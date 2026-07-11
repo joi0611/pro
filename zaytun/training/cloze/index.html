@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>新疆中考英语完形填空训练系统</title>
+    <link rel="stylesheet" href="styles.css?v=20260709-5" />
+  </head>
+  <body>
+    <section id="loginScreen" class="login-screen">
+      <div class="login-card">
+        <div class="login-hero">
+          <div class="login-brand">
+            <p class="login-kicker">@赞顿学堂</p>
+            <h1>新疆中考英语完形填空训练系统</h1>
+          </div>
+          <div class="login-panel">
+            <div class="login-form">
+              <label for="loginCode">登录码 <small>赞顿学堂统一登录码</small></label>
+              <div class="login-row">
+                <input id="loginCode" type="password" autocomplete="off" placeholder="请输入登录码" />
+                <button id="loginBtn" class="primary-button">登录</button>
+              </div>
+              <p id="loginFeedback" class="feedback"></p>
+            </div>
+          </div>
+        </div>
+        <article class="login-tip image-tip">
+          <img src="warm-tip.png" alt="温馨提示：完形填空训练方法说明" />
+        </article>
+      </div>
+    </section>
+
+    <main id="appShell" class="app-shell home-mode">
+      <aside id="sidebar" class="sidebar">
+        <div>
+          <p class="eyebrow">新疆中考英语</p>
+          <h1>新疆中考英语完形填空训练系统</h1>
+          <p class="subtitle">首尾定调、成分/重点判断、错题解析、复盘提升。</p>
+        </div>
+
+        <section class="lesson-card">
+          <div class="lesson-meta">
+            <span id="currentLevel">初中</span>
+            <span id="currentDifficulty">中等</span>
+            <span id="currentCount">15题</span>
+            <span id="currentSource">中考题库</span>
+          </div>
+          <h2 id="currentTitle">颜色们的争吵</h2>
+          <p id="currentEnglishTitle">The Colors Argued</p>
+        </section>
+
+        <section class="sidebar-library">
+          <p class="eyebrow">题库选择</p>
+          <div id="lessonGrid" class="lesson-grid"></div>
+        </section>
+
+        <nav class="step-list" aria-label="训练流程">
+          <button class="step-item active" data-jump="gate">1. 首尾定调</button>
+          <button class="step-item" data-jump="training">2. 逐空训练</button>
+          <button class="step-item" data-jump="result" disabled>3. 错题解析</button>
+          <button class="step-item" data-jump="verify">4. 复盘提升</button>
+        </nav>
+      </aside>
+
+      <section class="workspace">
+        <section id="home" class="panel home-panel">
+          <div class="home-heading">
+            <div>
+              <p class="eyebrow">题库主页</p>
+              <h2>选择一篇文章开始训练</h2>
+              <p>已上传的文章会显示在这里。做过的文章会保留记录，也可以重复练习。</p>
+            </div>
+            <div class="home-tool-actions" aria-label="学习工具入口">
+              <a class="home-tool-button home-return-link" href="../../index.html">返回首页，训练其他专题</a>
+              <button id="openNotebookBtn" class="home-tool-button" type="button">专属错题本</button>
+              <button id="openCollocationBankBtn" class="home-tool-button" type="button">固定搭配总库</button>
+            </div>
+          </div>
+          <section id="homeNotebookPanel" class="home-tool-panel hidden">
+            <div class="home-tool-panel-head">
+              <div>
+                <p class="eyebrow">专属错题本</p>
+                <h3>薄弱点雷达与错题规律</h3>
+              </div>
+              <button class="ghost-button" type="button" data-home-tool-close>返回题库</button>
+            </div>
+            <div id="notebookSummary" class="notebook-summary"></div>
+            <div id="weaknessRadar" class="weakness-radar"></div>
+            <div id="notebookGroups" class="notebook-groups"></div>
+          </section>
+          <section id="homeCollocationPanel" class="home-tool-panel hidden">
+            <div class="home-tool-panel-head">
+              <div>
+                <p class="eyebrow">固定搭配总库</p>
+                <h3>中考高频搭配卡片</h3>
+              </div>
+              <button class="ghost-button" type="button" data-home-tool-close>返回题库</button>
+            </div>
+            <section id="collocationBank" class="collocation-bank"></section>
+          </section>
+          <div id="homeProgress" class="home-progress"></div>
+          <div id="homeGrid" class="home-grid"></div>
+        </section>
+
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">当前文章</p>
+            <h2><span id="topTitle" class="top-title-main">颜色们的争吵</span> <span id="topEnglishTitle">The Colors Argued</span></h2>
+          </div>
+          <div class="top-actions">
+            <button id="backHomeBtn" class="ghost-button">返回主页</button>
+            <div class="progress-box">
+            <span id="progressText">待解锁</span>
+            <div class="progress-track">
+              <div id="progressBar" class="progress-fill"></div>
+            </div>
+            </div>
+          </div>
+        </header>
+
+        <section id="gate" class="panel study-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">破冰闯关区</p>
+            <h3>先读首尾句，判断文章走向</h3>
+          </div>
+
+          <div class="quote-grid">
+            <article>
+              <span>首句</span>
+              <p id="firstSentence">A long time ago, the colors argued about who was the best, the most important, and the most beautiful one in the world.</p>
+            </article>
+            <article>
+              <span>尾句</span>
+              <p id="lastSentence">They appreciate and love one another, and show one of the most beautiful ____ to the world.</p>
+            </article>
+          </div>
+
+          <div class="tone-options" id="toneOptions"></div>
+          <p id="gateFeedback" class="feedback"></p>
+        </section>
+
+        <section id="training" class="panel study-panel">
+          <div class="panel-heading row">
+            <div>
+              <p class="eyebrow">逐空训练区</p>
+              <h3>做题关键步骤：1有无固定搭配，2寻找线索，3选定答案，4代入验证</h3>
+            </div>
+            <button id="resetBtn" class="ghost-button">重新训练</button>
+          </div>
+
+          <div class="training-layout">
+            <article id="passage" class="passage"></article>
+
+            <aside class="question-panel">
+              <div id="emptyState" class="empty-state">
+                <strong>点击文章里的空格</strong>
+                <p>先判断本题是否有固定搭配；判断正确后，有搭配会显示具体结构，没有搭配则继续寻找上下文线索。</p>
+              </div>
+
+              <div id="questionBox" class="hidden">
+                <div class="question-title">
+                  <span id="questionNumber"></span>
+                  <span id="questionCategory"></span>
+                </div>
+
+                <section id="optionPreviewStep" class="mini-section option-preview-section">
+                  <h4>本题选项</h4>
+                  <div id="optionPreview" class="option-preview"></div>
+                </section>
+
+                <section id="posStep" class="mini-section">
+                  <h4>第一步：有无固定搭配</h4>
+                  <div id="posOptions" class="chip-grid"></div>
+                  <div id="posFeedback" class="feedback"></div>
+                </section>
+
+                <section id="toolStep" class="mini-section hidden">
+                  <h4 id="toolTitle"></h4>
+                  <div id="toolGuide" class="tool-guide"></div>
+                  <div id="clueWords" class="clue-list"></div>
+                </section>
+
+                <section id="answerStep" class="mini-section hidden">
+                  <h4>第二步：选择答案</h4>
+                  <div id="answerOptions" class="answer-grid"></div>
+                  <p id="answerFeedback" class="feedback"></p>
+                </section>
+
+                <section id="sentenceCheckStep" class="mini-section hidden">
+                  <h4>第三步：代入原句验证 <small>如果验证不通，再重选一次吧</small></h4>
+                  <p id="sentenceCheck" class="sentence-check"></p>
+                </section>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="result" class="panel locked hidden study-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">错题解析区</p>
+            <h3>错题解析</h3>
+          </div>
+          <div id="reflection" class="reflection">
+            <h4>灵魂三问</h4>
+            <label><input type="checkbox" /> 1. 通读全文了吗？</label>
+            <label><input type="checkbox" /> 2. 关键信息勾画了吗？</label>
+            <label><input type="checkbox" /> 3. 带回原文检查了吗？</label>
+          </div>
+          <div id="scoreBox" class="score-box"></div>
+          <div id="mistakeTable" class="mistake-table"></div>
+          <button id="resultHomeBtn" class="primary-button return-home-button">返回主页继续选题</button>
+        </section>
+
+        <section id="verify" class="panel study-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">复盘提升区</p>
+            <h3>做完再读一遍，是提升的关键</h3>
+          </div>
+          <section id="collocationReview" class="collocation-review"></section>
+          <div class="read-aloud">
+            <div>
+              <strong id="readStatus">精读翻译台</strong>
+              <p>完整查看原文和选项；单击单词或选项看意思，双击句子看整句中文。</p>
+            </div>
+          </div>
+          <div class="translation-workbench">
+            <div class="translation-main">
+              <article id="filledPassage" class="filled-passage"></article>
+              <div id="translationOptions" class="translation-options"></div>
+            </div>
+            <div id="sentenceMeaning" class="translation-card">
+              <strong>翻译</strong>
+              <p>单击单词或选项查看意思，双击句子查看整句中文。</p>
+            </div>
+          </div>
+          <section class="paper-practice">
+            <div>
+              <strong>纸质版再练习一遍</strong>
+              <p>生成考试卷样式，只保留原文空格和选项，适合打印后二刷。</p>
+            </div>
+            <button id="printReportBtn" class="primary-button">PDF打印</button>
+          </section>
+        </section>
+
+        <footer class="site-footer">@赞顿学堂</footer>
+      </section>
+    </main>
+
+    <div id="printArea" class="print-area" aria-hidden="true"></div>
+    <script src="app.js?v=20260710-2"></script>
+  </body>
+</html>

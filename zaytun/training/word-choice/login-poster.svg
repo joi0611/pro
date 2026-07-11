@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1180" viewBox="0 0 900 1180" role="img" aria-labelledby="title desc">
+  <title id="title">给新疆中考生的选词填空秘籍</title>
+  <desc id="desc">中考英语选词填空五步训练法海报</desc>
+  <defs>
+    <linearGradient id="blue" x1="0" x2="1">
+      <stop offset="0" stop-color="#0e5db7"/>
+      <stop offset="1" stop-color="#083274"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" x2="1">
+      <stop offset="0" stop-color="#0aa449"/>
+      <stop offset="1" stop-color="#07763a"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffac1a"/>
+      <stop offset="1" stop-color="#f17000"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" x2="1">
+      <stop offset="0" stop-color="#7f4bd8"/>
+      <stop offset="1" stop-color="#5131a5"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1180" fill="#fffdf8"/>
+  <g opacity=".11" fill="#7b8794" font-family="Microsoft YaHei, Arial" font-size="28" font-weight="700">
+    <text x="-80" y="120" transform="rotate(-16 0 0)">@赞顿学堂</text>
+    <text x="480" y="120" transform="rotate(-16 480 120)">@赞顿学堂</text>
+    <text x="80" y="430" transform="rotate(-16 80 430)">@赞顿学堂</text>
+    <text x="520" y="710" transform="rotate(-16 520 710)">@赞顿学堂</text>
+    <text x="80" y="1020" transform="rotate(-16 80 1020)">@赞顿学堂</text>
+  </g>
+  <text x="450" y="70" text-anchor="middle" font-size="54" fill="#0b2d63" font-weight="900" font-family="Microsoft YaHei, Arial">给新疆中考生的</text>
+  <text x="450" y="150" text-anchor="middle" font-size="86" fill="#df1717" font-weight="900" font-family="Microsoft YaHei, Arial">选词填空</text>
+  <text x="720" y="150" font-size="86" fill="#0b2d63" font-weight="900" font-family="Microsoft YaHei, Arial">秘籍</text>
+  <text x="450" y="204" text-anchor="middle" font-size="28" fill="#0b2d63" font-weight="800" font-family="Microsoft YaHei, Arial">词性定方向 · 搭配定答案 · 变形拿满分</text>
+  <g transform="translate(55 235)">
+    <g>
+      <rect x="0" y="0" width="135" height="135" rx="18" fill="url(#green)"/>
+      <text x="68" y="62" text-anchor="middle" font-size="58" fill="#fff" font-weight="900" font-family="Arial">1</text>
+      <text x="68" y="108" text-anchor="middle" font-size="34" fill="#fff" font-weight="900" font-family="Microsoft YaHei, Arial">标词性</text>
+      <rect x="160" y="0" width="625" height="135" rx="16" fill="#f6fff8" stroke="#0a8c42" stroke-width="3"/>
+      <text x="185" y="42" font-size="26" fill="#111" font-weight="800" font-family="Microsoft YaHei, Arial">给方框单词标注基本词性</text>
+      <text x="185" y="84" font-size="24" fill="#111" font-family="Microsoft YaHei, Arial">名词、动词、形容词顺便考虑可转换词性</text>
+      <text x="185" y="122" font-size="24" fill="#087a36" font-weight="800" font-family="Microsoft YaHei, Arial">口诀：标词性 → 判转换 → 标疑难</text>
+    </g>
+    <g transform="translate(0 165)">
+      <rect x="0" y="0" width="135" height="135" rx="18" fill="url(#blue)"/>
+      <text x="68" y="62" text-anchor="middle" font-size="58" fill="#fff" font-weight="900" font-family="Arial">2</text>
+      <text x="68" y="108" text-anchor="middle" font-size="34" fill="#fff" font-weight="900" font-family="Microsoft YaHei, Arial">判空格</text>
+      <rect x="160" y="0" width="625" height="135" rx="16" fill="#f7fbff" stroke="#1266bd" stroke-width="3"/>
+      <text x="185" y="42" font-size="26" fill="#111" font-weight="800" font-family="Microsoft YaHei, Arial">通读文章，理解大意</text>
+      <text x="185" y="84" font-size="24" fill="#111" font-family="Microsoft YaHei, Arial">观察空前空后，先判断每个空需要什么词性</text>
+      <text x="185" y="122" font-size="24" fill="#0d5fae" font-weight="800" font-family="Microsoft YaHei, Arial">口诀：先看语法，后看词义</text>
+    </g>
+    <g transform="translate(0 330)">
+      <rect x="0" y="0" width="135" height="135" rx="18" fill="url(#orange)"/>
+      <text x="68" y="62" text-anchor="middle" font-size="58" fill="#fff" font-weight="900" font-family="Arial">3</text>
+      <text x="68" y="108" text-anchor="middle" font-size="34" fill="#fff" font-weight="900" font-family="Microsoft YaHei, Arial">选单词</text>
+      <rect x="160" y="0" width="625" height="135" rx="16" fill="#fffaf0" stroke="#f28a00" stroke-width="3"/>
+      <text x="185" y="42" font-size="26" fill="#111" font-weight="800" font-family="Microsoft YaHei, Arial">按优先级筛选：固定搭配、词性匹配、语义通顺</text>
+      <text x="185" y="84" font-size="24" fill="#111" font-family="Microsoft YaHei, Arial">拿不准先跳过，最后再排除</text>
+      <text x="185" y="122" font-size="24" fill="#d96c00" font-weight="800" font-family="Microsoft YaHei, Arial">口诀：搭配优先，语义辅助</text>
+    </g>
+    <g transform="translate(0 495)">
+      <rect x="0" y="0" width="135" height="135" rx="18" fill="url(#purple)"/>
+      <text x="68" y="62" text-anchor="middle" font-size="58" fill="#fff" font-weight="900" font-family="Arial">4</text>
+      <text x="68" y="108" text-anchor="middle" font-size="34" fill="#fff" font-weight="900" font-family="Microsoft YaHei, Arial">查变形</text>
+      <rect x="160" y="0" width="625" height="135" rx="16" fill="#fbf8ff" stroke="#6b45bd" stroke-width="3"/>
+      <text x="185" y="42" font-size="26" fill="#111" font-weight="800" font-family="Microsoft YaHei, Arial">名词看单复数，动词看时态，形副看比较级</text>
+      <text x="185" y="84" font-size="24" fill="#111" font-family="Microsoft YaHei, Arial">代词、数词、所有格也要逐项检查</text>
+      <text x="185" y="122" font-size="24" fill="#5c38a8" font-weight="800" font-family="Microsoft YaHei, Arial">口诀：选词后，必变形</text>
+    </g>
+    <g transform="translate(0 660)">
+      <rect x="0" y="0" width="135" height="135" rx="18" fill="url(#green)"/>
+      <text x="68" y="62" text-anchor="middle" font-size="58" fill="#fff" font-weight="900" font-family="Arial">5</text>
+      <text x="68" y="108" text-anchor="middle" font-size="34" fill="#fff" font-weight="900" font-family="Microsoft YaHei, Arial">排除验证</text>
+      <rect x="160" y="0" width="625" height="135" rx="16" fill="#f6fff8" stroke="#0a8c42" stroke-width="3"/>
+      <text x="185" y="42" font-size="26" fill="#111" font-weight="800" font-family="Microsoft YaHei, Arial">检查是否一词一用，通读全文</text>
+      <text x="185" y="84" font-size="24" fill="#111" font-family="Microsoft YaHei, Arial">确认语法、搭配、逻辑都通顺</text>
+      <text x="185" y="122" font-size="24" fill="#087a36" font-weight="800" font-family="Microsoft YaHei, Arial">口诀：代入通读，排除验证</text>
+    </g>
+  </g>
+  <rect x="55" y="1080" width="790" height="58" rx="22" fill="#fff8f4" stroke="#ef3b2d" stroke-width="3"/>
+  <text x="450" y="1118" text-anchor="middle" font-size="30" fill="#0b2d63" font-weight="900" font-family="Microsoft YaHei, Arial">方法对了，满分不难！@赞顿学堂</text>
+</svg>

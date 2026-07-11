@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 - 读写题训练系统 | 赞顿学堂</title>
+  <link rel="stylesheet" href="style.css?v=zandun-rw-1">
+</head>
+<body>
+  <main class="login-shell">
+    <section class="login-card">
+      <div class="brand-mark login-mark">赞顿</div>
+      <h1>读写题训练系统</h1>
+      <p>@赞顿学堂</p>
+      <div class="login-form">
+        <label for="access-code">请输入登录码</label>
+        <input id="access-code" type="text" autocomplete="off" placeholder="请输入登录码">
+        <button id="login-button" type="button">登录</button>
+        <div id="login-message" class="login-message" aria-live="polite"></div>
+      </div>
+      <a class="home-link login-home-link" href="../../index.html">返回首页，训练其他题型</a>
+    </section>
+  </main>
+  <script>
+    const LOGIN_STORAGE_KEY = 'rw_supabase_access_code_20260710';
+    const LOGIN_OK_KEY = 'rw_supabase_login_ok_20260710';
+    const LOGIN_LABEL_KEY = 'rw_supabase_login_label_20260710';
+    const SUPABASE_CONFIG = {
+      url: 'https://gbjmylxohacppnybfssh.supabase.co',
+      anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdiam15bHhvaGFjcHBueWJmc3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDA1NzgsImV4cCI6MjA5ODI3NjU3OH0.mz5srsxdbZa4__oqKjlcysWuDo00w7UQaV8n2VNP4eE'
+    };
+    const SYSTEM_TYPE = 'reading-writing';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const savedCode = localStorage.getItem(LOGIN_STORAGE_KEY);
+      if (isLoggedIn() && savedCode) {
+        try {
+          await verifyAccessCode(savedCode);
+          window.location.href = 'index.html';
+          return;
+        } catch {
+          clearLoginState();
+        }
+      }
+      document.getElementById('login-button').addEventListener('click', checkLogin);
+      document.getElementById('access-code').addEventListener('keydown', event => {
+        if (event.key === 'Enter') checkLogin();
+      });
+    });
+
+    function isLoggedIn() {
+      return localStorage.getItem(LOGIN_OK_KEY) === 'true' && !!localStorage.getItem(LOGIN_STORAGE_KEY);
+    }
+
+    function clearLoginState() {
+      localStorage.removeItem(LOGIN_STORAGE_KEY);
+      localStorage.removeItem(LOGIN_OK_KEY);
+      localStorage.removeItem(LOGIN_LABEL_KEY);
+    }
+
+    async function checkLogin() {
+      const input = document.getElementById('access-code');
+      const message = document.getElementById('login-message');
+      const code = cleanLoginCode(input.value);
+      input.value = code;
+      if (!code) {
+        message.textContent = '请输入登录码。';
+        message.className = 'login-message bad';
+        return;
+      }
+      try {
+        const account = await verifyAccessCode(code);
+        localStorage.removeItem('rw_mvp_logged_in');
+        localStorage.removeItem('rw_mvp_login_time');
+        localStorage.removeItem('rw_mvp_mastered_ids');
+        localStorage.removeItem('rw_mvp_completed_practice_ids');
+        localStorage.setItem(LOGIN_STORAGE_KEY, code);
+        localStorage.setItem(LOGIN_OK_KEY, 'true');
+        if (account.label) localStorage.setItem(LOGIN_LABEL_KEY, account.label);
+        message.textContent = '登录成功，正在进入系统。';
+        message.className = 'login-message good';
+        window.location.href = 'index.html';
+      } catch {
+        message.textContent = '登录码不正确，或不可用于当前专项。';
+        message.className = 'login-message bad';
+      }
+    }
+
+    function cleanLoginCode(value) {
+      return String(value || '').replace(/[^A-Za-z0-9]/g, '').slice(0, 12);
+    }
+
+    async function callSupabaseRpc(functionName, payload) {
+      const response = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/rpc/${functionName}`, {
+        method: 'POST',
+        headers: {
+          apikey: SUPABASE_CONFIG.anonKey,
+          Authorization: `Bearer ${SUPABASE_CONFIG.anonKey}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      const text = await response.text();
+      const data = text ? JSON.parse(text) : null;
+      if (!response.ok) throw new Error(data && data.message ? data.message : '登录失败');
+      return data;
+    }
+
+    async function verifyAccessCode(code) {
+      let result;
+      try {
+        result = await callSupabaseRpc('verify_access_code', {
+          input_code: code,
+          input_system_type: SYSTEM_TYPE
+        });
+      } catch (error) {
+        if (String(error && error.message || '').includes('Could not find the function')) {
+          result = await callSupabaseRpc('verify_access_code', { input_code: code });
+        } else {
+          throw error;
+        }
+      }
+      const account = Array.isArray(result) ? result[0] : null;
+      if (!account || !account.access_code_id) throw new Error('登录码不正确');
+      return account;
+    }
+  </script>
+</body>
+</html>
