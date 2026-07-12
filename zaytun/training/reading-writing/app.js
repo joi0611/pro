@@ -36,10 +36,10 @@ async function init() {
   state.mastered = loadMastered();
   state.completedPractice = loadCompletedPractice();
   setupStrategyAccordion();
-  await loadCloudProgress();
   renderArticleList();
   renderLearning();
   updatePracticeProgress();
+  syncCloudProgressInBackground();
 }
 
 async function callSupabaseRpc(functionName, payload) {
@@ -135,14 +135,11 @@ async function setupLoginGate() {
   clearOldLoginData();
   const saved = safeGetLogin();
   if (saved && localStorage.getItem(LOGIN_OK_KEY) === 'true') {
-    try {
-      const account = await verifyAccessCode(saved);
-      safeSetLogin(saved, account.label);
-      unlockApp();
-      return true;
-    } catch {
-      clearLoginState();
-    }
+    unlockApp();
+    verifyAccessCode(saved)
+      .then(account => safeSetLogin(saved, account.label))
+      .catch(error => console.warn('Background reading-writing login check failed:', error));
+    return true;
   }
 
   const gate = document.getElementById('loginGate');
@@ -185,10 +182,10 @@ async function setupLoginGate() {
       state.mastered = loadMastered();
       state.completedPractice = loadCompletedPractice();
       setupStrategyAccordion();
-      await loadCloudProgress();
       renderArticleList();
       renderLearning();
       updatePracticeProgress();
+      syncCloudProgressInBackground();
     } catch (err) {
       if (error) {
         error.textContent = err.message || '登录码不正确，请重新输入。';
@@ -303,7 +300,7 @@ function switchSection(section) {
 }
 
 function getLearningItems() {
-  return state.data.learningItems.filter(item => item.category === state.activeCategory);
+  return (state.data.learningItems || []).filter(item => item.category === state.activeCategory);
 }
 
 function getCardItems() {
@@ -502,7 +499,7 @@ function startArticle(source) {
 }
 
 function getAllPracticeItems() {
-  return state.data.practiceItems.filter(item => item.targetSentence && item.answer);
+  return (state.data.practiceItems || []).filter(item => item.targetSentence && item.answer);
 }
 
 function getPracticeItems() {
@@ -684,6 +681,16 @@ async function loadCloudProgress() {
   } catch (error) {
     console.warn('Load reading-writing cloud progress failed:', error);
   }
+}
+
+function syncCloudProgressInBackground() {
+  loadCloudProgress().then(() => {
+    renderArticleList();
+    renderLearning();
+    updatePracticeProgress();
+  }).catch(error => {
+    console.warn('Background reading-writing progress sync failed:', error);
+  });
 }
 
 async function saveCloudProgress() {

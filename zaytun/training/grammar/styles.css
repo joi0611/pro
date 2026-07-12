@@ -2678,3 +2678,137 @@ body {
   color: #2d5f28;
   background: #e8ffd3;
 }
+
+/* Focus-first Zandun visual refinement */
+:root {
+  --focus: #f59e0b;
+  --focus-dark: #9a4f00;
+  --focus-soft: #fff3d6;
+  --done-soft: #eefbe8;
+  --neutral-soft: #f8faf6;
+}
+
+body {
+  background: #ffffff !important;
+}
+
+.app-shell,
+.top-header,
+.view,
+.content-area,
+.practice-shell,
+.exam-workspace,
+.word-transform-view,
+.review-view {
+  background: #ffffff !important;
+}
+
+.top-header,
+.exam-title-row,
+.exam-passage,
+.question-pill,
+.choice-btn,
+.result-card,
+.progress-tracker,
+.mistake-item,
+.collocation-review,
+.transform-list article,
+.exam-paper-card.compact-card,
+.site-footer {
+  border-color: #e6eadf !important;
+  background: #ffffff !important;
+  box-shadow: 0 10px 28px rgba(30, 45, 26, 0.05) !important;
+}
+
+.exam-passage,
+.question-card,
+.answer-card,
+.transform-list article {
+  background: #ffffff !important;
+}
+
+.question-pill.active,
+.blank-token.active,
+.choice-btn:hover,
+.choice-btn.selected,
+.choice-btn.active {
+  border-color: var(--focus) !important;
+  color: #11160f !important;
+  background: var(--focus-soft) !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.16) !important;
+}
+
+.question-pill.done,
+.blank-token.completed,
+.choice-btn.correct,
+.progress-row i em {
+  border-color: #9eea74 !important;
+  color: #0d160b !important;
+  background: var(--done-soft) !important;
+}
+
+.clue,
+.clue-word,
+.clue-highlight,
+.highlight,
+.keyword,
+.active-clue {
+  border-radius: 6px;
+  color: #6f4300 !important;
+  background: var(--focus-soft) !important;
+  box-shadow: inset 0 -2px 0 rgba(245, 158, 11, 0.28);
+}
+
+.blank-token {
+  border-color: #bfe8ad !important;
+  color: #1f4d32 !important;
+  background: #fbfff7 !important;
+}
+
+.primary-btn,
+.start-btn,
+.exam-paper-card.compact-card button,
+.nav-item.active {
+  border-color: #9eea74 !important;
+  color: #0d160b !important;
+  background: #d6ffad !important;
+}
+
+.secondary-btn,
+.ghost-btn,
+.top-home-link,
+.nav-item {
+  border-color: #dfe8db !important;
+  color: #11160f !important;
+  background: #ffffff !important;
+}
+
+.site-footer {
+  color: #1f4d32 !important;
+  background: linear-gradient(180deg, #ffffff, #fbfff7) !important;
+}
+
+/* Second pass: make list actions quieter; reserve color for current focus. */
+.exam-paper-card.compact-card button,
+.start-article-btn,
+.start-btn,
+.primary-btn {
+  border-color: #9eea74 !important;
+  color: #0d160b !important;
+  background: #ffffff !important;
+}
+
+.exam-paper-card.compact-card button:hover,
+.start-article-btn:hover,
+.start-btn:hover,
+.primary-btn:hover {
+  border-color: var(--focus) !important;
+  color: #11160f !important;
+  background: var(--focus-soft) !important;
+}
+
+.nav-item.active {
+  border-color: var(--focus) !important;
+  color: var(--focus-dark) !important;
+  background: var(--focus-soft) !important;
+}

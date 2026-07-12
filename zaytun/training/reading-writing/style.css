@@ -1167,3 +1167,184 @@ input {
     font-size: 15px;
   }
 }
+
+/* Focus-first Zandun visual refinement */
+:root {
+  --focus: #f59e0b;
+  --focus-dark: #9a4f00;
+  --focus-soft: #fff3d6;
+  --done-soft: #eefbe8;
+  --neutral-soft: #f8faf6;
+}
+
+body {
+  background: #ffffff !important;
+}
+
+.app-shell,
+.top-header,
+.main-content,
+.section,
+.panel,
+.practice-card,
+.study-card,
+.word-card,
+.login-card,
+.library-screen,
+.lesson-card {
+  background: #ffffff !important;
+}
+
+.app-shell,
+.top-header,
+.section,
+.panel,
+.practice-card,
+.study-card,
+.word-card,
+.library-screen,
+.lesson-card,
+.practice-progress,
+.sentence-block,
+.site-footer {
+  border-color: #e6eadf !important;
+  box-shadow: 0 10px 28px rgba(30, 45, 26, 0.05) !important;
+}
+
+.top-header {
+  border-bottom-color: #e6eadf !important;
+}
+
+.brand-mark,
+.tab-btn.active,
+.nav-btn.active,
+.start-btn,
+.primary-btn,
+#submit-answer,
+#next-practice,
+.lesson-card button {
+  border-color: #9eea74 !important;
+  color: #0d160b !important;
+  background: #d6ffad !important;
+}
+
+.tab-btn,
+.nav-btn,
+.ghost-btn,
+.secondary-btn,
+.home-link-btn,
+.lesson-card {
+  border-color: #dfe8db !important;
+  color: #11160f !important;
+  background: #ffffff !important;
+}
+
+.tab-btn:hover,
+.nav-btn:hover,
+.ghost-btn:hover,
+.secondary-btn:hover,
+.home-link-btn:hover,
+.lesson-card:hover,
+.choice-btn:hover {
+  border-color: var(--focus) !important;
+  background: var(--focus-soft) !important;
+}
+
+.practice-card.active,
+.question-card.active,
+.choice-btn.selected,
+.blank.active,
+.current-question,
+.active-step {
+  border-color: var(--focus) !important;
+  background: var(--focus-soft) !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.16) !important;
+}
+
+.done,
+.completed,
+.correct,
+.mastered,
+.progress-fill {
+  background: var(--done-soft) !important;
+}
+
+.keyword,
+.clue,
+.highlight,
+.source-word,
+.sentence-block mark {
+  border-radius: 6px;
+  color: #6f4300 !important;
+  background: var(--focus-soft) !important;
+  box-shadow: inset 0 -2px 0 rgba(245, 158, 11, 0.28);
+}
+
+.site-footer {
+  color: #1f4d32 !important;
+  background: linear-gradient(180deg, #ffffff, #fbfff7) !important;
+}
+
+/* Second pass: reduce button color weight; use orange for the active module. */
+.brand-mark {
+  background: #ffffff !important;
+}
+
+.nav-item,
+.tab-btn,
+.nav-btn,
+.start-btn,
+.primary-btn,
+#submit-answer,
+#next-practice,
+.lesson-card button,
+.home-link-btn,
+.category-actions button {
+  border-color: #9eea74 !important;
+  color: #0d160b !important;
+  background: #ffffff !important;
+}
+
+.nav-item.active,
+.tab-btn.active,
+.nav-btn.active,
+.category-actions button.active,
+.segmented button.active {
+  border-color: var(--focus) !important;
+  color: var(--focus-dark) !important;
+  background: var(--focus-soft) !important;
+}
+
+#submit-answer:hover,
+#next-practice:hover,
+.lesson-card button:hover,
+.start-btn:hover,
+.primary-btn:hover,
+.home-link-btn:hover {
+  border-color: var(--focus) !important;
+  color: #11160f !important;
+  background: var(--focus-soft) !important;
+}
+
+.practice-progress .progress-fill,
+.progress-fill {
+  background: var(--focus) !important;
+}
+
+#back-to-library,
+#new-practice,
+#submit-answer,
+#next-practice {
+  border-color: #9eea74 !important;
+  color: #0d160b !important;
+  background: #ffffff !important;
+}
+
+#back-to-library:hover,
+#new-practice:hover,
+#submit-answer:hover,
+#next-practice:hover {
+  border-color: var(--focus) !important;
+  color: var(--focus-dark) !important;
+  background: var(--focus-soft) !important;
+}

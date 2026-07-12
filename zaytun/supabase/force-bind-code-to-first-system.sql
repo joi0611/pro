@@ -1,15 +1,13 @@
--- 赞顿学堂：登录码首次登录自动绑定专项
+-- 赞顿学堂：强制登录码首次绑定专项
 -- 用法：复制整份 SQL 到 Supabase SQL Editor 执行。
--- 规则：
--- 1. bound_system_type 为空：首次登录时绑定到当前专项。
--- 2. bound_system_type 等于当前专项：允许登录。
--- 3. bound_system_type 不等于当前专项：拒绝登录。
 --
--- 当前前端专项类型：
--- cloze            = 完形填空
--- grammar          = 语法填空
--- word_choice      = 选词填空
--- reading-writing  = 读写题
+-- 执行后效果：
+-- 1. 前端必须调用 verify_access_code(input_code, input_system_type)。
+-- 2. 登录码第一次进入哪个专项，就绑定哪个专项。
+-- 3. 之后同一个码只能进入已绑定专项。
+-- 4. 旧的一参数 verify_access_code(input_code) 会被禁用，防止前端 fallback 绕过专项绑定。
+
+create extension if not exists pgcrypto with schema extensions;
 
 alter table public.access_codes
 add column if not exists bound_system_type text;
@@ -17,28 +15,9 @@ add column if not exists bound_system_type text;
 alter table public.access_codes
 add column if not exists bound_at timestamptz;
 
--- 默认不回填历史进度：从执行本 SQL 之后的第一次专项登录开始绑定。
--- 如果你确实希望“已有学习进度”也算第一次专项，可在执行完本文件后，单独运行下面这段：
---
--- with first_progress as (
---   select distinct on (access_code_id)
---     access_code_id,
---     system_type,
---     updated_at
---   from public.learning_progress
---   order by access_code_id, updated_at asc
--- )
--- update public.access_codes c
--- set
---   bound_system_type = fp.system_type,
---   bound_at = coalesce(c.bound_at, fp.updated_at)
--- from first_progress fp
--- where c.id = fp.access_code_id
---   and c.bound_system_type is null;
-
 create or replace function public.verify_access_code(
   input_code text,
-  input_system_type text default null
+  input_system_type text
 )
 returns table (
   access_code_id uuid,
@@ -70,9 +49,24 @@ begin
 end;
 $$;
 
+-- 禁用旧的一参数登录函数，避免前端 fallback 到旧函数后绕过专项绑定。
+create or replace function public.verify_access_code(input_code text)
+returns table (
+  access_code_id uuid,
+  label text
+)
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+begin
+  raise exception 'SYSTEM_TYPE_REQUIRED';
+end;
+$$;
+
 create or replace function public.get_learning_progress(
   input_code text,
-  input_system_type text default null
+  input_system_type text
 )
 returns table (
   system_type text,
@@ -176,5 +170,9 @@ end;
 $$;
 
 grant execute on function public.verify_access_code(text, text) to anon, authenticated;
+grant execute on function public.verify_access_code(text) to anon, authenticated;
 grant execute on function public.get_learning_progress(text, text) to anon, authenticated;
 grant execute on function public.save_learning_progress(text, text, text, jsonb, boolean, integer) to anon, authenticated;
+
+-- 通知 Supabase/PostgREST 重新加载函数缓存。
+notify pgrst, 'reload schema';

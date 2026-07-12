@@ -995,6 +995,168 @@
       }
     }
 
+    /* Focus-first Zandun visual refinement */
+    :root {
+      --focus: #f59e0b;
+      --focus-dark: #9a4f00;
+      --focus-soft: #fff3d6;
+      --done-soft: #eefbe8;
+      --neutral-soft: #f8faf6;
+    }
+
+    body {
+      background: #ffffff !important;
+    }
+
+    .app,
+    header,
+    .toolbar,
+    .panel,
+    .score-card,
+    .modal,
+    .bubble,
+    .login-card,
+    .library-screen,
+    .lesson-card,
+    .analysis-row,
+    .word-bank,
+    .passage {
+      background: #ffffff !important;
+    }
+
+    header,
+    .toolbar,
+    .panel,
+    .score-card,
+    .modal,
+    .bubble,
+    .login-card,
+    .library-screen,
+    .lesson-card,
+    .blank,
+    .choice,
+    .rule,
+    .analysis-row,
+    .word {
+      border-color: #e6eadf !important;
+      box-shadow: 0 10px 28px rgba(30, 45, 26, 0.05) !important;
+    }
+
+    .btn,
+    .start-article-btn,
+    .home-link-btn {
+      border-color: #9eea74 !important;
+      color: #0d160b !important;
+      background: #d6ffad !important;
+    }
+
+    .btn.secondary,
+    .question-tab,
+    .top-library-link,
+    .choice,
+    .rule {
+      border-color: #dfe8db !important;
+      color: #11160f !important;
+      background: #ffffff !important;
+    }
+
+    .btn:hover,
+    .start-article-btn:hover,
+    .home-link-btn:hover,
+    .question-tab:hover,
+    .choice:hover,
+    .rule:hover,
+    .lesson-card:hover {
+      border-color: var(--focus) !important;
+      color: #11160f !important;
+      background: var(--focus-soft) !important;
+    }
+
+    .question-tab.active,
+    .blank.active,
+    .choice.selected,
+    .rule.selected,
+    .word.available,
+    .inline-pos-panel {
+      border-color: var(--focus) !important;
+      color: #11160f !important;
+      background: var(--focus-soft) !important;
+      box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.16), 0 12px 28px rgba(30, 45, 26, 0.08) !important;
+    }
+
+    .word.untagged {
+      border-color: #dfe8db !important;
+      background: #ffffff !important;
+    }
+
+    .word.used,
+    .word.corrected,
+    .word.tag-ok,
+    .blank.filled,
+    .analysis-row.correct {
+      border-color: #9eea74 !important;
+      color: #0d160b !important;
+      background: var(--done-soft) !important;
+    }
+
+    .blank.later,
+    .clue,
+    .clue.active,
+    .formula-card,
+    .transform-card {
+      border-color: #f2c96b !important;
+      color: #6f4300 !important;
+      background: var(--focus-soft) !important;
+    }
+
+    .clue {
+      border-radius: 6px;
+      box-shadow: inset 0 -2px 0 rgba(245, 158, 11, 0.28);
+    }
+
+    .lesson-index {
+      border-color: #f2c96b !important;
+      color: var(--focus-dark) !important;
+      background: var(--focus-soft) !important;
+    }
+
+    .site-footer {
+      color: #1f4d32 !important;
+      background: linear-gradient(180deg, #ffffff, #fbfff7) !important;
+      box-shadow: none !important;
+    }
+
+    /* Second pass: remove residual blue and reduce green button weight. */
+    .tag,
+    .tag.pending {
+      border-color: #f2c96b !important;
+      color: #6f4300 !important;
+      background: var(--focus-soft) !important;
+    }
+
+    .tag.ok,
+    .tag.correct {
+      border-color: #9eea74 !important;
+      color: #0d160b !important;
+      background: var(--done-soft) !important;
+    }
+
+    .btn,
+    .start-article-btn,
+    .home-link-btn {
+      border-color: #9eea74 !important;
+      color: #0d160b !important;
+      background: #ffffff !important;
+    }
+
+    .question-tab.active,
+    .btn.primary,
+    .active-step {
+      border-color: var(--focus) !important;
+      color: var(--focus-dark) !important;
+      background: var(--focus-soft) !important;
+    }
+
   </style>
 </head>
 <body class="locked">
@@ -1068,6 +1230,7 @@
       <button class="question-tab" data-question="rmbScenery" type="button">2026 乌鲁木齐三模·人民币风景</button>
       <button class="question-tab" data-question="kungFuRobots" type="button">2026 热点话题·功夫机器人</button>
       <button class="question-tab" data-question="foodDeliveryHistory" type="button">2026 最后5天押题·外卖历史</button>
+      <button class="question-tab" data-question="qiongkushitaiVillage" type="button">新疆琼库什台村的变迁</button>
     </section>
 
     <section class="toolbar" aria-label="备选词词性打标签区">
@@ -3355,6 +3518,108 @@
         <span class="clue" data-clue-for="95">hot water into it</span> to keep the food warm.`
     };
 
+    const qiongkushitaiVillageQuestion = {
+      title: "新疆琼库什台村的变迁",
+      source: "2026新疆中考英语真题",
+      words: [
+        { text: "warm", forms: { adj: "warm", adv: "warmly", compare: "warmer", super: "warmest" } },
+        { text: "mountains", forms: { noun: "mountains", nounPlural: "mountains", singular: "mountain" } },
+        { text: "wooden", forms: { adj: "wooden" } },
+        { text: "start", forms: { verb: "start", noun: "start", third: "starts", past: "started", pp: "started", ing: "starting" } },
+        { text: "good", forms: { adj: "good", noun: "good", adv: "well", compare: "better", super: "best" } },
+        { text: "activities", forms: { noun: "activities", nounPlural: "activities", singular: "activity" } },
+        { text: "even", forms: { adv: "even", adj: "even", verb: "even" } },
+        { text: "with", forms: { prep: "with" } },
+        { text: "taken", forms: { verb: "take", third: "takes", past: "took", pp: "taken", ing: "taking" } },
+        { text: "both", forms: { conj: "both", pron: "both", adj: "both" } },
+        { text: "the", forms: { det: "the" } }
+      ],
+      wordKey: {
+        warm: { tag: "adj", conversions: [] },
+        mountains: { tag: "noun", conversions: [] },
+        wooden: { tag: "adj", conversions: [] },
+        start: { tag: "verb", conversions: ["noun"] },
+        good: { tag: "adj", conversions: ["noun", "adv"] },
+        activities: { tag: "noun", conversions: [] },
+        even: { tag: "adv", conversions: ["adj", "verb"] },
+        with: { tag: "prep", conversions: [] },
+        taken: { tag: "verb", conversions: [] },
+        both: { tag: "conj", conversions: ["pron", "adj"] },
+        the: { tag: "det", conversions: [] }
+      },
+      blanks: {
+        85: { needed: "noun", correctWord: "mountains", rule: "keep", answer: "mountains", path: "Deep in the ___ -> in 的宾语需要名词；结合后文 Snow-capped mountains 等地理环境，表示在深山中 -> mountains" },
+        86: { needed: "det", correctWord: "the", rule: "safe", answer: "the", path: "In ___ morning -> 固定时间短语 in the morning -> the" },
+        87: { needed: "adj", correctWord: "wooden", rule: "origin", answer: "wooden", path: "special ___ houses -> 名词 houses 前缺形容词；后句 use wood to build houses 直接提示木制的 -> wooden" },
+        88: { needed: "prep", correctWord: "with", rule: "safe", answer: "with", path: "cover each top ___ grass -> 固定搭配 cover...with...，用草覆盖屋顶 -> with" },
+        89: { needed: "adj", correctWord: "warm", rule: "origin", answer: "warm", path: "keeps houses ___ in winter and cool in summer -> keep + 宾语 + 形容词，且与 cool 对比 -> warm" },
+        90: { needed: "verb", correctWord: "taken", rule: "pp", answer: "taken", path: "have ___ place -> have + 过去分词构成现在完成时；take place 表示发生 -> taken" },
+        91: { needed: "verb", correctWord: "start", rule: "base", answer: "start", path: "return from cities to ___ their businesses -> to 后接动词原形；start a business 表示创业 -> start" },
+        92: { needed: "noun", correctWord: "activities", rule: "keep", answer: "activities", path: "design fun ___ such as... -> 形容词 fun 后接名词；such as 后列举多项活动 -> activities" },
+        93: { needed: "adv", correctWord: "even", rule: "origin", answer: "even", path: "some of them ___ live a new traveling life -> 副词修饰 live，表示递进：甚至 -> even" },
+        94: { needed: "adj", correctWord: "good", rule: "compare", answer: "better", path: "live a ___ life than before -> than 是比较级标志；good 的比较级是 better -> better" },
+        95: { needed: "conj", correctWord: "both", rule: "safe", answer: "both", path: "with ___ natural beauty and lively culture -> both A and B 固定并列结构 -> both" }
+      },
+      blankClues: {
+        85: "in the / it keeps",
+        86: "In / morning",
+        87: "special / houses",
+        88: "cover each top / grass",
+        89: "keeps houses / in winter",
+        90: "have / place here",
+        91: "return from cities to / their businesses",
+        92: "design fun / such as",
+        93: "some of them / live a new",
+        94: "live a / life than before",
+        95: "with / natural beauty and"
+      },
+      clueFormulas: {
+        85: "定冠词 the 之后，常需要名词；介词 in 后也要有名词作宾语。",
+        86: "常见时间短语：in the morning，冠词 the 直接锁定。",
+        87: "位于名词 houses 前作定语，优先判断为形容词。",
+        88: "动词搭配：cover...with...，表示“用……覆盖……”。",
+        89: "keep + 宾语 + 形容词作宾补；再看 warm in winter / cool in summer 的对比。",
+        90: "have/has + 过去分词构成现在完成时；take place 的过去分词是 taken。",
+        91: "不定式符号 to 后接动词原形，构成目的状语。",
+        92: "形容词 fun 后接名词；such as 后列举多项内容时，多用复数名词。",
+        93: "修饰动词 live，表示递进语气，填副词 even。",
+        94: "句中出现 than before，形容词要用比较级；good -> better。",
+        95: "并列连词固定句型：both A and B，表示两者兼具。"
+      },
+      passageHtml: `Qiongkushitai is a wonderful small village in Xinjiang. Deep <span class="clue" data-clue-for="85">in the</span>
+        <span class="blank-wrap"><button class="blank" data-blank="85">空缺 85</button><button class="later-btn" data-later="85" title="暂缓">!</button></span>,
+        it keeps traditional local culture and thousands of tourists visit it every year. <span class="clue" data-clue-for="86">In</span>
+        <span class="blank-wrap"><button class="blank" data-blank="86">空缺 86</button><button class="later-btn" data-later="86" title="暂缓">!</button></span>
+        <span class="clue" data-clue-for="86">morning</span>, sheep and horses walk on green grasslands. Snow-capped mountains, thick forests and clear rivers make the village look like a fairyland (仙境). Local people live in
+        <span class="clue" data-clue-for="87">special</span>
+        <span class="blank-wrap"><button class="blank" data-blank="87">空缺 87</button><button class="later-btn" data-later="87" title="暂缓">!</button></span>
+        <span class="clue" data-clue-for="87">houses</span>. They use wood to build houses and
+        <span class="clue" data-clue-for="88">cover each top</span>
+        <span class="blank-wrap"><button class="blank" data-blank="88">空缺 88</button><button class="later-btn" data-later="88" title="暂缓">!</button></span>
+        <span class="clue" data-clue-for="88">grass</span>. This smart way
+        <span class="clue" data-clue-for="89">keeps houses</span>
+        <span class="blank-wrap"><button class="blank" data-blank="89">空缺 89</button><button class="later-btn" data-later="89" title="暂缓">!</button></span>
+        <span class="clue" data-clue-for="89">in winter</span> and cool in summer. Now, great changes
+        <span class="clue" data-clue-for="90">have</span>
+        <span class="blank-wrap"><button class="blank" data-blank="90">空缺 90</button><button class="later-btn" data-later="90" title="暂缓">!</button></span>
+        <span class="clue" data-clue-for="90">place here</span>. More local people choose to stay in winter. They turn their houses into homestays (民宿). At the same time, more and more young people
+        <span class="clue" data-clue-for="91">return from cities to</span>
+        <span class="blank-wrap"><button class="blank" data-blank="91">空缺 91</button><button class="later-btn" data-later="91" title="暂缓">!</button></span>
+        <span class="clue" data-clue-for="91">their businesses</span>. They improve old buildings and create comfortable rooms in the local styles. The village keeps its own culture while making travel more interesting and special. Some young people
+        <span class="clue" data-clue-for="92">design fun</span>
+        <span class="blank-wrap"><button class="blank" data-blank="92">空缺 92</button><button class="later-btn" data-later="92" title="暂缓">!</button></span>
+        <span class="clue" data-clue-for="92">such as</span> making handmade soap and counting sheep in traditional ways. Following travelers,
+        <span class="clue" data-clue-for="93">some of them</span>
+        <span class="blank-wrap"><button class="blank" data-blank="93">空缺 93</button><button class="later-btn" data-later="93" title="暂缓">!</button></span>
+        <span class="clue" data-clue-for="93">live a new</span> "traveling life", moving between scenic spots (旅游景点) in different seasons. Today, Qiongkushitai mixes old traditions with modern life. The local people
+        <span class="clue" data-clue-for="94">live a</span>
+        <span class="blank-wrap"><button class="blank" data-blank="94">空缺 94</button><button class="later-btn" data-later="94" title="暂缓">!</button></span>
+        <span class="clue" data-clue-for="94">life than before</span>. The village shines
+        <span class="clue" data-clue-for="95">with</span>
+        <span class="blank-wrap"><button class="blank" data-blank="95">空缺 95</button><button class="later-btn" data-later="95" title="暂缓">!</button></span>
+        <span class="clue" data-clue-for="95">natural beauty and</span> lively culture.`
+    };
+
     const questionBank = {
       xinjiang: initialXinjiangQuestion,
       rose: roseQuestion,
@@ -3377,12 +3642,13 @@
       chinesePainting: chinesePaintingQuestion,
       rmbScenery: rmbSceneryQuestion,
       kungFuRobots: kungFuRobotsQuestion,
-      foodDeliveryHistory: foodDeliveryHistoryQuestion
+      foodDeliveryHistory: foodDeliveryHistoryQuestion,
+      qiongkushitaiVillage: qiongkushitaiVillageQuestion
     };
 
     function getArticleTitle(key) {
       const tab = document.querySelector('[data-question="' + key + '"]');
-      return tab ? tab.textContent.trim() : key;
+      return tab ? tab.textContent.trim() : (questionBank[key]?.title || key);
     }
 
     function renderLibrary() {
