@@ -2391,4 +2391,298 @@ h1 {
   border: 1px solid var(--line);
 }
 
+/* Focus-first training view: white reading area, orange current focus, green only for correct/done. */
+:root {
+  --focus: #f59e0b;
+  --focus-dark: #9a4f00;
+  --focus-soft: #fff3d6;
+  --clue-soft: #fff8df;
+  --done-soft: #eefbe8;
+  --surface-soft-neutral: #f7faf5;
+}
+
+.study-panel .panel-heading.row {
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #edf1e8;
+}
+
+.study-panel .panel-heading h3 {
+  margin-bottom: 4px;
+  color: #050705;
+  font-size: 28px;
+  line-height: 1.18;
+}
+
+.step-subtitle {
+  margin: 0;
+  color: #5d675a;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.passage,
+.filled-passage {
+  border-color: #dde7d9;
+  background: #fff !important;
+  box-shadow: 0 14px 34px rgba(31, 56, 28, 0.07);
+}
+
+.passage {
+  padding: 26px 22px;
+  font-size: 18px;
+  line-height: 2.08;
+}
+
+.blank-btn {
+  min-width: 90px;
+  border-color: #9bdc80;
+  color: #24562c;
+  background: #f4fee9 !important;
+  box-shadow: inset 0 0 0 1px rgba(47, 143, 70, 0.08);
+}
+
+.blank-btn.active {
+  color: #111;
+  border-color: var(--focus);
+  background: var(--focus-soft) !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18);
+}
+
+.blank-btn.answered {
+  border-color: var(--good);
+  color: #1f6c35;
+  background: var(--done-soft) !important;
+}
+
+.question-panel {
+  border-color: #dde7d9;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(31, 56, 28, 0.08);
+}
+
+.question-title {
+  align-items: center;
+  margin: -2px 0 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #edf1e8;
+  color: #5d675a;
+}
+
+#questionNumber {
+  color: #6b5a32;
+  font-weight: 900;
+}
+
+#questionCategory {
+  color: #4d5b4a;
+}
+
+.mini-section {
+  position: relative;
+  margin-top: 14px;
+  padding: 16px 0 0 14px;
+  border-top: 1px solid #edf1e8;
+}
+
+.mini-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 4px;
+  height: 28px;
+  border-radius: 999px;
+  background: #d9e5d4;
+}
+
+#posStep::before,
+#toolStep:not(.hidden)::before,
+#answerStep:not(.hidden)::before,
+#sentenceCheckStep:not(.hidden)::before {
+  background: var(--focus);
+}
+
+.mini-section h4 {
+  margin-bottom: 12px;
+  color: #050705;
+  font-size: 17px;
+}
+
+.option-preview-pill {
+  border-color: #e1e8dc;
+  color: #536052;
+  background: #fff !important;
+}
+
+.choice-button {
+  border-color: #dfe8db;
+  background: #fff;
+  color: #111;
+  font-weight: 800;
+}
+
+.choice-button:hover {
+  border-color: var(--focus);
+  background: var(--focus-soft);
+}
+
+.choice-button.correct {
+  border-color: var(--good);
+  color: #1f6c35;
+  background: #edfbe8;
+}
+
+.choice-button.wrong {
+  border-color: var(--bad);
+  color: #8d1f17;
+  background: var(--soft-red);
+}
+
+.feedback.good {
+  color: #1f6c35;
+}
+
+.feedback.bad {
+  color: #9f231a;
+}
+
+.tool-guide p {
+  color: #596358;
+}
+
+.clue-list {
+  gap: 10px;
+}
+
+.clue-pill {
+  border-color: #f2c96b;
+  color: #5b3b00;
+  background: var(--focus-soft) !important;
+}
+
+.clue-pill.correct {
+  border-style: solid;
+  border-color: var(--focus);
+  background: #fff8df !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.16);
+}
+
+.clue-pill span {
+  color: #7a4a00;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.clue-pill small {
+  color: #695d46;
+}
+
+.clue-mark,
+.clue-blue,
+.clue-green,
+.clue-yellow,
+.clue-red,
+.clue-violet {
+  border-color: #f2c96b;
+  color: #6f4300;
+  background: var(--focus-soft) !important;
+}
+
+.clue-mark::after {
+  color: #7a4a00;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.collocation-box,
+.collocation-lens-box {
+  border-color: #efd08a;
+  background: var(--focus-soft) !important;
+}
+
+.collocation-box strong,
+.option-collocation-card strong {
+  color: #5b3b00;
+}
+
+.option-collocation-card.correct {
+  border-color: var(--good);
+  background: #edfbe8;
+}
+
+#resetBtn {
+  border-color: #dfe8db;
+  background: #fff;
+}
+
+/* Reduce large green areas; keep green for completion and orange for focus. */
+body {
+  background: #ffffff !important;
+}
+
+.app-shell,
+main,
+.study-mode main,
+.home-mode main {
+  background: #ffffff !important;
+}
+
+.topbar,
+.panel,
+.study-panel,
+#gate,
+#training {
+  border-color: #e6eadf !important;
+  background: #ffffff !important;
+  box-shadow: 0 12px 32px rgba(30, 45, 26, 0.06) !important;
+}
+
+.topbar {
+  margin-bottom: 18px;
+}
+
+.eyebrow {
+  color: #6fc23e !important;
+}
+
+.quote-grid article {
+  border-color: #e6eadf !important;
+  background: #ffffff !important;
+}
+
+.quote-grid article:first-child,
+.quote-grid article:nth-child(2) {
+  background: #fbfdf9 !important;
+}
+
+.tone-options button,
+.tone-button {
+  border-color: #dbe4d2 !important;
+  background: #ffffff !important;
+}
+
+.tone-options button:hover,
+.tone-button:hover,
+.tone-options button.selected,
+.tone-button.selected {
+  border-color: var(--focus) !important;
+  color: var(--focus-dark) !important;
+  background: var(--focus-soft) !important;
+}
+
+.progress-track {
+  background: #edf2e8 !important;
+}
+
+.progress-fill {
+  background: var(--focus) !important;
+}
+
+#training .panel-heading {
+  margin-bottom: 18px;
+}
+
+#training .panel-heading.row {
+  background: #ffffff !important;
+}
+
 
