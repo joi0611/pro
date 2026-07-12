@@ -443,7 +443,7 @@
             <h2>完形填空训练系统</h2>
             <p>训练语境理解、逻辑推理和词义辨析能力。</p>
           </div>
-          <button class="enter-btn" data-target="training/cloze/index.html" data-title="完形填空训练系统">开始训练</button>
+          <button class="enter-btn" data-target="./training/cloze/index.html" data-title="完形填空训练系统">开始训练</button>
         </article>
 
         <article class="training-card">
@@ -452,7 +452,7 @@
             <h2>语法填空训练系统</h2>
             <p>强化动词、介词、连词、代词等语法考点。</p>
           </div>
-          <button class="enter-btn" data-target="training/grammar/index.html" data-title="语法填空训练系统">开始训练</button>
+          <button class="enter-btn" data-target="./training/grammar/index.html" data-title="语法填空训练系统">开始训练</button>
         </article>
 
         <article class="training-card">
@@ -461,7 +461,7 @@
             <h2>选词填空训练系统</h2>
             <p>练习词汇辨析、词形变化和上下文匹配。</p>
           </div>
-          <button class="enter-btn" data-target="training/word-choice/index.html" data-title="选词填空训练系统">开始训练</button>
+          <button class="enter-btn" data-target="./training/word-choice/index.html" data-title="选词填空训练系统">开始训练</button>
         </article>
 
         <article class="training-card">
@@ -470,7 +470,7 @@
             <h2>读写题训练系统</h2>
             <p>提升信息提取、整合表达和书面作答能力。</p>
           </div>
-          <button class="enter-btn" data-target="training/reading-writing/index.html" data-title="读写题训练系统">开始训练</button>
+          <button class="enter-btn" data-target="./training/reading-writing/index.html" data-title="读写题训练系统">开始训练</button>
         </article>
       </section>
     </main>
@@ -515,14 +515,24 @@
       pendingTarget = "";
     }
 
+    function resolveTrainingUrl(target) {
+      const path = window.location.pathname;
+      const base = path.endsWith("/")
+        ? path
+        : path.endsWith(".html")
+          ? path.replace(/[^/]*$/, "")
+          : path + "/";
+      return new URL(target, window.location.origin + base).href;
+    }
+
     function verifyAndEnter() {
-      window.location.href = pendingTarget;
+      window.location.href = resolveTrainingUrl(pendingTarget);
     }
 
     document.querySelectorAll(".enter-btn").forEach((button) => {
       button.addEventListener("click", () => {
-        if (button.dataset.target === "training/cloze/index.html" || button.dataset.target === "training/grammar/index.html" || button.dataset.target === "training/word-choice/index.html" || button.dataset.target === "training/reading-writing/index.html") {
-          window.location.href = button.dataset.target;
+        if (button.dataset.target === "./training/cloze/index.html" || button.dataset.target === "./training/grammar/index.html" || button.dataset.target === "./training/word-choice/index.html" || button.dataset.target === "./training/reading-writing/index.html") {
+          window.location.href = resolveTrainingUrl(button.dataset.target);
           return;
         }
         openCodeModal(button.dataset.title, button.dataset.target);
