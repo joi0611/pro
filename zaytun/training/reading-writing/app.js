@@ -481,7 +481,7 @@ function renderArticleList() {
         <div class="article-index">${String(index + 1).padStart(2, '0')}</div>
         <div class="article-main">
           <strong>${escapeHtml(article.title)}</strong>
-          <span>来源：${escapeHtml(article.source || '名校优质真题')}</span>
+          <span>来源：${escapeHtml(getArticleDisplaySource(article.source))}</span>
         </div>
         <div class="article-meta">${done}/${article.items.length}</div>
         <button class="start-article" type="button" data-source="${escapeAttr(article.source)}">开始训练</button>
@@ -516,7 +516,7 @@ function pickPractice(random = false) {
   updatePracticeProgress();
   const unfinished = getUnfinishedPracticeItems();
   const allItems = getPracticeItems();
-  const items = unfinished.length ? unfinished : allItems;
+  const items = random ? allItems : (unfinished.length ? unfinished : allItems);
   if (!items.length) {
     state.currentPractice = null;
     els.practiceSource.textContent = '暂无真题';
@@ -533,9 +533,7 @@ function pickPractice(random = false) {
 }
 
 function nextPractice() {
-  const unfinished = getUnfinishedPracticeItems();
-  const allItems = getPracticeItems();
-  const items = unfinished.length ? unfinished : allItems;
+  const items = getPracticeItems();
   if (!items.length) return;
 
   const currentId = state.currentPractice ? String(state.currentPractice.id) : '';
@@ -569,6 +567,12 @@ function cleanSourceTitle(source) {
     .replace(/^复习讲义\s*Passage\s*\d+\s*/iu, '')
     .replace(/^题型四\s*Passage\s*\d+\s*/iu, '')
     .trim();
+}
+
+function getArticleDisplaySource(source) {
+  const text = String(source || '').trim();
+  if (text.includes('2026新疆中考英语真题')) return text;
+  return '2026新疆优质模考题汇编';
 }
 
 function checkAnswer() {

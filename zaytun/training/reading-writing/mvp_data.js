@@ -3047,13 +3047,13 @@ window.MVP_DATA = {
                               "source":  "2026新疆中考英语真题｜中国式安全",
                               "number":  "69",
                               "original":  "returned it to her at once",
-                              "target":  "returned it back to the student",
+                              "target":  "gave it back to the student",
                               "meaning":  "归还",
-                              "point":  "原词复现 + 时态一致：原文 returned，转化句仍用过去式 returned",
-                              "studyPoint":  "原词复现；一般过去时",
+                              "point":  "同义转换 + 时态一致：returned it to her at once → gave it back to the student；过去事件用 gave。",
+                              "studyPoint":  "give back 表示“归还”，一般过去时用 gave back。",
                               "originalSentence":  "The driver found it and returned it to her at once",
                               "targetSentence":  "a taxi driver found a lost passport and ___ it back to the student.",
-                              "answer":  "returned"
+                              "answer":  "gave"
                           },
                           {
                               "id":  386,
@@ -4562,7 +4562,7 @@ window.MVP_DATA = {
                               "number":  "5",
                               "original":  "thought of giving up",
                               "target":  "gave up",
-                              "meaning":  "给/捐赠",
+                              "meaning":  "放弃",
                               "point":  "同义/结构转换：thought of giving up → gave up；一般过去时",
                               "studyPoint":  "同义/结构转换：thought of giving up → gave up；一般过去时",
                               "originalSentence":  "she never thought of giving up",
@@ -5653,13 +5653,13 @@ window.MVP_DATA = {
                               "source":  "2026新疆中考英语真题｜中国式安全",
                               "number":  "69",
                               "original":  "returned it to her at once",
-                              "target":  "returned it back to the student",
+                              "target":  "gave it back to the student",
                               "meaning":  "归还",
-                              "point":  "原词复现：原文 returned it to her at once；转化句保持一般过去时，填 returned。",
-                              "studyPoint":  "叙述过去事件时，动词用过去式 returned。",
+                              "point":  "同义转换 + 时态一致：returned it to her at once → gave it back to the student；过去事件用 gave。",
+                              "studyPoint":  "give back 表示“归还”，一般过去时用 gave back。",
                               "originalSentence":  "The driver found it and returned it to her at once",
                               "targetSentence":  "In Shantou, a taxi driver found a lost passport and ___ it back to the student.",
-                              "answer":  "returned"
+                              "answer":  "gave"
                           },
                           {
                               "id":  186,

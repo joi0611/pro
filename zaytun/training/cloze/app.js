@@ -235,7 +235,7 @@ const nineColoredDeer = {
     " it, and flowers grew brighter wherever it walked."
   ],
   questions: [
-    q(21, ["a", "an", "the"], "a", "代词", "语法", ["magical deer", "首次提到"], "第一次提到这只鹿，表泛指，且 magical 首字母是辅音音素，故使用不定冠词 a。"),
+    q(21, ["a", "an", "the"], "a", "冠词", "语法", ["magical deer", "首次提到"], "第一次提到这只鹿，表泛指，且 magical 首字母是辅音音素，故使用不定冠词 a。"),
     q(22, ["slowly", "quietly", "brightly"], "brightly", "形容词副词", "逻辑推理 / 词汇辨析", ["shining", "as white as snow"], "顺着前文“像雪一样白”和 shining 的逻辑指向，光芒应该是 brightly。"),
     q(23, ["drink", "drinking", "drank"], "drinking", "固定搭配", "语法 / 固定搭配", ["while"], "while 后若主语一致可直接加 doing，表示“在做某事的时候”。", "while doing sth.", "固定句型", "连词(while) + 动名词(doing)"),
     q(24, ["jumped", "run", "swam"], "jumped", "动词", "固定搭配 / 逻辑推理", ["into the river"], "为了救落水者，鹿毫不犹豫地跳进河里。", "jump into", "动词短语", "动词(jump) + 介词(into)"),
@@ -2718,7 +2718,7 @@ const brokenCameraSiblingLove = {
   englishTitle: "The Broken Camera",
   level: "中考",
   difficulty: "中等",
-  source: "2026新疆中考万维黑白卷（一）",
+  source: "2026新疆中考优质模考题",
   tags: ["家庭亲情", "人物故事", "逻辑推理", "上下文复现", "情感态度"],
   available: true,
   firstSentence: "A week before last year’s school photo show, Jenny’s brother Leo rushed into her room.",
@@ -3430,7 +3430,7 @@ const littleCulturalAmbassador = {
   englishTitle: "A Little Cultural Ambassador",
   level: "初三",
   difficulty: "中等偏易",
-  source: "2026新疆最后5天押题卷",
+  source: "2026新疆优质模考题汇编",
   tags: ["文化交流", "人物故事", "并列逻辑", "让步转折", "常识推断"],
   available: true,
   firstSentence: "Do you want to meet a special and lovely kid?",
