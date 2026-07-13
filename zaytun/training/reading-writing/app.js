@@ -69,19 +69,10 @@ async function callSupabaseRpc(functionName, payload) {
 }
 
 async function verifyAccessCode(code) {
-  let result;
-  try {
-    result = await callSupabaseRpc('verify_access_code', {
-      input_code: code,
-      input_system_type: SYSTEM_TYPE
-    });
-  } catch (error) {
-    if (String(error && error.message || '').includes('Could not find the function')) {
-      result = await callSupabaseRpc('verify_access_code', { input_code: code });
-    } else {
-      throw error;
-    }
-  }
+  const result = await callSupabaseRpc('verify_access_code', {
+    input_code: code,
+    input_system_type: SYSTEM_TYPE
+  });
   const account = Array.isArray(result) ? result[0] : null;
   if (!account || !account.access_code_id) {
     throw new Error('该登录码不可用于当前专项，或登录码不正确。');
