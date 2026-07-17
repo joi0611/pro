@@ -10,7 +10,8 @@ const state = {
   practiceIndex: 0,
   currentPractice: null,
   mastered: new Set(),
-  completedPractice: new Set()
+  completedPractice: new Set(),
+  answerSubmitting: false
 };
 
 const els = {};
@@ -24,12 +25,22 @@ const SUPABASE_CONFIG = {
   anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdiam15bHhvaGFjcHBueWJmc3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDA1NzgsImV4cCI6MjA5ODI3NjU3OH0.mz5srsxdbZa4__oqKjlcysWuDo00w7UQaV8n2VNP4eE'
 };
 const SYSTEM_TYPE = 'reading-writing';
+const TRIAL_SOURCE = '2025年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题';
 
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
+  if (isTrialMode()) document.body.classList.add('trial-mode');
   if (!(await setupLoginGate())) return;
   cacheElements();
+  if (isTrialMode()) {
+    const backButton = document.getElementById('back-to-library');
+    if (backButton) backButton.textContent = '返回首页';
+    const practiceNav = document.querySelector('.nav-item[data-section="practice"]');
+    if (practiceNav) practiceNav.textContent = '返回首页';
+    const progressText = document.getElementById('practice-progress-text');
+    if (progressText) progressText.textContent = '解锁更多内容联系工作人员领取登陆码';
+  }
   bindEvents();
   state.data = window.MVP_DATA || await (await fetch('mvp_data.json')).json();
   state.activeCategory = state.data.categories[0] || '';
@@ -39,6 +50,10 @@ async function init() {
   renderArticleList();
   renderLearning();
   updatePracticeProgress();
+  if (isTrialMode()) {
+    startArticle(TRIAL_SOURCE);
+    return;
+  }
   syncCloudProgressInBackground();
 }
 
@@ -123,6 +138,10 @@ function clearLoginState() {
 }
 
 async function setupLoginGate() {
+  if (isTrialMode()) {
+    unlockApp();
+    return true;
+  }
   clearOldLoginData();
   const saved = safeGetLogin();
   if (saved && localStorage.getItem(LOGIN_OK_KEY) === 'true') {
@@ -192,6 +211,14 @@ async function setupLoginGate() {
   return false;
 }
 
+function isTrialMode() {
+  try {
+    return new URLSearchParams(window.location.search).get('trial') === '1';
+  } catch {
+    return false;
+  }
+}
+
 function unlockApp() {
   document.body.classList.remove('auth-locked');
   const gate = document.getElementById('loginGate');
@@ -224,14 +251,19 @@ function cacheElements() {
   els.practiceOriginal = document.getElementById('practice-original');
   els.practiceTarget = document.getElementById('practice-target');
   els.answerInput = document.getElementById('answer-input');
-  els.submitAnswer = document.getElementById('submit-answer');
   els.nextPractice = document.getElementById('next-practice');
   els.feedback = document.getElementById('feedback');
 }
 
 function bindEvents() {
   els.navItems.forEach(btn => {
-    btn.addEventListener('click', () => switchSection(btn.dataset.section));
+    btn.addEventListener('click', () => {
+      if (isTrialMode() && btn.dataset.section !== 'practice') {
+        window.location.href = '../../index.html';
+        return;
+      }
+      switchSection(btn.dataset.section);
+    });
   });
 
   document.querySelectorAll('.home-link').forEach(link => {
@@ -263,9 +295,11 @@ function bindEvents() {
   els.studyCard.addEventListener('click', () => flipCard());
   document.getElementById('prev-card').addEventListener('click', () => moveCard(-1));
   document.getElementById('next-card').addEventListener('click', () => moveCard(1));
-  document.getElementById('back-to-library').addEventListener('click', () => switchSection('library'));
+  document.getElementById('back-to-library').addEventListener('click', () => {
+    if (isTrialMode()) window.location.href = '../../index.html';
+    else switchSection('library');
+  });
   document.getElementById('new-practice').addEventListener('click', () => pickPractice(true));
-  els.submitAnswer.addEventListener('click', checkAnswer);
   els.nextPractice.addEventListener('click', nextPractice);
   els.answerInput.addEventListener('keydown', event => {
     if (event.key === 'Enter') {
@@ -273,6 +307,17 @@ function bindEvents() {
       checkAnswer();
     }
   });
+}
+
+function applyTrialCopy() {
+  if (!isTrialMode()) return;
+  const brandSub = document.querySelector('.top-header .brand p');
+  if (brandSub) brandSub.textContent = '解锁更多内容联系工作人员领取登陆码';
+  const practiceHeading = document.querySelector('#practice .section-heading h2');
+  if (practiceHeading) practiceHeading.textContent = '免费体验';
+  const practiceEyebrow = document.querySelector('#practice .section-heading .eyebrow');
+  if (practiceEyebrow) practiceEyebrow.textContent = '免费体验';
+  if (els.practiceProgressText) els.practiceProgressText.textContent = '解锁更多内容联系工作人员领取登陆码';
 }
 
 function switchSection(section) {
@@ -455,7 +500,25 @@ function getPracticeArticles() {
     }
     map.get(source).items.push(item);
   });
-  return Array.from(map.values());
+  return Array.from(map.values()).sort(comparePracticeArticles);
+}
+
+function getSourceYear(source) {
+  const match = String(source || '').match(/20\d{2}/);
+  return match ? Number(match[0]) : 0;
+}
+
+function isOfficialExamSource(source) {
+  return /中考英语真题|中考真题|学业水平考试英语真题/.test(String(source || ''));
+}
+
+function comparePracticeArticles(a, b) {
+  if (isOfficialExamSource(a.source) !== isOfficialExamSource(b.source)) {
+    return isOfficialExamSource(a.source) ? -1 : 1;
+  }
+  const yearDiff = getSourceYear(b.source) - getSourceYear(a.source);
+  if (yearDiff) return yearDiff;
+  return 0;
 }
 
 function renderArticleList() {
@@ -471,6 +534,7 @@ function renderArticleList() {
       <article class="article-row">
         <div class="article-index">${String(index + 1).padStart(2, '0')}</div>
         <div class="article-main">
+          ${officialArticleBadge(article)}
           <strong>${escapeHtml(article.title)}</strong>
           <span>来源：${escapeHtml(getArticleDisplaySource(article.source))}</span>
         </div>
@@ -482,6 +546,12 @@ function renderArticleList() {
   els.articleList.querySelectorAll('.start-article').forEach(button => {
     button.addEventListener('click', () => startArticle(button.dataset.source));
   });
+}
+
+function officialArticleBadge(article) {
+  if (!isOfficialExamSource(article.source)) return '';
+  const year = getSourceYear(article.source);
+  return `<span class="official-exam-badge">${year ? `${year} ` : ''}新疆中考真题</span>`;
 }
 
 function startArticle(source) {
@@ -529,7 +599,17 @@ function nextPractice() {
 
   const currentId = state.currentPractice ? String(state.currentPractice.id) : '';
   const currentIndex = items.findIndex(item => String(item.id) === currentId);
-  const nextIndex = currentIndex >= 0 ? (currentIndex + 1) % items.length : 0;
+  const unfinished = items.filter(item => !state.completedPractice.has(String(item.id)));
+  let nextItem = null;
+  if (unfinished.length) {
+    nextItem = unfinished.find(item => {
+      const idx = items.findIndex(candidate => String(candidate.id) === String(item.id));
+      return idx > currentIndex;
+    }) || unfinished[0];
+  }
+  const nextIndex = nextItem
+    ? items.findIndex(item => String(item.id) === String(nextItem.id))
+    : (currentIndex >= 0 ? (currentIndex + 1) % items.length : 0);
   state.practiceIndex = nextIndex;
   state.currentPractice = items[nextIndex];
   renderPractice();
@@ -562,11 +642,13 @@ function cleanSourceTitle(source) {
 
 function getArticleDisplaySource(source) {
   const text = String(source || '').trim();
+  if (text.includes('初中学业水平考试英语真题')) return text;
   if (text.includes('2026新疆中考英语真题')) return text;
   return '2026新疆优质模考题汇编';
 }
 
 function checkAnswer() {
+  if (state.answerSubmitting) return;
   const item = state.currentPractice;
   if (!item) return;
   const typed = els.answerInput.value.trim();
@@ -578,6 +660,7 @@ function checkAnswer() {
   const answers = getAcceptableAnswers(item);
   const matchedAnswer = answers.find(answer => normalizeAnswer(typed) === normalizeAnswer(answer));
   const displayAnswer = answers.join(' / ');
+  state.answerSubmitting = true;
   if (matchedAnswer) {
     state.completedPractice.add(String(item.id));
     saveCompletedPractice();
@@ -588,6 +671,9 @@ function checkAnswer() {
   } else {
     setFeedback('bad', `错误。正确答案：${escapeHtml(displayAnswer)}。${buildExplanation(item)}`);
   }
+  setTimeout(() => {
+    state.answerSubmitting = false;
+  }, 450);
 }
 
 function getAcceptableAnswers(item) {
@@ -721,3 +807,9 @@ function escapeHtml(value) {
 function escapeAttr(value) {
   return escapeHtml(value).replaceAll('`', '&#96;');
 }
+
+const baseUpdatePracticeProgress = updatePracticeProgress;
+updatePracticeProgress = function() {
+  baseUpdatePracticeProgress();
+  applyTrialCopy();
+};

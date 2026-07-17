@@ -1158,7 +1158,6 @@ input {
     width: 100%;
   }
 
-  #submit-answer,
   #next-practice {
     font-weight: 800;
   }
@@ -1220,7 +1219,6 @@ body {
 .nav-btn.active,
 .start-btn,
 .primary-btn,
-#submit-answer,
 #next-practice,
 .lesson-card button {
   border-color: #9eea74 !important;
@@ -1295,7 +1293,6 @@ body {
 .nav-btn,
 .start-btn,
 .primary-btn,
-#submit-answer,
 #next-practice,
 .lesson-card button,
 .home-link-btn,
@@ -1315,7 +1312,6 @@ body {
   background: var(--focus-soft) !important;
 }
 
-#submit-answer:hover,
 #next-practice:hover,
 .lesson-card button:hover,
 .start-btn:hover,
@@ -1333,7 +1329,6 @@ body {
 
 #back-to-library,
 #new-practice,
-#submit-answer,
 #next-practice {
   border-color: #9eea74 !important;
   color: #0d160b !important;
@@ -1342,9 +1337,65 @@ body {
 
 #back-to-library:hover,
 #new-practice:hover,
-#submit-answer:hover,
 #next-practice:hover {
   border-color: var(--focus) !important;
   color: var(--focus-dark) !important;
   background: var(--focus-soft) !important;
+}
+
+/* Unified official-exam label and mobile touch polish */
+.official-exam-badge {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  min-height: 24px;
+  margin: 0 0 4px;
+  padding: 4px 10px;
+  border: 1px solid #f4c861;
+  border-radius: 999px;
+  color: #5f3b00;
+  background: linear-gradient(180deg, #fff0bf, #ffda78);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.2;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.14);
+}
+
+button,
+.start-article,
+#back-to-library {
+  touch-action: manipulation;
+}
+
+.start-article,
+#back-to-library {
+  min-height: 44px;
+}
+
+@media (max-width: 640px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .article-row {
+    grid-template-columns: 1fr !important;
+    align-items: stretch !important;
+  }
+
+  .article-index {
+    width: max-content;
+    min-width: 36px;
+  }
+
+  .article-main strong,
+  .article-main span {
+    white-space: normal;
+  }
+
+  .start-article {
+    width: 100%;
+  }
 }

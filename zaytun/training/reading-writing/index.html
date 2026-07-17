@@ -4,7 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>读写题训练系统 | 赞顿学堂</title>
-  <link rel="stylesheet" href="style.css?v=20260712-focus-1">
+  <link rel="stylesheet" href="style.css?v=20260717-ui-1">
+  <style>
+    body.trial-mode .nav-item[data-section="library"],
+    body.trial-mode .nav-item[data-section="strategy"],
+    body.trial-mode .nav-item[data-section="learning"],
+    body.trial-mode #library,
+    body.trial-mode #strategy,
+    body.trial-mode #learning {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
   <div class="login-gate" id="loginGate">
@@ -243,8 +253,7 @@
           </div>
           <div class="answer-row">
             <label for="answer-input">填空答案</label>
-            <input id="answer-input" type="text" autocomplete="off" placeholder="输入答案后按回车或提交">
-            <button id="submit-answer" type="button">提交</button>
+            <input id="answer-input" type="text" autocomplete="off" placeholder="输入答案后按回车提交">
             <button id="next-practice" type="button">下一题</button>
           </div>
           <div id="feedback" class="feedback"></div>
@@ -254,6 +263,7 @@
     <footer class="site-footer">@赞顿学堂</footer>
   </div>
   <script src="mvp_data.js?v=zandun-rw-6"></script>
-  <script src="app.js?v=zandun-rw-7"></script>
+  <script src="official-exams-reading-writing.js?v=20260717-2"></script>
+  <script src="app.js?v=zandun-rw-16"></script>
 </body>
 </html>

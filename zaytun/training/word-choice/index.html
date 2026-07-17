@@ -894,6 +894,12 @@
       display: none;
     }
 
+    body.trial-mode .library-screen,
+    body.trial-mode .question-switch,
+    body.trial-mode #backToLibraryBtn {
+      display: none !important;
+    }
+
     .library-screen {
       margin: 18px 0 24px;
       padding: 16px;
@@ -1157,6 +1163,47 @@
       background: var(--focus-soft) !important;
     }
 
+    .official-exam-badge {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      max-width: 100%;
+      min-height: 24px;
+      margin: 0 0 7px;
+      padding: 4px 10px;
+      border: 1px solid #f4c861;
+      border-radius: 999px;
+      color: #5f3b00;
+      background: linear-gradient(180deg, #fff0bf, #ffda78);
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.2;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.14);
+    }
+
+    button,
+    .start-article-btn,
+    .lesson-card {
+      touch-action: manipulation;
+    }
+
+    .start-article-btn {
+      min-height: 44px !important;
+    }
+
+    @media (max-width: 720px) {
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      .lesson-card strong,
+      .lesson-card small {
+        white-space: normal;
+      }
+    }
+
   </style>
 </head>
 <body class="locked">
@@ -1387,6 +1434,15 @@
       } catch (error) {}
     }
 
+    function isTrialMode() {
+      try { return new URLSearchParams(location.search).get("trial") === "1"; } catch (error) { return false; }
+    }
+
+    function applyTrialCopy() {
+      const mode = document.getElementById("modeText");
+      if (mode) mode.textContent = "解锁更多内容联系工作人员领取登陆码";
+    }
+
     function applyZandunCopy() {
       document.title = "中考英语选词填空训练系统 | 赞顿学堂";
       const loginTitle = document.querySelector(".login-card h1");
@@ -1415,7 +1471,11 @@
 
     applyZandunCopy();
 
-    if (safeGetLogin() && localStorage.getItem(LOGIN_OK_KEY) === "true") {
+    if (isTrialMode()) {
+      document.body.classList.add("trial-mode");
+      unlockApp();
+      applyTrialCopy();
+    } else if (safeGetLogin() && localStorage.getItem(LOGIN_OK_KEY) === "true") {
       unlockApp();
     }
 
@@ -3645,14 +3705,42 @@
       return tab ? tab.textContent.trim() : (questionBank[key]?.title || key);
     }
 
+    function getQuestionYear(data) {
+      const text = [data?.year, data?.source, data?.title].filter(Boolean).join(" ");
+      const match = String(text).match(/20\d{2}/);
+      return match ? Number(match[0]) : 0;
+    }
+
+    function isOfficialQuestion(data) {
+      const text = [data?.source, data?.title].filter(Boolean).join(" ");
+      return Boolean(data?.official || /中考英语真题|中考真题|学业水平考试英语真题/.test(text));
+    }
+
+    function getSortedQuestionEntries() {
+      return Object.entries(questionBank).sort((left, right) => {
+        const a = left[1];
+        const b = right[1];
+        if (isOfficialQuestion(a) !== isOfficialQuestion(b)) return isOfficialQuestion(a) ? -1 : 1;
+        const yearDiff = getQuestionYear(b) - getQuestionYear(a);
+        if (yearDiff) return yearDiff;
+        return 0;
+      });
+    }
+
+    function officialQuestionBadge(data) {
+      if (!isOfficialQuestion(data)) return "";
+      const year = getQuestionYear(data);
+      return '<span class="official-exam-badge">' + (year ? year + ' ' : '') + '新疆中考真题</span>';
+    }
+
     function renderLibrary() {
       const list = document.getElementById("lessonList");
       if (!list) return;
-      list.innerHTML = Object.entries(questionBank).map(([key, data], index) => {
+      list.innerHTML = getSortedQuestionEntries().map(([key, data], index) => {
         const title = getArticleTitle(key);
         const source = data.source || "名校优质真题";
         const serial = String(index + 1).padStart(2, "0");
-        return '<article class="lesson-card"><span class="lesson-index">' + serial + '</span><div><strong>' + title + '</strong><small>来源：' + source + '</small></div><button class="start-article-btn" type="button" data-start-article="' + key + '">开始训练</button></article>';
+        return '<article class="lesson-card"><span class="lesson-index">' + serial + '</span><div>' + officialQuestionBadge(data) + '<strong>' + title + '</strong><small>来源：' + source + '</small></div><button class="start-article-btn" type="button" data-start-article="' + key + '">开始训练</button></article>';
       }).join("");
       list.querySelectorAll("[data-start-article]").forEach(button => {
         button.addEventListener("click", () => startArticle(button.dataset.startArticle));
@@ -3666,6 +3754,10 @@
     }
 
     function showLibrary() {
+      if (isTrialMode()) {
+        window.location.href = "../../index.html";
+        return;
+      }
       document.body.classList.remove("training-active");
       renderLibrary();
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -4276,12 +4368,25 @@
       }
     });
 
+    const baseUpdateProgress = updateProgress;
+    updateProgress = function() {
+      baseUpdateProgress();
+      if (isTrialMode() && !state.activeNeed) applyTrialCopy();
+    };
+
     renderPosChoices();
     renderLibrary();
-    loadQuestion("xinjiang", { silent: true }).catch(error => {
-      console.error(error);
-      renderWords();
-    });
+    if (isTrialMode()) {
+      startArticle("rose").catch(error => {
+        console.error(error);
+        renderWords();
+      });
+    } else {
+      loadQuestion("xinjiang", { silent: true }).catch(error => {
+        console.error(error);
+        renderWords();
+      });
+    }
   </script>
 </body>
 </html>
