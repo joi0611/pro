@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <title>新疆学生无限进步 | 中考英语专项训练</title>
+  <script>
+    (function () {
+      var path = window.location.pathname;
+      if (path && !path.endsWith("/") && !path.endsWith(".html")) {
+        document.write('<base href="' + path + '/">');
+      }
+    })();
+  </script>
+  <style>
+    :root {
+      --page: #ffffff;
+      --surface: #ffffff;
+      --surface-soft: #f7f3ff;
+      --logo-green: #c9b3f2;
+      --fresh-green: #ded0f7;
+      --fresh-green-2: #f2ecff;
+      --green-deep: #65458f;
+      --ink: #17131d;
+      --muted: #706879;
+      --line: #e5dcf2;
+      --shadow: 0 18px 48px rgba(83, 58, 112, 0.12);
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 12%, rgba(222, 208, 247, 0.42), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #ffffff 52%, #faf7ff 100%);
+    }
+
+    .page {
+      width: min(1140px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 20px 0 34px;
+    }
+
+    header {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: #7655a6;
+      border: 1px solid #684792;
+      box-shadow: 0 10px 26px rgba(83, 58, 112, 0.18);
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+      padding: 9px 12px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      background: var(--fresh-green-2);
+      color: var(--green-deep);
+    }
+
+    .hero {
+      min-height: 430px;
+      padding: 64px 0 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid #dacaf0;
+      border-radius: 8px;
+      color: var(--green-deep);
+      background: var(--fresh-green-2);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .hero h1 {
+      margin: 18px 0 0;
+      font-size: clamp(46px, 7vw, 86px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      margin: 22px 0 0;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    .hero-logo-panel {
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(222, 208, 247, 0.62), rgba(255, 255, 255, 0.94)),
+        var(--surface);
+      box-shadow: var(--shadow);
+      aspect-ratio: 1 / 1;
+    }
+
+    .hero-brand {
+      width: min(100%, 280px);
+      display: grid;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .hero-brand-mark {
+      width: 112px;
+      height: 112px;
+      margin: 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      background: #7655a6;
+      box-shadow: 0 16px 34px rgba(83, 58, 112, 0.2);
+      font-size: 54px;
+      font-weight: 900;
+    }
+
+    .hero-brand strong {
+      font-size: 25px;
+      color: var(--ink);
+    }
+
+    .hero-brand span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .notice {
+      margin-top: 26px;
+      max-width: 620px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(83, 58, 112, 0.07);
+    }
+
+    .notice-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      background: var(--fresh-green);
+      color: #111;
+      font-weight: 900;
+    }
+
+    .notice strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .notice span {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .training-card {
+      min-height: 264px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 12px 32px rgba(83, 58, 112, 0.08);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .training-card:hover {
+      transform: translateY(-3px);
+      border-color: #cbb7e8;
+      box-shadow: var(--shadow);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--fresh-green);
+      color: #30213f;
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .training-card h2 {
+      font-size: 22px;
+      line-height: 1.35;
+      margin: 18px 0 10px;
+      letter-spacing: 0;
+    }
+
+    .training-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .enter-btn,
+    .modal button {
+      border: 0;
+      border-radius: 8px;
+      min-height: 44px;
+      padding: 0 16px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .enter-btn {
+      width: 100%;
+      margin-top: 24px;
+      color: #30213f;
+      background: var(--fresh-green);
+      font-weight: 900;
+      box-shadow: inset 0 0 0 1px rgba(101, 69, 143, 0.14);
+    }
+
+    .enter-btn:hover,
+    .modal .confirm:hover {
+      background: var(--logo-green);
+    }
+
+    footer {
+      margin-top: 34px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .modal-layer {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(30, 21, 40, 0.42);
+      z-index: 20;
+    }
+
+    .modal-layer.active {
+      display: flex;
+    }
+
+    .modal {
+      width: min(420px, 100%);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .modal h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
+    }
+
+    .modal p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    input {
+      width: 100%;
+      height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 12px;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #aa8bd4;
+      box-shadow: 0 0 0 3px rgba(222, 208, 247, 0.72);
+    }
+
+    .error {
+      min-height: 22px;
+      margin: 8px 0 0;
+      color: #b24536;
+      font-size: 14px;
+    }
+
+    .modal-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .modal .cancel {
+      background: #f4f0f8;
+      color: var(--green-deep);
+      font-weight: 800;
+    }
+
+    .modal .confirm {
+      background: var(--fresh-green);
+      color: #30213f;
+      font-weight: 900;
+    }
+
+    @media (max-width: 1100px) {
+      .training-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding-top: 42px;
+      }
+
+      .hero-logo-panel {
+        max-width: 340px;
+      }
+
+      .training-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 580px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-bottom: 12px;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav a {
+        padding-left: 0;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-logo-panel {
+        padding: 22px;
+      }
+
+      .training-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .training-card {
+        min-height: 230px;
+      }
+    }
+
+    /* UI/UX Pro Max: accessible learning-tool refinement */
+    :root {
+      --ui-primary: #7655a6;
+      --ui-primary-hover: #65458f;
+      --ui-focus: #7c3aed;
+      --ui-border: #ddd2ec;
+      --ui-soft: #f1eafa;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 1000;
+      min-height: 44px;
+      padding: 11px 16px;
+      color: #fff;
+      background: var(--ui-primary);
+      border-radius: 8px;
+      transform: translateY(-140%);
+      transition: transform 180ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    :where(a, button, input):focus-visible {
+      outline: 3px solid var(--ui-focus);
+      outline-offset: 3px;
+    }
+
+    button,
+    .enter-btn,
+    nav a {
+      min-height: 44px;
+      touch-action: manipulation;
+    }
+
+    nav a {
+      min-width: 44px;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.48;
+    }
+
+    .hero {
+      min-height: 360px;
+      padding: 46px 0 34px;
+      gap: 40px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      line-height: 1.08;
+    }
+
+    .enter-btn,
+    .modal .confirm {
+      color: #fff;
+      background: var(--ui-primary);
+      box-shadow: 0 6px 16px rgba(83, 58, 112, 0.18);
+      transition: background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .enter-btn:hover,
+    .modal .confirm:hover {
+      color: #fff;
+      background: var(--ui-primary-hover);
+      box-shadow: 0 8px 20px rgba(83, 58, 112, 0.24);
+    }
+
+    @media (max-width: 580px) {
+      .page {
+        width: min(100% - 24px, 1140px);
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      input {
+        font-size: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="./assets/theme-purple.css?v=20260716-ui3">
+  <link rel="stylesheet" href="./assets/home-reference.css?v=20260716-vocabulary-1">
+</head>
+<body class="module-home">
+  <a class="skip-link" href="#mainContent">跳到主要内容</a>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <span class="brand-logo" aria-hidden="true">新</span>
+        <span>新疆学生无限进步</span>
+      </div>
+      <nav aria-label="主导航">
+        <a class="active" href="#" aria-current="page">首页</a>
+        <a href="#training">专项训练</a>
+      </nav>
+    </header>
+
+    <main id="mainContent">
+      <section class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">新疆中考英语 · 专项训练</span>
+          <h1>新疆中考英语<span>专项训练</span></h1>
+          <p>把每一种题型拆成清晰步骤，在练习、判断与复盘中稳步提高。我们始终相信你可以无限进步。</p>
+          <a class="hero-action" href="#training">选择专项，马上开练 <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section class="training-section" aria-labelledby="trainingTitle">
+        <div class="section-heading">
+          <div><h2 id="trainingTitle">选择一个专项，马上开练</h2><p>每个专项首次登录后会绑定当前登录码，并自动保存学习进度。</p></div>
+          <span class="section-tip">六大专项 · 分步训练</span>
+        </div>
+      <div id="training" class="training-grid" aria-label="专项训练入口">
+        <article class="training-card">
+          <span class="card-number">01</span>
+          <img class="card-icon" src="./assets/icon-cloze.png" alt="" width="240" height="240">
+          <div class="card-copy">
+            <h2>完形填空</h2>
+            <p>训练语境理解、逻辑推理和词义辨析能力。</p>
+          </div>
+          <button class="enter-btn" data-target="./training/cloze/index.html" data-title="完形填空训练系统">去练习 →</button>
+        </article>
+
+        <article class="training-card">
+          <span class="card-number">02</span>
+          <img class="card-icon" src="./assets/icon-reading.png" alt="" width="240" height="240">
+          <div class="card-copy">
+            <h2>阅读理解</h2>
+            <p>训练细节定位、推理判断、主旨归纳和篇章结构。</p>
+          </div>
+          <button class="enter-btn" data-target="./training/reading-comprehension/index.html" data-title="阅读理解训练系统">去练习 →</button>
+        </article>
+
+        <article class="training-card">
+          <span class="card-number">03</span>
+          <img class="card-icon" src="./assets/icon-grammar.png" alt="" width="240" height="240">
+          <div class="card-copy">
+            <h2>语法填空</h2>
+            <p>强化动词、介词、连词、代词等语法考点。</p>
+          </div>
+          <button class="enter-btn" data-target="./training/grammar/index.html" data-title="语法填空训练系统">去练习 →</button>
+        </article>
+
+        <article class="training-card">
+          <span class="card-number">04</span>
+          <img class="card-icon" src="./assets/icon-word-choice.png" alt="" width="240" height="240">
+          <div class="card-copy">
+            <h2>选词填空</h2>
+            <p>练习词汇辨析、词形变化和上下文匹配。</p>
+          </div>
+          <button class="enter-btn" data-target="./training/word-choice/index.html" data-title="选词填空训练系统">去练习 →</button>
+        </article>
+
+        <article class="training-card">
+          <span class="card-number">05</span>
+          <img class="card-icon" src="./assets/icon-reading-writing.png" alt="" width="240" height="240">
+          <div class="card-copy">
+            <h2>读写题</h2>
+            <p>提升信息提取、整合表达和书面作答能力。</p>
+          </div>
+          <button class="enter-btn" data-target="./training/reading-writing/index.html" data-title="读写题训练系统">去练习 →</button>
+        </article>
+
+        <article class="training-card">
+          <span class="card-number">06</span>
+          <img class="card-icon" src="./training/vocabulary/assets/earth-study.png" alt="" width="240" height="240">
+          <div class="card-copy">
+            <h2>单词训练</h2>
+            <p>按词频规划学习，结合发音、搭配检测和间隔复习巩固词汇。</p>
+          </div>
+          <button class="enter-btn" data-target="./training/vocabulary/index.html" data-title="中考词汇备考系统">去练习 →</button>
+        </article>
+      </div>
+      </section>
+    </main>
+
+    <footer>我们始终相信你可以无限进步，新疆中考生加油！</footer>
+  </div>
+
+  <div class="modal-layer" id="codeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <h3 id="modalTitle">输入登录码</h3>
+      <p id="modalDesc">请输入登录码后进入专项训练。</p>
+      <label for="accessCode">登录码</label>
+      <input id="accessCode" type="password" autocomplete="off" placeholder="请输入登录码" />
+      <div class="error" id="errorText" aria-live="polite"></div>
+      <div class="modal-actions">
+        <button class="cancel" type="button" id="cancelBtn">取消</button>
+        <button class="confirm" type="button" id="confirmBtn">进入</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.querySelector("#codeModal");
+    const input = document.querySelector("#accessCode");
+    const errorText = document.querySelector("#errorText");
+    const modalDesc = document.querySelector("#modalDesc");
+    const cancelBtn = document.querySelector("#cancelBtn");
+    const confirmBtn = document.querySelector("#confirmBtn");
+    let pendingTarget = "";
+
+    function openCodeModal(title, target) {
+      pendingTarget = target;
+      modalDesc.textContent = `请输入登录码后进入：${title}`;
+      errorText.textContent = "";
+      input.value = "";
+      modal.classList.add("active");
+      setTimeout(() => input.focus(), 0);
+    }
+
+    function closeCodeModal() {
+      modal.classList.remove("active");
+      pendingTarget = "";
+    }
+
+    function resolveTrainingUrl(target) {
+      const path = window.location.pathname;
+      const base = path.endsWith("/")
+        ? path
+        : path.endsWith(".html")
+          ? path.replace(/[^/]*$/, "")
+          : path + "/";
+      return new URL(target, window.location.origin + base).href;
+    }
+
+    function verifyAndEnter() {
+      window.location.href = resolveTrainingUrl(pendingTarget);
+    }
+
+    document.querySelectorAll(".enter-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        if (button.dataset.target === "./training/cloze/index.html" || button.dataset.target === "./training/grammar/index.html" || button.dataset.target === "./training/word-choice/index.html" || button.dataset.target === "./training/reading-writing/index.html" || button.dataset.target === "./training/reading-comprehension/index.html" || button.dataset.target === "./training/vocabulary/index.html") {
+          window.location.href = resolveTrainingUrl(button.dataset.target);
+          return;
+        }
+        openCodeModal(button.dataset.title, button.dataset.target);
+      });
+    });
+
+    cancelBtn.addEventListener("click", closeCodeModal);
+    confirmBtn.addEventListener("click", verifyAndEnter);
+
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        verifyAndEnter();
+      }
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeCodeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("active")) {
+        closeCodeModal();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <title>读写题训练系统 | 新疆学生无限进步</title>
+  <link rel="stylesheet" href="style.css?v=20260716-enter-progress-1">
+  <link rel="stylesheet" href="../../assets/theme-purple.css?v=20260716-ui3">
+  <link rel="stylesheet" href="../../assets/workbook-modules.css?v=20260716-1">
+</head>
+<body class="module-reading-writing">
+  <a class="skip-link" href="#mainContent">跳到主要内容</a>
+  <div class="login-gate" id="loginGate">
+    <section class="login-card">
+      <div class="brand-mark login-mark">新</div>
+      <h1>读写题训练系统</h1>
+      <p>@新疆学生无限进步</p>
+      <form class="login-form" id="loginForm">
+        <label for="loginCode">请输入登录码</label>
+        <input id="loginCode" type="text" autocomplete="off" placeholder="请输入登录码">
+        <button type="submit">进入训练</button>
+        <div id="loginError" class="login-message" aria-live="polite"></div>
+      </form>
+      <a class="home-link login-home-link" href="../../index.html">返回首页，训练其他题型</a>
+    </section>
+  </div>
+
+  <div class="app-shell" id="mainContent">
+    <header class="top-header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">新</div>
+        <div>
+          <strong class="site-brand-name">新疆学生无限进步</strong>
+          <h1>读写题训练系统</h1>
+          <p>考点学习与真题演练</p>
+        </div>
+      </div>
+      <nav class="module-nav" aria-label="模块导航">
+        <button class="nav-item active" data-section="library">题库主页</button>
+        <button class="nav-item" data-section="strategy">做题步骤和技巧</button>
+        <button class="nav-item" data-section="learning">读写题重难点同义词转换</button>
+        <button class="nav-item" data-section="practice">真题演练</button>
+      </nav>
+      <a class="home-link" href="../../index.html">返回首页训练其他题型</a>
+    </header>
+
+    <main class="main-panel">
+      <section id="library" class="section active">
+        <div class="section-heading">
+          <span class="eyebrow">题库主页</span>
+          <h2>读写题真题列表</h2>
+        </div>
+        <div id="article-list" class="article-list"></div>
+      </section>
+
+      <section id="strategy" class="section">
+        <div class="strategy-container">
+          <div class="strategy-intro">
+            <h2>读写题攻略</h2>
+            <p>如果你已经掌握了以下的练习，你就可以实现95%以上的填空部分的正确率</p>
+            <p>这里还想再告诉你一点满分心法</p>
+            <p>还有几个非常关键的隐性考点和细节分值区容易被遗漏</p>
+          </div>
+
+          <div class="strategy-section">
+            <h3>一、填空题的“语法微调”陷阱</h3>
+            <p>在中考的缩写填空中，即便你找准了同义词，如果忽略了语境下的词形微调，依然会丢分。</p>
+            <table class="trap-table">
+              <thead>
+                <tr>
+                  <th>遗漏考点</th>
+                  <th>错误示例</th>
+                  <th>正确处理</th>
+                  <th>说明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>主谓一致</strong></td>
+                  <td><span class="error-example">The activity improve health.</span></td>
+                  <td><span class="correct-example">The activity improves health.</span></td>
+                  <td>动词加 -s/-es</td>
+                </tr>
+                <tr>
+                  <td><strong>被动语态转换</strong></td>
+                  <td><span class="error-example">People used it in 2012.</span></td>
+                  <td><span class="correct-example">The word was first used in 2012.</span></td>
+                  <td>需填过去分词</td>
+                </tr>
+                <tr>
+                  <td><strong>时态传承</strong></td>
+                  <td><span class="error-example">Zhou decides to build...</span></td>
+                  <td><span class="correct-example">Zhou made a decision...</span></td>
+                  <td>须保持过去时态</td>
+                </tr>
+                <tr>
+                  <td><strong>名词单复数</strong></td>
+                  <td><span class="error-example">Faced one challenge.</span></td>
+                  <td><span class="correct-example">Faced many challenges.</span></td>
+                  <td>名词须变复数</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="highlight-box"><strong>关键提示：</strong>填空后务必检查：主谓一致、被动语态、时态、名词单复数。</div>
+          </div>
+
+          <div class="strategy-section">
+            <h3>二、问答题的“代词与主语”规范</h3>
+            <p>问答题在中考卷中占重要分值，答案的规范性是满分的关键。</p>
+            <div class="template-box">
+              <div class="template-title">事实细节题规范</div>
+              <div class="template-content">
+                <p><strong>1. 人称替换：</strong>如果问题问 “What did Zhou do?”，回答时应将原文的 “I” 或 “Zhou” 统一替换为 “He”。</p>
+                <p><strong>2. 主谓一致：</strong>问句是 “Does he...?”，回答应为 “Yes, he does.” 而非 “Yes, he do.”。</p>
+                <p><strong>3. 回答简洁度：</strong>可简略回答，但需语法正确。例如问 “When...?”，直接回答 “In 2021” 即可。</p>
+              </div>
+            </div>
+            <div class="tip-box"><strong>满分技巧：</strong>回答问答题时，务必检查人称是否统一、主谓是否一致、回答是否简洁正确。</div>
+          </div>
+
+          <div class="strategy-section">
+            <h3>三、开放性问题的高分模板</h3>
+            <p>问答题最后一题通常要求谈启示或提建议。</p>
+            <div class="template-box">
+              <div class="template-title">常见主题推荐高分句式</div>
+              <div class="template-content">
+                <p><strong>1. 个人成长：</strong><br><span class="sentence-example">I learn that we should never give up when facing challenges.</span><br><span class="keyword-tag">Persistence 坚持</span><span class="keyword-tag">Bravery 勇敢</span></p>
+                <p><strong>2. 传统文化：</strong><br><span class="sentence-example">It's important for us to respect our roots and carry on the culture.</span><br><span class="keyword-tag">Cultural identity 认同感</span><span class="keyword-tag">Respect 尊重</span></p>
+                <p><strong>3. 自然保护：</strong><br><span class="sentence-example">In my opinion, everyone should take action to protect wild animals.</span><br><span class="keyword-tag">Responsibility 责任</span><span class="keyword-tag">Protection 保护</span></p>
+                <p><strong>4. 回馈社会：</strong><br><span class="sentence-example">We should learn from Zhou to care for our hometown.</span><br><span class="keyword-tag">Love 爱</span><span class="keyword-tag">Contribution 贡献</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="strategy-section">
+            <h3>四、文本结构与教育导向</h3>
+            <p>中考卷的文本通常遵循“事件经过 + 感悟/启示”的模式。</p>
+            <div class="template-box">
+              <div class="template-title">文本结构关键提示</div>
+              <div class="template-content">
+                <p><strong>1. 首尾句效应：</strong>填空题的最后一空通常对应原文的末段感悟。如果空格要求总结全文，重点看作者最后说了什么。</p>
+                <p><strong>2. 思政元素：</strong>主题常延续“小故事，大道理”，涉及文化自信、社会责任、家国情怀等。</p>
+                <p><strong>3. 观点必须积极向上：</strong>开放题观点必须符合教育导向，积极向上。</p>
+              </div>
+            </div>
+            <div class="warning-box"><strong>注意：</strong>开放性问题的回答必须积极向上，避免消极、负面观点。</div>
+          </div>
+
+          <div class="strategy-section">
+            <h3>五、答题口诀强化</h3>
+            <p>为了不遗漏细节，请牢记这份操作流程：</p>
+            <div class="formula-box">先读题，定位准 → 看空前，定词性 → 写完后，查细节</div>
+            <div class="template-box">
+              <div class="template-title">详细操作流程</div>
+              <div class="template-content">
+                <p><strong>1. 先读题，定位准：</strong>根据空格前后的关键词回文定位。</p>
+                <p><strong>2. 看空前，定词性：</strong>看到 a/an/the 填名词，看到 very 填形容词。</p>
+                <p><strong>3. 写完后，查细节：</strong>拼写、大小写、时态、单复数，缺一不可。</p>
+              </div>
+            </div>
+            <div class="tip-box"><strong>满分目标：</strong>按照这个流程操作，可以避免大部分细节丢分。</div>
+          </div>
+
+          <div class="strategy-section strategy-summary">
+            <h3>总结：满分心法</h3>
+            <div>
+              <p><strong>填空题：</strong>找准同义词 + 检查语法微调。</p>
+              <p><strong>问答题：</strong>人称统一 + 主谓一致 + 回答简洁。</p>
+              <p><strong>开放题：</strong>观点积极 + 使用高分句式 + 核心价值关键词。</p>
+              <p><strong>答题流程：</strong>先读题定位 → 看空前定词性 → 写完后查细节。</p>
+              <p class="summary-line"><strong>掌握以上心法，读写题满分不是梦。</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="learning" class="section">
+        <div class="section-heading">
+          <span class="eyebrow">模块二</span>
+          <h2>读写题重难点同义词转换</h2>
+        </div>
+        <div class="learning-toolbar">
+          <div>
+            <h3 id="learning-title">同义/反义转换、归纳概括</h3>
+            <p id="learning-count">加载中</p>
+          </div>
+          <div class="segmented" role="group" aria-label="记忆方式">
+            <button class="mode-btn active" data-mode="list">列表记忆</button>
+            <button class="mode-btn" data-mode="cards">卡片记忆</button>
+          </div>
+        </div>
+        <div id="list-view" class="table-wrap"></div>
+        <div id="card-view" class="card-study hidden">
+          <div class="card-filter segmented" role="group" aria-label="卡片练习范围">
+            <button class="card-filter-btn active" data-card-filter="all">全部练习</button>
+            <button class="card-filter-btn" data-card-filter="unmastered">未掌握部分练习</button>
+          </div>
+          <div class="card-meta" id="card-meta"></div>
+          <button class="study-card" id="study-card" type="button" aria-label="点击翻转卡片">
+            <div class="study-card-inner">
+              <div class="study-card-face study-card-front">
+                <span class="card-label">正面</span>
+                <div class="card-word" id="card-front-word"></div>
+                <div class="card-point" id="card-front-point"></div>
+              </div>
+              <div class="study-card-face study-card-back">
+                <span class="card-label">反面</span>
+                <div class="card-word" id="card-back-word"></div>
+              </div>
+            </div>
+          </button>
+          <div class="card-controls">
+            <button id="prev-card">上一张</button>
+            <span id="card-progress"></span>
+            <button id="next-card">下一张</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="practice" class="section">
+        <div class="section-heading">
+          <span class="eyebrow">模块三</span>
+          <h2>真题演练</h2>
+        </div>
+        <div class="practice-toolbar">
+          <div class="practice-progress">
+            <div class="progress-head">
+              <span id="practice-progress-text">未完成：加载中</span>
+              <span id="practice-progress-ratio"></span>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+              <div class="progress-fill" id="practice-progress-fill"></div>
+            </div>
+          </div>
+          <button id="back-to-library" type="button">返回题库</button>
+          <button id="new-practice">换一题</button>
+        </div>
+        <div class="practice-card">
+          <div class="source-line" id="practice-source"></div>
+          <div class="sentence-block">
+            <strong>原句</strong>
+            <p id="practice-original"></p>
+          </div>
+          <div class="sentence-block">
+            <strong>转化句</strong>
+            <p id="practice-target"></p>
+          </div>
+          <div class="answer-row">
+            <label for="answer-input">填空答案</label>
+            <input id="answer-input" type="text" autocomplete="off" enterkeyhint="done" placeholder="输入答案后按 Enter 提交">
+            <button id="next-practice" type="button">下一题</button>
+          </div>
+          <div id="feedback" class="feedback"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">@新疆学生无限进步</footer>
+  </div>
+  <script src="mvp_data.js?v=xj-progress-rw-1"></script>
+  <script src="official-exams-2024-2025.js?v=20260716-1"></script>
+  <script src="app.js?v=20260716-enter-progress-1"></script>
+</body>
+</html>

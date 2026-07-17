@@ -1,0 +1,604 @@
+/* 新疆学生无限进步 - shared learning UI theme */
+:root {
+  --ui-primary: #7655a6;
+  --ui-primary-hover: #65458f;
+  --ui-primary-soft: #efe7fa;
+  --ui-primary-subtle: #faf7ff;
+  --ui-surface: #ffffff;
+  --ui-background: #faf8fd;
+  --ui-text: #19141f;
+  --ui-muted: #665d70;
+  --ui-border: #ddd2ec;
+  --ui-border-strong: #bda8d8;
+  --ui-focus: #7c3aed;
+  --ui-clue: #fff0c7;
+  --ui-clue-text: #5e4300;
+  --ui-success: #18794e;
+  --ui-success-soft: #edf8f2;
+  --ui-error: #b42318;
+  --ui-error-soft: #fff1f0;
+  --ui-shadow-sm: 0 4px 14px rgba(63, 41, 88, 0.07);
+  --ui-shadow-md: 0 16px 42px rgba(63, 41, 88, 0.10);
+  --ui-radius: 8px;
+  --ui-duration: 180ms;
+}
+
+html {
+  color-scheme: light;
+  background: var(--ui-background);
+}
+
+body {
+  color: var(--ui-text) !important;
+  background: var(--ui-background) !important;
+  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif !important;
+  letter-spacing: 0 !important;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  text-rendering: optimizeLegibility;
+}
+
+a,
+button,
+[role="button"],
+label[for],
+select {
+  touch-action: manipulation;
+}
+
+button,
+[role="button"],
+a[class*="button"],
+a[class*="btn"],
+input,
+select {
+  min-height: 44px;
+}
+
+button,
+[role="button"],
+a[class*="button"],
+a[class*="btn"] {
+  border-radius: var(--ui-radius) !important;
+  cursor: pointer;
+  transition: color var(--ui-duration) ease,
+    background-color var(--ui-duration) ease,
+    border-color var(--ui-duration) ease,
+    box-shadow var(--ui-duration) ease,
+    opacity var(--ui-duration) ease !important;
+}
+
+button:active,
+[role="button"]:active,
+a[class*="button"]:active,
+a[class*="btn"]:active {
+  opacity: 0.82;
+}
+
+:where(a, button, input, select, textarea, [role="button"]):focus-visible {
+  outline: 3px solid var(--ui-focus) !important;
+  outline-offset: 3px !important;
+}
+
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed !important;
+  opacity: 0.48 !important;
+  box-shadow: none !important;
+}
+
+input,
+select,
+textarea {
+  border-color: var(--ui-border) !important;
+  border-radius: var(--ui-radius) !important;
+  color: var(--ui-text) !important;
+  background: var(--ui-surface) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--ui-primary) !important;
+  box-shadow: 0 0 0 3px rgba(118, 85, 166, 0.13) !important;
+}
+
+/* Login surfaces */
+.login-screen,
+.login-gate,
+.login-shell {
+  min-height: 100dvh !important;
+  background: var(--ui-background) !important;
+}
+
+.login-card {
+  border: 1px solid var(--ui-border) !important;
+  border-top: 5px solid var(--ui-primary) !important;
+  border-radius: var(--ui-radius) !important;
+  color: var(--ui-text) !important;
+  background: var(--ui-surface) !important;
+  box-shadow: var(--ui-shadow-md) !important;
+}
+
+.login-card h1,
+.login-card h2,
+.login-card label {
+  color: var(--ui-text) !important;
+}
+
+.login-card p,
+.login-card .muted,
+.login-help,
+.login-copy {
+  color: var(--ui-muted) !important;
+}
+
+.brand-mark,
+.login-mark,
+.logo-mark,
+.login-logo,
+.brand-badge {
+  border-color: var(--ui-primary) !important;
+  color: #fff !important;
+  background: var(--ui-primary) !important;
+  box-shadow: none !important;
+}
+
+.login-form button,
+.login-row button,
+#loginBtn,
+#loginButton,
+#login-button,
+.primary-button,
+.primary-btn,
+.home-start-button,
+.start-button,
+.start-btn,
+.start-lesson-button,
+.start-article-btn,
+.enter-btn,
+.action {
+  border: 1px solid var(--ui-primary) !important;
+  color: #fff !important;
+  background: var(--ui-primary) !important;
+  box-shadow: 0 5px 14px rgba(83, 58, 112, 0.16) !important;
+}
+
+.login-form button:hover,
+.login-row button:hover,
+#loginBtn:hover,
+#loginButton:hover,
+#login-button:hover,
+.primary-button:hover,
+.primary-btn:hover,
+.home-start-button:hover,
+.start-button:hover,
+.start-btn:hover,
+.start-lesson-button:hover,
+.start-article-btn:hover,
+.enter-btn:hover,
+.action:hover {
+  border-color: var(--ui-primary-hover) !important;
+  color: #fff !important;
+  background: var(--ui-primary-hover) !important;
+}
+
+.login-home-link,
+.login-home,
+.home-link,
+.home-link-btn,
+.top-home-link,
+.home-return-link,
+.secondary-btn,
+.secondary,
+.ghost-btn,
+.catalog-back,
+#back-to-library,
+#new-practice {
+  border-color: var(--ui-border-strong) !important;
+  color: #4d3273 !important;
+  background: var(--ui-surface) !important;
+  box-shadow: none !important;
+}
+
+.login-home-link:hover,
+.login-home:hover,
+.home-link:hover,
+.home-link-btn:hover,
+.top-home-link:hover,
+.home-return-link:hover,
+.secondary-btn:hover,
+.secondary:hover,
+.ghost-btn:hover,
+.catalog-back:hover,
+#back-to-library:hover,
+#new-practice:hover {
+  border-color: var(--ui-primary) !important;
+  color: var(--ui-primary-hover) !important;
+  background: var(--ui-primary-soft) !important;
+}
+
+/* App surfaces and navigation */
+.topbar,
+.top-header,
+header,
+.sidebar,
+.panel,
+.study-panel,
+.question-panel,
+.passage-panel,
+.section-card,
+.lesson-card,
+.exam-card,
+.exam-paper-card,
+.practice-card,
+.result-card,
+.score-card,
+.transform-card,
+.synonym-card,
+.catalog-section,
+.catalog-item,
+.training-card {
+  border-color: var(--ui-border) !important;
+}
+
+.topbar,
+.top-header,
+header,
+.sidebar,
+.panel,
+.study-panel,
+.question-panel,
+.passage-panel,
+.section-card,
+.lesson-card,
+.exam-card,
+.exam-paper-card,
+.practice-card,
+.result-card,
+.score-card,
+.transform-card,
+.synonym-card,
+.catalog-section,
+.catalog-item {
+  background-color: var(--ui-surface) !important;
+}
+
+.nav-item,
+.tab,
+.tab-btn,
+.nav-btn,
+.qtab,
+.question-pill,
+.step-item,
+.segmented button,
+.category-actions button {
+  border-color: var(--ui-border) !important;
+  color: var(--ui-text) !important;
+  background: var(--ui-surface) !important;
+}
+
+.nav-item:hover,
+.tab:hover,
+.tab-btn:hover,
+.nav-btn:hover,
+.qtab:hover,
+.question-pill:hover,
+.step-item:hover,
+.segmented button:hover,
+.category-actions button:hover {
+  border-color: var(--ui-border-strong) !important;
+  background: var(--ui-primary-subtle) !important;
+}
+
+.nav-item.active,
+.tab.active,
+.tab-btn.active,
+.nav-btn.active,
+.qtab.active,
+.question-pill.active,
+.step-item.active,
+.segmented button.active,
+.category-actions button.active,
+.choice-btn.selected,
+.option.selected,
+.word.selected,
+.blank-token.active,
+.blank.active,
+.current-question,
+.active-step {
+  border-color: var(--ui-primary) !important;
+  color: #4d3273 !important;
+  background: var(--ui-primary-soft) !important;
+  box-shadow: 0 0 0 2px rgba(118, 85, 166, 0.10) !important;
+}
+
+.progress-track,
+.progress-bar {
+  background: #eee8f5 !important;
+}
+
+.progress-fill,
+.progress-row i em {
+  background: var(--ui-primary) !important;
+}
+
+/* Semantic learning feedback: clues are amber, outcomes stay green/red. */
+.clue,
+.clue-word,
+.clue-highlight,
+.highlight,
+.keyword,
+.active-clue,
+.source-word,
+.sentence-block mark,
+.clue-mark,
+mark {
+  border-color: #e9c56b !important;
+  border-radius: 6px !important;
+  color: var(--ui-clue-text) !important;
+  background: var(--ui-clue) !important;
+  box-shadow: inset 0 -2px 0 rgba(174, 120, 0, 0.18) !important;
+}
+
+.correct,
+.is-correct,
+.feedback.good,
+.login-message.good,
+.choice-btn.correct,
+.option.correct,
+.trap-label.good {
+  border-color: #8cc9a9 !important;
+  color: #11613d !important;
+  background-color: var(--ui-success-soft) !important;
+}
+
+.wrong,
+.incorrect,
+.is-wrong,
+.feedback.bad,
+.login-message.bad,
+.choice-btn.wrong,
+.option.wrong,
+.trap-label.bad {
+  border-color: #e5a29c !important;
+  color: #8e1d16 !important;
+  background-color: var(--ui-error-soft) !important;
+}
+
+.site-footer,
+footer {
+  border-color: var(--ui-border) !important;
+  color: var(--ui-muted) !important;
+  background: #f5effb !important;
+}
+
+.skip-link {
+  position: fixed !important;
+  top: 8px !important;
+  left: 8px !important;
+  z-index: 1000 !important;
+  min-height: 44px !important;
+  padding: 11px 16px !important;
+  border-radius: var(--ui-radius) !important;
+  color: #fff !important;
+  background: var(--ui-primary) !important;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  body { overflow-x: hidden; }
+  input, select, textarea { font-size: 16px !important; }
+  .login-card { max-width: calc(100vw - 32px) !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Module-specific cleanup for legacy color layers. */
+.module-cloze .login-hero,
+.module-cloze .login-brand,
+.module-cloze .login-panel,
+.module-cloze .login-form {
+  border-color: var(--ui-border) !important;
+  background: var(--ui-surface) !important;
+}
+
+.module-cloze .login-panel {
+  background: var(--ui-primary-subtle) !important;
+}
+
+.module-cloze .login-brand {
+  background: var(--ui-surface) !important;
+}
+
+.module-cloze .quote-grid article,
+.module-cloze .home-status-card,
+.module-cloze .home-lesson-card,
+.module-cloze .home-tool-panel,
+.module-cloze .translation-card,
+.module-cloze .read-aloud,
+.module-cloze .filled-passage,
+.module-cloze .translation-options,
+.module-cloze .translation-option-card,
+.module-cloze .collocation-review,
+.module-cloze .collocation-review-card,
+.module-cloze .collocation-card-face,
+.module-cloze .collocation-bank,
+.module-cloze .collocation-bank-group,
+.module-cloze .sentence-check,
+.module-cloze .option-collocation-card,
+.module-cloze .option-meaning-summary {
+  border-color: var(--ui-border) !important;
+  background: var(--ui-surface) !important;
+}
+
+.module-cloze .home-status-card,
+.module-cloze .collocation-review,
+.module-cloze .translation-card.active,
+.module-cloze .sentence-check {
+  background: var(--ui-primary-subtle) !important;
+}
+
+.module-cloze .home-lesson-card.done,
+.module-cloze .home-lesson-card.ready {
+  border-color: var(--ui-border) !important;
+  background: var(--ui-surface) !important;
+}
+
+.module-cloze .home-lesson-card:hover {
+  border-color: var(--ui-primary) !important;
+  background: var(--ui-primary-subtle) !important;
+}
+
+.module-cloze .home-lesson-card.featured {
+  border-color: #e0ad4f !important;
+  background: #fff9e8 !important;
+}
+
+.module-cloze .blank-btn,
+.module-cloze .blank-btn.answered {
+  border-color: var(--ui-border-strong) !important;
+  color: #4d3273 !important;
+  background: var(--ui-primary-soft) !important;
+  box-shadow: none !important;
+}
+
+.module-cloze .blank-btn.active {
+  border-color: var(--ui-primary) !important;
+  color: #fff !important;
+  background: var(--ui-primary) !important;
+  box-shadow: 0 0 0 3px rgba(118, 85, 166, 0.13) !important;
+}
+
+.module-cloze .filled-answer.answer-blue,
+.module-cloze .filled-answer.answer-green,
+.module-cloze .filled-answer.answer-violet {
+  color: #4d3273 !important;
+  background: var(--ui-primary-soft) !important;
+}
+
+.module-grammar .login-gate::before,
+.module-grammar .login-gate::after {
+  display: none !important;
+}
+
+.module-grammar .decision-tree {
+  border-color: var(--ui-border-strong) !important;
+  color: #4d3273 !important;
+  background: var(--ui-primary-subtle) !important;
+}
+
+.module-grammar .decision-tree strong,
+.module-grammar .decision-tree span {
+  color: #4d3273 !important;
+}
+
+.module-grammar .skeleton-bar {
+  border-color: #e9c56b !important;
+  color: var(--ui-clue-text) !important;
+  background: #fff8e8 !important;
+}
+
+.module-grammar .skeleton-bar strong,
+.module-grammar .skeleton-bar span {
+  color: var(--ui-clue-text) !important;
+  background: transparent !important;
+}
+
+.module-grammar .answer-panel,
+.module-grammar .exam-passage,
+.module-grammar .choice-block {
+  border-color: var(--ui-border) !important;
+  background: var(--ui-surface) !important;
+}
+
+.module-grammar .mini-tab {
+  border-color: var(--ui-border) !important;
+  color: var(--ui-text) !important;
+  background: var(--ui-surface) !important;
+}
+
+.module-grammar .mini-tab.active,
+.module-grammar .transform-badges span {
+  border-color: var(--ui-border-strong) !important;
+  color: #4d3273 !important;
+  background: var(--ui-primary-soft) !important;
+}
+
+.module-reading-writing .top-header .brand-mark {
+  flex: 0 0 48px;
+  width: 48px !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  display: grid !important;
+  place-items: center;
+  padding: 0 !important;
+  border-radius: var(--ui-radius) !important;
+  font-size: 22px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.module-reading-writing .site-brand-name {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--ui-primary-hover);
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.module-reading-writing #submit-answer {
+  border-color: var(--ui-primary) !important;
+  color: #fff !important;
+  background: var(--ui-primary) !important;
+  box-shadow: 0 5px 14px rgba(83, 58, 112, 0.16) !important;
+}
+
+.module-reading-writing #submit-answer:hover {
+  border-color: var(--ui-primary-hover) !important;
+  color: #fff !important;
+  background: var(--ui-primary-hover) !important;
+}
+
+.module-reading-writing #next-practice {
+  border-color: var(--ui-border-strong) !important;
+  color: #4d3273 !important;
+  background: var(--ui-surface) !important;
+  box-shadow: none !important;
+}
+
+.module-reading-writing #next-practice:hover {
+  border-color: var(--ui-primary) !important;
+  color: var(--ui-primary-hover) !important;
+  background: var(--ui-primary-soft) !important;
+}
+
+.module-reading-writing .start-article {
+  border-color: var(--ui-primary) !important;
+  color: #fff !important;
+  background: var(--ui-primary) !important;
+  box-shadow: 0 5px 14px rgba(83, 58, 112, 0.14) !important;
+}
+
+.module-reading-writing .start-article:hover {
+  border-color: var(--ui-primary-hover) !important;
+  color: #fff !important;
+  background: var(--ui-primary-hover) !important;
+}
