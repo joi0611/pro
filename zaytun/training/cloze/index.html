@@ -4,7 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>新疆中考英语完形填空训练系统</title>
-    <link rel="stylesheet" href="styles.css?v=20260712-focus-1" />
+    <link rel="stylesheet" href="styles.css?v=20260717-ui-1" />
+    <style>
+      body.trial-mode .sidebar-library,
+      body.trial-mode .home-dashboard,
+      body.trial-mode [data-home-tool-close],
+      body.trial-mode #openNotebookBtn,
+      body.trial-mode #openCollocationBankBtn {
+        display: none !important;
+      }
+      .trial-unlock-note {
+        margin: 6px 0 0;
+        color: #5c6b61;
+        font-size: 13px;
+      }
+    </style>
   </head>
   <body>
     <section id="loginScreen" class="login-screen">
@@ -246,6 +260,7 @@
     </main>
 
     <div id="printArea" class="print-area" aria-hidden="true"></div>
-    <script src="app.js?v=20260713-3"></script>
+    <script src="official-exams-cloze.js?v=20260717-2"></script>
+    <script src="app.js?v=20260717-10"></script>
   </body>
 </html>

@@ -3760,6 +3760,18 @@ const lessonBanks = [
 
 const lessonSlots = lessonBanks.flatMap((bank) => bank.lessons);
 
+function registerOfficialClozeLessons() {
+  const officialLessons = Array.isArray(window.OFFICIAL_CLOZE_LESSONS) ? window.OFFICIAL_CLOZE_LESSONS : [];
+  if (!officialLessons.length) return;
+  const examBank = lessonBanks.find((bank) => bank.id === "exam");
+  if (!examBank) return;
+  const existing = new Set(lessonSlots.map((item) => item.id));
+  const freshLessons = officialLessons.filter((item) => item && item.id && !existing.has(item.id));
+  if (!freshLessons.length) return;
+  examBank.lessons.unshift(...freshLessons);
+  lessonSlots.unshift(...freshLessons);
+}
+
 const storageKeys = {
   done: "clozeCoach.doneLessons",
   mistakes: "clozeCoach.mistakeNotebook",
@@ -3774,6 +3786,7 @@ const storageKeys = {
 
 const trialDurationMs = 24 * 60 * 60 * 1000;
 const guestLessonId = "colors-argued";
+const trialLessonId = "official-xinjiang-2025-cloze";
 const supabaseConfig = {
   url: "https://gbjmylxohacppnybfssh.supabase.co",
   anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdiam15bHhvaGFjcHBueWJmc3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDA1NzgsImV4cCI6MjA5ODI3NjU3OH0.mz5srsxdbZa4__oqKjlcysWuDo00w7UQaV8n2VNP4eE"
@@ -3879,6 +3892,12 @@ const els = {
 };
 
 async function init() {
+  registerOfficialClozeLessons();
+  if (isTrialMode()) {
+    document.body.classList.add("trial-mode");
+    els.loginScreen.classList.add("hidden");
+    applyTrialCopy();
+  }
   initLogin();
   enterHome();
   renderHomeLibrary();
@@ -3895,6 +3914,9 @@ async function init() {
   renderCollocationBank();
   if (hasValidLogin()) {
     await loadCloudProgress();
+  }
+  if (isTrialMode()) {
+    selectLesson(trialLessonId);
   }
 }
 
@@ -3913,6 +3935,10 @@ function enterStudy() {
 }
 
 function initLogin() {
+  if (isTrialMode()) {
+    els.loginScreen.classList.add("hidden");
+    return;
+  }
   if (hasValidLogin()) {
     els.loginScreen.classList.add("hidden");
   } else {
@@ -3922,6 +3948,28 @@ function initLogin() {
   els.loginCode.addEventListener("keydown", (event) => {
     if (event.key === "Enter") handleLogin();
   });
+}
+
+function isTrialMode() {
+  try {
+    return new URLSearchParams(window.location.search).get("trial") === "1";
+  } catch {
+    return false;
+  }
+}
+
+function applyTrialCopy() {
+  const eyebrow = document.querySelector(".topbar .eyebrow");
+  if (eyebrow) eyebrow.textContent = "免费体验";
+  if (els.backHomeBtn) els.backHomeBtn.textContent = "返回首页";
+  if (els.resultHomeBtn) els.resultHomeBtn.textContent = "返回首页";
+  const titleWrap = document.querySelector(".topbar h2");
+  if (titleWrap && !document.querySelector(".trial-unlock-note")) {
+    const note = document.createElement("p");
+    note.className = "trial-unlock-note";
+    note.textContent = "解锁更多内容联系工作人员领取登陆码";
+    titleWrap.insertAdjacentElement("afterend", note);
+  }
 }
 
 function hasValidLogin() {
@@ -4099,11 +4147,43 @@ async function saveCloudProgress(lessonId, progress, completed = false, score = 
 }
 
 function getVisibleLessonBanks() {
-  return lessonBanks;
+  const order = { exam: 0, basic: 1 };
+  return lessonBanks
+    .slice()
+    .sort((a, b) => (order[a.id] ?? 9) - (order[b.id] ?? 9))
+    .map((bank) => ({
+      ...bank,
+      lessons: bank.lessons.slice().sort(compareLessonsForLibrary)
+    }));
 }
 
 function getAvailableLessons() {
   return getVisibleLessonBanks().flatMap((bank) => bank.lessons.filter((item) => item.available));
+}
+
+function getLessonYear(item) {
+  const text = `${item.year || ""} ${item.source || ""} ${item.title || ""}`;
+  const match = text.match(/20\d{2}/);
+  return match ? Number(match[0]) : 0;
+}
+
+function isOfficialExamLesson(item) {
+  const text = `${item.source || ""} ${item.title || ""} ${item.tags ? item.tags.join(" ") : ""}`;
+  return Boolean(item.official || /中考真题|学业水平考试英语真题/.test(text));
+}
+
+function compareLessonsForLibrary(a, b) {
+  if (!!isOfficialExamLesson(a) !== !!isOfficialExamLesson(b)) return isOfficialExamLesson(a) ? -1 : 1;
+  const yearDiff = getLessonYear(b) - getLessonYear(a);
+  if (yearDiff) return yearDiff;
+  if (!!a.featured !== !!b.featured) return a.featured ? -1 : 1;
+  return 0;
+}
+
+function officialExamBadge(item) {
+  if (!isOfficialExamLesson(item)) return "";
+  const year = getLessonYear(item);
+  return `<span class="official-exam-badge">${year ? `${year} ` : ""}新疆中考真题</span>`;
 }
 
 function hasStoredCollocation(question) {
@@ -4182,6 +4262,7 @@ function renderHomeLibrary() {
       card.className = `home-lesson-card ${isDone ? "done" : "ready"}${item.featured ? " featured" : ""}`;
       card.innerHTML = `
         <div class="home-card-main">
+          ${officialExamBadge(item)}
           <strong>${index + 1}. ${item.title}</strong>
           <p class="source-line">来源：${item.source || "名校优质真题"}</p>
         </div>
@@ -4242,6 +4323,7 @@ function renderLessonLibrary() {
       card.className = `library-card${isActive ? " active" : ""}${!item.available ? " disabled" : ""}${item.featured ? " featured" : ""}`;
       card.disabled = !item.available;
       card.innerHTML = `
+        ${officialExamBadge(item)}
         <div class="library-topline">
           <span class="pick-label">
             <span class="fake-check">${isActive ? "✓" : ""}</span>
@@ -5566,8 +5648,14 @@ function bindStaticEvents() {
     renderHomeLibrary();
   });
 
-  els.backHomeBtn.addEventListener("click", enterHome);
-  els.resultHomeBtn.addEventListener("click", enterHome);
+  els.backHomeBtn.addEventListener("click", () => {
+    if (isTrialMode()) window.location.href = "../../index.html";
+    else enterHome();
+  });
+  els.resultHomeBtn.addEventListener("click", () => {
+    if (isTrialMode()) window.location.href = "../../index.html";
+    else enterHome();
+  });
   els.printReportBtn?.addEventListener("click", printStudyReport);
 }
 

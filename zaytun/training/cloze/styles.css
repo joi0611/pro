@@ -2685,4 +2685,81 @@ main,
   background: #ffffff !important;
 }
 
+/* Unified official-exam label and mobile touch polish */
+.official-exam-badge {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  min-height: 24px;
+  margin: 0 0 8px;
+  padding: 4px 10px;
+  border: 1px solid #f4c861;
+  border-radius: 999px;
+  color: #5f3b00;
+  background: linear-gradient(180deg, #fff0bf, #ffda78);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.2;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.14);
+}
+
+.home-lesson-card.featured::before,
+.library-card.featured::before {
+  display: none !important;
+  content: none !important;
+}
+
+.home-lesson-card.featured,
+.home-lesson-card.done.featured,
+.library-card.featured,
+.library-card.active.featured {
+  border-color: #d7ebcc !important;
+  color: var(--ink) !important;
+  background: #ffffff !important;
+  box-shadow: 0 10px 28px rgba(30, 45, 26, 0.05) !important;
+}
+
+.home-lesson-card.featured:hover,
+.library-card.featured:hover {
+  border-color: #f4c861 !important;
+  background: #fffdf7 !important;
+}
+
+button,
+.home-start-button,
+.library-card {
+  touch-action: manipulation;
+}
+
+.home-start-button {
+  min-height: 44px;
+}
+
+@media (max-width: 560px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .home-lesson-card {
+    grid-template-columns: 1fr !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding: 12px !important;
+  }
+
+  .home-lesson-card strong,
+  .home-lesson-card .source-line,
+  .library-card strong,
+  .library-card .source-line {
+    white-space: normal !important;
+  }
+
+  .home-start-button {
+    width: 100%;
+  }
+}
+
 
