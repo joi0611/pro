@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#090b13">
+  <meta name="description" content="Leon 的说唱创作与录音练习室"><title>Leon的录音棚 · RAP LAB</title><link rel="stylesheet" href="styles.css?v=11">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a><div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" id="brandHome" aria-label="返回首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>RAP LAB</span></a>
+    <div class="session-pill"><span class="live-dot"></span> LEON'S STUDIO <strong>90 BPM</strong></div>
+    <button class="icon-button" id="soundToggle" type="button" aria-label="关闭界面音效" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Zm4.5 4.5a4 4 0 0 1 0 5m2.8-7.8a8 8 0 0 1 0 10.6"/></svg></button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="homeView" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="studio-owner"><span>LEON'S STUDIO</span><strong>Leon的录音棚</strong><small>温馨提示：李展至，玩起来！<b>GO!</b></small></div>
+        <p class="eyebrow"><span>今日任务</span> 从跟读到自己的 TRACK</p>
+        <h1 id="hero-title">把今天的<br><em>小事唱大。</em></h1>
+        <p class="hero-lead">先跟着读，再自己填，最后完全自由创作。每完成一关，就升级一次。</p>
+        <button class="button button-primary" id="enterStudio" type="button">先热身 60 秒<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+      </div>
+      <div class="hero-stage portrait-stage">
+        <div class="stage-glow" aria-hidden="true"></div>
+        <figure class="leon-portrait">
+          <img src="assets/leon-stage.png" alt="Leon 戴着墨镜、手持麦克风站在紫橙色说唱舞台上">
+          <figcaption><span>LEON ON STAGE</span><b><i aria-hidden="true"></i>90 BPM · READY</b></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="workspace level-workspace" id="studioView" hidden>
+      <section class="workspace-hero compact-hero">
+        <button class="back-home" id="backHome" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>返回首页</button>
+        <p class="kicker">LEON'S SESSION · LEVEL UP</p><h1>今日录音棚</h1><p>今天不赶时间。一关一关，把别人的句子变成你的句子。</p>
+      </section>
+
+      <nav class="level-progress" aria-label="训练关卡">
+        <button class="active unlocked" type="button" data-stage-target="1"><span>01</span><b>四拍热身</b></button>
+        <button type="button" data-stage-target="2"><span>02</span><b>事件跟读</b></button>
+        <button type="button" data-stage-target="3"><span>03</span><b>句式填空</b></button>
+        <button type="button" data-stage-target="4"><span>04</span><b>自由创作</b></button>
+        <button type="button" data-stage-target="5"><span>05</span><b>完成 TRACK</b></button>
+      </nav>
+
+      <div class="stage-container">
+        <section class="level-stage active" data-stage="1" id="stage1" aria-labelledby="warmup-title">
+          <div class="stage-heading"><div><p class="kicker">LEVEL 01 · FLOW CHECK</p><h2 id="warmup-title">一句话，装进四拍。</h2></div><p>先听懂四个鼓点。最后一个重要词，尽量落在第 4 拍附近。</p></div>
+          <div class="flow-preview-card">
+            <div><p class="kicker">COMMON FLOW · 90 BPM</p><h3>先听一小节电子 Hip-Hop Beat</h3><p>稳定鼓点配上明亮的电子合成器，稍微欢快一点。点击后直接起拍。</p></div>
+            <div class="flow-preview-action">
+              <div class="demo-beats compact-beats" id="demoBeats" aria-label="四拍节奏指示"><span><i>1</i><b>咚</b></span><span><i>2</i><b>啪</b></span><span><i>3</i><b>咚</b></span><span><i>4</i><b>啪</b></span></div>
+              <button class="button button-primary" id="demoBarButton" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg><span>听背景 Flow</span></button>
+            </div>
+          </div>
+          <div class="rhythm-heading"><div><p class="kicker">NUMBER FLOW</p><h3>用数字练四种节奏型</h3></div><p>每一格是一拍。数字越多，嘴巴要分得越快。</p></div>
+          <div class="rhythm-patterns" id="rhythmPatterns">
+            <article class="rhythm-card" data-rhythm-card="0"><div class="rhythm-card-head"><span>01 · 基础</span><b>一拍一字</b></div><div class="rhythm-groups" aria-label="1、2、3、4"><span>1</span><span>2</span><span>3</span><span>4</span></div><button type="button" data-rhythm="0"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg><span>倒数后练习</span></button></article>
+            <article class="rhythm-card" data-rhythm-card="1"><div class="rhythm-card-head"><span>02 · 双字</span><b>前三拍加密</b></div><div class="rhythm-groups" aria-label="12、12、12、3"><span>12</span><span>12</span><span>12</span><span>3</span></div><button type="button" data-rhythm="1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg><span>倒数后练习</span></button></article>
+            <article class="rhythm-card" data-rhythm-card="2"><div class="rhythm-card-head"><span>03 · 密集</span><b>第四拍收短</b></div><div class="rhythm-groups" aria-label="1234、1234、1234、12"><span>1234</span><span>1234</span><span>1234</span><span>12</span></div><button type="button" data-rhythm="2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg><span>倒数后练习</span></button></article>
+            <article class="rhythm-card" data-rhythm-card="3"><div class="rhythm-card-head"><span>04 · 变化</span><b>长短交替</b></div><div class="rhythm-groups" aria-label="1234、12、1234、12"><span>1234</span><span>12</span><span>1234</span><span>12</span></div><button type="button" data-rhythm="3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg><span>倒数后练习</span></button></article>
+          </div>
+          <p class="metronome-status" id="metronomeStatus" role="status">先听背景 Flow，再从第 1 个节奏型开始</p>
+          <div class="upgrade-row"><span>听懂四拍了吗？下一关开始选故事。</span><button class="upgrade-button" type="button" data-upgrade="2">升级 · 选择事件<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
+        </section>
+
+        <section class="level-stage" data-stage="2" id="stage2" aria-labelledby="event-title" hidden>
+          <div class="stage-heading"><div><p class="kicker">LEVEL 02 · COPY THE FLOW</p><h2 id="event-title">今日离谱事件</h2></div><p>选择一件事，系统立即载入对应的 4 句初级歌词。先把它完整读下来。</p></div>
+          <div class="event-grid" role="group" aria-label="选择今日事件">
+            <button class="active" type="button" data-event="pencil"><span>01 · 学校</span><b>铅笔盒失踪案</b><small>东西突然不见了</small></button>
+            <button type="button" data-event="clock"><span>02 · 早晨</span><b>闹钟响了三遍</b><small>差一点就迟到</small></button>
+            <button type="button" data-event="sock"><span>03 · 家里</span><b>袜子忍者出逃</b><small>翻遍房间也找不到</small></button>
+            <button type="button" data-event="chips"><span>04 · 零食</span><b>最后一块薯片</b><small>到底被谁拿走</small></button>
+          </div>
+          <div class="beginner-draft" id="beginnerDraft" aria-live="polite"></div>
+          <div class="practice-console" data-console="beginner">
+            <div class="console-header"><span>滚动提词屏 · BEGINNER</span><div class="console-beats" aria-label="节拍指示"><i></i><i></i><i></i><i></i></div><b>90 BPM</b></div>
+            <div class="prompter-window"><div class="prompter-track" id="beginnerPrompter"><p>选择事件后，准备跟读</p></div></div>
+            <button class="practice-button" type="button" data-practice="beginner"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg><span>跟节奏读一遍</span></button>
+          </div>
+          <div class="upgrade-row"><span>能完整读完 4 句，就可以开始换成自己的词。</span><button class="upgrade-button" type="button" data-upgrade="3">升级 · 自己填词<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
+        </section>
+
+        <section class="level-stage" data-stage="3" id="stage3" aria-labelledby="guided-title" hidden>
+          <div class="stage-heading"><div><p class="kicker">LEVEL 03 · FILL THE BAR</p><h2 id="guided-title">保留骨架，换成你的话。</h2></div><p>第一句已经替你放好。点击空格输入，也可以使用“给我灵感”。</p></div>
+          <div class="template-list">
+            <article class="template-line locked-template"><span>01</span><div class="sentence"><b>今天</b><input data-slot="thing" aria-label="固定事件关键词" value="铅笔盒" readonly aria-readonly="true"><b>突然</b><input data-slot="action" aria-label="固定事件动作" value="失踪" readonly aria-readonly="true"></div><div class="locked-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2M6 10h12v10H6V10Z"/></svg>事件已锁定</div></article>
+            <article class="template-line"><span>02</span><div class="sentence"><b>我的</b><input data-slot="subject" aria-label="我的什么" placeholder="书包"><b>好像</b><input data-slot="image" aria-label="好像什么" placeholder="一个黑洞"></div><button type="button" data-inspire="line2">给我灵感</button></article>
+            <article class="template-line"><span>03</span><div class="sentence"><b>我本来想</b><input data-slot="plan" aria-label="本来想做什么" placeholder="赶快找到它"><b>，结果</b><input data-slot="result" aria-label="结果怎样" placeholder="它躲进课本"></div><button type="button" data-inspire="line3">给我灵感</button></article>
+            <article class="template-line"><span>04</span><div class="sentence"><b>谁说我不能</b><input data-slot="can" aria-label="谁说我不能做什么" placeholder="找到线索"><b>，我偏要</b><input data-slot="will" aria-label="我偏要做什么" placeholder="继续往下找"></div><button type="button" data-inspire="line4">给我灵感</button></article>
+          </div>
+          <div class="closing-picker"><div><p class="kicker">ENDING LINE</p><h3>选择一个收尾句</h3></div><div id="closingChoices"></div></div>
+          <div class="practice-console" data-console="guided">
+            <div class="console-header"><span>滚动提词屏 · MY VERSION</span><div class="console-beats"><i></i><i></i><i></i><i></i></div><b>90 BPM</b></div>
+            <div class="prompter-window"><div class="prompter-track" id="guidedPrompter"></div></div>
+            <button class="practice-button" type="button" data-practice="guided"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg><span>跟节奏读我的版本</span></button>
+          </div>
+          <div class="upgrade-row"><span>句式只是扶手。下一关，把扶手拿掉。</span><button class="upgrade-button" type="button" data-upgrade="4">升级 · 自由创作<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
+        </section>
+
+        <section class="level-stage" data-stage="4" id="stage4" aria-labelledby="free-title" hidden>
+          <div class="stage-heading"><div><p class="kicker">LEVEL 04 · WRITE YOUR STORY</p><h2 id="free-title">四个任务，写出自己的故事。</h2></div><p>不再限制句式，只保留创作路线：事实、夸张、转折、收尾。</p></div>
+          <div class="free-layout">
+            <div class="free-editor">
+              <label><span><b>01 · 事实</b><small>从句式填空继承</small></span><input data-free="fact" value="我的铅笔盒突然失踪" readonly aria-readonly="true"></label>
+              <label><span><b>02 · 夸张</b><small>从句式填空继承</small></span><input data-free="exaggeration" value="桌子下面像个黑洞" readonly aria-readonly="true"></label>
+              <label><span><b>03 · 转折</b><small>从句式填空继承</small></span><input data-free="turn" value="书包说它完全不懂" readonly aria-readonly="true"></label>
+              <label><span><b>04 · 收尾</b><small>从选择的收尾句继承</small></span><input data-free="closing" value="翻开课本它在其中" readonly aria-readonly="true"></label>
+            </div>
+            <aside class="example-card"><span>EXAMPLE · 铅笔盒失踪案</span><p>我的铅笔盒突然失踪</p><p>桌子下面像个黑洞</p><p>书包说它完全不懂</p><p>翻开课本——它在其中</p></aside>
+          </div>
+          <div class="new-ending-lab">
+            <div><p class="kicker">YOUR NEW LINE</p><h3>只创作一个新的结尾句</h3><p>系统会根据当前事件先放入一句，你可以直接修改。</p></div>
+            <label><span>我的新结尾</span><input id="finalPunch" value="这次侦探就是我"></label>
+            <button type="button" id="autoFinalPunch">换一句匹配话题的内容</button>
+          </div>
+          <div class="strong-line-lab">
+            <div class="lab-heading"><div><p class="kicker">MEMORABLE LINE</p><h3>再制造一句“记得住的话”</h3></div><p>选择一种技巧，系统先示范；你可以继续修改。</p></div>
+            <div class="technique-grid" role="group" aria-label="最强一句技巧">
+              <button class="active" type="button" data-technique="repeat"><b>重复</b><small>快快快，我真的要迟到</small></button>
+              <button type="button" data-technique="reverse"><b>反转</b><small>找了半天，就在我脚上</small></button>
+              <button type="button" data-technique="exaggerate"><b>夸张</b><small>书包重得能压穿地板</small></button>
+              <button type="button" data-technique="contrast"><b>对比</b><small>嘴上说不怕，双腿已出发</small></button>
+              <button type="button" data-technique="personify"><b>拟人</b><small>闹钟说，你今天别想逃</small></button>
+            </div>
+            <label class="strong-line-input"><span>我的最强一句</span><input id="strongLine" value="快快快，我真的要迟到"></label>
+          </div>
+          <div class="final-mini-preview"><span>6 BAR DRAFT</span><ol id="freePreview"></ol></div>
+          <div class="upgrade-row"><span>故事和最强一句都完成了。最后一步，录下它。</span><button class="upgrade-button" type="button" data-upgrade="5">升级 · 完成 TRACK<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
+        </section>
+
+        <section class="level-stage" data-stage="5" id="stage5" aria-labelledby="track-title" hidden>
+          <div class="stage-heading"><div><p class="kicker">LEVEL 05 · FINAL TRACK</p><h2 id="track-title">这是你的 TRACK。</h2></div><p>五句话已经准备好。先读一遍，再开启麦克风。</p></div>
+          <div class="final-track-card"><div class="track-card-head"><span>LEON'S TRACK · 06 BAR</span><b>90 BPM</b></div><ol id="finalTrackLines"></ol><div class="final-adlib"><span>AD-LIB · 不计入正文</span><b id="finalTrackAdlib">YO! YO! BOOM BOOM!</b></div><div class="track-badge">ORIGINAL BY LEON</div></div>
+          <div class="practice-console final-console" data-console="final">
+            <div class="console-header"><span>最终提词屏 · FINAL TRACK</span><div class="console-beats"><i></i><i></i><i></i><i></i></div><b>90 BPM</b></div>
+            <div class="prompter-window"><div class="prompter-track" id="finalPrompter"></div></div>
+            <button class="practice-button" type="button" data-practice="final"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg><span>先完整练一遍</span></button>
+          </div>
+          <div class="studio record-v5">
+            <div class="studio-copy"><p class="kicker">RECORD YOUR TRACK</p><h2>准备好，就开麦。</h2><p>戴上耳机效果更好。录音只保存在当前设备。</p><ul><li><span>01</span>允许麦克风</li><li><span>02</span>倒数后节拍自动开始</li><li><span>03</span>唱完停止，马上回听</li></ul></div>
+            <div class="recorder-card"><div class="recorder-head"><span><i></i> LOCAL STUDIO</span><time id="recordTime">00:00</time></div><canvas id="waveform" width="720" height="190" aria-label="麦克风实时声波"></canvas><div class="countdown" id="countdown" aria-live="assertive"></div><div class="recorder-message" id="recorderMessage" role="status">麦克风还没连接</div><div class="recorder-actions"><button class="button button-record" id="recordButton" type="button"><span class="record-symbol"></span><b>开启麦克风</b></button><button class="icon-button stop-button" id="stopButton" type="button" aria-label="停止录音" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg></button></div><div class="playback" id="playbackPanel" hidden><audio id="playbackAudio" controls></audio><a class="button button-ghost" id="downloadLink" download="leon-track.webm">保存作品</a></div><p class="privacy">本地录音 · 不上传 · 刷新页面后会清除</p></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer><a class="brand" href="#home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>RAP LAB</span></a><p>从跟读开始，最后唱出自己的话。</p><span>LEON'S STUDIO · V11</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div><script src="app.js?v=11"></script>
+</body>
+</html>
