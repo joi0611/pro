@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
@@ -197,7 +197,7 @@
 
     .training-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 18px;
       margin-top: 10px;
     }
@@ -269,6 +269,38 @@
     .enter-btn:hover,
     .modal .confirm:hover {
       background: var(--logo-green);
+    }
+
+    .card-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .card-actions .enter-btn {
+      margin-top: 0;
+    }
+
+    .trial-btn {
+      width: 100%;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #f4c861;
+      border-radius: 8px;
+      color: #5f3b00;
+      background: linear-gradient(180deg, #fff8df, #ffedb0);
+      font: inherit;
+      font-weight: 900;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: inset 0 0 0 1px rgba(217, 119, 6, 0.08);
+    }
+
+    .trial-btn:hover {
+      background: linear-gradient(180deg, #fff2c0, #ffdc78);
     }
 
     footer {
@@ -434,8 +466,8 @@
           <div class="notice">
             <div class="notice-mark">码</div>
             <div>
-              <strong>进入训练需输入登录码</strong>
-              <span>点击专项入口后，系统会弹出登录码窗口。验证通过即可进入对应训练页面。</span>
+              <strong>可先免费体验 2025 真题</strong>
+              <span>每个专项开放一篇 2025 真题体验；完整题库和学习进度需输入登录码进入。</span>
             </div>
           </div>
         </div>
@@ -451,7 +483,21 @@
             <h2>完形填空训练系统</h2>
             <p>训练语境理解、逻辑推理和词义辨析能力。</p>
           </div>
-          <button class="enter-btn" data-target="./training/cloze/index.html" data-title="完形填空训练系统">开始训练</button>
+          <div class="card-actions">
+            <a class="trial-btn" href="./training/cloze/index.html?trial=1">免费体验</a>
+            <button class="enter-btn" data-target="./training/cloze/index.html" data-title="完形填空训练系统">输入登录码训练</button>
+          </div>
+        </article>
+        <article class="training-card">
+          <div>
+            <div class="card-icon">读</div>
+            <h2>阅读理解训练系统</h2>
+            <p>训练关键词定位、答案句定位、选项辨析和题型化解题流程。</p>
+          </div>
+          <div class="card-actions">
+            <a class="trial-btn" href="./training/reading/index.html?trial=1">免费体验</a>
+            <button class="enter-btn" data-target="./training/reading/index.html" data-title="阅读理解训练系统">输入登录码训练</button>
+          </div>
         </article>
 
         <article class="training-card">
@@ -460,7 +506,10 @@
             <h2>语法填空训练系统</h2>
             <p>强化动词、介词、连词、代词等语法考点。</p>
           </div>
-          <button class="enter-btn" data-target="./training/grammar/index.html" data-title="语法填空训练系统">开始训练</button>
+          <div class="card-actions">
+            <a class="trial-btn" href="./training/grammar/index.html?trial=1">免费体验</a>
+            <button class="enter-btn" data-target="./training/grammar/index.html" data-title="语法填空训练系统">输入登录码训练</button>
+          </div>
         </article>
 
         <article class="training-card">
@@ -469,7 +518,10 @@
             <h2>选词填空训练系统</h2>
             <p>练习词汇辨析、词形变化和上下文匹配。</p>
           </div>
-          <button class="enter-btn" data-target="./training/word-choice/index.html" data-title="选词填空训练系统">开始训练</button>
+          <div class="card-actions">
+            <a class="trial-btn" href="./training/word-choice/index.html?trial=1">免费体验</a>
+            <button class="enter-btn" data-target="./training/word-choice/index.html" data-title="选词填空训练系统">输入登录码训练</button>
+          </div>
         </article>
 
         <article class="training-card">
@@ -478,7 +530,10 @@
             <h2>读写题训练系统</h2>
             <p>提升信息提取、整合表达和书面作答能力。</p>
           </div>
-          <button class="enter-btn" data-target="./training/reading-writing/index.html" data-title="读写题训练系统">开始训练</button>
+          <div class="card-actions">
+            <a class="trial-btn" href="./training/reading-writing/index.html?trial=1">免费体验</a>
+            <button class="enter-btn" data-target="./training/reading-writing/index.html" data-title="读写题训练系统">输入登录码训练</button>
+          </div>
         </article>
       </section>
     </main>
@@ -539,7 +594,7 @@
 
     document.querySelectorAll(".enter-btn").forEach((button) => {
       button.addEventListener("click", () => {
-        if (button.dataset.target === "./training/cloze/index.html" || button.dataset.target === "./training/grammar/index.html" || button.dataset.target === "./training/word-choice/index.html" || button.dataset.target === "./training/reading-writing/index.html") {
+        if (button.dataset.target === "./training/cloze/index.html" || button.dataset.target === "./training/reading/index.html" || button.dataset.target === "./training/grammar/index.html" || button.dataset.target === "./training/word-choice/index.html" || button.dataset.target === "./training/reading-writing/index.html") {
           window.location.href = resolveTrainingUrl(button.dataset.target);
           return;
         }
@@ -570,3 +625,4 @@
   </script>
 </body>
 </html>
+
