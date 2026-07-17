@@ -2812,3 +2812,70 @@ body {
   color: var(--focus-dark) !important;
   background: var(--focus-soft) !important;
 }
+
+/* Unified official-exam label and mobile touch polish */
+.official-exam-badge {
+  display: inline-flex !important;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  min-height: 24px;
+  margin: 0 0 7px !important;
+  padding: 4px 10px;
+  border: 1px solid #f4c861;
+  border-radius: 999px;
+  color: #5f3b00 !important;
+  background: linear-gradient(180deg, #fff0bf, #ffda78) !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  line-height: 1.2;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.14);
+}
+
+.exam-paper-card.gold-card {
+  border-color: #d4efc4 !important;
+  color: var(--ink) !important;
+  background: #ffffff !important;
+  box-shadow: 0 10px 28px rgba(30, 45, 26, 0.05) !important;
+}
+
+.exam-paper-card.gold-card:hover {
+  border-color: #f4c861 !important;
+  background: #fffdf7 !important;
+}
+
+button,
+.start-article-btn,
+.exam-paper-card.compact-card {
+  touch-action: manipulation;
+}
+
+.start-article-btn,
+.exam-paper-card.compact-card button {
+  min-height: 44px !important;
+}
+
+@media (max-width: 720px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .exam-paper-card.compact-card {
+    grid-template-columns: 1fr !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding: 12px !important;
+  }
+
+  .exam-paper-card.compact-card span,
+  .exam-paper-card.compact-card small {
+    white-space: normal !important;
+  }
+
+  .exam-paper-card.compact-card button,
+  .start-article-btn {
+    width: 100% !important;
+  }
+}
