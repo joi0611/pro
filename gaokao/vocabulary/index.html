@@ -1,0 +1,356 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3eb">
+  <title>高考词汇训练</title>
+  <link rel="stylesheet" href="./styles.css?v=20260720-subjects-home1">
+</head>
+<body>
+  <section class="login-screen" id="loginScreen" aria-label="登录页面">
+    <div class="login-panel">
+      <div class="login-copy-block">
+        <p class="login-eyebrow">GAOKAO ENGLISH · 高考英语</p>
+        <h1>高考词汇训练</h1>
+        <p class="login-copy">从基础词到高频词，把每一天的学习、复习和检测连成一条清晰的进步路径。</p>
+        <div class="login-benefits" aria-label="训练特点">
+          <span>日历计划</span>
+          <span>断点续学</span>
+          <span>发音训练</span>
+          <span>错词强化</span>
+        </div>
+      </div>
+      <div class="login-card">
+        <div class="login-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" focusable="false"><path d="M7 7.5h11.5A4.5 4.5 0 0 1 23 12v13H11.5A4.5 4.5 0 0 1 7 20.5v-13Z"/><path d="M11 7.5h9.5A4.5 4.5 0 0 1 25 12v13h-9.5A4.5 4.5 0 0 0 11 20.5v-13Z"/></svg>
+        </div>
+        <p class="login-card-kicker">欢迎回来</p>
+        <h2>登录后选择你的词库</h2>
+        <p class="login-card-note">学习进度将按照登录码保存。</p>
+        <form class="login-form" id="loginForm">
+          <label for="loginCode">登录码</label>
+          <input id="loginCode" type="text" inputmode="latin" maxlength="6" autocomplete="one-time-code" placeholder="请输入 6 位登录码">
+          <button class="primary" type="submit">登录并选择词库</button>
+        </form>
+        <p class="login-error" id="loginError" role="alert"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="library-screen hidden" id="libraryScreen" aria-label="词库选择主页">
+    <header class="library-header">
+      <a class="library-brand" href="./index.html" aria-label="高考词汇训练首页">
+        <span class="library-brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" focusable="false"><path d="M7 7.5h11.5A4.5 4.5 0 0 1 23 12v13H11.5A4.5 4.5 0 0 1 7 20.5v-13Z"/><path d="M11 7.5h9.5A4.5 4.5 0 0 1 25 12v13h-9.5A4.5 4.5 0 0 0 11 20.5v-13Z"/></svg>
+        </span>
+        <span>高考词汇训练</span>
+      </a>
+      <button class="library-logout hidden" id="libraryLogout" type="button">退出登录</button>
+    </header>
+    <main class="library-main">
+      <div class="library-heading">
+        <p class="login-eyebrow">VOCABULARY LIBRARY</p>
+        <h1>今天从哪个词库开始？</h1>
+        <p>两套词库分别保存学习进度，可以随时切换。</p>
+      </div>
+      <div class="library-grid">
+        <button class="library-card library-card-basic" type="button" data-vocab-library="basic">
+          <span class="library-card-number">01</span>
+          <span class="library-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v17h4.5A2.5 2.5 0 0 1 20 22V5.5Z"/></svg>
+          </span>
+          <span class="library-card-status"><i></i>已录入 1331 词</span>
+          <strong>1300 基础词</strong>
+          <span class="library-card-copy">夯实高考阅读与写作所需的基础词汇，包含释义、常见考查形式与词频。</span>
+          <span class="library-card-action">进入基础词训练 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
+        </button>
+        <button class="library-card library-card-high" type="button" data-vocab-library="high">
+          <span class="library-card-number">02</span>
+          <span class="library-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3 9.5 8.5 4 11l5.5 2.5L12 19l2.5-5.5L20 11l-5.5-2.5L12 3Z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></svg>
+          </span>
+          <span class="library-card-status"><i></i>原有进度保留</span>
+          <strong>900 高频词</strong>
+          <span class="library-card-copy">集中掌握高考试卷中的核心高频词，继续原有日历、复习、发音和错词强化。</span>
+          <span class="library-card-action">进入高频词训练 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
+        </button>
+      </div>
+    </main>
+  </section>
+
+  <header class="app-header">
+    <div class="hero-copy">
+      <p class="eyebrow">高考词汇训练</p>
+      <h1 id="activeLibraryTitle">词汇训练</h1>
+    </div>
+    <div class="hero-mascot" aria-label="鼓励语">
+      <div class="speech-bubble">早晚都要搞定它，不如现在就开始！</div>
+      <img src="./assets/progress-girl.png" alt="为学习加油的人物插画">
+    </div>
+    <div class="header-stats" aria-label="词库统计">
+      <span><strong id="metaGroups">0</strong> 组核心词</span>
+      <span><strong id="metaRows">0</strong> 个词条</span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <nav class="subject-return-row" aria-label="专项导航">
+      <a class="ghost subjects-home-link" href="../index.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        <span>返回首页，训练其他专项</span>
+      </a>
+    </nav>
+    <section class="toolbar" aria-label="学习计划设置">
+      <div class="field">
+        <label for="startDate">开始日期</label>
+        <input id="startDate" type="date">
+      </div>
+      <div class="field">
+        <label>每日新学</label>
+        <div class="segmented" id="dailyOptions" role="radiogroup" aria-label="每日新学数量">
+          <button type="button" data-count="20">20</button>
+          <button type="button" data-count="30">30</button>
+          <button type="button" data-count="40">40</button>
+          <button type="button" data-count="50">50</button>
+        </div>
+      </div>
+      <button class="primary" id="buildPlan" type="button">生成学习日历</button>
+      <button class="ghost" id="startWeakTraining" type="button">薄弱词训练</button>
+      <button class="ghost" id="resetProgress" type="button">清空进度</button>
+      <button class="ghost" id="toggleDiagnostic" type="button">发音诊断</button>
+      <button class="ghost" id="selectLibrary" type="button">切换词库</button>
+      <button class="ghost hidden" id="logoutButton" type="button">退出登录</button>
+    </section>
+
+    <section class="diagnostic-panel hidden" id="diagnosticPanel" aria-label="页面内诊断面板">
+      <div class="diagnostic-top">
+        <div>
+          <p class="eyebrow">页面内诊断</p>
+          <h2>发音与播放状态</h2>
+        </div>
+        <div class="diagnostic-actions">
+          <button class="ghost compact" id="runDiagnostic" type="button">检测当前单词</button>
+          <button class="ghost compact" id="copyDiagnostic" type="button">复制结果</button>
+        </div>
+      </div>
+      <div class="diagnostic-meta">
+        <span>当前词：<strong id="diagnosticWord">-</strong></span>
+        <span>最近状态：<strong id="diagnosticStatus">未运行</strong></span>
+      </div>
+      <pre class="diagnostic-output" id="diagnosticOutput">等待检测…</pre>
+    </section>
+
+    <section class="summary-grid" aria-label="学习进度">
+      <div class="metric">
+        <span>今日新学</span>
+        <strong id="todayNew">0</strong>
+      </div>
+      <div class="metric">
+        <span>今日复习</span>
+        <strong id="todayReview">0</strong>
+      </div>
+      <div class="metric">
+        <span>已掌握</span>
+        <strong id="masteredCount">0</strong>
+      </div>
+      <div class="metric">
+        <span>错词组</span>
+        <strong id="weakCount">0</strong>
+      </div>
+    </section>
+
+    <section class="progress-panel" aria-label="整体学习进度">
+      <div class="progress-title">
+        <span>整体学习进度</span>
+        <strong id="overallProgressText">0%</strong>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <span id="overallProgressBar"></span>
+      </div>
+      <p id="overallProgressMeta">已学习 0 / 900 组核心词</p>
+    </section>
+
+    <section class="workbench">
+      <div class="calendar-panel">
+        <div class="panel-title">
+          <button class="icon-btn" id="prevMonth" type="button" aria-label="上一个月">←</button>
+          <h2 id="calendarTitle">学习日历</h2>
+          <button class="icon-btn" id="nextMonth" type="button" aria-label="下一个月">→</button>
+        </div>
+        <div class="weekdays" aria-hidden="true">
+          <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+        </div>
+        <div class="calendar" id="calendar"></div>
+      </div>
+
+    </section>
+
+    <section class="prestudy-check hidden" id="prestudyCheck" aria-labelledby="prestudyTitle">
+      <div class="prestudy-top">
+        <div>
+          <p class="eyebrow">学前检测</p>
+          <h2 id="prestudyTitle">先找出今天真正需要学的词</h2>
+          <p class="prestudy-note">只看英文判断。选择“认识”后会显示对应释义；如果判断有误，可随时改为“不认识”。</p>
+        </div>
+        <button class="ghost compact" id="closePrestudy" type="button">返回日历</button>
+      </div>
+      <div class="prestudy-progress" aria-live="polite">
+        <div>
+          <span>今日新学已选</span>
+          <strong id="prestudyCount">0 / 30</strong>
+        </div>
+        <div class="prestudy-track" aria-hidden="true"><span id="prestudyBar"></span></div>
+        <p id="prestudyStatus">请判断下面的英文词</p>
+      </div>
+      <div class="prestudy-list" id="prestudyList" aria-label="待判断英文词列表"></div>
+      <button class="ghost prestudy-more hidden" id="prestudyMore" type="button">继续检测下一组</button>
+    </section>
+
+    <section class="trainer hidden" id="trainer">
+      <div class="trainer-top">
+        <div>
+          <p class="eyebrow" id="trainerMode">训练</p>
+          <h2 id="trainerProgress">0 / 0</h2>
+        </div>
+        <button class="ghost compact" id="closeTrainer" type="button">返回日历</button>
+      </div>
+      <article class="word-card">
+        <div class="word-card-main">
+          <p class="eyebrow" id="cardTag">核心词</p>
+          <div class="word-line">
+            <h3 id="cardWord" class="split-word">word</h3>
+            <button class="speak-btn" id="speakWord" type="button" aria-label="播放单词发音" title="播放发音"><svg class="speaker-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                <path class="speaker-fill" d="M5 13.2c0-1.2 1-2.2 2.2-2.2h4.4l7.2-5.5c1.3-1 3.2-.1 3.2 1.6v17.8c0 1.7-1.9 2.6-3.2 1.6L11.6 21H7.2C6 21 5 20 5 18.8v-5.6Z"/>
+                <path class="speaker-line" d="M25.2 11.2c1.4 1.3 2.3 3 2.3 4.8s-.9 3.5-2.3 4.8"/>
+                <path class="speaker-line" d="M23.1 14c.6.6.9 1.3.9 2s-.3 1.4-.9 2"/>
+              </svg>
+            </button>
+          </div>
+          <div class="split-memory" id="cardSplitMemory"></div>
+          <p id="cardMeta">词性 · 频次</p>
+          <p id="cardMeaning">释义</p>
+          <button class="ghost compact reveal-btn" id="revealMeaning" type="button">查看释义</button>
+        </div>
+        <div class="forms" id="cardForms"></div>
+      </article>
+      <div class="answer-row">
+        <button class="bad" type="button" data-rating="again">不认识</button>
+        <button class="warn" type="button" data-rating="hard">模糊</button>
+        <button class="good" type="button" data-rating="good">认识</button>
+      </div>
+    </section>
+
+    <section class="test-ready hidden" id="testReady">
+      <div>
+        <p class="eyebrow" id="testReadyMode">学习完成</p>
+        <h2 id="testReadyTitle">今天的内容已经学完，开始检测吧</h2>
+        <p id="testReadyMeta">检测会包含刚刚学习和复习过的核心词。</p>
+      </div>
+      <button class="primary" id="startPendingQuiz" type="button">开始当日检测</button>
+    </section>
+
+    <section class="quiz hidden" id="quiz">
+      <div class="trainer-top">
+        <div>
+          <p class="eyebrow" id="quizMode">当日检测</p>
+          <h2 id="quizProgress">0 / 0</h2>
+        </div>
+        <button class="ghost compact" id="closeQuiz" type="button">返回日历</button>
+      </div>
+      <article class="quiz-card" id="quizCard">
+        <p class="eyebrow" id="quizType">选择题</p>
+        <h3 id="quizPrompt">prompt</h3>
+        <p class="quiz-hint" id="quizHint"></p>
+        <div class="quiz-options" id="quizOptions"></div>
+        <p class="quiz-feedback" id="quizFeedback"></p>
+        <button class="primary hidden" id="nextQuestion" type="button">下一题</button>
+      </article>
+      <div class="quiz-result hidden" id="quizResult">
+        <h2>检测结果</h2>
+        <div class="task-counts">
+          <span>正确率 <strong id="quizScore">0%</strong></span>
+          <span>错题 <strong id="quizWrongCount">0</strong></span>
+        </div>
+        <div class="task-list" id="quizWrongList"></div>
+      </div>
+    </section>
+
+    <section class="memory-boost hidden" id="memoryBoost">
+      <div class="trainer-top">
+        <div>
+          <p class="eyebrow">再次加强记忆</p>
+          <h2 id="memoryBoostTitle">错词再看一轮，记得更牢</h2>
+        </div>
+        <button class="ghost compact" id="closeMemoryBoost" type="button">返回日历</button>
+      </div>
+      <p class="memory-boost-meta" id="memoryBoostMeta"></p>
+      <div class="memory-boost-list" id="memoryBoostList"></div>
+    </section>
+
+    <section class="memory-drill hidden" id="memoryDrill">
+      <div class="memory-drill-top">
+        <div>
+          <p class="eyebrow memory-drill-label">单词正在进入你的脑瓜</p>
+          <h2 id="memoryDrillWord">WORD</h2>
+        </div>
+        <div class="memory-drill-progress-panel">
+          <div class="memory-drill-progress-copy">单词正在进入你的脑瓜</div>
+          <div class="memory-drill-track">
+            <span id="memoryDrillBar"></span>
+          </div>
+          <div class="memory-drill-countdown" id="memoryDrillCountdown">15s</div>
+        </div>
+      </div>
+      <div class="memory-stage" id="memoryStage"></div>
+      <div class="memory-drill-actions">
+        <button class="ghost compact" id="memoryDrillBack" type="button">返回错词列表</button>
+        <button class="primary" id="memoryDrillNext" type="button">下一个错词</button>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="tear-overlay hidden" id="tearOverlay" aria-live="polite">
+    <div class="tear-card" id="tearCard">
+      <div class="tear-top">今日已完成</div>
+      <div class="tear-art" id="tearArt"></div>
+      <div class="tear-date" id="tearDate">2026年7月6日/div>
+      <p id="tearMessage">今天这一页，稳稳拿下！</p>
+      <button class="primary compact" id="closeTear" type="button">收下这句</button>
+    </div>
+  </div>
+
+  <script>
+    window.__hypherModule = { exports: {} };
+    window.module = window.__hypherModule;
+  </script>
+  <script src="./vendor/hypher.js?v=20260707-diagnostic1"></script>
+  <script>
+    window.Hypher = window.__hypherModule.exports;
+    window.__hyphenationModule = { exports: {} };
+    window.module = window.__hyphenationModule;
+  </script>
+  <script src="./vendor/hyphenation.en-us.js?v=20260707-diagnostic1"></script>
+  <script>
+    window.hyphenationPatternsEnUs = window.__hyphenationModule.exports;
+    delete window.module;
+    delete window.__hypherModule;
+    delete window.__hyphenationModule;
+  </script>
+  <script src="./vocab-data.js?v=20260719-vocab-library1"></script>
+  <script src="./basic-vocab-data.js?v=20260720-form-grammar1"></script>
+  <script src="./audio-backup-data.js?v=20260707-diagnostic1"></script>
+  <script src="./collocation-data.js?v=20260707-diagnostic1"></script>
+  <script src="./embedded-audio-pack-core.js?v=20260707-diagnostic1"></script>
+  <script src="./word-audio-batch-map.js?v=20260707-diagnostic1"></script>
+  <script src="./local-audio-manifest.js?v=20260719-vocab-library1"></script>
+  <script src="./embedded-audio-pack-b13-b15.js?v=20260707-diagnostic1"></script>
+  <script src="./app.js?v=20260720-login-progress-guard1"></script>
+</body>
+</html>
+
+
+
+
+
