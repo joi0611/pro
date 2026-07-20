@@ -462,9 +462,11 @@ function bindEvents() {
     if (!button || !row) return;
     choosePrestudyWord(row.dataset.prestudyId, button.dataset.prestudyChoice);
   });
-  els.speakWord.addEventListener("click", () => {
+  els.speakWord.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     const group = activeQueue[activeIndex];
-    if (group) speakWord(group.core.word);
+    if (group) speakSingleWord(group.core.word);
   });
   els.revealMeaning.addEventListener("click", revealMeaning);
   els.cardForms.addEventListener("click", (event) => {
@@ -2547,6 +2549,14 @@ function speakWord(word) {
   playWordAudioNow(word, "");
 }
 
+function speakSingleWord(word) {
+  meaningSequenceToken += 1;
+  speechState.activeToken += 1;
+  clearSpeechRetryTimer();
+  if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+  speakWord(getPronunciationWord(word));
+}
+
 function playWordAudioNow(word, preferredUrl = "") {
   const key = String(word || "").trim().toLowerCase();
   const preparedAudio = audioPlayerCache[key];
@@ -2687,7 +2697,7 @@ function buildUniversalAudioUrl(word) {
 }
 
 function sanitizeAudioFileName(word) {
-  return String(word || "").trim().toLowerCase().replace(/[^a-z0-9-]/g, "_");
+  return getPronunciationWord(word).toLowerCase().replace(/[^a-z0-9-]/g, "_");
 }
 
 function buildLocalAudioUrls(word) {
@@ -2972,11 +2982,11 @@ function playMeaningSequence(group) {
 async function runMeaningSequence(englishWord, chineseMeaning, token) {
   await playWordAndWait(englishWord, token);
   await pauseMeaningSequence(120, token);
+  await playWordAndWait(englishWord, token);
+  await pauseMeaningSequence(120, token);
+  await playWordAndWait(englishWord, token);
+  await pauseMeaningSequence(120, token);
   await speakChineseTextAndWait(chineseMeaning, token);
-  await pauseMeaningSequence(120, token);
-  await playWordAndWait(englishWord, token);
-  await pauseMeaningSequence(120, token);
-  await playWordAndWait(englishWord, token);
 }
 
 function pauseMeaningSequence(ms, token) {
@@ -3259,11 +3269,17 @@ function clearSpeechRetryTimer() {
 }
 
 function normalizeSpeechText(word) {
-  return String(word || "")
+  return getPronunciationWord(word)
     .replace(/-/g, " ")
     .replace(/[^a-zA-Z'\s]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function getPronunciationWord(word) {
+  return String(word || "")
+    .trim()
+    .replace(/^to\s+(?=[a-z])/i, "");
 }
 
 function escapeHtml(value) {
