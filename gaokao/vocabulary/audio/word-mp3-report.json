@@ -1,0 +1,8120 @@
+﻿[
+    {
+        "word":  "realize",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "realize.mp3"
+    },
+    {
+        "word":  "reality",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "reality.mp3"
+    },
+    {
+        "word":  "realistic",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "realistic.mp3"
+    },
+    {
+        "word":  "achieve",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "achieve.mp3"
+    },
+    {
+        "word":  "achievement",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "achievement.mp3"
+    },
+    {
+        "word":  "achievable",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "achievable.mp3"
+    },
+    {
+        "word":  "appreciate",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "appreciate.mp3"
+    },
+    {
+        "word":  "appreciation",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "appreciation.mp3"
+    },
+    {
+        "word":  "appreciative",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "appreciative.mp3"
+    },
+    {
+        "word":  "sympathetic",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "sympathetic.mp3"
+    },
+    {
+        "word":  "sympathy",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "sympathy.mp3"
+    },
+    {
+        "word":  "optimistic",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "optimistic.mp3"
+    },
+    {
+        "word":  "optimism",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "optimism.mp3"
+    },
+    {
+        "word":  "pessimistic",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "pessimistic.mp3"
+    },
+    {
+        "word":  "pessimism",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "pessimism.mp3"
+    },
+    {
+        "word":  "grateful",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "grateful.mp3"
+    },
+    {
+        "word":  "gratefully",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "gratefully.mp3"
+    },
+    {
+        "word":  "enthusiastic",
+        "ok":  true,
+        "bytes":  11712,
+        "file":  "enthusiastic.mp3"
+    },
+    {
+        "word":  "enthusiasm",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "enthusiasm.mp3"
+    },
+    {
+        "word":  "doubt",
+        "ok":  true,
+        "bytes":  5760,
+        "file":  "doubt.mp3"
+    },
+    {
+        "word":  "undoubtedly",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "undoubtedly.mp3"
+    },
+    {
+        "word":  "doubtful",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "doubtful.mp3"
+    },
+    {
+        "word":  "criticize",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "criticize.mp3"
+    },
+    {
+        "word":  "critical",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "critical.mp3"
+    },
+    {
+        "word":  "critic",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "critic.mp3"
+    },
+    {
+        "word":  "objective",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "objective.mp3"
+    },
+    {
+        "word":  "neutral",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "neutral.mp3"
+    },
+    {
+        "word":  "positive",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "positive.mp3"
+    },
+    {
+        "word":  "negative",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "negative.mp3"
+    },
+    {
+        "word":  "encouraging",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "encouraging.mp3"
+    },
+    {
+        "word":  "hopeful",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "hopeful.mp3"
+    },
+    {
+        "word":  "approve",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "approve.mp3"
+    },
+    {
+        "word":  "disapprove",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "disapprove.mp3"
+    },
+    {
+        "word":  "advocate",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "advocate.mp3"
+    },
+    {
+        "word":  "appeal",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "appeal.mp3"
+    },
+    {
+        "word":  "consume",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "consume.mp3"
+    },
+    {
+        "word":  "consumption",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "consumption.mp3"
+    },
+    {
+        "word":  "consumer",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "consumer.mp3"
+    },
+    {
+        "word":  "environment",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "environment.mp3"
+    },
+    {
+        "word":  "environmental",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "environmental.mp3"
+    },
+    {
+        "word":  "illusion",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "illusion.mp3"
+    },
+    {
+        "word":  "equip",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "equip.mp3"
+    },
+    {
+        "word":  "equipment",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "equipment.mp3"
+    },
+    {
+        "word":  "instrument",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "instrument.mp3"
+    },
+    {
+        "word":  "facility",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "facility.mp3"
+    },
+    {
+        "word":  "explode",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "explode.mp3"
+    },
+    {
+        "word":  "explosion",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "explosion.mp3"
+    },
+    {
+        "word":  "explosive",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "explosive.mp3"
+    },
+    {
+        "word":  "resident",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "resident.mp3"
+    },
+    {
+        "word":  "residence",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "residence.mp3"
+    },
+    {
+        "word":  "residential",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "residential.mp3"
+    },
+    {
+        "word":  "distant",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "distant.mp3"
+    },
+    {
+        "word":  "distance",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "distance.mp3"
+    },
+    {
+        "word":  "adventure",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "adventure.mp3"
+    },
+    {
+        "word":  "adventurous",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "adventurous.mp3"
+    },
+    {
+        "word":  "foreign",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "foreign.mp3"
+    },
+    {
+        "word":  "foreigner",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "foreigner.mp3"
+    },
+    {
+        "word":  "recreation",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "recreation.mp3"
+    },
+    {
+        "word":  "recreational",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "recreational.mp3"
+    },
+    {
+        "word":  "bless",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "bless.mp3"
+    },
+    {
+        "word":  "blessing",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "blessing.mp3"
+    },
+    {
+        "word":  "imagine",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "imagine.mp3"
+    },
+    {
+        "word":  "imagination",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "imagination.mp3"
+    },
+    {
+        "word":  "unforgettable",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "unforgettable.mp3"
+    },
+    {
+        "word":  "forget",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "forget.mp3"
+    },
+    {
+        "word":  "violent",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "violent.mp3"
+    },
+    {
+        "word":  "violence",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "violence.mp3"
+    },
+    {
+        "word":  "theory",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "theory.mp3"
+    },
+    {
+        "word":  "theoretical",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "theoretical.mp3"
+    },
+    {
+        "word":  "reason",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "reason.mp3"
+    },
+    {
+        "word":  "reasonable",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "reasonable.mp3"
+    },
+    {
+        "word":  "knowledge",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "knowledge.mp3"
+    },
+    {
+        "word":  "knowledgeable",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "knowledgeable.mp3"
+    },
+    {
+        "word":  "product",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "product.mp3"
+    },
+    {
+        "word":  "produce",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "produce.mp3"
+    },
+    {
+        "word":  "production",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "production.mp3"
+    },
+    {
+        "word":  "technique",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "technique.mp3"
+    },
+    {
+        "word":  "technical",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "technical.mp3"
+    },
+    {
+        "word":  "architecture",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "architecture.mp3"
+    },
+    {
+        "word":  "architect",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "architect.mp3"
+    },
+    {
+        "word":  "architectural",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "architectural.mp3"
+    },
+    {
+        "word":  "generous",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "generous.mp3"
+    },
+    {
+        "word":  "generosity",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "generosity.mp3"
+    },
+    {
+        "word":  "commercial",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "commercial.mp3"
+    },
+    {
+        "word":  "commerce",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "commerce.mp3"
+    },
+    {
+        "word":  "construct",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "construct.mp3"
+    },
+    {
+        "word":  "constructive",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "constructive.mp3"
+    },
+    {
+        "word":  "construction",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "construction.mp3"
+    },
+    {
+        "word":  "relevant",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "relevant.mp3"
+    },
+    {
+        "word":  "sincere",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "sincere.mp3"
+    },
+    {
+        "word":  "industry",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "industry.mp3"
+    },
+    {
+        "word":  "industrial",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "industrial.mp3"
+    },
+    {
+        "word":  "industrialization",
+        "ok":  true,
+        "bytes":  14400,
+        "file":  "industrialization.mp3"
+    },
+    {
+        "word":  "curious",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "curious.mp3"
+    },
+    {
+        "word":  "curiosity",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "curiosity.mp3"
+    },
+    {
+        "word":  "recognize",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "recognize.mp3"
+    },
+    {
+        "word":  "recognition",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "recognition.mp3"
+    },
+    {
+        "word":  "explain",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "explain.mp3"
+    },
+    {
+        "word":  "explanation",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "explanation.mp3"
+    },
+    {
+        "word":  "similar",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "similar.mp3"
+    },
+    {
+        "word":  "similarity",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "similarity.mp3"
+    },
+    {
+        "word":  "pronounce",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "pronounce.mp3"
+    },
+    {
+        "word":  "pronunciation",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "pronunciation.mp3"
+    },
+    {
+        "word":  "identify",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "identify.mp3"
+    },
+    {
+        "word":  "identity",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "identity.mp3"
+    },
+    {
+        "word":  "identified",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "identified.mp3"
+    },
+    {
+        "word":  "identification",
+        "ok":  true,
+        "bytes":  12288,
+        "file":  "identification.mp3"
+    },
+    {
+        "word":  "anxious",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "anxious.mp3"
+    },
+    {
+        "word":  "anxiety",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "anxiety.mp3"
+    },
+    {
+        "word":  "various",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "various.mp3"
+    },
+    {
+        "word":  "vary",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "vary.mp3"
+    },
+    {
+        "word":  "variety",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "variety.mp3"
+    },
+    {
+        "word":  "advance",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "advance.mp3"
+    },
+    {
+        "word":  "advanced",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "advanced.mp3"
+    },
+    {
+        "word":  "advancement",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "advancement.mp3"
+    },
+    {
+        "word":  "ceremony",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "ceremony.mp3"
+    },
+    {
+        "word":  "conscious",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "conscious.mp3"
+    },
+    {
+        "word":  "unconsciously",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "unconsciously.mp3"
+    },
+    {
+        "word":  "graduate",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "graduate.mp3"
+    },
+    {
+        "word":  "graduation",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "graduation.mp3"
+    },
+    {
+        "word":  "furniture",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "furniture.mp3"
+    },
+    {
+        "word":  "scientific",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "scientific.mp3"
+    },
+    {
+        "word":  "science",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "science.mp3"
+    },
+    {
+        "word":  "scientist",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "scientist.mp3"
+    },
+    {
+        "word":  "experiment",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "experiment.mp3"
+    },
+    {
+        "word":  "experimental",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "experimental.mp3"
+    },
+    {
+        "word":  "cultural",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "cultural.mp3"
+    },
+    {
+        "word":  "culture",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "culture.mp3"
+    },
+    {
+        "word":  "gradual",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "gradual.mp3"
+    },
+    {
+        "word":  "gradually",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "gradually.mp3"
+    },
+    {
+        "word":  "education",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "education.mp3"
+    },
+    {
+        "word":  "educate",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "educate.mp3"
+    },
+    {
+        "word":  "educational",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "educational.mp3"
+    },
+    {
+        "word":  "educated",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "educated.mp3"
+    },
+    {
+        "word":  "artificial",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "artificial.mp3"
+    },
+    {
+        "word":  "intelligent",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "intelligent.mp3"
+    },
+    {
+        "word":  "intelligence",
+        "ok":  true,
+        "bytes":  11136,
+        "file":  "intelligence.mp3"
+    },
+    {
+        "word":  "society",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "society.mp3"
+    },
+    {
+        "word":  "social",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "social.mp3"
+    },
+    {
+        "word":  "determine",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "determine.mp3"
+    },
+    {
+        "word":  "determination",
+        "ok":  true,
+        "bytes":  11136,
+        "file":  "determination.mp3"
+    },
+    {
+        "word":  "determined",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "determined.mp3"
+    },
+    {
+        "word":  "original",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "original.mp3"
+    },
+    {
+        "word":  "origin",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "origin.mp3"
+    },
+    {
+        "word":  "originate",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "originate.mp3"
+    },
+    {
+        "word":  "private",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "private.mp3"
+    },
+    {
+        "word":  "privacy",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "privacy.mp3"
+    },
+    {
+        "word":  "infrastructure",
+        "ok":  true,
+        "bytes":  11904,
+        "file":  "infrastructure.mp3"
+    },
+    {
+        "word":  "civilize",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "civilize.mp3"
+    },
+    {
+        "word":  "civilized",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "civilized.mp3"
+    },
+    {
+        "word":  "civilization",
+        "ok":  true,
+        "bytes":  12480,
+        "file":  "civilization.mp3"
+    },
+    {
+        "word":  "stream",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "stream.mp3"
+    },
+    {
+        "word":  "germany",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "germany.mp3"
+    },
+    {
+        "word":  "german",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "german.mp3"
+    },
+    {
+        "word":  "switzerland",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "switzerland.mp3"
+    },
+    {
+        "word":  "spain",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "spain.mp3"
+    },
+    {
+        "word":  "spanish",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "spanish.mp3"
+    },
+    {
+        "word":  "singapore",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "singapore.mp3"
+    },
+    {
+        "word":  "austria",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "austria.mp3"
+    },
+    {
+        "word":  "austrian",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "austrian.mp3"
+    },
+    {
+        "word":  "britain",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "britain.mp3"
+    },
+    {
+        "word":  "british",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "british.mp3"
+    },
+    {
+        "word":  "hospitality",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "hospitality.mp3"
+    },
+    {
+        "word":  "perseverance",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "perseverance.mp3"
+    },
+    {
+        "word":  "expense",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "expense.mp3"
+    },
+    {
+        "word":  "expensive",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "expensive.mp3"
+    },
+    {
+        "word":  "skip",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "skip.mp3"
+    },
+    {
+        "word":  "tourist",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "tourist.mp3"
+    },
+    {
+        "word":  "passenger",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "passenger.mp3"
+    },
+    {
+        "word":  "oppose",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "oppose.mp3"
+    },
+    {
+        "word":  "nurture",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "nurture.mp3"
+    },
+    {
+        "word":  "dawn",
+        "ok":  true,
+        "bytes":  6144,
+        "file":  "dawn.mp3"
+    },
+    {
+        "word":  "opposite",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "opposite.mp3"
+    },
+    {
+        "word":  "refuse",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "refuse.mp3"
+    },
+    {
+        "word":  "refusal",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "refusal.mp3"
+    },
+    {
+        "word":  "cruel",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "cruel.mp3"
+    },
+    {
+        "word":  "cruelty",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "cruelty.mp3"
+    },
+    {
+        "word":  "crash",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "crash.mp3"
+    },
+    {
+        "word":  "scenery",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "scenery.mp3"
+    },
+    {
+        "word":  "scenic",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "scenic.mp3"
+    },
+    {
+        "word":  "popularize",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "popularize.mp3"
+    },
+    {
+        "word":  "popular",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "popular.mp3"
+    },
+    {
+        "word":  "popularity",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "popularity.mp3"
+    },
+    {
+        "word":  "operate",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "operate.mp3"
+    },
+    {
+        "word":  "operation",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "operation.mp3"
+    },
+    {
+        "word":  "company",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "company.mp3"
+    },
+    {
+        "word":  "companion",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "companion.mp3"
+    },
+    {
+        "word":  "modern",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "modern.mp3"
+    },
+    {
+        "word":  "modernization",
+        "ok":  true,
+        "bytes":  11712,
+        "file":  "modernization.mp3"
+    },
+    {
+        "word":  "temperature",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "temperature.mp3"
+    },
+    {
+        "word":  "monument",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "monument.mp3"
+    },
+    {
+        "word":  "electric",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "electric.mp3"
+    },
+    {
+        "word":  "electrical",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "electrical.mp3"
+    },
+    {
+        "word":  "electricity",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "electricity.mp3"
+    },
+    {
+        "word":  "contract",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "contract.mp3"
+    },
+    {
+        "word":  "brilliant",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "brilliant.mp3"
+    },
+    {
+        "word":  "rural",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "rural.mp3"
+    },
+    {
+        "word":  "urban",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "urban.mp3"
+    },
+    {
+        "word":  "cooperation",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "cooperation.mp3"
+    },
+    {
+        "word":  "cooperate",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "cooperate.mp3"
+    },
+    {
+        "word":  "phenomenon",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "phenomenon.mp3"
+    },
+    {
+        "word":  "instant",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "instant.mp3"
+    },
+    {
+        "word":  "instantly",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "instantly.mp3"
+    },
+    {
+        "word":  "relief",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "relief.mp3"
+    },
+    {
+        "word":  "relieve",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "relieve.mp3"
+    },
+    {
+        "word":  "disappoint",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "disappoint.mp3"
+    },
+    {
+        "word":  "disappointment",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "disappointment.mp3"
+    },
+    {
+        "word":  "embarrassed",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "embarrassed.mp3"
+    },
+    {
+        "word":  "embarrassment",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "embarrassment.mp3"
+    },
+    {
+        "word":  "satisfy",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "satisfy.mp3"
+    },
+    {
+        "word":  "satisfied",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "satisfied.mp3"
+    },
+    {
+        "word":  "credit",
+        "ok":  true,
+        "bytes":  6144,
+        "file":  "credit.mp3"
+    },
+    {
+        "word":  "dialogue",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "dialogue.mp3"
+    },
+    {
+        "word":  "strange",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "strange.mp3"
+    },
+    {
+        "word":  "stranger",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "stranger.mp3"
+    },
+    {
+        "word":  "desert",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "desert.mp3"
+    },
+    {
+        "word":  "deserted",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "deserted.mp3"
+    },
+    {
+        "word":  "exchange",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "exchange.mp3"
+    },
+    {
+        "word":  "conduct",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "conduct.mp3"
+    },
+    {
+        "word":  "potential",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "potential.mp3"
+    },
+    {
+        "word":  "potentially",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "potentially.mp3"
+    },
+    {
+        "word":  "regular",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "regular.mp3"
+    },
+    {
+        "word":  "vacation",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "vacation.mp3"
+    },
+    {
+        "word":  "reserve",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "reserve.mp3"
+    },
+    {
+        "word":  "reservation",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "reservation.mp3"
+    },
+    {
+        "word":  "normal",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "normal.mp3"
+    },
+    {
+        "word":  "apologize",
+        "ok":  true,
+        "bytes":  11520,
+        "file":  "apologize.mp3"
+    },
+    {
+        "word":  "apology",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "apology.mp3"
+    },
+    {
+        "word":  "charge",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "charge.mp3"
+    },
+    {
+        "word":  "respect",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "respect.mp3"
+    },
+    {
+        "word":  "respected",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "respected.mp3"
+    },
+    {
+        "word":  "garbage",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "garbage.mp3"
+    },
+    {
+        "word":  "volleyball",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "volleyball.mp3"
+    },
+    {
+        "word":  "tasty",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "tasty.mp3"
+    },
+    {
+        "word":  "taste",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "taste.mp3"
+    },
+    {
+        "word":  "kitchen",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "kitchen.mp3"
+    },
+    {
+        "word":  "village",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "village.mp3"
+    },
+    {
+        "word":  "countryside",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "countryside.mp3"
+    },
+    {
+        "word":  "desperate",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "desperate.mp3"
+    },
+    {
+        "word":  "desperately",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "desperately.mp3"
+    },
+    {
+        "word":  "routine",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "routine.mp3"
+    },
+    {
+        "word":  "comprehend",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "comprehend.mp3"
+    },
+    {
+        "word":  "comprehension",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "comprehension.mp3"
+    },
+    {
+        "word":  "comprehensive",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "comprehensive.mp3"
+    },
+    {
+        "word":  "sweat",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "sweat.mp3"
+    },
+    {
+        "word":  "sweaty",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "sweaty.mp3"
+    },
+    {
+        "word":  "struggle",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "struggle.mp3"
+    },
+    {
+        "word":  "definitely",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "definitely.mp3"
+    },
+    {
+        "word":  "definite",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "definite.mp3"
+    },
+    {
+        "word":  "significant",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "significant.mp3"
+    },
+    {
+        "word":  "significance",
+        "ok":  true,
+        "bytes":  12096,
+        "file":  "significance.mp3"
+    },
+    {
+        "word":  "honor",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "honor.mp3"
+    },
+    {
+        "word":  "honored",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "honored.mp3"
+    },
+    {
+        "word":  "ambassador",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "ambassador.mp3"
+    },
+    {
+        "word":  "ambassadorial",
+        "ok":  true,
+        "bytes":  11712,
+        "file":  "ambassadorial.mp3"
+    },
+    {
+        "word":  "connect",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "connect.mp3"
+    },
+    {
+        "word":  "connection",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "connection.mp3"
+    },
+    {
+        "word":  "combine",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "combine.mp3"
+    },
+    {
+        "word":  "combination",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "combination.mp3"
+    },
+    {
+        "word":  "sense",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "sense.mp3"
+    },
+    {
+        "word":  "nonsense",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "nonsense.mp3"
+    },
+    {
+        "word":  "starve",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "starve.mp3"
+    },
+    {
+        "word":  "starvation",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "starvation.mp3"
+    },
+    {
+        "word":  "introduce",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "introduce.mp3"
+    },
+    {
+        "word":  "introduction",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "introduction.mp3"
+    },
+    {
+        "word":  "responsible",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "responsible.mp3"
+    },
+    {
+        "word":  "responsibility",
+        "ok":  true,
+        "bytes":  12672,
+        "file":  "responsibility.mp3"
+    },
+    {
+        "word":  "clerk",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "clerk.mp3"
+    },
+    {
+        "word":  "college",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "college.mp3"
+    },
+    {
+        "word":  "underlined",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "underlined.mp3"
+    },
+    {
+        "word":  "according",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "according.mp3"
+    },
+    {
+        "word":  "volunteer",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "volunteer.mp3"
+    },
+    {
+        "word":  "title",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "title.mp3"
+    },
+    {
+        "word":  "artistic",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "artistic.mp3"
+    },
+    {
+        "word":  "prejudice",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "prejudice.mp3"
+    },
+    {
+        "word":  "characteristic",
+        "ok":  true,
+        "bytes":  11904,
+        "file":  "characteristic.mp3"
+    },
+    {
+        "word":  "psychology",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "psychology.mp3"
+    },
+    {
+        "word":  "psychological",
+        "ok":  true,
+        "bytes":  11520,
+        "file":  "psychological.mp3"
+    },
+    {
+        "word":  "philosophy",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "philosophy.mp3"
+    },
+    {
+        "word":  "character",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "character.mp3"
+    },
+    {
+        "word":  "geography",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "geography.mp3"
+    },
+    {
+        "word":  "politics",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "politics.mp3"
+    },
+    {
+        "word":  "political",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "political.mp3"
+    },
+    {
+        "word":  "politician",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "politician.mp3"
+    },
+    {
+        "word":  "mathematics",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "mathematics.mp3"
+    },
+    {
+        "word":  "scholar",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "scholar.mp3"
+    },
+    {
+        "word":  "community",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "community.mp3"
+    },
+    {
+        "word":  "snack",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "snack.mp3"
+    },
+    {
+        "word":  "process",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "process.mp3"
+    },
+    {
+        "word":  "program",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "program.mp3"
+    },
+    {
+        "word":  "function",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "function.mp3"
+    },
+    {
+        "word":  "content",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "content.mp3"
+    },
+    {
+        "word":  "improve",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "improve.mp3"
+    },
+    {
+        "word":  "improvement",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "improvement.mp3"
+    },
+    {
+        "word":  "extreme",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "extreme.mp3"
+    },
+    {
+        "word":  "extremely",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "extremely.mp3"
+    },
+    {
+        "word":  "autonomous",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "autonomous.mp3"
+    },
+    {
+        "word":  "height",
+        "ok":  true,
+        "bytes":  6144,
+        "file":  "height.mp3"
+    },
+    {
+        "word":  "high",
+        "ok":  true,
+        "bytes":  6336,
+        "file":  "high.mp3"
+    },
+    {
+        "word":  "complete",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "complete.mp3"
+    },
+    {
+        "word":  "completely",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "completely.mp3"
+    },
+    {
+        "word":  "surface",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "surface.mp3"
+    },
+    {
+        "word":  "replace",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "replace.mp3"
+    },
+    {
+        "word":  "replacement",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "replacement.mp3"
+    },
+    {
+        "word":  "model",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "model.mp3"
+    },
+    {
+        "word":  "system",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "system.mp3"
+    },
+    {
+        "word":  "systematic",
+        "ok":  true,
+        "bytes":  11136,
+        "file":  "systematic.mp3"
+    },
+    {
+        "word":  "engage",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "engage.mp3"
+    },
+    {
+        "word":  "challenge",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "challenge.mp3"
+    },
+    {
+        "word":  "curriculum",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "curriculum.mp3"
+    },
+    {
+        "word":  "carriage",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "carriage.mp3"
+    },
+    {
+        "word":  "instead",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "instead.mp3"
+    },
+    {
+        "word":  "overcome",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "overcome.mp3"
+    },
+    {
+        "word":  "beauty",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "beauty.mp3"
+    },
+    {
+        "word":  "beautiful",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "beautiful.mp3"
+    },
+    {
+        "word":  "beautify",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "beautify.mp3"
+    },
+    {
+        "word":  "proposal",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "proposal.mp3"
+    },
+    {
+        "word":  "concentrate",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "concentrate.mp3"
+    },
+    {
+        "word":  "concentration",
+        "ok":  true,
+        "bytes":  11520,
+        "file":  "concentration.mp3"
+    },
+    {
+        "word":  "emission",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "emission.mp3"
+    },
+    {
+        "word":  "degree",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "degree.mp3"
+    },
+    {
+        "word":  "absorb",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "absorb.mp3"
+    },
+    {
+        "word":  "inevitable",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "inevitable.mp3"
+    },
+    {
+        "word":  "nominate",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "nominate.mp3"
+    },
+    {
+        "word":  "nomination",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "nomination.mp3"
+    },
+    {
+        "word":  "journal",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "journal.mp3"
+    },
+    {
+        "word":  "current",
+        "ok":  true,
+        "bytes":  6336,
+        "file":  "current.mp3"
+    },
+    {
+        "word":  "lengthen",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "lengthen.mp3"
+    },
+    {
+        "word":  "cause",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "cause.mp3"
+    },
+    {
+        "word":  "exercise",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "exercise.mp3"
+    },
+    {
+        "word":  "publish",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "publish.mp3"
+    },
+    {
+        "word":  "punish",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "punish.mp3"
+    },
+    {
+        "word":  "punishment",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "punishment.mp3"
+    },
+    {
+        "word":  "complicated",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "complicated.mp3"
+    },
+    {
+        "word":  "complicate",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "complicate.mp3"
+    },
+    {
+        "word":  "government",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "government.mp3"
+    },
+    {
+        "word":  "fertilizer",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "fertilizer.mp3"
+    },
+    {
+        "word":  "global",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "global.mp3"
+    },
+    {
+        "word":  "globe",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "globe.mp3"
+    },
+    {
+        "word":  "appearance",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "appearance.mp3"
+    },
+    {
+        "word":  "pursue",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "pursue.mp3"
+    },
+    {
+        "word":  "protect",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "protect.mp3"
+    },
+    {
+        "word":  "protection",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "protection.mp3"
+    },
+    {
+        "word":  "protective",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "protective.mp3"
+    },
+    {
+        "word":  "prevent",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "prevent.mp3"
+    },
+    {
+        "word":  "prevention",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "prevention.mp3"
+    },
+    {
+        "word":  "specific",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "specific.mp3"
+    },
+    {
+        "word":  "specifically",
+        "ok":  true,
+        "bytes":  11136,
+        "file":  "specifically.mp3"
+    },
+    {
+        "word":  "approach",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "approach.mp3"
+    },
+    {
+        "word":  "impress",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "impress.mp3"
+    },
+    {
+        "word":  "impression",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "impression.mp3"
+    },
+    {
+        "word":  "impressive",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "impressive.mp3"
+    },
+    {
+        "word":  "aggressive",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "aggressive.mp3"
+    },
+    {
+        "word":  "deliver",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "deliver.mp3"
+    },
+    {
+        "word":  "delivery",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "delivery.mp3"
+    },
+    {
+        "word":  "attitude",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "attitude.mp3"
+    },
+    {
+        "word":  "library",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "library.mp3"
+    },
+    {
+        "word":  "librarian",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "librarian.mp3"
+    },
+    {
+        "word":  "inexperienced",
+        "ok":  true,
+        "bytes":  11904,
+        "file":  "inexperienced.mp3"
+    },
+    {
+        "word":  "appetite",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "appetite.mp3"
+    },
+    {
+        "word":  "envelope",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "envelope.mp3"
+    },
+    {
+        "word":  "possess",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "possess.mp3"
+    },
+    {
+        "word":  "possession",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "possession.mp3"
+    },
+    {
+        "word":  "illegal",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "illegal.mp3"
+    },
+    {
+        "word":  "acknowledge",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "acknowledge.mp3"
+    },
+    {
+        "word":  "opportunity",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "opportunity.mp3"
+    },
+    {
+        "word":  "creature",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "creature.mp3"
+    },
+    {
+        "word":  "unemployment",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "unemployment.mp3"
+    },
+    {
+        "word":  "complain",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "complain.mp3"
+    },
+    {
+        "word":  "complaint",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "complaint.mp3"
+    },
+    {
+        "word":  "supply",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "supply.mp3"
+    },
+    {
+        "word":  "jealous",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "jealous.mp3"
+    },
+    {
+        "word":  "addition",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "addition.mp3"
+    },
+    {
+        "word":  "additional",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "additional.mp3"
+    },
+    {
+        "word":  "unique",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "unique.mp3"
+    },
+    {
+        "word":  "circumstance",
+        "ok":  true,
+        "bytes":  12288,
+        "file":  "circumstance.mp3"
+    },
+    {
+        "word":  "compare",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "compare.mp3"
+    },
+    {
+        "word":  "comparison",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "comparison.mp3"
+    },
+    {
+        "word":  "prepare",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "prepare.mp3"
+    },
+    {
+        "word":  "preparation",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "preparation.mp3"
+    },
+    {
+        "word":  "arrange",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "arrange.mp3"
+    },
+    {
+        "word":  "arrangement",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "arrangement.mp3"
+    },
+    {
+        "word":  "familiar",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "familiar.mp3"
+    },
+    {
+        "word":  "familiarity",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "familiarity.mp3"
+    },
+    {
+        "word":  "available",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "available.mp3"
+    },
+    {
+        "word":  "ignore",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "ignore.mp3"
+    },
+    {
+        "word":  "ignorant",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "ignorant.mp3"
+    },
+    {
+        "word":  "ignorance",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "ignorance.mp3"
+    },
+    {
+        "word":  "particular",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "particular.mp3"
+    },
+    {
+        "word":  "particularly",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "particularly.mp3"
+    },
+    {
+        "word":  "advertise",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "advertise.mp3"
+    },
+    {
+        "word":  "advertisement",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "advertisement.mp3"
+    },
+    {
+        "word":  "advertiser",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "advertiser.mp3"
+    },
+    {
+        "word":  "conclusion",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "conclusion.mp3"
+    },
+    {
+        "word":  "conclude",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "conclude.mp3"
+    },
+    {
+        "word":  "vocabulary",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "vocabulary.mp3"
+    },
+    {
+        "word":  "gratitude",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "gratitude.mp3"
+    },
+    {
+        "word":  "consider",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "consider.mp3"
+    },
+    {
+        "word":  "consideration",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "consideration.mp3"
+    },
+    {
+        "word":  "considering",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "considering.mp3"
+    },
+    {
+        "word":  "apply",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "apply.mp3"
+    },
+    {
+        "word":  "application",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "application.mp3"
+    },
+    {
+        "word":  "applicant",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "applicant.mp3"
+    },
+    {
+        "word":  "register",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "register.mp3"
+    },
+    {
+        "word":  "organize",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "organize.mp3"
+    },
+    {
+        "word":  "organization",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "organization.mp3"
+    },
+    {
+        "word":  "evident",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "evident.mp3"
+    },
+    {
+        "word":  "evidence",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "evidence.mp3"
+    },
+    {
+        "word":  "expose",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "expose.mp3"
+    },
+    {
+        "word":  "exposure",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "exposure.mp3"
+    },
+    {
+        "word":  "fail",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "fail.mp3"
+    },
+    {
+        "word":  "failure",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "failure.mp3"
+    },
+    {
+        "word":  "voluntary",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "voluntary.mp3"
+    },
+    {
+        "word":  "perform",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "perform.mp3"
+    },
+    {
+        "word":  "performance",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "performance.mp3"
+    },
+    {
+        "word":  "performer",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "performer.mp3"
+    },
+    {
+        "word":  "celebrate",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "celebrate.mp3"
+    },
+    {
+        "word":  "celebration",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "celebration.mp3"
+    },
+    {
+        "word":  "congratulate",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "congratulate.mp3"
+    },
+    {
+        "word":  "congratulations",
+        "ok":  true,
+        "bytes":  13440,
+        "file":  "congratulations.mp3"
+    },
+    {
+        "word":  "permit",
+        "ok":  true,
+        "bytes":  6336,
+        "file":  "permit.mp3"
+    },
+    {
+        "word":  "permission",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "permission.mp3"
+    },
+    {
+        "word":  "exist",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "exist.mp3"
+    },
+    {
+        "word":  "existence",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "existence.mp3"
+    },
+    {
+        "word":  "traditional",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "traditional.mp3"
+    },
+    {
+        "word":  "tradition",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "tradition.mp3"
+    },
+    {
+        "word":  "alcoholic",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "alcoholic.mp3"
+    },
+    {
+        "word":  "alcohol",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "alcohol.mp3"
+    },
+    {
+        "word":  "worthwhile",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "worthwhile.mp3"
+    },
+    {
+        "word":  "proverb",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "proverb.mp3"
+    },
+    {
+        "word":  "climate",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "climate.mp3"
+    },
+    {
+        "word":  "emergency",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "emergency.mp3"
+    },
+    {
+        "word":  "emergent",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "emergent.mp3"
+    },
+    {
+        "word":  "cure",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "cure.mp3"
+    },
+    {
+        "word":  "convince",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "convince.mp3"
+    },
+    {
+        "word":  "convincing",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "convincing.mp3"
+    },
+    {
+        "word":  "boredom",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "boredom.mp3"
+    },
+    {
+        "word":  "common",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "common.mp3"
+    },
+    {
+        "word":  "majority",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "majority.mp3"
+    },
+    {
+        "word":  "facial",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "facial.mp3"
+    },
+    {
+        "word":  "fantasy",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "fantasy.mp3"
+    },
+    {
+        "word":  "fantastic",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "fantastic.mp3"
+    },
+    {
+        "word":  "infectious",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "infectious.mp3"
+    },
+    {
+        "word":  "infect",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "infect.mp3"
+    },
+    {
+        "word":  "infection",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "infection.mp3"
+    },
+    {
+        "word":  "figure",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "figure.mp3"
+    },
+    {
+        "word":  "previous",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "previous.mp3"
+    },
+    {
+        "word":  "previously",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "previously.mp3"
+    },
+    {
+        "word":  "detail",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "detail.mp3"
+    },
+    {
+        "word":  "schedule",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "schedule.mp3"
+    },
+    {
+        "word":  "assistant",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "assistant.mp3"
+    },
+    {
+        "word":  "assistance",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "assistance.mp3"
+    },
+    {
+        "word":  "assist",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "assist.mp3"
+    },
+    {
+        "word":  "efficient",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "efficient.mp3"
+    },
+    {
+        "word":  "efficiency",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "efficiency.mp3"
+    },
+    {
+        "word":  "promise",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "promise.mp3"
+    },
+    {
+        "word":  "promising",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "promising.mp3"
+    },
+    {
+        "word":  "instruction",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "instruction.mp3"
+    },
+    {
+        "word":  "instruct",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "instruct.mp3"
+    },
+    {
+        "word":  "effective",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "effective.mp3"
+    },
+    {
+        "word":  "effect",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "effect.mp3"
+    },
+    {
+        "word":  "poisonous",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "poisonous.mp3"
+    },
+    {
+        "word":  "poisoning",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "poisoning.mp3"
+    },
+    {
+        "word":  "check",
+        "ok":  true,
+        "bytes":  6336,
+        "file":  "check.mp3"
+    },
+    {
+        "word":  "assign",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "assign.mp3"
+    },
+    {
+        "word":  "admire",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "admire.mp3"
+    },
+    {
+        "word":  "admiration",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "admiration.mp3"
+    },
+    {
+        "word":  "admirable",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "admirable.mp3"
+    },
+    {
+        "word":  "transform",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "transform.mp3"
+    },
+    {
+        "word":  "transformation",
+        "ok":  true,
+        "bytes":  11520,
+        "file":  "transformation.mp3"
+    },
+    {
+        "word":  "elegant",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "elegant.mp3"
+    },
+    {
+        "word":  "precious",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "precious.mp3"
+    },
+    {
+        "word":  "recommend",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "recommend.mp3"
+    },
+    {
+        "word":  "luggage",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "luggage.mp3"
+    },
+    {
+        "word":  "present",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "present.mp3"
+    },
+    {
+        "word":  "presence",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "presence.mp3"
+    },
+    {
+        "word":  "humorous",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "humorous.mp3"
+    },
+    {
+        "word":  "humor",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "humor.mp3"
+    },
+    {
+        "word":  "correct",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "correct.mp3"
+    },
+    {
+        "word":  "entertainmentt",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "entertainmentt.mp3"
+    },
+    {
+        "word":  "entertain",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "entertain.mp3"
+    },
+    {
+        "word":  "considerate",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "considerate.mp3"
+    },
+    {
+        "word":  "display",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "display.mp3"
+    },
+    {
+        "word":  "author",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "author.mp3"
+    },
+    {
+        "word":  "internship",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "internship.mp3"
+    },
+    {
+        "word":  "intention",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "intention.mp3"
+    },
+    {
+        "word":  "intend",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "intend.mp3"
+    },
+    {
+        "word":  "professional",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "professional.mp3"
+    },
+    {
+        "word":  "profession",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "profession.mp3"
+    },
+    {
+        "word":  "shelter",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "shelter.mp3"
+    },
+    {
+        "word":  "hesitate",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "hesitate.mp3"
+    },
+    {
+        "word":  "hesitation",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "hesitation.mp3"
+    },
+    {
+        "word":  "isolation",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "isolation.mp3"
+    },
+    {
+        "word":  "isolated",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "isolated.mp3"
+    },
+    {
+        "word":  "interact",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "interact.mp3"
+    },
+    {
+        "word":  "interaction",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "interaction.mp3"
+    },
+    {
+        "word":  "remarkable",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "remarkable.mp3"
+    },
+    {
+        "word":  "remark",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "remark.mp3"
+    },
+    {
+        "word":  "persuade",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "persuade.mp3"
+    },
+    {
+        "word":  "persuasive",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "persuasive.mp3"
+    },
+    {
+        "word":  "reliable",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "reliable.mp3"
+    },
+    {
+        "word":  "rely",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "rely.mp3"
+    },
+    {
+        "word":  "awkward",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "awkward.mp3"
+    },
+    {
+        "word":  "faith",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "faith.mp3"
+    },
+    {
+        "word":  "faithful",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "faithful.mp3"
+    },
+    {
+        "word":  "decorate",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "decorate.mp3"
+    },
+    {
+        "word":  "decoration",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "decoration.mp3"
+    },
+    {
+        "word":  "motivation",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "motivation.mp3"
+    },
+    {
+        "word":  "academic",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "academic.mp3"
+    },
+    {
+        "word":  "academy",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "academy.mp3"
+    },
+    {
+        "word":  "triumph",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "triumph.mp3"
+    },
+    {
+        "word":  "contribute",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "contribute.mp3"
+    },
+    {
+        "word":  "contribution",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "contribution.mp3"
+    },
+    {
+        "word":  "complex",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "complex.mp3"
+    },
+    {
+        "word":  "complexity",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "complexity.mp3"
+    },
+    {
+        "word":  "committee",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "committee.mp3"
+    },
+    {
+        "word":  "conflict",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "conflict.mp3"
+    },
+    {
+        "word":  "confirm",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "confirm.mp3"
+    },
+    {
+        "word":  "confirmation",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "confirmation.mp3"
+    },
+    {
+        "word":  "contain",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "contain.mp3"
+    },
+    {
+        "word":  "container",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "container.mp3"
+    },
+    {
+        "word":  "digest",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "digest.mp3"
+    },
+    {
+        "word":  "discrimination",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "discrimination.mp3"
+    },
+    {
+        "word":  "deserve",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "deserve.mp3"
+    },
+    {
+        "word":  "fierce",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "fierce.mp3"
+    },
+    {
+        "word":  "fortnight",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "fortnight.mp3"
+    },
+    {
+        "word":  "evaluation",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "evaluation.mp3"
+    },
+    {
+        "word":  "evaluate",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "evaluate.mp3"
+    },
+    {
+        "word":  "permanent",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "permanent.mp3"
+    },
+    {
+        "word":  "permanently",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "permanently.mp3"
+    },
+    {
+        "word":  "temporary",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "temporary.mp3"
+    },
+    {
+        "word":  "contemporary",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "contemporary.mp3"
+    },
+    {
+        "word":  "innocent",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "innocent.mp3"
+    },
+    {
+        "word":  "boundary",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "boundary.mp3"
+    },
+    {
+        "word":  "institute",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "institute.mp3"
+    },
+    {
+        "word":  "kindergarten",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "kindergarten.mp3"
+    },
+    {
+        "word":  "harvest",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "harvest.mp3"
+    },
+    {
+        "word":  "modest",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "modest.mp3"
+    },
+    {
+        "word":  "satisfactory",
+        "ok":  true,
+        "bytes":  11712,
+        "file":  "satisfactory.mp3"
+    },
+    {
+        "word":  "principle",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "principle.mp3"
+    },
+    {
+        "word":  "promote",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "promote.mp3"
+    },
+    {
+        "word":  "promotion",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "promotion.mp3"
+    },
+    {
+        "word":  "purchase",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "purchase.mp3"
+    },
+    {
+        "word":  "pretend",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "pretend.mp3"
+    },
+    {
+        "word":  "reputation",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "reputation.mp3"
+    },
+    {
+        "word":  "security",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "security.mp3"
+    },
+    {
+        "word":  "secure",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "secure.mp3"
+    },
+    {
+        "word":  "sensitive",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "sensitive.mp3"
+    },
+    {
+        "word":  "sensitivity",
+        "ok":  true,
+        "bytes":  11520,
+        "file":  "sensitivity.mp3"
+    },
+    {
+        "word":  "shallow",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "shallow.mp3"
+    },
+    {
+        "word":  "sponsor",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "sponsor.mp3"
+    },
+    {
+        "word":  "fault",
+        "ok":  true,
+        "bytes":  6144,
+        "file":  "fault.mp3"
+    },
+    {
+        "word":  "genius",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "genius.mp3"
+    },
+    {
+        "word":  "tendency",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "tendency.mp3"
+    },
+    {
+        "word":  "summarize",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "summarize.mp3"
+    },
+    {
+        "word":  "summary",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "summary.mp3"
+    },
+    {
+        "word":  "vehicle",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "vehicle.mp3"
+    },
+    {
+        "word":  "surround",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "surround.mp3"
+    },
+    {
+        "word":  "surroundings",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "surroundings.mp3"
+    },
+    {
+        "word":  "surrounding",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "surrounding.mp3"
+    },
+    {
+        "word":  "tolerate",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "tolerate.mp3"
+    },
+    {
+        "word":  "tough",
+        "ok":  true,
+        "bytes":  6336,
+        "file":  "tough.mp3"
+    },
+    {
+        "word":  "threat",
+        "ok":  true,
+        "bytes":  5952,
+        "file":  "threat.mp3"
+    },
+    {
+        "word":  "threaten",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "threaten.mp3"
+    },
+    {
+        "word":  "victim",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "victim.mp3"
+    },
+    {
+        "word":  "virus",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "virus.mp3"
+    },
+    {
+        "word":  "witness",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "witness.mp3"
+    },
+    {
+        "word":  "anniversary",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "anniversary.mp3"
+    },
+    {
+        "word":  "appoint",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "appoint.mp3"
+    },
+    {
+        "word":  "appointment",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "appointment.mp3"
+    },
+    {
+        "word":  "wander",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "wander.mp3"
+    },
+    {
+        "word":  "necessity",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "necessity.mp3"
+    },
+    {
+        "word":  "necessary",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "necessary.mp3"
+    },
+    {
+        "word":  "distinct",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "distinct.mp3"
+    },
+    {
+        "word":  "attempt",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "attempt.mp3"
+    },
+    {
+        "word":  "classification",
+        "ok":  true,
+        "bytes":  12480,
+        "file":  "classification.mp3"
+    },
+    {
+        "word":  "selfish",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "selfish.mp3"
+    },
+    {
+        "word":  "demanding",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "demanding.mp3"
+    },
+    {
+        "word":  "discouraged",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "discouraged.mp3"
+    },
+    {
+        "word":  "average",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "average.mp3"
+    },
+    {
+        "word":  "track",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "track.mp3"
+    },
+    {
+        "word":  "treasure",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "treasure.mp3"
+    },
+    {
+        "word":  "independent",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "independent.mp3"
+    },
+    {
+        "word":  "independence",
+        "ok":  true,
+        "bytes":  11520,
+        "file":  "independence.mp3"
+    },
+    {
+        "word":  "ideal",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "ideal.mp3"
+    },
+    {
+        "word":  "annoy",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "annoy.mp3"
+    },
+    {
+        "word":  "annoyance",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "annoyance.mp3"
+    },
+    {
+        "word":  "european",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "european.mp3"
+    },
+    {
+        "word":  "europe",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "europe.mp3"
+    },
+    {
+        "word":  "consequently",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "consequently.mp3"
+    },
+    {
+        "word":  "consequence",
+        "ok":  true,
+        "bytes":  11136,
+        "file":  "consequence.mp3"
+    },
+    {
+        "word":  "thoroughly",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "thoroughly.mp3"
+    },
+    {
+        "word":  "thorough",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "thorough.mp3"
+    },
+    {
+        "word":  "occasion",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "occasion.mp3"
+    },
+    {
+        "word":  "occasionally",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "occasionally.mp3"
+    },
+    {
+        "word":  "exceptional",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "exceptional.mp3"
+    },
+    {
+        "word":  "exception",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "exception.mp3"
+    },
+    {
+        "word":  "puzzled",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "puzzled.mp3"
+    },
+    {
+        "word":  "puzzle",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "puzzle.mp3"
+    },
+    {
+        "word":  "puzzling",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "puzzling.mp3"
+    },
+    {
+        "word":  "invest",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "invest.mp3"
+    },
+    {
+        "word":  "investigate",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "investigate.mp3"
+    },
+    {
+        "word":  "incredible",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "incredible.mp3"
+    },
+    {
+        "word":  "interrupt",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "interrupt.mp3"
+    },
+    {
+        "word":  "interruption",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "interruption.mp3"
+    },
+    {
+        "word":  "spoil",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "spoil.mp3"
+    },
+    {
+        "word":  "passionate",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "passionate.mp3"
+    },
+    {
+        "word":  "campaign",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "campaign.mp3"
+    },
+    {
+        "word":  "fundamental",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "fundamental.mp3"
+    },
+    {
+        "word":  "appropriate",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "appropriate.mp3"
+    },
+    {
+        "word":  "appropriately",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "appropriately.mp3"
+    },
+    {
+        "word":  "distribute",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "distribute.mp3"
+    },
+    {
+        "word":  "distribution",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "distribution.mp3"
+    },
+    {
+        "word":  "rubbish",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "rubbish.mp3"
+    },
+    {
+        "word":  "mission",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "mission.mp3"
+    },
+    {
+        "word":  "poverty",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "poverty.mp3"
+    },
+    {
+        "word":  "random",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "random.mp3"
+    },
+    {
+        "word":  "retirement",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "retirement.mp3"
+    },
+    {
+        "word":  "retire",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "retire.mp3"
+    },
+    {
+        "word":  "regulation",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "regulation.mp3"
+    },
+    {
+        "word":  "forbidden",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "forbidden.mp3"
+    },
+    {
+        "word":  "forbid",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "forbid.mp3"
+    },
+    {
+        "word":  "criterion",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "criterion.mp3"
+    },
+    {
+        "word":  "declare",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "declare.mp3"
+    },
+    {
+        "word":  "forgive",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "forgive.mp3"
+    },
+    {
+        "word":  "forgiveness",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "forgiveness.mp3"
+    },
+    {
+        "word":  "eager",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "eager.mp3"
+    },
+    {
+        "word":  "eagerly",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "eagerly.mp3"
+    },
+    {
+        "word":  "accommodation",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "accommodation.mp3"
+    },
+    {
+        "word":  "frustration",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "frustration.mp3"
+    },
+    {
+        "word":  "frustrate",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "frustrate.mp3"
+    },
+    {
+        "word":  "addictive",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "addictive.mp3"
+    },
+    {
+        "word":  "addiction",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "addiction.mp3"
+    },
+    {
+        "word":  "addict",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "addict.mp3"
+    },
+    {
+        "word":  "clarify",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "clarify.mp3"
+    },
+    {
+        "word":  "clarification",
+        "ok":  true,
+        "bytes":  11712,
+        "file":  "clarification.mp3"
+    },
+    {
+        "word":  "prosperous",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "prosperous.mp3"
+    },
+    {
+        "word":  "prosperity",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "prosperity.mp3"
+    },
+    {
+        "word":  "precise",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "precise.mp3"
+    },
+    {
+        "word":  "bright",
+        "ok":  true,
+        "bytes":  5952,
+        "file":  "bright.mp3"
+    },
+    {
+        "word":  "brightness",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "brightness.mp3"
+    },
+    {
+        "word":  "factor",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "factor.mp3"
+    },
+    {
+        "word":  "stubborn",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "stubborn.mp3"
+    },
+    {
+        "word":  "stubbornness",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "stubbornness.mp3"
+    },
+    {
+        "word":  "cultivate",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "cultivate.mp3"
+    },
+    {
+        "word":  "embark",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "embark.mp3"
+    },
+    {
+        "word":  "accustomed",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "accustomed.mp3"
+    },
+    {
+        "word":  "accumulate",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "accumulate.mp3"
+    },
+    {
+        "word":  "accumulation",
+        "ok":  true,
+        "bytes":  11520,
+        "file":  "accumulation.mp3"
+    },
+    {
+        "word":  "terror",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "terror.mp3"
+    },
+    {
+        "word":  "terrible",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "terrible.mp3"
+    },
+    {
+        "word":  "absent",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "absent.mp3"
+    },
+    {
+        "word":  "absence",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "absence.mp3"
+    },
+    {
+        "word":  "harmony",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "harmony.mp3"
+    },
+    {
+        "word":  "harmonious",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "harmonious.mp3"
+    },
+    {
+        "word":  "involve",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "involve.mp3"
+    },
+    {
+        "word":  "involvement",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "involvement.mp3"
+    },
+    {
+        "word":  "emphasize",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "emphasize.mp3"
+    },
+    {
+        "word":  "emphasis",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "emphasis.mp3"
+    },
+    {
+        "word":  "persistent",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "persistent.mp3"
+    },
+    {
+        "word":  "persist",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "persist.mp3"
+    },
+    {
+        "word":  "persistence",
+        "ok":  true,
+        "bytes":  11136,
+        "file":  "persistence.mp3"
+    },
+    {
+        "word":  "rank",
+        "ok":  true,
+        "bytes":  6336,
+        "file":  "rank.mp3"
+    },
+    {
+        "word":  "diligent",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "diligent.mp3"
+    },
+    {
+        "word":  "diligence",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "diligence.mp3"
+    },
+    {
+        "word":  "mutual",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "mutual.mp3"
+    },
+    {
+        "word":  "reluctant",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "reluctant.mp3"
+    },
+    {
+        "word":  "deny",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "deny.mp3"
+    },
+    {
+        "word":  "premier",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "premier.mp3"
+    },
+    {
+        "word":  "establish",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "establish.mp3"
+    },
+    {
+        "word":  "establishment",
+        "ok":  true,
+        "bytes":  11136,
+        "file":  "establishment.mp3"
+    },
+    {
+        "word":  "indispensable",
+        "ok":  true,
+        "bytes":  11712,
+        "file":  "indispensable.mp3"
+    },
+    {
+        "word":  "secondary",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "secondary.mp3"
+    },
+    {
+        "word":  "guarantee",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "guarantee.mp3"
+    },
+    {
+        "word":  "demonstrate",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "demonstrate.mp3"
+    },
+    {
+        "word":  "audience",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "audience.mp3"
+    },
+    {
+        "word":  "pioneer",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "pioneer.mp3"
+    },
+    {
+        "word":  "automatic",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "automatic.mp3"
+    },
+    {
+        "word":  "imply",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "imply.mp3"
+    },
+    {
+        "word":  "implication",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "implication.mp3"
+    },
+    {
+        "word":  "merciful",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "merciful.mp3"
+    },
+    {
+        "word":  "mercy",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "mercy.mp3"
+    },
+    {
+        "word":  "sacrifice",
+        "ok":  true,
+        "bytes":  11712,
+        "file":  "sacrifice.mp3"
+    },
+    {
+        "word":  "steady",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "steady.mp3"
+    },
+    {
+        "word":  "magnificent",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "magnificent.mp3"
+    },
+    {
+        "word":  "expand",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "expand.mp3"
+    },
+    {
+        "word":  "moderate",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "moderate.mp3"
+    },
+    {
+        "word":  "dilemma",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "dilemma.mp3"
+    },
+    {
+        "word":  "absolute",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "absolute.mp3"
+    },
+    {
+        "word":  "absolutely",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "absolutely.mp3"
+    },
+    {
+        "word":  "mature",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "mature.mp3"
+    },
+    {
+        "word":  "distinguish",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "distinguish.mp3"
+    },
+    {
+        "word":  "distinguished",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "distinguished.mp3"
+    },
+    {
+        "word":  "atmosphere",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "atmosphere.mp3"
+    },
+    {
+        "word":  "personality",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "personality.mp3"
+    },
+    {
+        "word":  "accompany",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "accompany.mp3"
+    },
+    {
+        "word":  "approximately",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "approximately.mp3"
+    },
+    {
+        "word":  "afford",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "afford.mp3"
+    },
+    {
+        "word":  "affordable",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "affordable.mp3"
+    },
+    {
+        "word":  "severe",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "severe.mp3"
+    },
+    {
+        "word":  "severely",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "severely.mp3"
+    },
+    {
+        "word":  "imitate",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "imitate.mp3"
+    },
+    {
+        "word":  "imitation",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "imitation.mp3"
+    },
+    {
+        "word":  "opponent",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "opponent.mp3"
+    },
+    {
+        "word":  "mental",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "mental.mp3"
+    },
+    {
+        "word":  "skeptical",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "skeptical.mp3"
+    },
+    {
+        "word":  "accessible",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "accessible.mp3"
+    },
+    {
+        "word":  "typical",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "typical.mp3"
+    },
+    {
+        "word":  "typically",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "typically.mp3"
+    },
+    {
+        "word":  "ridiculous",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "ridiculous.mp3"
+    },
+    {
+        "word":  "controversial",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "controversial.mp3"
+    },
+    {
+        "word":  "athletic",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "athletic.mp3"
+    },
+    {
+        "word":  "athlete",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "athlete.mp3"
+    },
+    {
+        "word":  "laboratory",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "laboratory.mp3"
+    },
+    {
+        "word":  "exploit",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "exploit.mp3"
+    },
+    {
+        "word":  "virtue",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "virtue.mp3"
+    },
+    {
+        "word":  "guilty",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "guilty.mp3"
+    },
+    {
+        "word":  "guilt",
+        "ok":  true,
+        "bytes":  5760,
+        "file":  "guilt.mp3"
+    },
+    {
+        "word":  "innovative",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "innovative.mp3"
+    },
+    {
+        "word":  "innovation",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "innovation.mp3"
+    },
+    {
+        "word":  "abundant",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "abundant.mp3"
+    },
+    {
+        "word":  "abundance",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "abundance.mp3"
+    },
+    {
+        "word":  "delicate",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "delicate.mp3"
+    },
+    {
+        "word":  "ambiguous",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "ambiguous.mp3"
+    },
+    {
+        "word":  "charity",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "charity.mp3"
+    },
+    {
+        "word":  "examine",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "examine.mp3"
+    },
+    {
+        "word":  "contradictory",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "contradictory.mp3"
+    },
+    {
+        "word":  "punctual",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "punctual.mp3"
+    },
+    {
+        "word":  "punctuality",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "punctuality.mp3"
+    },
+    {
+        "word":  "individual",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "individual.mp3"
+    },
+    {
+        "word":  "elementary",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "elementary.mp3"
+    },
+    {
+        "word":  "conservative",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "conservative.mp3"
+    },
+    {
+        "word":  "compulsory",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "compulsory.mp3"
+    },
+    {
+        "word":  "scold",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "scold.mp3"
+    },
+    {
+        "word":  "compensate",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "compensate.mp3"
+    },
+    {
+        "word":  "compensation",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "compensation.mp3"
+    },
+    {
+        "word":  "frighten",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "frighten.mp3"
+    },
+    {
+        "word":  "frightened",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "frightened.mp3"
+    },
+    {
+        "word":  "applaud",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "applaud.mp3"
+    },
+    {
+        "word":  "applause",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "applause.mp3"
+    },
+    {
+        "word":  "coincidence",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "coincidence.mp3"
+    },
+    {
+        "word":  "coincident",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "coincident.mp3"
+    },
+    {
+        "word":  "extinction",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "extinction.mp3"
+    },
+    {
+        "word":  "insurance",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "insurance.mp3"
+    },
+    {
+        "word":  "dentist",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "dentist.mp3"
+    },
+    {
+        "word":  "intermediate",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "intermediate.mp3"
+    },
+    {
+        "word":  "dominate",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "dominate.mp3"
+    },
+    {
+        "word":  "dominant",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "dominant.mp3"
+    },
+    {
+        "word":  "illiterate",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "illiterate.mp3"
+    },
+    {
+        "word":  "literate",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "literate.mp3"
+    },
+    {
+        "word":  "mysterious",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "mysterious.mp3"
+    },
+    {
+        "word":  "mystery",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "mystery.mp3"
+    },
+    {
+        "word":  "gymnastics",
+        "ok":  true,
+        "bytes":  11136,
+        "file":  "gymnastics.mp3"
+    },
+    {
+        "word":  "gymnast",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "gymnast.mp3"
+    },
+    {
+        "word":  "certificate",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "certificate.mp3"
+    },
+    {
+        "word":  "amateur",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "amateur.mp3"
+    },
+    {
+        "word":  "investigation",
+        "ok":  true,
+        "bytes":  11904,
+        "file":  "investigation.mp3"
+    },
+    {
+        "word":  "classic",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "classic.mp3"
+    },
+    {
+        "word":  "dignity",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "dignity.mp3"
+    },
+    {
+        "word":  "authority",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "authority.mp3"
+    },
+    {
+        "word":  "acquaintance",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "acquaintance.mp3"
+    },
+    {
+        "word":  "acquaint",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "acquaint.mp3"
+    },
+    {
+        "word":  "souvenir",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "souvenir.mp3"
+    },
+    {
+        "word":  "vegetarian",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "vegetarian.mp3"
+    },
+    {
+        "word":  "vegetable",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "vegetable.mp3"
+    },
+    {
+        "word":  "biography",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "biography.mp3"
+    },
+    {
+        "word":  "compromise",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "compromise.mp3"
+    },
+    {
+        "word":  "privilege",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "privilege.mp3"
+    },
+    {
+        "word":  "adolescent",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "adolescent.mp3"
+    },
+    {
+        "word":  "diploma",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "diploma.mp3"
+    },
+    {
+        "word":  "thirsty",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "thirsty.mp3"
+    },
+    {
+        "word":  "disposable",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "disposable.mp3"
+    },
+    {
+        "word":  "tentative",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "tentative.mp3"
+    },
+    {
+        "word":  "sustain",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "sustain.mp3"
+    },
+    {
+        "word":  "sustainable",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "sustainable.mp3"
+    },
+    {
+        "word":  "undertake",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "undertake.mp3"
+    },
+    {
+        "word":  "chairman",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "chairman.mp3"
+    },
+    {
+        "word":  "restaurant",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "restaurant.mp3"
+    },
+    {
+        "word":  "weekend",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "weekend.mp3"
+    },
+    {
+        "word":  "holiday",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "holiday.mp3"
+    },
+    {
+        "word":  "favorite",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "favorite.mp3"
+    },
+    {
+        "word":  "business",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "business.mp3"
+    },
+    {
+        "word":  "cinema",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "cinema.mp3"
+    },
+    {
+        "word":  "newspaper",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "newspaper.mp3"
+    },
+    {
+        "word":  "christmas",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "christmas.mp3"
+    },
+    {
+        "word":  "traffic",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "traffic.mp3"
+    },
+    {
+        "word":  "apartment",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "apartment.mp3"
+    },
+    {
+        "word":  "travel",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "travel.mp3"
+    },
+    {
+        "word":  "magazine",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "magazine.mp3"
+    },
+    {
+        "word":  "excellent",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "excellent.mp3"
+    },
+    {
+        "word":  "excellence",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "excellence.mp3"
+    },
+    {
+        "word":  "opinion",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "opinion.mp3"
+    },
+    {
+        "word":  "public",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "public.mp3"
+    },
+    {
+        "word":  "arrive",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "arrive.mp3"
+    },
+    {
+        "word":  "arrival",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "arrival.mp3"
+    },
+    {
+        "word":  "department",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "department.mp3"
+    },
+    {
+        "word":  "service",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "service.mp3"
+    },
+    {
+        "word":  "secretary",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "secretary.mp3"
+    },
+    {
+        "word":  "pleasure",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "pleasure.mp3"
+    },
+    {
+        "word":  "comfortable",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "comfortable.mp3"
+    },
+    {
+        "word":  "delicious",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "delicious.mp3"
+    },
+    {
+        "word":  "museum",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "museum.mp3"
+    },
+    {
+        "word":  "concert",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "concert.mp3"
+    },
+    {
+        "word":  "information",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "information.mp3"
+    },
+    {
+        "word":  "understand",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "understand.mp3"
+    },
+    {
+        "word":  "possible",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "possible.mp3"
+    },
+    {
+        "word":  "impossible",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "impossible.mp3"
+    },
+    {
+        "word":  "possibility",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "possibility.mp3"
+    },
+    {
+        "word":  "expect",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "expect.mp3"
+    },
+    {
+        "word":  "expectation",
+        "ok":  true,
+        "bytes":  12096,
+        "file":  "expectation.mp3"
+    },
+    {
+        "word":  "courage",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "courage.mp3"
+    },
+    {
+        "word":  "encourage",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "encourage.mp3"
+    },
+    {
+        "word":  "encouragement",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "encouragement.mp3"
+    },
+    {
+        "word":  "discourage",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "discourage.mp3"
+    },
+    {
+        "word":  "creative",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "creative.mp3"
+    },
+    {
+        "word":  "create",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "create.mp3"
+    },
+    {
+        "word":  "creativity",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "creativity.mp3"
+    },
+    {
+        "word":  "creation",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "creation.mp3"
+    },
+    {
+        "word":  "technology",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "technology.mp3"
+    },
+    {
+        "word":  "technological",
+        "ok":  true,
+        "bytes":  11136,
+        "file":  "technological.mp3"
+    },
+    {
+        "word":  "control",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "control.mp3"
+    },
+    {
+        "word":  "controllable",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "controllable.mp3"
+    },
+    {
+        "word":  "adult",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "adult.mp3"
+    },
+    {
+        "word":  "adulthood",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "adulthood.mp3"
+    },
+    {
+        "word":  "vague",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "vague.mp3"
+    },
+    {
+        "word":  "purpose",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "purpose.mp3"
+    },
+    {
+        "word":  "generally",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "generally.mp3"
+    },
+    {
+        "word":  "general",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "general.mp3"
+    },
+    {
+        "word":  "stress",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "stress.mp3"
+    },
+    {
+        "word":  "stressful",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "stressful.mp3"
+    },
+    {
+        "word":  "guide",
+        "ok":  true,
+        "bytes":  6336,
+        "file":  "guide.mp3"
+    },
+    {
+        "word":  "guidance",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "guidance.mp3"
+    },
+    {
+        "word":  "actual",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "actual.mp3"
+    },
+    {
+        "word":  "actually",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "actually.mp3"
+    },
+    {
+        "word":  "ancient",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "ancient.mp3"
+    },
+    {
+        "word":  "memory",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "memory.mp3"
+    },
+    {
+        "word":  "memorize",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "memorize.mp3"
+    },
+    {
+        "word":  "memorable",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "memorable.mp3"
+    },
+    {
+        "word":  "value",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "value.mp3"
+    },
+    {
+        "word":  "valuable",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "valuable.mp3"
+    },
+    {
+        "word":  "benefit",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "benefit.mp3"
+    },
+    {
+        "word":  "beneficial",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "beneficial.mp3"
+    },
+    {
+        "word":  "physical",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "physical.mp3"
+    },
+    {
+        "word":  "physics",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "physics.mp3"
+    },
+    {
+        "word":  "physician",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "physician.mp3"
+    },
+    {
+        "word":  "confident",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "confident.mp3"
+    },
+    {
+        "word":  "confidence",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "confidence.mp3"
+    },
+    {
+        "word":  "attach",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "attach.mp3"
+    },
+    {
+        "word":  "energy",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "energy.mp3"
+    },
+    {
+        "word":  "energetic",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "energetic.mp3"
+    },
+    {
+        "word":  "quality",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "quality.mp3"
+    },
+    {
+        "word":  "message",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "message.mp3"
+    },
+    {
+        "word":  "inspire",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "inspire.mp3"
+    },
+    {
+        "word":  "inspiration",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "inspiration.mp3"
+    },
+    {
+        "word":  "situation",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "situation.mp3"
+    },
+    {
+        "word":  "mistake",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "mistake.mp3"
+    },
+    {
+        "word":  "certain",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "certain.mp3"
+    },
+    {
+        "word":  "certainly",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "certainly.mp3"
+    },
+    {
+        "word":  "certainty",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "certainty.mp3"
+    },
+    {
+        "word":  "basic",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "basic.mp3"
+    },
+    {
+        "word":  "basically",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "basically.mp3"
+    },
+    {
+        "word":  "basis",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "basis.mp3"
+    },
+    {
+        "word":  "attractive",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "attractive.mp3"
+    },
+    {
+        "word":  "attraction",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "attraction.mp3"
+    },
+    {
+        "word":  "smart",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "smart.mp3"
+    },
+    {
+        "word":  "smart-phone",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "smart-phone.mp3"
+    },
+    {
+        "word":  "style",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "style.mp3"
+    },
+    {
+        "word":  "lifestyle",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "lifestyle.mp3"
+    },
+    {
+        "word":  "employ",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "employ.mp3"
+    },
+    {
+        "word":  "employment",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "employment.mp3"
+    },
+    {
+        "word":  "employee",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "employee.mp3"
+    },
+    {
+        "word":  "employer",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "employer.mp3"
+    },
+    {
+        "word":  "remain",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "remain.mp3"
+    },
+    {
+        "word":  "affect",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "affect.mp3"
+    },
+    {
+        "word":  "proud",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "proud.mp3"
+    },
+    {
+        "word":  "pride",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "pride.mp3"
+    },
+    {
+        "word":  "react",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "react.mp3"
+    },
+    {
+        "word":  "reaction",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "reaction.mp3"
+    },
+    {
+        "word":  "overreact",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "overreact.mp3"
+    },
+    {
+        "word":  "squeeze",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "squeeze.mp3"
+    },
+    {
+        "word":  "desire",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "desire.mp3"
+    },
+    {
+        "word":  "admit",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "admit.mp3"
+    },
+    {
+        "word":  "admission",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "admission.mp3"
+    },
+    {
+        "word":  "active",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "active.mp3"
+    },
+    {
+        "word":  "actively",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "actively.mp3"
+    },
+    {
+        "word":  "aware",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "aware.mp3"
+    },
+    {
+        "word":  "awareness",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "awareness.mp3"
+    },
+    {
+        "word":  "object",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "object.mp3"
+    },
+    {
+        "word":  "disease",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "disease.mp3"
+    },
+    {
+        "word":  "competent",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "competent.mp3"
+    },
+    {
+        "word":  "pressure",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "pressure.mp3"
+    },
+    {
+        "word":  "compete",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "compete.mp3"
+    },
+    {
+        "word":  "competence",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "competence.mp3"
+    },
+    {
+        "word":  "competition",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "competition.mp3"
+    },
+    {
+        "word":  "competitive",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "competitive.mp3"
+    },
+    {
+        "word":  "competitor",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "competitor.mp3"
+    },
+    {
+        "word":  "exam",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "exam.mp3"
+    },
+    {
+        "word":  "examination",
+        "ok":  true,
+        "bytes":  11520,
+        "file":  "examination.mp3"
+    },
+    {
+        "word":  "proper",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "proper.mp3"
+    },
+    {
+        "word":  "properly",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "properly.mp3"
+    },
+    {
+        "word":  "delight",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "delight.mp3"
+    },
+    {
+        "word":  "delighted",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "delighted.mp3"
+    },
+    {
+        "word":  "delightful",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "delightful.mp3"
+    },
+    {
+        "word":  "frequently",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "frequently.mp3"
+    },
+    {
+        "word":  "frequent",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "frequent.mp3"
+    },
+    {
+        "word":  "frequency",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "frequency.mp3"
+    },
+    {
+        "word":  "donate",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "donate.mp3"
+    },
+    {
+        "word":  "donation",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "donation.mp3"
+    },
+    {
+        "word":  "standard",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "standard.mp3"
+    },
+    {
+        "word":  "standardize",
+        "ok":  true,
+        "bytes":  11136,
+        "file":  "standardize.mp3"
+    },
+    {
+        "word":  "talented",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "talented.mp3"
+    },
+    {
+        "word":  "talent",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "talent.mp3"
+    },
+    {
+        "word":  "relative",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "relative.mp3"
+    },
+    {
+        "word":  "request",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "request.mp3"
+    },
+    {
+        "word":  "spirit",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "spirit.mp3"
+    },
+    {
+        "word":  "spiritual",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "spiritual.mp3"
+    },
+    {
+        "word":  "entrance",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "entrance.mp3"
+    },
+    {
+        "word":  "exit",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "exit.mp3"
+    },
+    {
+        "word":  "generate",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "generate.mp3"
+    },
+    {
+        "word":  "nervous",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "nervous.mp3"
+    },
+    {
+        "word":  "nervousness",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "nervousness.mp3"
+    },
+    {
+        "word":  "economic",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "economic.mp3"
+    },
+    {
+        "word":  "economy",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "economy.mp3"
+    },
+    {
+        "word":  "obvious",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "obvious.mp3"
+    },
+    {
+        "word":  "obviously",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "obviously.mp3"
+    },
+    {
+        "word":  "crowd",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "crowd.mp3"
+    },
+    {
+        "word":  "crowded",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "crowded.mp3"
+    },
+    {
+        "word":  "method",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "method.mp3"
+    },
+    {
+        "word":  "reflect",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "reflect.mp3"
+    },
+    {
+        "word":  "reflection",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "reflection.mp3"
+    },
+    {
+        "word":  "destroy",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "destroy.mp3"
+    },
+    {
+        "word":  "equal",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "equal.mp3"
+    },
+    {
+        "word":  "equally",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "equally.mp3"
+    },
+    {
+        "word":  "fair",
+        "ok":  true,
+        "bytes":  6144,
+        "file":  "fair.mp3"
+    },
+    {
+        "word":  "fairly",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "fairly.mp3"
+    },
+    {
+        "word":  "financial",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "financial.mp3"
+    },
+    {
+        "word":  "finance",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "finance.mp3"
+    },
+    {
+        "word":  "loss",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "loss.mp3"
+    },
+    {
+        "word":  "wealth",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "wealth.mp3"
+    },
+    {
+        "word":  "wealthy",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "wealthy.mp3"
+    },
+    {
+        "word":  "shuttle",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "shuttle.mp3"
+    },
+    {
+        "word":  "confuse",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "confuse.mp3"
+    },
+    {
+        "word":  "confused",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "confused.mp3"
+    },
+    {
+        "word":  "cautious",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "cautious.mp3"
+    },
+    {
+        "word":  "caution",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "caution.mp3"
+    },
+    {
+        "word":  "deliberate",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "deliberate.mp3"
+    },
+    {
+        "word":  "deliberately",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "deliberately.mp3"
+    },
+    {
+        "word":  "consist",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "consist.mp3"
+    },
+    {
+        "word":  "consistent",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "consistent.mp3"
+    },
+    {
+        "word":  "concept",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "concept.mp3"
+    },
+    {
+        "word":  "polite",
+        "ok":  true,
+        "bytes":  6336,
+        "file":  "polite.mp3"
+    },
+    {
+        "word":  "impolite",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "impolite.mp3"
+    },
+    {
+        "word":  "dynamic",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "dynamic.mp3"
+    },
+    {
+        "word":  "career",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "career.mp3"
+    },
+    {
+        "word":  "comment",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "comment.mp3"
+    },
+    {
+        "word":  "symbol",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "symbol.mp3"
+    },
+    {
+        "word":  "symbolize",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "symbolize.mp3"
+    },
+    {
+        "word":  "flexible",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "flexible.mp3"
+    },
+    {
+        "word":  "flexibility",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "flexibility.mp3"
+    },
+    {
+        "word":  "contrast",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "contrast.mp3"
+    },
+    {
+        "word":  "remove",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "remove.mp3"
+    },
+    {
+        "word":  "constant",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "constant.mp3"
+    },
+    {
+        "word":  "constantly",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "constantly.mp3"
+    },
+    {
+        "word":  "adapt",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "adapt.mp3"
+    },
+    {
+        "word":  "adaptation",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "adaptation.mp3"
+    },
+    {
+        "word":  "adopt",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "adopt.mp3"
+    },
+    {
+        "word":  "wonder",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "wonder.mp3"
+    },
+    {
+        "word":  "target",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "target.mp3"
+    },
+    {
+        "word":  "scene",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "scene.mp3"
+    },
+    {
+        "word":  "participate",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "participate.mp3"
+    },
+    {
+        "word":  "participation",
+        "ok":  true,
+        "bytes":  11712,
+        "file":  "participation.mp3"
+    },
+    {
+        "word":  "participant",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "participant.mp3"
+    },
+    {
+        "word":  "straight",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "straight.mp3"
+    },
+    {
+        "word":  "disturb",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "disturb.mp3"
+    },
+    {
+        "word":  "disturbance",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "disturbance.mp3"
+    },
+    {
+        "word":  "magic",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "magic.mp3"
+    },
+    {
+        "word":  "magical",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "magical.mp3"
+    },
+    {
+        "word":  "magician",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "magician.mp3"
+    },
+    {
+        "word":  "image",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "image.mp3"
+    },
+    {
+        "word":  "predict",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "predict.mp3"
+    },
+    {
+        "word":  "prediction",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "prediction.mp3"
+    },
+    {
+        "word":  "review",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "review.mp3"
+    },
+    {
+        "word":  "sharp",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "sharp.mp3"
+    },
+    {
+        "word":  "sharply",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "sharply.mp3"
+    },
+    {
+        "word":  "obesity",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "obesity.mp3"
+    },
+    {
+        "word":  "obese",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "obese.mp3"
+    },
+    {
+        "word":  "occupy",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "occupy.mp3"
+    },
+    {
+        "word":  "occupation",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "occupation.mp3"
+    },
+    {
+        "word":  "consult",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "consult.mp3"
+    },
+    {
+        "word":  "consultant",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "consultant.mp3"
+    },
+    {
+        "word":  "annual",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "annual.mp3"
+    },
+    {
+        "word":  "slight",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "slight.mp3"
+    },
+    {
+        "word":  "urgent",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "urgent.mp3"
+    },
+    {
+        "word":  "obtain",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "obtain.mp3"
+    },
+    {
+        "word":  "outstanding",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "outstanding.mp3"
+    },
+    {
+        "word":  "ambition",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "ambition.mp3"
+    },
+    {
+        "word":  "ambitious",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "ambitious.mp3"
+    },
+    {
+        "word":  "affair",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "affair.mp3"
+    },
+    {
+        "word":  "recall",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "recall.mp3"
+    },
+    {
+        "word":  "restore",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "restore.mp3"
+    },
+    {
+        "word":  "suspect",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "suspect.mp3"
+    },
+    {
+        "word":  "acquire",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "acquire.mp3"
+    },
+    {
+        "word":  "acquisition",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "acquisition.mp3"
+    },
+    {
+        "word":  "exhausted",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "exhausted.mp3"
+    },
+    {
+        "word":  "exhaustion",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "exhaustion.mp3"
+    },
+    {
+        "word":  "command",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "command.mp3"
+    },
+    {
+        "word":  "justice",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "justice.mp3"
+    },
+    {
+        "word":  "recite",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "recite.mp3"
+    },
+    {
+        "word":  "arrest",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "arrest.mp3"
+    },
+    {
+        "word":  "paragraph",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "paragraph.mp3"
+    },
+    {
+        "word":  "seize",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "seize.mp3"
+    },
+    {
+        "word":  "prohibit",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "prohibit.mp3"
+    },
+    {
+        "word":  "neglect",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "neglect.mp3"
+    },
+    {
+        "word":  "budget",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "budget.mp3"
+    },
+    {
+        "word":  "betray",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "betray.mp3"
+    },
+    {
+        "word":  "betrayal",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "betrayal.mp3"
+    },
+    {
+        "word":  "real",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "real.mp3"
+    },
+    {
+        "word":  "really",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "really.mp3"
+    },
+    {
+        "word":  "resist",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "resist.mp3"
+    },
+    {
+        "word":  "success",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "success.mp3"
+    },
+    {
+        "word":  "successful",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "successful.mp3"
+    },
+    {
+        "word":  "succeed",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "succeed.mp3"
+    },
+    {
+        "word":  "conversation",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "conversation.mp3"
+    },
+    {
+        "word":  "inform",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "inform.mp3"
+    },
+    {
+        "word":  "search",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "search.mp3"
+    },
+    {
+        "word":  "research",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "research.mp3"
+    },
+    {
+        "word":  "decide",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "decide.mp3"
+    },
+    {
+        "word":  "decision",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "decision.mp3"
+    },
+    {
+        "word":  "decisive",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "decisive.mp3"
+    },
+    {
+        "word":  "experience",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "experience.mp3"
+    },
+    {
+        "word":  "experienced",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "experienced.mp3"
+    },
+    {
+        "word":  "record",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "record.mp3"
+    },
+    {
+        "word":  "university",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "university.mp3"
+    },
+    {
+        "word":  "productive",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "productive.mp3"
+    },
+    {
+        "word":  "section",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "section.mp3"
+    },
+    {
+        "word":  "weigh",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "weigh.mp3"
+    },
+    {
+        "word":  "weight",
+        "ok":  true,
+        "bytes":  6144,
+        "file":  "weight.mp3"
+    },
+    {
+        "word":  "serve",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "serve.mp3"
+    },
+    {
+        "word":  "servant",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "servant.mp3"
+    },
+    {
+        "word":  "surprise",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "surprise.mp3"
+    },
+    {
+        "word":  "surprised",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "surprised.mp3"
+    },
+    {
+        "word":  "surprisingly",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "surprisingly.mp3"
+    },
+    {
+        "word":  "return",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "return.mp3"
+    },
+    {
+        "word":  "remember",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "remember.mp3"
+    },
+    {
+        "word":  "special",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "special.mp3"
+    },
+    {
+        "word":  "specially",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "specially.mp3"
+    },
+    {
+        "word":  "specialist",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "specialist.mp3"
+    },
+    {
+        "word":  "reach",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "reach.mp3"
+    },
+    {
+        "word":  "reachable",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "reachable.mp3"
+    },
+    {
+        "word":  "practice",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "practice.mp3"
+    },
+    {
+        "word":  "practical",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "practical.mp3"
+    },
+    {
+        "word":  "regardless",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "regardless.mp3"
+    },
+    {
+        "word":  "regard",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "regard.mp3"
+    },
+    {
+        "word":  "provide",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "provide.mp3"
+    },
+    {
+        "word":  "patient",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "patient.mp3"
+    },
+    {
+        "word":  "patience",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "patience.mp3"
+    },
+    {
+        "word":  "chance",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "chance.mp3"
+    },
+    {
+        "word":  "comfort",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "comfort.mp3"
+    },
+    {
+        "word":  "collect",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "collect.mp3"
+    },
+    {
+        "word":  "collection",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "collection.mp3"
+    },
+    {
+        "word":  "history",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "history.mp3"
+    },
+    {
+        "word":  "historical",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "historical.mp3"
+    },
+    {
+        "word":  "historic",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "historic.mp3"
+    },
+    {
+        "word":  "historian",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "historian.mp3"
+    },
+    {
+        "word":  "temptation",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "temptation.mp3"
+    },
+    {
+        "word":  "discover",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "discover.mp3"
+    },
+    {
+        "word":  "discovery",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "discovery.mp3"
+    },
+    {
+        "word":  "recover",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "recover.mp3"
+    },
+    {
+        "word":  "recovery",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "recovery.mp3"
+    },
+    {
+        "word":  "continue",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "continue.mp3"
+    },
+    {
+        "word":  "continually",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "continually.mp3"
+    },
+    {
+        "word":  "continuous",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "continuous.mp3"
+    },
+    {
+        "word":  "behavior",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "behavior.mp3"
+    },
+    {
+        "word":  "behave",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "behave.mp3"
+    },
+    {
+        "word":  "express",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "express.mp3"
+    },
+    {
+        "word":  "expression",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "expression.mp3"
+    },
+    {
+        "word":  "accomplish",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "accomplish.mp3"
+    },
+    {
+        "word":  "accomplishment",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "accomplishment.mp3"
+    },
+    {
+        "word":  "habit",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "habit.mp3"
+    },
+    {
+        "word":  "habitat",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "habitat.mp3"
+    },
+    {
+        "word":  "receive",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "receive.mp3"
+    },
+    {
+        "word":  "interview",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "interview.mp3"
+    },
+    {
+        "word":  "interviewer",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "interviewer.mp3"
+    },
+    {
+        "word":  "interviewee",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "interviewee.mp3"
+    },
+    {
+        "word":  "initial",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "initial.mp3"
+    },
+    {
+        "word":  "project",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "project.mp3"
+    },
+    {
+        "word":  "accept",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "accept.mp3"
+    },
+    {
+        "word":  "acceptance",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "acceptance.mp3"
+    },
+    {
+        "word":  "acceptable",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "acceptable.mp3"
+    },
+    {
+        "word":  "describe",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "describe.mp3"
+    },
+    {
+        "word":  "description",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "description.mp3"
+    },
+    {
+        "word":  "touch",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "touch.mp3"
+    },
+    {
+        "word":  "material",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "material.mp3"
+    },
+    {
+        "word":  "recent",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "recent.mp3"
+    },
+    {
+        "word":  "recently",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "recently.mp3"
+    },
+    {
+        "word":  "avoid",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "avoid.mp3"
+    },
+    {
+        "word":  "avoidable",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "avoidable.mp3"
+    },
+    {
+        "word":  "sudden",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "sudden.mp3"
+    },
+    {
+        "word":  "suddenly",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "suddenly.mp3"
+    },
+    {
+        "word":  "silent",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "silent.mp3"
+    },
+    {
+        "word":  "silence",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "silence.mp3"
+    },
+    {
+        "word":  "represent",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "represent.mp3"
+    },
+    {
+        "word":  "trouble",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "trouble.mp3"
+    },
+    {
+        "word":  "troublesome",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "troublesome.mp3"
+    },
+    {
+        "word":  "include",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "include.mp3"
+    },
+    {
+        "word":  "festival",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "festival.mp3"
+    },
+    {
+        "word":  "professor",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "professor.mp3"
+    },
+    {
+        "word":  "attention",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "attention.mp3"
+    },
+    {
+        "word":  "attentive",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "attentive.mp3"
+    },
+    {
+        "word":  "infer",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "infer.mp3"
+    },
+    {
+        "word":  "excite",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "excite.mp3"
+    },
+    {
+        "word":  "excitement",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "excitement.mp3"
+    },
+    {
+        "word":  "reduce",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "reduce.mp3"
+    },
+    {
+        "word":  "trust",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "trust.mp3"
+    },
+    {
+        "word":  "trustworthy",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "trustworthy.mp3"
+    },
+    {
+        "word":  "waste",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "waste.mp3"
+    },
+    {
+        "word":  "calm",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "calm.mp3"
+    },
+    {
+        "word":  "calmness",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "calmness.mp3"
+    },
+    {
+        "word":  "communicate",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "communicate.mp3"
+    },
+    {
+        "word":  "communication",
+        "ok":  true,
+        "bytes":  10944,
+        "file":  "communication.mp3"
+    },
+    {
+        "word":  "immediate",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "immediate.mp3"
+    },
+    {
+        "word":  "immediately",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "immediately.mp3"
+    },
+    {
+        "word":  "demand",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "demand.mp3"
+    },
+    {
+        "word":  "substitute",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "substitute.mp3"
+    },
+    {
+        "word":  "transport",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "transport.mp3"
+    },
+    {
+        "word":  "transportation",
+        "ok":  true,
+        "bytes":  11712,
+        "file":  "transportation.mp3"
+    },
+    {
+        "word":  "emotion",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "emotion.mp3"
+    },
+    {
+        "word":  "emotional",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "emotional.mp3"
+    },
+    {
+        "word":  "position",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "position.mp3"
+    },
+    {
+        "word":  "flight",
+        "ok":  true,
+        "bytes":  6144,
+        "file":  "flight.mp3"
+    },
+    {
+        "word":  "chocolate",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "chocolate.mp3"
+    },
+    {
+        "word":  "therefore",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "therefore.mp3"
+    },
+    {
+        "word":  "mention",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "mention.mp3"
+    },
+    {
+        "word":  "limit",
+        "ok":  true,
+        "bytes":  6336,
+        "file":  "limit.mp3"
+    },
+    {
+        "word":  "limited",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "limited.mp3"
+    },
+    {
+        "word":  "limitation",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "limitation.mp3"
+    },
+    {
+        "word":  "sight",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "sight.mp3"
+    },
+    {
+        "word":  "friendly",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "friendly.mp3"
+    },
+    {
+        "word":  "friendliness",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "friendliness.mp3"
+    },
+    {
+        "word":  "influence",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "influence.mp3"
+    },
+    {
+        "word":  "exhibition",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "exhibition.mp3"
+    },
+    {
+        "word":  "exhibit",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "exhibit.mp3"
+    },
+    {
+        "word":  "argue",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "argue.mp3"
+    },
+    {
+        "word":  "argument",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "argument.mp3"
+    },
+    {
+        "word":  "fortune",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "fortune.mp3"
+    },
+    {
+        "word":  "fortunately",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "fortunately.mp3"
+    },
+    {
+        "word":  "handle",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "handle.mp3"
+    },
+    {
+        "word":  "pollution",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "pollution.mp3"
+    },
+    {
+        "word":  "pollute",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "pollute.mp3"
+    },
+    {
+        "word":  "secret",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "secret.mp3"
+    },
+    {
+        "word":  "secretly",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "secretly.mp3"
+    },
+    {
+        "word":  "accident",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "accident.mp3"
+    },
+    {
+        "word":  "accidentally",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "accidentally.mp3"
+    },
+    {
+        "word":  "occur",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "occur.mp3"
+    },
+    {
+        "word":  "extra",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "extra.mp3"
+    },
+    {
+        "word":  "extraordinary",
+        "ok":  true,
+        "bytes":  11136,
+        "file":  "extraordinary.mp3"
+    },
+    {
+        "word":  "reply",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "reply.mp3"
+    },
+    {
+        "word":  "subject",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "subject.mp3"
+    },
+    {
+        "word":  "strength",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "strength.mp3"
+    },
+    {
+        "word":  "strengthen",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "strengthen.mp3"
+    },
+    {
+        "word":  "population",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "population.mp3"
+    },
+    {
+        "word":  "detect",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "detect.mp3"
+    },
+    {
+        "word":  "detective",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "detective.mp3"
+    },
+    {
+        "word":  "path",
+        "ok":  true,
+        "bytes":  5952,
+        "file":  "path.mp3"
+    },
+    {
+        "word":  "prove",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "prove.mp3"
+    },
+    {
+        "word":  "honesty",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "honesty.mp3"
+    },
+    {
+        "word":  "honest",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "honest.mp3"
+    },
+    {
+        "word":  "beyond",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "beyond.mp3"
+    },
+    {
+        "word":  "suitable",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "suitable.mp3"
+    },
+    {
+        "word":  "suit",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "suit.mp3"
+    },
+    {
+        "word":  "charming",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "charming.mp3"
+    },
+    {
+        "word":  "worth",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "worth.mp3"
+    },
+    {
+        "word":  "worthy",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "worthy.mp3"
+    },
+    {
+        "word":  "hurry",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "hurry.mp3"
+    },
+    {
+        "word":  "hurried",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "hurried.mp3"
+    },
+    {
+        "word":  "literature",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "literature.mp3"
+    },
+    {
+        "word":  "explore",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "explore.mp3"
+    },
+    {
+        "word":  "exploration",
+        "ok":  true,
+        "bytes":  11136,
+        "file":  "exploration.mp3"
+    },
+    {
+        "word":  "explorer",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "explorer.mp3"
+    },
+    {
+        "word":  "tear",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "tear.mp3"
+    },
+    {
+        "word":  "luxury",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "luxury.mp3"
+    },
+    {
+        "word":  "luxurious",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "luxurious.mp3"
+    },
+    {
+        "word":  "measure",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "measure.mp3"
+    },
+    {
+        "word":  "escape",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "escape.mp3"
+    },
+    {
+        "word":  "insist",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "insist.mp3"
+    },
+    {
+        "word":  "cheer",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "cheer.mp3"
+    },
+    {
+        "word":  "cheerful",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "cheerful.mp3"
+    },
+    {
+        "word":  "rise",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "rise.mp3"
+    },
+    {
+        "word":  "gather",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "gather.mp3"
+    },
+    {
+        "word":  "thus",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "thus.mp3"
+    },
+    {
+        "word":  "delay",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "delay.mp3"
+    },
+    {
+        "word":  "revolution",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "revolution.mp3"
+    },
+    {
+        "word":  "revolutionary",
+        "ok":  true,
+        "bytes":  11712,
+        "file":  "revolutionary.mp3"
+    },
+    {
+        "word":  "respond",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "respond.mp3"
+    },
+    {
+        "word":  "response",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "response.mp3"
+    },
+    {
+        "word":  "dress",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "dress.mp3"
+    },
+    {
+        "word":  "destination",
+        "ok":  true,
+        "bytes":  10176,
+        "file":  "destination.mp3"
+    },
+    {
+        "word":  "blame",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "blame.mp3"
+    },
+    {
+        "word":  "repeat",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "repeat.mp3"
+    },
+    {
+        "word":  "regret",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "regret.mp3"
+    },
+    {
+        "word":  "regretful",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "regretful.mp3"
+    },
+    {
+        "word":  "rapid",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "rapid.mp3"
+    },
+    {
+        "word":  "rapidly",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "rapidly.mp3"
+    },
+    {
+        "word":  "weak",
+        "ok":  true,
+        "bytes":  6336,
+        "file":  "weak.mp3"
+    },
+    {
+        "word":  "weakness",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "weakness.mp3"
+    },
+    {
+        "word":  "lecture",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "lecture.mp3"
+    },
+    {
+        "word":  "lecturer",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "lecturer.mp3"
+    },
+    {
+        "word":  "cheap",
+        "ok":  true,
+        "bytes":  5952,
+        "file":  "cheap.mp3"
+    },
+    {
+        "word":  "excuse",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "excuse.mp3"
+    },
+    {
+        "word":  "crucial",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "crucial.mp3"
+    },
+    {
+        "word":  "brave",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "brave.mp3"
+    },
+    {
+        "word":  "bravery",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "bravery.mp3"
+    },
+    {
+        "word":  "award",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "award.mp3"
+    },
+    {
+        "word":  "progress",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "progress.mp3"
+    },
+    {
+        "word":  "praise",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "praise.mp3"
+    },
+    {
+        "word":  "quit",
+        "ok":  true,
+        "bytes":  5376,
+        "file":  "quit.mp3"
+    },
+    {
+        "word":  "wisdom",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "wisdom.mp3"
+    },
+    {
+        "word":  "address",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "address.mp3"
+    },
+    {
+        "word":  "balance",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "balance.mp3"
+    },
+    {
+        "word":  "balanced",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "balanced.mp3"
+    },
+    {
+        "word":  "seldom",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "seldom.mp3"
+    },
+    {
+        "word":  "strict",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "strict.mp3"
+    },
+    {
+        "word":  "analyze",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "analyze.mp3"
+    },
+    {
+        "word":  "analysis",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "analysis.mp3"
+    },
+    {
+        "word":  "decline",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "decline.mp3"
+    },
+    {
+        "word":  "ordinary",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "ordinary.mp3"
+    },
+    {
+        "word":  "impact",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "impact.mp3"
+    },
+    {
+        "word":  "careless",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "careless.mp3"
+    },
+    {
+        "word":  "carelessness",
+        "ok":  true,
+        "bytes":  10752,
+        "file":  "carelessness.mp3"
+    },
+    {
+        "word":  "announce",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "announce.mp3"
+    },
+    {
+        "word":  "announcement",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "announcement.mp3"
+    },
+    {
+        "word":  "debate",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "debate.mp3"
+    },
+    {
+        "word":  "essential",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "essential.mp3"
+    },
+    {
+        "word":  "ashamed",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "ashamed.mp3"
+    },
+    {
+        "word":  "suppose",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "suppose.mp3"
+    },
+    {
+        "word":  "awake",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "awake.mp3"
+    },
+    {
+        "word":  "passion",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "passion.mp3"
+    },
+    {
+        "word":  "apparent",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "apparent.mp3"
+    },
+    {
+        "word":  "apparently",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "apparently.mp3"
+    },
+    {
+        "word":  "narrow",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "narrow.mp3"
+    },
+    {
+        "word":  "translate",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "translate.mp3"
+    },
+    {
+        "word":  "translation",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "translation.mp3"
+    },
+    {
+        "word":  "assess",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "assess.mp3"
+    },
+    {
+        "word":  "assessment",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "assessment.mp3"
+    },
+    {
+        "word":  "withdraw",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "withdraw.mp3"
+    },
+    {
+        "word":  "thrill",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "thrill.mp3"
+    },
+    {
+        "word":  "burden",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "burden.mp3"
+    },
+    {
+        "word":  "brief",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "brief.mp3"
+    },
+    {
+        "word":  "briefly",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "briefly.mp3"
+    },
+    {
+        "word":  "calculate",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "calculate.mp3"
+    },
+    {
+        "word":  "maintain",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "maintain.mp3"
+    },
+    {
+        "word":  "illustrate",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "illustrate.mp3"
+    },
+    {
+        "word":  "illustration",
+        "ok":  true,
+        "bytes":  10368,
+        "file":  "illustration.mp3"
+    },
+    {
+        "word":  "casual",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "casual.mp3"
+    },
+    {
+        "word":  "quarrel",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "quarrel.mp3"
+    },
+    {
+        "word":  "bury",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "bury.mp3"
+    },
+    {
+        "word":  "pale",
+        "ok":  true,
+        "bytes":  6336,
+        "file":  "pale.mp3"
+    },
+    {
+        "word":  "vivid",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "vivid.mp3"
+    },
+    {
+        "word":  "diagnose",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "diagnose.mp3"
+    },
+    {
+        "word":  "diagnosis",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "diagnosis.mp3"
+    },
+    {
+        "word":  "ingredient",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "ingredient.mp3"
+    },
+    {
+        "word":  "negotiation",
+        "ok":  true,
+        "bytes":  11520,
+        "file":  "negotiation.mp3"
+    },
+    {
+        "word":  "negotiate",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "negotiate.mp3"
+    },
+    {
+        "word":  "proof",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "proof.mp3"
+    },
+    {
+        "word":  "plaza",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "plaza.mp3"
+    },
+    {
+        "word":  "electronic",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "electronic.mp3"
+    },
+    {
+        "word":  "remind",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "remind.mp3"
+    },
+    {
+        "word":  "market",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "market.mp3"
+    },
+    {
+        "word":  "upset",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "upset.mp3"
+    },
+    {
+        "word":  "master",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "master.mp3"
+    },
+    {
+        "word":  "shoulder",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "shoulder.mp3"
+    },
+    {
+        "word":  "major",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "major.mp3"
+    },
+    {
+        "word":  "fulfill",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "fulfill.mp3"
+    },
+    {
+        "word":  "income",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "income.mp3"
+    },
+    {
+        "word":  "decade",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "decade.mp3"
+    },
+    {
+        "word":  "term",
+        "ok":  true,
+        "bytes":  6528,
+        "file":  "term.mp3"
+    },
+    {
+        "word":  "speech",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "speech.mp3"
+    },
+    {
+        "word":  "contest",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "contest.mp3"
+    },
+    {
+        "word":  "engineer",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "engineer.mp3"
+    },
+    {
+        "word":  "engineering",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "engineering.mp3"
+    },
+    {
+        "word":  "quiz",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "quiz.mp3"
+    },
+    {
+        "word":  "choose",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "choose.mp3"
+    },
+    {
+        "word":  "choice",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "choice.mp3"
+    },
+    {
+        "word":  "endangered",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "endangered.mp3"
+    },
+    {
+        "word":  "species",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "species.mp3"
+    },
+    {
+        "word":  "president",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "president.mp3"
+    },
+    {
+        "word":  "fortunate",
+        "ok":  true,
+        "bytes":  8064,
+        "file":  "fortunate.mp3"
+    },
+    {
+        "word":  "eventually",
+        "ok":  true,
+        "bytes":  9792,
+        "file":  "eventually.mp3"
+    },
+    {
+        "word":  "childhood",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "childhood.mp3"
+    },
+    {
+        "word":  "conference",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "conference.mp3"
+    },
+    {
+        "word":  "warmth",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "warmth.mp3"
+    },
+    {
+        "word":  "warm",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "warm.mp3"
+    },
+    {
+        "word":  "alternative",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "alternative.mp3"
+    },
+    {
+        "word":  "medical",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "medical.mp3"
+    },
+    {
+        "word":  "peaceful",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "peaceful.mp3"
+    },
+    {
+        "word":  "powerful",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "powerful.mp3"
+    },
+    {
+        "word":  "suffer",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "suffer.mp3"
+    },
+    {
+        "word":  "increase",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "increase.mp3"
+    },
+    {
+        "word":  "local",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "local.mp3"
+    },
+    {
+        "word":  "marriage",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "marriage.mp3"
+    },
+    {
+        "word":  "marry",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "marry.mp3"
+    },
+    {
+        "word":  "depend",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "depend.mp3"
+    },
+    {
+        "word":  "hardship",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "hardship.mp3"
+    },
+    {
+        "word":  "gentle",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "gentle.mp3"
+    },
+    {
+        "word":  "dictionary",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "dictionary.mp3"
+    },
+    {
+        "word":  "dangerous",
+        "ok":  true,
+        "bytes":  9216,
+        "file":  "dangerous.mp3"
+    },
+    {
+        "word":  "danger",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "danger.mp3"
+    },
+    {
+        "word":  "asleep",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "asleep.mp3"
+    },
+    {
+        "word":  "sleep",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "sleep.mp3"
+    },
+    {
+        "word":  "happiness",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "happiness.mp3"
+    },
+    {
+        "word":  "happy",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "happy.mp3"
+    },
+    {
+        "word":  "pleasant",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "pleasant.mp3"
+    },
+    {
+        "word":  "classical",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "classical.mp3"
+    },
+    {
+        "word":  "costume",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "costume.mp3"
+    },
+    {
+        "word":  "source",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "source.mp3"
+    },
+    {
+        "word":  "manufacture",
+        "ok":  true,
+        "bytes":  11712,
+        "file":  "manufacture.mp3"
+    },
+    {
+        "word":  "candidate",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "candidate.mp3"
+    },
+    {
+        "word":  "pity",
+        "ok":  true,
+        "bytes":  5952,
+        "file":  "pity.mp3"
+    },
+    {
+        "word":  "language",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "language.mp3"
+    },
+    {
+        "word":  "glorious",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "glorious.mp3"
+    },
+    {
+        "word":  "glory",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "glory.mp3"
+    },
+    {
+        "word":  "especially",
+        "ok":  true,
+        "bytes":  9600,
+        "file":  "especially.mp3"
+    },
+    {
+        "word":  "support",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "support.mp3"
+    },
+    {
+        "word":  "invention",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "invention.mp3"
+    },
+    {
+        "word":  "invent",
+        "ok":  true,
+        "bytes":  7488,
+        "file":  "invent.mp3"
+    },
+    {
+        "word":  "advantage",
+        "ok":  true,
+        "bytes":  9408,
+        "file":  "advantage.mp3"
+    },
+    {
+        "word":  "disadvantage",
+        "ok":  true,
+        "bytes":  11328,
+        "file":  "disadvantage.mp3"
+    },
+    {
+        "word":  "chemistry",
+        "ok":  true,
+        "bytes":  8832,
+        "file":  "chemistry.mp3"
+    },
+    {
+        "word":  "chemical",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "chemical.mp3"
+    },
+    {
+        "word":  "frozen",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "frozen.mp3"
+    },
+    {
+        "word":  "freeze",
+        "ok":  true,
+        "bytes":  7680,
+        "file":  "freeze.mp3"
+    },
+    {
+        "word":  "freezing",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "freezing.mp3"
+    },
+    {
+        "word":  "settle",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "settle.mp3"
+    },
+    {
+        "word":  "settlement",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "settlement.mp3"
+    },
+    {
+        "word":  "freedom",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "freedom.mp3"
+    },
+    {
+        "word":  "free",
+        "ok":  true,
+        "bytes":  6336,
+        "file":  "free.mp3"
+    },
+    {
+        "word":  "example",
+        "ok":  true,
+        "bytes":  8640,
+        "file":  "example.mp3"
+    },
+    {
+        "word":  "own",
+        "ok":  true,
+        "bytes":  6144,
+        "file":  "own.mp3"
+    },
+    {
+        "word":  "province",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "province.mp3"
+    },
+    {
+        "word":  "preserve",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "preserve.mp3"
+    },
+    {
+        "word":  "colleague",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "colleague.mp3"
+    },
+    {
+        "word":  "hobby",
+        "ok":  true,
+        "bytes":  6912,
+        "file":  "hobby.mp3"
+    },
+    {
+        "word":  "bargain",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "bargain.mp3"
+    },
+    {
+        "word":  "account",
+        "ok":  true,
+        "bytes":  7104,
+        "file":  "account.mp3"
+    },
+    {
+        "word":  "accountant",
+        "ok":  true,
+        "bytes":  8256,
+        "file":  "accountant.mp3"
+    },
+    {
+        "word":  "accounting",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "accounting.mp3"
+    },
+    {
+        "word":  "invitation",
+        "ok":  true,
+        "bytes":  9984,
+        "file":  "invitation.mp3"
+    },
+    {
+        "word":  "invite",
+        "ok":  true,
+        "bytes":  6720,
+        "file":  "invite.mp3"
+    },
+    {
+        "word":  "appear",
+        "ok":  true,
+        "bytes":  7296,
+        "file":  "appear.mp3"
+    },
+    {
+        "word":  "convenient",
+        "ok":  true,
+        "bytes":  8448,
+        "file":  "convenient.mp3"
+    },
+    {
+        "word":  "solution",
+        "ok":  true,
+        "bytes":  9024,
+        "file":  "solution.mp3"
+    },
+    {
+        "word":  "observe",
+        "ok":  true,
+        "bytes":  7872,
+        "file":  "observe.mp3"
+    },
+    {
+        "word":  "observation",
+        "ok":  true,
+        "bytes":  10560,
+        "file":  "observation.mp3"
+    }
+]
