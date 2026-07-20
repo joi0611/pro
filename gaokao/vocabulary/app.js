@@ -338,6 +338,7 @@ const AUDIO_RETRY_MS = 5 * 60 * 1000;
 const AUDIO_PREFETCH_WINDOW = 2;
 const UNIVERSAL_TTS_BASE = "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=";
 const LOCAL_AUDIO_BASE = "./audio/words/";
+const LOCAL_AUDIO_SECONDARY_BASE = "./audio/words2/";
 const AUDIO_BACKUP_MAP = window.VOCAB_AUDIO_BACKUPS || {};
 const EMBEDDED_AUDIO_CORE_MAP = window.VOCAB_EMBEDDED_AUDIO_CORE || {};
 const AUDIO_BATCH_MAP = window.VOCAB_AUDIO_BATCH_MAP || {};
@@ -345,6 +346,7 @@ const LOCAL_AUDIO_WORD_SET = new Set(window.VOCAB_LOCAL_AUDIO_WORDS || []);
 const EMBEDDED_AUDIO_MAP = window.VOCAB_EMBEDDED_AUDIO_PACK || {};
 const AUDIO_POLICY_MODE = window.VOCAB_AUDIO_POLICY?.mode || "browser-first";
 const objectUrlCache = {};
+const audioUrlFailureCache = {};
 const audioDiagnosticState = {
   visible: false,
   status: "未运行",
@@ -1874,10 +1876,15 @@ async function speakWordFully(word, runToken) {
   const key = String(word || "").trim().toLowerCase();
   const preparedAudio = audioPlayerCache[key];
   const preparedSrc = preparedAudio?.currentSrc || preparedAudio?.src || "";
-  const cachedUrl = preparedSrc || audioCache[key] || buildUniversalAudioUrl(word);
-  if (cachedUrl && typeof Audio === "function") {
-    const played = await playAudioAndWait(cachedUrl, runToken);
-    if (played) return;
+  const candidates = getAudioPlaybackCandidates(word, preparedSrc);
+  if (typeof Audio === "function") {
+    for (const audioUrl of candidates) {
+      const playableUrl = getPlayableAudioUrl(audioUrl, key);
+      const played = await playAudioAndWait(playableUrl, runToken);
+      if (played) return;
+      markAudioUrlFailed(word, audioUrl);
+      if (runToken !== memoryDrillRunToken) return;
+    }
   }
   await speakWithBrowserAndWait(word, runToken);
 }
@@ -2544,45 +2551,58 @@ function playWordAudioNow(word, preferredUrl = "") {
   const key = String(word || "").trim().toLowerCase();
   const preparedAudio = audioPlayerCache[key];
   if (preparedAudio) {
+    const preparedUrl = preparedAudio.dataset?.sourceUrl || preparedAudio.currentSrc || preparedAudio.src || "";
     preparedAudio.currentTime = 0;
     preparedAudio.playbackRate = 1;
     pushDiagnosticEvent("play_cached_audio", {
       word,
       source: describeAudioSource(preparedAudio.currentSrc || preparedAudio.src || ""),
     });
-    preparedAudio.play().catch(() => {
+    let retried = false;
+    const retryPreparedAudio = () => {
+      if (retried) return;
+      retried = true;
       delete audioPlayerCache[key];
+      markAudioUrlFailed(word, preparedUrl);
       pushDiagnosticEvent("play_cached_audio_failed", { word });
-      speakWithBrowser(word);
-      prepareWordAudio(word);
-    });
+      playWordAudioNow(word);
+    };
+    preparedAudio.addEventListener("error", retryPreparedAudio, { once: true });
+    preparedAudio.play().catch(retryPreparedAudio);
     return;
   }
 
-  const cachedUrl = getPlayableAudioUrl(preferredUrl || getPreferredAudioUrl(word), key);
-  if (cachedUrl && typeof Audio === "function") {
-    const audio = new Audio(cachedUrl);
+  const candidates = getAudioPlaybackCandidates(word, preferredUrl);
+  const tryCandidate = (index) => {
+    const audioUrl = candidates[index];
+    if (!audioUrl || typeof Audio !== "function") {
+      speakWithBrowser(word);
+      prepareWordAudio(word);
+      return;
+    }
+    const playableUrl = getPlayableAudioUrl(audioUrl, key);
+    const audio = new Audio(playableUrl);
     audio.preload = "auto";
     audio.playbackRate = 1;
     pushDiagnosticEvent("play_fresh_audio", {
       word,
-      source: describeAudioSource(cachedUrl),
+      source: describeAudioSource(playableUrl),
     });
-    audio.play().catch(() => {
-      if (audioCache[key] === cachedUrl) delete audioCache[key];
+    let retried = false;
+    const retryNextCandidate = () => {
+      if (retried) return;
+      retried = true;
+      markAudioUrlFailed(word, audioUrl);
       pushDiagnosticEvent("play_fresh_audio_failed", {
         word,
-        source: describeAudioSource(cachedUrl),
+        source: describeAudioSource(playableUrl),
       });
-      speakWithBrowser(word);
-      prepareWordAudio(word);
-    });
-    prepareWordAudio(word);
-    return;
-  }
-
-  speakWithBrowser(word);
-  prepareWordAudio(word);
+      tryCandidate(index + 1);
+    };
+    audio.addEventListener("error", retryNextCandidate, { once: true });
+    audio.play().then(() => prepareWordAudio(word)).catch(retryNextCandidate);
+  };
+  tryCandidate(0);
 }
 
 async function prepareWordAudio(word) {
@@ -2594,13 +2614,15 @@ async function prepareWordAudio(word) {
   if (!playableUrl) return;
   const audio = new Audio(playableUrl);
   audio.preload = "auto";
+  audio.dataset.sourceUrl = audioUrl;
   audio.addEventListener("error", () => {
     if (audioPlayerCache[key] === audio) delete audioPlayerCache[key];
-    if (audioCache[key] === audioUrl) delete audioCache[key];
+    markAudioUrlFailed(word, audioUrl);
     pushDiagnosticEvent("prepare_audio_failed", {
       word,
       source: describeAudioSource(playableUrl),
     });
+    window.setTimeout(() => prepareWordAudio(word), 0);
   }, { once: true });
   audio.load();
   audioPlayerCache[key] = audio;
@@ -2668,12 +2690,52 @@ function sanitizeAudioFileName(word) {
   return String(word || "").trim().toLowerCase().replace(/[^a-z0-9-]/g, "_");
 }
 
-function buildLocalAudioUrl(word) {
+function buildLocalAudioUrls(word) {
   const safeName = sanitizeAudioFileName(word);
-  if (!safeName) return "";
-  const batchName = AUDIO_BATCH_MAP[safeName];
-  if (batchName) return `./${batchName}/audio/words/${safeName}.mp3`;
-  return LOCAL_AUDIO_WORD_SET.has(safeName) ? `${LOCAL_AUDIO_BASE}${safeName}.mp3` : "";
+  if (!safeName || !LOCAL_AUDIO_WORD_SET.has(safeName)) return [];
+  return [
+    `${LOCAL_AUDIO_BASE}${safeName}.mp3`,
+    `${LOCAL_AUDIO_SECONDARY_BASE}${safeName}.mp3`,
+  ];
+}
+
+function buildLocalAudioUrl(word) {
+  return buildLocalAudioUrls(word).find((url) => !hasAudioUrlFailed(word, url)) || "";
+}
+
+function getAudioFailureSet(word) {
+  const key = String(word || "").trim().toLowerCase();
+  if (!key) return null;
+  audioUrlFailureCache[key] ||= new Set();
+  return audioUrlFailureCache[key];
+}
+
+function hasAudioUrlFailed(word, url) {
+  return !!url && !!getAudioFailureSet(word)?.has(url);
+}
+
+function markAudioUrlFailed(word, url) {
+  if (!url) return;
+  const key = String(word || "").trim().toLowerCase();
+  getAudioFailureSet(word)?.add(url);
+  if (audioCache[key] === url) delete audioCache[key];
+}
+
+function getAudioPlaybackCandidates(word, firstUrl = "") {
+  const key = String(word || "").trim().toLowerCase();
+  const safeName = sanitizeAudioFileName(word);
+  const embeddedCoreUrl = EMBEDDED_AUDIO_CORE_MAP[key] || EMBEDDED_AUDIO_CORE_MAP[safeName];
+  const embeddedUrl = EMBEDDED_AUDIO_MAP[key] || EMBEDDED_AUDIO_MAP[safeName];
+  const backupUrl = AUDIO_BACKUP_MAP[key] || buildUniversalAudioUrl(word);
+  const candidates = [
+    firstUrl,
+    ...buildLocalAudioUrls(word),
+    embeddedCoreUrl,
+    embeddedUrl,
+    audioCache[key],
+    backupUrl,
+  ];
+  return [...new Set(candidates.filter(Boolean))].filter((url) => !hasAudioUrlFailed(word, url));
 }
 
 function getPlayableAudioUrl(url, cacheKey = "") {
@@ -2797,8 +2859,9 @@ async function runCurrentWordDiagnostic() {
     `策略模式：${AUDIO_POLICY_MODE}`,
     `内嵌核心音频：${EMBEDDED_AUDIO_CORE_MAP[safeName] ? "有" : "无"}`,
     `内嵌分包音频：${EMBEDDED_AUDIO_MAP[safeName] ? "有" : "无"}`,
-    `批次目录：${AUDIO_BATCH_MAP[safeName] || "未命中"}`,
-    `本地文件路径：${buildLocalAudioUrl(word) || "无"}`,
+    `主音频路径：${buildLocalAudioUrls(word)[0] || "无"}`,
+    `备用音频路径：${buildLocalAudioUrls(word)[1] || "无"}`,
+    `当前采用路径：${buildLocalAudioUrl(word) || "本地音频均不可用"}`,
     `备用电子发音：${AUDIO_BACKUP_MAP[safeName] ? "有" : "无"}`,
     `首选音频来源：${describeAudioSource(preferredUrl)} | ${truncateForPanel(preferredUrl)}`,
     `预热后音频来源：${describeAudioSource(readyUrl)} | ${truncateForPanel(readyUrl)}`,
@@ -2879,29 +2942,23 @@ async function copyDiagnosticResult() {
 }
 
 function getPreferredAudioUrl(word) {
-  const key = String(word || "").trim().toLowerCase();
-  const embeddedCoreUrl = EMBEDDED_AUDIO_CORE_MAP[key] || EMBEDDED_AUDIO_CORE_MAP[sanitizeAudioFileName(word)];
-  if (embeddedCoreUrl) return embeddedCoreUrl;
-  const embeddedUrl = EMBEDDED_AUDIO_MAP[key] || EMBEDDED_AUDIO_MAP[sanitizeAudioFileName(word)];
-  if (embeddedUrl) return embeddedUrl;
-  const localUrl = buildLocalAudioUrl(word);
-  if (localUrl) return localUrl;
-  const backupUrl = AUDIO_BACKUP_MAP[key] || buildUniversalAudioUrl(word);
-  if (AUDIO_POLICY_MODE === "backup-first") return backupUrl;
-  return audioCache[key] || backupUrl;
+  return getAudioPlaybackCandidates(word)[0] || "";
 }
 
 async function getReadyAudioUrl(word) {
   const key = String(word || "").trim().toLowerCase();
   if (!key) return "";
-  const embeddedCoreUrl = EMBEDDED_AUDIO_CORE_MAP[key] || EMBEDDED_AUDIO_CORE_MAP[sanitizeAudioFileName(word)];
-  if (embeddedCoreUrl) return embeddedCoreUrl;
-  const embeddedUrl = EMBEDDED_AUDIO_MAP[key] || EMBEDDED_AUDIO_MAP[sanitizeAudioFileName(word)];
-  if (embeddedUrl) return embeddedUrl;
   const localUrl = buildLocalAudioUrl(word);
   if (localUrl) return localUrl;
-  if (AUDIO_POLICY_MODE === "backup-first") return AUDIO_BACKUP_MAP[key] || buildUniversalAudioUrl(word);
-  return getDictionaryAudio(word);
+  const embeddedCoreUrl = EMBEDDED_AUDIO_CORE_MAP[key] || EMBEDDED_AUDIO_CORE_MAP[sanitizeAudioFileName(word)];
+  if (embeddedCoreUrl && !hasAudioUrlFailed(word, embeddedCoreUrl)) return embeddedCoreUrl;
+  const embeddedUrl = EMBEDDED_AUDIO_MAP[key] || EMBEDDED_AUDIO_MAP[sanitizeAudioFileName(word)];
+  if (embeddedUrl && !hasAudioUrlFailed(word, embeddedUrl)) return embeddedUrl;
+  const fallbackUrl = AUDIO_BACKUP_MAP[key] || buildUniversalAudioUrl(word);
+  if (AUDIO_POLICY_MODE === "backup-first") return hasAudioUrlFailed(word, fallbackUrl) ? "" : fallbackUrl;
+  const dictionaryUrl = await getDictionaryAudio(word);
+  if (dictionaryUrl && !hasAudioUrlFailed(word, dictionaryUrl)) return dictionaryUrl;
+  return hasAudioUrlFailed(word, fallbackUrl) ? "" : fallbackUrl;
 }
 
 function playMeaningSequence(group) {
@@ -2935,14 +2992,17 @@ async function playWordAndWait(word, token = 0) {
   if (token && token !== meaningSequenceToken) return;
   const key = String(word || "").trim().toLowerCase();
   const preparedAudio = audioPlayerCache[key];
-  const preparedSrc = preparedAudio?.currentSrc || preparedAudio?.src || "";
-  const cachedUrl = preparedSrc || getPlayableAudioUrl(getPreferredAudioUrl(word), key);
-  if (cachedUrl && typeof Audio === "function") {
-    const played = await playStandaloneAudioAndWait(cachedUrl, token, 5000);
+  const preparedUrl = preparedAudio?.dataset?.sourceUrl || preparedAudio?.currentSrc || preparedAudio?.src || "";
+  const candidates = getAudioPlaybackCandidates(word, preparedUrl);
+  for (const audioUrl of candidates) {
+    const playableUrl = getPlayableAudioUrl(audioUrl, key);
+    const played = await playStandaloneAudioAndWait(playableUrl, token, 5000);
     if (played) {
       prepareWordAudio(word);
       return;
     }
+    markAudioUrlFailed(word, audioUrl);
+    if (token && token !== meaningSequenceToken) return;
   }
   await speakWordWithBrowserAndWait(word, token);
   prepareWordAudio(word);
