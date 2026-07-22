@@ -44,10 +44,14 @@ const studyDate=()=>{let active=profile?.activeDate||today();return active<today
 const dateLabel=key=>{let d=parseDate(key),weeks="日一二三四五六";return `${d.getMonth()+1}月${d.getDate()}日 · 星期${weeks[d.getDay()]}`};
 const SESSION_KEY="wuxian-login-code";
 const DISABLED_LOGIN_CODES=new Set(["ZCQ9VU"]);
-const profileKey=code=>`${KEY}:${String(code||"").trim()}`;
+const isLegacyLoginCode=code=>/^[A-Za-z0-9]{6}$/.test(String(code||"").trim());
+const isNewLoginCode=code=>/^[A-Za-z0-9]{8}$/.test(String(code||"").trim());
+const normalizeLoginCode=code=>{const value=String(code||"").trim();return isLegacyLoginCode(value)?value.toUpperCase():value};
+const profileKey=code=>`${KEY}:${normalizeLoginCode(code)}`;
 const load=code=>{try{return JSON.parse(localStorage.getItem(profileKey(code)))}catch{return null}};
 const validLoginCode=code=>{code=String(code||"").trim();return !DISABLED_LOGIN_CODES.has(code)&&(window.LOGIN_CODES||[]).includes(code)};
-const cloudConfig=window.CLOUD_CONFIG||{},cloudEnabled=Boolean(cloudConfig.supabaseUrl&&cloudConfig.anonKey),VOCABULARY_SYSTEM_TYPE="vocabulary",VOCABULARY_PROFILE_ID="__profile__";
+const cloudConfig=window.CLOUD_CONFIG||{},newCloudEnabled=Boolean(cloudConfig.supabaseUrl&&cloudConfig.anonKey),legacyCloudEnabled=Boolean(cloudConfig.legacyFunctionUrl&&cloudConfig.anonKey),cloudEnabled=newCloudEnabled||legacyCloudEnabled,VOCABULARY_SYSTEM_TYPE="vocabulary",VOCABULARY_PROFILE_ID="__profile__";
+const cloudAvailableForCode=code=>isLegacyLoginCode(code)?legacyCloudEnabled:newCloudEnabled;
 async function callSupabaseRpc(name,payload){
   const response=await fetch(`${cloudConfig.supabaseUrl}/rest/v1/rpc/${name}`,{method:"POST",headers:{"Content-Type":"application/json",apikey:cloudConfig.anonKey,Authorization:`Bearer ${cloudConfig.anonKey}`},body:JSON.stringify(payload)});
   const text=await response.text();let result=null;
@@ -56,6 +60,12 @@ async function callSupabaseRpc(name,payload){
   return result;
 }
 async function cloudCall(action,code,extra={}){
+  if(isLegacyLoginCode(code)){
+    const response=await fetch(cloudConfig.legacyFunctionUrl,{method:"POST",headers:{"Content-Type":"application/json",apikey:cloudConfig.anonKey,Authorization:`Bearer ${cloudConfig.anonKey}`},body:JSON.stringify({action,code:normalizeLoginCode(code),...extra})});
+    const result=await response.json().catch(()=>({ok:false,message:"云端返回格式错误"}));
+    if(!response.ok||!result.ok)throw new Error(result.message||"旧版学习档案暂时无法读取");
+    return result;
+  }
   if(action==="login"){
     const result=await callSupabaseRpc("verify_access_code",{input_code:code,input_system_type:VOCABULARY_SYSTEM_TYPE});
     const account=Array.isArray(result)?result[0]:null;
@@ -73,7 +83,7 @@ async function cloudCall(action,code,extra={}){
   }
   throw new Error("未知云端操作");
 }
-let loginCode=(localStorage.getItem(SESSION_KEY)||"").trim(),profile=loginCode&&(cloudEnabled||validLoginCode(loginCode))?load(loginCode):null,syncTimer=null;
+let loginCode=normalizeLoginCode(localStorage.getItem(SESSION_KEY)||""),profile=loginCode&&(cloudAvailableForCode(loginCode)||validLoginCode(loginCode))?load(loginCode):null,syncTimer=null;
 if(profile&&![10,20,30,40].includes(profile.daily)){profile.daily=20;localStorage.setItem(profileKey(loginCode),JSON.stringify(profile))}
 let state={screen:profile?"home":"login",grade:profile?.grade||"初一",score:50,daily:profile?.daily||30,selected:profile?.selected||["高频"],queue:[],retryNames:[],scan:[],scanPool:[],scanOffset:0,idx:0,reveal:false,flip:false,noteReveal:false,meaningViewed:false,noteViewed:false,viewedCards:[],testIdx:0,testScore:0,testFeedback:"",testFeedbackType:"",testCorrectAnswer:"",testExplanation:"",testMistakes:[],reinforceIdx:0,reinforceCount:0,reinforceReady:false,reinforceTimer:null,memoryLayout:[],memoryAudio:null,followToken:0,reviewIdx:0,reviewQueue:[],reviewTotal:0,todayReviewMode:"en-cn",todayReviewRevealed:[]};
 const app=document.querySelector("#app");
@@ -81,7 +91,7 @@ function profileBase64(value){const bytes=new TextEncoder().encode(JSON.stringif
 function save(){
   if(!loginCode||!profile)return;
   localStorage.setItem(profileKey(loginCode),JSON.stringify(profile));
-  if(cloudEnabled){clearTimeout(syncTimer);syncTimer=setTimeout(()=>cloudCall("save",loginCode,{profile}).catch(()=>{}),250)}
+  if(cloudAvailableForCode(loginCode)){clearTimeout(syncTimer);syncTimer=setTimeout(()=>cloudCall("save",loginCode,{profile}).catch(()=>{}),250)}
 }
 const resumableScreens=["review","scan","study","test","reinforce","reinforceWord"];
 function checkpoint(){
@@ -177,7 +187,7 @@ function bindLogout(){
     const code=loginCode,data=profile;
     clearTimeout(syncTimer);clearInterval(state.reinforceTimer);state.followToken++;
     if(typeof stopMemoryPlayback==="function")stopMemoryPlayback();
-    if(cloudEnabled&&code&&data)cloudCall("save",code,{profile:data}).catch(()=>{});
+    if(cloudAvailableForCode(code)&&code&&data)cloudCall("save",code,{profile:data}).catch(()=>{});
     localStorage.removeItem(SESSION_KEY);loginCode="";profile=null;
     state.screen="login";state.queue=[];state.reviewQueue=[];state.testMistakes=[];
     render();
@@ -185,9 +195,9 @@ function bindLogout(){
 }
 
 function login(){
-  app.innerHTML=`<main class="login-page"><a class="login-home-link" href="../../index.html">返回首页，训练其他题型</a><div class="login-brand"><img src="../../assets/favicon.svg" alt=""><strong>新疆学生无限进步</strong><span>单词训练</span></div><div class="login-orbit"><svg viewBox="0 0 320 320" aria-hidden="true"><defs><path id="orbitPath" d="M 42,160 A 118,118 0 1,1 278,160 A 118,118 0 1,1 42,160"/></defs><text><textPath href="#orbitPath" startOffset="0%">相信你可以无限进步 ·</textPath></text><text><textPath href="#orbitPath" startOffset="33.33%">相信你可以无限进步 ·</textPath></text><text><textPath href="#orbitPath" startOffset="66.66%">相信你可以无限进步 ·</textPath></text></svg><img src="assets/earth-study.png" alt="词汇学习伙伴"></div><section class="login-box"><h1>中考词汇备考系统</h1><p>输入8位登录码，继续你的词汇旅程</p><label class="login-label" for="loginInput">登录码</label><input id="loginInput" maxlength="8" autocomplete="one-time-code" autocapitalize="none" spellcheck="false" placeholder="请输入8位登录码"><button id="loginButton">登录学习</button><small id="loginError" aria-live="polite"></small></section><footer class="login-credit">@新疆学生无限进步</footer></main>`;
+  app.innerHTML=`<main class="login-page"><a class="login-home-link" href="../../index.html">返回首页，训练其他题型</a><div class="login-brand"><img src="../../assets/favicon.svg" alt=""><strong>新疆学生无限进步</strong><span>单词训练</span></div><div class="login-orbit"><svg viewBox="0 0 320 320" aria-hidden="true"><defs><path id="orbitPath" d="M 42,160 A 118,118 0 1,1 278,160 A 118,118 0 1,1 42,160"/></defs><text><textPath href="#orbitPath" startOffset="0%">相信你可以无限进步 ·</textPath></text><text><textPath href="#orbitPath" startOffset="33.33%">相信你可以无限进步 ·</textPath></text><text><textPath href="#orbitPath" startOffset="66.66%">相信你可以无限进步 ·</textPath></text></svg><img src="assets/earth-study.png" alt="词汇学习伙伴"></div><section class="login-box"><h1>中考词汇备考系统</h1><p>支持原6位登录码和全站8位登录码</p><label class="login-label" for="loginInput">登录码</label><input id="loginInput" maxlength="8" autocomplete="one-time-code" autocapitalize="none" spellcheck="false" placeholder="请输入6位或8位登录码"><button id="loginButton">登录学习</button><small id="loginError" aria-live="polite"></small></section><footer class="login-credit">@新疆学生无限进步</footer></main>`;
   const input=document.querySelector("#loginInput"),button=document.querySelector("#loginButton");input.value=loginCode;
-  const submit=async()=>{const code=input.value.trim(),error=document.querySelector("#loginError");if(!/^[A-Za-z0-9]{8}$/.test(code)){error.textContent="请输入正确的8位登录码，并注意大小写";return}if(DISABLED_LOGIN_CODES.has(code)){error.textContent="该登录码已停用";return}button.disabled=true;button.textContent="正在读取学习档案…";error.textContent="";try{if(cloudEnabled)await cloudCall("login",code);else if(!validLoginCode(code))throw new Error("登录码无效");loginCode=code;localStorage.setItem(SESSION_KEY,code);if(cloudEnabled){const remote=await cloudCall("get",code);profile=remote.profile||load(code)}else profile=load(code);if(profile){localStorage.setItem(profileKey(code),JSON.stringify(profile));state.grade=profile.grade||"初一";state.daily=profile.daily||20;state.selected=profile.selected||["高频"];state.screen="home";restoreCheckpoint()}else state.screen="onboard";render()}catch(e){error.textContent=e.message||"暂时无法登录，请检查网络";button.disabled=false;button.textContent="登录学习"}};
+  const submit=async()=>{let code=input.value.trim(),error=document.querySelector("#loginError");if(!isLegacyLoginCode(code)&&!isNewLoginCode(code)){error.textContent="请输入正确的6位或8位登录码；8位码请注意大小写";return}code=normalizeLoginCode(code);if(DISABLED_LOGIN_CODES.has(code)){error.textContent="该登录码已停用";return}button.disabled=true;button.textContent="正在读取学习档案…";error.textContent="";try{if(cloudAvailableForCode(code))await cloudCall("login",code);else if(!validLoginCode(code))throw new Error("登录码无效");loginCode=code;localStorage.setItem(SESSION_KEY,code);if(cloudAvailableForCode(code)){const remote=await cloudCall("get",code);profile=remote.profile||load(code)}else profile=load(code);if(profile){localStorage.setItem(profileKey(code),JSON.stringify(profile));state.grade=profile.grade||"初一";state.daily=profile.daily||20;state.selected=profile.selected||["高频"];state.screen="home";restoreCheckpoint()}else state.screen="onboard";render()}catch(e){error.textContent=e.message||"暂时无法登录，请检查网络";button.disabled=false;button.textContent="登录学习"}};
   button.onclick=submit;input.onkeydown=e=>{if(e.key==="Enter")submit()};
 }
 
@@ -198,7 +208,7 @@ function onboard(){
   ${junior?`<div class="label section-gap">第二步 · 小升初学习建议</div><div class="advice"><b>从高频词开始</b><br>${rec.text}</div>`:`<div class="label section-gap">第二步 · 最近一次英语测试得分率</div><div class="score-row">${[50,70,85].map((n,i)=>`<button class="pill ${state.score===n?"active":""}" data-score="${n}">${["60% 以下","60%–80%","80% 以上"][i]}</button>`).join("")}</div><div class="advice"><b>学习建议</b><br>${rec.text}</div>`}
   <div class="label">主要背诵词库（可多选）</div><div class="library-grid">${libraryCards()}</div>
   <div class="label section-gap">每天学新数量</div><div class="daily-row">${dailyPills()}</div>
-  <aside class="onboard-tip"><div class="tip-title">🌼 温馨提示</div><p>每天按照下面的顺序完成学习：</p><ol><li><b>记忆复习</b>：先复习到期单词。</li><li><b>筛选新词</b>：只看英文，判断认识或不认识。</li><li><b>学习新词</b>：查看中文释义、固定搭配、词形变化等内容。</li><li><b>学后检测</b>：完成例句或固定搭配挖空题。</li><li><b>错词强化</b>：对检测错词进行15秒加强记忆。</li></ol><div class="tip-important">学新时，需要查看中文释义并点击完当前单词的所有知识卡片，才可以点击“记住了”或“还不熟”，进入下一词。</div></aside>
+  <aside class="onboard-tip"><div class="tip-title">🌼 温馨提示</div><p>每天按照下面的顺序完成学习：</p><ol><li><b>记忆复习</b>：先复习到期单词。</li><li><b>筛选新词</b>：只看英文，判断认识或不认识。</li><li><b>学习新词</b>：查看中文释义、固定搭配、词形变化等内容。</li><li><b>学后检测</b>：完成例句挖空、固定搭配挖空或汉语意思选择题。</li><li><b>错词强化</b>：对检测错词进行15秒加强记忆。</li></ol><div class="tip-important">学新时，需要查看中文释义并点击完当前单词的所有知识卡片，才可以点击“记住了”或“还不熟”，进入下一词。</div></aside>
   <button class="primary" id="create">建立档案，进入首页</button></section>`);
   bindSetup();
   document.querySelector("#create").onclick=()=>{profile={grade:state.grade,score:state.score,daily:state.daily,selected:state.selected,reviewMode:"ebbinghaus",libraryQueue:routeFromSelection(state.selected),activeDate:today(),streak:0,learned:{高频:0,中频:0,"2022新课标增加词汇":0,"时间/国家/节日/中国文化":0},completedWords:[],completedMigrated:true,history:{},dailyStats:{[today()]:{new:0,review:0,planNew:state.daily,planReview:0}},reviews:[],relearn:[],settingsHistory:[],todayNew:0,todayReview:0,lastDay:today()};save();state.screen="home";render()};
@@ -552,27 +562,63 @@ function blankLearnedForm(text,word,aliases=[]){
   const token=(text.match(/[A-Za-z]+(?:[-'][A-Za-z]+)*/g)||[]).find(t=>stem.length>=3&&t.toLowerCase().startsWith(stem));
   return token?{text:text.replace(token,"______"),answer:token}:null;
 }
+function strictPhraseBlank(text,x){
+  if(!text||/-/.test(x.w))return null;
+  const source=String(text),lower=source.toLowerCase(),matches=[],seen=new Set();
+  const forms=[x.w,...(x.aliases||[])].map(v=>String(v||"").trim()).filter(Boolean).sort((a,b)=>b.length-a.length);
+  for(const form of forms){
+    const target=form.toLowerCase();let from=0;
+    while(from<lower.length){
+      const at=lower.indexOf(target,from);if(at<0)break;
+      const before=source[at-1]||"",after=source[at+form.length]||"";
+      if(!/[A-Za-z]/.test(before)&&!/[A-Za-z]/.test(after)){
+        const key=`${at}:${form.length}`;if(!seen.has(key)){seen.add(key);matches.push({at,length:form.length})}
+      }
+      from=at+Math.max(1,form.length);
+    }
+  }
+  matches.sort((a,b)=>a.at-b.at||b.length-a.length);
+  const distinct=matches.filter((m,i,all)=>!all.some((other,j)=>j<i&&other.at<=m.at&&other.at+other.length>=m.at+m.length));
+  if(distinct.length!==1)return null;
+  const match=distinct[0],answer=source.slice(match.at,match.at+match.length),blanked=source.slice(0,match.at)+"______"+source.slice(match.at+match.length);
+  return (blanked.match(/______/g)||[]).length===1?{text:blanked,answer}:null;
+}
+function usablePhraseMeaning(text){
+  const chinese=(String(text||"").match(/[\u3400-\u9fff]/g)||[]).join("");
+  return chinese.length>=2&&!/暂无|补充搭配|中文意思/.test(String(text||""));
+}
+function meaningOptions(x){
+  const answer=shortCn(x),result=[],seen=new Set([answer]);
+  const add=word=>{const meaning=shortCn(word);if(meaning&&meaning.length<=24&&!seen.has(meaning)){seen.add(meaning);result.push(meaning)}};
+  distractors(x).map(wordByName).filter(Boolean).forEach(add);
+  const samePos=wordPos(x)[0];
+  Object.values(banks).flat().filter(word=>word.w!==x.w&&(!samePos||wordPos(word).includes(samePos))).forEach(add);
+  if(result.length<3)Object.values(banks).flat().filter(word=>word.w!==x.w).forEach(add);
+  return [answer,...result.slice(0,3)];
+}
+function meaningQuestion(x){
+  const answer=shortCn(x);
+  return {text:x.w,answer,cn:"",kind:"选择汉语意思",mode:"meaning",options:meaningOptions(x)};
+}
 function testQuestion(x){
+  if(/-/.test(x.w))return meaningQuestion(x);
   if(x.exampleEn){
     const blank=blankLearnedForm(x.exampleEn,x.w,x.aliases);
     if(blank)return {...blank,cn:x.exampleCn||x.cn,kind:"例句挖空"};
   }
   const phrases=learningCards(x).filter(c=>c.kind==="phrase");
   for(const phrase of phrases){
-    const blank=blankLearnedForm(phrase.en,x.w,x.aliases);
-    if(blank)return {...blank,cn:phrase.cn,kind:"固定搭配挖空"};
+    if(!usablePhraseMeaning(phrase.cn))continue;
+    const blank=strictPhraseBlank(phrase.en,x);
+    if(blank)return {...blank,cn:phrase.cn,kind:"固定搭配挖空",mode:"cloze"};
   }
-  if(phrases.length){
-    const phrase=phrases[0],token=(phrase.en.match(/[A-Za-z]+(?:[-'][A-Za-z]+)*/)||[])[0];
-    if(token)return {text:phrase.en.replace(token,"______"),answer:token,cn:phrase.cn,kind:"固定搭配挖空"};
-  }
-  return {text:`Please remember the vocabulary item "______".`,answer:x.w,cn:x.cn,kind:"词义检测"};
+  return meaningQuestion(x);
 }
 function clozeSentence(x){return testQuestion(x).text}
 function test(){
   if(state.testIdx>=state.queue.length){finalizeNewLearning();return state.testMistakes.length?reinforceIntro():complete()}
-  const x=state.queue[state.testIdx],question=testQuestion(x),raw=[...new Set([question.answer,...distractors(x).filter(w=>w.toLowerCase()!==question.answer.toLowerCase())])].slice(0,4),shift=state.testIdx%raw.length,opts=[...raw.slice(shift),...raw.slice(0,shift)];
-  app.innerHTML=shell(`<section class="panel quiz"><div class="study-meta"><span>学习检测 ${state.testIdx+1} / ${state.queue.length}</span><span>${question.kind}</span></div>${progressBar((state.testIdx+1)/state.queue.length*100)}<div class="quiz-body"><div class="label">选择最合适的英文单词补全内容</div><h2 class="cloze-sentence">${question.text}</h2><p class="sentence-cn">${question.cn}</p><div class="options word-options">${opts.map(o=>`<button class="${state.testCorrectAnswer&&o===state.testCorrectAnswer?"correct-flash":""}" data-answer="${o===question.answer}">${o}</button>`).join("")}</div><div class="feedback ${state.testFeedbackType}">${state.testFeedback}</div>${state.testExplanation?`<div class="answer-explanation">${state.testExplanation}</div>`:""}</div></section>`,true);bindHome();
+  const x=state.queue[state.testIdx],question=testQuestion(x),baseOptions=question.mode==="meaning"?question.options:[question.answer,...distractors(x).filter(w=>w.toLowerCase()!==question.answer.toLowerCase())],raw=[...new Set(baseOptions)].slice(0,4),shift=state.testIdx%raw.length,opts=[...raw.slice(shift),...raw.slice(0,shift)],label=question.mode==="meaning"?"选择最合适的汉语意思":"选择最合适的英文单词补全内容";
+  app.innerHTML=shell(`<section class="panel quiz"><div class="study-meta"><span>学习检测 ${state.testIdx+1} / ${state.queue.length}</span><span>${question.kind}</span></div>${progressBar((state.testIdx+1)/state.queue.length*100)}<div class="quiz-body"><div class="label">${label}</div><h2 class="cloze-sentence">${question.text}</h2>${question.cn?`<p class="sentence-cn">${question.cn}</p>`:""}<div class="options word-options ${question.mode==="meaning"?"meaning-options":""}">${opts.map(o=>`<button class="${state.testCorrectAnswer&&o===state.testCorrectAnswer?"correct-flash":""}" data-answer="${o===question.answer}">${o}</button>`).join("")}</div><div class="feedback ${state.testFeedbackType}">${state.testFeedback}</div>${state.testExplanation?`<div class="answer-explanation">${state.testExplanation}</div>`:""}</div></section>`,true);bindHome();
   document.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>{if(state.testCorrectAnswer)return;grade(b.dataset.answer==="true",x,question)});
 }
 function scheduleRetry(word){
@@ -585,7 +631,7 @@ function scheduleRetry(word){
   profile.dailyStats[due]=tomorrow;
   save();
 }
-function grade(ok,x,question){if(ok)state.testScore++;else{scheduleRetry(x.w);if(!state.testMistakes.some(v=>v.w===x.w))state.testMistakes.push(x)}state.testFeedbackType=ok?"correct":"wrong";state.testCorrectAnswer=ok?"":question.answer;state.testExplanation=ok?"":`解析：本题考查 ${x.w}，意思是“${shortCn(x)}”。结合中文释义和句子空格，应选择 ${question.answer}。`;state.testFeedback=ok?"✓ 回答正确":`✗ 回答错误，正确答案是：${question.answer}`;setTimeout(()=>{state.testIdx++;state.testFeedback="";state.testFeedbackType="";state.testCorrectAnswer="";state.testExplanation="";checkpoint();test()},ok?650:3000);test()}
+function grade(ok,x,question){if(ok)state.testScore++;else{scheduleRetry(x.w);if(!state.testMistakes.some(v=>v.w===x.w))state.testMistakes.push(x)}state.testFeedbackType=ok?"correct":"wrong";state.testCorrectAnswer=ok?"":question.answer;state.testExplanation=ok?"":question.mode==="meaning"?`解析：${x.w} 最合适的中文意思是“${question.answer}”。`:`解析：本题考查 ${x.w}，意思是“${shortCn(x)}”。结合中文释义和句子空格，应选择 ${question.answer}。`;state.testFeedback=ok?"✓ 回答正确":`✗ 回答错误，正确答案是：${question.answer}`;setTimeout(()=>{state.testIdx++;state.testFeedback="";state.testFeedbackType="";state.testCorrectAnswer="";state.testExplanation="";checkpoint();test()},ok?650:3000);test()}
 function shortCn(x){return (x.cn||"").replace(/^(?:adj|adv|prep|conj|pron|num|v|n|modal|det)\.\s*/i,"").split(/[；;]/)[0].trim()}
 async function speakMemory(x,count=0){
   const url=audioCache.get(x.w)||"";let played=false;if(!url)warmAudio(x.w);
@@ -652,7 +698,7 @@ async function boot(){
   if(!loginCode){state.screen="login";render();return}
   if(DISABLED_LOGIN_CODES.has(loginCode)){loginCode="";profile=null;localStorage.removeItem(SESSION_KEY);state.screen="login";render();return}
   try{
-    if(cloudEnabled){await cloudCall("login",loginCode);const remote=await cloudCall("get",loginCode);profile=remote.profile||load(loginCode)}
+    if(cloudAvailableForCode(loginCode)){await cloudCall("login",loginCode);const remote=await cloudCall("get",loginCode);profile=remote.profile||load(loginCode)}
     else{if(!validLoginCode(loginCode))throw new Error("登录码无效");profile=load(loginCode)}
     if(profile){localStorage.setItem(profileKey(loginCode),JSON.stringify(profile));state.grade=profile.grade||"初一";state.daily=profile.daily||20;state.selected=profile.selected||["高频"];state.screen="home";restoreCheckpoint()}else state.screen="onboard";
   }catch{loginCode="";profile=null;localStorage.removeItem(SESSION_KEY);state.screen="login"}
