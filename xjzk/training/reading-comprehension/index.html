@@ -372,6 +372,18 @@
       border-color: #f1aaa8;
       background: #fff0f0;
     }
+    .compare-status {
+      padding: 10px 12px;
+      border: 1px solid #d8c8ef;
+      background: #f8f4ff;
+      color: #5f477d;
+      line-height: 1.7;
+    }
+    .action:disabled,
+    .compare-answer:disabled {
+      cursor: not-allowed;
+      opacity: .68;
+    }
     .sentence-compare {
       display: grid;
       gap: 8px;
@@ -1195,7 +1207,6 @@
       $("chosenKeywordText").textContent = "已划关键词：暂未选择";
       $("answerSentence").className = "answer-sentence";
       $("answerSentence").innerHTML = "";
-      renderCompareBox();
       $("feedback").className = "feedback";
       $("feedback").innerHTML = "";
       if (useQuickCompare()) {
@@ -1204,6 +1215,7 @@
       } else {
         $("options").innerHTML = q.options.map(opt => `<button class="option" onclick="chooseAnswer('${optionKey(opt)}', this)">${escapeHtml(opt)}</button>`).join("");
       }
+      renderCompareBox();
     }
 
     function renderStepCopy(q) {
@@ -1306,30 +1318,15 @@
       const submitted = Boolean(state.answers[answerKey(q)]);
       $("compareBox").className = "compare show";
       $("compareBox").innerHTML = `
-        ${q.options.map((opt, index) => {
+        ${q.options.map(opt => {
           const key = optionKey(opt);
           const picked = state.chosenAnswer === key;
-          const correct = key === q.answer;
-          return `<button class="compare-answer ${picked ? "selected" : ""} ${submitted ? (correct ? "correct" : "wrong") : ""}" onclick="chooseQuickAnswer('${key}')">
-            ${escapeHtml(opt)}
-            ${submitted ? `<div class="trap-label ${correct ? "good" : "bad"}">${correct ? "匹配答案句" : optionCompareInfo(q, opt, index).label}</div>` : ""}
-          </button>`;
+          return `<button class="compare-answer ${picked ? "selected" : ""}" onclick="chooseQuickAnswer('${key}')" ${submitted ? "disabled" : ""}>${escapeHtml(opt)}</button>`;
         }).join("")}
         <div class="compare-actions">
-          <button class="action" onclick="submitQuickCompare()">${submitted ? "已完成本题" : "提交判断"}</button>
-          ${submitted ? `<button class="action secondary" onclick="toggleTraps()">${state.trapsVisible ? "收起完整解析" : "查看完整解析"}</button>` : ""}
+          <button class="action" onclick="submitQuickCompare()" ${submitted ? "disabled" : ""}>${submitted ? "选择已提交" : "确认选择"}</button>
         </div>
-        ${submitted ? `<div class="compare-feedback show"><strong>${state.chosenAnswer === q.answer ? "判断正确" : "再看答案句"}：${q.answer}</strong><br>${escapeHtml(q.explanation)}<br>关键依据：${escapeHtml(locatedEvidenceText(q))}</div>` : ""}
-        ${state.trapsVisible || submitted ? q.options.map((opt, index) => {
-          const info = optionCompareInfo(q, opt, index);
-          const key = optionKey(opt);
-          const label = key === q.answer ? "匹配答案句" : info.label;
-          return `<div class="compare-row">
-            <div>${escapeHtml(opt)}</div>
-            <div class="trap-label ${key === q.answer ? "good" : "bad"}">${escapeHtml(label)}</div>
-            <div class="compare-feedback show">${highlightCompareTerms(info.feedback)}</div>
-          </div>`;
-        }).join("") : ""}
+        ${submitted ? `<div class="compare-status">你已完成选择。正确答案和各选项判断依据请在第 4 步“复盘”中查看。</div>` : `<div class="hint">先逐项对照原文证据，再选择你认为最合适的答案。选择前不会显示正确项。</div>`}
       `;
       renderQuickReview(q);
     }
@@ -1351,9 +1348,9 @@
       const correct = state.chosenAnswer === q.answer;
       state.answers[answerKey(q)] = { correct, chosen: state.chosenAnswer };
       saveReadingProgress(answerKey(q), state.answers[answerKey(q)]);
-      state.trapsVisible = true;
-      $("feedback").className = `feedback show ${correct ? "good" : "bad"}`;
-      $("feedback").innerHTML = `<strong>${correct ? "判断正确" : "再看答案句"}：${q.answer}</strong><br>${escapeHtml(q.explanation)}`;
+      state.trapsVisible = false;
+      $("feedback").className = "feedback";
+      $("feedback").innerHTML = "";
       renderCompareBox();
       renderTabs();
       renderStats();
@@ -1367,13 +1364,21 @@
     function renderQuickReview(q) {
       const saved = state.answers[answerKey(q)];
       if (!useQuickCompare()) return;
+      $("submitBtn").classList.add("hidden");
+      $("nextBtn").disabled = !saved;
       if (!saved) {
         $("finalStem").textContent = "复盘：先在第 3 步完成判断，提交后这里会显示答案和解析。";
         $("options").innerHTML = "";
         return;
       }
-      $("finalStem").textContent = `复盘：正确答案 ${q.answer}`;
-      $("options").innerHTML = `<div class="feedback show ${saved.correct ? "good" : "bad"}">${escapeHtml(q.explanation)}<br>关键依据：${escapeHtml(locatedEvidenceText(q))}</div>`;
+      $("finalStem").textContent = `复盘：你选择 ${saved.chosen}，正确答案 ${q.answer}`;
+      $("options").innerHTML = `
+        <div class="feedback show ${saved.correct ? "good" : "bad"}"><strong>${saved.correct ? "判断正确" : "这一次没有选对"}</strong><br>${escapeHtml(q.explanation)}<br>关键依据：${escapeHtml(locatedEvidenceText(q))}</div>
+        ${q.options.map((opt, index) => {
+          const key = optionKey(opt), info = optionCompareInfo(q, opt, index), correct = key === q.answer;
+          return `<div class="compare-row"><div>${escapeHtml(opt)}</div><div class="trap-label ${correct ? "good" : "bad"}">${escapeHtml(correct ? "匹配答案句" : info.label)}</div><div class="compare-feedback show">${highlightCompareTerms(info.feedback)}</div></div>`;
+        }).join("")}
+      `;
     }
 
     function renderACompareBox(q) {
