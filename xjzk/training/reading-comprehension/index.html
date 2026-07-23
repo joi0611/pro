@@ -835,7 +835,7 @@
         ]
       }];
 
-    const state = { view: "home", catalogLetter: "", passage: 0, question: 0, chosenWords: [], chosenAnswer: "", located: false, compared: false, keywordsConfirmed: false, answers: {} };
+    const state = { view: "home", catalogLetter: "", passage: 0, question: 0, chosenWords: [], chosenAnswer: "", attemptSubmitted: false, located: false, compared: false, keywordsConfirmed: false, answers: {} };
     const SYSTEM_TYPE = "reading-comprehension";
     const LOGIN_STORAGE_KEY = "reading_comprehension_access_code_20260716";
     const SUPABASE_CONFIG = {
@@ -1190,7 +1190,8 @@
       const p = currentPassage();
       const q = currentQuestion();
       state.chosenWords = [];
-      state.chosenAnswer = state.answers[answerKey(q)]?.chosen || "";
+      state.chosenAnswer = "";
+      state.attemptSubmitted = false;
       state.located = false;
       state.compared = false;
       state.keywordsConfirmed = false;
@@ -1315,7 +1316,7 @@
     }
 
     function renderQuickCompareBox(q) {
-      const submitted = Boolean(state.answers[answerKey(q)]);
+      const submitted = state.attemptSubmitted;
       $("compareBox").className = "compare show";
       $("compareBox").innerHTML = `
         ${q.options.map(opt => {
@@ -1332,14 +1333,14 @@
     }
 
     function chooseQuickAnswer(value) {
-      if (state.answers[answerKey(currentQuestion())]) return;
+      if (state.attemptSubmitted) return;
       state.chosenAnswer = value;
       renderCompareBox();
     }
 
     function submitQuickCompare() {
       const q = currentQuestion();
-      if (state.answers[answerKey(q)]) return;
+      if (state.attemptSubmitted) return;
       if (!state.chosenAnswer) {
         $("feedback").className = "feedback show bad";
         $("feedback").innerHTML = "请先在第 3 步选择一个你判断的最优答案。";
@@ -1347,6 +1348,7 @@
       }
       const correct = state.chosenAnswer === q.answer;
       state.answers[answerKey(q)] = { correct, chosen: state.chosenAnswer };
+      state.attemptSubmitted = true;
       saveReadingProgress(answerKey(q), state.answers[answerKey(q)]);
       state.trapsVisible = false;
       $("feedback").className = "feedback";
@@ -1362,7 +1364,7 @@
     }
 
     function renderQuickReview(q) {
-      const saved = state.answers[answerKey(q)];
+      const saved = state.attemptSubmitted ? state.answers[answerKey(q)] : null;
       if (!useQuickCompare()) return;
       $("submitBtn").classList.add("hidden");
       $("nextBtn").disabled = !saved;
