@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>前三单元 50 词乱序检测</title>
+  <style>
+    :root { --ink:#241735; --muted:#746884; --purple:#5c35a2; --purple-dark:#3f236d; --yellow:#ffd766; --line:#eadfb9; --panel:#fffdf7; --good:#187a4b; --bad:#b42318; --shadow:0 18px 42px rgba(63,35,109,.16); }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; font-family:"Segoe UI","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:radial-gradient(circle at top left,rgba(255,215,102,.42),transparent 34%),linear-gradient(135deg,#fff8df 0%,#f4eaff 48%,#fff3c6 100%); }
+    button { font:inherit; }
+    main { width:min(960px,100%); margin:0 auto; padding:24px; }
+    .topbar { display:flex; justify-content:space-between; gap:14px; align-items:center; flex-wrap:wrap; margin-bottom:18px; }
+    h1 { margin:0; font-size:clamp(34px,7vw,64px); line-height:1; color:var(--purple-dark); letter-spacing:0; }
+    p { margin:6px 0 0; color:var(--muted); line-height:1.55; }
+    .home { color:var(--purple-dark); text-decoration:none; font-weight:900; background:rgba(255,253,247,.88); border:1px solid var(--line); border-radius:7px; padding:10px 12px; }
+    .panel { background:rgba(255,253,247,.96); border:1px solid var(--line); border-radius:8px; box-shadow:var(--shadow); padding:22px; }
+    .progress { display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center; margin-bottom:16px; }
+    .meter { height:12px; background:#efe4bd; border-radius:999px; overflow:hidden; }
+    .meter span { display:block; height:100%; width:0%; background:var(--purple); transition:width .2s ease; }
+    .count { color:var(--muted); font-weight:900; white-space:nowrap; }
+    .word-head { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; border-bottom:1px solid var(--line); padding-bottom:16px; margin-bottom:18px; }
+    .word { font-size:clamp(48px,11vw,96px); color:var(--purple-dark); font-weight:950; line-height:.95; overflow-wrap:anywhere; }
+    .tag { display:inline-flex; margin-top:10px; padding:5px 10px; border-radius:999px; background:#fff0b8; color:#805400; font-weight:900; }
+    .speak { border:0; width:58px; height:58px; border-radius:50%; background:var(--yellow); color:var(--purple-dark); font-size:25px; cursor:pointer; box-shadow:0 14px 28px rgba(111,67,192,.25); }
+    .options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .option { min-height:62px; border:1px solid #d9c47c; background:white; border-radius:8px; padding:14px 16px; text-align:left; color:var(--purple-dark); font-weight:900; cursor:pointer; font-size:20px; }
+    .option.correct { border-color:var(--good); background:#dff7e9; color:var(--good); }
+    .option.wrong { border-color:var(--bad); background:#fee4e2; color:var(--bad); }
+    .status { min-height:36px; margin-top:14px; color:var(--muted); font-weight:900; }
+    .hidden { display:none !important; }
+    .result { display:grid; gap:14px; }
+    .score { font-size:clamp(42px,10vw,84px); line-height:1; color:var(--purple-dark); font-weight:950; }
+    .feedback { font-size:20px; color:var(--ink); font-weight:850; }
+    .missed { display:grid; gap:8px; margin-top:6px; }
+    .miss { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:11px 12px; border:1px solid var(--line); border-radius:7px; background:#fffefa; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    .btn { border:1px solid #d9c47c; background:var(--panel); color:var(--purple-dark); border-radius:7px; min-height:44px; padding:0 15px; cursor:pointer; font-weight:900; }
+    .btn.primary { border-color:var(--purple); background:var(--purple); color:white; }
+    @media (max-width:640px) { main { padding:16px; } .options { grid-template-columns:1fr; } .word-head { align-items:center; } .miss { display:grid; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="topbar">
+      <div><h1>前三单元乱序检测</h1><p>从 UNIT1-UNIT3 随机抽 50 题。看英文，选中文。</p></div>
+      <a class="home" href="index.html">返回首页</a>
+    </header>
+    <section class="panel" id="quizPanel">
+      <div class="progress"><div class="meter" aria-hidden="true"><span id="bar"></span></div><div class="count" id="countText">1 / 50</div></div>
+      <div class="word-head"><div><div class="word" id="wordText">word</div><span class="tag" id="unitText">UNIT</span></div><button class="speak" id="speakBtn" title="播放单词" aria-label="播放单词">🔊</button></div>
+      <div class="options" id="options"></div>
+      <div class="status" id="statusText">请选择中文意思。</div>
+    </section>
+    <section class="panel result hidden" id="resultPanel">
+      <div class="score" id="scoreText">0 / 50</div>
+      <div class="feedback" id="feedbackText"></div>
+      <div class="actions"><button class="btn primary" id="restartBtn">重新抽 50 题</button><a class="btn" href="index.html" style="display:inline-grid;place-items:center;text-decoration:none;">返回首页</a></div>
+      <div id="missedBlock"><h2>错题回看</h2><div class="missed" id="missedList"></div></div>
+    </section>
+  </main>
+<script>
+const allWords = [
+  {
+    "id": "UNIT1-1",
+    "unit": "UNIT1",
+    "number": 1,
+    "word": "burn",
+    "chinese": "着火",
+    "definition": "to be on fire",
+    "example": "The paper is burning.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/burn-us.mp3",
+    "chineseAudio": "audio/zh-burn.wav"
+  },
+  {
+    "id": "UNIT1-2",
+    "unit": "UNIT1",
+    "number": 2,
+    "word": "exchange",
+    "chinese": "交换",
+    "definition": "to give something and get something at the same time",
+    "example": "The gentlemen exchange phone numbers.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/exchange-us.mp3",
+    "chineseAudio": "audio/zh-exchange.wav"
+  },
+  {
+    "id": "UNIT1-3",
+    "unit": "UNIT1",
+    "number": 3,
+    "word": "introduce",
+    "chinese": "介绍",
+    "definition": "to make a person known to another person",
+    "example": "Jane's husband introduces her to his handsome friend.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/introduce-us.mp3",
+    "chineseAudio": "audio/zh-introduce.wav"
+  },
+  {
+    "id": "UNIT1-4",
+    "unit": "UNIT1",
+    "number": 4,
+    "word": "offer",
+    "chinese": "给",
+    "definition": "to try to give or do something to help someone",
+    "example": "Paul offered the man money, but he was not interested.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/offer-us.mp3",
+    "chineseAudio": "audio/zh-offer.wav"
+  },
+  {
+    "id": "UNIT1-5",
+    "unit": "UNIT1",
+    "number": 5,
+    "word": "pardon",
+    "chinese": "原谅",
+    "definition": "to forgive, often used with me",
+    "example": "\"Pardon me. Can you tell me how to get to the subway?\"",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/pardon-us.mp3",
+    "chineseAudio": "audio/zh-pardon.wav"
+  },
+  {
+    "id": "UNIT1-6",
+    "unit": "UNIT1",
+    "number": 6,
+    "word": "popular",
+    "chinese": "受欢迎的",
+    "definition": "liked by many people",
+    "example": "This busy street is a popular place to shop.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/popular-us.mp3",
+    "chineseAudio": "audio/zh-popular.wav"
+  },
+  {
+    "id": "UNIT1-7",
+    "unit": "UNIT1",
+    "number": 7,
+    "word": "prepare",
+    "chinese": "准备",
+    "definition": "to make",
+    "example": "The cooks prepare a delicious meal in the restaurant.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/prepare-us.mp3",
+    "chineseAudio": "audio/zh-prepare.wav"
+  },
+  {
+    "id": "UNIT1-8",
+    "unit": "UNIT1",
+    "number": 8,
+    "word": "reason",
+    "chinese": "理由",
+    "definition": "something that says why something was or was not done",
+    "example": "He did not have a reason for arriving late at the theater.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/reason-us.mp3",
+    "chineseAudio": "audio/zh-reason.wav"
+  },
+  {
+    "id": "UNIT1-9",
+    "unit": "UNIT1",
+    "number": 9,
+    "word": "shake",
+    "chinese": "摇动",
+    "definition": "to hold and move up and down",
+    "example": "The woman shakes Sue's hand and congratulates her.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/shake-us.mp3",
+    "chineseAudio": "audio/zh-shake.wav"
+  },
+  {
+    "id": "UNIT1-10",
+    "unit": "UNIT1",
+    "number": 10,
+    "word": "shy",
+    "chinese": "害羞的",
+    "definition": "quiet and not wanting to talk to others",
+    "example": "The young boy is very shy.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/shy-us.mp3",
+    "chineseAudio": "audio/zh-shy.wav"
+  },
+  {
+    "id": "UNIT1-11",
+    "unit": "UNIT1",
+    "number": 11,
+    "word": "bell",
+    "chinese": "铃",
+    "definition": "something that makes a ringing sound when hit",
+    "example": "The bell rings when the gate opens.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/bell-us.mp3",
+    "chineseAudio": "audio/zh-bell.wav"
+  },
+  {
+    "id": "UNIT1-12",
+    "unit": "UNIT1",
+    "number": 12,
+    "word": "block",
+    "chinese": "街区",
+    "definition": "a part of a city with streets on all four sides",
+    "example": "There are many houses on each block.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/block-au.mp3",
+    "chineseAudio": "audio/zh-block.wav"
+  },
+  {
+    "id": "UNIT1-13",
+    "unit": "UNIT1",
+    "number": 13,
+    "word": "borrow",
+    "chinese": "借",
+    "definition": "to take and use something belonging to another person",
+    "example": "Thank you for letting me borrow your math book this week.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/borrow-us.mp3",
+    "chineseAudio": "audio/zh-borrow.wav"
+  },
+  {
+    "id": "UNIT1-14",
+    "unit": "UNIT1",
+    "number": 14,
+    "word": "bowl",
+    "chinese": "碗",
+    "definition": "a dish with tall sides",
+    "example": "I had a big bowl of soup for lunch.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/bowl-us.mp3",
+    "chineseAudio": "audio/zh-bowl.wav"
+  },
+  {
+    "id": "UNIT1-15",
+    "unit": "UNIT1",
+    "number": 15,
+    "word": "confuse",
+    "chinese": "使糊涂",
+    "definition": "to make it difficult for someone to understand",
+    "example": "Math confuses Scott.",
+    "englishAudio": "audio/confuse.wav",
+    "chineseAudio": "audio/zh-confuse.wav"
+  },
+  {
+    "id": "UNIT1-16",
+    "unit": "UNIT1",
+    "number": 16,
+    "word": "knock",
+    "chinese": "敲",
+    "definition": "to hit something with part of your hand",
+    "example": "She continued to knock on the door.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/knock-au.mp3",
+    "chineseAudio": "audio/zh-knock.wav"
+  },
+  {
+    "id": "UNIT1-17",
+    "unit": "UNIT1",
+    "number": 17,
+    "word": "result",
+    "chinese": "结果",
+    "definition": "an exam grade; something that is caused by another",
+    "example": "John's doctor was very happy with his test results.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/result-us.mp3",
+    "chineseAudio": "audio/zh-result.wav"
+  },
+  {
+    "id": "UNIT1-18",
+    "unit": "UNIT1",
+    "number": 18,
+    "word": "seem",
+    "chinese": "好像",
+    "definition": "to look to be",
+    "example": "They seem to be enjoying the funny movie tonight.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/seem-us.mp3",
+    "chineseAudio": "audio/zh-seem.wav"
+  },
+  {
+    "id": "UNIT1-19",
+    "unit": "UNIT1",
+    "number": 19,
+    "word": "smart",
+    "chinese": "聪明的",
+    "definition": "good at learning or thinking about things",
+    "example": "Chris is a very smart boy.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/smart-us.mp3",
+    "chineseAudio": "audio/zh-smart.wav"
+  },
+  {
+    "id": "UNIT1-20",
+    "unit": "UNIT1",
+    "number": 20,
+    "word": "subject",
+    "chinese": "科目",
+    "definition": "something you study in school",
+    "example": "English is the most popular subject at my school.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/subject-1-us.mp3",
+    "chineseAudio": "audio/zh-subject.wav"
+  },
+  {
+    "id": "UNIT2-1",
+    "unit": "UNIT2",
+    "number": 501,
+    "word": "active",
+    "chinese": "活跃的",
+    "definition": "doing many things",
+    "example": "Children are very active and like to run and jump.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/active-us.mp3",
+    "chineseAudio": "audio/unit2-zh-active.wav"
+  },
+  {
+    "id": "UNIT2-2",
+    "unit": "UNIT2",
+    "number": 502,
+    "word": "believe",
+    "chinese": "相信",
+    "definition": "to think that something is true",
+    "example": "He believes he is a smart boy.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/believe-us.mp3",
+    "chineseAudio": "audio/unit2-zh-believe.wav"
+  },
+  {
+    "id": "UNIT2-3",
+    "unit": "UNIT2",
+    "number": 503,
+    "word": "environment",
+    "chinese": "环境",
+    "definition": "all of the things found in an area, indoors or outdoors",
+    "example": "Fresh air is a good reason to live in a clean environment.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/environment-uk.mp3",
+    "chineseAudio": "audio/unit2-zh-environment.wav"
+  },
+  {
+    "id": "UNIT2-4",
+    "unit": "UNIT2",
+    "number": 504,
+    "word": "forest",
+    "chinese": "森林",
+    "definition": "a big area of trees",
+    "example": "The forest seems to be burning.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/forest-uk.mp3",
+    "chineseAudio": "audio/unit2-zh-forest.wav"
+  },
+  {
+    "id": "UNIT2-5",
+    "unit": "UNIT2",
+    "number": 505,
+    "word": "human",
+    "chinese": "人",
+    "definition": "a person",
+    "example": "The old bridge was built by humans a long time ago.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/human-us.mp3",
+    "chineseAudio": "audio/unit2-zh-human.wav"
+  },
+  {
+    "id": "UNIT2-6",
+    "unit": "UNIT2",
+    "number": 506,
+    "word": "hunt",
+    "chinese": "打猎",
+    "definition": "to look for animals to kill",
+    "example": "Some people in North America like to hunt.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/hunt-us.mp3",
+    "chineseAudio": "audio/unit2-zh-hunt.wav"
+  },
+  {
+    "id": "UNIT2-7",
+    "unit": "UNIT2",
+    "number": 507,
+    "word": "path",
+    "chinese": "路",
+    "definition": "a way to go from one place to another",
+    "example": "Both paths take you to the gate of the park.",
+    "englishAudio": "audio/unit2-path.wav",
+    "chineseAudio": "audio/unit2-zh-path.wav"
+  },
+  {
+    "id": "UNIT2-8",
+    "unit": "UNIT2",
+    "number": 508,
+    "word": "safe",
+    "chinese": "安全的",
+    "definition": "not dangerous",
+    "example": "The gentleman stands in a safe place away from the subway.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/safe-us.mp3",
+    "chineseAudio": "audio/unit2-zh-safe.wav"
+  },
+  {
+    "id": "UNIT2-9",
+    "unit": "UNIT2",
+    "number": 509,
+    "word": "service",
+    "chinese": "服务",
+    "definition": "the job of helping visitors at a place like a restaurant",
+    "example": "The new restaurant has delicious food and great service.",
+    "englishAudio": "audio/unit2-service.wav",
+    "chineseAudio": "audio/unit2-zh-service.wav"
+  },
+  {
+    "id": "UNIT2-10",
+    "unit": "UNIT2",
+    "number": 510,
+    "word": "wild",
+    "chinese": "野生的",
+    "definition": "living or growing without humans' help",
+    "example": "Africa is a popular place to see wild animals.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/wild-us.mp3",
+    "chineseAudio": "audio/unit2-zh-wild.wav"
+  },
+  {
+    "id": "UNIT2-11",
+    "unit": "UNIT2",
+    "number": 511,
+    "word": "area",
+    "chinese": "区域",
+    "definition": "a part of a larger place",
+    "example": "The people living in this area are very poor.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/area-us.mp3",
+    "chineseAudio": "audio/unit2-zh-area.wav"
+  },
+  {
+    "id": "UNIT2-12",
+    "unit": "UNIT2",
+    "number": 512,
+    "word": "choice",
+    "chinese": "选择",
+    "definition": "something you can choose",
+    "example": "It is your choice. Do you want to go north or south?",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/choice-us.mp3",
+    "chineseAudio": "audio/unit2-zh-choice.wav"
+  },
+  {
+    "id": "UNIT2-13",
+    "unit": "UNIT2",
+    "number": 513,
+    "word": "enter",
+    "chinese": "进入",
+    "definition": "to go in",
+    "example": "She enters through the front gate.",
+    "englishAudio": "audio/unit2-enter.wav",
+    "chineseAudio": "audio/unit2-zh-enter.wav"
+  },
+  {
+    "id": "UNIT2-14",
+    "unit": "UNIT2",
+    "number": 514,
+    "word": "important",
+    "chinese": "重要的",
+    "definition": "having great meaning",
+    "example": "The king is the most important piece in the game.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/important-us.mp3",
+    "chineseAudio": "audio/unit2-zh-important.wav"
+  },
+  {
+    "id": "UNIT2-15",
+    "unit": "UNIT2",
+    "number": 515,
+    "word": "lie",
+    "chinese": "躺",
+    "definition": "to be on your back on the ground or in a bed",
+    "example": "She lies in the grass and looks up at the sky.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/lie-us.mp3",
+    "chineseAudio": "audio/unit2-zh-lie.wav"
+  },
+  {
+    "id": "UNIT2-16",
+    "unit": "UNIT2",
+    "number": 516,
+    "word": "mad",
+    "chinese": "生气的",
+    "definition": "angry",
+    "example": "The woman is mad because someone hit her car.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/mad-us.mp3",
+    "chineseAudio": "audio/unit2-zh-mad.wav"
+  },
+  {
+    "id": "UNIT2-17",
+    "unit": "UNIT2",
+    "number": 517,
+    "word": "nature",
+    "chinese": "大自然",
+    "definition": "everything in the world that is not made by humans",
+    "example": "She likes to take pictures of nature.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/nature-uk.mp3",
+    "chineseAudio": "audio/unit2-zh-nature.wav"
+  },
+  {
+    "id": "UNIT2-18",
+    "unit": "UNIT2",
+    "number": 518,
+    "word": "protect",
+    "chinese": "保护",
+    "definition": "to keep safe from harm",
+    "example": "The umbrella protects the people from the hot sun.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/protect-us.mp3",
+    "chineseAudio": "audio/unit2-zh-protect.wav"
+  },
+  {
+    "id": "UNIT2-19",
+    "unit": "UNIT2",
+    "number": 519,
+    "word": "shout",
+    "chinese": "喊",
+    "definition": "to say something very loudly",
+    "example": "The shy boy surprised everyone by shouting.",
+    "englishAudio": "audio/unit2-shout.wav",
+    "chineseAudio": "audio/unit2-zh-shout.wav"
+  },
+  {
+    "id": "UNIT2-20",
+    "unit": "UNIT2",
+    "number": 520,
+    "word": "usually",
+    "chinese": "通常",
+    "definition": "most of the time",
+    "example": "People usually shake hands when they introduce themselves.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/usually-us.mp3",
+    "chineseAudio": "audio/unit2-zh-usually.wav"
+  },
+  {
+    "id": "UNIT3-1",
+    "unit": "UNIT3",
+    "number": 521,
+    "word": "amazing",
+    "chinese": "惊奇的",
+    "definition": "causing great surprise or wonder",
+    "example": "It is amazing that humans walked on the moon.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/amazing-us.mp3",
+    "chineseAudio": "audio/unit3-zh-amazing.wav"
+  },
+  {
+    "id": "UNIT3-2",
+    "unit": "UNIT3",
+    "number": 522,
+    "word": "attend",
+    "chinese": "参加",
+    "definition": "to go to a class or activity",
+    "example": "Many students attend this class on protecting the environment.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/attend-us.mp3",
+    "chineseAudio": "audio/unit3-zh-attend.wav"
+  },
+  {
+    "id": "UNIT3-3",
+    "unit": "UNIT3",
+    "number": 523,
+    "word": "event",
+    "chinese": "活动",
+    "definition": "a special, planned activity",
+    "example": "There is usually a fun event at the park on a holiday.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/event-1-us.mp3",
+    "chineseAudio": "audio/unit3-zh-event.wav"
+  },
+  {
+    "id": "UNIT3-4",
+    "unit": "UNIT3",
+    "number": 524,
+    "word": "express",
+    "chinese": "表达",
+    "definition": "to say, write, or show thoughts or feelings",
+    "example": "Marcy expresses her feelings with her face.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/express-us.mp3",
+    "chineseAudio": "audio/unit3-zh-express.wav"
+  },
+  {
+    "id": "UNIT3-5",
+    "unit": "UNIT3",
+    "number": 525,
+    "word": "grade",
+    "chinese": "年级",
+    "definition": "a level of study in school",
+    "example": "Lesley started first grade today.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/grade-us.mp3",
+    "chineseAudio": "audio/unit3-zh-grade.wav"
+  },
+  {
+    "id": "UNIT3-6",
+    "unit": "UNIT3",
+    "number": 526,
+    "word": "part",
+    "chinese": "部分",
+    "definition": "a piece; some but not all",
+    "example": "The cheese was cut into eight parts.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/part-us.mp3",
+    "chineseAudio": "audio/unit3-zh-part.wav"
+  },
+  {
+    "id": "UNIT3-7",
+    "unit": "UNIT3",
+    "number": 527,
+    "word": "save",
+    "chinese": "保存",
+    "definition": "to keep something to use later",
+    "example": "She is saving this cake to eat tomorrow.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/save-us.mp3",
+    "chineseAudio": "audio/unit3-zh-save.wav"
+  },
+  {
+    "id": "UNIT3-8",
+    "unit": "UNIT3",
+    "number": 528,
+    "word": "set",
+    "chinese": "设定",
+    "definition": "to choose something",
+    "example": "We need to set a date for our trip.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/set-us.mp3",
+    "chineseAudio": "audio/unit3-zh-set.wav"
+  },
+  {
+    "id": "UNIT3-9",
+    "unit": "UNIT3",
+    "number": 529,
+    "word": "space",
+    "chinese": "空间",
+    "definition": "an empty area where a person or thing can go",
+    "example": "Their new apartment has a lot of space.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/space-us.mp3",
+    "chineseAudio": "audio/unit3-zh-space.wav"
+  },
+  {
+    "id": "UNIT3-10",
+    "unit": "UNIT3",
+    "number": 530,
+    "word": "special",
+    "chinese": "特别的",
+    "definition": "different from the usual",
+    "example": "The store is offering special, low prices all week.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/special-us.mp3",
+    "chineseAudio": "audio/unit3-zh-special.wav"
+  },
+  {
+    "id": "UNIT3-11",
+    "unit": "UNIT3",
+    "number": 531,
+    "word": "cheer",
+    "chinese": "欢呼",
+    "definition": "to shout to show happiness or to make others feel good",
+    "example": "The fans are cheering for their favorite baseball team.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/cheer-us.mp3",
+    "chineseAudio": "audio/unit3-zh-cheer.wav"
+  },
+  {
+    "id": "UNIT3-12",
+    "unit": "UNIT3",
+    "number": 532,
+    "word": "contest",
+    "chinese": "比赛",
+    "definition": "an event in which there is a winner",
+    "example": "Mila and Victor won the dance contest!",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/contest-us.mp3",
+    "chineseAudio": "audio/unit3-zh-contest.wav"
+  },
+  {
+    "id": "UNIT3-13",
+    "unit": "UNIT3",
+    "number": 533,
+    "word": "gift",
+    "chinese": "礼物",
+    "definition": "something given to someone",
+    "example": "His gift came in a pretty red box.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/gift-us.mp3",
+    "chineseAudio": "audio/unit3-zh-gift.wav"
+  },
+  {
+    "id": "UNIT3-14",
+    "unit": "UNIT3",
+    "number": 534,
+    "word": "magazine",
+    "chinese": "杂志",
+    "definition": "a thin book that comes out once a week or month",
+    "example": "The Week is my favorite news magazine.",
+    "englishAudio": "audio/unit3-magazine.wav",
+    "chineseAudio": "audio/unit3-zh-magazine.wav"
+  },
+  {
+    "id": "UNIT3-15",
+    "unit": "UNIT3",
+    "number": 535,
+    "word": "perform",
+    "chinese": "表演",
+    "definition": "to do something like singing or acting in front of people",
+    "example": "The popular singer performs all over the world.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/perform-us.mp3",
+    "chineseAudio": "audio/unit3-zh-perform.wav"
+  },
+  {
+    "id": "UNIT3-16",
+    "unit": "UNIT3",
+    "number": 536,
+    "word": "public",
+    "chinese": "公众",
+    "definition": "a place where many people can see you",
+    "example": "Shy people do not like to speak in public.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/public-us.mp3",
+    "chineseAudio": "audio/unit3-zh-public.wav"
+  },
+  {
+    "id": "UNIT3-17",
+    "unit": "UNIT3",
+    "number": 537,
+    "word": "scene",
+    "chinese": "镜头",
+    "definition": "a part of a play or movie",
+    "example": "The scene with the fight is the most exciting part of the play.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/scene-us.mp3",
+    "chineseAudio": "audio/unit3-zh-scene.wav"
+  },
+  {
+    "id": "UNIT3-18",
+    "unit": "UNIT3",
+    "number": 538,
+    "word": "secret",
+    "chinese": "秘密",
+    "definition": "something that is kept hidden from other people",
+    "example": "Greg is telling Jessica a secret. I wonder what it is!",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/secret-us.mp3",
+    "chineseAudio": "audio/unit3-zh-secret.wav"
+  },
+  {
+    "id": "UNIT3-19",
+    "unit": "UNIT3",
+    "number": 539,
+    "word": "stage",
+    "chinese": "舞台",
+    "definition": "the part of a theater where people perform",
+    "example": "Many great actors have performed on this stage.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/stage-uk.mp3",
+    "chineseAudio": "audio/unit3-zh-stage.wav"
+  },
+  {
+    "id": "UNIT3-20",
+    "unit": "UNIT3",
+    "number": 540,
+    "word": "unique",
+    "chinese": "独特的",
+    "definition": "not like anyone or anything else",
+    "example": "That man's hair is unique.",
+    "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/unique-us.mp3",
+    "chineseAudio": "audio/unit3-zh-unique.wav"
+  }
+];
+const totalQuestions = 50;
+const state = { order: [], index: 0, score: 0, answered: false, mistakes: [], activeAudio: null, audioElements: new Map() };
+const $ = (id) => document.getElementById(id);
+function shuffle(array) { return [...array].sort(() => Math.random() - 0.5); }
+function getAudioElement(url) { if (!url) return null; if (!state.audioElements.has(url)) { const audio = new Audio(url); audio.preload = 'auto'; audio.load(); state.audioElements.set(url, audio); } return state.audioElements.get(url); }
+function stopAudio() { if (state.activeAudio) { state.activeAudio.pause(); state.activeAudio.currentTime = 0; state.activeAudio = null; } window.speechSynthesis?.cancel(); }
+function speakFallback(text, lang) { return new Promise((resolve) => { if (!('speechSynthesis' in window)) { resolve(); return; } const utterance = new SpeechSynthesisUtterance(text); utterance.lang = lang; utterance.rate = lang === 'zh-CN' ? 0.88 : 0.82; utterance.onend = resolve; utterance.onerror = resolve; window.speechSynthesis.speak(utterance); }); }
+function playAudio(url, fallbackText, fallbackLang) { return new Promise((resolve) => { const audio = getAudioElement(url); if (!audio) { speakFallback(fallbackText, fallbackLang).then(resolve); return; } audio.pause(); audio.currentTime = 0; state.activeAudio = audio; audio.onended = () => { if (state.activeAudio === audio) state.activeAudio = null; resolve(); }; audio.onerror = () => { if (state.activeAudio === audio) state.activeAudio = null; speakFallback(fallbackText, fallbackLang).then(resolve); }; audio.play().catch(() => { if (state.activeAudio === audio) state.activeAudio = null; speakFallback(fallbackText, fallbackLang).then(resolve); }); }); }
+async function playEnglish(item, times) { for (let i = 0; i < times; i += 1) await playAudio(item.englishAudio, item.word, 'en-US'); }
+async function playChinese(item) { await playAudio(item.chineseAudio, item.chinese, 'zh-CN'); }
+function makeOptions(correct) { const wrong = shuffle(allWords.filter((item) => item.chinese !== correct.chinese)).slice(0, 3).map((item) => item.chinese); return shuffle([correct.chinese, ...wrong]); }
+function preloadCurrent() { const current = state.order[state.index]; if (!current) return; getAudioElement(current.englishAudio); getAudioElement(current.chineseAudio); state.order.slice(state.index + 1, state.index + 4).forEach((item) => { getAudioElement(item.englishAudio); getAudioElement(item.chineseAudio); }); }
+function renderQuestion() { if (state.index >= state.order.length) { showResult(); return; } stopAudio(); state.answered = false; const item = state.order[state.index]; $('wordText').textContent = item.word; $('unitText').textContent = item.unit + ' · ' + item.number; $('countText').textContent = (state.index + 1) + ' / ' + state.order.length; $('bar').style.width = ((state.index / state.order.length) * 100) + '%'; $('statusText').textContent = '请选择中文意思。'; $('options').innerHTML = makeOptions(item).map((option) => '<button class="option" data-answer="' + option.replace(/"/g, '&quot;') + '">' + option + '</button>').join(''); document.querySelectorAll('.option').forEach((btn) => btn.addEventListener('click', () => checkAnswer(btn, item))); preloadCurrent(); }
+async function checkAnswer(btn, item) { if (state.answered) return; state.answered = true; stopAudio(); const picked = btn.dataset.answer; document.querySelectorAll('.option').forEach((option) => { option.disabled = true; if (option.dataset.answer === item.chinese) option.classList.add('correct'); }); if (picked === item.chinese) { state.score += 1; btn.classList.add('correct'); $('statusText').textContent = '答对了，播放英文 1 遍。'; await playEnglish(item, 1); } else { btn.classList.add('wrong'); state.mistakes.push({ word: item.word, chinese: item.chinese, picked, unit: item.unit, number: item.number }); $('statusText').textContent = '答错了，正确答案：' + item.chinese + '。正在播放英文 3 遍和中文 1 遍。'; await playEnglish(item, 3); await playChinese(item); } state.index += 1; $('bar').style.width = ((state.index / state.order.length) * 100) + '%'; window.setTimeout(renderQuestion, 260); }
+function showResult() { stopAudio(); $('quizPanel').classList.add('hidden'); $('resultPanel').classList.remove('hidden'); const score = state.score; const percent = Math.round((score / state.order.length) * 100); $('scoreText').textContent = score + ' / ' + state.order.length; let feedback = ''; if (percent >= 90) feedback = '优秀：前三单元掌握很扎实，可以进入下一组复习。'; else if (percent >= 75) feedback = '良好：大部分词已经熟悉，建议重点回听错题。'; else if (percent >= 60) feedback = '继续加油：先复习错题，再重新测一次。'; else feedback = '需要回炉：建议回到 UNIT1-UNIT3 逐个跟读后再测。'; $('feedbackText').textContent = '正确率 ' + percent + '%。' + feedback; if (state.mistakes.length === 0) { $('missedBlock').classList.add('hidden'); } else { $('missedBlock').classList.remove('hidden'); $('missedList').innerHTML = state.mistakes.map((item) => '<div class="miss"><strong>' + item.word + ' <small>' + item.unit + ' · ' + item.number + '</small></strong><span>' + item.chinese + ' · 你选了：' + item.picked + '</span></div>').join(''); } }
+function startTest() { stopAudio(); state.order = shuffle(allWords).slice(0, totalQuestions); state.index = 0; state.score = 0; state.answered = false; state.mistakes = []; $('quizPanel').classList.remove('hidden'); $('resultPanel').classList.add('hidden'); renderQuestion(); }
+$('speakBtn').addEventListener('click', () => { const item = state.order[state.index]; if (item) { stopAudio(); playEnglish(item, 1); } });
+$('restartBtn').addEventListener('click', startTest);
+allWords.forEach((item) => { getAudioElement(item.englishAudio); getAudioElement(item.chineseAudio); });
+startTest();
+</script>
+</body>
+</html>
