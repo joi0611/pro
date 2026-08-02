@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UNIT10-UNIT12 80???</title>
+  <title>UNIT10-UNIT12 80词检测</title>
   <style>
     :root { --ink:#241735; --muted:#746884; --purple:#5c35a2; --purple-dark:#3f236d; --yellow:#ffd766; --line:#eadfb9; --panel:#fffdf7; --good:#187a4b; --bad:#b42318; --shadow:0 18px 42px rgba(63,35,109,.16); }
     * { box-sizing: border-box; }
@@ -49,20 +49,20 @@
 <body>
   <main>
     <header class="topbar">
-      <div><h1>UNIT10-UNIT12 80???</h1><p>UNIT10-UNIT12 ?? 60 ??? UNIT1-UNIT9 ?? 20 ????</p></div>
-      <a class="home" href="index.html">????</a>
+      <div><h1>UNIT10-UNIT12 80词检测</h1><p>UNIT10-UNIT12 全部 60 词，加 UNIT1-UNIT9 随机 20 词复习。</p></div>
+      <a class="home" href="index.html">返回首页</a>
     </header>
     <section class="panel" id="quizPanel">
       <div class="progress"><div class="meter" aria-hidden="true"><span id="bar"></span></div><div class="count" id="countText">1 / 80</div></div>
-      <div class="word-head"><div><div class="word" id="wordText">word</div><span class="tag" id="unitText">UNIT</span></div><button class="speak" id="speakBtn" title="????" aria-label="????">??</button></div>
+      <div class="word-head"><div><div class="word" id="wordText">word</div><span class="tag" id="unitText">UNIT</span></div><button class="speak" id="speakBtn" title="播放单词" aria-label="播放单词">🔊</button></div>
       <div class="options" id="options"></div>
-      <div class="status" id="statusText">????????</div>
+      <div class="status" id="statusText">请选择中文意思。</div>
     </section>
     <section class="panel result hidden" id="resultPanel">
       <div class="score" id="scoreText">0 / 80</div>
       <div class="feedback" id="feedbackText"></div>
-      <div class="actions"><button class="btn primary" id="restartBtn">????</button><a class="btn" href="index.html" style="display:inline-grid;place-items:center;text-decoration:none;">????</a></div>
-      <div class="missed hidden" id="missedBlock"><h2>????</h2><div class="missed-list" id="missedList"></div></div>
+      <div class="actions"><button class="btn primary" id="restartBtn">重新抽题</button><a class="btn" href="index.html" style="display:inline-grid;place-items:center;text-decoration:none;">返回首页</a></div>
+      <div class="missed hidden" id="missedBlock"><h2>错题回看</h2><div class="missed-list" id="missedList"></div></div>
     </section>
   </main>
   <script>
@@ -70,7 +70,7 @@ const coreWords = [
   {
     "id": "UNIT10-1",
     "unit": "UNIT10",
-    "number": 641,
+    "number": 661,
     "word": "bake",
     "chinese": "烤",
     "definition": "to make something and cook it in an oven",
@@ -81,7 +81,7 @@ const coreWords = [
   {
     "id": "UNIT10-2",
     "unit": "UNIT10",
-    "number": 642,
+    "number": 662,
     "word": "communicate",
     "chinese": "沟通",
     "definition": "to share thoughts and feelings with another person",
@@ -92,7 +92,7 @@ const coreWords = [
   {
     "id": "UNIT10-3",
     "unit": "UNIT10",
-    "number": 643,
+    "number": 663,
     "word": "deliver",
     "chinese": "递送",
     "definition": "to take something to a person or place",
@@ -103,7 +103,7 @@ const coreWords = [
   {
     "id": "UNIT10-4",
     "unit": "UNIT10",
-    "number": 644,
+    "number": 664,
     "word": "direct",
     "chinese": "导演",
     "definition": "to tell an actor or a group of actors what to do",
@@ -114,7 +114,7 @@ const coreWords = [
   {
     "id": "UNIT10-5",
     "unit": "UNIT10",
-    "number": 645,
+    "number": 665,
     "word": "goal",
     "chinese": "目标",
     "definition": "something you are trying to do",
@@ -125,7 +125,7 @@ const coreWords = [
   {
     "id": "UNIT10-6",
     "unit": "UNIT10",
-    "number": 646,
+    "number": 666,
     "word": "history",
     "chinese": "历史",
     "definition": "events in the past",
@@ -136,7 +136,7 @@ const coreWords = [
   {
     "id": "UNIT10-7",
     "unit": "UNIT10",
-    "number": 647,
+    "number": 667,
     "word": "inform",
     "chinese": "通知",
     "definition": "to let others know about something",
@@ -147,7 +147,7 @@ const coreWords = [
   {
     "id": "UNIT10-8",
     "unit": "UNIT10",
-    "number": 648,
+    "number": 668,
     "word": "mail",
     "chinese": "邮件",
     "definition": "letters or packages sent to others",
@@ -158,7 +158,7 @@ const coreWords = [
   {
     "id": "UNIT10-9",
     "unit": "UNIT10",
-    "number": 649,
+    "number": 669,
     "word": "march",
     "chinese": "行军",
     "definition": "to walk as a group in step with each other",
@@ -169,7 +169,7 @@ const coreWords = [
   {
     "id": "UNIT10-10",
     "unit": "UNIT10",
-    "number": 650,
+    "number": 670,
     "word": "whole",
     "chinese": "完整的",
     "definition": "all of something",
@@ -180,7 +180,7 @@ const coreWords = [
   {
     "id": "UNIT10-11",
     "unit": "UNIT10",
-    "number": 651,
+    "number": 671,
     "word": "appear",
     "chinese": "出现",
     "definition": "to be seen",
@@ -191,7 +191,7 @@ const coreWords = [
   {
     "id": "UNIT10-12",
     "unit": "UNIT10",
-    "number": 652,
+    "number": 672,
     "word": "community",
     "chinese": "社区",
     "definition": "a group of people living in the same area",
@@ -202,7 +202,7 @@ const coreWords = [
   {
     "id": "UNIT10-13",
     "unit": "UNIT10",
-    "number": 653,
+    "number": 673,
     "word": "festival",
     "chinese": "盛会",
     "definition": "a special party with events to celebrate something",
@@ -213,7 +213,7 @@ const coreWords = [
   {
     "id": "UNIT10-14",
     "unit": "UNIT10",
-    "number": 654,
+    "number": 674,
     "word": "interview",
     "chinese": "面试",
     "definition": "to ask someone many questions",
@@ -224,7 +224,7 @@ const coreWords = [
   {
     "id": "UNIT10-15",
     "unit": "UNIT10",
-    "number": 655,
+    "number": 675,
     "word": "million",
     "chinese": "百万",
     "definition": "of the number 1,000,000",
@@ -235,7 +235,7 @@ const coreWords = [
   {
     "id": "UNIT10-16",
     "unit": "UNIT10",
-    "number": 656,
+    "number": 676,
     "word": "newspaper",
     "chinese": "报纸",
     "definition": "a set of large papers with stories about true events",
@@ -246,7 +246,7 @@ const coreWords = [
   {
     "id": "UNIT10-17",
     "unit": "UNIT10",
-    "number": 657,
+    "number": 677,
     "word": "report",
     "chinese": "报道",
     "definition": "to give news on television or in a newspaper",
@@ -257,7 +257,7 @@ const coreWords = [
   {
     "id": "UNIT10-18",
     "unit": "UNIT10",
-    "number": 658,
+    "number": 678,
     "word": "sport",
     "chinese": "体育运动",
     "definition": "an active game with rules that people play",
@@ -268,7 +268,7 @@ const coreWords = [
   {
     "id": "UNIT10-19",
     "unit": "UNIT10",
-    "number": 659,
+    "number": 679,
     "word": "support",
     "chinese": "支持",
     "definition": "to show you like and want to help a person or group",
@@ -279,7 +279,7 @@ const coreWords = [
   {
     "id": "UNIT10-20",
     "unit": "UNIT10",
-    "number": 660,
+    "number": 680,
     "word": "uniform",
     "chinese": "制服",
     "definition": "the clothing worn by members of a group",
@@ -290,7 +290,7 @@ const coreWords = [
   {
     "id": "UNIT11-1",
     "unit": "UNIT11",
-    "number": 661,
+    "number": 681,
     "word": "brave",
     "chinese": "勇敢的",
     "definition": "not afraid",
@@ -301,7 +301,7 @@ const coreWords = [
   {
     "id": "UNIT11-2",
     "unit": "UNIT11",
-    "number": 662,
+    "number": 682,
     "word": "goat",
     "chinese": "山羊",
     "definition": "a small animal that lives on a farm or in the mountains",
@@ -312,7 +312,7 @@ const coreWords = [
   {
     "id": "UNIT11-3",
     "unit": "UNIT11",
-    "number": 663,
+    "number": 683,
     "word": "hang",
     "chinese": "悬挂",
     "definition": "to place something so that it is held at the top",
@@ -323,7 +323,7 @@ const coreWords = [
   {
     "id": "UNIT11-4",
     "unit": "UNIT11",
-    "number": 664,
+    "number": 684,
     "word": "ice",
     "chinese": "冰",
     "definition": "frozen water",
@@ -334,7 +334,7 @@ const coreWords = [
   {
     "id": "UNIT11-5",
     "unit": "UNIT11",
-    "number": 665,
+    "number": 685,
     "word": "insect",
     "chinese": "昆虫",
     "definition": "a small animal with six legs",
@@ -345,7 +345,7 @@ const coreWords = [
   {
     "id": "UNIT11-6",
     "unit": "UNIT11",
-    "number": 666,
+    "number": 686,
     "word": "raise",
     "chinese": "养",
     "definition": "to care for an animal or plant as it grows",
@@ -356,7 +356,7 @@ const coreWords = [
   {
     "id": "UNIT11-7",
     "unit": "UNIT11",
-    "number": 667,
+    "number": 687,
     "word": "roll",
     "chinese": "滚",
     "definition": "to turn over and over",
@@ -367,7 +367,7 @@ const coreWords = [
   {
     "id": "UNIT11-8",
     "unit": "UNIT11",
-    "number": 668,
+    "number": 688,
     "word": "sore",
     "chinese": "酸胀的",
     "definition": "hurting",
@@ -378,7 +378,7 @@ const coreWords = [
   {
     "id": "UNIT11-9",
     "unit": "UNIT11",
-    "number": 669,
+    "number": 689,
     "word": "tent",
     "chinese": "帐篷",
     "definition": "a covered place to sleep outside",
@@ -389,7 +389,7 @@ const coreWords = [
   {
     "id": "UNIT11-10",
     "unit": "UNIT11",
-    "number": 670,
+    "number": 690,
     "word": "village",
     "chinese": "乡村",
     "definition": "a very small town",
@@ -400,7 +400,7 @@ const coreWords = [
   {
     "id": "UNIT11-11",
     "unit": "UNIT11",
-    "number": 671,
+    "number": 691,
     "word": "accident",
     "chinese": "事故",
     "definition": "a sudden bad event in which someone might be hurt",
@@ -411,7 +411,7 @@ const coreWords = [
   {
     "id": "UNIT11-12",
     "unit": "UNIT11",
-    "number": 672,
+    "number": 692,
     "word": "adventure",
     "chinese": "冒险",
     "definition": "an exciting experience",
@@ -422,7 +422,7 @@ const coreWords = [
   {
     "id": "UNIT11-13",
     "unit": "UNIT11",
-    "number": 673,
+    "number": 693,
     "word": "corn",
     "chinese": "玉米",
     "definition": "a vegetable with many small yellow seeds",
@@ -433,7 +433,7 @@ const coreWords = [
   {
     "id": "UNIT11-14",
     "unit": "UNIT11",
-    "number": 674,
+    "number": 694,
     "word": "develop",
     "chinese": "发展",
     "definition": "to create something over time",
@@ -444,7 +444,7 @@ const coreWords = [
   {
     "id": "UNIT11-15",
     "unit": "UNIT11",
-    "number": 675,
+    "number": 695,
     "word": "medicine",
     "chinese": "药",
     "definition": "something that helps a sick person or animal",
@@ -455,7 +455,7 @@ const coreWords = [
   {
     "id": "UNIT11-16",
     "unit": "UNIT11",
-    "number": 676,
+    "number": 696,
     "word": "own",
     "chinese": "拥有",
     "definition": "to pay for something so it belongs to you",
@@ -466,7 +466,7 @@ const coreWords = [
   {
     "id": "UNIT11-17",
     "unit": "UNIT11",
-    "number": 677,
+    "number": 697,
     "word": "product",
     "chinese": "产品",
     "definition": "something that is made or grown and sold",
@@ -477,7 +477,7 @@ const coreWords = [
   {
     "id": "UNIT11-18",
     "unit": "UNIT11",
-    "number": 678,
+    "number": 698,
     "word": "quite",
     "chinese": "相当",
     "definition": "very",
@@ -488,7 +488,7 @@ const coreWords = [
   {
     "id": "UNIT11-19",
     "unit": "UNIT11",
-    "number": 679,
+    "number": 699,
     "word": "roof",
     "chinese": "屋顶",
     "definition": "the top covering on a building",
@@ -499,7 +499,7 @@ const coreWords = [
   {
     "id": "UNIT11-20",
     "unit": "UNIT11",
-    "number": 680,
+    "number": 700,
     "word": "rope",
     "chinese": "绳子",
     "definition": "a very thick and strong string",
@@ -510,9 +510,9 @@ const coreWords = [
   {
     "id": "UNIT12-1",
     "unit": "UNIT12",
-    "number": 681,
+    "number": 701,
     "word": "carrot",
-    "chinese": "???",
+    "chinese": "胡萝卜",
     "definition": "an orange vegetable that grows under the ground",
     "example": "We raised carrots in our garden.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/carrot-us.mp3",
@@ -521,9 +521,9 @@ const coreWords = [
   {
     "id": "UNIT12-2",
     "unit": "UNIT12",
-    "number": 682,
+    "number": 702,
     "word": "cause",
-    "chinese": "??",
+    "chinese": "使得",
     "definition": "to make something happen",
     "example": "He caused the pieces to fall over.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/cause-us.mp3",
@@ -532,9 +532,9 @@ const coreWords = [
   {
     "id": "UNIT12-3",
     "unit": "UNIT12",
-    "number": 683,
+    "number": 703,
     "word": "experiment",
-    "chinese": "??",
+    "chinese": "实验",
     "definition": "to try something new",
     "example": "Kelly enjoys experimenting with colors.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/experiment-us.mp3",
@@ -543,9 +543,9 @@ const coreWords = [
   {
     "id": "UNIT12-4",
     "unit": "UNIT12",
-    "number": 684,
+    "number": 704,
     "word": "fry",
-    "chinese": "?",
+    "chinese": "炒",
     "definition": "to cook in oil",
     "example": "He heats the pan and then fries food in it.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/fry-us.mp3",
@@ -554,9 +554,9 @@ const coreWords = [
   {
     "id": "UNIT12-5",
     "unit": "UNIT12",
-    "number": 685,
+    "number": 705,
     "word": "ground",
-    "chinese": "??",
+    "chinese": "地面",
     "definition": "the land under your feet",
     "example": "The newspaper lies on the ground.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/ground-us.mp3",
@@ -565,9 +565,9 @@ const coreWords = [
   {
     "id": "UNIT12-6",
     "unit": "UNIT12",
-    "number": 686,
+    "number": 706,
     "word": "kill",
-    "chinese": "??",
+    "chinese": "杀死",
     "definition": "to end a life",
     "example": "I felt sad when I killed the insect on my desk.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/kill-us.mp3",
@@ -576,9 +576,9 @@ const coreWords = [
   {
     "id": "UNIT12-7",
     "unit": "UNIT12",
-    "number": 687,
+    "number": 707,
     "word": "mix",
-    "chinese": "??",
+    "chinese": "混合",
     "definition": "to put two or more things together",
     "example": "I like to mix different kinds of vegetables when I cook.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/mix-us.mp3",
@@ -587,9 +587,9 @@ const coreWords = [
   {
     "id": "UNIT12-8",
     "unit": "UNIT12",
-    "number": 688,
+    "number": 708,
     "word": "possible",
-    "chinese": "???",
+    "chinese": "可能的",
     "definition": "able to be done",
     "example": "Mary said we could not climb to the top, but I knew it was possible.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/possible-us.mp3",
@@ -598,9 +598,9 @@ const coreWords = [
   {
     "id": "UNIT12-9",
     "unit": "UNIT12",
-    "number": 689,
+    "number": 709,
     "word": "pot",
-    "chinese": "??",
+    "chinese": "深锅",
     "definition": "a deep, round container used for cooking",
     "example": "The corn is cooking in a pot.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/pot-us.mp3",
@@ -609,9 +609,9 @@ const coreWords = [
   {
     "id": "UNIT12-10",
     "unit": "UNIT12",
-    "number": 690,
+    "number": 710,
     "word": "proud",
-    "chinese": "???",
+    "chinese": "自豪的",
     "definition": "feeling good about something done",
     "example": "His parents are proud of him for completing college.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/proud-us.mp3",
@@ -620,9 +620,9 @@ const coreWords = [
   {
     "id": "UNIT12-11",
     "unit": "UNIT12",
-    "number": 691,
+    "number": 711,
     "word": "lay",
-    "chinese": "??",
+    "chinese": "放置",
     "definition": "to put something down carefully",
     "example": "Ricky is laying the boards on the floor.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/lay-us.mp3",
@@ -631,9 +631,9 @@ const coreWords = [
   {
     "id": "UNIT12-12",
     "unit": "UNIT12",
-    "number": 692,
+    "number": 712,
     "word": "list",
-    "chinese": "??",
+    "chinese": "清单",
     "definition": "a number of items that are needed",
     "example": "I made a list of things I need to buy at the store.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/list-us.mp3",
@@ -642,9 +642,9 @@ const coreWords = [
   {
     "id": "UNIT12-13",
     "unit": "UNIT12",
-    "number": 693,
+    "number": 713,
     "word": "main",
-    "chinese": "???",
+    "chinese": "主要的",
     "definition": "most important",
     "example": "We drove through the village on the main road.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/main-us.mp3",
@@ -653,9 +653,9 @@ const coreWords = [
   {
     "id": "UNIT12-14",
     "unit": "UNIT12",
-    "number": 694,
+    "number": 714,
     "word": "mark",
-    "chinese": "??",
+    "chinese": "记号",
     "definition": "a symbol or shape drawn on something",
     "example": "He made a mark in the box next to his answer.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/mark-us.mp3",
@@ -664,9 +664,9 @@ const coreWords = [
   {
     "id": "UNIT12-15",
     "unit": "UNIT12",
-    "number": 695,
+    "number": 715,
     "word": "mistake",
-    "chinese": "??",
+    "chinese": "错误",
     "definition": "something that is not correct",
     "example": "Does the teacher know she made a mistake?",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/mistake-us.mp3",
@@ -675,9 +675,9 @@ const coreWords = [
   {
     "id": "UNIT12-16",
     "unit": "UNIT12",
-    "number": 696,
+    "number": 716,
     "word": "price",
-    "chinese": "??",
+    "chinese": "价钱",
     "definition": "the amount that something costs",
     "example": "The woman is looking at the price of the shirt.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/price-us.mp3",
@@ -686,9 +686,9 @@ const coreWords = [
   {
     "id": "UNIT12-17",
     "unit": "UNIT12",
-    "number": 697,
+    "number": 717,
     "word": "several",
-    "chinese": "??",
+    "chinese": "几个",
     "definition": "more than two but not many",
     "example": "There are several goats near the tree.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/several-us.mp3",
@@ -697,9 +697,9 @@ const coreWords = [
   {
     "id": "UNIT12-18",
     "unit": "UNIT12",
-    "number": 698,
+    "number": 718,
     "word": "share",
-    "chinese": "??",
+    "chinese": "分享",
     "definition": "to allow someone to use or enjoy something of yours",
     "example": "Marcus shares the tent with his sister.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/share-us.mp3",
@@ -708,9 +708,9 @@ const coreWords = [
   {
     "id": "UNIT12-19",
     "unit": "UNIT12",
-    "number": 699,
+    "number": 719,
     "word": "soil",
-    "chinese": "??",
+    "chinese": "土壤",
     "definition": "dirt",
     "example": "Carrots and other vegetables grow in the soil.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/soil-us.mp3",
@@ -719,9 +719,9 @@ const coreWords = [
   {
     "id": "UNIT12-20",
     "unit": "UNIT12",
-    "number": 700,
+    "number": 720,
     "word": "taste",
-    "chinese": "?",
+    "chinese": "尝",
     "definition": "to get the flavor of food in the mouth",
     "example": "The cook tastes the food a final time before it is served.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/taste-us.mp3",
@@ -952,7 +952,7 @@ const reviewWords = [
   {
     "id": "UNIT2-1",
     "unit": "UNIT2",
-    "number": 481,
+    "number": 501,
     "word": "active",
     "chinese": "活跃的",
     "definition": "doing many things",
@@ -963,7 +963,7 @@ const reviewWords = [
   {
     "id": "UNIT2-2",
     "unit": "UNIT2",
-    "number": 482,
+    "number": 502,
     "word": "believe",
     "chinese": "相信",
     "definition": "to think that something is true",
@@ -974,7 +974,7 @@ const reviewWords = [
   {
     "id": "UNIT2-3",
     "unit": "UNIT2",
-    "number": 483,
+    "number": 503,
     "word": "environment",
     "chinese": "环境",
     "definition": "all of the things found in an area, indoors or outdoors",
@@ -985,7 +985,7 @@ const reviewWords = [
   {
     "id": "UNIT2-4",
     "unit": "UNIT2",
-    "number": 484,
+    "number": 504,
     "word": "forest",
     "chinese": "森林",
     "definition": "a big area of trees",
@@ -996,7 +996,7 @@ const reviewWords = [
   {
     "id": "UNIT2-5",
     "unit": "UNIT2",
-    "number": 485,
+    "number": 505,
     "word": "human",
     "chinese": "人",
     "definition": "a person",
@@ -1007,7 +1007,7 @@ const reviewWords = [
   {
     "id": "UNIT2-6",
     "unit": "UNIT2",
-    "number": 486,
+    "number": 506,
     "word": "hunt",
     "chinese": "打猎",
     "definition": "to look for animals to kill",
@@ -1018,7 +1018,7 @@ const reviewWords = [
   {
     "id": "UNIT2-7",
     "unit": "UNIT2",
-    "number": 487,
+    "number": 507,
     "word": "path",
     "chinese": "路",
     "definition": "a way to go from one place to another",
@@ -1029,7 +1029,7 @@ const reviewWords = [
   {
     "id": "UNIT2-8",
     "unit": "UNIT2",
-    "number": 488,
+    "number": 508,
     "word": "safe",
     "chinese": "安全的",
     "definition": "not dangerous",
@@ -1040,7 +1040,7 @@ const reviewWords = [
   {
     "id": "UNIT2-9",
     "unit": "UNIT2",
-    "number": 489,
+    "number": 509,
     "word": "service",
     "chinese": "服务",
     "definition": "the job of helping visitors at a place like a restaurant",
@@ -1051,7 +1051,7 @@ const reviewWords = [
   {
     "id": "UNIT2-10",
     "unit": "UNIT2",
-    "number": 490,
+    "number": 510,
     "word": "wild",
     "chinese": "野生的",
     "definition": "living or growing without humans' help",
@@ -1062,7 +1062,7 @@ const reviewWords = [
   {
     "id": "UNIT2-11",
     "unit": "UNIT2",
-    "number": 491,
+    "number": 511,
     "word": "area",
     "chinese": "区域",
     "definition": "a part of a larger place",
@@ -1073,7 +1073,7 @@ const reviewWords = [
   {
     "id": "UNIT2-12",
     "unit": "UNIT2",
-    "number": 492,
+    "number": 512,
     "word": "choice",
     "chinese": "选择",
     "definition": "something you can choose",
@@ -1084,7 +1084,7 @@ const reviewWords = [
   {
     "id": "UNIT2-13",
     "unit": "UNIT2",
-    "number": 493,
+    "number": 513,
     "word": "enter",
     "chinese": "进入",
     "definition": "to go in",
@@ -1095,7 +1095,7 @@ const reviewWords = [
   {
     "id": "UNIT2-14",
     "unit": "UNIT2",
-    "number": 494,
+    "number": 514,
     "word": "important",
     "chinese": "重要的",
     "definition": "having great meaning",
@@ -1106,7 +1106,7 @@ const reviewWords = [
   {
     "id": "UNIT2-15",
     "unit": "UNIT2",
-    "number": 495,
+    "number": 515,
     "word": "lie",
     "chinese": "躺",
     "definition": "to be on your back on the ground or in a bed",
@@ -1117,7 +1117,7 @@ const reviewWords = [
   {
     "id": "UNIT2-16",
     "unit": "UNIT2",
-    "number": 496,
+    "number": 516,
     "word": "mad",
     "chinese": "生气的",
     "definition": "angry",
@@ -1128,7 +1128,7 @@ const reviewWords = [
   {
     "id": "UNIT2-17",
     "unit": "UNIT2",
-    "number": 497,
+    "number": 517,
     "word": "nature",
     "chinese": "大自然",
     "definition": "everything in the world that is not made by humans",
@@ -1139,7 +1139,7 @@ const reviewWords = [
   {
     "id": "UNIT2-18",
     "unit": "UNIT2",
-    "number": 498,
+    "number": 518,
     "word": "protect",
     "chinese": "保护",
     "definition": "to keep safe from harm",
@@ -1150,7 +1150,7 @@ const reviewWords = [
   {
     "id": "UNIT2-19",
     "unit": "UNIT2",
-    "number": 499,
+    "number": 519,
     "word": "shout",
     "chinese": "喊",
     "definition": "to say something very loudly",
@@ -1161,7 +1161,7 @@ const reviewWords = [
   {
     "id": "UNIT2-20",
     "unit": "UNIT2",
-    "number": 500,
+    "number": 520,
     "word": "usually",
     "chinese": "通常",
     "definition": "most of the time",
@@ -1172,7 +1172,7 @@ const reviewWords = [
   {
     "id": "UNIT3-1",
     "unit": "UNIT3",
-    "number": 501,
+    "number": 521,
     "word": "amazing",
     "chinese": "惊奇的",
     "definition": "causing great surprise or wonder",
@@ -1183,7 +1183,7 @@ const reviewWords = [
   {
     "id": "UNIT3-2",
     "unit": "UNIT3",
-    "number": 502,
+    "number": 522,
     "word": "attend",
     "chinese": "参加",
     "definition": "to go to a class or activity",
@@ -1194,7 +1194,7 @@ const reviewWords = [
   {
     "id": "UNIT3-3",
     "unit": "UNIT3",
-    "number": 503,
+    "number": 523,
     "word": "event",
     "chinese": "活动",
     "definition": "a special, planned activity",
@@ -1205,7 +1205,7 @@ const reviewWords = [
   {
     "id": "UNIT3-4",
     "unit": "UNIT3",
-    "number": 504,
+    "number": 524,
     "word": "express",
     "chinese": "表达",
     "definition": "to say, write, or show thoughts or feelings",
@@ -1216,7 +1216,7 @@ const reviewWords = [
   {
     "id": "UNIT3-5",
     "unit": "UNIT3",
-    "number": 505,
+    "number": 525,
     "word": "grade",
     "chinese": "年级",
     "definition": "a level of study in school",
@@ -1227,7 +1227,7 @@ const reviewWords = [
   {
     "id": "UNIT3-6",
     "unit": "UNIT3",
-    "number": 506,
+    "number": 526,
     "word": "part",
     "chinese": "部分",
     "definition": "a piece; some but not all",
@@ -1238,7 +1238,7 @@ const reviewWords = [
   {
     "id": "UNIT3-7",
     "unit": "UNIT3",
-    "number": 507,
+    "number": 527,
     "word": "save",
     "chinese": "保存",
     "definition": "to keep something to use later",
@@ -1249,7 +1249,7 @@ const reviewWords = [
   {
     "id": "UNIT3-8",
     "unit": "UNIT3",
-    "number": 508,
+    "number": 528,
     "word": "set",
     "chinese": "设定",
     "definition": "to choose something",
@@ -1260,7 +1260,7 @@ const reviewWords = [
   {
     "id": "UNIT3-9",
     "unit": "UNIT3",
-    "number": 509,
+    "number": 529,
     "word": "space",
     "chinese": "空间",
     "definition": "an empty area where a person or thing can go",
@@ -1271,7 +1271,7 @@ const reviewWords = [
   {
     "id": "UNIT3-10",
     "unit": "UNIT3",
-    "number": 510,
+    "number": 530,
     "word": "special",
     "chinese": "特别的",
     "definition": "different from the usual",
@@ -1282,7 +1282,7 @@ const reviewWords = [
   {
     "id": "UNIT3-11",
     "unit": "UNIT3",
-    "number": 511,
+    "number": 531,
     "word": "cheer",
     "chinese": "欢呼",
     "definition": "to shout to show happiness or to make others feel good",
@@ -1293,7 +1293,7 @@ const reviewWords = [
   {
     "id": "UNIT3-12",
     "unit": "UNIT3",
-    "number": 512,
+    "number": 532,
     "word": "contest",
     "chinese": "比赛",
     "definition": "an event in which there is a winner",
@@ -1304,7 +1304,7 @@ const reviewWords = [
   {
     "id": "UNIT3-13",
     "unit": "UNIT3",
-    "number": 513,
+    "number": 533,
     "word": "gift",
     "chinese": "礼物",
     "definition": "something given to someone",
@@ -1315,7 +1315,7 @@ const reviewWords = [
   {
     "id": "UNIT3-14",
     "unit": "UNIT3",
-    "number": 514,
+    "number": 534,
     "word": "magazine",
     "chinese": "杂志",
     "definition": "a thin book that comes out once a week or month",
@@ -1326,7 +1326,7 @@ const reviewWords = [
   {
     "id": "UNIT3-15",
     "unit": "UNIT3",
-    "number": 515,
+    "number": 535,
     "word": "perform",
     "chinese": "表演",
     "definition": "to do something like singing or acting in front of people",
@@ -1337,7 +1337,7 @@ const reviewWords = [
   {
     "id": "UNIT3-16",
     "unit": "UNIT3",
-    "number": 516,
+    "number": 536,
     "word": "public",
     "chinese": "公众",
     "definition": "a place where many people can see you",
@@ -1348,7 +1348,7 @@ const reviewWords = [
   {
     "id": "UNIT3-17",
     "unit": "UNIT3",
-    "number": 517,
+    "number": 537,
     "word": "scene",
     "chinese": "镜头",
     "definition": "a part of a play or movie",
@@ -1359,7 +1359,7 @@ const reviewWords = [
   {
     "id": "UNIT3-18",
     "unit": "UNIT3",
-    "number": 518,
+    "number": 538,
     "word": "secret",
     "chinese": "秘密",
     "definition": "something that is kept hidden from other people",
@@ -1370,7 +1370,7 @@ const reviewWords = [
   {
     "id": "UNIT3-19",
     "unit": "UNIT3",
-    "number": 519,
+    "number": 539,
     "word": "stage",
     "chinese": "舞台",
     "definition": "the part of a theater where people perform",
@@ -1381,7 +1381,7 @@ const reviewWords = [
   {
     "id": "UNIT3-20",
     "unit": "UNIT3",
-    "number": 520,
+    "number": 540,
     "word": "unique",
     "chinese": "独特的",
     "definition": "not like anyone or anything else",
@@ -1392,7 +1392,7 @@ const reviewWords = [
   {
     "id": "UNIT4-1",
     "unit": "UNIT4",
-    "number": 521,
+    "number": 541,
     "word": "electricity",
     "chinese": "电",
     "definition": "something used to give light and make things work",
@@ -1403,7 +1403,7 @@ const reviewWords = [
   {
     "id": "UNIT4-2",
     "unit": "UNIT4",
-    "number": 522,
+    "number": 542,
     "word": "fact",
     "chinese": "事实",
     "definition": "something that is true",
@@ -1414,7 +1414,7 @@ const reviewWords = [
   {
     "id": "UNIT4-3",
     "unit": "UNIT4",
-    "number": 523,
+    "number": 543,
     "word": "fold",
     "chinese": "折叠",
     "definition": "to bend one part of something over another part",
@@ -1425,7 +1425,7 @@ const reviewWords = [
   {
     "id": "UNIT4-4",
     "unit": "UNIT4",
-    "number": 524,
+    "number": 544,
     "word": "key",
     "chinese": "钥匙",
     "definition": "an object used to lock or unlock a door or to start a car",
@@ -1436,7 +1436,7 @@ const reviewWords = [
   {
     "id": "UNIT4-5",
     "unit": "UNIT4",
-    "number": 525,
+    "number": 545,
     "word": "mind",
     "chinese": "介意",
     "definition": "to be unhappy about something, usually used with not",
@@ -1447,7 +1447,7 @@ const reviewWords = [
   {
     "id": "UNIT4-6",
     "unit": "UNIT4",
-    "number": 526,
+    "number": 546,
     "word": "power",
     "chinese": "能源",
     "definition": "something you cannot see that is used to make things work",
@@ -1458,7 +1458,7 @@ const reviewWords = [
   {
     "id": "UNIT4-7",
     "unit": "UNIT4",
-    "number": 527,
+    "number": 547,
     "word": "sock",
     "chinese": "袜子",
     "definition": "a soft piece of clothing that covers the foot",
@@ -1469,7 +1469,7 @@ const reviewWords = [
   {
     "id": "UNIT4-8",
     "unit": "UNIT4",
-    "number": 528,
+    "number": 548,
     "word": "solve",
     "chinese": "解答",
     "definition": "to find the answer",
@@ -1480,7 +1480,7 @@ const reviewWords = [
   {
     "id": "UNIT4-9",
     "unit": "UNIT4",
-    "number": 529,
+    "number": 549,
     "word": "stick",
     "chinese": "粘贴",
     "definition": "to attach to something",
@@ -1491,7 +1491,7 @@ const reviewWords = [
   {
     "id": "UNIT4-10",
     "unit": "UNIT4",
-    "number": 530,
+    "number": 550,
     "word": "traffic",
     "chinese": "交通",
     "definition": "cars on the road",
@@ -1502,7 +1502,7 @@ const reviewWords = [
   {
     "id": "UNIT4-11",
     "unit": "UNIT4",
-    "number": 531,
+    "number": 551,
     "word": "advice",
     "chinese": "建议",
     "definition": "an opinion about what someone should or should not do",
@@ -1513,7 +1513,7 @@ const reviewWords = [
   {
     "id": "UNIT4-12",
     "unit": "UNIT4",
-    "number": 532,
+    "number": 552,
     "word": "case",
     "chinese": "盒子",
     "definition": "a small box or bag",
@@ -1524,7 +1524,7 @@ const reviewWords = [
   {
     "id": "UNIT4-13",
     "unit": "UNIT4",
-    "number": 533,
+    "number": 553,
     "word": "exam",
     "chinese": "考试",
     "definition": "a test",
@@ -1535,7 +1535,7 @@ const reviewWords = [
   {
     "id": "UNIT4-14",
     "unit": "UNIT4",
-    "number": 534,
+    "number": 554,
     "word": "happen",
     "chinese": "发生",
     "definition": "to take place",
@@ -1546,7 +1546,7 @@ const reviewWords = [
   {
     "id": "UNIT4-15",
     "unit": "UNIT4",
-    "number": 535,
+    "number": 555,
     "word": "lazy",
     "chinese": "懒的",
     "definition": "not wanting to work or move",
@@ -1557,7 +1557,7 @@ const reviewWords = [
   {
     "id": "UNIT4-16",
     "unit": "UNIT4",
-    "number": 536,
+    "number": 556,
     "word": "message",
     "chinese": "消息",
     "definition": "information that is sent or given to someone",
@@ -1568,7 +1568,7 @@ const reviewWords = [
   {
     "id": "UNIT4-17",
     "unit": "UNIT4",
-    "number": 537,
+    "number": 557,
     "word": "stupid",
     "chinese": "愚蠢的",
     "definition": "dumb; foolish",
@@ -1579,7 +1579,7 @@ const reviewWords = [
   {
     "id": "UNIT4-18",
     "unit": "UNIT4",
-    "number": 538,
+    "number": 558,
     "word": "succeed",
     "chinese": "成功",
     "definition": "to do well; to do what you tried to do",
@@ -1590,7 +1590,7 @@ const reviewWords = [
   {
     "id": "UNIT4-19",
     "unit": "UNIT4",
-    "number": 539,
+    "number": 559,
     "word": "terrible",
     "chinese": "糟糕的",
     "definition": "very bad",
@@ -1601,7 +1601,7 @@ const reviewWords = [
   {
     "id": "UNIT4-20",
     "unit": "UNIT4",
-    "number": 540,
+    "number": 560,
     "word": "upset",
     "chinese": "沮丧的",
     "definition": "worried; not happy",
@@ -1612,7 +1612,7 @@ const reviewWords = [
   {
     "id": "UNIT5-1",
     "unit": "UNIT5",
-    "number": 541,
+    "number": 561,
     "word": "airplane",
     "chinese": "飞机",
     "definition": "a flying machine",
@@ -1623,7 +1623,7 @@ const reviewWords = [
   {
     "id": "UNIT5-2",
     "unit": "UNIT5",
-    "number": 542,
+    "number": 562,
     "word": "airport",
     "chinese": "机场",
     "definition": "a place where airplanes arrive and leave",
@@ -1634,7 +1634,7 @@ const reviewWords = [
   {
     "id": "UNIT5-3",
     "unit": "UNIT5",
-    "number": 543,
+    "number": 563,
     "word": "culture",
     "chinese": "文化",
     "definition": "the way of life of a group of people",
@@ -1645,7 +1645,7 @@ const reviewWords = [
   {
     "id": "UNIT5-4",
     "unit": "UNIT5",
-    "number": 544,
+    "number": 564,
     "word": "decide",
     "chinese": "决定",
     "definition": "to make a choice",
@@ -1656,7 +1656,7 @@ const reviewWords = [
   {
     "id": "UNIT5-5",
     "unit": "UNIT5",
-    "number": 545,
+    "number": 565,
     "word": "leave",
     "chinese": "离开",
     "definition": "to go away from",
@@ -1667,7 +1667,7 @@ const reviewWords = [
   {
     "id": "UNIT5-6",
     "unit": "UNIT5",
-    "number": 546,
+    "number": 566,
     "word": "modern",
     "chinese": "现代的",
     "definition": "of the latest kind",
@@ -1678,7 +1678,7 @@ const reviewWords = [
   {
     "id": "UNIT5-7",
     "unit": "UNIT5",
-    "number": 547,
+    "number": 567,
     "word": "order",
     "chinese": "点餐",
     "definition": "to ask for a food or drink at a restaurant",
@@ -1689,7 +1689,7 @@ const reviewWords = [
   {
     "id": "UNIT5-8",
     "unit": "UNIT5",
-    "number": 548,
+    "number": 568,
     "word": "sand",
     "chinese": "沙子",
     "definition": "very tiny pieces of rock",
@@ -1700,7 +1700,7 @@ const reviewWords = [
   {
     "id": "UNIT5-9",
     "unit": "UNIT5",
-    "number": 549,
+    "number": 569,
     "word": "spot",
     "chinese": "地点",
     "definition": "an area, place, or location",
@@ -1711,7 +1711,7 @@ const reviewWords = [
   {
     "id": "UNIT5-10",
     "unit": "UNIT5",
-    "number": 550,
+    "number": 570,
     "word": "strange",
     "chinese": "奇怪的",
     "definition": "different from what is usual",
@@ -1722,7 +1722,7 @@ const reviewWords = [
   {
     "id": "UNIT5-11",
     "unit": "UNIT5",
-    "number": 551,
+    "number": 571,
     "word": "bill",
     "chinese": "纸币",
     "definition": "a piece of paper money",
@@ -1733,7 +1733,7 @@ const reviewWords = [
   {
     "id": "UNIT5-12",
     "unit": "UNIT5",
-    "number": 552,
+    "number": 572,
     "word": "blow",
     "chinese": "吹",
     "definition": "to move something with air",
@@ -1744,7 +1744,7 @@ const reviewWords = [
   {
     "id": "UNIT5-13",
     "unit": "UNIT5",
-    "number": 553,
+    "number": 573,
     "word": "century",
     "chinese": "世纪",
     "definition": "one hundred years",
@@ -1755,7 +1755,7 @@ const reviewWords = [
   {
     "id": "UNIT5-14",
     "unit": "UNIT5",
-    "number": 554,
+    "number": 574,
     "word": "custom",
     "chinese": "习俗",
     "definition": "the usual way of doing something in a culture",
@@ -1766,7 +1766,7 @@ const reviewWords = [
   {
     "id": "UNIT5-15",
     "unit": "UNIT5",
-    "number": 555,
+    "number": 575,
     "word": "experience",
     "chinese": "体验",
     "definition": "to see, feel, or do something",
@@ -1777,7 +1777,7 @@ const reviewWords = [
   {
     "id": "UNIT5-16",
     "unit": "UNIT5",
-    "number": 556,
+    "number": 576,
     "word": "international",
     "chinese": "国际的",
     "definition": "happening in or between two or more countries",
@@ -1788,7 +1788,7 @@ const reviewWords = [
   {
     "id": "UNIT5-17",
     "unit": "UNIT5",
-    "number": 557,
+    "number": 577,
     "word": "island",
     "chinese": "岛屿",
     "definition": "a piece of land in the middle of water",
@@ -1799,7 +1799,7 @@ const reviewWords = [
   {
     "id": "UNIT5-18",
     "unit": "UNIT5",
-    "number": 558,
+    "number": 578,
     "word": "journey",
     "chinese": "长途旅行",
     "definition": "a long trip",
@@ -1810,7 +1810,7 @@ const reviewWords = [
   {
     "id": "UNIT5-19",
     "unit": "UNIT5",
-    "number": 559,
+    "number": 579,
     "word": "meal",
     "chinese": "饭",
     "definition": "food that is prepared and eaten",
@@ -1821,7 +1821,7 @@ const reviewWords = [
   {
     "id": "UNIT5-20",
     "unit": "UNIT5",
-    "number": 560,
+    "number": 580,
     "word": "return",
     "chinese": "返回",
     "definition": "to come back after being away",
@@ -1832,7 +1832,7 @@ const reviewWords = [
   {
     "id": "UNIT6-1",
     "unit": "UNIT6",
-    "number": 561,
+    "number": 581,
     "word": "actually",
     "chinese": "实际上",
     "definition": "in fact",
@@ -1843,7 +1843,7 @@ const reviewWords = [
   {
     "id": "UNIT6-2",
     "unit": "UNIT6",
-    "number": 562,
+    "number": 582,
     "word": "camp",
     "chinese": "露营",
     "definition": "to sleep outside in a tent",
@@ -1854,7 +1854,7 @@ const reviewWords = [
   {
     "id": "UNIT6-3",
     "unit": "UNIT6",
-    "number": 563,
+    "number": 583,
     "word": "collect",
     "chinese": "收集",
     "definition": "to bring things together into one group",
@@ -1865,7 +1865,7 @@ const reviewWords = [
   {
     "id": "UNIT6-4",
     "unit": "UNIT6",
-    "number": 564,
+    "number": 584,
     "word": "form",
     "chinese": "制作",
     "definition": "to make",
@@ -1876,7 +1876,7 @@ const reviewWords = [
   {
     "id": "UNIT6-5",
     "unit": "UNIT6",
-    "number": 565,
+    "number": 585,
     "word": "kick",
     "chinese": "踢",
     "definition": "to hit something with your foot",
@@ -1887,7 +1887,7 @@ const reviewWords = [
   {
     "id": "UNIT6-6",
     "unit": "UNIT6",
-    "number": 566,
+    "number": 586,
     "word": "reach",
     "chinese": "伸手去够",
     "definition": "to stretch out the arm to touch or get with your hand",
@@ -1898,7 +1898,7 @@ const reviewWords = [
   {
     "id": "UNIT6-7",
     "unit": "UNIT6",
-    "number": 567,
+    "number": 587,
     "word": "review",
     "chinese": "复习",
     "definition": "to look at or study something again",
@@ -1909,7 +1909,7 @@ const reviewWords = [
   {
     "id": "UNIT6-8",
     "unit": "UNIT6",
-    "number": 568,
+    "number": 588,
     "word": "simple",
     "chinese": "简单的",
     "definition": "easy",
@@ -1920,7 +1920,7 @@ const reviewWords = [
   {
     "id": "UNIT6-9",
     "unit": "UNIT6",
-    "number": 569,
+    "number": 589,
     "word": "soccer",
     "chinese": "足球",
     "definition": "a sport in which a ball is kicked into a goal to win a point",
@@ -1931,7 +1931,7 @@ const reviewWords = [
   {
     "id": "UNIT6-10",
     "unit": "UNIT6",
-    "number": 570,
+    "number": 590,
     "word": "symbol",
     "chinese": "象征",
     "definition": "a shape with a special meaning",
@@ -1942,7 +1942,7 @@ const reviewWords = [
   {
     "id": "UNIT6-11",
     "unit": "UNIT6",
-    "number": 571,
+    "number": 591,
     "word": "allow",
     "chinese": "允许",
     "definition": "to let someone do something",
@@ -1953,7 +1953,7 @@ const reviewWords = [
   {
     "id": "UNIT6-12",
     "unit": "UNIT6",
-    "number": 572,
+    "number": 592,
     "word": "bat",
     "chinese": "蝙蝠",
     "definition": "a flying animal that hunts at night",
@@ -1964,7 +1964,7 @@ const reviewWords = [
   {
     "id": "UNIT6-13",
     "unit": "UNIT6",
-    "number": 573,
+    "number": 593,
     "word": "exercise",
     "chinese": "锻炼",
     "definition": "to move the body as a way to get healthy",
@@ -1975,7 +1975,7 @@ const reviewWords = [
   {
     "id": "UNIT6-14",
     "unit": "UNIT6",
-    "number": 574,
+    "number": 594,
     "word": "force",
     "chinese": "逼迫",
     "definition": "to make people do things they do not want to do",
@@ -1986,7 +1986,7 @@ const reviewWords = [
   {
     "id": "UNIT6-15",
     "unit": "UNIT6",
-    "number": 575,
+    "number": 595,
     "word": "leaf",
     "chinese": "叶子",
     "definition": "the flat green part of a plant",
@@ -1997,7 +1997,7 @@ const reviewWords = [
   {
     "id": "UNIT6-16",
     "unit": "UNIT6",
-    "number": 576,
+    "number": 596,
     "word": "member",
     "chinese": "成员",
     "definition": "a person in a group or club",
@@ -2008,7 +2008,7 @@ const reviewWords = [
   {
     "id": "UNIT6-17",
     "unit": "UNIT6",
-    "number": 577,
+    "number": 597,
     "word": "real",
     "chinese": "真实的",
     "definition": "actually happening; being what it looks like",
@@ -2019,7 +2019,7 @@ const reviewWords = [
   {
     "id": "UNIT6-18",
     "unit": "UNIT6",
-    "number": 578,
+    "number": 598,
     "word": "sign",
     "chinese": "标志",
     "definition": "a flat board or paper with a message on it",
@@ -2030,7 +2030,7 @@ const reviewWords = [
   {
     "id": "UNIT6-19",
     "unit": "UNIT6",
-    "number": 579,
+    "number": 599,
     "word": "step",
     "chinese": "走",
     "definition": "to move your foot up and put it down in a different spot",
@@ -2041,7 +2041,7 @@ const reviewWords = [
   {
     "id": "UNIT6-20",
     "unit": "UNIT6",
-    "number": 580,
+    "number": 600,
     "word": "treat",
     "chinese": "乐趣",
     "definition": "something nice that you do not eat or do often",
@@ -2052,7 +2052,7 @@ const reviewWords = [
   {
     "id": "UNIT7-1",
     "unit": "UNIT7",
-    "number": 581,
+    "number": 601,
     "word": "afraid",
     "chinese": "害怕的",
     "definition": "feeling fear",
@@ -2063,7 +2063,7 @@ const reviewWords = [
   {
     "id": "UNIT7-2",
     "unit": "UNIT7",
-    "number": 582,
+    "number": 602,
     "word": "fair",
     "chinese": "公平的",
     "definition": "good for everyone",
@@ -2074,7 +2074,7 @@ const reviewWords = [
   {
     "id": "UNIT7-3",
     "unit": "UNIT7",
-    "number": 583,
+    "number": 603,
     "word": "focus",
     "chinese": "专注",
     "definition": "to put all of your thoughts on one thing",
@@ -2085,7 +2085,7 @@ const reviewWords = [
   {
     "id": "UNIT7-4",
     "unit": "UNIT7",
-    "number": 584,
+    "number": 604,
     "word": "foreign",
     "chinese": "国外的",
     "definition": "from a different country",
@@ -2096,7 +2096,7 @@ const reviewWords = [
   {
     "id": "UNIT7-5",
     "unit": "UNIT7",
-    "number": 585,
+    "number": 605,
     "word": "habit",
     "chinese": "习惯",
     "definition": "something you do often, usually without thinking about it",
@@ -2107,7 +2107,7 @@ const reviewWords = [
   {
     "id": "UNIT7-6",
     "unit": "UNIT7",
-    "number": 586,
+    "number": 606,
     "word": "invent",
     "chinese": "发明",
     "definition": "to make something for the first time",
@@ -2118,7 +2118,7 @@ const reviewWords = [
   {
     "id": "UNIT7-7",
     "unit": "UNIT7",
-    "number": 587,
+    "number": 607,
     "word": "language",
     "chinese": "语言",
     "definition": "the words and symbols used by people of one country or area",
@@ -2129,7 +2129,7 @@ const reviewWords = [
   {
     "id": "UNIT7-8",
     "unit": "UNIT7",
-    "number": 588,
+    "number": 608,
     "word": "nation",
     "chinese": "国家",
     "definition": "a country",
@@ -2140,7 +2140,7 @@ const reviewWords = [
   {
     "id": "UNIT7-9",
     "unit": "UNIT7",
-    "number": 589,
+    "number": 609,
     "word": "still",
     "chinese": "不动的",
     "definition": "not moving",
@@ -2151,7 +2151,7 @@ const reviewWords = [
   {
     "id": "UNIT7-10",
     "unit": "UNIT7",
-    "number": 590,
+    "number": 610,
     "word": "wise",
     "chinese": "智慧的",
     "definition": "knowing the right things to do",
@@ -2162,7 +2162,7 @@ const reviewWords = [
   {
     "id": "UNIT7-11",
     "unit": "UNIT7",
-    "number": 591,
+    "number": 611,
     "word": "audience",
     "chinese": "观众",
     "definition": "a group of people watching an event or show",
@@ -2173,7 +2173,7 @@ const reviewWords = [
   {
     "id": "UNIT7-12",
     "unit": "UNIT7",
-    "number": 592,
+    "number": 612,
     "word": "college",
     "chinese": "大学",
     "definition": "a school where students study after high school",
@@ -2184,7 +2184,7 @@ const reviewWords = [
   {
     "id": "UNIT7-13",
     "unit": "UNIT7",
-    "number": 593,
+    "number": 613,
     "word": "comfortable",
     "chinese": "舒服的",
     "definition": "feeling relaxed",
@@ -2195,7 +2195,7 @@ const reviewWords = [
   {
     "id": "UNIT7-14",
     "unit": "UNIT7",
-    "number": 594,
+    "number": 614,
     "word": "honest",
     "chinese": "诚实的",
     "definition": "good and saying things that are true",
@@ -2206,7 +2206,7 @@ const reviewWords = [
   {
     "id": "UNIT7-15",
     "unit": "UNIT7",
-    "number": 595,
+    "number": 615,
     "word": "imagine",
     "chinese": "想象",
     "definition": "to think of things that are not real",
@@ -2217,7 +2217,7 @@ const reviewWords = [
   {
     "id": "UNIT7-16",
     "unit": "UNIT7",
-    "number": 596,
+    "number": 616,
     "word": "level",
     "chinese": "数量",
     "definition": "an amount of something",
@@ -2228,7 +2228,7 @@ const reviewWords = [
   {
     "id": "UNIT7-17",
     "unit": "UNIT7",
-    "number": 597,
+    "number": 617,
     "word": "sentence",
     "chinese": "句子",
     "definition": "a set of words that make a statement or question",
@@ -2239,7 +2239,7 @@ const reviewWords = [
   {
     "id": "UNIT7-18",
     "unit": "UNIT7",
-    "number": 598,
+    "number": 618,
     "word": "stress",
     "chinese": "压力",
     "definition": "worry caused by problems in your life",
@@ -2250,7 +2250,7 @@ const reviewWords = [
   {
     "id": "UNIT7-19",
     "unit": "UNIT7",
-    "number": 599,
+    "number": 619,
     "word": "suddenly",
     "chinese": "突然",
     "definition": "very quickly",
@@ -2261,7 +2261,7 @@ const reviewWords = [
   {
     "id": "UNIT7-20",
     "unit": "UNIT7",
-    "number": 600,
+    "number": 620,
     "word": "topic",
     "chinese": "主题",
     "definition": "a subject people talk or write about",
@@ -2272,7 +2272,7 @@ const reviewWords = [
   {
     "id": "UNIT8-1",
     "unit": "UNIT8",
-    "number": 601,
+    "number": 621,
     "word": "add",
     "chinese": "增加",
     "definition": "to put one thing with another thing or things",
@@ -2283,7 +2283,7 @@ const reviewWords = [
   {
     "id": "UNIT8-2",
     "unit": "UNIT8",
-    "number": 602,
+    "number": 622,
     "word": "blind",
     "chinese": "瞎的",
     "definition": "not able to see",
@@ -2294,7 +2294,7 @@ const reviewWords = [
   {
     "id": "UNIT8-3",
     "unit": "UNIT8",
-    "number": 603,
+    "number": 623,
     "word": "button",
     "chinese": "扣子",
     "definition": "a small round thing used to close an opening in clothing",
@@ -2305,7 +2305,7 @@ const reviewWords = [
   {
     "id": "UNIT8-4",
     "unit": "UNIT8",
-    "number": 604,
+    "number": 624,
     "word": "create",
     "chinese": "创造",
     "definition": "to make something",
@@ -2316,7 +2316,7 @@ const reviewWords = [
   {
     "id": "UNIT8-5",
     "unit": "UNIT8",
-    "number": 605,
+    "number": 625,
     "word": "memory",
     "chinese": "记忆",
     "definition": "something from the past that is remembered",
@@ -2327,7 +2327,7 @@ const reviewWords = [
   {
     "id": "UNIT8-6",
     "unit": "UNIT8",
-    "number": 606,
+    "number": 626,
     "word": "prince",
     "chinese": "王子",
     "definition": "the son of a king or queen",
@@ -2338,7 +2338,7 @@ const reviewWords = [
   {
     "id": "UNIT8-7",
     "unit": "UNIT8",
-    "number": 607,
+    "number": 627,
     "word": "string",
     "chinese": "细绳",
     "definition": "a long thread used to keep things together",
@@ -2349,7 +2349,7 @@ const reviewWords = [
   {
     "id": "UNIT8-8",
     "unit": "UNIT8",
-    "number": 608,
+    "number": 628,
     "word": "thick",
     "chinese": "厚的",
     "definition": "having a large distance from top to bottom",
@@ -2360,7 +2360,7 @@ const reviewWords = [
   {
     "id": "UNIT8-9",
     "unit": "UNIT8",
-    "number": 609,
+    "number": 629,
     "word": "tight",
     "chinese": "紧的",
     "definition": "fitting close to the body",
@@ -2371,7 +2371,7 @@ const reviewWords = [
   {
     "id": "UNIT8-10",
     "unit": "UNIT8",
-    "number": 610,
+    "number": 630,
     "word": "tradition",
     "chinese": "传统",
     "definition": "a custom that has been around for a long time",
@@ -2382,7 +2382,7 @@ const reviewWords = [
   {
     "id": "UNIT8-11",
     "unit": "UNIT8",
-    "number": 611,
+    "number": 631,
     "word": "board",
     "chinese": "木板",
     "definition": "a flat, wide piece of wood",
@@ -2393,7 +2393,7 @@ const reviewWords = [
   {
     "id": "UNIT8-12",
     "unit": "UNIT8",
-    "number": 612,
+    "number": 632,
     "word": "brain",
     "chinese": "大脑",
     "definition": "the part of the body inside your head",
@@ -2404,7 +2404,7 @@ const reviewWords = [
   {
     "id": "UNIT8-13",
     "unit": "UNIT8",
-    "number": 613,
+    "number": 633,
     "word": "celebrate",
     "chinese": "庆祝",
     "definition": "to do something special for an important event",
@@ -2415,7 +2415,7 @@ const reviewWords = [
   {
     "id": "UNIT8-14",
     "unit": "UNIT8",
-    "number": 614,
+    "number": 634,
     "word": "especially",
     "chinese": "尤其",
     "definition": "in a way that is greater than usual",
@@ -2426,7 +2426,7 @@ const reviewWords = [
   {
     "id": "UNIT8-15",
     "unit": "UNIT8",
-    "number": 615,
+    "number": 635,
     "word": "hole",
     "chinese": "洞",
     "definition": "an opening that something can pass through",
@@ -2437,7 +2437,7 @@ const reviewWords = [
   {
     "id": "UNIT8-16",
     "unit": "UNIT8",
-    "number": 616,
+    "number": 636,
     "word": "item",
     "chinese": "部件",
     "definition": "a thing that is usually part of a group",
@@ -2448,7 +2448,7 @@ const reviewWords = [
   {
     "id": "UNIT8-17",
     "unit": "UNIT8",
-    "number": 617,
+    "number": 637,
     "word": "match",
     "chinese": "匹配",
     "definition": "to look similar to something",
@@ -2459,7 +2459,7 @@ const reviewWords = [
   {
     "id": "UNIT8-18",
     "unit": "UNIT8",
-    "number": 618,
+    "number": 638,
     "word": "princess",
     "chinese": "公主",
     "definition": "the daughter of a king or queen",
@@ -2470,7 +2470,7 @@ const reviewWords = [
   {
     "id": "UNIT8-19",
     "unit": "UNIT8",
-    "number": 619,
+    "number": 639,
     "word": "social",
     "chinese": "爱交往的",
     "definition": "having a need to be with others",
@@ -2481,7 +2481,7 @@ const reviewWords = [
   {
     "id": "UNIT8-20",
     "unit": "UNIT8",
-    "number": 620,
+    "number": 640,
     "word": "tear",
     "chinese": "撕裂",
     "definition": "to pull something into parts",
@@ -2492,7 +2492,7 @@ const reviewWords = [
   {
     "id": "UNIT9-1",
     "unit": "UNIT9",
-    "number": 621,
+    "number": 641,
     "word": "cross",
     "chinese": "穿过",
     "definition": "to go from one side to the other",
@@ -2503,7 +2503,7 @@ const reviewWords = [
   {
     "id": "UNIT9-2",
     "unit": "UNIT9",
-    "number": 622,
+    "number": 642,
     "word": "finally",
     "chinese": "终于",
     "definition": "after a long time",
@@ -2514,7 +2514,7 @@ const reviewWords = [
   {
     "id": "UNIT9-3",
     "unit": "UNIT9",
-    "number": 623,
+    "number": 643,
     "word": "follow",
     "chinese": "跟随",
     "definition": "to go after; to do what a person or thing says",
@@ -2525,7 +2525,7 @@ const reviewWords = [
   {
     "id": "UNIT9-4",
     "unit": "UNIT9",
-    "number": 624,
+    "number": 644,
     "word": "heat",
     "chinese": "加热",
     "definition": "to make something hot",
@@ -2536,7 +2536,7 @@ const reviewWords = [
   {
     "id": "UNIT9-5",
     "unit": "UNIT9",
-    "number": 625,
+    "number": 645,
     "word": "rainbow",
     "chinese": "彩虹",
     "definition": "a curved line of colors in the sky",
@@ -2547,7 +2547,7 @@ const reviewWords = [
   {
     "id": "UNIT9-6",
     "unit": "UNIT9",
-    "number": 626,
+    "number": 646,
     "word": "spread",
     "chinese": "铺开",
     "definition": "to open or place something so that it covers a large area",
@@ -2558,7 +2558,7 @@ const reviewWords = [
   {
     "id": "UNIT9-7",
     "unit": "UNIT9",
-    "number": 627,
+    "number": 647,
     "word": "tired",
     "chinese": "劳累的",
     "definition": "needing rest or sleep",
@@ -2569,7 +2569,7 @@ const reviewWords = [
   {
     "id": "UNIT9-8",
     "unit": "UNIT9",
-    "number": 628,
+    "number": 648,
     "word": "tower",
     "chinese": "塔",
     "definition": "a tall and narrow building",
@@ -2580,7 +2580,7 @@ const reviewWords = [
   {
     "id": "UNIT9-9",
     "unit": "UNIT9",
-    "number": 629,
+    "number": 649,
     "word": "unit",
     "chinese": "单元",
     "definition": "one part of something",
@@ -2591,7 +2591,7 @@ const reviewWords = [
   {
     "id": "UNIT9-10",
     "unit": "UNIT9",
-    "number": 630,
+    "number": 650,
     "word": "vote",
     "chinese": "投票",
     "definition": "to make a choice for or against a person or thing",
@@ -2602,7 +2602,7 @@ const reviewWords = [
   {
     "id": "UNIT9-11",
     "unit": "UNIT9",
-    "number": 631,
+    "number": 651,
     "word": "climb",
     "chinese": "爬",
     "definition": "to go up or down using your feet and hands",
@@ -2613,7 +2613,7 @@ const reviewWords = [
   {
     "id": "UNIT9-12",
     "unit": "UNIT9",
-    "number": 632,
+    "number": 652,
     "word": "describe",
     "chinese": "描述",
     "definition": "to talk about what something is like",
@@ -2624,7 +2624,7 @@ const reviewWords = [
   {
     "id": "UNIT9-13",
     "unit": "UNIT9",
-    "number": 633,
+    "number": 653,
     "word": "energy",
     "chinese": "能量",
     "definition": "power; the ability to be active",
@@ -2635,7 +2635,7 @@ const reviewWords = [
   {
     "id": "UNIT9-14",
     "unit": "UNIT9",
-    "number": 634,
+    "number": 654,
     "word": "engine",
     "chinese": "引擎",
     "definition": "the part of a car that makes power for it to move",
@@ -2646,7 +2646,7 @@ const reviewWords = [
   {
     "id": "UNIT9-15",
     "unit": "UNIT9",
-    "number": 635,
+    "number": 655,
     "word": "field",
     "chinese": "田野",
     "definition": "a grassy area that has no trees or buildings",
@@ -2657,7 +2657,7 @@ const reviewWords = [
   {
     "id": "UNIT9-16",
     "unit": "UNIT9",
-    "number": 636,
+    "number": 656,
     "word": "include",
     "chinese": "包括",
     "definition": "to have a person or thing as part of a group",
@@ -2668,7 +2668,7 @@ const reviewWords = [
   {
     "id": "UNIT9-17",
     "unit": "UNIT9",
-    "number": 637,
+    "number": 657,
     "word": "perfect",
     "chinese": "完美的",
     "definition": "not having anything wrong",
@@ -2679,7 +2679,7 @@ const reviewWords = [
   {
     "id": "UNIT9-18",
     "unit": "UNIT9",
-    "number": 638,
+    "number": 658,
     "word": "rise",
     "chinese": "升起",
     "definition": "to move upward",
@@ -2690,7 +2690,7 @@ const reviewWords = [
   {
     "id": "UNIT9-19",
     "unit": "UNIT9",
-    "number": 639,
+    "number": 659,
     "word": "shape",
     "chinese": "形状",
     "definition": "the outline of something",
@@ -2701,7 +2701,7 @@ const reviewWords = [
   {
     "id": "UNIT9-20",
     "unit": "UNIT9",
-    "number": 640,
+    "number": 660,
     "word": "stone",
     "chinese": "石头",
     "definition": "a small rock",
@@ -2714,7 +2714,7 @@ const allWords = [
   {
     "id": "UNIT10-1",
     "unit": "UNIT10",
-    "number": 641,
+    "number": 661,
     "word": "bake",
     "chinese": "烤",
     "definition": "to make something and cook it in an oven",
@@ -2725,7 +2725,7 @@ const allWords = [
   {
     "id": "UNIT10-2",
     "unit": "UNIT10",
-    "number": 642,
+    "number": 662,
     "word": "communicate",
     "chinese": "沟通",
     "definition": "to share thoughts and feelings with another person",
@@ -2736,7 +2736,7 @@ const allWords = [
   {
     "id": "UNIT10-3",
     "unit": "UNIT10",
-    "number": 643,
+    "number": 663,
     "word": "deliver",
     "chinese": "递送",
     "definition": "to take something to a person or place",
@@ -2747,7 +2747,7 @@ const allWords = [
   {
     "id": "UNIT10-4",
     "unit": "UNIT10",
-    "number": 644,
+    "number": 664,
     "word": "direct",
     "chinese": "导演",
     "definition": "to tell an actor or a group of actors what to do",
@@ -2758,7 +2758,7 @@ const allWords = [
   {
     "id": "UNIT10-5",
     "unit": "UNIT10",
-    "number": 645,
+    "number": 665,
     "word": "goal",
     "chinese": "目标",
     "definition": "something you are trying to do",
@@ -2769,7 +2769,7 @@ const allWords = [
   {
     "id": "UNIT10-6",
     "unit": "UNIT10",
-    "number": 646,
+    "number": 666,
     "word": "history",
     "chinese": "历史",
     "definition": "events in the past",
@@ -2780,7 +2780,7 @@ const allWords = [
   {
     "id": "UNIT10-7",
     "unit": "UNIT10",
-    "number": 647,
+    "number": 667,
     "word": "inform",
     "chinese": "通知",
     "definition": "to let others know about something",
@@ -2791,7 +2791,7 @@ const allWords = [
   {
     "id": "UNIT10-8",
     "unit": "UNIT10",
-    "number": 648,
+    "number": 668,
     "word": "mail",
     "chinese": "邮件",
     "definition": "letters or packages sent to others",
@@ -2802,7 +2802,7 @@ const allWords = [
   {
     "id": "UNIT10-9",
     "unit": "UNIT10",
-    "number": 649,
+    "number": 669,
     "word": "march",
     "chinese": "行军",
     "definition": "to walk as a group in step with each other",
@@ -2813,7 +2813,7 @@ const allWords = [
   {
     "id": "UNIT10-10",
     "unit": "UNIT10",
-    "number": 650,
+    "number": 670,
     "word": "whole",
     "chinese": "完整的",
     "definition": "all of something",
@@ -2824,7 +2824,7 @@ const allWords = [
   {
     "id": "UNIT10-11",
     "unit": "UNIT10",
-    "number": 651,
+    "number": 671,
     "word": "appear",
     "chinese": "出现",
     "definition": "to be seen",
@@ -2835,7 +2835,7 @@ const allWords = [
   {
     "id": "UNIT10-12",
     "unit": "UNIT10",
-    "number": 652,
+    "number": 672,
     "word": "community",
     "chinese": "社区",
     "definition": "a group of people living in the same area",
@@ -2846,7 +2846,7 @@ const allWords = [
   {
     "id": "UNIT10-13",
     "unit": "UNIT10",
-    "number": 653,
+    "number": 673,
     "word": "festival",
     "chinese": "盛会",
     "definition": "a special party with events to celebrate something",
@@ -2857,7 +2857,7 @@ const allWords = [
   {
     "id": "UNIT10-14",
     "unit": "UNIT10",
-    "number": 654,
+    "number": 674,
     "word": "interview",
     "chinese": "面试",
     "definition": "to ask someone many questions",
@@ -2868,7 +2868,7 @@ const allWords = [
   {
     "id": "UNIT10-15",
     "unit": "UNIT10",
-    "number": 655,
+    "number": 675,
     "word": "million",
     "chinese": "百万",
     "definition": "of the number 1,000,000",
@@ -2879,7 +2879,7 @@ const allWords = [
   {
     "id": "UNIT10-16",
     "unit": "UNIT10",
-    "number": 656,
+    "number": 676,
     "word": "newspaper",
     "chinese": "报纸",
     "definition": "a set of large papers with stories about true events",
@@ -2890,7 +2890,7 @@ const allWords = [
   {
     "id": "UNIT10-17",
     "unit": "UNIT10",
-    "number": 657,
+    "number": 677,
     "word": "report",
     "chinese": "报道",
     "definition": "to give news on television or in a newspaper",
@@ -2901,7 +2901,7 @@ const allWords = [
   {
     "id": "UNIT10-18",
     "unit": "UNIT10",
-    "number": 658,
+    "number": 678,
     "word": "sport",
     "chinese": "体育运动",
     "definition": "an active game with rules that people play",
@@ -2912,7 +2912,7 @@ const allWords = [
   {
     "id": "UNIT10-19",
     "unit": "UNIT10",
-    "number": 659,
+    "number": 679,
     "word": "support",
     "chinese": "支持",
     "definition": "to show you like and want to help a person or group",
@@ -2923,7 +2923,7 @@ const allWords = [
   {
     "id": "UNIT10-20",
     "unit": "UNIT10",
-    "number": 660,
+    "number": 680,
     "word": "uniform",
     "chinese": "制服",
     "definition": "the clothing worn by members of a group",
@@ -2934,7 +2934,7 @@ const allWords = [
   {
     "id": "UNIT11-1",
     "unit": "UNIT11",
-    "number": 661,
+    "number": 681,
     "word": "brave",
     "chinese": "勇敢的",
     "definition": "not afraid",
@@ -2945,7 +2945,7 @@ const allWords = [
   {
     "id": "UNIT11-2",
     "unit": "UNIT11",
-    "number": 662,
+    "number": 682,
     "word": "goat",
     "chinese": "山羊",
     "definition": "a small animal that lives on a farm or in the mountains",
@@ -2956,7 +2956,7 @@ const allWords = [
   {
     "id": "UNIT11-3",
     "unit": "UNIT11",
-    "number": 663,
+    "number": 683,
     "word": "hang",
     "chinese": "悬挂",
     "definition": "to place something so that it is held at the top",
@@ -2967,7 +2967,7 @@ const allWords = [
   {
     "id": "UNIT11-4",
     "unit": "UNIT11",
-    "number": 664,
+    "number": 684,
     "word": "ice",
     "chinese": "冰",
     "definition": "frozen water",
@@ -2978,7 +2978,7 @@ const allWords = [
   {
     "id": "UNIT11-5",
     "unit": "UNIT11",
-    "number": 665,
+    "number": 685,
     "word": "insect",
     "chinese": "昆虫",
     "definition": "a small animal with six legs",
@@ -2989,7 +2989,7 @@ const allWords = [
   {
     "id": "UNIT11-6",
     "unit": "UNIT11",
-    "number": 666,
+    "number": 686,
     "word": "raise",
     "chinese": "养",
     "definition": "to care for an animal or plant as it grows",
@@ -3000,7 +3000,7 @@ const allWords = [
   {
     "id": "UNIT11-7",
     "unit": "UNIT11",
-    "number": 667,
+    "number": 687,
     "word": "roll",
     "chinese": "滚",
     "definition": "to turn over and over",
@@ -3011,7 +3011,7 @@ const allWords = [
   {
     "id": "UNIT11-8",
     "unit": "UNIT11",
-    "number": 668,
+    "number": 688,
     "word": "sore",
     "chinese": "酸胀的",
     "definition": "hurting",
@@ -3022,7 +3022,7 @@ const allWords = [
   {
     "id": "UNIT11-9",
     "unit": "UNIT11",
-    "number": 669,
+    "number": 689,
     "word": "tent",
     "chinese": "帐篷",
     "definition": "a covered place to sleep outside",
@@ -3033,7 +3033,7 @@ const allWords = [
   {
     "id": "UNIT11-10",
     "unit": "UNIT11",
-    "number": 670,
+    "number": 690,
     "word": "village",
     "chinese": "乡村",
     "definition": "a very small town",
@@ -3044,7 +3044,7 @@ const allWords = [
   {
     "id": "UNIT11-11",
     "unit": "UNIT11",
-    "number": 671,
+    "number": 691,
     "word": "accident",
     "chinese": "事故",
     "definition": "a sudden bad event in which someone might be hurt",
@@ -3055,7 +3055,7 @@ const allWords = [
   {
     "id": "UNIT11-12",
     "unit": "UNIT11",
-    "number": 672,
+    "number": 692,
     "word": "adventure",
     "chinese": "冒险",
     "definition": "an exciting experience",
@@ -3066,7 +3066,7 @@ const allWords = [
   {
     "id": "UNIT11-13",
     "unit": "UNIT11",
-    "number": 673,
+    "number": 693,
     "word": "corn",
     "chinese": "玉米",
     "definition": "a vegetable with many small yellow seeds",
@@ -3077,7 +3077,7 @@ const allWords = [
   {
     "id": "UNIT11-14",
     "unit": "UNIT11",
-    "number": 674,
+    "number": 694,
     "word": "develop",
     "chinese": "发展",
     "definition": "to create something over time",
@@ -3088,7 +3088,7 @@ const allWords = [
   {
     "id": "UNIT11-15",
     "unit": "UNIT11",
-    "number": 675,
+    "number": 695,
     "word": "medicine",
     "chinese": "药",
     "definition": "something that helps a sick person or animal",
@@ -3099,7 +3099,7 @@ const allWords = [
   {
     "id": "UNIT11-16",
     "unit": "UNIT11",
-    "number": 676,
+    "number": 696,
     "word": "own",
     "chinese": "拥有",
     "definition": "to pay for something so it belongs to you",
@@ -3110,7 +3110,7 @@ const allWords = [
   {
     "id": "UNIT11-17",
     "unit": "UNIT11",
-    "number": 677,
+    "number": 697,
     "word": "product",
     "chinese": "产品",
     "definition": "something that is made or grown and sold",
@@ -3121,7 +3121,7 @@ const allWords = [
   {
     "id": "UNIT11-18",
     "unit": "UNIT11",
-    "number": 678,
+    "number": 698,
     "word": "quite",
     "chinese": "相当",
     "definition": "very",
@@ -3132,7 +3132,7 @@ const allWords = [
   {
     "id": "UNIT11-19",
     "unit": "UNIT11",
-    "number": 679,
+    "number": 699,
     "word": "roof",
     "chinese": "屋顶",
     "definition": "the top covering on a building",
@@ -3143,7 +3143,7 @@ const allWords = [
   {
     "id": "UNIT11-20",
     "unit": "UNIT11",
-    "number": 680,
+    "number": 700,
     "word": "rope",
     "chinese": "绳子",
     "definition": "a very thick and strong string",
@@ -3154,9 +3154,9 @@ const allWords = [
   {
     "id": "UNIT12-1",
     "unit": "UNIT12",
-    "number": 681,
+    "number": 701,
     "word": "carrot",
-    "chinese": "???",
+    "chinese": "胡萝卜",
     "definition": "an orange vegetable that grows under the ground",
     "example": "We raised carrots in our garden.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/carrot-us.mp3",
@@ -3165,9 +3165,9 @@ const allWords = [
   {
     "id": "UNIT12-2",
     "unit": "UNIT12",
-    "number": 682,
+    "number": 702,
     "word": "cause",
-    "chinese": "??",
+    "chinese": "使得",
     "definition": "to make something happen",
     "example": "He caused the pieces to fall over.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/cause-us.mp3",
@@ -3176,9 +3176,9 @@ const allWords = [
   {
     "id": "UNIT12-3",
     "unit": "UNIT12",
-    "number": 683,
+    "number": 703,
     "word": "experiment",
-    "chinese": "??",
+    "chinese": "实验",
     "definition": "to try something new",
     "example": "Kelly enjoys experimenting with colors.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/experiment-us.mp3",
@@ -3187,9 +3187,9 @@ const allWords = [
   {
     "id": "UNIT12-4",
     "unit": "UNIT12",
-    "number": 684,
+    "number": 704,
     "word": "fry",
-    "chinese": "?",
+    "chinese": "炒",
     "definition": "to cook in oil",
     "example": "He heats the pan and then fries food in it.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/fry-us.mp3",
@@ -3198,9 +3198,9 @@ const allWords = [
   {
     "id": "UNIT12-5",
     "unit": "UNIT12",
-    "number": 685,
+    "number": 705,
     "word": "ground",
-    "chinese": "??",
+    "chinese": "地面",
     "definition": "the land under your feet",
     "example": "The newspaper lies on the ground.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/ground-us.mp3",
@@ -3209,9 +3209,9 @@ const allWords = [
   {
     "id": "UNIT12-6",
     "unit": "UNIT12",
-    "number": 686,
+    "number": 706,
     "word": "kill",
-    "chinese": "??",
+    "chinese": "杀死",
     "definition": "to end a life",
     "example": "I felt sad when I killed the insect on my desk.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/kill-us.mp3",
@@ -3220,9 +3220,9 @@ const allWords = [
   {
     "id": "UNIT12-7",
     "unit": "UNIT12",
-    "number": 687,
+    "number": 707,
     "word": "mix",
-    "chinese": "??",
+    "chinese": "混合",
     "definition": "to put two or more things together",
     "example": "I like to mix different kinds of vegetables when I cook.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/mix-us.mp3",
@@ -3231,9 +3231,9 @@ const allWords = [
   {
     "id": "UNIT12-8",
     "unit": "UNIT12",
-    "number": 688,
+    "number": 708,
     "word": "possible",
-    "chinese": "???",
+    "chinese": "可能的",
     "definition": "able to be done",
     "example": "Mary said we could not climb to the top, but I knew it was possible.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/possible-us.mp3",
@@ -3242,9 +3242,9 @@ const allWords = [
   {
     "id": "UNIT12-9",
     "unit": "UNIT12",
-    "number": 689,
+    "number": 709,
     "word": "pot",
-    "chinese": "??",
+    "chinese": "深锅",
     "definition": "a deep, round container used for cooking",
     "example": "The corn is cooking in a pot.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/pot-us.mp3",
@@ -3253,9 +3253,9 @@ const allWords = [
   {
     "id": "UNIT12-10",
     "unit": "UNIT12",
-    "number": 690,
+    "number": 710,
     "word": "proud",
-    "chinese": "???",
+    "chinese": "自豪的",
     "definition": "feeling good about something done",
     "example": "His parents are proud of him for completing college.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/proud-us.mp3",
@@ -3264,9 +3264,9 @@ const allWords = [
   {
     "id": "UNIT12-11",
     "unit": "UNIT12",
-    "number": 691,
+    "number": 711,
     "word": "lay",
-    "chinese": "??",
+    "chinese": "放置",
     "definition": "to put something down carefully",
     "example": "Ricky is laying the boards on the floor.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/lay-us.mp3",
@@ -3275,9 +3275,9 @@ const allWords = [
   {
     "id": "UNIT12-12",
     "unit": "UNIT12",
-    "number": 692,
+    "number": 712,
     "word": "list",
-    "chinese": "??",
+    "chinese": "清单",
     "definition": "a number of items that are needed",
     "example": "I made a list of things I need to buy at the store.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/list-us.mp3",
@@ -3286,9 +3286,9 @@ const allWords = [
   {
     "id": "UNIT12-13",
     "unit": "UNIT12",
-    "number": 693,
+    "number": 713,
     "word": "main",
-    "chinese": "???",
+    "chinese": "主要的",
     "definition": "most important",
     "example": "We drove through the village on the main road.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/main-us.mp3",
@@ -3297,9 +3297,9 @@ const allWords = [
   {
     "id": "UNIT12-14",
     "unit": "UNIT12",
-    "number": 694,
+    "number": 714,
     "word": "mark",
-    "chinese": "??",
+    "chinese": "记号",
     "definition": "a symbol or shape drawn on something",
     "example": "He made a mark in the box next to his answer.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/mark-us.mp3",
@@ -3308,9 +3308,9 @@ const allWords = [
   {
     "id": "UNIT12-15",
     "unit": "UNIT12",
-    "number": 695,
+    "number": 715,
     "word": "mistake",
-    "chinese": "??",
+    "chinese": "错误",
     "definition": "something that is not correct",
     "example": "Does the teacher know she made a mistake?",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/mistake-us.mp3",
@@ -3319,9 +3319,9 @@ const allWords = [
   {
     "id": "UNIT12-16",
     "unit": "UNIT12",
-    "number": 696,
+    "number": 716,
     "word": "price",
-    "chinese": "??",
+    "chinese": "价钱",
     "definition": "the amount that something costs",
     "example": "The woman is looking at the price of the shirt.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/price-us.mp3",
@@ -3330,9 +3330,9 @@ const allWords = [
   {
     "id": "UNIT12-17",
     "unit": "UNIT12",
-    "number": 697,
+    "number": 717,
     "word": "several",
-    "chinese": "??",
+    "chinese": "几个",
     "definition": "more than two but not many",
     "example": "There are several goats near the tree.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/several-us.mp3",
@@ -3341,9 +3341,9 @@ const allWords = [
   {
     "id": "UNIT12-18",
     "unit": "UNIT12",
-    "number": 698,
+    "number": 718,
     "word": "share",
-    "chinese": "??",
+    "chinese": "分享",
     "definition": "to allow someone to use or enjoy something of yours",
     "example": "Marcus shares the tent with his sister.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/share-us.mp3",
@@ -3352,9 +3352,9 @@ const allWords = [
   {
     "id": "UNIT12-19",
     "unit": "UNIT12",
-    "number": 699,
+    "number": 719,
     "word": "soil",
-    "chinese": "??",
+    "chinese": "土壤",
     "definition": "dirt",
     "example": "Carrots and other vegetables grow in the soil.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/soil-us.mp3",
@@ -3363,9 +3363,9 @@ const allWords = [
   {
     "id": "UNIT12-20",
     "unit": "UNIT12",
-    "number": 700,
+    "number": 720,
     "word": "taste",
-    "chinese": "?",
+    "chinese": "尝",
     "definition": "to get the flavor of food in the mouth",
     "example": "The cook tastes the food a final time before it is served.",
     "englishAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/taste-us.mp3",
@@ -3594,7 +3594,7 @@ const allWords = [
   {
     "id": "UNIT2-1",
     "unit": "UNIT2",
-    "number": 481,
+    "number": 501,
     "word": "active",
     "chinese": "活跃的",
     "definition": "doing many things",
@@ -3605,7 +3605,7 @@ const allWords = [
   {
     "id": "UNIT2-2",
     "unit": "UNIT2",
-    "number": 482,
+    "number": 502,
     "word": "believe",
     "chinese": "相信",
     "definition": "to think that something is true",
@@ -3616,7 +3616,7 @@ const allWords = [
   {
     "id": "UNIT2-3",
     "unit": "UNIT2",
-    "number": 483,
+    "number": 503,
     "word": "environment",
     "chinese": "环境",
     "definition": "all of the things found in an area, indoors or outdoors",
@@ -3627,7 +3627,7 @@ const allWords = [
   {
     "id": "UNIT2-4",
     "unit": "UNIT2",
-    "number": 484,
+    "number": 504,
     "word": "forest",
     "chinese": "森林",
     "definition": "a big area of trees",
@@ -3638,7 +3638,7 @@ const allWords = [
   {
     "id": "UNIT2-5",
     "unit": "UNIT2",
-    "number": 485,
+    "number": 505,
     "word": "human",
     "chinese": "人",
     "definition": "a person",
@@ -3649,7 +3649,7 @@ const allWords = [
   {
     "id": "UNIT2-6",
     "unit": "UNIT2",
-    "number": 486,
+    "number": 506,
     "word": "hunt",
     "chinese": "打猎",
     "definition": "to look for animals to kill",
@@ -3660,7 +3660,7 @@ const allWords = [
   {
     "id": "UNIT2-7",
     "unit": "UNIT2",
-    "number": 487,
+    "number": 507,
     "word": "path",
     "chinese": "路",
     "definition": "a way to go from one place to another",
@@ -3671,7 +3671,7 @@ const allWords = [
   {
     "id": "UNIT2-8",
     "unit": "UNIT2",
-    "number": 488,
+    "number": 508,
     "word": "safe",
     "chinese": "安全的",
     "definition": "not dangerous",
@@ -3682,7 +3682,7 @@ const allWords = [
   {
     "id": "UNIT2-9",
     "unit": "UNIT2",
-    "number": 489,
+    "number": 509,
     "word": "service",
     "chinese": "服务",
     "definition": "the job of helping visitors at a place like a restaurant",
@@ -3693,7 +3693,7 @@ const allWords = [
   {
     "id": "UNIT2-10",
     "unit": "UNIT2",
-    "number": 490,
+    "number": 510,
     "word": "wild",
     "chinese": "野生的",
     "definition": "living or growing without humans' help",
@@ -3704,7 +3704,7 @@ const allWords = [
   {
     "id": "UNIT2-11",
     "unit": "UNIT2",
-    "number": 491,
+    "number": 511,
     "word": "area",
     "chinese": "区域",
     "definition": "a part of a larger place",
@@ -3715,7 +3715,7 @@ const allWords = [
   {
     "id": "UNIT2-12",
     "unit": "UNIT2",
-    "number": 492,
+    "number": 512,
     "word": "choice",
     "chinese": "选择",
     "definition": "something you can choose",
@@ -3726,7 +3726,7 @@ const allWords = [
   {
     "id": "UNIT2-13",
     "unit": "UNIT2",
-    "number": 493,
+    "number": 513,
     "word": "enter",
     "chinese": "进入",
     "definition": "to go in",
@@ -3737,7 +3737,7 @@ const allWords = [
   {
     "id": "UNIT2-14",
     "unit": "UNIT2",
-    "number": 494,
+    "number": 514,
     "word": "important",
     "chinese": "重要的",
     "definition": "having great meaning",
@@ -3748,7 +3748,7 @@ const allWords = [
   {
     "id": "UNIT2-15",
     "unit": "UNIT2",
-    "number": 495,
+    "number": 515,
     "word": "lie",
     "chinese": "躺",
     "definition": "to be on your back on the ground or in a bed",
@@ -3759,7 +3759,7 @@ const allWords = [
   {
     "id": "UNIT2-16",
     "unit": "UNIT2",
-    "number": 496,
+    "number": 516,
     "word": "mad",
     "chinese": "生气的",
     "definition": "angry",
@@ -3770,7 +3770,7 @@ const allWords = [
   {
     "id": "UNIT2-17",
     "unit": "UNIT2",
-    "number": 497,
+    "number": 517,
     "word": "nature",
     "chinese": "大自然",
     "definition": "everything in the world that is not made by humans",
@@ -3781,7 +3781,7 @@ const allWords = [
   {
     "id": "UNIT2-18",
     "unit": "UNIT2",
-    "number": 498,
+    "number": 518,
     "word": "protect",
     "chinese": "保护",
     "definition": "to keep safe from harm",
@@ -3792,7 +3792,7 @@ const allWords = [
   {
     "id": "UNIT2-19",
     "unit": "UNIT2",
-    "number": 499,
+    "number": 519,
     "word": "shout",
     "chinese": "喊",
     "definition": "to say something very loudly",
@@ -3803,7 +3803,7 @@ const allWords = [
   {
     "id": "UNIT2-20",
     "unit": "UNIT2",
-    "number": 500,
+    "number": 520,
     "word": "usually",
     "chinese": "通常",
     "definition": "most of the time",
@@ -3814,7 +3814,7 @@ const allWords = [
   {
     "id": "UNIT3-1",
     "unit": "UNIT3",
-    "number": 501,
+    "number": 521,
     "word": "amazing",
     "chinese": "惊奇的",
     "definition": "causing great surprise or wonder",
@@ -3825,7 +3825,7 @@ const allWords = [
   {
     "id": "UNIT3-2",
     "unit": "UNIT3",
-    "number": 502,
+    "number": 522,
     "word": "attend",
     "chinese": "参加",
     "definition": "to go to a class or activity",
@@ -3836,7 +3836,7 @@ const allWords = [
   {
     "id": "UNIT3-3",
     "unit": "UNIT3",
-    "number": 503,
+    "number": 523,
     "word": "event",
     "chinese": "活动",
     "definition": "a special, planned activity",
@@ -3847,7 +3847,7 @@ const allWords = [
   {
     "id": "UNIT3-4",
     "unit": "UNIT3",
-    "number": 504,
+    "number": 524,
     "word": "express",
     "chinese": "表达",
     "definition": "to say, write, or show thoughts or feelings",
@@ -3858,7 +3858,7 @@ const allWords = [
   {
     "id": "UNIT3-5",
     "unit": "UNIT3",
-    "number": 505,
+    "number": 525,
     "word": "grade",
     "chinese": "年级",
     "definition": "a level of study in school",
@@ -3869,7 +3869,7 @@ const allWords = [
   {
     "id": "UNIT3-6",
     "unit": "UNIT3",
-    "number": 506,
+    "number": 526,
     "word": "part",
     "chinese": "部分",
     "definition": "a piece; some but not all",
@@ -3880,7 +3880,7 @@ const allWords = [
   {
     "id": "UNIT3-7",
     "unit": "UNIT3",
-    "number": 507,
+    "number": 527,
     "word": "save",
     "chinese": "保存",
     "definition": "to keep something to use later",
@@ -3891,7 +3891,7 @@ const allWords = [
   {
     "id": "UNIT3-8",
     "unit": "UNIT3",
-    "number": 508,
+    "number": 528,
     "word": "set",
     "chinese": "设定",
     "definition": "to choose something",
@@ -3902,7 +3902,7 @@ const allWords = [
   {
     "id": "UNIT3-9",
     "unit": "UNIT3",
-    "number": 509,
+    "number": 529,
     "word": "space",
     "chinese": "空间",
     "definition": "an empty area where a person or thing can go",
@@ -3913,7 +3913,7 @@ const allWords = [
   {
     "id": "UNIT3-10",
     "unit": "UNIT3",
-    "number": 510,
+    "number": 530,
     "word": "special",
     "chinese": "特别的",
     "definition": "different from the usual",
@@ -3924,7 +3924,7 @@ const allWords = [
   {
     "id": "UNIT3-11",
     "unit": "UNIT3",
-    "number": 511,
+    "number": 531,
     "word": "cheer",
     "chinese": "欢呼",
     "definition": "to shout to show happiness or to make others feel good",
@@ -3935,7 +3935,7 @@ const allWords = [
   {
     "id": "UNIT3-12",
     "unit": "UNIT3",
-    "number": 512,
+    "number": 532,
     "word": "contest",
     "chinese": "比赛",
     "definition": "an event in which there is a winner",
@@ -3946,7 +3946,7 @@ const allWords = [
   {
     "id": "UNIT3-13",
     "unit": "UNIT3",
-    "number": 513,
+    "number": 533,
     "word": "gift",
     "chinese": "礼物",
     "definition": "something given to someone",
@@ -3957,7 +3957,7 @@ const allWords = [
   {
     "id": "UNIT3-14",
     "unit": "UNIT3",
-    "number": 514,
+    "number": 534,
     "word": "magazine",
     "chinese": "杂志",
     "definition": "a thin book that comes out once a week or month",
@@ -3968,7 +3968,7 @@ const allWords = [
   {
     "id": "UNIT3-15",
     "unit": "UNIT3",
-    "number": 515,
+    "number": 535,
     "word": "perform",
     "chinese": "表演",
     "definition": "to do something like singing or acting in front of people",
@@ -3979,7 +3979,7 @@ const allWords = [
   {
     "id": "UNIT3-16",
     "unit": "UNIT3",
-    "number": 516,
+    "number": 536,
     "word": "public",
     "chinese": "公众",
     "definition": "a place where many people can see you",
@@ -3990,7 +3990,7 @@ const allWords = [
   {
     "id": "UNIT3-17",
     "unit": "UNIT3",
-    "number": 517,
+    "number": 537,
     "word": "scene",
     "chinese": "镜头",
     "definition": "a part of a play or movie",
@@ -4001,7 +4001,7 @@ const allWords = [
   {
     "id": "UNIT3-18",
     "unit": "UNIT3",
-    "number": 518,
+    "number": 538,
     "word": "secret",
     "chinese": "秘密",
     "definition": "something that is kept hidden from other people",
@@ -4012,7 +4012,7 @@ const allWords = [
   {
     "id": "UNIT3-19",
     "unit": "UNIT3",
-    "number": 519,
+    "number": 539,
     "word": "stage",
     "chinese": "舞台",
     "definition": "the part of a theater where people perform",
@@ -4023,7 +4023,7 @@ const allWords = [
   {
     "id": "UNIT3-20",
     "unit": "UNIT3",
-    "number": 520,
+    "number": 540,
     "word": "unique",
     "chinese": "独特的",
     "definition": "not like anyone or anything else",
@@ -4034,7 +4034,7 @@ const allWords = [
   {
     "id": "UNIT4-1",
     "unit": "UNIT4",
-    "number": 521,
+    "number": 541,
     "word": "electricity",
     "chinese": "电",
     "definition": "something used to give light and make things work",
@@ -4045,7 +4045,7 @@ const allWords = [
   {
     "id": "UNIT4-2",
     "unit": "UNIT4",
-    "number": 522,
+    "number": 542,
     "word": "fact",
     "chinese": "事实",
     "definition": "something that is true",
@@ -4056,7 +4056,7 @@ const allWords = [
   {
     "id": "UNIT4-3",
     "unit": "UNIT4",
-    "number": 523,
+    "number": 543,
     "word": "fold",
     "chinese": "折叠",
     "definition": "to bend one part of something over another part",
@@ -4067,7 +4067,7 @@ const allWords = [
   {
     "id": "UNIT4-4",
     "unit": "UNIT4",
-    "number": 524,
+    "number": 544,
     "word": "key",
     "chinese": "钥匙",
     "definition": "an object used to lock or unlock a door or to start a car",
@@ -4078,7 +4078,7 @@ const allWords = [
   {
     "id": "UNIT4-5",
     "unit": "UNIT4",
-    "number": 525,
+    "number": 545,
     "word": "mind",
     "chinese": "介意",
     "definition": "to be unhappy about something, usually used with not",
@@ -4089,7 +4089,7 @@ const allWords = [
   {
     "id": "UNIT4-6",
     "unit": "UNIT4",
-    "number": 526,
+    "number": 546,
     "word": "power",
     "chinese": "能源",
     "definition": "something you cannot see that is used to make things work",
@@ -4100,7 +4100,7 @@ const allWords = [
   {
     "id": "UNIT4-7",
     "unit": "UNIT4",
-    "number": 527,
+    "number": 547,
     "word": "sock",
     "chinese": "袜子",
     "definition": "a soft piece of clothing that covers the foot",
@@ -4111,7 +4111,7 @@ const allWords = [
   {
     "id": "UNIT4-8",
     "unit": "UNIT4",
-    "number": 528,
+    "number": 548,
     "word": "solve",
     "chinese": "解答",
     "definition": "to find the answer",
@@ -4122,7 +4122,7 @@ const allWords = [
   {
     "id": "UNIT4-9",
     "unit": "UNIT4",
-    "number": 529,
+    "number": 549,
     "word": "stick",
     "chinese": "粘贴",
     "definition": "to attach to something",
@@ -4133,7 +4133,7 @@ const allWords = [
   {
     "id": "UNIT4-10",
     "unit": "UNIT4",
-    "number": 530,
+    "number": 550,
     "word": "traffic",
     "chinese": "交通",
     "definition": "cars on the road",
@@ -4144,7 +4144,7 @@ const allWords = [
   {
     "id": "UNIT4-11",
     "unit": "UNIT4",
-    "number": 531,
+    "number": 551,
     "word": "advice",
     "chinese": "建议",
     "definition": "an opinion about what someone should or should not do",
@@ -4155,7 +4155,7 @@ const allWords = [
   {
     "id": "UNIT4-12",
     "unit": "UNIT4",
-    "number": 532,
+    "number": 552,
     "word": "case",
     "chinese": "盒子",
     "definition": "a small box or bag",
@@ -4166,7 +4166,7 @@ const allWords = [
   {
     "id": "UNIT4-13",
     "unit": "UNIT4",
-    "number": 533,
+    "number": 553,
     "word": "exam",
     "chinese": "考试",
     "definition": "a test",
@@ -4177,7 +4177,7 @@ const allWords = [
   {
     "id": "UNIT4-14",
     "unit": "UNIT4",
-    "number": 534,
+    "number": 554,
     "word": "happen",
     "chinese": "发生",
     "definition": "to take place",
@@ -4188,7 +4188,7 @@ const allWords = [
   {
     "id": "UNIT4-15",
     "unit": "UNIT4",
-    "number": 535,
+    "number": 555,
     "word": "lazy",
     "chinese": "懒的",
     "definition": "not wanting to work or move",
@@ -4199,7 +4199,7 @@ const allWords = [
   {
     "id": "UNIT4-16",
     "unit": "UNIT4",
-    "number": 536,
+    "number": 556,
     "word": "message",
     "chinese": "消息",
     "definition": "information that is sent or given to someone",
@@ -4210,7 +4210,7 @@ const allWords = [
   {
     "id": "UNIT4-17",
     "unit": "UNIT4",
-    "number": 537,
+    "number": 557,
     "word": "stupid",
     "chinese": "愚蠢的",
     "definition": "dumb; foolish",
@@ -4221,7 +4221,7 @@ const allWords = [
   {
     "id": "UNIT4-18",
     "unit": "UNIT4",
-    "number": 538,
+    "number": 558,
     "word": "succeed",
     "chinese": "成功",
     "definition": "to do well; to do what you tried to do",
@@ -4232,7 +4232,7 @@ const allWords = [
   {
     "id": "UNIT4-19",
     "unit": "UNIT4",
-    "number": 539,
+    "number": 559,
     "word": "terrible",
     "chinese": "糟糕的",
     "definition": "very bad",
@@ -4243,7 +4243,7 @@ const allWords = [
   {
     "id": "UNIT4-20",
     "unit": "UNIT4",
-    "number": 540,
+    "number": 560,
     "word": "upset",
     "chinese": "沮丧的",
     "definition": "worried; not happy",
@@ -4254,7 +4254,7 @@ const allWords = [
   {
     "id": "UNIT5-1",
     "unit": "UNIT5",
-    "number": 541,
+    "number": 561,
     "word": "airplane",
     "chinese": "飞机",
     "definition": "a flying machine",
@@ -4265,7 +4265,7 @@ const allWords = [
   {
     "id": "UNIT5-2",
     "unit": "UNIT5",
-    "number": 542,
+    "number": 562,
     "word": "airport",
     "chinese": "机场",
     "definition": "a place where airplanes arrive and leave",
@@ -4276,7 +4276,7 @@ const allWords = [
   {
     "id": "UNIT5-3",
     "unit": "UNIT5",
-    "number": 543,
+    "number": 563,
     "word": "culture",
     "chinese": "文化",
     "definition": "the way of life of a group of people",
@@ -4287,7 +4287,7 @@ const allWords = [
   {
     "id": "UNIT5-4",
     "unit": "UNIT5",
-    "number": 544,
+    "number": 564,
     "word": "decide",
     "chinese": "决定",
     "definition": "to make a choice",
@@ -4298,7 +4298,7 @@ const allWords = [
   {
     "id": "UNIT5-5",
     "unit": "UNIT5",
-    "number": 545,
+    "number": 565,
     "word": "leave",
     "chinese": "离开",
     "definition": "to go away from",
@@ -4309,7 +4309,7 @@ const allWords = [
   {
     "id": "UNIT5-6",
     "unit": "UNIT5",
-    "number": 546,
+    "number": 566,
     "word": "modern",
     "chinese": "现代的",
     "definition": "of the latest kind",
@@ -4320,7 +4320,7 @@ const allWords = [
   {
     "id": "UNIT5-7",
     "unit": "UNIT5",
-    "number": 547,
+    "number": 567,
     "word": "order",
     "chinese": "点餐",
     "definition": "to ask for a food or drink at a restaurant",
@@ -4331,7 +4331,7 @@ const allWords = [
   {
     "id": "UNIT5-8",
     "unit": "UNIT5",
-    "number": 548,
+    "number": 568,
     "word": "sand",
     "chinese": "沙子",
     "definition": "very tiny pieces of rock",
@@ -4342,7 +4342,7 @@ const allWords = [
   {
     "id": "UNIT5-9",
     "unit": "UNIT5",
-    "number": 549,
+    "number": 569,
     "word": "spot",
     "chinese": "地点",
     "definition": "an area, place, or location",
@@ -4353,7 +4353,7 @@ const allWords = [
   {
     "id": "UNIT5-10",
     "unit": "UNIT5",
-    "number": 550,
+    "number": 570,
     "word": "strange",
     "chinese": "奇怪的",
     "definition": "different from what is usual",
@@ -4364,7 +4364,7 @@ const allWords = [
   {
     "id": "UNIT5-11",
     "unit": "UNIT5",
-    "number": 551,
+    "number": 571,
     "word": "bill",
     "chinese": "纸币",
     "definition": "a piece of paper money",
@@ -4375,7 +4375,7 @@ const allWords = [
   {
     "id": "UNIT5-12",
     "unit": "UNIT5",
-    "number": 552,
+    "number": 572,
     "word": "blow",
     "chinese": "吹",
     "definition": "to move something with air",
@@ -4386,7 +4386,7 @@ const allWords = [
   {
     "id": "UNIT5-13",
     "unit": "UNIT5",
-    "number": 553,
+    "number": 573,
     "word": "century",
     "chinese": "世纪",
     "definition": "one hundred years",
@@ -4397,7 +4397,7 @@ const allWords = [
   {
     "id": "UNIT5-14",
     "unit": "UNIT5",
-    "number": 554,
+    "number": 574,
     "word": "custom",
     "chinese": "习俗",
     "definition": "the usual way of doing something in a culture",
@@ -4408,7 +4408,7 @@ const allWords = [
   {
     "id": "UNIT5-15",
     "unit": "UNIT5",
-    "number": 555,
+    "number": 575,
     "word": "experience",
     "chinese": "体验",
     "definition": "to see, feel, or do something",
@@ -4419,7 +4419,7 @@ const allWords = [
   {
     "id": "UNIT5-16",
     "unit": "UNIT5",
-    "number": 556,
+    "number": 576,
     "word": "international",
     "chinese": "国际的",
     "definition": "happening in or between two or more countries",
@@ -4430,7 +4430,7 @@ const allWords = [
   {
     "id": "UNIT5-17",
     "unit": "UNIT5",
-    "number": 557,
+    "number": 577,
     "word": "island",
     "chinese": "岛屿",
     "definition": "a piece of land in the middle of water",
@@ -4441,7 +4441,7 @@ const allWords = [
   {
     "id": "UNIT5-18",
     "unit": "UNIT5",
-    "number": 558,
+    "number": 578,
     "word": "journey",
     "chinese": "长途旅行",
     "definition": "a long trip",
@@ -4452,7 +4452,7 @@ const allWords = [
   {
     "id": "UNIT5-19",
     "unit": "UNIT5",
-    "number": 559,
+    "number": 579,
     "word": "meal",
     "chinese": "饭",
     "definition": "food that is prepared and eaten",
@@ -4463,7 +4463,7 @@ const allWords = [
   {
     "id": "UNIT5-20",
     "unit": "UNIT5",
-    "number": 560,
+    "number": 580,
     "word": "return",
     "chinese": "返回",
     "definition": "to come back after being away",
@@ -4474,7 +4474,7 @@ const allWords = [
   {
     "id": "UNIT6-1",
     "unit": "UNIT6",
-    "number": 561,
+    "number": 581,
     "word": "actually",
     "chinese": "实际上",
     "definition": "in fact",
@@ -4485,7 +4485,7 @@ const allWords = [
   {
     "id": "UNIT6-2",
     "unit": "UNIT6",
-    "number": 562,
+    "number": 582,
     "word": "camp",
     "chinese": "露营",
     "definition": "to sleep outside in a tent",
@@ -4496,7 +4496,7 @@ const allWords = [
   {
     "id": "UNIT6-3",
     "unit": "UNIT6",
-    "number": 563,
+    "number": 583,
     "word": "collect",
     "chinese": "收集",
     "definition": "to bring things together into one group",
@@ -4507,7 +4507,7 @@ const allWords = [
   {
     "id": "UNIT6-4",
     "unit": "UNIT6",
-    "number": 564,
+    "number": 584,
     "word": "form",
     "chinese": "制作",
     "definition": "to make",
@@ -4518,7 +4518,7 @@ const allWords = [
   {
     "id": "UNIT6-5",
     "unit": "UNIT6",
-    "number": 565,
+    "number": 585,
     "word": "kick",
     "chinese": "踢",
     "definition": "to hit something with your foot",
@@ -4529,7 +4529,7 @@ const allWords = [
   {
     "id": "UNIT6-6",
     "unit": "UNIT6",
-    "number": 566,
+    "number": 586,
     "word": "reach",
     "chinese": "伸手去够",
     "definition": "to stretch out the arm to touch or get with your hand",
@@ -4540,7 +4540,7 @@ const allWords = [
   {
     "id": "UNIT6-7",
     "unit": "UNIT6",
-    "number": 567,
+    "number": 587,
     "word": "review",
     "chinese": "复习",
     "definition": "to look at or study something again",
@@ -4551,7 +4551,7 @@ const allWords = [
   {
     "id": "UNIT6-8",
     "unit": "UNIT6",
-    "number": 568,
+    "number": 588,
     "word": "simple",
     "chinese": "简单的",
     "definition": "easy",
@@ -4562,7 +4562,7 @@ const allWords = [
   {
     "id": "UNIT6-9",
     "unit": "UNIT6",
-    "number": 569,
+    "number": 589,
     "word": "soccer",
     "chinese": "足球",
     "definition": "a sport in which a ball is kicked into a goal to win a point",
@@ -4573,7 +4573,7 @@ const allWords = [
   {
     "id": "UNIT6-10",
     "unit": "UNIT6",
-    "number": 570,
+    "number": 590,
     "word": "symbol",
     "chinese": "象征",
     "definition": "a shape with a special meaning",
@@ -4584,7 +4584,7 @@ const allWords = [
   {
     "id": "UNIT6-11",
     "unit": "UNIT6",
-    "number": 571,
+    "number": 591,
     "word": "allow",
     "chinese": "允许",
     "definition": "to let someone do something",
@@ -4595,7 +4595,7 @@ const allWords = [
   {
     "id": "UNIT6-12",
     "unit": "UNIT6",
-    "number": 572,
+    "number": 592,
     "word": "bat",
     "chinese": "蝙蝠",
     "definition": "a flying animal that hunts at night",
@@ -4606,7 +4606,7 @@ const allWords = [
   {
     "id": "UNIT6-13",
     "unit": "UNIT6",
-    "number": 573,
+    "number": 593,
     "word": "exercise",
     "chinese": "锻炼",
     "definition": "to move the body as a way to get healthy",
@@ -4617,7 +4617,7 @@ const allWords = [
   {
     "id": "UNIT6-14",
     "unit": "UNIT6",
-    "number": 574,
+    "number": 594,
     "word": "force",
     "chinese": "逼迫",
     "definition": "to make people do things they do not want to do",
@@ -4628,7 +4628,7 @@ const allWords = [
   {
     "id": "UNIT6-15",
     "unit": "UNIT6",
-    "number": 575,
+    "number": 595,
     "word": "leaf",
     "chinese": "叶子",
     "definition": "the flat green part of a plant",
@@ -4639,7 +4639,7 @@ const allWords = [
   {
     "id": "UNIT6-16",
     "unit": "UNIT6",
-    "number": 576,
+    "number": 596,
     "word": "member",
     "chinese": "成员",
     "definition": "a person in a group or club",
@@ -4650,7 +4650,7 @@ const allWords = [
   {
     "id": "UNIT6-17",
     "unit": "UNIT6",
-    "number": 577,
+    "number": 597,
     "word": "real",
     "chinese": "真实的",
     "definition": "actually happening; being what it looks like",
@@ -4661,7 +4661,7 @@ const allWords = [
   {
     "id": "UNIT6-18",
     "unit": "UNIT6",
-    "number": 578,
+    "number": 598,
     "word": "sign",
     "chinese": "标志",
     "definition": "a flat board or paper with a message on it",
@@ -4672,7 +4672,7 @@ const allWords = [
   {
     "id": "UNIT6-19",
     "unit": "UNIT6",
-    "number": 579,
+    "number": 599,
     "word": "step",
     "chinese": "走",
     "definition": "to move your foot up and put it down in a different spot",
@@ -4683,7 +4683,7 @@ const allWords = [
   {
     "id": "UNIT6-20",
     "unit": "UNIT6",
-    "number": 580,
+    "number": 600,
     "word": "treat",
     "chinese": "乐趣",
     "definition": "something nice that you do not eat or do often",
@@ -4694,7 +4694,7 @@ const allWords = [
   {
     "id": "UNIT7-1",
     "unit": "UNIT7",
-    "number": 581,
+    "number": 601,
     "word": "afraid",
     "chinese": "害怕的",
     "definition": "feeling fear",
@@ -4705,7 +4705,7 @@ const allWords = [
   {
     "id": "UNIT7-2",
     "unit": "UNIT7",
-    "number": 582,
+    "number": 602,
     "word": "fair",
     "chinese": "公平的",
     "definition": "good for everyone",
@@ -4716,7 +4716,7 @@ const allWords = [
   {
     "id": "UNIT7-3",
     "unit": "UNIT7",
-    "number": 583,
+    "number": 603,
     "word": "focus",
     "chinese": "专注",
     "definition": "to put all of your thoughts on one thing",
@@ -4727,7 +4727,7 @@ const allWords = [
   {
     "id": "UNIT7-4",
     "unit": "UNIT7",
-    "number": 584,
+    "number": 604,
     "word": "foreign",
     "chinese": "国外的",
     "definition": "from a different country",
@@ -4738,7 +4738,7 @@ const allWords = [
   {
     "id": "UNIT7-5",
     "unit": "UNIT7",
-    "number": 585,
+    "number": 605,
     "word": "habit",
     "chinese": "习惯",
     "definition": "something you do often, usually without thinking about it",
@@ -4749,7 +4749,7 @@ const allWords = [
   {
     "id": "UNIT7-6",
     "unit": "UNIT7",
-    "number": 586,
+    "number": 606,
     "word": "invent",
     "chinese": "发明",
     "definition": "to make something for the first time",
@@ -4760,7 +4760,7 @@ const allWords = [
   {
     "id": "UNIT7-7",
     "unit": "UNIT7",
-    "number": 587,
+    "number": 607,
     "word": "language",
     "chinese": "语言",
     "definition": "the words and symbols used by people of one country or area",
@@ -4771,7 +4771,7 @@ const allWords = [
   {
     "id": "UNIT7-8",
     "unit": "UNIT7",
-    "number": 588,
+    "number": 608,
     "word": "nation",
     "chinese": "国家",
     "definition": "a country",
@@ -4782,7 +4782,7 @@ const allWords = [
   {
     "id": "UNIT7-9",
     "unit": "UNIT7",
-    "number": 589,
+    "number": 609,
     "word": "still",
     "chinese": "不动的",
     "definition": "not moving",
@@ -4793,7 +4793,7 @@ const allWords = [
   {
     "id": "UNIT7-10",
     "unit": "UNIT7",
-    "number": 590,
+    "number": 610,
     "word": "wise",
     "chinese": "智慧的",
     "definition": "knowing the right things to do",
@@ -4804,7 +4804,7 @@ const allWords = [
   {
     "id": "UNIT7-11",
     "unit": "UNIT7",
-    "number": 591,
+    "number": 611,
     "word": "audience",
     "chinese": "观众",
     "definition": "a group of people watching an event or show",
@@ -4815,7 +4815,7 @@ const allWords = [
   {
     "id": "UNIT7-12",
     "unit": "UNIT7",
-    "number": 592,
+    "number": 612,
     "word": "college",
     "chinese": "大学",
     "definition": "a school where students study after high school",
@@ -4826,7 +4826,7 @@ const allWords = [
   {
     "id": "UNIT7-13",
     "unit": "UNIT7",
-    "number": 593,
+    "number": 613,
     "word": "comfortable",
     "chinese": "舒服的",
     "definition": "feeling relaxed",
@@ -4837,7 +4837,7 @@ const allWords = [
   {
     "id": "UNIT7-14",
     "unit": "UNIT7",
-    "number": 594,
+    "number": 614,
     "word": "honest",
     "chinese": "诚实的",
     "definition": "good and saying things that are true",
@@ -4848,7 +4848,7 @@ const allWords = [
   {
     "id": "UNIT7-15",
     "unit": "UNIT7",
-    "number": 595,
+    "number": 615,
     "word": "imagine",
     "chinese": "想象",
     "definition": "to think of things that are not real",
@@ -4859,7 +4859,7 @@ const allWords = [
   {
     "id": "UNIT7-16",
     "unit": "UNIT7",
-    "number": 596,
+    "number": 616,
     "word": "level",
     "chinese": "数量",
     "definition": "an amount of something",
@@ -4870,7 +4870,7 @@ const allWords = [
   {
     "id": "UNIT7-17",
     "unit": "UNIT7",
-    "number": 597,
+    "number": 617,
     "word": "sentence",
     "chinese": "句子",
     "definition": "a set of words that make a statement or question",
@@ -4881,7 +4881,7 @@ const allWords = [
   {
     "id": "UNIT7-18",
     "unit": "UNIT7",
-    "number": 598,
+    "number": 618,
     "word": "stress",
     "chinese": "压力",
     "definition": "worry caused by problems in your life",
@@ -4892,7 +4892,7 @@ const allWords = [
   {
     "id": "UNIT7-19",
     "unit": "UNIT7",
-    "number": 599,
+    "number": 619,
     "word": "suddenly",
     "chinese": "突然",
     "definition": "very quickly",
@@ -4903,7 +4903,7 @@ const allWords = [
   {
     "id": "UNIT7-20",
     "unit": "UNIT7",
-    "number": 600,
+    "number": 620,
     "word": "topic",
     "chinese": "主题",
     "definition": "a subject people talk or write about",
@@ -4914,7 +4914,7 @@ const allWords = [
   {
     "id": "UNIT8-1",
     "unit": "UNIT8",
-    "number": 601,
+    "number": 621,
     "word": "add",
     "chinese": "增加",
     "definition": "to put one thing with another thing or things",
@@ -4925,7 +4925,7 @@ const allWords = [
   {
     "id": "UNIT8-2",
     "unit": "UNIT8",
-    "number": 602,
+    "number": 622,
     "word": "blind",
     "chinese": "瞎的",
     "definition": "not able to see",
@@ -4936,7 +4936,7 @@ const allWords = [
   {
     "id": "UNIT8-3",
     "unit": "UNIT8",
-    "number": 603,
+    "number": 623,
     "word": "button",
     "chinese": "扣子",
     "definition": "a small round thing used to close an opening in clothing",
@@ -4947,7 +4947,7 @@ const allWords = [
   {
     "id": "UNIT8-4",
     "unit": "UNIT8",
-    "number": 604,
+    "number": 624,
     "word": "create",
     "chinese": "创造",
     "definition": "to make something",
@@ -4958,7 +4958,7 @@ const allWords = [
   {
     "id": "UNIT8-5",
     "unit": "UNIT8",
-    "number": 605,
+    "number": 625,
     "word": "memory",
     "chinese": "记忆",
     "definition": "something from the past that is remembered",
@@ -4969,7 +4969,7 @@ const allWords = [
   {
     "id": "UNIT8-6",
     "unit": "UNIT8",
-    "number": 606,
+    "number": 626,
     "word": "prince",
     "chinese": "王子",
     "definition": "the son of a king or queen",
@@ -4980,7 +4980,7 @@ const allWords = [
   {
     "id": "UNIT8-7",
     "unit": "UNIT8",
-    "number": 607,
+    "number": 627,
     "word": "string",
     "chinese": "细绳",
     "definition": "a long thread used to keep things together",
@@ -4991,7 +4991,7 @@ const allWords = [
   {
     "id": "UNIT8-8",
     "unit": "UNIT8",
-    "number": 608,
+    "number": 628,
     "word": "thick",
     "chinese": "厚的",
     "definition": "having a large distance from top to bottom",
@@ -5002,7 +5002,7 @@ const allWords = [
   {
     "id": "UNIT8-9",
     "unit": "UNIT8",
-    "number": 609,
+    "number": 629,
     "word": "tight",
     "chinese": "紧的",
     "definition": "fitting close to the body",
@@ -5013,7 +5013,7 @@ const allWords = [
   {
     "id": "UNIT8-10",
     "unit": "UNIT8",
-    "number": 610,
+    "number": 630,
     "word": "tradition",
     "chinese": "传统",
     "definition": "a custom that has been around for a long time",
@@ -5024,7 +5024,7 @@ const allWords = [
   {
     "id": "UNIT8-11",
     "unit": "UNIT8",
-    "number": 611,
+    "number": 631,
     "word": "board",
     "chinese": "木板",
     "definition": "a flat, wide piece of wood",
@@ -5035,7 +5035,7 @@ const allWords = [
   {
     "id": "UNIT8-12",
     "unit": "UNIT8",
-    "number": 612,
+    "number": 632,
     "word": "brain",
     "chinese": "大脑",
     "definition": "the part of the body inside your head",
@@ -5046,7 +5046,7 @@ const allWords = [
   {
     "id": "UNIT8-13",
     "unit": "UNIT8",
-    "number": 613,
+    "number": 633,
     "word": "celebrate",
     "chinese": "庆祝",
     "definition": "to do something special for an important event",
@@ -5057,7 +5057,7 @@ const allWords = [
   {
     "id": "UNIT8-14",
     "unit": "UNIT8",
-    "number": 614,
+    "number": 634,
     "word": "especially",
     "chinese": "尤其",
     "definition": "in a way that is greater than usual",
@@ -5068,7 +5068,7 @@ const allWords = [
   {
     "id": "UNIT8-15",
     "unit": "UNIT8",
-    "number": 615,
+    "number": 635,
     "word": "hole",
     "chinese": "洞",
     "definition": "an opening that something can pass through",
@@ -5079,7 +5079,7 @@ const allWords = [
   {
     "id": "UNIT8-16",
     "unit": "UNIT8",
-    "number": 616,
+    "number": 636,
     "word": "item",
     "chinese": "部件",
     "definition": "a thing that is usually part of a group",
@@ -5090,7 +5090,7 @@ const allWords = [
   {
     "id": "UNIT8-17",
     "unit": "UNIT8",
-    "number": 617,
+    "number": 637,
     "word": "match",
     "chinese": "匹配",
     "definition": "to look similar to something",
@@ -5101,7 +5101,7 @@ const allWords = [
   {
     "id": "UNIT8-18",
     "unit": "UNIT8",
-    "number": 618,
+    "number": 638,
     "word": "princess",
     "chinese": "公主",
     "definition": "the daughter of a king or queen",
@@ -5112,7 +5112,7 @@ const allWords = [
   {
     "id": "UNIT8-19",
     "unit": "UNIT8",
-    "number": 619,
+    "number": 639,
     "word": "social",
     "chinese": "爱交往的",
     "definition": "having a need to be with others",
@@ -5123,7 +5123,7 @@ const allWords = [
   {
     "id": "UNIT8-20",
     "unit": "UNIT8",
-    "number": 620,
+    "number": 640,
     "word": "tear",
     "chinese": "撕裂",
     "definition": "to pull something into parts",
@@ -5134,7 +5134,7 @@ const allWords = [
   {
     "id": "UNIT9-1",
     "unit": "UNIT9",
-    "number": 621,
+    "number": 641,
     "word": "cross",
     "chinese": "穿过",
     "definition": "to go from one side to the other",
@@ -5145,7 +5145,7 @@ const allWords = [
   {
     "id": "UNIT9-2",
     "unit": "UNIT9",
-    "number": 622,
+    "number": 642,
     "word": "finally",
     "chinese": "终于",
     "definition": "after a long time",
@@ -5156,7 +5156,7 @@ const allWords = [
   {
     "id": "UNIT9-3",
     "unit": "UNIT9",
-    "number": 623,
+    "number": 643,
     "word": "follow",
     "chinese": "跟随",
     "definition": "to go after; to do what a person or thing says",
@@ -5167,7 +5167,7 @@ const allWords = [
   {
     "id": "UNIT9-4",
     "unit": "UNIT9",
-    "number": 624,
+    "number": 644,
     "word": "heat",
     "chinese": "加热",
     "definition": "to make something hot",
@@ -5178,7 +5178,7 @@ const allWords = [
   {
     "id": "UNIT9-5",
     "unit": "UNIT9",
-    "number": 625,
+    "number": 645,
     "word": "rainbow",
     "chinese": "彩虹",
     "definition": "a curved line of colors in the sky",
@@ -5189,7 +5189,7 @@ const allWords = [
   {
     "id": "UNIT9-6",
     "unit": "UNIT9",
-    "number": 626,
+    "number": 646,
     "word": "spread",
     "chinese": "铺开",
     "definition": "to open or place something so that it covers a large area",
@@ -5200,7 +5200,7 @@ const allWords = [
   {
     "id": "UNIT9-7",
     "unit": "UNIT9",
-    "number": 627,
+    "number": 647,
     "word": "tired",
     "chinese": "劳累的",
     "definition": "needing rest or sleep",
@@ -5211,7 +5211,7 @@ const allWords = [
   {
     "id": "UNIT9-8",
     "unit": "UNIT9",
-    "number": 628,
+    "number": 648,
     "word": "tower",
     "chinese": "塔",
     "definition": "a tall and narrow building",
@@ -5222,7 +5222,7 @@ const allWords = [
   {
     "id": "UNIT9-9",
     "unit": "UNIT9",
-    "number": 629,
+    "number": 649,
     "word": "unit",
     "chinese": "单元",
     "definition": "one part of something",
@@ -5233,7 +5233,7 @@ const allWords = [
   {
     "id": "UNIT9-10",
     "unit": "UNIT9",
-    "number": 630,
+    "number": 650,
     "word": "vote",
     "chinese": "投票",
     "definition": "to make a choice for or against a person or thing",
@@ -5244,7 +5244,7 @@ const allWords = [
   {
     "id": "UNIT9-11",
     "unit": "UNIT9",
-    "number": 631,
+    "number": 651,
     "word": "climb",
     "chinese": "爬",
     "definition": "to go up or down using your feet and hands",
@@ -5255,7 +5255,7 @@ const allWords = [
   {
     "id": "UNIT9-12",
     "unit": "UNIT9",
-    "number": 632,
+    "number": 652,
     "word": "describe",
     "chinese": "描述",
     "definition": "to talk about what something is like",
@@ -5266,7 +5266,7 @@ const allWords = [
   {
     "id": "UNIT9-13",
     "unit": "UNIT9",
-    "number": 633,
+    "number": 653,
     "word": "energy",
     "chinese": "能量",
     "definition": "power; the ability to be active",
@@ -5277,7 +5277,7 @@ const allWords = [
   {
     "id": "UNIT9-14",
     "unit": "UNIT9",
-    "number": 634,
+    "number": 654,
     "word": "engine",
     "chinese": "引擎",
     "definition": "the part of a car that makes power for it to move",
@@ -5288,7 +5288,7 @@ const allWords = [
   {
     "id": "UNIT9-15",
     "unit": "UNIT9",
-    "number": 635,
+    "number": 655,
     "word": "field",
     "chinese": "田野",
     "definition": "a grassy area that has no trees or buildings",
@@ -5299,7 +5299,7 @@ const allWords = [
   {
     "id": "UNIT9-16",
     "unit": "UNIT9",
-    "number": 636,
+    "number": 656,
     "word": "include",
     "chinese": "包括",
     "definition": "to have a person or thing as part of a group",
@@ -5310,7 +5310,7 @@ const allWords = [
   {
     "id": "UNIT9-17",
     "unit": "UNIT9",
-    "number": 637,
+    "number": 657,
     "word": "perfect",
     "chinese": "完美的",
     "definition": "not having anything wrong",
@@ -5321,7 +5321,7 @@ const allWords = [
   {
     "id": "UNIT9-18",
     "unit": "UNIT9",
-    "number": 638,
+    "number": 658,
     "word": "rise",
     "chinese": "升起",
     "definition": "to move upward",
@@ -5332,7 +5332,7 @@ const allWords = [
   {
     "id": "UNIT9-19",
     "unit": "UNIT9",
-    "number": 639,
+    "number": 659,
     "word": "shape",
     "chinese": "形状",
     "definition": "the outline of something",
@@ -5343,7 +5343,7 @@ const allWords = [
   {
     "id": "UNIT9-20",
     "unit": "UNIT9",
-    "number": 640,
+    "number": 660,
     "word": "stone",
     "chinese": "石头",
     "definition": "a small rock",
@@ -5365,9 +5365,9 @@ async function playChinese(item) { await playAudio(item.chineseAudio, item.chine
 function makeOptions(correct) { const seen = new Set([correct.chinese]); const wrong = []; for (const item of shuffle(allWords)) { if (!seen.has(item.chinese)) { seen.add(item.chinese); wrong.push(item.chinese); if (wrong.length === 3) break; } } return shuffle([correct.chinese, ...wrong]); }
 function preloadCurrent() { const current = state.order[state.index]; if (!current) return; getAudioElement(current.englishAudio); getAudioElement(current.chineseAudio); state.order.slice(state.index + 1, state.index + 4).forEach((item) => { getAudioElement(item.englishAudio); getAudioElement(item.chineseAudio); }); }
 function buildOrder() { return shuffle([...coreWords, ...shuffle(reviewWords).slice(0, 20)]); }
-function renderQuestion() { if (state.index >= state.order.length) { showResult(); return; } stopAudio(); state.answered = false; const item = state.order[state.index]; $('wordText').textContent = item.word; $('unitText').textContent = item.unit + ' ? ' + item.number; $('countText').textContent = (state.index + 1) + ' / ' + state.order.length; $('bar').style.width = ((state.index / state.order.length) * 100) + '%'; $('statusText').textContent = '????????'; $('options').innerHTML = makeOptions(item).map((option) => '<button class="option" data-answer="' + option.replace(/"/g, '&quot;') + '">' + option + '</button>').join(''); document.querySelectorAll('.option').forEach((btn) => btn.addEventListener('click', () => checkAnswer(btn, item))); preloadCurrent(); }
-async function checkAnswer(btn, item) { if (state.answered) return; state.answered = true; stopAudio(); const picked = btn.dataset.answer; document.querySelectorAll('.option').forEach((option) => { option.disabled = true; if (option.dataset.answer === item.chinese) option.classList.add('correct'); }); if (picked === item.chinese) { state.score += 1; btn.classList.add('correct'); $('statusText').textContent = '???????? 1 ??'; await playEnglish(item, 1); } else { btn.classList.add('wrong'); state.mistakes.push({ word: item.word, chinese: item.chinese, picked, unit: item.unit, number: item.number }); $('statusText').textContent = '?????????' + item.chinese + '??????? 3 ???? 1 ??'; await playEnglish(item, 3); await playChinese(item); } state.index += 1; $('bar').style.width = ((state.index / state.order.length) * 100) + '%'; window.setTimeout(renderQuestion, 220); }
-function showResult() { stopAudio(); $('quizPanel').classList.add('hidden'); $('resultPanel').classList.remove('hidden'); const score = state.score; const percent = Math.round((score / state.order.length) * 100); $('scoreText').textContent = score + ' / ' + state.order.length; let feedback = ''; if (percent >= 90) feedback = '???UNIT10-UNIT12 ??????????????'; else if (percent >= 75) feedback = '?????????????????????'; else if (percent >= 60) feedback = '??????????????????'; else feedback = '????????? UNIT10-UNIT12 ????????'; $('feedbackText').textContent = '??? ' + percent + '%?' + feedback; if (state.mistakes.length === 0) { $('missedBlock').classList.add('hidden'); } else { $('missedBlock').classList.remove('hidden'); $('missedList').innerHTML = state.mistakes.map((item) => '<div class="miss"><strong>' + item.word + ' <small>' + item.unit + ' ? ' + item.number + '</small></strong><span>' + item.chinese + ' ? ????' + item.picked + '</span></div>').join(''); } }
+function renderQuestion() { if (state.index >= state.order.length) { showResult(); return; } stopAudio(); state.answered = false; const item = state.order[state.index]; $('wordText').textContent = item.word; $('unitText').textContent = item.unit + ' · ' + item.number; $('countText').textContent = (state.index + 1) + ' / ' + state.order.length; $('bar').style.width = ((state.index / state.order.length) * 100) + '%'; $('statusText').textContent = '请选择中文意思。'; $('options').innerHTML = makeOptions(item).map((option) => '<button class="option" data-answer="' + option.replace(/"/g, '&quot;') + '">' + option + '</button>').join(''); document.querySelectorAll('.option').forEach((btn) => btn.addEventListener('click', () => checkAnswer(btn, item))); preloadCurrent(); }
+async function checkAnswer(btn, item) { if (state.answered) return; state.answered = true; stopAudio(); const picked = btn.dataset.answer; document.querySelectorAll('.option').forEach((option) => { option.disabled = true; if (option.dataset.answer === item.chinese) option.classList.add('correct'); }); if (picked === item.chinese) { state.score += 1; btn.classList.add('correct'); $('statusText').textContent = '答对了，播放英文 1 遍。'; await playEnglish(item, 1); } else { btn.classList.add('wrong'); state.mistakes.push({ word: item.word, chinese: item.chinese, picked, unit: item.unit, number: item.number }); $('statusText').textContent = '答错了，正确答案：' + item.chinese + '。正在播放英文 3 遍和中文 1 遍。'; await playEnglish(item, 3); await playChinese(item); } state.index += 1; $('bar').style.width = ((state.index / state.order.length) * 100) + '%'; window.setTimeout(renderQuestion, 220); }
+function showResult() { stopAudio(); $('quizPanel').classList.add('hidden'); $('resultPanel').classList.remove('hidden'); const score = state.score; const percent = Math.round((score / state.order.length) * 100); $('scoreText').textContent = score + ' / ' + state.order.length; let feedback = ''; if (percent >= 90) feedback = '优秀：UNIT10-UNIT12 掌握扎实，旧单元复习也稳定。'; else if (percent >= 75) feedback = '良好：大部分词已经熟悉，建议重点回听错题。'; else if (percent >= 60) feedback = '继续加油：先复习错题，再重新测一次。'; else feedback = '需要回炉：建议回到 UNIT10-UNIT12 逐个跟读后再测。'; $('feedbackText').textContent = '正确率 ' + percent + '%。' + feedback; if (state.mistakes.length === 0) { $('missedBlock').classList.add('hidden'); } else { $('missedBlock').classList.remove('hidden'); $('missedList').innerHTML = state.mistakes.map((item) => '<div class="miss"><strong>' + item.word + ' <small>' + item.unit + ' · ' + item.number + '</small></strong><span>' + item.chinese + ' · 你选了：' + item.picked + '</span></div>').join(''); } }
 function startTest() { stopAudio(); state.order = buildOrder(); state.index = 0; state.score = 0; state.answered = false; state.mistakes = []; $('quizPanel').classList.remove('hidden'); $('resultPanel').classList.add('hidden'); renderQuestion(); }
 $('speakBtn').addEventListener('click', () => { const item = state.order[state.index]; if (item) { stopAudio(); playEnglish(item, 1); } });
 $('restartBtn').addEventListener('click', startTest);
