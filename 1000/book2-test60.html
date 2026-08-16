@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book 2 UNIT1-UNIT4 60词复习抽查</title>
+  <style>
+    :root {
+      --ink: #241735;
+      --muted: #746884;
+      --purple: #5c35a2;
+      --purple-dark: #3f236d;
+      --yellow: #ffd766;
+      --line: #eadfb9;
+      --panel: #fffdf7;
+      --good: #187a4b;
+      --bad: #b42318;
+      --shadow: 0 18px 42px rgba(63, 35, 109, .16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 215, 102, .42), transparent 34%),
+        linear-gradient(135deg, #fff8df 0%, #f4eaff 48%, #fff3c6 100%);
+    }
+
+    button {
+      font: inherit;
+      touch-action: manipulation;
+    }
+
+    main {
+      width: min(960px, 100%);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 7vw, 64px);
+      line-height: 1;
+      color: var(--purple-dark);
+    }
+
+    h2 { margin: 0; }
+
+    p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .home,
+    .btn {
+      min-height: 44px;
+      border: 1px solid #d9c47c;
+      border-radius: 7px;
+      padding: 0 15px;
+      color: var(--purple-dark);
+      background: var(--panel);
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .home {
+      display: inline-grid;
+      place-items: center;
+      padding: 10px 14px;
+      text-decoration: none;
+    }
+
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 247, .96);
+      box-shadow: var(--shadow);
+    }
+
+    .progress {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .meter {
+      height: 12px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #efe4bd;
+    }
+
+    .meter span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: var(--purple);
+      transition: width .2s ease;
+    }
+
+    .count {
+      color: var(--muted);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .word-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      padding-bottom: 16px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .word {
+      color: var(--purple-dark);
+      font-size: clamp(48px, 11vw, 96px);
+      font-weight: 950;
+      line-height: .95;
+      overflow-wrap: anywhere;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: #805400;
+      background: #fff0b8;
+      font-weight: 900;
+    }
+
+    .speak {
+      display: grid;
+      flex: 0 0 auto;
+      width: 58px;
+      height: 58px;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      color: var(--purple-dark);
+      background: var(--yellow);
+      box-shadow: 0 14px 28px rgba(111, 67, 192, .25);
+      cursor: pointer;
+    }
+
+    .speak svg {
+      width: 27px;
+      height: 27px;
+      fill: currentColor;
+    }
+
+    .speak:disabled {
+      opacity: .55;
+      cursor: wait;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .option {
+      min-height: 62px;
+      padding: 14px 16px;
+      border: 1px solid #d9c47c;
+      border-radius: 8px;
+      color: var(--purple-dark);
+      background: white;
+      font-size: 20px;
+      font-weight: 900;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
+    }
+
+    .option:hover:not(:disabled) { transform: translateY(-1px); }
+    .option:active:not(:disabled),
+    .btn:active,
+    .home:active,
+    .speak:active:not(:disabled) { transform: translateY(1px); }
+    .option.correct { border-color: var(--good); color: var(--good); background: #dff7e9; }
+    .option.wrong { border-color: var(--bad); color: var(--bad); background: #fee4e2; }
+    .option:disabled { cursor: default; }
+    .option:disabled:not(.correct):not(.wrong) { opacity: .58; }
+
+    .status {
+      min-height: 36px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-weight: 900;
+    }
+
+    .hidden { display: none !important; }
+
+    .result {
+      display: grid;
+      gap: 14px;
+    }
+
+    .score {
+      color: var(--purple-dark);
+      font-size: clamp(42px, 10vw, 84px);
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .feedback {
+      color: var(--ink);
+      font-size: 20px;
+      font-weight: 850;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn.primary {
+      border-color: var(--purple);
+      color: white;
+      background: var(--purple);
+    }
+
+    .missed {
+      display: grid;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .miss {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fffefa;
+    }
+
+    .miss small { color: var(--muted); }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #c08700;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 640px) {
+      main { padding: 16px; }
+      .options { grid-template-columns: 1fr; }
+      .word-head { align-items: center; }
+      .miss { display: grid; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="topbar">
+      <div>
+        <h1>Book 2 复习抽查</h1>
+        <p>覆盖 UNIT1–UNIT4 共 80 词，每单元随机抽 15 词，合计 60 词。看英文，选中文。</p>
+      </div>
+      <a class="home" href="index.html">返回总页面</a>
+    </header>
+
+    <section class="panel" id="quizPanel">
+      <div class="progress">
+        <div class="meter" id="progressMeter" role="progressbar" aria-label="答题进度" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0">
+          <span id="bar"></span>
+        </div>
+        <div class="count" id="countText">1 / 60</div>
+      </div>
+      <div class="word-head">
+        <div>
+          <div class="word" id="wordText">word</div>
+          <span class="tag" id="unitText">[2]UNIT</span>
+        </div>
+        <button class="speak" id="speakBtn" title="播放单词" aria-label="播放单词">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zm-2.5-9v2.06a7.01 7.01 0 0 1 0 13.88V21a9 9 0 0 0 0-18z"/></svg>
+        </button>
+      </div>
+      <div class="options" id="options"></div>
+      <div class="status" id="statusText" aria-live="polite">请选择中文意思。</div>
+    </section>
+
+    <section class="panel result hidden" id="resultPanel">
+      <div class="score" id="scoreText">0 / 60</div>
+      <div class="feedback" id="feedbackText"></div>
+      <div class="actions">
+        <button class="btn primary" id="restartBtn">重新抽 60 词</button>
+        <a class="home" href="index.html">返回总页面</a>
+      </div>
+      <div id="missedBlock">
+        <h2>错题回看</h2>
+        <div class="missed" id="missedList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const wordRows = [
+      ["angry","愤怒的",1,"https://api.dictionaryapi.dev/media/pronunciations/en/angry-us.mp3","audio/book2-unit1-zh-angry.wav"],
+      ["boring","枯燥的",1,"https://api.dictionaryapi.dev/media/pronunciations/en/boring-us.mp3","audio/book2-unit1-zh-boring.wav"],
+      ["class","班级",1,"https://api.dictionaryapi.dev/media/pronunciations/en/class-us.mp3","audio/book2-unit1-zh-class.wav"],
+      ["dream","梦想",1,"https://api.dictionaryapi.dev/media/pronunciations/en/dream-us.mp3","audio/book2-unit1-zh-dream.wav"],
+      ["famous","著名的",1,"https://api.dictionaryapi.dev/media/pronunciations/en/famous-us.ogg","audio/book2-unit1-zh-famous.wav"],
+      ["feel","觉得",1,"https://api.dictionaryapi.dev/media/pronunciations/en/feel-us.mp3","audio/book2-unit1-zh-feel.wav"],
+      ["future","将来",1,"https://api.dictionaryapi.dev/media/pronunciations/en/future-us.mp3","audio/book2-unit1-zh-future.wav"],
+      ["group","群组",1,"audio/book2-unit1-group.wav","audio/book2-unit1-zh-group.wav"],
+      ["hobby","爱好",1,"https://api.dictionaryapi.dev/media/pronunciations/en/hobby-uk.mp3","audio/book2-unit1-zh-hobby.wav"],
+      ["job","工作",1,"https://api.dictionaryapi.dev/media/pronunciations/en/job-us.mp3","audio/book2-unit1-zh-job.wav"],
+      ["hundred","百",1,"https://api.dictionaryapi.dev/media/pronunciations/en/hundred-us.mp3","audio/book2-unit1-zh-hundred.wav"],
+      ["invite","邀请",1,"https://api.dictionaryapi.dev/media/pronunciations/en/invite-2-us.mp3","audio/book2-unit1-zh-invite.wav"],
+      ["math","数学",1,"https://api.dictionaryapi.dev/media/pronunciations/en/math-1-us.mp3","audio/book2-unit1-zh-math.wav"],
+      ["photograph","照片",1,"https://api.dictionaryapi.dev/media/pronunciations/en/photograph-us.mp3","audio/book2-unit1-zh-photograph.wav"],
+      ["president","总统",1,"https://api.dictionaryapi.dev/media/pronunciations/en/president-us.mp3","audio/book2-unit1-zh-president.wav"],
+      ["really","真的",1,"https://api.dictionaryapi.dev/media/pronunciations/en/really-1-us.mp3","audio/book2-unit1-zh-really.wav"],
+      ["speech","演讲",1,"https://api.dictionaryapi.dev/media/pronunciations/en/speech-us.mp3","audio/book2-unit1-zh-speech.wav"],
+      ["travel","旅行",1,"https://api.dictionaryapi.dev/media/pronunciations/en/travel-us.mp3","audio/book2-unit1-zh-travel.wav"],
+      ["voice","声音",1,"https://api.dictionaryapi.dev/media/pronunciations/en/voice-us.mp3","audio/book2-unit1-zh-voice.wav"],
+      ["wonder","想知道",1,"https://api.dictionaryapi.dev/media/pronunciations/en/wonder-us.mp3","audio/book2-unit1-zh-wonder.wav"],
+      ["baseball","棒球",2,"https://api.dictionaryapi.dev/media/pronunciations/en/baseball-us.mp3","audio/book2-unit2-zh-baseball.wav"],
+      ["basketball","篮球",2,"audio/book2-unit2-basketball.wav","audio/book2-unit2-zh-basketball.wav"],
+      ["dangerous","危险的",2,"https://api.dictionaryapi.dev/media/pronunciations/en/dangerous-us.mp3","audio/book2-unit2-zh-dangerous.wav"],
+      ["excited","激动的",2,"https://api.dictionaryapi.dev/media/pronunciations/en/excited-us.mp3","audio/book2-unit2-zh-excited.wav"],
+      ["hill","山",2,"https://api.dictionaryapi.dev/media/pronunciations/en/hill-us.mp3","audio/book2-unit2-zh-hill.wav"],
+      ["hit","击打",2,"https://api.dictionaryapi.dev/media/pronunciations/en/hit-us.mp3","audio/book2-unit2-zh-hit.wav"],
+      ["hospital","医院",2,"https://api.dictionaryapi.dev/media/pronunciations/en/hospital-us.mp3","audio/book2-unit2-zh-hospital.wav"],
+      ["hurt","使受伤",2,"https://api.dictionaryapi.dev/media/pronunciations/en/hurt-us.mp3","audio/book2-unit2-zh-hurt.wav"],
+      ["motorbike","摩托车",2,"https://api.dictionaryapi.dev/media/pronunciations/en/motorbike-uk.mp3","audio/book2-unit2-zh-motorbike.wav"],
+      ["slow","慢的",2,"https://api.dictionaryapi.dev/media/pronunciations/en/slow-us.mp3","audio/book2-unit2-zh-slow.wav"],
+      ["drop","掉落",2,"https://api.dictionaryapi.dev/media/pronunciations/en/drop-us.mp3","audio/book2-unit2-zh-drop.wav"],
+      ["earth","土",2,"https://api.dictionaryapi.dev/media/pronunciations/en/earth-us.ogg","audio/book2-unit2-zh-earth.wav"],
+      ["flag","旗帜",2,"https://api.dictionaryapi.dev/media/pronunciations/en/flag-us.mp3","audio/book2-unit2-zh-flag.wav"],
+      ["foolish","愚蠢的",2,"https://api.dictionaryapi.dev/media/pronunciations/en/foolish-us.mp3","audio/book2-unit2-zh-foolish.wav"],
+      ["hold","拿",2,"https://api.dictionaryapi.dev/media/pronunciations/en/hold-us.mp3","audio/book2-unit2-zh-hold.wav"],
+      ["matter","重要",2,"https://api.dictionaryapi.dev/media/pronunciations/en/matter-us.mp3","audio/book2-unit2-zh-matter.wav"],
+      ["round","圆的",2,"https://api.dictionaryapi.dev/media/pronunciations/en/round-us.mp3","audio/book2-unit2-zh-round.wav"],
+      ["take","带",2,"https://api.dictionaryapi.dev/media/pronunciations/en/take-us.mp3","audio/book2-unit2-zh-take.wav"],
+      ["tie","平局",2,"https://api.dictionaryapi.dev/media/pronunciations/en/tie-us.mp3","audio/book2-unit2-zh-tie.wav"],
+      ["weather","天气",2,"https://api.dictionaryapi.dev/media/pronunciations/en/weather-us.mp3","audio/book2-unit2-zh-weather.wav"],
+      ["art","艺术",3,"https://api.dictionaryapi.dev/media/pronunciations/en/art-us.mp3","audio/book2-unit3-zh-art.wav"],
+      ["build","建造",3,"https://api.dictionaryapi.dev/media/pronunciations/en/build-us.mp3","audio/book2-unit3-zh-build.wav"],
+      ["choose","选择",3,"https://api.dictionaryapi.dev/media/pronunciations/en/choose-1-us.mp3","audio/book2-unit3-zh-choose.wav"],
+      ["draw","画",3,"audio/book2-unit3-draw.wav","audio/book2-unit3-zh-draw.wav"],
+      ["kid","孩子",3,"https://api.dictionaryapi.dev/media/pronunciations/en/kid-us.mp3","audio/book2-unit3-zh-kid.wav"],
+      ["paint","画",3,"https://api.dictionaryapi.dev/media/pronunciations/en/paint-us.mp3","audio/book2-unit3-zh-paint.wav"],
+      ["picture","图片",3,"https://api.dictionaryapi.dev/media/pronunciations/en/picture-us.mp3","audio/book2-unit3-zh-picture.wav"],
+      ["plant","植物",3,"https://api.dictionaryapi.dev/media/pronunciations/en/plant-us.mp3","audio/book2-unit3-zh-plant.wav"],
+      ["repeat","重复",3,"https://api.dictionaryapi.dev/media/pronunciations/en/repeat-us.mp3","audio/book2-unit3-zh-repeat.wav"],
+      ["wall","墙",3,"https://api.dictionaryapi.dev/media/pronunciations/en/wall-us.mp3","audio/book2-unit3-zh-wall.wav"],
+      ["absent","缺席",3,"https://api.dictionaryapi.dev/media/pronunciations/en/absent-1-us.mp3","audio/book2-unit3-zh-absent.wav"],
+      ["back","后面",3,"https://api.dictionaryapi.dev/media/pronunciations/en/back-us.mp3","audio/book2-unit3-zh-back.wav"],
+      ["fix","修理",3,"https://api.dictionaryapi.dev/media/pronunciations/en/fix-us.mp3","audio/book2-unit3-zh-fix.wav"],
+      ["land","土地",3,"https://api.dictionaryapi.dev/media/pronunciations/en/land-us.mp3","audio/book2-unit3-zh-land.wav"],
+      ["pants","裤子",3,"https://api.dictionaryapi.dev/media/pronunciations/en/pants-us.mp3","audio/book2-unit3-zh-pants.wav"],
+      ["picnic","野餐",3,"audio/book2-unit3-picnic.wav","audio/book2-unit3-zh-picnic.wav"],
+      ["river","河",3,"https://api.dictionaryapi.dev/media/pronunciations/en/river-1-us.mp3","audio/book2-unit3-zh-river.wav"],
+      ["rock","石头",3,"https://api.dictionaryapi.dev/media/pronunciations/en/rock-us.mp3","audio/book2-unit3-zh-rock.wav"],
+      ["school","学校",3,"https://api.dictionaryapi.dev/media/pronunciations/en/school-uk.mp3","audio/book2-unit3-zh-school.wav"],
+      ["wood","木材",3,"https://api.dictionaryapi.dev/media/pronunciations/en/wood-1-au.mp3","audio/book2-unit3-zh-wood.wav"],
+      ["book","书",4,"https://api.dictionaryapi.dev/media/pronunciations/en/book-us.mp3","audio/book2-unit4-zh-book.wav"],
+      ["example","例子",4,"https://api.dictionaryapi.dev/media/pronunciations/en/example-us.mp3","audio/book2-unit4-zh-example.wav"],
+      ["glue","胶水",4,"https://api.dictionaryapi.dev/media/pronunciations/en/glue-us.mp3","audio/book2-unit4-zh-glue.wav"],
+      ["library","图书馆",4,"https://api.dictionaryapi.dev/media/pronunciations/en/library-us.mp3","audio/book2-unit4-zh-library.wav"],
+      ["mean","凶恶的",4,"https://api.dictionaryapi.dev/media/pronunciations/en/mean-us.mp3","audio/book2-unit4-zh-mean.wav"],
+      ["piece","碎片",4,"https://api.dictionaryapi.dev/media/pronunciations/en/piece-us.mp3","audio/book2-unit4-zh-piece.wav"],
+      ["plan","计划",4,"https://api.dictionaryapi.dev/media/pronunciations/en/plan-us.mp3","audio/book2-unit4-zh-plan.wav"],
+      ["quiet","安静的",4,"https://api.dictionaryapi.dev/media/pronunciations/en/quiet-us.mp3","audio/book2-unit4-zh-quiet.wav"],
+      ["read","阅读",4,"https://api.dictionaryapi.dev/media/pronunciations/en/read-2-us.mp3","audio/book2-unit4-zh-read.wav"],
+      ["sound","声音",4,"https://api.dictionaryapi.dev/media/pronunciations/en/sound-us.mp3","audio/book2-unit4-zh-sound.wav"],
+      ["correct","正确的",4,"https://api.dictionaryapi.dev/media/pronunciations/en/correct-us.mp3","audio/book2-unit4-zh-correct.wav"],
+      ["difference","不同",4,"https://api.dictionaryapi.dev/media/pronunciations/en/difference-us.mp3","audio/book2-unit4-zh-difference.wav"],
+      ["difficult","困难的",4,"https://api.dictionaryapi.dev/media/pronunciations/en/difficult-us.mp3","audio/book2-unit4-zh-difficult.wav"],
+      ["excellent","很好的",4,"https://api.dictionaryapi.dev/media/pronunciations/en/excellent-us.mp3","audio/book2-unit4-zh-excellent.wav"],
+      ["guess","猜测",4,"https://api.dictionaryapi.dev/media/pronunciations/en/guess-us.mp3","audio/book2-unit4-zh-guess.wav"],
+      ["museum","博物馆",4,"https://api.dictionaryapi.dev/media/pronunciations/en/museum-us.mp3","audio/book2-unit4-zh-museum.wav"],
+      ["noise","噪音",4,"https://api.dictionaryapi.dev/media/pronunciations/en/noise-us.mp3","audio/book2-unit4-zh-noise.wav"],
+      ["relax","放松",4,"https://api.dictionaryapi.dev/media/pronunciations/en/relax-us.mp3","audio/book2-unit4-zh-relax.wav"],
+      ["science","科学",4,"https://api.dictionaryapi.dev/media/pronunciations/en/science-1-us.mp3","audio/book2-unit4-zh-science.wav"],
+      ["tomorrow","明天",4,"https://api.dictionaryapi.dev/media/pronunciations/en/tomorrow-us.mp3","audio/book2-unit4-zh-tomorrow.wav"]
+    ];
+
+    const allWords = wordRows.map(function (row, index) {
+      const positionInUnit = index % 20;
+      return {
+        word: row[0],
+        chinese: row[1],
+        unitNumber: row[2],
+        unit: "[2]UNIT " + row[2],
+        number: 241 + ((row[2] - 1) * 20) + positionInUnit,
+        englishAudio: row[3],
+        chineseAudio: row[4]
+      };
+    });
+
+    const totalQuestions = 60;
+    const state = {
+      order: [],
+      index: 0,
+      score: 0,
+      answered: false,
+      mistakes: [],
+      activeAudio: null,
+      audioElements: new Map()
+    };
+
+    const $ = function (id) { return document.getElementById(id); };
+
+    function shuffle(array) {
+      const result = array.slice();
+      for (let i = result.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temporary = result[i];
+        result[i] = result[j];
+        result[j] = temporary;
+      }
+      return result;
+    }
+
+    function getAudioElement(url) {
+      if (!url) return null;
+      if (!state.audioElements.has(url)) {
+        const audio = new Audio(url);
+        audio.preload = "auto";
+        state.audioElements.set(url, audio);
+      }
+      return state.audioElements.get(url);
+    }
+
+    function stopAudio() {
+      if (state.activeAudio) {
+        state.activeAudio.pause();
+        state.activeAudio.currentTime = 0;
+        state.activeAudio = null;
+      }
+      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+    }
+
+    function speakFallback(text, language) {
+      return new Promise(function (resolve) {
+        if (!("speechSynthesis" in window)) {
+          resolve();
+          return;
+        }
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = language;
+        utterance.rate = language === "zh-CN" ? .88 : .82;
+        utterance.onend = resolve;
+        utterance.onerror = resolve;
+        window.speechSynthesis.speak(utterance);
+      });
+    }
+
+    function playAudio(url, fallbackText, fallbackLanguage) {
+      return new Promise(function (resolve) {
+        const audio = getAudioElement(url);
+        if (!audio) {
+          speakFallback(fallbackText, fallbackLanguage).then(resolve);
+          return;
+        }
+
+        audio.pause();
+        audio.currentTime = 0;
+        state.activeAudio = audio;
+        audio.onended = function () {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          resolve();
+        };
+        audio.onerror = function () {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          speakFallback(fallbackText, fallbackLanguage).then(resolve);
+        };
+        audio.play().catch(function () {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          speakFallback(fallbackText, fallbackLanguage).then(resolve);
+        });
+      });
+    }
+
+    async function playEnglish(item, times) {
+      for (let i = 0; i < times; i += 1) {
+        await playAudio(item.englishAudio, item.word, "en-US");
+      }
+    }
+
+    async function playChinese(item) {
+      await playAudio(item.chineseAudio, item.chinese, "zh-CN");
+    }
+
+    function makeOptions(correct) {
+      const seen = new Set([correct.chinese]);
+      const wrong = [];
+      const candidates = shuffle(allWords);
+
+      for (const item of candidates) {
+        if (!seen.has(item.chinese)) {
+          seen.add(item.chinese);
+          wrong.push(item.chinese);
+          if (wrong.length === 3) break;
+        }
+      }
+
+      return shuffle([correct.chinese].concat(wrong));
+    }
+
+    function renderOptions(item) {
+      const container = $("options");
+      container.textContent = "";
+
+      makeOptions(item).forEach(function (answer) {
+        const button = document.createElement("button");
+        button.className = "option";
+        button.type = "button";
+        button.dataset.answer = answer;
+        button.textContent = answer;
+        button.addEventListener("click", function () {
+          checkAnswer(button, item);
+        });
+        container.appendChild(button);
+      });
+    }
+
+    function preloadCurrent() {
+      const current = state.order[state.index];
+      if (!current) return;
+      getAudioElement(current.englishAudio);
+      getAudioElement(current.chineseAudio);
+      state.order.slice(state.index + 1, state.index + 4).forEach(function (item) {
+        getAudioElement(item.englishAudio);
+        getAudioElement(item.chineseAudio);
+      });
+    }
+
+    function updateProgress() {
+      const completed = Math.min(state.index, state.order.length);
+      const percentage = state.order.length ? (completed / state.order.length) * 100 : 0;
+      $("bar").style.width = percentage + "%";
+      $("progressMeter").setAttribute("aria-valuenow", String(completed));
+    }
+
+    function renderQuestion() {
+      if (state.index >= state.order.length) {
+        showResult();
+        return;
+      }
+
+      stopAudio();
+      state.answered = false;
+      const item = state.order[state.index];
+      $("wordText").textContent = item.word;
+      $("unitText").textContent = item.unit + " · " + item.number;
+      $("countText").textContent = (state.index + 1) + " / " + state.order.length;
+      $("statusText").textContent = "请选择中文意思。";
+      $("speakBtn").disabled = false;
+      renderOptions(item);
+      updateProgress();
+      preloadCurrent();
+    }
+
+    async function checkAnswer(button, item) {
+      if (state.answered) return;
+      state.answered = true;
+      stopAudio();
+      $("speakBtn").disabled = true;
+
+      const picked = button.dataset.answer;
+      document.querySelectorAll(".option").forEach(function (option) {
+        option.disabled = true;
+        if (option.dataset.answer === item.chinese) option.classList.add("correct");
+      });
+
+      if (picked === item.chinese) {
+        state.score += 1;
+        button.classList.add("correct");
+        $("statusText").textContent = "答对了，播放英文 1 遍。";
+        await playEnglish(item, 1);
+      } else {
+        button.classList.add("wrong");
+        state.mistakes.push({
+          word: item.word,
+          chinese: item.chinese,
+          picked: picked,
+          unit: item.unit,
+          number: item.number
+        });
+        $("statusText").textContent = "答错了，正确答案：" + item.chinese + "。正在播放英文 3 遍和中文 1 遍。";
+        await playEnglish(item, 3);
+        await playChinese(item);
+      }
+
+      state.index += 1;
+      updateProgress();
+      window.setTimeout(renderQuestion, 260);
+    }
+
+    function renderMistakes() {
+      const block = $("missedBlock");
+      const list = $("missedList");
+      list.textContent = "";
+
+      if (state.mistakes.length === 0) {
+        block.classList.add("hidden");
+        return;
+      }
+
+      block.classList.remove("hidden");
+      state.mistakes.forEach(function (item) {
+        const row = document.createElement("div");
+        const word = document.createElement("strong");
+        const meta = document.createElement("small");
+        const answer = document.createElement("span");
+
+        row.className = "miss";
+        word.textContent = item.word + " ";
+        meta.textContent = item.unit + " · " + item.number;
+        answer.textContent = item.chinese + " · 你选了：" + item.picked;
+        word.appendChild(meta);
+        row.appendChild(word);
+        row.appendChild(answer);
+        list.appendChild(row);
+      });
+    }
+
+    function showResult() {
+      stopAudio();
+      $("quizPanel").classList.add("hidden");
+      $("resultPanel").classList.remove("hidden");
+
+      const percent = Math.round((state.score / state.order.length) * 100);
+      let feedback = "";
+      if (percent >= 90) feedback = "优秀：Book 2 前四个单元掌握得很扎实。";
+      else if (percent >= 75) feedback = "良好：大部分单词已经熟悉，建议重点回听错题。";
+      else if (percent >= 60) feedback = "继续加油：先复习错题，再重新抽查一次。";
+      else feedback = "建议回到 Book 2 UNIT1–UNIT4 逐个跟读后再测。";
+
+      $("scoreText").textContent = state.score + " / " + state.order.length;
+      $("feedbackText").textContent = "正确率 " + percent + "%。" + feedback;
+      renderMistakes();
+    }
+
+    function startTest() {
+      stopAudio();
+      const selected = [1, 2, 3, 4].flatMap(function (unitNumber) {
+        return shuffle(allWords.filter(function (item) {
+          return item.unitNumber === unitNumber;
+        })).slice(0, 15);
+      });
+      state.order = shuffle(selected);
+      state.index = 0;
+      state.score = 0;
+      state.answered = false;
+      state.mistakes = [];
+      $("quizPanel").classList.remove("hidden");
+      $("resultPanel").classList.add("hidden");
+      renderQuestion();
+    }
+
+    $("speakBtn").addEventListener("click", function () {
+      const item = state.order[state.index];
+      if (item) {
+        stopAudio();
+        playEnglish(item, 1);
+      }
+    });
+
+    $("restartBtn").addEventListener("click", startTest);
+    startTest();
+  </script>
+</body>
+</html>
