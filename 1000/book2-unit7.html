@@ -612,7 +612,7 @@
       <section class="brand">
         <small>Vocabulary Companion</small>
         <h1>[2]UNIT 7</h1>
-        <p>优先播放网络词典音频，跟读三遍，再看中文和例句，最后完成检测。</p>
+        <p>播放本地英文 3 遍、中文 1 遍，再看中文和例句，最后完成检测。</p>
       </section>
 
       <section class="progress-box" aria-label="学习进度">
@@ -632,7 +632,7 @@
       <header class="topbar" id="learnHeader">
         <div>
           <h2>[2]UNIT 7 单词学习</h2>
-          <p>点喇叭：网络词典英文 3 遍、中文 1 遍、跟读提示 3 遍。</p>
+          <p>点喇叭：本地英文 3 遍、中文 1 遍。</p>
         </div>
         <div class="actions">
           <button class="icon-btn" id="prevBtn" title="上一个" aria-label="上一个">‹</button>
@@ -994,25 +994,26 @@
     const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
     const dictionaryApiBase = "https://api.dictionaryapi.dev/api/v2/entries/en/";
     const verifiedAudioUrls = {
-          "ago": "https://api.dictionaryapi.dev/media/pronunciations/en/ago-us.mp3",
-          "agree": "https://api.dictionaryapi.dev/media/pronunciations/en/agree-us.mp3",
-          "beach": "https://api.dictionaryapi.dev/media/pronunciations/en/beach-us.mp3",
-          "cap": "https://api.dictionaryapi.dev/media/pronunciations/en/cap-us.mp3",
-          "fat": "https://api.dictionaryapi.dev/media/pronunciations/en/fat-us.mp3",
-          "throw": "https://api.dictionaryapi.dev/media/pronunciations/en/throw-us.mp3",
-          "towel": "https://api.dictionaryapi.dev/media/pronunciations/en/towel-us.mp3",
-          "trip": "https://api.dictionaryapi.dev/media/pronunciations/en/trip-1-us.mp3",
-          "vacation": "https://api.dictionaryapi.dev/media/pronunciations/en/vacation-us.mp3",
-          "ball": "https://api.dictionaryapi.dev/media/pronunciations/en/ball-us.mp3",
-          "basket": "https://api.dictionaryapi.dev/media/pronunciations/en/basket-us.mp3",
-          "boat": "https://api.dictionaryapi.dev/media/pronunciations/en/boat-us.mp3",
-          "holiday": "https://api.dictionaryapi.dev/media/pronunciations/en/holiday-us.mp3",
-          "lamp": "https://api.dictionaryapi.dev/media/pronunciations/en/lamp-us.mp3",
-          "last": "https://api.dictionaryapi.dev/media/pronunciations/en/last-us.mp3",
-          "past": "https://api.dictionaryapi.dev/media/pronunciations/en/past-us.mp3",
-          "ship": "https://api.dictionaryapi.dev/media/pronunciations/en/ship-us.mp3",
-          "spend": "https://api.dictionaryapi.dev/media/pronunciations/en/spend-us.mp3",
-          "west": "https://api.dictionaryapi.dev/media/pronunciations/en/west-us.mp3"
+          "ago": "audio/book2-unit7-ago.wav",
+          "agree": "audio/book2-unit7-agree.wav",
+          "beach": "audio/book2-unit7-beach.wav",
+          "cap": "audio/book2-unit7-cap.wav",
+          "fat": "audio/book2-unit7-fat.wav",
+          "sea": "audio/book2-unit7-sea.wav",
+          "throw": "audio/book2-unit7-throw.wav",
+          "towel": "audio/book2-unit7-towel.wav",
+          "trip": "audio/book2-unit7-trip.wav",
+          "vacation": "audio/book2-unit7-vacation.wav",
+          "ball": "audio/book2-unit7-ball.wav",
+          "basket": "audio/book2-unit7-basket.wav",
+          "boat": "audio/book2-unit7-boat.wav",
+          "holiday": "audio/book2-unit7-holiday.wav",
+          "lamp": "audio/book2-unit7-lamp.wav",
+          "last": "audio/book2-unit7-last.wav",
+          "past": "audio/book2-unit7-past.wav",
+          "ship": "audio/book2-unit7-ship.wav",
+          "spend": "audio/book2-unit7-spend.wav",
+          "west": "audio/book2-unit7-west.wav"
     };
 
     const chineseAudioUrls = {
@@ -1211,6 +1212,7 @@
 
       for (let i = 1; i <= 3; i += 1) {
         if (runId !== state.speechRun) return;
+        [1, 2, 3].forEach((n) => $("dot" + n).classList.toggle("active", n === i));
         $("practiceHint").textContent = `听英文第 ${i} 遍`;
         await playOnlineWord(item.word);
         await wait(40);
@@ -1220,14 +1222,6 @@
       $("practiceHint").textContent = `中文：${item.chinese}`;
       await playChineseMeaning(item);
       await wait(160);
-
-      for (let i = 1; i <= 3; i += 1) {
-        if (runId !== state.speechRun) return;
-        [1, 2, 3].forEach((n) => $("dot" + n).classList.toggle("active", n === i));
-        $("practiceHint").textContent = `跟读第 ${i} 遍`;
-        await playOnlineWord(item.word);
-        await wait(90);
-      }
 
       if (runId === state.speechRun) resetPracticeHighlight();
     }
@@ -1417,5 +1411,3 @@
   </script>
 </body>
 </html>
-
-

@@ -612,7 +612,7 @@
       <section class="brand">
         <small>Vocabulary Companion</small>
         <h1>[2]UNIT 6</h1>
-        <p>优先播放网络词典音频，跟读三遍，再看中文和例句，最后完成检测。</p>
+        <p>播放本地英文 3 遍、中文 1 遍，再看中文和例句，最后完成检测。</p>
       </section>
 
       <section class="progress-box" aria-label="学习进度">
@@ -632,7 +632,7 @@
       <header class="topbar" id="learnHeader">
         <div>
           <h2>[2]UNIT 6 单词学习</h2>
-          <p>点喇叭：网络词典英文 3 遍、中文 1 遍、跟读提示 3 遍。</p>
+          <p>点喇叭：本地英文 3 遍、中文 1 遍。</p>
         </div>
         <div class="actions">
           <button class="icon-btn" id="prevBtn" title="上一个" aria-label="上一个">‹</button>
@@ -993,26 +993,26 @@
     const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
     const dictionaryApiBase = "https://api.dictionaryapi.dev/api/v2/entries/en/";
     const verifiedAudioUrls = {
-          "care": "https://api.dictionaryapi.dev/media/pronunciations/en/care-us.mp3",
-          "die": "https://api.dictionaryapi.dev/media/pronunciations/en/die-us.mp3",
-          "empty": "https://api.dictionaryapi.dev/media/pronunciations/en/empty-us.mp3",
-          "feed": "https://api.dictionaryapi.dev/media/pronunciations/en/feed-us.mp3",
-          "health": "https://api.dictionaryapi.dev/media/pronunciations/en/health-1-us.mp3",
-          "heart": "https://api.dictionaryapi.dev/media/pronunciations/en/heart-uk.mp3",
-          "large": "https://api.dictionaryapi.dev/media/pronunciations/en/large-us.ogg",
-          "remember": "https://api.dictionaryapi.dev/media/pronunciations/en/remember-1-us.mp3",
-          "rule": "https://api.dictionaryapi.dev/media/pronunciations/en/rule-us.mp3",
-          "zoo": "https://api.dictionaryapi.dev/media/pronunciations/en/zoo-us.mp3",
-          "dirty": "https://api.dictionaryapi.dev/media/pronunciations/en/dirty-us.mp3",
-          "fill": "https://api.dictionaryapi.dev/media/pronunciations/en/fill-us.mp3",
-          "fresh": "https://api.dictionaryapi.dev/media/pronunciations/en/fresh-us.mp3",
-          "frog": "https://api.dictionaryapi.dev/media/pronunciations/en/frog-us.mp3",
-          "girl": "https://api.dictionaryapi.dev/media/pronunciations/en/girl-us.mp3",
-          "glass": "https://api.dictionaryapi.dev/media/pronunciations/en/glass-us.mp3",
-          "hungry": "https://api.dictionaryapi.dev/media/pronunciations/en/hungry-us.mp3",
-          "spoon": "https://api.dictionaryapi.dev/media/pronunciations/en/spoon-us.mp3",
-          "thirsty": "https://api.dictionaryapi.dev/media/pronunciations/en/thirsty-us.mp3",
-          "window": "https://api.dictionaryapi.dev/media/pronunciations/en/window-us.mp3"
+          "care": "audio/book2-unit6-care.wav",
+          "die": "audio/book2-unit6-die.wav",
+          "empty": "audio/book2-unit6-empty.wav",
+          "feed": "audio/book2-unit6-feed.wav",
+          "health": "audio/book2-unit6-health.wav",
+          "heart": "audio/book2-unit6-heart.wav",
+          "large": "audio/book2-unit6-large.wav",
+          "remember": "audio/book2-unit6-remember.wav",
+          "rule": "audio/book2-unit6-rule.wav",
+          "zoo": "audio/book2-unit6-zoo.wav",
+          "dirty": "audio/book2-unit6-dirty.wav",
+          "fill": "audio/book2-unit6-fill.wav",
+          "fresh": "audio/book2-unit6-fresh.wav",
+          "frog": "audio/book2-unit6-frog.wav",
+          "girl": "audio/book2-unit6-girl.wav",
+          "glass": "audio/book2-unit6-glass.wav",
+          "hungry": "audio/book2-unit6-hungry.wav",
+          "spoon": "audio/book2-unit6-spoon.wav",
+          "thirsty": "audio/book2-unit6-thirsty.wav",
+          "window": "audio/book2-unit6-window.wav"
     };
 
     const chineseAudioUrls = {
@@ -1211,6 +1211,7 @@
 
       for (let i = 1; i <= 3; i += 1) {
         if (runId !== state.speechRun) return;
+        [1, 2, 3].forEach((n) => $("dot" + n).classList.toggle("active", n === i));
         $("practiceHint").textContent = `听英文第 ${i} 遍`;
         await playOnlineWord(item.word);
         await wait(40);
@@ -1220,14 +1221,6 @@
       $("practiceHint").textContent = `中文：${item.chinese}`;
       await playChineseMeaning(item);
       await wait(160);
-
-      for (let i = 1; i <= 3; i += 1) {
-        if (runId !== state.speechRun) return;
-        [1, 2, 3].forEach((n) => $("dot" + n).classList.toggle("active", n === i));
-        $("practiceHint").textContent = `跟读第 ${i} 遍`;
-        await playOnlineWord(item.word);
-        await wait(90);
-      }
 
       if (runId === state.speechRun) resetPracticeHighlight();
     }
@@ -1417,5 +1410,3 @@
   </script>
 </body>
 </html>
-
-
