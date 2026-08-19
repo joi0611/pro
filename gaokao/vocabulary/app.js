@@ -167,6 +167,7 @@ const STORAGE_KEY = ACTIVE_VOCAB_KEY === "high"
   : `gaokao-vocab-mvp-state-v1-${ACTIVE_VOCAB_KEY}`;
 const LOGIN_STORAGE_KEY = "gaokao-vocab-mvp-login-ok";
 const LOGIN_CODE_STORAGE_KEY = "gaokao-vocab-mvp-login-code";
+const PENDING_COMPLETION_SYNC_KEY = "gaokao-vocab-pending-completion-sync-v1";
 const SUPABASE_URL = "https://gbjmylxohacppnybfssh.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_qhB54NbaSS2bRDw0ehKGbA_7kHXkhTQ";
 const LOGIN_CODES = [
@@ -532,7 +533,8 @@ function initLogin() {
   }
 
   const storedCode = normalizeLoginCode(localStorage.getItem(LOGIN_CODE_STORAGE_KEY) || "");
-  const authenticated = localStorage.getItem(LOGIN_STORAGE_KEY) === "1" && LOGIN_CODES.includes(storedCode);
+  const authenticated = LOGIN_CODES.includes(storedCode);
+  if (authenticated) localStorage.setItem(LOGIN_STORAGE_KEY, "1");
   const shouldShowLibrary = authenticated && !HAS_SELECTED_VOCAB;
   document.body.classList.toggle("auth-locked", !authenticated);
   document.body.classList.toggle("library-locked", shouldShowLibrary);
@@ -1361,7 +1363,8 @@ function startDailyQuiz(groups, key) {
   els.testReady.classList.add("hidden");
   if (!quizQueue.length) {
     if (activeSessionType !== "weak") state.completedDates[key] = true;
-    saveState();
+    if (activeSessionType !== "weak") saveCompletedDayReliably(key);
+    else saveState();
     renderAll();
     if (activeSessionType !== "weak") showCompletionAnimation(key, 100);
     exitLearningFocus();
@@ -1747,7 +1750,8 @@ function finishQuiz() {
     score,
     finishedAt: new Date().toISOString(),
   };
-  saveState();
+  if (completedCalendarDay) saveCompletedDayReliably(activeDate);
+  else saveState();
   renderAll();
   els.quizCard.classList.add("hidden");
   els.quizResult.classList.add("hidden");
@@ -2171,6 +2175,84 @@ function saveState() {
   scheduleCloudSave();
 }
 
+function loadPendingCompletionSyncStore() {
+  try {
+    const value = JSON.parse(localStorage.getItem(PENDING_COMPLETION_SYNC_KEY) || "{}");
+    return value && typeof value === "object" ? value : {};
+  } catch {
+    return {};
+  }
+}
+
+function rememberPendingCompletion(key) {
+  const code = normalizeLoginCode(localStorage.getItem(LOGIN_CODE_STORAGE_KEY) || "");
+  if (!LOGIN_CODES.includes(code) || !key) return;
+  const store = loadPendingCompletionSyncStore();
+  store[code] ||= {};
+  store[code][ACTIVE_VOCAB_KEY] ||= {};
+  store[code][ACTIVE_VOCAB_KEY][key] = {
+    completed: true,
+    quizResult: state.quizResults?.[key] || null,
+    savedAt: new Date().toISOString(),
+  };
+  localStorage.setItem(PENDING_COMPLETION_SYNC_KEY, JSON.stringify(store));
+}
+
+function getPendingCompletions(code) {
+  const normalizedCode = normalizeLoginCode(code);
+  const store = loadPendingCompletionSyncStore();
+  const records = store?.[normalizedCode]?.[ACTIVE_VOCAB_KEY];
+  return records && typeof records === "object" ? records : {};
+}
+
+function clearPendingCompletions(code, keys = []) {
+  const normalizedCode = normalizeLoginCode(code);
+  const store = loadPendingCompletionSyncStore();
+  const records = store?.[normalizedCode]?.[ACTIVE_VOCAB_KEY];
+  if (!records || typeof records !== "object") return;
+  keys.forEach((key) => delete records[key]);
+  if (!Object.keys(records).length) delete store[normalizedCode][ACTIVE_VOCAB_KEY];
+  if (!Object.keys(store[normalizedCode] || {}).length) delete store[normalizedCode];
+  localStorage.setItem(PENDING_COMPLETION_SYNC_KEY, JSON.stringify(store));
+}
+
+function applyPendingCompletions(candidateState, code) {
+  const records = getPendingCompletions(code);
+  const keys = Object.keys(records);
+  if (!keys.length) return { state: candidateState, keys, changed: false };
+  const mergedState = {
+    ...candidateState,
+    completedDates: { ...(candidateState?.completedDates || {}) },
+    quizResults: { ...(candidateState?.quizResults || {}) },
+  };
+  let changed = false;
+  keys.forEach((key) => {
+    if (!mergedState.completedDates[key]) {
+      mergedState.completedDates[key] = true;
+      changed = true;
+    }
+    if (!mergedState.quizResults[key] && records[key]?.quizResult) {
+      mergedState.quizResults[key] = records[key].quizResult;
+      changed = true;
+    }
+  });
+  return { state: mergedState, keys, changed };
+}
+
+function saveCompletedDayReliably(key) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  rememberPendingCompletion(key);
+  clearTimeout(cloudSaveTimer);
+  if (!cloudSyncReady) return;
+  const code = normalizeLoginCode(localStorage.getItem(LOGIN_CODE_STORAGE_KEY) || "");
+  if (!LOGIN_CODES.includes(code)) return;
+  saveStateToCloud(code)
+    .then(() => clearPendingCompletions(code, [key]))
+    .catch((error) => {
+      console.warn("当日完成状态暂未上传，已保存在本机并将在下次登录时补传。", error);
+    });
+}
+
 async function initializeCloudSync(code) {
   cloudSyncReady = false;
   const localStateBeforeCloud = { ...loadStateFallback(), ...state };
@@ -2188,8 +2270,14 @@ async function initializeCloudSync(code) {
           buildPlan();
         }
       } else {
-        state = { ...loadStateFallback(), ...cloudState };
+        if (hasLearningActivity(localStateBeforeCloud)) {
+          state = localStateBeforeCloud;
+        } else {
+          state = { ...loadStateFallback(), ...cloudState };
+        }
       }
+      const pendingCompletionMerge = applyPendingCompletions(state, code);
+      state = pendingCompletionMerge.state;
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       calendarMonth = startOfMonth(parseDate(state.selectedDate || todayKey()));
       activeDate = state.selectedDate || todayKey();
@@ -2197,7 +2285,8 @@ async function initializeCloudSync(code) {
       setDailyActive(state.dailyCount || 30);
       renderAll();
       resumeInterruptedLearningIfNeeded();
-      if (needsInitialization) await saveStateToCloud(code);
+      if (needsInitialization || pendingCompletionMerge.changed) await saveStateToCloud(code);
+      if (pendingCompletionMerge.keys.length) clearPendingCompletions(code, pendingCompletionMerge.keys);
     } else {
       cloudStateEnvelope ||= createCloudEnvelope();
       if (hasLearningActivity(localStateBeforeCloud)) {
@@ -2206,7 +2295,10 @@ async function initializeCloudSync(code) {
         resetStateToToday();
         buildPlan();
       }
+      const pendingCompletionMerge = applyPendingCompletions(state, code);
+      state = pendingCompletionMerge.state;
       await saveStateToCloud(code);
+      if (pendingCompletionMerge.keys.length) clearPendingCompletions(code, pendingCompletionMerge.keys);
     }
     cloudSyncReady = true;
   } catch (error) {
