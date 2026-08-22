@@ -393,7 +393,7 @@ h1 {
 }
 
 .panel.locked::after {
-  content: "瀹屾垚涓婁竴鍏冲悗瑙ｉ攣";
+  content: "完成上一关后解锁";
   position: absolute;
   inset: 0;
   display: grid;
