@@ -213,3 +213,16 @@ button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* 二轮检测 · 混淆词回顾 */
+.round2-mistakes{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+.round2-mistake-row{display:grid;grid-template-columns:minmax(96px,1fr) 1fr 1.2fr;gap:8px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.round2-mistake-row b{font-size:17px;color:var(--ink)}
+.round2-mistake-row span{font-size:14px;color:var(--muted)}
+.round2-mistake-row .right{font-weight:900;color:#1d9e75}
+.round2-actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.round2-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.round2-stats div{padding:16px;border:1px solid var(--line);border-radius:8px;background:#f8f4fc;text-align:center}
+.round2-stats b{display:block;font-size:30px;color:var(--ink)}
+.round2-stats span{font-size:13px;color:var(--muted);font-weight:700}
+@media(max-width:700px){.round2-mistake-row{grid-template-columns:1fr;gap:4px}.round2-stats{grid-template-columns:1fr 1fr}}
