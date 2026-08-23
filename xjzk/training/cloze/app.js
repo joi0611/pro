@@ -3748,7 +3748,12 @@ const normalizedLessonSources = {
   "xinjiang-official-2024-cloze": "2024年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
   "xinjiang-official-2023-cloze": "2023年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
   "xinjiang-official-2022-cloze": "2022年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
-  "xinjiang-official-2021-cloze": "2021年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题"
+  "xinjiang-official-2021-cloze": "2021年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2020-cloze": "2020年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2019-cloze": "2019年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2018-cloze": "2018年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2017-cloze": "2017年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2016-cloze": "2016年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题"
 };
 
 const lessonBanks = [
