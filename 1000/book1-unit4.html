@@ -1,0 +1,1415 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BOOK 1 · UNIT 4 单词学习</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #241735;
+      --muted: #746884;
+      --line: #eadfb9;
+      --paper: #fff8df;
+      --panel: #fffdf7;
+      --purple: #6f43c0;
+      --purple-dark: #3f236d;
+      --purple-soft: #efe5ff;
+      --yellow: #ffd766;
+      --yellow-soft: #fff0b8;
+      --apricot: #ffd9aa;
+      --rose: #ffd5dd;
+      --lilac: #dfd0ff;
+      --mint: #d9f2d8;
+      --good: #187a4b;
+      --bad: #b42318;
+      --shadow: 0 18px 42px rgba(63, 35, 109, .16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 215, 102, .42), transparent 34%),
+        linear-gradient(135deg, #fff8df 0%, #f4eaff 48%, #fff3c6 100%);
+      min-height: 100vh;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+    }
+
+    body.quiz-mode .app {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    body.quiz-mode .sidebar {
+      display: none;
+    }
+
+    aside.sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      padding: 24px 18px;
+      color: #fffaf0;
+      background: linear-gradient(180deg, #3f236d 0%, #5c35a2 58%, #7b4fcb 100%);
+      border-right: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .brand {
+      margin-bottom: 22px;
+    }
+
+    .brand small {
+      display: block;
+      color: #ffeab0;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .brand h1 {
+      margin: 8px 0;
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .brand p {
+      margin: 0;
+      color: #f4eaff;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .progress-box {
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.12);
+      border-radius: 8px;
+      margin-bottom: 18px;
+    }
+
+    .meter {
+      height: 10px;
+      background: rgba(255,255,255,.18);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+
+    .meter span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: var(--yellow);
+      transition: width .25s ease;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .stat {
+      padding: 10px;
+      border-radius: 7px;
+      background: rgba(255,255,255,.12);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 23px;
+      color: #ffe28a;
+    }
+
+    .stat span {
+      color: #f4eaff;
+      font-size: 12px;
+    }
+
+    nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    .nav-btn {
+      width: 100%;
+      min-height: 42px;
+      border: 0;
+      border-radius: 7px;
+      padding: 10px 12px;
+      text-align: left;
+      color: #fffaf0;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-btn:hover,
+    .nav-btn.active {
+      background: rgba(255, 215, 102, .2);
+    }
+
+    .nav-btn span:first-child {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    main {
+      padding: 28px;
+      display: grid;
+      gap: 22px;
+      align-content: start;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .topbar h2,
+    .topbar h3 {
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    .topbar h2 {
+      font-size: 30px;
+    }
+
+    .topbar p {
+      margin: 5px 0 0;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .icon-btn,
+    .text-btn {
+      border: 1px solid #d9c47c;
+      background: var(--panel);
+      color: var(--purple-dark);
+      border-radius: 7px;
+      height: 42px;
+      min-width: 42px;
+      padding: 0 14px;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(63, 35, 109, .08);
+      font-weight: 800;
+    }
+
+    .icon-btn {
+      font-size: 19px;
+      padding: 0;
+    }
+
+    .text-btn.primary {
+      border-color: var(--purple);
+      background: var(--purple);
+      color: white;
+    }
+
+    .learn-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .word-card,
+    .quiz-panel {
+      background: rgba(255, 253, 247, .96);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .word-card {
+      padding: 26px;
+    }
+
+    .word-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+
+    .word-title {
+      min-width: 0;
+    }
+
+    .word-title h3 {
+      margin: 0;
+      font-size: clamp(40px, 7vw, 82px);
+      line-height: .98;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+      color: var(--purple-dark);
+    }
+
+    .phonetic {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 20px;
+      font-family: "Arial Unicode MS", "Lucida Sans Unicode", "DejaVu Sans", Arial, sans-serif;
+      font-variant-ligatures: none;
+    }
+
+    .pos {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--yellow-soft);
+      color: #805400;
+      font-weight: 900;
+      margin-top: 12px;
+    }
+
+    .speak {
+      border: 0;
+      background: var(--yellow);
+      color: var(--purple-dark);
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 25px;
+      flex: 0 0 auto;
+      box-shadow: 0 14px 28px rgba(111, 67, 192, .25);
+    }
+
+    .practice-strip {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid #dbc98d;
+      background: linear-gradient(90deg, #fff2b8, #f1e7ff);
+      border-radius: 8px;
+      margin: 0 0 20px;
+    }
+
+    .practice-strip strong {
+      display: block;
+      font-size: 28px;
+      color: var(--purple-dark);
+      overflow-wrap: anywhere;
+    }
+
+    .practice-strip span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .repeat-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .repeat-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #fffdf7;
+      border: 1px solid #d9c47c;
+      color: var(--muted);
+      font-weight: 900;
+    }
+
+    .repeat-dot.active {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: #fff;
+      transform: scale(1.06);
+    }
+
+    .practice-strip.active {
+      outline: 3px solid rgba(255, 215, 102, .88);
+      box-shadow: 0 0 0 7px rgba(111, 67, 192, .12);
+    }
+
+    .chunks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0 22px;
+    }
+
+    .chunk {
+      min-height: 54px;
+      min-width: 72px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(63,35,109,.12);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 950;
+      font-size: 26px;
+      letter-spacing: 0;
+      box-shadow: inset 0 -3px 0 rgba(63,35,109,.08);
+    }
+
+    .c1 { background: var(--yellow-soft); color: #865b00; }
+    .c2 { background: var(--lilac); color: #56309b; }
+    .c3 { background: var(--apricot); color: #92511a; }
+    .c4 { background: var(--rose); color: #8f3450; }
+    .c5 { background: var(--mint); color: #1f7147; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .info {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 14px;
+      background: #fffefa;
+      min-height: 98px;
+    }
+
+    .info b {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 7px;
+      font-size: 13px;
+    }
+
+    .info p {
+      margin: 0;
+      line-height: 1.5;
+      font-size: 18px;
+    }
+
+    .info.chinese {
+      background: linear-gradient(135deg, var(--yellow-soft), #f0e4ff);
+      border-color: #d7bd67;
+    }
+
+    .info.chinese p {
+      font-size: clamp(34px, 6vw, 56px);
+      font-weight: 950;
+      color: var(--purple-dark);
+      line-height: 1.15;
+    }
+
+    .example {
+      grid-column: 1 / -1;
+    }
+
+    .example-line {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .example-text {
+      flex: 1;
+      cursor: pointer;
+      padding: 8px 10px;
+      border-radius: 7px;
+      background: #fbf6ff;
+    }
+
+    .example-text:hover {
+      background: #f0e4ff;
+    }
+
+    .translation {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-left: 4px solid var(--purple);
+      background: var(--yellow-soft);
+      font-size: 20px;
+      font-weight: 850;
+      color: var(--purple-dark);
+    }
+
+    .translation.show {
+      display: block;
+    }
+
+    .quiz-panel h3 {
+      margin: 0 0 12px;
+      font-size: 19px;
+      letter-spacing: 0;
+    }
+
+    .quiz-panel {
+      padding: 22px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .quiz-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: #fffefa;
+    }
+
+    .quiz-word {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .quiz-word strong {
+      font-size: 32px;
+      overflow-wrap: anywhere;
+      color: var(--purple-dark);
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .option {
+      min-height: 52px;
+      border: 1px solid #d9c47c;
+      background: white;
+      border-radius: 7px;
+      cursor: pointer;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 850;
+      color: var(--purple-dark);
+    }
+
+    .option.correct {
+      border-color: var(--good);
+      background: #dff7e9;
+      color: var(--good);
+    }
+
+    .option.wrong {
+      border-color: var(--bad);
+      background: #fee4e2;
+      color: var(--bad);
+    }
+
+    .quiz-feedback {
+      min-height: 28px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .quiz-result {
+      display: none;
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 7px;
+      background: var(--yellow-soft);
+      color: var(--purple-dark);
+      font-weight: 900;
+    }
+
+    .mini-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 940px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      aside.sidebar {
+        position: static;
+        height: auto;
+      }
+
+      nav {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+
+      .learn-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      main {
+        padding: 16px;
+      }
+
+      .word-card {
+        padding: 18px;
+      }
+
+      .word-head,
+      .practice-strip {
+        align-items: center;
+      }
+
+      .practice-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid,
+      .options {
+        grid-template-columns: 1fr;
+      }
+
+      .chunk {
+        flex: 1 1 82px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <section class="brand">
+        <small>BOOK 1 · 1000 Basic English Words</small>
+        <h1>UNIT 4</h1>
+        <p>优先播放本地音频，跟读三遍，再看中文和例句，最后完成检测。</p>
+      </section>
+
+      <section class="progress-box" aria-label="学习进度">
+        <strong>学习进度</strong>
+        <div class="meter" aria-hidden="true"><span id="progressBar"></span></div>
+        <div id="progressText">0 / 20 已学习</div>
+        <div class="stats">
+          <div class="stat"><strong id="learnedCount">0</strong><span>已学习</span></div>
+          <div class="stat"><strong id="scoreCount">0</strong><span>检测得分</span></div>
+        </div>
+      </section>
+
+      <nav id="wordNav" aria-label="单词列表"></nav>
+    </aside>
+
+    <main>
+      <header class="topbar" id="learnHeader">
+        <div>
+          <h2>BOOK 1 · UNIT 4 单词学习</h2>
+          <p>点喇叭：本地音频英文 3 遍、中文 1 遍、跟读提示 3 遍。</p>
+        </div>
+        <div class="actions">
+          <button class="icon-btn" id="prevBtn" title="上一个" aria-label="上一个">‹</button>
+          <button class="icon-btn" id="nextBtn" title="下一个" aria-label="下一个">›</button>
+          <button class="text-btn primary" id="markBtn">标记本词学完</button>
+        </div>
+      </header>
+
+      <section class="learn-grid" id="learnSection">
+        <article class="word-card" aria-live="polite">
+          <div class="word-head">
+            <div class="word-title">
+              <h3 id="wordText">burn</h3>
+              <span class="pos" id="posText">v.</span>
+            </div>
+            <button class="speak" id="speakBtn" title="播放单词跟读" aria-label="播放单词跟读">🔊</button>
+          </div>
+
+          <div class="practice-strip" id="practiceStrip" role="button" tabindex="0" title="点击播放跟读">
+            <div>
+              <strong id="practiceText">burn</strong>
+              <span id="practiceHint">准备跟读</span>
+            </div>
+            <div class="repeat-dots" aria-label="跟读次数">
+              <span class="repeat-dot" id="dot1">1</span>
+              <span class="repeat-dot" id="dot2">2</span>
+              <span class="repeat-dot" id="dot3">3</span>
+            </div>
+          </div>
+
+          <h3>自然拼读拆分</h3>
+          <div class="chunks" id="chunks"></div>
+
+          <div class="info-grid">
+            <div class="info">
+              <b>英文释义</b>
+              <p id="definitionText"></p>
+            </div>
+            <div class="info chinese">
+              <b>中文意思</b>
+              <p id="chineseText"></p>
+            </div>
+            <div class="info example">
+              <b>例句</b>
+              <div class="example-line">
+                <p class="example-text" id="exampleText" title="点击显示或隐藏翻译"></p>
+              </div>
+              <div class="translation" id="exampleTranslation"></div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <section class="quiz-panel hidden" id="quiz">
+        <div class="topbar">
+          <div>
+            <h3>中文意思检测</h3>
+            <p>每题选择这个英文单词的中文意思。</p>
+          </div>
+          <button class="text-btn" id="restartQuizBtn">重新检测</button>
+        </div>
+        <div class="quiz-card">
+          <div class="quiz-word">
+            <strong id="quizWord"></strong>
+            <button class="icon-btn" id="quizSpeakBtn" title="播放检测单词发音" aria-label="播放检测单词发音">🔊</button>
+          </div>
+          <div class="options" id="options"></div>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+          <div class="quiz-result" id="quizResult"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const words = [
+      {
+            "word": "again",
+            "phonetic": "[əˈɡen]",
+            "pos": "adv.",
+            "definition": "another time",
+            "chinese": "再次",
+            "example": "He needs to write the letter again.",
+            "translation": "他需要再写一遍那封信。",
+            "chunks": [
+                  "a",
+                  "gain"
+            ]
+      },
+      {
+            "word": "bad",
+            "phonetic": "[bæd]",
+            "pos": "adj.",
+            "definition": "not good",
+            "chinese": "坏的",
+            "example": "The fruit is bad.",
+            "translation": "水果坏了。",
+            "chunks": [
+                  "ba",
+                  "d"
+            ]
+      },
+      {
+            "word": "buy",
+            "phonetic": "[baɪ]",
+            "pos": "v.",
+            "definition": "to pay for with money",
+            "chinese": "买",
+            "example": "She buys a small gift.",
+            "translation": "她买了一个小礼物。",
+            "chunks": [
+                  "bu",
+                  "y"
+            ]
+      },
+      {
+            "word": "end",
+            "phonetic": "[end]",
+            "pos": "n.",
+            "definition": "the last part",
+            "chinese": "结尾",
+            "example": "Some people cry at the end of a movie.",
+            "translation": "有些人在电影结尾会哭。",
+            "chunks": [
+                  "en",
+                  "d"
+            ]
+      },
+      {
+            "word": "find",
+            "phonetic": "[faɪnd]",
+            "pos": "v.",
+            "definition": "to look for and see something",
+            "chinese": "找到",
+            "example": "He finds his lunch in the bag.",
+            "translation": "他在包里找到了午饭。",
+            "chunks": [
+                  "fin",
+                  "d"
+            ]
+      },
+      {
+            "word": "friend",
+            "phonetic": "[frend]",
+            "pos": "n.",
+            "definition": "a person you enjoy being with",
+            "chinese": "朋友",
+            "example": "He plays baseball with his friends in the afternoon.",
+            "translation": "他下午和朋友打棒球。",
+            "chunks": [
+                  "frien",
+                  "d"
+            ]
+      },
+      {
+            "word": "say",
+            "phonetic": "[seɪ]",
+            "pos": "v.",
+            "definition": "to tell",
+            "chinese": "说出",
+            "example": "Please say your address again.",
+            "translation": "请再说一遍你的地址。",
+            "chunks": [
+                  "sa",
+                  "y"
+            ]
+      },
+      {
+            "word": "speak",
+            "phonetic": "[spiːk]",
+            "pos": "v.",
+            "definition": "to talk",
+            "chinese": "讲话",
+            "example": "The teacher speaks to the student.",
+            "translation": "老师跟学生说话。",
+            "chunks": [
+                  "spea",
+                  "k"
+            ]
+      },
+      {
+            "word": "sweet",
+            "phonetic": "[swiːt]",
+            "pos": "adj.",
+            "definition": "having a lot of sugar",
+            "chinese": "甜的",
+            "example": "She likes to eat sweet snacks.",
+            "translation": "她喜欢吃甜点心。",
+            "chunks": [
+                  "sweet"
+            ]
+      },
+      {
+            "word": "true",
+            "phonetic": "[truː]",
+            "pos": "adj.",
+            "definition": "correct",
+            "chinese": "真的",
+            "example": "Is it true that you have a monkey?",
+            "translation": "你有一只猴子，是真的吗？",
+            "chunks": [
+                  "tru",
+                  "e"
+            ]
+      },
+      {
+            "word": "answer",
+            "phonetic": "[ˈænsər]",
+            "pos": "n.",
+            "definition": "what you say or write when someone asks a question",
+            "chinese": "答案",
+            "example": "Karen is able to give the right answers.",
+            "translation": "凯伦能给出正确答案。",
+            "chunks": [
+                  "an",
+                  "swer"
+            ]
+      },
+      {
+            "word": "learn",
+            "phonetic": "[lɜːrn]",
+            "pos": "v.",
+            "definition": "to come to know",
+            "chinese": "学习",
+            "example": "He learns how to make pizza.",
+            "translation": "他学做披萨。",
+            "chunks": [
+                  "lear",
+                  "n"
+            ]
+      },
+      {
+            "word": "like",
+            "phonetic": "[laɪk]",
+            "pos": "v.",
+            "definition": "to enjoy",
+            "chinese": "喜欢",
+            "example": "He likes to drink milk.",
+            "translation": "他喜欢喝牛奶。",
+            "chunks": [
+                  "li",
+                  "ke"
+            ]
+      },
+      {
+            "word": "long",
+            "phonetic": "[lɔːŋ]",
+            "pos": "adj.",
+            "definition": "not short",
+            "chinese": "长的",
+            "example": "That is a long word!",
+            "translation": "那是一个很长的单词！",
+            "chunks": [
+                  "lon",
+                  "g"
+            ]
+      },
+      {
+            "word": "minute",
+            "phonetic": "[ˈmɪnɪt]",
+            "pos": "n.",
+            "definition": "sixty seconds",
+            "chinese": "分钟",
+            "example": "Class starts in five minutes.",
+            "translation": "还有五分钟就上课了。",
+            "chunks": [
+                  "mi",
+                  "nute"
+            ]
+      },
+      {
+            "word": "sing",
+            "phonetic": "[sɪŋ]",
+            "pos": "v.",
+            "definition": "to make music with your voice",
+            "chinese": "唱歌",
+            "example": "She sings a great song.",
+            "translation": "她唱了一首很棒的歌。",
+            "chunks": [
+                  "sin",
+                  "g"
+            ]
+      },
+      {
+            "word": "sit",
+            "phonetic": "[sɪt]",
+            "pos": "v.",
+            "definition": "to rest on your bottom",
+            "chinese": "坐",
+            "example": "The man sits under the tree.",
+            "translation": "那个男人坐在树下。",
+            "chunks": [
+                  "si",
+                  "t"
+            ]
+      },
+      {
+            "word": "star",
+            "phonetic": "[stɑːr]",
+            "pos": "v.",
+            "definition": "to have the main part in a movie or play",
+            "chinese": "主演",
+            "example": "Beth stars in the play.",
+            "translation": "贝丝在这出戏里主演。",
+            "chunks": [
+                  "sta",
+                  "r"
+            ]
+      },
+      {
+            "word": "think",
+            "phonetic": "[θɪŋk]",
+            "pos": "v.",
+            "definition": "to use the mind",
+            "chinese": "考虑",
+            "example": "He thinks about what to cook.",
+            "translation": "他在考虑做什么菜。",
+            "chunks": [
+                  "thin",
+                  "k"
+            ]
+      },
+      {
+            "word": "town",
+            "phonetic": "[taʊn]",
+            "pos": "n.",
+            "definition": "a small city",
+            "chinese": "城镇",
+            "example": "Three hundred people live in this town.",
+            "translation": "这个城镇住了三百人。",
+            "chunks": [
+                  "tow",
+                  "n"
+            ]
+      }
+];
+
+    const state = {
+      current: 0,
+      learned: new Set(JSON.parse(localStorage.getItem("book1_unit4Learned") || "[]")),
+      quizIndex: 0,
+      score: 0,
+      answered: false,
+      quizOrder: [],
+      speechRun: 0,
+      voices: [],
+      audioCache: new Map(),
+      audioElements: new Map(),
+      activeAudio: null,
+      mode: "learn"
+    };
+
+    const $ = (id) => document.getElementById(id);
+    const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
+    const dictionaryApiBase = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+    const verifiedAudioUrls = {
+      "again": "audio/book1-unit4-again.wav",
+      "bad": "audio/book1-unit4-bad.wav",
+      "buy": "audio/book1-unit4-buy.wav",
+      "end": "audio/book1-unit4-end.wav",
+      "find": "audio/book1-unit4-find.wav",
+      "friend": "audio/book1-unit4-friend.wav",
+      "say": "audio/book1-unit4-say.wav",
+      "speak": "audio/book1-unit4-speak.wav",
+      "sweet": "audio/book1-unit4-sweet.wav",
+      "true": "audio/book1-unit4-true.wav",
+      "answer": "audio/book1-unit4-answer.wav",
+      "learn": "audio/book1-unit4-learn.wav",
+      "like": "audio/book1-unit4-like.wav",
+      "long": "audio/book1-unit4-long.wav",
+      "minute": "audio/book1-unit4-minute.wav",
+      "sing": "audio/book1-unit4-sing.wav",
+      "sit": "audio/book1-unit4-sit.wav",
+      "star": "audio/book1-unit4-star.wav",
+      "think": "audio/book1-unit4-think.wav",
+      "town": "audio/book1-unit4-town.wav"
+};
+
+    const chineseAudioUrls = {
+      "again": "audio/book1-unit4-zh-again.wav",
+      "bad": "audio/book1-unit4-zh-bad.wav",
+      "buy": "audio/book1-unit4-zh-buy.wav",
+      "end": "audio/book1-unit4-zh-end.wav",
+      "find": "audio/book1-unit4-zh-find.wav",
+      "friend": "audio/book1-unit4-zh-friend.wav",
+      "say": "audio/book1-unit4-zh-say.wav",
+      "speak": "audio/book1-unit4-zh-speak.wav",
+      "sweet": "audio/book1-unit4-zh-sweet.wav",
+      "true": "audio/book1-unit4-zh-true.wav",
+      "answer": "audio/book1-unit4-zh-answer.wav",
+      "learn": "audio/book1-unit4-zh-learn.wav",
+      "like": "audio/book1-unit4-zh-like.wav",
+      "long": "audio/book1-unit4-zh-long.wav",
+      "minute": "audio/book1-unit4-zh-minute.wav",
+      "sing": "audio/book1-unit4-zh-sing.wav",
+      "sit": "audio/book1-unit4-zh-sit.wav",
+      "star": "audio/book1-unit4-zh-star.wav",
+      "think": "audio/book1-unit4-zh-think.wav",
+      "town": "audio/book1-unit4-zh-town.wav"
+};
+
+    function loadVoices() {
+      if (!("speechSynthesis" in window)) return [];
+      state.voices = window.speechSynthesis.getVoices();
+      return state.voices;
+    }
+
+    function pickVoice(lang) {
+      const voices = state.voices.length ? state.voices : loadVoices();
+      const lowerLang = lang.toLowerCase();
+      return voices.find((voice) => voice.lang.toLowerCase() === lowerLang)
+        || voices.find((voice) => voice.lang.toLowerCase().startsWith(lowerLang.slice(0, 2)))
+        || null;
+    }
+
+    function speak(text, lang = "en-US", rate = 0.82) {
+      return new Promise((resolve) => {
+        if (!("speechSynthesis" in window)) {
+          resolve();
+          return;
+        }
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.rate = rate;
+        utterance.pitch = 1;
+        const voice = pickVoice(lang);
+        if (voice) utterance.voice = voice;
+        utterance.onend = resolve;
+        utterance.onerror = resolve;
+        window.speechSynthesis.speak(utterance);
+      });
+    }
+
+    function stopAudio() {
+      if (state.activeAudio) {
+        state.activeAudio.pause();
+        state.activeAudio.currentTime = 0;
+        state.activeAudio = null;
+      }
+      window.speechSynthesis?.cancel();
+    }
+
+    function getAudioElement(audioUrl) {
+      if (!state.audioElements.has(audioUrl)) {
+        const audio = new Audio(audioUrl);
+        audio.preload = "auto";
+        audio.load();
+        state.audioElements.set(audioUrl, audio);
+      }
+      return state.audioElements.get(audioUrl);
+    }
+
+    function preloadAudioUrl(audioUrl) {
+      if (audioUrl) getAudioElement(audioUrl);
+    }
+
+    async function getOnlineAudioUrl(word) {
+      const key = word.toLowerCase();
+      if (state.audioCache.has(key)) return state.audioCache.get(key);
+      if (verifiedAudioUrls[key]) {
+        state.audioCache.set(key, verifiedAudioUrls[key]);
+        return verifiedAudioUrls[key];
+      }
+
+      try {
+        const response = await fetch(dictionaryApiBase + encodeURIComponent(key));
+        if (!response.ok) throw new Error("Dictionary audio request failed");
+        const entries = await response.json();
+        const phonetics = entries.flatMap((entry) => entry.phonetics || []);
+        const audio = phonetics
+          .map((item) => item.audio)
+          .find((url) => typeof url === "string" && url.startsWith("https://"));
+        state.audioCache.set(key, audio || "");
+        return audio || "";
+      } catch (error) {
+        state.audioCache.set(key, "");
+        return "";
+      }
+    }
+
+    async function playAudioUrl(audioUrl, fallbackText = "", fallbackLang = "en-US") {
+      await new Promise((resolve) => {
+        const audio = getAudioElement(audioUrl);
+        audio.pause();
+        audio.currentTime = 0;
+        state.activeAudio = audio;
+        audio.onended = () => {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          resolve();
+        };
+        audio.onerror = async () => {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          if (fallbackText) await speak(fallbackText, fallbackLang, 0.82);
+          resolve();
+        };
+        audio.play().catch(async () => {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          if (fallbackText) await speak(fallbackText, fallbackLang, 0.82);
+          resolve();
+        });
+      });
+    }
+
+    async function playOnlineWord(word) {
+      const key = word.toLowerCase();
+      const audioUrl = verifiedAudioUrls[key] || await getOnlineAudioUrl(word);
+      if (!audioUrl) {
+        await speak(word, "en-US", 0.82);
+        return;
+      }
+      await playAudioUrl(audioUrl, word, "en-US");
+    }
+
+    async function playChineseMeaning(item) {
+      const audioUrl = chineseAudioUrls[item.word.toLowerCase()];
+      if (audioUrl) {
+        await playAudioUrl(audioUrl, item.chinese, "zh-CN");
+        return;
+      }
+      await speak(item.chinese, "zh-CN", 0.88);
+    }
+
+    function warmAudio(index) {
+      const item = words[index];
+      if (!item) return;
+      const key = item.word.toLowerCase();
+      preloadAudioUrl(verifiedAudioUrls[key]);
+      preloadAudioUrl(chineseAudioUrls[key]);
+      if (!verifiedAudioUrls[key]) getOnlineAudioUrl(item.word);
+    }
+
+    function resetPracticeHighlight() {
+      $("practiceStrip").classList.remove("active");
+      $("practiceHint").textContent = "准备跟读";
+      [1, 2, 3].forEach((n) => $("dot" + n).classList.remove("active"));
+    }
+
+    function showLearnMode() {
+      state.mode = "learn";
+      document.body.classList.remove("quiz-mode");
+      $("learnHeader").classList.remove("hidden");
+      $("learnSection").classList.remove("hidden");
+      $("quiz").classList.add("hidden");
+    }
+
+    function showQuizMode() {
+      state.mode = "quiz";
+      document.body.classList.add("quiz-mode");
+      $("learnHeader").classList.add("hidden");
+      $("learnSection").classList.add("hidden");
+      $("quiz").classList.remove("hidden");
+      startQuiz();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function updatePrimaryButton() {
+      if (state.learned.size >= words.length) {
+        $("markBtn").textContent = "开始中文检测";
+        return;
+      }
+      $("markBtn").textContent = state.learned.has(state.current) ? "学习下一个" : "标记本词学完";
+    }
+
+    async function playWordRoutine() {
+      const runId = ++state.speechRun;
+      const item = words[state.current];
+      stopAudio();
+      resetPracticeHighlight();
+      $("practiceText").textContent = item.word;
+      $("practiceStrip").classList.add("active");
+
+      for (let i = 1; i <= 3; i += 1) {
+        if (runId !== state.speechRun) return;
+        $("practiceHint").textContent = `听英文第 ${i} 遍`;
+        await playOnlineWord(item.word);
+        await wait(40);
+      }
+
+      if (runId !== state.speechRun) return;
+      $("practiceHint").textContent = `中文：${item.chinese}`;
+      await playChineseMeaning(item);
+      await wait(160);
+
+      for (let i = 1; i <= 3; i += 1) {
+        if (runId !== state.speechRun) return;
+        [1, 2, 3].forEach((n) => $("dot" + n).classList.toggle("active", n === i));
+        $("practiceHint").textContent = `跟读第 ${i} 遍`;
+        await playOnlineWord(item.word);
+        await wait(90);
+      }
+
+      if (runId === state.speechRun) resetPracticeHighlight();
+    }
+
+    function saveLearned() {
+      localStorage.setItem("book1_unit4Learned", JSON.stringify([...state.learned]));
+    }
+
+    function renderNav() {
+      $("wordNav").innerHTML = words.map((item, index) => `
+        <button class="nav-btn ${index === state.current ? "active" : ""}" data-index="${index}">
+          <span>${61 + index}. ${item.word}</span>
+          <span>${state.learned.has(index) ? "✓" : ""}</span>
+        </button>
+      `).join("");
+
+      document.querySelectorAll(".nav-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          state.current = Number(btn.dataset.index);
+          renderWord();
+        });
+      });
+    }
+
+    function renderProgress() {
+      const learnedCount = state.learned.size;
+      $("learnedCount").textContent = learnedCount;
+      $("progressText").textContent = `${learnedCount} / ${words.length} 已学习`;
+      $("progressBar").style.width = `${(learnedCount / words.length) * 100}%`;
+      $("scoreCount").textContent = state.score;
+      if (state.mode === "learn") updatePrimaryButton();
+    }
+
+    function renderWord() {
+      const item = words[state.current];
+      state.speechRun += 1;
+      stopAudio();
+      resetPracticeHighlight();
+      $("wordText").textContent = item.word;
+      $("practiceText").textContent = item.word;
+      $("posText").textContent = item.pos;
+      $("definitionText").textContent = item.definition;
+      $("chineseText").textContent = item.chinese;
+      $("exampleText").textContent = item.example;
+      $("exampleTranslation").textContent = item.translation;
+      $("exampleTranslation").classList.remove("show");
+      updatePrimaryButton();
+
+      $("chunks").innerHTML = item.chunks.map((chunk, index) => `
+        <span class="chunk c${(index % 5) + 1}">${chunk}</span>
+      `).join("");
+
+      renderNav();
+      renderProgress();
+      warmAudio(state.current);
+      warmAudio((state.current + 1) % words.length);
+    }
+
+    function shuffle(array) {
+      return [...array].sort(() => Math.random() - 0.5);
+    }
+
+    function startQuiz() {
+      state.quizOrder = shuffle(words.map((_, index) => index));
+      state.quizIndex = 0;
+      state.score = 0;
+      state.answered = false;
+      $("quizResult").style.display = "none";
+      renderProgress();
+      renderQuizQuestion();
+    }
+
+    function makeOptions(correctIndex) {
+      const wrong = shuffle(words.map((item, index) => ({ item, index })).filter((entry) => entry.index !== correctIndex))
+        .slice(0, 3)
+        .map((entry) => entry.item.chinese);
+      return shuffle([words[correctIndex].chinese, ...wrong]);
+    }
+
+    function renderQuizQuestion() {
+      if (state.quizIndex >= state.quizOrder.length) {
+        $("quizWord").textContent = "完成";
+        $("options").innerHTML = "";
+        $("quizFeedback").textContent = "";
+        $("quizResult").style.display = "block";
+        $("quizResult").textContent = `本次检测得分：${state.score} / ${words.length}`;
+        renderProgress();
+        return;
+      }
+
+      state.answered = false;
+      const wordIndex = state.quizOrder[state.quizIndex];
+      const item = words[wordIndex];
+      $("quizWord").textContent = `${state.quizIndex + 1}. ${item.word}`;
+      $("quizFeedback").textContent = "";
+      $("options").innerHTML = makeOptions(wordIndex).map((option) => `
+        <button class="option" data-answer="${option}">${option}</button>
+      `).join("");
+
+      document.querySelectorAll(".option").forEach((btn) => {
+        btn.addEventListener("click", () => checkAnswer(btn, item.chinese));
+      });
+    }
+
+    function checkAnswer(btn, correct) {
+      if (state.answered) return;
+      state.answered = true;
+      const picked = btn.dataset.answer;
+      document.querySelectorAll(".option").forEach((option) => {
+        option.disabled = true;
+        if (option.dataset.answer === correct) option.classList.add("correct");
+      });
+
+      if (picked === correct) {
+        state.score += 1;
+        btn.classList.add("correct");
+        $("quizFeedback").textContent = "答对了。下一题马上来。";
+      } else {
+        btn.classList.add("wrong");
+        $("quizFeedback").textContent = `正确答案：${correct}`;
+      }
+      renderProgress();
+      window.setTimeout(() => {
+        state.quizIndex += 1;
+        renderQuizQuestion();
+      }, 900);
+    }
+
+    $("speakBtn").addEventListener("click", playWordRoutine);
+    $("practiceStrip").addEventListener("click", playWordRoutine);
+    $("practiceStrip").addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        playWordRoutine();
+      }
+    });
+    $("exampleText").addEventListener("click", () => {
+      $("exampleTranslation").classList.toggle("show");
+    });
+    $("quizSpeakBtn").addEventListener("click", () => {
+      const wordIndex = state.quizOrder[state.quizIndex];
+      if (wordIndex !== undefined) {
+        stopAudio();
+        playOnlineWord(words[wordIndex].word);
+      }
+    });
+    $("prevBtn").addEventListener("click", () => {
+      state.current = (state.current - 1 + words.length) % words.length;
+      renderWord();
+    });
+    $("nextBtn").addEventListener("click", () => {
+      state.current = (state.current + 1) % words.length;
+      renderWord();
+    });
+    $("markBtn").addEventListener("click", () => {
+      if (state.learned.size >= words.length) {
+        showQuizMode();
+        return;
+      }
+
+      if (!state.learned.has(state.current)) {
+        state.learned.add(state.current);
+        saveLearned();
+        renderWord();
+        return;
+      }
+
+      const nextUnlearned = words.findIndex((_, index) => !state.learned.has(index));
+      if (nextUnlearned >= 0) {
+        state.current = nextUnlearned;
+        renderWord();
+      } else {
+        showQuizMode();
+      }
+    });
+    $("restartQuizBtn").addEventListener("click", startQuiz);
+
+    loadVoices();
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+    words.forEach((_, index) => warmAudio(index));
+
+    showLearnMode();
+    renderWord();
+  </script>
+</body>
+</html>

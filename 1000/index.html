@@ -53,11 +53,6 @@
       line-height: 1.6;
     }
 
-    .units {
-      display: grid;
-      gap: 14px;
-    }
-
     a {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
@@ -101,248 +96,69 @@
       font-size: 28px;
       font-weight: 900;
     }
+
+    .books {
+      display: grid;
+      gap: 14px;
+      margin: 6px 0 26px;
+    }
+
+    .books a {
+      min-height: 132px;
+      padding: 26px 24px;
+    }
+
+    .books a strong {
+      font-size: 30px;
+    }
+
+    .books a .label {
+      display: inline-block;
+      margin-bottom: 4px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: #efe5ff;
+      color: var(--purple-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
   </style>
 </head>
 <body>
   <main>
     <h1>1000词伴学</h1>
-    <p>按顺序完成每个 Unit 的学习、跟读和中文检测。</p>
-    <section class="units" aria-label="单元列表">
-      <a href="unit1.html">
+    <p>选择分册开始学习，按顺序完成每个 Unit 的学习、跟读和中文检测。</p>
+    <section class="books" aria-label="分册入口">
+      <a href="book1.html">
         <div>
-          <strong>UNIT1</strong>
-          <span>001-020 单词学习</span>
+          <span class="label">📘 BOOK 1</span>
+          <strong>第一册</strong>
+          <span>12 单元 · 240 词 · 1000 Basic English Words Vol.1</span>
         </div>
         <div class="arrow">›</div>
       </a>
-      <a href="unit2.html">
+      <a href="book2.html">
         <div>
-          <strong>UNIT2</strong>
-          <span>501-520 单词学习</span>
+          <span class="label">📗 BOOK 2</span>
+          <strong>第二册</strong>
+          <span>12 单元 · 240 词 · book2-unit1 – book2-unit12</span>
         </div>
         <div class="arrow">›</div>
       </a>
-      <a href="unit3.html">
+      <a href="book3.html">
         <div>
-          <strong>UNIT3</strong>
-          <span>521-540 单词学习</span>
+          <span class="label">📙 BOOK 3</span>
+          <strong>第三册</strong>
+          <span>14 单元 · unit1 – unit12 及 unit2-1 / unit2-2</span>
         </div>
         <div class="arrow">›</div>
       </a>
-      <a href="unit4.html">
+      <a href="book4.html">
         <div>
-          <strong>UNIT4</strong>
-          <span>541-560 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="unit5.html">
-        <div>
-          <strong>UNIT5</strong>
-          <span>561-580 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="unit6.html">
-        <div>
-          <strong>UNIT6</strong>
-          <span>581-600 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="unit7.html">
-        <div>
-          <strong>UNIT7</strong>
-          <span>601-620 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="unit8.html">
-        <div>
-          <strong>UNIT8</strong>
-          <span>621-640 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="unit9.html">
-        <div>
-          <strong>UNIT9</strong>
-          <span>641-660 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="unit10.html">
-        <div>
-          <strong>UNIT10</strong>
-          <span>661-680 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="unit11.html">
-        <div>
-          <strong>UNIT11</strong>
-          <span>681-700 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="unit12.html">
-        <div>
-          <strong>UNIT12</strong>
-          <span>701-720 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="test50.html">
-        <div>
-          <strong>50词乱序检测</strong>
-          <span>UNIT1-UNIT3 随机抽题</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="test70.html">
-        <div>
-          <strong>70词阶段检测</strong>
-          <span>UNIT4-UNIT6 全部 + 前三单元复习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="test75.html">
-        <div>
-          <strong>75词阶段检测</strong>
-          <span>UNIT7-UNIT9 全部 + 旧单元复习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="test80.html">
-        <div>
-          <strong>80词阶段检测</strong>
-          <span>UNIT10-UNIT12 全部 + UNIT1-UNIT9 复习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="unit4-1.html">
-        <div>
-          <strong>UNIT 4-1</strong>
-          <span>721-730 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="unit4-2.html">
-        <div>
-          <strong>UNIT 4-2</strong>
-          <span>731-740 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="unit2-1.html">
-        <div>
-          <strong>UNIT 2-1</strong>
-          <span>741-750 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="unit2-2.html">
-        <div>
-          <strong>UNIT 2-2</strong>
-          <span>751-760 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-unit1.html">
-        <div>
-          <strong>[2]UNIT 1</strong>
-          <span>241-260 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-unit2.html">
-        <div>
-          <strong>[2]UNIT 2</strong>
-          <span>261-280 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-unit3.html">
-        <div>
-          <strong>[2]UNIT 3</strong>
-          <span>281-300 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-unit4.html">
-        <div>
-          <strong>[2]UNIT 4</strong>
-          <span>301-320 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-unit5.html">
-        <div>
-          <strong>[2]UNIT 5</strong>
-          <span>321-340 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-unit6.html">
-        <div>
-          <strong>[2]UNIT 6</strong>
-          <span>341-360 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-unit7.html">
-        <div>
-          <strong>[2]UNIT 7</strong>
-          <span>361-380 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-unit8.html">
-        <div>
-          <strong>[2]UNIT 8</strong>
-          <span>381-400 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-unit9.html">
-        <div>
-          <strong>[2]UNIT 9</strong>
-          <span>401-420 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-unit10.html">
-        <div>
-          <strong>[2]UNIT 10</strong>
-          <span>421-440 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-unit11.html">
-        <div>
-          <strong>[2]UNIT 11</strong>
-          <span>441-460 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-unit12.html">
-        <div>
-          <strong>[2]UNIT 12</strong>
-          <span>461-480 单词学习</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-test60.html">
-        <div>
-          <strong>2-unit1-4</strong>
-          <span>Book 2 UNIT1-UNIT4 · 每单元随机15词，共60题</span>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a href="book2-test5-7.html">
-        <div>
-          <strong>2-unit5-7</strong>
-          <span>Book 2 UNIT5-UNIT7 · 打乱顺序随机抽50题</span>
+          <span class="label">📕 BOOK 4</span>
+          <strong>第四册</strong>
+          <span>2 单元 · 20 词 · unit4-1 / unit4-2</span>
         </div>
         <div class="arrow">›</div>
       </a>

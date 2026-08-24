@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book 1 UNIT1-UNIT3 50词测评</title>
+  <style>
+    :root {
+      --ink: #241735;
+      --muted: #746884;
+      --purple: #5c35a2;
+      --purple-dark: #3f236d;
+      --yellow: #ffd766;
+      --line: #eadfb9;
+      --panel: #fffdf7;
+      --good: #187a4b;
+      --bad: #b42318;
+      --shadow: 0 18px 42px rgba(63, 35, 109, .16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 215, 102, .42), transparent 34%),
+        linear-gradient(135deg, #fff8df 0%, #f4eaff 48%, #fff3c6 100%);
+    }
+
+    button {
+      font: inherit;
+      touch-action: manipulation;
+    }
+
+    main {
+      width: min(960px, 100%);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 7vw, 64px);
+      line-height: 1;
+      color: var(--purple-dark);
+    }
+
+    h2 { margin: 0; }
+
+    p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .home,
+    .btn {
+      min-height: 44px;
+      border: 1px solid #d9c47c;
+      border-radius: 7px;
+      padding: 0 15px;
+      color: var(--purple-dark);
+      background: var(--panel);
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .home {
+      display: inline-grid;
+      place-items: center;
+      padding: 10px 14px;
+      text-decoration: none;
+    }
+
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 247, .96);
+      box-shadow: var(--shadow);
+    }
+
+    .progress {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .meter {
+      height: 12px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #efe4bd;
+    }
+
+    .meter span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: var(--purple);
+      transition: width .2s ease;
+    }
+
+    .count {
+      color: var(--muted);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .word-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      padding-bottom: 16px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .word {
+      color: var(--purple-dark);
+      font-size: clamp(48px, 11vw, 96px);
+      font-weight: 950;
+      line-height: .95;
+      overflow-wrap: anywhere;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: #805400;
+      background: #fff0b8;
+      font-weight: 900;
+    }
+
+    .speak {
+      display: grid;
+      flex: 0 0 auto;
+      width: 58px;
+      height: 58px;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      color: var(--purple-dark);
+      background: var(--yellow);
+      box-shadow: 0 14px 28px rgba(111, 67, 192, .25);
+      cursor: pointer;
+    }
+
+    .speak svg {
+      width: 27px;
+      height: 27px;
+      fill: currentColor;
+    }
+
+    .speak:disabled {
+      opacity: .55;
+      cursor: wait;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .option {
+      min-height: 62px;
+      padding: 14px 16px;
+      border: 1px solid #d9c47c;
+      border-radius: 8px;
+      color: var(--purple-dark);
+      background: white;
+      font-size: 20px;
+      font-weight: 900;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
+    }
+
+    .option:hover:not(:disabled) { transform: translateY(-1px); }
+    .option:active:not(:disabled),
+    .btn:active,
+    .home:active,
+    .speak:active:not(:disabled) { transform: translateY(1px); }
+    .option.correct { border-color: var(--good); color: var(--good); background: #dff7e9; }
+    .option.wrong { border-color: var(--bad); color: var(--bad); background: #fee4e2; }
+    .option:disabled { cursor: default; }
+    .option:disabled:not(.correct):not(.wrong) { opacity: .58; }
+
+    .status {
+      min-height: 36px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-weight: 900;
+    }
+
+    .hidden { display: none !important; }
+
+    .result {
+      display: grid;
+      gap: 14px;
+    }
+
+    .score {
+      color: var(--purple-dark);
+      font-size: clamp(42px, 10vw, 84px);
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .feedback {
+      color: var(--ink);
+      font-size: 20px;
+      font-weight: 850;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn.primary {
+      border-color: var(--purple);
+      color: white;
+      background: var(--purple);
+    }
+
+    .missed {
+      display: grid;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .miss {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fffefa;
+    }
+
+    .miss small { color: var(--muted); }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #c08700;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 640px) {
+      main { padding: 16px; }
+      .options { grid-template-columns: 1fr; }
+      .word-head { align-items: center; }
+      .miss { display: grid; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="topbar">
+      <div>
+        <h1>Book 1 UNIT1–3 测评</h1>
+        <p>覆盖 UNIT1–UNIT3 共 60 词，打乱顺序随机抽 50 词。看英文，选中文。</p>
+      </div>
+      <a class="home" href="index.html">返回总页面</a>
+    </header>
+
+    <section class="panel" id="quizPanel">
+      <div class="progress">
+        <div class="meter" id="progressMeter" role="progressbar" aria-label="答题进度" aria-valuemin="0" aria-valuemax="50" aria-valuenow="0">
+          <span id="bar"></span>
+        </div>
+        <div class="count" id="countText">1 / 50</div>
+      </div>
+      <div class="word-head">
+        <div>
+          <div class="word" id="wordText">word</div>
+          <span class="tag" id="unitText">[2]UNIT</span>
+        </div>
+        <button class="speak" id="speakBtn" title="播放单词" aria-label="播放单词">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zm-2.5-9v2.06a7.01 7.01 0 0 1 0 13.88V21a9 9 0 0 0 0-18z"/></svg>
+        </button>
+      </div>
+      <div class="options" id="options"></div>
+      <div class="status" id="statusText" aria-live="polite">请选择中文意思。</div>
+    </section>
+
+    <section class="panel result hidden" id="resultPanel">
+      <div class="score" id="scoreText">0 / 50</div>
+      <div class="feedback" id="feedbackText"></div>
+      <div class="actions">
+        <button class="btn primary" id="restartBtn">重新抽 50 词</button>
+        <a class="home" href="index.html">返回总页面</a>
+      </div>
+      <div id="missedBlock">
+        <h2>错题回看</h2>
+        <div class="missed" id="missedList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const wordRows = [
+      ["cry","哭",1,"audio/book1-unit1-cry.wav","audio/book1-unit1-zh-cry.wav"],
+      ["drive","开车",1,"audio/book1-unit1-drive.wav","audio/book1-unit1-zh-drive.wav"],
+      ["funny","好笑的",1,"audio/book1-unit1-funny.wav","audio/book1-unit1-zh-funny.wav"],
+      ["hope","希望",1,"audio/book1-unit1-hope.wav","audio/book1-unit1-zh-hope.wav"],
+      ["laugh","大笑",1,"audio/book1-unit1-laugh.wav","audio/book1-unit1-zh-laugh.wav"],
+      ["nice","友善的",1,"audio/book1-unit1-nice.wav","audio/book1-unit1-zh-nice.wav"],
+      ["smile","微笑",1,"audio/book1-unit1-smile.wav","audio/book1-unit1-zh-smile.wav"],
+      ["strong","强壮的",1,"audio/book1-unit1-strong.wav","audio/book1-unit1-zh-strong.wav"],
+      ["student","学生",1,"audio/book1-unit1-student.wav","audio/book1-unit1-zh-student.wav"],
+      ["young","年轻的",1,"audio/book1-unit1-young.wav","audio/book1-unit1-zh-young.wav"],
+      ["big","大的",1,"audio/book1-unit1-big.wav","audio/book1-unit1-zh-big.wav"],
+      ["boy","男孩",1,"audio/book1-unit1-boy.wav","audio/book1-unit1-zh-boy.wav"],
+      ["child","孩子",1,"audio/book1-unit1-child.wav","audio/book1-unit1-zh-child.wav"],
+      ["have","有",1,"audio/book1-unit1-have.wav","audio/book1-unit1-zh-have.wav"],
+      ["loud","吵闹的",1,"audio/book1-unit1-loud.wav","audio/book1-unit1-zh-loud.wav"],
+      ["story","故事",1,"audio/book1-unit1-story.wav","audio/book1-unit1-zh-story.wav"],
+      ["swim","游泳",1,"audio/book1-unit1-swim.wav","audio/book1-unit1-zh-swim.wav"],
+      ["today","今天",1,"audio/book1-unit1-today.wav","audio/book1-unit1-zh-today.wav"],
+      ["watch","观看",1,"audio/book1-unit1-watch.wav","audio/book1-unit1-zh-watch.wav"],
+      ["worry","担心",1,"audio/book1-unit1-worry.wav","audio/book1-unit1-zh-worry.wav"],
+      ["able","能",2,"audio/book1-unit2-able.wav","audio/book1-unit2-zh-able.wav"],
+      ["alone","孤单的",2,"audio/book1-unit2-alone.wav","audio/book1-unit2-zh-alone.wav"],
+      ["animal","动物",2,"audio/book1-unit2-animal.wav","audio/book1-unit2-zh-animal.wav"],
+      ["become","成为",2,"audio/book1-unit2-become.wav","audio/book1-unit2-zh-become.wav"],
+      ["call","叫喊",2,"audio/book1-unit2-call.wav","audio/book1-unit2-zh-call.wav"],
+      ["catch","接住",2,"audio/book1-unit2-catch.wav","audio/book1-unit2-zh-catch.wav"],
+      ["country","乡村",2,"audio/book1-unit2-country.wav","audio/book1-unit2-zh-country.wav"],
+      ["monkey","猴子",2,"audio/book1-unit2-monkey.wav","audio/book1-unit2-zh-monkey.wav"],
+      ["thin","薄的",2,"audio/book1-unit2-thin.wav","audio/book1-unit2-zh-thin.wav"],
+      ["word","单词",2,"audio/book1-unit2-word.wav","audio/book1-unit2-zh-word.wav"],
+      ["baby","婴儿",2,"audio/book1-unit2-baby.wav","audio/book1-unit2-zh-baby.wav"],
+      ["clean","清理",2,"audio/book1-unit2-clean.wav","audio/book1-unit2-zh-clean.wav"],
+      ["eat","吃",2,"audio/book1-unit2-eat.wav","audio/book1-unit2-zh-eat.wav"],
+      ["enjoy","喜欢",2,"audio/book1-unit2-enjoy.wav","audio/book1-unit2-zh-enjoy.wav"],
+      ["family","家庭",2,"audio/book1-unit2-family.wav","audio/book1-unit2-zh-family.wav"],
+      ["fruit","水果",2,"audio/book1-unit2-fruit.wav","audio/book1-unit2-zh-fruit.wav"],
+      ["jump","跳",2,"audio/book1-unit2-jump.wav","audio/book1-unit2-zh-jump.wav"],
+      ["kind","种类",2,"audio/book1-unit2-kind.wav","audio/book1-unit2-zh-kind.wav"],
+      ["man","男人",2,"audio/book1-unit2-man.wav","audio/book1-unit2-zh-man.wav"],
+      ["parent","父亲或母亲",2,"audio/book1-unit2-parent.wav","audio/book1-unit2-zh-parent.wav"],
+      ["address","地址",3,"audio/book1-unit3-address.wav","audio/book1-unit3-zh-address.wav"],
+      ["afternoon","下午",3,"audio/book1-unit3-afternoon.wav","audio/book1-unit3-zh-afternoon.wav"],
+      ["come","来",3,"audio/book1-unit3-come.wav","audio/book1-unit3-zh-come.wav"],
+      ["home","家",3,"audio/book1-unit3-home.wav","audio/book1-unit3-zh-home.wav"],
+      ["letter","信",3,"audio/book1-unit3-letter.wav","audio/book1-unit3-zh-letter.wav"],
+      ["lunch","午饭",3,"audio/book1-unit3-lunch.wav","audio/book1-unit3-zh-lunch.wav"],
+      ["make","做",3,"audio/book1-unit3-make.wav","audio/book1-unit3-zh-make.wav"],
+      ["need","需要",3,"audio/book1-unit3-need.wav","audio/book1-unit3-zh-need.wav"],
+      ["people","人",3,"audio/book1-unit3-people.wav","audio/book1-unit3-zh-people.wav"],
+      ["start","开始",3,"audio/book1-unit3-start.wav","audio/book1-unit3-zh-start.wav"],
+      ["cook","烹饪",3,"audio/book1-unit3-cook.wav","audio/book1-unit3-zh-cook.wav"],
+      ["day","天",3,"audio/book1-unit3-day.wav","audio/book1-unit3-zh-day.wav"],
+      ["drink","喝",3,"audio/book1-unit3-drink.wav","audio/book1-unit3-zh-drink.wav"],
+      ["front","前面",3,"audio/book1-unit3-front.wav","audio/book1-unit3-zh-front.wav"],
+      ["great","很棒的",3,"audio/book1-unit3-great.wav","audio/book1-unit3-zh-great.wav"],
+      ["play","玩耍",3,"audio/book1-unit3-play.wav","audio/book1-unit3-zh-play.wav"],
+      ["see","看到",3,"audio/book1-unit3-see.wav","audio/book1-unit3-zh-see.wav"],
+      ["send","发送",3,"audio/book1-unit3-send.wav","audio/book1-unit3-zh-send.wav"],
+      ["small","小的",3,"audio/book1-unit3-small.wav","audio/book1-unit3-zh-small.wav"],
+      ["time","时间",3,"audio/book1-unit3-time.wav","audio/book1-unit3-zh-time.wav"]
+    ];
+
+    const allWords = wordRows.map(function (row, index) {
+      const positionInUnit = index % 20;
+      return {
+        word: row[0],
+        chinese: row[1],
+        unitNumber: row[2],
+        unit: "BOOK 1 · UNIT " + row[2],
+        number: 1 + ((row[2] - 1) * 20) + positionInUnit,
+        englishAudio: row[3],
+        chineseAudio: row[4]
+      };
+    });
+
+    const totalQuestions = 50;
+    const state = {
+      order: [],
+      index: 0,
+      score: 0,
+      answered: false,
+      mistakes: [],
+      activeAudio: null,
+      audioElements: new Map()
+    };
+
+    const $ = function (id) { return document.getElementById(id); };
+
+    function shuffle(array) {
+      const result = array.slice();
+      for (let i = result.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temporary = result[i];
+        result[i] = result[j];
+        result[j] = temporary;
+      }
+      return result;
+    }
+
+    function getAudioElement(url) {
+      if (!url) return null;
+      if (!state.audioElements.has(url)) {
+        const audio = new Audio(url);
+        audio.preload = "auto";
+        state.audioElements.set(url, audio);
+      }
+      return state.audioElements.get(url);
+    }
+
+    function stopAudio() {
+      if (state.activeAudio) {
+        state.activeAudio.pause();
+        state.activeAudio.currentTime = 0;
+        state.activeAudio = null;
+      }
+      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+    }
+
+    function speakFallback(text, language) {
+      return new Promise(function (resolve) {
+        if (!("speechSynthesis" in window)) {
+          resolve();
+          return;
+        }
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = language;
+        utterance.rate = language === "zh-CN" ? .88 : .82;
+        utterance.onend = resolve;
+        utterance.onerror = resolve;
+        window.speechSynthesis.speak(utterance);
+      });
+    }
+
+    function playAudio(url, fallbackText, fallbackLanguage) {
+      return new Promise(function (resolve) {
+        const audio = getAudioElement(url);
+        if (!audio) {
+          speakFallback(fallbackText, fallbackLanguage).then(resolve);
+          return;
+        }
+
+        audio.pause();
+        audio.currentTime = 0;
+        state.activeAudio = audio;
+        audio.onended = function () {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          resolve();
+        };
+        audio.onerror = function () {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          speakFallback(fallbackText, fallbackLanguage).then(resolve);
+        };
+        audio.play().catch(function () {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          speakFallback(fallbackText, fallbackLanguage).then(resolve);
+        });
+      });
+    }
+
+    async function playEnglish(item, times) {
+      for (let i = 0; i < times; i += 1) {
+        await playAudio(item.englishAudio, item.word, "en-US");
+      }
+    }
+
+    async function playChinese(item) {
+      await playAudio(item.chineseAudio, item.chinese, "zh-CN");
+    }
+
+    function makeOptions(correct) {
+      const seen = new Set([correct.chinese]);
+      const wrong = [];
+      const candidates = shuffle(allWords);
+
+      for (const item of candidates) {
+        if (!seen.has(item.chinese)) {
+          seen.add(item.chinese);
+          wrong.push(item.chinese);
+          if (wrong.length === 3) break;
+        }
+      }
+
+      return shuffle([correct.chinese].concat(wrong));
+    }
+
+    function renderOptions(item) {
+      const container = $("options");
+      container.textContent = "";
+
+      makeOptions(item).forEach(function (answer) {
+        const button = document.createElement("button");
+        button.className = "option";
+        button.type = "button";
+        button.dataset.answer = answer;
+        button.textContent = answer;
+        button.addEventListener("click", function () {
+          checkAnswer(button, item);
+        });
+        container.appendChild(button);
+      });
+    }
+
+    function preloadCurrent() {
+      const current = state.order[state.index];
+      if (!current) return;
+      getAudioElement(current.englishAudio);
+      getAudioElement(current.chineseAudio);
+      state.order.slice(state.index + 1, state.index + 4).forEach(function (item) {
+        getAudioElement(item.englishAudio);
+        getAudioElement(item.chineseAudio);
+      });
+    }
+
+    function updateProgress() {
+      const completed = Math.min(state.index, state.order.length);
+      const percentage = state.order.length ? (completed / state.order.length) * 100 : 0;
+      $("bar").style.width = percentage + "%";
+      $("progressMeter").setAttribute("aria-valuenow", String(completed));
+    }
+
+    function renderQuestion() {
+      if (state.index >= state.order.length) {
+        showResult();
+        return;
+      }
+
+      stopAudio();
+      state.answered = false;
+      const item = state.order[state.index];
+      $("wordText").textContent = item.word;
+      $("unitText").textContent = item.unit + " · " + item.number;
+      $("countText").textContent = (state.index + 1) + " / " + state.order.length;
+      $("statusText").textContent = "请选择中文意思。";
+      $("speakBtn").disabled = false;
+      renderOptions(item);
+      updateProgress();
+      preloadCurrent();
+    }
+
+    async function checkAnswer(button, item) {
+      if (state.answered) return;
+      state.answered = true;
+      stopAudio();
+      $("speakBtn").disabled = true;
+
+      const picked = button.dataset.answer;
+      document.querySelectorAll(".option").forEach(function (option) {
+        option.disabled = true;
+        if (option.dataset.answer === item.chinese) option.classList.add("correct");
+      });
+
+      if (picked === item.chinese) {
+        state.score += 1;
+        button.classList.add("correct");
+        $("statusText").textContent = "答对了，播放英文 1 遍。";
+        await playEnglish(item, 1);
+      } else {
+        button.classList.add("wrong");
+        state.mistakes.push({
+          word: item.word,
+          chinese: item.chinese,
+          picked: picked,
+          unit: item.unit,
+          number: item.number
+        });
+        $("statusText").textContent = "答错了，正确答案：" + item.chinese + "。正在播放英文 3 遍和中文 1 遍。";
+        await playEnglish(item, 3);
+        await playChinese(item);
+      }
+
+      state.index += 1;
+      updateProgress();
+      window.setTimeout(renderQuestion, 260);
+    }
+
+    function renderMistakes() {
+      const block = $("missedBlock");
+      const list = $("missedList");
+      list.textContent = "";
+
+      if (state.mistakes.length === 0) {
+        block.classList.add("hidden");
+        return;
+      }
+
+      block.classList.remove("hidden");
+      state.mistakes.forEach(function (item) {
+        const row = document.createElement("div");
+        const word = document.createElement("strong");
+        const meta = document.createElement("small");
+        const answer = document.createElement("span");
+
+        row.className = "miss";
+        word.textContent = item.word + " ";
+        meta.textContent = item.unit + " · " + item.number;
+        answer.textContent = item.chinese + " · 你选了：" + item.picked;
+        word.appendChild(meta);
+        row.appendChild(word);
+        row.appendChild(answer);
+        list.appendChild(row);
+      });
+    }
+
+    function showResult() {
+      stopAudio();
+      $("quizPanel").classList.add("hidden");
+      $("resultPanel").classList.remove("hidden");
+
+      const percent = Math.round((state.score / state.order.length) * 100);
+      let feedback = "";
+      if (percent >= 90) feedback = "优秀：Book 1 UNIT1–UNIT3 掌握得很扎实。";
+      else if (percent >= 75) feedback = "良好：大部分单词已经熟悉，建议重点回听错题。";
+      else if (percent >= 60) feedback = "继续加油：先复习错题，再重新抽查一次。";
+      else feedback = "建议回到 Book 1 UNIT1–UNIT3 逐个跟读后再测。";
+
+      $("scoreText").textContent = state.score + " / " + state.order.length;
+      $("feedbackText").textContent = "正确率 " + percent + "%。" + feedback;
+      renderMistakes();
+    }
+
+    function startTest() {
+      stopAudio();
+      const selected = [1, 2, 3].flatMap(function (unitNumber, idx) {
+        const perUnit = [17, 17, 16][idx];
+        return shuffle(allWords.filter(function (item) {
+          return item.unitNumber === unitNumber;
+        })).slice(0, perUnit);
+      });
+      state.order = shuffle(selected);
+      state.index = 0;
+      state.score = 0;
+      state.answered = false;
+      state.mistakes = [];
+      $("quizPanel").classList.remove("hidden");
+      $("resultPanel").classList.add("hidden");
+      renderQuestion();
+    }
+
+    $("speakBtn").addEventListener("click", function () {
+      const item = state.order[state.index];
+      if (item) {
+        stopAudio();
+        playEnglish(item, 1);
+      }
+    });
+
+    $("restartBtn").addEventListener("click", startTest);
+    startTest();
+  </script>
+</body>
+</html>

@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book 1 全册 12 单元 50 词总测试</title>
+  <style>
+    :root {
+      --ink: #241735;
+      --muted: #746884;
+      --purple: #5c35a2;
+      --purple-dark: #3f236d;
+      --yellow: #ffd766;
+      --line: #eadfb9;
+      --panel: #fffdf7;
+      --good: #187a4b;
+      --bad: #b42318;
+      --shadow: 0 18px 42px rgba(63, 35, 109, .16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 215, 102, .42), transparent 34%),
+        linear-gradient(135deg, #fff8df 0%, #f4eaff 48%, #fff3c6 100%);
+    }
+
+    button {
+      font: inherit;
+      touch-action: manipulation;
+    }
+
+    main {
+      width: min(960px, 100%);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 7vw, 64px);
+      line-height: 1;
+      color: var(--purple-dark);
+    }
+
+    h2 { margin: 0; }
+
+    p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .home,
+    .btn {
+      min-height: 44px;
+      border: 1px solid #d9c47c;
+      border-radius: 7px;
+      padding: 0 15px;
+      color: var(--purple-dark);
+      background: var(--panel);
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .home {
+      display: inline-grid;
+      place-items: center;
+      padding: 10px 14px;
+      text-decoration: none;
+    }
+
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 247, .96);
+      box-shadow: var(--shadow);
+    }
+
+    .progress {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .meter {
+      height: 12px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #efe4bd;
+    }
+
+    .meter span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: var(--purple);
+      transition: width .2s ease;
+    }
+
+    .count {
+      color: var(--muted);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .word-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      padding-bottom: 16px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .word {
+      color: var(--purple-dark);
+      font-size: clamp(48px, 11vw, 96px);
+      font-weight: 950;
+      line-height: .95;
+      overflow-wrap: anywhere;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: #805400;
+      background: #fff0b8;
+      font-weight: 900;
+    }
+
+    .speak {
+      display: grid;
+      flex: 0 0 auto;
+      width: 58px;
+      height: 58px;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      color: var(--purple-dark);
+      background: var(--yellow);
+      box-shadow: 0 14px 28px rgba(111, 67, 192, .25);
+      cursor: pointer;
+    }
+
+    .speak svg {
+      width: 27px;
+      height: 27px;
+      fill: currentColor;
+    }
+
+    .speak:disabled {
+      opacity: .55;
+      cursor: wait;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .option {
+      min-height: 62px;
+      padding: 14px 16px;
+      border: 1px solid #d9c47c;
+      border-radius: 8px;
+      color: var(--purple-dark);
+      background: white;
+      font-size: 20px;
+      font-weight: 900;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
+    }
+
+    .option:hover:not(:disabled) { transform: translateY(-1px); }
+    .option:active:not(:disabled),
+    .btn:active,
+    .home:active,
+    .speak:active:not(:disabled) { transform: translateY(1px); }
+    .option.correct { border-color: var(--good); color: var(--good); background: #dff7e9; }
+    .option.wrong { border-color: var(--bad); color: var(--bad); background: #fee4e2; }
+    .option:disabled { cursor: default; }
+    .option:disabled:not(.correct):not(.wrong) { opacity: .58; }
+
+    .status {
+      min-height: 36px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-weight: 900;
+    }
+
+    .hidden { display: none !important; }
+
+    .result {
+      display: grid;
+      gap: 14px;
+    }
+
+    .score {
+      color: var(--purple-dark);
+      font-size: clamp(42px, 10vw, 84px);
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .feedback {
+      color: var(--ink);
+      font-size: 20px;
+      font-weight: 850;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn.primary {
+      border-color: var(--purple);
+      color: white;
+      background: var(--purple);
+    }
+
+    .missed {
+      display: grid;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .miss {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fffefa;
+    }
+
+    .miss small { color: var(--muted); }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #c08700;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 640px) {
+      main { padding: 16px; }
+      .options { grid-template-columns: 1fr; }
+      .word-head { align-items: center; }
+      .miss { display: grid; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="topbar">
+      <div>
+        <h1>Book 1 全册总测试</h1>
+        <p>覆盖 Book 1 全部 12 单元 240 词，打乱顺序随机抽 50 词。看英文，选中文。</p>
+      </div>
+      <a class="home" href="index.html">返回总页面</a>
+    </header>
+
+    <section class="panel" id="quizPanel">
+      <div class="progress">
+        <div class="meter" id="progressMeter" role="progressbar" aria-label="答题进度" aria-valuemin="0" aria-valuemax="50" aria-valuenow="0">
+          <span id="bar"></span>
+        </div>
+        <div class="count" id="countText">1 / 50</div>
+      </div>
+      <div class="word-head">
+        <div>
+          <div class="word" id="wordText">word</div>
+          <span class="tag" id="unitText">[2]UNIT</span>
+        </div>
+        <button class="speak" id="speakBtn" title="播放单词" aria-label="播放单词">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zm-2.5-9v2.06a7.01 7.01 0 0 1 0 13.88V21a9 9 0 0 0 0-18z"/></svg>
+        </button>
+      </div>
+      <div class="options" id="options"></div>
+      <div class="status" id="statusText" aria-live="polite">请选择中文意思。</div>
+    </section>
+
+    <section class="panel result hidden" id="resultPanel">
+      <div class="score" id="scoreText">0 / 50</div>
+      <div class="feedback" id="feedbackText"></div>
+      <div class="actions">
+        <button class="btn primary" id="restartBtn">重新抽 50 词</button>
+        <a class="home" href="index.html">返回总页面</a>
+      </div>
+      <div id="missedBlock">
+        <h2>错题回看</h2>
+        <div class="missed" id="missedList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const wordRows = [
+      ["cry","哭",1,"audio/book1-unit1-cry.wav","audio/book1-unit1-zh-cry.wav"],
+      ["drive","开车",1,"audio/book1-unit1-drive.wav","audio/book1-unit1-zh-drive.wav"],
+      ["funny","好笑的",1,"audio/book1-unit1-funny.wav","audio/book1-unit1-zh-funny.wav"],
+      ["hope","希望",1,"audio/book1-unit1-hope.wav","audio/book1-unit1-zh-hope.wav"],
+      ["laugh","大笑",1,"audio/book1-unit1-laugh.wav","audio/book1-unit1-zh-laugh.wav"],
+      ["nice","友善的",1,"audio/book1-unit1-nice.wav","audio/book1-unit1-zh-nice.wav"],
+      ["smile","微笑",1,"audio/book1-unit1-smile.wav","audio/book1-unit1-zh-smile.wav"],
+      ["strong","强壮的",1,"audio/book1-unit1-strong.wav","audio/book1-unit1-zh-strong.wav"],
+      ["student","学生",1,"audio/book1-unit1-student.wav","audio/book1-unit1-zh-student.wav"],
+      ["young","年轻的",1,"audio/book1-unit1-young.wav","audio/book1-unit1-zh-young.wav"],
+      ["big","大的",1,"audio/book1-unit1-big.wav","audio/book1-unit1-zh-big.wav"],
+      ["boy","男孩",1,"audio/book1-unit1-boy.wav","audio/book1-unit1-zh-boy.wav"],
+      ["child","孩子",1,"audio/book1-unit1-child.wav","audio/book1-unit1-zh-child.wav"],
+      ["have","有",1,"audio/book1-unit1-have.wav","audio/book1-unit1-zh-have.wav"],
+      ["loud","吵闹的",1,"audio/book1-unit1-loud.wav","audio/book1-unit1-zh-loud.wav"],
+      ["story","故事",1,"audio/book1-unit1-story.wav","audio/book1-unit1-zh-story.wav"],
+      ["swim","游泳",1,"audio/book1-unit1-swim.wav","audio/book1-unit1-zh-swim.wav"],
+      ["today","今天",1,"audio/book1-unit1-today.wav","audio/book1-unit1-zh-today.wav"],
+      ["watch","观看",1,"audio/book1-unit1-watch.wav","audio/book1-unit1-zh-watch.wav"],
+      ["worry","担心",1,"audio/book1-unit1-worry.wav","audio/book1-unit1-zh-worry.wav"],
+      ["able","能",2,"audio/book1-unit2-able.wav","audio/book1-unit2-zh-able.wav"],
+      ["alone","孤单的",2,"audio/book1-unit2-alone.wav","audio/book1-unit2-zh-alone.wav"],
+      ["animal","动物",2,"audio/book1-unit2-animal.wav","audio/book1-unit2-zh-animal.wav"],
+      ["become","成为",2,"audio/book1-unit2-become.wav","audio/book1-unit2-zh-become.wav"],
+      ["call","叫喊",2,"audio/book1-unit2-call.wav","audio/book1-unit2-zh-call.wav"],
+      ["catch","接住",2,"audio/book1-unit2-catch.wav","audio/book1-unit2-zh-catch.wav"],
+      ["country","乡村",2,"audio/book1-unit2-country.wav","audio/book1-unit2-zh-country.wav"],
+      ["monkey","猴子",2,"audio/book1-unit2-monkey.wav","audio/book1-unit2-zh-monkey.wav"],
+      ["thin","薄的",2,"audio/book1-unit2-thin.wav","audio/book1-unit2-zh-thin.wav"],
+      ["word","单词",2,"audio/book1-unit2-word.wav","audio/book1-unit2-zh-word.wav"],
+      ["baby","婴儿",2,"audio/book1-unit2-baby.wav","audio/book1-unit2-zh-baby.wav"],
+      ["clean","清理",2,"audio/book1-unit2-clean.wav","audio/book1-unit2-zh-clean.wav"],
+      ["eat","吃",2,"audio/book1-unit2-eat.wav","audio/book1-unit2-zh-eat.wav"],
+      ["enjoy","喜欢",2,"audio/book1-unit2-enjoy.wav","audio/book1-unit2-zh-enjoy.wav"],
+      ["family","家庭",2,"audio/book1-unit2-family.wav","audio/book1-unit2-zh-family.wav"],
+      ["fruit","水果",2,"audio/book1-unit2-fruit.wav","audio/book1-unit2-zh-fruit.wav"],
+      ["jump","跳",2,"audio/book1-unit2-jump.wav","audio/book1-unit2-zh-jump.wav"],
+      ["kind","种类",2,"audio/book1-unit2-kind.wav","audio/book1-unit2-zh-kind.wav"],
+      ["man","男人",2,"audio/book1-unit2-man.wav","audio/book1-unit2-zh-man.wav"],
+      ["parent","父亲或母亲",2,"audio/book1-unit2-parent.wav","audio/book1-unit2-zh-parent.wav"],
+      ["address","地址",3,"audio/book1-unit3-address.wav","audio/book1-unit3-zh-address.wav"],
+      ["afternoon","下午",3,"audio/book1-unit3-afternoon.wav","audio/book1-unit3-zh-afternoon.wav"],
+      ["come","来",3,"audio/book1-unit3-come.wav","audio/book1-unit3-zh-come.wav"],
+      ["home","家",3,"audio/book1-unit3-home.wav","audio/book1-unit3-zh-home.wav"],
+      ["letter","信",3,"audio/book1-unit3-letter.wav","audio/book1-unit3-zh-letter.wav"],
+      ["lunch","午饭",3,"audio/book1-unit3-lunch.wav","audio/book1-unit3-zh-lunch.wav"],
+      ["make","做",3,"audio/book1-unit3-make.wav","audio/book1-unit3-zh-make.wav"],
+      ["need","需要",3,"audio/book1-unit3-need.wav","audio/book1-unit3-zh-need.wav"],
+      ["people","人",3,"audio/book1-unit3-people.wav","audio/book1-unit3-zh-people.wav"],
+      ["start","开始",3,"audio/book1-unit3-start.wav","audio/book1-unit3-zh-start.wav"],
+      ["cook","烹饪",3,"audio/book1-unit3-cook.wav","audio/book1-unit3-zh-cook.wav"],
+      ["day","天",3,"audio/book1-unit3-day.wav","audio/book1-unit3-zh-day.wav"],
+      ["drink","喝",3,"audio/book1-unit3-drink.wav","audio/book1-unit3-zh-drink.wav"],
+      ["front","前面",3,"audio/book1-unit3-front.wav","audio/book1-unit3-zh-front.wav"],
+      ["great","很棒的",3,"audio/book1-unit3-great.wav","audio/book1-unit3-zh-great.wav"],
+      ["play","玩耍",3,"audio/book1-unit3-play.wav","audio/book1-unit3-zh-play.wav"],
+      ["see","看到",3,"audio/book1-unit3-see.wav","audio/book1-unit3-zh-see.wav"],
+      ["send","发送",3,"audio/book1-unit3-send.wav","audio/book1-unit3-zh-send.wav"],
+      ["small","小的",3,"audio/book1-unit3-small.wav","audio/book1-unit3-zh-small.wav"],
+      ["time","时间",3,"audio/book1-unit3-time.wav","audio/book1-unit3-zh-time.wav"],
+      ["again","再次",4,"audio/book1-unit4-again.wav","audio/book1-unit4-zh-again.wav"],
+      ["bad","坏的",4,"audio/book1-unit4-bad.wav","audio/book1-unit4-zh-bad.wav"],
+      ["buy","买",4,"audio/book1-unit4-buy.wav","audio/book1-unit4-zh-buy.wav"],
+      ["end","结尾",4,"audio/book1-unit4-end.wav","audio/book1-unit4-zh-end.wav"],
+      ["find","找到",4,"audio/book1-unit4-find.wav","audio/book1-unit4-zh-find.wav"],
+      ["friend","朋友",4,"audio/book1-unit4-friend.wav","audio/book1-unit4-zh-friend.wav"],
+      ["say","说出",4,"audio/book1-unit4-say.wav","audio/book1-unit4-zh-say.wav"],
+      ["speak","讲话",4,"audio/book1-unit4-speak.wav","audio/book1-unit4-zh-speak.wav"],
+      ["sweet","甜的",4,"audio/book1-unit4-sweet.wav","audio/book1-unit4-zh-sweet.wav"],
+      ["true","真的",4,"audio/book1-unit4-true.wav","audio/book1-unit4-zh-true.wav"],
+      ["answer","答案",4,"audio/book1-unit4-answer.wav","audio/book1-unit4-zh-answer.wav"],
+      ["learn","学习",4,"audio/book1-unit4-learn.wav","audio/book1-unit4-zh-learn.wav"],
+      ["like","喜欢",4,"audio/book1-unit4-like.wav","audio/book1-unit4-zh-like.wav"],
+      ["long","长的",4,"audio/book1-unit4-long.wav","audio/book1-unit4-zh-long.wav"],
+      ["minute","分钟",4,"audio/book1-unit4-minute.wav","audio/book1-unit4-zh-minute.wav"],
+      ["sing","唱歌",4,"audio/book1-unit4-sing.wav","audio/book1-unit4-zh-sing.wav"],
+      ["sit","坐",4,"audio/book1-unit4-sit.wav","audio/book1-unit4-zh-sit.wav"],
+      ["star","主演",4,"audio/book1-unit4-star.wav","audio/book1-unit4-zh-star.wav"],
+      ["think","考虑",4,"audio/book1-unit4-think.wav","audio/book1-unit4-zh-think.wav"],
+      ["town","城镇",4,"audio/book1-unit4-town.wav","audio/book1-unit4-zh-town.wav"],
+      ["breakfast","早饭",5,"audio/book1-unit5-breakfast.wav","audio/book1-unit5-zh-breakfast.wav"],
+      ["carry","搬",5,"audio/book1-unit5-carry.wav","audio/book1-unit5-zh-carry.wav"],
+      ["cheap","便宜的",5,"audio/book1-unit5-cheap.wav","audio/book1-unit5-zh-cheap.wav"],
+      ["count","数数",5,"audio/book1-unit5-count.wav","audio/book1-unit5-zh-count.wav"],
+      ["cut","切",5,"audio/book1-unit5-cut.wav","audio/book1-unit5-zh-cut.wav"],
+      ["early","早",5,"audio/book1-unit5-early.wav","audio/book1-unit5-zh-early.wav"],
+      ["finish","完成",5,"audio/book1-unit5-finish.wav","audio/book1-unit5-zh-finish.wav"],
+      ["flower","花",5,"audio/book1-unit5-flower.wav","audio/book1-unit5-zh-flower.wav"],
+      ["food","食物",5,"audio/book1-unit5-food.wav","audio/book1-unit5-zh-food.wav"],
+      ["vegetable","蔬菜",5,"audio/book1-unit5-vegetable.wav","audio/book1-unit5-zh-vegetable.wav"],
+      ["begin","开始",5,"audio/book1-unit5-begin.wav","audio/book1-unit5-zh-begin.wav"],
+      ["excuse","借口",5,"audio/book1-unit5-excuse.wav","audio/book1-unit5-zh-excuse.wav"],
+      ["heavy","重的",5,"audio/book1-unit5-heavy.wav","audio/book1-unit5-zh-heavy.wav"],
+      ["market","市场",5,"audio/book1-unit5-market.wav","audio/book1-unit5-zh-market.wav"],
+      ["meat","肉",5,"audio/book1-unit5-meat.wav","audio/book1-unit5-zh-meat.wav"],
+      ["money","钱",5,"audio/book1-unit5-money.wav","audio/book1-unit5-zh-money.wav"],
+      ["put","存放",5,"audio/book1-unit5-put.wav","audio/book1-unit5-zh-put.wav"],
+      ["station","车站",5,"audio/book1-unit5-station.wav","audio/book1-unit5-zh-station.wav"],
+      ["visit","拜访",5,"audio/book1-unit5-visit.wav","audio/book1-unit5-zh-visit.wav"],
+      ["yesterday","昨天",5,"audio/book1-unit5-yesterday.wav","audio/book1-unit5-zh-yesterday.wav"],
+      ["cold","寒冷的",6,"audio/book1-unit6-cold.wav","audio/book1-unit6-zh-cold.wav"],
+      ["dark","黑的",6,"audio/book1-unit6-dark.wav","audio/book1-unit6-zh-dark.wav"],
+      ["dinner","晚餐",6,"audio/book1-unit6-dinner.wav","audio/book1-unit6-zh-dinner.wav"],
+      ["dish","碟子",6,"audio/book1-unit6-dish.wav","audio/book1-unit6-zh-dish.wav"],
+      ["evening","傍晚",6,"audio/book1-unit6-evening.wav","audio/book1-unit6-zh-evening.wav"],
+      ["sick","生病的",6,"audio/book1-unit6-sick.wav","audio/book1-unit6-zh-sick.wav"],
+      ["snowy","下雪的",6,"audio/book1-unit6-snowy.wav","audio/book1-unit6-zh-snowy.wav"],
+      ["sugar","糖",6,"audio/book1-unit6-sugar.wav","audio/book1-unit6-zh-sugar.wav"],
+      ["tea","茶",6,"audio/book1-unit6-tea.wav","audio/book1-unit6-zh-tea.wav"],
+      ["world","世界",6,"audio/book1-unit6-world.wav","audio/book1-unit6-zh-world.wav"],
+      ["hard","困难的",6,"audio/book1-unit6-hard.wav","audio/book1-unit6-zh-hard.wav"],
+      ["late","晚的",6,"audio/book1-unit6-late.wav","audio/book1-unit6-zh-late.wav"],
+      ["life","生活",6,"audio/book1-unit6-life.wav","audio/book1-unit6-zh-life.wav"],
+      ["look","看",6,"audio/book1-unit6-look.wav","audio/book1-unit6-zh-look.wav"],
+      ["love","爱",6,"audio/book1-unit6-love.wav","audio/book1-unit6-zh-love.wav"],
+      ["night","晚上",6,"audio/book1-unit6-night.wav","audio/book1-unit6-zh-night.wav"],
+      ["same","一样的",6,"audio/book1-unit6-same.wav","audio/book1-unit6-zh-same.wav"],
+      ["sleep","睡觉",6,"audio/book1-unit6-sleep.wav","audio/book1-unit6-zh-sleep.wav"],
+      ["water","水",6,"audio/book1-unit6-water.wav","audio/book1-unit6-zh-water.wav"],
+      ["weak","弱的",6,"audio/book1-unit6-weak.wav","audio/book1-unit6-zh-weak.wav"],
+      ["fine","很好的",7,"audio/book1-unit7-fine.wav","audio/book1-unit7-zh-fine.wav"],
+      ["give","给",7,"audio/book1-unit7-give.wav","audio/book1-unit7-zh-give.wav"],
+      ["help","帮助",7,"audio/book1-unit7-help.wav","audio/book1-unit7-zh-help.wav"],
+      ["hour","小时",7,"audio/book1-unit7-hour.wav","audio/book1-unit7-zh-hour.wav"],
+      ["meet","聚会",7,"audio/book1-unit7-meet.wav","audio/book1-unit7-zh-meet.wav"],
+      ["page","页",7,"audio/book1-unit7-page.wav","audio/book1-unit7-zh-page.wav"],
+      ["pay","支付",7,"audio/book1-unit7-pay.wav","audio/book1-unit7-zh-pay.wav"],
+      ["rain","下雨",7,"audio/book1-unit7-rain.wav","audio/book1-unit7-zh-rain.wav"],
+      ["sell","卖",7,"audio/book1-unit7-sell.wav","audio/book1-unit7-zh-sell.wav"],
+      ["tree","树",7,"audio/book1-unit7-tree.wav","audio/book1-unit7-zh-tree.wav"],
+      ["chair","椅子",7,"audio/book1-unit7-chair.wav","audio/book1-unit7-zh-chair.wav"],
+      ["hear","听到",7,"audio/book1-unit7-hear.wav","audio/book1-unit7-zh-hear.wav"],
+      ["number","数字",7,"audio/book1-unit7-number.wav","audio/book1-unit7-zh-number.wav"],
+      ["park","公园",7,"audio/book1-unit7-park.wav","audio/book1-unit7-zh-park.wav"],
+      ["poor","贫穷的",7,"audio/book1-unit7-poor.wav","audio/book1-unit7-zh-poor.wav"],
+      ["ready","准备好的",7,"audio/book1-unit7-ready.wav","audio/book1-unit7-zh-ready.wav"],
+      ["ride","骑车",7,"audio/book1-unit7-ride.wav","audio/book1-unit7-zh-ride.wav"],
+      ["table","桌子",7,"audio/book1-unit7-table.wav","audio/book1-unit7-zh-table.wav"],
+      ["work","工作",7,"audio/book1-unit7-work.wav","audio/book1-unit7-zh-work.wav"],
+      ["write","写",7,"audio/book1-unit7-write.wav","audio/book1-unit7-zh-write.wav"],
+      ["door","门",8,"audio/book1-unit8-door.wav","audio/book1-unit8-zh-door.wav"],
+      ["easy","容易的",8,"audio/book1-unit8-easy.wav","audio/book1-unit8-zh-easy.wav"],
+      ["grow","长大",8,"audio/book1-unit8-grow.wav","audio/book1-unit8-zh-grow.wav"],
+      ["hate","讨厌",8,"audio/book1-unit8-hate.wav","audio/book1-unit8-zh-hate.wav"],
+      ["morning","早晨",8,"audio/book1-unit8-morning.wav","audio/book1-unit8-zh-morning.wav"],
+      ["music","音乐",8,"audio/book1-unit8-music.wav","audio/book1-unit8-zh-music.wav"],
+      ["o'clock","整点",8,"audio/book1-unit8-o'clock.wav","audio/book1-unit8-zh-o'clock.wav"],
+      ["ring","戒指",8,"audio/book1-unit8-ring.wav","audio/book1-unit8-zh-ring.wav"],
+      ["stop","停止",8,"audio/book1-unit8-stop.wav","audio/book1-unit8-zh-stop.wav"],
+      ["study","学习",8,"audio/book1-unit8-study.wav","audio/book1-unit8-zh-study.wav"],
+      ["mirror","镜子",8,"audio/book1-unit8-mirror.wav","audio/book1-unit8-zh-mirror.wav"],
+      ["nurse","护士",8,"audio/book1-unit8-nurse.wav","audio/book1-unit8-zh-nurse.wav"],
+      ["pocket","口袋",8,"audio/book1-unit8-pocket.wav","audio/book1-unit8-zh-pocket.wav"],
+      ["pretty","美丽的",8,"audio/book1-unit8-pretty.wav","audio/book1-unit8-zh-pretty.wav"],
+      ["problem","问题",8,"audio/book1-unit8-problem.wav","audio/book1-unit8-zh-problem.wav"],
+      ["pull","拉",8,"audio/book1-unit8-pull.wav","audio/book1-unit8-zh-pull.wav"],
+      ["sad","难过的",8,"audio/book1-unit8-sad.wav","audio/book1-unit8-zh-sad.wav"],
+      ["try","尽力",8,"audio/book1-unit8-try.wav","audio/book1-unit8-zh-try.wav"],
+      ["want","想要",8,"audio/book1-unit8-want.wav","audio/book1-unit8-zh-want.wav"],
+      ["wrong","错误的",8,"audio/book1-unit8-wrong.wav","audio/book1-unit8-zh-wrong.wav"],
+      ["high","高",9,"audio/book1-unit9-high.wav","audio/book1-unit9-zh-high.wav"],
+      ["keep","存放",9,"audio/book1-unit9-keep.wav","audio/book1-unit9-zh-keep.wav"],
+      ["know","知道",9,"audio/book1-unit9-know.wav","audio/book1-unit9-zh-know.wav"],
+      ["let","让",9,"audio/book1-unit9-let.wav","audio/book1-unit9-zh-let.wav"],
+      ["move","移动",9,"audio/book1-unit9-move.wav","audio/book1-unit9-zh-move.wav"],
+      ["pass","传递",9,"audio/book1-unit9-pass.wav","audio/book1-unit9-zh-pass.wav"],
+      ["point","指",9,"audio/book1-unit9-point.wav","audio/book1-unit9-zh-point.wav"],
+      ["push","推",9,"audio/book1-unit9-push.wav","audio/book1-unit9-zh-push.wav"],
+      ["quick","快的",9,"audio/book1-unit9-quick.wav","audio/book1-unit9-zh-quick.wav"],
+      ["together","一起",9,"audio/book1-unit9-together.wav","audio/book1-unit9-zh-together.wav"],
+      ["fall","摔倒",9,"audio/book1-unit9-fall.wav","audio/book1-unit9-zh-fall.wav"],
+      ["lady","女士",9,"audio/book1-unit9-lady.wav","audio/book1-unit9-zh-lady.wav"],
+      ["rest","休息",9,"audio/book1-unit9-rest.wav","audio/book1-unit9-zh-rest.wav"],
+      ["run","跑步",9,"audio/book1-unit9-run.wav","audio/book1-unit9-zh-run.wav"],
+      ["season","赛季",9,"audio/book1-unit9-season.wav","audio/book1-unit9-zh-season.wav"],
+      ["short","矮的",9,"audio/book1-unit9-short.wav","audio/book1-unit9-zh-short.wav"],
+      ["sky","天空",9,"audio/book1-unit9-sky.wav","audio/book1-unit9-zh-sky.wav"],
+      ["stand","站立",9,"audio/book1-unit9-stand.wav","audio/book1-unit9-zh-stand.wav"],
+      ["tall","高的",9,"audio/book1-unit9-tall.wav","audio/book1-unit9-zh-tall.wav"],
+      ["wear","穿",9,"audio/book1-unit9-wear.wav","audio/book1-unit9-zh-wear.wav"],
+      ["bottle","瓶子",10,"audio/book1-unit10-bottle.wav","audio/book1-unit10-zh-bottle.wav"],
+      ["change","变化",10,"audio/book1-unit10-change.wav","audio/book1-unit10-zh-change.wav"],
+      ["cool","冷的",10,"audio/book1-unit10-cool.wav","audio/book1-unit10-zh-cool.wav"],
+      ["cover","盖",10,"audio/book1-unit10-cover.wav","audio/book1-unit10-zh-cover.wav"],
+      ["dry","擦干",10,"audio/book1-unit10-dry.wav","audio/book1-unit10-zh-dry.wav"],
+      ["egg","鸡蛋",10,"audio/book1-unit10-egg.wav","audio/book1-unit10-zh-egg.wav"],
+      ["expensive","贵的",10,"audio/book1-unit10-expensive.wav","audio/book1-unit10-zh-expensive.wav"],
+      ["fast","迅速的",10,"audio/book1-unit10-fast.wav","audio/book1-unit10-zh-fast.wav"],
+      ["fish","鱼",10,"audio/book1-unit10-fish.wav","audio/book1-unit10-zh-fish.wav"],
+      ["knife","小刀",10,"audio/book1-unit10-knife.wav","audio/book1-unit10-zh-knife.wav"],
+      ["full","满的",10,"audio/book1-unit10-full.wav","audio/book1-unit10-zh-full.wav"],
+      ["garden","花园",10,"audio/book1-unit10-garden.wav","audio/book1-unit10-zh-garden.wav"],
+      ["hot","热的",10,"audio/book1-unit10-hot.wav","audio/book1-unit10-zh-hot.wav"],
+      ["ill","病的",10,"audio/book1-unit10-ill.wav","audio/book1-unit10-zh-ill.wav"],
+      ["kitchen","厨房",10,"audio/book1-unit10-kitchen.wav","audio/book1-unit10-zh-kitchen.wav"],
+      ["light","点燃",10,"audio/book1-unit10-light.wav","audio/book1-unit10-zh-light.wav"],
+      ["milk","牛奶",10,"audio/book1-unit10-milk.wav","audio/book1-unit10-zh-milk.wav"],
+      ["potato","土豆",10,"audio/book1-unit10-potato.wav","audio/book1-unit10-zh-potato.wav"],
+      ["warm","温暖的",10,"audio/book1-unit10-warm.wav","audio/book1-unit10-zh-warm.wav"],
+      ["wash","洗",10,"audio/book1-unit10-wash.wav","audio/book1-unit10-zh-wash.wav"],
+      ["beautiful","美丽的",11,"audio/book1-unit11-beautiful.wav","audio/book1-unit11-zh-beautiful.wav"],
+      ["bicycle","自行车",11,"audio/book1-unit11-bicycle.wav","audio/book1-unit11-zh-bicycle.wav"],
+      ["city","城市",11,"audio/book1-unit11-city.wav","audio/book1-unit11-zh-city.wav"],
+      ["east","向东",11,"audio/book1-unit11-east.wav","audio/book1-unit11-zh-east.wav"],
+      ["far","远地",11,"audio/book1-unit11-far.wav","audio/book1-unit11-zh-far.wav"],
+      ["map","地图",11,"audio/book1-unit11-map.wav","audio/book1-unit11-zh-map.wav"],
+      ["open","开始营业",11,"audio/book1-unit11-open.wav","audio/book1-unit11-zh-open.wav"],
+      ["road","路",11,"audio/book1-unit11-road.wav","audio/book1-unit11-zh-road.wav"],
+      ["shoe","鞋子",11,"audio/book1-unit11-shoe.wav","audio/book1-unit11-zh-shoe.wav"],
+      ["side","一侧",11,"audio/book1-unit11-side.wav","audio/book1-unit11-zh-side.wav"],
+      ["air","空气",11,"audio/book1-unit11-air.wav","audio/book1-unit11-zh-air.wav"],
+      ["fly","飞",11,"audio/book1-unit11-fly.wav","audio/book1-unit11-zh-fly.wav"],
+      ["half","一半",11,"audio/book1-unit11-half.wav","audio/book1-unit11-zh-half.wav"],
+      ["left","向左",11,"audio/book1-unit11-left.wav","audio/book1-unit11-zh-left.wav"],
+      ["little","小的",11,"audio/book1-unit11-little.wav","audio/book1-unit11-zh-little.wav"],
+      ["new","新的",11,"audio/book1-unit11-new.wav","audio/book1-unit11-zh-new.wav"],
+      ["shop","商店",11,"audio/book1-unit11-shop.wav","audio/book1-unit11-zh-shop.wav"],
+      ["show","展示",11,"audio/book1-unit11-show.wav","audio/book1-unit11-zh-show.wav"],
+      ["use","用",11,"audio/book1-unit11-use.wav","audio/book1-unit11-zh-use.wav"],
+      ["wait","等待",11,"audio/book1-unit11-wait.wav","audio/book1-unit11-zh-wait.wav"],
+      ["ask","问",12,"audio/book1-unit12-ask.wav","audio/book1-unit12-zh-ask.wav"],
+      ["break","打破",12,"audio/book1-unit12-break.wav","audio/book1-unit12-zh-break.wav"],
+      ["desk","课桌",12,"audio/book1-unit12-desk.wav","audio/book1-unit12-zh-desk.wav"],
+      ["seat","座位",12,"audio/book1-unit12-seat.wav","audio/book1-unit12-zh-seat.wav"],
+      ["stairs","楼梯",12,"audio/book1-unit12-stairs.wav","audio/book1-unit12-zh-stairs.wav"],
+      ["stay","停留",12,"audio/book1-unit12-stay.wav","audio/book1-unit12-zh-stay.wav"],
+      ["talk","说",12,"audio/book1-unit12-talk.wav","audio/book1-unit12-zh-talk.wav"],
+      ["understand","理解",12,"audio/book1-unit12-understand.wav","audio/book1-unit12-zh-understand.wav"],
+      ["walk","走",12,"audio/book1-unit12-walk.wav","audio/book1-unit12-zh-walk.wav"],
+      ["year","年",12,"audio/book1-unit12-year.wav","audio/book1-unit12-zh-year.wav"],
+      ["act","表现",12,"audio/book1-unit12-act.wav","audio/book1-unit12-zh-act.wav"],
+      ["bring","带来",12,"audio/book1-unit12-bring.wav","audio/book1-unit12-zh-bring.wav"],
+      ["glad","高兴的",12,"audio/book1-unit12-glad.wav","audio/book1-unit12-zh-glad.wav"],
+      ["lesson","课",12,"audio/book1-unit12-lesson.wav","audio/book1-unit12-zh-lesson.wav"],
+      ["listen","听",12,"audio/book1-unit12-listen.wav","audio/book1-unit12-zh-listen.wav"],
+      ["pencil","铅笔",12,"audio/book1-unit12-pencil.wav","audio/book1-unit12-zh-pencil.wav"],
+      ["question","问题",12,"audio/book1-unit12-question.wav","audio/book1-unit12-zh-question.wav"],
+      ["right","正确的",12,"audio/book1-unit12-right.wav","audio/book1-unit12-zh-right.wav"],
+      ["teach","教",12,"audio/book1-unit12-teach.wav","audio/book1-unit12-zh-teach.wav"],
+      ["way","方法",12,"audio/book1-unit12-way.wav","audio/book1-unit12-zh-way.wav"]
+    ];
+
+    const allWords = wordRows.map(function (row, index) {
+      const positionInUnit = index % 20;
+      return {
+        word: row[0],
+        chinese: row[1],
+        unitNumber: row[2],
+        unit: "BOOK 1 · UNIT " + row[2],
+        number: 1 + ((row[2] - 1) * 20) + positionInUnit,
+        englishAudio: row[3],
+        chineseAudio: row[4]
+      };
+    });
+
+    const totalQuestions = 50;
+    const state = {
+      order: [],
+      index: 0,
+      score: 0,
+      answered: false,
+      mistakes: [],
+      activeAudio: null,
+      audioElements: new Map()
+    };
+
+    const $ = function (id) { return document.getElementById(id); };
+
+    function shuffle(array) {
+      const result = array.slice();
+      for (let i = result.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temporary = result[i];
+        result[i] = result[j];
+        result[j] = temporary;
+      }
+      return result;
+    }
+
+    function getAudioElement(url) {
+      if (!url) return null;
+      if (!state.audioElements.has(url)) {
+        const audio = new Audio(url);
+        audio.preload = "auto";
+        state.audioElements.set(url, audio);
+      }
+      return state.audioElements.get(url);
+    }
+
+    function stopAudio() {
+      if (state.activeAudio) {
+        state.activeAudio.pause();
+        state.activeAudio.currentTime = 0;
+        state.activeAudio = null;
+      }
+      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+    }
+
+    function speakFallback(text, language) {
+      return new Promise(function (resolve) {
+        if (!("speechSynthesis" in window)) {
+          resolve();
+          return;
+        }
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = language;
+        utterance.rate = language === "zh-CN" ? .88 : .82;
+        utterance.onend = resolve;
+        utterance.onerror = resolve;
+        window.speechSynthesis.speak(utterance);
+      });
+    }
+
+    function playAudio(url, fallbackText, fallbackLanguage) {
+      return new Promise(function (resolve) {
+        const audio = getAudioElement(url);
+        if (!audio) {
+          speakFallback(fallbackText, fallbackLanguage).then(resolve);
+          return;
+        }
+
+        audio.pause();
+        audio.currentTime = 0;
+        state.activeAudio = audio;
+        audio.onended = function () {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          resolve();
+        };
+        audio.onerror = function () {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          speakFallback(fallbackText, fallbackLanguage).then(resolve);
+        };
+        audio.play().catch(function () {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          speakFallback(fallbackText, fallbackLanguage).then(resolve);
+        });
+      });
+    }
+
+    async function playEnglish(item, times) {
+      for (let i = 0; i < times; i += 1) {
+        await playAudio(item.englishAudio, item.word, "en-US");
+      }
+    }
+
+    async function playChinese(item) {
+      await playAudio(item.chineseAudio, item.chinese, "zh-CN");
+    }
+
+    function makeOptions(correct) {
+      const seen = new Set([correct.chinese]);
+      const wrong = [];
+      const candidates = shuffle(allWords);
+
+      for (const item of candidates) {
+        if (!seen.has(item.chinese)) {
+          seen.add(item.chinese);
+          wrong.push(item.chinese);
+          if (wrong.length === 3) break;
+        }
+      }
+
+      return shuffle([correct.chinese].concat(wrong));
+    }
+
+    function renderOptions(item) {
+      const container = $("options");
+      container.textContent = "";
+
+      makeOptions(item).forEach(function (answer) {
+        const button = document.createElement("button");
+        button.className = "option";
+        button.type = "button";
+        button.dataset.answer = answer;
+        button.textContent = answer;
+        button.addEventListener("click", function () {
+          checkAnswer(button, item);
+        });
+        container.appendChild(button);
+      });
+    }
+
+    function preloadCurrent() {
+      const current = state.order[state.index];
+      if (!current) return;
+      getAudioElement(current.englishAudio);
+      getAudioElement(current.chineseAudio);
+      state.order.slice(state.index + 1, state.index + 4).forEach(function (item) {
+        getAudioElement(item.englishAudio);
+        getAudioElement(item.chineseAudio);
+      });
+    }
+
+    function updateProgress() {
+      const completed = Math.min(state.index, state.order.length);
+      const percentage = state.order.length ? (completed / state.order.length) * 100 : 0;
+      $("bar").style.width = percentage + "%";
+      $("progressMeter").setAttribute("aria-valuenow", String(completed));
+    }
+
+    function renderQuestion() {
+      if (state.index >= state.order.length) {
+        showResult();
+        return;
+      }
+
+      stopAudio();
+      state.answered = false;
+      const item = state.order[state.index];
+      $("wordText").textContent = item.word;
+      $("unitText").textContent = item.unit + " · " + item.number;
+      $("countText").textContent = (state.index + 1) + " / " + state.order.length;
+      $("statusText").textContent = "请选择中文意思。";
+      $("speakBtn").disabled = false;
+      renderOptions(item);
+      updateProgress();
+      preloadCurrent();
+    }
+
+    async function checkAnswer(button, item) {
+      if (state.answered) return;
+      state.answered = true;
+      stopAudio();
+      $("speakBtn").disabled = true;
+
+      const picked = button.dataset.answer;
+      document.querySelectorAll(".option").forEach(function (option) {
+        option.disabled = true;
+        if (option.dataset.answer === item.chinese) option.classList.add("correct");
+      });
+
+      if (picked === item.chinese) {
+        state.score += 1;
+        button.classList.add("correct");
+        $("statusText").textContent = "答对了，播放英文 1 遍。";
+        await playEnglish(item, 1);
+      } else {
+        button.classList.add("wrong");
+        state.mistakes.push({
+          word: item.word,
+          chinese: item.chinese,
+          picked: picked,
+          unit: item.unit,
+          number: item.number
+        });
+        $("statusText").textContent = "答错了，正确答案：" + item.chinese + "。正在播放英文 3 遍和中文 1 遍。";
+        await playEnglish(item, 3);
+        await playChinese(item);
+      }
+
+      state.index += 1;
+      updateProgress();
+      window.setTimeout(renderQuestion, 260);
+    }
+
+    function renderMistakes() {
+      const block = $("missedBlock");
+      const list = $("missedList");
+      list.textContent = "";
+
+      if (state.mistakes.length === 0) {
+        block.classList.add("hidden");
+        return;
+      }
+
+      block.classList.remove("hidden");
+      state.mistakes.forEach(function (item) {
+        const row = document.createElement("div");
+        const word = document.createElement("strong");
+        const meta = document.createElement("small");
+        const answer = document.createElement("span");
+
+        row.className = "miss";
+        word.textContent = item.word + " ";
+        meta.textContent = item.unit + " · " + item.number;
+        answer.textContent = item.chinese + " · 你选了：" + item.picked;
+        word.appendChild(meta);
+        row.appendChild(word);
+        row.appendChild(answer);
+        list.appendChild(row);
+      });
+    }
+
+    function showResult() {
+      stopAudio();
+      $("quizPanel").classList.add("hidden");
+      $("resultPanel").classList.remove("hidden");
+
+      const percent = Math.round((state.score / state.order.length) * 100);
+      let feedback = "";
+      if (percent >= 90) feedback = "优秀：Book 1 全册 掌握得很扎实。";
+      else if (percent >= 75) feedback = "良好：大部分单词已经熟悉，建议重点回听错题。";
+      else if (percent >= 60) feedback = "继续加油：先复习错题，再重新抽查一次。";
+      else feedback = "建议回到 Book 1 全册 逐个跟读后再测。";
+
+      $("scoreText").textContent = state.score + " / " + state.order.length;
+      $("feedbackText").textContent = "正确率 " + percent + "%。" + feedback;
+      renderMistakes();
+    }
+
+    function startTest() {
+      stopAudio();
+      const selected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].flatMap(function (unitNumber, idx) {
+        const perUnit = [5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4][idx];
+        return shuffle(allWords.filter(function (item) {
+          return item.unitNumber === unitNumber;
+        })).slice(0, perUnit);
+      });
+      state.order = shuffle(selected);
+      state.index = 0;
+      state.score = 0;
+      state.answered = false;
+      state.mistakes = [];
+      $("quizPanel").classList.remove("hidden");
+      $("resultPanel").classList.add("hidden");
+      renderQuestion();
+    }
+
+    $("speakBtn").addEventListener("click", function () {
+      const item = state.order[state.index];
+      if (item) {
+        stopAudio();
+        playEnglish(item, 1);
+      }
+    });
+
+    $("restartBtn").addEventListener("click", startTest);
+    startTest();
+  </script>
+</body>
+</html>
