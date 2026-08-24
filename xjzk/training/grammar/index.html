@@ -53,9 +53,25 @@
         </article>
       </div>
     </section>
+    <section class="login-gate name-gate" id="nameGate" aria-label="填写姓名" style="display:none">
+      <div class="login-layout">
+        <div class="login-card name-card">
+          <div class="brand-mark logo-mark" aria-hidden="true">新</div>
+          <h1>欢迎，请填写你的姓名</h1>
+          <p>登录码已验证通过</p>
+          <form id="nameForm" autocomplete="off" action="javascript:void(0)">
+            <label for="studentName">姓名</label>
+            <input id="studentName" name="studentName" type="text" maxlength="12" placeholder="请输入姓名" />
+            <p class="name-hint">请确认无误，输入后无法修改</p>
+            <button class="primary-btn" type="submit">进入系统</button>
+            <div class="login-error" id="nameError" role="alert"></div>
+          </form>
+        </div>
+      </div>
+    </section>
     <header class="workbook-site-header">
       <a class="workbook-brand" href="../../index.html"><span class="workbook-brand-mark">新</span><strong>新疆学生无限进步</strong></a>
-      <nav class="workbook-main-nav"><a href="../../index.html">首页</a><span class="active">专项训练</span><button type="button" onclick="document.querySelector('[data-view=review]')?.click()">学习记录</button></nav>
+      <nav class="workbook-main-nav"><a href="../../index.html">首页</a><span class="active">专项训练</span><button type="button" onclick="document.querySelector('[data-view=review]')?.click()">学习记录</button><button class="logout-btn" type="button" id="logoutBtn">退出登录</button></nav>
     </header>
     <div class="app-shell" id="mainContent">
       <aside class="sidebar">

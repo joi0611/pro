@@ -53,7 +53,7 @@
       promptQuestion(71, "anywhere", ["anywhere"], ["anywhere", "somewhere", "everywhere", "nowhere"], "形容词与副词", "副词保持原形", "地点副词", "anytime / at school", "anytime anywhere 表示“任何时间、任何地点”，anywhere 作地点副词，保持原形。", { focusOptions: ["副词保持原形", "形容词变副词", "比较级与最高级"] }),
       promptQuestion(72, "all", ["all"], ["all", "both", "each", "every"], "代词", "代词保持原形", "all + 复数名词", "his subjects", "subjects 是复数且表示所有科目，使用 all 修饰，保持原形。", { focusOptions: ["代词保持原形", "人称代词宾格", "物主代词"] }),
       promptQuestion(73, "us", ["us"], ["we", "us", "our", "ourselves"], "代词", "人称代词宾格保持原形", "动词 + 宾格", "makes / better and better", "make 是动词，后面用人称代词宾格 us；词库已给出正确形式，保持原形。", { focusOptions: ["人称代词主格", "人称代词宾格保持原形", "形容词性物主代词", "反身代词"] }),
-      promptQuestion(74, "teach", ["taught"], ["teach", "teaches", "taught", "teaching"], "动词", "谓语动词时态", "一般过去时", "Their teacher said / their story", "宾语从句叙述过去发生的事情，主语 their story 主动发出 teach 的动作，使用过去式 taught。", {
+      promptQuestion(74, "teach", ["taught"], ["teach", "teaches", "taught", "teaching"], "动词", "谓语动词时态", "一般过去时", "Their teacher / their story", "宾语从句叙述过去发生的事情，主语 their story 主动发出 teach 的动作，使用过去式 taught。", {
         verbFlow: makeVerbFlow({ hasChangedVerb: "没有", route: "谓语", predicateKind: "时态", actionRelation: "主动发出动作", structure: "一般过去时", subject: "their story", blank: "teach", clueText: "Their teacher said" }),
         focusOptions: ["谓语动词时态", "谓语动词语态", "非谓语：to do", "非谓语：doing"]
       }),
