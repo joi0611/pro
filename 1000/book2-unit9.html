@@ -1,0 +1,1391 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[2]UNIT 9 Vocabulary Companion</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #241735;
+      --muted: #746884;
+      --line: #eadfb9;
+      --paper: #fff8df;
+      --panel: #fffdf7;
+      --purple: #6f43c0;
+      --purple-dark: #3f236d;
+      --purple-soft: #efe5ff;
+      --yellow: #ffd766;
+      --yellow-soft: #fff0b8;
+      --apricot: #ffd9aa;
+      --rose: #ffd5dd;
+      --lilac: #dfd0ff;
+      --mint: #d9f2d8;
+      --good: #187a4b;
+      --bad: #b42318;
+      --shadow: 0 18px 42px rgba(63, 35, 109, .16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 215, 102, .42), transparent 34%),
+        linear-gradient(135deg, #fff8df 0%, #f4eaff 48%, #fff3c6 100%);
+      min-height: 100vh;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+    }
+
+    body.quiz-mode .app {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    body.quiz-mode .sidebar {
+      display: none;
+    }
+
+    aside.sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      padding: 24px 18px;
+      color: #fffaf0;
+      background: linear-gradient(180deg, #3f236d 0%, #5c35a2 58%, #7b4fcb 100%);
+      border-right: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .brand {
+      margin-bottom: 22px;
+    }
+
+    .brand small {
+      display: block;
+      color: #ffeab0;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .brand h1 {
+      margin: 8px 0;
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .brand p {
+      margin: 0;
+      color: #f4eaff;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .progress-box {
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.12);
+      border-radius: 8px;
+      margin-bottom: 18px;
+    }
+
+    .meter {
+      height: 10px;
+      background: rgba(255,255,255,.18);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+
+    .meter span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: var(--yellow);
+      transition: width .25s ease;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .stat {
+      padding: 10px;
+      border-radius: 7px;
+      background: rgba(255,255,255,.12);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 23px;
+      color: #ffe28a;
+    }
+
+    .stat span {
+      color: #f4eaff;
+      font-size: 12px;
+    }
+
+    nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    .nav-btn {
+      width: 100%;
+      min-height: 42px;
+      border: 0;
+      border-radius: 7px;
+      padding: 10px 12px;
+      text-align: left;
+      color: #fffaf0;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-btn:hover,
+    .nav-btn.active {
+      background: rgba(255, 215, 102, .2);
+    }
+
+    .nav-btn span:first-child {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    main {
+      padding: 28px;
+      display: grid;
+      gap: 22px;
+      align-content: start;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .topbar h2,
+    .topbar h3 {
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    .topbar h2 {
+      font-size: 30px;
+    }
+
+    .topbar p {
+      margin: 5px 0 0;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .icon-btn,
+    .text-btn {
+      border: 1px solid #d9c47c;
+      background: var(--panel);
+      color: var(--purple-dark);
+      border-radius: 7px;
+      height: 42px;
+      min-width: 42px;
+      padding: 0 14px;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(63, 35, 109, .08);
+      font-weight: 800;
+    }
+
+    .icon-btn {
+      font-size: 19px;
+      padding: 0;
+    }
+
+    .text-btn.primary {
+      border-color: var(--purple);
+      background: var(--purple);
+      color: white;
+    }
+
+    .learn-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .word-card,
+    .quiz-panel {
+      background: rgba(255, 253, 247, .96);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .word-card {
+      padding: 26px;
+    }
+
+    .word-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+
+    .word-title {
+      min-width: 0;
+    }
+
+    .word-title h3 {
+      margin: 0;
+      font-size: clamp(40px, 7vw, 82px);
+      line-height: .98;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+      color: var(--purple-dark);
+    }
+
+    .phonetic {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 20px;
+      font-family: "Arial Unicode MS", "Lucida Sans Unicode", "DejaVu Sans", Arial, sans-serif;
+      font-variant-ligatures: none;
+    }
+
+    .pos {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--yellow-soft);
+      color: #805400;
+      font-weight: 900;
+      margin-top: 12px;
+    }
+
+    .speak {
+      border: 0;
+      background: var(--yellow);
+      color: var(--purple-dark);
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 25px;
+      flex: 0 0 auto;
+      box-shadow: 0 14px 28px rgba(111, 67, 192, .25);
+    }
+
+    .practice-strip {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid #dbc98d;
+      background: linear-gradient(90deg, #fff2b8, #f1e7ff);
+      border-radius: 8px;
+      margin: 0 0 20px;
+    }
+
+    .practice-strip strong {
+      display: block;
+      font-size: 28px;
+      color: var(--purple-dark);
+      overflow-wrap: anywhere;
+    }
+
+    .practice-strip span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .repeat-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .repeat-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #fffdf7;
+      border: 1px solid #d9c47c;
+      color: var(--muted);
+      font-weight: 900;
+    }
+
+    .repeat-dot.active {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: #fff;
+      transform: scale(1.06);
+    }
+
+    .practice-strip.active {
+      outline: 3px solid rgba(255, 215, 102, .88);
+      box-shadow: 0 0 0 7px rgba(111, 67, 192, .12);
+    }
+
+    .chunks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0 22px;
+    }
+
+    .chunk {
+      min-height: 54px;
+      min-width: 72px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(63,35,109,.12);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 950;
+      font-size: 26px;
+      letter-spacing: 0;
+      box-shadow: inset 0 -3px 0 rgba(63,35,109,.08);
+    }
+
+    .c1 { background: var(--yellow-soft); color: #865b00; }
+    .c2 { background: var(--lilac); color: #56309b; }
+    .c3 { background: var(--apricot); color: #92511a; }
+    .c4 { background: var(--rose); color: #8f3450; }
+    .c5 { background: var(--mint); color: #1f7147; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .info {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 14px;
+      background: #fffefa;
+      min-height: 98px;
+    }
+
+    .info b {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 7px;
+      font-size: 13px;
+    }
+
+    .info p {
+      margin: 0;
+      line-height: 1.5;
+      font-size: 18px;
+    }
+
+    .info.chinese {
+      background: linear-gradient(135deg, var(--yellow-soft), #f0e4ff);
+      border-color: #d7bd67;
+    }
+
+    .info.chinese p {
+      font-size: clamp(34px, 6vw, 56px);
+      font-weight: 950;
+      color: var(--purple-dark);
+      line-height: 1.15;
+    }
+
+    .example {
+      grid-column: 1 / -1;
+    }
+
+    .example-line {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .example-text {
+      flex: 1;
+      cursor: pointer;
+      padding: 8px 10px;
+      border-radius: 7px;
+      background: #fbf6ff;
+    }
+
+    .example-text:hover {
+      background: #f0e4ff;
+    }
+
+    .translation {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-left: 4px solid var(--purple);
+      background: var(--yellow-soft);
+      font-size: 20px;
+      font-weight: 850;
+      color: var(--purple-dark);
+    }
+
+    .translation.show {
+      display: block;
+    }
+
+    .quiz-panel h3 {
+      margin: 0 0 12px;
+      font-size: 19px;
+      letter-spacing: 0;
+    }
+
+    .quiz-panel {
+      padding: 22px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .quiz-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: #fffefa;
+    }
+
+    .quiz-word {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .quiz-word strong {
+      font-size: 32px;
+      overflow-wrap: anywhere;
+      color: var(--purple-dark);
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .option {
+      min-height: 52px;
+      border: 1px solid #d9c47c;
+      background: white;
+      border-radius: 7px;
+      cursor: pointer;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 850;
+      color: var(--purple-dark);
+    }
+
+    .option.correct {
+      border-color: var(--good);
+      background: #dff7e9;
+      color: var(--good);
+    }
+
+    .option.wrong {
+      border-color: var(--bad);
+      background: #fee4e2;
+      color: var(--bad);
+    }
+
+    .quiz-feedback {
+      min-height: 28px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .quiz-result {
+      display: none;
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 7px;
+      background: var(--yellow-soft);
+      color: var(--purple-dark);
+      font-weight: 900;
+    }
+
+    .mini-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 940px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      aside.sidebar {
+        position: static;
+        height: auto;
+      }
+
+      nav {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+
+      .learn-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      main {
+        padding: 16px;
+      }
+
+      .word-card {
+        padding: 18px;
+      }
+
+      .word-head,
+      .practice-strip {
+        align-items: center;
+      }
+
+      .practice-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid,
+      .options {
+        grid-template-columns: 1fr;
+      }
+
+      .chunk {
+        flex: 1 1 82px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <section class="brand">
+        <small>Vocabulary Companion</small>
+        <h1>[2]UNIT 9</h1>
+        <p>播放本地英文 3 遍、中文 1 遍，再看中文和例句，最后完成检测。</p>
+      </section>
+
+      <section class="progress-box" aria-label="学习进度">
+        <strong>学习进度</strong>
+        <div class="meter" aria-hidden="true"><span id="progressBar"></span></div>
+        <div id="progressText">0 / 20 已学习</div>
+        <div class="stats">
+          <div class="stat"><strong id="learnedCount">0</strong><span>已学习</span></div>
+          <div class="stat"><strong id="scoreCount">0</strong><span>检测得分</span></div>
+        </div>
+      </section>
+
+      <nav id="wordNav" aria-label="单词列表"></nav>
+    </aside>
+
+    <main>
+      <header class="topbar" id="learnHeader">
+        <div>
+          <h2>[2]UNIT 9 单词学习</h2>
+          <p>点喇叭：英文 3 遍、中文 1 遍。</p>
+        </div>
+        <div class="actions">
+          <button class="icon-btn" id="prevBtn" title="上一个" aria-label="上一个">‹</button>
+          <button class="icon-btn" id="nextBtn" title="下一个" aria-label="下一个">›</button>
+          <button class="text-btn primary" id="markBtn">标记本词学完</button>
+        </div>
+      </header>
+
+      <section class="learn-grid" id="learnSection">
+        <article class="word-card" aria-live="polite">
+          <div class="word-head">
+            <div class="word-title">
+              <h3 id="wordText">birth</h3>
+              <div class="phonetic" id="phoneticText">[bɜ:rθ]</div>
+              <span class="pos" id="posText">n.</span>
+            </div>
+            <button class="speak" id="speakBtn" title="播放单词跟读" aria-label="播放单词跟读">🔊</button>
+          </div>
+
+          <div class="practice-strip" id="practiceStrip" role="button" tabindex="0" title="点击播放跟读">
+            <div>
+              <strong id="practiceText">birth</strong>
+              <span id="practiceHint">准备跟读</span>
+            </div>
+            <div class="repeat-dots" aria-label="跟读次数">
+              <span class="repeat-dot" id="dot1">1</span>
+              <span class="repeat-dot" id="dot2">2</span>
+              <span class="repeat-dot" id="dot3">3</span>
+            </div>
+          </div>
+
+          <h3>自然拼读拆分</h3>
+          <div class="chunks" id="chunks"></div>
+
+          <div class="info-grid">
+            <div class="info">
+              <b>英文释义</b>
+              <p id="definitionText"></p>
+            </div>
+            <div class="info chinese">
+              <b>中文意思</b>
+              <p id="chineseText"></p>
+            </div>
+            <div class="info example">
+              <b>例句</b>
+              <div class="example-line">
+                <p class="example-text" id="exampleText" title="点击显示或隐藏翻译"></p>
+              </div>
+              <div class="translation" id="exampleTranslation"></div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <section class="quiz-panel hidden" id="quiz">
+        <div class="topbar">
+          <div>
+            <h3>中文意思检测</h3>
+            <p>每题选择这个英文单词的中文意思。</p>
+          </div>
+          <button class="text-btn" id="restartQuizBtn">重新检测</button>
+        </div>
+        <div class="quiz-card">
+          <div class="quiz-word">
+            <strong id="quizWord"></strong>
+            <button class="icon-btn" id="quizSpeakBtn" title="播放检测单词发音" aria-label="播放检测单词发音">🔊</button>
+          </div>
+          <div class="options" id="options"></div>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+          <div class="quiz-result" id="quizResult"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const words = [
+          {
+                "word": "birth",
+                "phonetic": "[bɜ:rθ]",
+                "pos": "n.",
+                "definition": "the moment a baby is born",
+                "chinese": "出生",
+                "example": "He was holding his baby after its birth.",
+                "translation": "他正抱着刚出生的宝宝。",
+                "chunks": [
+                      "b", "ir", "th"
+                ]
+          },
+          {
+                "word": "clothes",
+                "phonetic": "[kloʊðz]",
+                "pos": "n.",
+                "definition": "things people wear",
+                "chinese": "衣服",
+                "example": "She is picking clothes for her trip to the beach.",
+                "translation": "她正在挑选去海边度假要穿的衣服。",
+                "chunks": [
+                      "clo", "thes"
+                ]
+          },
+          {
+                "word": "cost",
+                "phonetic": "[kɔ:st]",
+                "pos": "v.",
+                "definition": "to have an amount of money as a price",
+                "chinese": "花费",
+                "example": "The new car costs a lot of money.",
+                "translation": "这辆新车花了很多钱。",
+                "chunks": [
+                      "c", "o", "st"
+                ]
+          },
+          {
+                "word": "hide",
+                "phonetic": "[haɪd]",
+                "pos": "v.",
+                "definition": "to put something in a place where others cannot see it",
+                "chinese": "藏",
+                "example": "Mark was hiding under the bed with his mom's computer.",
+                "translation": "马克正拿着妈妈的电脑躲在床底下。",
+                "chunks": [
+                      "h", "i", "de"
+                ]
+          },
+          {
+                "word": "pet",
+                "phonetic": "[pet]",
+                "pos": "n.",
+                "definition": "an animal that is cared for by a person",
+                "chinese": "宠物",
+                "example": "She thinks Rover is the best pet in the world.",
+                "translation": "她觉得罗弗是世界上最好的宠物。",
+                "chunks": [
+                      "p", "e", "t"
+                ]
+          },
+          {
+                "word": "puppy",
+                "phonetic": "['pʌpi]",
+                "pos": "n.",
+                "definition": "a very young dog",
+                "chinese": "小狗",
+                "example": "Sleep is important for the health of a puppy.",
+                "translation": "睡眠对小狗的健康很重要。",
+                "chunks": [
+                      "pup", "py"
+                ]
+          },
+          {
+                "word": "soft",
+                "phonetic": "[sɔ:ft]",
+                "pos": "adj.",
+                "definition": "smooth and nice to touch",
+                "chinese": "柔软的",
+                "example": "She was resting on a soft pillow.",
+                "translation": "她正躺在一个柔软的枕头上休息。",
+                "chunks": [
+                      "s", "oft"
+                ]
+          },
+          {
+                "word": "touch",
+                "phonetic": "[tʌtʃ]",
+                "pos": "v.",
+                "definition": "to feel by putting fingers on something",
+                "chinese": "触摸",
+                "example": "Touch the phone to make a call.",
+                "translation": "触碰手机就可以打电话。",
+                "chunks": [
+                      "t", "ou", "ch"
+                ]
+          },
+          {
+                "word": "weigh",
+                "phonetic": "[weɪ]",
+                "pos": "v.",
+                "definition": "to find out how heavy a person or thing is",
+                "chinese": "称重量",
+                "example": "She always weighs herself in the morning.",
+                "translation": "她每天早上都会称体重。",
+                "chunks": [
+                      "w", "eigh"
+                ]
+          },
+          {
+                "word": "wish",
+                "phonetic": "[wɪʃ]",
+                "pos": "n.",
+                "definition": "a hope for something",
+                "chinese": "愿望",
+                "example": "He remembered to make a wish for his birthday.",
+                "translation": "他记得要对着生日许个愿望。",
+                "chunks": [
+                      "w", "i", "sh"
+                ]
+          },
+          {
+                "word": "age",
+                "phonetic": "[eɪdʒ]",
+                "pos": "n.",
+                "definition": "the amount of time being alive",
+                "chinese": "年龄",
+                "example": "They do a lot of activities for people of their age.",
+                "translation": "他们为这个年龄段的人组织了很多活动。",
+                "chunks": [
+                      "a", "ge"
+                ]
+          },
+          {
+                "word": "bath",
+                "phonetic": "[bæθ]",
+                "pos": "n.",
+                "definition": "the act of cleaning the body",
+                "chinese": "洗澡",
+                "example": "The dirty dog does not want to take a bath.",
+                "translation": "那只脏兮兮的小狗不想洗澡。",
+                "chunks": [
+                      "b", "a", "th"
+                ]
+          },
+          {
+                "word": "bright",
+                "phonetic": "[braɪt]",
+                "pos": "adj.",
+                "definition": "clever or smart",
+                "chinese": "聪明的",
+                "example": "Everyone agrees that Mike is a bright person.",
+                "translation": "大家都觉得迈克是个聪明的人。",
+                "chunks": [
+                      "br", "ight"
+                ]
+          },
+          {
+                "word": "brush",
+                "phonetic": "[brʌʃ]",
+                "pos": "v.",
+                "definition": "to clean or make smooth with a brush",
+                "chinese": "梳",
+                "example": "The girl was brushing her hair before going to bed.",
+                "translation": "小女孩在睡前梳头。",
+                "chunks": [
+                      "br", "u", "sh"
+                ]
+          },
+          {
+                "word": "lose",
+                "phonetic": "[lu:z]",
+                "pos": "v.",
+                "definition": "not to be able to find something; not to be the best in a game",
+                "chinese": "丢失",
+                "example": "Min lost her ring yesterday, but she found it today.",
+                "translation": "敏昨天把戒指弄丢了，但今天又找到了。",
+                "chunks": [
+                      "l", "o", "se"
+                ]
+          },
+          {
+                "word": "second",
+                "phonetic": "['sekənd]",
+                "pos": "n.",
+                "definition": "a very short period of time; 1/60 of a minute",
+                "chinese": "秒",
+                "example": "You only have a few seconds to finish.",
+                "translation": "你只剩几秒钟就要完成了。",
+                "chunks": [
+                      "se", "con", "d"
+                ]
+          },
+          {
+                "word": "tell",
+                "phonetic": "[tel]",
+                "pos": "v.",
+                "definition": "to say or write something to someone",
+                "chinese": "告诉",
+                "example": "The doctor was telling the man about his heart.",
+                "translation": "医生正在跟那个男人讲他的心脏情况。",
+                "chunks": [
+                      "t", "e", "ll"
+                ]
+          },
+          {
+                "word": "test",
+                "phonetic": "[test]",
+                "pos": "n.",
+                "definition": "an exam",
+                "chinese": "测试",
+                "example": "Write your name at the top of your test paper.",
+                "translation": "把名字写在试卷的最上面。",
+                "chunks": [
+                      "t", "e", "st"
+                ]
+          },
+          {
+                "word": "thank",
+                "phonetic": "[θæŋk]",
+                "pos": "v.",
+                "definition": "to tell someone you are grateful for something",
+                "chinese": "感谢",
+                "example": "Nina thanked her brother for the gift.",
+                "translation": "妮娜感谢哥哥送她的礼物。",
+                "chunks": [
+                      "th", "an", "k"
+                ]
+          },
+          {
+                "word": "ugly",
+                "phonetic": "['ʌɡli]",
+                "pos": "adj.",
+                "definition": "not pretty",
+                "chinese": "丑陋的",
+                "example": "We saw some ugly birds at the zoo.",
+                "translation": "我们在动物园看到了一些难看的鸟。",
+                "chunks": [
+                      "u", "g", "ly"
+                ]
+          }
+    ];
+
+    const state = {
+      current: 0,
+      learned: new Set(JSON.parse(localStorage.getItem("book2_unit9Learned") || "[]")),
+      quizIndex: 0,
+      score: 0,
+      answered: false,
+      quizOrder: [],
+      speechRun: 0,
+      voices: [],
+      audioCache: new Map(),
+      audioElements: new Map(),
+      activeAudio: null,
+      mode: "learn"
+    };
+
+    const $ = (id) => document.getElementById(id);
+    const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
+    const dictionaryApiBase = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+    const verifiedAudioUrls = {
+          "birth": "audio/book2-unit9-birth.wav",
+          "clothes": "audio/book2-unit9-clothes.wav",
+          "cost": "audio/book2-unit9-cost.wav",
+          "hide": "audio/book2-unit9-hide.wav",
+          "pet": "audio/book2-unit9-pet.wav",
+          "puppy": "audio/book2-unit9-puppy.wav",
+          "soft": "audio/book2-unit9-soft.wav",
+          "touch": "audio/book2-unit9-touch.wav",
+          "weigh": "audio/book2-unit9-weigh.wav",
+          "wish": "audio/book2-unit9-wish.wav",
+          "age": "audio/book2-unit9-age.wav",
+          "bath": "audio/book2-unit9-bath.wav",
+          "bright": "audio/book2-unit9-bright.wav",
+          "brush": "audio/book2-unit9-brush.wav",
+          "lose": "audio/book2-unit9-lose.wav",
+          "second": "audio/book2-unit9-second.wav",
+          "tell": "audio/book2-unit9-tell.wav",
+          "test": "audio/book2-unit9-test.wav",
+          "thank": "audio/book2-unit9-thank.wav",
+          "ugly": "audio/book2-unit9-ugly.wav"
+    };
+
+    const chineseAudioUrls = {
+          "birth": "audio/book2-unit9-zh-birth.wav",
+          "clothes": "audio/book2-unit9-zh-clothes.wav",
+          "cost": "audio/book2-unit9-zh-cost.wav",
+          "hide": "audio/book2-unit9-zh-hide.wav",
+          "pet": "audio/book2-unit9-zh-pet.wav",
+          "puppy": "audio/book2-unit9-zh-puppy.wav",
+          "soft": "audio/book2-unit9-zh-soft.wav",
+          "touch": "audio/book2-unit9-zh-touch.wav",
+          "weigh": "audio/book2-unit9-zh-weigh.wav",
+          "wish": "audio/book2-unit9-zh-wish.wav",
+          "age": "audio/book2-unit9-zh-age.wav",
+          "bath": "audio/book2-unit9-zh-bath.wav",
+          "bright": "audio/book2-unit9-zh-bright.wav",
+          "brush": "audio/book2-unit9-zh-brush.wav",
+          "lose": "audio/book2-unit9-zh-lose.wav",
+          "second": "audio/book2-unit9-zh-second.wav",
+          "tell": "audio/book2-unit9-zh-tell.wav",
+          "test": "audio/book2-unit9-zh-test.wav",
+          "thank": "audio/book2-unit9-zh-thank.wav",
+          "ugly": "audio/book2-unit9-zh-ugly.wav"
+    };
+
+    function loadVoices() {
+      if (!("speechSynthesis" in window)) return [];
+      state.voices = window.speechSynthesis.getVoices();
+      return state.voices;
+    }
+
+    function pickVoice(lang) {
+      const voices = state.voices.length ? state.voices : loadVoices();
+      const lowerLang = lang.toLowerCase();
+      return voices.find((voice) => voice.lang.toLowerCase() === lowerLang)
+        || voices.find((voice) => voice.lang.toLowerCase().startsWith(lowerLang.slice(0, 2)))
+        || null;
+    }
+
+    function speak(text, lang = "en-US", rate = 0.82) {
+      return new Promise((resolve) => {
+        if (!("speechSynthesis" in window)) {
+          resolve();
+          return;
+        }
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.rate = rate;
+        utterance.pitch = 1;
+        const voice = pickVoice(lang);
+        if (voice) utterance.voice = voice;
+        utterance.onend = resolve;
+        utterance.onerror = resolve;
+        window.speechSynthesis.speak(utterance);
+      });
+    }
+
+    function stopAudio() {
+      if (state.activeAudio) {
+        state.activeAudio.pause();
+        state.activeAudio.currentTime = 0;
+        state.activeAudio = null;
+      }
+      window.speechSynthesis?.cancel();
+    }
+
+    function getAudioElement(audioUrl) {
+      if (!state.audioElements.has(audioUrl)) {
+        const audio = new Audio(audioUrl);
+        audio.preload = "auto";
+        audio.load();
+        state.audioElements.set(audioUrl, audio);
+      }
+      return state.audioElements.get(audioUrl);
+    }
+
+    function preloadAudioUrl(audioUrl) {
+      if (audioUrl) getAudioElement(audioUrl);
+    }
+
+    async function getOnlineAudioUrl(word) {
+      const key = word.toLowerCase();
+      if (state.audioCache.has(key)) return state.audioCache.get(key);
+      if (verifiedAudioUrls[key]) {
+        state.audioCache.set(key, verifiedAudioUrls[key]);
+        return verifiedAudioUrls[key];
+      }
+
+      try {
+        const response = await fetch(dictionaryApiBase + encodeURIComponent(key));
+        if (!response.ok) throw new Error("Dictionary audio request failed");
+        const entries = await response.json();
+        const phonetics = entries.flatMap((entry) => entry.phonetics || []);
+        const audio = phonetics
+          .map((item) => item.audio)
+          .find((url) => typeof url === "string" && url.startsWith("https://"));
+        state.audioCache.set(key, audio || "");
+        return audio || "";
+      } catch (error) {
+        state.audioCache.set(key, "");
+        return "";
+      }
+    }
+
+    async function playAudioUrl(audioUrl, fallbackText = "", fallbackLang = "en-US") {
+      await new Promise((resolve) => {
+        const audio = getAudioElement(audioUrl);
+        audio.pause();
+        audio.currentTime = 0;
+        state.activeAudio = audio;
+        audio.onended = () => {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          resolve();
+        };
+        audio.onerror = async () => {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          if (fallbackText) await speak(fallbackText, fallbackLang, 0.82);
+          resolve();
+        };
+        audio.play().catch(async () => {
+          if (state.activeAudio === audio) state.activeAudio = null;
+          if (fallbackText) await speak(fallbackText, fallbackLang, 0.82);
+          resolve();
+        });
+      });
+    }
+
+    async function playOnlineWord(word) {
+      const key = word.toLowerCase();
+      const audioUrl = verifiedAudioUrls[key] || await getOnlineAudioUrl(word);
+      if (!audioUrl) {
+        await speak(word, "en-US", 0.82);
+        return;
+      }
+      await playAudioUrl(audioUrl, word, "en-US");
+    }
+
+    async function playChineseMeaning(item) {
+      const audioUrl = chineseAudioUrls[item.word.toLowerCase()];
+      if (audioUrl) {
+        await playAudioUrl(audioUrl, item.chinese, "zh-CN");
+        return;
+      }
+      await speak(item.chinese, "zh-CN", 0.88);
+    }
+
+    function warmAudio(index) {
+      const item = words[index];
+      if (!item) return;
+      const key = item.word.toLowerCase();
+      preloadAudioUrl(verifiedAudioUrls[key]);
+      preloadAudioUrl(chineseAudioUrls[key]);
+      if (!verifiedAudioUrls[key]) getOnlineAudioUrl(item.word);
+    }
+
+    function resetPracticeHighlight() {
+      $("practiceStrip").classList.remove("active");
+      $("practiceHint").textContent = "准备跟读";
+      [1, 2, 3].forEach((n) => $("dot" + n).classList.remove("active"));
+    }
+
+    function showLearnMode() {
+      state.mode = "learn";
+      document.body.classList.remove("quiz-mode");
+      $("learnHeader").classList.remove("hidden");
+      $("learnSection").classList.remove("hidden");
+      $("quiz").classList.add("hidden");
+    }
+
+    function showQuizMode() {
+      state.mode = "quiz";
+      document.body.classList.add("quiz-mode");
+      $("learnHeader").classList.add("hidden");
+      $("learnSection").classList.add("hidden");
+      $("quiz").classList.remove("hidden");
+      startQuiz();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function updatePrimaryButton() {
+      if (state.learned.size >= words.length) {
+        $("markBtn").textContent = "开始中文检测";
+        return;
+      }
+      $("markBtn").textContent = state.learned.has(state.current) ? "学习下一个" : "标记本词学完";
+    }
+
+    async function playWordRoutine() {
+      const runId = ++state.speechRun;
+      const item = words[state.current];
+      stopAudio();
+      resetPracticeHighlight();
+      $("practiceText").textContent = item.word;
+      $("practiceStrip").classList.add("active");
+
+      for (let i = 1; i <= 3; i += 1) {
+        if (runId !== state.speechRun) return;
+        [1, 2, 3].forEach((n) => $("dot" + n).classList.toggle("active", n === i));
+        $("practiceHint").textContent = `听英文第 ${i} 遍`;
+        await playOnlineWord(item.word);
+        await wait(40);
+      }
+
+      if (runId !== state.speechRun) return;
+      $("practiceHint").textContent = `中文：${item.chinese}`;
+      await playChineseMeaning(item);
+      await wait(160);
+
+      if (runId === state.speechRun) resetPracticeHighlight();
+    }
+
+    function saveLearned() {
+      localStorage.setItem("book2_unit9Learned", JSON.stringify([...state.learned]));
+    }
+
+    function renderNav() {
+      $("wordNav").innerHTML = words.map((item, index) => `
+        <button class="nav-btn ${index === state.current ? "active" : ""}" data-index="${index}">
+          <span>${401 + index}. ${item.word}</span>
+          <span>${state.learned.has(index) ? "✓" : ""}</span>
+        </button>
+      `).join("");
+
+      document.querySelectorAll(".nav-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          state.current = Number(btn.dataset.index);
+          renderWord();
+        });
+      });
+    }
+
+    function renderProgress() {
+      const learnedCount = state.learned.size;
+      $("learnedCount").textContent = learnedCount;
+      $("progressText").textContent = `${learnedCount} / ${words.length} 已学习`;
+      $("progressBar").style.width = `${(learnedCount / words.length) * 100}%`;
+      $("scoreCount").textContent = state.score;
+      if (state.mode === "learn") updatePrimaryButton();
+    }
+
+    function renderWord() {
+      const item = words[state.current];
+      state.speechRun += 1;
+      stopAudio();
+      resetPracticeHighlight();
+      $("wordText").textContent = item.word;
+      $("practiceText").textContent = item.word;
+      $("phoneticText").textContent = item.phonetic;
+      $("posText").textContent = item.pos;
+      $("definitionText").textContent = item.definition;
+      $("chineseText").textContent = item.chinese;
+      $("exampleText").textContent = item.example;
+      $("exampleTranslation").textContent = item.translation;
+      $("exampleTranslation").classList.remove("show");
+      updatePrimaryButton();
+
+      $("chunks").innerHTML = item.chunks.map((chunk, index) => `
+        <span class="chunk c${(index % 5) + 1}">${chunk}</span>
+      `).join("");
+
+      renderNav();
+      renderProgress();
+      warmAudio(state.current);
+      warmAudio((state.current + 1) % words.length);
+    }
+
+    function shuffle(array) {
+      return [...array].sort(() => Math.random() - 0.5);
+    }
+
+    function startQuiz() {
+      state.quizOrder = shuffle(words.map((_, index) => index));
+      state.quizIndex = 0;
+      state.score = 0;
+      state.answered = false;
+      $("quizResult").style.display = "none";
+      renderProgress();
+      renderQuizQuestion();
+    }
+
+    function makeOptions(correctIndex) {
+      const wrong = shuffle(words.map((item, index) => ({ item, index })).filter((entry) => entry.index !== correctIndex))
+        .slice(0, 3)
+        .map((entry) => entry.item.chinese);
+      return shuffle([words[correctIndex].chinese, ...wrong]);
+    }
+
+    function renderQuizQuestion() {
+      if (state.quizIndex >= state.quizOrder.length) {
+        $("quizWord").textContent = "完成";
+        $("options").innerHTML = "";
+        $("quizFeedback").textContent = "";
+        $("quizResult").style.display = "block";
+        $("quizResult").textContent = `本次检测得分：${state.score} / ${words.length}`;
+        renderProgress();
+        return;
+      }
+
+      state.answered = false;
+      const wordIndex = state.quizOrder[state.quizIndex];
+      const item = words[wordIndex];
+      $("quizWord").textContent = `${state.quizIndex + 1}. ${item.word}`;
+      $("quizFeedback").textContent = "";
+      $("options").innerHTML = makeOptions(wordIndex).map((option) => `
+        <button class="option" data-answer="${option}">${option}</button>
+      `).join("");
+
+      document.querySelectorAll(".option").forEach((btn) => {
+        btn.addEventListener("click", () => checkAnswer(btn, item.chinese));
+      });
+    }
+
+    function checkAnswer(btn, correct) {
+      if (state.answered) return;
+      state.answered = true;
+      const picked = btn.dataset.answer;
+      document.querySelectorAll(".option").forEach((option) => {
+        option.disabled = true;
+        if (option.dataset.answer === correct) option.classList.add("correct");
+      });
+
+      if (picked === correct) {
+        state.score += 1;
+        btn.classList.add("correct");
+        $("quizFeedback").textContent = "答对了。下一题马上来。";
+      } else {
+        btn.classList.add("wrong");
+        $("quizFeedback").textContent = `正确答案：${correct}`;
+      }
+      renderProgress();
+      window.setTimeout(() => {
+        state.quizIndex += 1;
+        renderQuizQuestion();
+      }, 900);
+    }
+
+    $("speakBtn").addEventListener("click", playWordRoutine);
+    $("practiceStrip").addEventListener("click", playWordRoutine);
+    $("practiceStrip").addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        playWordRoutine();
+      }
+    });
+    $("exampleText").addEventListener("click", () => {
+      $("exampleTranslation").classList.toggle("show");
+    });
+    $("quizSpeakBtn").addEventListener("click", () => {
+      const wordIndex = state.quizOrder[state.quizIndex];
+      if (wordIndex !== undefined) {
+        stopAudio();
+        playOnlineWord(words[wordIndex].word);
+      }
+    });
+    $("prevBtn").addEventListener("click", () => {
+      state.current = (state.current - 1 + words.length) % words.length;
+      renderWord();
+    });
+    $("nextBtn").addEventListener("click", () => {
+      state.current = (state.current + 1) % words.length;
+      renderWord();
+    });
+    $("markBtn").addEventListener("click", () => {
+      if (state.learned.size >= words.length) {
+        showQuizMode();
+        return;
+      }
+
+      if (!state.learned.has(state.current)) {
+        state.learned.add(state.current);
+        saveLearned();
+        renderWord();
+        return;
+      }
+
+      const nextUnlearned = words.findIndex((_, index) => !state.learned.has(index));
+      if (nextUnlearned >= 0) {
+        state.current = nextUnlearned;
+        renderWord();
+      } else {
+        showQuizMode();
+      }
+    });
+    $("restartQuizBtn").addEventListener("click", startQuiz);
+
+    loadVoices();
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+    words.forEach((_, index) => warmAudio(index));
+
+    showLearnMode();
+    renderWord();
+  </script>
+</body>
+</html>
