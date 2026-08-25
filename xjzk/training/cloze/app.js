@@ -1597,8 +1597,8 @@ const climbingQomolangma = {
     q(5, ["difficulties", "difficult", "difficulty", "difficultys"], "difficulties", "名词", "语法 / 逻辑推理", ["include", "weather conditions and heavy storms"], "include 和后面多个困难提示这里用可数名词复数 difficulties。"),
     q(6, ["take up", "take in", "take out", "take off"], "take in", "动词短语", "固定搭配 / 常识", ["air", "get near the top"], "接近山顶时空气稀薄，呼吸空气就是 take in air。", "take in", "动词短语", "动词(take) + 副词(in)"),
     q(7, ["in", "at", "of", "on"], "on", "介词搭配", "语法", ["May 29, 1953"], "具体到某年某月某日时用介词 on。", "on + a specific date", "介词用法", "介词(on) + 具体日期"),
-    q(8, ["challenge", "to challenge", "challenging", "challenged"], "to challenge", "动词", "语法 / 动词不定式", ["want ___"], "看到 want 后面缺动作，直接判断动词形式：want 后接 to do，所以选 to challenge。"),
-    q(9, ["trying", "try", "to try", "tries"], "trying", "动词", "语法 / 动名词", ["give up ___"], "空格在 give up 后面，考的是动词形式；give up 后接 doing，所以选 trying。"),
+    q(8, ["challenge", "to challenge", "challenging", "challenged"], "to challenge", "动词", "固定搭配优先", ["want ___"], "看到 want 后面缺动作，直接判断动词形式：want 后接 to do，所以选 to challenge。", "want to do", "固定句型", "动词(want) + 不定式(to do)"),
+    q(9, ["trying", "try", "to try", "tries"], "trying", "动词", "固定搭配优先", ["give up ___"], "空格在 give up 后面，考的是动词形式；give up 后接 doing，所以选 trying。", "give up doing", "固定句型", "动词短语(give up) + 动名词(doing)"),
     q(10, ["strong", "more strong", "strongest", "stronger"], "stronger", "形容词副词", "语法", ["than"], "than 提示比较级，strong 的比较级是 stronger。")
   ],
   verifySentences: [
@@ -4869,6 +4869,9 @@ function buildToolGuide(question, tool) {
   const answered = Boolean(state.answers[question.id]);
   const selectedRoute = state.reasoningRoutes[question.id];
   if (selectedRoute === true && hasStoredCollocation(question)) {
+    if (!answered) {
+      return "<p>先观察线索词和空格前后结构，不急着看完整搭配。选完答案后，再打开搭配放大镜复盘。</p>";
+    }
     return `
       <div class="collocation-box collocation-lens-box">
         <strong>固定搭配：${question.collocation}</strong>
