@@ -3975,7 +3975,7 @@ const els = {
 };
 
 async function init() {
-  initLogin();
+  await initLogin();
   enterHome();
   renderHomeLibrary();
   renderLessonLibrary();
@@ -4008,9 +4008,17 @@ function enterStudy() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function initLogin() {
+async function initLogin() {
   if (hasValidLogin()) {
-    els.loginScreen.classList.add("hidden");
+    const code = getCloudAccessCode();
+    try {
+      const account = await verifyAccessCode(code);
+      await ensureStudentProfile(code, account);
+      els.loginScreen.classList.add("hidden");
+    } catch (error) {
+      localStorage.removeItem(storageKeys.login);
+      els.loginScreen.classList.remove("hidden");
+    }
   } else {
     els.loginScreen.classList.remove("hidden");
   }
@@ -4046,6 +4054,7 @@ async function handleLogin() {
 
   try {
     const account = await verifyAccessCode(code);
+    await ensureStudentProfile(code, account);
     localStorage.setItem(storageKeys.login, "true");
     localStorage.setItem(storageKeys.accessCode, code);
     localStorage.setItem(storageKeys.loginLabel, account.label || "");
@@ -4115,6 +4124,19 @@ async function verifyAccessCode(code) {
     throw new Error("该登录码不可用于当前专项，或登录码不正确。");
   }
   return account;
+}
+
+async function ensureStudentProfile(code, account) {
+  const name = await window.StudentProfile.ensure({
+    code,
+    account,
+    bindName: studentName => callSupabaseRpc("bind_student_name", {
+      input_code: code,
+      input_system_type: systemType,
+      input_student_name: studentName
+    })
+  });
+  window.StudentProfile.applyBrand(name, systemType);
 }
 
 function getCloudAccessCode() {
