@@ -36,8 +36,7 @@
       padding: 10px 18px;
       background: #fff;
       border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
+      position: static;
       z-index: 10;
     }
     h1 { margin: 0; font-size: 18px; }
@@ -637,7 +636,7 @@
     </div>
   </section>
   <header class="workbook-site-header">
-    <a class="workbook-brand" href="../../index.html"><span class="workbook-brand-mark">新</span><strong>新疆学生无限进步</strong></a>
+    <a class="workbook-brand" href="../../index.html"><span class="workbook-brand-mark">新</span><strong class="student-system-brand">新疆学生无限进步</strong></a>
     <nav class="workbook-main-nav"><a href="../../index.html">首页</a><span class="active">专项训练</span><button type="button" onclick="showHome()">题库主页</button></nav>
   </header>
   <header class="reading-module-header">
@@ -707,6 +706,7 @@
   </div>
   <footer class="site-footer">@新疆学生无限进步</footer>
 
+  <script src="../../assets/student-profile.js?v=20260828-1"></script>
   <script>
     function q(number, stem, options, answer, keywords, evidence, keywordTip, compare, explanation) {
       return { number, stem, options, answer, keywords, evidence, keywordTip, compare, explanation };
@@ -1746,7 +1746,17 @@
     }
 
     async function completeReadingLogin(code) {
-      await verifyReadingCode(code);
+      const account = await verifyReadingCode(code);
+      const name = await window.StudentProfile.ensure({
+        code,
+        account,
+        bindName: studentName => callSupabaseRpc("bind_student_name", {
+          input_code: code,
+          input_system_type: SYSTEM_TYPE,
+          input_student_name: studentName
+        })
+      });
+      window.StudentProfile.applyBrand(name, SYSTEM_TYPE);
       activeAccessCode = code;
       localStorage.setItem(LOGIN_STORAGE_KEY, code);
       await loadReadingProgress(code);
