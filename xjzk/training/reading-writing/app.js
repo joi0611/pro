@@ -1,6 +1,6 @@
 const state = {
   data: null,
-  activeSection: 'library',
+  activeSection: 'strategy',
   activeCategory: '',
   learningMode: 'list',
   cardFilter: 'all',
@@ -10,7 +10,8 @@ const state = {
   practiceIndex: 0,
   currentPractice: null,
   mastered: new Set(),
-  completedPractice: new Set()
+  completedPractice: new Set(),
+  practiceAttempts: {}
 };
 
 const els = {};
@@ -19,6 +20,7 @@ const LOGIN_OK_KEY = 'rw_supabase_login_ok_20260710';
 const LOGIN_LABEL_KEY = 'rw_supabase_login_label_20260710';
 const MASTERED_KEY = 'rw_supabase_mastered_cache_20260710';
 const PRACTICE_DONE_KEY = 'rw_supabase_completed_practice_cache_20260710';
+const PRACTICE_ATTEMPTS_KEY = 'rw_supabase_practice_attempts_20260828';
 const SUPABASE_CONFIG = {
   url: 'https://gbjmylxohacppnybfssh.supabase.co',
   anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdiam15bHhvaGFjcHBueWJmc3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDA1NzgsImV4cCI6MjA5ODI3NjU3OH0.mz5srsxdbZa4__oqKjlcysWuDo00w7UQaV8n2VNP4eE'
@@ -35,6 +37,8 @@ async function init() {
   state.activeCategory = state.data.categories[0] || '';
   state.mastered = loadMastered();
   state.completedPractice = loadCompletedPractice();
+  state.practiceAttempts = loadPracticeAttempts();
+  migrateCompletedPracticeToAttempts();
   setupStrategyAccordion();
   renderArticleList();
   renderLearning();
@@ -78,6 +82,20 @@ async function verifyAccessCode(code) {
     throw new Error('该登录码不可用于当前专项，或登录码不正确。');
   }
   return account;
+}
+
+async function ensureStudentProfile(code, account) {
+  const name = await window.StudentProfile.ensure({
+    code,
+    account,
+    bindName: studentName => callSupabaseRpc('bind_student_name', {
+      input_code: code,
+      input_system_type: SYSTEM_TYPE,
+      input_student_name: studentName
+    })
+  });
+  window.StudentProfile.applyBrand(name, SYSTEM_TYPE);
+  return name;
 }
 
 function cleanLoginCode(value) {
@@ -126,11 +144,16 @@ async function setupLoginGate() {
   clearOldLoginData();
   const saved = safeGetLogin();
   if (saved && localStorage.getItem(LOGIN_OK_KEY) === 'true') {
-    unlockApp();
-    verifyAccessCode(saved)
-      .then(account => safeSetLogin(saved, account.label))
-      .catch(error => console.warn('Background reading-writing login check failed:', error));
-    return true;
+    try {
+      const account = await verifyAccessCode(saved);
+      await ensureStudentProfile(saved, account);
+      safeSetLogin(saved, account.label);
+      unlockApp();
+      return true;
+    } catch (error) {
+      console.warn('Reading-writing saved login check failed:', error);
+      clearLoginState();
+    }
   }
 
   const gate = document.getElementById('loginGate');
@@ -164,6 +187,7 @@ async function setupLoginGate() {
     }
     try {
       const account = await verifyAccessCode(code);
+      await ensureStudentProfile(code, account);
       safeSetLogin(code, account.label);
       unlockApp();
       cacheElements();
@@ -172,6 +196,8 @@ async function setupLoginGate() {
       state.activeCategory = state.data.categories[0] || '';
       state.mastered = loadMastered();
       state.completedPractice = loadCompletedPractice();
+      state.practiceAttempts = loadPracticeAttempts();
+      migrateCompletedPracticeToAttempts();
       setupStrategyAccordion();
       renderArticleList();
       renderLearning();
@@ -223,7 +249,10 @@ function cacheElements() {
   els.practiceSource = document.getElementById('practice-source');
   els.practiceOriginal = document.getElementById('practice-original');
   els.practiceTarget = document.getElementById('practice-target');
+  els.practiceQuestion = document.getElementById('practice-question');
+  els.practiceSummary = document.getElementById('practice-summary');
   els.answerInput = document.getElementById('answer-input');
+  els.newPractice = document.getElementById('new-practice');
   els.nextPractice = document.getElementById('next-practice');
   els.feedback = document.getElementById('feedback');
 }
@@ -283,7 +312,7 @@ function switchSection(section) {
   els.sections.forEach(panel => panel.classList.toggle('active', panel.id === section));
   if (section === 'practice') {
     pickPractice();
-    els.answerInput.focus();
+    if (!els.practiceQuestion.classList.contains('hidden')) els.answerInput.focus();
   }
   if (section === 'library') renderArticleList();
 }
@@ -321,15 +350,17 @@ function renderList(items) {
     <table>
       <thead>
         <tr>
-          <th style="width: 28%">原文词语</th>
-          <th style="width: 28%">转换词语（填空）</th>
+          <th style="width: 76px">题号</th>
+          <th style="width: 25%">2–3词短语</th>
+          <th style="width: 25%">1词转换</th>
           <th>中文释义</th>
           <th style="width: 96px">已掌握</th>
         </tr>
       </thead>
       <tbody>
-        ${items.map(item => `
+        ${items.map((item, index) => `
           <tr class="${state.mastered.has(String(item.id)) ? 'mastered-row' : ''}">
+            <td><strong>${index + 1}</strong></td>
             <td>${escapeHtml(item.original)}</td>
             <td>${escapeHtml(item.target)}</td>
             <td>${escapeHtml(item.meaning || '')}</td>
@@ -341,14 +372,18 @@ function renderList(items) {
       </tbody>
     </table>
     <div class="mobile-word-list">
-      ${items.map(item => `
+      ${items.map((item, index) => `
         <article class="word-card ${state.mastered.has(String(item.id)) ? 'mastered-row' : ''}">
           <div class="word-card-row">
-            <span>原文</span>
+            <span>题号</span>
+            <strong>${index + 1}</strong>
+          </div>
+          <div class="word-card-row">
+            <span>2–3词短语</span>
             <strong>${escapeHtml(item.original)}</strong>
           </div>
           <div class="word-card-row">
-            <span>转换</span>
+            <span>1词转换</span>
             <strong>${escapeHtml(item.target)}</strong>
           </div>
           <div class="word-card-row">
@@ -415,7 +450,8 @@ function renderCard(items) {
   if (state.cardIndex >= items.length) state.cardIndex = 0;
   const item = items[state.cardIndex];
   els.studyCard.classList.toggle('flipped', state.cardFlipped);
-  els.cardMeta.textContent = `${item.category} · ${item.source}`;
+  const displayNumber = getLearningItems().findIndex(candidate => String(candidate.id) === String(item.id)) + 1;
+  els.cardMeta.textContent = `题号 ${displayNumber} · ${item.category} · ${item.source}`;
   els.cardFrontWord.textContent = item.original;
   els.cardFrontPoint.textContent = needsStudyPoint(item) ? item.studyPoint || item.point || item.category : '';
   els.cardBackWord.textContent = item.target;
@@ -476,7 +512,7 @@ function renderArticleList() {
     return;
   }
   els.articleList.innerHTML = articles.map((article, index) => {
-    const done = article.items.filter(item => state.completedPractice.has(String(item.id))).length;
+    const done = article.items.filter(item => hasPracticeAttempt(item.id)).length;
     const officialYear = getReadingOfficialExamYear(article.source);
     return `
       <article class="article-row${officialYear ? ' official-exam-card' : ''}">
@@ -512,15 +548,14 @@ function getPracticeItems() {
 }
 
 function getUnfinishedPracticeItems() {
-  return getPracticeItems().filter(item => !state.completedPractice.has(String(item.id)));
+  return getPracticeItems().filter(item => !hasPracticeAttempt(item.id));
 }
 
 function pickPractice(random = false) {
   updatePracticeProgress();
   const unfinished = getUnfinishedPracticeItems();
   const allItems = getPracticeItems();
-  const items = random ? allItems : (unfinished.length ? unfinished : allItems);
-  if (!items.length) {
+  if (!allItems.length) {
     state.currentPractice = null;
     els.practiceSource.textContent = '暂无真题';
     els.practiceOriginal.textContent = '';
@@ -530,8 +565,14 @@ function pickPractice(random = false) {
     return;
   }
 
-  state.practiceIndex = random ? Math.floor(Math.random() * items.length) : 0;
-  state.currentPractice = items[state.practiceIndex];
+  if (!unfinished.length) {
+    showArticleSummary();
+    return;
+  }
+
+  const item = random ? unfinished[Math.floor(Math.random() * unfinished.length)] : unfinished[0];
+  state.practiceIndex = allItems.findIndex(candidate => String(candidate.id) === String(item.id));
+  state.currentPractice = item;
   renderPractice();
 }
 
@@ -539,25 +580,42 @@ function nextPractice() {
   const items = getPracticeItems();
   if (!items.length) return;
 
+  if (!state.currentPractice || !hasPracticeAttempt(state.currentPractice.id)) {
+    setFeedback('warn', '请先提交本题答案。');
+    els.answerInput.focus();
+    return;
+  }
+
   const currentId = state.currentPractice ? String(state.currentPractice.id) : '';
   const currentIndex = items.findIndex(item => String(item.id) === currentId);
-  const nextIndex = currentIndex >= 0 ? (currentIndex + 1) % items.length : 0;
-  state.practiceIndex = nextIndex;
-  state.currentPractice = items[nextIndex];
+  const nextItem = items.slice(currentIndex + 1).find(item => !hasPracticeAttempt(item.id))
+    || items.slice(0, currentIndex).find(item => !hasPracticeAttempt(item.id));
+  if (!nextItem) {
+    showArticleSummary();
+    return;
+  }
+  state.practiceIndex = items.findIndex(item => String(item.id) === String(nextItem.id));
+  state.currentPractice = nextItem;
   renderPractice();
 }
 
 function renderPractice() {
   const item = state.currentPractice;
   const progress = getPracticeProgress();
-  const status = progress.unfinished ? '未完成练习' : '已全部完成，当前为复习';
+  const status = '本篇训练';
   const allItems = progress.items;
   const globalIndex = allItems.findIndex(candidate => String(candidate.id) === String(item.id));
   const title = cleanSourceTitle(item.source);
   els.practiceSource.textContent = `${status} · 第 ${globalIndex + 1}/${allItems.length} 题 · ${title} · 原题第 ${item.number} 空`;
   els.practiceOriginal.textContent = item.originalSentence;
   els.practiceTarget.innerHTML = escapeHtml(item.targetSentence).replace(/_+/g, '<span class="blank">______</span>');
+  els.practiceQuestion.classList.remove('hidden');
+  els.practiceSummary.classList.add('hidden');
+  els.newPractice.classList.remove('hidden');
   els.answerInput.value = '';
+  els.answerInput.disabled = false;
+  els.nextPractice.disabled = true;
+  els.nextPractice.textContent = globalIndex === allItems.length - 1 ? '完成本篇' : '下一题';
   els.answerInput.focus();
   setFeedback('', '');
   updatePracticeProgress();
@@ -565,7 +623,7 @@ function renderPractice() {
 
 function cleanSourceTitle(source) {
   const text = String(source || '').trim();
-  if (getReadingOfficialExamYear(text) && text.includes('｜')) {
+  if (text.includes('｜')) {
     return text.split('｜').slice(1).join('｜').trim();
   }
   return text
@@ -585,7 +643,7 @@ function getReadingOfficialExamYear(source) {
 
 function getArticleDisplaySource(source) {
   const text = String(source || '').trim();
-  if (getReadingOfficialExamYear(text)) return text.split('｜')[0].trim();
+  if (text.includes('｜')) return text.split('｜')[0].trim();
   return '2026新疆优质模考题汇编';
 }
 
@@ -601,16 +659,27 @@ function checkAnswer() {
   const answers = getAcceptableAnswers(item);
   const matchedAnswer = answers.find(answer => normalizeAnswer(typed) === normalizeAnswer(answer));
   const displayAnswer = answers.join(' / ');
-  if (matchedAnswer) {
+  const isCorrect = Boolean(matchedAnswer);
+  state.practiceAttempts[String(item.id)] = {
+    answer: typed,
+    correct: isCorrect,
+    submittedAt: new Date().toISOString()
+  };
+  savePracticeAttempts();
+  if (isCorrect) {
     state.completedPractice.add(String(item.id));
     saveCompletedPractice();
-    saveCloudProgress();
-    updatePracticeProgress();
-    renderArticleList();
     setFeedback('good', `正确。${buildExplanation(item)}`);
   } else {
     setFeedback('bad', `错误。正确答案：${escapeHtml(displayAnswer)}。${buildExplanation(item)}`);
   }
+  saveCloudProgress();
+  updatePracticeProgress();
+  renderArticleList();
+  els.answerInput.disabled = true;
+  els.nextPractice.disabled = false;
+  const unfinished = getUnfinishedPracticeItems();
+  els.nextPractice.textContent = unfinished.length ? '下一题' : '查看本篇结果';
 }
 
 function getAcceptableAnswers(item) {
@@ -637,7 +706,7 @@ function updatePracticeProgress() {
 function getPracticeProgress() {
   const items = getPracticeItems();
   const completed = items.reduce((count, item) => (
-    count + (state.completedPractice.has(String(item.id)) ? 1 : 0)
+    count + (hasPracticeAttempt(item.id) ? 1 : 0)
   ), 0);
   const total = items.length;
   return {
@@ -647,6 +716,47 @@ function getPracticeProgress() {
     unfinished: Math.max(total - completed, 0),
     percent: total ? Math.round((completed / total) * 100) : 0
   };
+}
+
+function hasPracticeAttempt(id) {
+  return Boolean(state.practiceAttempts[String(id)]);
+}
+
+function showArticleSummary() {
+  const items = getPracticeItems();
+  if (!items.length) return;
+  const attempts = items.map(item => ({ item, attempt: state.practiceAttempts[String(item.id)] }));
+  const correct = attempts.filter(entry => entry.attempt && entry.attempt.correct).length;
+  const wrong = attempts.filter(entry => entry.attempt && !entry.attempt.correct);
+  const accuracy = Math.round((correct / items.length) * 100);
+  state.currentPractice = null;
+  els.practiceQuestion.classList.add('hidden');
+  els.practiceSummary.classList.remove('hidden');
+  els.newPractice.classList.add('hidden');
+  els.practiceSource.textContent = `${cleanSourceTitle(state.currentArticleSource)} · 本篇已做完`;
+  els.practiceSummary.innerHTML = `
+    <div class="article-result-head">
+      <span class="result-finished">本篇已做完</span>
+      <strong>${correct}/${items.length}</strong>
+      <span>正确率 ${accuracy}%</span>
+    </div>
+    ${wrong.length ? `
+      <div class="wrong-review-list">
+        <h3>错题复盘（${wrong.length}题）</h3>
+        ${wrong.map(({ item, attempt }) => `
+          <article class="wrong-review-item">
+            <div class="wrong-review-number">原题第 ${escapeHtml(item.number)} 空</div>
+            <p><strong>原句：</strong>${escapeHtml(item.originalSentence)}</p>
+            <p><strong>转化句：</strong>${escapeHtml(item.targetSentence).replace(/_+/g, '<span class="blank">______</span>')}</p>
+            <p class="wrong-answer"><strong>你的答案：</strong>${escapeHtml(attempt.answer || '未填写')}</p>
+            <p class="right-answer"><strong>正确答案：</strong>${escapeHtml(getAcceptableAnswers(item).join(' / '))}</p>
+          </article>
+        `).join('')}
+      </div>
+    ` : '<div class="all-correct-message">全部答对，太棒了！</div>'}
+  `;
+  updatePracticeProgress();
+  renderArticleList();
 }
 
 function buildExplanation(item) {
@@ -680,6 +790,32 @@ function loadCompletedPractice() {
   }
 }
 
+function loadPracticeAttempts() {
+  try {
+    const value = JSON.parse(localStorage.getItem(PRACTICE_ATTEMPTS_KEY) || '{}');
+    return value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+  } catch {
+    return {};
+  }
+}
+
+function savePracticeAttempts() {
+  localStorage.setItem(PRACTICE_ATTEMPTS_KEY, JSON.stringify(state.practiceAttempts));
+}
+
+function migrateCompletedPracticeToAttempts() {
+  state.completedPractice.forEach(id => {
+    if (!state.practiceAttempts[String(id)]) {
+      state.practiceAttempts[String(id)] = {
+        answer: '',
+        correct: true,
+        legacy: true
+      };
+    }
+  });
+  savePracticeAttempts();
+}
+
 function saveCompletedPractice() {
   localStorage.setItem(PRACTICE_DONE_KEY, JSON.stringify([...state.completedPractice]));
 }
@@ -702,6 +838,13 @@ async function loadCloudProgress() {
       ]);
       saveCompletedPractice();
     }
+    if (progress.practiceAttempts && typeof progress.practiceAttempts === 'object' && !Array.isArray(progress.practiceAttempts)) {
+      state.practiceAttempts = {
+        ...progress.practiceAttempts,
+        ...state.practiceAttempts
+      };
+      migrateCompletedPracticeToAttempts();
+    }
     if (Array.isArray(progress.mastered)) {
       state.mastered = new Set([
         ...state.mastered,
@@ -709,6 +852,7 @@ async function loadCloudProgress() {
       ]);
       localStorage.setItem(MASTERED_KEY, JSON.stringify([...state.mastered]));
     }
+    migrateCompletedPracticeToAttempts();
   } catch (error) {
     console.warn('Load reading-writing cloud progress failed:', error);
   }
@@ -734,6 +878,7 @@ async function saveCloudProgress() {
       input_lesson_id: '__reading_writing__',
       input_progress: {
         completedPractice: [...state.completedPractice],
+        practiceAttempts: state.practiceAttempts,
         mastered: [...state.mastered],
         updatedAt: new Date().toISOString()
       },

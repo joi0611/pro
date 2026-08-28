@@ -31,22 +31,21 @@
       <div class="brand">
         <div class="brand-mark" aria-hidden="true">新</div>
         <div>
-          <strong class="site-brand-name">新疆学生无限进步</strong>
+          <strong class="site-brand-name student-system-brand">新疆学生无限进步</strong>
           <h1>读写题训练系统</h1>
           <p>考点学习与真题演练</p>
         </div>
       </div>
       <nav class="module-nav" aria-label="模块导航">
-        <button class="nav-item active" data-section="library">题库主页</button>
-        <button class="nav-item" data-section="strategy">做题步骤和技巧</button>
-        <button class="nav-item" data-section="learning">读写题重难点同义词转换</button>
-        <button class="nav-item" data-section="practice">真题演练</button>
+        <button class="nav-item active" data-section="strategy">做题步骤和技巧</button>
+        <button class="nav-item" data-section="library">题库</button>
+        <button class="nav-item" data-section="learning">同义词训练</button>
       </nav>
       <a class="home-link" href="../../index.html">返回首页训练其他题型</a>
     </header>
 
     <main class="main-panel">
-      <section id="library" class="section active">
+      <section id="library" class="section">
         <div class="section-heading">
           <span class="eyebrow">题库主页</span>
           <h2>读写题真题列表</h2>
@@ -54,7 +53,7 @@
         <div id="article-list" class="article-list"></div>
       </section>
 
-      <section id="strategy" class="section">
+      <section id="strategy" class="section active">
         <div class="strategy-container">
           <div class="strategy-intro">
             <h2>读写题攻略</h2>
@@ -200,12 +199,12 @@
           <button class="study-card" id="study-card" type="button" aria-label="点击翻转卡片">
             <div class="study-card-inner">
               <div class="study-card-face study-card-front">
-                <span class="card-label">正面</span>
+                <span class="card-label">正面 · 2–3词短语</span>
                 <div class="card-word" id="card-front-word"></div>
                 <div class="card-point" id="card-front-point"></div>
               </div>
               <div class="study-card-face study-card-back">
-                <span class="card-label">反面</span>
+                <span class="card-label">反面 · 1词转换</span>
                 <div class="card-word" id="card-back-word"></div>
               </div>
             </div>
@@ -221,7 +220,7 @@
       <section id="practice" class="section">
         <div class="section-heading">
           <span class="eyebrow">模块三</span>
-          <h2>真题演练</h2>
+          <h2>题目训练</h2>
         </div>
         <div class="practice-toolbar">
           <div class="practice-progress">
@@ -238,20 +237,23 @@
         </div>
         <div class="practice-card">
           <div class="source-line" id="practice-source"></div>
-          <div class="sentence-block">
-            <strong>原句</strong>
-            <p id="practice-original"></p>
+          <div id="practice-question">
+            <div class="sentence-block">
+              <strong>原句</strong>
+              <p id="practice-original"></p>
+            </div>
+            <div class="sentence-block">
+              <strong>转化句</strong>
+              <p id="practice-target"></p>
+            </div>
+            <div class="answer-row">
+              <label for="answer-input">填空答案</label>
+              <input id="answer-input" type="text" autocomplete="off" enterkeyhint="done" placeholder="输入答案后按 Enter 提交">
+              <button id="next-practice" type="button" disabled>下一题</button>
+            </div>
+            <div id="feedback" class="feedback"></div>
           </div>
-          <div class="sentence-block">
-            <strong>转化句</strong>
-            <p id="practice-target"></p>
-          </div>
-          <div class="answer-row">
-            <label for="answer-input">填空答案</label>
-            <input id="answer-input" type="text" autocomplete="off" enterkeyhint="done" placeholder="输入答案后按 Enter 提交">
-            <button id="next-practice" type="button">下一题</button>
-          </div>
-          <div id="feedback" class="feedback"></div>
+          <div id="practice-summary" class="practice-summary hidden"></div>
         </div>
       </section>
     </main>
@@ -259,6 +261,10 @@
   </div>
   <script src="mvp_data.js?v=xj-progress-rw-1"></script>
   <script src="official-exams-2024-2025.js?v=20260716-1"></script>
-  <script src="app.js?v=20260716-enter-progress-1"></script>
+  <script src="confirmed-question-bank.js?v=20260828-exact-sources-2"></script>
+  <script src="urumqi-may-2026-exams.js?v=20260828-urumqi-four-exams-1"></script>
+  <script src="learning-phrase-base.js?v=20260828-auto-practice-transforms-1"></script>
+  <script src="../../assets/student-profile.js?v=20260828-1"></script>
+  <script src="app.js?v=20260828-student-profile-1"></script>
 </body>
 </html>
