@@ -70,7 +70,7 @@ async function cloudCall(action,code,extra={}){
     const result=await callSupabaseRpc("verify_access_code",{input_code:code,input_system_type:VOCABULARY_SYSTEM_TYPE});
     const account=Array.isArray(result)?result[0]:null;
     if(!account?.access_code_id)throw new Error("该登录码不可用于单词训练，或登录码不正确");
-    return {ok:true};
+    return {ok:true,account};
   }
   if(action==="get"){
     const rows=await callSupabaseRpc("get_learning_progress",{input_code:code,input_system_type:VOCABULARY_SYSTEM_TYPE});
@@ -83,7 +83,8 @@ async function cloudCall(action,code,extra={}){
   }
   throw new Error("未知云端操作");
 }
-let loginCode=normalizeLoginCode(localStorage.getItem(SESSION_KEY)||""),profile=loginCode&&(cloudAvailableForCode(loginCode)||validLoginCode(loginCode))?load(loginCode):null,syncTimer=null;
+let loginCode=normalizeLoginCode(localStorage.getItem(SESSION_KEY)||""),profile=loginCode&&(cloudAvailableForCode(loginCode)||validLoginCode(loginCode))?load(loginCode):null,syncTimer=null,studentName="";
+async function ensureStudentProfile(code,account){studentName=await window.StudentProfile.ensure({code,account,bindName:isLegacyLoginCode(code)?null:name=>callSupabaseRpc("bind_student_name",{input_code:code,input_system_type:VOCABULARY_SYSTEM_TYPE,input_student_name:name})});return studentName}
 if(profile&&![10,20,30,40].includes(profile.daily)){profile.daily=20;localStorage.setItem(profileKey(loginCode),JSON.stringify(profile))}
 let state={screen:profile?"home":"login",grade:profile?.grade||"初一",score:50,daily:profile?.daily||30,selected:profile?.selected||["高频"],queue:[],retryNames:[],scan:[],scanPool:[],scanOffset:0,idx:0,reveal:false,flip:false,noteReveal:false,meaningViewed:false,noteViewed:false,viewedCards:[],testIdx:0,testScore:0,testFeedback:"",testFeedbackType:"",testCorrectAnswer:"",testExplanation:"",testMistakes:[],reinforceIdx:0,reinforceCount:0,reinforceReady:false,reinforceTimer:null,memoryLayout:[],memoryAudio:null,followToken:0,reviewIdx:0,reviewQueue:[],reviewTotal:0,todayReviewMode:"en-cn",todayReviewRevealed:[],round2Group:0,round2Idx:0,round2Queue:[],round2Results:[],round2Mistakes:[],round2Answer:"",round2Feedback:"",round2PartialFrom:0};
 const app=document.querySelector("#app");
@@ -133,7 +134,16 @@ function ensureLearningRoute(){
 }
 function learningLibraries(){ensureLearningRoute();return profile.libraryQueue}
 function completedKey(x){return `${x.lib}:${x.w}`}
-function ensureCompletionData(){profile.completedWords=profile.completedWords||[];if(!profile.completedMigrated){for(const lib of libraryOrder){let n=Math.min(profile.learned?.[lib]||0,banks[lib].length);profile.completedWords.push(...banks[lib].slice(0,n).map(completedKey))}profile.completedWords=[...new Set(profile.completedWords)];profile.completedMigrated=true}}
+function migrateLegacyProgress(){
+  if(!profile||profile.progressMigratedV2)return;
+  const valid=new Set(Object.values(banks).flat().map(x=>completedKey(x)));
+  profile.completedWords=(profile.completedWords||[]).map(k=>k==="高频:TRUE"?"高频:true":k).filter(k=>valid.has(k));
+  profile.completedWords=[...new Set(profile.completedWords)];
+  libraryOrder.forEach(lib=>{profile.learned[lib]=profile.completedWords.filter(k=>k.startsWith(`${lib}:`)).length});
+  profile.progressMigratedV2=true;
+  save();
+}
+function ensureCompletionData(){profile.completedWords=profile.completedWords||[];migrateLegacyProgress();if(!profile.completedMigrated){for(const lib of libraryOrder){let n=Math.min(profile.learned?.[lib]||0,banks[lib].length);profile.completedWords.push(...banks[lib].slice(0,n).map(completedKey))}profile.completedWords=[...new Set(profile.completedWords)];profile.completedMigrated=true}}
 function markCompleted(x){ensureCompletionData();let key=completedKey(x);if(!profile.completedWords.includes(key))profile.completedWords.push(key);profile.learned[x.lib]=profile.completedWords.filter(k=>k.startsWith(`${x.lib}:`)).length}
 function unmarkCompleted(x){ensureCompletionData();profile.completedWords=profile.completedWords.filter(k=>k!==completedKey(x));profile.learned[x.lib]=profile.completedWords.filter(k=>k.startsWith(`${x.lib}:`)).length}
 const allWords=()=>{ensureCompletionData();let done=new Set(profile.completedWords);return learningLibraries().flatMap(x=>banks[x]).filter(x=>!done.has(completedKey(x)))};
@@ -180,7 +190,7 @@ function recommendation(score){
   if(score<80)return {text:"先筛选高频，再重点学习中频，之后学习2022新课标增加词汇和文化主题词汇。",libs:["高频","中频"]};
   return {text:"快速筛选高频和中频，重点学习2022新课标增加词汇与文化主题词汇。",libs:["高频","中频","2022新课标增加词汇","时间/国家/节日/中国文化"]};
 }
-function shell(content,homeLink=false){return `<div class="shell"><header class="top"><a class="brand" href="../../index.html"><img src="../../assets/favicon.svg" alt=""><strong>新疆学生无限进步</strong><span>单词训练</span></a><div class="top-actions">${homeLink?'<button class="back" id="home">回到首页</button>':""}<a class="site-home-link" href="../../index.html">训练其他题型</a><div class="streak">连续学习 ${profile?.streak||0} 天</div>${loginCode?'<button class="logout" id="logout">退出登录</button>':""}</div></header>${content}</div>`}
+function shell(content,homeLink=false){const safeStudentName=String(studentName||"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));const brand=studentName?`${safeStudentName}学生（单词训练）专属训练系统`:"新疆学生无限进步";return `<div class="shell"><header class="top"><a class="brand" href="../../index.html"><img src="../../assets/favicon.svg" alt=""><strong class="student-system-brand">${brand}</strong><span>单词训练</span></a><div class="top-actions">${homeLink?'<button class="back" id="home">回到首页</button>':""}<a class="site-home-link" href="../../index.html">训练其他题型</a><div class="streak">连续学习 ${profile?.streak||0} 天</div>${loginCode?'<button class="logout" id="logout">退出登录</button>':""}</div></header>${content}</div>`}
 function progressBar(n){return `<div class="progress"><i style="width:${Math.min(100,n)}%"></i></div>`}
 function bindHome(){let b=document.querySelector("#home");if(b)b.onclick=()=>{if(profile){if(resumableScreens.includes(state.screen))checkpoint();else{profile.activeSession=null;save()}}state.screen="home";render()}}
 function bindLogout(){
@@ -199,7 +209,7 @@ function bindLogout(){
 function login(){
   app.innerHTML=`<main class="login-page"><a class="login-home-link" href="../../index.html">返回首页，训练其他题型</a><div class="login-brand"><img src="../../assets/favicon.svg" alt=""><strong>新疆学生无限进步</strong><span>单词训练</span></div><div class="login-orbit"><svg viewBox="0 0 320 320" aria-hidden="true"><defs><path id="orbitPath" d="M 42,160 A 118,118 0 1,1 278,160 A 118,118 0 1,1 42,160"/></defs><text><textPath href="#orbitPath" startOffset="0%">相信你可以无限进步 ·</textPath></text><text><textPath href="#orbitPath" startOffset="33.33%">相信你可以无限进步 ·</textPath></text><text><textPath href="#orbitPath" startOffset="66.66%">相信你可以无限进步 ·</textPath></text></svg><img src="assets/earth-study.png" alt="词汇学习伙伴"></div><section class="login-box"><h1>中考词汇备考系统</h1><p>支持原6位登录码和全站8位登录码</p><label class="login-label" for="loginInput">登录码</label><input id="loginInput" maxlength="8" autocomplete="one-time-code" autocapitalize="none" spellcheck="false" placeholder="请输入6位或8位登录码"><button id="loginButton">登录学习</button><small id="loginError" aria-live="polite"></small></section><footer class="login-credit">@新疆学生无限进步</footer></main>`;
   const input=document.querySelector("#loginInput"),button=document.querySelector("#loginButton");input.value=loginCode;
-  const submit=async()=>{let code=input.value.trim(),error=document.querySelector("#loginError");if(!isLegacyLoginCode(code)&&!isNewLoginCode(code)){error.textContent="请输入正确的6位或8位登录码；8位码请注意大小写";return}code=normalizeLoginCode(code);if(DISABLED_LOGIN_CODES.has(code)){error.textContent="该登录码已停用";return}button.disabled=true;button.textContent="正在读取学习档案…";error.textContent="";try{if(cloudAvailableForCode(code))await cloudCall("login",code);else if(!validLoginCode(code))throw new Error("登录码无效");loginCode=code;localStorage.setItem(SESSION_KEY,code);if(cloudAvailableForCode(code)){const remote=await cloudCall("get",code);profile=remote.profile||load(code)}else profile=load(code);if(profile){localStorage.setItem(profileKey(code),JSON.stringify(profile));state.grade=profile.grade||"初一";state.daily=profile.daily||20;state.selected=profile.selected||["高频"];state.screen="home";restoreCheckpoint()}else state.screen="onboard";render()}catch(e){error.textContent=e.message||"暂时无法登录，请检查网络";button.disabled=false;button.textContent="登录学习"}};
+  const submit=async()=>{let code=input.value.trim(),error=document.querySelector("#loginError");if(!isLegacyLoginCode(code)&&!isNewLoginCode(code)){error.textContent="请输入正确的6位或8位登录码；8位码请注意大小写";return}code=normalizeLoginCode(code);if(DISABLED_LOGIN_CODES.has(code)){error.textContent="该登录码已停用";return}button.disabled=true;button.textContent="正在读取学习档案…";error.textContent="";try{let loginResult=null;if(cloudAvailableForCode(code))loginResult=await cloudCall("login",code);else if(!validLoginCode(code))throw new Error("登录码无效");await ensureStudentProfile(code,loginResult?.account);loginCode=code;localStorage.setItem(SESSION_KEY,code);if(cloudAvailableForCode(code)){const remote=await cloudCall("get",code);profile=remote.profile||load(code)}else profile=load(code);if(profile){localStorage.setItem(profileKey(code),JSON.stringify(profile));state.grade=profile.grade||"初一";state.daily=profile.daily||20;state.selected=profile.selected||["高频"];state.screen="home";restoreCheckpoint()}else state.screen="onboard";render()}catch(e){error.textContent=e.message||"暂时无法登录，请检查网络";button.disabled=false;button.textContent="登录学习"}};
   button.onclick=submit;input.onkeydown=e=>{if(e.key==="Enter")submit()};
 }
 
@@ -716,9 +726,9 @@ async function boot(){
   if(!loginCode){state.screen="login";render();return}
   if(DISABLED_LOGIN_CODES.has(loginCode)){loginCode="";profile=null;localStorage.removeItem(SESSION_KEY);state.screen="login";render();return}
   try{
-    if(cloudAvailableForCode(loginCode)){await cloudCall("login",loginCode);const remote=await cloudCall("get",loginCode);profile=remote.profile||load(loginCode)}
-    else{if(!validLoginCode(loginCode))throw new Error("登录码无效");profile=load(loginCode)}
-    if(profile){localStorage.setItem(profileKey(loginCode),JSON.stringify(profile));state.grade=profile.grade||"初一";state.daily=profile.daily||20;state.selected=profile.selected||["高频"];state.screen="home";restoreCheckpoint()}else state.screen="onboard";
+    if(cloudAvailableForCode(loginCode)){const loginResult=await cloudCall("login",loginCode);await ensureStudentProfile(loginCode,loginResult?.account);const remote=await cloudCall("get",loginCode);profile=remote.profile||load(loginCode)}
+    else{if(!validLoginCode(loginCode))throw new Error("登录码无效");await ensureStudentProfile(loginCode,null);profile=load(loginCode)}
+    if(profile){migrateLegacyProgress();localStorage.setItem(profileKey(loginCode),JSON.stringify(profile));state.grade=profile.grade||"初一";state.daily=profile.daily||20;state.selected=profile.selected||["高频"];state.screen="home";restoreCheckpoint()}else state.screen="onboard";
   }catch{loginCode="";profile=null;localStorage.removeItem(SESSION_KEY);state.screen="login"}
   render();
 }
