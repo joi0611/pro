@@ -1384,7 +1384,7 @@
     </div>
   </main>
   <header class="workbook-site-header">
-    <a class="workbook-brand" href="../../index.html"><span class="workbook-brand-mark">新</span><strong>新疆学生无限进步</strong></a>
+    <a class="workbook-brand" href="../../index.html"><span class="workbook-brand-mark">新</span><strong class="student-system-brand">新疆学生无限进步</strong></a>
     <nav class="workbook-main-nav"><a href="../../index.html">首页</a><span class="active">专项训练</span><button type="button" onclick="document.querySelector('#backToLibraryBtn')?.click()">题库主页</button></nav>
   </header>
   <div class="app" id="mainContent">
@@ -1541,6 +1541,7 @@
 
   <div class="toast" id="toast"></div>
 
+  <script src="../../assets/student-profile.js?v=20260828-1"></script>
   <script>
     const loginCodes = new Set();
 
@@ -1585,6 +1586,19 @@
       return account;
     }
 
+    async function ensureStudentProfile(code, account) {
+      const name = await window.StudentProfile.ensure({
+        code,
+        account,
+        bindName: studentName => callSupabaseRpc("bind_student_name", {
+          input_code: code,
+          input_system_type: SYSTEM_TYPE,
+          input_student_name: studentName
+        })
+      });
+      window.StudentProfile.applyBrand(name, SYSTEM_TYPE);
+    }
+
     function safeGetLogin() {
       try { return normalizeLoginCode(localStorage.getItem(LOGIN_STORAGE_KEY)); } catch (error) { return ""; }
     }
@@ -1625,7 +1639,9 @@
     applyXinjiangProgressCopy();
 
     if (safeGetLogin() && localStorage.getItem(LOGIN_OK_KEY) === "true") {
-      unlockApp();
+      verifyAccessCode(safeGetLogin()).then(account => ensureStudentProfile(safeGetLogin(), account)).then(unlockApp).catch(() => {
+        try { localStorage.removeItem(LOGIN_OK_KEY); } catch (error) {}
+      });
     }
 
     const posList = [
@@ -4499,7 +4515,8 @@
       if (submitButton) submitButton.disabled = true;
       document.getElementById("loginError").textContent = "正在验证登录码...";
       try {
-        await verifyAccessCode(code);
+        const account = await verifyAccessCode(code);
+        await ensureStudentProfile(code, account);
         safeSetLogin(code);
         unlockApp();
         showToast("登录成功，请选择篇目开始训练。");
