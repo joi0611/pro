@@ -884,6 +884,43 @@ input {
   }
 }
 
+.practice-result-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.practice-result-summary span,
+.result-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f1f8ed;
+  color: #315d25;
+  font-weight: 700;
+}
+
+.practice-result-summary .result-wrong,
+.wrong-review-item .result-status {
+  background: #fff1ef;
+  color: #a43d32;
+}
+
+.practice-result-summary .result-correct,
+.correct-review-item .result-status {
+  background: #edf9e7;
+  color: #3b7d28;
+}
+
+.correct-review-item {
+  border-left: 4px solid #8bd866;
+}
+
+.wrong-review-item {
+  border-left: 4px solid #e58b7d;
+}
+
 @media (max-width: 640px) {
   body {
     padding: 0;

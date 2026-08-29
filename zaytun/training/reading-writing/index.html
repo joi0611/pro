@@ -42,16 +42,15 @@
         </div>
       </div>
       <nav class="module-nav" aria-label="模块导航">
-        <button class="nav-item active" data-section="library">题库主页</button>
-        <button class="nav-item" data-section="strategy">做题步骤和技巧</button>
+        <button class="nav-item active" data-section="strategy">做题步骤和技巧</button>
+        <button class="nav-item" data-section="library">题库主页</button>
         <button class="nav-item" data-section="learning">读写题重难点同义词转换</button>
-        <button class="nav-item" data-section="practice">真题演练</button>
       </nav>
       <a class="home-link" href="../../index.html">返回首页训练其他题型</a>
     </header>
 
     <main class="main-panel">
-      <section id="library" class="section active">
+      <section id="library" class="section">
         <div class="section-heading">
           <span class="eyebrow">题库主页</span>
           <h2>读写题真题列表</h2>
@@ -59,7 +58,7 @@
         <div id="article-list" class="article-list"></div>
       </section>
 
-      <section id="strategy" class="section">
+      <section id="strategy" class="section active">
         <div class="strategy-container">
           <div class="strategy-intro">
             <h2>读写题攻略</h2>
@@ -242,6 +241,7 @@
           <button id="new-practice">换一题</button>
         </div>
         <div class="practice-card">
+          <div id="practice-question">
           <div class="source-line" id="practice-source"></div>
           <div class="sentence-block">
             <strong>原句</strong>
@@ -257,13 +257,18 @@
             <button id="next-practice" type="button">下一题</button>
           </div>
           <div id="feedback" class="feedback"></div>
+          </div>
+          <div id="practice-summary" class="practice-summary hidden"></div>
         </div>
       </section>
     </main>
     <footer class="site-footer">@赞顿学堂</footer>
   </div>
   <script src="mvp_data.js?v=zandun-rw-6"></script>
-  <script src="official-exams-reading-writing.js?v=20260717-2"></script>
-  <script src="app.js?v=zandun-rw-16"></script>
+  <script src="official-exams-2024-2025-20260829.js?v=question-sync"></script>
+  <script src="confirmed-question-bank-20260829.js?v=question-sync"></script>
+  <script src="urumqi-may-2026-exams-20260829.js?v=question-sync"></script>
+  <script src="learning-phrase-base-20260829.js?v=question-sync"></script>
+  <script src="app.js?v=zandun-rw-17-trial-source"></script>
 </body>
 </html>

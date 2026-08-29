@@ -1,6 +1,6 @@
 const state = {
   data: null,
-  activeSection: 'library',
+  activeSection: 'strategy',
   activeCategory: '',
   learningMode: 'list',
   cardFilter: 'all',
@@ -11,7 +11,7 @@ const state = {
   currentPractice: null,
   mastered: new Set(),
   completedPractice: new Set(),
-  answerSubmitting: false
+  practiceAttempts: {}
 };
 
 const els = {};
@@ -20,12 +20,13 @@ const LOGIN_OK_KEY = 'rw_supabase_login_ok_20260710';
 const LOGIN_LABEL_KEY = 'rw_supabase_login_label_20260710';
 const MASTERED_KEY = 'rw_supabase_mastered_cache_20260710';
 const PRACTICE_DONE_KEY = 'rw_supabase_completed_practice_cache_20260710';
+const PRACTICE_ATTEMPTS_KEY = 'rw_supabase_practice_attempts_20260828';
 const SUPABASE_CONFIG = {
   url: 'https://gbjmylxohacppnybfssh.supabase.co',
   anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdiam15bHhvaGFjcHBueWJmc3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDA1NzgsImV4cCI6MjA5ODI3NjU3OH0.mz5srsxdbZa4__oqKjlcysWuDo00w7UQaV8n2VNP4eE'
 };
 const SYSTEM_TYPE = 'reading-writing';
-const TRIAL_SOURCE = '2025年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题';
+const TRIAL_SOURCE = '2025年新疆维吾尔自治区、新疆生产建设兵团初中学业水平考试英语真题｜射箭中的坚持';
 
 document.addEventListener('DOMContentLoaded', init);
 
@@ -46,6 +47,8 @@ async function init() {
   state.activeCategory = state.data.categories[0] || '';
   state.mastered = loadMastered();
   state.completedPractice = loadCompletedPractice();
+  state.practiceAttempts = loadPracticeAttempts();
+  migrateCompletedPracticeToAttempts();
   setupStrategyAccordion();
   renderArticleList();
   renderLearning();
@@ -138,6 +141,12 @@ function clearLoginState() {
 }
 
 async function setupLoginGate() {
+  // Local preview mode: allow browsing the question bank without a cloud login.
+  // Online deployments continue to use the normal access-code gate below.
+  if (window.location.protocol === 'file:') {
+    unlockApp();
+    return true;
+  }
   if (isTrialMode()) {
     unlockApp();
     return true;
@@ -250,6 +259,9 @@ function cacheElements() {
   els.practiceSource = document.getElementById('practice-source');
   els.practiceOriginal = document.getElementById('practice-original');
   els.practiceTarget = document.getElementById('practice-target');
+  els.practiceQuestion = document.getElementById('practice-question');
+  els.practiceSummary = document.getElementById('practice-summary');
+  els.newPractice = document.getElementById('new-practice');
   els.answerInput = document.getElementById('answer-input');
   els.nextPractice = document.getElementById('next-practice');
   els.feedback = document.getElementById('feedback');
@@ -368,15 +380,17 @@ function renderList(items) {
     <table>
       <thead>
         <tr>
-          <th style="width: 28%">原文词语</th>
-          <th style="width: 28%">转换词语（填空）</th>
+          <th style="width: 76px">题号</th>
+          <th style="width: 25%">2–3词短语</th>
+          <th style="width: 25%">1词转换</th>
           <th>中文释义</th>
           <th style="width: 96px">已掌握</th>
         </tr>
       </thead>
       <tbody>
-        ${items.map(item => `
+        ${items.map((item, index) => `
           <tr class="${state.mastered.has(String(item.id)) ? 'mastered-row' : ''}">
+            <td><strong>${index + 1}</strong></td>
             <td>${escapeHtml(item.original)}</td>
             <td>${escapeHtml(item.target)}</td>
             <td>${escapeHtml(item.meaning || '')}</td>
@@ -388,14 +402,18 @@ function renderList(items) {
       </tbody>
     </table>
     <div class="mobile-word-list">
-      ${items.map(item => `
+      ${items.map((item, index) => `
         <article class="word-card ${state.mastered.has(String(item.id)) ? 'mastered-row' : ''}">
           <div class="word-card-row">
-            <span>原文</span>
+            <span>题号</span>
+            <strong>${index + 1}</strong>
+          </div>
+          <div class="word-card-row">
+            <span>2–3词短语</span>
             <strong>${escapeHtml(item.original)}</strong>
           </div>
           <div class="word-card-row">
-            <span>转换</span>
+            <span>1词转换</span>
             <strong>${escapeHtml(item.target)}</strong>
           </div>
           <div class="word-card-row">
@@ -462,7 +480,8 @@ function renderCard(items) {
   if (state.cardIndex >= items.length) state.cardIndex = 0;
   const item = items[state.cardIndex];
   els.studyCard.classList.toggle('flipped', state.cardFlipped);
-  els.cardMeta.textContent = `${item.category} · ${item.source}`;
+  const displayNumber = getLearningItems().findIndex(candidate => String(candidate.id) === String(item.id)) + 1;
+  els.cardMeta.textContent = `题号 ${displayNumber} · ${item.category} · ${item.source}`;
   els.cardFrontWord.textContent = item.original;
   els.cardFrontPoint.textContent = needsStudyPoint(item) ? item.studyPoint || item.point || item.category : '';
   els.cardBackWord.textContent = item.target;
@@ -500,25 +519,19 @@ function getPracticeArticles() {
     }
     map.get(source).items.push(item);
   });
-  return Array.from(map.values()).sort(comparePracticeArticles);
-}
-
-function getSourceYear(source) {
-  const match = String(source || '').match(/20\d{2}/);
-  return match ? Number(match[0]) : 0;
-}
-
-function isOfficialExamSource(source) {
-  return /中考英语真题|中考真题|学业水平考试英语真题/.test(String(source || ''));
-}
-
-function comparePracticeArticles(a, b) {
-  if (isOfficialExamSource(a.source) !== isOfficialExamSource(b.source)) {
-    return isOfficialExamSource(a.source) ? -1 : 1;
-  }
-  const yearDiff = getSourceYear(b.source) - getSourceYear(a.source);
-  if (yearDiff) return yearDiff;
-  return 0;
+  return Array.from(map.values())
+    .map((article, originalIndex) => ({ article, originalIndex }))
+    .sort((a, b) => {
+      const aYear = getReadingOfficialExamYear(a.article.source);
+      const bYear = getReadingOfficialExamYear(b.article.source);
+      if (aYear || bYear) {
+        if (!aYear) return 1;
+        if (!bYear) return -1;
+        if (aYear !== bYear) return bYear - aYear;
+      }
+      return a.originalIndex - b.originalIndex;
+    })
+    .map(({ article }) => article);
 }
 
 function renderArticleList() {
@@ -529,14 +542,15 @@ function renderArticleList() {
     return;
   }
   els.articleList.innerHTML = articles.map((article, index) => {
-    const done = article.items.filter(item => state.completedPractice.has(String(item.id))).length;
+    const done = article.items.filter(item => hasPracticeAttempt(item.id)).length;
+    const officialYear = getReadingOfficialExamYear(article.source);
     return `
-      <article class="article-row">
+      <article class="article-row${officialYear ? ' official-exam-card' : ''}">
         <div class="article-index">${String(index + 1).padStart(2, '0')}</div>
         <div class="article-main">
-          ${officialArticleBadge(article)}
+          ${officialYear ? `<span class="official-exam-badge">${officialYear} 新疆中考真题</span>` : ''}
           <strong>${escapeHtml(article.title)}</strong>
-          <span>来源：${escapeHtml(getArticleDisplaySource(article.source))}</span>
+          <span class="article-source${officialYear ? ' real-exam-source' : ''}">${escapeHtml(getArticleDisplaySource(article.source))}</span>
         </div>
         <div class="article-meta">${done}/${article.items.length}</div>
         <button class="start-article" type="button" data-source="${escapeAttr(article.source)}">开始训练</button>
@@ -546,12 +560,6 @@ function renderArticleList() {
   els.articleList.querySelectorAll('.start-article').forEach(button => {
     button.addEventListener('click', () => startArticle(button.dataset.source));
   });
-}
-
-function officialArticleBadge(article) {
-  if (!isOfficialExamSource(article.source)) return '';
-  const year = getSourceYear(article.source);
-  return `<span class="official-exam-badge">${year ? `${year} ` : ''}新疆中考真题</span>`;
 }
 
 function startArticle(source) {
@@ -570,15 +578,14 @@ function getPracticeItems() {
 }
 
 function getUnfinishedPracticeItems() {
-  return getPracticeItems().filter(item => !state.completedPractice.has(String(item.id)));
+  return getPracticeItems().filter(item => !hasPracticeAttempt(item.id));
 }
 
 function pickPractice(random = false) {
   updatePracticeProgress();
   const unfinished = getUnfinishedPracticeItems();
   const allItems = getPracticeItems();
-  const items = random ? allItems : (unfinished.length ? unfinished : allItems);
-  if (!items.length) {
+  if (!allItems.length) {
     state.currentPractice = null;
     els.practiceSource.textContent = '暂无真题';
     els.practiceOriginal.textContent = '';
@@ -588,8 +595,14 @@ function pickPractice(random = false) {
     return;
   }
 
-  state.practiceIndex = random ? Math.floor(Math.random() * items.length) : 0;
-  state.currentPractice = items[state.practiceIndex];
+  if (!unfinished.length) {
+    showArticleSummary();
+    return;
+  }
+
+  const item = random ? unfinished[Math.floor(Math.random() * unfinished.length)] : unfinished[0];
+  state.practiceIndex = allItems.findIndex(candidate => String(candidate.id) === String(item.id));
+  state.currentPractice = item;
   renderPractice();
 }
 
@@ -597,42 +610,56 @@ function nextPractice() {
   const items = getPracticeItems();
   if (!items.length) return;
 
+  if (!state.currentPractice || !hasPracticeAttempt(state.currentPractice.id)) {
+    setFeedback('warn', '请先提交本题答案。');
+    els.answerInput.focus();
+    return;
+  }
+
   const currentId = state.currentPractice ? String(state.currentPractice.id) : '';
   const currentIndex = items.findIndex(item => String(item.id) === currentId);
-  const unfinished = items.filter(item => !state.completedPractice.has(String(item.id)));
-  let nextItem = null;
-  if (unfinished.length) {
-    nextItem = unfinished.find(item => {
-      const idx = items.findIndex(candidate => String(candidate.id) === String(item.id));
-      return idx > currentIndex;
-    }) || unfinished[0];
+  const nextItem = items.slice(currentIndex + 1).find(item => !hasPracticeAttempt(item.id))
+    || items.slice(0, currentIndex).find(item => !hasPracticeAttempt(item.id));
+  if (!nextItem) {
+    showArticleSummary();
+    return;
   }
-  const nextIndex = nextItem
-    ? items.findIndex(item => String(item.id) === String(nextItem.id))
-    : (currentIndex >= 0 ? (currentIndex + 1) % items.length : 0);
-  state.practiceIndex = nextIndex;
-  state.currentPractice = items[nextIndex];
+  state.practiceIndex = items.findIndex(item => String(item.id) === String(nextItem.id));
+  state.currentPractice = nextItem;
+  // Clear the previous submission before rendering the next question.
+  els.answerInput.value = '';
+  setFeedback('', '');
   renderPractice();
 }
 
 function renderPractice() {
   const item = state.currentPractice;
-  const unfinished = getUnfinishedPracticeItems().length;
-  const status = unfinished ? '未完成练习' : '已全部完成，当前为复习';
-  const allItems = getPracticeItems();
+  const progress = getPracticeProgress();
+  const status = '本篇训练';
+  const allItems = progress.items;
   const globalIndex = allItems.findIndex(candidate => String(candidate.id) === String(item.id));
   const title = cleanSourceTitle(item.source);
   els.practiceSource.textContent = `${status} · 第 ${globalIndex + 1}/${allItems.length} 题 · ${title} · 原题第 ${item.number} 空`;
   els.practiceOriginal.textContent = item.originalSentence;
   els.practiceTarget.innerHTML = escapeHtml(item.targetSentence).replace(/_+/g, '<span class="blank">______</span>');
+  els.practiceQuestion.classList.remove('hidden');
+  els.practiceSummary.classList.add('hidden');
+  els.newPractice.classList.remove('hidden');
   els.answerInput.value = '';
+  els.answerInput.disabled = false;
+  els.nextPractice.disabled = true;
+  els.nextPractice.textContent = globalIndex === allItems.length - 1 ? '完成本篇' : '下一题';
   els.answerInput.focus();
   setFeedback('', '');
   updatePracticeProgress();
 }
 
 function cleanSourceTitle(source) {
-  return String(source || '')
+  const text = String(source || '').trim();
+  if (text.includes('｜')) {
+    return text.split('｜').slice(1).join('｜').trim();
+  }
+  return text
     .replace(/^2025\s*专练\s*读写题（[^）]+）[A-Z]\s*/u, '')
     .replace(/^2026\s*模考\s*Passage\s*\d+\s*/iu, '')
     .replace(/^复习讲义\s*Passage\s*\d+\s*/iu, '')
@@ -640,15 +667,20 @@ function cleanSourceTitle(source) {
     .trim();
 }
 
+function getReadingOfficialExamYear(source) {
+  const text = String(source || '').trim();
+  if (!/初中学业水平考试英语真题|新疆.*中考.*真题/.test(text)) return 0;
+  const match = text.match(/20\d{2}/);
+  return match ? Number(match[0]) : 0;
+}
+
 function getArticleDisplaySource(source) {
   const text = String(source || '').trim();
-  if (text.includes('初中学业水平考试英语真题')) return text;
-  if (text.includes('2026新疆中考英语真题')) return text;
+  if (text.includes('｜')) return text.split('｜')[0].trim();
   return '2026新疆优质模考题汇编';
 }
 
 function checkAnswer() {
-  if (state.answerSubmitting) return;
   const item = state.currentPractice;
   if (!item) return;
   const typed = els.answerInput.value.trim();
@@ -660,20 +692,27 @@ function checkAnswer() {
   const answers = getAcceptableAnswers(item);
   const matchedAnswer = answers.find(answer => normalizeAnswer(typed) === normalizeAnswer(answer));
   const displayAnswer = answers.join(' / ');
-  state.answerSubmitting = true;
-  if (matchedAnswer) {
+  const isCorrect = Boolean(matchedAnswer);
+  state.practiceAttempts[String(item.id)] = {
+    answer: typed,
+    correct: isCorrect,
+    submittedAt: new Date().toISOString()
+  };
+  savePracticeAttempts();
+  if (isCorrect) {
     state.completedPractice.add(String(item.id));
     saveCompletedPractice();
-    saveCloudProgress();
-    updatePracticeProgress();
-    renderArticleList();
     setFeedback('good', `正确。${buildExplanation(item)}`);
   } else {
     setFeedback('bad', `错误。正确答案：${escapeHtml(displayAnswer)}。${buildExplanation(item)}`);
   }
-  setTimeout(() => {
-    state.answerSubmitting = false;
-  }, 450);
+  saveCloudProgress();
+  updatePracticeProgress();
+  renderArticleList();
+  els.answerInput.disabled = true;
+  els.nextPractice.disabled = false;
+  const unfinished = getUnfinishedPracticeItems();
+  els.nextPractice.textContent = unfinished.length ? '下一题' : '查看本篇结果';
 }
 
 function getAcceptableAnswers(item) {
@@ -690,13 +729,74 @@ function normalizeAnswer(value) {
 
 function updatePracticeProgress() {
   if (!state.data) return;
-  const total = getPracticeItems().length;
-  const completed = getPracticeItems().filter(item => state.completedPractice.has(String(item.id))).length;
-  const unfinished = Math.max(total - completed, 0);
-  const percent = total ? Math.round((completed / total) * 100) : 0;
-  els.practiceProgressText.textContent = `未完成：${unfinished} 题`;
-  els.practiceProgressRatio.textContent = `${completed}/${total}`;
-  els.practiceProgressFill.style.width = `${percent}%`;
+  const progress = getPracticeProgress();
+  els.practiceProgressText.textContent = `未完成：${progress.unfinished} 题`;
+  els.practiceProgressRatio.textContent = `${progress.completed}/${progress.total}`;
+  els.practiceProgressFill.style.width = `${progress.percent}%`;
+  els.practiceProgressFill.parentElement?.setAttribute('aria-label', `已完成 ${progress.completed}/${progress.total} 题`);
+}
+
+function getPracticeProgress() {
+  const items = getPracticeItems();
+  const completed = items.reduce((count, item) => (
+    count + (hasPracticeAttempt(item.id) ? 1 : 0)
+  ), 0);
+  const total = items.length;
+  return {
+    items,
+    total,
+    completed,
+    unfinished: Math.max(total - completed, 0),
+    percent: total ? Math.round((completed / total) * 100) : 0
+  };
+}
+
+function hasPracticeAttempt(id) {
+  return Boolean(state.practiceAttempts[String(id)]);
+}
+
+function showArticleSummary() {
+  const items = getPracticeItems();
+  if (!items.length) return;
+  const attempts = items.map(item => ({ item, attempt: state.practiceAttempts[String(item.id)] }));
+  const correct = attempts.filter(entry => entry.attempt && entry.attempt.correct).length;
+  const wrong = attempts.filter(entry => entry.attempt && !entry.attempt.correct);
+  const answered = attempts.filter(entry => entry.attempt);
+  const accuracy = Math.round((correct / items.length) * 100);
+  state.currentPractice = null;
+  els.practiceQuestion.classList.add('hidden');
+  els.practiceSummary.classList.remove('hidden');
+  els.newPractice.classList.add('hidden');
+  els.practiceSource.textContent = `${cleanSourceTitle(state.currentArticleSource)} · 本篇已做完`;
+  els.practiceSummary.innerHTML = `
+    <div class="article-result-head">
+      <span class="result-finished">本篇已做完</span>
+      <strong>${correct}/${items.length}</strong>
+      <span>正确率 ${accuracy}%</span>
+    </div>
+    <div class="practice-result-summary">
+      <span>已答 ${answered.length} 题</span>
+      <span class="result-correct">正确 ${correct} 题</span>
+      <span class="result-wrong">错误 ${wrong.length} 题</span>
+    </div>
+    ${answered.length ? `
+      <div class="wrong-review-list">
+        <h3>逐题结果</h3>
+        ${answered.map(({ item, attempt }) => `
+          <article class="wrong-review-item ${attempt.correct ? 'correct-review-item' : 'wrong-review-item'}">
+            <div class="wrong-review-number">原题第 ${escapeHtml(item.number)} 空</div>
+            <div class="result-status">${attempt.correct ? '✓ 正确' : '✕ 错误'}</div>
+            <p><strong>原句：</strong>${escapeHtml(item.originalSentence)}</p>
+            <p><strong>转化句：</strong>${escapeHtml(item.targetSentence).replace(/_+/g, '<span class="blank">______</span>')}</p>
+            <p class="wrong-answer"><strong>你的答案：</strong>${escapeHtml(attempt.answer || '未填写')}</p>
+            <p class="right-answer"><strong>正确答案：</strong>${escapeHtml(getAcceptableAnswers(item).join(' / '))}</p>
+          </article>
+        `).join('')}
+      </div>
+    ` : '<div class="all-correct-message">暂无答题记录。</div>'}
+  `;
+  updatePracticeProgress();
+  renderArticleList();
 }
 
 function buildExplanation(item) {
@@ -730,6 +830,32 @@ function loadCompletedPractice() {
   }
 }
 
+function loadPracticeAttempts() {
+  try {
+    const value = JSON.parse(localStorage.getItem(PRACTICE_ATTEMPTS_KEY) || '{}');
+    return value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+  } catch {
+    return {};
+  }
+}
+
+function savePracticeAttempts() {
+  localStorage.setItem(PRACTICE_ATTEMPTS_KEY, JSON.stringify(state.practiceAttempts));
+}
+
+function migrateCompletedPracticeToAttempts() {
+  state.completedPractice.forEach(id => {
+    if (!state.practiceAttempts[String(id)]) {
+      state.practiceAttempts[String(id)] = {
+        answer: '',
+        correct: true,
+        legacy: true
+      };
+    }
+  });
+  savePracticeAttempts();
+}
+
 function saveCompletedPractice() {
   localStorage.setItem(PRACTICE_DONE_KEY, JSON.stringify([...state.completedPractice]));
 }
@@ -752,6 +878,13 @@ async function loadCloudProgress() {
       ]);
       saveCompletedPractice();
     }
+    if (progress.practiceAttempts && typeof progress.practiceAttempts === 'object' && !Array.isArray(progress.practiceAttempts)) {
+      state.practiceAttempts = {
+        ...progress.practiceAttempts,
+        ...state.practiceAttempts
+      };
+      migrateCompletedPracticeToAttempts();
+    }
     if (Array.isArray(progress.mastered)) {
       state.mastered = new Set([
         ...state.mastered,
@@ -759,6 +892,7 @@ async function loadCloudProgress() {
       ]);
       localStorage.setItem(MASTERED_KEY, JSON.stringify([...state.mastered]));
     }
+    migrateCompletedPracticeToAttempts();
   } catch (error) {
     console.warn('Load reading-writing cloud progress failed:', error);
   }
@@ -784,6 +918,7 @@ async function saveCloudProgress() {
       input_lesson_id: '__reading_writing__',
       input_progress: {
         completedPractice: [...state.completedPractice],
+        practiceAttempts: state.practiceAttempts,
         mastered: [...state.mastered],
         updatedAt: new Date().toISOString()
       },
@@ -807,9 +942,3 @@ function escapeHtml(value) {
 function escapeAttr(value) {
   return escapeHtml(value).replaceAll('`', '&#96;');
 }
-
-const baseUpdatePracticeProgress = updatePracticeProgress;
-updatePracticeProgress = function() {
-  baseUpdatePracticeProgress();
-  applyTrialCopy();
-};
