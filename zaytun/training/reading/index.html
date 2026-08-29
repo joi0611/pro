@@ -35,8 +35,7 @@
       padding: 10px 18px;
       background: #fff;
       border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
+      position: static;
       z-index: 10;
     }
     h1 { margin: 0; font-size: 18px; }
@@ -370,6 +369,18 @@
     .compare-answer.wrong {
       border-color: #f1aaa8;
       background: #fff0f0;
+    }
+    .compare-status {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: var(--brand-soft);
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .action:disabled,
+    .compare-answer:disabled {
+      cursor: not-allowed;
+      opacity: .68;
     }
     .sentence-compare {
       display: grid;
@@ -807,7 +818,7 @@
         ]
       }];
 
-    const state = { view: "home", catalogLetter: "", passage: 0, question: 0, chosenWords: [], chosenAnswer: "", located: false, compared: false, keywordsConfirmed: false, answers: {} };
+    const state = { view: "home", catalogLetter: "", passage: 0, question: 0, chosenWords: [], chosenAnswer: "", attemptSubmitted: false, located: false, compared: false, keywordsConfirmed: false, answers: {} };
     const detailCompareLabels = ["原词复现", "同义替换", "无依据", "偷换对象", "数字/时间错误", "范围错误", "反向表达"];
     const globalCompareLabels = ["全文覆盖", "只涵盖细节", "范围过大", "范围过窄", "偏离主题", "吸引力较弱", "最佳标题"];
     const structureCompareLabels = ["结构吻合", "层次错分", "方法段误判", "总结段误判", "无依据", "最佳结构"];
@@ -820,6 +831,10 @@
 
     function isTrialMode() {
       try { return new URLSearchParams(location.search).get("trial") === "1"; } catch { return false; }
+    }
+
+    function isLocalFileMode() {
+      return window.location.protocol === "file:";
     }
 
     function cleanLoginCode(value) {
@@ -869,6 +884,10 @@
         document.body.classList.add("trial-mode");
         unlockApp();
         openTrialPassage();
+        return;
+      }
+      if (isLocalFileMode()) {
+        unlockApp();
         return;
       }
       const saved = cleanLoginCode(localStorage.getItem(LOGIN_STORAGE_KEY));
@@ -1027,7 +1046,7 @@
     }
 
     function isRealExam(p) {
-      return /真题|中考真题/.test(`${p.id} ${p.meta}`);
+      return /20\d{2}.*新疆.*(?:中考.*真题|真题)/.test(`${p.id} ${p.meta}`);
     }
 
     function passageTitleHtml(p) {
@@ -1042,7 +1061,13 @@
     }
 
     function sortedCatalogList(list) {
-      return [...list].sort((a, b) => passageYear(b) - passageYear(a) || passages.indexOf(a) - passages.indexOf(b));
+      return [...list].sort((a, b) => {
+        const aOfficial = isRealExam(a);
+        const bOfficial = isRealExam(b);
+        if (aOfficial !== bOfficial) return aOfficial ? -1 : 1;
+        if (aOfficial && passageYear(a) !== passageYear(b)) return passageYear(b) - passageYear(a);
+        return passages.indexOf(a) - passages.indexOf(b);
+      });
     }
 
     function renderArticle() {
@@ -1263,7 +1288,8 @@
       const p = currentPassage();
       const q = currentQuestion();
       state.chosenWords = [];
-      state.chosenAnswer = state.answers[answerKey(q)]?.chosen || "";
+      state.chosenAnswer = "";
+      state.attemptSubmitted = false;
       state.located = false;
       state.compared = false;
       state.keywordsConfirmed = false;
@@ -1280,7 +1306,6 @@
       $("chosenKeywordText").textContent = "已划关键词：暂未选择";
       $("answerSentence").className = "answer-sentence";
       $("answerSentence").innerHTML = "";
-      renderCompareBox();
       $("feedback").className = "feedback";
       $("feedback").innerHTML = "";
       if (useQuickCompare()) {
@@ -1289,6 +1314,7 @@
       } else {
         $("options").innerHTML = q.options.map(opt => `<button class="option" onclick="chooseAnswer('${optionKey(opt)}', this)">${escapeHtml(opt)}</button>`).join("");
       }
+      renderCompareBox();
     }
 
     function renderStepCopy(q) {
@@ -1388,46 +1414,31 @@
     }
 
     function renderQuickCompareBox(q) {
-      const submitted = Boolean(state.answers[answerKey(q)]);
+      const submitted = state.attemptSubmitted;
       $("compareBox").className = "compare show";
       $("compareBox").innerHTML = `
-        ${q.options.map((opt, index) => {
+        ${q.options.map(opt => {
           const key = optionKey(opt);
           const picked = state.chosenAnswer === key;
-          const correct = key === q.answer;
-          return `<button class="compare-answer ${picked ? "selected" : ""} ${submitted ? (correct ? "correct" : "wrong") : ""}" onclick="chooseQuickAnswer('${key}')">
-            ${escapeHtml(opt)}
-            ${submitted ? `<div class="trap-label ${correct ? "good" : "bad"}">${correct ? "匹配答案句" : optionCompareInfo(q, opt, index).label}</div>` : ""}
-          </button>`;
+          return `<button class="compare-answer ${picked ? "selected" : ""}" onclick="chooseQuickAnswer('${key}')" ${submitted ? "disabled" : ""}>${escapeHtml(opt)}</button>`;
         }).join("")}
         <div class="compare-actions">
-          <button class="action" onclick="submitQuickCompare()">${submitted ? "已完成本题" : "提交判断"}</button>
-          ${submitted ? `<button class="action secondary" onclick="toggleTraps()">${state.trapsVisible ? "收起完整解析" : "查看完整解析"}</button>` : ""}
+          <button class="action" onclick="submitQuickCompare()" ${submitted ? "disabled" : ""}>${submitted ? "选择已提交" : "确认选择"}</button>
         </div>
-        ${submitted ? `<div class="compare-feedback show"><strong>${state.chosenAnswer === q.answer ? "判断正确" : "再看答案句"}：${q.answer}</strong><br>${escapeHtml(q.explanation)}<br>关键依据：${escapeHtml(locatedEvidenceText(q))}</div>` : ""}
-        ${state.trapsVisible || submitted ? q.options.map((opt, index) => {
-          const info = optionCompareInfo(q, opt, index);
-          const key = optionKey(opt);
-          const label = key === q.answer ? "匹配答案句" : info.label;
-          return `<div class="compare-row">
-            <div>${escapeHtml(opt)}</div>
-            <div class="trap-label ${key === q.answer ? "good" : "bad"}">${escapeHtml(label)}</div>
-            <div class="compare-feedback show">${highlightCompareTerms(info.feedback)}</div>
-          </div>`;
-        }).join("") : ""}
+        ${submitted ? `<div class="compare-status">你已完成选择。正确答案和各选项判断依据请在第 4 步“复盘”中查看。</div>` : `<div class="hint">先逐项对照原文证据，再选择你认为最合适的答案。选择前不会显示正确项。</div>`}
       `;
       renderQuickReview(q);
     }
 
     function chooseQuickAnswer(value) {
-      if (state.answers[answerKey(currentQuestion())]) return;
+      if (state.attemptSubmitted) return;
       state.chosenAnswer = value;
       renderCompareBox();
     }
 
     function submitQuickCompare() {
       const q = currentQuestion();
-      if (state.answers[answerKey(q)]) return;
+      if (state.attemptSubmitted) return;
       if (!state.chosenAnswer) {
         $("feedback").className = "feedback show bad";
         $("feedback").innerHTML = "请先在第 3 步选择一个你判断的最优答案。";
@@ -1435,9 +1446,10 @@
       }
       const correct = state.chosenAnswer === q.answer;
       state.answers[answerKey(q)] = { correct, chosen: state.chosenAnswer };
-      state.trapsVisible = true;
-      $("feedback").className = `feedback show ${correct ? "good" : "bad"}`;
-      $("feedback").innerHTML = `<strong>${correct ? "判断正确" : "再看答案句"}：${q.answer}</strong><br>${escapeHtml(q.explanation)}`;
+      state.attemptSubmitted = true;
+      state.trapsVisible = false;
+      $("feedback").className = "feedback";
+      $("feedback").innerHTML = "";
       renderCompareBox();
       renderTabs();
       renderStats();
@@ -1449,15 +1461,23 @@
     }
 
     function renderQuickReview(q) {
-      const saved = state.answers[answerKey(q)];
+      const saved = state.attemptSubmitted ? state.answers[answerKey(q)] : null;
       if (!useQuickCompare()) return;
+      $("submitBtn").classList.add("hidden");
+      $("nextBtn").disabled = !saved;
       if (!saved) {
         $("finalStem").textContent = "复盘：先在第 3 步完成判断，提交后这里会显示答案和解析。";
         $("options").innerHTML = "";
         return;
       }
-      $("finalStem").textContent = `复盘：正确答案 ${q.answer}`;
-      $("options").innerHTML = `<div class="feedback show ${saved.correct ? "good" : "bad"}">${escapeHtml(q.explanation)}<br>关键依据：${escapeHtml(locatedEvidenceText(q))}</div>`;
+      $("finalStem").textContent = `复盘：你选择 ${saved.chosen}，正确答案 ${q.answer}`;
+      $("options").innerHTML = `
+        <div class="feedback show ${saved.correct ? "good" : "bad"}"><strong>${saved.correct ? "判断正确" : "这一次没有选对"}</strong><br>${escapeHtml(q.explanation)}<br>关键依据：${escapeHtml(locatedEvidenceText(q))}</div>
+        ${q.options.map((opt, index) => {
+          const key = optionKey(opt), info = optionCompareInfo(q, opt, index), correct = key === q.answer;
+          return `<div class="compare-row"><div>${escapeHtml(opt)}</div><div class="trap-label ${correct ? "good" : "bad"}">${escapeHtml(correct ? "匹配答案句" : info.label)}</div><div class="compare-feedback show">${highlightCompareTerms(info.feedback)}</div></div>`;
+        }).join("")}
+      `;
     }
 
     function renderACompareBox(q) {
@@ -1498,6 +1518,7 @@
       const q = currentQuestion();
       if (useQuickCompare()) {
         renderQuickReview(q);
+        appendCurrentPassageSummary();
         if (!state.answers[answerKey(q)]) {
           $("feedback").className = "feedback show bad";
           $("feedback").innerHTML = "这篇测试文章已改为第 3 步直接作答，请先在“比”的环节提交判断。";
@@ -1514,7 +1535,21 @@
       `;
       renderTabs();
       renderStats();
+      appendCurrentPassageSummary();
     };
+
+    function appendCurrentPassageSummary() {
+      const passage = currentPassage();
+      if (!passage || !passage.questions?.length) return;
+      const results = passage.questions.map(question => state.answers[answerKey(question)]).filter(Boolean);
+      if (results.length !== passage.questions.length) return;
+      const correct = results.filter(result => result.correct).length;
+      const wrongQuestions = passage.questions.filter(question => !state.answers[answerKey(question)]?.correct);
+      const summary = `<hr><strong>本篇完成：正确 ${correct} 题，错误 ${wrongQuestions.length} 题，正确率 ${Math.round(correct / passage.questions.length * 100)}%</strong>`
+        + (wrongQuestions.length ? `<br>错误题目：${wrongQuestions.map(question => question.number).join("、")}` : "<br>本篇全部答对。");
+      const feedback = $("feedback");
+      if (feedback && !feedback.innerHTML.includes("本篇完成：")) feedback.innerHTML += summary;
+    }
 
     $("nextBtn").onclick = () => {
       const qs = currentPassage().questions;
