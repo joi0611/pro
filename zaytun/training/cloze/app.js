@@ -45,21 +45,21 @@
     ' to the world.'
   ],
   questions: [
-    q(21, ["look", "listen", "walk"], "look", "动词", "逻辑推理", ["and you will see"], "动作发生的因果逻辑，只有先发出“看”的动作，才能得到“看见”的结果。"),
-    q(22, ["peace", "life", "luck"], "life", "名词", "上下文复现", ["grass", "trees", "leaves"], "Green代表草木，是生命的象征，且下文Blue和Red也在聊life，属于语义场复现。"),
+    q(21, ["look", "listen", "walk"], "look", "动词", "逻辑推理 / 固定搭配", ["and you will see"], "这题有两条正确路径：结构上，look at 表示“看”；语境上，后文 and you will see 说明前面先发生“看”的动作。两条线索都锁定 look。", "look at", "动词短语", "动词(look) + 介词(at)"),
+    q(22, ["peace", "life", "luck"], "life", "名词", "上下文复现", ["of grass, trees","grass, trees, and","trees, and leaves"], "Green代表草木，是生命的象征，且下文Blue和Red也在聊life，属于语义场复现。"),
     q(23, ["happily", "quietly", "angrily"], "angrily", "形容词副词", "情感态度", ["You're wrong!"], "“你错了！”带有攻击性和负面情绪，顺着态度褒贬法则锁定angrily。"),
     q(24, ["everything", "nothing", "something"], "nothing", "代词", "逻辑推理", ["Without the peace"], "没有了和平，你们什么都不是，逻辑指向nothing。"),
     q(25, ["courage", "beauty", "wisdom"], "courage", "名词", "上下文复现", ["make people brave"], "后文brave指向勇敢，名词形式呼应courage。"),
     q(26, ["fun", "silence", "joy"], "silence", "名词", "上下文复现", ["Its voice was quieter"], "声音更安静quieter，语义自然呼应silence。"),
     q(27, ["love", "power", "thought"], "thought", "名词", "上下文复现", ["and deep thinking"], "and连接并列内容，thinking与thought形成语义复现。"),
     q(28, ["arguing", "laughing", "playing"], "arguing", "动词", "上下文复现", ["the colors argued"], "首句已经出现argued，此处是原词复现，颜色们继续争吵。"),
-    q(29, ["shape", "size", "importance"], "importance", "名词", "上下文复现", ["who was the most important"], "首句争论谁最重要，此处用importance形成同根复现。"),
+    q(29, ["shape", "size", "importance"], "importance", "名词", "上下文复现", ["took pride in its own"], "首句争论谁最重要，此处用importance形成同根复现。"),
     q(30, ["Snow", "Rain", "Wind"], "Rain", "名词", "上下文复现", ["The Rain spoke"], "答案在下一段开头，典型下文原词复现。"),
-    q(31, ["shouted", "hid", "gathered"], "gathered", "动词", "逻辑推理", ["close to one another for comfort and warmth"], "为了取暖和安慰彼此靠近，连贯动作指向gathered。"),
-    q(32, ["lightning", "rainbow", "thunder"], "rainbow", "名词", "常识", ["colors", "Rain"], "各种颜色聚在一起加上下雨，根据常识推断为rainbow。"),
-    q(33, ["good", "better", "best"], "better", "形容词副词", "语法", ["much"], "much修饰形容词比较级，选better。"),
+    q(31, ["shouted", "hid", "gathered"], "gathered", "动词", "逻辑推理", ["for comfort and warmth"], "为了取暖和安慰彼此靠近，连贯动作指向gathered。"),
+    q(32, ["lightning", "rainbow", "thunder"], "rainbow", "名词", "常识", ["colors were surprised", "pour down"], "各种颜色聚在一起加上下雨，根据常识推断为rainbow。"),
+    q(33, ["good", "better", "best"], "better", "形容词副词", "语法", ["are much better"], "much修饰形容词比较级，选better。"),
     q(34, ["Instead", "However", "Besides"], "Instead", "连词逻辑", "逻辑推理", ["never argued", "always appear together"], "前面是不再争吵，后面是一起出现，属于替代动作逻辑。"),
-    q(35, ["stories", "sights", "colors"], "sights", "名词", "常识 / 词汇辨析", ["beautiful"], "彩虹向世界展示的是美丽的风景，sights更贴合搭配。")
+    q(35, ["stories", "sights", "colors"], "sights", "名词", "常识 / 词汇辨析", ["most beautiful sights"], "彩虹向世界展示的是美丽的风景，sights更贴合搭配。")
   ],
   verifySentences: [
     {
@@ -235,20 +235,20 @@ const nineColoredDeer = {
     " it, and flowers grew brighter wherever it walked."
   ],
   questions: [
-    q(21, ["a", "an", "the"], "a", "冠词", "语法", ["magical deer", "首次提到"], "第一次提到这只鹿，表泛指，且 magical 首字母是辅音音素，故使用不定冠词 a。"),
-    q(22, ["slowly", "quietly", "brightly"], "brightly", "形容词副词", "逻辑推理 / 词汇辨析", ["shining", "as white as snow"], "顺着前文“像雪一样白”和 shining 的逻辑指向，光芒应该是 brightly。"),
-    q(23, ["drink", "drinking", "drank"], "drinking", "固定搭配", "语法 / 固定搭配", ["while"], "while 后若主语一致可直接加 doing，表示“在做某事的时候”。", "while doing sth.", "固定句型", "连词(while) + 动名词(doing)"),
+    q(21, ["a", "an", "the"], "a", "冠词", "语法", ["Deep in a forest", "magical deer"], "文章第一次提到这只鹿，用不定冠词；magical 以辅音音素开头，因此选 a。an 用在元音音素前，the 表示特指。"),
+    q(22, ["slowly", "quietly", "brightly"], "brightly", "形容词副词", "逻辑推理 / 词汇辨析", ["patterns, shining brightly","as white as snow"], "顺着前文“像雪一样白”和 shining 的逻辑指向，光芒应该是 brightly。"),
+    q(23, ["drink", "drinking", "drank"], "drinking", "固定搭配", "语法 / 固定搭配", ["while drinking water"], "while 后若主语一致可直接加 doing，表示“在做某事的时候”。", "while doing sth.", "固定句型", "连词(while) + 动名词(doing)"),
     q(24, ["jumped", "run", "swam"], "jumped", "动词", "固定搭配 / 逻辑推理", ["into the river"], "为了救落水者，鹿毫不犹豫地跳进河里。", "jump into", "动词短语", "动词(jump) + 介词(into)"),
-    q(25, ["forest", "bank", "palace"], "bank", "名词", "常识", ["pulled the man to", "river"], "从河里把人救上来，必然是拉到岸边 bank。"),
+    q(25, ["forest", "bank", "palace"], "bank", "名词", "常识", ["into the river", "pulled the man"], "从河里把人救上来，必然是拉到岸边 bank。"),
     q(26, ["angry", "sadly", "thankful"], "thankful", "形容词副词", "情感态度 / 固定搭配", ["How can I repay you?"], "商人问“我该如何报答你？”，说明情绪为正向，选 thankful。", "be thankful to sb.", "形容词搭配", "系动词(be) + 形容词(thankful) + 介词(to) + 某人(sb.)"),
     q(27, ["agreed", "refused", "cried"], "agreed", "动词", "逻辑推理", ["and left happily"], "and 提示前后动作情感一致，开心离开说明他同意了请求。"),
-    q(28, ["study", "dream", "date"], "dream", "固定搭配", "固定搭配", ["had a ___ about a magical deer"], "王后做了一个关于神奇九色鹿的梦。", "have a dream about", "动词短语", "动词(have) + 冠词(a) + 名词(dream) + 介词(about)"),
+    q(28, ["study", "dream", "date"], "dream", "固定搭配", "固定搭配", ["queen of the country", "magical deer"], "王后做了一个关于神奇九色鹿的梦。", "have a dream about", "动词短语", "动词(have) + 冠词(a) + 名词(dream) + 介词(about)"),
     q(29, ["trader", "queen", "deer"], "trader", "名词", "上下文复现", ["The man, who was a trader"], "上文明确交代被救男人是 trader，此处为原词复现。"),
     q(30, ["last", "unlucky", "only"], "only", "形容词副词", "逻辑推理", ["never to tell anyone"], "九色鹿让他不要告诉任何人，商人意识到自己是唯一知道下落的人。"),
     q(31, ["followed", "led", "fought"], "led", "动词", "逻辑推理", ["soldiers into the forest"], "只有商人知道位置，所以是带领士兵进入森林。"),
     q(32, ["proudly", "nervously", "calmly"], "calmly", "形容词副词", "情感态度 / 逻辑推理", ["turned to the emperor and said"], "九色鹿没有逃跑，而是转身陈述事实，说明它很镇定。"),
     q(33, ["idea", "secret", "plan"], "secret", "固定搭配", "固定搭配 / 上下文复现", ["promise never to tell anyone"], "keep the secret 与 never to tell anyone 完美呼应。", "keep a/the secret", "动词短语", "动词(keep) + 冠词(the) + 名词(secret)"),
-    q(34, ["into", "on", "up"], "into", "介词搭配", "固定搭配", ["put the trader ___ prison"], "皇帝下令把商人投入监狱，固定短语为 put sb. into prison。", "put sb. into prison", "动词短语", "动词(put) + 某人(sb.) + 介词(into) + 名词(prison)"),
+    q(34, ["into", "on", "up"], "into", "介词搭配", "固定搭配", ["ordered the soldiers", "as punishment"], "皇帝下令惩罚商人，结构 put sb. into prison 表示把某人关进监狱，因此选 into。", "put sb. into prison", "动词短语", "动词(put) + 某人(sb.) + 介词(into) + 名词(prison)"),
     q(35, ["under", "in", "around"], "around", "介词搭配", "逻辑推理", ["lived peacefully", "flowers grew brighter"], "鸟儿在九色鹿周围歌唱，符合结尾积极美好的童话意境。")
   ],
   verifySentences: [
@@ -327,21 +327,21 @@ const supermarketWarmth = {
     "."
   ],
   questions: [
-    q(21, ["took", "cost", "spent"], "spent", "动词", "词汇辨析 / 固定搭配", ["We", "an hour buying food"], "主语是人 We，后面跟时间 an hour 和动名词 buying，花费时间做某事用 spend。", "spend time (in) doing sth.", "固定句型", "动词(spend) + 时间(an hour) + 动名词(buying)"),
+    q(21, ["took", "cost", "spent"], "spent", "动词", "词汇辨析 / 固定搭配", ["an hour buying food", "for the coming week"], "主语是人，后面跟时间 an hour 和动名词 buying，使用 spend time doing sth.。take 通常用 It 作形式主语，cost 的主语通常是物。", "spend time (in) doing sth.", "固定句型", "动词(spend) + 时间(an hour) + 动名词(buying)"),
     q(22, ["computer", "phone", "radio"], "phone", "名词", "上下文复现 / 常识", ["Can a phone ever do that?"], "下文母亲反问 Can a phone ever do that?，此处属于跨段落原词复现。"),
-    q(23, ["how", "what", "when"], "how", "代词", "语法 / 固定搭配", ["learned ___ to do it"], "考查“疑问词+不定式”作宾语，妈妈学会了如何用手机点单。", "learn how to do sth.", "动词短语", "动词(learn) + 疑问副词(how) + 不定式(to do)"),
-    q(24, ["laughed", "explained", "cried"], "explained", "动词", "逻辑推理 / 情感态度", ["tried to tell her all the good points"], "我在向母亲陈述网上购物的好处，这种沟通动作是 explained。"),
+    q(23, ["how", "what", "when"], "how", "代词", "语法 / 固定搭配", ["a few weeks ago"], "考查“疑问词+不定式”作宾语，妈妈学会了如何用手机点单。", "learn how to do sth.", "动词短语", "动词(learn) + 疑问副词(how) + 不定式(to do)"),
+    q(24, ["laughed", "explained", "cried"], "explained", "动词", "逻辑推理 / 情感态度", ["around the supermarket"], "我在向母亲陈述网上购物的好处，这种沟通动作是 explained。"),
     q(25, ["easier", "harder", "busier"], "easier", "形容词副词", "逻辑推理 / 上下文复现", ["much faster", "easier ways"], "顺着 faster 和送到家门口的逻辑，生活会变得 easier；下文 easier ways 也是复现。"),
-    q(26, ["sometimes", "often", "anymore"], "anymore", "形容词副词", "固定搭配 / 语法", ["won't"], "否定句中 not... anymore 表示“不再”。", "not... anymore", "固定句型", "否定词(not) + 副词(anymore)"),
+    q(26, ["sometimes", "often", "anymore"], "anymore", "形容词副词", "固定搭配 / 语法", ["If I do that", "Mrs. Chen"], "否定句中 not... anymore 表示“不再”。", "not... anymore", "固定句型", "否定词(not) + 副词(anymore)"),
     q(27, ["of", "to", "with"], "with", "介词搭配", "语法 / 介词辨析", ["an old lady", "a kind face"], "这里不是固定搭配，而是介词含义判断：with 表示“带有”，用来修饰老奶奶的外貌特征。"),
     q(28, ["minutes", "hours", "days"], "minutes", "名词", "常识 / 逻辑推理", ["greeted us", "walked to the fruit area"], "在超市遇到熟人停下来打招呼，通常只聊几分钟。", "for a few minutes", "介词短语", "介词(for) + 数量词(a few) + 名词复数(minutes)"),
     q(29, ["light", "heavy", "small"], "heavy", "形容词副词", "逻辑推理", ["helped the lady carry"], "既然妈妈需要帮忙提袋子，反推袋子应该是 heavy。"),
     q(30, ["healthy", "unhappy", "ill"], "ill", "形容词副词", "逻辑推理", ["Mrs. Chen sent us hot soup"], "陈太太送热汤是照顾行为，说明当时“我”生病了。"),
-    q(31, ["And", "But", "However"], "And", "连词逻辑", "逻辑推理", ["上一句送汤", "本句还钱包"], "妈妈讲了两件充满人情味的事情，属于并列递进关系。"),
+    q(31, ["And", "But", "However"], "And", "连词逻辑", "逻辑推理", ["sent us hot soup", "lost my wallet here"], "前一句讲陈太太送汤，后一句继续补充超市员工归还钱包，两件暖心事件是并列递进关系，因此用 And；But 和 However 都表示转折。"),
     q(32, ["lent", "returned", "threw"], "returned", "动词", "固定搭配 / 逻辑推理", ["found it", "to me"], "员工捡到钱包后的动作应是归还。", "return sth. to sb.", "动词短语", "动词(return) + 代词(sth.) + 介词(to) + 代词(sb.)"),
     q(33, ["Must", "May", "Can"], "Can", "动词", "语法 / 情感态度", ["a phone ever do that?"], "母亲反问手机能否做到真实温暖的交流，表示能力或可能性用 Can。"),
-    q(34, ["something", "anything", "nothing"], "something", "代词", "语法", ["understood", "important"], "肯定句中表示“某事”用 something，且形容词 important 后置。", "something important", "名词搭配", "不定代词(something) + 形容词(important)"),
-    q(35, ["another", "other", "others"], "other", "代词", "固定搭配", ["each"], "each other 表示“彼此，互相”，呼应文章温暖积极的基调。", "each other", "固定句型", "代词(each) + 代词(other)")
+    q(34, ["something", "anything", "nothing"], "something", "代词", "语法", ["I understood something","understood something important"], "肯定句中表示“某事”用 something，且形容词 important 后置。", "something important", "名词搭配", "不定代词(something) + 形容词(important)"),
+    q(35, ["another", "other", "others"], "other", "代词", "固定搭配", ["to each other"], "each other 表示“彼此，互相”，呼应文章温暖积极的基调。", "each other", "固定句型", "代词(each) + 代词(other)")
   ],
   verifySentences: [
     { english: "Last Saturday, I went to the supermarket with my mom.", chinese: "上周六，我和妈妈去了超市。" },
@@ -416,20 +416,20 @@ const oldBookWarmth = {
   ],
   questions: [
     q(21, ["missed", "hated", "hit"], "hit", "动词", "逻辑推理 / 固定搭配", ["the smell of paper and ink", "like an old friend"], "纸墨的气味像老朋友一样扑面而来，英文中感觉或气味突然袭来常用 hit。", "hit sb. like...", "动词短语", "动词(hit) + 代词(sb.) + 介词短语(like...)"),
-    q(22, ["flew", "ran", "fell"], "fell", "动词", "常识 / 逻辑推理", ["a yellowed note", "out"], "从破旧的书里，一张泛黄的便签是掉出来的。", "fall out", "动词短语", "动词(fall) + 副词(out)"),
-    q(23, ["what", "if", "why"], "if", "连词逻辑", "语法 / 固定搭配", ["wondered"], "我想知道这是否是祖母的书，wonder if... 表示“想知道是否”。", "wonder if...", "固定句型", "动词(wonder) + 引导词(if) + 宾语从句"),
-    q(24, ["Both", "All", "None"], "All", "代词", "上下文复现 / 逻辑推理", ["a supermarket list", "three ticket stubs"], "一张清单加三张票根，一共四件物品，三者及以上用 All。"),
-    q(25, ["letter", "gift", "message"], "message", "名词", "逻辑推理 / 常识", ["posted the note online", "replied"], "便签发到网上，Emily 的回复应是网络留言或信息。"),
+    q(22, ["flew", "ran", "fell"], "fell", "动词", "常识 / 逻辑推理", ["a yellowed note","note fell out"], "从破旧的书里，一张泛黄的便签是掉出来的。", "fall out", "动词短语", "动词(fall) + 副词(out)"),
+    q(23, ["what", "if", "why"], "if", "连词逻辑", "语法 / 固定搭配", ["I wondered if"], "我想知道这是否是祖母的书，wonder if... 表示“想知道是否”。", "wonder if...", "固定句型", "动词(wonder) + 引导词(if) + 宾语从句"),
+    q(24, ["Both", "All", "None"], "All", "代词", "上下文复现 / 逻辑推理 / 固定搭配", ["a supermarket list", "three ticket stubs"], "这题有两条正确路径：结构上，all of them 表示“它们全部”；语境上，一张清单加三张票根共四件物品，三者及以上用 All。", "all of them", "代词结构", "代词(all) + 介词(of) + 宾格代词(them)"),
+    q(25, ["letter", "gift", "message"], "message", "名词", "逻辑推理 / 常识", ["posted the note online","Emily replied with"], "便签发到网上，Emily 的回复应是网络留言或信息。"),
     q(26, ["carefully", "loudly", "sadly"], "carefully", "形容词副词", "情感态度", ["wrote a new note", "felt warm"], "felt warm 是积极珍视的情绪，因此写便签应是 carefully。"),
     q(27, ["tradition", "picture", "program"], "picture", "名词", "常识", ["of a rose", "on the cover"], "书的封面上关于玫瑰的自然是图案或图片。"),
     q(28, ["under", "beside", "on"], "on", "介词搭配", "固定搭配", ["Rain beat", "my umbrella"], "雨点敲打在雨伞表面，介词用 on。", "beat on", "动词短语", "动词(beat) + 介词(on) + 名词(umbrella)"),
     q(29, ["Because", "Although", "Unless"], "Although", "连词逻辑", "逻辑推理", ["just a book", "it carried love"], "前半句只是一本书，后半句承载着爱，二者是让步转折关系。"),
-    q(30, ["everything", "nothing", "something"], "everything", "代词", "逻辑推理", ["short", "but stories live on"], "but 提示对比：生活中的一切短暂，但故事会延续。"),
+    q(30, ["everything", "nothing", "something"], "everything", "代词", "逻辑推理", ["stories live on", "hand to hand"], "but 提示对比：生活中的一切短暂，但故事会延续。"),
     q(31, ["carry", "carrying", "carried"], "carrying", "动词", "语法", ["They pass hand to hand"], "句子主干已完整，逗号后用 -ing 形式作伴随状语。"),
-    q(32, ["them", "her", "it"], "it", "代词", "上下文复现", ["kept the book", "take good care of"], "it 指代前文的 the book，单数物品用 it。", "take good care of sth.", "动词短语", "动词(take) + 形容词(good) + 名词(care) + 介词(of) + 代词(it)"),
+    q(32, ["them", "her", "it"], "it", "代词", "上下文复现", ["kept the book", "take good care of"], "it 指代前文的 the book，单数物品用 it；核心路径是代词指代，不展示搭配卡。"),
     q(33, ["just", "still", "never"], "just", "形容词副词", "逻辑推理", ["a new beginning"], "这仅仅是一个新的开始，契合爱意继续传递的意境。"),
     q(34, ["sad", "sweet", "boring"], "sweet", "形容词副词", "情感态度", ["a new beginning", "memory of the two Claras"], "文章基调积极温暖，回忆应是 sweet。"),
-    q(35, ["valuable", "more valuable", "most valuable"], "most valuable", "形容词副词", "语法", ["the", "in the world"], "the 加 in the world 表明使用最高级 most valuable。")
+    q(35, ["valuable", "more valuable", "most valuable"], "most valuable", "形容词副词", "语法", ["Love and stories", "in the world"], "圈出范围 in the world，再看前面的定冠词 the，说明是在世界范围内比较，应使用最高级 most valuable。")
   ],
   verifySentences: [
     { english: "I found an old bookstore by accident.", chinese: "我偶然发现了一家旧书店。" },
@@ -503,16 +503,16 @@ const tinySeedGrowth = {
     q(21, ["proper", "big", "strange"], "big", "形容词副词", "逻辑推理", ["small seed", "grow into a tall oak tree"], "虽然布鲁斯是一颗小种子，但他想长成参天大树，说明他有远大的梦想。"),
     q(22, ["although", "but", "so"], "although", "连词逻辑", "逻辑推理", ["believed that he would make it", "there were so many difficulties"], "相信自己能成功与前方有许多困难之间构成让步转折关系。"),
     q(23, ["went through", "searched for", "turned down"], "went through", "动词", "词汇辨析 / 固定搭配", ["strong winds", "heavy rains", "heating sun"], "went through 表示“经历、经受”。布鲁斯经历并熬过狂风、暴雨和烈日；searched for 是寻找，turned down 是拒绝或调低，都不符合挑战经历。", "go through", "动词短语", "动词(go) + 介词(through)"),
-    q(24, ["if", "before", "whether"], "whether", "连词逻辑", "固定搭配 / 语法", ["doubted", "or not"], "表示是否且句末跟 or not，引导词用 whether。", "whether... or not", "固定句型", "连词(whether) + 或者不(or not)"),
-    q(25, ["doesn't", "didn't", "don't"], "didn't", "动词", "语法", ["felt", "doubted"], "文章叙述过去经历，felt 和 doubted 都是过去时，此处也用 didn't。"),
+    q(24, ["if", "before", "whether"], "whether", "连词逻辑", "固定搭配 / 语法", ["and doubted whether","or not"], "表示是否且句末跟 or not，引导词用 whether。", "whether... or not", "固定句型", "连词(whether) + 或者不(or not)"),
+    q(25, ["doesn't", "didn't", "don't"], "didn't", "动词", "语法", ["he felt upset","and doubted whether"], "文章叙述过去经历，felt 和 doubted 都是过去时，此处也用 didn't。"),
     q(26, ["deeper", "closer", "faster"], "deeper", "形容词副词", "常识 / 逻辑推理", ["stand firmly", "into the earth"], "为了站稳，树根必须向泥土里扎得更深。"),
     q(27, ["snow", "wind", "sunlight"], "sunlight", "名词", "常识", ["leaves opened widely to reach for"], "树叶张开向上伸展，是为了吸收阳光。"),
     q(28, ["order", "problem", "dream"], "dream", "名词", "上下文复现", ["with big dreams"], "前文出现 big dreams，此处是原词复现。"),
     q(29, ["surprisingly", "sadly", "happily"], "surprisingly", "形容词副词", "情感态度 / 逻辑推理", ["How did you become so strong?"], "动物看到巨大的成长变化并询问原因，说明感到惊讶。"),
     q(30, ["Why", "How", "Where"], "How", "代词", "逻辑推理", ["I am the result of"], "下文回答的是变强的过程和方式，因此问 How。"),
     q(31, ["regretting", "overcoming", "refusing"], "overcoming", "动词", "固定搭配 / 逻辑推理", ["challenges and difficulties"], "面对挑战和困难，积极动作是克服。", "overcome challenges", "动词短语", "动词(overcome) + 名词(challenges)"),
-    q(32, ["me", "you", "it"], "me", "代词", "语法 / 上下文复现", ["Every storm I went through", "every struggle I faced"], "橡树在讲自己的经历，所以风雨让“我”更强。", "make sb. stronger", "固定句型", "动词(make) + 代词(sb.) + 形容词比较级(stronger)"),
-    q(33, ["pride", "power", "pleasure"], "power", "名词", "上下文复现", ["strength"], "power 与 strength 形成同义词复现。"),
+    q(32, ["me", "you", "it"], "me", "代词", "语法 / 上下文复现", ["Every storm I went through", "every struggle I faced"], "橡树在讲自己的经历，所以风雨让“我”更强；核心路径是人称指代，不展示搭配卡。"),
+    q(33, ["pride", "power", "pleasure"], "power", "名词", "上下文复现 / 固定搭配", ["lies in every seed", "grow into big trees"], "这题有两条正确路径：have the power to do sth. 表示“有能力做某事”；同时 power 与前文 strength 构成同义复现。", "have the power to do sth.", "固定句型", "动词(have) + 定冠词(the) + 名词(power) + 不定式(to do)"),
     q(34, ["praised", "advised", "inspired"], "inspired", "动词", "情感态度", ["by the oak's wisdom", "listened carefully"], "动物们被橡树的智慧启发和鼓舞。", "be inspired by", "动词短语", "动词被动(be inspired) + 介词(by)"),
     q(35, ["clear", "valuable", "funny"], "valuable", "形容词副词", "情感态度", ["as the dream itself", "oak's wisdom"], "成长旅程和梦想本身一样珍贵，升华积极主题。")
   ],
@@ -584,21 +584,21 @@ const filialSonTravels = {
     ", she’ll grow old.”"
   ],
   questions: [
-    q(21, ["much", "no", "little"], "much", "形容词副词", "固定搭配 / 语境推理", ["got ___ attention online"], "孝子背母亲旅行的感人举动在网上引起了大量关注，get much attention 表示“获得很多关注”。", "get much attention", "动词短语", "动词(get) + 数量限定词(much) + 名词(attention)"),
+    q(21, ["much", "no", "little"], "much", "形容词副词", "固定搭配 / 语境推理", ["This got", "attention online"], "孝子背母亲旅行的感人举动在网上引起了大量关注，get much attention 表示“获得很多关注”。", "get much attention", "动词短语", "动词(get) + 数量限定词(much) + 名词(attention)"),
     q(22, ["for", "by", "to"], "by", "介词搭配", "语法 / 固定搭配", ["was regarded as", "thousands of internet users"], "被动语态中引出动作执行者用 by，表示他被成千上万的网友认为是孝顺的儿子。", "be regarded as... by...", "固定句型", "被动语态(was regarded as) + 介词(by) + 动作发出者"),
-    q(23, ["polite", "strict", "weak"], "weak", "形容词副词", "上下文复现 / 逻辑推理", ["disabled", "wheelchair-bound"], "前文 disabled 和后文 wheelchair-bound 都指向母亲身体虚弱、行动不便，weak 最符合语境。"),
+    q(23, ["polite", "strict", "weak"], "weak", "形容词副词", "上下文复现 / 逻辑推理", ["old disabled mother","wheelchair-bound"], "前文 disabled 和后文 wheelchair-bound 都指向母亲身体虚弱、行动不便，weak 最符合语境。"),
     q(24, ["trips", "weeks", "performances"], "trips", "名词", "上下文复现", ["take his mother out to travel"], "前文提到 take his mother out to travel，此处 during the trips 是同一语义场的复现。"),
-    q(25, ["Because", "Or", "So"], "So", "连词逻辑", "逻辑推理", ["some roads were difficult to walk on", "prepared the sling"], "路不好走是原因，准备背带是结果，前后构成因果关系，用 So 衔接。"),
+    q(25, ["Because", "Or", "So"], "So", "连词逻辑", "逻辑推理", ["During the trips", "prepared the sling"], "路不好走是原因，准备背带是结果，前后构成因果关系，用 So 衔接。"),
     q(26, ["useless", "same", "expensive"], "same", "形容词副词", "逻辑推理", ["reminded him", "mother used to carry her children"], "这条带子让他想起母亲当年背孩子的带子，the same one 强调爱的传承。", "the same one", "名词搭配", "定冠词(the) + 形容词(same) + 代词(one)"),
     q(27, ["nervous", "worried", "glad"], "glad", "形容词副词", "情感态度", ["admiring the beauty"], "母亲一路欣赏美景，这是正向愉悦的场景，情感色彩应选择 glad。"),
-    q(28, ["patience", "fear", "warmth"], "warmth", "名词", "情感态度", ["saw her son carry her on his back"], "母亲看到儿子背着自己，顺着全文温情积极的基调，心中充满 warmth。", "be filled with warmth", "动词短语", "动词被动(be filled with) + 情感名词(warmth)"),
-    q(29, ["memories", "prizes", "decisions"], "memories", "名词", "逻辑推理", ["reminded him", "used to carry her children and her grandchildren"], "带子连接过去和现在，不只是工具，也承载着一家人的回忆。"),
-    q(30, ["asked", "taken", "advised"], "taken", "动词", "固定搭配", ["his mother to visit many interesting places"], "take sb. to visit... 表示带某人去参观，has 后用过去分词 taken。", "take sb. to visit...", "动词短语", "动词(take) + 某人(sb.) + 不定式(to visit)"),
+    q(28, ["patience", "fear", "warmth"], "warmth", "名词", "情感态度", ["filled with", "her son carry her"], "母亲看到儿子背着自己，顺着全文温情积极的基调，心中充满 warmth。", "be filled with warmth", "动词短语", "动词被动(be filled with) + 情感名词(warmth)"),
+    q(29, ["memories", "prizes", "decisions"], "memories", "名词", "逻辑推理", ["reminded him", "For them"], "带子连接过去和现在，不只是工具，也承载着一家人的回忆。"),
+    q(30, ["asked", "taken", "advised"], "taken", "动词", "固定搭配", ["during the past five years"], "take sb. to visit... 表示带某人去参观，has 后用过去分词 taken。", "take sb. to visit...", "动词短语", "动词(take) + 某人(sb.) + 不定式(to visit)"),
     q(31, ["never", "sometimes", "seldom"], "sometimes", "形容词副词", "逻辑推理", ["He had a sore back"], "背母亲旅行让他背部酸痛，因此有时会觉得累，sometimes 符合常理。"),
     q(32, ["stop", "continue", "travel"], "stop", "动词", "逻辑推理", ["and take a rest"], "and 连接并列动作，后面是休息，前面自然是先停下来。"),
     q(33, ["different", "boring", "private"], "different", "形容词副词", "逻辑推理", ["see more about the world"], "想让母亲多看看世界，就要带她去不同的地方，different 符合语境。"),
     q(34, ["help", "thank", "praise"], "praise", "动词", "语境推理", ["what a son should do", "not a big deal"], "他说这只是儿子应该做的、没什么大不了，说明别人是在夸赞他。"),
-    q(35, ["mine", "hers", "his"], "mine", "代词", "逻辑推理 / 语法", ["On her back, I grew up", "on ___, she'll grow old"], "前半句 her back 对应我长大，后半句母亲老去对应“我的背上”，用名词性物主代词 mine。")
+    q(35, ["mine", "hers", "his"], "mine", "代词", "逻辑推理 / 语法", ["On her back", "she’ll grow old"], "前半句 her back 对应我长大，后半句母亲老去对应“我的背上”，用名词性物主代词 mine。")
   ],
   verifySentences: [
     { english: "A 52-year-old man in China carried his 89-year-old disabled mother on his back while travelling.", chinese: "中国一名52岁的男子在旅行时背着他89岁的残疾母亲。" },
@@ -670,20 +670,20 @@ const caringBabyExperience = {
   ],
   questions: [
     q(21, ["kids", "games", "animals"], "kids", "名词", "上下文复现 / 逻辑推理", ["take care of a “baby”"], "下文一直围绕照顾 baby 展开，并且 Emily 对此很期待，说明她非常喜欢孩子。"),
-    q(22, ["but", "because", "though"], "because", "连词逻辑", "逻辑推理", ["happy today", "had a chance to take care of a baby"], "前半句是高兴的结果，后半句说明原因，因果关系明确，用 because。"),
-    q(23, ["What", "Why", "How"], "What", "代词", "语法 / 固定搭配", ["exciting news"], "news 是不可数名词，感叹句使用 What + adj. + 不可数名词。", "What + adj. + 不可数名词!", "固定句型", "感叹词(What) + 形容词(exciting) + 不可数名词(news)"),
+    q(22, ["but", "because", "though"], "because", "连词逻辑", "逻辑推理", ["She was very happy", "for the whole day"], "前半句是高兴的结果，后半句说明原因，因果关系明确，用 because。"),
+    q(23, ["What", "Why", "How"], "What", "代词", "语法 / 固定搭配", ["exciting news"], "news 是不可数名词，感叹句使用 What + adj. + uncountable noun!。", "What + adj. + uncountable noun!", "固定句型", "感叹词(What) + 形容词(exciting) + 不可数名词(news)"),
     q(24, ["hug", "hugged", "hugging"], "hugging", "动词", "固定搭配 / 语法", ["looked forward to"], "look forward to 中的 to 是介词，后面接动名词 doing，所以选 hugging。", "look forward to doing sth.", "动词短语", "动词短语(look forward to) + 动名词(hugging)"),
     q(25, ["school", "club", "office"], "club", "名词", "上下文复现", ["joined a club"], "前文明确说她 joined a club，下班后自然是去 club 领取“婴儿”。"),
     q(26, ["strange", "strong", "similar"], "similar", "形容词副词", "固定搭配 / 词汇辨析", ["weight to a real baby"], "娃娃的重量与真实婴儿相似，similar to 是固定搭配。", "be similar to", "形容词搭配", "形容词(similar) + 介词(to)"),
-    q(27, ["educate", "realize", "explain"], "realize", "动词", "逻辑推理 / 词汇辨析", ["didn't", "so hard in the beginning", "excited"], "起初她很兴奋，并没有意识到项目会这么难，realize 表示心理认知活动。"),
+    q(27, ["educate", "realize", "explain"], "realize", "动词", "逻辑推理 / 词汇辨析", ["in the beginning", "this project", "so excited"], "起初她很兴奋，并没有意识到项目会这么难，realize 表示心理认知活动。"),
     q(28, ["slowly", "usually", "suddenly"], "suddenly", "形容词副词", "逻辑推理 / 常识", ["On her way home", "quite worried"], "回家路上娃娃突然哭起来，才导致 Emily 很担心，也符合婴儿哭闹突发的常识。"),
-    q(29, ["calm", "lay", "put"], "calm", "动词", "固定搭配", ["down", "the crying"], "孩子哭了，要让他平静下来，calm sb. down 是固定搭配。", "calm sb. down", "动词短语", "动词(calm) + 代词(him) + 副词(down)"),
+    q(29, ["calm", "lay", "put"], "calm", "动词", "固定搭配", ["calm him down","the crying"], "孩子哭了，要让他平静下来，calm sb. down 是固定搭配。", "calm sb. down", "动词短语", "动词(calm) + 代词(him) + 副词(down)"),
     q(30, ["by", "in", "with"], "by", "介词搭配", "语法 / 介词辨析", ["calmed down", "patting him"], "这里不是固定搭配，而是介词含义判断：by 表示“通过某种方式”，她是通过 patting him 让他平静下来。"),
     q(31, ["do", "did", "done"], "done", "动词", "语法 / 固定搭配", ["get some housework"], "get sth. done 表示让某事被完成，housework 与 do 之间是被动关系，用 done。", "get sth. done", "固定句型", "动词(get) + 宾语(housework) + 过去分词(done)"),
-    q(32, ["wrong", "clever", "right"], "wrong", "形容词副词", "逻辑推理", ["but", "started crying again"], "but 提示反转，她以为有时间做家务，但十分钟后娃娃又哭了，说明她想错了。"),
-    q(33, ["fed", "feed", "feeding"], "feeding", "动词", "语法", ["spend a lot of time patting and ___"], "and 前后结构并列，前面是 patting，后面也要用动名词 feeding。", "spend time (in) doing", "固定句型", "spend time + 动名词(patting and feeding)"),
+    q(32, ["wrong", "clever", "right"], "wrong", "形容词副词", "逻辑推理", ["give her a little time", "started crying again"], "她原以为有时间做家务，但十分钟后娃娃又哭了，结果与判断相反，说明她想错了，应选 wrong。clever 和 right 都与后面的反转不符。"),
+    q(33, ["fed", "feed", "feeding"], "feeding", "动词", "语法", ["patting and", "make the baby sleep"], "and 前后结构并列，前面是 patting，后面也要用动名词 feeding。", "spend time (in) doing", "固定句型", "spend time + 动名词(patting and feeding)"),
     q(34, ["scared", "tired", "relaxed"], "tired", "形容词副词", "情感态度 / 逻辑推理", ["arms were about to break", "didn't do anything until midnight"], "手臂快断、忙到半夜，第二天必然很疲惫，tired 符合情感和逻辑。"),
-    q(35, ["never", "only", "always"], "only", "形容词副词", "逻辑推理", ["for one day", "but her parents did this all the time"], "她仅仅照顾一天就快崩溃，而父母多年一直照顾她，only 强化对比。")
+    q(35, ["never", "only", "always"], "only", "形容词副词", "逻辑推理", ["for one day", "parents did this all the time"], "她仅仅照顾一天就快崩溃，而父母多年一直照顾她，only 强化对比。")
   ],
   verifySentences: [
     { english: "Emily was a young lady and she loved kids very much.", chinese: "Emily 是一位年轻女士，她非常喜欢孩子。", answers: ["kids"] },
@@ -746,7 +746,7 @@ const overcomingShyness = {
     { blank: 28 },
     ". Do something!\" I always knew I wanted to be part of a group, and I knew I had to start somehow. ",
     { blank: 29 },
-    " more in class seemed like the first thing I should do. One day, I collected all my ",
+    " more in class seemed like the first thing I should do. One day, I gathered all my ",
     { blank: 30 },
     " and shared my ideas with everyone in a small group discussion. ",
     { blank: 31 },
@@ -762,20 +762,20 @@ const overcomingShyness = {
   ],
   questions: [
     q(21, ["relaxed", "quiet", "excited"], "quiet", "形容词副词", "逻辑推理 / 上下文复现", ["shy girl", "wait quietly"], "因为“我”很害羞，且下文有 wait quietly 的复现，所以上课时总是保持安静。", "keep quiet", "形容词搭配", "系动词(keep) + 形容词(quiet)"),
-    q(22, ["much", "more", "little"], "little", "形容词副词", "逻辑推理", ["shy", "voice would shake"], "害羞且声音发抖，说明被提问时会尽可能少说话。", "as little as I could", "固定句型", "as + 副词原级(little) + as + 主语 + could"),
-    q(23, ["smaller", "bigger", "greater"], "smaller", "形容词副词", "词汇辨析 / 逻辑推理", ["shrink"], "shrink 表示萎缩、退缩，坐在座位上退缩时会感觉自己变得更小。"),
+    q(22, ["much", "more", "little"], "little", "形容词副词", "逻辑推理", ["really shy girl","voice would shake"], "害羞且声音发抖，说明被提问时会尽可能少说话。", "as little as I could", "固定句型", "as + 副词原级(little) + as + 主语 + could"),
+    q(23, ["smaller", "bigger", "greater"], "smaller", "形容词副词", "词汇辨析 / 逻辑推理", ["in my seat", "feeling like I was"], "shrink 表示萎缩、退缩，坐在座位上退缩时会感觉自己变得更小。"),
     q(24, ["for", "until", "after"], "until", "连词逻辑", "语法 / 固定搭配", ["wait quietly"], "wait until... 表示一直等到某个时间点，此处是等到下课。", "wait until...", "固定句型", "动词(wait) + 连词(until) + 从句"),
-    q(25, ["lost", "cheered", "patient"], "lost", "形容词副词", "情感态度", ["unhappy and ___"], "and 提示前后情感一致，unhappy 是负面情绪，lost 也符合失落迷茫的状态。"),
+    q(25, ["lost", "cheered", "patient"], "lost", "形容词副词", "情感态度", ["more and more unhappy"], "and 提示前后情感一致，unhappy 是负面情绪，lost 也符合失落迷茫的状态。"),
     q(26, ["supported", "supposed", "communicated"], "supposed", "动词", "固定搭配", ["to be shy"], "be supposed to do 是核心句型，此处表示“好像注定/被设定就是害羞、不被注意”。", "be supposed to do sth.", "固定句型", "被动语态(be supposed) + 不定式(to do)"),
     q(27, ["what", "how", "why"], "how", "代词", "语法", ["I felt"], "向姐姐倾诉自己的感受，feel 是连系动词，询问感受用 how。"),
     q(28, ["job", "ability", "problem"], "problem", "名词", "逻辑推理", ["Do something!"], "姐姐让她主动做点什么，说明害羞和失落是她需要面对的问题。"),
     q(29, ["Talking", "Studying", "Writing"], "Talking", "动词", "上下文复现", ["talk as little as I could", "shared my ideas"], "前文不敢说话，后文分享想法，要改变的第一步自然是在课堂上多发言。"),
-    q(30, ["course", "feeling", "courage"], "courage", "名词", "固定搭配 / 逻辑推理", ["shared my ideas"], "害羞的人要在小组讨论中分享想法，需要鼓起勇气。", "collect one's courage", "动词短语", "动词(collect) + 形容词性物主代词(my) + 名词(courage)"),
+    q(30, ["course", "feeling", "courage"], "courage", "名词", "固定搭配 / 逻辑推理", ["shared my ideas", "gathered all my"], "害羞的人要在小组讨论中公开表达想法，需要先鼓起勇气。gather one’s courage 表示鼓起勇气，因此选 courage。course 是课程，feeling 是感受，都不符合动作目的。", "gather one's courage", "动词短语", "动词(gather) + 形容词性物主代词(my) + 名词(courage)"),
     q(31, ["Easily", "Slowly", "Normally"], "Slowly", "形容词副词", "逻辑推理", ["started to work"], "克服害羞是渐进变化，事情慢慢开始起作用更符合成长逻辑。"),
     q(32, ["ever", "never", "even"], "even", "形容词副词", "逻辑推理", ["noticed me", "answered what I asked"], "从同学注意到她，到甚至回答她的问题，是明显递进关系。"),
-    q(33, ["of", "on", "out"], "of", "介词搭配", "固定搭配", ["All ___ a sudden"], "all of a sudden 是固定短语，表示突然地。", "all of a sudden", "介词短语", "代词(all) + 介词(of) + 冠词(a) + 名词(sudden)"),
+    q(33, ["of", "on", "out"], "of", "介词搭配", "固定搭配", ["felt like I was part", "started making friends"], "固定短语 all of a sudden 表示突然地，中间介词只能用 of。", "all of a sudden", "介词短语", "代词(all) + 介词(of) + 冠词(a) + 名词(sudden)"),
     q(34, ["separated", "refused", "accepted"], "accepted", "动词", "情感态度 / 逻辑推理", ["making friends", "part of the discussion"], "她开始交朋友，成为讨论的一部分，最终感到自己被接纳。"),
-    q(35, ["change", "chance", "advantage"], "change", "名词", "上下文概括", ["shy girl", "making friends"], "全文讲的是从害羞到敢于发言、交到朋友的改变，这个改变影响了她的人生。", "make a big difference", "固定搭配", "动词(make) + 名词短语(a big difference)")
+    q(35, ["change", "chance", "advantage"], "change", "名词", "上下文复现 / 全文概括", ["shy girl", "making friends"], "全文讲的是从害羞到敢于发言、交到朋友的改变，这个改变影响了她的人生；答案靠全文概括，不展示搭配卡。")
   ],
   verifySentences: [
     { english: "I was a really shy girl when I was in school.", chinese: "我上学时是一个非常害羞的女孩。" },
@@ -790,7 +790,7 @@ const overcomingShyness = {
     { english: "She said, \"It's your own problem. Do something!\"", chinese: "她说：“这是你自己的问题。做点什么吧！”", answers: ["problem"] },
     { english: "I always knew I wanted to be part of a group, and I knew I had to start somehow.", chinese: "我一直知道自己想成为群体中的一员，也知道必须以某种方式开始改变。" },
     { english: "Talking more in class seemed like the first thing I should do.", chinese: "在课堂上多发言似乎是我应该做的第一件事。", answers: ["Talking"] },
-    { english: "One day, I collected all my courage and shared my ideas with everyone in a small group discussion.", chinese: "一天，我鼓起全部勇气，在一次小组讨论中和大家分享了我的想法。", answers: ["courage"] },
+    { english: "One day, I gathered all my courage and shared my ideas with everyone in a small group discussion.", chinese: "一天，我鼓起全部勇气，在一次小组讨论中和大家分享了我的想法。", answers: ["courage"] },
     { english: "Slowly, it started to work.", chinese: "慢慢地，这开始起作用了。", answers: ["Slowly"] },
     { english: "My classmates noticed me.", chinese: "我的同学们注意到了我。" },
     { english: "Sometimes, they even answered what I asked.", chinese: "有时，他们甚至会回答我提出的问题。", answers: ["even"] },
@@ -851,16 +851,16 @@ const chenWenjunXinjiang = {
     q(21, ["To", "On", "At"], "At", "介词搭配", "固定搭配", ["didn't plan to stay"], "at first 表示起初，一开始，与后文最终决定留下形成转折对比。", "at first", "介词短语", "介词(At) + 名词/副词(first)"),
     q(22, ["patient", "friendly", "rich"], "friendly", "形容词副词", "逻辑推理 / 情感态度", ["villagers welcomed them", "inviting them to eat"], "当地人送瓜果、邀请他们吃饭，这些行为直接指向 friendly。"),
     q(23, ["welcomed", "offered", "admired"], "welcomed", "动词", "固定搭配 / 词汇辨析", ["with watermelons and hami melons"], "welcome sb. with sth. 表示用某物欢迎某人，符合村民热情接待的语境。", "welcome sb. with sth.", "动词短语", "动词(welcome) + 代词(sb.) + 介词(with) + 名词(sth.)"),
-    q(24, ["call on", "stick on", "depend on"], "stick on", "动词短语", "逻辑推理 / 语境辨析", ["inviting them to eat"], "结合语境，农民们吃饭时会不断/坚持邀请他们吃。此处根据选项排除 call on 和 depend on，锁定 stick on。", "stick on doing sth.", "动词短语", "动词(stick) + 介词(on) + 动名词(inviting)"),
+    q(24, ["call on", "keep on", "depend on"], "keep on", "动词短语", "逻辑推理 / 固定搭配", ["inviting them to eat", "During meal time"], "圈出后面的动名词 inviting，再结合当地人热情招待的语境：keep on doing sth. 表示继续或反复做某事，因此选 keep on。call on 后通常接某人或用 call on sb. to do；depend on 表示依靠或取决于，均不符合语义。", "keep on doing sth.", "动词短语", "动词短语(keep on) + 动名词(inviting)"),
     q(25, ["mostly", "suddenly", "quickly"], "suddenly", "形容词副词", "逻辑推理 / 常识", ["our car broke down", "in the Gobi Desert"], "汽车在午夜戈壁滩抛锚属于突发意外，用 suddenly。"),
-    q(26, ["surprised", "sick", "hopeless"], "hopeless", "形容词副词", "情感态度 / 逻辑推理", ["broke down", "midnight", "darkness", "more than 100 kilometers"], "午夜、黑暗、戈壁滩、距离目的地很远，这种困境会让人感到绝望。"),
-    q(27, ["helped", "told", "thanked"], "helped", "动词", "逻辑推理", ["got out and ___ us", "wanted to thank the two men"], "后文说他们想感谢两人，说明两位维吾尔族朋友下车后帮助了他们。"),
-    q(28, ["happily", "sadly", "strongly"], "strongly", "形容词副词", "情感态度 / 词汇辨析", ["wanted to thank", "refused"], "面对感谢时坚决拒绝，说明他们不求回报，strongly 修饰 refused 最自然。", "strongly refuse", "副词修饰动词", "副词(strongly) + 动词(refuse)"),
+    q(26, ["surprised", "sick", "hopeless"], "hopeless", "形容词副词", "情感态度 / 逻辑推理", ["car broke down", "Gobi Desert", "our destination Yarkant"], "午夜、黑暗、戈壁滩、距离目的地很远，这种困境会让人感到绝望。"),
+    q(27, ["helped", "told", "thanked"], "helped", "动词", "逻辑推理", ["Two Uygur friends", "wanted to thank"], "后文说他们想感谢两人，说明两位维吾尔族朋友下车后帮助了他们。"),
+    q(28, ["happily", "sadly", "strongly"], "strongly", "形容词副词", "情感态度 / 词汇辨析", ["wanted to thank","they strongly refused"], "面对感谢时坚决拒绝，说明他们不求回报，strongly 修饰 refused 最自然。", "strongly refuse", "副词修饰动词", "副词(strongly) + 动词(refuse)"),
     q(29, ["touched", "hurt", "lost"], "touched", "动词", "上下文复现", ["What touched me the most"], "上文已有 What touched me the most，此处是同词复现，表示话语深深触动了我的心。", "touch one's heart", "动词短语", "动词(touch) + 形容词性物主代词(my) + 名词(heart)"),
     q(30, ["too", "either", "also"], "too", "形容词副词", "语法", ["you will help us"], "肯定句句末表示“也”用 too；either 用于否定句末，also 通常放在句中。"),
     q(31, ["move", "fight", "stay"], "stay", "动词", "上下文复现 / 逻辑转折", ["didn't plan to stay", "At that moment"], "开篇说他 didn't plan to stay，被善意打动后决定留下，stay 是跨段落原词复现。"),
     q(32, ["everything", "nothing", "something"], "something", "代词", "语法 / 固定搭配", ["meaningful and helpful"], "肯定句中表示做一些有意义的事用 something，且形容词 meaningful and helpful 后置。", "do something meaningful", "名词搭配", "动词(do) + 不定代词(something) + 形容词(meaningful)"),
-    q(33, ["good", "similar", "comfortable"], "good", "形容词副词", "逻辑推理", ["help local people sell", "because there was no ___ market"], "创办企业帮助销售瓜果，是因为当地没有好的市场。"),
+    q(33, ["good", "similar", "comfortable"], "good", "形容词副词", "逻辑推理", ["help local people sell", "market for them"], "创办企业帮助销售瓜果，是因为当地没有好的市场。"),
     q(34, ["farmers", "teachers", "doctors"], "farmers", "名词", "上下文复现", ["the farmers would", "planting of fruit trees"], "上文出现 farmers，且改善果树种植的人群也应是农民。"),
     q(35, ["roads", "jobs", "shows"], "jobs", "名词", "逻辑推理 / 常识", ["helped 3,500 people find", "close to their home"], "企业帮助3500人在家附近找到工作，find jobs 是自然搭配。", "find jobs", "动词短语", "动词(find) + 名词(jobs)")
   ],
@@ -870,7 +870,7 @@ const chenWenjunXinjiang = {
     { english: "At that time, he and his workmates often traveled around southern Xinjiang.", chinese: "那时，他和同事们经常在南疆各地走访。" },
     { english: "They found the local people are very friendly.", chinese: "他们发现当地人非常友好。", answers: ["friendly"] },
     { english: "Every time they went to the countryside, the villagers welcomed them with watermelons and hami melons.", chinese: "每次他们去乡下，村民们都会用西瓜和哈密瓜欢迎他们。", answers: ["welcomed"] },
-    { english: "During meal time, the farmers would stick on inviting them to eat.", chinese: "吃饭时，农民们会坚持邀请他们一起吃饭。", answers: ["stick on"] },
+    { english: "During meal time, the farmers would keep on inviting them to eat.", chinese: "吃饭时，农民们会不断邀请他们一起吃饭。", answers: ["keep on"] },
     { english: "What touched me the most was one midnight, our car broke down suddenly in the Gobi Desert, more than 100 kilometers from our destination Yarkant.", chinese: "最打动我的是，有一天午夜，我们的车在戈壁滩上突然抛锚，距离目的地叶尔羌还有100多公里。", answers: ["suddenly"] },
     { english: "When we felt hopeless in the darkness, a small truck stopped.", chinese: "当我们在黑暗中感到绝望时，一辆小卡车停了下来。", answers: ["hopeless"] },
     { english: "Two Uygur friends got out and helped us.", chinese: "两位维吾尔族朋友下车帮助了我们。", answers: ["helped"] },
@@ -903,7 +903,7 @@ const bakerInnovation = {
     { blank: 22 },
     " the warm, familiar taste of his bread, and they lined up every day at his shop. Soon he opened a new shop, and he ",
     { blank: 23 },
-    " baked his bread in a big oven. “I will never fail to use my way of baking!” he said. But over time, fewer ",
+    " baked his bread in a big oven. “I will always use my way of baking!” he said. But over time, fewer ",
     { blank: 24 },
     " came. He kept using the same flour (面粉) and spent the same time baking, ",
     { blank: 25 },
@@ -919,7 +919,7 @@ const bakerInnovation = {
     { blank: 30 },
     " now. “You’re great at baking,” the neighbor said kindly, “but people love new things. Why not try adding ",
     { blank: 31 },
-    " different?” That night, he tried adding nuts, spices and fruits while keeping using his own ",
+    " different?” That night, he tried adding nuts, spices and fruits while still using his own ",
     { blank: 32 },
     " of baking. Days later, customers came happily to buy his bread. Even people who didn’t love bread came to ",
     { blank: 33 },
@@ -930,17 +930,17 @@ const bakerInnovation = {
     " your way of thinking and always keep learning new things."
   ],
   questions: [
-    q(21, ["easy", "new", "same"], "same", "形容词副词", "上下文复现 / 逻辑推理", ["learned to make bread from his grandfather", "kept using the same flour"], "从爷爷那里学来的手艺，加上下文 same flour 的复现，说明他多年使用同样的方法。"),
+    q(21, ["easy", "new", "same"], "same", "形容词副词", "上下文复现 / 逻辑推理", ["from his grandfather", "same way for years"], "从爷爷那里学来的手艺，加上下文 same flour 的复现，说明他多年使用同样的方法。"),
     q(22, ["covered", "paid", "loved"], "loved", "动词", "情感态度 / 逻辑推理", ["lined up every day"], "人们每天排队购买，说明他们喜爱这种温暖熟悉的味道。"),
-    q(23, ["proudly", "probably", "quickly"], "proudly", "形容词副词", "情感态度", ["I will never fail to use my way of baking!"], "他说永远不会放弃自己的烘焙方式，体现对手艺的自信和自豪。"),
-    q(24, ["doctors", "customers", "teachers"], "customers", "名词", "上下文复现", ["baker", "shop", "buy his bread"], "面包店场景里来买面包的人是顾客，下文 customers 也有原词复现。"),
+    q(23, ["proudly", "probably", "quickly"], "proudly", "形容词副词", "情感态度", ["new shop", "big oven"], "他说自己会一直使用这套烘焙方法，表现出对传统手艺的自信与自豪，因此说话方式是 proudly。probably 表示可能，quickly 表示速度快，都不能体现态度。"),
+    q(24, ["doctors", "customers", "teachers"], "customers", "名词", "上下文复现", ["golden-brown bread", "at his shop", "buy his bread"], "面包店场景里来买面包的人是顾客，下文 customers 也有原词复现。"),
     q(25, ["if", "but", "so"], "but", "连词逻辑", "逻辑推理", ["kept using the same", "wanted new tastes"], "前面还在用相同方式，后面人们想要新口味，构成转折关系。"),
     q(26, ["hotel", "shop", "museum"], "shop", "名词", "上下文复现", ["at his shop"], "邻居带来的面包来自另一家店，shop 呼应前文 at his shop。"),
-    q(27, ["in", "by", "with"], "with", "介词搭配", "语法 / 介词辨析", ["bread ___ honey and fruit"], "这里不是固定搭配，而是介词含义判断：with 表示“带有、添加了”，bread with honey and fruit 是加了蜂蜜和水果的面包。"),
+    q(27, ["in", "by", "with"], "with", "介词搭配", "语法 / 介词辨析", ["Try this bread", "honey and fruit"], "面包中添加了蜂蜜和水果，with 表示带有、含有，因此选 with。in 表示在里面，by 表示方式或位置，都不符合修饰关系。"),
     q(28, ["again", "ever", "still"], "still", "形容词副词", "逻辑推理", ["didn't like the idea but"], "but 提示反差，虽然不喜欢这个想法，但他还是咬了一口。"),
     q(29, ["delicious", "terrible", "cheap"], "delicious", "形容词副词", "情感态度", ["To his surprise", "soft, sweet"], "破折号后 soft, sweet and full of new ideas 都是正向体验，指向 delicious。"),
     q(30, ["simple", "exciting", "special"], "simple", "形容词副词", "逻辑推理", ["full of new ideas", "his own bread"], "邻居的面包充满新意，对比之下他的传统面包显得太简单单调。"),
-    q(31, ["anything", "everything", "something"], "something", "代词", "语法 / 固定搭配", ["adding ___ different", "Why not"], "Why not 提建议时常用 something，且形容词 different 后置修饰不定代词。", "something different", "名词搭配", "不定代词(something) + 形容词(different)"),
+    q(31, ["anything", "everything", "something"], "something", "代词", "语法 / 固定搭配", ["Why not try adding", "people love new things"], "Why not 引出肯定建议，需要加入某种不同的东西，用 something；形容词 different 后置修饰不定代词。anything 常用于疑问或否定语境，everything 表示所有事物。", "something different", "名词搭配", "不定代词(something) + 形容词(different)"),
     q(32, ["space", "time", "way"], "way", "名词", "上下文复现", ["my way of baking"], "这里呼应前文 my way of baking，表示保留自己的烘焙方法。", "one's way of doing sth.", "名词搭配", "形容词性物主代词(own) + 名词(way) + 介词(of) + 动名词(baking)"),
     q(33, ["explain", "try", "show"], "try", "动词", "逻辑推理 / 上下文复现", ["Try this bread", "his new kinds of bread"], "不爱面包的人也来尝试他的新面包，try 与前文 Try this bread 呼应。"),
     q(34, ["took up", "put up", "cut up"], "put up", "动词短语", "固定搭配", ["a new sign"], "put up a sign 表示挂起或张贴招牌，符合语境。", "put up a sign", "动词短语", "动词短语(put up) + 冠词(a) + 名词(sign)"),
@@ -951,7 +951,7 @@ const bakerInnovation = {
     { english: "He learned to make bread from his grandfather and did it the same way for years.", chinese: "他从祖父那里学会做面包，并多年一直用同样的方法制作。", answers: ["same"] },
     { english: "People loved the warm, familiar taste of his bread, and they lined up every day at his shop.", chinese: "人们喜爱他面包温暖而熟悉的味道，每天都在他的店门口排队。", answers: ["loved"] },
     { english: "Soon he opened a new shop, and he proudly baked his bread in a big oven.", chinese: "很快他开了一家新店，并自豪地在大烤箱里烤面包。", answers: ["proudly"] },
-    { english: "“I will never fail to use my way of baking!” he said.", chinese: "他说：“我永远不会放弃我的烘焙方法！”" },
+    { english: "“I will always use my way of baking!” he said.", chinese: "他说：“我会一直使用自己的烘焙方法！”" },
     { english: "But over time, fewer customers came.", chinese: "但随着时间推移，来的顾客越来越少。", answers: ["customers"] },
     { english: "He kept using the same flour and spent the same time baking, but people wanted new tastes.", chinese: "他仍然使用同样的面粉，花同样的时间烘焙，但是人们想要新的口味。", answers: ["but"] },
     { english: "One morning, a neighbor brought him bread from another shop.", chinese: "一天早上，一位邻居从另一家店给他带来了面包。", answers: ["shop"] },
@@ -960,7 +960,7 @@ const bakerInnovation = {
     { english: "To his surprise, it was delicious—soft, sweet and full of new ideas.", chinese: "令他惊讶的是，它很好吃，柔软、香甜，而且充满新意。", answers: ["delicious"] },
     { english: "His own bread, though still good, seemed too simple now.", chinese: "他自己的面包虽然仍然不错，但现在看起来太单调了。", answers: ["simple"] },
     { english: "“You're great at baking,” the neighbor said kindly, “but people love new things. Why not try adding something different?”", chinese: "邻居温和地说：“你很擅长烘焙，但人们喜欢新东西。为什么不试着加点不同的东西呢？”", answers: ["something"] },
-    { english: "That night, he tried adding nuts, spices and fruits while keeping using his own way of baking.", chinese: "那天晚上，他尝试加入坚果、香料和水果，同时保留自己的烘焙方法。", answers: ["way"] },
+    { english: "That night, he tried adding nuts, spices and fruits while still using his own way of baking.", chinese: "那天晚上，他尝试加入坚果、香料和水果，同时保留自己的烘焙方法。", answers: ["way"] },
     { english: "Days later, customers came happily to buy his bread.", chinese: "几天后，顾客们开心地来买他的面包。" },
     { english: "Even people who didn't love bread came to try his new kinds of bread.", chinese: "甚至那些原本不爱面包的人也来尝试他的新面包。", answers: ["try"] },
     { english: "The baker put up a new sign: Old and New, Both Great.", chinese: "面包师挂起了一个新招牌：传统与创新，都很棒。", answers: ["put up"] },
@@ -1025,7 +1025,7 @@ const vultureRevelation = {
     q(28, ["know", "forget", "choose"], "know", "动词", "逻辑推理", ["the truth"], "老师希望他清楚认识到：天赋并不等于好成绩。", "know the truth", "动词短语", "动词(know) + 冠词(the) + 名词(truth)"),
     q(29, ["important", "similar", "friendly"], "similar", "形容词副词", "固定搭配 / 上下文复现", ["good at writing", "failed an easy test"], "老师年轻时也擅长某科却因轻敌失败，经历与 Mark 相似。", "be similar to...", "形容词搭配", "系动词(be) + 形容词(similar) + 介词(to)"),
     q(30, ["before", "after", "if"], "after", "连词逻辑", "逻辑推理", ["failed an easy test"], "秃鹫图片作为教训和鼓励，应是在老师考试失败之后收到的。"),
-    q(31, ["trees", "gifts", "birds"], "birds", "名词", "上下文复现", ["vulture", "fly directly into the sky"], "vulture 属于鸟类，这里是上下义词复现。"),
+    q(31, ["trees", "gifts", "birds"], "birds", "名词", "上下文复现", ["the vulture depends","fly directly into the sky"], "vulture 属于鸟类，这里是上下义词复现。"),
     q(32, ["she", "it", "you"], "it", "代词", "上下文复现", ["the vulture"], "代词指代前文 the vulture，用 it。"),
     q(33, ["hard-working", "clever", "lazy"], "hard-working", "形容词副词", "逻辑推理 / 情感态度", ["like the run-up", "realize your dreams"], "秃鹫起飞前的助跑象征脚踏实地的努力，Mark 需要变得勤奋。"),
     q(34, ["experience", "talent", "story"], "talent", "名词", "上下文复现", ["natural talent", "wasted your talent"], "全文多次强调 talent，努力与天赋结合才能飞得更高。"),
@@ -1052,7 +1052,7 @@ const vultureRevelation = {
     { english: "Do you see this picture?", chinese: "你看到这张图片了吗？" },
     { english: "This is a vulture.", chinese: "这是一只秃鹫。" },
     { english: "It was a gift from my Chinese teacher after I failed an easy test.", chinese: "这是我一次简单考试失败后，语文老师送给我的礼物。", answers: ["after"] },
-    { english: "Unlike other birds that fly directly into the sky, the vulture depends on a run-up before flying.", chinese: "不像其他直接飞向天空的鸟，秃鹫在飞行前依靠助跑。", answers: ["birds"] },
+    { english: "Unlike other birds that fly directly into the sky, the teacher explained, the vulture depends on a run-up before flying.", chinese: "老师解释说，不像其他直接飞向天空的鸟，秃鹫在飞行前依靠助跑。", answers: ["birds"] },
     { english: "So, once it flies into the sky, it can glide.", chinese: "所以，一旦它飞上天空，就可以滑翔。", answers: ["it"] },
     { english: "You're the vulture.", chinese: "你就是那只秃鹫。" },
     { english: "Remember, being hard-working is like the run-up.", chinese: "记住，勤奋就像助跑。", answers: ["hard-working"] },
@@ -1098,9 +1098,9 @@ const paperBridgeValue = {
     { blank: 30 },
     " it was my turn. To ",
     { blank: 31 },
-    " surprise, they asked me a lot of questions. They couldn’t believe that the paper bridge could be so ",
+    " surprise, they asked me a lot of questions. They couldn’t believe that the paper bridge could be ",
     { blank: 32 },
-    " to carry heavy stones. At last, I got a special ",
+    " enough to carry heavy stones. At last, I got a special ",
     { blank: 33 },
     "! The teacher said my creation was great because it was easy to understand. She said it could ",
     { blank: 34 },
@@ -1111,19 +1111,19 @@ const paperBridgeValue = {
   questions: [
     q(21, ["others", "one", "all"], "others", "代词", "语法 / 固定搭配", ["some of my classmates"], "some..., others... 表示“一些……，另一些……”，这里指另一些同学擅长体育或音乐。", "some..., others...", "固定句型", "代词(some) + 连词(while) + 代词(others)"),
     q(22, ["never", "often", "nearly"], "often", "形容词副词", "逻辑推理", ["nothing special about me", "classmates are super smart"], "在优秀同学的对比下，Mario 经常觉得自己没有特别之处。"),
-    q(23, ["rule", "news", "result"], "news", "名词", "上下文复现", ["announced"], "学校宣布比赛，这个宣布的内容就是一条消息。"),
-    q(24, ["sleepy", "unfair", "difficult"], "difficult", "形容词副词", "逻辑推理", ["But", "wasn't sure what I could do"], "大家兴奋，但他不知道自己能做什么，所以感到有点为难。"),
+    q(23, ["rule", "news", "result"], "news", "名词", "上下文复现", ["science competition", "made everyone excited"], "学校宣布比赛，这个宣布的内容就是一条消息。"),
+    q(24, ["sleepy", "unfair", "worried"], "worried", "形容词副词", "逻辑推理", ["felt a bit", "wasn’t sure what"], "圈出 But 形成的转折：大家很兴奋，但 Mario 不确定自己能做什么，因此感到 worried。sleepy 是困倦，unfair 是不公平，都与这种担忧不符。"),
     q(25, ["want", "use", "play"], "use", "动词", "常识 / 逻辑推理", ["kinds of paper"], "纸是每天都会使用的物品，用日常材料做实验符合语境。"),
     q(26, ["different", "small", "common"], "different", "形容词副词", "上下文复现", ["different kinds of paper"], "下文直接出现 different kinds of paper，是原词复现。", "different kinds of", "形容词搭配", "形容词(different) + 名词词组(kinds of)"),
     q(27, ["prepared", "broke", "made"], "prepared", "动词", "逻辑推理", ["thick cardboard", "built a perfect paper bridge"], "建造纸桥前，需要先准备好硬纸板、打印纸等材料。"),
-    q(28, ["slowly", "finally", "suddenly"], "finally", "形容词副词", "逻辑推理", ["thought hard", "prepared", "built a perfect paper bridge"], "经过思考和准备，最终建成纸桥，finally 符合结果呈现。"),
+    q(28, ["slowly", "finally", "suddenly"], "finally", "形容词副词", "逻辑推理", ["thought hard", "thick cardboard", "perfect paper bridge"], "经过思考和准备，最终建成纸桥，finally 符合结果呈现。"),
     q(29, ["nervous", "thankful", "silly"], "nervous", "形容词副词", "情感态度 / 上下文复现", ["My hands shook"], "手发抖是紧张的具体表现，指向 nervous。"),
     q(30, ["after", "when", "if"], "when", "连词逻辑", "语法", ["showed my paper bridge", "it was my turn"], "当轮到我展示纸桥时，动作发生在特定时间点，用 when。"),
-    q(31, ["their", "our", "my"], "my", "代词", "固定搭配 / 逻辑推理", ["they asked me a lot of questions"], "没想到别人对作品如此感兴趣，所以是令“我”惊讶。", "to one's surprise", "介词短语", "介词(To) + 物主代词(my) + 名词(surprise)"),
-    q(32, ["famous", "beautiful", "strong"], "strong", "形容词副词", "逻辑推理", ["to carry heavy stones"], "能承载重石头，说明纸桥很坚固。", "be strong to do", "形容词搭配", "系动词(be) + 形容词(strong) + 不定式(to carry)"),
+    q(31, ["their", "our", "my"], "my", "代词", "逻辑推理 / 代词指代", ["showed my paper bridge", "when it was my turn"], "叙述者一直用第一人称讲自己的作品，因此选 my；核心路径是人称指代，不展示搭配卡。"),
+    q(32, ["famous", "beautiful", "strong"], "strong", "形容词副词", "逻辑推理", ["enough to carry heavy stones"], "画箭头看结果：纸桥能承载重石头，说明它足够坚固，因此选 strong。famous 是著名，beautiful 是漂亮，都不能解释承重能力。"),
     q(33, ["ability", "prize", "chance"], "prize", "名词", "上下文复现 / 常识", ["science competition", "At last"], "参加比赛并展示优秀作品，最后获得特殊奖项。", "get a prize", "动词短语", "动词(get) + 冠词(a) + 名词(prize)"),
     q(34, ["allow", "train", "encourage"], "encourage", "动词", "固定搭配 / 情感态度", ["my creation was great"], "老师夸奖作品，是为了鼓励大家用简单事物创造伟大作品。", "encourage sb. to do sth.", "动词短语", "动词(encourage) + 代词(us) + 不定式(to make)"),
-    q(35, ["off", "in", "on"], "in", "介词搭配", "固定搭配", ["excellent student ___ every subject"], "表示在某门学科或领域内，介词用 in。", "excellent in a subject", "介词短语", "介词(in) + 名词短语(every subject)")
+    q(35, ["off", "in", "on"], "in", "介词搭配", "固定搭配", ["most excellent student", "every subject"], "表示在某门学科或领域内，介词用 in。", "be excellent in a subject", "介词短语", "系动词(be) + 形容词(excellent) + 介词(in) + 名词短语(a subject)")
   ],
   verifySentences: [
     { english: "I’m Mario.", chinese: "我是 Mario。" },
@@ -1131,7 +1131,7 @@ const paperBridgeValue = {
     { english: "I often felt that I had nothing special about me.", chinese: "我经常觉得自己没有什么特别之处。", answers: ["often"] },
     { english: "One day, our school announced a science competition.", chinese: "一天，我们学校宣布了一场科学竞赛。" },
     { english: "The news made everyone excited.", chinese: "这个消息让每个人都很兴奋。", answers: ["news"] },
-    { english: "But I felt a bit difficult.", chinese: "但我感到有点为难。", answers: ["difficult"] },
+    { english: "But I felt a bit worried.", chinese: "但我感到有点担心。", answers: ["worried"] },
     { english: "I wasn’t sure what I could do.", chinese: "我不确定自己能做什么。" },
     { english: "I thought hard and decided to work on the things we use every day.", chinese: "我认真思考后，决定研究我们每天使用的东西。", answers: ["use"] },
     { english: "I wanted to see how different kinds of paper worked for making bridges.", chinese: "我想看看不同种类的纸用来造桥效果如何。", answers: ["different"] },
@@ -1140,7 +1140,7 @@ const paperBridgeValue = {
     { english: "When the competition came, I got really nervous.", chinese: "比赛到来时，我真的很紧张。", answers: ["nervous"] },
     { english: "My hands shook as I showed my paper bridge when it was my turn.", chinese: "轮到我展示纸桥时，我的手在发抖。", answers: ["when"] },
     { english: "To my surprise, they asked me a lot of questions.", chinese: "令我惊讶的是，他们问了我很多问题。", answers: ["my"] },
-    { english: "They couldn’t believe that the paper bridge could be so strong to carry heavy stones.", chinese: "他们无法相信这座纸桥竟然如此坚固，能承载沉重的石头。", answers: ["strong"] },
+    { english: "They couldn’t believe that the paper bridge could be strong enough to carry heavy stones.", chinese: "他们无法相信这座纸桥竟然足够坚固，能承载沉重的石头。", answers: ["strong"] },
     { english: "At last, I got a special prize!", chinese: "最后，我获得了一个特别奖！", answers: ["prize"] },
     { english: "The teacher said my creation was great because it was easy to understand.", chinese: "老师说我的作品很棒，因为它容易理解。" },
     { english: "She said it could encourage us to make something great with simple things.", chinese: "她说它可以鼓励我们用简单的东西创造伟大的事物。", answers: ["encourage"] },
@@ -1201,16 +1201,16 @@ const collettesCookieDream = {
     q(23, ["choosing", "studying", "failing"], "failing", "动词", "上下文复现 / 语法", ["failed so often"], "后文 failed so often 与此处 failing 构成同词根复现，同时 keep 后接 doing。", "keep doing sth.", "固定句型", "动词(keep) + 动名词(failing)"),
     q(24, ["because", "and", "although"], "because", "连词逻辑", "逻辑推理", ["failed so often", "born with Down syndrome"], "经常失败是结果，患有唐氏综合征是她认为的原因，用 because。"),
     q(25, ["agreed", "decided", "needed"], "decided", "动词", "逻辑推理 / 固定搭配", ["open her own business"], "找工作碰壁后，她决定自己创业当老板。", "decide to do sth.", "动词短语", "动词(decide) + 不定式(to do)"),
-    q(26, ["wonderful", "difficult", "favorite"], "favorite", "形容词副词", "情感态度 / 逻辑推理", ["hobbies and ___"], "and 连接情感一致内容，hobbies 是喜欢的事物，后面应接 favorite。"),
-    q(27, ["to", "in", "at"], "to", "介词搭配", "固定搭配", ["took her cookies ___ a local grocery store"], "take sth. to... 表示把某物带到某地。", "take sth. to...", "动词短语", "动词(take) + 名词(cookies) + 介词(to) + 目的地"),
+    q(26, ["wonderful", "difficult", "favorite"], "favorite", "形容词副词", "情感态度 / 逻辑推理", ["thought about her hobbies"], "and 连接情感一致内容，hobbies 是喜欢的事物，后面应接 favorite。"),
+    q(27, ["to", "in", "at"], "to", "介词搭配", "固定搭配", ["local grocery store", "Right after tasting"], "take sth. to... 表示把某物带到某地。", "take sth. to...", "动词短语", "动词(take) + 名词(cookies) + 介词(to) + 目的地"),
     q(28, ["her", "it", "them"], "them", "代词", "逻辑推理 / 代词指代", ["her cookies"], "代词指代前面的复数 cookies，宾格用 them。"),
-    q(29, ["get away", "give up", "stand out"], "give up", "动词短语", "逻辑推理 / 词汇辨析", ["when faced with rejection", "started her own business"], "前面是 faced with rejection，后面是 started her own business，说明她没有放弃，而是继续行动。give up 表示“放弃”；get away 是离开、逃脱，stand out 是突出。"),
+    q(29, ["get away", "give up", "stand out"], "give up", "动词短语", "逻辑推理 / 词汇辨析 / 固定搭配", ["faced with rejection", "more news stations"], "这题有两条正确路径：give up 是固定短语，表示“放弃”；前面是 faced with rejection，后面是 started her own business，也说明她没有放弃而是继续行动。get away 是离开、逃脱，stand out 是突出。", "give up", "动词短语", "动词(give) + 副词(up)"),
     q(30, ["expensive", "popular", "delicious"], "popular", "形容词副词", "逻辑推理", ["more news stations shared her story", "hire more people", "keep up with the need"], "新闻报道后需求增加，她不得不雇更多人，说明饼干很受欢迎。"),
     q(31, ["never", "also", "just"], "just", "形容词副词", "逻辑推理", ["larger dream"], "她不只是想卖饼干，后面还有更大的梦想，doesn't just 构成递进。", "not just", "固定搭配", "否定词(not/doesn't) + 副词(just)"),
     q(32, ["decision", "influence", "dream"], "dream", "名词", "上下文复现", ["achieve big goals"], "雇佣尽可能多的残疾人是她更大的梦想，dream 与 big goals 属于同义场复现。"),
-    q(33, ["talents", "feelings", "sadness"], "talents", "名词", "上下文复现 / 情感态度", ["strengths and ___", "talented baker"], "strengths 是正向词，and 后也应是正向的 talents，同时呼应 talented。"),
+    q(33, ["talents", "feelings", "sadness"], "talents", "名词", "上下文复现 / 情感态度", ["business owners", "people with disabilities"], "strengths 是正向词，and 后也应是正向的 talents，同时呼应 talented。"),
     q(34, ["seldom", "often", "hardly"], "often", "形容词副词", "逻辑推理", ["Even when they do get jobs", "paid less than the minimum wage"], "即使找到工作，残疾人也往往被支付低于最低工资的薪水，often 符合社会现状描述。"),
-    q(35, ["add", "turn", "change"], "change", "动词", "逻辑推理 / 主旨升华", ["They can work but cannot find jobs", "paid less than the minimum wage"], "面对就业困难和薪资不公，Divitto 想改变这种现状。")
+    q(35, ["add", "turn", "change"], "change", "动词", "逻辑推理 / 主旨升华", ["cannot find jobs", "minimum wage"], "面对就业困难和薪资不公，Divitto 想改变这种现状。")
   ],
   verifySentences: [
     { english: "It takes a lot of hard work and determination to achieve big goals.", chinese: "实现大目标需要大量努力和决心。" },
@@ -1290,17 +1290,17 @@ const unexpectedSpringPicnic = {
     q(2, ["candies", "bananas", "tomatoes", "flowers"], "candies", "名词", "上下文复现", ["stealing a candy", "so many candies"], "下一句出现 candy，后文又有 so many candies，是明显原词复现。"),
     q(3, ["fresh", "cute", "clear", "sweet"], "cute", "形容词副词", "逻辑推理", ["look like soft sheep"], "把纸杯蛋糕装饰成毛茸茸的小羊，是为了让它们看起来可爱。"),
     q(4, ["bought", "made", "added", "ordered"], "added", "动词", "逻辑推理 / 动作连贯", ["joined in", "so many candies"], "弟弟妹妹加入制作，往蛋糕上添加了太多糖果。"),
-    q(5, ["badly", "freely", "quietly", "smoothly"], "smoothly", "形容词副词", "固定搭配 / 逻辑推理", ["didn't go ___ as usual", "First", "Then"], "后文列举连串意外，说明事情没有顺利进行。", "go smoothly", "动词短语", "动词(go) + 副词(smoothly)"),
+    q(5, ["badly", "freely", "quietly", "smoothly"], "smoothly", "形容词副词", "固定搭配 / 逻辑推理", ["things didn’t go", "as usual"], "后文列举连串意外，说明事情没有顺利进行。", "go smoothly", "动词短语", "动词(go) + 副词(smoothly)"),
     q(6, ["found", "left", "brought", "checked"], "left", "动词", "固定搭配 / 词汇辨析", ["her wallet at home"], "表示把某物落在家里用 leave sth. at home，过去式为 left。", "leave sth. at home", "动词短语", "动词(leave) + 名词(wallet) + 介词短语(at home)"),
     q(7, ["tried", "marked", "mentioned", "repaired"], "tried", "动词", "逻辑推理", ["a new back road"], "为了赶路找近道，爸爸尝试走了一条新的小路。"),
-    q(8, ["appeared", "arrived", "stopped", "dropped"], "stopped", "动词", "逻辑推理", ["making a strange noise", "Help won't come for at least an hour"], "车发出奇怪噪音，后面需要等救援，说明车停下或抛锚了。"),
-    q(9, ["excited", "tired", "relaxed", "surprised"], "tired", "形容词副词", "情感态度", ["Help won't come for at least an hour", "complained"], "经历连串意外又要等救援，妈妈的声音应是疲惫的。"),
-    q(10, ["change", "organize", "share", "miss"], "miss", "动词", "逻辑推理", ["complained", "won't come for at least an hour"], "车坏了要等很久，Tex 抱怨他们会错过整个派对。"),
-    q(11, ["spread out", "handed out", "cut out", "carried out"], "spread out", "动词短语", "固定搭配", ["the blanket", "picnic"], "野餐时要铺开毯子，spread out the blanket 符合语境。", "spread out", "动宾搭配", "动词短语(spread out) + 名词(the blanket)"),
+    q(8, ["appeared", "arrived", "stopped", "dropped"], "stopped", "动词", "逻辑推理", ["making a strange noise", "middle of nowhere"], "车发出奇怪噪音，后面需要等救援，说明车停下或抛锚了。"),
+    q(9, ["excited", "tired", "relaxed", "surprised"], "tired", "形容词副词", "情感态度", ["at least an hour", "Mom said"], "经历连串意外又要等救援，妈妈的声音应是疲惫的。"),
+    q(10, ["change", "organize", "share", "miss"], "miss", "动词", "逻辑推理", ["whole party", "Help won’t come"], "车坏了要等很久，Tex 抱怨他们会错过整个派对。"),
+    q(11, ["spread out", "handed out", "cut out", "carried out"], "spread out", "动词短语", "固定搭配", ["the blanket","own picnic here"], "野餐时要铺开毯子，spread out the blanket 符合语境。", "spread out", "动宾搭配", "动词短语(spread out) + 名词(the blanket)"),
     q(12, ["rode", "flew", "jumped", "climbed"], "jumped", "动词", "常识", ["two small rabbits"], "兔子在草地上的典型动作是跳跃。"),
-    q(13, ["wind", "magic", "music", "fog"], "magic", "名词", "情感态度 / 逻辑推理", ["Wow", "something amazing happened"], "蝴蝶、兔子和成群飞鸟构成奇妙景象，像魔法一样。"),
-    q(14, ["and", "or", "but", "so"], "but", "连词逻辑", "逻辑推理", ["never made it", "that didn't matter"], "没去成农场是遗憾，后面说不重要了，是转折关系。"),
-    q(15, ["hide", "lose", "forget"], "hide", "动词", "逻辑推理 / 主旨升华", ["when things don't work out", "unexpected wonders"], "全文表达失望中可能隐藏着意想不到的惊喜，hide 符合主旨。")
+    q(13, ["wind", "magic", "music", "fog"], "magic", "名词", "情感态度 / 逻辑推理", ["something amazing happened", "birds shot up"], "蝴蝶、兔子和成群飞鸟构成奇妙景象，像魔法一样。"),
+    q(14, ["and", "or", "but", "so"], "but", "连词逻辑", "逻辑推理", ["never made it", "didn’t matter"], "没去成农场是遗憾，后面却说这已经不重要，前后构成转折，因此选 but。and 表并列，or 表选择，so 表结果。"),
+    q(15, ["hide", "lose", "forget", "destroy"], "hide", "动词", "逻辑推理 / 主旨升华", ["disappointments may", "unexpected wonders"], "全文表达失望中可能隐藏着意想不到的惊喜，hide 符合主旨。")
   ],
   verifySentences: [
     { english: "My family had never done anything different before.", chinese: "我的家人以前从未做过什么不同寻常的事情。" },
@@ -1323,7 +1323,7 @@ const unexpectedSpringPicnic = {
     { english: "A huge butterfly gently landed on Indi’s knee.", chinese: "一只巨大的蝴蝶轻轻落在 Indi 的膝盖上。" },
     { english: "Nearby, two small rabbits jumped across the grass, happily eating.", chinese: "附近，两只小兔子跳过草地，开心地吃着东西。", answers: ["jumped"] },
     { english: "Suddenly, we heard a loud rustling, and hundreds of birds shot up from the trees, flying into the sky in huge circles above us.", chinese: "突然，我们听到一阵响亮的沙沙声，成百上千只鸟从树上飞起，在我们上方的天空中盘旋成巨大的圆圈。" },
-    { english: "Wow! It’s like magic!", chinese: "哇！这就像魔法一样！", answers: ["magic"] },
+    { english: "It’s like magic!", chinese: "这就像魔法一样！", answers: ["magic"] },
     { english: "We never made it to Aunt Jen’s farm, but that didn’t matter.", chinese: "我们最终没能到 Jen 阿姨的农场，但那已经不重要了。", answers: ["but"] },
     { english: "Sitting in that field, enjoying my cupcakes under the open sky, I understood something important.", chinese: "坐在那片田野里，在开阔的天空下享用我的纸杯蛋糕时，我明白了一件重要的事。" },
     { english: "When things don’t work out, disappointments may hide unexpected wonders.", chinese: "当事情不如意时，失望中也可能隐藏着意想不到的奇迹。", answers: ["hide"] },
@@ -1368,11 +1368,11 @@ const refrigeratorMagnets = {
   ],
   questions: [
     q(1, ["gave up", "took up", "put up", "cleaned up"], "took up", "动词短语", "固定搭配 / 逻辑推理", ["I do"], "前文 I do 表明作者喜欢收集冰箱贴，所以几年前开始培养了这项爱好。", "take up a hobby", "动词短语", "动词(take) + 副词(up) + 名词(a hobby)"),
-    q(2, ["awful", "strange", "lively", "common"], "lively", "形容词副词", "情感态度", ["like", "fun"], "全文基调积极，作者热爱收藏，冰箱贴贴在一起看起来应是生动活泼的。"),
-    q(3, ["remind", "care", "break", "make"], "remind", "动词", "固定搭配", ["___ me of my trips"], "冰箱贴让作者想起世界各地的旅行，remind sb. of sth. 是固定搭配。", "remind sb. of sth.", "动词短语", "动词(remind) + 代词(sb.) + 介词(of) + 名词(sth.)"),
+    q(2, ["awful", "strange", "lively", "common"], "lively", "形容词副词", "情感态度", ["look so", "really fun"], "全文基调积极，作者热爱收藏，冰箱贴贴在一起看起来应是生动活泼的。"),
+    q(3, ["remind", "care", "break", "make"], "remind", "动词", "固定搭配", ["me of my trips", "Every time I open"], "冰箱贴让作者想起世界各地的旅行，remind sb. of sth. 是固定搭配。", "remind sb. of sth.", "动词短语", "动词(remind) + 代词(sb.) + 介词(of) + 名词(sth.)"),
     q(4, ["breaks", "stay", "journeys", "training"], "journeys", "名词", "上下文复现", ["my trips around the world", "exciting travels"], "trips、travels、journeys 都指旅行，构成同义词复现。"),
     q(5, ["mix", "fill", "connect", "share"], "share", "动词", "固定搭配 / 逻辑推理", ["their exciting travels with me"], "朋友带回冰箱贴，是为了和作者分享他们精彩的旅行经历。", "share sth. with sb.", "动词短语", "动词(share) + 名词短语(their exciting travels) + 介词(with) + 代词(me)"),
-    q(6, ["soon", "only", "either", "rather"], "soon", "形容词副词", "逻辑推理 / 并列关系", ["quickly"], "小吃很快被吃完，也会很快被忘记，soon 与 quickly 在节奏上呼应。"),
+    q(6, ["soon", "only", "either", "rather"], "soon", "形容词副词", "逻辑推理 / 并列关系", ["eat them up quickly", "stay with me"], "小吃很快被吃完，也会很快被忘记，soon 与 quickly 在节奏上呼应。"),
     q(7, ["boring", "soft", "scary", "colourful"], "colourful", "形容词副词", "上下文复现 / 常识", ["yellow Thai elephant", "England’s red bus"], "下文列举黄色大象、红色巴士等颜色线索，说明冰箱贴五颜六色。"),
     q(8, ["rules", "secrets", "symbols", "problems"], "symbols", "名词", "逻辑推理 / 常识", ["Thai elephant", "England’s red bus", "the Great Wall of China"], "泰国大象、英国红巴、中国长城都是国家象征。"),
     q(9, ["humour", "achievement", "direction", "fear"], "achievement", "名词", "情感态度 / 固定搭配", ["special to me", "collection grows"], "收藏不断增加会带来正向的成就感。", "a sense of achievement", "名词搭配", "名词(sense) + 介词(of) + 名词(achievement)"),
@@ -1446,19 +1446,19 @@ const braveBoyHouseFire = {
   questions: [
     q(1, ["date", "fire", "storm", "pool"], "fire", "名词", "上下文复现", ["smelled smoke", "was on fire"], "下文出现 smoke 和 on fire，说明这是房屋火灾。", "house fire", "名词搭配", "名词(house) + 名词(fire)"),
     q(2, ["children", "neighbours", "friends", "parents"], "children", "名词", "逻辑推理 / 上下文复现", ["leaving their five children at home"], "父母外出，把五个孩子留在家里，闻到烟味的自然是孩子们。"),
-    q(3, ["about", "for", "in", "against"], "in", "介词搭配", "固定搭配", ["looked around ___ surprise"], "发现家里有烟时，孩子们惊讶地四处张望。", "in surprise", "介词短语", "介词(in) + 名词(surprise)"),
+    q(3, ["about", "for", "in", "against"], "in", "介词搭配", "固定搭配", ["looked around", "in surprise"], "发现家里有烟时，孩子们惊讶地四处张望。", "in surprise", "介词短语", "介词(in) + 名词(surprise)"),
     q(4, ["last", "third", "second", "first"], "first", "形容词副词", "逻辑推理", ["acted quickly"], "突发火灾时，Briar 的第一念头就是把四个妹妹带出房子。", "one's first thought", "名词搭配", "物主代词(My) + 序数词(first) + 名词(thought)"),
     q(5, ["new", "comfortable", "dangerous", "clean"], "dangerous", "形容词副词", "情感态度 / 逻辑推理", ["was on fire"], "房子正在着火，处境危及生命，因此是危险的。"),
     q(6, ["working out", "taking out", "putting out", "blowing out"], "putting out", "动词短语", "固定搭配 / 词汇辨析", ["the fire", "saving their home"], "确保妹妹安全后，他想扑灭大火来挽救家园。", "put out a fire", "动词短语", "动词(put) + 副词(out) + 名词(the fire)"),
     q(7, ["But", "So", "Or", "And"], "But", "连词逻辑", "逻辑推理", ["tried putting out", "burning strongly"], "男孩试图灭火，但火势很猛，前后构成转折。"),
     q(8, ["Loudly", "Unluckily", "Early", "Hardly"], "Unluckily", "形容词副词", "情感态度", ["lost their home in the fire"], "最终失去家园是负面结果，用 Unluckily。"),
-    q(9, ["funny", "lively", "scary", "standard"], "scary", "形容词副词", "情感态度", ["lost their home", "fire"], "火灾威胁孩子生命并烧毁家园，这种情况很可怕。"),
-    q(10, ["strongest", "happiest", "cleverest", "saddest"], "saddest", "形容词副词", "情感态度 / 逻辑推理", ["If my son had not taken actions"], "如果儿子没有救出妹妹，母亲会成为世界上最悲伤的人。"),
+    q(9, ["funny", "lively", "scary", "standard"], "scary", "形容词副词", "情感态度", ["lost their home", "in the fire"], "火灾威胁孩子生命并烧毁家园，这种情况很可怕。"),
+    q(10, ["strongest", "happiest", "cleverest", "saddest"], "saddest", "形容词副词", "情感态度 / 逻辑推理", ["had not taken actions", "person in the world"], "如果儿子没有救出妹妹，母亲会成为世界上最悲伤的人。"),
     q(11, ["caused", "lost", "checked", "failed"], "lost", "动词", "上下文复现", ["lost their home"], "前文说家人在火灾中失去家园，此处表示失去所有东西。"),
     q(12, ["asked", "wanted", "let", "hoped"], "hoped", "动词", "逻辑推理", ["created a Go-Fund Me account", "raise some money"], "朋友创建众筹账户，是希望为这个家庭筹钱。"),
     q(13, ["almost", "usually", "especially", "always"], "almost", "形容词副词", "语境辨析", ["$7,000 in the account"], "描述金额数量，表示账户里差不多有 7000 美元。"),
     q(14, ["ready", "curious", "thankful", "harmful"], "thankful", "形容词副词", "情感态度 / 固定搭配", ["for what those kind people did"], "家人得到善良人士帮助，自然非常感激。", "be thankful for...", "形容词搭配", "系动词(be) + 副词(really) + 形容词(thankful) + 介词(for)"),
-    q(15, ["somebody", "everybody", "anybody", "nobody"], "nobody", "代词", "逻辑推理", ["Very little of the house remained", "but"], "房子几乎烧光，但幸运的是没人受伤，but 提示反转。")
+    q(15, ["somebody", "everybody", "anybody", "nobody"], "nobody", "代词", "逻辑推理", ["house remained after", "got hurt"], "房子几乎烧光，但幸运的是没人受伤，but 提示反转。")
   ],
   verifySentences: [
     { english: "In Wisconsin, a teenager named Briar became famous for his quick actions in an accident.", chinese: "在威斯康星州，一名叫 Briar 的少年因在事故中的迅速行动而出名。" },
@@ -1524,10 +1524,10 @@ const saltyJuiceLife = {
     q(2, ["anything", "somebody", "anybody", "everybody"], "anybody", "代词", "语法", ["hardly talk to"], "hardly 是否定意义副词，否定语境中表示任何人用 anybody。"),
     q(3, ["passed by", "got across", "went up", "passed away"], "passed away", "动词短语", "上下文复现 / 固定搭配", ["His death"], "下一句 His death 直接提示爷爷去世，pass away 表示去世。", "pass away", "动词短语", "动词(pass) + 副词(away)"),
     q(4, ["entered", "posed", "followed", "caught"], "entered", "动词", "逻辑推理 / 动作连贯", ["invited him to his house", "gave him the gift"], "老师邀请他到家里，Jeff 进入房子后老师才给礼物。"),
-    q(5, ["stopped", "believed", "covered", "guided"], "stopped", "动词", "逻辑推理", ["would pour it out", "We can add a little more sugar"], "老师要倒掉果汁，Jeff 提出加糖解决，说明他阻止了老师。"),
+    q(5, ["stopped", "believed", "covered", "guided"], "stopped", "动词", "逻辑推理", ["would pour it out", "add a little more sugar"], "老师要倒掉果汁，Jeff 提出加糖解决，说明他阻止了老师。"),
     q(6, ["rich", "slow", "sweet", "warm"], "sweet", "形容词副词", "常识 / 逻辑推理", ["add a little more sugar"], "加糖的目的自然是让果汁变甜。"),
     q(7, ["difference", "present", "pressure", "decision"], "present", "名词", "上下文复现", ["gave him the gift", "liked this gift"], "上文和尾句都出现 gift，present 是 gift 的同义词复现。"),
-    q(8, ["painful", "difficult", "surprising", "serious"], "painful", "形容词副词", "情感态度 / 上下文复现", ["death", "upset", "something sad"], "盐象征生活中痛苦的经历，对应爷爷去世带来的 upset 和 sad。"),
+    q(8, ["painful", "difficult", "surprising", "serious"], "painful", "形容词副词", "情感态度 / 上下文复现", ["something sad", "experiences in our life"], "盐象征生活中痛苦的经历，对应爷爷去世带来的 upset 和 sad。"),
     q(9, ["compare", "organize", "improve", "promise"], "improve", "动词", "逻辑推理", ["make the juice taste better", "adding some good experiences"], "加糖能让果汁更好，加入美好经历也能改善生活。"),
     q(10, ["discussed", "understood", "advised", "hated"], "understood", "动词", "情感态度 / 逻辑推理", ["liked this gift and thanked him"], "Jeff 喜欢礼物并感谢老师，说明他理解了老师的话。")
   ],
@@ -1591,15 +1591,15 @@ const climbingQomolangma = {
   ],
   questions: [
     q(1, ["hear of", "hearing of", "heard of", "heard from"], "heard of", "动词短语", "语法 / 固定搭配", ["Have you ever"], "Have you ever 后接过去分词，hear 的过去分词是 heard；hear of 表示听说。", "hear of", "动词短语", "动词(hear) + 介词(of)"),
-    q(2, ["dangerousest", "danger", "more dangerous", "most dangerous"], "most dangerous", "形容词副词", "语法 / 最高级", ["the", "in the world"], "the 和 in the world 提示最高级，dangerous 是多音节形容词，最高级用 most dangerous。"),
+    q(2, ["dangerousest", "danger", "more dangerous", "most dangerous"], "most dangerous", "形容词副词", "语法 / 最高级", ["most popular places", "in the world"], "the 和 in the world 提示最高级，dangerous 是多音节形容词，最高级用 most dangerous。"),
     q(3, ["/", "the", "an", "a"], "the", "冠词", "语法 / 特指判断", ["southwestern part of China"], "表示中国西南部这一特定地理部分，方位词前用 the。"),
-    q(4, ["is covered", "covers", "covered", "to cover"], "is covered", "动词短语", "语法 / 被动语态", ["It", "with thick clouds and snow"], "主语 Qomolangma 与 cover 是被动关系，句意是“它被厚厚的云和雪覆盖”，所以用 is covered。"),
-    q(5, ["difficulties", "difficult", "difficulty", "difficultys"], "difficulties", "名词", "语法 / 逻辑推理", ["include", "weather conditions and heavy storms"], "include 和后面多个困难提示这里用可数名词复数 difficulties。"),
-    q(6, ["take up", "take in", "take out", "take off"], "take in", "动词短语", "固定搭配 / 常识", ["air", "get near the top"], "接近山顶时空气稀薄，呼吸空气就是 take in air。", "take in", "动词短语", "动词(take) + 副词(in)"),
-    q(7, ["in", "at", "of", "on"], "on", "介词搭配", "语法", ["May 29, 1953"], "具体到某年某月某日时用介词 on。", "on + 具体某一天", "介词用法", "介词(on) + 具体日期"),
-    q(8, ["challenge", "to challenge", "challenging", "challenged"], "to challenge", "动词", "语法 / 动词不定式", ["want ___"], "看到 want 后面缺动作，直接判断动词形式：want 后接 to do，所以选 to challenge。"),
-    q(9, ["trying", "try", "to try", "tries"], "trying", "动词", "语法 / 动名词", ["give up ___"], "空格在 give up 后面，考的是动词形式；give up 后接 doing，所以选 trying。"),
-    q(10, ["strong", "more strong", "strongest", "stronger"], "stronger", "形容词副词", "语法", ["than"], "than 提示比较级，strong 的比较级是 stronger。")
+    q(4, ["is covered", "covers", "covered", "to cover"], "is covered", "动词短语", "语法 / 被动语态", ["thick clouds and snow", "Even more serious"], "主语 Qomolangma 与 cover 是被动关系，句意是“它被厚厚的云和雪覆盖”，所以用 is covered。"),
+    q(5, ["difficulties", "difficult", "difficulty", "difficultys"], "difficulties", "名词", "语法 / 逻辑推理", ["weather conditions and heavy storms"], "include 和后面多个困难提示这里用可数名词复数 difficulties。"),
+    q(6, ["take up", "take in", "take out", "take off"], "take in", "动词短语", "固定搭配 / 常识", ["difficult to", "get near the top"], "接近山顶时空气稀薄，呼吸空气就是 take in air。", "take in", "动词短语", "动词(take) + 副词(in)"),
+    q(7, ["in", "at", "of", "on"], "on", "介词搭配", "语法", ["May 29, 1953"], "具体到某年某月某日时用介词 on。", "on + a specific date", "介词用法", "介词(on) + 具体日期"),
+    q(8, ["challenge", "to challenge", "challenging", "challenged"], "to challenge", "动词", "固定搭配优先", ["people want", "in the face of difficulties"], "看到 want 后面缺动作，直接判断动词形式：want 后接 to do，所以选 to challenge。", "want to do", "固定句型", "动词(want) + 不定式(to do)"),
+    q(9, ["trying", "try", "to try", "tries"], "trying", "动词", "固定搭配优先", ["give up", "achieve our dreams"], "空格在 give up 后面，考的是动词形式；give up 后接 doing，所以选 trying。", "give up doing", "固定句型", "动词短语(give up) + 动名词(doing)"),
+    q(10, ["strong", "more strong", "strongest", "stronger"], "stronger", "形容词副词", "语法", ["forces of nature", "It also shows"], "than 提示比较级，strong 的比较级是 stronger。")
   ],
   verifySentences: [
     { english: "Do you like climbing mountains?", chinese: "你喜欢爬山吗？" },
@@ -1660,13 +1660,13 @@ const markelaBeekeepingDream = {
     q(1, ["wake up", "look after", "deal with", "search for"], "look after", "动词短语", "逻辑推理 / 常识", ["family of beekeepers", "good at keeping bees"], "作为养蜂家庭的一员，她周末帮助爷爷照顾蜜蜂。", "look after", "动词短语", "动词(look) + 介词(after)"),
     q(2, ["interview", "explain", "realize", "develop"], "realize", "动词", "逻辑推理 / 词汇辨析", ["terrible weather makes her"], "恶劣天气让她意识到自己的梦想很难实现。realize 是“意识到”；interview 是采访，explain 是解释，develop 是发展，都不能表达内心认识到困难。"),
     q(3, ["typhoon", "snowstorm", "earthquake", "drought"], "drought", "名词", "因果推理 / 上下文复现", ["fewer rainy days in summer", "dry weather"], "雨天减少和干燥天气直接指向干旱。"),
-    q(4, ["rise", "fall", "raise", "add"], "rise", "动词", "逻辑推理 / 词汇辨析", ["dry weather", "high level"], "干旱伴随气温上升，rise 是不及物动词，表示温度自己升高。"),
+    q(4, ["rise", "fall", "raise", "add"], "rise", "动词", "逻辑推理 / 词汇辨析 / 固定搭配", ["dry weather", "high level"], "这题有两条正确路径：rise to a high level 表示“上升到较高水平”；同时干旱天气和 high level 说明气温在升高。rise 是不及物动词，raise 后面必须直接接宾语。", "rise to a high level", "动词搭配", "动词(rise) + 介词(to) + 程度(a high level)"),
     q(5, ["coolest", "shortest", "longest", "hottest"], "hottest", "形容词副词", "上下文复现", ["hot and dry weather"], "下句直接出现 hot and dry weather，反推六七月是历史上最热的。"),
-    q(6, ["so", "but", "if", "though"], "so", "连词逻辑", "逻辑推理", ["Few flowers survived", "the amount of honey fell a lot"], "花少是原因，蜂蜜数量下降是结果，用 so。"),
+    q(6, ["so", "but", "if", "though"], "so", "连词逻辑", "逻辑推理", ["Few flowers survived", "honey fell a lot"], "花少是原因，蜂蜜数量下降是结果，用 so。"),
     q(7, ["accepted", "caused", "rescued", "answered"], "caused", "动词", "固定搭配 / 逻辑推理", ["many other problems"], "野火还造成许多其他问题，cause problems 是自然搭配。", "cause problems", "动宾搭配", "动词(cause) + 名词(problems)"),
     q(8, ["darker", "safer", "quieter", "cleaner"], "safer", "形容词副词", "逻辑推理 / 常识", ["lost their houses", "leave their homes"], "房屋被毁、生命受威胁，人们离开家是去更安全的地方。"),
-    q(9, ["hardly", "actually", "slowly", "possibly"], "possibly", "形容词副词", "逻辑推理 / 情感态度", ["worried", "could", "close to the forest"], "住得靠近森林，所以担心火灾可能发生在他们身上。"),
-    q(10, ["postcard", "rule", "report", "standard"], "report", "名词", "常识 / 语境推理", ["says that children like Markela will experience three times more climate disasters"], "关于未来气候灾难的正式数据和预测通常来自报告。", "A report says...", "名词搭配", "冠词(A) + 名词(report) + 动词(says)")
+    q(9, ["hardly", "actually", "slowly", "possibly"], "possibly", "形容词副词", "逻辑推理 / 情感态度", ["live close to the forest", "a fire could"], "住得靠近森林，所以担心火灾可能发生在他们身上。"),
+    q(10, ["postcard", "rule", "report", "standard"], "report", "名词", "常识 / 语境推理", ["children like Markela", "three times more climate disasters"], "关于未来气候灾难的正式数据和预测通常来自报告。", "A report says...", "名词搭配", "冠词(A) + 名词(report) + 动词(says)")
   ],
   verifySentences: [
     { english: "As a member of a family of beekeepers, 11-year-old Markela is also good at keeping bees.", chinese: "作为养蜂家庭的一员，11岁的 Markela 也擅长养蜂。" },
@@ -1739,12 +1739,12 @@ const cinemaRules = {
     q(1, ["but", "and", "or", "so"], "but", "连词逻辑", "逻辑推理", ["don't know whether", "I do"], "前半句说不知道你是否喜欢，后半句明确说我喜欢，前后形成转折关系，用 but。"),
     q(2, ["play", "sleep", "relax", "dream"], "relax", "动词", "常识 / 逻辑推理", ["love watching movies"], "看电影是一种娱乐活动，通常能帮助人放松，所以选 relax。"),
     q(3, ["your", "her", "my", "his"], "my", "代词", "逻辑推理 / 语法", ["I often go there"], "全文是 Molly 的第一人称自述，电影院在我的家附近，用 my。"),
-    q(4, ["see", "look", "take", "taste"], "see", "动词", "固定搭配 / 词汇辨析", ["movies"], "表示看电影可以用 see movies / watch movies，不能直接用 look movies。", "see movies", "动宾搭配", "动词(see) + 名词(movies)"),
+    q(4, ["see", "look", "take", "taste"], "see", "动词", "固定搭配 / 词汇辨析", ["a lot of movies", "every day"], "表示看电影可以用 see movies / watch movies，不能直接用 look movies。", "see movies", "动宾搭配", "动词(see) + 名词(movies)"),
     q(5, ["can", "can’t", "mustn’t", "must"], "must", "动词", "逻辑推理 / 语境辨析", ["lots of rules", "have to"], "面对电影院的很多规则，下文也多次出现 have to 和 can't，说明必须遵守规则。"),
-    q(6, ["speak", "tell", "say", "talk"], "tell", "动词", "固定搭配 / 词汇辨析", ["___ you some of them"], "表示告诉某人某事，用 tell sb. sth.，其他三个说法不能直接接双宾语。", "tell sb. sth.", "动词短语", "动词(tell) + 间接宾语(you) + 直接宾语(some of them)"),
+    q(6, ["speak", "tell", "say", "talk"], "tell", "动词", "固定搭配 / 词汇辨析", ["Let me", "you some of them"], "表示告诉某人某事，用 tell sb. sth.，其他三个说法不能直接接双宾语。", "tell sb. sth.", "动词短语", "动词(tell) + 间接宾语(you) + 直接宾语(some of them)"),
     q(7, ["write", "draw", "show", "make"], "show", "动词", "常识 / 逻辑推理", ["go into the cinema", "my ticket"], "进入电影院时需要向工作人员出示电影票，所以选 show。"),
-    q(8, ["never", "usually", "always", "sometimes"], "never", "形容词副词", "逻辑推理", ["can't bring any food or drinks"], "既然不能把食物和饮料带进电影院，所以我从不在电影院外面买这些东西。"),
-    q(9, ["books", "photos", "showers", "exercises"], "photos", "名词", "固定搭配 / 常识", ["take", "in the cinema"], "电影院常见规则是不能拍照，take photos 是固定搭配。", "take photos", "动宾搭配", "动词(take) + 名词(photos)"),
+    q(8, ["never", "usually", "always", "sometimes"], "never", "形容词副词", "逻辑推理", ["any food or drinks", "buy anything outside"], "既然不能把食物和饮料带进电影院，所以我从不在电影院外面买这些东西。"),
+    q(9, ["books", "photos", "showers", "exercises"], "photos", "名词", "固定搭配 / 常识", ["take photos", "in the cinema"], "电影院常见规则是不能拍照，take photos 是固定搭配。", "take photos", "动宾搭配", "动词(take) + 名词(photos)"),
     q(10, ["buy", "love", "get", "use"], "use", "动词", "常识 / 逻辑推理", ["my phone either"], "观影时也不能使用手机，use one's phone 符合语境。", "use one's phone", "动宾搭配", "动词(use) + 名词(phone)"),
     q(11, ["guitars", "glasses", "bikes", "phones"], "glasses", "名词", "上下文复现", ["3D glasses"], "前一句已经出现 3D glasses，后文说弄坏了要赔偿，直接复现 glasses。"),
     q(12, ["fun", "boring", "relaxing", "difficult"], "boring", "形容词副词", "情感态度 / 逻辑推理", ["don't like these rules"], "作者说不喜欢这些规则，情感为负面，所以认为规则 boring。"),
@@ -1813,13 +1813,13 @@ const momsRules = {
   questions: [
     q(1, ["takes", "follows", "makes", "picks"], "makes", "动词", "上下文复现 / 固定搭配", ["Mom makes these rules"], "下文直接出现 Mom makes these rules，说明制定规则用 make rules。", "make rules", "动宾搭配", "动词(make) + 名词(rules)"),
     q(2, ["but", "and", "so", "or"], "but", "连词逻辑", "逻辑推理", ["aren’t happy with them", "still try to follow"], "前半句说有时不高兴，后半句说仍然努力遵守，前后形成转折关系。"),
-    q(3, ["swimming", "eating", "sleeping", "studying"], "eating", "动词", "常识 / 固定搭配", ["brush our teeth after", "meals"], "刷牙通常发生在吃饭之后，after eating meals 符合生活常识。", "eat meals", "动宾搭配", "动词(eat) + 名词(meals)"),
-    q(4, ["happy", "noisy", "quiet", "kind"], "quiet", "形容词副词", "逻辑推理 / 词汇辨析", ["mustn't talk loudly", "and"], "妈妈开会时不能大声说话，所以要保持安静，and 提示前后逻辑一致。"),
+    q(3, ["swimming", "eating", "sleeping", "studying"], "eating", "动词", "常识 / 固定搭配", ["brush our teeth after", "after eating meals"], "刷牙通常发生在吃饭之后，after eating meals 符合生活常识。", "eat meals", "动宾搭配", "动词(eat) + 名词(meals)"),
+    q(4, ["happy", "noisy", "quiet", "kind"], "quiet", "形容词副词", "逻辑推理 / 词汇辨析", ["mustn't talk loudly", "have to be"], "妈妈开会时不能大声说话，所以要保持安静，and 提示前后逻辑一致。"),
     q(5, ["look at", "work out", "turn off", "pick up"], "turn off", "动词短语", "逻辑推理 / 固定搭配", ["meeting in the house", "mustn't talk loudly"], "为了保持安静，需要关掉手机和电视，turn off 表示关闭。", "turn off", "动词短语", "动词(turn) + 副词(off)"),
-    q(6, ["easily", "exactly", "early", "especially"], "early", "形容词副词", "逻辑推理", ["because Mom doesn't want us to hurry"], "妈妈不希望孩子们匆忙去学校，所以要求早起。", "get up early", "副词搭配", "动词短语(get up) + 副词(early)"),
+    q(6, ["easily", "exactly", "early", "especially"], "early", "形容词副词", "逻辑推理", ["get up", "hurry to school"], "妈妈不希望孩子们匆忙去学校，所以要求早起。", "get up early", "副词搭配", "动词短语(get up) + 副词(early)"),
     q(7, ["room", "world", "rule", "school"], "world", "名词", "常识 / 逻辑推理", ["read books", "know more about"], "读书能帮助我们了解更广阔的世界，world 比 room 和 school 范围更合适。"),
     q(8, ["loves", "hates", "remembers", "listens"], "loves", "动词", "情感态度 / 上下文复现", ["we love her, too"], "最后一句的 too 暗示妈妈先爱我们，所以我们也爱她。"),
-    q(9, ["what", "how", "when", "why"], "how", "代词", "语法 / 固定搭配", ["learn ___ to be"], "learn how to do sth. 表示学习如何做某事，这里是学习如何成为自律的人。", "learn how to do sth.", "固定句型", "动词(learn) + 疑问词(how) + 不定式(to do)"),
+    q(9, ["what", "how", "when", "why"], "how", "代词", "语法 / 固定搭配", ["learn how", "to be a self-disciplined person"], "learn how to do sth. 表示学习如何做某事，这里是学习如何成为自律的人。", "learn how to do sth.", "固定句型", "动词(learn) + 疑问词(how) + 不定式(to do)"),
     q(10, ["look", "treat", "surprise", "change"], "treat", "动词", "固定搭配 / 词汇辨析", ["everyone with respect"], "treat sb. with respect 表示尊重地对待某人，符合妈妈对孩子的期待。", "treat sb. with respect", "动宾搭配", "动词(treat) + 代词(everyone) + 介词短语(with respect)")
   ],
   verifySentences: [
@@ -1869,22 +1869,22 @@ const favoriteBasketball = {
     { blank: 7 },
     " one another to do better. Their help gives me confidence (信心). When we win, we celebrate together. When we ",
     { blank: 8 },
-    ", we talk about our mistakes and practise more. Basketball isn’t just a(n) ",
+    ", we talk about our mistakes and practise more. Basketball isn’t just an ",
     { blank: 9 },
     " for me. It builds my body and makes my life full of joy. I’ll keep practising to ",
     { blank: 10 },
     " a better basketball player. Do you want to do so with me?"
   ],
   questions: [
-    q(1, ["marks", "goals", "tricks", "rules"], "tricks", "名词", "语境推理 / 词汇辨析", ["learn new", "try to make them perfect", "practice"], "放学后练习并努力让它们更完美，在篮球语境中指学习新的技巧。"),
-    q(2, ["If", "And", "But", "Because"], "If", "连词逻辑", "逻辑推理", ["can pass the ball well", "it's easy for us to score"], "传球好是容易得分的前提条件，所以用 If 引导条件状语从句。"),
-    q(3, ["few", "funny", "sweet", "double"], "double", "形容词副词", "逻辑推理 / 下文暗示", ["keeps me fit and strong", "also teaches me not to give up"], "下文列出两重好处：强身健体和学会不放弃，因此是 double benefits。", "double benefits", "形容词搭配", "形容词(double) + 名词(benefits)"),
-    q(4, ["wishes", "matches", "reasons", "numbers"], "matches", "名词", "上下文复现 / 语义场", ["sport", "game"], "在篮球运动和比赛语境中，输掉的自然是 matches。", "lose matches", "动宾搭配", "动词(lose) + 名词(matches)"),
+    q(1, ["marks", "goals", "tricks", "rules"], "tricks", "名词", "语境推理 / 词汇辨析", ["learn new", "make them perfect", "practice with my group"], "放学后练习并努力让它们更完美，在篮球语境中指学习新的技巧。"),
+    q(2, ["If", "And", "But", "Because"], "If", "连词逻辑", "逻辑推理", ["pass the ball well", "easy for us to score"], "传球好是容易得分的前提条件，所以用 If 引导条件状语从句。"),
+    q(3, ["few", "funny", "sweet", "double"], "double", "形容词副词", "逻辑推理 / 下文暗示", ["keeps me fit and strong", "not to give up"], "下文列出两重好处：强身健体和学会不放弃，因此是 double benefits。", "double benefits", "形容词搭配", "形容词(double) + 名词(benefits)"),
+    q(4, ["wishes", "matches", "reasons", "numbers"], "matches", "名词", "上下文复现 / 语义场", ["lose matches", "first game"], "在篮球运动和比赛语境中，输掉的自然是 matches。", "lose matches", "动宾搭配", "动词(lose) + 名词(matches)"),
     q(5, ["noise", "spirit", "advice", "progress"], "progress", "名词", "固定搭配 / 逻辑推理", ["practise hard", "makes great"], "努力练习之后，团队取得巨大进步，make progress 是固定搭配。", "make progress", "动宾搭配", "动词(make) + 形容词(great) + 名词(progress)"),
     q(6, ["his", "hers", "ours", "theirs"], "ours", "代词", "语法 / 上下文复现", ["Our coach", "our team"], "前文一直用 we / our 指代作者所在的队伍，所以此处用 ours 表示 our team。"),
-    q(7, ["stop", "notice", "hang", "encourage"], "encourage", "动词", "情感态度 / 逻辑推理", ["friendship", "do better", "gives me confidence"], "本段讲友谊和团队互助，队友之间彼此鼓励做得更好。", "encourage sb. to do sth.", "动词短语", "动词(encourage) + 代词(one another) + 不定式(to do)"),
+    q(7, ["stop", "notice", "hang", "encourage"], "encourage", "动词", "情感态度 / 逻辑推理", ["The best part", "do better", "gives me confidence"], "本段讲友谊和团队互助，队友之间彼此鼓励做得更好。", "encourage sb. to do sth.", "动词短语", "动词(encourage) + 代词(one another) + 不定式(to do)"),
     q(8, ["lose", "succeed", "hope", "relax"], "lose", "动词", "逻辑推理", ["When we win", "talk about our mistakes"], "前一句是赢了就庆祝，后一句谈错误并继续练习，对应的是输了的时候。"),
-    q(9, ["skill", "exercise", "flag", "duty"], "exercise", "名词", "常识推断 / 主旨升华", ["Basketball", "builds my body"], "篮球不仅是锻炼身体的 exercise，也让生活充满快乐。"),
+    q(9, ["skill", "exercise", "flag", "duty"], "exercise", "名词", "常识推断 / 主旨升华", ["builds my body", "full of joy"], "篮球不仅是锻炼身体的 exercise，也让生活充满快乐。"),
     q(10, ["make", "care", "discover", "become"], "become", "动词", "动作连贯 / 词汇辨析", ["keep practising"], "坚持练习的目标是成为更好的篮球运动员。become 表示“成为”；make 是制作或使，让后面结构不顺，care 是关心，discover 是发现，都不能表达目标身份变化。", "become a player", "动宾搭配", "动词(become) + 冠词(a) + 名词词组(better basketball player)")
   ],
   verifySentences: [
@@ -1948,15 +1948,15 @@ const peterChineseFood = {
   ],
   questions: [
     q(1, ["menu", "energy", "habit", "weight"], "habit", "名词", "固定搭配 / 上下文复现", ["falls in love with Chinese food"], "Peter 在郑州爱上中国食物，回澳洲后仍保持吃中餐的习惯。", "keep the habit of doing sth.", "名词搭配", "动词(keep) + 冠词(the) + 名词(habit) + 介词(of)"),
-    q(2, ["often", "hardly", "always", "usually"], "hardly", "形容词副词", "逻辑推理", ["But"], "But 提示转折：虽然他保持吃中餐的习惯，但家附近几乎找不到中餐厅。"),
+    q(2, ["often", "hardly", "always", "usually"], "hardly", "形容词副词", "逻辑推理", ["find a Chinese restaurant", "near his home"], "But 提示转折：虽然他保持吃中餐的习惯，但家附近几乎找不到中餐厅。"),
     q(3, ["sad", "friendly", "unlucky", "happy"], "happy", "形容词副词", "情感态度", ["can't wait"], "看到中餐厅后迫不及待想进去，说明他的心情是 happy。"),
     q(4, ["singer", "waitress", "teacher", "teenager"], "waitress", "名词", "上下文复现 / 常识", ["The waitress"], "下一句直接出现 The waitress，是下文原词复现。"),
     q(5, ["rises", "loses", "blows", "orders"], "orders", "动词", "动作连贯 / 常识", ["asks the waitress", "Of course"], "服务员回答有河南焖面后，Peter 自然会点一大碗面。"),
     q(6, ["builds", "causes", "serves", "draws"], "serves", "动词", "常识 / 动宾搭配", ["The waitress", "the noodles"], "餐厅场景中，服务员把面端上来或供应给顾客，用 serves。", "serve food", "动宾搭配", "动词(serve) + 名词(food/noodles)"),
-    q(7, ["surprise", "rule", "spirit", "result"], "surprise", "名词", "情感态度 / 语境推理", ["a feeling of coming back to China"], "在澳洲吃到让他感觉回到中国的面条，超出预期，是一个惊喜。"),
-    q(8, ["free", "blind", "same", "different"], "different", "形容词副词", "逻辑推理 / 下文暗示", ["But", "28 yuan", "14 yuan"], "下文用 28 元和 14 元作价格对比，说明价格不同。"),
+    q(7, ["surprise", "rule", "spirit", "result"], "surprise", "名词", "情感态度 / 语境推理", ["coming back to China", "eats them"], "在澳洲吃到让他感觉回到中国的面条，超出预期，是一个惊喜。"),
+    q(8, ["free", "blind", "same", "different"], "different", "形容词副词", "逻辑推理 / 下文暗示", ["price of the dish", "28 yuan", "14 yuan"], "下文用 28 元和 14 元作价格对比，说明价格不同。"),
     q(9, ["double", "perfect", "special", "friendly"], "double", "形容词副词", "常识推断 / 逻辑推理", ["28 yuan", "14 yuan"], "28 元正好是 14 元的两倍，所以澳洲价格是 double。"),
-    q(10, ["Excuse me", "On time", "After all", "For example"], "After all", "连词逻辑", "逻辑推理", ["Even so", "it's not easy to"], "这里是在解释为什么虽然贵也可以接受，After all 用来引出理由：毕竟在澳洲吃中国面不容易。")
+    q(10, ["Excuse me", "On time", "After all", "For example"], "After all", "连词逻辑", "逻辑推理 / 固定搭配", ["Even so", "it's not easy to"], "这题有两条正确路径：After all 是固定表达，表示“毕竟”；从逻辑上看，后句是在解释为什么虽然贵也可以接受，因为在澳洲吃到中国面并不容易。", "after all", "固定短语", "副词(after) + 代词(all)，整体表示“毕竟”")
   ],
   verifySentences: [
     { english: "Peter is from Australia.", chinese: "Peter 来自澳大利亚。" },
@@ -2023,7 +2023,7 @@ const silkRoadTrip = {
     q(2, ["from", "in", "at", "to"], "from", "介词搭配", "语法 / 介词辨析", ["different countries", "meet and trade"], "画出 different countries，再看前面的 People，句意是“来自不同国家的人”，表示来源用 from。"),
     q(3, ["poor", "excited", "absent", "lucky"], "excited", "形容词副词", "情感态度 / 逻辑推理", ["going on a trip"], "同学们即将去丝绸之路旅行，心情自然是兴奋的。"),
     q(4, ["of", "with", "without", "in"], "with", "介词搭配", "语法 / 介词辨析", ["modern city", "a long history"], "这里不是固定搭配，而是介词含义判断：with 表示“带有、拥有”，a modern city with a long history 指“一座拥有悠久历史的现代城市”。"),
-    q(5, ["friendly", "untidy", "interesting", "unhappy"], "interesting", "形容词副词", "逻辑推理 / 情感态度", ["so... that many people come to see them"], "兵马俑如此有趣和吸引人，以至于每年很多人来看。", "so... that...", "固定句型", "副词(so) + 形容词(interesting) + 连词(that) + 从句"),
+    q(5, ["friendly", "untidy", "interesting", "unhappy"], "interesting", "形容词副词", "逻辑推理 / 情感态度", ["many people come to see", "every year"], "兵马俑如此有趣和吸引人，以至于每年很多人来看。", "so... that...", "固定句型", "副词(so) + 形容词(interesting) + 连词(that) + 从句"),
     q(6, ["visit", "save", "carry", "arrive"], "visit", "动词", "词汇辨析 / 逻辑推理", ["the Zhongshan Bridge"], "中山桥是景点，游客面对景点最自然的动作是 visit“参观”。save 是拯救，carry 是携带，arrive 后面通常不能直接接地点名词，都不符合。"),
     q(7, ["mother river", "longest river", "shortest river", "cleanest river"], "mother river", "名词", "常识推断 / 文化常识", ["The Yellow River", "special meaning"], "结合中国文化常识，黄河被称为中国的母亲河。", "mother river", "名词搭配", "名词(mother) + 名词(river)"),
     q(8, ["articles", "paintings", "stories", "buildings"], "paintings", "名词", "常识推断 / 语义场复现", ["Mogao Caves", "and sculptures"], "莫高窟以壁画和雕塑闻名，paintings 与 sculptures 构成艺术品语义场。"),
@@ -2090,16 +2090,16 @@ const urumqiYuliExpressway = {
     ". This shows how the progress in Xinjiang is truly helping local communities improve."
   ],
   questions: [
-    q(21, ["hope", "fear", "sadness", "worry"], "hope", "名词", "情感态度 / 主旨基调", ["new highway", "improve"], "高速公路建成带来便利、机会和发展，全文积极，road of hope 指希望之路。"),
+    q(21, ["hope", "fear", "sadness", "worry"], "hope", "名词", "情感态度 / 主旨基调", ["new highway connects", "north and south"], "高速公路建成带来便利、机会和发展，全文积极，road of hope 指希望之路。"),
     q(22, ["slower", "faster", "harder", "easier"], "easier", "形容词副词", "逻辑推理 / 情感态度", ["connects the north and south"], "高速公路连接天山南北，让出行更便利、更容易。", "make travel easier", "动宾补搭配", "动词(makes) + 名词(travel) + 副词(much) + 形容词比较级(easier)"),
     q(23, ["spent", "cost", "took", "paid"], "took", "动词", "语法 / 词义辨析", ["the drive", "about seven hours", "Now, it takes"], "主语是行程 the drive，表示花费时间用 took；下文 Now, it takes 也形成复现。", "It takes/took time", "固定句型", "物/事件作主语 + take/took + 时间段"),
-    q(24, ["come", "go", "get", "turn"], "come", "动词", "固定搭配", ["an old dream", "true"], "dream come true 是固定表达，表示梦想成真。", "come true", "动词短语", "动词(come) + 形容词(true)"),
-    q(25, ["morning", "noon", "evening", "night"], "night", "名词", "语法 / 逻辑对比", ["in the morning", "at"], "前文 in the morning 与后文 at night 构成时间对比，at night 是固定表达。", "at night", "介词短语", "介词(at) + 名词(night)"),
+    q(24, ["come", "go", "get", "turn"], "come", "动词", "固定搭配", ["amazing change", "an old dream"], "dream come true 是固定表达，表示梦想成真。", "come true", "动词短语", "动词(come) + 形容词(true)"),
+    q(25, ["morning", "noon", "evening", "night"], "night", "名词", "语法 / 逻辑对比", ["in the morning", "desert in the south"], "前文 in the morning 与后文 at night 构成时间对比，at night 是固定表达。", "at night", "介词短语", "介词(at) + 名词(night)"),
     q(26, ["difficult", "boring", "expensive", "convenient"], "convenient", "形容词副词", "情感态度 / 逻辑推理", ["helps them move"], "新高速帮助牧民转移牲畜，生活自然更加便利。"),
-    q(27, ["time", "money", "space", "food"], "time", "名词", "上下文复现 / 逻辑线索", ["from seven hours to three"], "上文强调出行时间从七小时缩短到三小时，此处也指转移动物花更少时间。"),
+    q(27, ["time", "money", "space", "food"], "time", "名词", "上下文复现 / 逻辑线索", ["about seven hours", "just over three"], "上文强调出行时间从七小时缩短到三小时，此处也指转移动物花更少时间。"),
     q(28, ["came", "bought", "started", "sold"], "started", "动词", "固定搭配 / 逻辑推理", ["encouraged businessmen", "a business"], "商人看到道路带来的机会后返乡创业，start a business 表示开办生意。", "start a business", "动宾搭配", "动词(start) + 冠词(a) + 名词(business)"),
     q(29, ["closed", "start", "new", "open"], "open", "形容词", "上下文复现 / 同词复现", ["When the road opens"], "后文台词 When the road opens 直接提示，此处 expressway is now open 表示高速已经通车。"),
-    q(30, ["past", "present", "future", "nature"], "future", "名词", "主旨升华 / 逻辑推理", ["improving", "helping local communities improve"], "高速不仅连接地点，也带来更好的未来，呼应全文积极希望的主旨。", "a better future", "名词搭配", "冠词(a) + 形容词(better) + 名词(future)")
+    q(30, ["past", "present", "future", "nature"], "future", "名词", "主旨升华 / 逻辑推理", ["better future", "helping local communities"], "高速不仅连接地点，也带来更好的未来，呼应全文积极希望的主旨。", "a better future", "名词搭配", "冠词(a) + 形容词(better) + 名词(future)")
   ],
   verifySentences: [
     { english: 'The Urumqi-Yuli Expressway has become a "road of hope" for people in Xinjiang.', chinese: "乌尉高速已经成为新疆人民的一条“希望之路”。", answers: ["hope"] },
@@ -2235,20 +2235,20 @@ const firstFishingTrip = {
     " —patience and courage."
   ],
   questions: [
-    q(1, ["fishing", "camping", "boating"], "fishing", "动名词", "上下文复现", ["fishing trip", "favorite fishing place"], "画出下文 fishing trip 和 fishing place，两个线索都直接指向 fishing。这里重点是原词复现，不按固定搭配处理。"),
-    q(2, ["games", "habits", "memories"], "memories", "名词", "逻辑推理 / 常识", ["When I was young", "childhood"], "童年时期那些快乐的下午，自然成为童年记忆。"),
+    q(1, ["fishing", "camping", "boating"], "fishing", "动名词", "上下文复现 / 固定搭配", ["fishing trip", "favorite fishing place"], "这题有两条正确路径：go fishing 是固定表达，表示“去钓鱼”；下文 fishing trip 和 favorite fishing place 又形成两处原词复现。", "go fishing", "动词短语", "动词(go) + 动名词(fishing)"),
+    q(2, ["games", "habits", "memories"], "memories", "名词", "逻辑推理 / 常识", ["When I was young","happiest childhood memories"], "童年时期那些快乐的下午，自然成为童年记忆。"),
     q(3, ["first", "second", "third"], "first", "序数词", "上下文复现", ["the first fishing trip"], "结尾处出现 the first fishing trip，首尾呼应，直接复现 first。"),
     q(4, ["sad", "excited", "angry"], "excited", "形容词副词", "情感态度", ["happiest childhood", "favorite fishing place"], "去最喜欢的钓鱼地点，是快乐童年记忆的一部分，心情应为 excited。"),
     q(5, ["where", "when", "why"], "when", "连词逻辑", "语法", ["watched him carefully", "he taught me"], "当叔叔教我抛鱼钩时，我仔细看着他，when 引导时间状语从句。"),
-    q(6, ["something", "anything", "nothing"], "nothing", "代词", "逻辑推理 / 上下文复现", ["but", "still got nothing"], "but 提示结果不如意，下文又复现 still got nothing。"),
+    q(6, ["something", "anything", "nothing"], "nothing", "代词", "逻辑推理 / 上下文复现", ["tried a few times", "still got nothing"], "作者尝试了几次仍然没有收获，后文 still got nothing 直接复现，因此选 nothing。something 和 anything 都不符合失败结果。"),
     q(7, ["patient", "excellent", "important"], "patient", "形容词副词", "上下文复现", ["His patience"], "第一段写叔叔的 patience，这里转为形容词 patient，属于同词根复现。"),
-    q(8, ["hug", "voice", "laughter"], "voice", "名词", "动作连贯 / 逻辑推理", ["he said", "gentle"], "叔叔刚说了鼓励的话，所以是他温柔的声音帮助我继续尝试。"),
+    q(8, ["hug", "voice", "laughter"], "voice", "名词", "动作连贯 / 逻辑推理", ["he said","His gentle voice"], "叔叔刚说了鼓励的话，所以是他温柔的声音帮助我继续尝试。"),
     q(9, ["surprised", "proud", "upset"], "upset", "形容词副词", "情感态度 / 因果关系", ["kept throwing", "still got nothing"], "一直抛钩却仍然没有收获，自然会感到沮丧。"),
     q(10, ["fast", "well", "normally"], "fast", "形容词副词", "常识推断 / 情感态度", ["felt a fish biting", "I got one"], "感觉鱼上钩时紧张兴奋，心跳会很快。", "beat fast", "动副搭配", "动词(beat) + 副词(fast)"),
-    q(11, ["just now", "right away", "at times"], "right away", "副词短语", "逻辑推理", ["Unluckily", "disappeared"], "刚喊钓到了，鱼就立刻消失跑掉，right away 表示“立刻、马上”，符合遗憾语境；just now 是刚才，at times 是有时。"),
+    q(11, ["just now", "right away", "at times"], "right away", "副词短语", "逻辑推理 / 固定搭配", ["Unluckily, the fish","fish disappeared right"], "这题有两条正确路径：right away 是固定短语，表示“立刻、马上”；语境中刚喊钓到了，鱼就消失了，也说明动作紧接着发生。just now 是刚才，at times 是有时。", "right away", "固定短语", "副词(right) + 副词(away)，整体表示“立刻”"),
     q(12, ["so", "because", "before"], "because", "连词逻辑", "逻辑推理", ["cried in silence", "failed too many times"], "哭泣是结果，失败太多次是原因，所以用 because。"),
     q(13, ["encouraged", "invited", "warned"], "encouraged", "动词", "固定搭配 / 情感态度", ["to keep on trying"], "叔叔在作者受挫时鼓励他继续尝试，encourage sb. to do sth. 是固定搭配。", "encourage sb. to do sth.", "动宾搭配", "动词(encourage) + 代词(me) + 不定式(to keep on trying)"),
-    q(14, ["protected", "supported", "taught"], "taught", "动词", "上下文复现", ["he taught me how to throw the hook"], "前文叔叔教我抛鱼钩，结尾升华为这次钓鱼之旅教给我更多。"),
+    q(14, ["protected", "supported", "taught"], "taught", "动词", "上下文复现", ["how to throw the hook"], "前文叔叔教我抛鱼钩，结尾升华为这次钓鱼之旅教给我更多。"),
     q(15, ["meaningless", "amazing", "valuable"], "valuable", "形容词副词", "情感态度 / 主旨升华", ["patience and courage"], "耐心和勇气是非常宝贵的品质，valuable 符合全文积极升华。")
   ],
   verifySentences: [
@@ -2328,16 +2328,16 @@ const twoPlantsGreat = {
     q(3, ["prettier", "bigger", "longer"], "bigger", "形容词副词", "上下文复现", ["will grow bigger"], "下一句男孩回答 inside plant will grow bigger，直接原词复现 bigger。"),
     q(4, ["if", "though", "because"], "because", "连词逻辑", "逻辑推理", ["will grow bigger", "it is safer"], "男孩认为室内植物会长得更大，因为它更安全，前果后因用 because。"),
     q(5, ["care for", "take away", "cut down"], "care for", "动词短语", "逻辑推理 / 固定搭配", ["not safe at all", "Animals may eat it"], "室外植物不安全，没人照顾，可能被动物吃掉，所以选 care for。", "care for", "动词短语", "动词短语(care for) + 代词(it)"),
-    q(6, ["quickly", "patiently", "happily"], "patiently", "形容词副词", "逻辑推理 / 常识", ["wait", "We will know the answer"], "植物生长需要时间，因此要耐心等待。", "wait patiently", "动副搭配", "动词(wait) + 副词(patiently)"),
+    q(6, ["quickly", "patiently", "happily"], "patiently", "形容词副词", "逻辑推理 / 常识", ["Let’s wait patiently","We will know the answer"], "植物生长需要时间，因此要耐心等待。", "wait patiently", "动副搭配", "动词(wait) + 副词(patiently)"),
     q(7, ["days", "years", "months"], "years", "名词", "常识推断 / 下文暗示", ["see a big tree"], "植物长成一棵大树需要较长时间，通常是数年。"),
     q(8, ["Anything", "Something", "Nothing"], "Nothing", "代词", "逻辑推理 / 代词辨析", ["and it is safe"], "室内植物很安全，所以没有坏事发生，用 Nothing。"),
     q(9, ["surprised", "upset", "relaxed"], "surprised", "形容词副词", "情感态度 / 逻辑对比", ["see a big tree", "couldn’t believe his eyes"], "男孩本以为室外植物不安全，结果看到大树，因此很惊讶。", "be surprised to do sth.", "形容词搭配", "系动词(was) + 形容词(surprised) + 不定式(to see)"),
-    q(10, ["decide", "understand", "remember"], "understand", "动词", "动作连贯 / 逻辑推理", ["couldn't believe his eyes", "why"], "结果出乎意料，男孩无法理解为什么室外植物长得更大。"),
+    q(10, ["decide", "understand", "remember"], "understand", "动词", "动作连贯 / 逻辑推理", ["couldn’t believe his eyes", "grow much bigger"], "结果与男孩原先的判断相反，他无法理解室外植物为什么长得更大，因此选 understand。decide 和 remember 都不能引出对原因的疑问。"),
     q(11, ["wall", "season", "corner"], "season", "名词", "常识推断 / 语义场复现", ["weather changes"], "室外植物经历四季和困难，season 与 weather changes 属于自然气候语义场。"),
     q(12, ["stop", "break", "feel"], "feel", "动词", "逻辑推理", ["inside is safe", "weather changes"], "室内植物被保护起来，感受不到外界天气变化。"),
-    q(13, ["food", "water", "sunlight"], "sunlight", "名词", "常识推断", ["doesn't grow big", "inside"], "室内植物长不大，一个核心原因是得不到足够阳光。"),
+    q(13, ["food", "water", "sunlight"], "sunlight", "名词", "常识推断", ["doesn’t grow big", "plant inside"], "室内植物长不大，一个核心原因是得不到足够阳光。"),
     q(14, ["answer", "result", "meaning"], "answer", "名词", "上下文复现", ["How can a person be great", "Here's the"], "前一句提出问题，后面给出答案，选 answer。"),
-    q(15, ["solved", "found", "protected"], "solved", "动词", "逻辑递进 / 动宾搭配", ["failed", "faced", "those difficulties"], "成为伟大的人不仅要面对困难，还要解决困难，动作层层递进。", "solve difficulties", "动宾搭配", "动词(solve) + 名词(difficulties)")
+    q(15, ["overcome", "found", "protected"], "overcome", "动词", "逻辑递进 / 动宾搭配", ["failed many times", "faced many difficulties"], "画出动作链：先经历失败，再面对困难，最后克服困难。overcome difficulties 是自然动宾搭配；它与 have failed、faced 并列，因此用过去分词 overcome。", "overcome difficulties", "动宾搭配", "动词(overcome) + 名词(difficulties)")
   ],
   verifySentences: [
     { english: "One day, a little boy asked his father, “What does the word ‘great’ mean?", chinese: "一天，一个小男孩问他的父亲：“‘伟大’这个词是什么意思？”" },
@@ -2360,7 +2360,7 @@ const twoPlantsGreat = {
     { english: "It doesn’t feel weather changes.", chinese: "它感受不到天气变化。", answers: ["feel"] },
     { english: "And it doesn’t get enough sunlight, so it doesn’t grow big.", chinese: "而且它得不到足够的阳光，所以长不大。", answers: ["sunlight"] },
     { english: "How can a person be great?", chinese: "一个人怎样才能变得伟大？" },
-    { english: "Here’s the answer: to become a great person, one must have failed many times, faced many difficulties and solved those difficulties.", chinese: "答案是：要成为一个伟大的人，一个人必须失败过很多次，面对过许多困难，并解决那些困难。", answers: ["answer", "solved"] },
+    { english: "Here's the answer: to become a great person, one must have failed many times, faced many difficulties and overcome those difficulties.", chinese: "答案是：要成为一个伟大的人，一个人必须经历多次失败，面对许多困难，并克服那些困难。", answers: ["answer", "overcome"] },
     { english: "Only in this way can he or she become great.", chinese: "只有这样，他或她才能变得伟大。" }
   ]
 };
@@ -2384,7 +2384,7 @@ const actOfKindness = {
     { blank: 2 },
     " a language I couldn’t understand. It seemed that he was in a hurry to get somewhere. I realized that he was ",
     { blank: 3 },
-    " and couldn’t speak English. He showed me some map screenshots (屏幕截图), ",
+    " and couldn’t speak English. He showed me some map screenshots (屏幕截图); ",
     { blank: 4 },
     ", I didn’t know how to read them. ",
     { blank: 5 },
@@ -2411,16 +2411,16 @@ const actOfKindness = {
     ", we reached the bus stop and he made his call. We said our goodbyes and he gave me a heartwarming message that made me believe in the goodness of human nature."
   ],
   questions: [
-    q(1, ["phone", "watch", "book"], "phone", "名词", "上下文复现 / 常识", ["map screenshots", "translation app", "microphone"], "地图截图、翻译软件和麦克风都指向手机这一物品。"),
-    q(2, ["on", "in", "for"], "in", "介词搭配", "语法 / 介词搭配", ["speaking ___ a language"], "表示用某种语言讲话，用 speak in a language。", "in a language", "介词短语", "介词(in) + 名词词组(a language)"),
+    q(1, ["phone", "watch", "book"], "phone", "名词", "上下文复现 / 常识", ["map screenshots", "translation app", "spoke into the microphone"], "地图截图、翻译软件和麦克风都指向手机这一物品。"),
+    q(2, ["on", "in", "for"], "in", "介词搭配", "语法 / 介词搭配", ["a language I couldn’t understand", "couldn’t speak English"], "表示使用某种语言讲话，用 speak in a language，因此选 in。on 和 for 不能表示所使用的语言。", "in a language", "介词短语", "介词(in) + 名词词组(a language)"),
     q(3, ["won", "got", "lost"], "lost", "动词", "逻辑推理", ["in a hurry to get somewhere", "map screenshots"], "老人急着去某处，又拿地图截图求助，说明他迷路了。"),
-    q(4, ["or", "however", "but"], "however", "连词逻辑", "语法 / 逻辑推理", ["showed me some map screenshots", "I didn't know how to read them"], "前后构成转折，且 however 常被逗号隔开作插入语。"),
-    q(5, ["So", "Because", "If"], "So", "连词逻辑", "逻辑推理", ["didn't know how to read them", "downloaded a translation app"], "看不懂地图是原因，下载翻译软件是结果，用 So。"),
+    q(4, ["or", "however", "but"], "however", "连词逻辑", "语法 / 逻辑推理", ["map screenshots", "read them"], "前后构成转折，且 however 常被逗号隔开作插入语。"),
+    q(5, ["So", "Because", "If"], "So", "连词逻辑", "逻辑推理", ["read them", "translation app"], "看不懂地图是原因，下载翻译软件是结果，用 So。"),
     q(6, ["translated", "finished", "divided"], "translated", "动词", "上下文复现 / 固定搭配", ["translation app", "into English"], "翻译软件把他的话翻译成英语，translation 与 translated 同词根复现。", "translate... into...", "动宾搭配", "动词(translated) + 名词(his words) + 介词短语(into English)"),
     q(7, ["took out", "got out", "found out"], "found out", "动词短语", "动作连贯 / 逻辑推理", ["communicate with him", "that he wanted to go home"], "通过沟通，我最终弄清楚他想回家。", "find out", "动词短语", "动词(found) + 副词(out) + 宾语从句(that...)"),
     q(8, ["which", "what", "where"], "where", "代词", "语法", ["a bus stop"], "先行词是地点 a bus stop，从句中表示在那里给儿子打电话，用 where。"),
-    q(9, ["although", "because", "and"], "although", "连词逻辑", "逻辑推理", ["laughed and joked", "couldn't understand each other's language"], "虽然语言不通，但一路欢笑，前后构成让步关系。"),
-    q(10, ["fun", "sad", "safe"], "fun", "形容词副词", "情感态度", ["laughed and joked", "heartwarming"], "一路笑着开玩笑，后文又说暖心，说明这是一次愉快有趣的经历。"),
+    q(9, ["although", "because", "and"], "although", "连词逻辑", "逻辑推理", ["laughed and joked", "each other’s language"], "虽然语言不通，但一路欢笑，前后构成让步关系。"),
+    q(10, ["fun", "sad", "safe"], "fun", "形容词副词", "情感态度", ["laughed and joked","a heartwarming message"], "一路笑着开玩笑，后文又说暖心，说明这是一次愉快有趣的经历。"),
     q(11, ["useful", "careful", "thankful"], "thankful", "形容词副词", "上下文复现 / 情感态度", ["kept thanking me"], "后文说老人一直感谢我，thankful 与 thanking 构成同词根复现。", "be thankful for", "形容词搭配", "系动词(was) + 副词(very) + 形容词(thankful) + 介词短语(for my help)"),
     q(12, ["asking", "reminding", "giving"], "reminding", "动词", "逻辑推理 / 语境辨析", ["kept thanking me", "I was happy to help"], "老人不断感谢我，我不断提醒他我很乐意帮忙。", "remind sb. that...", "动宾搭配", "动词(reminding) + 代词(him) + 宾语从句(that...)"),
     q(13, ["It", "That", "This"], "It", "代词", "语法", ["was amazing how"], "It 作形式主语，真正主语是 how 引导的从句。", "It is amazing how...", "固定句型", "形式主语(It) + 系动词(was) + 表语(amazing) + 真正主语从句(how...)"),
@@ -2432,7 +2432,7 @@ const actOfKindness = {
     { english: "He was waving his phone at me and speaking in a language I couldn’t understand.", chinese: "他正朝我挥着手机，并用一种我听不懂的语言说话。", answers: ["phone", "in"] },
     { english: "It seemed that he was in a hurry to get somewhere.", chinese: "他似乎急着要去某个地方。" },
     { english: "I realized that he was lost and couldn’t speak English.", chinese: "我意识到他迷路了，而且不会说英语。", answers: ["lost"] },
-    { english: "He showed me some map screenshots, however, I didn’t know how to read them.", chinese: "他给我看了一些地图截图，然而我不知道如何看懂它们。", answers: ["however"] },
+    { english: "He showed me some map screenshots; however, I didn’t know how to read them.", chinese: "他给我看了一些地图截图，然而我不知道如何看懂它们。", answers: ["however"] },
     { english: "So I downloaded a translation app to communicate with him.", chinese: "所以我下载了一个翻译软件来和他沟通。", answers: ["So"] },
     { english: "He spoke into the microphone in his language and it translated his words into English so that I could understand.", chinese: "他用自己的语言对着麦克风说话，软件把他的话翻译成英语，这样我就能理解了。", answers: ["translated"] },
     { english: "I finally found out that he wanted to go home, which was a long walk away.", chinese: "我终于弄清楚他想回家，而那是一段很长的路。", answers: ["found out"] },
@@ -2485,12 +2485,12 @@ const sharingJuiceFairly = {
   questions: [
     q(1, ["similar", "same", "expensive", "different"], "different", "形容词副词", "下文暗示 / 逻辑推理", ["short and wide", "tall and thin"], "下文写三个杯子的形状各不相同，所以他们有不同的杯子。"),
     q(2, ["turn down", "find out", "put off", "hand in"], "find out", "动词短语", "固定搭配 / 逻辑推理", ["just by looking", "measure it"], "光靠看不能弄清楚谁的杯子能装最多，必须测量。", "find out", "动词短语", "动词(find) + 副词(out) + 宾语从句"),
-    q(3, ["truth", "plan", "value", "problem"], "truth", "名词", "逻辑推理", ["might look like", "but"], "看起来像 Ella 的杯子装得最多，但这可能不是真相。"),
-    q(4, ["listened", "looked", "wrote", "turned"], "looked", "动词", "动作连贯 / 常识推断", ["inside the cups", "I think Jim's cup has the least"], "Ella 判断 Jim 的杯子最少之前，先往杯子里面看了看。", "look inside", "动副搭配", "动词(looked) + 介词短语(inside the cups)"),
-    q(5, ["anger", "happiness", "smile", "sadness"], "smile", "名词", "上下文复现", ["Tiva smiled at Jim kindly", "still"], "前文写 Tiva smiled，still 提示她脸上仍带着微笑。", "with a smile on one's face", "名词搭配", "介词(with) + 冠词(a) + 名词(smile) + 介词短语(on her face)"),
-    q(6, ["Instead", "Also", "Hardly", "Still"], "Instead", "连词逻辑", "逻辑推理", ["didn't drink it", "poured it into Jim's short cup"], "她没有喝果汁，而是倒进 Jim 的短杯子里，构成替代逻辑。"),
-    q(7, ["added", "made", "filled", "held"], "filled", "动词", "上下文复现", ["She filled her cup with juice", "again"], "again 提示重复前文 filled her cup 的动作。"),
-    q(8, ["empty", "full", "beautiful", "heavy"], "full", "形容词副词", "上下文复现", ["It was just full", "too"], "too 提示这次倒进 Ella 的杯子也和前文一样是满的。"),
+    q(3, ["truth", "plan", "value", "problem"], "truth", "名词", "逻辑推理", ["might look like", "may not be"], "前面只是视觉判断，后面说仍需测量，说明表象可能不是真相，因此选 truth。plan、value 和 problem 都不能与真假判断呼应。"),
+    q(4, ["listened", "looked", "wrote", "turned"], "looked", "动词", "动作连贯 / 常识推断", ["inside the cups", "Jim’s cup"], "Ella 判断 Jim 的杯子最少之前，先往杯子里面看了看。", "look inside", "动副搭配", "动词(looked) + 介词短语(inside the cups)"),
+    q(5, ["anger", "happiness", "smile", "sadness"], "smile", "名词", "上下文复现", ["Tiva smiled at Jim kindly","smile still on"], "前文写 Tiva smiled，still 提示她脸上仍带着微笑。", "with a smile on one's face", "名词搭配", "介词(with) + 冠词(a) + 名词(smile) + 介词短语(on her face)"),
+    q(6, ["Instead", "Also", "Hardly", "Still"], "Instead", "连词逻辑", "逻辑推理", ["She didn’t drink", "poured it into Jim’s"], "她没有喝果汁，而是把果汁倒进 Jim 的杯子，两个动作构成替代关系，因此选 Instead。Also 表补充，Hardly 表几乎不，Still 表仍然。"),
+    q(7, ["added", "made", "filled", "held"], "filled", "动词", "上下文复现", ["She filled her cup with juice","her cup again"], "again 提示重复前文 filled her cup 的动作。"),
+    q(8, ["empty", "full", "beautiful", "heavy"], "full", "形容词副词", "上下文复现", ["It was just full","was full, too"], "too 提示这次倒进 Ella 的杯子也和前文一样是满的。"),
     q(9, ["price", "shape", "color", "weight"], "shape", "名词", "上文总结 / 语义场复现", ["short and wide", "tall and thin"], "短宽、高瘦都在描述杯子的形状，所以是 different in shape。", "different in shape", "介词短语", "形容词(different) + 介词(in) + 名词(shape)"),
     q(10, ["created", "changed", "avoided", "solved"], "solved", "动词", "固定搭配 / 逻辑推理", ["the problem", "made good use of your knowledge"], "Tiva 用知识解决了公平分果汁的问题，solve the problem 是固定搭配。", "solve the problem", "动宾搭配", "动词(solved) + 名词(the problem)")
   ],
@@ -2547,7 +2547,7 @@ const jacksBirthdayPicnic = {
     { blank: 5 },
     " the cake.” Mum picked the cake up, but tripped (绊) over the blanket. The cake fell onto the sand. “No way can we eat the cake now,” Mum sighed (叹气). “Mum, I’m not hungry yet,” Jack said. A moment later, dark clouds came and it began to rain. The family ",
     { blank: 6 },
-    " packed up everything and decided to leave. Dad made a(n) ",
+    " packed up everything and decided to leave. Dad made a ",
     { blank: 7 },
     ", “We’ll have a big meal on the way home.” But later they found the only restaurant on the way back was closed. Mum and Dad were a little sad. Luckily, Jack ",
     { blank: 8 },
@@ -2564,10 +2564,10 @@ const jacksBirthdayPicnic = {
     q(4, ["silent", "strict", "busy", "glad"], "silent", "形容词副词", "上下文复现 / 逻辑推理", ["broke the silence"], "下一句 Jack 打破沉默，倒推爸妈变得沉默。"),
     q(5, ["share", "buy", "show", "cover"], "share", "动词", "逻辑推理", ["No worry", "the cake"], "食物篮没了，Jack 安慰父母还可以分享蛋糕。"),
     q(6, ["lazily", "secretly", "quickly", "strangely"], "quickly", "形容词副词", "常识推断 / 逻辑推理", ["began to rain", "packed up"], "开始下雨时，一家人会迅速收拾东西离开。"),
-    q(7, ["noise", "mistake", "answer", "promise"], "promise", "名词", "固定搭配 / 逻辑推理", ["We'll have a big meal on the way home"], "爸爸说回家路上吃大餐，是安慰大家的承诺。", "make a promise", "动宾搭配", "动词(made) + 冠词(a) + 名词(promise)"),
+    q(7, ["noise", "mistake", "answer", "promise"], "promise", "名词", "固定搭配 / 逻辑推理", ["Dad made a", "way home"], "爸爸说回家路上吃大餐，是安慰大家的承诺。", "make a promise", "动宾搭配", "动词(made) + 冠词(a) + 名词(promise)"),
     q(8, ["needed", "guessed", "forgot", "knew"], "knew", "动词", "逻辑推理 / 词汇辨析", ["jokes that could cheer them up"], "Jack 知道很多能让父母开心的笑话，才能讲出来逗他们。"),
     q(9, ["tent", "basket", "treasure", "cake"], "basket", "名词", "上下文复现", ["the basket of food", "inside the front door"], "全文悬念是食物篮没找到，回家后发现篮子就在前门里面。"),
-    q(10, ["game", "morning", "birthday"], "birthday", "名词", "上下文复现 / 主旨升华", ["start for Jack's birthday"], "首句写 Jack 的生日有完美开始，结尾呼应为生日的完美结束。")
+    q(10, ["game", "morning", "birthday", "picnic"], "birthday", "名词", "上下文复现 / 主旨升华", ["lovely morning", "Mum and Dad"], "首句写 Jack 的生日有一个完美开端，结尾用 perfect ending 形成首尾呼应，因此选 birthday。game 和 morning 都不能概括全天经历。")
   ],
   verifySentences: [
     { english: "It was a lovely morning, a perfect start for Jack’s birthday.", chinese: "那是一个美好的早晨，是 Jack 生日的完美开始。" },
@@ -2652,19 +2652,19 @@ const seedSecretPatience = {
   questions: [
     q(1, ["carefully", "happily", "carelessly", "quietly"], "carefully", "形容词副词", "上下文复现", ["plant it in the soil carefully"], "下一段写 Amy decided to plant it in the soil carefully，直接复现 carefully。"),
     q(2, ["boring", "clear", "terrible", "interesting"], "interesting", "形容词副词", "情感态度 / 逻辑推理", ["very curious"], "Amy 对种子很好奇，所以认为种下它一定很有趣。"),
-    q(3, ["touched", "watered", "smelt", "sent"], "watered", "动词", "上下文复现 / 常识", ["watered the soil three times a day"], "下文明确出现 She still watered the soil three times a day，直接复现 watered。"),
-    q(4, ["warm", "lazy", "glad", "sad"], "sad", "形容词副词", "情感态度 / 逻辑推理", ["But", "only bare soil"], "期待发芽却只看到光秃秃的土壤，Amy 感到难过。"),
+    q(3, ["touched", "watered", "smelt", "sent"], "watered", "动词", "上下文复现 / 常识", ["three times a day"], "下文明确出现 She still watered the soil three times a day，直接复现 watered。"),
+    q(4, ["warm", "lazy", "glad", "sad"], "sad", "形容词副词", "情感态度 / 逻辑推理", ["only bare soil", "after four days"], "Amy 期待种子发芽，四天后却只看到光秃秃的土壤，情绪应是 sad。warm、lazy、glad 都不符合失望场景。"),
     q(5, ["words", "wish", "story", "lie"], "words", "名词", "动作连贯 / 逻辑推理", ["Amy complained to"], "Amy 向 Mr. Green 抱怨，他听到的是她说的话。"),
     q(6, ["Or", "But", "So", "Yet"], "So", "连词逻辑", "逻辑推理", ["just spent several days", "need to be patient"], "植物生长需要时间，而 Amy 只等了几天，所以她需要耐心。"),
-    q(7, ["how", "when", "what", "where"], "what", "代词", "语法", ["didn't believe", "he said"], "believe 后接宾语从句，said 缺宾语，表示他说的话，用 what。"),
+    q(7, ["how", "when", "what", "where"], "what", "代词", "语法", ["Amy didn’t believe", "he said"], "believe 后接宾语从句，said 缺少宾语，表示“他说的内容”，因此用 what。how、when、where 分别表示方式、时间和地点。"),
     q(8, ["Unluckily", "Patiently", "Luckily", "Impolitely"], "Unluckily", "形容词副词", "情感态度 / 逻辑推理", ["muddy mess", "heavy rain", "flooded soil"], "土壤已泥泞，周末又下大雨，是不幸的情况。"),
     q(9, ["bought", "checked", "painted", "collected"], "checked", "动词", "动作连贯 / 逻辑推理", ["carefully and said"], "Mr. Green 在判断前仔细检查了土壤。"),
     q(10, ["time", "water", "food", "heat"], "time", "名词", "上下文复现 / 语义呼应", ["Nature works on its own clock", "spent a long time"], "前文反复强调自然有自己的时间和需要长时间，因此植物需要 time。"),
-    q(11, ["test", "advice", "present", "box"], "advice", "名词", "固定搭配 / 逻辑推理", ["didn't check the seed again and again"], "Amy 改变做法，说明她听取了 Mr. Green 的建议。", "take one's advice", "动宾搭配", "动词(took) + 物主代词(his) + 名词(advice)"),
-    q(12, ["teach", "help", "treat", "tell"], "tell", "动词", "固定搭配 / 词汇辨析", ["___ Mr. Green about it"], "嫩芽出现后，Amy 跑去把这件事告诉 Mr. Green。", "tell sb. about sth.", "动词短语", "动词(tell) + 名词(Mr. Green) + 介词短语(about it)"),
-    q(13, ["at", "with", "from", "without"], "with", "介词搭配", "语法 / 介词辨析", ["waited ___ patience"], "这里不按固定搭配处理，而看介词含义：with 加抽象名词 patience，表示“带着耐心、耐心地”。"),
+    q(11, ["test", "advice", "present", "box"], "advice", "名词", "固定搭配 / 逻辑推理", ["didn’t check the seed", "again and again"], "Amy 改变做法，说明她听取了 Mr. Green 的建议。", "take one's advice", "动宾搭配", "动词(took) + 物主代词(his) + 名词(advice)"),
+    q(12, ["teach", "help", "treat", "tell"], "tell", "动词", "固定搭配 / 词汇辨析", ["ran quickly", "about it"], "嫩芽出现后，Amy 跑去把这件事告诉 Mr. Green。", "tell sb. about sth.", "动词短语", "动词(tell) + 名词(Mr. Green) + 介词短语(about it)"),
+    q(13, ["at", "with", "from", "without"], "with", "介词搭配", "语法 / 介词辨析", ["watched and waited", "Still be patient"], "with 加抽象名词 patience 表示带着耐心、耐心地，符合整个夏天持续观察和等待的语境，因此选 with。"),
     q(14, ["offered", "received", "became", "protected"], "became", "动词", "动作连贯 / 逻辑推理", ["golden petals came out", "a bright sunflower"], "花瓣长出来后，植物最终变成了一朵明亮的向日葵。"),
-    q(15, ["road", "rose", "secret"], "secret", "名词", "上下文复现", ["understand its secret"], "首段奶奶说会明白它的 secret，结尾呼应为知道了这个 secret。")
+    q(15, ["road", "rose", "secret", "gift"], "secret", "名词", "上下文复现", ["understand its secret"], "首段奶奶说会明白它的 secret，结尾呼应为知道了这个 secret。")
   ],
   verifySentences: [
     { english: "One spring morning, 8-year-old Amy received a small box from her grandma.", chinese: "一个春天的早晨，8岁的 Amy 收到了奶奶给她的一个小盒子。" },
@@ -2759,19 +2759,19 @@ const brokenCameraSiblingLove = {
     ". This camera now is more meaningful."
   ],
   questions: [
-    q(21, ["of", "from", "with"], "from", "介词搭配", "语法 / 介词辨析", ["a gift ___ her father"], "这里不是固定搭配，而是介词含义判断：礼物来自父亲，表示来源用 from。"),
+    q(21, ["of", "from", "with"], "from", "介词搭配", "语法 / 介词辨析", ["special—a gift", "for her birthday"], "这台相机是父亲送来的生日礼物，表示来源用 from。of 表所属，with 表伴随，都不能表示赠送者来源。"),
     q(22, ["angry", "happy", "excited"], "angry", "形容词副词", "情感态度 / 褒贬态度一致法", ["camera dropped", "lens broke", "very sad"], "心爱的相机被摔坏，Jenny 非常伤心，顺着负面情绪，她这两天一直很生气；后文 anger disappeared 也复现。"),
-    q(23, ["decided", "wanted", "refused"], "refused", "动词", "逻辑推理 / 转折关系", ["tried to say sorry", "but"], "哥哥试图道歉，但是 Jenny 还在生气，所以拒绝接受道歉。", "refuse to do sth.", "动宾搭配", "动词(refuse) + 不定式(to do)"),
-    q(24, ["her", "his", "my"], "his", "代词", "逻辑推理 / 语法", ["he brought ___ piggy bank"], "主语是 he，哥哥拿来的是他自己的存钱罐，因此用 his。"),
+    q(23, ["decided", "wanted", "refused"], "refused", "动词", "逻辑推理 / 转折关系", ["tried to say sorry", "stayed angry"], "哥哥试图道歉，但 Jenny 仍在生气，所以她拒绝接受道歉。refuse to do sth. 表示拒绝做某事；decide 和 want 都与负面转折不符。", "refuse to do sth.", "动宾搭配", "动词(refuse) + 不定式(to do)"),
+    q(24, ["her", "his", "my"], "his", "代词", "逻辑推理 / 语法", ["piggy bank", "tried to say sorry"], "主语是 he，哥哥拿来的是他自己的存钱罐，因此用 his。"),
     q(25, ["fix", "break", "sell"], "fix", "动词", "上下文复现 / 动作连贯", ["wanted him to fix it"], "哥哥拿存钱罐是为了帮忙修相机，下文 wanted him to fix it 直接复现 fix。"),
     q(26, ["lasting", "useful", "cheap"], "cheap", "形容词副词", "逻辑推理 / 下文暗示", ["didn’t have enough money"], "修理师傅说不简单也不便宜，下一句没有足够的钱直接提示 cheap。"),
     q(27, ["pay for", "ask for", "look for"], "pay for", "动词短语", "固定搭配 / 逻辑推理", ["let Jenny work here", "part of it"], "因为钱不够，Jenny 在店里工作是为了支付部分修理费。", "pay for", "动词短语", "动词(pay) + 介词(for)"),
     q(28, ["minutes", "days", "hours"], "days", "名词", "上下文复现 / 常识推断", ["stayed with her every day"], "下一句 every day 提示时间单位是 days。"),
-    q(29, ["cheer", "wake", "pick"], "cheer", "动词", "固定搭配 / 情感态度", ["Jenny's anger disappeared"], "Leo 每天陪着她，让她振作、开心起来，所以 Jenny 的怒气消失。", "cheer sb. up", "动副搭配", "动词(cheer) + 某人(sb.) + 副词(up)"),
-    q(30, ["photo", "camera", "paper"], "camera", "名词", "上下文复现 / 主旨词", ["Jenny's camera", "fix it"], "全文围绕摔坏并修好的相机展开，此处归还的是 repaired camera。"),
-    q(31, ["secretly", "bravely", "perfectly"], "perfectly", "形容词副词", "逻辑推理 / 情感态度", ["still see marks", "but", "works"], "虽然还有划痕，但是相机运转得很好，but 后是积极转折。", "work perfectly", "动副搭配", "动词(work) + 副词(perfectly)"),
+    q(29, ["cheer", "wake", "pick"], "cheer", "动词", "固定搭配 / 情感态度", ["stayed with her every day", "anger disappeared"], "Leo 每天陪着她，让她振作、开心起来，所以 Jenny 的怒气消失。", "cheer sb. up", "动副搭配", "动词(cheer) + 某人(sb.) + 副词(up)"),
+    q(30, ["photo", "camera", "paper"], "camera", "名词", "上下文复现 / 主旨词", ["took the camera", "wanted him to fix"], "全文围绕送修相机展开，陈师傅在展览当天归还的自然是 repaired camera。photo 和 paper 都不是被送修的物品。"),
+    q(31, ["secretly", "bravely", "perfectly"], "perfectly", "形容词副词", "逻辑推理 / 情感态度", ["still see marks", "repaired camera"], "虽然外观仍有痕迹，但相机已经修好，后半句应表达运转良好，因此选 perfectly。secretly 和 bravely 都不能修饰机器运转。", "work perfectly", "动副搭配", "动词(work) + 副词(perfectly)"),
     q(32, ["trouble", "meaning", "experience"], "meaning", "名词", "上下文复现 / 同词根复现", ["more meaningful"], "句末 This camera now is more meaningful 与 meaning 形成同词根复现。"),
-    q(33, ["So", "Or", "But"], "But", "连词逻辑", "逻辑推理 / 转折关系", ["was anxious", "wasn't nervous at all"], "前面焦虑，后面看到哥哥后不紧张，前后构成转折，用 But。"),
+    q(33, ["So", "Or", "But"], "But", "连词逻辑", "逻辑推理 / 转折关系", ["was anxious", "front row"], "前面焦虑，后面看到哥哥后不紧张，前后构成转折，用 But。"),
     q(34, ["As", "Before", "If"], "As", "连词逻辑", "语法 / 时间状语从句", ["took photos", "camera worked"], "表示当她拍照时，相机运转得更好，As 引导时间状语从句。"),
     q(35, ["taller", "closer", "younger"], "closer", "形容词副词", "主旨升华 / 情感态度", ["hugged Leo", "more meaningful"], "经历修相机后，兄妹互相理解，关系变得更亲密。", "grow closer", "系表结构", "系动词(grow) + 形容词比较级(closer)")
   ],
@@ -2792,7 +2792,7 @@ const brokenCameraSiblingLove = {
     { english: "Leo stayed with her every day to cheer her up.", chinese: "Leo 每天陪着她，让她振作起来。", answers: ["cheer"] },
     { english: "Finally, Jenny’s anger disappeared.", chinese: "最后，Jenny 的怒气消失了。" },
     { english: "On the morning of the show, Mr. Chen returned the repaired camera to Jenny.", chinese: "展览当天早上，陈师傅把修好的相机还给了 Jenny。", answers: ["camera"] },
-    { english: "You can still see marks here, but it works perfectly.", chinese: "这里仍然能看到痕迹，但它运转得非常好。", answers: ["perfectly"] },
+    { english: "But it works perfectly.", chinese: "但它运转得非常好。", answers: ["perfectly"] },
     { english: "Sometimes these give photographs more meaning.", chinese: "有时候，这些痕迹会赋予照片更多意义。", answers: ["meaning"] },
     { english: "Before the show, Jenny was anxious.", chinese: "展览前，Jenny 很焦虑。" },
     { english: "But when Jenny saw Leo in the front row with his “Good Luck” sign, she wasn’t nervous at all.", chinese: "但当 Jenny 看到 Leo 在第一排举着“好运”的牌子时，她一点也不紧张了。", answers: ["But"] },
@@ -2854,17 +2854,17 @@ const heartOfBamboo = {
     q(22, ["kitchen", "study", "restroom"], "study", "名词", "上下文复现", ["in the study"], "上一句已经出现 in the study，此处 Lina 走进的自然也是书房。"),
     q(23, ["learn", "forget", "refuse"], "learn", "动词", "逻辑推理 / 动作连贯", ["willing to teach Lina"], "Lina 问自己能否学习画画，下文爷爷愿意教她，learn 与 teach 形成动作呼应。", "learn to do sth.", "动词短语", "动词(learn) + 不定式(to do)"),
     q(24, ["hands", "feet", "eyes"], "eyes", "名词", "常识推断 / 情感态度", ["lit up", "willing to teach"], "听到孙女想学画画，爷爷很高兴，常见表达是 eyes lit up。", "eyes lit up", "名词搭配", "名词(eyes) + 动词短语(lit up)"),
-    q(25, ["explain", "mind", "realize"], "mind", "动词", "逻辑推理 / 转折关系", ["unsteady", "But", "moving her hand gently"], "Lina 的笔触不稳，但爷爷不介意，反而温柔地帮助她。"),
-    q(26, ["always", "often", "never"], "never", "形容词副词", "逻辑推理 / 常识推断", ["bends in the wind", "but"], "竹子在风中弯曲，但从不折断，体现竹子的坚韧。"),
+    q(25, ["explain", "mind", "realize"], "mind", "动词", "逻辑推理 / 转折关系", ["brush movements were unsteady", "moving her hand gently"], "Lina 的笔触不稳，但爷爷不介意，反而温柔地帮助她。"),
+    q(26, ["always", "often", "never"], "never", "形容词副词", "逻辑推理 / 常识推断", ["bends in the wind", "never breaks"], "竹子在风中弯曲，但从不折断，体现竹子的坚韧。"),
     q(27, ["practiced", "competed", "cheered"], "practiced", "动词", "动作连贯 / 逻辑推理", ["teach Lina", "held the brush"], "前文爷爷教 Lina 画画，接下来几周他们每天晚上练习。"),
-    q(28, ["nothing", "anything", "something"], "something", "代词", "语法 / 不定代词", ["shared ___ interesting"], "肯定句中表示一些有趣的事情，用 something interesting。", "something interesting", "不定代词搭配", "不定代词(something) + 后置形容词(interesting)"),
+    q(28, ["nothing", "anything", "something"], "something", "代词", "语法 / 不定代词", ["Lina held the brush", "ancient artists"], "肯定句中表示一些有趣的事情，用 something interesting。", "something interesting", "不定代词搭配", "不定代词(something) + 后置形容词(interesting)"),
     q(29, ["bought", "finished", "repaired"], "finished", "动词", "上下文复现 / 逻辑呼应", ["a half-finished bamboo painting"], "前文 half-finished 暗示完成作品，几周后 Lina 完成了自己的第一幅竹画。"),
-    q(30, ["but", "if", "though"], "but", "连词逻辑", "逻辑推理 / 转折关系", ["unsteady", "bright and lively"], "线条还有些不稳，但竹子看起来明亮生动，前后转折。"),
+    q(30, ["but", "if", "though"], "but", "连词逻辑", "逻辑推理 / 转折关系", ["little unsteady, but","bright and lively"], "线条还有些不稳，但竹子看起来明亮生动，前后转折。"),
     q(31, ["put up", "put off", "put out"], "put up", "动词短语", "固定搭配 / 常识推断", ["on the wall"], "画在墙上应是被挂起或张贴，put up 符合。", "put up", "动词短语", "动词(put) + 副词(up)"),
     q(32, ["weak", "strong", "beautiful"], "strong", "形容词副词", "逻辑对比 / 上下文暗示", ["soft but", "never breaks"], "竹子的心是柔软但坚韧强大的，呼应前文弯曲但不折断。"),
     q(33, ["photo", "book", "painting"], "painting", "名词", "上下文复现 / 核心词复现", ["bamboo painting", "to paint"], "全文围绕 Lina 学水墨竹画展开，她展示给同学的是 painting。"),
-    q(34, ["from", "behind", "without"], "without", "介词搭配", "逻辑推理 / 文化常识", ["say things ___ words"], "水墨画能不用文字表达心意，without words 符合。", "without words", "介词短语", "介词(without) + 名词(words)"),
-    q(35, ["stronger", "closer", "poorer"], "closer", "形容词副词", "主旨升华 / 上下文复现", ["felt a little distant", "relationship"], "开头说 Lina 与爷爷疏远，结尾通过共同爱好变得更亲密。", "closer than before", "形容词比较级", "形容词比较级(closer) + than before")
+    q(34, ["from", "behind", "without"], "without", "介词搭配", "逻辑推理 / 文化常识", ["say things", "Chinese ink and wash painting"], "水墨画能不用文字表达心意，without words 符合。", "without words", "介词短语", "介词(without) + 名词(words)"),
+    q(35, ["stronger", "closer", "poorer"], "closer", "形容词副词", "主旨升华 / 上下文复现", ["felt a little distant","the relationship between"], "开头说 Lina 与爷爷疏远，结尾通过共同爱好变得更亲密。", "closer than before", "形容词比较级", "形容词比较级(closer) + than before")
   ],
   verifySentences: [
     { english: "Lina had always felt a little distant from her grandpa.", chinese: "Lina 一直觉得自己和爷爷有点疏远。" },
@@ -2900,7 +2900,7 @@ const journeyNotAlone = {
   available: true,
   firstSentence: "A little boy lived in a city with his parents.",
   lastSentence: "Remember we are not alone.",
-  tone: "积极 / 升华",
+  tone: "积极",
   toneReason: "文章从男孩独自坐火车的期待与担忧写起，中途出现短暂恐惧，最后被父亲的信安慰，升华出人生旅途并不孤单的积极温情基调。",
   passage: [
     "A little boy lived in a city with his parents. Every summer holiday, the family would visit his grandparents by train. The boy always looked ",
@@ -2936,20 +2936,20 @@ const journeyNotAlone = {
     " with us. Remember we are not alone."
   ],
   questions: [
-    q(1, ["up", "forward", "back"], "forward", "动词短语", "固定搭配", ["looked ___ to"], "表示期待、盼望，用 look forward to。男孩总是期待这趟旅程。", "look forward to", "动词短语", "动词(look) + 副词(forward) + 介词(to)"),
+    q(1, ["up", "forward", "back"], "forward", "动词短语", "固定搭配", ["The boy always looked", "the journey"], "表示期待、盼望，用 look forward to。男孩总是期待这趟旅程。", "look forward to", "动词短语", "动词(look) + 副词(forward) + 介词(to)"),
     q(2, ["got", "grew", "gave"], "grew", "动词短语", "常识推断 / 动作搭配", ["As time went by", "big enough"], "随着时间流逝，男孩渐渐长大，grow up 表示长大。", "grow up", "动词短语", "动词(grow) + 副词(up)"),
-    q(3, ["myself", "yourself", "himself"], "myself", "反身代词", "语法 / 反身代词", ["I'm big enough", "I can visit"], "这不是固定搭配，而是代词指代和反身代词判断。双引号内主语是 I，表示“我自己”，所以用 myself。"),
-    q(4, ["health", "study", "safety"], "safety", "名词", "逻辑推理 / 常识推断", ["agreed", "but", "worried about"], "父母同意他独自旅行，但仍然担心他的安全。", "worry about one's safety", "动宾搭配", "动词短语(worry about) + 物主代词 + 名词(safety)"),
+    q(3, ["myself", "yourself", "himself"], "myself", "反身代词", "语法 / 反身代词", ["I’m big enough", "I can visit"], "这不是固定搭配，而是代词指代和反身代词判断。双引号内主语是 I，表示“我自己”，所以用 myself。"),
+    q(4, ["health", "study", "safety"], "safety", "名词", "逻辑推理 / 常识推断", ["parents agreed", "still worried about"], "父母同意他独自旅行，但仍然担心他的安全。", "worry about one's safety", "动宾搭配", "动词短语(worry about) + 物主代词 + 名词(safety)"),
     q(5, ["carefully", "politely", "suddenly"], "carefully", "形容词副词", "情感态度 / 动作连贯", ["worried about his safety", "taught him everything"], "因为担心安全，父母教他旅途中需要知道的一切时会非常仔细。"),
     q(6, ["sister’s", "friend’s", "grandparents’"], "grandparents’", "名词所有格", "上下文复现", ["visit his grandparents"], "前文明确说每年暑假去看 grandparents，此处去的是 grandparents’ house。"),
-    q(7, ["read", "gave", "sent"], "gave", "动词", "动作连贯 / 常识推断", ["At the station", "him a letter"], "父亲在车站当面把信交给儿子，用 gave。", "give sb. sth.", "双宾语搭配", "动词(give) + 间接宾语(sb.) + 直接宾语(sth.)"),
+    q(7, ["read", "gave", "sent"], "gave", "动词", "动作连贯 / 常识推断", ["At the station", "him a letter"], "父亲在车站当面把信交给儿子，用 gave；read 和 sent 都不符合当面交付的动作场景。"),
     q(8, ["if", "unless", "although"], "if", "连词逻辑", "逻辑推理 / 条件关系", ["read it", "you feel afraid"], "感到害怕是打开信读的条件，因此用 if。"),
     q(9, ["sad", "excited", "angry"], "excited", "形容词副词", "逻辑推理 / 褒贬态度一致法", ["and happy"], "and 后面是 happy，前后情绪一致，应选正向词 excited。"),
-    q(10, ["going", "flying", "running"], "going", "动词", "固定搭配 / 语义场", ["people kept coming and ___"], "火车每站都停，人们上上下下，coming and going 表示人来人往。", "come and go", "动词短语", "动词(come) + and + 动词(go)"),
+    q(10, ["going", "flying", "running"], "going", "动词", "固定搭配 / 语义场", ["every station", "people kept coming"], "火车每站都停，人们上上下下，coming and going 表示人来人往。", "come and go", "动词短语", "动词(come) + and + 动词(go)"),
     q(11, ["train", "bus", "car"], "train", "名词", "上下文复现", ["by train", "the train began to move"], "全文讲的是坐火车旅程，此处男人上的是 train。", "got on the train", "名词搭配", "got on + the train"),
     q(12, ["a", "/", "the"], "the", "冠词", "语法 / 特指判断", ["gave him a letter"], "前文第一次提到 a letter，此处特指父亲给他的那封信，用 the。"),
-    q(13, ["happiness", "fear", "interest"], "fear", "名词", "上下文复现 / 同义词复现", ["a little scared", "Don't be afraid"], "前文 scared 和 afraid 都指向恐惧，读完信后 fear 消失了。"),
-    q(14, ["mustn’t", "can’t", "needn’t"], "needn’t", "情态动词", "主旨升华 / 情态动词辨析", ["Our parents and friends are always with us"], "画出结尾 Our parents and friends are always with us。既然我们一直有人支持，所以独自做事时“不必”悲伤或害怕，选 needn't。"),
+    q(13, ["happiness", "fear", "interest"], "fear", "名词", "上下文复现 / 同义词复现", ["a little scared", "Don’t be afraid"], "前文 scared 和 afraid 都指向恐惧，读完信后 fear 消失了。"),
+    q(14, ["mustn’t", "can’t", "needn’t"], "needn’t", "情态动词", "主旨升华 / 情态动词辨析", ["parents and friends", "not alone"], "画出结尾 Our parents and friends are always with us。既然我们一直有人支持，所以独自做事时“不必”悲伤或害怕，选 needn't。"),
     q(15, ["always", "sometimes", "never"], "always", "形容词副词", "情感态度 / 主旨升华", ["Remember we are not alone"], "文章结尾强调我们并不孤单，因为父母朋友总是与我们同在。", "always with sb.", "副词搭配", "副词(always) + 介词短语(with sb.)")
   ],
   verifySentences: [
@@ -2987,12 +2987,12 @@ const lessonOfLove = {
   source: "2026年乌鲁木齐经开区5月中考模拟（第43篇）",
   tags: ["人物故事", "家庭亲情", "逻辑推理", "上下文复现", "情感态度"],
   available: true,
-  firstSentence: "Hu Ming, a Guizhou University teacher, whose 85-year-old mother has Alzheimer’s disease (阿尔茨海默病), has to take his mother to class with him for years.",
+  firstSentence: "Hu Ming, a Guizhou University teacher, whose 85-year-old mother has Alzheimer’s disease (阿尔茨海默病), has had to take his mother to class with him for years.",
   lastSentence: "To care for those who once cared for us is our duty. I am a son, and I love my mother deeply.” Hu said.",
-  tone: "积极温情 / 升华",
+  tone: "积极",
   toneReason: "文章从母亲患病的无奈写起，转向儿子长期耐心照顾母亲的平静与温情，最后升华为子女尽孝、回报父母照料的责任与爱。",
   passage: [
-    "Hu Ming, a Guizhou University teacher, whose 85-year-old mother has Alzheimer’s disease (阿尔茨海默病), has to take his mother to class with him for years. Maybe you will say he can have some other people take care of his ",
+    "Hu Ming, a Guizhou University teacher, whose 85-year-old mother has Alzheimer’s disease (阿尔茨海默病), has had to take his mother to class with him for years. Maybe you will say he can have some other people take care of his ",
     { blank: 1 },
     ". Indeed, he has sisters. But they ",
     { blank: 2 },
@@ -3000,7 +3000,7 @@ const lessonOfLove = {
     { blank: 3 },
     " him wherever he goes. He also tried a nurse but failed. “My mother’s illness was ",
     { blank: 4 },
-    ". She drank dishwater, and she mistook washing powder (洗衣粉) for salt or sugar,” explained 58-year-old Hu. “I couldn’t imagine she stayed at home without me and that always made me ",
+    ". She drank dishwater, and she mistook washing powder (洗衣粉) for salt or sugar,” explained 58-year-old Hu. “I couldn’t imagine her staying at home without me, and that always made me ",
     { blank: 5 },
     ", so I began to take her with me to class.” “With my mother sitting ",
     { blank: 6 },
@@ -3014,11 +3014,11 @@ const lessonOfLove = {
     { blank: 10 },
     ". When the mother ",
     { blank: 11 },
-    " eating, the son quietly took her to the washroom, cleaned the food on the clothes, smoothed her hair and fitted her glasses. When they came out, all the people were ",
+    " eating, the son quietly took her to the washroom. He cleaned the food on the clothes, smoothed her hair and fitted her glasses. When they came out, all the people were ",
     { blank: 12 },
     " them. Without saying anything or watching anybody, the son walked ",
     { blank: 13 },
-    " to pay the bill and started walking peacefully out with his mother. Hu gave a lesson to every child and ",
+    " to pay the bill. He started walking out peacefully with his mother. Hu gave a lesson to every child and ",
     { blank: 14 },
     " to every mother. To care for those who once ",
     { blank: 15 },
@@ -3029,20 +3029,20 @@ const lessonOfLove = {
     q(2, ["mustn’t", "can’t", "shouldn’t"], "can’t", "情态动词", "逻辑推理 / 因果关系", ["because his mother only recognizes him"], "因为母亲只认得他，所以姐妹们客观上无法照顾她。"),
     q(3, ["catches", "carries", "follows"], "follows", "动词", "常识推断 / 动作连贯", ["only recognizes him", "wherever he goes"], "母亲只认得他，强烈依赖他，所以无论他去哪儿都跟着他。"),
     q(4, ["pleasant", "hopeful", "serious"], "serious", "形容词副词", "下文暗示 / 情感态度", ["drank dishwater", "mistook washing powder for salt"], "喝洗碗水、把洗衣粉当盐或糖，说明母亲病情很严重。"),
-    q(5, ["worried", "surprised", "interested"], "worried", "形容词副词", "因果关系 / 情感态度", ["couldn't imagine she stayed at home without me"], "无法想象母亲独自在家，所以胡明总是很担心。", "make sb. + adj.", "动宾补搭配", "动词(make) + 宾语(sb.) + 形容词"),
+    q(5, ["worried", "surprised", "interested"], "worried", "形容词副词", "因果关系 / 情感态度", ["staying at home without me", "always made me"], "无法想象母亲独自在家，所以胡明总是很担心；三个形容词都能进入该结构，答案必须靠情境判断。"),
     q(6, ["noisily", "quietly", "sadly"], "quietly", "形容词副词", "因果逻辑 / 褒贬态度一致", ["pay more attention to teaching"], "母亲安静坐在课堂里，他才能更专注教学。"),
     q(7, ["joke", "lie", "story"], "story", "名词", "上下文复现 / 下文暗示", ["A son took his mother"], "下一段讲了一个儿子带母亲吃饭的完整故事。", "tell a story", "动宾搭配", "动词(tell) + 冠词(a) + 名词(story)"),
-    q(8, ["weak", "impolite", "kind"], "weak", "形容词副词", "逻辑推理 / 并列关系", ["old and ___"], "old and weak 是自然搭配，年老且虚弱也呼应后文吃饭时掉得到处都是。"),
-    q(9, ["everywhere", "somewhere", "anywhere"], "everywhere", "形容词副词", "标点符号解题法 / 语境推理", ["on her shirt and trousers", "the table", "the chair", "the floor"], "后面列举衬衫、裤子、桌子、椅子和地板，说明食物掉得到处都是。"),
-    q(10, ["nervous", "calm", "angry"], "calm", "形容词副词", "逻辑推理 / 转折对比", ["watched her in disgust", "while"], "别人厌恶地看着老人，而儿子与他们形成对比，保持平静。"),
+    q(8, ["weak", "impolite", "kind"], "weak", "形容词副词", "逻辑推理 / 并列关系", ["restaurant for dinner", "dropped the food everywhere"], "old and weak 是自然搭配，年老且虚弱也呼应后文吃饭时掉得到处都是。"),
+    q(9, ["everywhere", "somewhere", "anywhere"], "everywhere", "形容词副词", "标点符号解题法 / 语境推理", ["shirt and trousers", "the table, the chair", "and the floor"], "后面列举衬衫、裤子、桌子、椅子和地板，说明食物掉得到处都是。"),
+    q(10, ["nervous", "calm", "angry"], "calm", "形容词副词", "逻辑推理 / 转折对比", ["watched her in disgust"], "别人厌恶地看着老人，而儿子与他们形成对比，保持平静。"),
     q(11, ["started", "remembered", "finished"], "finished", "动词", "常识推断 / 动作顺序", ["took her to the washroom", "cleaned the food"], "清理衣服发生在吃完饭之后，finish doing sth. 表示完成做某事。", "finish doing sth.", "固定句型", "动词(finish) + 动名词(doing)"),
     q(12, ["welcoming", "watching", "greeting"], "watching", "动词", "上下文复现 / 场景对比", ["Other people watched her"], "上文 people watched her，此处他们出来时大家仍在看着他们。"),
     q(13, ["shamefully", "difficultly", "directly"], "directly", "形容词副词", "动作连贯 / 情感态度", ["Without saying anything or watching anybody"], "儿子不解释也不看别人，径直去结账，体现平静和坦然。"),
-    q(14, ["money", "hope", "room"], "hope", "名词", "逻辑推理 / 主旨升华", ["a lesson to every child", "every mother"], "这个故事给每个孩子上一课，也给每位母亲带来被照顾、被爱的希望。"),
-    q(15, ["cared", "looked", "waited"], "cared", "动词", "上下文复现 / 主旨升华", ["To care for those who once ___ for us"], "照顾曾经照顾过我们的人是责任，care for 原词复现。", "care for sb.", "动词短语", "动词(care) + 介词(for) + 某人(sb.)")
+    q(14, ["money", "hope", "room"], "hope", "名词", "逻辑推理 / 主旨升华 / 固定搭配", ["a lesson to every child", "every mother"], "这题有两条正确路径：give hope to sb. 表示“给某人希望”，句中 gave 同时支配 lesson 和 hope；文章主旨也说明故事给母亲带来被照顾、被爱的希望。", "give hope to sb.", "动词短语", "动词(give) + 名词(hope) + 介词(to) + 某人(sb.)"),
+    q(15, ["cared", "looked", "waited"], "cared", "动词", "上下文复现 / 主旨升华", ["is our duty", "love my mother deeply"], "照顾曾经照顾过我们的人是责任，care for 原词复现。", "care for sb.", "动词短语", "动词(care) + 介词(for) + 某人(sb.)")
   ],
   verifySentences: [
-    { english: "Hu Ming, a Guizhou University teacher, whose 85-year-old mother has Alzheimer’s disease, has to take his mother to class with him for years.", chinese: "胡明是贵州大学的一名教师，他85岁的母亲患有阿尔茨海默病，多年来他不得不带母亲一起去上课。" },
+    { english: "Hu Ming, a Guizhou University teacher, whose 85-year-old mother has Alzheimer’s disease, has had to take his mother to class with him for years.", chinese: "胡明是贵州大学的一名教师，他85岁的母亲患有阿尔茨海默病，多年来他不得不带母亲一起去上课。" },
     { english: "Maybe you will say he can have some other people take care of his mother.", chinese: "也许你会说，他可以让其他人照顾他的母亲。", answers: ["mother"] },
     { english: "Indeed, he has sisters.", chinese: "事实上，他有姐妹。" },
     { english: "But they can’t do it because his mother only recognizes him.", chinese: "但她们做不到，因为他的母亲只认得他。", answers: ["can’t"] },
@@ -3050,7 +3050,7 @@ const lessonOfLove = {
     { english: "He also tried a nurse but failed.", chinese: "他也试过请护工，但失败了。" },
     { english: "My mother’s illness was serious.", chinese: "我母亲的病情很严重。", answers: ["serious"] },
     { english: "She drank dishwater, and she mistook washing powder for salt or sugar.", chinese: "她喝洗碗水，还把洗衣粉误认为盐或糖。" },
-    { english: "I couldn’t imagine she stayed at home without me and that always made me worried.", chinese: "我无法想象她不在我身边独自待在家里，那总是让我担心。", answers: ["worried"] },
+    { english: "I couldn’t imagine her staying at home without me, and that always made me worried.", chinese: "我无法想象她在没有我陪伴的情况下独自待在家里，那总是让我担心。", answers: ["worried"] },
     { english: "So I began to take her with me to class.", chinese: "所以我开始带她一起去上课。" },
     { english: "With my mother sitting quietly in class, I was able to pay more attention to teaching.", chinese: "母亲安静地坐在课堂里，我就能更专注于教学。", answers: ["quietly"] },
     { english: "But still, there are many different voices.", chinese: "但仍然有许多不同的声音。" },
@@ -3062,7 +3062,7 @@ const lessonOfLove = {
     { english: "He cleaned the food on the clothes, smoothed her hair and fitted her glasses.", chinese: "他清理衣服上的食物，理顺她的头发，并扶正她的眼镜。" },
     { english: "When they came out, all the people were watching them.", chinese: "当他们出来时，所有人都在看着他们。", answers: ["watching"] },
     { english: "Without saying anything or watching anybody, the son walked directly to pay the bill.", chinese: "儿子什么也没说，也没有看任何人，径直走去结账。", answers: ["directly"] },
-    { english: "He started walking peacefully out with his mother.", chinese: "他平静地带着母亲走了出去。" },
+    { english: "He started walking out peacefully with his mother.", chinese: "他平静地带着母亲走了出去。" },
     { english: "Hu gave a lesson to every child and hope to every mother.", chinese: "胡明给每个孩子上了一课，也给每位母亲带来了希望。", answers: ["hope"] },
     { english: "To care for those who once cared for us is our duty.", chinese: "照顾那些曾经照顾过我们的人，是我们的责任。", answers: ["cared"] },
     { english: "I am a son, and I love my mother deeply.", chinese: "我是一个儿子，我深深地爱着我的母亲。" }
@@ -3083,13 +3083,13 @@ const farmerDogDonkey = {
   tone: "积极",
   toneReason: "文章通过驴主动提醒农夫、狗因失职受罚的寓言故事，告诉学生每个人都应做好自己的本职工作，整体落点是积极的道理启发。",
   passage: [
-    "Once upon a time, there lived a(n) ",
+    "Once upon a time, there lived a ",
     { blank: 21 },
     " on a farm. He ",
     { blank: 22 },
     " a dog and a donkey（驴）. The dog kept watch on the farm and the donkey ",
     { blank: 23 },
-    " some heavy things. One night, a thief came into the farm. At that time, the farmer ",
+    " some heavy things. One night, a thief came into the farm. At that time, the farmer was ",
     { blank: 24 },
     ". The dog didn’t bark (吠叫) ",
     { blank: 25 },
@@ -3127,9 +3127,9 @@ const farmerDogDonkey = {
     q(29, ["reach", "know", "promise"], "know", "动词", "逻辑推理 / 因果关系", ["didn’t see", "why the donkey brayed"], "因为没看见小偷，所以农夫不知道驴为什么叫，用 know。reach 和 promise 语义不通。"),
     q(30, ["happy", "sad", "angry"], "angry", "形容词副词", "情感态度 / 动作连贯", ["beat the donkey", "with a stick"], "大半夜被吵醒又不知道原因，紧接着用棍子打驴，动作带有负面情绪，说明他很 angry。"),
     q(31, ["told", "asked", "called"], "told", "动词", "动词搭配 / 动作连贯", ["him about the thief"], "驴挨打后把小偷的事告诉农夫，tell sb. about sth. 表示告诉某人关于某事。", "tell sb. about sth.", "动词短语", "动词(tell) + 某人(sb.) + about + 某事(sth.)"),
-    q(32, ["sorry", "thanks", "goodbye"], "sorry", "名词", "因果关系 / 常识推断", ["regretted beating", "said"], "农夫后悔打了驴，出于内疚会说 sorry。thanks 和 goodbye 不符合道歉语境。", "say sorry", "动宾搭配", "动词(say) + 名词(sorry)"),
-    q(33, ["about", "also", "off"], "also", "副词", "逻辑推理", ["was ___ woken up"], "驴叫声很大，不仅农夫醒了，原本睡着的狗也醒了，用 also。"),
-    q(34, ["when", "if", "that"], "when", "连词逻辑", "语法 / 时间状语从句", ["laughed", "was beaten"], "狗在驴被打的时候嘲笑它，表示“当……时”用 when。"),
+    q(32, ["sorry", "thanks", "goodbye"], "sorry", "名词", "因果关系 / 常识推断", ["regretted beating", "said sorry"], "农夫后悔打了驴，出于内疚会说 sorry。thanks 和 goodbye 不符合道歉语境。", "say sorry", "动宾搭配", "动词(say) + 名词(sorry)"),
+    q(33, ["about", "also", "off"], "also", "副词", "逻辑推理", ["was also woken up", "stood behind the farmer"], "驴叫声很大，不仅农夫醒了，原本睡着的狗也醒了，用 also。"),
+    q(34, ["when", "if", "that"], "when", "连词逻辑", "语法 / 时间状语从句", ["laughed when", "donkey was beaten"], "狗在驴被打的时候嘲笑它，表示“当……时”用 when。"),
     q(35, ["decision", "job", "hobby"], "job", "名词", "上下文复现 / 画箭头法", ["didn’t do his", "what he should do"], "往后看，keeping watch on the farm was what he should do，点明看家是狗的本职工作，所以是 job。")
   ],
   verifySentences: [
@@ -3205,16 +3205,16 @@ const communityCleanUpDay = {
     q(1, ["provide", "improve", "break"], "improve", "动词", "情感态度 / 常识推断", ["great way", "living environment"], "判断褒贬色彩：Community Clean-up Day 是改善环境的好方式，作用应是正向的 improve。break 与清洁活动的积极目的相反。"),
     q(2, ["gave away", "ran out", "took part"], "took part", "动词短语", "固定搭配 / 常识推断", ["Volunteers of all ages", "clean-up event"], "志愿者面对社区清洁活动，动作自然是参与，take part 表示参加。gave away 和 ran out 不符合活动语境。", "take part", "动词短语", "动词(take) + 名词(part)"),
     q(3, ["picked up", "looked up", "depended on"], "picked up", "动词短语", "固定搭配 / 词组辨析", ["litter in the park"], "看到 litter，清洁活动中的动作就是把垃圾捡起来，pick up litter 是常见搭配。", "pick up litter", "动宾搭配", "动词短语(pick up) + 名词(litter)"),
-    q(4, ["the other", "other", "others"], "others", "代词", "语法 / 不定代词", ["Some of them", "repaired"], "描述同一群体中的不同分工，用 Some..., others... 表示一些人……另一些人……。", "Some..., others...", "固定句型", "Some + 复数名词/代词..., others..."),
-    q(5, ["falling", "fallen", "fell"], "fallen", "非谓语动词", "语法 / 过去分词作定语", ["sweep", "leaves and rubbish"], "这不是固定搭配，而是非谓语作定语。扫帚扫的是已经落在地上的叶子，用过去分词 fallen；falling 是正在落下，fell 不能直接作定语。"),
+    q(4, ["the other", "other", "others"], "others", "代词", "语法 / 不定代词", ["Some of them", "repaired the public facilities"], "描述同一群体中的不同分工，用 Some..., others... 表示一些人……另一些人……。", "Some..., others...", "固定句型", "Some + 复数名词/代词..., others..."),
+    q(5, ["falling", "fallen", "fell"], "fallen", "非谓语动词", "语法 / 过去分词作定语", ["sweep the fallen leaves", "leaves and rubbish"], "这不是固定搭配，而是非谓语作定语。扫帚扫的是已经落在地上的叶子，用过去分词 fallen；falling 是正在落下，fell 不能直接作定语。"),
     q(6, ["kindness", "achievement", "fairness"], "achievement", "名词", "情感态度 / 固定搭配", ["hard work", "cleaner streets"], "辛苦劳动后看到街道变干净，会产生正向的成就感，a sense of achievement 表示成就感。", "a sense of achievement", "名词搭配", "a sense of + 名词(achievement)"),
-    q(7, ["importance", "invention", "interest"], "importance", "名词", "转折关系 / 语境推理", ["However", "such activities"], "However 提示转折：前面活动有意义，后面一些人不重视公共区域，说明他们不知道这类活动的重要性。"),
+    q(7, ["importance", "invention", "interest"], "importance", "名词", "转折关系 / 语境推理", ["some people", "such activities", "get used to"], "However 提示转折：前面活动有意义，后面一些人不重视公共区域，说明他们不知道这类活动的重要性。"),
     q(8, ["clean", "cleaning", "cleans"], "cleaning", "动名词", "语法 / 动词加 doing", ["get used to", "their own places"], "这道题不进固定搭配，重点看动词形式：get used to 中的 to 是介词，后面接动名词，所以选 cleaning。"),
     q(9, ["make", "take", "bring"], "make", "动词", "语法 / 使役动词", ["the community more beautiful"], "make + 宾语 + 形容词，表示使社区变得更美丽。take 和 bring 不能构成这个结构。", "make sth. + adj.", "动宾补结构", "make + 宾语(sth.) + 形容词(adj.)"),
     q(10, ["what", "where", "how"], "how", "疑问词", "语法 / 疑问词加不定式", ["ideas on", "to keep"], "这不是固定搭配，而是“疑问词 + 不定式”的语法判断：分享的是如何长期保持社区清洁的方法，所以选 how。"),
     q(11, ["told", "said", "spoke"], "told", "动词", "近义动词辨析 / 固定搭配", ["us stories"], "后面有 us 和 stories，是双宾语结构，tell sb. stories 表示给某人讲故事，过去式用 told。", "tell sb. stories", "双宾语搭配", "动词(tell) + 某人(sb.) + stories"),
     q(12, ["boring", "tiring", "meaningful"], "meaningful", "形容词副词", "情感态度 / 褒贬态度一致", ["stories about the old days", "whole experience"], "老人讲述社区过去的故事，让活动不只是劳动，也有交流和传承，因此经历更有意义。"),
-    q(13, ["because", "but", "so"], "but", "连词逻辑", "并列关联词 / 固定搭配", ["not only", "also"], "看到 not only，后面固定搭配 but also，表示不仅……而且……。", "not only... but also...", "并列关联词", "not only + A + but also + B"),
+    q(13, ["because", "but", "so"], "but", "连词逻辑", "并列关联词 / 固定搭配", ["not only", "also about building"], "看到 not only，后面固定搭配 but also，表示不仅……而且……。", "not only... but also...", "并列关联词", "not only + A + but also + B"),
     q(14, ["to join", "join", "joined"], "to join", "动词不定式", "语法 / 动词加 to do", ["encourage more people", "future clean-up days"], "这不是固定搭配，而是动词形式考点：encourage 后接人，再用 to do 表示鼓励别人去做某事，所以选 to join。"),
     q(15, ["planned", "planning", "plans"], "planning", "动词时态", "语法 / 现在进行时", ["We are", "next week"], "这不是固定搭配，而是时态和结构判断：前面有 are，后面有 next week，表示正在计划将来的活动，所以用 planning。")
   ],
@@ -3232,8 +3232,7 @@ const communityCleanUpDay = {
     { english: "Most of us believe that everyone should do their part to make the community more beautiful.", chinese: "我们大多数人认为，每个人都应该尽自己的一份力，让社区更加美丽。", answers: ["make"] },
     { english: "Moreover, during the clean-up, we also had a chance to communicate with our neighbors.", chinese: "此外，在清洁过程中，我们也有机会和邻居交流。" },
     { english: "We shared ideas on how to keep our community clean for a long time.", chinese: "我们分享了如何长期保持社区清洁的想法。", answers: ["how"] },
-    { english: "Some of the elderly volunteers told us stories about the old days of the community.", chinese: "一些年长的志愿者给我们讲了社区过去的故事。", answers: ["told"] },
-    { english: "This made the whole experience more meaningful.", chinese: "这让整个经历更有意义。", answers: ["meaningful"] },
+    { english: "Some of the elderly volunteers told us stories about the old days of the community, which made the whole experience more meaningful.", chinese: "一些年长的志愿者给我们讲了社区过去的故事，这让整个经历更有意义。", answers: ["told", "meaningful"] },
     { english: "It was not only about cleaning but also about building community spirit.", chinese: "它不仅是关于清洁，也是在建设社区精神。", answers: ["but"] },
     { english: "We encourage more people to join in the future clean-up days.", chinese: "我们鼓励更多人在未来的清洁日加入。", answers: ["to join"] },
     { english: "We are planning to organize more activities next week.", chinese: "我们正计划下周组织更多活动。", answers: ["planning"] },
@@ -3289,21 +3288,21 @@ const monkeyKingStory = {
     "."
   ],
   questions: [
-    q(21, ["to", "from", "for"], "from", "介词", "介词短语 / 常识推断", ["light", "the sun and the moon"], "结合《西游记》的文化常识，花果山顶的仙石吸收日月精华。光芒是来自太阳和月亮的，表示来源用介词 from。"),
+    q(21, ["to", "from", "for"], "from", "介词", "介词短语 / 常识推断", ["sun and the moon"], "结合《西游记》的文化常识，花果山顶的仙石吸收日月精华。光芒是来自太阳和月亮的，表示来源用介词 from。"),
     q(22, ["grew", "died", "disappeared"], "grew", "动词", "常识推断 / 动作连贯", ["Years later", "inside the stone"], "随着时间的推移，一个小小的生命在石头里面生长、发育，用 grew。died 和 disappeared 都是负面走向，违背石猴出世的积极生命力基调。"),
-    q(23, ["sick", "cute", "quiet"], "cute", "形容词副词", "并列关系 / 褒贬态度一致", ["and lively"], "拿出红笔圈出 and！and 后面是 lively（活泼的，+），前面也要填正向词来形容小石猴，所以选 cute。sick 是负面词，quiet 也不符合猴子活泼的天性。"),
+    q(23, ["sick", "cute", "quiet"], "cute", "形容词副词", "并列关系 / 褒贬态度一致", ["and lively"], "and 连接并列形容词，lively 是积极、活泼的评价，前面也应选择正向的 cute。sick 是负面词，quiet 与猴子活泼的状态不一致。"),
     q(24, ["left", "fought", "joined"], "joined", "动词", "动作连贯 / 动宾搭配", ["greeted the world", "the other monkeys"], "石猴出世后先向周围世界打招呼，然后加入其他猴子群中，join sb. 表示加入某人或某个群体。left 和 fought 不符合初来乍到、快乐融入的语境。", "join sb.", "动宾搭配", "动词(join) + 某人/群体(sb.)"),
-    q(25, ["his", "him", "he"], "his", "代词", "语法 / 物主代词", ["___ life"], "考查语法基本功：空格后是名词 life，前面必须用形容词性物主代词 his，表示“他的生活”。him 是宾格，he 是主格，都不能直接修饰名词。"),
-    q(26, ["boring", "dirty", "great"], "great", "形容词副词", "褒贬态度一致法 / 语境推理", ["waterfall", "lived there happily"], "再次判正负极！猴子们发现瀑布，后文还把瀑布后的洞穴当成家，所以这个瀑布带来积极转机，应是 great。boring 和 dirty 都是负面词，直接排除。"),
+    q(25, ["his", "him", "he"], "his", "代词", "语法 / 物主代词", ["little monkey enjoyed", "in the mountain"], "考查语法基本功：空格后是名词 life，前面必须用形容词性物主代词 his，表示“他的生活”。him 是宾格，he 是主格，都不能直接修饰名词。"),
+    q(26, ["boring", "dirty", "great"], "great", "形容词副词", "褒贬态度一致法 / 语境推理", ["a great waterfall", "lived there happily"], "先判断褒贬方向：猴子们后来在瀑布后的洞穴中快乐生活，瀑布带来积极转机，因此选 great；boring 和 dirty 都是负面词。"),
     q(27, ["joke", "deal", "mistake"], "deal", "名词", "固定搭配 / 动词加名词短语", ["Who jumps through", "will be our king"], "这里猴子们立下规矩：谁跳过瀑布，谁就是王。这实际上是大家做出约定，make a deal 表示达成协议、做个约定。joke 和 mistake 不符合推举猴王时严肃的语境。", "make a deal", "动宾搭配", "动词(make) + 冠词(a) + 名词(deal)"),
     q(28, ["too", "hardly", "seldom"], "too", "副词", "语法 / 固定句型", ["afraid to try"], "考查初中高频句型：看到后面的 to try，就要想到 too...to... 结构。其他猴子太害怕而不敢尝试，所以选 too。", "too... to...", "固定句型", "too + 形容词/副词 + to do"),
-    q(29, ["Or", "So", "But"], "But", "连词逻辑", "转折关系", ["afraid to try", "really brave"], "找逻辑转折！前一句说其他猴子害怕不敢跳，后一句说石猴真的很勇敢，前后形成强烈对比，必须用 But。"),
+    q(29, ["Or", "So", "But"], "But", "连词逻辑", "转折关系", ["afraid to try", "really brave"], "前一句说其他猴子害怕尝试，后一句说石猴非常勇敢，前后形成明显转折，因此选 But。"),
     q(30, ["twice", "two", "second"], "twice", "副词", "固定搭配", ["without thinking"], "考查地道固定表达：think twice 意为三思，without thinking twice 就是毫不犹豫、不假思索。他勇敢地直接跳进瀑布，选 twice。", "without thinking twice", "固定搭配", "without + thinking + twice"),
-    q(31, ["dark", "far", "big"], "big", "形容词副词", "逻辑推理 / 常识推断", ["enough for all monkeys", "to live in"], "瀑布后面的洞穴怎么样？关键线索是 for all monkeys to live in，能装下所有猴子，说明洞穴足够大。dark 和 far 都不是“能住下”的关键条件。", "adj. + enough", "固定结构", "形容词(adj.) + enough"),
+    q(31, ["dark", "far", "big"], "big", "形容词副词", "逻辑推理 / 常识推断", ["enough for all monkeys", "to live in"], "能容纳所有猴子居住，说明洞穴足够大；dark 和 far 也能进入形容词加 enough 的结构，答案必须靠容量语境判断。"),
     q(32, ["asked", "kept", "broke"], "kept", "动词", "固定搭配 / 上下文复现", ["the promise", "make him their king"], "因为猴子们爱戴并信任石猴，所以兑现了前面第27题的约定。表示信守诺言用 keep a/the promise，反义是 break a promise。", "keep a promise", "动宾搭配", "动词(keep) + 冠词/物主代词 + promise"),
     q(33, ["duty", "rule", "chance"], "chance", "名词", "主旨升华 / 固定句型", ["to be great"], "故事讲完后进入升华：每个人都有变得伟大的机会。have a chance to do sth. 表示有机会做某事，chance 最契合“只要努力就能成功”的主题。", "have a chance to do sth.", "固定句型", "have + a chance + to do"),
-    q(34, ["slowly", "easily", "suddenly"], "easily", "副词", "上下文复现 / 转折对比逻辑", ["meet problems", "try bravely"], "画箭头看下句：Just like the Monkey King, we should try bravely。下句提倡的是勇敢尝试，那么上一句 shouldn't give up 后面要填的，就是与勇敢相反的消极态度：遇到困难就轻易放弃。easily 表示轻易地；slowly 强调速度慢，suddenly 强调突然发生，都和是否勇敢没有直接逻辑关联。"),
-    q(35, ["come true", "come up", "come in"], "come true", "动词短语", "固定搭配", ["dreams"], "最后的超级送分题！前面的名词是 dreams，表示让梦想成真，全宇宙通用固定搭配就是 make one's dreams come true。come up 是出现、被提出，come in 是进来。", "make one's dreams come true", "固定搭配", "make + one's dreams + come true")
+    q(34, ["slowly", "easily", "suddenly"], "easily", "副词", "上下文复现 / 转折对比逻辑", ["meet problems", "try bravely"], "下句提倡像美猴王一样勇敢尝试，与遇到困难就轻易放弃形成对照，因此选 easily。slowly 强调速度，suddenly 强调突然发生，都不符合这里的态度判断。"),
+    q(35, ["come true", "come up", "come in"], "come true", "动词短语", "固定搭配", ["make our dreams"], "make one's dreams come true 表示“使某人的梦想成真”，dreams 与 come true 构成固定表达。come up 表示出现或被提出，come in 表示进来。", "make one's dreams come true", "固定搭配", "make + one's dreams + come true")
   ],
   verifySentences: [
     { english: "At the top of the Huaguo Mountain, there was a special stone.", chinese: "在花果山顶，有一块特别的石头。" },
@@ -3345,16 +3344,16 @@ const learningTcm = {
   available: true,
   firstSentence: "In China, more and more young people are becoming interested in Traditional Chinese Medicine.",
   lastSentence: "He will serve as a bridge between the two countries and spread TCM and Chinese culture.",
-  tone: "积极 / 赞扬",
+  tone: "积极",
   toneReason: "文章从年轻人对中医兴趣增强写起，重点描写 Alex 通过学习中医改变生活方式、帮助家人并计划传播中医文化，整体充满积极赞扬的正能量。",
   passage: [
     "In China, more and more young people are becoming interested in Traditional Chinese Medicine. One thousand young people took part in a survey by China Youth Daily. The survey ",
     { blank: 21 },
     " that more than 90% of them had tried different TCM treatments. Between Western Medicine and TCM, young people often choose TCM ",
     { blank: 22 },
-    " it can be a more accurate treatment for different patients. Today TCM is getting popular with young foreigners. And it also brings good to more people. Alex, a young Frenchman, is one of them. He is a big ",
+    " it can be a more accurate treatment for different patients. Today TCM is getting popular with young foreigners. It also brings benefits to more people. Alex, a young Frenchman, is one of them. He is a big ",
     { blank: 23 },
-    " of TCM. He came to China to learn TCM in Beijing University of Chinese Medicine in 2022. Studying TCM ",
+    " of TCM. He came to China to learn TCM at Beijing University of Chinese Medicine in 2022. Studying TCM ",
     { blank: 24 },
     " Alex’s mind and lifestyle. He realizes keeping the balance of yin and yang is ",
     { blank: 25 },
@@ -3383,19 +3382,19 @@ const learningTcm = {
   questions: [
     q(21, ["advised", "showed", "answered"], "showed", "动词", "常识推断 / 动作连贯", ["took part in a survey", "more than 90%"], "调查后列出数据，说明调查显示了这个结果。", "the survey showed that...", "主谓搭配", "名词(survey) + 动词(showed) + 宾语从句"),
     q(22, ["or", "but", "because"], "because", "连词逻辑", "逻辑推理 / 因果关系", ["choose TCM", "more accurate treatment"], "年轻人选择中医是结果，中医能提供更精准治疗是原因，用 because。"),
-    q(23, ["fan", "man", "boy"], "fan", "名词", "固定搭配 / 情感态度", ["getting popular", "brings good"], "Alex 是中医的爱好者，a big fan of 表示……的超级粉丝。", "be a big fan of", "名词搭配", "be + 冠词(a) + 形容词(big) + 名词(fan) + 介词(of)"),
+    q(23, ["fan", "man", "boy"], "fan", "名词", "固定搭配 / 情感态度", ["getting popular", "young Frenchman"], "Alex 是中医的爱好者，a big fan of 表示……的超级粉丝。", "be a big fan of", "名词搭配", "be + 冠词(a) + 形容词(big) + 名词(fan) + 介词(of)"),
     q(24, ["broke", "changed", "helped"], "changed", "动词", "上下文复现 / 逻辑推理", ["used to be", "But now"], "后文对比过去熬夜和现在平衡生活，说明学习中医改变了他的思想和生活方式。"),
-    q(25, ["impossible", "important", "interesting"], "important", "形容词副词", "情感态度 / 文化常识", ["keeping the balance of yin and yang", "follow the rules of nature"], "保持阴阳平衡、遵循自然规律在中医理念中是重要的。"),
+    q(25, ["impossible", "important", "interesting"], "important", "形容词副词", "情感态度 / 文化常识", ["balance of yin and yang", "rules of nature"], "保持阴阳平衡、遵循自然规律在中医理念中是重要的。"),
     q(26, ["get up", "wake up", "stay up"], "stay up", "动词短语", "固定搭配 / 逻辑推理", ["electronic products", "late every night"], "过去沉迷电子产品，每晚都熬夜，stay up late 表示熬夜。", "stay up late", "动词短语", "动词(stay) + 副词(up) + 副词(late)"),
-    q(27, ["peaceful", "harmful", "careful"], "peaceful", "形容词副词", "逻辑推理 / 并列关系", ["balanced and ___ life"], "and 前的 balanced 是正向词，后面也应是正向的 peaceful，表示平静安宁的生活。"),
+    q(27, ["peaceful", "harmful", "careful"], "peaceful", "形容词副词", "逻辑推理 / 并列关系", ["But now", "good living habits"], "and 前的 balanced 是正向词，后面也应是正向的 peaceful，表示平静安宁的生活。"),
     q(28, ["something", "nothing", "anything"], "something", "代词", "语法 / 不定代词", ["loves reading"], "肯定句中表示读一些关于古代中国文化的内容，用 something。"),
     q(29, ["likes", "keeps", "avoids"], "avoids", "动词", "逻辑推理 / 常识推断", ["drinking icy water", "new lifestyle"], "结合中医养生和健康习惯，运动后他避免喝冰水。", "avoid doing sth.", "动词 + doing", "动词(avoid) + 动名词(doing)"),
     q(30, ["doctor", "teacher", "cook"], "doctor", "名词", "语义场复现", ["Traditional Chinese Medicine"], "全文讲学习中医，与医药对应的职业是 doctor。"),
     q(31, ["friends", "class", "family"], "family", "名词", "上下文复现", ["his family members"], "下一句 family members 直接提示他用知识帮助家人。"),
-    q(32, ["calm", "healthy", "happy"], "healthy", "形容词副词", "语义场复现 / 固定搭配", ["TCM", "faces or tongues", "advice"], "中医检查脸色舌头并给建议，是为了帮助家人保持健康。", "stay healthy", "系表搭配", "系动词(stay) + 形容词(healthy)"),
+    q(32, ["calm", "healthy", "happy"], "healthy", "形容词副词", "语义场复现 / 固定搭配", ["different TCM treatments","faces or tongues","some advice about"], "中医检查脸色舌头并给建议，是为了帮助家人保持健康。", "stay healthy", "系表搭配", "系动词(stay) + 形容词(healthy)"),
     q(33, ["finally", "quickly", "simply"], "finally", "形容词副词", "语境推理 / 词义辨析", ["Over time"], "Over time 表示随着时间推移，家人最终理解他的梦想。"),
-    q(34, ["what", "why", "where"], "why", "代词", "语法 / 宾语从句", ["understand ___ TCM is a treasure"], "从句主干完整，语义是理解为什么中医是中国文化瑰宝，选 why。"),
-    q(35, ["school", "work", "graduation"], "graduation", "名词", "逻辑推理 / 时间线索", ["Beijing University", "after"], "他在大学学习中医，计划毕业后在法国开中医诊所。", "after graduation", "介词短语", "介词(after) + 名词(graduation)")
+    q(34, ["what", "why", "where"], "why", "代词", "语法 / 宾语从句", ["The more I study TCM", "treasure of Chinese culture"], "从句主干完整，语义是理解为什么中医是中国文化瑰宝，选 why。"),
+    q(35, ["school", "work", "graduation"], "graduation", "名词", "逻辑推理 / 时间线索", ["Beijing University","France after graduation"], "他在大学学习中医，计划毕业后在法国开中医诊所。", "after graduation", "介词短语", "介词(after) + 名词(graduation)")
   ],
   verifySentences: [
     { english: "In China, more and more young people are becoming interested in Traditional Chinese Medicine.", chinese: "在中国，越来越多的年轻人开始对中医感兴趣。" },
@@ -3403,10 +3402,10 @@ const learningTcm = {
     { english: "The survey showed that more than 90% of them had tried different TCM treatments.", chinese: "调查显示，他们中超过90%的人尝试过不同的中医疗法。", answers: ["showed"] },
     { english: "Between Western Medicine and TCM, young people often choose TCM because it can be a more accurate treatment for different patients.", chinese: "在西医和中医之间，年轻人经常选择中医，因为它能为不同病人提供更精准的治疗。", answers: ["because"] },
     { english: "Today TCM is getting popular with young foreigners.", chinese: "如今，中医也越来越受到外国年轻人的欢迎。" },
-    { english: "And it also brings good to more people.", chinese: "它也给更多人带来了好处。" },
+    { english: "It also brings benefits to more people.", chinese: "它也给更多人带来了好处。" },
     { english: "Alex, a young Frenchman, is one of them.", chinese: "Alex 是一位年轻的法国人，他就是其中之一。" },
     { english: "He is a big fan of TCM.", chinese: "他是中医的忠实爱好者。", answers: ["fan"] },
-    { english: "He came to China to learn TCM in Beijing University of Chinese Medicine in 2022.", chinese: "2022年，他来到中国，在北京中医药大学学习中医。" },
+    { english: "He came to China to learn TCM at Beijing University of Chinese Medicine in 2022.", chinese: "2022年，他来到中国，在北京中医药大学学习中医。" },
     { english: "Studying TCM changed Alex’s mind and lifestyle.", chinese: "学习中医改变了 Alex 的思想和生活方式。", answers: ["changed"] },
     { english: "He realizes keeping the balance of yin and yang is important and that everyone should follow the rules of nature.", chinese: "他意识到保持阴阳平衡很重要，每个人都应该遵循自然规律。", answers: ["important"] },
     { english: "He used to be interested in electronic products and stay up late every night.", chinese: "他过去对电子产品感兴趣，并且每天晚上熬夜。", answers: ["stay up"] },
@@ -3435,7 +3434,7 @@ const littleCulturalAmbassador = {
   available: true,
   firstSentence: "Do you want to meet a special and lovely kid?",
   lastSentence: "She has become a lovely symbol of traditional culture and childhood energy.",
-  tone: "积极 / 赞赏",
+  tone: "积极",
   toneReason: "文章从介绍特别可爱的 Alina 写起，描写她在中国充满活力的生活，并升华为中外文化交流桥梁，整体积极温暖、充满赞赏。",
   passage: [
     "Do you want to meet a special and lovely kid? Let me ",
@@ -3460,7 +3459,7 @@ const littleCulturalAmbassador = {
     { blank: 30 },
     " Alina is very young, she is like a small ",
     { blank: 31 },
-    " between Chinese and foreign cultures. She often shows Chinese Kung Fu and her hometown’s culture with people from other ",
+    " between Chinese and foreign cultures. She often shares Chinese Kung Fu and her hometown’s culture with people from other ",
     { blank: 32 },
     ". She shows a beautiful side of Chinese culture to ",
     { blank: 33 },
@@ -3471,20 +3470,20 @@ const littleCulturalAmbassador = {
     " of traditional culture and childhood energy."
   ],
   questions: [
-    q(21, ["interview", "invite", "introduce"], "introduce", "动词", "固定搭配 / 动词词组", ["Let me ___ Alina to you"], "文章开头要引出新人物，introduce sb. to sb. 表示把某人介绍给某人。", "introduce sb. to sb.", "动词短语", "introduce + sb. + to + sb."),
-    q(22, ["on", "in", "at"], "in", "介词搭配", "固定搭配 / 介词短语", ["lives ___ a beautiful old village"], "表示居住在村庄、城市或国家等较大空间范围内，用 live in。", "live in", "动词短语", "live + in + 地点"),
+    q(21, ["interview", "invite", "introduce"], "introduce", "动词", "固定搭配 / 动词词组", ["meet a special", "She is a seven-year-old"], "文章开头要引出新人物，introduce sb. to sb. 表示把某人介绍给某人。", "introduce sb. to sb.", "动词短语", "introduce + sb. + to + sb."),
+    q(22, ["on", "in", "at"], "in", "介词搭配", "固定搭配 / 介词短语", ["comes from Australia", "beautiful old village"], "表示居住在村庄、城市或国家等较大空间范围内，用 live in。", "live in", "动词短语", "live + in + 地点"),
     q(23, ["its", "our", "their"], "its", "代词", "语法 / 物主代词指代", ["This village", "traditional Huizhou buildings"], "空格指代 This village 的传统徽派建筑，单数事物用 its。"),
     q(24, ["less than", "more than", "rather than"], "more than", "短语", "递进逻辑 / 词组辨析", ["just a lovely girl", "also like a cultural ambassador"], "more than 表示“不只是、超过”。后文说她 also like a cultural ambassador，说明她不仅仅是可爱女孩。less than 是少于，rather than 是而不是。", "more than just...", "短语搭配", "more than + just + 名词"),
     q(25, ["are sold", "are brought", "are translated"], "are translated", "动词短语", "常识推断 / 动词词组", ["Wuxia novels", "into different languages"], "武侠小说变成不同语言，动作应是被翻译。translate into 表示翻译成。", "translate into...", "动词短语", "translate + into + 语言"),
-    q(26, ["active", "quiet", "sad"], "active", "形容词副词", "并列逻辑 / 褒贬态度一致", ["lively and", "loves practicing Tai Chi and Kung Fu"], "and 前是 lively，后面应填同样积极、好动的 active。"),
-    q(27, ["planting", "cutting", "climbing"], "climbing", "动词", "常识推断 / 动作搭配", ["wild", "trees", "running and riding bikes"], "她是有点野、爱运动的女孩，和 trees 搭配的玩耍动作是 climbing。", "climb trees", "动宾搭配", "climb + trees"),
+    q(26, ["active", "quiet", "sad"], "active", "形容词副词", "并列逻辑 / 褒贬态度一致", ["lively and", "Tai Chi and Kung Fu"], "and 前是 lively，后面应填同样积极、好动的 active。"),
+    q(27, ["planting", "cutting", "climbing"], "climbing", "动词", "常识推断 / 动作搭配", ["little “wild” girl","climbing trees, running","running and riding bikes"], "她是有点野、爱运动的女孩，和 trees 搭配的玩耍动作是 climbing。", "climb trees", "动宾搭配", "climb + trees"),
     q(28, ["cross", "through", "under"], "through", "介词", "介词辨析 / 常识推断", ["riding bikes", "the fields"], "在田野中骑车穿行，表示从内部穿过，用 through。cross 是动词，不适合此处。"),
-    q(29, ["are short of", "are full of", "are proud of"], "are full of", "动词短语", "固定搭配 / 情感态度", ["practices Kung Fu every day", "energy"], "她每天练功夫、跑步骑车，日子充满活力。be full of 表示充满。", "be full of", "形容词短语", "be + full + of"),
+    q(29, ["are short of", "are full of", "are proud of"], "are full of", "动词短语", "固定搭配 / 情感态度", ["practices Kung Fu every day","full of energy"], "她每天练功夫、跑步骑车，日子充满活力。be full of 表示充满。", "be full of", "形容词短语", "be + full + of"),
     q(30, ["Although", "Because", "If"], "Although", "连词逻辑", "让步关系 / 逻辑推理", ["very young", "like a small bridge"], "年龄小却像文化桥梁，前后构成让步转折，用 Although。"),
     q(31, ["river", "bridge", "flower"], "bridge", "名词", "语境推理 / 隐喻常识", ["between Chinese and foreign cultures"], "连接中外文化的人常被比作桥梁，bridge 符合语境。"),
     q(32, ["towns", "villages", "countries"], "countries", "名词", "语义场复现 / 上下义词", ["foreign cultures", "the world"], "与外国文化和世界范围呼应，应是来自其他国家的人。"),
-    q(33, ["other", "others", "oneself"], "others", "代词", "语法 / 不定代词", ["shows", "to"], "空格作介词 to 的宾语，others 相当于 other people，表示其他人。"),
-    q(34, ["have heard", "have seen", "have done"], "have seen", "动词短语", "常识推断 / 拟人表达", ["The mountains and rivers", "her happy growth"], "山山水水像旁观者一样见证她的成长，用 have seen 更符合拟人表达。"),
+    q(33, ["other", "others", "oneself"], "others", "代词", "语法 / 不定代词", ["beautiful side of Chinese culture", "culture to others"], "空格作介词 to 的宾语，others 相当于 other people，表示其他人。"),
+    q(34, ["have heard", "have witnessed", "have done"], "have witnessed", "动词短语", "常识推断 / 拟人表达", ["The mountains and rivers", "her happy growth"], "主语是家乡的山山水水，宾语是她的成长，语义需要“见证”。have witnessed 能准确表达这一拟人含义；have heard 和 have done 均不能与 growth 构成合理动宾关系。"),
     q(35, ["symbol", "leader", "guide"], "symbol", "名词", "主旨升华 / 情感态度", ["traditional culture and childhood energy"], "她成为传统文化和童年活力的可爱象征。a symbol of 表示……的象征。", "a symbol of", "名词搭配", "a + symbol + of")
   ],
   verifySentences: [
@@ -3506,9 +3505,9 @@ const littleCulturalAmbassador = {
     { english: "She practices Kung Fu every day in the green mountains.", chinese: "她每天在青山中练功夫。" },
     { english: "Her days are full of energy.", chinese: "她的日子充满活力。", answers: ["are full of"] },
     { english: "Although Alina is very young, she is like a small bridge between Chinese and foreign cultures.", chinese: "虽然 Alina 很年轻，但她像中外文化之间的一座小桥。", answers: ["Although", "bridge"] },
-    { english: "She often shows Chinese Kung Fu and her hometown’s culture with people from other countries.", chinese: "她经常向来自其他国家的人展示中国功夫和家乡文化。", answers: ["countries"] },
+    { english: "She often shares Chinese Kung Fu and her hometown’s culture with people from other countries.", chinese: "她经常与来自其他国家的人分享中国功夫和家乡文化。", answers: ["countries"] },
     { english: "She shows a beautiful side of Chinese culture to others.", chinese: "她向其他人展示了中国文化美好的一面。", answers: ["others"] },
-    { english: "The mountains and rivers in her hometown have seen her happy growth.", chinese: "家乡的山山水水见证了她快乐的成长。", answers: ["have seen"] },
+    { english: "The mountains and rivers in her hometown have witnessed her happy growth.", chinese: "家乡的山山水水见证了她快乐的成长。", answers: ["have witnessed"] },
     { english: "She has become a lovely symbol of traditional culture and childhood energy.", chinese: "她已经成为传统文化和童年活力的可爱象征。", answers: ["symbol"] }
   ]
 };
@@ -3524,7 +3523,7 @@ const nangBowlCoffee = {
   available: true,
   firstSentence: "In recent years, more and more tourists have become interested in Xinjiang's creative food.",
   lastSentence: "She hopes to visit Xinjiang again after she graduates from university.",
-  tone: "积极 / 赞扬",
+  tone: "积极",
   toneReason: "文章围绕新疆创意美食馕碗咖啡展开，写游客通过美食理解新疆文化并主动传播，整体充满对传统文化创新表达的赞美与向往。",
   passage: [
     "In recent years, more and more tourists have become interested in Xinjiang's creative food. One of the most popular examples is Nang Bowl Coffee. Instead of using a normal cup, people drink coffee from a bowl made of nang, a traditional Xinjiang food. Last summer, a survey among young travelers ",
@@ -3562,17 +3561,17 @@ const nangBowlCoffee = {
   questions: [
     q(21, ["showed", "protected", "invented"], "showed", "动词", "常识推断 / 动作连贯", ["a survey", "many visitors wanted"], "调查后给出游客想尝试本地美食新方式这一结果，说明调查“显示/表明”了这个情况。", "a survey showed that...", "主谓搭配", "名词(survey) + 动词(showed) + 宾语从句"),
     q(22, ["but", "because", "or"], "because", "连词逻辑", "逻辑推理 / 因果关系", ["became popular", "combines traditional culture with modern life"], "馕碗咖啡受欢迎是结果，融合传统文化和现代生活是原因，用 because。"),
-    q(23, ["interested", "surprised", "worried"], "interested", "形容词副词", "固定搭配 / 情感态度", ["one of its fans", "saw Nang Bowl Coffee on social media"], "Emma 是馕碗咖啡的粉丝，看到后对它很感兴趣。be interested in 表示对……感兴趣。", "be interested in", "形容词搭配", "be + interested + in"),
+    q(23, ["interested", "surprised", "worried"], "interested", "形容词副词", "固定搭配 / 情感态度", ["one of its fans", "Nang Bowl Coffee on social media"], "Emma 是馕碗咖啡的粉丝，看到后对它很感兴趣。be interested in 表示对……感兴趣。", "be interested in", "形容词搭配", "be + interested + in"),
     q(24, ["changed", "broke", "followed"], "changed", "动词", "上下文复现 / 转折对比", ["Before coming to Xinjiang", "But now"], "前后对比她对传统食物的看法发生变化，说明这次经历改变了她的想法。", "change one's idea", "动宾搭配", "change + one's idea"),
     q(25, ["harmful", "popular", "difficult"], "popular", "形容词副词", "情感态度 / 逻辑推理", ["became popular", "attractive to young people"], "前文说馕碗咖啡变得受欢迎，后文又说它能吸引年轻人，因此传统食物也可以是受欢迎的。"),
     q(26, ["easy", "important", "harmful"], "important", "形容词副词", "固定搭配 / 情感态度", ["made nang for hundreds of years", "daily life"], "馕已有数百年历史，并在日常生活中扮演重要角色。play an important role in... 表示在……中起重要作用。", "play an important role in...", "动宾搭配", "play + an important role + in"),
-    q(27, ["shares", "avoids", "loses"], "shares", "动词", "常识推断 / 动作连贯", ["photos and videos", "online"], "回国后，她经常在网上分享馕碗咖啡的照片和视频。", "share sth. online", "动宾搭配", "share + 名词 + online"),
+    q(27, ["shares", "avoids", "loses"], "shares", "动词", "常识推断 / 动作连贯", ["photos and videos", "After returning home"], "回国后，她经常在网上分享馕碗咖啡的照片和视频。", "share sth. online", "动宾搭配", "share + 名词 + online"),
     q(28, ["nothing", "anything", "something"], "something", "代词", "语法 / 语境推理", ["every place", "special to offer"], "肯定句中表达“每个地方都有一些特别的东西可提供”，用 something。", "something special", "不定代词搭配", "something + 形容词(special)"),
     q(29, ["enjoys", "avoids", "keeps"], "avoids", "动词", "固定搭配 / 逻辑推理", ["wasting food", "always finishes"], "后文说她总会把馕碗吃完，说明她避免浪费食物。avoid doing sth. 表示避免做某事。", "avoid doing sth.", "动词 + doing", "avoid + 动名词(doing)"),
     q(30, ["people", "products", "problems"], "people", "名词", "逻辑推理 / 语境推理", ["understanding a culture", "meeting local"], "旅行体验不只是品尝饮品，也是在理解文化、遇见当地人。"),
-    q(31, ["friends", "class", "teacher"], "friends", "名词", "上下文复现 / 逻辑推理", ["Many of her friends", "shows them pictures"], "前文提到她的许多朋友对新疆文化感兴趣，这里是她经常向朋友讲述旅行。", "tell sb. about sth.", "动词短语", "tell + sb. + about + sth."),
+    q(31, ["friends", "class", "teacher"], "friends", "名词", "上下文复现 / 逻辑推理", ["Many of her friends", "shows them pictures"], "前文明确提到她的朋友，后文 them 也回指这些朋友；核心路径是上下文指代，不展示搭配卡。"),
     q(32, ["finally", "simply", "suddenly"], "finally", "形容词副词", "语境推理 / 时间线索", ["Over time"], "Over time 表示随着时间推移，朋友们最终对新疆感兴趣。"),
-    q(33, ["where", "what", "why"], "why", "连词逻辑", "语法 / 宾语从句", ["understand ___ so many people love it"], "从句主干完整，语义是理解为什么这么多人喜欢新疆，用 why。"),
+    q(33, ["where", "what", "why"], "why", "连词逻辑", "语法 / 宾语从句", ["The more I learn", "so many people love it"], "从句主干完整，语义是理解为什么这么多人喜欢新疆，用 why。"),
     q(34, ["modern", "terrible", "private"], "modern", "形容词副词", "上下文复现", ["combines traditional culture with modern life"], "前文已经说馕碗咖啡融合传统文化和现代生活，这里是 modern life 的原词复现。"),
     q(35, ["graduates", "studies", "returns"], "graduates", "动词", "固定搭配 / 逻辑推理", ["from university", "hopes to visit Xinjiang again after"], "她希望大学毕业后再次来新疆。graduate from university 表示从大学毕业。", "graduate from university", "动词短语", "graduate + from + university")
   ],
@@ -3619,7 +3618,7 @@ const powerOfWords = {
   available: true,
   firstSentence: "A sad memory from Grade 7 came to my mind.",
   lastSentence: "I hope my words can help others.",
-  tone: "转折升华",
+  tone: "转折变化",
   toneReason: "文章先写七年级被排挤的伤心孤独，再写八年级被老师鼓励后重新努力，最后升华为理解言语的力量并用文字传递善意。",
   passage: [
     "A sad memory from Grade 7 came to my mind. The sky was ",
@@ -3650,24 +3649,24 @@ const powerOfWords = {
     { blank: 33 },
     " about our words. After school, I started writing. It helps me ",
     { blank: 34 },
-    " my feelings and continue my teachers’ kindness. Their encouragement has ",
+    " my feelings and pass on my teachers’ kindness. Their encouragement has ",
     { blank: 35 },
     " my life. I hope my words can help others."
   ],
   questions: [
     q(21, ["bright", "grey", "empty"], "grey", "形容词副词", "褒贬态度一致法 / 语境推理", ["sad memory", "felt the same"], "开篇是伤心回忆，作者心情也和天空一样灰暗，选 grey。"),
-    q(22, ["refused", "agreed", "managed"], "refused", "动词", "逻辑推理 / 转折关系", ["wanted to join", "but", "We don’t like you"], "作者想加入游戏，但女孩说不喜欢她，说明女孩拒绝了她。"),
+    q(22, ["refused", "agreed", "managed"], "refused", "动词", "逻辑推理 / 转折关系", ["wanted to join", "We don’t like you"], "作者想加入游戏，但女孩说不喜欢她，说明女孩拒绝了她。"),
     q(23, ["happy", "tired", "lonely"], "lonely", "形容词副词", "情感态度 / 逻辑推理", ["wanted to join", "We don’t like you"], "被排挤、不能加入游戏，自然会感到孤独。"),
-    q(24, ["went by", "ran out", "came back"], "went by", "动词短语", "固定搭配 / 词义辨析", ["As time ___"], "as time went by 表示随着时间流逝。", "as time goes/went by", "动词短语", "as + time + go/went + by"),
+    q(24, ["went by", "ran out", "came back"], "went by", "动词短语", "固定搭配 / 词义辨析", ["the feeling still stayed","Later, my teacher’s"], "as time went by 表示随着时间流逝。", "as time goes/went by", "动词短语", "as + time + go/went + by"),
     q(25, ["how", "when", "why"], "when", "连词逻辑", "语法 / 下文暗示", ["one day in Grade 8"], "后文给出 one day in Grade 8 这个时间点，说明记得事情何时发生。"),
     q(26, ["eyes", "mouth", "hands"], "eyes", "名词", "常识推断 / 语义场", ["surprise was clear", "could see it"], "惊讶和喜悦通常能从眼神中看出来。"),
     q(27, ["strong", "broken", "dangerous"], "broken", "形容词副词", "逻辑推理 / 转折对比", ["but her words were the cure"], "后文说老师的话是良药，前文应是受伤状态，像断了翅膀的鸟。"),
     q(28, ["wealth", "courage", "effort"], "effort", "名词", "上下文复现 / 固定搭配", ["hard-working kid"], "后文老师夸作者努力，说明她把全部努力投入学习。", "put one's effort into sth.", "动宾搭配", "put + one's effort + into + sth."),
-    q(29, ["with", "of", "out"], "with", "介词搭配", "固定搭配", ["fills my heart ___ pleasure"], "fill sth. with sth. 表示使某物充满某物。", "fill... with...", "动词短语", "fill + 宾语 + with + 名词"),
+    q(29, ["with", "of", "out"], "with", "介词搭配", "固定搭配", ["hard-working kid", "My science teacher"], "fill sth. with sth. 表示使某物充满某物。", "fill... with...", "动词短语", "fill + 宾语 + with + 名词"),
     q(30, ["badly", "truly", "differently"], "truly", "形容词副词", "语境推理 / 词汇辨析", ["realized that words can hurt"], "经历伤害和鼓励后，作者真正意识到言语会伤人。"),
     q(31, ["symbol", "weight", "power"], "power", "名词", "主旨升华 / 逻辑对比", ["words can hurt", "warm our hearts"], "言语既能伤人也能温暖人，体现 words 的力量。", "the power of words", "名词搭配", "the + power + of + words"),
     q(32, ["while", "though", "if"], "while", "连词逻辑", "逻辑推理 / 对比关系", ["warm our hearts", "hurt our feelings"], "善意的话温暖人心，刺耳的话伤害人心，前后构成对比，用 while。"),
-    q(33, ["ready", "careful", "honest"], "careful", "形容词副词", "因果关系 / 情感态度", ["So", "words can hurt"], "因为言语会伤人，所以我们要谨慎对待自己的话。", "be careful about", "形容词搭配", "be + careful + about"),
+    q(33, ["ready", "careful", "honest"], "careful", "形容词副词", "因果关系 / 情感态度", ["So we should","words can hurt"], "因为言语会伤人，所以我们要谨慎对待自己的话。", "be careful about", "形容词搭配", "be + careful + about"),
     q(34, ["express", "perform", "praise"], "express", "动词", "动宾搭配 / 常识推断", ["started writing", "my feelings"], "写作可以帮助作者表达自己的感受。", "express one's feelings", "动宾搭配", "express + one's feelings"),
     q(35, ["required", "punished", "changed"], "changed", "动词", "主旨升华 / 全文总结", ["hope my words can help others"], "老师的鼓励改变了作者的人生，让她也想用文字帮助别人。", "change one's life", "动宾搭配", "change + one's life")
   ],
@@ -3694,37 +3693,74 @@ const powerOfWords = {
     { english: "Kind words can warm our hearts in the coldest winter, while harsh words can hurt our feelings even in the hottest summer.", chinese: "善意的话能在最寒冷的冬天温暖我们的心，而刺耳的话即使在最炎热的夏天也会伤害我们的感受。", answers: ["while"] },
     { english: "So we should always be kind and careful about our words.", chinese: "所以我们应该始终善良，并谨慎对待自己的话。", answers: ["careful"] },
     { english: "After school, I started writing.", chinese: "放学后，我开始写作。" },
-    { english: "It helps me express my feelings and continue my teachers’ kindness.", chinese: "它帮助我表达感受，并延续老师们的善意。", answers: ["express"] },
+    { english: "It helps me express my feelings and pass on my teachers’ kindness.", chinese: "它帮助我表达感受，并把老师们的善意传递下去。", answers: ["express"] },
     { english: "Their encouragement has changed my life.", chinese: "她们的鼓励改变了我的人生。", answers: ["changed"] },
     { english: "I hope my words can help others.", chinese: "我希望我的文字能帮助别人。" }
   ]
 };
 
+const normalizedLessonSources = {
+  "refrigerator-magnets": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试",
+  "brave-boy-house-fire": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试",
+  "salty-juice-life": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试",
+  "climbing-qomolangma": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试",
+  "markela-beekeeping-dream": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试",
+  "cinema-rules": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试",
+  "moms-rules": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试",
+  "favorite-basketball": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试",
+  "peter-chinese-food": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试",
+  "silk-road-trip": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试",
+  "urumqi-yuli-expressway": "2026年 · 乌鲁木齐市 · 乌鲁木齐市第十三中学 · 八年级英语期中考试",
+  "deal-with-anger": "2026年 · 乌鲁木齐市 · 新疆师范大学附属中学 · 八年级英语期中考试",
+  "farmer-dog-donkey": "2024—2025学年第二学期 · 乌鲁木齐市 · 七年级英语期末统考",
+  "community-clean-up-day": "2024—2025学年第二学期 · 乌鲁木齐市 · 乌鲁木齐市第七十中学 · 八年级英语期末考试",
+  "colors-argued": "2026年 · 乌鲁木齐市 · 九年级英语第二次模拟考试",
+  "nine-colored-deer": "2026年 · 乌鲁木齐市天山区 · 九年级英语适应性测试",
+  "supermarket-warmth": "2026年3月 · 乌鲁木齐市 · 九年级英语学业质量检测",
+  "old-book-warmth": "2026年 · 乌鲁木齐市 · 乌鲁木齐八一中学 · 九年级英语第一次模拟考试",
+  "tiny-seed-growth": "2026年 · 乌鲁木齐市 · 乌鲁木齐市第七十中学 · 九年级英语第一次模拟考试",
+  "filial-son-travels": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 九年级英语第二次模拟考试",
+  "caring-baby-experience": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语模拟考试",
+  "overcoming-shyness": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语模拟考试",
+  "chen-wenjun-xinjiang": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语模拟考试",
+  "baker-innovation": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语模拟考试",
+  "vulture-revelation": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语冲刺模拟考试",
+  "paper-bridge-value": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语冲刺模拟考试",
+  "collettes-cookie-dream": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语冲刺模拟考试",
+  "unexpected-spring-picnic": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语冲刺模拟考试",
+  "first-fishing-trip": "2026年 · 乌鲁木齐市 · 新疆名校联合 · 九年级英语第一次模拟考试",
+  "two-plants-great": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 九年级英语第一次模拟考试",
+  "act-of-kindness": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语模拟考试",
+  "sharing-juice-fairly": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语模拟考试",
+  "jacks-birthday-picnic": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语模拟考试",
+  "seed-secret-patience": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语模拟考试",
+  "broken-camera-sibling-love": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语优质模拟考试",
+  "heart-of-bamboo": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语优质模拟考试",
+  "journey-not-alone": "2026年 · 乌鲁木齐市高新区（新市区） · 九年级英语模拟考试",
+  "lesson-of-love": "2026年5月 · 乌鲁木齐经济技术开发区 · 九年级英语中考模拟考试",
+  "learning-tcm": "2026年5月 · 乌鲁木齐市 · 乌鲁木齐市第十三中学 · 九年级英语中考模拟考试",
+  "power-of-words": "2026年 · 乌鲁木齐市 · 九年级英语第三次模拟考试",
+  "little-cultural-ambassador": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语优质模拟考试",
+  "nang-bowl-coffee": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语热点模拟考试",
+  "monkey-king-story": "2026年 · 新疆维吾尔自治区 · 初中学业水平考试英语真题",
+  "xinjiang-official-2025-cloze": "2025年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2024-cloze": "2024年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2023-cloze": "2023年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2022-cloze": "2022年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2021-cloze": "2021年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2020-cloze": "2020年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2019-cloze": "2019年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2018-cloze": "2018年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2017-cloze": "2017年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题",
+  "xinjiang-official-2016-cloze": "2016年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题"
+};
+
 const lessonBanks = [
-  {
-    id: "basic",
-    title: "初阶",
-    lessons: [
-      refrigeratorMagnets,
-      braveBoyHouseFire,
-      saltyJuiceLife,
-      climbingQomolangma,
-      markelaBeekeepingDream,
-      cinemaRules,
-      momsRules,
-      favoriteBasketball,
-      peterChineseFood,
-      silkRoadTrip,
-      urumqiYuliExpressway,
-      dealWithAnger,
-      farmerDogDonkey,
-      communityCleanUpDay
-    ]
-  },
   {
     id: "exam",
     title: "中考",
     lessons: [
+      ...(window.officialClozeLessons || []),
       lesson,
       nineColoredDeer,
       supermarketWarmth,
@@ -3755,22 +3791,67 @@ const lessonBanks = [
       nangBowlCoffee,
       monkeyKingStory
     ]
+  },
+  {
+    id: "basic",
+    title: "初阶",
+    lessons: [
+      refrigeratorMagnets,
+      braveBoyHouseFire,
+      saltyJuiceLife,
+      climbingQomolangma,
+      markelaBeekeepingDream,
+      cinemaRules,
+      momsRules,
+      favoriteBasketball,
+      peterChineseFood,
+      silkRoadTrip,
+      urumqiYuliExpressway,
+      dealWithAnger,
+      farmerDogDonkey,
+      communityCleanUpDay
+    ]
   }
 ];
 
-const lessonSlots = lessonBanks.flatMap((bank) => bank.lessons);
+lessonBanks.forEach((bank) => {
+  bank.lessons.forEach((item) => {
+    item.source = normalizedLessonSources[item.id] || "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试";
+  });
+});
 
-function registerOfficialClozeLessons() {
-  const officialLessons = Array.isArray(window.OFFICIAL_CLOZE_LESSONS) ? window.OFFICIAL_CLOZE_LESSONS : [];
-  if (!officialLessons.length) return;
-  const examBank = lessonBanks.find((bank) => bank.id === "exam");
-  if (!examBank) return;
-  const existing = new Set(lessonSlots.map((item) => item.id));
-  const freshLessons = officialLessons.filter((item) => item && item.id && !existing.has(item.id));
-  if (!freshLessons.length) return;
-  examBank.lessons.unshift(...freshLessons);
-  lessonSlots.unshift(...freshLessons);
+function isOfficialExamLesson(item) {
+  return Boolean(item && (item.featured || /初中学业水平考试英语真题/.test(item.source || "")));
 }
+
+function getOfficialExamYear(item) {
+  if (!isOfficialExamLesson(item)) return 0;
+  const match = String(item.source || "").match(/20\d{2}/);
+  return match ? Number(match[0]) : 0;
+}
+
+function getOfficialExamBadge(item) {
+  const year = getOfficialExamYear(item);
+  return year ? `${year} 新疆中考真题` : "新疆中考真题";
+}
+
+function sortLessonsForDisplay(lessons) {
+  return lessons
+    .map((item, originalIndex) => ({ item, originalIndex }))
+    .sort((a, b) => {
+      const aYear = getOfficialExamYear(a.item);
+      const bYear = getOfficialExamYear(b.item);
+      if (aYear || bYear) {
+        if (!aYear) return 1;
+        if (!bYear) return -1;
+        if (aYear !== bYear) return bYear - aYear;
+      }
+      return a.originalIndex - b.originalIndex;
+    })
+    .map(({ item }) => item);
+}
+
+const lessonSlots = lessonBanks.flatMap((bank) => bank.lessons);
 
 const storageKeys = {
   done: "clozeCoach.doneLessons",
@@ -3786,7 +3867,7 @@ const storageKeys = {
 
 const trialDurationMs = 24 * 60 * 60 * 1000;
 const guestLessonId = "colors-argued";
-const trialLessonId = "official-xinjiang-2025-cloze";
+const trialLessonId = "xinjiang-official-2025-cloze";
 const supabaseConfig = {
   url: "https://gbjmylxohacppnybfssh.supabase.co",
   anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdiam15bHhvaGFjcHBueWJmc3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDA1NzgsImV4cCI6MjA5ODI3NjU3OH0.mz5srsxdbZa4__oqKjlcysWuDo00w7UQaV8n2VNP4eE"
@@ -3892,7 +3973,6 @@ const els = {
 };
 
 async function init() {
-  registerOfficialClozeLessons();
   if (isTrialMode()) {
     document.body.classList.add("trial-mode");
     els.loginScreen.classList.add("hidden");
@@ -3935,7 +4015,7 @@ function enterStudy() {
 }
 
 function initLogin() {
-  if (isTrialMode()) {
+  if (isTrialMode() || isLocalFileMode()) {
     els.loginScreen.classList.add("hidden");
     return;
   }
@@ -3956,6 +4036,10 @@ function isTrialMode() {
   } catch {
     return false;
   }
+}
+
+function isLocalFileMode() {
+  return window.location.protocol === "file:";
 }
 
 function applyTrialCopy() {
@@ -4147,43 +4231,11 @@ async function saveCloudProgress(lessonId, progress, completed = false, score = 
 }
 
 function getVisibleLessonBanks() {
-  const order = { exam: 0, basic: 1 };
-  return lessonBanks
-    .slice()
-    .sort((a, b) => (order[a.id] ?? 9) - (order[b.id] ?? 9))
-    .map((bank) => ({
-      ...bank,
-      lessons: bank.lessons.slice().sort(compareLessonsForLibrary)
-    }));
+  return lessonBanks;
 }
 
 function getAvailableLessons() {
   return getVisibleLessonBanks().flatMap((bank) => bank.lessons.filter((item) => item.available));
-}
-
-function getLessonYear(item) {
-  const text = `${item.year || ""} ${item.source || ""} ${item.title || ""}`;
-  const match = text.match(/20\d{2}/);
-  return match ? Number(match[0]) : 0;
-}
-
-function isOfficialExamLesson(item) {
-  const text = `${item.source || ""} ${item.title || ""} ${item.tags ? item.tags.join(" ") : ""}`;
-  return Boolean(item.official || /中考真题|学业水平考试英语真题/.test(text));
-}
-
-function compareLessonsForLibrary(a, b) {
-  if (!!isOfficialExamLesson(a) !== !!isOfficialExamLesson(b)) return isOfficialExamLesson(a) ? -1 : 1;
-  const yearDiff = getLessonYear(b) - getLessonYear(a);
-  if (yearDiff) return yearDiff;
-  if (!!a.featured !== !!b.featured) return a.featured ? -1 : 1;
-  return 0;
-}
-
-function officialExamBadge(item) {
-  if (!isOfficialExamLesson(item)) return "";
-  const year = getLessonYear(item);
-  return `<span class="official-exam-badge">${year ? `${year} ` : ""}新疆中考真题</span>`;
 }
 
 function hasStoredCollocation(question) {
@@ -4195,6 +4247,21 @@ function shouldUseCollocationFirst(question) {
   const category = question.category || "";
   const clueFirstTypes = ["上下文复现", "逻辑推理", "常识", "情感态度", "主旨升华", "动作连贯", "下文暗示", "上文总结", "语境推理"];
   return !clueFirstTypes.some((type) => category.includes(type));
+}
+
+function hasIndependentClueRoute(question) {
+  const category = question.category || "";
+  const clueRouteTypes = ["上下文复现", "逻辑推理", "常识", "情感态度", "主旨升华", "动作连贯", "下文暗示", "上文总结", "语境推理"];
+  return Boolean(question.clues?.length) && clueRouteTypes.some((type) => category.includes(type));
+}
+
+function isDualReasoningQuestion(question) {
+  return hasStoredCollocation(question) && hasIndependentClueRoute(question);
+}
+
+function getAcceptedReasoningRoutes(question) {
+  if (isDualReasoningQuestion(question)) return [true, false];
+  return [shouldUseCollocationFirst(question)];
 }
 
 function isAllOptionCollocationQuestion(question) {
@@ -4212,7 +4279,7 @@ function isPrepositionCollocationQuestion(question) {
 }
 
 function shouldSkipCollocationStep(question) {
-  return isAllOptionCollocationQuestion(question);
+  return isAllOptionCollocationQuestion(question) && !isDualReasoningQuestion(question);
 }
 
 function renderHomeProgress(doneLessons = getDoneLessons()) {
@@ -4224,13 +4291,16 @@ function renderHomeProgress(doneLessons = getDoneLessons()) {
 
   els.homeProgress.innerHTML = `
     <div class="home-progress-card">
-      <div>
+      <div class="home-progress-copy">
         <span>学习进度</span>
         <strong>${doneCount} / ${total} 篇</strong>
         <p>已做完的文章会显示为灰色，未做完的文章保持彩色，可随时重复练习。</p>
       </div>
-      <div class="home-progress-meter" aria-label="学习进度 ${percent}%">
-        <div style="width: ${percent}%"></div>
+      <div class="home-progress-status">
+        <div class="home-progress-meter" aria-label="学习进度 ${percent}%">
+          <div style="width: ${percent}%"></div>
+        </div>
+        <b>${percent}%</b>
       </div>
     </div>
   `;
@@ -4242,7 +4312,7 @@ function renderHomeLibrary() {
   renderHomeProgress(doneLessons);
   els.homeGrid.innerHTML = "";
   getVisibleLessonBanks().forEach((bank) => {
-    const availableLessons = bank.lessons.filter((item) => item.available);
+    const availableLessons = sortLessonsForDisplay(bank.lessons.filter((item) => item.available));
     if (!availableLessons.length) return;
 
     const section = document.createElement("section");
@@ -4259,12 +4329,14 @@ function renderHomeLibrary() {
     availableLessons.forEach((item, index) => {
       const isDone = Boolean(doneLessons[item.id]);
       const card = document.createElement("article");
-      card.className = `home-lesson-card ${isDone ? "done" : "ready"}${item.featured ? " featured" : ""}`;
+      const isOfficialExam = isOfficialExamLesson(item);
+      card.className = `home-lesson-card ${isDone ? "done" : "ready"}${item.featured ? " featured" : ""}${isOfficialExam ? " official-exam-card" : ""}`;
       card.innerHTML = `
+        <span class="home-card-index">${String(index + 1).padStart(2, "0")}</span>
         <div class="home-card-main">
-          ${officialExamBadge(item)}
-          <strong>${index + 1}. ${item.title}</strong>
-          <p class="source-line">来源：${item.source || "名校优质真题"}</p>
+          ${isOfficialExam ? `<span class="official-exam-badge">${getOfficialExamBadge(item)}</span>` : ""}
+          <strong>${item.title}</strong>
+          <p class="source-line${isOfficialExamLesson(item) ? " real-exam-source" : ""}">${item.source}</p>
         </div>
         <button class="home-start-button" type="button">开始训练</button>
       `;
@@ -4315,15 +4387,15 @@ function renderLessonLibrary() {
     const list = document.createElement("div");
     list.className = "library-group-list";
 
-    bank.lessons.forEach((item, index) => {
+    sortLessonsForDisplay(bank.lessons).forEach((item, index) => {
       const isDone = Boolean(doneLessons[item.id]);
       const isActive = item.id === lesson.id;
+      const isOfficialExam = isOfficialExamLesson(item);
       const card = document.createElement("button");
       card.type = "button";
-      card.className = `library-card${isActive ? " active" : ""}${!item.available ? " disabled" : ""}${item.featured ? " featured" : ""}`;
+      card.className = `library-card${isActive ? " active" : ""}${!item.available ? " disabled" : ""}${item.featured ? " featured" : ""}${isOfficialExam ? " official-exam-card" : ""}`;
       card.disabled = !item.available;
       card.innerHTML = `
-        ${officialExamBadge(item)}
         <div class="library-topline">
           <span class="pick-label">
             <span class="fake-check">${isActive ? "✓" : ""}</span>
@@ -4331,9 +4403,10 @@ function renderLessonLibrary() {
           </span>
           <span class="status-pill ${isDone ? "done" : item.available ? "ready" : "pending"}">${isDone ? "已做，可重做" : item.available ? "可练习" : "待导入"}</span>
         </div>
+        ${isOfficialExam ? `<span class="official-exam-badge">${getOfficialExamBadge(item)}</span>` : ""}
         <strong>${item.title}</strong>
         <p>${item.englishTitle}</p>
-        ${item.source ? `<p class="source-line">来源：${item.source}</p>` : ""}
+        ${item.source ? `<p class="source-line${isOfficialExamLesson(item) ? " real-exam-source" : ""}">${item.source}</p>` : ""}
         <div class="tag-row">${item.tags.map((tag) => `<span>${tag}</span>`).join("")}</div>
       `;
       card.addEventListener("click", () => selectLesson(item.id));
@@ -4379,6 +4452,7 @@ function renderLessonHeader() {
 function resetPracticeState() {
   state.selectedId = null;
   state.posPassed = {};
+  state.reasoningRoutes = {};
   state.answers = {};
   state.readIndex = 0;
   state.readSentences = [];
@@ -4494,7 +4568,11 @@ function getToneValue(tone) {
 
 function renderPassage() {
   els.passage.innerHTML = "";
-  const activeQuestion = state.selectedId && state.posPassed[state.selectedId] ? findQuestion(state.selectedId) : null;
+  const activeQuestion = state.selectedId
+    && state.posPassed[state.selectedId]
+    && state.reasoningRoutes[state.selectedId] !== true
+    ? findQuestion(state.selectedId)
+    : null;
   lesson.passage.forEach((part) => {
     if (typeof part === "string") {
       renderTextWithClues(els.passage, part, activeQuestion);
@@ -4601,14 +4679,20 @@ function renderOptionPreview(question) {
 function getClueSearchTargets(clue = "") {
   const raw = String(clue || "").trim();
   if (!raw) return [];
-  const targets = [raw];
   const cleaned = raw
     .replace(/[“”"']/g, "")
     .replace(/\([^)]*\)/g, "")
     .replace(/\s+/g, " ")
     .trim();
-  const stopWords = new Set(["a", "an", "the", "of", "to", "for", "with", "and", "or", "but", "who", "was", "were", "is", "are"]);
+  const stopWords = new Set([
+    "a", "an", "the", "of", "to", "for", "with", "and", "or", "but", "who",
+    "i", "you", "he", "she", "it", "we", "they", "me", "him", "her", "us", "them",
+    "my", "your", "his", "its", "our", "their", "this", "that", "these", "those",
+    "am", "is", "are", "was", "were", "be", "been", "being", "do", "does", "did"
+  ]);
   const words = cleaned.match(/[A-Za-z]+(?:'[A-Za-z]+)?/g) || [];
+  if (words.length === 1 && stopWords.has(words[0].toLowerCase())) return [];
+  const targets = [raw];
   const meaningful = words.filter((word) => !stopWords.has(word.toLowerCase()));
 
   for (let size = Math.min(4, meaningful.length); size >= 2; size -= 1) {
@@ -4665,22 +4749,13 @@ function getClueSourceSentence(question, clue = "") {
 }
 
 function getQuestionHighlightItems(question, options = {}) {
-  const revealCollocation = Boolean(options.revealCollocation);
-  const clueItems = question.clues.map((clue, clueIndex) => ({
-    clue,
-    clueIndex,
-    targets: getClueSearchTargets(clue)
-  }));
-  const anchorTargets = getCollocationAnchorTargets(question);
-  if (anchorTargets.length) {
-    clueItems.push({
-      clue: revealCollocation ? `固定搭配骨架：${question.collocation}` : `搭配核心词：${anchorTargets.join(" / ")}`,
-      clueIndex: clueItems.length,
-      targets: anchorTargets,
-      relationType: "搭配核心词"
-    });
-  }
-  return clueItems;
+  return question.clues
+    .map((clue, clueIndex) => ({
+      clue,
+      clueIndex,
+      targets: getClueSearchTargets(clue)
+    }))
+    .filter((item) => item.targets.length);
 }
 
 function renderPosStep(question) {
@@ -4695,17 +4770,24 @@ function renderPosStep(question) {
   }
 
   document.querySelector("#posStep").classList.remove("hidden");
-  const hasCollocation = shouldUseCollocationFirst(question);
-  const choices = [
-    { label: "固定搭配", value: true },
-    { label: "没有固定搭配", value: false }
-  ];
+  const dualRoute = isDualReasoningQuestion(question);
+  const stepTitle = document.querySelector("#posStep h4");
+  if (stepTitle) stepTitle.textContent = dualRoute ? "选择你的判断路径" : "有无固定搭配";
+  const choices = dualRoute
+    ? [
+        { label: "按固定搭配判断", value: true },
+        { label: "按线索词判断", value: false }
+      ]
+    : [
+        { label: "固定搭配", value: true },
+        { label: "没有固定搭配", value: false }
+      ];
 
   choices.forEach((choice) => {
     const button = document.createElement("button");
     button.className = "choice-button";
     button.textContent = choice.label;
-    if (state.posPassed[question.id] && choice.value === hasCollocation) {
+    if (state.posPassed[question.id] && choice.value === state.reasoningRoutes[question.id]) {
       button.classList.add("correct");
     }
     button.addEventListener("click", () => chooseCollocationStep(question, choice.value, button));
@@ -4724,25 +4806,34 @@ function chooseCollocationStep(question, answer, button) {
   document.querySelectorAll("#posOptions .choice-button").forEach((item) => {
     item.classList.remove("correct", "wrong");
   });
-  const hasCollocation = shouldUseCollocationFirst(question);
-  if (answer === hasCollocation) {
+  const acceptedRoutes = getAcceptedReasoningRoutes(question);
+  if (acceptedRoutes.includes(answer)) {
     state.posPassed[question.id] = true;
+    state.reasoningRoutes[question.id] = answer;
     button.classList.add("correct");
     showCollocationStepResult(question);
   } else {
     state.posPassed[question.id] = false;
+    delete state.reasoningRoutes[question.id];
     button.classList.add("wrong");
     els.posFeedback.className = "feedback bad";
     els.posFeedback.textContent = "再看看空格前后的结构信号，判断这里是否有固定搭配。";
   }
   renderPassage();
+  if (state.posPassed[question.id]) renderToolStep(question);
   toggleAnswerVisibility(question);
 }
 
 function showCollocationStepResult(question) {
   const hasCollocation = shouldUseCollocationFirst(question);
+  const dualRoute = isDualReasoningQuestion(question);
+  const selectedRoute = state.reasoningRoutes[question.id];
   els.posFeedback.className = "feedback good";
-  if (hasCollocation) {
+  if (dualRoute && selectedRoute === true) {
+    els.posFeedback.textContent = "路径正确：固定搭配信号明确。继续结合上下文线索选择答案。";
+  } else if (dualRoute && selectedRoute === false) {
+    els.posFeedback.textContent = "路径正确：上下文线索足以锁定答案。答题后仍可查看固定搭配复盘。";
+  } else if (hasCollocation) {
     els.posFeedback.textContent = state.answers[question.id]
       ? "已完成选择：下方已展示固定搭配解析。"
       : "判断正确：先看线索词和空格前后结构，选完答案后再看固定搭配解析。";
@@ -4757,10 +4848,17 @@ function renderToolStep(question) {
   const tool = getTool(question);
   const answered = Boolean(state.answers[question.id]);
   const hiddenCollocation = shouldUseCollocationFirst(question) && !answered;
-  els.toolTitle.textContent = hiddenCollocation ? "线索词观察" : tool.title;
+  const selectedRoute = state.reasoningRoutes[question.id];
+  els.toolTitle.textContent = selectedRoute === true
+    ? "固定搭配"
+    : selectedRoute === false
+      ? "寻找线索"
+      : `寻找线索：${hiddenCollocation ? "线索词观察" : tool.title}`;
   els.toolGuide.innerHTML = buildToolGuide(question, tool);
   els.clueWords.innerHTML = "";
-  const clueItems = getQuestionHighlightItems(question, { revealCollocation: answered });
+  const clueItems = selectedRoute === true
+    ? []
+    : getQuestionHighlightItems(question, { revealCollocation: answered });
   clueItems.forEach((item) => {
     const pill = document.createElement("button");
     pill.className = `clue-pill clue-${clueColors[item.clueIndex % clueColors.length]}`;
@@ -4804,6 +4902,24 @@ function getClueRelationType(question, clue = "") {
 function buildToolGuide(question, tool) {
   const base = `<p>${tool.guide}</p>`;
   const answered = Boolean(state.answers[question.id]);
+  const selectedRoute = state.reasoningRoutes[question.id];
+  if (selectedRoute === true && hasStoredCollocation(question)) {
+    if (!answered) {
+      return "<p>先观察线索词和空格前后结构，不急着看完整搭配。选完答案后，再打开搭配放大镜复盘。</p>";
+    }
+    return `
+      <div class="collocation-box collocation-lens-box">
+        <strong>固定搭配：${question.collocation}</strong>
+        <span>${question.collocationType && question.collocationType !== "无" ? question.collocationType : "固定搭配"}</span>
+        <p>${question.collocationBreakdown && question.collocationBreakdown !== "无"
+          ? question.collocationBreakdown
+          : "先确认搭配结构，再代入原句检查意思是否通顺。"}</p>
+      </div>
+    `;
+  }
+  if (selectedRoute === false) {
+    return "<p>先圈出空格附近和上下文中的关键词，再用原词复现、同义呼应、逻辑关系或情感态度锁定答案。</p>";
+  }
   if (isAllOptionCollocationQuestion(question)) {
     if (!answered) return base;
     return `
@@ -5180,13 +5296,6 @@ function getWordForms(word) {
   return Array.from(forms).filter((item) => item.length > 1);
 }
 
-function getCollocationMeaning(item) {
-  const text = (item.explanation || "").trim();
-  if (!text) return "根据本题语境理解这个固定搭配的中文含义。";
-  const sentence = text.split(/[。！？]/)[0];
-  return sentence ? `${sentence}。` : text;
-}
-
 function renderCollocationReview() {
   if (!els.collocationReview) return;
   const items = getLessonCollocations();
@@ -5245,12 +5354,9 @@ renderCollocationReview = function() {
         <button class="collocation-review-card" type="button" aria-pressed="false">
           <span class="collocation-card-inner">
             <span class="collocation-card-face collocation-card-front">
-              <span>第 ${item.id} 题 · 中文提示</span>
               <strong>${getCollocationMeaning(item)}</strong>
-              <small>点击翻看英文固定搭配</small>
             </span>
             <span class="collocation-card-face collocation-card-back">
-              <span>${item.type}</span>
               <strong>${item.collocation}</strong>
             </span>
           </span>
@@ -5282,9 +5388,9 @@ function getCollocationMeaning(item) {
     "pass away": "去世",
     "fall out": "掉出来",
     "wonder if...": "想知道是否……",
-    "beat on": "敲打在……上",
+    "beat on": "敲打；拍打……",
     "take good care of sth.": "好好照顾某物",
-    "while doing sth.": "当做某事时",
+    "while doing sth.": "当……时；在做某事时",
     "jump into": "跳进",
     "be thankful to sb.": "感激某人",
     "have a dream about": "做一个关于……的梦",
@@ -5314,6 +5420,7 @@ function getCollocationMeaning(item) {
     "by doing sth.": "通过做某事",
     "get sth. done": "让某事被完成",
     "be supposed to do sth.": "应该做某事",
+    "be angry with sb.": "生某人的气",
     "collect one's courage": "鼓起勇气",
     "all of a sudden": "突然",
     "at first": "起初",
@@ -5322,10 +5429,12 @@ function getCollocationMeaning(item) {
     "touch one's heart": "触动某人的心",
     "do something meaningful": "做一些有意义的事",
     "find jobs": "找工作",
+    "for a long time": "很长时间",
+    "get a call from sb.": "接到某人的电话",
     "with": "带有，具有",
     "something different": "不同的东西",
     "one's way of doing sth.": "某人做某事的方法",
-    "put up a sign": "挂起标志",
+    "put up a sign": "张贴或挂起标志牌",
     "develop one's way of thinking": "发展思维方式",
     "hand in one's paper": "交卷",
     "waste one's talent": "浪费天赋",
@@ -5364,6 +5473,14 @@ function getCollocationMeaning(item) {
     "mother river": "母亲河",
     "a symbol of": "……的象征",
     "go fishing": "去钓鱼",
+    "look at": "看；注视",
+    "all of them": "它们全部",
+    "have the power to do sth.": "有能力做某事",
+    "right away": "立刻；马上",
+    "after all": "毕竟",
+    "rise to a high level": "上升到较高水平",
+    "give hope to sb.": "给某人希望",
+    "give sb. a chance to do sth.": "给某人做某事的机会",
     "beat fast": "快速跳动",
     "care for": "照顾，照料",
     "wait patiently": "耐心等待",
@@ -5395,7 +5512,28 @@ function getCollocationMeaning(item) {
     "throw away": "扔掉",
     "get a headache": "头痛",
     "It's normal for sb. to do sth.": "某人做某事是正常的",
-    "think about": "思考；想一想"
+    "think about": "思考；想一想",
+    "stop doing sth.": "停止做某事",
+    "stop sth. from doing sth.": "阻止某人或某物做某事",
+    "keep sth. clean": "保持某物清洁",
+    "come out of": "从……出来",
+    "let sb. do sth.": "让某人做某事",
+    "break into pieces": "破成碎片",
+    "run away": "逃跑；跑开",
+    "ask sb. to stop doing sth.": "要求某人停止做某事",
+    "no matter how much": "无论多少；不管多么",
+    "more ... than ...": "比……更……",
+    "work out problems": "解决问题",
+    "adjective + enough": "足够……（形容词 + enough）",
+    "look for": "寻找",
+    "spend time (in) doing": "花时间做某事",
+    "gather one's courage": "鼓起勇气",
+    "keep on doing sth.": "继续或不断做某事",
+    "leave sth. at home": "把某物落在家里",
+    "spread out": "铺开；展开",
+    "overcome difficulties": "克服困难",
+    "want to do": "想要做某事",
+    "give up doing": "放弃做某事"
     ,"a gift from sb.": "来自某人的礼物",
     "refuse to do sth.": "拒绝做某事",
     "introduce sb. to sb.": "把某人介绍给某人",
@@ -5479,6 +5617,31 @@ function getCollocationMeaning(item) {
     "keep a promise": "信守诺言",
     "have a chance to do sth.": "有机会做某事",
     "give up easily": "轻易放弃",
+    "in a ... voice": "用……的声音",
+    "keep silent": "保持沉默",
+    "one of them": "他们中的一个",
+    "as well as": "以及；也",
+    "what is wrong": "怎么了",
+    "weeks later": "几周后",
+    "think of": "想起；想到",
+    "fall down": "掉落；倒下",
+    "in fact": "事实上",
+    "put on": "穿上",
+    "put sb. down": "把某人放下",
+    "say thank you": "表示感谢",
+    "hit sb. like...": "像……一样突然袭来",
+    "What + adj. + uncountable noun!": "多么……的……！",
+    "keep quiet": "保持安静",
+    "as little as I could": "尽可能少",
+    "wait until...": "一直等到……",
+    "be similar to...": "与……相似",
+    "some..., others...": "一些……，另一些……",
+    "different kinds of": "不同种类的……",
+    "get a prize": "获奖",
+    "be excellent in a subject": "擅长某门学科",
+    "go smoothly": "进展顺利",
+    "be thankful for": "因……而感激",
+    "on + a specific date": "在具体某一天",
     "make one's dreams come true": "让梦想成真"
   };
   if (meanings[item.collocation]) return meanings[item.collocation];
@@ -5527,12 +5690,9 @@ renderCollocationReview = function() {
         <button class="collocation-review-card" type="button" aria-pressed="false">
           <span class="collocation-card-inner">
             <span class="collocation-card-face collocation-card-front">
-              <span>第 ${item.id} 题 · 中文意思</span>
               <strong>${getCollocationMeaning(item)}</strong>
-              <small>点击翻看固定搭配</small>
             </span>
             <span class="collocation-card-face collocation-card-back">
-              <span>英文固定搭配</span>
               <strong>${item.collocation}</strong>
             </span>
           </span>
@@ -5634,6 +5794,7 @@ function bindStaticEvents() {
   });
 
   els.openNotebookBtn?.addEventListener("click", () => showHomeTool("notebook"));
+  els.headerNotebookBtn?.addEventListener("click", () => showHomeTool("notebook"));
   els.openCollocationBankBtn?.addEventListener("click", () => showHomeTool("collocation"));
   document.querySelectorAll("[data-home-tool-close]").forEach((button) => {
     button.addEventListener("click", () => showHomeLibrary());
@@ -5648,14 +5809,8 @@ function bindStaticEvents() {
     renderHomeLibrary();
   });
 
-  els.backHomeBtn.addEventListener("click", () => {
-    if (isTrialMode()) window.location.href = "../../index.html";
-    else enterHome();
-  });
-  els.resultHomeBtn.addEventListener("click", () => {
-    if (isTrialMode()) window.location.href = "../../index.html";
-    else enterHome();
-  });
+  els.backHomeBtn.addEventListener("click", enterHome);
+  els.resultHomeBtn.addEventListener("click", enterHome);
   els.printReportBtn?.addEventListener("click", printStudyReport);
 }
 
@@ -6758,7 +6913,7 @@ function printStudyReport() {
       <div class="print-paper-head">
         <h1>${escapeHtml(lesson.title)}</h1>
         <h2>${escapeHtml(lesson.englishTitle)}</h2>
-        ${lesson.source ? `<p>来源：${escapeHtml(lesson.source)}</p>` : ""}
+        ${lesson.source ? `<p class="${isOfficialExamLesson(lesson) ? "real-exam-source" : ""}">${escapeHtml(lesson.source)}</p>` : ""}
         <div class="print-student-line">
           <span>姓名：____________</span>
           <span>用时：____________</span>
@@ -7113,12 +7268,9 @@ function renderCollocationBank() {
               <button class="collocation-review-card" type="button" aria-pressed="false">
                 <span class="collocation-card-inner">
                   <span class="collocation-card-face collocation-card-front">
-                    <span>第 ${item.id} 题 · 中文意思</span>
                     <strong>${getCollocationMeaning(item)}</strong>
-                    <small>点击翻看固定搭配</small>
                   </span>
                   <span class="collocation-card-face collocation-card-back">
-                    <span>英文固定搭配</span>
                     <strong>${item.collocation}</strong>
                   </span>
                 </span>
