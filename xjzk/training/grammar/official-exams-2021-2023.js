@@ -89,7 +89,7 @@
       promptQuestion(82, "painter", ["painters"], ["painter", "painters", "painting", "painted"], "名词", "可数名词变复数", "one of the + 最高级 + 复数名词", "one of the most famous", "one of the most famous 后接可数名词复数，painter 变为 painters。", { focusOptions: ["名词保持原形", "可数名词变复数", "名词变动词"] }),
       promptQuestion(83, "serious", ["serious"], ["serious", "seriously", "seriousness", "more serious"], "形容词与副词", "形容词保持原形", "形容词修饰名词", "a / illness", "illness 是名词，前面需要形容词 serious 修饰；词库已给出形容词，保持原形。", { focusOptions: ["形容词保持原形", "形容词变副词", "比较级与最高级"] }),
       promptQuestion(84, "move", ["move"], ["move", "moves", "moved", "moving"], "动词", "情态动词 + 原形", "can + 动词原形", "can only", "情态动词 can 后接动词原形 move。", {
-        verbFlow: makeVerbFlow({ hasChangedVerb: "没有", route: "谓语", predicateKind: "时态", actionRelation: "主动发出动作", structure: "情态动词 + 动词原形", subject: "She", predicate: "can", blank: "move", clueText: "can only" }),
+        verbFlow: makeVerbFlow({ hasChangedVerb: "没有", route: "谓语", predicateKind: "情态动词", actionRelation: "主动发出动作", structure: "情态动词 + 动词原形", subject: "She", predicate: "can", blank: "move", clueText: "can only" }),
         focusOptions: ["情态动词 + 原形", "谓语动词时态", "非谓语：to do"]
       }),
       promptQuestion(85, "trying", ["trying"], ["try", "trying", "tried", "to try"], "动词", "非谓语：doing", "prevent sb. from doing sth.", "prevented her from", "句中已有谓语 prevented；介词 from 后接动名词 trying。词库已给出 -ing 形式，保持该形式。", {
