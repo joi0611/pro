@@ -1438,6 +1438,10 @@
       try { return new URLSearchParams(location.search).get("trial") === "1"; } catch (error) { return false; }
     }
 
+    function isLocalFileMode() {
+      return window.location.protocol === "file:";
+    }
+
     function applyTrialCopy() {
       const mode = document.getElementById("modeText");
       if (mode) mode.textContent = "解锁更多内容联系工作人员领取登陆码";
@@ -1475,6 +1479,8 @@
       document.body.classList.add("trial-mode");
       unlockApp();
       applyTrialCopy();
+    } else if (isLocalFileMode()) {
+      unlockApp();
     } else if (safeGetLogin() && localStorage.getItem(LOGIN_OK_KEY) === "true") {
       unlockApp();
     }
@@ -1881,7 +1887,7 @@
         { text: "dream", forms: { noun: "dream", verb: "dream", nounPlural: "dreams", third: "dreams", past: "dreamed", pp: "dreamed", ing: "dreaming" } },
         { text: "far", forms: { adj: "far", adv: "far", compare: "farther", super: "farthest" } },
         { text: "future", forms: { noun: "future", adj: "future", nounPlural: "futures" } },
-        { text: "know", note: "原卷词库疑似为 become，此处按语境修正为 know。", forms: { verb: "know", third: "knows", past: "knew", pp: "known", ing: "knowing" } },
+        { text: "know", forms: { verb: "know", third: "knows", past: "knew", pp: "known", ing: "knowing" } },
         { text: "share", forms: { verb: "share", noun: "share", third: "shares", past: "shared", pp: "shared", ing: "sharing", perfect: "has shared" } }
       ],
       wordKey: {
@@ -1908,7 +1914,7 @@
         92: { needed: "verb", correctWord: "share", rule: "presentPerfect", answer: "has shared", path: "So far, Li ___ videos -> so far 提示现在完成时，主语 Li 为单数 -> 锁定 share -> has + 过去分词 -> has shared" },
         93: { needed: "verb", correctWord: "received", rule: "past", answer: "received", path: "gained ... and ___ many likes -> and 连接并列谓语，时态与 gained 一致 -> 锁定 received -> received" },
         94: { needed: "noun", correctWord: "dream", rule: "plural", answer: "dreams", path: "their ___ can come true -> 物主代词后加名词，前文多个孩子有不同梦想 -> 锁定 dream -> 复数 -> dreams" },
-        95: { needed: "verb", correctWord: "know", rule: "base", answer: "know", path: "let more people ___ about Xinjiang -> let sb. do 结构后接动词原形；原卷 become 无法与 about 构成合理搭配，此处按语境修正为 know -> know" }
+        95: { needed: "verb", correctWord: "know", rule: "base", answer: "know", path: "let more people ___ about Xinjiang -> let sb. do 结构后接动词原形；know about 表示了解 -> 锁定 know -> 保持原形 -> know" }
       },
       blankClues: {
         85: "in the / west of China",
@@ -2193,7 +2199,7 @@
         deep: { tag: "adj", conversions: ["adv"] },
         part: { tag: "noun", conversions: [] },
         get: { tag: "verb", conversions: [] },
-        a: { tag: "art", conversions: [] },
+        a: { tag: "det", conversions: [] },
         slow: { tag: "verb", conversions: ["adj", "adv"] },
         answer: { tag: "noun", conversions: ["verb"] },
         stop: { tag: "verb", conversions: ["noun"] },
@@ -2202,7 +2208,7 @@
       blanks: {
         65: { needed: "noun", correctWord: "answer", rule: "keep", answer: "answer", path: "The ___ is yes -> 需要名词作主语，结合上句提问 -> 锁定 answer -> 保持单数原形 -> answer" },
         66: { needed: "adj", correctWord: "dry", rule: "origin", answer: "dry", path: "land is ___ -> 系动词后缺表语，but 转折说明周围土地干燥 -> 锁定 dry -> 保持原形 -> dry" },
-        67: { needed: "art", correctWord: "a", rule: "safe", answer: "a", path: "has ___ long history of -> 固定搭配 have a long history of -> 锁定 a -> 保持原形 -> a" },
+        67: { needed: "det", correctWord: "a", rule: "safe", answer: "a", path: "has ___ long history of -> 固定搭配 have a long history of -> 锁定 a -> 保持原形 -> a" },
         68: { needed: "adj", correctWord: "clear", rule: "origin", answer: "clear", path: "becomes ___ and clean -> 与 clean 并列作表语，形容水质 -> 锁定 clear -> 保持原形 -> clear" },
         69: { needed: "noun", correctWord: "part", rule: "keep", answer: "part", path: "plays an important ___ in -> 固定搭配 play an important part in -> 锁定 part -> 保持原形 -> part" },
         70: { needed: "verb", correctWord: "stop", rule: "base", answer: "stop", path: "helps to ___ the desert from -> to 后接动词原形，stop...from doing -> 锁定 stop -> 原形 -> stop" },
@@ -2797,7 +2803,7 @@
         help: { tag: "verb", conversions: ["noun", "adj"] },
         hot: { tag: "adj", conversions: ["noun"] },
         few: { tag: "adj", conversions: ["pron"] },
-        a: { tag: "art", conversions: [] },
+        a: { tag: "det", conversions: [] },
         condition: { tag: "noun", conversions: [] },
         because: { tag: "conj", conversions: [] },
         grow: { tag: "verb", conversions: ["noun"] },
@@ -2811,7 +2817,7 @@
         88: { needed: "verb", correctWord: "help", rule: "third", answer: "helps", path: "sunshine ___ fruit trees make -> 主语 sunshine 不可数，一般现在时用单三，help sb. do sth. -> helps" },
         89: { needed: "noun", correctWord: "difference", rule: "keep", answer: "difference", path: "the temperature ___ between day and night -> temperature difference 表示温差 -> difference" },
         90: { needed: "adj", correctWord: "hot", rule: "origin", answer: "hot", path: "is ___ enough -> 系动词后作表语，与夜晚 very cold 对比 -> hot" },
-        91: { needed: "art", correctWord: "a", rule: "safe", answer: "a", path: "As ___ result -> 固定短语 As a result -> a" },
+        91: { needed: "det", correctWord: "a", rule: "safe", answer: "a", path: "As ___ result -> 固定短语 As a result -> 锁定 a -> 保持原形 -> a" },
         92: { needed: "noun", correctWord: "rain", rule: "keep", answer: "rain", path: "little ___ -> little 修饰不可数名词，结合 dry 表示降雨少 -> rain" },
         93: { needed: "prep", correctWord: "for", rule: "safe", answer: "for", path: "is also good ___ -> 固定搭配 be good for -> for" },
         94: { needed: "verb", correctWord: "grow", rule: "base", answer: "grow", path: "to ___ well and take -> to 后接动词原形，与 take 并列 -> grow" },
@@ -3287,7 +3293,7 @@
       source: "2026乌鲁木齐三模｜人民币背后的风景与人物",
       words: [
         { text: "their", forms: { pron: "their", possAdj: "their", possNoun: "theirs" } },
-        { text: "well", note: "原卷词库疑似为 world，此处按语境修正为 well。", forms: { adv: "well", adj: "well" } },
+        { text: "well", forms: { adv: "well", adj: "well" } },
         { text: "spirit", forms: { noun: "spirit", nounPlural: "spirits", adj: "spiritual" } },
         { text: "place", forms: { noun: "place", nounPlural: "places" } },
         { text: "fishermen", forms: { noun: "fishermen", nounPlural: "fishermen" } },
@@ -3315,7 +3321,7 @@
         85: { needed: "noun", correctWord: "fishermen", rule: "keep", answer: "fishermen", path: "one of the ___ -> one of the 后接可数名词复数，表示漓江渔民之一 -> fishermen" },
         86: { needed: "verb", correctWord: "stood", rule: "past", answer: "stood", path: "wore... and ___ on his boat -> and 前后谓语时态一致，wore 为过去式 -> stood" },
         87: { needed: "noun", correctWord: "spirit", rule: "keep", answer: "spirit", path: "the true ___ of -> the + 名词 + of 结构，表示漓江真正的精神 -> spirit" },
-        88: { needed: "adv", correctWord: "well", rule: "origin", answer: "well", path: "row his boat ___ -> 副词修饰 row，表示划船划得很好；原卷 world 疑为 well 录入误差 -> well" },
+        88: { needed: "adv", correctWord: "well", rule: "origin", answer: "well", path: "row his boat ___ -> 副词修饰动词 row，表示划船技术好 -> 锁定 well -> 保持原形 -> well" },
         89: { needed: "verb", correctWord: "take", rule: "past", answer: "took", path: "he ___ photos -> in 2008 提示过去时，take photos -> took" },
         90: { needed: "pron", correctWord: "their", rule: "possAdj", answer: "their", path: "have ___ own cultural value -> 名词前作定语，指代 These RMB pictures -> their" },
         91: { needed: "adj", correctWord: "lucky", rule: "origin", answer: "lucky", path: "a ___ place -> 冠词和名词之间填形容词，祈求好运 -> lucky" },
@@ -3675,6 +3681,7 @@
     };
 
     const questionBank = {
+      ...window.WORD_CHOICE_IMPORTED_20260829,
       xinjiang: initialXinjiangQuestion,
       rose: roseQuestion,
       maxfood: maxFoodQuestion,
@@ -3686,7 +3693,6 @@
       luckyDog: luckyDogQuestion,
       womensDay: womensDayQuestion,
       beijingTrip: beijingTripQuestion,
-      zhengTennis: zhengTennisQuestion,
       xinjiangPandas: xinjiangPandasQuestion,
       fruitSweet: fruitSweetQuestion,
       principalMailbox: principalMailboxQuestion,
@@ -3706,8 +3712,9 @@
     }
 
     function getQuestionYear(data) {
-      const text = [data?.year, data?.source, data?.title].filter(Boolean).join(" ");
-      const match = String(text).match(/20\d{2}/);
+      const source = String(data?.source || "");
+      if (!/新疆.*中考.*真题|新疆真题/.test(source)) return 0;
+      const match = source.match(/20\d{2}/);
       return match ? Number(match[0]) : 0;
     }
 
@@ -3717,14 +3724,19 @@
     }
 
     function getSortedQuestionEntries() {
-      return Object.entries(questionBank).sort((left, right) => {
-        const a = left[1];
-        const b = right[1];
-        if (isOfficialQuestion(a) !== isOfficialQuestion(b)) return isOfficialQuestion(a) ? -1 : 1;
-        const yearDiff = getQuestionYear(b) - getQuestionYear(a);
-        if (yearDiff) return yearDiff;
-        return 0;
-      });
+      return Object.entries(questionBank)
+        .map((entry, originalIndex) => ({ entry, originalIndex }))
+        .sort((a, b) => {
+          const aYear = getQuestionYear(a.entry[1]);
+          const bYear = getQuestionYear(b.entry[1]);
+          if (aYear || bYear) {
+            if (!aYear) return 1;
+            if (!bYear) return -1;
+            if (aYear !== bYear) return bYear - aYear;
+          }
+          return a.originalIndex - b.originalIndex;
+        })
+        .map(({ entry }) => entry);
     }
 
     function officialQuestionBadge(data) {
@@ -4074,6 +4086,7 @@
         ["keep", "保持原形", getForm(wordText, "noun")],
         ["plural", "变复数 (+s/es)", getForm(wordText, "nounPlural")],
         ["possessive", "变所有格 ('s)", getForm(wordText, "noun") + "'s"],
+        ["pluralPossessive", "变复数所有格 (s')", getForm(wordText, "nounPlural") + "'"],
         ["sentence", "句首大写", getForm(wordText, "sentence") || getForm(wordText, "noun").replace(/^./, char => char.toUpperCase())],
         ["toAdj", "变形容词", wordText === "pride" ? "proud" : getForm(wordText, "adj")]
       ];
