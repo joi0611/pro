@@ -477,8 +477,16 @@
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = language;
         utterance.rate = language === "zh-CN" ? .88 : .82;
-        utterance.onend = resolve;
-        utterance.onerror = resolve;
+        let settled = false;
+        const finish = function () {
+          if (settled) return;
+          settled = true;
+          window.clearTimeout(timeoutId);
+          resolve();
+        };
+        const timeoutId = window.setTimeout(finish, 5000);
+        utterance.onend = finish;
+        utterance.onerror = finish;
         window.speechSynthesis.speak(utterance);
       });
     }
@@ -491,20 +499,36 @@
           return;
         }
 
+        let settled = false;
+        const finish = function (useFallback) {
+          if (settled) return;
+          settled = true;
+          window.clearTimeout(timeoutId);
+          if (state.activeAudio === audio) state.activeAudio = null;
+          if (useFallback) {
+            speakFallback(fallbackText, fallbackLanguage).then(resolve);
+          } else {
+            resolve();
+          }
+        };
+        // Do not let an unavailable remote audio host block the quiz forever.
+        const timeoutId = window.setTimeout(function () {
+          audio.pause();
+          audio.currentTime = 0;
+          finish(true);
+        }, 2500);
+
         audio.pause();
         audio.currentTime = 0;
         state.activeAudio = audio;
         audio.onended = function () {
-          if (state.activeAudio === audio) state.activeAudio = null;
-          resolve();
+          finish(false);
         };
         audio.onerror = function () {
-          if (state.activeAudio === audio) state.activeAudio = null;
-          speakFallback(fallbackText, fallbackLanguage).then(resolve);
+          finish(true);
         };
         audio.play().catch(function () {
-          if (state.activeAudio === audio) state.activeAudio = null;
-          speakFallback(fallbackText, fallbackLanguage).then(resolve);
+          finish(true);
         });
       });
     }
