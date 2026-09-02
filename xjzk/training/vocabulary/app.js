@@ -435,6 +435,9 @@ function remainingStudyText(x){
 }
 const audioCache=new Map(),audioRequests=new Map(),preparedAudio=new Map();
 let activeAudio=null;
+function youdaoAudioUrl(word){
+  return `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`;
+}
 function stopActiveAudio(){
   if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0}catch{}activeAudio=null}
 }
@@ -448,15 +451,11 @@ async function warmAudio(word){
   if(audioCache.has(word))return audioCache.get(word);
   if(audioRequests.has(word))return audioRequests.get(word);
   const request=(async()=>{
-    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),2200);
-    try{
-      const r=await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`,{signal:controller.signal});
-      const data=await r.json();let url=data?.[0]?.phonetics?.find(p=>p.audio)?.audio||"";
-      if(url.startsWith("//"))url=`https:${url}`;
-      audioCache.set(word,url);if(url)prepareAudio(word,url);return url;
-    }catch{audioCache.set(word,"");return ""}
-    finally{clearTimeout(timer);audioRequests.delete(word)}
-  })();
+    const youdaoUrl=youdaoAudioUrl(word);
+    audioCache.set(word,youdaoUrl);
+    prepareAudio(word,youdaoUrl);
+    return youdaoUrl;
+  })().finally(()=>audioRequests.delete(word));
   audioRequests.set(word,request);return request;
 }
 function playPreparedAudio(word,url){
@@ -486,7 +485,7 @@ function speechOnce(text,lang,rate=1){
 async function playFollowReading(x,prompt){
   const token=++state.followToken;if(prompt)prompt.classList.add("show");
   stopActiveAudio();if(window.speechSynthesis)window.speechSynthesis.cancel();
-  const url=audioCache.get(x.w)||"";if(!url)warmAudio(x.w);
+  const url=audioCache.get(x.w)||await warmAudio(x.w);
   for(let i=0;i<3&&token===state.followToken;i++){
     const played=url?await playPreparedAudio(x.w,url):false;
     if(!played&&token===state.followToken)await speechOnce(x.w,"en-US",.9);
@@ -496,7 +495,7 @@ async function playFollowReading(x,prompt){
 async function playReviewReading(x){
   const token=++state.followToken;
   stopActiveAudio();if(window.speechSynthesis)window.speechSynthesis.cancel();
-  const url=audioCache.get(x.w)||"";if(!url)warmAudio(x.w);
+  const url=audioCache.get(x.w)||await warmAudio(x.w);
   const played=url?await playPreparedAudio(x.w,url):false;
   if(!played&&token===state.followToken)await speechOnce(x.w,"en-US",.9);
   if(token===state.followToken)await speechOnce(shortCn(x),"zh-CN",1);
