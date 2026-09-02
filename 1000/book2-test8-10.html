@@ -465,27 +465,36 @@
 
     function playAudio(url, fallbackText, fallbackLanguage) {
       return new Promise(function (resolve) {
+        if (fallbackLanguage === "en-US" && /api\\.dictionaryapi\\.dev/.test(url || "")) {
+          url = "https://dict.youdao.com/dictvoice?audio=" + encodeURIComponent(fallbackText) + "&type=2";
+        }
         const audio = getAudioElement(url);
         if (!audio) {
           speakFallback(fallbackText, fallbackLanguage).then(resolve);
           return;
         }
 
+        let settled = false;
+        let timer = null;
+        const finish = function (useFallback) {
+          if (settled) return;
+          settled = true;
+          if (timer) window.clearTimeout(timer);
+          if (state.activeAudio === audio) state.activeAudio = null;
+          if (useFallback) speakFallback(fallbackText, fallbackLanguage).then(resolve);
+          else resolve();
+        };
         audio.pause();
         audio.currentTime = 0;
         state.activeAudio = audio;
-        audio.onended = function () {
-          if (state.activeAudio === audio) state.activeAudio = null;
-          resolve();
-        };
-        audio.onerror = function () {
-          if (state.activeAudio === audio) state.activeAudio = null;
-          speakFallback(fallbackText, fallbackLanguage).then(resolve);
-        };
-        audio.play().catch(function () {
-          if (state.activeAudio === audio) state.activeAudio = null;
-          speakFallback(fallbackText, fallbackLanguage).then(resolve);
-        });
+        audio.onended = function () { finish(false); };
+        audio.onerror = function () { finish(true); };
+        timer = window.setTimeout(function () {
+          audio.pause();
+          audio.currentTime = 0;
+          finish(true);
+        }, 2500);
+        audio.play().catch(function () { finish(true); });
       });
     }
 

@@ -993,7 +993,7 @@
 
     const $ = (id) => document.getElementById(id);
     const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
-    const dictionaryApiBase = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+    const youdaoAudioBase = "https://dict.youdao.com/dictvoice?audio=";
     const verifiedAudioUrls = {
       "carrot": "https://api.dictionaryapi.dev/media/pronunciations/en/carrot-us.mp3",
       "cause": "https://api.dictionaryapi.dev/media/pronunciations/en/cause-us.mp3",
@@ -1104,42 +1104,36 @@
         return verifiedAudioUrls[key];
       }
 
-      try {
-        const response = await fetch(dictionaryApiBase + encodeURIComponent(key));
-        if (!response.ok) throw new Error("Dictionary audio request failed");
-        const entries = await response.json();
-        const phonetics = entries.flatMap((entry) => entry.phonetics || []);
-        const audio = phonetics
-          .map((item) => item.audio)
-          .find((url) => typeof url === "string" && url.startsWith("https://"));
-        state.audioCache.set(key, audio || "");
-        return audio || "";
-      } catch (error) {
-        state.audioCache.set(key, "");
-        return "";
-      }
+      // 有道直接返回音频，避免手机端等待词典 JSON 接口或跨域失败。
+      const audio = youdaoAudioBase + encodeURIComponent(key) + "&type=2";
+      state.audioCache.set(key, audio);
+      return audio;
     }
 
     async function playAudioUrl(audioUrl, fallbackText = "", fallbackLang = "en-US") {
       await new Promise((resolve) => {
         const audio = getAudioElement(audioUrl);
+        let settled = false;
+        let timer = null;
+        const finish = async (useFallback) => {
+          if (settled) return;
+          settled = true;
+          if (timer) window.clearTimeout(timer);
+          if (state.activeAudio === audio) state.activeAudio = null;
+          if (useFallback && fallbackText) await speak(fallbackText, fallbackLang, 0.82);
+          resolve();
+        };
         audio.pause();
         audio.currentTime = 0;
         state.activeAudio = audio;
-        audio.onended = () => {
-          if (state.activeAudio === audio) state.activeAudio = null;
-          resolve();
-        };
-        audio.onerror = async () => {
-          if (state.activeAudio === audio) state.activeAudio = null;
-          if (fallbackText) await speak(fallbackText, fallbackLang, 0.82);
-          resolve();
-        };
-        audio.play().catch(async () => {
-          if (state.activeAudio === audio) state.activeAudio = null;
-          if (fallbackText) await speak(fallbackText, fallbackLang, 0.82);
-          resolve();
-        });
+        audio.onended = () => finish(false);
+        audio.onerror = () => finish(true);
+        timer = window.setTimeout(() => {
+          audio.pause();
+          audio.currentTime = 0;
+          finish(true);
+        }, 2500);
+        audio.play().catch(() => finish(true));
       });
     }
 

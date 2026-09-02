@@ -493,6 +493,9 @@
 
     function playAudio(url, fallbackText, fallbackLanguage) {
       return new Promise(function (resolve) {
+        if (fallbackLanguage === "en-US" && /api\.dictionaryapi\.dev/.test(url || "")) {
+          url = "https://dict.youdao.com/dictvoice?audio=" + encodeURIComponent(fallbackText) + "&type=2";
+        }
         const audio = getAudioElement(url);
         if (!audio) {
           speakFallback(fallbackText, fallbackLanguage).then(resolve);
