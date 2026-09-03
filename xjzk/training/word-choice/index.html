@@ -685,6 +685,90 @@
       display: none;
     }
     .analysis.show { display: block; }
+    .feedback-summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .feedback-card {
+      padding: 14px;
+      border: 1px solid #d9e7e8;
+      border-radius: 12px;
+      background: #f7fbfb;
+    }
+    .feedback-card strong { display: block; font-size: 24px; color: var(--accent); }
+    .feedback-card small { color: var(--muted); font-weight: 800; }
+    .error-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 16px;
+    }
+    .error-stat {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #fff5df;
+      color: #7c5a13;
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .analysis-row .error-reason {
+      display: inline-block;
+      margin: 6px 0;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #ffe0da;
+      color: #9b3025;
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .analysis-row .row-actions { margin-top: 9px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .mini-btn {
+      border: 1px solid #a9caca;
+      border-radius: 8px;
+      padding: 6px 10px;
+      background: #fff;
+      color: var(--accent);
+      cursor: pointer;
+      font-weight: 800;
+    }
+    .notebook-modal .modal { max-width: 780px; }
+    .notebook-list { max-height: 58vh; overflow: auto; margin-top: 12px; }
+    .notebook-item {
+      padding: 12px;
+      margin-top: 9px;
+      border: 1px solid #e5d9c1;
+      border-radius: 10px;
+      background: #fffaf0;
+    }
+    .notebook-item p { margin: 5px 0; line-height: 1.55; }
+    .notebook-item .review-sentence {
+      margin: 10px 0;
+      padding: 11px 13px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      background: #f3f9f9;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+    .notebook-item .review-sentence mark {
+      padding: 2px 5px;
+      border-radius: 5px;
+      background: #ffe8a8;
+      color: #704d00;
+    }
+    .review-steps {
+      margin: 9px 0;
+      padding: 9px 12px;
+      border-radius: 8px;
+      background: #f8f5ff;
+      color: #5c438b;
+      line-height: 1.65;
+    }
+    .notebook-toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .notebook-toolbar select { padding: 8px; border: 1px solid #bfd4d5; border-radius: 8px; }
+    @media (max-width: 640px) { .feedback-summary { grid-template-columns: 1fr; } }
     .analysis-row {
       border-left: 4px solid var(--accent);
       background: #f8fbfc;
@@ -912,6 +996,18 @@
     .library-head p {
       margin: 0;
     }
+
+    .onboarding-modal .modal { max-width: 760px; }
+    .guide-lead { margin: 6px 0 14px; color: var(--muted); line-height: 1.65; }
+    .guide-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+    .guide-step { padding: 13px; border: 1px solid #d7e8e8; border-radius: 12px; background: #f5fbfb; }
+    .guide-step b { display: block; color: var(--accent); margin-bottom: 6px; }
+    .guide-step p, .guide-reason li { margin: 5px 0; line-height: 1.55; }
+    .guide-reason { padding: 12px 14px; border-radius: 10px; background: #fff8e6; }
+    .guide-reason h4 { margin: 0 0 6px; color: #785613; }
+    .guide-reason ul { margin: 0; padding-left: 20px; }
+    .guide-note { margin: 12px 0 0; color: #5c438b; font-weight: 800; line-height: 1.6; }
+    @media (max-width: 640px) { .guide-flow { grid-template-columns: 1fr; } }
 
     .library-head p {
       margin-top: 4px;
@@ -1400,6 +1496,7 @@
       </div>
       <div class="top-actions">
         <button class="home-link-btn top-library-link" id="backToLibraryBtn" type="button">进入题库首页</button>
+        <button class="home-link-btn top-library-link" id="notebookBtn" type="button">错题本 <span id="notebookCount">0</span></button>
         <a class="home-link-btn top-home-link" href="../../index.html">返回首页，训练其他专题</a>
       </div>
     </header>
@@ -1411,6 +1508,7 @@
           <h2>选词填空题库</h2>
           <p>选择篇目后进入正式训练。</p>
         </div>
+        <button class="btn secondary" id="openGuideBtn" type="button">第一次使用说明</button>
       </div>
       <div class="lesson-list" id="lessonList"></div>
     </section>
@@ -1538,15 +1636,45 @@
     </div>
   </div>
 
+  <div class="modal-layer notebook-modal" id="notebookModal">
+    <div class="modal">
+      <h3>错题本</h3>
+      <p class="clue-note">保存本设备上的错题，点击“回看本空”可直接回到对应文章。</p>
+      <div class="notebook-toolbar">
+        <select id="notebookFilter" aria-label="按错误类型筛选"><option value="all">全部错误</option></select>
+        <button class="mini-btn" id="clearNotebookBtn" type="button">清空错题本</button>
+      </div>
+      <div class="notebook-list" id="notebookList"></div>
+      <div class="actions"><button class="btn secondary" data-close="notebookModal" type="button">关闭</button></div>
+    </div>
+  </div>
+
+  <div class="modal-layer onboarding-modal" id="onboardingModal">
+    <div class="modal">
+      <h3>第一次使用：选词填空训练流程</h3>
+      <p class="guide-lead">这套系统不是让你凭感觉直接猜答案，而是把中考选词填空拆成三个可检查的判断步骤。每一步都能看见依据，错了也能知道错在哪里。</p>
+      <div class="guide-flow">
+        <div class="guide-step"><b>第一步：标记词性</b><p>点击备选词，标记它的基础词性，并勾选可能转换的词性。</p><p>例如：<strong>kind → 形容词</strong>，也可以转换为名词 <strong>kindness</strong>。</p></div>
+        <div class="guide-step"><b>第二步：判断空格</b><p>点击文章中的空格，先判断这里需要名词、动词、形容词、副词等什么词性。</p><p>系统会高亮符合当前词性的备选词。</p></div>
+        <div class="guide-step"><b>第三步：决定变形</b><p>选中单词后，再根据句子结构选择原形、单三、过去式、复数、比较级等规则。</p><p>系统只显示当前词实际存在的有效规则。</p></div>
+      </div>
+      <div class="guide-reason"><h4>为什么这样练更高效？</h4><ul><li>先词性，先解决“空格需要什么”；再选词，解决“哪个词合适”；最后变形，解决“应该写成什么形式”。</li><li>这能把“词义、语法、词形”三个容易混在一起的问题分开训练，减少盲猜。</li><li>提交后系统会给出正确率、逐空错误原因和具体解析；错题会自动保存到错题本，便于针对性复习。</li></ul></div>
+      <p class="guide-note">推荐顺序：先独立完成 → 再提交查看反馈 → 重点复习错题本 → 间隔一段时间后再练一次。</p>
+      <div class="actions"><button class="btn" id="startGuideBtn" type="button">我知道了，开始练习</button><button class="btn secondary" data-close="onboardingModal" type="button">稍后查看</button></div>
+    </div>
+  </div>
+
   <div class="toast" id="toast"></div>
 
   <script src="../../assets/student-profile.js?v=20260828-1"></script>
   <script src="imported-question-bank-20260829.js?v=20260829-1"></script>
+  <script src="imported-question-bank-20260902.js?v=20260902-1"></script>
   <script>
     const loginCodes = new Set();
 
     const LOGIN_STORAGE_KEY = "word_choice_supabase_access_code_20260709";
     const LOGIN_OK_KEY = "word_choice_supabase_login_ok_20260709";
+    const ONBOARDING_STORAGE_KEY = "word_choice_onboarding_seen_20260903";
     const SUPABASE_CONFIG = {
       url: "https://gbjmylxohacppnybfssh.supabase.co",
       anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdiam15bHhvaGFjcHBueWJmc3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDA1NzgsImV4cCI6MjA5ODI3NjU3OH0.mz5srsxdbZa4__oqKjlcysWuDo00w7UQaV8n2VNP4eE"
@@ -1634,6 +1762,14 @@
 
     function unlockApp() {
       document.body.classList.remove("locked");
+      showOnboardingIfNeeded();
+    }
+
+    function showOnboardingIfNeeded() {
+      try {
+        if (localStorage.getItem(ONBOARDING_STORAGE_KEY) === "true") return;
+      } catch (error) {}
+      document.getElementById("onboardingModal")?.classList.add("show");
     }
 
     applyXinjiangProgressCopy();
@@ -3841,6 +3977,7 @@
 
     const questionBank = {
       ...window.WORD_CHOICE_IMPORTED_20260829,
+      ...window.WORD_CHOICE_IMPORTED_20260902,
       xinjiang: initialXinjiangQuestion,
       rose: roseQuestion,
       maxfood: maxFoodQuestion,
@@ -3922,6 +4059,8 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
+    let currentQuestionKey = "xinjiang";
+    const NOTEBOOK_STORAGE_KEY = "word_choice_notebook_20260902";
     const state = {
       selectedWord: null,
       selectedBlank: null,
@@ -3935,6 +4074,110 @@
       tagCloseTimer: null,
       draggingTag: null
     };
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>\"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
+    }
+    function readNotebook() {
+      try { return JSON.parse(localStorage.getItem(NOTEBOOK_STORAGE_KEY) || "[]"); }
+      catch (error) { return []; }
+    }
+    function writeNotebook(items) {
+      try { localStorage.setItem(NOTEBOOK_STORAGE_KEY, JSON.stringify(items)); } catch (error) {}
+      updateNotebookCount();
+    }
+    function updateNotebookCount() {
+      const count = document.getElementById("notebookCount");
+      if (count) count.textContent = readNotebook().length;
+    }
+    const notebookRuleLabels = { keep: "保持原形", origin: "保持原级", safe: "保持原形", base: "动词原形", third: "第三人称单数", past: "一般过去时", ing: "现在分词/动名词", pp: "过去分词", plural: "名词复数", possessive: "所有格", pluralPossessive: "复数所有格", toAdj: "变形容词", toAdv: "变副词", toNoun: "变名词", toNounPlural: "变名词复数", sentence: "句首大写", compare: "比较级", super: "最高级", possAdj: "形容词性物主代词", obj: "宾格", subj: "主格", ordinal: "序数词", cardinal: "基数词" };
+    function notebookRuleLabel(rule) { return notebookRuleLabels[rule] || rule || "结合句子结构判断"; }
+    function classifyError(target, ans) {
+      if (!ans) return ["未作答", "没有完成选词、词性和变形操作。"];
+      if (ans.need !== target.needed) return ["词性判断", `本空需要${labelFor(target.needed)}，你选择的是${labelFor(ans.need)}。先判断词性，再进行词形转换。`];
+      if (ans.word !== target.correctWord) return ["选词错误", `本空需要${labelFor(target.needed)}，应先选“${target.correctWord}”，再决定词形。`];
+      if (ans.shown !== target.answer) {
+        if (target.rule === "sentence" || /^[A-Z]/.test(target.answer) && /^[a-z]/.test(ans.shown || "")) return ["句首大小写", "词形基本正确，但位于句首时首字母需要大写。"];
+        if (target.rule === "third") return ["第三人称单数", `主语和时态要求动词第三人称单数，应使用“${target.answer}”。`];
+        if (["plural", "pluralPossessive"].includes(target.rule)) return ["单复数/所有格", `数量或所有格结构要求使用“${target.answer}”。`];
+        if (["past", "pp", "presentPerfect"].includes(target.rule)) return ["时态/语态", `根据上下文的时态或语态，应使用“${target.answer}”。`];
+        if (["ing"].includes(target.rule)) return ["非谓语形式", "介词、固定结构或进行时要求使用现在分词/动名词。"];
+        if (["compare", "super"].includes(target.rule)) return ["比较级/最高级", "比较结构要求使用对应的比较级或最高级。"];
+        if (["toAdj", "toAdv", "toNoun", "toNounPlural"].includes(target.rule)) return ["词性转换", `当前空格需要${labelFor(target.needed)}，应将“${target.correctWord}”转换为“${target.answer}”。`];
+        return ["变形规则", `选词正确，但没有按照本空要求生成“${target.answer}”。`];
+      }
+      return ["综合语境", "答案与标准答案不同，建议重新检查上下文和固定搭配。"];
+    }
+    function getBlankSentence(questionKey, blankId) {
+      const data = questionBank[questionKey];
+      if (!data?.passageHtml) return "结合上下文完成本空。";
+      const holder = document.createElement("div");
+      holder.innerHTML = data.passageHtml;
+      holder.querySelectorAll(".later-btn").forEach(button => button.remove());
+      holder.querySelectorAll(".blank-wrap").forEach(wrap => {
+        const button = wrap.querySelector("[data-blank]");
+        wrap.textContent = button?.dataset.blank === String(blankId) ? `【空缺${blankId}】` : "____";
+      });
+      const text = holder.textContent.replace(/\s+/g, " ").trim();
+      const marker = `【空缺${blankId}】`;
+      const at = text.indexOf(marker);
+      if (at < 0) return data.blankClues?.[blankId] || "结合上下文完成本空。";
+      const before = text.slice(0, at);
+      const start = Math.max(before.lastIndexOf("."), before.lastIndexOf("?"), before.lastIndexOf("!"), before.lastIndexOf("。"), before.lastIndexOf("？"), before.lastIndexOf("！")) + 1;
+      const after = text.slice(at + marker.length);
+      const endMatches = [...after.matchAll(/[.!?。！？]/g)];
+      const end = endMatches.length ? at + marker.length + endMatches[0].index + 1 : Math.min(text.length, at + marker.length + 150);
+      return text.slice(start, end).trim();
+    }
+    function saveWrongAnswers(records) {
+      const old = readNotebook();
+      const now = new Date().toISOString();
+      records.filter(item => !item.ok).forEach(item => {
+        const key = `${item.questionKey}:${item.blankId}`;
+        const previous = old.find(entry => entry.key === key);
+        const next = { ...item, key, wrongCount: (previous?.wrongCount || 0) + 1, updatedAt: now };
+        const index = old.findIndex(entry => entry.key === key);
+        if (index >= 0) old[index] = next; else old.unshift(next);
+      });
+      writeNotebook(old);
+    }
+    function getNotebookTarget(item) {
+      const data = questionBank[item.questionKey] || {};
+      const target = data.blanks?.[item.blankId] || {};
+      return {
+        needed: item.needed || target.needed || "",
+        answer: item.correct || target.answer || "",
+        rule: item.selectedRule || target.rule || "",
+        explanation: item.explanation && item.explanation !== "没有完成选词、词性和变形操作。" ? item.explanation : (target.path || "结合空格前后结构和上下文判断。"),
+        formula: item.formula && item.formula !== "结合上下文和句子结构判断。" ? item.formula : (data.clueFormulas?.[item.blankId] || "结合本空需要的词性和上下文判断。"),
+        clue: data.blankClues?.[item.blankId] || ""
+      };
+    }
+    function renderNotebook() {
+      const list = document.getElementById("notebookList");
+      const filter = document.getElementById("notebookFilter");
+      if (!list || !filter) return;
+      const all = readNotebook();
+      const types = [...new Set(all.map(item => item.errorType))];
+      const current = filter.value;
+      filter.innerHTML = `<option value="all">全部错误（${all.length}）</option>` + types.map(type => `<option value="${escapeHtml(type)}">${escapeHtml(type)}</option>`).join("");
+      filter.value = types.includes(current) ? current : "all";
+      const visible = filter.value === "all" ? all : all.filter(item => item.errorType === filter.value);
+      list.innerHTML = visible.length ? visible.map(item => {
+        const target = getNotebookTarget(item);
+        const sentence = item.sentence || getBlankSentence(item.questionKey, item.blankId) || target.clue || "结合上下文完成本空。";
+        const sentenceHtml = escapeHtml(sentence).replace(`【空缺${escapeHtml(item.blankId)}】`, `<mark>【空缺${escapeHtml(item.blankId)}】</mark>`);
+        const selectedWord = item.selectedWord || "未记录";
+        const selectedRule = item.selectedRule ? notebookRuleLabel(item.selectedRule) : `标准规则：${notebookRuleLabel(target.rule)}`;
+        const needed = target.needed ? labelFor(target.needed) : "未记录";
+        const formula = target.formula;
+        const explanation = target.explanation;
+        const steps = `① 先判断：本空需要${needed}　② 再选词：${selectedWord === "未记录" ? "回想备选词" : selectedWord}　③ 最后变形：${selectedRule === "未记录" ? "根据句子结构决定" : selectedRule}`;
+        return `<article class="notebook-item"><b>${escapeHtml(item.title)}</b><p>空缺 ${escapeHtml(item.blankId)} · 错误类型：${escapeHtml(item.errorType)} · 累计错误 ${item.wrongCount} 次</p><div class="review-sentence"><strong>题目原句：</strong>${sentenceHtml}</div><div class="review-steps">${escapeHtml(steps)}</div><p><strong>答案对照：</strong>你的填入 <strong>${escapeHtml(item.mine)}</strong>；标准答案 <strong>${escapeHtml(target.answer)}</strong></p><p><strong>解析要点：</strong>${escapeHtml(explanation)}</p><p class="clue-note"><strong>本空规则提示：</strong>${escapeHtml(formula)}</p><button class="mini-btn" type="button" data-review-question="${escapeHtml(item.questionKey)}" data-review-blank="${escapeHtml(item.blankId)}">再练一次</button></article>`;
+      }).join("") : "<p class=\"clue-note\">暂无错题，完成练习并提交后会自动保存。</p>";
+      updateNotebookCount();
+    }
+    function openNotebook() { renderNotebook(); document.getElementById("notebookModal").classList.add("show"); }
 
     const bank = document.getElementById("wordBank");
     const popover = document.getElementById("tagPopover");
@@ -3965,6 +4208,7 @@
 
     async function loadQuestion(key, options = {}) {
       const data = questionBank[key];
+      currentQuestionKey = key;
       words = JSON.parse(JSON.stringify(data.words));
       wordKey = JSON.parse(JSON.stringify(data.wordKey));
       blanks = JSON.parse(JSON.stringify(data.blanks));
@@ -4225,57 +4469,116 @@
       blank.classList.add("filled", "fly-in");
       blank.classList.remove("later", "wrong");
       renderWords();
-      openTransform(wordText, state.tags[wordText] || state.activeNeed);
+      openTransform(wordText, state.activeNeed, state.tags[wordText] || state.activeNeed);
     }
 
-    function rulesFor(pos, wordText) {
-      if (pos === "noun") return [
-        ["keep", "保持原形", getForm(wordText, "noun")],
-        ["plural", "变复数 (+s/es)", getForm(wordText, "nounPlural")],
-        ["possessive", "变所有格 ('s)", getForm(wordText, "noun") + "'s"],
-        ["pluralPossessive", "变复数所有格 (s')", getForm(wordText, "nounPlural") + "'"],
-        ["sentence", "句首大写", getForm(wordText, "sentence") || getForm(wordText, "noun").replace(/^./, char => char.toUpperCase())],
-        ["toAdj", "变形容词", wordText === "pride" ? "proud" : getForm(wordText, "adj")]
-      ];
-      if (pos === "verb") return [
-        ["base", "原形", getForm(wordText, "verb")],
-        ["third", "第三人称单数", getForm(wordText, "third")],
-        ["past", "过去式 (-ed)", getForm(wordText, "past")],
-        ["ing", "现在分词/动名词 (-ing)", getForm(wordText, "ing")],
-        ["pp", "过去分词 (-ed)", getForm(wordText, "pp")],
-        ["presentPerfect", "现在完成时 (has/have + done)", getForm(wordText, "perfect") || "has " + getForm(wordText, "pp")],
-        ["to", "不定式 (to do)", "to " + getForm(wordText, "verb")],
-        ["toAdj", "变形容词", getForm(wordText, "adj")],
-        ["toNoun", "变名词", getForm(wordText, "noun")],
-        ["toNounPlural", "变名词复数", getForm(wordText, "nounPlural")]
-      ];
-      if (pos === "adj" || pos === "adv") return [
-        ["origin", "原级", getForm(wordText, pos)],
-        ["toAdv", "\u53d8\u526f\u8bcd", getForm(wordText, "adv")],
-        ["compare", "比较级 (-er/more)", getForm(wordText, "compare") || "more " + getForm(wordText, pos)],
-        ["super", "最高级 (-est/most)", getForm(wordText, "super") || "most " + getForm(wordText, pos)],
-        ["sentence", "句首大写", getForm(wordText, "sentence") || getForm(wordText, pos).replace(/^./, char => char.toUpperCase())],
-        ["toNoun", "变名词", getForm(wordText, "noun")],
-        ["opposite", "变反义词 (un-/dis-)", getForm(wordText, "opposite") || "un" + getForm(wordText, pos)]
-      ];
-      if (pos === "pron") return [
-        ["subj", "主格", getForm(wordText, "pron")],
-        ["obj", "宾格", getForm(wordText, "obj")],
-        ["possAdj", "形容词性物主代词", getForm(wordText, "possAdj")],
-        ["possNoun", "名词性物主代词", getForm(wordText, "possNoun") || "ours"],
-        ["reflexive", "反身代词", getForm(wordText, "reflexive")],
-        ["sentence", "句首大写", getForm(wordText, "sentence") || getForm(wordText, "pron").replace(/^./, char => char.toUpperCase())]
-      ];
-      if (pos === "num") return [
-        ["cardinal", "基数词", getForm(wordText, "num")],
-        ["ordinal", "序数词", getForm(wordText, "ordinal")],
-        ["times", "次数词", getForm(wordText, "times")],
-        ["plural", "单位词复数 (+s)", getForm(wordText, "nounPlural")]
-      ];
-      return [
-        ["safe", "安全词类，无需变形", getForm(wordText, pos)],
-        ["sentence", "句首大写", getForm(wordText, "sentence") || getForm(wordText, pos).replace(/^./, char => char.toUpperCase())]
-      ];
+    function rulesFor(pos, wordText, basePos = pos) {
+      const word = words.find(item => item.text === wordText);
+      const forms = word?.forms || {};
+      const options = [];
+      const seen = new Set();
+      const has = key => Boolean(forms[key]);
+      const value = key => forms[key];
+      const add = (key, label, output, available = true) => {
+        if (available && output && !seen.has(`${key}:${output}`)) {
+          seen.add(`${key}:${output}`);
+          options.push([key, label, output]);
+        }
+      };
+      const finish = () => {
+        const outputs = new Set(options.map(item => item[2]));
+        const addFamily = (key, label, output) => {
+          if (output && !outputs.has(output)) {
+            add(key, label, output, true);
+            outputs.add(output);
+          }
+        };
+        const family = [
+          ["verb", "动词原形", value("verb")], ["third", "第三人称单数", value("third")],
+          ["past", "过去式", value("past")], ["ing", "现在分词/动名词", value("ing")],
+          ["pp", "过去分词", value("pp")], ["noun", "变名词", value("noun")],
+          ["nounPlural", "变名词复数", value("nounPlural")], ["adj", "变形容词", value("adj")],
+          ["adv", "变副词", value("adv")], ["compare", "比较级", value("compare")],
+          ["super", "最高级", value("super")], ["opposite", "变反义词", value("opposite")]
+        ];
+        if (options.length < 3) family.forEach(([key, label, output]) => addFamily(key, label, output));
+        if (options.length < 3 && pos === "num" && has("num")) {
+          addFamily("plural", "单位词复数", value("nounPlural") || getForm(wordText, "nounPlural"));
+        }
+        if (options.length < 3 && basePos === "adj" && pos === "adj" && !has("adv")) {
+          const adj = value("adj");
+          const derived = adj && (adj.endsWith("y") ? `${adj.slice(0, -1)}ily` : adj.endsWith("le") ? `${adj.slice(0, -1)}y` : `${adj}ly`);
+          addFamily("toAdv", "变副词", derived);
+        }
+        if (options.length < 3 && basePos === "adv" && pos === "adv" && has("adj")) {
+          addFamily("toAdj", "变形容词", value("adj"));
+        }
+        return options;
+      };
+      const sentence = key => value("sentence") || (value(key) ? value(key).replace(/^./, char => char.toUpperCase()) : "");
+
+      if (pos === "noun") {
+        if (basePos === "noun") {
+          add("keep", "保持原形", value("noun"), has("noun"));
+          add("plural", "变复数 (+s/es)", value("nounPlural"), has("nounPlural"));
+          add("possessive", "变所有格 ('s)", value("noun") + "'s", has("noun"));
+          add("pluralPossessive", "变复数所有格 (s')", value("nounPlural") + "'", has("nounPlural"));
+        } else {
+          add("toNoun", "变名词", value("noun"), has("noun"));
+          add("toNounPlural", "变名词复数", value("nounPlural"), has("nounPlural"));
+        }
+        add("sentence", "句首大写", sentence("noun"), has("noun") || has("sentence"));
+        add("toAdj", "变形容词", wordText === "pride" ? "proud" : value("adj"), has("adj"));
+        return finish();
+      }
+      if (pos === "verb") {
+        if (basePos === "verb") {
+          add("base", "原形", value("verb"), has("verb"));
+          add("third", "第三人称单数", value("third") || getForm(wordText, "third"), has("third") || has("verb"));
+          add("past", "过去式", value("past") || getForm(wordText, "past"), has("past") || has("verb"));
+          add("ing", "现在分词/动名词", value("ing") || getForm(wordText, "ing"), has("ing") || has("verb"));
+          add("pp", "过去分词", value("pp") || getForm(wordText, "pp"), has("pp") || has("verb"));
+          add("presentPerfect", "现在完成时（have/has + done）", value("perfect") ? value("perfect") : (has("pp") ? `has ${value("pp")}` : ""), has("perfect") || has("pp"));
+          add("to", "不定式（to + 动词原形）", `to ${value("verb")}`, has("verb"));
+        }
+        add("toAdj", "变形容词", value("adj"), has("adj"));
+        add("toNoun", "变名词", value("noun"), has("noun"));
+        add("toNounPlural", "变名词复数", value("nounPlural"), has("nounPlural"));
+        return finish();
+      }
+      if (pos === "adj" || pos === "adv") {
+        if (basePos === pos) add("origin", "保持原级", value(pos), has(pos));
+        if (pos === "adj" && basePos !== "adj") add("toAdj", "变形容词", value("adj"), has("adj"));
+        if (pos === "adv" && basePos === "adj") add("toAdv", "变副词", value("adv"), has("adv"));
+        if (basePos === pos) {
+          add("toAdv", "变副词", value("adv"), pos === "adj" && has("adv"));
+          add("compare", "比较级", value("compare"), has("compare"));
+          add("super", "最高级", value("super"), has("super"));
+        }
+        add("sentence", "句首大写", sentence(pos), has(pos) || has("sentence"));
+        add("toNoun", "变名词", value("noun"), has("noun"));
+        add("opposite", "变反义词", value("opposite"), has("opposite"));
+        return finish();
+      }
+      if (pos === "pron") {
+        add("subj", "主格", value("pron"), has("pron"));
+        add("obj", "宾格", value("obj"), has("obj"));
+        add("possAdj", "形容词性物主代词", value("possAdj"), has("possAdj"));
+        add("possNoun", "名词性物主代词", value("possNoun"), has("possNoun"));
+        add("reflexive", "反身代词", value("reflexive"), has("reflexive"));
+        add("sentence", "句首大写", sentence("pron"), has("pron") || has("sentence"));
+        return finish();
+      }
+      if (pos === "num") {
+        add("cardinal", "基数词", value("num"), has("num"));
+        add("ordinal", "序数词", value("ordinal"), has("ordinal"));
+        add("times", "次数词", value("times"), has("times"));
+        add("plural", "单位词复数", value("nounPlural"), has("nounPlural"));
+        return finish();
+      }
+      add("safe", "保持原形", value(pos) || wordText, true);
+      add("sentence", "句首大写", value("sentence") || (value(pos) || wordText).replace(/^./, char => char.toUpperCase()), Boolean(value(pos) || has("sentence") || wordText));
+      return finish();
     }
 
     function getForm(wordText, key) {
@@ -4291,11 +4594,11 @@
       return wordText;
     }
 
-    function openTransform(wordText, pos) {
+    function openTransform(wordText, pos, basePos = pos) {
       const safe = ["prep", "conj", "det"].includes(pos);
       document.getElementById("transformTitle").textContent = safe ? "安全词类，无需变形" : `${wordText}：选择变形规则`;
       document.getElementById("transformHint").textContent = safe ? "介词、连词等功能词通常直接确认。" : "选定规则后，系统会直接调用正确拼写显示在空缺处。";
-      const options = rulesFor(pos, wordText);
+      const options = rulesFor(pos, wordText, basePos);
       document.getElementById("ruleOptions").innerHTML = options.map(([key, label, output]) => `
         <label class="rule">
           <input type="radio" name="rule" value="${key}" data-output="${output}">
@@ -4328,20 +4631,29 @@
       const box = document.getElementById("analysis");
       const total = Object.keys(blanks).length;
       let correct = 0;
-      Object.entries(blanks).forEach(([id, target]) => {
+      const records = Object.entries(blanks).map(([id, target]) => {
         const ans = state.answers[id];
         const blank = document.querySelector(`[data-blank="${id}"]`);
-        const ok = ans && ans.word === target.correctWord && ans.shown === target.answer;
+        const ok = ans && ans.need === target.needed && ans.word === target.correctWord && ans.shown === target.answer;
         if (ok) correct += 1;
         blank.classList.toggle("wrong", !ok);
+        const [errorType, explanation] = ok ? ["", ""] : classifyError(target, ans);
+        return { questionKey: currentQuestionKey, title: getArticleTitle(currentQuestionKey), blankId: id, sentence: getBlankSentence(currentQuestionKey, id), selectedWord: ans?.word || "未选择", selectedRule: ans?.rule || "未选择", needed: target.needed, mine: ans?.shown || "未作答", correct: target.answer, errorType, explanation, formula: clueFormulas[id] || "结合上下文和句子结构判断。", ok, targetPath: target.path };
       });
-      box.innerHTML = `<h2>模块四：反馈与解析系统</h2><p>本次得分：${correct} / ${total}。下面按“三步法”显示正确路径，方便定位错在词性、选词还是变形。</p>` +
-        Object.entries(blanks).map(([id, target]) => {
-          const ans = state.answers[id];
-          const ok = ans && ans.word === target.correctWord && ans.shown === target.answer;
-          const mine = ans ? ans.shown : "未作答";
-          return `<div class="analysis-row ${ok ? "correct" : "wrong"}"><b>空缺 ${id}</b><br>你的答案：${mine}<br>正确路径：${target.path}</div>`;
-        }).join("");
+      saveWrongAnswers(records);
+      const wrongRecords = records.filter(item => !item.ok);
+      const counts = wrongRecords.reduce((map, item) => { map[item.errorType] = (map[item.errorType] || 0) + 1; return map; }, {});
+      const stats = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+      box.innerHTML = `<h2>模块四：反馈与解析系统</h2>
+        <div class="feedback-summary">
+          <div class="feedback-card"><small>本次正确率</small><strong>${total ? Math.round(correct / total * 100) : 0}%</strong><span>${correct} / ${total}</span></div>
+          <div class="feedback-card"><small>答对空数</small><strong>${correct}</strong><span>继续保持</span></div>
+          <div class="feedback-card"><small>主要错误</small><strong>${wrongRecords.length}</strong><span>${wrongRecords.length ? "已加入错题本" : "全部正确"}</span></div>
+        </div>
+        <h3>主要错误原因</h3>
+        <div class="error-stats">${stats.length ? stats.map(([type, count]) => `<span class="error-stat">${escapeHtml(type)}：${count}</span>`).join("") : "<span class=\"error-stat\">暂无错误</span>"}</div>
+        <p>逐空反馈如下；词性转换、时态、单复数等问题会单独标注。</p>` +
+        records.map(item => `<div class="analysis-row ${item.ok ? "correct" : "wrong"}"><b>空缺 ${escapeHtml(item.blankId)}</b>${item.ok ? "<span class=\"error-reason\" style=\"background:#dff3e5;color:#23713b\">正确</span>" : `<span class="error-reason">${escapeHtml(item.errorType)}</span>`}<br>你的答案：${escapeHtml(item.mine)}<br>正确答案：<strong>${escapeHtml(item.correct)}</strong>${item.ok ? "" : `<br>${escapeHtml(item.explanation)}`}<br>正确路径：${escapeHtml(item.targetPath)}${item.ok ? "" : `<div class="row-actions"><button class="mini-btn" type="button" data-review-question="${escapeHtml(item.questionKey)}" data-review-blank="${escapeHtml(item.blankId)}">加入错题本并回看</button></div>`}</div>`).join("");
       box.classList.add("show");
       box.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -4482,6 +4794,28 @@
     popover.addEventListener("click", event => {
       if (event.target === popover) closePopovers();
     });
+    document.getElementById("notebookBtn").addEventListener("click", openNotebook);
+    document.getElementById("notebookFilter").addEventListener("change", renderNotebook);
+    document.getElementById("clearNotebookBtn").addEventListener("click", () => {
+      if (!readNotebook().length || !window.confirm("确定清空本设备上的全部错题吗？")) return;
+      writeNotebook([]);
+      renderNotebook();
+      showToast("错题本已清空。");
+    });
+    document.addEventListener("click", async event => {
+      const review = event.target.closest("[data-review-question]");
+      if (!review) return;
+      const key = review.dataset.reviewQuestion;
+      const blankId = review.dataset.reviewBlank;
+      document.getElementById("notebookModal").classList.remove("show");
+      await loadQuestion(key, { silent: true });
+      document.body.classList.add("training-active");
+      const blank = document.querySelector(`[data-blank="${blankId}"]`);
+      if (blank) {
+        blank.scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => openBlankModal(blankId, blank), 250);
+      }
+    });
     document.getElementById("clearFilterBtn").addEventListener("click", () => {
       state.activeNeed = null;
       state.selectedBlank = null;
@@ -4498,6 +4832,13 @@
       btn.addEventListener("click", () => loadQuestion(btn.dataset.question));
     });
     document.getElementById("backToLibraryBtn")?.addEventListener("click", showLibrary);
+    document.getElementById("openGuideBtn")?.addEventListener("click", () => document.getElementById("onboardingModal").classList.add("show"));
+    document.getElementById("startGuideBtn")?.addEventListener("click", () => {
+      try { localStorage.setItem(ONBOARDING_STORAGE_KEY, "true"); } catch (error) {}
+      document.getElementById("onboardingModal").classList.remove("show");
+      showToast("引导完成，请选择一篇文章开始训练。");
+    });
+    updateNotebookCount();
 
     document.getElementById("loginCode").addEventListener("input", event => {
       event.target.value = normalizeLoginCode(event.target.value).slice(0, 12);
