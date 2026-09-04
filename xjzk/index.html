@@ -589,7 +589,7 @@
       <section class="training-section" aria-labelledby="trainingTitle">
         <div class="section-heading">
           <div><h2 id="trainingTitle">选择一个专项，马上开练</h2><p>每个专项首次登录后会绑定当前登录码，并自动保存学习进度。</p></div>
-          <span class="section-tip">六大专项 · 分步训练</span>
+          <span class="section-tip">七大专项 · 分步训练</span>
         </div>
       <div id="training" class="training-grid" aria-label="专项训练入口">
         <article class="training-card">
@@ -651,6 +651,16 @@
           </div>
           <button class="enter-btn" data-target="./training/vocabulary/index.html" data-title="中考词汇备考系统">去练习 →</button>
         </article>
+
+        <article class="training-card">
+          <span class="card-number">07</span>
+          <img class="card-icon" src="./assets/icon-test.png" alt="" width="240" height="240">
+          <div class="card-copy">
+            <h2>构词法训练</h2>
+            <p>系统掌握前后缀、合成法和词性判断，在分步训练中建立词形变化思路。</p>
+          </div>
+          <button class="enter-btn" data-target="./training/word-formation/index.html" data-title="中考英语构词法训练">去练习 →</button>
+        </article>
       </div>
       </section>
     </main>
@@ -696,22 +706,23 @@
     }
 
     function resolveTrainingUrl(target) {
-      const path = window.location.pathname;
-      const base = path.endsWith("/")
-        ? path
-        : path.endsWith(".html")
-          ? path.replace(/[^/]*$/, "")
-          : path + "/";
-      return new URL(target, window.location.origin + base).href;
+      return new URL(target, document.baseURI).href;
     }
 
     function verifyAndEnter() {
+      const code = input.value.trim();
+      if (!code) {
+        errorText.textContent = "请输入登录码。";
+        input.focus();
+        return;
+      }
+      sessionStorage.setItem("wordFormationAccessCode", code);
       window.location.href = resolveTrainingUrl(pendingTarget);
     }
 
     document.querySelectorAll(".enter-btn").forEach((button) => {
       button.addEventListener("click", () => {
-        if (button.dataset.target === "./training/cloze/index.html" || button.dataset.target === "./training/grammar/index.html" || button.dataset.target === "./training/word-choice/index.html" || button.dataset.target === "./training/reading-writing/index.html" || button.dataset.target === "./training/reading-comprehension/index.html" || button.dataset.target === "./training/vocabulary/index.html") {
+if (button.dataset.target === "./training/cloze/index.html" || button.dataset.target === "./training/grammar/index.html" || button.dataset.target === "./training/word-choice/index.html" || button.dataset.target === "./training/reading-writing/index.html" || button.dataset.target === "./training/reading-comprehension/index.html" || button.dataset.target === "./training/vocabulary/index.html" || button.dataset.target === "./training/word-formation/index.html") {
           window.location.href = resolveTrainingUrl(button.dataset.target);
           return;
         }
