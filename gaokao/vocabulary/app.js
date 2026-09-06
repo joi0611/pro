@@ -2246,11 +2246,27 @@ function saveCompletedDayReliably(key) {
   if (!cloudSyncReady) return;
   const code = normalizeLoginCode(localStorage.getItem(LOGIN_CODE_STORAGE_KEY) || "");
   if (!LOGIN_CODES.includes(code)) return;
-  saveStateToCloud(code)
+  saveStateToCloudWithRetry(code)
     .then(() => clearPendingCompletions(code, [key]))
     .catch((error) => {
       console.warn("当日完成状态暂未上传，已保存在本机并将在下次登录时补传。", error);
     });
+}
+
+async function saveStateToCloudWithRetry(code, attempts = 3) {
+  let lastError;
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    try {
+      await saveStateToCloud(code);
+      return;
+    } catch (error) {
+      lastError = error;
+      if (attempt < attempts - 1) {
+        await new Promise((resolve) => setTimeout(resolve, 500 * (attempt + 1)));
+      }
+    }
+  }
+  throw lastError || new Error("云端保存失败");
 }
 
 async function initializeCloudSync(code) {
@@ -2270,11 +2286,10 @@ async function initializeCloudSync(code) {
           buildPlan();
         }
       } else {
-        if (hasLearningActivity(localStateBeforeCloud)) {
-          state = localStateBeforeCloud;
-        } else {
-          state = { ...loadStateFallback(), ...cloudState };
-        }
+        // 本机状态和云端状态都可能包含不同日期的学习记录。
+        // 不能因为本机有活动就整份覆盖云端，否则换设备或跨天登录时，
+        // 云端已经保存的 completedDates / quizResults / progress 会消失。
+        state = mergePersistedStates(cloudState, localStateBeforeCloud);
       }
       const pendingCompletionMerge = applyPendingCompletions(state, code);
       state = pendingCompletionMerge.state;
@@ -2285,7 +2300,8 @@ async function initializeCloudSync(code) {
       setDailyActive(state.dailyCount || 30);
       renderAll();
       resumeInterruptedLearningIfNeeded();
-      if (needsInitialization || pendingCompletionMerge.changed) await saveStateToCloud(code);
+       // 初始化合并后立即回写，确保本机尚未上传的日期记录也进入云端。
+       await saveStateToCloudWithRetry(code);
       if (pendingCompletionMerge.keys.length) clearPendingCompletions(code, pendingCompletionMerge.keys);
     } else {
       cloudStateEnvelope ||= createCloudEnvelope();
@@ -2305,6 +2321,79 @@ async function initializeCloudSync(code) {
     console.warn("云端同步暂不可用，已继续使用本地记录。", error);
     cloudSyncReady = false;
   }
+}
+
+function mergePersistedStates(cloudState, localState) {
+  const cloud = { ...loadStateFallback(), ...(cloudState || {}) };
+  const local = { ...loadStateFallback(), ...(localState || {}) };
+  const merged = {
+    ...cloud,
+    // 计划以云端为主；本机只有在云端没有计划时才补上。
+    plan: cloud.plan && Object.keys(cloud.plan).length ? cloud.plan : local.plan,
+    dailyCount: local.dailyCount || cloud.dailyCount || 30,
+    progress: mergeProgressMaps(cloud.progress, local.progress),
+    completedDates: mergeBooleanMaps(cloud.completedDates, local.completedDates),
+    quizResults: mergeDatedRecords(cloud.quizResults, local.quizResults, "finishedAt"),
+    extraReviews: mergeArrayMaps(cloud.extraReviews, local.extraReviews),
+    preStudyChecks: mergeDatedRecords(cloud.preStudyChecks, local.preStudyChecks, "completedAt"),
+    trainingSessions: mergeDatedRecords(cloud.trainingSessions, local.trainingSessions, "updatedAt"),
+  };
+  merged.startDate = cloud.startDate || local.startDate || todayKey();
+  merged.selectedDate = local.selectedDate || cloud.selectedDate || todayKey();
+  return merged;
+}
+
+function mergeProgressMaps(cloudProgress = {}, localProgress = {}) {
+  const merged = { ...cloudProgress };
+  Object.entries(localProgress || {}).forEach(([id, localItem]) => {
+    const cloudItem = merged[id];
+    if (!cloudItem) {
+      merged[id] = localItem;
+      return;
+    }
+    // 进度是累积数据，合并计数并保留任一端已经达到的状态。
+    const item = { ...cloudItem, ...localItem };
+    ["total", "again", "hard", "good", "testWrong"].forEach((key) => {
+      item[key] = Math.max(Number(cloudItem[key] || 0), Number(localItem?.[key] || 0));
+    });
+    item.streak = Math.max(Number(cloudItem.streak || 0), Number(localItem?.streak || 0));
+    item.seen = Boolean(cloudItem.seen || localItem?.seen);
+    item.mastered = Boolean(cloudItem.mastered || localItem?.mastered);
+    item.weak = Boolean(cloudItem.weak || localItem?.weak);
+    merged[id] = item;
+  });
+  return merged;
+}
+
+function mergeDatedRecords(cloudRecords = {}, localRecords = {}, dateField) {
+  const merged = { ...(cloudRecords || {}) };
+  Object.entries(localRecords || {}).forEach(([key, localRecord]) => {
+    const cloudRecord = merged[key];
+    if (!cloudRecord) {
+      merged[key] = localRecord;
+      return;
+    }
+    const localTime = Date.parse(localRecord?.[dateField] || "") || 0;
+    const cloudTime = Date.parse(cloudRecord?.[dateField] || "") || 0;
+    if (localTime >= cloudTime) merged[key] = localRecord;
+  });
+  return merged;
+}
+
+function mergeArrayMaps(cloudMap = {}, localMap = {}) {
+  const merged = { ...(cloudMap || {}) };
+  Object.entries(localMap || {}).forEach(([key, values]) => {
+    merged[key] = [...new Set([...(merged[key] || []), ...(Array.isArray(values) ? values : [])])];
+  });
+  return merged;
+}
+
+function mergeBooleanMaps(cloudMap = {}, localMap = {}) {
+  const merged = { ...(cloudMap || {}) };
+  Object.entries(localMap || {}).forEach(([key, value]) => {
+    if (value) merged[key] = true;
+  });
+  return merged;
 }
 
 function createCloudEnvelope() {
@@ -2332,7 +2421,7 @@ function scheduleCloudSave() {
   if (!LOGIN_CODES.includes(code)) return;
   clearTimeout(cloudSaveTimer);
   cloudSaveTimer = setTimeout(() => {
-    saveStateToCloud(code).catch((error) => {
+    saveStateToCloudWithRetry(code).catch((error) => {
       console.warn("云端保存失败，本地记录仍然有效。", error);
     });
   }, 500);
@@ -3382,4 +3471,3 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 }
-
