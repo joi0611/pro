@@ -637,7 +637,7 @@
   </section>
   <header class="workbook-site-header">
     <a class="workbook-brand" href="../../index.html"><span class="workbook-brand-mark">新</span><strong class="student-system-brand">新疆学生无限进步</strong></a>
-    <nav class="workbook-main-nav"><a href="../../index.html">首页</a><span class="active">专项训练</span><button type="button" onclick="showHome()">题库主页</button></nav>
+    <nav class="workbook-main-nav"><button type="button" onclick="showReadingHome()">首页</button><span class="active">专项训练</span><button type="button" onclick="showPassageHome()">本篇主页</button></nav>
   </header>
   <header class="reading-module-header">
     <div>
@@ -870,7 +870,7 @@
     }
 
     function renderTabs() {
-      $("passageTabs").innerHTML = `<button class="tab ${state.view === "home" ? "active" : ""}" onclick="showHome()">首页</button>`;
+      $("passageTabs").innerHTML = `<button class="tab ${state.view === "home" ? "active" : ""}" onclick="showPassageHome()">本篇主页</button>`;
       $("questionTabs").innerHTML = currentPassage().questions.map((q, i) => {
         const saved = state.answers[answerKey(q)];
         const cls = saved ? (saved.correct ? "done" : "wrong") : "";
@@ -1460,8 +1460,15 @@
       renderAll();
     }
 
-    function showHome() {
+    function showReadingHome() {
       state.view = "home";
+      state.catalogLetter = "";
+      renderAll();
+    }
+
+    function showPassageHome() {
+      state.view = "home";
+      state.catalogLetter = passageLetter(currentPassage());
       renderAll();
     }
 
