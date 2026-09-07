@@ -1503,25 +1503,12 @@
       return `<strong>${escapeHtml(row.slice(0, idx + 1))}</strong>${highlightCompareTerms(row.slice(idx + 1))}`;
     }
 
-    function comparePrefixKeys(prefixStr) {
-      // 支持单字母 "B：" 与合并前缀 "A/C/D："，返回前缀覆盖的选项字母集合
-      const idx = prefixStr.indexOf("：") > -1 ? prefixStr.indexOf("：") : prefixStr.indexOf(":");
-      return idx > 0 ? prefixStr.slice(0, idx).split("/").map(s => s.trim()).filter(Boolean) : [];
-    }
     function optionCompareInfo(q, opt, index) {
       const key = optionKey(opt);
-      // 先精确命中：单字母 key： 或合并前缀(如 "A/C/D：") 覆盖到本 key
-      let row = "";
-      if (q.compare && q.compare.length) {
-        row = q.compare.find(item => {
-          const keys = comparePrefixKeys(item);
-          return keys.includes(key);
-        }) || "";
-      }
-      if (!row) row = (q.compare || [])[index] || "";
+      const row = q.compare.find(item => item.startsWith(key + "：")) || q.compare[index] || "";
       const text = row || opt;
       const label = isGlobalQuestion(q) ? inferGlobalCompareLabel(q, key, text) : inferCompareLabel(q, key, text);
-      const feedback = row ? row.replace(/^[A-DTFA-DT\/]+[：:]\s*/, "") : (key === q.answer ? "这个选项与答案句匹配。" : "这个选项不能从答案句推出。");
+      const feedback = row ? row.replace(/^[A-DTF]：/, "") : (key === q.answer ? "这个选项与答案句匹配。" : "这个选项不能从答案句推出。");
       return { label, feedback };
     }
 
@@ -1664,8 +1651,8 @@
         return /同义|对应|=|替换|created|written|quickly|fast|nervous|uneasy|company|lonely/i.test(t) ? "同义替换" : "原词复现";
       }
       // —— 干扰项：从最具体到兜底（返回仍落在标准7类标签，保证 UI/选择器不出现陌生标签）——
-      // 1) 反向 / 说反了（“与原文不符”是笼统的不一致词，不属严格“说反了”，不在此归反向）
-      if (/(相反|反向|反了|说反|背道而驰|其实不是|与原文相反|不是.*而是.*但|意思相反|opposite|与原意相反|正好相反)/i.test(t)) return "反向表达";
+      // 1) 反向 / 说反了
+      if (/(相反|反向|反了|说反|背道而驰|其实不是|与原文相反|与原文不符|不是.*而是.*但|意思相反|opposite)/i.test(t)) return "反向表达";
       // 2) 偷换对象 / 混搭拼凑 / 张冠李戴 / 把A说成B / 材料拼凑
       if (/(偷换|混同|张冠李戴|移花接木|移接|把.*看成|把.*当成|把.*说成|混搭|拼凑|串了|错位|不对应|对应错|风马牛)/i.test(t)) return "偷换对象";
       // 3) 数字 / 时间 / 地点 / 朝代 细节错
@@ -1788,66 +1775,41 @@
     function trapBadge(q, opt, info) {
       const isCorrect = optionKey(opt) === q.answer;
       if (isCorrect) return { cls: "good", text: "✓ 与原文一致" };
-      // 判断主源 = 数据里真实的解释 feedback（已去选项前缀）；label 是 infer 推断的粗分类标签，
-      // 其中“无依据”只是兜底（表示未细分），绝不能当作“无中生有”的罪名。因此：
-      //   - 具体类型靠 feedback 文本关键词命中；
-      //   - label 仅当它是高置信类型(反向/偷换/数字/范围/层次)时并入帮助传导，
-      //     兜底“无依据/原词复现/同义替换/…”不参与具体罪名。
-      const feed = (info.feedback || "").toLowerCase();
-      const L = info.label || "";
+      const joined = `${info.label} ${info.feedback}`.toLowerCase();
       const abs = ABSOLUTE_WORDS.find(w => wordTokens(opt).some(t => t.w.toLowerCase() === w));
-      const lab = {
-        reversal: /反向表达/.test(L),
-        swap: /偷换对象/.test(L),
-        num: /数字\/时间错误/.test(L),
-        scope: /范围错误/.test(L),
-        layer: /层次错分|总结段误判/.test(L)
-      };
       // —— 顺序：最具体 → 次具体 → 中性兜底 ——
-      // 1) 反向/说反了（label 明确 或 feedback 含“与原文相反/相反/说反/其实不是”，
-      //    以及“原文说A…，B却 can't/不能”这类 选项与原意相反的对照句型。
-      //    注意：“与原文不符”是笼统的不一致词，不算严格“相反”，不在此触发，避免误贴)
-      if (lab.reversal ||
-          /(相反|反向|反了|说反|背道而驰|其实不是|其实是.*但|与原文相反|与原意相反|意思相反|opposite|cannot|说反了|恰恰相反)/i.test(feed) ||
-          /(原文|文中)说?.{0,24}(can't|cannot|不能|没法|做不到|不是.*而是)/i.test(feed)) {
+      // 1) 反向/说反了（含英文 can't/cannot 作反义对照、中文“其实不是/与原文相反”）
+      if (/(反向表达|相反|反向|说反|反了|背道而驰|其实不是|其实是.*但|与原文相反|与原文不符|意思相反|opposite|cannot|说反了)/i.test(joined)) {
         return { cls: "bad", text: "陷阱·相反" };
       }
-      // 2) 偷换对象 / 混搭拼凑 / 张冠李戴 / 名称错（把A说成B、张冠李戴到别处）
-      if (lab.swap ||
-          /(偷换|混同|混搭|拼凑|张冠李戴|移花接木|移接|把.*看成|把.*当成|把.*说成|对应错|串了|不对应|错位|风马牛|名称错误|名字错|张冠李戴到|名称不符|叫错|移接到别处|对应的是其他|对应其他)/i.test(feed)) {
+      // 2) 偷换对象 / 混搭拼凑 / 张冠李戴（把A说成B）
+      if (/(偷换对象|偷换|混同|混搭|拼凑|张冠李戴|移花接木|移接|把.*看成|把.*当成|把.*说成|对应错|串了|不对应|错位|风马牛)/i.test(joined)) {
         return { cls: "bad", text: "陷阱·偷换/拼凑" };
       }
       // 3) 太绝对：选项含绝对词 或 中文写明“过于绝对/绝对化/说得太满”
-      if (abs || /(过于绝对|太绝对|绝对化|说得太满|绝对词|太绝对了|语气绝对)/i.test(feed)) {
+      if (abs || /(过于绝对|太绝对|绝对化|说得太满|绝对词|太绝对了|语气绝对)/i.test(joined)) {
         return { cls: "bad", text: "陷阱·太绝对" };
       }
       // 4) 数字/时间/地点/朝代 细节错（含“不是最早/不是最高/写错”等中文，与具体数字）
-      if (lab.num ||
-          /(数字|时间|数量|朝代|年份|日期|地点|价格|金额|不是最早|不是最高|写错|两处|wrong.*(number|time)|twice|fewer|more than)/i.test(feed) ||
-          /(April|March|Wuhan|Wuhu|Yuan|Qing|two\b|three\b|cost|pollution|speed)/i.test(feed)) {
+      if (/(数字|时间|数量|朝代|年份|日期|地点|价格|金额|不是最早|不是最高|写错|两处|wrong.*(number|time)|twice|fewer|more than)/i.test(joined) ||
+          /(April|March|Wuhan|Wuhu|Yuan|Qing|two\b|three\b|cost|pollution|speed)/i.test(joined)) {
         return { cls: "bad", text: "陷阱·偷换条件(数字/时间)" };
       }
       // 5) 以偏概全 / 范围过窄（局部当整体、只抓某细节）
-      if (lab.scope ||
-          /(只涵盖|只抓住|只对应|过窄|以偏概全|某个|局部|只提|只涉及|只说了|仅.*段|细节当|范围过窄|范围错误|不能概括|片面|不能代表全文|覆盖不全面)/i.test(feed)) {
+      if (/(只涵盖|只抓住|只对应|过窄|以偏概全|某个|局部|只提|只涉及|只说了|仅.*段|细节当|范围过窄|范围错误|不能概括)/i.test(joined)) {
         return { cls: "bad", text: "陷阱·以偏概全" };
       }
       // 6) 范围过大（过度扩大/绝对化 all/every）
-      if (/(范围过大|范围太大|说得过大|扩大|all\b|every|整个世界|全部|所有|放之四海)/i.test(feed)) {
+      if (/(范围过大|范围太大|说得过大|扩大|all\b|every|整个世界|全部|所有)/i.test(joined)) {
         return { cls: "bad", text: "陷阱·范围过大" };
       }
-      // 7) 偏离主题 / 主旨题走题 / 出处·文体不符
-      if (/(偏离|走题|离题|不是主题|没抓住主旨|偏离主题|文体不符|体裁不符|体裁不对|文体不对|类型不符)/i.test(feed)) {
+      // 7) 偏离主题 / 主旨题走题
+      if (/(偏离|走题|离题|不是主题|没抓住主旨|偏离主题)/i.test(joined)) {
         return { cls: "bad", text: "陷阱·偏离主题" };
       }
-      // 8) 真正的“无中生有”：feedback 明说“原文没有/没提/不能推出/毫无依据/纯脑补”等强词。
-      //     （只跑 feedback，不拼 label——label 的兜底“无依据”不参与，避免重蹈过度归因）
-      if (/(原文没有|原文并未|原文根本没|没提到|没提|未提|未涉及|未出现|凭空|不能推出|无法推出|没有依据|无从|子虚乌有|文章中并没有|原文中并没有|依据不足|缺乏依据|原文没有提到|文中没有|并不存在|找不到依据|无依据|语境无依据|脑补|忽略了|漏看|没看到原文)/i.test(feed)) {
+      // 8) 真正的“无中生有”只认强词（原文压根没出现/推不出）
+      if (/(原文没有|原文并未|原文根本没|没提到|没提|未提|未涉及|未出现|凭空|不能推出|无法推出|没有依据|无从|子虚乌有|文章中并没有|原文中并没有)/i.test(joined)) {
         return { cls: "bad", text: "陷阱·无中生有" };
-      }
-      // 8b) 结构题干扰项：层次/结构划分错（仅在题干确为 structure 时启用，避免误伤细节题）
-      if (lab.layer || (isStructureQuestion(q) && /(层次|结构|划分|分层|框架|层析)/i.test(feed) && !/(吻合|正确|一致|最佳|最准)/i.test(feed))) {
-        return { cls: "bad", text: "陷阱·结构层次错分" };
       }
       // —— 中性兜底：能说明是干扰项，但无法细分具体陷阱，不硬扣罪名 ——
       return { cls: "bad", text: "待判别·依据不足" };
