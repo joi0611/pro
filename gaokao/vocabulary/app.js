@@ -299,7 +299,8 @@ const els = {
 };
 
 let state = loadState();
-let calendarMonth = startOfMonth(parseDate(state.selectedDate || todayKey()));
+// 登录和首次打开时，日历默认定位到当前月份，不使用上次保存的旧日期。
+let calendarMonth = startOfMonth(parseDate(todayKey()));
 let activeQueue = [];
 let activeIndex = 0;
 let activeDate = state.selectedDate || todayKey();
@@ -1438,7 +1439,7 @@ function resumeInterruptedLearningIfNeeded() {
   activeSessionType = type;
   activeDate = key;
   state.selectedDate = key;
-  calendarMonth = startOfMonth(parseDate(key));
+  // 恢复旧的未完成训练时，只恢复训练内容，不改变当前月份视图。
   activeQueue = savedSession.queueIds.map((id) => getGroup(id)).filter(Boolean);
   if (!activeQueue.length) {
     clearTrainingSessionByKey(type, key);
@@ -2297,7 +2298,7 @@ async function initializeCloudSync(code) {
       const pendingCompletionMerge = applyPendingCompletions(state, code);
       state = pendingCompletionMerge.state;
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-      calendarMonth = startOfMonth(parseDate(state.selectedDate || todayKey()));
+      calendarMonth = startOfMonth(parseDate(todayKey()));
       activeDate = state.selectedDate || todayKey();
       els.startDate.value = state.startDate || todayKey();
       setDailyActive(state.dailyCount || 30);
