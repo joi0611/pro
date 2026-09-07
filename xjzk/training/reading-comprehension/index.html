@@ -1646,13 +1646,20 @@
     }
 
     function inferCompareLabel(q, key, text) {
+      const t = text;
       if (key === q.answer) {
-        return /同义|对应|=|替换|created|written|quickly|fast|nervous|uneasy|company|lonely/i.test(text) ? "同义替换" : "原词复现";
+        return /同义|对应|=|替换|created|written|quickly|fast|nervous|uneasy|company|lonely/i.test(t) ? "同义替换" : "原词复现";
       }
-      if (/偷换|混同|不对应|对象|朝代/.test(text)) return "偷换对象";
-      if (/数字|时间|地点|two|three|Yuan|Qing|April|March|Wuhan|Wuhu|方向错|speed|cost|pollution/.test(text)) return "数字/时间错误";
-      if (/相反|反向|opposite/.test(text)) return "反向表达";
-      if (/范围|过大|过小|all/.test(text)) return "范围错误";
+      // —— 干扰项：从最具体到兜底（返回仍落在标准7类标签，保证 UI/选择器不出现陌生标签）——
+      // 1) 反向 / 说反了
+      if (/(相反|反向|反了|说反|背道而驰|其实不是|与原文相反|与原文不符|不是.*而是.*但|意思相反|opposite)/i.test(t)) return "反向表达";
+      // 2) 偷换对象 / 混搭拼凑 / 张冠李戴 / 把A说成B / 材料拼凑
+      if (/(偷换|混同|张冠李戴|移花接木|移接|把.*看成|把.*当成|把.*说成|混搭|拼凑|串了|错位|不对应|对应错|风马牛)/i.test(t)) return "偷换对象";
+      // 3) 数字 / 时间 / 地点 / 朝代 细节错
+      if (/(数字|时间|地点|数量|朝代|年份|日期|价格|金额|不是最早|不是最高|写错|April|March|Wuhan|Wuhu|Yuan|Qing|cost|pollution|two\b|three\b|twice|speed)/i.test(t)) return "数字/时间错误";
+      // 4) 范围 / 以偏概全 / 范围错误
+      if (/(范围|过大|过小|过窄|只涵盖|只抓住|只提|只对应|局部|以偏概全|某个细节|细节当|不能概括)/i.test(t)) return "范围错误";
+      // 5) 反向的“语气绝对”类无标准标签，交由 trapBadge 靠绝对词捕捉，这里归兜底
       return "无依据";
     }
 
@@ -1759,21 +1766,53 @@
       return reds;
     }
 
-    // 把 infer 标签/反馈 映射到“六类陷阱”徽章文案
+    // 把 infer 标签/反馈 映射到“六类陷阱”徽章文案。
+    // 修复(2026-09-07)：此前把 label=“无依据”(兜底)一律渲染成“无中生有”，
+    // 导致 245 个干扰项里 80% 都显示成“无中生有”。现在改为：
+    // ① inferCompareLabel 已先补中文信号词，能分到具体类就不落兜底；
+    // ② 这里的“无中生有”只认 feedback 里真正的“原文根本没有”类强词，
+    //    其余无法细分的中性解释一律显示“待判别/依据不足”，不冤枉。
     function trapBadge(q, opt, info) {
       const isCorrect = optionKey(opt) === q.answer;
       if (isCorrect) return { cls: "good", text: "✓ 与原文一致" };
       const joined = `${info.label} ${info.feedback}`.toLowerCase();
       const abs = ABSOLUTE_WORDS.find(w => wordTokens(opt).some(t => t.w.toLowerCase() === w));
-      let text = "";
-      if (/(反向表达|相反|反向|opposite|反了)/.test(joined)) text = "陷阱·相反";
-      else if (abs) text = "陷阱·太绝对";
-      else if (/(数字|时间|数量|朝代|地点|偷换对象|范围错误|混同)/.test(joined)) text = "陷阱·偷换/混同";
-      else if (/(只涵盖|只抓住|过窄|以偏概全|某个|局部|只对应)/.test(joined)) text = "陷阱·以偏概全";
-      else if (/(范围过大|all|所有|未来|全部)/.test(joined)) text = "陷阱·范围过大";
-      else if (/(偏离|不是|无依据|未提|没提|没有提到|原文没有|不能推出)/.test(joined)) text = "陷阱·无中生有";
-      else text = "陷阱·待判别";
-      return { cls: "bad", text };
+      // —— 顺序：最具体 → 次具体 → 中性兜底 ——
+      // 1) 反向/说反了（含英文 can't/cannot 作反义对照、中文“其实不是/与原文相反”）
+      if (/(反向表达|相反|反向|说反|反了|背道而驰|其实不是|其实是.*但|与原文相反|与原文不符|意思相反|opposite|cannot|说反了)/i.test(joined)) {
+        return { cls: "bad", text: "陷阱·相反" };
+      }
+      // 2) 偷换对象 / 混搭拼凑 / 张冠李戴（把A说成B）
+      if (/(偷换对象|偷换|混同|混搭|拼凑|张冠李戴|移花接木|移接|把.*看成|把.*当成|把.*说成|对应错|串了|不对应|错位|风马牛)/i.test(joined)) {
+        return { cls: "bad", text: "陷阱·偷换/拼凑" };
+      }
+      // 3) 太绝对：选项含绝对词 或 中文写明“过于绝对/绝对化/说得太满”
+      if (abs || /(过于绝对|太绝对|绝对化|说得太满|绝对词|太绝对了|语气绝对)/i.test(joined)) {
+        return { cls: "bad", text: "陷阱·太绝对" };
+      }
+      // 4) 数字/时间/地点/朝代 细节错（含“不是最早/不是最高/写错”等中文，与具体数字）
+      if (/(数字|时间|数量|朝代|年份|日期|地点|价格|金额|不是最早|不是最高|写错|两处|wrong.*(number|time)|twice|fewer|more than)/i.test(joined) ||
+          /(April|March|Wuhan|Wuhu|Yuan|Qing|two\b|three\b|cost|pollution|speed)/i.test(joined)) {
+        return { cls: "bad", text: "陷阱·偷换条件(数字/时间)" };
+      }
+      // 5) 以偏概全 / 范围过窄（局部当整体、只抓某细节）
+      if (/(只涵盖|只抓住|只对应|过窄|以偏概全|某个|局部|只提|只涉及|只说了|仅.*段|细节当|范围过窄|范围错误|不能概括)/i.test(joined)) {
+        return { cls: "bad", text: "陷阱·以偏概全" };
+      }
+      // 6) 范围过大（过度扩大/绝对化 all/every）
+      if (/(范围过大|范围太大|说得过大|扩大|all\b|every|整个世界|全部|所有)/i.test(joined)) {
+        return { cls: "bad", text: "陷阱·范围过大" };
+      }
+      // 7) 偏离主题 / 主旨题走题
+      if (/(偏离|走题|离题|不是主题|没抓住主旨|偏离主题)/i.test(joined)) {
+        return { cls: "bad", text: "陷阱·偏离主题" };
+      }
+      // 8) 真正的“无中生有”只认强词（原文压根没出现/推不出）
+      if (/(原文没有|原文并未|原文根本没|没提到|没提|未提|未涉及|未出现|凭空|不能推出|无法推出|没有依据|无从|子虚乌有|文章中并没有|原文中并没有)/i.test(joined)) {
+        return { cls: "bad", text: "陷阱·无中生有" };
+      }
+      // —— 中性兜底：能说明是干扰项，但无法细分具体陷阱，不硬扣罪名 ——
+      return { cls: "bad", text: "待判别·依据不足" };
     }
 
     function hasAbsolute(opt) {
