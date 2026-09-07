@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>第四册 · UNIT 3-A</title>
+  <style>
+    :root{--ink:#241735;--muted:#746884;--purple:#5c35a2;--soft:#efe5ff;--paper:#fff8df;--line:#eadfb9}
+    *{box-sizing:border-box}body{margin:0;padding:20px 14px 50px;background:linear-gradient(135deg,#fff8df,#f4eaff 55%,#fff3c6);color:var(--ink);font-family:"Segoe UI","Microsoft YaHei",Arial,sans-serif}
+    main{width:min(760px,100%);margin:auto}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:20px}.back{color:var(--purple);font-weight:700;text-decoration:none}.sub{color:var(--muted);font-weight:700;font-size:14px}h1{margin:0;color:#3f236d;font-size:clamp(32px,8vw,54px)}.intro{color:var(--muted);line-height:1.6}
+    .progress{height:10px;background:#fff;border-radius:99px;overflow:hidden;border:1px solid var(--line);margin:14px 0 22px}.progress span{display:block;height:100%;width:10%;background:var(--purple);transition:width .2s}
+    .card{background:#fffdf7;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 12px 30px #3f236d18}.nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}.nav button,.speak{border:0;border-radius:10px;background:var(--soft);color:#3f236d;font-size:20px;font-weight:800;min-width:44px;min-height:42px;cursor:pointer}.nav button:disabled{opacity:.4}.number{color:var(--muted);font-weight:700}.wordline{display:flex;align-items:center;justify-content:space-between;gap:12px}.word{font-size:clamp(36px,10vw,64px);font-weight:800;color:#3f236d}.phonetic{color:var(--muted);font-size:18px}.speak{background:#ffd766;font-size:24px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}.info{padding:14px;border-radius:10px;background:#fff8df;border:1px solid var(--line);line-height:1.6}.label{display:block;color:var(--purple);font-weight:800;margin-bottom:4px}.example{grid-column:1/-1}.controls{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.controls button{padding:11px 16px;border-radius:10px;border:1px solid var(--line);background:white;color:var(--ink);font-weight:700;cursor:pointer}.controls .primary{background:var(--purple);color:white;border-color:var(--purple)}
+    @media(max-width:560px){body{padding:14px 10px 36px}.card{padding:16px}.grid{grid-template-columns:1fr}.example{grid-column:auto}.word{font-size:44px}.top{align-items:flex-start;flex-direction:column;gap:4px}}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top"><a class="back" href="book4.html">‹ 返回第四册</a><span class="sub">UNIT 3-A · 761–770</span></div>
+    <h1>UNIT 3-A</h1>
+    <p class="intro">第四册 UNIT 3 单词学习。点击喇叭播放有道词典发音；网络不可用时自动尝试本地音频，再使用浏览器语音。</p>
+    <div class="progress"><span id="bar"></span></div>
+    <section class="card" aria-live="polite">
+      <div class="nav"><button id="prev" aria-label="上一个">‹</button><span class="number" id="count">761 / 770</span><button id="next" aria-label="下一个">›</button></div>
+      <div class="wordline"><div><div class="word" id="word"></div><div class="phonetic" id="phonetic"></div></div><button class="speak" id="speak" aria-label="播放发音">🔊</button></div>
+      <div class="grid"><div class="info"><span class="label">中文释义</span><span id="chinese"></span></div><div class="info"><span class="label">英文释义</span><span id="definition"></span></div><div class="info example"><span class="label">例句</span><span id="example"></span></div></div>
+      <div class="controls"><button id="mark">标记已学习</button><button class="primary" id="auto">播放并下一词</button></div>
+    </section>
+  </main>
+  <script>
+    const words=[
+      {word:"castle",phonetic:"[ˈkæsl]",chinese:"城堡",definition:"a large home where a king or queen usually lives",example:"Jim learned that it was common to find huge castles in the past."},
+      {word:"decision",phonetic:"[dɪˈsɪʒn]",chinese:"决定",definition:"a choice",example:"Tim made the decision to eat the carrots to be healthier."},
+      {word:"empire",phonetic:"[ˈempaɪər]",chinese:"帝国",definition:"a kingdom",example:"The Roman Empire included several hundred towns and cities."},
+      {word:"explore",phonetic:"[ɪkˈsplɔːr]",chinese:"探索",definition:"to look at something in a careful way to learn about it",example:"The woman, who is alone, loves to explore nature."},
+      {word:"flight",phonetic:"[flaɪt]",chinese:"空中航行",definition:"a trip on an airplane",example:"Max and Shelly shared a flight to Mexico City last summer."},
+      {word:"guard",phonetic:"[ɡɑːrd]",chinese:"守卫",definition:"to watch in order to protect",example:"Our dog Rover is guarding the house at the moment."},
+      {word:"incredible",phonetic:"[ɪnˈkredəbl]",chinese:"非常棒的",definition:"very good",example:"This book mentions how incredible the beaches are in Hawaii."},
+      {word:"serve",phonetic:"[sɜːrv]",chinese:"供应",definition:"to give someone food in a restaurant or at home",example:"They serve many types of food at this restaurant."},
+      {word:"skin",phonetic:"[skɪn]",chinese:"皮肤",definition:"the outer part that covers humans and animals",example:"For beautiful skin, a healthy diet and good habits are necessary."},
+      {word:"southern",phonetic:"[ˈsʌðərn]",chinese:"南方的",definition:"being in or toward the south",example:"The man regretted not visiting southern California last summer."}
+    ];
+    let index=0;const $=id=>document.getElementById(id);const localBase="audio/unit3-A-";const youdao="https://dict.youdao.com/dictvoice?audio=";let active=null;
+    function stop(){if(active){active.pause();active.currentTime=0;active=null}if("speechSynthesis" in window)window.speechSynthesis.cancel()}
+    function speak(text,lang="en-US"){return new Promise(resolve=>{if(!("speechSynthesis" in window)){resolve();return}let done=false;const finish=()=>{if(done)return;done=true;clearTimeout(timer);resolve()};const u=new SpeechSynthesisUtterance(text);u.lang=lang;u.rate=.84;u.onend=finish;u.onerror=finish;const timer=setTimeout(finish,5000);window.speechSynthesis.cancel();window.speechSynthesis.speak(u)})}
+    function play(url,text,lang="en-US"){return new Promise(resolve=>{const a=new Audio(url);let done=false;const finish=ok=>{if(done)return;done=true;clearTimeout(timer);if(active===a)active=null;resolve(ok)};const timer=setTimeout(()=>{a.pause();finish(false)},2500);active=a;a.onended=()=>finish(true);a.onerror=()=>finish(false);a.play().catch(()=>finish(false))})}
+    async function pronounce(item){stop();const remote=youdao+encodeURIComponent(item.word)+"&type=2";if(await play(remote,item.word))return;if(await play(localBase+item.word+".wav",item.word))return;await speak(item.word);}
+    function render(){const item=words[index];$("word").textContent=item.word;$("phonetic").textContent=item.phonetic;$("chinese").textContent=item.chinese;$("definition").textContent=item.definition;$("example").textContent=item.example;$("count").textContent=(761+index)+" / 770";$("bar").style.width=((index+1)/words.length*100)+"%";$("prev").disabled=index===0;$("next").disabled=index===words.length-1}
+    $("speak").onclick=()=>pronounce(words[index]);$("prev").onclick=()=>{if(index){index--;render()}};$("next").onclick=()=>{if(index<words.length-1){index++;render()}};$("mark").onclick=()=>{localStorage.setItem("unit3ALearned-"+index,"1");if(index<words.length-1){index++;render()}};$("auto").onclick=async()=>{const item=words[index];pronounce(item);await new Promise(r=>setTimeout(r,2700));if(index<words.length-1){index++;render()}};render();
+  </script>
+</body>
+</html>
