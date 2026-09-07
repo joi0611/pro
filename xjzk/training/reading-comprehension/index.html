@@ -403,6 +403,18 @@
       font-family: "Microsoft YaHei", Arial, sans-serif;
       font-size: 13px;
     }
+    /* ===== 复盘增强：原文对照 + 红绿标词 + 陷阱徽章 ===== */
+    .rev-optwrap { line-height: 1.8; }
+    .w-red { color: #c62828; font-weight: 700; }
+    .w-green { color: #1b7a45; font-weight: 700; }
+    .rev-evidence { margin-top: 6px; padding: 7px 10px; border-left: 3px solid #9fd1ab; background: #f4faf6; border-radius: 0 6px 6px 0; font-family: Georgia, "Times New Roman", serif; font-size: 14px; color: #2c3e37; }
+    .rev-evidence .cap { display: block; font-family: "Microsoft YaHei", Arial, sans-serif; font-size: 11px; color: #6b7480; margin-bottom: 2px; font-weight: 600; }
+    .rev-trapchip { display: inline-flex; align-items: center; height: 22px; margin-left: 6px; padding: 0 8px; border-radius: 999px; font-size: 11.5px; font-weight: 800; }
+    .rev-trapchip.bad { background: #fdecec; border: 1px solid #f0b1b1; color: #a32d2d; }
+    .rev-trapchip.good { background: #e8f7ef; border: 1px solid #9bd6b4; color: #116339; }
+    .rev-absnote { display: block; margin-top: 4px; font-family: "Microsoft YaHei", Arial, sans-serif; font-size: 12px; color: #a32d2d; }
+    .rev-legend { font-size: 12px; color: #6b7480; margin: 8px 0; line-height: 1.6; }
+    .rev-legend b.red { color: #c62828; } .rev-legend b.green { color: #1b7a45; }
     .feedback {
       display: none;
       margin-top: 10px;
@@ -1376,10 +1388,8 @@
       $("finalStem").textContent = `复盘：你选择 ${saved.chosen}，正确答案 ${q.answer}`;
       $("options").innerHTML = `
         <div class="feedback show ${saved.correct ? "good" : "bad"}"><strong>${saved.correct ? "判断正确" : "这一次没有选对"}</strong><br>${escapeHtml(q.explanation)}<br>关键依据：${escapeHtml(locatedEvidenceText(q))}</div>
-        ${q.options.map((opt, index) => {
-          const key = optionKey(opt), info = optionCompareInfo(q, opt, index), correct = key === q.answer;
-          return `<div class="compare-row"><div>${escapeHtml(opt)}</div><div class="trap-label ${correct ? "good" : "bad"}">${escapeHtml(correct ? "匹配答案句" : info.label)}</div><div class="compare-feedback show">${highlightCompareTerms(info.feedback)}</div></div>`;
-        }).join("")}
+        ${revLegendHtml()}
+        ${q.options.map((opt, index) => renderEnhancedReviewRow(q, opt, index)).join("")}
       `;
     }
 
@@ -1681,6 +1691,142 @@
       });
       return found;
     }
+
+    /* ============ 复盘增强 helpers：原文对照 + 红绿标词 + 六类陷阱 ============ */
+
+    const ABSOLUTE_WORDS = ["only","all","always","never","fully","entirely","every","whole","nobody","nothing","no one","completely"];
+    const REVERSAL_WORDS = ["not","never","no","can't","cannot","don't","doesn't","isn't","aren't","won't","without","opposite"];
+    // 英文虚词/极短功能词不参与上色，避免“are/is/good”等被误标
+    const COLOR_STOPWORDS = new Set(["are","is","am","was","were","be","been","being","do","does","did","have","has","had","will","would","can","could","may","might","shall","should","must","the","a","an","and","or","but","of","to","for","with","in","on","at","by","from","as","it","its","this","that","these","those","you","your","we","our","they","their","he","his","she","her","them","who","what","when","where","which","why","how","not","no","only","all","not","there","than","so","if","about","into","out","up","down"]);
+
+    // 把一个英文选项按“词元”切成数组 [{w, start, end}]（保留标点位置，只对>=3字母的词判类）
+    function wordTokens(text) {
+      const out = [];
+      const re = /[A-Za-z]+(?:'[A-Za-z]+)?/g;
+      let m;
+      while ((m = re.exec(text)) !== null) {
+        if (m[0].length >= 3) out.push({ w: m[0], start: m.index, end: re.lastIndex });
+      }
+      return out;
+    }
+
+    // 收集答案词 → 用于“原词复现”判定
+    function evidenceWordSet(text) {
+      const s = new Set();
+      wordTokens(text).forEach(t => s.add(t.w.toLowerCase()));
+      return s;
+    }
+
+    // 在纯文本上按词元注入 class（支持 green/red）。对每段分别转义，安全处理引号/撇号等字符。
+    function colorizeWords(text, opts) {
+      const tokens = wordTokens(text);
+      const evWords = opts.evidenceWords || new Set();
+      const kwSyn = opts.kwSyn || new Set();
+      const red = new Set((opts.red || []).map(w => w.toLowerCase()));
+      // 为每个 token 定类（红优先；虚词只拦绿色，不拦红色陷阱词）
+      const clsMap = tokens.map(t => {
+        const lw = t.w.toLowerCase();
+        const isRed = red.has(lw);
+        if (isRed) return "w-red";
+        if (COLOR_STOPWORDS.has(lw)) return null;
+        if (evWords.has(lw) || kwSyn.has(lw)) return "w-green";
+        return null;
+      });
+      // 逐段拼接：文本边界区段按原文转义，命中的词包 span
+      let html = "";
+      let cursor = 0;
+      tokens.forEach((t, i) => {
+        const cls = clsMap[i];
+        if (t.start > cursor) html += escapeHtml(text.slice(cursor, t.start));
+        const frag = escapeHtml(text.slice(t.start, t.end));
+        html += cls ? `<span class="${cls}">${frag}</span>` : frag;
+        cursor = t.end;
+      });
+      if (cursor < text.length) html += escapeHtml(text.slice(cursor));
+      return html;
+    }
+
+    // 依据 q / 选项 / 答案/信息，得到该选项的红词表：绝对化词必红；反向/否定词仅在判为“反向表达”时才红
+    function optionRedWords(opt, isCorrect, info) {
+      const reds = [];
+      if (isCorrect) return reds;
+      const isReversal = /反向表达|相反|反向|opposite|反了|背道而驰/i.test(`${info.label} ${info.feedback}`);
+      wordTokens(opt).forEach(t => {
+        const lw = t.w.toLowerCase();
+        if (ABSOLUTE_WORDS.includes(lw)) reds.push(t.w);
+        else if (isReversal && REVERSAL_WORDS.includes(lw)) reds.push(t.w);
+      });
+      return reds;
+    }
+
+    // 把 infer 标签/反馈 映射到“六类陷阱”徽章文案
+    function trapBadge(q, opt, info) {
+      const isCorrect = optionKey(opt) === q.answer;
+      if (isCorrect) return { cls: "good", text: "✓ 与原文一致" };
+      const joined = `${info.label} ${info.feedback}`.toLowerCase();
+      const abs = ABSOLUTE_WORDS.find(w => wordTokens(opt).some(t => t.w.toLowerCase() === w));
+      let text = "";
+      if (/(反向表达|相反|反向|opposite|反了)/.test(joined)) text = "陷阱·相反";
+      else if (abs) text = "陷阱·太绝对";
+      else if (/(数字|时间|数量|朝代|地点|偷换对象|范围错误|混同)/.test(joined)) text = "陷阱·偷换/混同";
+      else if (/(只涵盖|只抓住|过窄|以偏概全|某个|局部|只对应)/.test(joined)) text = "陷阱·以偏概全";
+      else if (/(范围过大|all|所有|未来|全部)/.test(joined)) text = "陷阱·范围过大";
+      else if (/(偏离|不是|无依据|未提|没提|没有提到|原文没有|不能推出)/.test(joined)) text = "陷阱·无中生有";
+      else text = "陷阱·待判别";
+      return { cls: "bad", text };
+    }
+
+    function hasAbsolute(opt) {
+      return wordTokens(opt).some(t => ABSOLUTE_WORDS.includes(t.w.toLowerCase()));
+    }
+
+    // 选项的红/绿词高亮（英文选项区用）：正确答案的“对上”词标绿；错误项只标红陷阱词
+    function decorateOption(opt, q, isCorrect, evText, info) {
+      const kwSyn = new Set();
+      synonymTerms([...q.keywords, opt], q).forEach(w => kwSyn.add(String(w).toLowerCase()));
+      q.keywords.forEach(k => kwSyn.add(String(k).toLowerCase()));
+      const evSet = isCorrect ? evidenceWordSet(evText) : new Set();
+      const red = optionRedWords(opt, isCorrect, info);
+      return colorizeWords(opt, { evidenceWords: evSet, kwSyn, red });
+    }
+
+    // 原文证据句高亮（绿色 = 与“答案选项”对上；保留 yellow keyword 的语义作区分）
+    function decorateEvidence(evText, q, ansOpt) {
+      const ansSet = evidenceWordSet(ansOpt || "");
+      const kwSyn = new Set();
+      if (ansOpt) synonymTerms([...q.keywords, ansOpt], q).forEach(w => kwSyn.add(String(w).toLowerCase()));
+      q.keywords.forEach(k => kwSyn.add(String(k).toLowerCase()));
+      return colorizeWords(evText, { evidenceWords: ansSet, kwSyn, red: [] });
+    }
+
+    function evidenceTextFor(q) {
+      return locatedEvidenceText(q) || q.evidence || "";
+    }
+
+    function revLegendHtml() {
+      return `<div class="rev-legend">图例：<b class="red">红字</b>＝错误关键词（绝对化/反向），<b class="green">绿字</b>＝与原文对上的原词/同义词。每一选项都贴上“原文依据”便于直接对照。</div>`;
+    }
+
+    /* ================= 复盘增强渲染（替换原逐选项行） ================= */
+    function renderEnhancedReviewRow(q, opt, index) {
+      const key = optionKey(opt);
+      const info = optionCompareInfo(q, opt, index);
+      const correct = key === q.answer;
+      const evText = evidenceTextFor(q);
+      const badge = trapBadge(q, opt, info);
+      const optHtml = decorateOption(opt, q, correct, evText, info);
+      const evHtml = decorateEvidence(evText, q, correct ? opt : null);
+      const absNote = (!correct && hasAbsolute(opt)) ? `<span class="rev-absnote">⚠ 含绝对化词，几乎一定是错误选项——原文很少把话说“满”。</span>` : "";
+      return `
+        <div class="compare-row rev-optwrap">
+          <div>${optHtml}<span class="rev-trapchip ${badge.cls}">${escapeHtml(badge.text)}</span></div>
+          <div class="rev-evidence"><span class="cap">↳ 原文依据（对照）</span>${evHtml}</div>
+          <div class="compare-feedback show">${highlightCompareTerms(info.feedback)}</div>
+          ${absNote}
+        </div>
+      `;
+    }
+    /* ============================================================ */
 
     function escapeHtml(s) {
       return String(s).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
