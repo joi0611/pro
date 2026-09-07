@@ -176,6 +176,7 @@ const LOGIN_CODES = [
   "S2A9VD", "J5N7HX", "U6M3PC", "F4R8YL", "P7C2ZK", "A9W5DG", "M2H6RT", "Q4L8XN", "Z7K3FA", "B5T9MJ",
   "V2P6QH", "L8D4CY", "T3X7RN", "N9F2KB", "D5J8WA", "R6M4PL", "X2Q9TE", "G7V3HC", "K5B8ND", "C4Y6RJ",
   "Y9L2VF", "W5T7XA", "E3P8KM", "S6H4QN", "J2R9DZ", "U8C5LB", "F7N3WY", "P4M6TX", "A2Q8CJ", "M9V5RS",
+  "H8Q4ZM",
 ];
 const AGAIN_REQUEUE_DISTANCE = 4;
 const COMPLETE_COLORS = [
@@ -2271,15 +2272,17 @@ async function saveStateToCloudWithRetry(code, attempts = 3) {
 
 async function initializeCloudSync(code) {
   cloudSyncReady = false;
-  const localStateBeforeCloud = { ...loadStateFallback(), ...state };
   try {
     const cloudPayload = await callCloudFunction("load_vocab_progress", { p_login_code: code });
     const cloudState = selectActiveCloudState(cloudPayload);
+    // 云端请求期间用户可能已经开始学习。必须在请求完成后重新读取
+    // 当前 state，不能使用请求开始时的旧快照，否则会把刚产生的进度清掉。
+    const localStateAtMerge = { ...loadStateFallback(), ...state };
     if (cloudState && typeof cloudState === "object") {
       const needsInitialization = isFirstLoginState(cloudState);
       if (needsInitialization) {
-        if (hasLearningActivity(localStateBeforeCloud)) {
-          state = localStateBeforeCloud;
+        if (hasLearningActivity(localStateAtMerge)) {
+          state = localStateAtMerge;
         } else {
           state = { ...loadStateFallback(), ...cloudState };
           resetStateToToday();
@@ -2289,7 +2292,7 @@ async function initializeCloudSync(code) {
         // 本机状态和云端状态都可能包含不同日期的学习记录。
         // 不能因为本机有活动就整份覆盖云端，否则换设备或跨天登录时，
         // 云端已经保存的 completedDates / quizResults / progress 会消失。
-        state = mergePersistedStates(cloudState, localStateBeforeCloud);
+        state = mergePersistedStates(cloudState, localStateAtMerge);
       }
       const pendingCompletionMerge = applyPendingCompletions(state, code);
       state = pendingCompletionMerge.state;
@@ -2305,8 +2308,8 @@ async function initializeCloudSync(code) {
       if (pendingCompletionMerge.keys.length) clearPendingCompletions(code, pendingCompletionMerge.keys);
     } else {
       cloudStateEnvelope ||= createCloudEnvelope();
-      if (hasLearningActivity(localStateBeforeCloud)) {
-        state = localStateBeforeCloud;
+      if (hasLearningActivity(localStateAtMerge)) {
+        state = localStateAtMerge;
       } else {
         resetStateToToday();
         buildPlan();
