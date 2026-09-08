@@ -457,8 +457,17 @@
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = language;
         utterance.rate = language === "zh-CN" ? .88 : .82;
-        utterance.onend = resolve;
-        utterance.onerror = resolve;
+        let settled = false;
+        const finish = function () {
+          if (settled) return;
+          settled = true;
+          window.clearTimeout(timeoutId);
+          resolve();
+        };
+        const timeoutId = window.setTimeout(finish, 5000);
+        utterance.onend = finish;
+        utterance.onerror = finish;
+        window.speechSynthesis.cancel();
         window.speechSynthesis.speak(utterance);
       });
     }
