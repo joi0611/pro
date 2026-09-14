@@ -19,8 +19,13 @@ const context = {
   }
 };
 vm.createContext(context);
-const importedPath = path.join(__dirname, "imported-question-bank-20260829.js");
-if (fs.existsSync(importedPath)) vm.runInContext(fs.readFileSync(importedPath, "utf8"), context, { filename: importedPath });
+const importedPaths = fs.readdirSync(__dirname)
+  .filter(name => /^imported-question-bank-\d{8}\.js$/.test(name))
+  .sort()
+  .map(name => path.join(__dirname, name));
+for (const importedPath of importedPaths) {
+  vm.runInContext(fs.readFileSync(importedPath, "utf8"), context, { filename: importedPath });
+}
 vm.runInContext(
   html.slice(start, end).replace("...window.WORD_CHOICE_IMPORTED_20260829,", "...window.WORD_CHOICE_IMPORTED_20260829,") +
     "\n;globalThis.__audit = { posList, questionBank };",

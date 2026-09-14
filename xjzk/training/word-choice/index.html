@@ -1448,6 +1448,26 @@
       font-weight: 900;
       white-space: nowrap;
     }
+
+    .lesson-card .latest-update-badge {
+      display: inline-flex;
+      width: fit-content;
+      max-width: 100%;
+      align-items: center;
+      min-height: 25px;
+      padding: 3px 10px;
+      border: 1px solid rgba(255, 220, 191, .9);
+      border-radius: 7px;
+      color: #fffaf6;
+      background: linear-gradient(115deg, #f5a14a 0%, #e56b45 46%, #b8344c 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 3px 8px rgba(157,50,57,.22);
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: .04em;
+      white-space: nowrap;
+      text-shadow: 0 1px 1px rgba(103,29,38,.38);
+    }
     .lesson-card.official-exam-card small {
       color: #7655a6 !important;
       font-weight: 800;
@@ -1475,7 +1495,7 @@
           <button class="btn" type="submit">进入训练</button>
         </div>
         <p class="login-error" id="loginError" aria-live="polite"></p>
-        <p class="login-note">请按领取的大小写输入登录码。验证通过后，本设备会保持登录状态。</p>
+        <p class="login-note">登录码不区分大小写。验证通过后，本设备会保持登录状态。</p>
       </form>
     </div>
   </main>
@@ -1496,6 +1516,7 @@
       </div>
       <div class="top-actions">
         <button class="home-link-btn top-library-link" id="backToLibraryBtn" type="button">进入题库首页</button>
+        <button class="home-link-btn top-library-link" id="printCurrentArticleBtn" type="button">PDF打印</button>
         <button class="home-link-btn top-library-link" id="notebookBtn" type="button">错题本 <span id="notebookCount">0</span></button>
         <a class="home-link-btn top-home-link" href="../../index.html">返回首页，训练其他专题</a>
       </div>
@@ -1669,6 +1690,7 @@
   <script src="../../assets/student-profile.js?v=20260828-1"></script>
   <script src="imported-question-bank-20260829.js?v=20260829-1"></script>
   <script src="imported-question-bank-20260902.js?v=20260902-1"></script>
+  <script src="imported-question-bank-20260913.js?v=20260914-visible-print-1"></script>
   <script>
     const loginCodes = new Set();
 
@@ -1747,7 +1769,7 @@
       const loginLabel = document.querySelector('label[for="loginCode"]');
       if (loginLabel) loginLabel.textContent = "请输入登录码";
       const loginNote = document.querySelector(".login-note");
-      if (loginNote) loginNote.textContent = "请按领取的大小写输入登录码。验证通过后，本设备会保持登录状态。";
+      if (loginNote) loginNote.textContent = "登录码不区分大小写。验证通过后，本设备会保持登录状态。";
       const appTitle = document.querySelector(".app header h1");
       if (appTitle) appTitle.textContent = "中考英语选词填空训练系统";
       const appSub = document.querySelector(".app header .sub");
@@ -3978,6 +4000,7 @@
     const questionBank = {
       ...window.WORD_CHOICE_IMPORTED_20260829,
       ...window.WORD_CHOICE_IMPORTED_20260902,
+      ...window.WORD_CHOICE_IMPORTED_20260913,
       xinjiang: initialXinjiangQuestion,
       rose: roseQuestion,
       maxfood: maxFoodQuestion,
@@ -4025,6 +4048,9 @@
             if (!bYear) return -1;
             if (aYear !== bYear) return bYear - aYear;
           }
+          const aLatest = String(a.entry[1]?.source || "").includes("乌鲁木齐市第一中学");
+          const bLatest = String(b.entry[1]?.source || "").includes("乌鲁木齐市第一中学");
+          if (aLatest !== bLatest) return aLatest ? -1 : 1;
           return a.originalIndex - b.originalIndex;
         })
         .map(({ entry }) => entry);
@@ -4039,7 +4065,7 @@
         const officialYear = getWordChoiceOfficialYear(data);
         const title = officialYear ? (rawTitle.replace(/^20\d{2}\s*新疆真题\s*[·.：:]?\s*/, "").trim() || "新疆中考选词填空") : rawTitle;
         const serial = String(index + 1).padStart(2, "0");
-        const badge = officialYear ? '<span class="official-exam-badge">' + officialYear + ' 新疆中考真题</span>' : '';
+        const badge = officialYear ? '<span class="official-exam-badge">' + officialYear + ' 新疆中考真题</span>' : (source.includes('乌鲁木齐市第一中学') ? '<span class="latest-update-badge">20260913 更新</span>' : '');
         return '<article class="lesson-card' + (officialYear ? ' official-exam-card' : '') + '"><span class="lesson-index">' + serial + '</span><div class="lesson-main">' + badge + '<strong>' + title + '</strong><small>' + source + '</small></div><button class="start-article-btn" type="button" data-start-article="' + key + '">开始训练</button></article>';
       }).join("");
       list.querySelectorAll("[data-start-article]").forEach(button => {
@@ -4057,6 +4083,44 @@
       document.body.classList.remove("training-active");
       renderLibrary();
       window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function buildPrintableWordChoicePassage(data) {
+      const holder = document.createElement("div");
+      holder.innerHTML = data.passageHtml || "";
+      holder.querySelectorAll(".blank-wrap").forEach(wrap => {
+        const blank = wrap.querySelector("[data-blank]");
+        const number = blank?.dataset.blank || "";
+        const replacement = document.createElement("span");
+        replacement.className = "print-blank";
+        replacement.textContent = `${number}. __________`;
+        wrap.replaceWith(replacement);
+      });
+      holder.querySelectorAll("button").forEach(button => button.remove());
+      holder.querySelectorAll(".clue").forEach(clue => clue.replaceWith(document.createTextNode(clue.textContent || "")));
+      return holder.innerHTML;
+    }
+
+    function printCurrentWordChoiceArticle() {
+      const data = questionBank[currentQuestionKey];
+      if (!data) {
+        alert("请先选择一篇选词填空文章，再点击打印。");
+        return;
+      }
+      const title = data.title || getArticleTitle(currentQuestionKey) || "选词填空练习";
+      const source = data.source || "名校优质真题";
+      const wordBank = (data.words || []).map(item => escapeHtml(item.text)).join("　　");
+      const passage = buildPrintableWordChoicePassage(data);
+      const popup = window.open("", "_blank", "width=920,height=760");
+      if (!popup) {
+        alert("浏览器阻止了打印窗口，请允许弹出窗口后重试。");
+        return;
+      }
+      popup.document.open();
+      popup.document.write(`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>${escapeHtml(title)} - 选词填空</title><style>
+        @page{size:A4;margin:12mm 14mm}*{box-sizing:border-box}body{margin:0;color:#111;background:#fff;font-family:Arial,"Microsoft YaHei",sans-serif;font-size:13px;line-height:1.9}.paper{max-width:760px;margin:0 auto}.head{text-align:center;border-bottom:2px solid #111;padding-bottom:9px;margin-bottom:14px}.head h1{margin:0 0 4px;font-size:23px}.source{margin:0;color:#444;font-size:12px}.student{display:flex;justify-content:space-between;margin-top:12px;font-size:12px}.instruction{margin:0 0 9px}.word-bank{margin:0 0 14px;padding:9px 12px;border:1px solid #555;text-align:center;font-weight:700;line-height:1.7}.passage{text-align:justify}.print-blank{display:inline-block;min-width:115px;text-align:center;font-weight:800;white-space:nowrap}@media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+      </style></head><body><main class="paper"><header class="head"><h1>${escapeHtml(title)}</h1><p class="source">来源：${escapeHtml(source)}</p><div class="student"><span>姓名：____________</span><span>用时：____________</span><span>得分：____________</span></div></header><h2>选词填空</h2><p class="instruction">从方框中选择恰当的词，并用其正确形式填空。每词限用一次。</p><section class="word-bank">${wordBank}</section><section class="passage">${passage}</section></main><script>window.addEventListener('load',()=>window.print());<\/script></body></html>`);
+      popup.document.close();
     }
 
     let currentQuestionKey = "xinjiang";
@@ -4795,6 +4859,7 @@
       if (event.target === popover) closePopovers();
     });
     document.getElementById("notebookBtn").addEventListener("click", openNotebook);
+    document.getElementById("printCurrentArticleBtn").addEventListener("click", printCurrentWordChoiceArticle);
     document.getElementById("notebookFilter").addEventListener("change", renderNotebook);
     document.getElementById("clearNotebookBtn").addEventListener("click", () => {
       if (!readNotebook().length || !window.confirm("确定清空本设备上的全部错题吗？")) return;
