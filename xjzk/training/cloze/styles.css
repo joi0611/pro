@@ -2878,6 +2878,25 @@ button:disabled {
   box-shadow: 0 10px 24px rgba(151, 101, 10, 0.12) !important;
 }
 
+.latest-update-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 24px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: linear-gradient(115deg, #f6a24b 0%, #e86f45 45%, #b9364c 100%);
+  border: 1px solid rgba(255, 224, 190, .8);
+  color: #fffaf5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  text-shadow: 0 1px 1px rgba(116, 34, 39, .35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 2px 6px rgba(160, 55, 55, .2);
+}
+
 .home-lesson-card.official-exam-card .home-card-main,
 .library-card.official-exam-card {
   gap: 7px;

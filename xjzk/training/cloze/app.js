@@ -3613,9 +3613,11 @@ const powerOfWords = {
   englishTitle: "The Power of Words",
   level: "初三",
   difficulty: "中等",
-  source: "2026年乌鲁木齐中考第三次模拟考试",
+  // 与本次九月模考完形篇目核对为同文，按最新来源优先。
+  source: "2026年乌鲁木齐市第一中学九年级上学期9月模考（原卷第17—31题）",
   tags: ["人物故事", "情感成长", "逻辑推理", "褒贬态度一致", "上下文复现"],
   available: true,
+  latestUpdate: "20260913",
   firstSentence: "A sad memory from Grade 7 came to my mind.",
   lastSentence: "I hope my words can help others.",
   tone: "转折变化",
@@ -3739,7 +3741,7 @@ const normalizedLessonSources = {
   "journey-not-alone": "2026年 · 乌鲁木齐市高新区（新市区） · 九年级英语模拟考试",
   "lesson-of-love": "2026年5月 · 乌鲁木齐经济技术开发区 · 九年级英语中考模拟考试",
   "learning-tcm": "2026年5月 · 乌鲁木齐市 · 乌鲁木齐市第十三中学 · 九年级英语中考模拟考试",
-  "power-of-words": "2026年 · 乌鲁木齐市 · 九年级英语第三次模拟考试",
+  "power-of-words": "2026年乌鲁木齐市第一中学九年级上学期9月模考",
   "little-cultural-ambassador": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语优质模拟考试",
   "nang-bowl-coffee": "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 中考英语热点模拟考试",
   "monkey-king-story": "2026年 · 新疆维吾尔自治区 · 初中学业水平考试英语真题",
@@ -3846,6 +3848,7 @@ function sortLessonsForDisplay(lessons) {
         if (!bYear) return -1;
         if (aYear !== bYear) return bYear - aYear;
       }
+      if (Boolean(a.item.latestUpdate) !== Boolean(b.item.latestUpdate)) return a.item.latestUpdate ? -1 : 1;
       return a.originalIndex - b.originalIndex;
     })
     .map(({ item }) => item);
@@ -4018,9 +4021,11 @@ async function initLogin() {
       localStorage.removeItem(storageKeys.login);
       els.loginScreen.classList.remove("hidden");
     }
+
   } else {
     els.loginScreen.classList.remove("hidden");
   }
+
   els.loginBtn.addEventListener("click", handleLogin);
   els.loginCode.addEventListener("keydown", (event) => {
     if (event.key === "Enter") handleLogin();
@@ -4321,6 +4326,7 @@ function renderHomeLibrary() {
         <span class="home-card-index">${String(index + 1).padStart(2, "0")}</span>
         <div class="home-card-main">
           ${isOfficialExam ? `<span class="official-exam-badge">${getOfficialExamBadge(item)}</span>` : ""}
+          ${item.id === "power-of-words" ? `<span class="latest-update-badge">20260913 更新</span>` : ""}
           <strong>${item.title}</strong>
           <p class="source-line${isOfficialExamLesson(item) ? " real-exam-source" : ""}">${item.source}</p>
         </div>
@@ -4390,6 +4396,7 @@ function renderLessonLibrary() {
           <span class="status-pill ${isDone ? "done" : item.available ? "ready" : "pending"}">${isDone ? "已做，可重做" : item.available ? "可练习" : "待导入"}</span>
         </div>
         ${isOfficialExam ? `<span class="official-exam-badge">${getOfficialExamBadge(item)}</span>` : ""}
+        ${item.id === "power-of-words" ? `<span class="latest-update-badge">20260913 更新</span>` : ""}
         <strong>${item.title}</strong>
         <p>${item.englishTitle}</p>
         ${item.source ? `<p class="source-line${isOfficialExamLesson(item) ? " real-exam-source" : ""}">${item.source}</p>` : ""}
