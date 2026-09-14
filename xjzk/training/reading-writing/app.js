@@ -499,6 +499,9 @@ function getPracticeArticles() {
         if (!bYear) return -1;
         if (aYear !== bYear) return bYear - aYear;
       }
+      const aLatest = a.article.source.includes('乌鲁木齐市第一中学');
+      const bLatest = b.article.source.includes('乌鲁木齐市第一中学');
+      if (aLatest !== bLatest) return aLatest ? -1 : 1;
       return a.originalIndex - b.originalIndex;
     })
     .map(({ article }) => article);
@@ -518,7 +521,7 @@ function renderArticleList() {
       <article class="article-row${officialYear ? ' official-exam-card' : ''}">
         <div class="article-index">${String(index + 1).padStart(2, '0')}</div>
         <div class="article-main">
-          ${officialYear ? `<span class="official-exam-badge">${officialYear} 新疆中考真题</span>` : ''}
+          ${officialYear ? `<span class="official-exam-badge">${officialYear} 新疆中考真题</span>` : ''}${article.source.includes('乌鲁木齐市第一中学') ? '<span class="latest-update-badge">20260913 更新</span>' : ''}
           <strong>${escapeHtml(article.title)}</strong>
           <span class="article-source${officialYear ? ' real-exam-source' : ''}">${escapeHtml(getArticleDisplaySource(article.source))}</span>
         </div>
@@ -646,6 +649,33 @@ function getArticleDisplaySource(source) {
   if (text.includes('｜')) return text.split('｜')[0].trim();
   return '2026新疆优质模考题汇编';
 }
+
+function printReadingWritingPaper() {
+  const source = state.currentArticleSource;
+  const items = getPracticeItems();
+  if (!source || !items.length) {
+    alert('请先在题库中选择一篇读写题，再点击打印。');
+    return;
+  }
+  const title = cleanSourceTitle(source) || '读写题训练';
+  const displaySource = getArticleDisplaySource(source);
+  const questions = items.map((item, index) => {
+    const number = item.number || index + 1;
+    const target = escapeHtml(item.targetSentence || '').replace(/_+/g, '<span class="print-blank">____________</span>');
+    return `<section class="print-question"><div class="question-number">${escapeHtml(String(number))}.</div><div><div class="sentence-label">原句</div><p>${escapeHtml(item.originalSentence || item.original || '')}</p><div class="sentence-label">转化句</div><p>${target}</p></div></section>`;
+  }).join('');
+  const popup = window.open('', '_blank', 'width=900,height=760');
+  if (!popup) {
+    alert('浏览器阻止了打印窗口，请允许弹出窗口后重试。');
+    return;
+  }
+  popup.document.open();
+  popup.document.write(`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>${escapeHtml(title)} - 读写题</title><style>
+    @page{size:A4;margin:12mm 14mm}*{box-sizing:border-box}body{margin:0;color:#111;background:#fff;font-family:Arial,"Microsoft YaHei",sans-serif;font-size:13px;line-height:1.55}.paper{max-width:760px;margin:0 auto}.head{text-align:center;border-bottom:2px solid #111;padding-bottom:9px;margin-bottom:14px}.head h1{margin:0 0 4px;font-size:23px}.source{margin:0;color:#444;font-size:12px}.student{display:flex;justify-content:space-between;margin-top:12px;font-size:12px}.instruction{margin:0 0 12px}.print-question{display:grid;grid-template-columns:32px 1fr;gap:6px;break-inside:avoid;margin:0 0 13px;padding-bottom:10px;border-bottom:1px solid #bbb}.question-number{font-weight:900}.print-question p{margin:2px 0 6px}.sentence-label{display:inline-block;padding:1px 6px;border:1px solid #777;border-radius:3px;font-size:11px;font-weight:800}.print-blank{display:inline-block;min-width:110px;text-align:center;font-weight:700;white-space:nowrap}@media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+  </style></head><body><main class="paper"><header class="head"><h1>${escapeHtml(title)}</h1><p class="source">来源：${escapeHtml(displaySource)}</p><div class="student"><span>姓名：____________</span><span>用时：____________</span><span>得分：____________</span></div></header><h2>读写题</h2><p class="instruction">阅读原句，根据题目要求完成转化句，每空一词。</p>${questions}</main><script>window.addEventListener('load',()=>window.print());<\/script></body></html>`);
+  popup.document.close();
+}
+window.printReadingWritingPaper = printReadingWritingPaper;
 
 function checkAnswer() {
   const item = state.currentPractice;

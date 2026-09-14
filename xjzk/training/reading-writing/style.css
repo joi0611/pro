@@ -1622,6 +1622,26 @@ button:disabled {
   white-space: nowrap;
 }
 
+.article-main .latest-update-badge {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  min-height: 25px;
+  padding: 3px 10px;
+  border: 1px solid rgba(255, 220, 191, .9);
+  border-radius: 7px;
+  color: #fffaf6;
+  background: linear-gradient(115deg, #f5a14a 0%, #e56b45 46%, #b8344c 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 3px 8px rgba(157, 50, 57, .22);
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  text-shadow: 0 1px 1px rgba(103, 29, 38, .38);
+}
+
 .article-main .article-source.real-exam-source {
   color: #7655a6;
   font-weight: 800;

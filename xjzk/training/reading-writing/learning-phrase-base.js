@@ -284,9 +284,10 @@
     .replace(/[’']/g, '')
     .replace(/[^a-z0-9-]+/g, ' ')
     .trim();
-  const existingPairs = new Set(data.learningItems.map(item => (
-    `${normalizePairPart(item.original)}=>${normalizePairPart(item.target)}`
-  )));
+  const existingPairItems = new Map(data.learningItems.map(item => ([
+    `${normalizePairPart(item.original)}=>${normalizePairPart(item.target)}`,
+    item
+  ])));
 
   const inferPracticePair = (item) => {
     if (Array.isArray(item.learningPair) && item.learningPair.length === 2) {
@@ -318,9 +319,26 @@
     if (!shortPhrase(phrase) || !word) return;
 
     const pairKey = `${normalizePairPart(phrase)}=>${normalizePairPart(word)}`;
-    if (existingPairs.has(pairKey)) return;
-    existingPairs.add(pairKey);
-    data.learningItems.push({
+    const existingItem = existingPairItems.get(pairKey);
+    if (existingItem) {
+      // 显式 learningPair 来自最新核对题目时，保留唯一训练卡并更新为最新真题来源。
+      if (Array.isArray(item.learningPair) && item.learningPair.length === 2) {
+        Object.assign(existingItem, {
+          source: item.source,
+          number: item.number,
+          meaning: item.meaning || existingItem.meaning,
+          point: `真题提炼：${phrase} → ${word}`,
+          studyPoint: item.studyPoint || item.point || existingItem.studyPoint,
+          originalSentence: item.originalSentence,
+          targetSentence: item.targetSentence,
+          answer: word,
+          fromPracticeBank: true,
+          latestSource: true
+        });
+      }
+      return;
+    }
+    const learningItem = {
       id: `practice-transform-${item.id}`,
       category: data.categories[0] || '同义/反义转换、归纳概括',
       source: item.source,
@@ -335,6 +353,8 @@
       answer: word,
       learningFormat: 'phrase-to-word',
       fromPracticeBank: true
-    });
+    };
+    data.learningItems.push(learningItem);
+    existingPairItems.set(pairKey, learningItem);
   });
 })();
