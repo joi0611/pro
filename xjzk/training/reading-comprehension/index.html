@@ -83,6 +83,9 @@
     }
     h2 { margin: 0; font-size: 22px; }
     .meta { color: var(--muted); font-size: 13px; }
+    .latest-update-badge{display:inline-block;margin:4px 0;padding:3px 8px;border-radius:6px;background:linear-gradient(115deg,#f6a24b,#e86f45 45%,#b9364c);border:1px solid #f8d0b0;color:#fff;font-size:11px;font-style:normal;font-weight:800;}
+    .grammar-print-btn,
+    .reading-print-btn { flex: 0 0 auto; margin-top: 0; }
     .article {
       max-width: 920px;
       margin: 0 auto 60px;
@@ -675,6 +678,7 @@
           <h2 id="passageTitle"></h2>
           <div class="meta" id="passageMeta"></div>
         </div>
+        <button class="action reading-print-btn" type="button" onclick="printReadingPaper()">PDF打印</button>
       </div>
       <article class="article" id="article"></article>
     </main>
@@ -918,11 +922,13 @@
             <h3>${current ? current[1] : state.catalogLetter + "篇练习"}</h3>
             <button class="catalog-back" onclick="closeCatalogLetter()">返回篇目选择</button>
           </div>
-          ${list.length ? list.map(p => {
+          ${list.length ? list.map((p, displayIndex) => {
             const index = passages.indexOf(p);
             const official = isRealExam(p);
             const badge = official ? `<span class="official-exam-badge">${passageYear(p)} 新疆中考真题</span>` : "";
-            return `<button class="catalog-item${official ? " official-exam-card" : ""}" onclick="selectPassage(${index})">${badge}<strong>${escapeHtml(cleanSourceText(p.title))}</strong><span>${escapeHtml(cleanSourceText(p.meta))} · ${p.questions.length} 题</span></button>`;
+            const latest = /乌鲁木齐市第一中学.*9月模考/.test(p.meta || "");
+            const serial = String(displayIndex + 1).padStart(2, "0");
+            return `<button class="catalog-item${official ? " official-exam-card" : ""}" onclick="selectPassage(${index})">${badge}${latest ? '<em class="latest-update-badge">20260913 更新</em>' : ''}<strong>${serial}. ${escapeHtml(cleanSourceText(p.title))}</strong><span>${escapeHtml(cleanSourceText(p.meta))} · ${p.questions.length} 题</span></button>`;
           }).join("") : `<div class="meta">暂未载入</div>`}
         </section>
       `;
@@ -992,7 +998,7 @@
       const target = state.located && !isGlobalQuestion(q) ? locatedEvidenceTarget(q) : null;
       const visual = p.visual ? `<img class="source-visual" src="${escapeHtml(p.visual)}" alt="原卷图表">` : "";
       const chart = p.chart ? renderChart(p.chart, q) : "";
-      const paragraphs = p.chart ? "" : p.paragraphs.map((text, index) => {
+      const paragraphs = p.paragraphs.map((text, index) => {
         let html = escapeHtml(text);
         if (state.located && isGlobalQuestion(q)) {
           html = highlightGlobalClues(text, q);
@@ -1005,7 +1011,7 @@
         }
         return `<p>${html}</p>`;
       }).join("");
-      $("article").innerHTML = visual + chart + paragraphs;
+      $("article").innerHTML = visual + paragraphs + chart;
     }
 
     function renderChart(chart, q) {
@@ -1023,6 +1029,42 @@
         ${note}
       </section>`;
     }
+
+    function printableImageUrl(path) {
+      try { return new URL(path, window.location.href).href; } catch (_) { return path || ""; }
+    }
+
+    function buildPrintableChart(chart) {
+      if (!chart) return "";
+      const columns = chart.columns || [];
+      const rows = chart.rows || [];
+      const head = columns.length ? `<thead><tr>${columns.map(col => `<th>${escapeHtml(col)}</th>`).join("")}</tr></thead>` : "";
+      const body = rows.map(row => {
+        const cells = Array.isArray(row) ? row : columns.map(col => row[col] || "");
+        return `<tr>${cells.map(cell => `<td>${escapeHtml(String(cell))}</td>`).join("")}</tr>`;
+      }).join("");
+      return `<table class="print-chart">${head}<tbody>${body}</tbody></table>`;
+    }
+
+    function printReadingPaper() {
+      const p = currentPassage();
+      if (!p) return;
+      const articleImage = p.visual ? `<img class="print-visual" src="${escapeHtml(printableImageUrl(p.visual))}" alt="原卷图表">` : "";
+      const paragraphs = (p.paragraphs || []).map(text => `<p>${escapeHtml(text)}</p>`).join("");
+      const questions = (p.questions || []).map(question => {
+        const questionImage = question.image ? `<img class="print-question-image" src="${escapeHtml(printableImageUrl(question.image))}" alt="题目配图">` : "";
+        const options = (question.options || []).map((option, index) => `<span>${String.fromCharCode(65 + index)}. ${escapeHtml(option.replace(/^[A-D]\.\s*/, ""))}</span>`).join("");
+        return `<section class="print-question"><strong>${question.number}. ${escapeHtml(question.stem)}</strong>${questionImage}<div class="print-options">${options}</div></section>`;
+      }).join("");
+      const popup = window.open("", "_blank", "width=920,height=760");
+      if (!popup) { alert("浏览器阻止了打印窗口，请允许弹出窗口后重试。"); return; }
+      popup.document.open();
+      popup.document.write(`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>${escapeHtml(cleanSourceText(p.title))} - 阅读理解</title><style>
+        @page{size:A4;margin:11mm 12mm}*{box-sizing:border-box}body{margin:0;color:#111;background:#fff;font-family:Arial,"Microsoft YaHei",sans-serif;font-size:12px;line-height:1.55}.paper{max-width:780px;margin:0 auto}.head{text-align:center;border-bottom:2px solid #111;padding-bottom:8px;margin-bottom:12px}.head h1{margin:0 0 3px;font-size:21px}.source{margin:0;color:#444;font-size:11px}.student{display:flex;justify-content:space-between;margin-top:10px}.instruction{margin:0 0 9px}.passage p{margin:0 0 7px;text-align:justify;text-indent:2em}.print-chart{width:100%;border-collapse:collapse;margin:9px 0 12px;font-size:10px}.print-chart th,.print-chart td{border:1px solid #555;padding:4px;text-align:left;vertical-align:top}.print-visual{display:block;max-width:100%;max-height:230px;margin:8px auto}.print-question{break-inside:avoid;margin:0 0 9px}.print-question>strong{display:block;margin-bottom:3px}.print-options{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;padding-left:12px}.print-question-image{display:block;max-width:520px;max-height:190px;margin:6px auto}@media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+      </style></head><body><main class="paper"><header class="head"><h1>${escapeHtml(cleanSourceText(p.title))}</h1><p class="source">来源：${escapeHtml(cleanSourceText(p.meta))}</p><div class="student"><span>姓名：____________</span><span>用时：____________</span><span>得分：____________</span></div></header><h2>阅读理解</h2><p class="instruction">阅读下面材料，根据要求选择正确答案。</p><section class="passage">${articleImage}${paragraphs}${buildPrintableChart(p.chart)}</section><section>${questions}</section></main><script>window.addEventListener('load',()=>window.print());<\/script></body></html>`);
+      popup.document.close();
+    }
+    window.printReadingPaper = printReadingPaper;
 
     function highlightChartText(text, q) {
       if (!state.located) return escapeHtml(text);
@@ -2037,8 +2079,6 @@
     renderAll();
     document.addEventListener("DOMContentLoaded", initReadingLogin);
   </script>
-  <script src="data/imported-passages.js"></script>
+  <script src="data/imported-passages.js?v=20260914-reading-print-1"></script>
 </body>
 </html>
-
-
