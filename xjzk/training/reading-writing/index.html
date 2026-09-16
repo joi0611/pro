@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
   <title>读写题训练系统 | 新疆学生无限进步</title>
-  <link rel="stylesheet" href="style.css?v=20260914-latest-badge-1">
+  <link rel="stylesheet" href="style.css?v=20260916-login-casefix-1">
   <link rel="stylesheet" href="../../assets/theme-purple.css?v=20260716-ui3">
   <link rel="stylesheet" href="../../assets/workbook-modules.css?v=20260716-1">
 </head>
@@ -18,7 +18,7 @@
       <p>@新疆学生无限进步</p>
       <form class="login-form" id="loginForm">
         <label for="loginCode">请输入登录码</label>
-        <input id="loginCode" type="text" autocomplete="off" placeholder="请输入登录码">
+        <input id="loginCode" type="text" autocomplete="one-time-code" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="请输入登录码">
         <button type="submit">进入训练</button>
         <div id="loginError" class="login-message" aria-live="polite"></div>
       </form>

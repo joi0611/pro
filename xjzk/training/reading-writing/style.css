@@ -370,7 +370,6 @@ body.auth-locked .app-shell {
 .login-form input {
   min-height: 48px;
   font-size: 20px;
-  text-transform: uppercase;
   text-align: center;
   letter-spacing: 4px;
 }
