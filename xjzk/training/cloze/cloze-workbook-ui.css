@@ -914,3 +914,250 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* 本篇高频词：固定搭配复盘后的原文语境翻转卡。 */
+.module-cloze .high-frequency-review {
+  display: grid;
+  gap: 14px;
+  margin: 0 0 18px;
+  padding: 18px;
+  border: 1px solid rgba(108, 60, 231, 0.22);
+  border-radius: 8px;
+  background: #fbf9ff;
+}
+
+.module-cloze .collocation-review-heading > span {
+  color: var(--cloze-purple, #6c3ce7);
+}
+
+.module-cloze .collocation-review-heading > strong {
+  flex: 0 0 auto;
+  min-width: 58px;
+  padding: 7px 10px;
+  border: 1px solid rgba(108, 60, 231, 0.2);
+  border-radius: 8px;
+  color: #4e2c9f;
+  background: #eee7ff;
+  font-size: 13px;
+  text-align: center;
+}
+
+.module-cloze .high-frequency-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.module-cloze .high-frequency-heading > div {
+  display: grid;
+  gap: 4px;
+}
+
+.module-cloze .high-frequency-heading span {
+  color: var(--cloze-purple, #6c3ce7);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.module-cloze .high-frequency-heading strong {
+  color: #171120;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.module-cloze .high-frequency-heading b {
+  flex: 0 0 auto;
+  min-width: 58px;
+  padding: 7px 10px;
+  border: 1px solid rgba(108, 60, 231, 0.2);
+  border-radius: 8px;
+  color: #4e2c9f;
+  background: #eee7ff;
+  font-size: 13px;
+  text-align: center;
+}
+
+.module-cloze .high-frequency-intro {
+  margin: 0;
+  color: #655d70;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.module-cloze .high-frequency-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.module-cloze .high-frequency-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 250px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  color: inherit;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  perspective: 1000px;
+  touch-action: manipulation;
+}
+
+.module-cloze .high-frequency-card:focus-visible {
+  outline: 3px solid #7c3aed;
+  outline-offset: 3px;
+}
+
+.module-cloze .high-frequency-card:active .high-frequency-card-face {
+  border-color: #ad91d8;
+  box-shadow: 0 4px 12px rgba(67, 43, 99, 0.14);
+}
+
+.module-cloze .high-frequency-card-inner {
+  display: grid;
+  min-height: 250px;
+  transform-style: preserve-3d;
+  transition: transform 280ms ease;
+}
+
+.module-cloze .high-frequency-card.flipped .high-frequency-card-inner {
+  transform: rotateY(180deg);
+}
+
+.module-cloze .high-frequency-card-face {
+  grid-area: 1 / 1;
+  display: flex;
+  min-width: 0;
+  min-height: 250px;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid #dcd0ef;
+  border-radius: 8px;
+  background: #fff;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 8px 20px rgba(67, 43, 99, 0.09);
+}
+
+.module-cloze .high-frequency-card-back {
+  border-color: #cdbbea;
+  background: #f4effc;
+  transform: rotateY(180deg);
+}
+
+.module-cloze .high-frequency-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.module-cloze .high-frequency-reason,
+.module-cloze .high-frequency-flip-hint,
+.module-cloze .high-frequency-surface,
+.module-cloze .high-frequency-sentence,
+.module-cloze .high-frequency-meaning,
+.module-cloze .high-frequency-details,
+.module-cloze .high-frequency-context-note,
+.module-cloze .high-frequency-example {
+  display: block;
+}
+
+.module-cloze .high-frequency-reason {
+  color: #5e3ba7;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.module-cloze .high-frequency-flip-hint {
+  color: #746b80;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.module-cloze .high-frequency-card-face > strong {
+  color: #181020;
+  font-size: clamp(25px, 3vw, 32px);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.module-cloze .high-frequency-surface {
+  color: #62586e;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.module-cloze .high-frequency-sentence {
+  margin-top: auto;
+  color: #30273a;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.module-cloze .high-frequency-sentence mark {
+  padding: 1px 4px;
+  border-radius: 4px;
+  color: #3d236f;
+  background: #eadfff;
+  font-weight: 800;
+}
+
+.module-cloze .high-frequency-meaning {
+  color: #2f243a;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.module-cloze .high-frequency-details {
+  display: grid;
+  gap: 7px;
+}
+
+.module-cloze .high-frequency-details > span,
+.module-cloze .high-frequency-context-note,
+.module-cloze .high-frequency-example {
+  color: #5f566a;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.module-cloze .high-frequency-details > span {
+  padding-left: 10px;
+  border-left: 3px solid #bba3e3;
+}
+
+.module-cloze .high-frequency-example {
+  margin-top: auto;
+  font-style: italic;
+}
+
+@media (max-width: 760px) {
+  .module-cloze .high-frequency-review {
+    padding: 16px;
+  }
+
+  .module-cloze .high-frequency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .module-cloze .high-frequency-card,
+  .module-cloze .high-frequency-card-inner,
+  .module-cloze .high-frequency-card-face {
+    min-height: 228px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .module-cloze .high-frequency-card-inner {
+    transition: none;
+  }
+}

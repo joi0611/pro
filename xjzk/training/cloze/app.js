@@ -3957,6 +3957,7 @@ const els = {
   verify: document.querySelector("#verify"),
   result: document.querySelector("#result"),
   collocationReview: document.querySelector("#collocationReview"),
+  highFrequencyReview: document.querySelector("#highFrequencyReview"),
   filledPassage: document.querySelector("#filledPassage"),
   readStatus: document.querySelector("#readStatus"),
   sentenceMeaning: document.querySelector("#sentenceMeaning"),
@@ -3986,6 +3987,7 @@ async function init() {
   renderPassage();
   renderFilledPassage();
   renderCollocationReview();
+  renderHighFrequencyReview();
   resetSentenceAudio();
   bindStaticEvents();
   updateProgress();
@@ -4423,6 +4425,7 @@ function selectLesson(lessonId) {
   renderPassage();
   renderFilledPassage();
   renderCollocationReview();
+  renderHighFrequencyReview();
   resetSentenceAudio();
   updateProgress();
   enterStudy();
@@ -5301,7 +5304,7 @@ function renderCollocationReview() {
     els.collocationReview.innerHTML = `
       <div class="collocation-review-heading">
         <span>固定搭配整理</span>
-        <strong>本篇无重点固定搭配</strong>
+        <strong>0 搭配</strong>
       </div>
       <p class="collocation-empty">这一篇更适合把注意力放在上下文线索、逻辑关系和情感走向上。</p>
     `;
@@ -5311,7 +5314,7 @@ function renderCollocationReview() {
   els.collocationReview.innerHTML = `
     <div class="collocation-review-heading">
       <span>固定搭配整理</span>
-      <strong>本篇 ${items.length} 个重点搭配</strong>
+      <strong>${items.length} 搭配</strong>
     </div>
     <div class="collocation-review-list">
       ${items.map((item) => `
@@ -5334,7 +5337,7 @@ renderCollocationReview = function() {
     els.collocationReview.innerHTML = `
       <div class="collocation-review-heading">
         <span>固定搭配整理</span>
-        <strong>本篇无重点固定搭配</strong>
+        <strong>0 搭配</strong>
       </div>
       <p class="collocation-empty">这一篇更适合把注意力放在上下文线索、逻辑关系和情感走向上。</p>
     `;
@@ -5344,7 +5347,7 @@ renderCollocationReview = function() {
   els.collocationReview.innerHTML = `
     <div class="collocation-review-heading">
       <span>固定搭配整理</span>
-      <strong>本篇 ${items.length} 个重点搭配</strong>
+      <strong>${items.length} 搭配</strong>
     </div>
     <div class="collocation-review-list">
       ${items.map((item) => `
@@ -5675,7 +5678,7 @@ renderCollocationReview = function() {
     els.collocationReview.innerHTML = `
       <div class="collocation-review-heading">
         <span>固定搭配整理</span>
-        <strong>本篇无重点固定搭配</strong>
+        <strong>0 搭配</strong>
       </div>
       <p class="collocation-empty">这一篇更适合把注意力放在上下文线索、逻辑关系和情感走向上。</p>
     `;
@@ -5685,7 +5688,7 @@ renderCollocationReview = function() {
   els.collocationReview.innerHTML = `
     <div class="collocation-review-heading">
       <span>固定搭配整理</span>
-      <strong>本篇 ${items.length} 个重点搭配</strong>
+      <strong>${items.length} 搭配</strong>
     </div>
     <div class="collocation-review-list">
       ${items.map((item) => `
@@ -5711,10 +5714,94 @@ renderCollocationReview = function() {
   });
 };
 
+function getHighFrequencyVocabularyEntry(word) {
+  if (typeof DOC_WORDS === "undefined" || !Array.isArray(DOC_WORDS)) return null;
+  const target = normalizeTranslationKey(word);
+  return DOC_WORDS.find((entry) => normalizeTranslationKey(entry.w) === target) || null;
+}
+
+function renderHighFrequencySentence(sentence, surface) {
+  const source = String(sentence || "");
+  const target = String(surface || "");
+  if (!source || !target) return escapeHtml(source);
+  const index = source.toLowerCase().indexOf(target.toLowerCase());
+  if (index < 0) return escapeHtml(source);
+  return `${escapeHtml(source.slice(0, index))}<mark>${escapeHtml(source.slice(index, index + target.length))}</mark>${escapeHtml(source.slice(index + target.length))}`;
+}
+
+function renderHighFrequencyReview() {
+  if (!els.highFrequencyReview) return;
+  const lessonSelections = window.CLOZE_HIGH_FREQUENCY_SELECTIONS?.[lesson.id] || [];
+  const cards = lessonSelections.map((selection) => {
+    const entry = getHighFrequencyVocabularyEntry(selection.word);
+    if (!entry) return null;
+    const details = (entry.details || []).slice(0, 2);
+    const reason = selection.answer
+      ? (selection.collocation ? "本题答案 · 固定搭配" : "本题答案")
+      : "文章重点词";
+    const surfaceNote = normalizeTranslationKey(selection.surface) !== normalizeTranslationKey(entry.w)
+      ? `<span class="high-frequency-surface">原文形式：${escapeHtml(selection.surface)}</span>`
+      : "";
+    const detailHtml = details.length
+      ? `<span class="high-frequency-details">${details.map((detail) => `<span>${escapeHtml(detail)}</span>`).join("")}</span>`
+      : `<span class="high-frequency-context-note">结合正面的本篇原句理解并记忆。</span>`;
+    const exampleHtml = entry.exampleEn
+      ? `<span class="high-frequency-example">${escapeHtml(entry.exampleEn)}</span>`
+      : "";
+    return `
+      <button class="high-frequency-card" type="button" aria-pressed="false" aria-label="翻转查看 ${escapeHtml(entry.w)} 的释义">
+        <span class="high-frequency-card-inner">
+          <span class="high-frequency-card-face high-frequency-card-front">
+            <span class="high-frequency-card-topline">
+              <span class="high-frequency-reason">${reason}</span>
+              <span class="high-frequency-flip-hint">点击翻转</span>
+            </span>
+            <strong>${escapeHtml(entry.w)}</strong>
+            ${surfaceNote}
+            <span class="high-frequency-sentence">${renderHighFrequencySentence(selection.sentence, selection.surface)}</span>
+          </span>
+          <span class="high-frequency-card-face high-frequency-card-back">
+            <span class="high-frequency-card-topline">
+              <span class="high-frequency-reason">词汇库释义</span>
+              <span class="high-frequency-flip-hint">点击返回</span>
+            </span>
+            <strong>${escapeHtml(entry.w)}</strong>
+            <span class="high-frequency-meaning">${escapeHtml(entry.meaning)}</span>
+            ${detailHtml}
+            ${exampleHtml}
+          </span>
+        </span>
+      </button>
+    `;
+  }).filter(Boolean);
+
+  els.highFrequencyReview.innerHTML = `
+    <div class="high-frequency-heading">
+      <div>
+        <span>本篇高频词</span>
+        <strong id="highFrequencyTitle">结合原文，再记牢一次</strong>
+      </div>
+      <b>${cards.length} 词</b>
+    </div>
+    <p class="high-frequency-intro">先看单词和本篇原句，想一想含义；点击卡片翻转查看词汇库释义。</p>
+    <div class="high-frequency-grid">${cards.join("")}</div>
+  `;
+
+  els.highFrequencyReview.querySelectorAll(".high-frequency-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const isFlipped = card.classList.toggle("flipped");
+      card.setAttribute("aria-pressed", String(isFlipped));
+      const word = card.querySelector("strong")?.textContent || "该单词";
+      card.setAttribute("aria-label", isFlipped ? `返回 ${word} 的原文卡片` : `翻转查看 ${word} 的释义`);
+    });
+  });
+}
+
 function showVerify() {
   unlockPanel("verify");
   els.verify.classList.remove("hidden");
   renderCollocationReview();
+  renderHighFrequencyReview();
   renderFilledPassage();
   resetSentenceAudio();
 }
