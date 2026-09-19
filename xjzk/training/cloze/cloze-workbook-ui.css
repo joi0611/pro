@@ -920,7 +920,7 @@
   display: grid;
   gap: 14px;
   margin: 0 0 18px;
-  padding: 18px;
+  padding: 16px;
   border: 1px solid rgba(108, 60, 231, 0.22);
   border-radius: 8px;
   background: #fbf9ff;
@@ -987,14 +987,14 @@
 
 .module-cloze .high-frequency-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
 }
 
 .module-cloze .high-frequency-card {
   width: 100%;
   min-width: 0;
-  min-height: 250px;
+  height: 172px;
   padding: 0;
   border: 0;
   border-radius: 8px;
@@ -1004,7 +1004,7 @@
   cursor: pointer;
   font: inherit;
   text-align: left;
-  perspective: 1000px;
+  perspective: 900px;
   touch-action: manipulation;
 }
 
@@ -1020,7 +1020,7 @@
 
 .module-cloze .high-frequency-card-inner {
   display: grid;
-  min-height: 250px;
+  height: 172px;
   transform-style: preserve-3d;
   transition: transform 280ms ease;
 }
@@ -1033,11 +1033,12 @@
   grid-area: 1 / 1;
   display: flex;
   min-width: 0;
-  min-height: 250px;
+  height: 172px;
   flex-direction: column;
-  gap: 12px;
-  padding: 18px;
-  overflow: hidden;
+  gap: 8px;
+  padding: 16px;
+  overflow-x: hidden;
+  overflow-y: auto;
   border: 1px solid #dcd0ef;
   border-radius: 8px;
   background: #fff;
@@ -1084,7 +1085,7 @@
 
 .module-cloze .high-frequency-card-face > strong {
   color: #181020;
-  font-size: clamp(25px, 3vw, 32px);
+  font-size: clamp(20px, 2.4vw, 24px);
   line-height: 1.2;
   overflow-wrap: anywhere;
 }
@@ -1098,8 +1099,8 @@
 .module-cloze .high-frequency-sentence {
   margin-top: auto;
   color: #30273a;
-  font-size: 15px;
-  line-height: 1.75;
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .module-cloze .high-frequency-sentence mark {
@@ -1119,7 +1120,7 @@
 
 .module-cloze .high-frequency-details {
   display: grid;
-  gap: 7px;
+  gap: 5px;
 }
 
 .module-cloze .high-frequency-details > span,
@@ -1152,7 +1153,7 @@
   .module-cloze .high-frequency-card,
   .module-cloze .high-frequency-card-inner,
   .module-cloze .high-frequency-card-face {
-    min-height: 228px;
+    height: 172px;
   }
 }
 
