@@ -1478,6 +1478,7 @@
   </style>
   <link rel="stylesheet" href="../../assets/theme-purple.css?v=20260716-ui3">
   <link rel="stylesheet" href="../../assets/workbook-modules.css?v=20260716-1">
+  <link rel="stylesheet" href="word-choice-reading.css?v=20260920-1">
 </head>
 <body class="module-word-choice locked">
   <a class="skip-link" href="#mainContent">跳到主要内容</a>
@@ -1533,6 +1534,8 @@
       </div>
       <div class="lesson-list" id="lessonList"></div>
     </section>
+
+    <section class="word-choice-reading-screen" id="wordChoiceReadingScreen" hidden aria-label="全文精读"></section>
 
     <section class="question-switch" aria-label="文章选择">
       <span>文章选择</span>
@@ -1615,6 +1618,7 @@
           <button class="btn" id="submitBtn" type="button">提交并查看解析</button>
           <button class="btn secondary" id="resetBtn" type="button">重置训练</button>
         </div>
+        <div id="readingStatus"></div>
         <div class="analysis" id="analysis"></div>
       </section>
 
@@ -1691,6 +1695,8 @@
   <script src="imported-question-bank-20260829.js?v=20260829-1"></script>
   <script src="imported-question-bank-20260902.js?v=20260902-1"></script>
   <script src="imported-question-bank-20260913.js?v=20260914-visible-print-1"></script>
+  <script src="../grammar/grammar-word-data.js?v=20260920-1"></script>
+  <script src="word-choice-reading.js?v=20260920-1"></script>
   <script>
     const loginCodes = new Set();
 
@@ -4025,6 +4031,19 @@
       qiongkushitaiVillage: qiongkushitaiVillageQuestion
     };
 
+    const WORD_CHOICE_DONE_KEY = "word_choice_done_articles_v1";
+    let wordChoiceDoneArticles = readWordChoiceCompletions();
+
+    function readWordChoiceCompletions() {
+      try { return JSON.parse(localStorage.getItem(WORD_CHOICE_DONE_KEY) || "{}"); }
+      catch (error) { return {}; }
+    }
+
+    function writeWordChoiceCompletions() {
+      try { localStorage.setItem(WORD_CHOICE_DONE_KEY, JSON.stringify(wordChoiceDoneArticles)); }
+      catch (error) {}
+    }
+
     function getArticleTitle(key) {
       const tab = document.querySelector('[data-question="' + key + '"]');
       return tab ? tab.textContent.trim() : (questionBank[key]?.title || key);
@@ -4066,10 +4085,15 @@
         const title = officialYear ? (rawTitle.replace(/^20\d{2}\s*新疆真题\s*[·.：:]?\s*/, "").trim() || "新疆中考选词填空") : rawTitle;
         const serial = String(index + 1).padStart(2, "0");
         const badge = officialYear ? '<span class="official-exam-badge">' + officialYear + ' 新疆中考真题</span>' : (source.includes('乌鲁木齐市第一中学') ? '<span class="latest-update-badge">20260913 更新</span>' : '');
-        return '<article class="lesson-card' + (officialYear ? ' official-exam-card' : '') + '"><span class="lesson-index">' + serial + '</span><div class="lesson-main">' + badge + '<strong>' + title + '</strong><small>' + source + '</small></div><button class="start-article-btn" type="button" data-start-article="' + key + '">开始训练</button></article>';
+        const done = wordChoiceDoneArticles[key];
+        const readingButton = '<button class="reading-library-btn" type="button" data-reading-article="' + key + '">全文翻译</button>';
+        return '<article class="lesson-card' + (officialYear ? ' official-exam-card' : '') + '"><span class="lesson-index">' + serial + '</span><div class="lesson-main">' + badge + '<strong>' + title + '</strong><small>' + source + '</small></div><div class="lesson-actions">' + readingButton + '<button class="start-article-btn" type="button" data-start-article="' + key + '">' + (done ? '重新训练' : '开始训练') + '</button></div></article>';
       }).join("");
       list.querySelectorAll("[data-start-article]").forEach(button => {
         button.addEventListener("click", () => startArticle(button.dataset.startArticle));
+      });
+      list.querySelectorAll("[data-reading-article]").forEach(button => {
+        button.addEventListener("click", () => openCompletedWordChoiceReading(button.dataset.readingArticle));
       });
     }
 
@@ -4080,6 +4104,7 @@
     }
 
     function showLibrary() {
+      closeWordChoiceReading(false);
       document.body.classList.remove("training-active");
       renderLibrary();
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -4271,6 +4296,7 @@
     }
 
     async function loadQuestion(key, options = {}) {
+      closeWordChoiceReading(false);
       const data = questionBank[key];
       currentQuestionKey = key;
       words = JSON.parse(JSON.stringify(data.words));
@@ -4282,6 +4308,7 @@
       document.getElementById("articleSource").textContent = `来源：${data.source || "名校优质真题"}`;
       resetStateForQuestion();
       renderWords();
+      renderWordChoiceReadingStatus();
       document.querySelectorAll("[data-question]").forEach(btn => btn.classList.toggle("active", btn.dataset.question === key));
       if (!options.silent) showToast(`已切换文章：${data.source || key}`);
     }
@@ -4689,6 +4716,75 @@
       const done = Object.values(state.answers).filter(ans => ans.rule).length;
       document.getElementById("progressText").textContent = `${done} / ${Object.keys(blanks).length}`;
       document.getElementById("modeText").textContent = state.activeNeed ? `正在筛选：${labelFor(state.activeNeed)}` : "先手动标词性，错了会即时提示";
+      renderWordChoiceReadingStatus();
+    }
+
+    function isWordChoiceArticleComplete() {
+      const ids = Object.keys(blanks || {});
+      return ids.length > 0 && ids.every(id => state.answers[id] && state.answers[id].rule);
+    }
+
+    function renderWordChoiceReadingStatus() {
+      const host = document.getElementById("readingStatus");
+      if (!host) return;
+      const total = Object.keys(blanks || {}).length;
+      const finished = Object.values(state.answers || {}).filter(answer => answer && answer.rule).length;
+      const done = wordChoiceDoneArticles[currentQuestionKey];
+      const title = done && isWordChoiceArticleComplete() ? '本篇已完成，可以查看全文精读' : '无需重新作答，可直接检查全文翻译';
+      const note = done && isWordChoiceArticleComplete()
+        ? '集中复习逐句翻译、重点词汇和固定短语。'
+        : '当前已完成 ' + finished + '/' + total + ' 题；系统会自动代回标准答案，不影响当前作答。';
+      host.innerHTML = '<section class="reading-complete-banner"><span aria-hidden="true">📖</span><div><strong>' + title + '</strong><p>' + note + '</p></div><button type="button" class="btn reading-entry-btn" data-open-current-reading>直接查看全文翻译</button></section>';
+      host.querySelector("[data-open-current-reading]")?.addEventListener("click", () => openCompletedWordChoiceReading(currentQuestionKey));
+    }
+
+    function saveWordChoiceCompletion(correct, total) {
+      if (!isWordChoiceArticleComplete()) return;
+      wordChoiceDoneArticles[currentQuestionKey] = {
+        completedAt: new Date().toISOString(),
+        right: correct,
+        total,
+        answers: JSON.parse(JSON.stringify(state.answers))
+      };
+      writeWordChoiceCompletions();
+      renderLibrary();
+    }
+
+    async function openCompletedWordChoiceReading(key) {
+      const article = questionBank[key];
+      const record = wordChoiceDoneArticles[key] || { total: Object.keys(article?.blanks || {}).length, preview: true };
+      if (!article || !window.WordChoiceReading) return;
+      const needsRestore = key !== currentQuestionKey;
+      if (needsRestore) {
+        await loadQuestion(key, { silent: true });
+        state.answers = record.answers && typeof record.answers === "object" ? JSON.parse(JSON.stringify(record.answers)) : {};
+        Object.entries(state.answers).forEach(([id, answer]) => {
+          const blank = document.querySelector(`[data-blank="${id}"]`);
+          if (!blank || !answer?.shown) return;
+          blank.textContent = answer.shown;
+          blank.classList.add("filled");
+        });
+        renderWords();
+        updateProgress();
+      }
+      currentQuestionKey = key;
+      document.body.classList.add("training-active", "reading-mode");
+      const screen = document.getElementById("wordChoiceReadingScreen");
+      screen.hidden = false;
+      screen.innerHTML = window.WordChoiceReading.render(article, record, getArticleTitle(key));
+      window.WordChoiceReading.bind({
+        article,
+        onBack: () => closeWordChoiceReading(true),
+        onLibrary: showLibrary
+      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function closeWordChoiceReading(returnToTraining = true) {
+      document.body.classList.remove("reading-mode");
+      const screen = document.getElementById("wordChoiceReadingScreen");
+      if (screen) { screen.hidden = true; screen.innerHTML = ""; }
+      if (returnToTraining) document.body.classList.add("training-active");
     }
 
     function submit() {
@@ -4705,6 +4801,7 @@
         return { questionKey: currentQuestionKey, title: getArticleTitle(currentQuestionKey), blankId: id, sentence: getBlankSentence(currentQuestionKey, id), selectedWord: ans?.word || "未选择", selectedRule: ans?.rule || "未选择", needed: target.needed, mine: ans?.shown || "未作答", correct: target.answer, errorType, explanation, formula: clueFormulas[id] || "结合上下文和句子结构判断。", ok, targetPath: target.path };
       });
       saveWrongAnswers(records);
+      saveWordChoiceCompletion(correct, total);
       const wrongRecords = records.filter(item => !item.ok);
       const counts = wrongRecords.reduce((map, item) => { map[item.errorType] = (map[item.errorType] || 0) + 1; return map; }, {});
       const stats = Object.entries(counts).sort((a, b) => b[1] - a[1]);
@@ -4719,6 +4816,7 @@
         <p>逐空反馈如下；词性转换、时态、单复数等问题会单独标注。</p>` +
         records.map(item => `<div class="analysis-row ${item.ok ? "correct" : "wrong"}"><b>空缺 ${escapeHtml(item.blankId)}</b>${item.ok ? "<span class=\"error-reason\" style=\"background:#dff3e5;color:#23713b\">正确</span>" : `<span class="error-reason">${escapeHtml(item.errorType)}</span>`}<br>你的答案：${escapeHtml(item.mine)}<br>正确答案：<strong>${escapeHtml(item.correct)}</strong>${item.ok ? "" : `<br>${escapeHtml(item.explanation)}`}<br>正确路径：${escapeHtml(item.targetPath)}${item.ok ? "" : `<div class="row-actions"><button class="mini-btn" type="button" data-review-question="${escapeHtml(item.questionKey)}" data-review-blank="${escapeHtml(item.blankId)}">加入错题本并回看</button></div>`}</div>`).join("");
       box.classList.add("show");
+      renderWordChoiceReadingStatus();
       box.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
@@ -4740,6 +4838,7 @@
       clearClues();
       document.getElementById("analysis").classList.remove("show");
       renderWords();
+      renderWordChoiceReadingStatus();
       showToast("训练已重置。");
     }
 
