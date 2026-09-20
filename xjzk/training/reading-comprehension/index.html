@@ -56,6 +56,8 @@
       border-color: var(--brand);
       color: #105244;
     }
+    .tab.translation-locked { color: var(--muted); border-style: dashed; background: #faf8fc; }
+    .tab.translation-locked:disabled { cursor: not-allowed; opacity: 1; }
     .qtab.done { color: var(--good); border-color: #94d2ad; }
     .qtab.wrong { color: var(--bad); border-color: #f0aaa3; }
     .app {
@@ -528,6 +530,54 @@
       text-shadow: 0 1px 1px rgba(0,0,0,.18);
     }
     .hidden { display: none !important; }
+
+    /* ===== 本篇完成后的逐段翻译 ===== */
+    .translation-view { min-height: calc(100vh - 116px); padding: 24px; background: #faf8fc; }
+    .translation-shell { max-width: 1080px; margin: 0 auto; }
+    .translation-summary, .translation-panel { border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+    .translation-summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; margin-bottom: 14px; }
+    .translation-summary-main { display: flex; align-items: center; gap: 14px; }
+    .translation-check { width: 42px; height: 42px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; background: #e8f7ef; color: #087443; font-size: 25px; font-weight: 900; }
+    .translation-summary strong { display: block; font-size: 18px; }
+    .translation-score { color: var(--muted); }
+    .translation-score b { color: #087443; font-size: 18px; }
+    .translation-panel { padding: 18px; }
+    .translation-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+    .translation-head h2 { margin-bottom: 3px; }
+    .translation-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+    .translation-actions .action { margin-top: 0; min-height: 44px; }
+    .translation-tip { display: flex; align-items: center; gap: 8px; margin: 14px 0; padding: 10px 12px; border: 1px solid #d8c8ef; border-radius: 8px; background: #f7f2fc; color: #55357f; font-size: 14px; font-weight: 700; }
+    .translation-tip-mark { width: 25px; height: 25px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; background: var(--brand); color: #fff; font-size: 13px; }
+    .translation-paragraph { margin-top: 12px; padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+    .translation-paragraph-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 9px; }
+    .paragraph-number { display: inline-flex; align-items: center; min-height: 30px; padding: 3px 10px; border-radius: 999px; background: var(--brand); color: #fff; font-size: 13px; font-weight: 800; }
+    .translation-toggle { min-height: 38px; padding: 0 10px; border-color: #d8c8ef; background: #f7f2fc; color: #55357f; font-weight: 700; }
+    .translation-english { margin: 0; color: #231b2e; font-family: Georgia, "Times New Roman", serif; font-size: 18px; line-height: 1.9; }
+    .translation-word { border-radius: 3px; cursor: help; touch-action: manipulation; user-select: none; -webkit-user-select: none; }
+    .translation-word:hover, .translation-word:focus-visible { background: #efe7fa; color: #4d3273; }
+    .translation-chinese { margin: 11px 0 0; padding: 11px 13px; border-left: 3px solid #bda8d8; border-radius: 0 8px 8px 0; background: #f8f4fc; color: #3f3549; font-size: 16px; line-height: 1.8; }
+    .translation-expressions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+    .expression-label, .expression-chip { display: inline-flex; align-items: center; min-height: 30px; padding: 3px 9px; border-radius: 999px; background: #f3eef9; color: #4d3273; font-size: 13px; }
+    .expression-label { font-weight: 800; }
+    .translation-empty { padding: 26px 18px; text-align: center; color: var(--muted); border: 1px dashed #bda8d8; border-radius: 8px; background: #faf8fc; }
+    .word-card-layer { position: fixed; inset: 0; z-index: 1200; display: none; place-items: center; padding: 18px; background: rgba(25, 20, 31, .38); }
+    .word-card-layer.show { display: grid; }
+    .word-card { position: relative; width: min(100%, 430px); max-height: min(82vh, 620px); overflow: auto; padding: 23px; border: 1px solid var(--line); border-top: 5px solid var(--brand); border-radius: 8px; background: #fff; box-shadow: 0 24px 64px rgba(42, 27, 58, .22); }
+    .word-card-close { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; padding: 0; border: 0; background: #f3eef9; color: #4d3273; font-size: 27px; line-height: 1; }
+    .word-card-label { margin: 0 48px 3px 0; color: var(--muted); font-size: 13px; }
+    .word-card-title-row { display: flex; align-items: center; gap: 9px; margin-right: 48px; }
+    .word-card h3 { margin: 0; font-size: 28px; line-height: 1.25; }
+    .word-card-title-link { display: inline-flex; align-items: center; min-height: 44px; color: inherit; text-decoration: none; border-bottom: 2px dotted #bda8d8; text-underline-offset: 4px; touch-action: manipulation; }
+    .word-card-title-link::after { content: "\2197"; margin-left: 6px; color: #7655a6; font-family: Arial, sans-serif; font-size: 15px; vertical-align: super; }
+    .word-card-title-link:hover, .word-card-title-link:focus-visible { color: #55357f; border-bottom-color: #7655a6; outline: 3px solid #e7dcf5; outline-offset: 4px; }
+    .word-card-speaker { width: 44px; height: 44px; display: inline-grid; place-items: center; flex: 0 0 auto; padding: 0; border: 1px solid #bda8d8; border-radius: 50%; background: #f7f2fc; color: #55357f; }
+    .word-card-speaker svg { width: 21px; height: 21px; fill: currentColor; }
+    .word-card-speaker.playing { border-color: var(--brand); background: var(--brand); color: #fff; }
+    .word-card-speaker:disabled { cursor: wait; opacity: .72; }
+    .word-card-phonetic { color: #7655a6; font-family: Arial, sans-serif; }
+    .word-card-meaning { margin: 15px 0; padding: 12px; border-radius: 8px; background: #f7f2fc; color: #352642; font-weight: 700; }
+    .word-card-context { margin: 0; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); }
+    .word-card-context strong { display: block; margin-bottom: 4px; color: var(--ink); }
     @media (max-width: 980px) {
       .app { display: block; height: auto; }
       main, aside { overflow: visible; }
@@ -591,6 +641,16 @@
       .login-card { padding: 24px 18px; }
       .login-row { grid-template-columns: 1fr; }
       .login-row button { width: 100%; }
+      .translation-view { padding: 14px 10px; }
+      .translation-summary, .translation-head { align-items: stretch; flex-direction: column; }
+      .translation-summary .action { width: 100%; }
+      .translation-panel { padding: 12px; }
+      .translation-actions { justify-content: stretch; }
+      .translation-actions .action { flex: 1 1 100%; width: 100%; }
+      .translation-paragraph { padding: 13px; }
+      .translation-english { font-size: 17px; line-height: 1.85; }
+      .word-card-layer { align-items: end; padding: 0; }
+      .word-card { width: 100%; max-height: 78vh; border-radius: 14px 14px 0 0; padding: 22px 18px calc(22px + env(safe-area-inset-bottom)); }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
@@ -719,6 +779,38 @@
         <div class="feedback" id="feedback"></div>
       </section>
     </aside>
+  </div>
+  <section class="translation-view hidden" id="translationView" aria-labelledby="translationPageTitle">
+    <div class="translation-shell">
+      <div class="translation-summary" id="translationSummary"></div>
+      <div class="translation-panel">
+        <div class="translation-head">
+          <div><h2 id="translationPageTitle">本篇译文</h2><div class="meta" id="translationMeta"></div></div>
+          <div class="translation-actions">
+            <button class="action secondary" id="toggleAllTranslations" type="button">收起全部译文</button>
+            <button class="action secondary" type="button" onclick="returnToPassageReview()">返回答题复盘</button>
+            <button class="action" type="button" onclick="openNextPassage()">下一篇</button>
+          </div>
+        </div>
+        <div class="translation-tip"><span class="translation-tip-mark" aria-hidden="true">译</span><span>点击英文单词，查看词汇在本句中的意思</span></div>
+        <div id="translationArticle"></div>
+      </div>
+    </div>
+  </section>
+  <div class="word-card-layer" id="wordCardLayer" role="dialog" aria-modal="true" aria-labelledby="wordCardTitle" onclick="handleWordCardBackdrop(event)">
+    <section class="word-card">
+      <button class="word-card-close" id="wordCardClose" type="button" aria-label="关闭词汇卡片" onclick="closeWordCard()">×</button>
+      <p class="word-card-label" id="wordCardLabel">词汇学习卡片</p>
+      <div class="word-card-title-row">
+        <h3><a class="word-card-title-link" id="wordCardTitle" href="https://dict.youdao.com/" target="_blank" rel="noopener noreferrer" title="前往有道词典查看完整释义"></a></h3>
+        <button class="word-card-speaker" id="wordCardSpeak" type="button" onclick="playWordPronunciation()" aria-label="播放单词发音" title="播放发音">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zm-2.5-8.75v2.06a7 7 0 0 1 0 13.38v2.06a9 9 0 0 0 0-17.5z"/></svg>
+        </button>
+      </div>
+      <div class="word-card-phonetic" id="wordCardPhonetic"></div>
+      <div class="word-card-meaning" id="wordCardMeaning"></div>
+      <p class="word-card-context"><strong>所在原句</strong><span id="wordCardContext"></span></p>
+    </section>
   </div>
   <footer class="site-footer">@新疆学生无限进步</footer>
 
@@ -851,7 +943,7 @@
         ]
       }];
 
-    const state = { view: "home", catalogLetter: "", passage: 0, question: 0, chosenWords: [], chosenAnswer: "", attemptSubmitted: false, located: false, compared: false, keywordsConfirmed: false, answers: {} };
+    const state = { view: "home", catalogLetter: "", passage: 0, question: 0, chosenWords: [], chosenAnswer: "", attemptSubmitted: false, located: false, compared: false, keywordsConfirmed: false, answers: {}, translationCollapsed: {} };
     const SYSTEM_TYPE = "reading-comprehension";
     const LOGIN_STORAGE_KEY = "reading_comprehension_access_code_20260716";
     const SUPABASE_CONFIG = {
@@ -874,6 +966,11 @@
         renderStats();
         return;
       }
+      if (state.view === "translation") {
+        renderTranslationView();
+        renderStats();
+        return;
+      }
       renderArticle();
       renderQuestion();
       renderStats();
@@ -882,16 +979,23 @@
     function renderView() {
       $("homeView").classList.toggle("hidden", state.view !== "home");
       $("practiceView").classList.toggle("hidden", state.view !== "practice");
+      $("translationView").classList.toggle("hidden", state.view !== "translation");
       $("questionTabs").classList.toggle("hidden", state.view !== "practice");
     }
 
     function renderTabs() {
+      const p = currentPassage();
+      const translationTab = hasPassageTranslation(p)
+        ? (isPassageComplete(p)
+          ? `<button class="tab ${state.view === "translation" ? "active" : ""}" onclick="showTranslationView()">本篇译文</button>`
+          : `<button class="tab translation-locked" type="button" disabled title="完成本篇全部题目后解锁译文">本篇译文（完成后解锁）</button>`)
+        : "";
       $("passageTabs").innerHTML = `<button class="tab ${state.view === "home" ? "active" : ""}" onclick="showPassageHome()">本篇主页</button>`;
       $("questionTabs").innerHTML = currentPassage().questions.map((q, i) => {
         const saved = state.answers[answerKey(q)];
         const cls = saved ? (saved.correct ? "done" : "wrong") : "";
         return `<button class="qtab ${i === state.question ? "active" : ""} ${cls}" onclick="selectQuestion(${i})">${q.number}题</button>`;
-      }).join("");
+      }).join("") + translationTab;
     }
 
     function renderCatalog() {
@@ -928,7 +1032,9 @@
             const badge = official ? `<span class="official-exam-badge">${passageYear(p)} 新疆中考真题</span>` : "";
             const latest = /乌鲁木齐市第一中学.*9月模考/.test(p.meta || "");
             const serial = String(displayIndex + 1).padStart(2, "0");
-            return `<button class="catalog-item${official ? " official-exam-card" : ""}" onclick="selectPassage(${index})">${badge}${latest ? '<em class="latest-update-badge">20260913 更新</em>' : ''}<strong>${serial}. ${escapeHtml(cleanSourceText(p.title))}</strong><span>${escapeHtml(cleanSourceText(p.meta))} · ${p.questions.length} 题</span></button>`;
+            const completed = isPassageComplete(p);
+            const translationStatus = completed && hasPassageTranslation(p) ? " · 已完成，可看译文" : (completed ? " · 已完成" : "");
+            return `<button class="catalog-item${official ? " official-exam-card" : ""}" onclick="selectPassage(${index})">${badge}${latest ? '<em class="latest-update-badge">20260913 更新</em>' : ''}<strong>${serial}. ${escapeHtml(cleanSourceText(p.title))}</strong><span>${escapeHtml(cleanSourceText(p.meta))} · ${p.questions.length} 题${translationStatus}</span></button>`;
           }).join("") : `<div class="meta">暂未载入</div>`}
         </section>
       `;
@@ -1013,6 +1119,288 @@
       }).join("");
       $("article").innerHTML = visual + paragraphs + chart;
     }
+
+    function passageAnswerKey(p, q) {
+      return `${p.id}-${q.number}`;
+    }
+
+    function isPassageComplete(p) {
+      return !!p && p.questions.length > 0 && p.questions.every(question => state.answers[passageAnswerKey(p, question)]);
+    }
+
+    function hasPassageTranslation(p) {
+      return !!p && Array.isArray(p.translations) && p.translations.length === p.paragraphs.length;
+    }
+
+    function passageResult(p) {
+      const records = p.questions.map(question => state.answers[passageAnswerKey(p, question)]).filter(Boolean);
+      return { done: records.length, right: records.filter(record => record.correct).length, total: p.questions.length };
+    }
+
+    function showTranslationView() {
+      const p = currentPassage();
+      if (!isPassageComplete(p) || !hasPassageTranslation(p)) return;
+      state.view = "translation";
+      closeWordCard();
+      renderAll();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function returnToPassageReview() {
+      state.view = "practice";
+      state.question = Math.max(0, currentPassage().questions.length - 1);
+      closeWordCard();
+      renderAll();
+    }
+
+    function openNextPassage() {
+      if (state.passage < passages.length - 1) {
+        state.passage += 1;
+        state.question = 0;
+        state.view = "practice";
+      } else {
+        state.view = "home";
+        state.catalogLetter = "";
+      }
+      closeWordCard();
+      renderAll();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function translationCollapseKey(p, index) {
+      return `${p.id}-${index}`;
+    }
+
+    function renderTranslationView() {
+      const p = currentPassage();
+      if (!isPassageComplete(p) || !hasPassageTranslation(p)) {
+        state.view = "practice";
+        renderAll();
+        return;
+      }
+      const result = passageResult(p);
+      $("translationSummary").innerHTML = `
+        <div class="translation-summary-main">
+          <span class="translation-check" aria-hidden="true">✓</span>
+          <div><strong>${escapeHtml(passageLetter(p) || "本")}篇训练完成</strong><span class="translation-score">答对 <b>${result.right} / ${result.total}</b></span></div>
+        </div>
+        <button class="action secondary" type="button" onclick="returnToPassageReview()">回看错题</button>
+      `;
+      $("translationPageTitle").textContent = cleanSourceText(p.title);
+      $("translationMeta").textContent = `${cleanSourceText(p.meta)} · 逐段对照翻译 · 完成全部题目后解锁`;
+      const allCollapsed = p.paragraphs.every((_, index) => state.translationCollapsed[translationCollapseKey(p, index)]);
+      $("toggleAllTranslations").textContent = allCollapsed ? "展开全部译文" : "收起全部译文";
+      $("toggleAllTranslations").onclick = () => {
+        p.paragraphs.forEach((_, index) => { state.translationCollapsed[translationCollapseKey(p, index)] = !allCollapsed; });
+        renderTranslationView();
+      };
+      $("translationArticle").innerHTML = p.paragraphs.map((text, index) => renderTranslationParagraph(p, text, index)).join("");
+    }
+
+    function renderTranslationParagraph(p, text, index) {
+      const collapsed = !!state.translationCollapsed[translationCollapseKey(p, index)];
+      const expressions = p.translationExpressions && p.translationExpressions[index] || [];
+      return `<section class="translation-paragraph">
+        <div class="translation-paragraph-bar">
+          <span class="paragraph-number">第 ${index + 1} 段</span>
+          <button class="translation-toggle" type="button" aria-expanded="${!collapsed}" onclick="toggleTranslationParagraph(${index})">${collapsed ? "展开本段" : "收起本段"}</button>
+        </div>
+        <p class="translation-english">${tokenizeTranslationText(text, index)}</p>
+        ${collapsed ? "" : `<p class="translation-chinese">${escapeHtml(p.translations[index])}</p>${renderTranslationExpressions(expressions)}`}
+      </section>`;
+    }
+
+    function renderTranslationExpressions(expressions) {
+      if (!expressions.length) return "";
+      return `<div class="translation-expressions"><span class="expression-label">重点表达</span>${expressions.map(item => `<span class="expression-chip">${escapeHtml(item)}</span>`).join("")}</div>`;
+    }
+
+    function toggleTranslationParagraph(index) {
+      const key = translationCollapseKey(currentPassage(), index);
+      state.translationCollapsed[key] = !state.translationCollapsed[key];
+      renderTranslationView();
+    }
+
+    function tokenizeTranslationText(text, paragraphIndex) {
+      const source = String(text || "");
+      const wordPattern = /[A-Za-z]+(?:[’'][A-Za-z]+)?/g;
+      let html = "";
+      let cursor = 0;
+      let match;
+      while ((match = wordPattern.exec(source))) {
+        html += escapeHtml(source.slice(cursor, match.index));
+        const word = match[0];
+        html += `<span class="translation-word" tabindex="0" data-word="${escapeHtml(word.toLowerCase())}" data-paragraph="${paragraphIndex}" onclick="openWordCard(event, this)" onkeydown="handleWordCardKey(event, this)">${escapeHtml(word)}</span>`;
+        cursor = wordPattern.lastIndex;
+      }
+      return html + escapeHtml(source.slice(cursor));
+    }
+
+    let readingVocabularyIndex = null;
+    let lastWordCardTrigger = null;
+    let currentWordCardTerm = "";
+    let currentPronunciationAudio = null;
+
+    function buildReadingVocabularyIndex() {
+      if (readingVocabularyIndex) return readingVocabularyIndex;
+      readingVocabularyIndex = new Map();
+      const sources = [
+        typeof NEW_CURRICULUM_WORDS === "undefined" ? [] : NEW_CURRICULUM_WORDS,
+        typeof MID_WORDS === "undefined" ? [] : MID_WORDS,
+        typeof CULTURE_WORDS === "undefined" ? [] : CULTURE_WORDS,
+        typeof DOC_WORDS === "undefined" ? [] : DOC_WORDS
+      ];
+      sources.flat().forEach(entry => {
+        readingVocabularyIndex.set(String(entry.w || "").toLowerCase(), entry);
+        (entry.aliases || []).forEach(alias => readingVocabularyIndex.set(String(alias).toLowerCase(), entry));
+      });
+      return readingVocabularyIndex;
+    }
+
+    function vocabularyCandidates(word) {
+      const clean = String(word || "").toLowerCase().replace(/[^a-z'-]/g, "");
+      const candidates = [clean];
+      if (clean.endsWith("iness")) candidates.push(clean.slice(0, -5) + "y");
+      if (clean.endsWith("ness")) candidates.push(clean.slice(0, -4));
+      if (clean.endsWith("ies")) candidates.push(clean.slice(0, -3) + "y");
+      if (clean.endsWith("ily")) candidates.push(clean.slice(0, -3) + "y");
+      if (clean.endsWith("ly")) candidates.push(clean.slice(0, -2));
+      if (clean.endsWith("ing")) candidates.push(clean.slice(0, -3), clean.slice(0, -3) + "e");
+      if (clean.endsWith("ed")) candidates.push(clean.slice(0, -2), clean.slice(0, -1));
+      if (clean.endsWith("es")) candidates.push(clean.slice(0, -2), clean.slice(0, -1));
+      if (clean.endsWith("s")) candidates.push(clean.slice(0, -1));
+      const irregular = { began: "begin", made: "make", did: "do", were: "be", was: "be", took: "take", kept: "keep", shown: "show", built: "build", felt: "feel" };
+      if (irregular[clean]) candidates.push(irregular[clean]);
+      return [...new Set(candidates.filter(Boolean))];
+    }
+
+    function sentenceForWord(text, word) {
+      const sentences = String(text).match(/[^.!?]+[.!?]?/g) || [text];
+      return (sentences.find(sentence => new RegExp(`\\b${escapeReg(word)}\\b`, "i").test(sentence)) || text).trim();
+    }
+
+    function passageVocabularyEntry(p, text, word) {
+      const vocabulary = p.translationVocabulary || {};
+      const phrases = Object.keys(vocabulary).filter(key => key.includes(" ")).sort((a, b) => b.length - a.length);
+      const phrase = phrases.find(key => new RegExp(`\\b${escapeReg(key)}\\b`, "i").test(text) && key.toLowerCase().split(/\s+/).includes(word.toLowerCase()));
+      if (phrase) return { title: phrase, ...vocabulary[phrase] };
+      for (const candidate of vocabularyCandidates(word)) {
+        if (vocabulary[candidate]) return { title: candidate, ...vocabulary[candidate] };
+      }
+      const index = buildReadingVocabularyIndex();
+      for (const candidate of vocabularyCandidates(word)) {
+        const entry = index.get(candidate);
+        if (entry) return { title: entry.w || candidate, phonetic: entry.phonetic || "", meaning: entry.meaning || "", pos: "", details: entry.details || [] };
+      }
+      return { title: word, phonetic: "", meaning: "本地词库暂未收录该词。点击上方词语，可前往有道词典查看完整释义。", pos: "", details: [], missing: true };
+    }
+
+    function openWordCard(event, element) {
+      if (event) event.preventDefault();
+      const p = currentPassage();
+      const paragraphIndex = Number(element.dataset.paragraph);
+      const word = element.dataset.word || element.textContent;
+      const paragraph = p.paragraphs[paragraphIndex] || "";
+      const entry = passageVocabularyEntry(p, paragraph, word);
+      lastWordCardTrigger = element;
+      $("wordCardLabel").textContent = entry.title.includes(" ") ? "短语学习卡片" : "词汇学习卡片";
+      const titleLink = $("wordCardTitle");
+      const lookupTerm = String(word || entry.title).trim();
+      titleLink.textContent = entry.title;
+      titleLink.href = `https://dict.youdao.com/result?word=${encodeURIComponent(lookupTerm)}&lang=en`;
+      titleLink.setAttribute("aria-label", `在有道词典查看 ${lookupTerm} 的完整释义`);
+      $("wordCardPhonetic").textContent = [entry.phonetic, entry.pos].filter(Boolean).join("  ");
+      $("wordCardMeaning").textContent = entry.contextMeaning || entry.meaning || "该词暂未收录释义。";
+      $("wordCardContext").textContent = sentenceForWord(paragraph, word);
+      currentWordCardTerm = entry.title;
+      resetPronunciationButton();
+      $("wordCardLayer").classList.add("show");
+      document.body.style.overflow = "hidden";
+      $("wordCardClose").focus();
+    }
+
+    function handleWordCardKey(event, element) {
+      if (event.key === "Enter" || event.key === " ") openWordCard(event, element);
+    }
+
+    function resetPronunciationButton() {
+      const button = $("wordCardSpeak");
+      if (!button) return;
+      button.disabled = false;
+      button.classList.remove("playing");
+      button.setAttribute("aria-label", "播放单词发音");
+      button.title = "播放发音";
+    }
+
+    function browserSpeakWord(term) {
+      if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
+        $("wordCardSpeak").setAttribute("aria-label", "暂时无法播放发音");
+        setTimeout(resetPronunciationButton, 1600);
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(term);
+      utterance.lang = "en-US";
+      utterance.rate = .82;
+      utterance.onend = resetPronunciationButton;
+      utterance.onerror = () => {
+        $("wordCardSpeak").setAttribute("aria-label", "暂时无法播放发音");
+        setTimeout(resetPronunciationButton, 1600);
+      };
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function playWordPronunciation() {
+      const term = currentWordCardTerm.trim();
+      if (!term) return;
+      if (currentPronunciationAudio) {
+        currentPronunciationAudio.pause();
+        currentPronunciationAudio = null;
+      }
+      const button = $("wordCardSpeak");
+      button.disabled = true;
+      button.classList.add("playing");
+      button.setAttribute("aria-label", "正在播放发音");
+      const audioUrl = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(term)}&type=2`;
+      const audio = new Audio(audioUrl);
+      currentPronunciationAudio = audio;
+      let usedFallback = false;
+      const fallback = () => {
+        if (usedFallback) return;
+        usedFallback = true;
+        currentPronunciationAudio = null;
+        button.disabled = false;
+        button.classList.add("playing");
+        button.setAttribute("aria-label", "浏览器正在播放发音");
+        browserSpeakWord(term);
+      };
+      audio.onended = () => { currentPronunciationAudio = null; resetPronunciationButton(); };
+      audio.onerror = fallback;
+      const playResult = audio.play();
+      if (playResult && typeof playResult.catch === "function") playResult.catch(fallback);
+    }
+
+    function closeWordCard() {
+      const layer = $("wordCardLayer");
+      if (!layer) return;
+      if (currentPronunciationAudio) {
+        currentPronunciationAudio.pause();
+        currentPronunciationAudio = null;
+      }
+      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+      layer.classList.remove("show");
+      document.body.style.overflow = "";
+      if (lastWordCardTrigger && document.contains(lastWordCardTrigger)) lastWordCardTrigger.focus();
+      lastWordCardTrigger = null;
+    }
+
+    function handleWordCardBackdrop(event) {
+      if (event.target === $("wordCardLayer")) closeWordCard();
+    }
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && $("wordCardLayer").classList.contains("show")) closeWordCard();
+    });
 
     function renderChart(chart, q) {
       const columns = chart.columns || [];
@@ -1433,6 +1821,12 @@
         ${revLegendHtml()}
         ${q.options.map((opt, index) => renderEnhancedReviewRow(q, opt, index)).join("")}
       `;
+      const lastQuestion = state.question === currentPassage().questions.length - 1;
+      if (lastQuestion && isPassageComplete(currentPassage())) {
+        $("nextBtn").textContent = hasPassageTranslation(currentPassage()) ? "完成本篇，查看译文" : "完成本篇，返回目录";
+      } else {
+        $("nextBtn").textContent = "下一题";
+      }
     }
 
     function renderACompareBox(q) {
@@ -1494,8 +1888,15 @@
 
     $("nextBtn").onclick = () => {
       const qs = currentPassage().questions;
-      if (state.question < qs.length - 1) state.question += 1;
-      else if (state.passage < passages.length - 1) { state.passage += 1; state.question = 0; }
+      if (state.question < qs.length - 1) {
+        state.question += 1;
+      } else if (isPassageComplete(currentPassage()) && hasPassageTranslation(currentPassage())) {
+        showTranslationView();
+        return;
+      } else {
+        state.view = "home";
+        state.catalogLetter = passageLetter(currentPassage());
+      }
       renderAll();
     };
 
@@ -2080,5 +2481,10 @@
     document.addEventListener("DOMContentLoaded", initReadingLogin);
   </script>
   <script src="data/imported-passages.js?v=20260914-reading-print-1"></script>
+  <script src="../vocabulary/low_words.js?v=20260919-reading-card-1"></script>
+  <script src="../vocabulary/mid_words.js?v=20260919-reading-card-1"></script>
+  <script src="../vocabulary/extra_words.js?v=20260919-reading-card-1"></script>
+  <script src="../vocabulary/doc_words.js?v=20260919-reading-card-1"></script>
+  <script src="data/passage-translations.js?v=20260920-youdao-1"></script>
 </body>
 </html>
