@@ -62,7 +62,7 @@
   function stripMarkup(text, questions) {
     return String(text || "")
       .replace(/\[\[clue:\d+:([^\]]+)\]\]/g, "$1")
-      .replace(/\[\[(\d+)\]\]\s*(\([^)]+\))?/g, (_, no) => {
+      .replace(/\[\[(\d+)\]\](?:\s*\([^)]+\))?/g, (_, no) => {
         const question = (questions || []).find(item => item.no === Number(no));
         return question && question.answers && question.answers[0] ? question.answers[0] : "";
       })
@@ -160,7 +160,7 @@
         const cached = translationCache[cacheKey];
         return '<section class="reading-sentence" data-sentence-index="' + index + '" data-sentence="' + escapeHtml(item.text) + '"><div class="reading-sentence-no">句子 ' + String(index + 1).padStart(2, "0") + '</div><div class="reading-sentence-body"><p class="reading-en">' + renderInteractiveSentence(item.text) + '</p><div class="reading-cn" data-translation-key="' + cacheKey + '"><strong>译文</strong><span>' + (cached ? escapeHtml(cached) : '正在加载译文…') + '</span></div></div></section>';
       }).join("") + '</div>' +
-      '<footer class="reading-footer"><p>单击任意英文单词，可查看单词、音标、词性、本句含义和相关短语。</p><div><button type="button" class="ghost-btn" data-reading-action="back">返回做题结果</button><button type="button" class="primary-btn" data-reading-action="library">返回题库</button></div></footer></article></div>';
+      '<footer class="reading-footer"><p>单击任意英文单词，可查看单词、音标、词性、本句含义和相关短语。</p><div><button type="button" class="ghost-btn" data-reading-action="back">返回做题结果</button><button type="button" class="primary-btn" data-reading-action="library">返回本题库</button><a class="ghost-btn reading-home-link" href="../../index.html">返回首页</a></div></footer></article></div>';
   }
 
   function bind(article) {
