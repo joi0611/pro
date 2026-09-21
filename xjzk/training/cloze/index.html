@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
     <title>新疆中考英语完形填空训练系统</title>
-    <link rel="stylesheet" href="styles.css?v=20260716-official-order-1" />
+    <link rel="stylesheet" href="styles.css?v=20260921-experience-button-2" />
     <link rel="stylesheet" href="../../assets/theme-purple.css?v=20260716-ui3" />
-    <link rel="stylesheet" href="cloze-workbook-ui.css?v=20260919-compact-word-cards-1" />
+    <link rel="stylesheet" href="cloze-workbook-ui.css?v=20260921-sentence-translate-2" />
   </head>
   <body class="module-cloze">
     <a class="skip-link" href="#appShell">跳到主要内容</a>
@@ -21,11 +21,13 @@
           <div class="login-panel">
             <div class="login-form">
               <label for="loginCode">登录码 <small>新疆学生无限进步统一登录码</small></label>
-              <div class="login-row">
-                <input id="loginCode" type="password" autocomplete="off" placeholder="请输入登录码" />
-                <button id="loginBtn" class="primary-button">登录</button>
-              </div>
-              <p id="loginFeedback" class="feedback"></p>
+               <div class="login-row">
+                 <input id="loginCode" type="password" autocomplete="off" placeholder="请输入登录码" />
+                 <button id="loginBtn" class="primary-button">登录</button>
+               </div>
+               <button id="experienceLoginBtn" class="experience-login-button" type="button">进入体验版</button>
+               <p class="experience-login-note">体验版需输入体验码，开放5篇文章，学习记录仅保存在当前浏览器。</p>
+               <p id="loginFeedback" class="feedback"></p>
             </div>
           </div>
         </div>
@@ -81,12 +83,14 @@
           <div class="home-heading">
             <div>
               <p class="eyebrow">题库主页</p>
-              <h2>选择一篇文章，<span>开始训练</span></h2>
-              <p>已上传的文章会显示在这里。做过的文章会保留记录，也可以重复练习。</p>
+               <h2>选择一篇文章，<span>开始训练</span></h2>
+               <p id="experienceModeNote" class="experience-mode-note hidden">体验版 · 已开放5篇文章</p>
+               <p>已上传的文章会显示在这里。做过的文章会保留记录，也可以重复练习。</p>
             </div>
-            <div class="home-tool-actions" aria-label="学习工具入口">
-              <a class="home-tool-button home-return-link" href="../../index.html">返回首页，训练其他专题</a>
-              <button id="openNotebookBtn" class="home-tool-button" type="button">专属错题本</button>
+             <div class="home-tool-actions" aria-label="学习工具入口">
+               <a class="home-tool-button home-return-link" href="../../index.html">返回首页，训练其他专题</a>
+               <button id="unlockFormalBtn" class="home-tool-button hidden" type="button">输入正式码解锁全部</button>
+               <button id="openNotebookBtn" class="home-tool-button" type="button">专属错题本</button>
               <button id="openCollocationBankBtn" class="home-tool-button" type="button">固定搭配总库</button>
             </div>
           </div>
@@ -235,7 +239,7 @@
           <div class="read-aloud">
             <div>
               <strong id="readStatus">精读翻译台</strong>
-              <p>完整查看原文和选项；单击单词或选项看意思，双击句子看整句中文。</p>
+              <p>完整查看原文和选项；单击单词查看词卡，点击每句末尾的“译”查看整句中文。</p>
             </div>
           </div>
           <div class="translation-workbench">
@@ -245,7 +249,7 @@
             </div>
             <div id="sentenceMeaning" class="translation-card">
               <strong>翻译</strong>
-              <p>单击单词或选项查看意思，双击句子查看整句中文。</p>
+              <p>单击单词查看词卡，点击每句末尾的“译”查看整句中文。</p>
             </div>
           </div>
           <section class="paper-practice">
@@ -262,11 +266,35 @@
     </main>
 
     <div id="printArea" class="print-area" aria-hidden="true"></div>
+
+    <div id="clozeWordCardLayer" class="cloze-word-card-layer" role="dialog" aria-modal="true" aria-labelledby="clozeWordCardTitle">
+      <section class="cloze-word-card" role="document">
+        <button id="clozeWordCardClose" class="cloze-word-card-close" type="button" aria-label="关闭词汇卡片">×</button>
+        <p class="cloze-word-card-label">精读词汇卡片</p>
+        <div class="cloze-word-card-title-row">
+          <h3><a id="clozeWordCardTitle" href="https://dict.youdao.com/" target="_blank" rel="noopener noreferrer" title="前往有道词典查看完整释义"></a></h3>
+          <button id="clozeWordCardSpeak" class="cloze-word-card-speaker" type="button" aria-label="播放单词发音" title="播放发音">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zm-2.5-8.7v2.06a7 7 0 0 1 0 13.28v2.06a9 9 0 0 0 0-17.4z"/></svg>
+            <span>发音</span>
+          </button>
+        </div>
+        <p id="clozeWordCardPhonetic" class="cloze-word-card-phonetic">音标加载中…</p>
+        <div class="cloze-word-card-section">
+          <strong>词义</strong>
+          <p id="clozeWordCardMeaning"></p>
+        </div>
+        <div class="cloze-word-card-section">
+          <strong>常见固定搭配</strong>
+          <div id="clozeWordCardCollocations" class="cloze-word-card-collocations"></div>
+        </div>
+        <p class="cloze-word-card-source">点击词语可前往有道词典；发音优先使用有道，连接失败时自动使用浏览器英语语音。</p>
+      </section>
+    </div>
     <script src="official-exams-2021-2025.js?v=20260823-official-exams-2"></script>
     <script src="official-exams-2016-2020.js?v=20260823-official-exams-2"></script>
     <script src="../vocabulary/doc_words.js?v=20260824"></script>
     <script src="high-frequency-selections.js?v=20260919-1"></script>
     <script src="../../assets/student-profile.js?v=20260828-1"></script>
-    <script src="app.js?v=20260919-review-labels-2"></script>
+    <script src="app.js?v=20260921-experience-codes-4"></script>
   </body>
 </html>

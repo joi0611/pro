@@ -11,6 +11,44 @@
   --cloze-red: #cf646a;
 }
 
+/* 体验版：保留完整题库陈列，但锁定白名单之外的文章。 */
+.module-cloze.experience-mode .home-lesson-card.experience-locked {
+  color: #858585;
+  border-color: #dedede;
+  background: #f3f3f3;
+  box-shadow: none;
+  filter: grayscale(0.72);
+}
+
+.module-cloze.experience-mode .home-lesson-card.experience-locked:hover {
+  border-color: #c7c7c7;
+  transform: none;
+}
+
+.module-cloze.experience-mode .home-lesson-card.experience-locked .home-card-main,
+.module-cloze.experience-mode .home-lesson-card.experience-locked strong,
+.module-cloze.experience-mode .home-lesson-card.experience-locked p {
+  color: #7d7d7d;
+}
+
+.module-cloze.experience-mode .home-lesson-card.experience-locked .home-start-button {
+  color: #6f6f6f;
+  border-color: #d0d0d0;
+  background: #e7e7e7;
+}
+
+.module-cloze.experience-mode .library-card.experience-locked {
+  color: #a9b0bb;
+  border-color: rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.035);
+  filter: grayscale(1);
+}
+
+.module-cloze.experience-mode .library-card.experience-locked .status-pill.locked {
+  color: #535b66;
+  background: #d9dde2;
+}
+
 .module-cloze {
   min-height: 100dvh;
   background:
@@ -1160,5 +1198,340 @@
 @media (prefers-reduced-motion: reduce) {
   .module-cloze .high-frequency-card-inner {
     transition: none;
+  }
+}
+
+.module-cloze .high-frequency-card-shell {
+  position: relative;
+  min-width: 0;
+  height: 172px;
+}
+
+.module-cloze .high-frequency-card-back {
+  padding-bottom: 62px;
+}
+
+.module-cloze .high-frequency-speak {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 4;
+  display: inline-flex;
+  min-width: 84px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 12px;
+  border: 1px solid #a98bd8 !important;
+  border-radius: 8px;
+  color: #50308e !important;
+  background: #fff !important;
+  box-shadow: 0 6px 16px rgba(67, 43, 99, 0.12) !important;
+  font-size: 13px;
+  font-weight: 900;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(5px);
+  transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.module-cloze .high-frequency-card-shell.flipped .high-frequency-speak {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.module-cloze .high-frequency-speak:hover,
+.module-cloze .high-frequency-speak.playing {
+  color: #fff !important;
+  background: #6c3ce7 !important;
+}
+
+.module-cloze .high-frequency-speak svg,
+.module-cloze .cloze-word-card-speaker svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+.module-cloze .high-frequency-speak:focus-visible,
+.module-cloze .cloze-word-card button:focus-visible,
+.module-cloze .cloze-word-card a:focus-visible,
+.module-cloze .word-token:focus-visible {
+  outline: 3px solid #7c3aed;
+  outline-offset: 3px;
+}
+
+.module-cloze.word-card-open {
+  overflow: hidden;
+}
+
+.module-cloze .cloze-word-card-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1400;
+  display: none;
+  place-items: center;
+  padding: 20px;
+  background: rgba(27, 20, 39, 0.46);
+  backdrop-filter: blur(3px);
+}
+
+.module-cloze .cloze-word-card-layer.show {
+  display: grid;
+}
+
+.module-cloze .cloze-word-card {
+  position: relative;
+  width: min(100%, 500px);
+  max-height: min(86vh, 680px);
+  overflow: auto;
+  padding: 24px;
+  border: 1px solid #d8cbea;
+  border-top: 5px solid #6c3ce7;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 28px 80px rgba(38, 23, 57, 0.28);
+}
+
+.module-cloze .cloze-word-card-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0 !important;
+  border-radius: 50%;
+  color: #563987 !important;
+  background: #f1ebfa !important;
+  box-shadow: none !important;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.module-cloze .cloze-word-card-label {
+  margin: 0 52px 4px 0;
+  color: #756c80;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.module-cloze .cloze-word-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 48px;
+}
+
+.module-cloze .cloze-word-card-title-row h3 {
+  min-width: 0;
+  margin: 0;
+  font-size: clamp(25px, 5vw, 32px);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.module-cloze .cloze-word-card-title-row a {
+  color: #1e1626;
+  text-decoration: none;
+  border-bottom: 2px dotted #bda8d8;
+}
+
+.module-cloze .cloze-word-card-title-row a::after {
+  content: "↗";
+  margin-left: 7px;
+  color: #7655a6;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  vertical-align: super;
+}
+
+.module-cloze .cloze-word-card-speaker {
+  display: inline-flex;
+  min-width: 92px;
+  min-height: 44px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 12px;
+  border: 1px solid #aa8fd3 !important;
+  border-radius: 999px;
+  color: #55357f !important;
+  background: #f7f2fc !important;
+  box-shadow: none !important;
+  font-weight: 900;
+}
+
+.module-cloze .cloze-word-card-speaker.playing {
+  color: #fff !important;
+  background: #6c3ce7 !important;
+}
+
+.module-cloze .cloze-word-card-phonetic {
+  min-height: 24px;
+  margin: 10px 0 16px;
+  color: #6847a0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.module-cloze .cloze-word-card-section {
+  margin-top: 12px;
+  padding: 13px 14px;
+  border: 1px solid #e1d8ee;
+  border-radius: 9px;
+  background: #faf8fd;
+}
+
+.module-cloze .cloze-word-card-section > strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #3f2768;
+  font-size: 14px;
+}
+
+.module-cloze .cloze-word-card-section p {
+  margin: 0;
+  color: #3e3747;
+  line-height: 1.7;
+}
+
+.module-cloze .cloze-word-card-collocations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.module-cloze .cloze-word-card-collocations > span {
+  padding: 6px 9px;
+  border-radius: 7px;
+  color: #4b307c;
+  background: #ece4f8;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.module-cloze .cloze-word-card-empty {
+  color: #746b7e !important;
+  font-size: 13px;
+}
+
+.module-cloze .cloze-word-card-source {
+  margin: 14px 2px 0;
+  color: #756c80;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.module-cloze .word-token {
+  text-decoration: underline dotted rgba(108, 60, 231, 0.38);
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  .module-cloze .cloze-word-card-layer {
+    align-items: end;
+    padding: 0;
+  }
+
+  .module-cloze .cloze-word-card {
+    width: 100%;
+    max-height: 82vh;
+    padding: 22px 18px calc(22px + env(safe-area-inset-bottom));
+    border-radius: 16px 16px 0 0;
+  }
+
+  .module-cloze .cloze-word-card-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-right: 48px;
+  }
+}
+
+/* 精读翻译：一句一行，显式按钮取代容易误触的双击操作。 */
+.module-cloze .filled-passage {
+  display: grid;
+  gap: 0;
+  padding: 10px 14px;
+}
+
+.module-cloze .read-sentence {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
+  align-items: start;
+  gap: 10px;
+  padding: 10px 4px;
+  border: 0;
+  border-bottom: 1px solid #ece7f2;
+  border-radius: 0;
+  color: inherit;
+  background: transparent;
+  text-align: left;
+}
+
+.module-cloze .read-sentence:last-child {
+  border-bottom: 0;
+}
+
+.module-cloze .read-sentence-text {
+  min-width: 0;
+  padding-top: 3px;
+  line-height: 1.85;
+}
+
+.module-cloze .read-sentence:hover {
+  color: inherit;
+  background: #fbf9fe;
+}
+
+.module-cloze .read-sentence.meaning-active,
+.module-cloze .read-sentence.reading {
+  color: inherit;
+  outline: 0;
+  background: #f4effc;
+  box-shadow: inset 3px 0 0 #7c3aed;
+}
+
+.module-cloze .sentence-translate-button {
+  display: inline-grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #cbbbe3 !important;
+  border-radius: 50%;
+  color: #5c3b91 !important;
+  background: #f7f3fc !important;
+  box-shadow: none !important;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.module-cloze .sentence-translate-button:hover,
+.module-cloze .sentence-translate-button:focus-visible,
+.module-cloze .read-sentence.meaning-active .sentence-translate-button {
+  color: #fff !important;
+  border-color: #6c3ce7 !important;
+  background: #6c3ce7 !important;
+}
+
+.module-cloze .sentence-translate-button:focus-visible {
+  outline: 3px solid rgba(124, 58, 237, 0.28);
+  outline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  .module-cloze .filled-passage {
+    padding: 8px 10px;
+  }
+
+  .module-cloze .read-sentence {
+    gap: 8px;
+    padding: 10px 2px;
   }
 }

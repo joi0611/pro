@@ -3859,6 +3859,8 @@ const lessonSlots = lessonBanks.flatMap((bank) => bank.lessons);
 const storageKeys = {
   done: "clozeCoach.doneLessons",
   mistakes: "clozeCoach.mistakeNotebook",
+  experienceDone: "clozeCoach.experience.doneLessons.20260921",
+  experienceMode: "clozeCoach.experienceMode.20260921",
   login: "clozeCoach.supabaseLoginOk.20260709",
   accessCode: "clozeCoach.supabaseAccessCode.20260709",
   loginLabel: "clozeCoach.supabaseLoginLabel.20260709",
@@ -3870,6 +3872,13 @@ const storageKeys = {
 
 const trialDurationMs = 24 * 60 * 60 * 1000;
 const guestLessonId = "colors-argued";
+const experienceAllowedLessonIds = new Set([
+  "monkey-king-story",
+  "xinjiang-official-2025-cloze",
+  "xinjiang-official-2024-cloze",
+  "power-of-words",
+  "colors-argued"
+]);
 const supabaseConfig = {
   url: "https://gbjmylxohacppnybfssh.supabase.co",
   anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdiam15bHhvaGFjcHBueWJmc3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDA1NzgsImV4cCI6MjA5ODI3NjU3OH0.mz5srsxdbZa4__oqKjlcysWuDo00w7UQaV8n2VNP4eE"
@@ -3915,7 +3924,9 @@ const els = {
   loginScreen: document.querySelector("#loginScreen"),
   loginCode: document.querySelector("#loginCode"),
   loginBtn: document.querySelector("#loginBtn"),
+  experienceLoginBtn: document.querySelector("#experienceLoginBtn"),
   loginFeedback: document.querySelector("#loginFeedback"),
+  experienceModeNote: document.querySelector("#experienceModeNote"),
   currentLevel: document.querySelector("#currentLevel"),
   currentDifficulty: document.querySelector("#currentDifficulty"),
   currentCount: document.querySelector("#currentCount"),
@@ -3928,6 +3939,7 @@ const els = {
   lastSentence: document.querySelector("#lastSentence"),
   openNotebookBtn: document.querySelector("#openNotebookBtn"),
   headerNotebookBtn: document.querySelector("#headerNotebookBtn"),
+  unlockFormalBtn: document.querySelector("#unlockFormalBtn"),
   openCollocationBankBtn: document.querySelector("#openCollocationBankBtn"),
   homeNotebookPanel: document.querySelector("#homeNotebookPanel"),
   homeCollocationPanel: document.querySelector("#homeCollocationPanel"),
@@ -3979,6 +3991,8 @@ const els = {
 
 async function init() {
   await initLogin();
+  ensureAccessibleLessonSelected();
+  applyExperienceModeUi();
   enterHome();
   renderHomeLibrary();
   renderLessonLibrary();
@@ -3993,7 +4007,7 @@ async function init() {
   updateProgress();
   renderNotebook();
   renderCollocationBank();
-  if (hasValidLogin()) {
+  if (hasFormalLogin()) {
     await loadCloudProgress();
   }
 }
@@ -4013,7 +4027,9 @@ function enterStudy() {
 }
 
 async function initLogin() {
-  if (hasValidLogin()) {
+  if (isExperienceMode()) {
+    els.loginScreen.classList.add("hidden");
+  } else if (hasFormalLogin()) {
     const code = getCloudAccessCode();
     try {
       const account = await verifyAccessCode(code);
@@ -4029,12 +4045,17 @@ async function initLogin() {
   }
 
   els.loginBtn.addEventListener("click", handleLogin);
+  els.experienceLoginBtn?.addEventListener("click", handleExperienceLogin);
   els.loginCode.addEventListener("keydown", (event) => {
     if (event.key === "Enter") handleLogin();
   });
 }
 
 function hasValidLogin() {
+  return isExperienceMode() || hasFormalLogin();
+}
+
+function hasFormalLogin() {
   clearGuestMode();
   if (localStorage.getItem(storageKeys.login) !== "true") return false;
   if (!localStorage.getItem(storageKeys.accessCode)) return false;
@@ -4044,6 +4065,94 @@ function hasValidLogin() {
   localStorage.removeItem(storageKeys.login);
   localStorage.removeItem(storageKeys.loginExpiresAt);
   return false;
+}
+
+function isExperienceMode() {
+  return localStorage.getItem(storageKeys.experienceMode) === "true";
+}
+
+function isLessonUnlocked(itemOrId) {
+  if (!isExperienceMode()) return true;
+  const lessonId = typeof itemOrId === "string" ? itemOrId : itemOrId?.id;
+  return experienceAllowedLessonIds.has(lessonId);
+}
+
+function ensureAccessibleLessonSelected() {
+  if (isLessonUnlocked(lesson)) return;
+  const fallback = lessonSlots.find((item) => item.available && isLessonUnlocked(item));
+  if (fallback) {
+    lesson = fallback;
+    state.lessonId = fallback.id;
+  }
+}
+
+function applyExperienceModeUi() {
+  const enabled = isExperienceMode();
+  document.body.classList.toggle("experience-mode", enabled);
+  els.experienceModeNote?.classList.toggle("hidden", !enabled);
+  els.unlockFormalBtn?.classList.toggle("hidden", !enabled);
+  els.openNotebookBtn?.classList.toggle("experience-locked-tool", enabled);
+  els.headerNotebookBtn?.classList.toggle("experience-locked-tool", enabled);
+  if (els.openNotebookBtn) els.openNotebookBtn.textContent = enabled ? "专属错题本 · 已锁定" : "专属错题本";
+  if (els.headerNotebookBtn) els.headerNotebookBtn.textContent = enabled ? "学习记录 · 已锁定" : "学习记录";
+}
+
+function showExperienceLockedMessage(message = "该内容仅限正式版使用，请输入正式登录码解锁全部内容。") {
+  window.alert(message);
+}
+
+function showFormalLoginFromExperience() {
+  els.loginCode.value = "";
+  els.loginFeedback.className = "feedback";
+  els.loginFeedback.textContent = "请输入正式登录码，登录成功后即可解锁全部内容。";
+  els.loginScreen.classList.remove("hidden");
+  window.setTimeout(() => els.loginCode.focus(), 0);
+}
+
+async function handleExperienceLogin() {
+  const code = els.loginCode.value.trim();
+  if (!code) {
+    els.loginFeedback.className = "feedback bad";
+    els.loginFeedback.textContent = "请输入体验码。";
+    els.loginCode.focus();
+    return;
+  }
+  els.experienceLoginBtn.disabled = true;
+  els.loginFeedback.className = "feedback";
+  els.loginFeedback.textContent = "正在验证体验码...";
+
+  try {
+    const result = await callSupabaseRpc("verify_cloze_experience_code", { input_code: code });
+    const account = Array.isArray(result) ? result[0] : null;
+    if (!account?.access_code_id) throw new Error("INVALID_EXPERIENCE_CODE");
+
+    localStorage.setItem(storageKeys.experienceMode, "true");
+    ensureAccessibleLessonSelected();
+    applyExperienceModeUi();
+    els.loginScreen.classList.add("hidden");
+    els.loginFeedback.className = "feedback";
+    els.loginFeedback.textContent = "";
+    resetPracticeState();
+    renderLessonHeader();
+    renderHomeLibrary();
+    renderLessonLibrary();
+    renderToneGate();
+    renderPassage();
+    renderFilledPassage();
+    renderCollocationReview();
+    renderHighFrequencyReview();
+    renderCollocationBank();
+    updateProgress();
+    enterHome();
+  } catch (error) {
+    els.loginFeedback.className = "feedback bad";
+    els.loginFeedback.textContent = error.message === "INVALID_EXPERIENCE_CODE"
+      ? "体验码不正确，请检查后再试。"
+      : "暂时无法验证体验码，请检查网络后重试。";
+    els.loginCode.focus();
+  } finally {
+    els.experienceLoginBtn.disabled = false;
+  }
 }
 
 async function handleLogin() {
@@ -4065,6 +4174,8 @@ async function handleLogin() {
     localStorage.setItem(storageKeys.accessCode, code);
     localStorage.setItem(storageKeys.loginLabel, account.label || "");
     localStorage.removeItem(storageKeys.loginExpiresAt);
+    localStorage.removeItem(storageKeys.experienceMode);
+    applyExperienceModeUi();
     clearGuestMode();
     els.loginScreen.classList.add("hidden");
     els.loginFeedback.className = "feedback";
@@ -4150,6 +4261,7 @@ function getCloudAccessCode() {
 }
 
 async function loadCloudProgress() {
+  if (isExperienceMode()) return;
   const code = getCloudAccessCode();
   if (!code) return;
 
@@ -4205,6 +4317,7 @@ function mergeNotebookRecords(localRecords, cloudRecords) {
 }
 
 async function saveCloudProgress(lessonId, progress, completed = false, score = null) {
+  if (isExperienceMode()) return;
   const code = getCloudAccessCode();
   if (!code) return;
 
@@ -4227,7 +4340,9 @@ function getVisibleLessonBanks() {
 }
 
 function getAvailableLessons() {
-  return getVisibleLessonBanks().flatMap((bank) => bank.lessons.filter((item) => item.available));
+  return getVisibleLessonBanks().flatMap((bank) =>
+    bank.lessons.filter((item) => item.available && isLessonUnlocked(item))
+  );
 }
 
 function hasStoredCollocation(question) {
@@ -4320,10 +4435,11 @@ function renderHomeLibrary() {
     const list = document.createElement("div");
     list.className = "home-card-grid";
     availableLessons.forEach((item, index) => {
-      const isDone = Boolean(doneLessons[item.id]);
+      const isUnlocked = isLessonUnlocked(item);
+      const isDone = isUnlocked && Boolean(doneLessons[item.id]);
       const card = document.createElement("article");
       const isOfficialExam = isOfficialExamLesson(item);
-      card.className = `home-lesson-card ${isDone ? "done" : "ready"}${item.featured ? " featured" : ""}${isOfficialExam ? " official-exam-card" : ""}`;
+      card.className = `home-lesson-card ${isUnlocked ? (isDone ? "done" : "ready") : "experience-locked"}${item.featured ? " featured" : ""}${isOfficialExam ? " official-exam-card" : ""}`;
       card.innerHTML = `
         <span class="home-card-index">${String(index + 1).padStart(2, "0")}</span>
         <div class="home-card-main">
@@ -4332,7 +4448,7 @@ function renderHomeLibrary() {
           <strong>${item.title}</strong>
           <p class="source-line${isOfficialExamLesson(item) ? " real-exam-source" : ""}">${item.source}</p>
         </div>
-        <button class="home-start-button" type="button">开始训练 <span aria-hidden="true">→</span></button>
+        <button class="home-start-button" type="button">${isUnlocked ? "开始训练" : "已锁定"} <span aria-hidden="true">${isUnlocked ? "→" : "🔒"}</span></button>
       `;
       card.querySelector(".home-start-button").addEventListener("click", () => selectLesson(item.id));
       list.appendChild(card);
@@ -4354,6 +4470,10 @@ function showHomeLibrary(shouldScroll = true) {
 }
 
 function showHomeTool(tool) {
+  if (tool === "notebook" && isExperienceMode()) {
+    showExperienceLockedMessage("专属错题本为正式版功能。体验版的5篇学习进度只保存在当前浏览器中。");
+    return;
+  }
   els.appShell.classList.add("home-mode");
   els.appShell.classList.remove("study-mode");
   resetSentenceAudio();
@@ -4382,12 +4502,13 @@ function renderLessonLibrary() {
     list.className = "library-group-list";
 
     sortLessonsForDisplay(bank.lessons).forEach((item, index) => {
-      const isDone = Boolean(doneLessons[item.id]);
+      const isUnlocked = isLessonUnlocked(item);
+      const isDone = isUnlocked && Boolean(doneLessons[item.id]);
       const isActive = item.id === lesson.id;
       const isOfficialExam = isOfficialExamLesson(item);
       const card = document.createElement("button");
       card.type = "button";
-      card.className = `library-card${isActive ? " active" : ""}${!item.available ? " disabled" : ""}${item.featured ? " featured" : ""}${isOfficialExam ? " official-exam-card" : ""}`;
+      card.className = `library-card${isActive ? " active" : ""}${!item.available ? " disabled" : ""}${!isUnlocked ? " experience-locked" : ""}${item.featured ? " featured" : ""}${isOfficialExam ? " official-exam-card" : ""}`;
       card.disabled = !item.available;
       card.innerHTML = `
         <div class="library-topline">
@@ -4395,7 +4516,7 @@ function renderLessonLibrary() {
             <span class="fake-check">${isActive ? "✓" : ""}</span>
             第 ${index + 1} 篇
           </span>
-          <span class="status-pill ${isDone ? "done" : item.available ? "ready" : "pending"}">${isDone ? "已做，可重做" : item.available ? "可练习" : "待导入"}</span>
+          <span class="status-pill ${!isUnlocked ? "locked" : isDone ? "done" : item.available ? "ready" : "pending"}">${!isUnlocked ? "已锁定" : isDone ? "已做，可重做" : item.available ? "可练习" : "待导入"}</span>
         </div>
         ${isOfficialExam ? `<span class="official-exam-badge">${getOfficialExamBadge(item)}</span>` : ""}
         ${item.id === "power-of-words" ? `<span class="latest-update-badge">20260913 更新</span>` : ""}
@@ -4416,6 +4537,10 @@ function renderLessonLibrary() {
 function selectLesson(lessonId) {
   const selected = lessonSlots.find((item) => item.id === lessonId);
   if (!selected || !selected.available) return;
+  if (!isLessonUnlocked(selected)) {
+    showExperienceLockedMessage("体验版固定开放第1、2、3、12、13篇文章，输入正式登录码可解锁全部文章。");
+    return;
+  }
   lesson = selected;
   state.lessonId = lesson.id;
   resetPracticeState();
@@ -4465,7 +4590,7 @@ function resetPracticeState() {
 }
 
 function getDoneLessons() {
-  return readJson(storageKeys.done, {});
+  return readJson(isExperienceMode() ? storageKeys.experienceDone : storageKeys.done, {});
 }
 
 function markLessonDone(score) {
@@ -4478,15 +4603,17 @@ function markLessonDone(score) {
     completedAt: new Date().toISOString()
   };
   doneLessons[lesson.id] = doneRecord;
-  writeJson(storageKeys.done, doneLessons);
+  writeJson(isExperienceMode() ? storageKeys.experienceDone : storageKeys.done, doneLessons);
   return doneRecord;
 }
 
 function getNotebookRecords() {
+  if (isExperienceMode()) return [];
   return readJson(storageKeys.mistakes, []);
 }
 
 function addMistakesToNotebook(wrongQuestions) {
+  if (isExperienceMode()) return [];
   const signature = `${lesson.id}:${lesson.questions.map((question) => state.answers[question.id] || "_").join("|")}`;
   if (state.savedAttemptSignature === signature) return [];
   state.savedAttemptSignature = signature;
@@ -5714,10 +5841,129 @@ renderCollocationReview = function() {
   });
 };
 
+let clozeVocabularyIndex = null;
+let clozeWordCardLastTrigger = null;
+let clozeWordCardTerm = "";
+let currentClozePronunciationAudio = null;
+let currentClozePronunciationButton = null;
+let currentClozePronunciationTimer = null;
+const clozePhoneticCache = new Map();
+
+function buildClozeVocabularyIndex() {
+  if (clozeVocabularyIndex) return clozeVocabularyIndex;
+  clozeVocabularyIndex = new Map();
+  if (typeof DOC_WORDS === "undefined" || !Array.isArray(DOC_WORDS)) return clozeVocabularyIndex;
+  DOC_WORDS.forEach((entry) => {
+    clozeVocabularyIndex.set(normalizeTranslationKey(entry.w), entry);
+    (entry.aliases || []).forEach((alias) => clozeVocabularyIndex.set(normalizeTranslationKey(alias), entry));
+  });
+  return clozeVocabularyIndex;
+}
+
+function getClozeVocabularyCandidates(word) {
+  const clean = cleanWord(word);
+  const candidates = [clean];
+  if (clean.endsWith("iness")) candidates.push(`${clean.slice(0, -5)}y`);
+  if (clean.endsWith("ness")) candidates.push(clean.slice(0, -4));
+  if (clean.endsWith("ies")) candidates.push(`${clean.slice(0, -3)}y`);
+  if (clean.endsWith("ily")) candidates.push(`${clean.slice(0, -3)}y`);
+  if (clean.endsWith("ly")) candidates.push(clean.slice(0, -2));
+  if (clean.endsWith("ing")) candidates.push(clean.slice(0, -3), `${clean.slice(0, -3)}e`);
+  if (clean.endsWith("ed")) candidates.push(clean.slice(0, -2), clean.slice(0, -1));
+  if (clean.endsWith("es")) candidates.push(clean.slice(0, -2), clean.slice(0, -1));
+  if (clean.endsWith("s")) candidates.push(clean.slice(0, -1));
+  const irregular = {
+    began: "begin", made: "make", did: "do", were: "be", was: "be", took: "take",
+    kept: "keep", shown: "show", built: "build", felt: "feel", gave: "give", found: "find",
+    thought: "think", brought: "bring", became: "become", went: "go", came: "come", knew: "know"
+  };
+  if (irregular[clean]) candidates.push(irregular[clean]);
+  return [...new Set(candidates.filter(Boolean))];
+}
+
 function getHighFrequencyVocabularyEntry(word) {
-  if (typeof DOC_WORDS === "undefined" || !Array.isArray(DOC_WORDS)) return null;
-  const target = normalizeTranslationKey(word);
-  return DOC_WORDS.find((entry) => normalizeTranslationKey(entry.w) === target) || null;
+  const index = buildClozeVocabularyIndex();
+  for (const candidate of getClozeVocabularyCandidates(word)) {
+    const entry = index.get(candidate);
+    if (entry) return entry;
+  }
+  return null;
+}
+
+function resetClozePronunciationButton(button = currentClozePronunciationButton) {
+  if (!button) return;
+  button.disabled = false;
+  button.classList.remove("playing");
+  button.setAttribute("aria-label", `播放 ${button.dataset.term || clozeWordCardTerm || "单词"} 的发音`);
+  currentClozePronunciationButton = null;
+}
+
+function stopClozePronunciation() {
+  if (currentClozePronunciationTimer) {
+    window.clearTimeout(currentClozePronunciationTimer);
+    currentClozePronunciationTimer = null;
+  }
+  if (currentClozePronunciationAudio) {
+    currentClozePronunciationAudio.pause();
+    currentClozePronunciationAudio = null;
+  }
+  if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+  resetClozePronunciationButton();
+}
+
+function speakWithBrowserFallback(term, button) {
+  if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
+    button.setAttribute("aria-label", "暂时无法播放发音");
+    window.setTimeout(() => resetClozePronunciationButton(button), 1600);
+    return;
+  }
+  const utterance = new SpeechSynthesisUtterance(term);
+  utterance.lang = "en-US";
+  utterance.rate = 0.82;
+  utterance.onend = () => resetClozePronunciationButton(button);
+  utterance.onerror = () => {
+    button.setAttribute("aria-label", "暂时无法播放发音");
+    window.setTimeout(() => resetClozePronunciationButton(button), 1600);
+  };
+  button.setAttribute("aria-label", "正在使用浏览器英语语音播放");
+  window.speechSynthesis.speak(utterance);
+}
+
+function playClozePronunciation(term, button) {
+  const cleanTerm = String(term || "").trim();
+  if (!cleanTerm || !button) return;
+  stopClozePronunciation();
+  currentClozePronunciationButton = button;
+  button.disabled = true;
+  button.classList.add("playing");
+  button.setAttribute("aria-label", "正在连接有道发音");
+
+  const audio = new Audio(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(cleanTerm)}&type=2`);
+  currentClozePronunciationAudio = audio;
+  let fallbackUsed = false;
+  const fallback = () => {
+    if (fallbackUsed) return;
+    fallbackUsed = true;
+    audio.pause();
+    if (currentClozePronunciationTimer) window.clearTimeout(currentClozePronunciationTimer);
+    currentClozePronunciationTimer = null;
+    currentClozePronunciationAudio = null;
+    button.disabled = false;
+    speakWithBrowserFallback(cleanTerm, button);
+  };
+  audio.onplaying = () => {
+    if (currentClozePronunciationTimer) window.clearTimeout(currentClozePronunciationTimer);
+    currentClozePronunciationTimer = null;
+    button.setAttribute("aria-label", "正在播放有道发音");
+  };
+  audio.onended = () => {
+    currentClozePronunciationAudio = null;
+    resetClozePronunciationButton(button);
+  };
+  audio.onerror = fallback;
+  currentClozePronunciationTimer = window.setTimeout(fallback, 4500);
+  const playResult = audio.play();
+  if (playResult && typeof playResult.catch === "function") playResult.catch(fallback);
 }
 
 function renderHighFrequencySentence(sentence, surface) {
@@ -5749,6 +5995,7 @@ function renderHighFrequencyReview() {
       ? `<span class="high-frequency-example">${escapeHtml(entry.exampleEn)}</span>`
       : "";
     return `
+      <div class="high-frequency-card-shell">
       <button class="high-frequency-card" type="button" aria-pressed="false" aria-label="翻转查看 ${escapeHtml(entry.w)} 的释义">
         <span class="high-frequency-card-inner">
           <span class="high-frequency-card-face high-frequency-card-front">
@@ -5772,6 +6019,11 @@ function renderHighFrequencyReview() {
           </span>
         </span>
       </button>
+      <button class="high-frequency-speak" type="button" data-term="${escapeHtml(entry.w)}" aria-label="播放 ${escapeHtml(entry.w)} 的发音" title="播放发音">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zm-2.5-8.7v2.06a7 7 0 0 1 0 13.28v2.06a9 9 0 0 0 0-17.4z"/></svg>
+        <span>发音</span>
+      </button>
+      </div>
     `;
   }).filter(Boolean);
 
@@ -5790,9 +6042,16 @@ function renderHighFrequencyReview() {
   els.highFrequencyReview.querySelectorAll(".high-frequency-card").forEach((card) => {
     card.addEventListener("click", () => {
       const isFlipped = card.classList.toggle("flipped");
+      card.closest(".high-frequency-card-shell")?.classList.toggle("flipped", isFlipped);
       card.setAttribute("aria-pressed", String(isFlipped));
       const word = card.querySelector("strong")?.textContent || "该单词";
       card.setAttribute("aria-label", isFlipped ? `返回 ${word} 的原文卡片` : `翻转查看 ${word} 的释义`);
+    });
+  });
+  els.highFrequencyReview.querySelectorAll(".high-frequency-speak").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      playClozePronunciation(button.dataset.term, button);
     });
   });
 }
@@ -5884,7 +6143,18 @@ function bindStaticEvents() {
 
   els.openNotebookBtn?.addEventListener("click", () => showHomeTool("notebook"));
   els.headerNotebookBtn?.addEventListener("click", () => showHomeTool("notebook"));
+  els.unlockFormalBtn?.addEventListener("click", showFormalLoginFromExperience);
   els.openCollocationBankBtn?.addEventListener("click", () => showHomeTool("collocation"));
+  document.querySelector("#clozeWordCardClose")?.addEventListener("click", closeClozeWordCard);
+  document.querySelector("#clozeWordCardSpeak")?.addEventListener("click", (event) => {
+    playClozePronunciation(clozeWordCardTerm, event.currentTarget);
+  });
+  document.querySelector("#clozeWordCardLayer")?.addEventListener("click", (event) => {
+    if (event.target === event.currentTarget) closeClozeWordCard();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeClozeWordCard();
+  });
   document.querySelectorAll("[data-home-tool-close]").forEach((button) => {
     button.addEventListener("click", () => showHomeLibrary());
   });
@@ -5951,6 +6221,7 @@ function resetSentenceAudio() {
 }
 
 function stopSpeech() {
+  stopClozePronunciation();
   return null;
 }
 
@@ -6887,18 +7158,128 @@ function showTranslationCard(title, body) {
   els.sentenceMeaning.innerHTML = `<strong>${title}</strong><p>${body}</p>`;
 }
 
+async function resolveClozePhonetic(term, entry) {
+  const local = String(entry?.phonetic || "").trim();
+  if (local) return local;
+  const key = cleanWord(term);
+  if (!key) return "暂未收录音标";
+  if (clozePhoneticCache.has(key)) return clozePhoneticCache.get(key);
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), 4000);
+  try {
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(key)}`, {
+      signal: controller.signal
+    });
+    if (!response.ok) throw new Error("PHONETIC_LOOKUP_FAILED");
+    const data = await response.json();
+    const first = Array.isArray(data) ? data[0] : null;
+    const phonetic = String(first?.phonetic || first?.phonetics?.find((item) => item?.text)?.text || "").trim();
+    const result = phonetic || "暂未收录音标";
+    clozePhoneticCache.set(key, result);
+    return result;
+  } catch (error) {
+    return "音标暂时无法加载，可点击词语前往有道词典查看";
+  } finally {
+    window.clearTimeout(timeoutId);
+  }
+}
+
+function getClozeWordCollocations(word, entry) {
+  const candidates = new Set(getClozeVocabularyCandidates(word));
+  const items = [];
+  lesson.questions.forEach((question) => {
+    const collocation = String(question.collocation || "").trim();
+    if (!collocation || collocation === "无") return;
+    const answerMatches = candidates.has(cleanWord(question.answer));
+    const collocationMatches = collocation
+      .split(/[^A-Za-z'’-]+/)
+      .map(cleanWord)
+      .some((part) => candidates.has(part));
+    if (answerMatches || collocationMatches) items.push(collocation);
+  });
+  (entry?.details || [])
+    .filter((detail) => /^(配|搭|短语)/.test(String(detail).trim()))
+    .forEach((detail) => items.push(String(detail).replace(/^(配|搭|短语)\s*/, "")));
+  return [...new Set(items.filter(Boolean))].slice(0, 5);
+}
+
+function renderClozeWordCollocations(items) {
+  const container = document.querySelector("#clozeWordCardCollocations");
+  if (!container) return;
+  if (!items.length) {
+    container.innerHTML = '<p class="cloze-word-card-empty">本地词库暂未收录常见搭配，可点击上方词语前往有道词典继续查询。</p>';
+    return;
+  }
+  container.innerHTML = items.map((item) => `<span>${escapeHtml(item)}</span>`).join("");
+}
+
+function openClozeWordCard(word, sentenceItem, trigger) {
+  const entry = getHighFrequencyVocabularyEntry(word);
+  const term = String(entry?.w || cleanWord(word) || word).trim();
+  clozeWordCardTerm = term;
+  clozeWordCardLastTrigger = trigger || null;
+  const titleLink = document.querySelector("#clozeWordCardTitle");
+  titleLink.textContent = term;
+  titleLink.href = `https://dict.youdao.com/result?word=${encodeURIComponent(term)}&lang=en`;
+  titleLink.setAttribute("aria-label", `在有道词典查看 ${term} 的完整释义`);
+  const meaningElement = document.querySelector("#clozeWordCardMeaning");
+  const localMeaning = entry?.meaning || getWordMeaning(word);
+  meaningElement.textContent = localMeaning;
+  if (!entry && localMeaning.startsWith("暂未收录")) {
+    resolveWordMeaning(word).then((meaning) => {
+      if (clozeWordCardTerm === term && meaning) meaningElement.textContent = meaning;
+    });
+  }
+  renderClozeWordCollocations(getClozeWordCollocations(word, entry));
+
+  const phonetic = document.querySelector("#clozeWordCardPhonetic");
+  phonetic.textContent = entry?.phonetic || "音标加载中…";
+  const speakButton = document.querySelector("#clozeWordCardSpeak");
+  speakButton.dataset.term = term;
+  resetClozePronunciationButton(speakButton);
+  document.querySelector("#clozeWordCardLayer").classList.add("show");
+  document.body.classList.add("word-card-open");
+  document.querySelector("#clozeWordCardClose").focus();
+
+  resolveClozePhonetic(term, entry).then((result) => {
+    if (clozeWordCardTerm === term && document.querySelector("#clozeWordCardLayer")?.classList.contains("show")) {
+      phonetic.textContent = result;
+    }
+  });
+}
+
+function closeClozeWordCard() {
+  const layer = document.querySelector("#clozeWordCardLayer");
+  if (!layer?.classList.contains("show")) return;
+  stopClozePronunciation();
+  layer.classList.remove("show");
+  document.body.classList.remove("word-card-open");
+  if (clozeWordCardLastTrigger && document.contains(clozeWordCardLastTrigger)) clozeWordCardLastTrigger.focus();
+  clozeWordCardLastTrigger = null;
+}
+
 renderFilledPassage = function() {
   els.filledPassage.innerHTML = "";
   state.readSentences = lesson.verifySentences;
   state.readSentences.forEach((sentenceItem, index) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "read-sentence";
-    button.dataset.index = String(index);
-    renderSentenceWords(button, sentenceItem);
-    button.addEventListener("dblclick", () => showSentenceMeaning(index));
-    els.filledPassage.appendChild(button);
-    els.filledPassage.append(" ");
+    const row = document.createElement("div");
+    row.className = "read-sentence";
+    row.dataset.index = String(index);
+
+    const sentenceText = document.createElement("span");
+    sentenceText.className = "read-sentence-text";
+    renderSentenceWords(sentenceText, sentenceItem);
+
+    const translateButton = document.createElement("button");
+    translateButton.type = "button";
+    translateButton.className = "sentence-translate-button";
+    translateButton.textContent = "译";
+    translateButton.setAttribute("aria-label", `查看第 ${index + 1} 句中文翻译`);
+    translateButton.title = "查看本句翻译";
+    translateButton.addEventListener("click", () => playSentence(index));
+
+    row.append(sentenceText, translateButton);
+    els.filledPassage.appendChild(row);
   });
   renderTranslationOptions();
   showSentenceMeaning(null);
@@ -6910,14 +7291,20 @@ function renderSentenceWords(container, sentenceItem) {
     if (/^[A-Za-z][A-Za-z'’-]*$/.test(part)) {
       const token = document.createElement("span");
       token.className = "word-token";
+      token.tabIndex = 0;
+      token.setAttribute("role", "button");
+      token.setAttribute("aria-label", `打开 ${part} 的词汇卡片`);
       if (answerWords.has(cleanWord(part))) token.classList.add("filled-answer", "answer-blue");
       token.textContent = part;
       token.addEventListener("click", (event) => {
         event.stopPropagation();
-        showTranslationCard(`单词：${part}`, "正在翻译...");
-        resolveWordMeaning(part).then((meaning) => {
-          showTranslationCard(`单词：${part}`, meaning);
-        });
+        openClozeWordCard(part, sentenceItem, token);
+      });
+      token.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        event.stopPropagation();
+        openClozeWordCard(part, sentenceItem, token);
       });
       container.appendChild(token);
     } else {
@@ -6964,7 +7351,7 @@ showSentenceMeaning = function(index) {
 
   if (index === null || index === undefined) {
     state.meaningIndex = null;
-    showTranslationCard("翻译", "单击单词或选项查看意思；双击英文句子查看整句中文。");
+    showTranslationCard("翻译", "单击单词查看词卡；点击每句末尾的“译”，在这里查看整句中文。");
     return;
   }
 
@@ -7342,7 +7729,7 @@ function renderCollocationBank() {
         <p class="eyebrow">固定搭配总库</p>
         <h3>中考高频搭配卡片</h3>
       </div>
-      <span>${items.length} 个搭配</span>
+      <span>${isExperienceMode() ? `体验版共收录 ${items.length} 个搭配` : `${items.length} 个搭配`}</span>
     </div>
     <p class="collocation-bank-tip">正面显示中文意思，点击后翻转查看英文固定搭配。建议错题复盘后顺手翻一组。</p>
     <div class="collocation-bank-groups">
