@@ -563,13 +563,36 @@ function calcPlan(){
 }
 if(store.planResult) document.getElementById('planResult').innerHTML = store.planResult;
 
-// ===== 发音 =====
+// ===== 发音：兼容手机端延迟加载语音列表 =====
+let englishVoice=null,speechWarned=false;
+function prepareEnglishVoice(){
+  if(!('speechSynthesis' in window)) return false;
+  const voices=window.speechSynthesis.getVoices();
+  englishVoice=voices.find(v=>/^en-US$/i.test(v.lang))||voices.find(v=>/^en[-_]/i.test(v.lang))||null;
+  return true;
+}
+if('speechSynthesis' in window){
+  prepareEnglishVoice();
+  window.speechSynthesis.addEventListener?.('voiceschanged',prepareEnglishVoice);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)prepareEnglishVoice()});
+}
 function speak(text){
-  try{ speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang='en-US'; u.rate=0.85;
-    speechSynthesis.speak(u);
-  }catch(e){}
+  if(!text) return;
+  if(!('speechSynthesis' in window)||!('SpeechSynthesisUtterance' in window)){
+    if(!speechWarned){speechWarned=true;alert('当前浏览器不支持内置发音，请换用系统浏览器或 Chrome/Safari 打开。')}
+    return;
+  }
+  const synth=window.speechSynthesis;
+  try{
+    synth.cancel();
+    const u=new SpeechSynthesisUtterance(text);
+    u.lang='en-US';u.rate=0.82;u.pitch=1;u.volume=1;
+    if(englishVoice)u.voice=englishVoice;
+    synth.resume();
+    synth.speak(u);
+  }catch(error){
+    if(!speechWarned){speechWarned=true;alert('发音启动失败，请确认手机没有静音，并用系统浏览器重新打开。')}
+  }
 }
 function speakWord(){ speak(curWord ? L3WORDS[curWord][0] : ''); }
 

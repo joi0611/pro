@@ -171,18 +171,41 @@ const store = JSON.parse(localStorage.getItem('flowerbook') || '{}');
 let cur = 0;
 function save(){ localStorage.setItem('flowerbook', JSON.stringify(store)); }
 
-// 发音 ============
+// 发音：只在用户点击后调用，兼容手机浏览器延迟加载语音列表
+let englishVoice=null,speechWarned=false;
+function prepareEnglishVoice(){
+  if(!('speechSynthesis' in window)) return false;
+  const voices=window.speechSynthesis.getVoices();
+  englishVoice=voices.find(v=>/^en-US$/i.test(v.lang))||voices.find(v=>/^en[-_]/i.test(v.lang))||null;
+  return true;
+}
+if('speechSynthesis' in window){
+  prepareEnglishVoice();
+  window.speechSynthesis.addEventListener?.('voiceschanged',prepareEnglishVoice);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)prepareEnglishVoice()});
+}
 function speak(text){
-  try{ speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang='en-US'; u.rate=0.85;
-    speechSynthesis.speak(u);
-  }catch(e){}
+  if(!text) return;
+  if(!('speechSynthesis' in window)||!('SpeechSynthesisUtterance' in window)){
+    if(!speechWarned){speechWarned=true;alert('当前浏览器不支持内置发音，请换用系统浏览器或 Chrome/Safari 打开。')}
+    return;
+  }
+  const synth=window.speechSynthesis;
+  try{
+    synth.cancel();
+    const u=new SpeechSynthesisUtterance(text);
+    u.lang='en-US';u.rate=0.82;u.pitch=1;u.volume=1;
+    if(englishVoice)u.voice=englishVoice;
+    synth.resume();
+    synth.speak(u);
+  }catch(error){
+    if(!speechWarned){speechWarned=true;alert('发音启动失败，请确认手机没有静音，并用系统浏览器重新打开。')}
+  }
 }
 function speakWord(){ speak(WORDS[curWord][0]); }
 
 // 渲染一页 ============
-function render(){
+function render(readFirstSentence=false){
   const p = PAGES[cur];
   const wrap = document.getElementById('wrap');
   const box = document.createElement('div');
@@ -214,8 +237,8 @@ function render(){
   document.getElementById('prev').disabled = cur===0;
   document.getElementById('next').disabled = cur===PAGES.length-1;
   renderDots();
-  // 翻页自动朗读第一句
-  speak(sentenceText(p.ss[0]));
+  // 首次打开不自动播放；只有点击“上一页/下一页”后才朗读
+  if(readFirstSentence) speak(sentenceText(p.ss[0]));
   window.scrollTo(0,0);
 }
 function sentenceText(tokens){
@@ -231,7 +254,7 @@ function renderDots(){
   const d = document.getElementById('dots');
   d.innerHTML = PAGES.map((_,i)=>`<span class="dot${i===cur?' cur':''}"></span>`).join('');
 }
-function go(n){ cur = Math.max(0, Math.min(PAGES.length-1, cur+n)); render(); }
+function go(n){ cur = Math.max(0, Math.min(PAGES.length-1, cur+n)); render(true); }
 
 // 词汇卡片 ============
 let curWord=null;
