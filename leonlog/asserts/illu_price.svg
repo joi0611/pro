@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#FFF6ED"/>
+  <path d="M0 430 Q 200 405 400 428 T 800 425 V 600 H 0 Z" fill="#E8F3E4"/>
+  <circle cx="90" cy="90" r="40" fill="#FFCE54"/>
+  <!-- 左：斗南花堆 -->
+  <g>
+    <circle cx="170" cy="400" r="20" fill="#FF8CB8"/><circle cx="205" cy="406" r="16" fill="#FFCE54"/>
+    <circle cx="140" cy="412" r="15" fill="#BF8CF0"/><circle cx="235" cy="396" r="17" fill="#FF8C5A"/>
+    <circle cx="120" cy="424" r="14" fill="#7CC48D"/>
+    <rect x="112" y="432" width="140" height="14" rx="7" fill="#D9A25F"/>
+    <text x="182" y="492" font-size="24" fill="#2E9E5B" font-weight="bold" text-anchor="middle">斗南 10元</text>
+  </g>
+  <!-- 小男孩（中间，惊讶） -->
+  <g>
+    <circle cx="400" cy="300" r="42" fill="#FFD8B8"/>
+    <path d="M364 282 q36 -18 72 0" fill="#B5845E"/>
+    <circle cx="385" cy="304" r="30" fill="#FFF"/><circle cx="415" cy="304" r="30" fill="#FFF"/>
+    <circle cx="390" cy="308" r="7" fill="#5A4632"/><circle cx="410" cy="308" r="7" fill="#5A4632"/>
+    <path d="M392 330 q8 8 16 0" stroke="#5A4632" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M366 344 v86 h68 v-86" fill="#FFC94D"/>
+    <circle cx="400" cy="408" r="10" fill="#E05A3A"/>
+    <path d="M400 414 v30" stroke="#E05A3A" stroke-width="12" stroke-linecap="round"/>
+    <path d="M366 380 h-34" stroke="#FFD8B8" stroke-width="12" stroke-linecap="round"/>
+    <path d="M434 380 h34" stroke="#FFD8B8" stroke-width="12" stroke-linecap="round"/>
+    <!-- 惊讶嘴 -->
+    <ellipse cx="400" cy="330" rx="7" ry="9" fill="#E05A3A"/>
+  </g>
+  <!-- 右侧：雪山小城 -->
+  <g>
+    <polygon points="700,300 780,180 860,300" fill="#F3F8FC" stroke="#CFE4F2" stroke-width="3"/>
+    <polygon points="700,300 780,210 860,300" fill="#E8F1F8"/>
+    <rect x="650" y="330" width="110" height="100" rx="10" fill="#FFFFFF" stroke="#E8D5CC" stroke-width="4"/>
+    <rect x="658" y="392" width="94" height="38" rx="5" fill="#E9F4FB"/>
+    <rect x="655" y="316" width="100" height="26" fill="#4A90D9" rx="8"/>
+    <text x="705" y="335" font-size="20" fill="#FFF" font-weight="bold" text-anchor="middle">花店</text>
+    <g stroke="#A2CBE6" stroke-width="3">
+      <line x1="660" y1="402" x2="660" y2="418" /><line x1="690" y1="402" x2="690" y2="418"/>
+      <line x1="720" y1="402" x2="720" y2="418" /><line x1="750" y1="402" x2="750" y2="418"/>
+    </g>
+    <text x="705" y="492" font-size="24" fill="#2A6CB5" font-weight="bold" text-anchor="middle">新疆 60元</text>
+  </g>
+  <!-- 中间卡车沿地图 -->
+  <g>
+    <path d="M300 460 Q 460 430 620 470" stroke="#D9A25F" stroke-width="8" fill="none" stroke-dasharray="2 14" stroke-linecap="round" opacity="0.7"/>
+    <rect x="380" y="430" width="74" height="34" rx="8" fill="#FF8C5A"/>
+    <rect x="440" y="440" width="26" height="24" rx="5" fill="#E05A3A"/>
+    <circle cx="398" cy="468" r="9" fill="#4A90D9"/><circle cx="444" cy="468" r="9" fill="#4A90D9"/>
+    <circle cx="410" cy="428" r="8" fill="#FFCE54"/><circle cx="424" cy="424" r="8" fill="#FF8CB8"/>
+  </g>
+  <text x="400" y="540" font-size="26" fill="#C98A00" font-weight="bold" text-anchor="middle">一枝同样的玫瑰，为什么差这么多？</text>
+</svg>

@@ -1,0 +1,143 @@
+/* Leon旅行日记 · 统一视觉系统
+   白色 / 淡蓝色 / 手绘插画 / 儿童友好 */
+:root{
+  --vi-white:#ffffff;
+  --vi-bg:#f7fbfd;
+  --vi-sky-50:#eef8fc;
+  --vi-sky-100:#dff1f8;
+  --vi-sky-200:#b8ddea;
+  --vi-sky-300:#8bc7dd;
+  --vi-sky-500:#347f9d;
+  --vi-sky-700:#205f79;
+  --vi-ink:#244454;
+  --vi-muted:#5d7783;
+  --vi-yellow:#f4cf72;
+  --vi-coral:#ef987e;
+  --vi-border:#82bdd3;
+  --vi-shadow:#cfe8f2;
+  --vi-focus:#f0b84d;
+  --vi-font-hand:"STKaiti","KaiTi","Kaiti SC",serif;
+  --vi-font-body:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{
+  color:var(--vi-ink)!important;
+  background-color:var(--vi-bg)!important;
+  background-image:
+    radial-gradient(circle at 15% 12%,rgba(139,199,221,.16) 0 2px,transparent 2.5px),
+    radial-gradient(circle at 82% 28%,rgba(77,159,194,.09) 0 1.5px,transparent 2px)!important;
+  background-size:34px 34px,25px 25px!important;
+  font-family:var(--vi-font-body)!important;
+}
+body::before{opacity:.08!important}
+a,button,[role="button"],label[for]{cursor:pointer}
+h1,h2,h3,.brand,.label,.chapter-kicker{font-family:var(--vi-font-hand)!important}
+p,li{line-height:1.75}
+:focus-visible{outline:3px solid var(--vi-focus)!important;outline-offset:4px!important}
+button,a,input{transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,border-color .2s ease,color .2s ease}
+
+/* 通用手绘表面 */
+.vi-handbook .card,
+.vi-kunming .card,
+.vi-reader .cardbox,
+.vi-reader .wcard,
+.vi-reader .q{
+  border:2px solid var(--vi-border)!important;
+  background:var(--vi-white)!important;
+  box-shadow:4px 5px 0 var(--vi-shadow)!important;
+  border-radius:15px 22px 17px 24px!important;
+}
+
+/* ========== 全国地图首页 ========== */
+.vi-home .brand-stamp{background:var(--vi-sky-500)!important;border-color:var(--vi-ink)!important;box-shadow:3px 4px 0 var(--vi-ink)!important}
+.vi-home .top-note{color:var(--vi-muted)!important;border-color:var(--vi-sky-300)!important}
+.vi-home .eyebrow{color:var(--vi-sky-700)!important}.vi-home .eyebrow::before{background:var(--vi-sky-500)!important}
+.vi-home h1,.vi-home h1 .travel{color:var(--vi-ink)!important}.vi-home h1 .travel{color:var(--vi-sky-700)!important}
+.vi-home .intro{color:var(--vi-muted)!important}.vi-home .scribble{color:var(--vi-sky-700)!important}.vi-home .scribble::after{border-color:var(--vi-sky-300)!important}
+.vi-home .mini-stamp{color:var(--vi-sky-700)!important;border-color:var(--vi-border)!important;background:var(--vi-white)!important}
+.vi-home .map-paper{background:var(--vi-white)!important;border-color:var(--vi-border)!important;box-shadow:11px 13px 0 var(--vi-shadow)!important}
+.vi-home .map-paper::before,.vi-home .map-paper::after{background:#b8ddea99!important}
+.vi-home .china-map .land{fill:var(--vi-sky-100)!important;stroke:var(--vi-ink)!important}
+.vi-home .china-map .boundary{stroke:#619bb1!important}.vi-home .china-map .region text{fill:#4d7180!important}
+.vi-home .china-map .region:hover text,.vi-home .china-map .region:focus text{fill:var(--vi-sky-700)!important}
+.vi-home .china-map .yunnan path{fill:#80c8e3!important;stroke:var(--vi-ink)!important;filter:drop-shadow(4px 5px 0 #9fcbdc80)!important}
+.vi-home .china-map .yunnan:hover path,.vi-home .china-map .yunnan:focus path{fill:#a8ddef!important}
+.vi-home .china-map .yunnan .pin path{fill:var(--vi-yellow)!important}.vi-home .china-map .yunnan .pin circle{fill:var(--vi-white)!important}
+.vi-home .legend .on{background:var(--vi-sky-500)!important}
+.vi-home .map-arrow path{stroke:var(--vi-sky-500)!important}
+.vi-home .sun{background:#fff3c6!important;border-color:var(--vi-sky-300)!important;box-shadow:0 0 0 13px var(--vi-bg),0 0 0 17px var(--vi-sky-200)!important}
+.vi-home .cloud{color:var(--vi-white)!important;-webkit-text-stroke-color:var(--vi-sky-300)!important}
+.vi-home .hello{background:var(--vi-white)!important;border-color:var(--vi-ink)!important;box-shadow:4px 5px 0 var(--vi-sky-200)!important}
+.vi-home .down-note{background:var(--vi-sky-500)!important;color:var(--vi-white)!important}
+.vi-home .chapter-kicker,.vi-home .route{color:var(--vi-sky-700)!important}
+.vi-home .count{border-color:var(--vi-sky-300)!important;color:var(--vi-muted)!important}
+.vi-home .kunming-card{background:var(--vi-sky-50)!important;border-color:var(--vi-ink)!important;box-shadow:9px 10px 0 var(--vi-shadow)!important}
+.vi-home .postcard::after{background:var(--vi-yellow)!important}.vi-home .trip-info p{color:var(--vi-muted)!important}
+.vi-home .tags span{border-color:var(--vi-border)!important;background:var(--vi-white)!important;color:var(--vi-sky-700)!important}
+.vi-home .primary{background:var(--vi-sky-500)!important;color:var(--vi-white)!important;border-color:var(--vi-ink)!important;box-shadow:4px 5px 0 var(--vi-ink)!important}
+.vi-home .primary:hover,.vi-home .primary:focus-visible{background:var(--vi-sky-700)!important}
+.vi-home footer{border-color:var(--vi-border)!important}.vi-home .toast{background:var(--vi-sky-700)!important;box-shadow:4px 5px 0 var(--vi-sky-200)!important}
+
+/* ========== 云南昆明章节页 ========== */
+.vi-kunming .back{border-color:var(--vi-sky-300)!important;color:var(--vi-sky-700)!important}
+.vi-kunming .hero{background:var(--vi-sky-100)!important;border-color:var(--vi-ink)!important;box-shadow:9px 10px 0 var(--vi-shadow)!important}
+.vi-kunming .label{color:var(--vi-sky-700)!important}.vi-kunming .hero h1 span{color:var(--vi-sky-700)!important}.vi-kunming .hero p{color:var(--vi-muted)!important}
+.vi-kunming .hero-photo::after{background:var(--vi-yellow)!important}
+.vi-kunming .guide{background:var(--vi-white)!important;border-color:var(--vi-sky-500)!important;color:var(--vi-muted)!important;box-shadow:4px 5px 0 var(--vi-shadow)!important}
+.vi-kunming .card{border-color:var(--vi-border)!important;background:var(--vi-white)!important;box-shadow:6px 7px 0 var(--vi-shadow)!important}
+.vi-kunming .card:nth-child(2),.vi-kunming .card:nth-child(4){background:var(--vi-sky-50)!important}
+.vi-kunming .card:hover,.vi-kunming .card:focus-visible{box-shadow:9px 11px 0 #b9ddea!important}
+.vi-kunming .card p{color:var(--vi-muted)!important}.vi-kunming .go{color:var(--vi-sky-700)!important}.vi-kunming footer{border-color:var(--vi-border)!important}
+
+/* ========== 互动研学手册 ========== */
+.vi-handbook{padding-bottom:76px!important}
+.vi-handbook header{background:var(--vi-sky-500)!important;border-radius:0 0 24px 17px!important;box-shadow:0 7px 0 var(--vi-sky-100)!important}
+.vi-handbook header .links a{background:rgba(255,255,255,.22)!important;border:1px solid rgba(255,255,255,.58)!important;min-height:38px;display:inline-flex;align-items:center}
+.vi-handbook #progressWrap{background:rgba(255,255,255,.38)!important}.vi-handbook #progressBar{background:var(--vi-yellow)!important}
+.vi-handbook .sec{max-width:760px;margin:0 auto}
+.vi-handbook .card{box-shadow:4px 5px 0 var(--vi-shadow)!important}
+.vi-handbook .card h2{color:var(--vi-sky-700)!important}.vi-handbook .card h3{color:var(--vi-sky-700)!important}
+.vi-handbook .fact{border-color:var(--vi-sky-100)!important}.vi-handbook .fact .no{background:var(--vi-sky-500)!important}
+.vi-handbook input[type=text],.vi-handbook input[type=number]{border-color:var(--vi-sky-200)!important;background:var(--vi-white)!important;min-height:44px}
+.vi-handbook input:focus{outline:3px solid var(--vi-yellow)!important;box-shadow:0 0 0 4px var(--vi-sky-100)!important}
+.vi-handbook th,.vi-handbook td{border-color:var(--vi-sky-200)!important}.vi-handbook th{background:var(--vi-sky-100)!important;color:var(--vi-sky-700)!important}
+.vi-handbook .btn{background:var(--vi-sky-500)!important;color:var(--vi-white)!important;border:2px solid var(--vi-sky-700)!important;box-shadow:3px 4px 0 var(--vi-sky-200)!important;min-height:46px}
+.vi-handbook .btn:hover,.vi-handbook .btn:focus-visible{background:var(--vi-sky-700)!important;transform:translateY(-2px)}
+.vi-handbook .btn.ghost{background:var(--vi-white)!important;color:var(--vi-sky-700)!important}
+.vi-handbook .result{background:var(--vi-sky-50)!important;border:1.5px dashed var(--vi-border)!important}
+.vi-handbook .word{background:var(--vi-white)!important;border-color:var(--vi-sky-200)!important}.vi-handbook .word .en{color:var(--vi-sky-700)!important}.vi-handbook .word .speak{color:var(--vi-sky-500)!important}.vi-handbook .word.learned{background:#e8f7f7!important;border-color:#6eb9b5!important}
+.vi-handbook .star.on{color:var(--vi-yellow)!important;text-shadow:0 0 8px #f8dfa2!important}
+.vi-handbook .cert{background:var(--vi-sky-50)!important;border-color:var(--vi-sky-300)!important}.vi-handbook .cert h2{color:var(--vi-sky-700)!important}
+.vi-handbook nav{border-color:var(--vi-sky-200)!important;box-shadow:0 -5px 18px rgba(67,131,158,.12)!important}.vi-handbook nav button{min-height:56px;color:var(--vi-muted)!important}.vi-handbook nav button.active{color:var(--vi-sky-700)!important;background:var(--vi-sky-50)!important}
+
+/* ========== 点读绘本 ========== */
+.vi-reader #bar{background:var(--vi-sky-500)!important;box-shadow:0 5px 0 var(--vi-sky-100)!important}.vi-reader #bar button{background:rgba(255,255,255,.22)!important;border:1px solid rgba(255,255,255,.58)!important;min-height:38px}
+.vi-reader img.photo{border:5px solid var(--vi-white)!important;box-shadow:5px 6px 0 var(--vi-shadow)!important;border-radius:15px 22px 16px 24px!important}
+.vi-reader .credit,.vi-reader .zh{color:var(--vi-muted)!important}.vi-reader .sentence .nw{color:var(--vi-sky-700)!important;text-decoration-color:var(--vi-sky-300)!important}.vi-reader .sentence .nw.learned{color:#328981!important}.vi-reader .speakHint{color:var(--vi-sky-700)!important}
+.vi-reader .cardbox{background:var(--vi-sky-50)!important;border-color:var(--vi-sky-300)!important}.vi-reader .tag{background:var(--vi-sky-500)!important}
+.vi-reader .btnlink{background:var(--vi-sky-500)!important;border:2px solid var(--vi-sky-700)!important;box-shadow:3px 4px 0 var(--vi-shadow)!important;min-height:46px}
+.vi-reader #nav{border-color:var(--vi-sky-200)!important;box-shadow:0 -5px 18px rgba(67,131,158,.12)!important}.vi-reader #nav button{background:var(--vi-sky-500)!important;min-height:46px}.vi-reader #nav button:disabled{background:#bfd7e1!important}.vi-reader #nav .dot{background:var(--vi-sky-200)!important}.vi-reader #nav .dot.cur{background:var(--vi-sky-700)!important}
+.vi-reader #sheet{background:var(--vi-white)!important;box-shadow:0 -8px 0 var(--vi-sky-100)!important}.vi-reader #sheet .en,.vi-reader h2.sec,.vi-reader .wcard .en{color:var(--vi-sky-700)!important}.vi-reader #sheet .ex{background:var(--vi-sky-50)!important;border-color:var(--vi-sky-200)!important}.vi-reader #sheet .speak{background:var(--vi-sky-500)!important}.vi-reader #sheet .done{background:#e8f7f7!important;color:#287d78!important;border-color:#75bbb7!important}.vi-reader #sheet .close{background:var(--vi-sky-50)!important;color:var(--vi-sky-700)!important}
+.vi-reader .wcard.learned{background:#e8f7f7!important;border-color:#75bbb7!important}.vi-reader .award{background:var(--vi-sky-50)!important;border-color:var(--vi-sky-300)!important}.vi-reader .award h2{color:var(--vi-sky-700)!important}
+
+/* ========== 纸质打印页 ========== */
+.vi-print-book,.vi-print-handbook{background:#eaf5f9!important}
+.vi-print-book .page,.vi-print-handbook .page{background:var(--vi-white)!important;box-shadow:0 4px 18px rgba(40,104,130,.13)!important;border:1px solid var(--vi-sky-200)!important}
+.vi-print-book .cover{background:var(--vi-sky-50)!important}.vi-print-book .cover h1,.vi-print-book h2.sec,.vi-print-handbook h1,.vi-print-handbook h2{color:var(--vi-sky-700)!important}
+.vi-print-book .txt .en .nw,.vi-print-book .cardbox .en .nw{color:var(--vi-sky-700)!important;text-decoration-color:var(--vi-sky-300)!important}
+.vi-print-book .cardpage{background:var(--vi-sky-50)!important}.vi-print-book .cardbox{border-color:var(--vi-sky-300)!important}.vi-print-book .cardbox .tag{background:var(--vi-sky-500)!important}.vi-print-book .cardbox .en{color:var(--vi-sky-700)!important}
+.vi-print-book .q,.vi-print-book .wcard{border-color:var(--vi-sky-200)!important;background:var(--vi-white)!important}.vi-print-book .wcard .en{color:var(--vi-sky-700)!important}.vi-print-book .award{background:var(--vi-sky-50)!important;border-color:var(--vi-sky-300)!important}.vi-print-book .award h2{color:var(--vi-sky-700)!important}
+.vi-print-handbook .tag{background:var(--vi-sky-500)!important}.vi-print-handbook .tag.green,.vi-print-handbook .tag.blue,.vi-print-handbook .tag.purple{background:var(--vi-sky-500)!important}
+.vi-print-handbook .box,.vi-print-handbook .box.g,.vi-print-handbook .box.b{background:var(--vi-sky-50)!important;border-color:var(--vi-sky-300)!important}.vi-print-handbook .fact .no,.vi-print-handbook .fact.g .no{background:var(--vi-sky-500)!important}
+.vi-print-handbook th,.vi-print-handbook td{border-color:var(--vi-sky-200)!important}.vi-print-handbook th{background:var(--vi-sky-100)!important}.vi-print-handbook .word-card{border-color:var(--vi-sky-200)!important;background:var(--vi-white)!important}.vi-print-handbook .word-card .en{color:var(--vi-sky-700)!important}.vi-print-handbook .mission{border-color:var(--vi-sky-500)!important;background:var(--vi-sky-50)!important}.vi-print-handbook .mission b{color:var(--vi-sky-700)!important}.vi-print-handbook .check{border-color:var(--vi-sky-500)!important}
+
+@media(max-width:560px){
+  .vi-handbook header{padding-top:22px!important}
+  .vi-reader #bar{gap:6px!important;padding:9px 8px!important}.vi-reader #bar .t{font-size:12px!important}.vi-reader #bar button{padding:4px 8px!important;font-size:12px!important}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+@media print{
+  .vi-print-book,.vi-print-handbook{background:#fff!important;background-image:none!important}
+  .vi-print-book .page,.vi-print-handbook .page{box-shadow:none!important;border:none!important}
+}
