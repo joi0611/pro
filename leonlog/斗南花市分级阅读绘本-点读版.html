@@ -1,0 +1,283 @@
+<!-- AI生成 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>点读绘本 · Leon旅行日记</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; background:#fdf6f0; color:#333; }
+  #bar { position:fixed; top:0; left:0; right:0; z-index:9; display:flex; align-items:center; gap:10px; padding:12px 14px; background:linear-gradient(135deg,#ff8c5a,#e05a3a); color:#fff; }
+  #bar .t { font-size:14px; font-weight:bold; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  #bar .pg { font-size:13px; background:rgba(255,255,255,.25); border-radius:20px; padding:3px 12px; white-space:nowrap; }
+  #bar button { border:none; background:rgba(255,255,255,.25); color:#fff; border-radius:20px; padding:4px 12px; font-size:13px; }
+  #wrap { max-width:560px; margin:0 auto; padding:70px 16px 90px; }
+  .pgbox { display:none; animation:fade .3s; }
+  .pgbox.on { display:block; }
+  @keyframes fade { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;} }
+  img.photo { width:100%; border-radius:18px; aspect-ratio:4/3; object-fit:cover; box-shadow:0 4px 14px rgba(224,90,58,.15); }
+  .credit { font-size:11px; color:#bbb; margin-top:4px; text-align:right; }
+  .zh { font-size:13px; color:#999; margin:8px 0 4px; line-height:1.7; }
+  .sentence { font-size:30px; font-weight:bold; line-height:1.8; color:#222; margin:6px 0; cursor:pointer; letter-spacing:1px; }
+  .sentence .wd { display:inline-block; margin-right:9px; }
+  .sentence .wd:last-child { margin-right:0; }
+  .sentence .wd.punct { margin-right:4px; margin-left:-5px; }
+  .sentence .nw { color:#e05a3a; text-decoration:underline; text-decoration-thickness:3px; text-underline-offset:6px; cursor:pointer; padding:0 1px; }
+  .sentence .nw.learned { color:#2e9e5b; }
+  .sentence .nw.learned::after { content:" ✓"; font-size:15px; }
+  .speakHint { font-size:11px; color:#ff8c5a; text-align:center; margin-top:2px; }
+  .cardbox { background:#f0f6fd; border:3px dashed #4a90d9; border-radius:18px; padding:18px; margin-top:14px; }
+  .tag { display:inline-block; background:#4a90d9; color:#fff; font-size:12px; padding:3px 12px; border-radius:20px; }
+  .bigemoji { font-size:54px; text-align:center; margin:16px 0 6px; }
+  .btnlink { display:block; text-align:center; background:linear-gradient(135deg,#ff8c5a,#e05a3a); color:#fff; text-decoration:none; border-radius:14px; padding:12px; font-size:15px; margin-top:12px; }
+  #nav { position:fixed; bottom:0; left:0; right:0; z-index:9; display:flex; align-items:center; gap:8px; background:#fff; border-top:1px solid #f0e0d8; padding:10px 14px; max-width:560px; margin:0 auto; }
+  #nav button { flex:1; border:none; border-radius:12px; padding:11px; font-size:15px; background:#ff7d54; color:#fff; }
+  #nav button:disabled { background:#e8d5cc; }
+  #nav .dots { display:flex; gap:4px; justify-content:center; flex:1.4; flex-wrap:wrap; }
+  #nav .dot { width:8px; height:8px; border-radius:50%; background:#e8d5cc; }
+  #nav .dot.cur { background:#e05a3a; }
+  /* 词汇卡片弹层 */
+  #mask { position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:20; display:none; }
+  #sheet { position:fixed; left:0; right:0; bottom:0; z-index:21; background:#fff; border-radius:22px 22px 0 0; padding:22px 20px 30px; max-width:560px; margin:0 auto; transform:translateY(110%); transition:transform .3s; box-shadow:0 -6px 30px rgba(0,0,0,.2); }
+  #sheet.open { transform:none; }
+  #sheet .en { font-size:34px; font-weight:bold; color:#7b4fc4; }
+  #sheet .ph { color:#999; font-size:15px; margin:4px 0; }
+  #sheet .cn { font-size:17px; margin:4px 0; }
+  #sheet .ex { background:#faf7ff; border:1.5px solid #d8c4ee; border-radius:12px; padding:10px; font-size:15px; margin:10px 0; }
+  #sheet .row { display:flex; gap:8px; margin-top:12px; }
+  #sheet .row button { flex:1; border:none; border-radius:12px; padding:11px; font-size:14px; }
+  #sheet .speak { background:#7b4fc4; color:#fff; }
+  #sheet .done { background:#e8f9ef; color:#2e9e5b; border:1.5px solid #4caf7d; }
+  #sheet .close { background:#f5f0fa; color:#7b4fc4; }
+  /* 词汇表页 */
+  .wlist { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .wcard { background:#faf7ff; border:2px solid #d8c4ee; border-radius:14px; padding:14px; text-align:center; cursor:pointer; }
+  .wcard .en { font-size:21px; font-weight:bold; color:#7b4fc4; }
+  .wcard .ph { font-size:11px; color:#999; }
+  .wcard .cn { font-size:14px; margin-top:2px; }
+  .wcard.learned { background:#e8f9ef; border-color:#4caf7d; }
+  .wcard.learned .en { color:#2e9e5b; }
+  .q { border:2px solid #f0c9b8; border-radius:14px; padding:16px; margin-bottom:12px; background:#fffdfb; }
+  .q .en { font-size:20px; font-weight:bold; line-height:1.6; cursor:pointer; }
+  .q .cn { font-size:12px; color:#888; margin:4px 0; }
+  .checks { display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; font-size:14px; }
+  .checks label { display:flex; align-items:center; gap:5px; }
+  .award { text-align:center; border:3px dashed #ffce54; border-radius:18px; padding:24px 16px; background:linear-gradient(135deg,#fff7e0,#ffedd8); }
+  .award h2 { color:#c98a00; font-size:26px; margin-bottom:10px; }
+  h2.sec { font-size:24px; color:#e05a3a; margin-bottom:14px; }
+</style>
+<link rel="stylesheet" href="assets/leon-vi.css">
+</head>
+<body class="vi-reader">
+
+
+<div id="bar">
+  <span class="t">Leon旅行日记 · Flower Market</span>
+  <span class="pg" id="pgLabel">第 1 / 12 页</span>
+  <button onclick="location.href='云南昆明研学日记.html'">← 日记</button>
+  <button onclick="location.href='斗南花市研学手册-网页版.html'">📘 手册</button>
+  <button onclick="showWords()">📖 词汇</button>
+</div>
+
+<div id="wrap"></div>
+
+<div id="nav">
+  <button id="prev" onclick="go(-1)">上一页</button>
+  <div class="dots" id="dots"></div>
+  <button id="next" onclick="go(1)">下一页</button>
+</div>
+
+<div id="mask" onclick="closeSheet()"></div>
+<div id="sheet">
+  <div class="en" id="sEn"></div>
+  <div class="ph" id="sPh"></div>
+  <div class="cn" id="sCn"></div>
+  <div class="ex" id="sEx"></div>
+  <div class="row">
+    <button class="speak" onclick="speakWord()">🔊 听发音</button>
+    <button class="done" id="sDone" onclick="toggleLearned()">✅ 我学会了</button>
+    <button class="close" onclick="closeSheet()">收起</button>
+  </div>
+</div>
+
+<script>
+// 数据 ============
+const WORDS = {
+  flower:['flower','/ˈflaʊər/','花；花朵','This flower is beautiful.'],
+  market:['market','/ˈmɑːrkɪt/','市场','This is a big flower market.'],
+  rose:['rose','/rəʊz/','玫瑰','A red rose for Mom.'],
+  sunflower:['sunflower','/ˈsʌnflaʊər/','向日葵','The sunflower is big and yellow.'],
+  lily:['lily','/ˈlɪli/','百合','I see a white lily.'],
+  carnation:['carnation','/kɑːrˈneɪʃn/','康乃馨','The carnation is for Mom.'],
+  price:['price','/praɪs/','价格','What is the price?'],
+  cheap:['cheap','/tʃiːp/','便宜的','So cheap!'],
+  expensive:['expensive','/ɪkˈspensɪv/','昂贵的','Too expensive!'],
+  money:['money','/ˈmʌni/','钱','I have 100 yuan. It is my money.'],
+  buy:['buy','/baɪ/','买','Ten yuan buys many roses.'],
+  yuan:['yuan','/juˈɑːn/','元（人民币）','How much is it? Ten yuan.'],
+  sad:['sad','/sæd/','难过的','Some flowers are sad on the way.'],
+  truck:['truck','/trʌk/','卡车','The flowers go by truck.'],
+  plane:['plane','/pleɪn/','飞机','They go by plane.']
+};
+// 句子用 token：字符串为普通词，[wid] 为生词
+const PAGES = [
+ {type:'photo', img:'assets/dounan_1.jpg', credit:'封面图：斗南花市大门（知乎）',
+  zh:'这是斗南。它是一个大大的鲜花市场。',
+  ss:[['This','is','Dounan','.'] ,['It','is','a','big',['flower'],['market'],'.'] ]},
+ {type:'photo', img:'assets/dounan_2.jpg', credit:'（新华网）',
+  zh:'哇！好多花！红的、黄的、粉的、蓝的。',
+  ss:[['Wow','!','So','many',['flower','s'],'!'],['Red',',','yellow',',','pink','and','blue','.'] ]},
+ {type:'photo', img:'assets/dounan_12.jpg', credit:'（去哪儿攻略）',
+  zh:'看这些玫瑰。多少钱？"十元！"叔叔说。',
+  ss:[['Look','at','the',['rose','s'],'.'],['How','much','is','it','?'],['"Ten',['yuan'],'!"','says','the','man','.'] ]},
+ {type:'photo', img:'assets/dounan_7.jpg', credit:'花海（新浪）',
+  zh:'看那朵向日葵，又大又黄。多少钱？"五元！"',
+  ss:[['Look','at','the',['sunflower'],'.'],['It','is','big','and','yellow','.'],['"Five',['yuan'],'!"','he','says','.'] ]},
+ {type:'photo', img:'assets/dounan_8.jpg', credit:'（去哪儿攻略）',
+  zh:'我看到一朵百合，一朵康乃馨。康乃馨是给妈妈的。',
+  ss:[['I','see','a',['lily'],'.'],['I','see','a',['carnation'],'.'],['The','carnation','is','for','Mom','.'] ]},
+ {type:'photo', img:'assets/dounan_9.jpg', credit:'夜场（关注森林网）',
+  zh:'"多少钱？"我问。"八元。"真便宜！',
+  ss:[['"How','much','is','it','?"','I','ask','.'],['"Eight','yuan','."'],['So',['cheap'],'!'] ]},
+ {type:'card', img:'assets/illu_buy.png', credit:'插画',
+  tag:'💡 想一想',
+  zh:'在我住的城市，一枝玫瑰要十元。在这里，十元能买好多玫瑰！',
+  ss:[['In','my','city',',','one','rose','is','ten','yuan','.'],['Here',',','ten','yuan',['buy','s'],'many','roses','!'] ]},
+ {type:'card', img:'assets/illu_price.png', credit:'插画',
+  tag:'🔎 比一比',
+  zh:'看！新疆的价格是六十元。太贵了！为什么？',
+  ss:[['Look','!','The',['price'],'in','Xinjiang','is','sixty','yuan','.'],['Too',['expensive'],'!','Why','?'] ]},
+ {type:'card', img:'assets/illu_truck.png', credit:'插画',
+  tag:'🚚 找原因',
+  zh:'鲜花坐货车，坐飞机，走很远很远的路。',
+  ss:[['The','flowers','go','by',['truck'],'.'],['They','go','by',['plane'],'.'],['It','is','a','long',',','long','way','.'] ]},
+ {type:'card', img:'assets/illu_sad.png', credit:'插画',
+  tag:'🥀 小秘密',
+  zh:'有些花在路上蔫掉了，剩下的花要分担它的路费，所以价格变高了。',
+  ss:[['Some','flowers','are',['sad'],'on','the','way','.'],['So','the','price','goes','up','.'] ]},
+ {type:'card', img:'assets/illu_money.png', credit:'插画',
+  tag:'🧮 我来算',
+  zh:'我有 100 元，这是我的钱。我能买什么呢？让我想想！',
+  btn:['🧮 翻开研学手册，做我的采购计划 →','斗南花市研学手册-网页版.html'],
+  ss:[['I','have','100','yuan','.'],['It','is','my',['money'],'.'],['What','can','I','buy','?','Let','me','see','!'] ]},
+ {type:'photo', img:'assets/dounan_6.jpg', credit:'鲜花特写（云南网）',
+  zh:'我爱斗南花市。花会去很远的地方，爱也会去很远的地方。',
+  ss:[['I','love','the','flower','market','.'],['Flowers','go','far','.','Love','goes','far',',','too','.'] ]}
+];
+
+// 状态 ============
+const store = JSON.parse(localStorage.getItem('flowerbook') || '{}');
+let cur = 0;
+function save(){ localStorage.setItem('flowerbook', JSON.stringify(store)); }
+
+// 发音 ============
+function speak(text){
+  try{ speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang='en-US'; u.rate=0.85;
+    speechSynthesis.speak(u);
+  }catch(e){}
+}
+function speakWord(){ speak(WORDS[curWord][0]); }
+
+// 渲染一页 ============
+function render(){
+  const p = PAGES[cur];
+  const wrap = document.getElementById('wrap');
+  const box = document.createElement('div');
+  box.className='pgbox on';
+  let html = '';
+  if(p.type==='photo') html += `<img class="photo" src="${p.img}" alt="斗南花市">`;
+  if(p.type==='card' && p.img) html += `<img class="photo" src="${p.img}" alt="插画">`;
+  html += `<div class="credit">${p.credit}</div>`;
+  if(p.type==='card') html += `<div class="cardbox"><span class="tag">${p.tag}</span></div>`;
+  if(p.btn) html += `<a class="btnlink" href="${p.btn[1]}">${p.btn[0]}</a>`;
+  html += `<p class="zh">${p.zh}</p>`;
+  p.ss.forEach((s,i)=>{
+    html += `<div class="sentence" data-i="${i}">${s.map(t=>{
+      if(Array.isArray(t))
+        return `<span class="wd"><span class="nw${store['w'+t[0]]?' learned':''}" data-w="${t[0]}">${t.join('')}</span></span>`;
+      const punct = /^[.,!?"'（）]+$/.test(t) ? ' punct' : '';
+      return `<span class="wd${punct}">${t}</span>`;
+    }).join('')}</div>`;
+  });
+  html += '<p class="speakHint">👆 点句子听发音 · 点红色生词看卡片</p>';
+  wrap.innerHTML = html;
+  wrap.querySelectorAll('.sentence').forEach(el=>{
+    el.onclick = (e)=>{ if(!e.target.classList.contains('nw')) speak(sentenceText(p.ss[el.dataset.i])); };
+  });
+  wrap.querySelectorAll('.nw').forEach(el=>{
+    el.onclick = (ev)=>{ ev.stopPropagation(); openSheet(el.dataset.w); };
+  });
+  document.getElementById('pgLabel').textContent = `第 ${cur+1} / 12 页`;
+  document.getElementById('prev').disabled = cur===0;
+  document.getElementById('next').disabled = cur===PAGES.length-1;
+  renderDots();
+  // 翻页自动朗读第一句
+  speak(sentenceText(p.ss[0]));
+  window.scrollTo(0,0);
+}
+function sentenceText(tokens){
+  let s='';
+  tokens.forEach(t=>{
+    const w = Array.isArray(t)?t.join(''):t;
+    s += (!s || ',."\u2019!?'.includes(w[0])) ? w : ' '+w;
+  });
+  return s.trim();
+}
+
+function renderDots(){
+  const d = document.getElementById('dots');
+  d.innerHTML = PAGES.map((_,i)=>`<span class="dot${i===cur?' cur':''}"></span>`).join('');
+}
+function go(n){ cur = Math.max(0, Math.min(PAGES.length-1, cur+n)); render(); }
+
+// 词汇卡片 ============
+let curWord=null;
+function openSheet(w){
+  curWord = w;
+  const d = WORDS[w];
+  document.getElementById('sEn').textContent = w;
+  document.getElementById('sPh').textContent = d[1];
+  document.getElementById('sCn').textContent = d[2];
+  document.getElementById('sEx').textContent = d[3];
+  document.getElementById('sDone').textContent = store['w'+w] ? '✅ 已学会' : '⭐ 我学会了';
+  document.getElementById('mask').style.display='block';
+  document.getElementById('sheet').classList.add('open');
+  speak(w);
+}
+function closeSheet(){ document.getElementById('mask').style.display='none'; document.getElementById('sheet').classList.remove('open'); }
+function toggleLearned(){
+  if(!curWord) return;
+  store['w'+curWord] = !store['w'+curWord]; save();
+  document.getElementById('sDone').textContent = store['w'+curWord] ? '✅ 已学会' : '⭐ 我学会了';
+  render();
+}
+
+// 词汇表页 ============
+function showWords(){
+  cur = PAGES.length; // 词汇页
+  const wrap = document.getElementById('wrap');
+  let html = '<h2 class="sec">📖 全书生词（点卡片听发音）</h2><div class="wlist">';
+  Object.keys(WORDS).forEach(w=>{
+    const d = WORDS[w];
+    html += `<div class="wcard${store['w'+w]?' learned':''}" data-w="${w}">
+      <div class="en">${w}</div><div class="ph">${d[1]}</div><div class="cn">${d[2]}</div></div>`;
+  });
+  html += '</div>';
+  wrap.innerHTML = html;
+  wrap.querySelectorAll('.wcard').forEach(el=>{
+    el.onclick = ()=>{ const w=el.dataset.w; openSheet(w); };
+  });
+  document.getElementById('pgLabel').textContent = '词汇表';
+  document.getElementById('prev').disabled = true;
+  document.getElementById('next').disabled = true;
+  renderDots();
+  window.scrollTo(0,0);
+}
+
+render();
+</script>
+</body>
+</html>

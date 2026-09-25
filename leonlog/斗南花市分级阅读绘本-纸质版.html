@@ -1,0 +1,261 @@
+<!-- AI生成 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>纸质绘本 · Leon旅行日记</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; color:#333; background:#eee; }
+  .page { width:210mm; height:297mm; background:#fff; margin:10px auto; padding:13mm 15mm; position:relative; overflow:hidden; page-break-after:always; }
+  .page:last-child { page-break-after:auto; }
+  .cover { background:linear-gradient(160deg,#fff5ef,#ffe9de); text-align:center; }
+  .cover img { width:100%; height:150mm; object-fit:cover; border-radius:16px; margin-top:4mm; }
+  .cover h1 { font-size:40px; color:#e05a3a; margin:8mm 0 2mm; }
+  .cover .sub { font-size:15px; color:#888; }
+  .cover .info { display:flex; justify-content:center; gap:10mm; margin-top:8mm; font-size:14px; color:#666; }
+  .writeline { display:inline-block; border-bottom:1.5px solid #bbb; min-width:35mm; height:18px; }
+  .pic { width:100%; height:118mm; object-fit:cover; border-radius:14px; display:block; }
+  .illu { height:102mm; }
+  .txt { margin-top:6mm; }
+  .txt .en { font-size:38px; font-weight:bold; line-height:1.5; color:#222; }
+  .txt .en .nw { color:#e05a3a; text-decoration:underline; text-decoration-color:#ffb59a; text-underline-offset:5px; }
+  .txt .zh { font-size:13px; color:#999; margin-top:2mm; }
+  .tip { position:absolute; bottom:10mm; left:15mm; right:15mm; font-size:11px; color:#bbb; }
+  .pagefoot { position:absolute; bottom:4mm; left:0; right:0; text-align:center; font-size:10px; color:#ccc; }
+  /* 知识卡页 */
+  .cardpage { background:#f0f6fd; }
+  .cardbox { border:3px dashed #4a90d9; border-radius:18px; padding:12mm 10mm; margin-top:10mm; background:#fff; }
+  .cardbox .tag { display:inline-block; background:#4a90d9; color:#fff; font-size:12px; padding:3px 12px; border-radius:20px; }
+  .cardbox .en { font-size:36px; font-weight:bold; color:#2a6cb5; line-height:1.55; margin-top:8mm; }
+  .cardbox .en .nw { color:#e05a3a; text-decoration:underline; text-decoration-color:#ffb59a; text-underline-offset:5px; }
+  .cardbox .zh { font-size:13px; color:#999; margin-top:3mm; }
+  .bigemoji { font-size:64px; text-align:center; margin-top:12mm; }
+  h2.sec { font-size:26px; color:#e05a3a; margin-bottom:8mm; }
+  .q { border:2px solid #f0c9b8; border-radius:14px; padding:8mm; margin-bottom:8mm; background:#fffdfb; }
+  .q .en { font-size:22px; font-weight:bold; line-height:1.6; }
+  .q .cn { font-size:13px; color:#888; margin-top:2mm; }
+  .checks { margin-top:5mm; font-size:15px; }
+  .check { display:inline-block; width:16px; height:16px; border:2px solid #ff7d54; border-radius:4px; margin-right:2mm; vertical-align:-3px; }
+  .words { display:grid; grid-template-columns:1fr 1fr; gap:4mm; }
+  .wcard { border:2px solid #d8c4ee; border-radius:12px; padding:4mm; background:#faf7ff; }
+  .wcard .en { font-size:21px; font-weight:bold; color:#7b4fc4; }
+  .wcard .ph { color:#999; font-size:12px; }
+  .wcard .cn { font-size:13px; color:#444; }
+  .award { text-align:center; border:3px dashed #ffce54; border-radius:18px; padding:16mm 10mm; background:linear-gradient(135deg,#fff7e0,#ffedd8); margin-top:14mm; }
+  .award h2 { color:#c98a00; font-size:30px; margin-bottom:6mm; }
+  .award p { font-size:16px; line-height:2.2; }
+  @media print { body{background:#fff;} .page{margin:0; box-shadow:none;} }
+</style>
+<link rel="stylesheet" href="assets/leon-vi.css">
+</head>
+<body class="vi-print-book">
+
+
+<!-- 封面 -->
+<div class="page cover">
+  <h1>The Flower Market Adventure</h1>
+  <p class="sub">斗南花市大冒险 · 分级阅读绘本（词汇量 ≈500）</p>
+  <img src="assets/dounan_1.jpg" alt="斗南花市大门">
+  <div class="info">
+    <span>小读者：<span class="writeline"></span></span>
+    <span>阅读日期：<span class="writeline"></span></span>
+  </div>
+  <p class="tip" style="bottom:20mm;">封面图片：斗南花市夜景大门（来源：知乎）</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 1 页</div>
+</div>
+
+<!-- P1 -->
+<div class="page">
+  <img class="pic" src="assets/dounan_2.jpg" alt="斗南花市全景">
+  <div class="txt">
+    <p class="en">This is Dounan.<br>It is a big <span class="nw">flower</span> <span class="nw">market</span>.</p>
+    <p class="zh">这是斗南。它是一个大大的鲜花市场。（生词：flower 花 · market 市场）</p>
+  </div>
+  <p class="tip">图片：斗南花市热闹景象（来源：新华网）</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 2 页</div>
+</div>
+
+<!-- P2 -->
+<div class="page">
+  <img class="pic" src="assets/dounan_3.jpg" alt="花市鲜花">
+  <div class="txt">
+    <p class="en">Wow! So many <span class="nw">flowers</span>!<br>Red, yellow, pink and blue.</p>
+    <p class="zh">哇！好多花！红的、黄的、粉的、蓝的。（复习：flower）</p>
+  </div>
+  <p class="tip">图片：斗南花市（来源：新华网）</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 3 页</div>
+</div>
+
+<!-- P3 -->
+<div class="page">
+  <img class="pic" src="assets/dounan_12.jpg" alt="鲜花摊位">
+  <div class="txt">
+    <p class="en">Look at the <span class="nw">roses</span>.<br>How much is it?<br>"Ten <span class="nw">yuan</span>!" says the man.</p>
+    <p class="zh">看这些玫瑰。多少钱？"十元！"叔叔说。（生词：rose 玫瑰 · yuan 元）</p>
+  </div>
+  <p class="tip">图片：斗南花市鲜花摊位（来源：去哪儿攻略）</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 4 页</div>
+</div>
+
+<!-- P4 -->
+<div class="page">
+  <img class="pic" src="assets/dounan_7.jpg" alt="花市花海">
+  <div class="txt">
+    <p class="en">Look at the <span class="nw">sunflower</span>.<br>It is big and yellow.<br>"Five <span class="nw">yuan</span>!" he says.</p>
+    <p class="zh">看那朵向日葵，又大又黄。"五元！"他说。（生词：sunflower 向日葵）</p>
+  </div>
+  <p class="tip">图片：斗南花市花海（来源：新浪）</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 5 页</div>
+</div>
+
+<!-- P5 -->
+<div class="page">
+  <img class="pic" src="assets/dounan_8.jpg" alt="花市摊位">
+  <div class="txt">
+    <p class="en">I see a <span class="nw">lily</span>.<br>I see a <span class="nw">carnation</span>.<br>The carnation is for Mom.</p>
+    <p class="zh">我看到一朵百合，一朵康乃馨。康乃馨是给妈妈的。（生词：lily 百合 · carnation 康乃馨）</p>
+  </div>
+  <p class="tip">图片：斗南花市摊位（来源：去哪儿攻略）</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 6 页</div>
+</div>
+
+<!-- P6 -->
+<div class="page">
+  <img class="pic" src="assets/dounan_9.jpg" alt="花市人流">
+  <div class="txt">
+    <p class="en">"How much is it?" I ask.<br>"Eight yuan."<br>So <span class="nw">cheap</span>!</p>
+    <p class="zh">"多少钱？"我问。"八元。"真便宜！（生词：cheap 便宜的）</p>
+  </div>
+  <p class="tip">图片：斗南花市夜场（来源：关注森林网）</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 7 页</div>
+</div>
+
+<!-- P7 知识卡 -->
+<div class="page cardpage">
+  <img class="pic illu" src="assets/illu_buy.png" alt="插画：同样的钱">
+  <div class="cardbox">
+    <span class="tag">💡 想一想</span>
+    <p class="en">In my city, one rose is ten yuan.<br>Here, ten yuan <span class="nw">buys</span> many roses!</p>
+    <p class="zh">在我住的城市，一枝玫瑰要十元。在这里，十元能买好多玫瑰！（生词：buy 买）</p>
+  </div>
+  <p class="tip">同样的钱，在产地斗南能买到更多花——这叫"购买力"。</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 8 页</div>
+</div>
+
+<!-- P8 知识卡 -->
+<div class="page cardpage">
+  <img class="pic illu" src="assets/illu_price.png" alt="插画：比价地图">
+  <div class="cardbox">
+    <span class="tag">🔎 比一比</span>
+    <p class="en">Look! The <span class="nw">price</span> in Xinjiang is sixty yuan.<br>Too <span class="nw">expensive</span>! Why?</p>
+    <p class="zh">看！新疆的价格是六十元。太贵了！为什么？（生词：price 价格 · expensive 昂贵的）</p>
+  </div>
+  <p class="tip">同一种花，越远越贵。差额藏在了运输、损耗和花店成本里。</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 9 页</div>
+</div>
+
+<!-- P9 知识卡 -->
+<div class="page cardpage">
+  <img class="pic illu" src="assets/illu_truck.png" alt="插画：运输">
+  <div class="cardbox">
+    <span class="tag">🚚 找原因</span>
+    <p class="en">The flowers go by truck.<br>They go by plane.<br>It is a long, long way.</p>
+    <p class="zh">鲜花坐货车，坐飞机，走很远很远的路。（复习：flower）</p>
+  </div>
+  <p class="tip">从云南到新疆有 3000 多公里，路费是价格的一部分。</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 10 页</div>
+</div>
+
+<!-- P10 知识卡 -->
+<div class="page cardpage">
+  <img class="pic illu" src="assets/illu_sad.png" alt="插画：损耗">
+  <div class="cardbox">
+    <span class="tag">🥀 小秘密</span>
+    <p class="en">Some flowers are sad on the way.<br>So the price goes up.</p>
+    <p class="zh">有些花在路上蔫掉了，剩下的花就要分担它的路费，所以价格变高了。</p>
+  </div>
+  <p class="tip">鲜花会损耗，越远损耗越大——这也是差价的一部分。</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 11 页</div>
+</div>
+
+<!-- P11 知识卡 -->
+<div class="page cardpage">
+  <img class="pic illu" src="assets/illu_money.png" alt="插画：采购计划">
+  <div class="cardbox">
+    <span class="tag">🧮 我来算</span>
+    <p class="en">I have 100 yuan.<br>It is my <span class="nw">money</span>.<br>What can I buy? Let me see!</p>
+    <p class="zh">我有 100 元，这是我的钱。我能买什么呢？让我想想！（生词：money 钱）</p>
+  </div>
+  <p class="tip">翻开研学手册的任务二，用真实价格设计你的采购单吧！</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 12 页</div>
+</div>
+
+<!-- P12 -->
+<div class="page">
+  <img class="pic" src="assets/dounan_6.jpg" alt="彩色花束">
+  <div class="txt">
+    <p class="en">I love the flower market.<br>Flowers go far. Love goes far, too.</p>
+    <p class="zh">我爱斗南花市。花会去很远的地方，爱也会去很远的地方。</p>
+  </div>
+  <p class="tip">图片：斗南花市鲜花特写（来源：云南网）</p>
+  <div class="pagefoot">The Flower Market Adventure · 第 13 页</div>
+</div>
+
+<!-- 理解问题 -->
+<div class="page">
+  <h2 class="sec">❓ 读一读，答一答</h2>
+  <div class="q">
+    <p class="en">1. What flowers can you see in the market?</p>
+    <p class="cn">在花市里你能看到哪些花？</p>
+    <div class="checks"><span class="check"></span>rose　<span class="check"></span>sunflower　<span class="check"></span>lily　<span class="check"></span>carnation</div>
+  </div>
+  <div class="q">
+    <p class="en">2. How much is a rose in Dounan? How much in Xinjiang?</p>
+    <p class="cn">斗南的玫瑰多少钱？新疆的多少钱？</p>
+    <div class="checks">斗南 <span class="writeline"></span> 元　·　新疆 <span class="writeline"></span> 元</div>
+  </div>
+  <div class="q">
+    <p class="en">3. Why is it cheap in Dounan?</p>
+    <p class="cn">为什么在斗南买花最便宜？（和爸爸妈妈说一说）</p>
+    <div class="checks"><span class="check"></span>产地里没有路费　<span class="check"></span>没有花店房租　<span class="check"></span>损耗少</div>
+  </div>
+  <div class="pagefoot">The Flower Market Adventure · 第 14 页</div>
+</div>
+
+<!-- 生词表 -->
+<div class="page">
+  <h2 class="sec">📖 全书生词表（12 个）</h2>
+  <div class="words">
+    <div class="wcard"><div class="en">flower</div><div class="ph">/ˈflaʊər/</div><div class="cn">花；花朵</div></div>
+    <div class="wcard"><div class="en">market</div><div class="ph">/ˈmɑːrkɪt/</div><div class="cn">市场</div></div>
+    <div class="wcard"><div class="en">rose</div><div class="ph">/rəʊz/</div><div class="cn">玫瑰</div></div>
+    <div class="wcard"><div class="en">sunflower</div><div class="ph">/ˈsʌnflaʊər/</div><div class="cn">向日葵</div></div>
+    <div class="wcard"><div class="en">lily</div><div class="ph">/ˈlɪli/</div><div class="cn">百合</div></div>
+    <div class="wcard"><div class="en">carnation</div><div class="ph">/kɑːrˈneɪʃn/</div><div class="cn">康乃馨</div></div>
+    <div class="wcard"><div class="en">price</div><div class="ph">/praɪs/</div><div class="cn">价格</div></div>
+    <div class="wcard"><div class="en">cheap</div><div class="ph">/tʃiːp/</div><div class="cn">便宜的</div></div>
+    <div class="wcard"><div class="en">expensive</div><div class="ph">/ɪkˈspensɪv/</div><div class="cn">昂贵的</div></div>
+    <div class="wcard"><div class="en">money</div><div class="ph">/ˈmʌni/</div><div class="cn">钱</div></div>
+    <div class="wcard"><div class="en">buy</div><div class="ph">/baɪ/</div><div class="cn">买</div></div>
+    <div class="wcard"><div class="en">yuan</div><div class="ph">/juˈɑːn/</div><div class="cn">元（人民币）</div></div>
+  </div>
+  <div class="pagefoot">The Flower Market Adventure · 第 15 页</div>
+</div>
+
+<!-- 奖状 -->
+<div class="page">
+  <div class="award">
+    <h2>🏅 我读完了！</h2>
+    <p><b>I read the whole book!</b></p>
+    <p>我能自己读：<span class="check"></span>5页　<span class="check"></span>10页　<span class="check"></span>全部12页</p>
+    <p>我最喜欢的句子：<span class="writeline" style="min-width:70mm;"></span></p>
+    <p style="margin-top:10mm;">家长签名：<span class="writeline" style="min-width:50mm;"></span></p>
+    <p style="color:#c98a00; margin-top:8mm;">下一站：把它读给爷爷奶奶听吧！</p>
+  </div>
+  <div class="pagefoot">The Flower Market Adventure · 第 16 页</div>
+</div>
+
+</body>
+</html>

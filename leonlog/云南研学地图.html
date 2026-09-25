@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>云南研学地图 · Leon旅行日记</title>
+<meta name="description" content="Leon的云南研学地图。昆明已解锁，大理等待探索。">
+<link rel="stylesheet" href="assets/leon-vi.css">
+<style>
+  *{box-sizing:border-box}
+  html,body{min-height:100%;margin:0}
+  body{overflow-x:hidden}
+  .yn-page{width:min(1180px,calc(100% - 36px));min-height:100vh;margin:auto;padding:22px 0 30px;display:grid;grid-template-rows:auto 1fr;gap:16px}
+  .yn-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .back{display:inline-flex;align-items:center;min-height:44px;padding:8px 15px;border:2px solid var(--vi-border);border-radius:18px 14px 20px 13px;background:#fff;color:var(--vi-sky-700);font-weight:700;text-decoration:none;box-shadow:3px 4px 0 var(--vi-shadow)}
+  .back:hover{transform:translateY(-2px);box-shadow:5px 6px 0 var(--vi-shadow)}
+  .route{margin:0;color:var(--vi-muted);font-size:14px;letter-spacing:.08em}
+  .map-paper{position:relative;isolation:isolate;min-height:690px;padding:24px 28px 18px;overflow:hidden;background:rgba(255,255,255,.96);border:2px solid var(--vi-border);border-radius:26px 18px 30px 20px;box-shadow:11px 13px 0 var(--vi-shadow)}
+  .map-paper::before,.map-paper::after{content:"";position:absolute;z-index:-1;width:104px;height:28px;background:#b8ddea88;transform:rotate(-7deg)}
+  .map-paper::before{top:10px;left:9%}.map-paper::after{right:7%;bottom:11px;transform:rotate(6deg)}
+  .map-head{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+  .kicker{display:block;margin-bottom:4px;color:var(--vi-sky-700);font-size:12px;font-weight:800;letter-spacing:.15em}
+  h1{margin:0;font-size:clamp(32px,5vw,60px);line-height:1;color:var(--vi-ink)}
+  .intro{max-width:380px;margin:0;color:var(--vi-muted);text-align:right;line-height:1.7}
+  .stage{position:relative;height:570px;margin-top:4px}
+  .map-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(8px 10px 0 rgba(184,221,234,.8))}
+  .yn-shape{fill:var(--vi-sky-100);stroke:var(--vi-ink);stroke-width:2.2;vector-effect:non-scaling-stroke}
+  .river{fill:none;stroke:#82bdd3;stroke-width:2;stroke-linecap:round;stroke-dasharray:6 7;opacity:.8;vector-effect:non-scaling-stroke}
+  .city{color:var(--vi-ink);text-decoration:none;outline:none;cursor:pointer}
+  .hit{fill:transparent}
+  .pin-body{fill:var(--vi-yellow);stroke:var(--vi-ink);stroke-width:1.8;vector-effect:non-scaling-stroke;transition:transform .22s ease,fill .22s ease;transform-box:fill-box;transform-origin:center bottom}
+  .pin-dot{fill:#fff;stroke:var(--vi-ink);stroke-width:1.3;vector-effect:non-scaling-stroke;pointer-events:none}
+  .city-label{font-family:var(--vi-font-hand);font-size:8px;font-weight:800;fill:var(--vi-ink);paint-order:stroke;stroke:#fff;stroke-width:2.3;stroke-linejoin:round;pointer-events:none}
+  .city-sub{font-family:var(--vi-font-body);font-size:4.2px;font-weight:700;fill:var(--vi-sky-700);paint-order:stroke;stroke:#fff;stroke-width:1.5;pointer-events:none}
+  .city:hover .pin-body,.city:focus-visible .pin-body{fill:#ffd958;transform:translateY(-2px)}
+  .city:focus-visible .hit{stroke:var(--vi-focus);stroke-width:2;vector-effect:non-scaling-stroke}
+  .dali .pin-body{fill:#fff;stroke-dasharray:3 2}.dali .city-sub{fill:var(--vi-muted)}
+  .legend{position:absolute;left:5%;bottom:6%;display:flex;gap:16px;flex-wrap:wrap;padding:9px 13px;background:#fff;border:1.5px dashed var(--vi-border);border-radius:16px;color:var(--vi-muted);font-size:13px}
+  .legend span{display:flex;align-items:center;gap:7px}.legend i{width:13px;height:13px;border:2px solid var(--vi-ink);border-radius:50%;background:var(--vi-yellow)}.legend .waiting{background:#fff;border-style:dashed}
+  .leon{position:absolute;right:1%;bottom:-8px;width:min(25vw,245px);filter:drop-shadow(5px 8px 0 rgba(184,221,234,.76));animation:leon-look 7s ease-in-out infinite;pointer-events:none}
+  .note{position:absolute;right:13%;top:13%;padding:11px 14px;background:#fff;border:2px solid var(--vi-ink);border-radius:18px 16px 20px 8px;box-shadow:4px 5px 0 var(--vi-shadow);font-family:var(--vi-font-hand);font-weight:800;transform:rotate(2deg)}
+  .note::after{content:"";position:absolute;right:20px;bottom:-10px;width:16px;height:16px;background:#fff;border-right:2px solid var(--vi-ink);border-bottom:2px solid var(--vi-ink);transform:rotate(45deg)}
+  .toast{position:fixed;left:50%;bottom:26px;z-index:10;max-width:calc(100% - 32px);padding:12px 18px;border-radius:16px;background:var(--vi-sky-700);color:#fff;font-weight:700;box-shadow:4px 5px 0 var(--vi-sky-200);opacity:0;transform:translate(-50%,18px);transition:.25s ease;pointer-events:none}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  @keyframes leon-look{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(-8px,-7px,0) rotate(-1.2deg)}}
+  @media(max-width:760px){.yn-page{width:min(100% - 22px,680px);padding-top:12px}.yn-top{align-items:flex-start;flex-direction:column;gap:7px}.route{padding-left:4px}.map-paper{min-height:680px;padding:20px 14px 12px}.map-head{align-items:flex-start;flex-direction:column;gap:9px}.intro{text-align:left;font-size:14px}.stage{height:540px}.map-svg{inset:16px -46px 30px -42px;width:calc(100% + 88px);height:calc(100% - 28px)}.leon{right:-4%;width:170px}.note{right:4%;top:11%;font-size:13px}.legend{left:4%;bottom:3%;max-width:180px}}
+  @media(max-width:430px){.map-paper{min-height:620px}.stage{height:475px}.map-svg{inset:22px -58px 24px -54px;width:calc(100% + 112px);height:calc(100% - 30px)}.leon{width:132px;right:-8%;bottom:2px}.note{top:8%;right:1%;max-width:130px}.legend{font-size:12px;gap:8px;max-width:145px}}
+  @media(prefers-reduced-motion:reduce){.leon{animation:none}.city *{transition:none}}
+</style>
+</head>
+<body class="vi-yunnan-map">
+<main class="yn-page">
+  <header class="yn-top">
+    <a class="back" href="index.html" aria-label="返回全国旅行地图">← 返回全国地图</a>
+    <p class="route">中国地图 / 云南 / 城市研学足迹</p>
+  </header>
+
+  <section class="map-paper" aria-labelledby="yn-title">
+    <div class="map-head">
+      <div><span class="kicker">LEON'S YUNNAN MAP · 2026</span><h1 id="yn-title">云南研学地图</h1></div>
+      <p class="intro">找到地图上的旅行定位点。<br>昆明已经点亮，大理还在等 Leon 出发。</p>
+    </div>
+
+    <div class="stage">
+      <svg class="map-svg" viewBox="550 605 205 183" role="img" aria-labelledby="map-name map-desc">
+        <title id="map-name">云南省研学地图</title>
+        <desc id="map-desc">地图标注昆明与大理。昆明可进入研学手册，大理暂未解锁。</desc>
+        <use class="yn-shape" href="assets/china-provinces.svg#province-530000"></use>
+        <path class="river" d="M594 650 C621 666 637 691 650 714 C661 733 680 746 706 754"></path>
+
+        <a class="city kunming" href="云南昆明研学日记.html" aria-label="昆明，已解锁，进入昆明研学主目录">
+          <circle class="hit" cx="676" cy="686" r="15"></circle>
+          <path class="pin-body" d="M676 671c-7.2 0-13 5.8-13 13 0 9.5 13 21 13 21s13-11.5 13-21c0-7.2-5.8-13-13-13z"></path>
+          <circle class="pin-dot" cx="676" cy="684" r="4.6"></circle>
+          <text class="city-label" x="691" y="682">昆明</text>
+          <text class="city-sub" id="kunming-date" x="691" y="690">点击进入研学主目录</text>
+        </a>
+
+        <g class="city dali" role="button" tabindex="0" aria-label="大理，待解锁" data-city="大理">
+          <circle class="hit" cx="624" cy="677" r="15"></circle>
+          <path class="pin-body" d="M624 662c-7.2 0-13 5.8-13 13 0 9.5 13 21 13 21s13-11.5 13-21c0-7.2-5.8-13-13-13z"></path>
+          <circle class="pin-dot" cx="624" cy="675" r="4.6"></circle>
+          <text class="city-label" x="594" y="674">大理</text>
+          <text class="city-sub" x="581" y="682">下一篇 · 待解锁</text>
+        </g>
+      </svg>
+
+      <div class="note" aria-hidden="true">先去昆明选择研学内容吧！</div>
+      <img class="leon" src="assets/leon-traveler.png" alt="Leon背着旅行包查看云南地图">
+      <div class="legend" aria-label="地图图例"><span><i></i>已点亮</span><span><i class="waiting"></i>待解锁</span></div>
+    </div>
+  </section>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+  const dali=document.querySelector('.dali');
+  const toast=document.getElementById('toast');
+  let toastTimer;
+  try{
+    const tripDate=JSON.parse(localStorage.getItem('dounan')||'{}').tripDate;
+    if(tripDate){
+      const [,month,day]=tripDate.split('-');
+      document.getElementById('kunming-date').textContent=`${Number(month)}月${Number(day)}日 · 已打卡`;
+    }
+  }catch(error){}
+  function showLocked(){
+    toast.textContent='大理篇正在准备中，先去昆明完成研学任务吧';
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(()=>toast.classList.remove('show'),2400);
+  }
+  dali.addEventListener('click',showLocked);
+  dali.addEventListener('keydown',event=>{
+    if(event.key==='Enter'||event.key===' '){event.preventDefault();showLocked()}
+  });
+</script>
+</body>
+</html>

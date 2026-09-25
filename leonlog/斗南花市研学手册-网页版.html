@@ -1,0 +1,410 @@
+<!-- AI生成 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>斗南花市互动手册 · Leon旅行日记</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; background:#fdf6f0; color:#333; padding-bottom:70px; }
+  header { background:linear-gradient(135deg,#ff8c5a,#e05a3a); color:#fff; padding:28px 20px 20px; border-radius:0 0 24px 24px; }
+  header h1 { font-size:24px; }
+  header p { font-size:13px; opacity:.9; margin-top:4px; }
+  header .links { margin-top:10px; font-size:12.5px; display:flex; gap:10px; flex-wrap:wrap; }
+  header .links a { color:#fff; text-decoration:none; background:rgba(255,255,255,.22); padding:4px 12px; border-radius:16px; }
+  #progressWrap { margin-top:12px; background:rgba(255,255,255,.3); border-radius:10px; height:12px; overflow:hidden; }
+  #progressBar { height:100%; width:0; background:#ffce54; transition:width .4s; }
+  #progressText { font-size:12px; margin-top:4px; }
+  .sec { display:none; padding:18px 16px; }
+  .sec.active { display:block; animation:fade .25s; }
+  @keyframes fade { from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
+  .card { background:#fff; border-radius:16px; padding:16px; margin-bottom:14px; box-shadow:0 2px 8px rgba(224,90,58,.08); }
+  .card h2 { font-size:17px; color:#e05a3a; margin-bottom:8px; }
+  .card h3 { font-size:15px; color:#2a6cb5; margin:12px 0 6px; }
+  .card p, .card li { font-size:14px; line-height:1.8; }
+  .fact { display:flex; gap:10px; padding:8px 0; border-bottom:1px dashed #f3d9cd; }
+  .fact:last-child { border:none; }
+  .fact .no { flex:none; width:22px; height:22px; border-radius:50%; background:#4caf7d; color:#fff; text-align:center; line-height:22px; font-size:12px; }
+  .checkrow { display:flex; align-items:center; gap:8px; padding:7px 0; font-size:14px; }
+  .checkrow input { width:20px; height:20px; accent-color:#ff7d54; }
+  input[type=text], input[type=number], input[type=date] { width:100%; border:1.5px solid #e8d5cc; border-radius:10px; padding:9px 12px; font-size:14px; background:#fffdfb; }
+  input:focus { outline:2px solid #ffb59a; }
+  table { width:100%; border-collapse:collapse; font-size:13px; margin:8px 0; }
+  th, td { border:1px solid #f0c9b8; padding:6px 4px; text-align:center; }
+  th { background:#ffe9df; }
+  td input { border:none; text-align:center; padding:4px 2px; font-size:13px; }
+  .btn { display:block; width:100%; background:#ff7d54; color:#fff; border:none; border-radius:12px; padding:12px; font-size:15px; margin-top:10px; }
+  .btn.ghost { background:#fff; color:#e05a3a; border:1.5px solid #ffb59a; }
+  .result { background:#f0f6fd; border-radius:10px; padding:10px; font-size:14px; margin-top:8px; }
+  .word-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .word { background:#faf7ff; border:2px solid #d8c4ee; border-radius:14px; padding:12px; text-align:center; cursor:pointer; transition:transform .15s; }
+  .word:active { transform:scale(.95); }
+  .word .en { font-size:18px; font-weight:bold; color:#7b4fc4; }
+  .word .ph { font-size:11px; color:#999; }
+  .word .cn { font-size:13px; margin-top:2px; min-height:20px; }
+  .word .speak { font-size:11px; color:#b79ae0; margin-top:4px; }
+  .word.learned { background:#e8f9ef; border-color:#4caf7d; }
+  .star { font-size:34px; cursor:pointer; color:#ddd; transition:color .2s; }
+  .star.on { color:#ffce54; text-shadow:0 0 8px #ffd983; }
+  #photoWall { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+  #photoWall img { width:100%; border-radius:12px; aspect-ratio:1; object-fit:cover; }
+  .unknown-flower { margin-top:8px; padding:12px; background:#eef8fc; border:1.5px dashed #82bdd3; border-radius:14px 18px 13px 20px; }
+  .unknown-flower label { display:block; margin-bottom:7px; color:#205f79; font-size:14px; font-weight:700; }
+  .flower-photo-box { margin-top:14px; padding-top:14px; border-top:1px dashed #b8ddea; }
+  .flower-photo-box h3 { margin:0 0 3px; }
+  .helper { color:#5d7783; font-size:12px; line-height:1.6; }
+  .photo-picker { display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px; }
+  .photo-picker svg { width:21px; height:21px; flex:none; }
+  .flower-photo-wall { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; margin-top:10px; }
+  .flower-shot { position:relative; overflow:hidden; margin:0; border:2px solid #b8ddea; border-radius:14px 19px 16px 12px; background:#eef8fc; aspect-ratio:1; }
+  .flower-shot img { width:100%; height:100%; display:block; object-fit:cover; }
+  .flower-shot button { position:absolute; top:6px; right:6px; width:34px; height:34px; border:2px solid #244454; border-radius:50%; background:rgba(255,255,255,.94); color:#244454; font-size:22px; line-height:28px; box-shadow:2px 3px 0 #b8ddea; }
+  .page-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 4px; }
+  .page-actions button { min-height:50px; margin:0; }
+  .page-actions button:disabled { background:#edf3f5!important; color:#879aa2!important; border-color:#cbdadd!important; box-shadow:none!important; cursor:not-allowed; }
+  .page-count { grid-column:1/-1; margin:0; color:#5d7783; font-size:12px; text-align:center; }
+  .trip-date-card { margin:16px 16px 0; padding:14px 16px; display:grid; grid-template-columns:minmax(130px,210px) 1fr; align-items:center; gap:14px; background:#fff; border:2px solid #82bdd3; border-radius:15px 22px 17px 24px; box-shadow:4px 5px 0 #cfe8f2; }
+  .trip-date-card label { color:#205f79; font-family:"STKaiti","KaiTi",serif; font-size:17px; font-weight:700; }
+  .trip-date-card input { min-height:46px; color:#244454; }
+  .date-hint { grid-column:1/-1; margin:0; color:#5d7783; font-size:12px; line-height:1.6; }
+  @media(max-width:520px){.trip-date-card{grid-template-columns:1fr;gap:7px;margin:12px 12px 0}.date-hint{grid-column:auto}}
+  .cert { background:linear-gradient(135deg,#fff7e0,#ffedd8); border:2px dashed #ffce54; text-align:center; }
+  nav { position:fixed; bottom:0; left:0; right:0; display:flex; background:#fff; border-top:1px solid #f0e0d8; z-index:9; }
+  nav button { flex:1; border:none; background:none; padding:8px 0 6px; font-size:11px; color:#999; }
+  nav button .ic { font-size:20px; display:block; }
+  nav button.active { color:#e05a3a; font-weight:bold; }
+</style>
+<link rel="stylesheet" href="assets/leon-vi.css">
+</head>
+<body class="vi-handbook">
+
+
+<header>
+  <h1>🌻 Leon的斗南花市大冒险</h1>
+  <p>Leon旅行日记 · 小小花卉研学家 · 亚洲最大鲜花市场</p>
+  <div class="links">
+    <a href="云南昆明研学日记.html">← 昆明日记</a>
+    <a href="斗南花市分级阅读绘本-点读版.html">📖 去读绘本</a>
+    <a href="斗南花市研学手册.html">🖨️ 打印版</a>
+  </div>
+  <div id="progressWrap"><div id="progressBar"></div></div>
+  <div id="progressText">完成度 0%</div>
+</header>
+
+<section class="trip-date-card" aria-labelledby="trip-date-label">
+  <label id="trip-date-label" for="tripDate">研学日期（必填）</label>
+  <input type="date" class="save" id="tripDate" required aria-describedby="tripDateHint">
+  <p class="date-hint" id="tripDateHint" role="status">选择日期后会自动保存，并显示在全国地图和云南地图的昆明定位点。</p>
+</section>
+
+<!-- 知识 -->
+<div class="sec active" id="sec-know">
+  <div class="card">
+    <h2>🔍 关于斗南的 6 个秘密</h2>
+    <div class="fact"><div class="no">1</div><p><b>亚洲第一：</b>全中国每 10 枝鲜花，约 7 枝从这里出发。</p></div>
+    <div class="fact"><div class="no">2</div><p><b>鲜花论斤卖：</b>"云南十八怪，鲜花论斤卖"，这里买花像买菜！</p></div>
+    <div class="fact"><div class="no">3</div><p><b>鲜花坐飞机：</b>早上采摘的花，冷链运输，当晚就到北京上海，出口 50 多个国家。</p></div>
+    <div class="fact"><div class="no">4</div><p><b>花的结构：</b>花瓣、花蕊、花茎、叶子——花蕊是孕育种子的地方。</p></div>
+    <div class="fact"><div class="no">5</div><p><b>春城花都：</b>昆明四季如春、阳光足、温差大，花儿长得又快又艳。</p></div>
+    <div class="fact"><div class="no">6</div><p><b>夜晚花拍：</b>每晚这里有鲜花拍卖，"出价！成交！"几百万元的花几小时抢光。</p></div>
+  </div>
+  <div class="card">
+    <h2>🌸 认花打卡（找到就打勾）</h2>
+    <label class="checkrow"><input type="checkbox" class="save" id="f1">玫瑰</label>
+    <label class="checkrow"><input type="checkbox" class="save" id="f2">向日葵</label>
+    <label class="checkrow"><input type="checkbox" class="save" id="f3">百合</label>
+    <label class="checkrow"><input type="checkbox" class="save" id="f4">康乃馨</label>
+    <label class="checkrow"><input type="checkbox" class="save" id="f5">满天星</label>
+    <label class="checkrow"><input type="checkbox" class="save" id="f6">一种我不认识的花（问摊主它叫什么！）</label>
+    <div class="unknown-flower">
+      <label for="unknownFlowerName">我问到的花名是：</label>
+      <input type="text" class="save" id="unknownFlowerName" autocomplete="off" placeholder="把摊主告诉你的花名写在这里">
+    </div>
+    <div class="flower-photo-box">
+      <h3>给找到的花拍张照片</h3>
+      <p class="helper">可以拍照或从相册选择；照片只保存在当前设备的浏览器中。</p>
+      <label class="btn photo-picker" for="flowerPhotoInput">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.5 10 3.5h4l1.5 2H19A2.5 2.5 0 0 1 21.5 8v9A2.5 2.5 0 0 1 19 19.5H5A2.5 2.5 0 0 1 2.5 17V8A2.5 2.5 0 0 1 5 5.5h3.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        拍照 / 上传认花照片
+      </label>
+      <input type="file" id="flowerPhotoInput" accept="image/*" capture="environment" hidden>
+      <div class="flower-photo-wall" id="flowerPhotoWall" aria-live="polite"></div>
+      <p class="helper" id="flowerPhotoStatus" role="status"></p>
+    </div>
+  </div>
+  <div class="page-actions" aria-label="手册翻页">
+    <button class="btn ghost" type="button" disabled>← 上一页</button>
+    <button class="btn" type="button" onclick="turnPage(1)">完成本页，下一页 →</button>
+    <p class="page-count">第 1 页，共 4 页</p>
+  </div>
+</div>
+
+<!-- 任务 -->
+<div class="sec" id="sec-task">
+  <div class="card">
+    <h2>📝 任务一：问价大挑战</h2>
+    <p>礼貌地问 3 个摊位同一种花的价格："阿姨，请问这个多少钱一把？"</p>
+    <table>
+      <tr><th>摊位</th><th>花名</th><th>价格</th></tr>
+      <tr><td>1号</td><td><input class="save" id="q1n"></td><td><input class="save" id="q1p" type="number"></td></tr>
+      <tr><td>2号</td><td><input class="save" id="q2n"></td><td><input class="save" id="q2p" type="number"></td></tr>
+      <tr><td>3号</td><td><input class="save" id="q3n"></td><td><input class="save" id="q3p" type="number"></td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h2>🧮 任务二：100元虚拟采购计划</h2>
+    <p>今晚要坐飞机，只计划不购买。用 100 元假想资金搭配采购单：</p>
+    <div id="planRows"></div>
+    <button class="btn ghost" onclick="addRow()">＋ 加一行</button>
+    <button class="btn" onclick="calcPlan()">计算合计</button>
+    <div class="result" id="planResult">合计会显示在这里</div>
+  </div>
+  <div class="card">
+    <h2>🔎 任务三：比价小侦探</h2>
+    <p>样本：11枝红玫瑰。斗南问价 + 美团查昆明花店价 + 美团切换城市到"乌鲁木齐"查新疆价：</p>
+    <table>
+      <tr><th>地点</th><th>价格（元）</th></tr>
+      <tr><td>① 斗南花市</td><td><input class="save" id="p1" type="number"></td></tr>
+      <tr><td>② 昆明花店（美团）</td><td><input class="save" id="p2" type="number"></td></tr>
+      <tr><td>③ 新疆花店（美团）</td><td><input class="save" id="p3" type="number"></td></tr>
+    </table>
+    <button class="btn" onclick="calcDiff()">算出差价</button>
+    <div class="result" id="diffResult">差价会显示在这里</div>
+    <h3>差价侦探：钱去哪了？（讨论后打勾）</h3>
+    <label class="checkrow"><input type="checkbox" class="save" id="d1">🌱 花农的成本和辛苦钱</label>
+    <label class="checkrow"><input type="checkbox" class="save" id="d2">🚚 冷链运输费（云南→新疆 3000 多公里！）</label>
+    <label class="checkrow"><input type="checkbox" class="save" id="d3">🥀 损耗：鲜花会蔫，越远损耗越大</label>
+    <label class="checkrow"><input type="checkbox" class="save" id="d4">🏪 花店房租、店员、包装</label>
+    <label class="checkrow"><input type="checkbox" class="save" id="d5">🎀 花艺师的手艺钱</label>
+  </div>
+  <div class="page-actions" aria-label="手册翻页">
+    <button class="btn ghost" type="button" onclick="turnPage(-1)">← 上一页</button>
+    <button class="btn" type="button" onclick="turnPage(1)">下一页：花市单词 →</button>
+    <p class="page-count">第 2 页，共 4 页</p>
+  </div>
+</div>
+
+<!-- 单词 -->
+<div class="sec" id="sec-word">
+  <div class="card">
+    <h2>🗣️ 花市10词（点卡片听发音、看中文）</h2>
+    <div class="word-grid" id="words"></div>
+  </div>
+  <div class="page-actions" aria-label="手册翻页">
+    <button class="btn ghost" type="button" onclick="turnPage(-1)">← 上一页</button>
+    <button class="btn" type="button" onclick="turnPage(1)">下一页：总结 →</button>
+    <p class="page-count">第 3 页，共 4 页</p>
+  </div>
+</div>
+
+<!-- 总结 -->
+<div class="sec" id="sec-final">
+  <div class="card">
+    <h2>⭐ 成就墙（做到了就点亮）</h2>
+    <div id="stars" style="display:flex; justify-content:space-around; padding:8px 0;">
+      <span class="star" data-tip="问价">★</span><span class="star" data-tip="采购计划">★</span><span class="star" data-tip="比价">★</span><span class="star" data-tip="差价归因">★</span><span class="star" data-tip="5个单词">★</span><span class="star" data-tip="设计花束">★</span>
+    </div>
+    <p style="text-align:center; font-size:12px; color:#999;" id="starTips">问价 · 采购计划 · 比价 · 差价归因 · 5个单词 · 设计花束</p>
+  </div>
+  <div class="card">
+    <h2>✏️ 今天我学到了</h2>
+    <p>🌸 最美的花：<input type="text" class="save" id="s1"></p>
+    <p style="margin-top:8px;">🧮 新本领：<input type="text" class="save" id="s2"></p>
+    <p style="margin-top:8px;">⭐ 最爱的单词：<input type="text" class="save" id="s3"></p>
+  </div>
+  <div class="card">
+    <h2>📷 回忆墙（拍照上传）</h2>
+    <p style="font-size:12px; color:#999;">照片只保存在这台手机的本手册里，不会上传到网络。</p>
+    <label class="btn" style="text-align:center; cursor:pointer;">拍一张 / 选照片<input type="file" id="photoInput" accept="image/*" capture="environment" style="display:none"></label>
+    <div id="photoWall"></div>
+  </div>
+  <div class="card cert">
+    <h2 style="color:#c98a00;">🏅 金牌花艺小商人认证 🏅</h2>
+    <p>恭喜你完成斗南花市大冒险！</p>
+    <p style="margin-top:6px;">家长签字：<input type="text" class="save" id="sign" style="width:60%; display:inline-block;"></p>
+  </div>
+  <button class="btn ghost" onclick="if(confirm('确定清空所有记录吗？')){localStorage.removeItem('dounan'); location.reload();}">🗑️ 清空重来</button>
+  <div class="page-actions" aria-label="手册翻页">
+    <button class="btn ghost" type="button" onclick="turnPage(-1)">← 上一页</button>
+    <button class="btn" type="button" disabled>已经是最后一页</button>
+    <p class="page-count">第 4 页，共 4 页</p>
+  </div>
+</div>
+
+<nav>
+  <button class="active" data-sec="sec-know"><span class="ic">📖</span>知识</button>
+  <button data-sec="sec-task"><span class="ic">🧮</span>任务</button>
+  <button data-sec="sec-word"><span class="ic">🗣️</span>单词</button>
+  <button data-sec="sec-final"><span class="ic">🏅</span>总结</button>
+</nav>
+
+<script>
+const store = JSON.parse(localStorage.getItem('dounan') || '{}');
+function save(){ localStorage.setItem('dounan', JSON.stringify(store)); updateProgress(); }
+
+// 导航与顺序翻页
+const sectionIds = ['sec-know','sec-task','sec-word','sec-final'];
+function showSection(id){
+  document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.sec===id));
+  document.querySelectorAll('.sec').forEach(x=>x.classList.toggle('active',x.id===id));
+  window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+}
+function turnPage(direction){
+  const current = document.querySelector('.sec.active');
+  const nextIndex = Math.max(0,Math.min(sectionIds.length-1,sectionIds.indexOf(current.id)+direction));
+  showSection(sectionIds[nextIndex]);
+}
+document.querySelectorAll('nav button').forEach(b=>{
+  b.onclick = ()=>showSection(b.dataset.sec);
+});
+
+// 输入与勾选自动保存
+document.querySelectorAll('.save').forEach(el=>{
+  if(store[el.id] !== undefined){
+    if(el.type==='checkbox') el.checked = !!store[el.id]; else el.value = store[el.id];
+  }
+  el.onchange = ()=>{ store[el.id] = el.type==='checkbox' ? el.checked : el.value; save(); };
+});
+const tripDateInput=document.getElementById('tripDate');
+const tripDateHint=document.getElementById('tripDateHint');
+function updateTripDateHint(){
+  if(!tripDateInput.value){
+    tripDateHint.textContent='请选择研学日期；保存后会显示在全国地图和云南地图的昆明定位点。';
+    return;
+  }
+  const [year,month,day]=tripDateInput.value.split('-');
+  tripDateHint.textContent=`已保存：${year}年${Number(month)}月${Number(day)}日。返回地图即可看到打卡日期。`;
+}
+tripDateInput.addEventListener('change',updateTripDateHint);
+updateTripDateHint();
+
+// 采购计划
+const planRows = document.getElementById('planRows');
+function addRow(name,price,qty){
+  const d = document.createElement('div');
+  d.style.cssText='display:flex; gap:6px; margin-top:8px;';
+  d.innerHTML = `<input placeholder="花名" value="${name||''}"><input placeholder="单价" type="number" style="width:70px" value="${price||''}"><input placeholder="几把" type="number" style="width:60px" value="${qty||''}">`;
+  planRows.appendChild(d);
+}
+if(store.plan) store.plan.forEach(r=>addRow(r[0],r[1],r[2])); else addRow();
+function calcPlan(){
+  let total=0, rows=[];
+  planRows.querySelectorAll('div').forEach(d=>{
+    const [n,p,q] = d.querySelectorAll('input');
+    const sub = (parseFloat(p.value)||0)*(parseFloat(q.value)||0);
+    total += sub; rows.push([n.value,p.value,q.value]);
+  });
+  store.plan = rows; save();
+  const left = 100-total;
+  document.getElementById('planResult').innerHTML =
+    `合计：<b>￥${total}</b> ${left>=0 ? `✅ 没超预算，还剩 ￥${left}` : `❌ 超出预算 ￥${-left}，调整一下吧！`}<br>
+     <span style="font-size:12px;color:#888;">再想想：同样这些花在美团花店要多少钱？差价就是"产地优势"。</span>`;
+}
+if(store.planResult) document.getElementById('planResult').innerHTML = store.planResult;
+
+// 比价
+function calcDiff(){
+  const p1=parseFloat(document.getElementById('p1').value), p3=parseFloat(document.getElementById('p3').value);
+  if(!p1||!p3){ document.getElementById('diffResult').textContent='先填斗南价和新疆价哦'; return; }
+  const diff = p3-p1;
+  const html = `新疆比斗南贵 <b>￥${diff}</b>！<br><span style="font-size:12px;color:#888;">讨论：这笔钱去了哪里？（花农成本/运输/损耗/花店/手艺）</span>`;
+  document.getElementById('diffResult').innerHTML = html;
+  store.diffResult = html; save();
+}
+if(store.diffResult) document.getElementById('diffResult').innerHTML = store.diffResult;
+
+// 单词卡
+const words = [['flower','/ˈflaʊər/','花；花朵'],['rose','/rəʊz/','玫瑰'],['sunflower','/ˈsʌnflaʊər/','向日葵'],['lily','/ˈlɪli/','百合'],['carnation','/kɑːrˈneɪʃn/','康乃馨'],['price','/praɪs/','价格'],['cheap','/tʃiːp/','便宜的'],['expensive','/ɪkˈspensɪv/','昂贵的'],['money','/ˈmʌni/','钱'],['buy','/baɪ/','买']];
+const wgrid = document.getElementById('words');
+words.forEach((w,i)=>{
+  const d = document.createElement('div');
+  d.className = 'word' + (store['w'+i] ? ' learned' : '');
+  d.innerHTML = `<div class="en">${i+1}. ${w[0]}</div><div class="ph">${w[1]}</div><div class="cn">${store['w'+i] ? w[2] : '？点我'}</div><div class="speak">🔊 点我读 + 显示中文</div>`;
+  d.onclick = ()=>{
+    d.querySelector('.cn').textContent = w[2];
+    d.classList.add('learned');
+    store['w'+i] = true; save();
+    try{ const u = new SpeechSynthesisUtterance(w[0]); u.lang='en-US'; speechSynthesis.speak(u); }catch(e){}
+  };
+  wgrid.appendChild(d);
+});
+
+// 星星
+document.querySelectorAll('.star').forEach((s,i)=>{
+  if(store['star'+i]) s.classList.add('on');
+  s.onclick = ()=>{ s.classList.toggle('on'); store['star'+i] = s.classList.contains('on'); save(); };
+});
+
+// 照片压缩后存到当前浏览器
+function compressPhoto(file,maxSize=480){
+  return new Promise((resolve,reject)=>{
+    const img = new Image();
+    const objectUrl = URL.createObjectURL(file);
+    img.onload = ()=>{
+    const c = document.createElement('canvas');
+      const sc = Math.min(1,maxSize/Math.max(img.width,img.height));
+    c.width = img.width*sc; c.height = img.height*sc;
+    c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+      URL.revokeObjectURL(objectUrl);
+      resolve(c.toDataURL('image/jpeg',.72));
+    };
+    img.onerror = ()=>{ URL.revokeObjectURL(objectUrl); reject(new Error('image-load-failed')); };
+    img.src = objectUrl;
+  });
+}
+document.getElementById('flowerPhotoInput').onchange = async e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const status = document.getElementById('flowerPhotoStatus');
+  if((store.flowerPhotos||[]).length>=6){ status.textContent='最多保存 6 张认花照片，可以先删除一张再添加。'; e.target.value=''; return; }
+  status.textContent='正在整理照片…';
+  try{
+    const url = await compressPhoto(file);
+    store.flowerPhotos = store.flowerPhotos||[];
+    store.flowerPhotos.push(url);
+    save(); renderFlowerPhotos();
+    status.textContent='照片已保存到认花打卡。';
+  }catch(error){ status.textContent='这张照片暂时无法读取，请换一张试试。'; }
+  e.target.value='';
+};
+function removeFlowerPhoto(index){
+  store.flowerPhotos.splice(index,1);
+  save(); renderFlowerPhotos();
+  document.getElementById('flowerPhotoStatus').textContent='照片已删除。';
+}
+function renderFlowerPhotos(){
+  document.getElementById('flowerPhotoWall').innerHTML = (store.flowerPhotos||[]).map((url,index)=>`<figure class="flower-shot"><img src="${url}" alt="认花打卡照片 ${index+1}"><button type="button" aria-label="删除第 ${index+1} 张认花照片" onclick="removeFlowerPhoto(${index})">×</button></figure>`).join('');
+}
+renderFlowerPhotos();
+
+// 总结页回忆墙
+document.getElementById('photoInput').onchange = async e=>{
+  const file = e.target.files[0]; if(!file) return;
+  try{
+    const url = await compressPhoto(file,400);
+    store.photos = store.photos||[]; store.photos.push(url); save(); renderPhotos();
+  }catch(error){ alert('这张照片暂时无法读取，请换一张试试。'); }
+  e.target.value='';
+};
+function renderPhotos(){
+  document.getElementById('photoWall').innerHTML = (store.photos||[]).map((u,i)=>`<img src="${u}" alt="回忆墙照片 ${i+1}">`).join('');
+}
+renderPhotos();
+
+// 完成度
+function updateProgress(){
+  const keys = ['f1','f2','f3','f4','f5','f6','d1','d2','d3','d4','d5'];
+  let done = keys.filter(k=>store[k]).length;
+  for(let i=0;i<10;i++) if(store['w'+i]) done++;
+  for(let i=0;i<6;i++) if(store['star'+i]) done++;
+  ['tripDate','q1p','p1','p3','s1','sign','unknownFlowerName'].forEach(k=>{ if(store[k]) done++; });
+  if((store.flowerPhotos||[]).length) done++;
+  const pct = Math.round(done/35*100);
+  document.getElementById('progressBar').style.width = pct+'%';
+  document.getElementById('progressText').textContent = '完成度 '+pct+'%';
+}
+updateProgress();
+</script>
+</body>
+</html>

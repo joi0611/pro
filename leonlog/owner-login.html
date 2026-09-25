@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>主人登录 · Leon旅行日记</title>
+<link rel="stylesheet" href="assets/leon-vi.css">
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px}.login{width:min(430px,100%);padding:30px;background:#fff;border:2px solid var(--vi-border);border-radius:18px 27px 20px 31px;box-shadow:10px 12px 0 var(--vi-shadow)}.mark{width:62px;height:62px;display:grid;place-items:center;margin:0 auto 17px;background:var(--vi-sky-500);color:#fff;border:3px solid var(--vi-ink);border-radius:48% 52% 43% 57%;font:700 32px/1 var(--vi-font-hand);transform:rotate(-5deg);box-shadow:4px 5px 0 var(--vi-ink)}h1{margin:0;text-align:center;font-size:34px}.sub{text-align:center;color:var(--vi-muted);margin:8px 0 24px}label{display:block;margin:13px 0 6px;font-weight:700;color:var(--vi-sky-700)}input{width:100%;min-height:48px;padding:10px 13px;border:2px solid var(--vi-sky-200);border-radius:13px;background:#fff;font:inherit}button{width:100%;min-height:50px;margin-top:20px;border:2px solid var(--vi-ink);border-radius:15px 20px 14px 18px;background:var(--vi-sky-500);color:#fff;font-size:16px;font-weight:800;box-shadow:4px 5px 0 var(--vi-ink)}button:disabled{opacity:.6;cursor:wait}.status{min-height:24px;margin:12px 0 0;text-align:center;color:var(--vi-muted);font-size:13px}.status.error{color:#a84035}.back{display:block;margin-top:18px;text-align:center;color:var(--vi-sky-700);font-size:13px}
+</style>
+</head>
+<body>
+<main class="login">
+  <div class="mark" aria-hidden="true">L</div><h1>主人入口</h1><p class="sub">登录后管理研学记录与留言</p>
+  <form id="login-form">
+    <label for="username">用户名</label><input id="username" autocomplete="username" placeholder="请输入 leon" spellcheck="false" autocapitalize="none" required>
+    <label for="password">登录密码</label><input id="password" type="password" autocomplete="current-password" required>
+    <button id="login-button" type="submit">进入主人后台</button>
+    <p class="status" id="status" role="status"></p>
+  </form>
+  <a class="back" href="index.html">返回旅行地图</a>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="assets/supabase-config.js"></script><script src="assets/leon-backend.js"></script>
+<script>
+const form=document.getElementById('login-form'),statusEl=document.getElementById('status'),button=document.getElementById('login-button');
+leonSupabase.auth.getSession().then(({data})=>{if(data.session) location.replace('owner-admin.html')});
+form.addEventListener('submit',async event=>{event.preventDefault();statusEl.className='status';const enteredName=form.username.value.trim().toLowerCase();const acceptedNames=[LEON_OWNER_LOGIN.username.toLowerCase(),LEON_OWNER_LOGIN.email.toLowerCase()];if(!acceptedNames.includes(enteredName)){statusEl.textContent='用户名或密码不正确';statusEl.classList.add('error');return}button.disabled=true;statusEl.textContent='正在验证主人身份…';const {error}=await leonSupabase.auth.signInWithPassword({email:LEON_OWNER_LOGIN.email,password:form.password.value});button.disabled=false;if(error){statusEl.textContent='用户名或密码不正确';statusEl.classList.add('error');return}location.replace('owner-admin.html')});
+</script>
+</body></html>

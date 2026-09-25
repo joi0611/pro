@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Leon旅行日记全国研学地图。首站：云南昆明。">
+<meta name="theme-color" content="#f7fbfd">
+<title>Leon旅行日记 · 全国研学地图</title>
+<link rel="stylesheet" href="assets/leon-vi.css">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;overflow-x:hidden}
+  a{color:inherit}
+  .skip{position:absolute;left:-9999px;top:8px;z-index:30;background:#fff;padding:10px 14px;border:2px solid var(--vi-sky-700)}.skip:focus{left:8px}
+  .site-head{height:74px;max-width:1480px;margin:auto;padding:13px clamp(16px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font:700 clamp(21px,2.3vw,30px)/1 var(--vi-font-hand)}
+  .brand-mark{width:44px;height:44px;display:grid;place-items:center;background:var(--vi-sky-500);color:#fff;border:3px solid var(--vi-ink);border-radius:47% 53% 44% 56%;box-shadow:3px 4px 0 var(--vi-ink);transform:rotate(-5deg)}
+  .head-note{color:var(--vi-muted);font-size:14px;border-bottom:2px solid var(--vi-sky-200);padding:5px 2px;transform:rotate(1deg)}
+  main{min-height:calc(100dvh - 74px);display:grid;place-items:center;padding:4px clamp(12px,3.5vw,52px) 34px}
+  .map-board{width:min(1340px,100%);position:relative;background:#fff;border:2px solid var(--vi-border);border-radius:8px 23px 12px 27px;box-shadow:12px 14px 0 var(--vi-shadow);padding:clamp(13px,2vw,26px);transform:rotate(-.15deg)}
+  .map-board::before,.map-board::after{content:"";position:absolute;width:92px;height:27px;background:#b8ddea99;z-index:4}.map-board::before{top:-10px;left:9%;transform:rotate(-7deg)}.map-board::after{right:7%;bottom:-10px;transform:rotate(6deg)}
+  .map-head{display:flex;align-items:end;justify-content:space-between;gap:18px;padding:3px 8px 10px}
+  .map-kicker{font:700 12px/1.2 monospace;letter-spacing:.12em;color:var(--vi-sky-700)}
+  h1{font:700 clamp(29px,4vw,49px)/1.05 var(--vi-font-hand);margin:7px 0 0;color:var(--vi-ink)}
+  .map-meta{text-align:right;color:var(--vi-muted);font-size:14px;line-height:1.7}
+  .legend{display:flex;justify-content:flex-end;gap:14px}.legend span{display:inline-flex;align-items:center;gap:5px}.legend i{width:11px;height:11px;border:1.5px solid var(--vi-ink);border-radius:50%}.legend .visited{background:var(--vi-sky-500)}.legend .waiting{background:var(--vi-sky-100)}
+  .map-frame{position:relative;aspect-ratio:1.74;min-height:430px;overflow:visible}
+  .china-map-object{display:block;width:100%;height:100%;border:0}
+  .leon-orbit{position:absolute;z-index:5;right:-2.5%;top:15%;width:clamp(116px,16vw,220px);pointer-events:none;animation:leon-orbit 8s ease-in-out infinite;filter:drop-shadow(7px 9px 0 rgba(65,112,131,.16))}
+  .leon-orbit img{display:block;width:100%;height:auto}
+  .leon-note{position:absolute;right:4%;top:8%;z-index:6;background:#fff;border:2px solid var(--vi-ink);box-shadow:4px 5px 0 var(--vi-sky-200);border-radius:50% 45% 53% 47%;padding:10px 14px;font:700 14px/1.4 var(--vi-font-hand);transform:rotate(4deg);pointer-events:none}
+  .leon-note::after{content:"";position:absolute;right:18px;bottom:-13px;width:18px;height:18px;border-right:2px solid var(--vi-ink);transform:rotate(34deg)}
+  .map-tip{position:absolute;left:18px;bottom:10px;z-index:6;color:var(--vi-sky-700);font:700 13px/1.4 var(--vi-font-hand);background:rgba(255,255,255,.9);border:1.5px dashed var(--vi-border);padding:7px 10px;transform:rotate(-1deg);pointer-events:none}
+  .toast{position:fixed;left:50%;bottom:28px;z-index:30;transform:translate(-50%,30px);opacity:0;background:var(--vi-sky-700);color:#fff;border:2px solid #fff;box-shadow:4px 5px 0 var(--vi-sky-200);padding:12px 18px;max-width:calc(100% - 32px);text-align:center;pointer-events:none;transition:.25s ease}.toast.show{opacity:1;transform:translate(-50%,0)}
+  .guestbook-button{position:fixed;right:22px;bottom:22px;z-index:20;min-height:48px;padding:10px 16px;border:2px solid var(--vi-ink);border-radius:18px 14px 21px 13px;background:var(--vi-yellow);color:var(--vi-ink);font-weight:800;box-shadow:4px 5px 0 var(--vi-ink)}
+  .guestbook{width:min(680px,calc(100% - 24px));max-height:min(760px,calc(100dvh - 30px));padding:0;border:2px solid var(--vi-border);border-radius:20px 28px 18px 25px;background:var(--vi-bg);color:var(--vi-ink);box-shadow:10px 12px 0 var(--vi-shadow);overflow:auto}.guestbook::backdrop{background:rgba(28,62,75,.36);backdrop-filter:blur(3px)}.guest-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;background:var(--vi-sky-100);border-bottom:2px dashed var(--vi-border)}.guest-head h2{margin:0;font-size:27px}.guest-close{width:44px;height:44px;border:2px solid var(--vi-ink);border-radius:50%;background:#fff;font-size:24px}.guest-body{padding:18px 20px 24px}.guest-list{display:grid;gap:10px;margin-bottom:20px}.guest-note{padding:13px 15px;background:#fff;border:1.5px solid var(--vi-sky-200);border-radius:13px 19px 15px 21px}.guest-note p{margin:5px 0}.guest-note time,.guest-empty{color:var(--vi-muted);font-size:12px}.guest-form{padding:16px;background:#fff;border:2px solid var(--vi-border);border-radius:18px}.guest-form h3{margin:0 0 10px}.guest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.guest-form label{display:block;margin:8px 0 5px;font-weight:700;color:var(--vi-sky-700)}.guest-form input,.guest-form textarea{width:100%;min-height:44px;padding:9px 11px;border:1.5px solid var(--vi-sky-200);border-radius:11px;background:#fff;font:inherit}.guest-form textarea{min-height:95px;resize:vertical}.guest-submit{width:100%;min-height:48px;margin-top:11px;border:2px solid var(--vi-sky-700);border-radius:13px;background:var(--vi-sky-500);color:#fff;font-weight:800}.guest-status{min-height:22px;margin:9px 0 0;color:var(--vi-muted);font-size:13px}
+  @keyframes leon-orbit{0%,100%{transform:translate(0,0) rotate(1deg)}25%{transform:translate(-18px,13px) rotate(-1deg)}50%{transform:translate(-7px,34px) rotate(1.5deg)}75%{transform:translate(15px,17px) rotate(-.5deg)}}
+  @media(max-width:900px){.map-frame{min-height:0}.leon-orbit{right:-2%;top:25%;width:clamp(105px,23vw,165px)}.leon-note{right:1%;top:13%}}
+  @media(max-width:600px){.site-head{height:64px}.brand{font-size:21px}.brand-mark{width:38px;height:38px}.head-note{display:none}main{min-height:calc(100dvh - 64px);padding:2px 9px 26px}.map-board{padding:12px 9px}.map-head{align-items:flex-start}.map-kicker{font-size:10px}h1{font-size:28px}.map-meta{font-size:12px}.legend{display:none}.map-frame{aspect-ratio:1.58}.leon-orbit{right:-5%;top:34%;width:105px}.leon-note{right:0;top:19%;font-size:11px;padding:7px 9px}.map-tip{left:6px;bottom:3px;font-size:11px;padding:5px 7px}.guestbook-button{right:10px;bottom:10px}.guest-grid{grid-template-columns:1fr}.guest-head,.guest-body{padding-left:14px;padding-right:14px}}
+  @media(prefers-reduced-motion:reduce){.leon-orbit{animation:none}.toast{transition:none}}
+</style>
+</head>
+<body class="vi-home">
+<a class="skip" href="#map">跳到旅行地图</a>
+<header class="site-head">
+  <a class="brand" href="index.html" aria-label="Leon旅行日记首页"><span class="brand-mark">L</span><span>Leon旅行日记</span></a>
+  <span class="head-note">把走过的路，画进手帐里 ✎</span>
+</header>
+
+<main>
+  <section class="map-board" id="map" aria-labelledby="map-title">
+    <div class="map-head">
+      <div><span class="map-kicker">LEON'S TRAVEL MAP · 2026</span><h1 id="map-title">展至的中国旅行地图</h1></div>
+      <div class="map-meta"><div id="map-status" aria-live="polite">34 个省级区域 · 云南已点亮</div><div class="legend"><span><i class="visited"></i>已到达</span><span><i class="waiting"></i>待探索</span></div></div>
+    </div>
+    <div class="map-frame">
+      <iframe class="china-map-object" src="assets/china-provinces.svg" title="中国34个省级区域互动地图，点击云南进入云南研学地图" loading="eager"></iframe>
+      <div class="leon-note" aria-hidden="true">下一站，会是哪儿呢？</div>
+      <div class="leon-orbit" aria-hidden="true"><img src="assets/leon-traveler.png" alt=""></div>
+      <div class="map-tip">点云南，看看省内研学足迹</div>
+    </div>
+  </section>
+</main>
+
+<button class="guestbook-button" id="guestbook-open" type="button">远方唠唠区</button>
+<dialog class="guestbook" id="guestbook">
+  <div class="guest-head"><h2>远方唠唠区</h2><button class="guest-close" id="guestbook-close" type="button" aria-label="关闭远方唠唠区">×</button></div>
+  <div class="guest-body">
+    <div class="guest-list" id="guest-list"><p class="guest-empty">正在打开远方唠唠区…</p></div>
+    <form class="guest-form" id="guest-form"><h3>留下一句祝福</h3><div class="guest-grid"><div><label for="guest-name">怎么称呼您</label><input id="guest-name" maxlength="30" required></div><div><label for="guest-relation">您是 Leon 的</label><input id="guest-relation" maxlength="30" placeholder="例如：爷爷、阿姨"></div></div><label for="guest-content">留言内容</label><textarea id="guest-content" minlength="2" maxlength="300" required></textarea><button class="guest-submit" type="submit">放进留言信箱</button><p class="guest-status" id="guest-status" role="status">留言提交后，经主人审核通过才会公开展示。</p></form>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="assets/supabase-config.js"></script><script src="assets/leon-backend.js"></script>
+<script>
+  const toast=document.getElementById('toast');let toastTimer;
+  function showLocked(place){toast.textContent=`${place}篇还在路上，先去云南昆明看看吧`;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2400)}
+  try{
+    const tripDate=JSON.parse(localStorage.getItem('dounan')||'{}').tripDate;
+    if(tripDate){
+      const [year,month,day]=tripDate.split('-');
+      document.getElementById('map-status').textContent=`云南已点亮 · ${year}年${Number(month)}月${Number(day)}日`;
+    }
+  }catch(error){}
+  const guestbook=document.getElementById('guestbook'),guestList=document.getElementById('guest-list'),guestStatus=document.getElementById('guest-status');
+  document.getElementById('guestbook-open').onclick=()=>{guestbook.showModal();loadGuestbook()};document.getElementById('guestbook-close').onclick=()=>guestbook.close();
+  async function loadGuestbook(){const {data,error}=await leonSupabase.from('leon_messages').select('nickname,relation,content,created_at').eq('status','approved').order('created_at',{ascending:false}).limit(20);guestList.innerHTML='';if(error||!data?.length){const p=document.createElement('p');p.className='guest-empty';p.textContent=error?'远方唠唠区暂时无法打开':'还没有公开留言，欢迎留下第一句祝福。';guestList.append(p);return}data.forEach(item=>{const article=document.createElement('article');article.className='guest-note';const strong=document.createElement('strong');strong.textContent=item.nickname+(item.relation?' · '+item.relation:'');const p=document.createElement('p');p.textContent=item.content;const time=document.createElement('time');time.textContent=new Date(item.created_at).toLocaleDateString('zh-CN');article.append(strong,p,time);guestList.append(article)})}
+  document.getElementById('guest-form').onsubmit=async event=>{event.preventDefault();const button=event.target.querySelector('button');button.disabled=true;guestStatus.textContent='正在把留言放进信箱…';const {error}=await leonSupabase.rpc('submit_leon_message',{p_nickname:document.getElementById('guest-name').value,p_relation:document.getElementById('guest-relation').value,p_content:document.getElementById('guest-content').value});button.disabled=false;if(error){guestStatus.textContent='提交失败，请稍后再试。';return}event.target.reset();guestStatus.textContent='留言已提交，主人审核通过后会出现在这里。'};
+  let ownerTapCount=0,ownerTapTimer;document.querySelector('.brand-mark').addEventListener('click',event=>{event.preventDefault();ownerTapCount++;clearTimeout(ownerTapTimer);ownerTapTimer=setTimeout(()=>ownerTapCount=0,2200);if(ownerTapCount>=5)location.href='owner-login.html'});
+</script>
+</body>
+</html>

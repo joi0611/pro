@@ -1,0 +1,1894 @@
+<!-- AI生成 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爱达魔都号 · 小小航海家研学手册</title>
+<style>
+:root{
+  --bg:#FDF6EC; --ink:#1D3A5F; --deep:#125E8F; --ocean:#35A7E2;
+  --aqua:#4FC6C0; --sun:#FFC53D; --coral:#FF7A6B; --cream:#FFF3E0;
+  --line:#EAD9BE; --green:#3BA97A;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.65;
+  font-family:'Baloo 2','Varela Round','Comic Sans MS','PingFang SC','Hiragino Maru Gothic ProN','Microsoft YaHei','Noto Sans SC',sans-serif;}
+h1,h2,h3{line-height:1.3}
+button{font-family:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+
+/* ---------- 顶部导航 ---------- */
+.topnav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:3px solid var(--sun);}
+.topnav .wrap{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:9px 8px;}
+.topnav a{text-decoration:none;color:var(--ink);font-weight:800;font-size:14px;
+  padding:5px 11px;border-radius:999px;background:var(--cream);border:2px solid var(--line);transition:.15s;}
+.topnav a:hover{background:var(--sun);border-color:var(--ink);transform:translateY(-2px);}
+
+/* ---------- 封面 ---------- */
+.hero{position:relative;padding:44px 16px 30px;text-align:center;overflow:hidden;
+  background:linear-gradient(180deg,#CBEAF9 0%,#EAF7FC 58%,var(--bg) 100%);}
+.hero .wavetop{position:absolute;top:0;left:0;width:100%;height:14px;background:repeating-linear-gradient(90deg,transparent 0 26px,var(--sun) 26px 34px);opacity:.5;}
+.hero .badge{display:inline-block;background:var(--coral);color:#fff;font-weight:800;font-size:14px;
+  padding:5px 16px;border-radius:999px;letter-spacing:2px;transform:rotate(-2deg);box-shadow:0 4px 0 rgba(29,58,95,.2);}
+.hero h1{font-size:clamp(38px,7vw,64px);margin:12px 0 2px;letter-spacing:2px;color:var(--deep);text-shadow:2px 2px 0 var(--sun);}
+.hero .sub{font-size:clamp(17px,3vw,22px);font-weight:800;color:var(--ink);margin-bottom:8px;}
+.hero .route{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;margin:10px 0 6px;font-weight:800;font-size:19px;}
+.hero .route .port{background:#fff;border:3px solid var(--deep);border-radius:14px;padding:6px 16px;box-shadow:0 4px 0 rgba(29,58,95,.15);}
+.hero .route .arrow{font-size:22px;color:var(--coral);animation:sway 1.6s ease-in-out infinite;}
+@keyframes sway{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.mascot{display:flex;align-items:center;justify-content:center;gap:10px;margin:16px auto 4px;max-width:560px;}
+.mascot .bubble{background:#fff;border:3px solid var(--aqua);border-radius:18px;padding:10px 16px;font-size:15px;font-weight:700;position:relative;text-align:left;}
+.mascot .bubble::before{content:'';position:absolute;left:-14px;top:18px;border:8px solid transparent;border-right-color:var(--aqua);}
+.mascot .whale{font-size:42px;animation:floaty 3s ease-in-out infinite;}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* ---------- 船票 ---------- */
+.ticketwrap{max-width:600px;margin:22px auto 0;}
+.ticket{position:relative;background:#fff;border:3px dashed var(--deep);border-radius:20px;
+  padding:22px 22px 26px;box-shadow:0 10px 0 rgba(18,94,143,.12);}
+.ticket .tltop{display:flex;justify-content:space-between;align-items:center;font-weight:800;color:var(--deep);font-size:16px;}
+.ticket .stampbadge{background:var(--coral);color:#fff;padding:3px 12px;border-radius:999px;font-size:13px;transform:rotate(4deg);}
+.ticket .tline{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin:14px 0;font-size:17px;font-weight:800;}
+.ticket .tline .leg{background:var(--cream);border:2px solid var(--line);border-radius:12px;padding:8px;text-align:center;}
+.ticket .tline .ship{font-size:30px;}
+.ticket .fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.ticket label{display:block;font-size:13px;font-weight:800;color:#7A6A52;margin-bottom:2px;}
+.ticket input{border:2px solid var(--line);border-radius:10px;padding:8px 12px;font-size:17px;font-family:inherit;width:100%;background:var(--cream);color:var(--ink);}
+.ticket input:focus{outline:3px solid var(--sun);border-color:var(--deep);}
+.barcode{height:46px;border-radius:8px;background:repeating-linear-gradient(90deg,var(--ink) 0 3px,transparent 3px 7px);max-width:220px;margin:0 auto;}
+.ticket .no{position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);background:var(--sun);border:3px solid var(--ink);
+  font-weight:800;font-size:13px;padding:3px 14px;border-radius:999px;white-space:nowrap;}
+
+/* ---------- 章节 ---------- */
+.sec{padding:52px 0 10px;scroll-margin-top:70px;}
+.sechead{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+.secno{background:var(--deep);color:#fff;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:24px;flex:none;box-shadow:0 4px 0 rgba(29,58,95,.25);}
+.sechead h2{font-size:clamp(22px,4vw,30px);margin:0;}
+.sub{color:#8A7A62;font-size:15px;margin:0 0 18px 58px;}
+.tape{position:relative;display:inline-block;}
+.tape::after{content:'';position:absolute;top:-8px;left:20%;width:60%;height:18px;background:rgba(255,197,61,.55);transform:rotate(-2deg);z-index:-1;border-radius:3px;}
+
+/* ---------- 卡片通用 ---------- */
+.card{background:#fff;border:3px solid var(--line);border-radius:20px;box-shadow:0 6px 0 rgba(29,58,95,.08);}
+.btn{display:inline-block;border:3px solid var(--ink);background:var(--sun);color:var(--ink);font-weight:800;font-size:16px;
+  padding:10px 20px;border-radius:999px;cursor:pointer;box-shadow:0 5px 0 rgba(29,58,95,.25);transition:transform .12s,box-shadow .12s;user-select:none;}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(29,58,95,.25);}
+.btn:disabled{opacity:.45;cursor:not-allowed;}
+.btn.aqua{background:var(--aqua);}
+.btn.coral{background:var(--coral);color:#fff;border-color:#fff;}
+.btn.deep{background:var(--deep);color:#fff;border-color:var(--ink);}
+.grid{display:grid;gap:14px;}
+
+/* ---------- 认识大船 ---------- */
+.shipcard{background:linear-gradient(180deg,#E8F6FD,#fff);border:4px solid var(--deep);border-radius:24px;padding:16px 16px 6px;box-shadow:0 8px 0 rgba(18,94,143,.12);}
+.shipcard svg{width:100%;height:auto;display:block;}
+.smoke puff{animation:rise 2.6s ease-in-out infinite;}
+.smoke puff:nth-child(2){animation-delay:.9s}
+.smoke puff:nth-child(3){animation-delay:1.7s}
+@keyframes rise{0%{transform:translateY(0);opacity:.9}100%{transform:translateY(-16px);opacity:.25}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:18px;}
+.stat{background:#fff;border:3px solid var(--line);border-radius:16px;padding:14px 10px;text-align:center;transition:.15s;}
+.stat:hover{transform:translateY(-4px);border-color:var(--ocean);}
+.stat .num{display:block;font-size:clamp(20px,3vw,26px);font-weight:800;color:var(--deep);line-height:1.2;}
+.stat .lbl{font-size:13px;color:#8A7A62;font-weight:700;}
+.fac{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px;}
+.fac .f{background:#fff;border:3px solid var(--line);border-radius:16px;padding:12px 8px;text-align:center;font-weight:800;font-size:15px;transition:.15s;}
+.fac .f:hover{transform:translateY(-4px) rotate(-1deg);border-color:var(--sun);}
+.fac .f .ic{display:block;font-size:30px;margin-bottom:2px;}
+.knowchips{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px;}
+.knowchips .k{background:var(--cream);border:2px solid var(--line);border-radius:16px;padding:12px 14px;font-size:15px;font-weight:700;}
+.knowchips .k b{display:block;color:var(--deep);font-size:17px;}
+
+/* ---------- 任务清单 ---------- */
+.goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;}
+.goal{background:#fff;border:3px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 5px 0 rgba(29,58,95,.07);}
+.goal h3{margin:0 0 4px;font-size:18px;}
+.goal .gtag{display:inline-block;background:var(--cream);border:2px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;color:#8A7A62;padding:2px 10px;margin-bottom:6px;}
+.goal ul{list-style:none;margin:0;padding:0;}
+.goal li{padding:3px 0;font-size:15px;font-weight:700;}
+.goal input{margin-right:8px;transform:scale(1.35);accent-color:var(--aqua);cursor:pointer;}
+.goal li.done{color:#8A9BB0;text-decoration:line-through;}
+.gear{background:#fff;border:3px solid var(--line);border-radius:18px;padding:14px;margin-top:16px;box-shadow:0 5px 0 rgba(29,58,95,.07);}
+.gearhead{font-weight:800;font-size:16px;margin-bottom:10px;}
+.gearitems{display:flex;gap:10px;flex-wrap:wrap;}
+.gbtn{border:3px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-size:15px;font-weight:800;cursor:pointer;transition:.12s;color:var(--ink);}
+.gbtn.on{background:var(--sun);border-color:var(--ink);transform:translateY(-2px);box-shadow:0 4px 0 rgba(29,58,95,.2);}
+
+/* ---------- 浮力实验室 ---------- */
+.lab{background:linear-gradient(180deg,#FFF,#EFF8FD);border:4px solid var(--deep);border-radius:24px;padding:18px;box-shadow:0 8px 0 rgba(18,94,143,.12);margin-top:18px;}
+.labhead{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+.lab h3{margin:0;font-size:20px;}
+.labhead .lbl{font-size:14px;font-weight:800;color:var(--coral);}
+.labstage{position:relative;height:230px;background:linear-gradient(180deg,#D9F2FD 0%,#BFE8F8 70%,#9FDCF0 100%);border:3px solid var(--ocean);border-radius:18px;overflow:hidden;}
+.waterline{position:absolute;left:0;right:0;top:46%;height:54%;background:linear-gradient(180deg,rgba(63,169,223,.28),rgba(63,169,223,.55));}
+.waves{position:absolute;left:0;right:0;top:45%;height:14px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 14px,transparent 14px 30px);animation:slide 3s linear infinite;}
+@keyframes slide{0%{background-position:0 0}100%{background-position:-120px 0}}
+.foil{position:absolute;left:50%;top:44%;transform:translate(-50%,-100%);transition:transform .5s ease;z-index:3;}
+.foil.sinking{transform:translate(-50%,-18%) rotate(16deg);}
+.foil.sunk{transform:translate(-50%,130%) rotate(38deg);opacity:.55;}
+.foil svg{display:block;}
+.foil .coins{position:absolute;top:-12px;left:50%;transform:translateX(-50%);display:flex;gap:3px;z-index:2;}
+.coin{width:15px;height:15px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFE28A,#E8B93A 60%,#B98F1F);border:2px solid #8A6A0F;animation:dropin .25s;}
+@keyframes dropin{from{transform:translateY(-18px)}to{transform:translateY(0)}}
+.labinfo{text-align:center;font-weight:800;font-size:17px;margin:10px 0 6px;min-height:26px;}
+.labbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.labnote{font-size:13.5px;color:#8A7A62;font-weight:700;margin-top:10px;text-align:center;}
+
+/* ---------- 天气 ---------- */
+.weatherrow{display:flex;align-items:center;gap:8px;margin:6px 0 12px;flex-wrap:wrap;}
+.weatherrow .wl{font-size:14px;font-weight:800;color:#8A7A62;}
+.weatherrow .wbtn{border:3px solid var(--line);background:#fff;border-radius:999px;padding:3px 11px;font-size:19px;cursor:pointer;transition:.12s;}
+.weatherrow .wbtn.on{background:var(--sun);border-color:var(--ink);transform:scale(1.1);}
+
+/* ---------- 韩语 ---------- */
+.kor{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px;}
+.kor .k{background:#fff;border:3px solid var(--line);border-radius:18px;padding:12px 14px;text-align:center;transition:.15s;}
+.kor .k:hover{transform:translateY(-3px);border-color:var(--ocean);}
+.kor .k .kr{font-size:22px;font-weight:800;color:var(--deep);}
+.kor .k .zh{font-size:14px;font-weight:800;color:#5A6B7F;margin-top:2px;}
+.kor .k .py{font-size:12.5px;color:#8A7A62;font-weight:700;}
+.kor .k button{margin-top:6px;font-size:14px;padding:5px 14px;}
+
+/* ---------- 成长记录 ---------- */
+.grow{display:grid;gap:10px;max-width:520px;margin:18px auto 0;}
+.growrow{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border:3px solid var(--line);border-radius:14px;padding:9px 14px;}
+.growrow .gname{font-weight:800;font-size:16px;}
+.growrow .gstars{font-size:25px;letter-spacing:3px;cursor:pointer;color:#D8C9B0;}
+.growrow .gstars .on{color:var(--coral);}
+.wishes{max-width:520px;margin:18px auto 0;text-align:left;}
+.wishes label{font-size:14px;font-weight:800;color:#8A7A62;display:block;margin:10px 0 4px;}
+.wishes textarea,.wishes input{width:100%;border:3px solid var(--line);border-radius:14px;padding:10px 14px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink);}
+.wishes textarea{min-height:70px;resize:vertical;}
+.wishes textarea:focus,.wishes input:focus{outline:3px solid var(--sun);border-color:var(--deep);}
+
+/* ---------- 幕后之旅 ---------- */
+.tour{display:grid;gap:16px;}
+.tcard{background:#fff;border:3px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 6px 0 rgba(29,58,95,.08);}
+.tcard h3{margin:0 0 4px;font-size:19px;}
+.tcard .lvl{display:inline-block;background:#FFF1F1;border:2px solid var(--coral);color:#C24A3E;font-size:12px;font-weight:800;border-radius:999px;padding:2px 10px;margin-bottom:8px;}
+.tcard p{font-size:15.5px;margin:0 0 10px;}
+.tcard .note{font-size:13.5px;color:#8A7A62;font-weight:700;background:var(--cream);border:2px dashed var(--line);border-radius:12px;padding:8px 12px;margin-top:10px;}
+.knowrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:14px;}
+.know{background:var(--cream);border:2px solid var(--line);border-radius:16px;padding:12px 14px;}
+.know b{font-size:16px;}
+.know p{font-size:14px;margin:4px 0 0;color:#5A6B7F;}
+.steps{display:grid;gap:10px;max-width:540px;}
+.step{border:3px solid var(--line);background:#fff;border-radius:14px;padding:10px 14px;font-size:15.5px;font-weight:800;cursor:pointer;transition:.12s;text-align:left;}
+.step:hover{border-color:var(--deep);}
+.step.on{border-color:var(--green);background:#DFF5EA;cursor:default;}
+.step .sno{display:inline-block;min-width:26px;height:26px;border-radius:50%;background:var(--deep);color:#fff;text-align:center;line-height:26px;font-size:14px;margin-right:8px;}
+.step.on .sno{background:var(--green);}
+.lbwrap{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center;}
+.lbboat{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;max-width:520px;background:linear-gradient(180deg,#D9F2FD,#BFE8F8);border:3px solid var(--ocean);border-radius:14px;padding:12px 8px;}
+.lb{font-size:30px;cursor:pointer;transition:.15s;filter:grayscale(1);opacity:.4;text-align:center;}
+.lb.on{filter:none;opacity:1;transform:scale(1.18);}
+.lbguess{display:flex;gap:8px;flex-wrap:wrap;}
+.crew{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;}
+.cr{border:3px solid var(--line);border-radius:16px;padding:12px 10px;text-align:center;background:#fff;cursor:pointer;transition:.15s;}
+.cr:hover{transform:translateY(-3px);border-color:var(--ocean);}
+.cr.on{border-color:var(--coral);background:#FFF6F0;}
+.cr .ic{font-size:32px;display:block;}
+.cr b{font-size:15px;}
+.cr .det{font-size:13px;color:#5A6B7F;margin-top:4px;min-height:38px;font-weight:700;}
+.deckmap{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;}
+.dm{border:3px dashed var(--line);border-radius:14px;padding:10px 8px;text-align:center;background:#fff;cursor:pointer;transition:.12s;}
+.dm:hover{border-color:var(--aqua);transform:translateY(-2px);}
+.dm .ic{font-size:26px;display:block;}
+.dm .nm{font-size:13px;font-weight:800;color:#8A9BB0;}
+.dm .tt{font-size:12px;color:#B0A48C;font-weight:700;display:none;margin-top:2px;}
+.dm.found{border-style:solid;border-color:var(--green);background:#DFF5EA;}
+.dm.found .nm{color:var(--ink);}
+.dm.found .tt{display:block;color:#3BA97A;}
+.soundbox{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+.soundbtn{border:3px solid var(--ink);background:var(--deep);color:#fff;font-weight:800;border-radius:999px;padding:10px 18px;font-size:15px;cursor:pointer;box-shadow:0 4px 0 rgba(29,58,95,.3);transition:.1s;}
+.soundbtn:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(29,58,95,.3);}
+.soundbtn.playing{background:var(--coral);}
+.gearbox{display:flex;gap:10px;flex-wrap:wrap;}
+.gear-item{border:3px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font-weight:800;font-size:15px;cursor:pointer;transition:.12s;}
+.gear-item.on{border-color:var(--green);background:#DFF5EA;}
+.gear-item.bad{border-color:var(--coral);background:#FFE5E0;}
+.radarbox{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.radar{position:relative;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,#083B2F,#04251E);overflow:hidden;border:4px solid var(--deep);flex:none;}
+.radar .sweep{position:absolute;left:50%;top:50%;width:50%;height:3px;transform-origin:0 0;background:linear-gradient(90deg,rgba(124,252,154,0),#7CFC9A);animation:radar 3.2s linear infinite;}
+@keyframes radar{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.radar .ring{position:absolute;border:1px solid rgba(124,252,154,.35);border-radius:50%;}
+.radar .blip{position:absolute;width:8px;height:8px;border-radius:50%;background:#7CFC9A;box-shadow:0 0 6px #7CFC9A;animation:blink 1.2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.paintbox{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;}
+@media(max-width:640px){.paintbox{grid-template-columns:1fr}}
+.paintbox canvas{border:3px solid var(--deep);border-radius:14px;background:#fff;cursor:crosshair;width:100%;touch-action:none;}
+.wheelfig{text-align:center;}
+.wheelfig svg{width:130px;height:130px;}
+.qna{border:3px solid var(--line);border-radius:16px;padding:12px 14px;background:var(--cream);margin-bottom:10px;cursor:pointer;transition:.12s;}
+.qna:hover{border-color:var(--ocean);}
+.qna .qq{font-weight:800;font-size:15.5px;}
+.qna .aa{display:none;font-size:14.5px;color:#5A6B7F;margin-top:6px;font-weight:700;}
+.qna.open{background:#EAF3FB;border-color:var(--deep);}
+.qna.open .aa{display:block;}
+.mbadges{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;}
+.mbadge{border:3px solid var(--line);border-radius:18px;padding:14px 8px;text-align:center;background:#fff;cursor:pointer;transition:.15s;box-shadow:0 5px 0 rgba(29,58,95,.07);}
+.mbadge:hover{transform:translateY(-3px);}
+.mbadge .ic{font-size:36px;display:block;filter:grayscale(1);opacity:.35;margin-bottom:2px;transition:.2s;}
+.mbadge .nm{font-size:14px;font-weight:800;color:#8A9BB0;display:block;}
+.mbadge .tt{font-size:12.5px;color:#B0A48C;font-weight:700;display:block;margin-top:2px;}
+.mbadge.won{border-color:var(--coral);background:#FFF6F0;}
+.mbadge.won .ic{filter:none;opacity:1;animation:pop .45s;}
+.mbadge.won .nm{color:var(--ink);}
+.fill{border:3px solid var(--line);border-radius:12px;padding:8px 12px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink);width:100%;}
+.fill:focus{outline:3px solid var(--sun);border-color:var(--deep);}
+.fillrow{display:grid;gap:4px;margin-bottom:10px;}
+.fillrow label{font-size:13px;font-weight:800;color:#8A7A62;}
+
+/* ---------- 航线地图 ---------- */
+.mapbox{background:#fff;border:4px solid var(--deep);border-radius:24px;padding:12px;box-shadow:0 8px 0 rgba(18,94,143,.12);}
+.mapbox svg{width:100%;height:auto;display:block;border-radius:14px;}
+.daybtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0 8px;}
+.daybtns .btn{font-size:15px;padding:8px 16px;}
+.daybtns .btn.on{background:var(--deep);color:#fff;}
+.logbox{margin-top:10px;padding:14px 18px;border-radius:16px;background:#fff;border:3px dashed var(--aqua);font-size:17px;min-height:62px;font-weight:700;}
+.portinfo{margin-top:12px;padding:14px 18px;border-radius:16px;background:#fff;border:3px solid var(--line);font-size:16px;min-height:76px;}
+.portinfo .pt{font-weight:800;color:var(--deep);font-size:18px;}
+
+/* ---------- 行程 ---------- */
+.tl{display:flex;flex-direction:column;gap:20px;}
+.day{background:#fff;border:3px solid var(--line);border-radius:22px;padding:20px 20px 16px;position:relative;box-shadow:0 6px 0 rgba(29,58,95,.08);}
+.day::before{content:'';position:absolute;left:-3px;top:28px;bottom:28px;width:10px;background:var(--coral);border-radius:0 8px 8px 0;}
+.day.blue::before{background:var(--ocean);}
+.day.green::before{background:var(--green);}
+.day .dnum{display:inline-block;background:var(--coral);color:#fff;font-weight:800;font-size:14px;padding:3px 14px;border-radius:999px;margin-bottom:8px;}
+.day.blue .dnum{background:var(--ocean);}
+.day.green .dnum{background:var(--green);}
+.day h3{margin:0 0 4px;font-size:20px;}
+.day .dsub{color:#8A7A62;font-size:14px;font-weight:700;margin-bottom:10px;}
+.sched{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:15.5px;margin-bottom:12px;}
+.sched .t{font-weight:800;color:var(--deep);white-space:nowrap;}
+.tasklist{list-style:none;padding:0;margin:0;border-top:2px dashed var(--line);padding-top:10px;}
+.tasklist li{padding:4px 0;font-size:16px;font-weight:700;}
+.tasklist input{margin-right:8px;transform:scale(1.4);accent-color:var(--aqua);cursor:pointer;}
+.tasklist li.done{color:#8A9BB0;text-decoration:line-through;}
+
+/* ---------- 地理课 ---------- */
+.geo{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:760px){.geo{grid-template-columns:1fr}}
+.geocard{background:#fff;border:3px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 6px 0 rgba(29,58,95,.08);}
+.geocard h3{margin:0 0 8px;font-size:19px;}
+.geocard p{font-size:15.5px;margin:0 0 8px;}
+.slidergoal{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0 6px;}
+.volcano{position:relative;}
+.volstage{margin-top:6px;}
+.volinfo{min-height:60px;background:var(--cream);border:2px dashed var(--line);border-radius:14px;padding:10px 14px;font-size:15px;font-weight:700;margin-top:10px;}
+.hotspots{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
+.hs{background:#fff;border:3px solid var(--line);border-radius:18px;padding:14px;transition:.15s;box-shadow:0 5px 0 rgba(29,58,95,.07);}
+.hs:hover{transform:translateY(-4px) rotate(-1deg);border-color:var(--coral);}
+.hs .ic{font-size:34px;display:block;margin-bottom:4px;}
+.hs b{font-size:17px;}
+.hs p{font-size:14.5px;margin:4px 0 0;color:#5A6B7F;}
+
+/* ---------- 闯关 ---------- */
+.quizbox{max-width:640px;margin:0 auto;}
+.qcard{background:#fff;border:4px solid var(--deep);border-radius:24px;padding:22px;text-align:center;box-shadow:0 8px 0 rgba(18,94,143,.12);}
+.qstars{font-size:34px;letter-spacing:6px;margin-bottom:6px;min-height:44px;}
+.qtitle{font-weight:800;color:var(--deep);margin-bottom:4px;}
+.qtext{font-size:20px;font-weight:800;margin:8px 0 16px;min-height:58px;}
+.opts{display:grid;gap:10px;text-align:left;}
+.opt{border:3px solid var(--line);background:#fff;border-radius:14px;padding:12px 16px;font-size:17px;font-weight:700;cursor:pointer;transition:.12s;}
+.opt:hover:not(:disabled){border-color:var(--deep);transform:translateX(4px);}
+.opt:disabled{cursor:default;}
+.opt.right{background:#DFF5EA;border-color:var(--green);}
+.opt.wrong{background:#FFE5E0;border-color:var(--coral);}
+.qtip{min-height:44px;font-size:15px;font-weight:700;color:#5A6B7F;margin:12px 0 4px;}
+.qnav{display:flex;gap:12px;justify-content:center;margin-top:12px;}
+
+/* ---------- 配对 ---------- */
+.matchwrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:640px){.matchwrap{grid-template-columns:1fr}}
+.mcol h3{font-size:18px;margin:0 0 8px;text-align:center;}
+.mcol .lbl{text-align:center;font-size:13px;font-weight:800;color:#8A7A62;margin-bottom:10px;}
+.mcards{display:flex;flex-direction:column;gap:10px;}
+.mcard{border:3px solid var(--line);border-radius:16px;padding:11px 12px;text-align:center;cursor:pointer;background:#fff;font-weight:800;font-size:16px;user-select:none;transition:.12s;box-shadow:0 4px 0 rgba(29,58,95,.07);}
+.mcard:hover{transform:translateY(-2px);}
+.mcard.sel{border-color:var(--deep);background:#EAF3FB;transform:scale(1.03);}
+.mcard.ok{border-color:var(--green);background:#DFF5EA;opacity:.75;cursor:default;box-shadow:none;}
+.mcard.shake{animation:shake .35s;}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.mstatus{text-align:center;font-weight:800;font-size:17px;margin-top:14px;min-height:26px;}
+
+/* ---------- 印章本 ---------- */
+.stamps{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;}
+.stamp{border:3px dashed var(--line);border-radius:18px;padding:14px 8px;text-align:center;background:#fff;cursor:pointer;transition:.15s;box-shadow:0 4px 0 rgba(29,58,95,.06);}
+.stamp:hover{transform:translateY(-3px);}
+.stamp .ic{font-size:34px;display:block;filter:grayscale(1);opacity:.3;transition:.2s;margin-bottom:2px;}
+.stamp .nm{font-size:14px;font-weight:800;color:#8A9BB0;}
+.stamp.stamped{border-style:solid;border-color:var(--coral);background:#FFF6F0;}
+.stamp.stamped .ic{filter:none;opacity:1;animation:pop .45s;}
+.stamp.stamped .nm{color:var(--ink);}
+@keyframes pop{0%{transform:scale(.3) rotate(-25deg)}60%{transform:scale(1.3) rotate(6deg)}100%{transform:scale(1)}}
+.stampprogress{margin:14px 0;height:22px;background:#fff;border:3px solid var(--deep);border-radius:999px;overflow:hidden;}
+.stampprogress .bar{height:100%;width:0;background:linear-gradient(90deg,var(--aqua),var(--sun));border-radius:999px;transition:width .4s;}
+
+/* ---------- 证书 ---------- */
+.certwrap{max-width:660px;margin:0 auto;text-align:center;}
+.cert{position:relative;background:#FFFDF6;border:6px double var(--deep);border-radius:26px;padding:34px 26px 28px;margin-top:14px;box-shadow:0 10px 0 rgba(18,94,143,.12);}
+.cert::before{content:'🏅';position:absolute;top:-26px;left:50%;transform:translateX(-50%);font-size:44px;background:var(--bg);border-radius:50%;padding:4px;}
+.cert .crown{font-size:30px;}
+.cert h3{font-size:clamp(26px,5vw,34px);letter-spacing:4px;color:var(--deep);margin:4px 0 2px;}
+.cert .cname{font-size:clamp(24px,4vw,30px);font-weight:800;color:var(--coral);border-bottom:3px dotted var(--coral);display:inline-block;min-width:180px;padding:0 10px;margin:10px 0;}
+.cert .cline{font-size:16px;font-weight:700;margin:6px 0;color:#5A6B7F;}
+.cert .csign{margin-top:22px;display:flex;justify-content:space-between;font-size:14px;font-weight:800;color:#8A7A62;padding-top:12px;border-top:2px dashed var(--line);}
+.cert .medal{font-size:52px;animation:spin 6s linear infinite;display:inline-block;margin-top:6px;}
+@keyframes spin{0%,100%{transform:rotate(0)}50%{transform:rotate(18deg)}}
+
+/* ---------- 确认弹窗(轻量) ---------- */
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(80px);background:var(--ink);color:#fff;
+  font-weight:800;padding:12px 22px;border-radius:999px;font-size:16px;z-index:99;transition:.35s;opacity:0;box-shadow:0 6px 0 rgba(0,0,0,.25);}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:98;}
+
+/* ---------- 页脚 ---------- */
+footer{position:relative;margin-top:56px;padding:60px 0 26px;background:linear-gradient(180deg,var(--bg),#D5EEF9);text-align:center;overflow:hidden;}
+footer .wave{position:absolute;top:0;left:0;width:200%;animation:wave 9s linear infinite;}
+@keyframes wave{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+footer .end{font-size:20px;font-weight:800;margin:8px 0 2px;}
+footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
+
+@media print{
+  .topnav,.daybtns,.btn,.stamp,.toast,#confetti,footer{display:none !important;}
+  body{background:#fff;}
+  .sec{page-break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+<p data-aigc-mark="1" style="margin:0 0 8px;font-size:10px;line-height:1.3;color:#6b6560;font-weight:400;">AI生成</p>
+
+
+<nav class="topnav">
+  <div class="wrap">
+    <a href="#hero">🚢 出发</a>
+    <a href="#ship">🛳️ 认识大船</a>
+    <a href="#goals">🎯 任务清单</a>
+    <a href="#map">🗺️ 航线地图</a>
+    <a href="#plan">📅 三天计划</a>
+    <a href="#geo">🌋 济州地理课</a>
+    <a href="#tour">🔧 幕后之旅</a>
+    <a href="#quiz">⭐ 闯关问答</a>
+    <a href="#match">🧩 配对游戏</a>
+    <a href="#stamp">📛 印章本</a>
+    <a href="#cert">🎓 结业证书</a>
+  </div>
+</nav>
+
+<!-- ===== 封面 ===== -->
+<header class="hero" id="hero">
+  <div class="wavetop"></div>
+  <span class="badge">小小航海家 · 研学手册</span>
+  <h1>爱达魔都号</h1>
+  <div class="sub">中国第一艘国产大邮轮 🚢 等你来当小船长</div>
+  <div class="route">
+    <span class="port">📍 上海</span>
+    <span class="arrow">➜</span>
+    <span class="port">🗻 济州岛</span>
+    <span class="arrow">➜</span>
+    <span class="port">📍 上海</span>
+  </div>
+  <div class="mascot">
+    <span class="whale">🐳</span>
+    <div class="bubble">嗨!我是小鲸鱼船长助手。带上望远镜和好奇心,我们要出航啦!</div>
+  </div>
+
+  <div class="ticketwrap">
+    <div class="ticket">
+      <div class="tltop"><span>🎫 我的专属船票</span><span class="stampbadge">研学手册</span></div>
+      <div class="tline">
+        <div class="leg">上海<br><small>出发港</small></div>
+        <div class="ship">🚢</div>
+        <div class="leg">济州岛<br><small>探险站</small></div>
+        <div class="ship">🚢</div>
+        <div class="leg">上海<br><small>回家</small></div>
+      </div>
+      <div class="fields">
+        <div><label>小船长姓名</label><input id="nameInput" maxlength="12" placeholder="写下你的名字"></div>
+        <div><label>登船日期</label><input id="dateInput" type="date"></div>
+      </div>
+      <div class="barcode"></div>
+      <div class="no">三天两晚 · 奇妙之旅</div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 认识大船 ===== -->
+<section class="sec" id="ship">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">1</span><h2 class="tape">认识爱达魔都号</h2></div>
+    <p class="sub">她是一艘漂浮在海上的“大城堡”,比三个足球场还长!</p>
+
+    <div class="shipcard">
+      <svg viewBox="0 0 640 300" role="img" aria-label="爱达魔都号邮轮侧视图">
+        <defs>
+          <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#CFF0FC"/><stop offset="1" stop-color="#8FD4F2"/>
+          </linearGradient>
+          <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCEFF7"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="228" width="640" height="72" fill="url(#sea)"/>
+        <path d="M0 258 q20 -8 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 v12 H0 Z" fill="#3FA9DF" opacity=".35"/>
+        <g class="smoke">
+          <ellipse cx="312" cy="52" rx="9" ry="7" fill="#CFE4EF"/>
+          <ellipse cx="330" cy="42" rx="12" ry="9" fill="#CFE4EF"/>
+          <ellipse cx="350" cy="30" rx="15" ry="11" fill="#CFE4EF"/>
+        </g>
+        <g id="shipbody">
+          <path d="M112 258 L98 232 L120 214 L572 214 L586 232 L576 258 Z" fill="url(#hull)" stroke="#125E8F" stroke-width="3"/>
+          <path d="M98 232 L586 232" stroke="#FFC53D" stroke-width="6"/>
+          <rect x="120" y="196" width="452" height="18" rx="6" fill="#FFFFFF" stroke="#125E8F" stroke-width="2.5"/>
+          <rect x="120" y="174" width="452" height="22" rx="6" fill="#FFFFFF" stroke="#125E8F" stroke-width="2.5"/>
+          <rect x="120" y="150" width="452" height="24" rx="6" fill="#FFFFFF" stroke="#125E8F" stroke-width="2.5"/>
+          <rect x="120" y="126" width="452" height="24" rx="6" fill="#FFFFFF" stroke="#125E8F" stroke-width="2.5"/>
+          <rect x="120" y="102" width="452" height="24" rx="6" fill="#FFFFFF" stroke="#125E8F" stroke-width="2.5"/>
+          <rect x="120" y="80" width="452" height="22" rx="6" fill="#FFFFFF" stroke="#125E8F" stroke-width="2.5"/>
+          <path d="M232 80 L300 44 L368 80 Z" fill="#125E8F"/>
+          <path d="M292 48 L308 48 L310 76 L290 76 Z" fill="#4FC6C0"/>
+          <path d="M252 74 q6 -10 12 0 M278 74 q6 -10 12 0" stroke="#FFC53D" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <rect x="490" y="96" width="82" height="74" rx="10" fill="#FFFFFF" stroke="#125E8F" stroke-width="2.5"/>
+          <rect x="498" y="106" width="66" height="18" rx="5" fill="#4FC6C0"/>
+          <rect x="498" y="128" width="66" height="18" rx="5" fill="#4FC6C0"/>
+          <rect x="498" y="150" width="66" height="18" rx="5" fill="#4FC6C0"/>
+          <g fill="#9FD4EA">
+            <circle cx="152" cy="214" r="4"/><circle cx="176" cy="214" r="4"/><circle cx="200" cy="214" r="4"/>
+            <circle cx="152" cy="190" r="4"/><circle cx="176" cy="190" r="4"/><circle cx="200" cy="190" r="4"/>
+            <circle cx="152" cy="164" r="4"/><circle cx="176" cy="164" r="4"/><circle cx="200" cy="164" r="4"/>
+            <circle cx="152" cy="138" r="4"/><circle cx="176" cy="138" r="4"/><circle cx="200" cy="138" r="4"/>
+            <circle cx="152" cy="114" r="4"/><circle cx="176" cy="114" r="4"/><circle cx="200" cy="114" r="4"/>
+            <circle cx="250" cy="164" r="4"/><circle cx="274" cy="164" r="4"/><circle cx="298" cy="164" r="4"/>
+            <circle cx="250" cy="138" r="4"/><circle cx="274" cy="138" r="4"/><circle cx="298" cy="138" r="4"/>
+            <circle cx="250" cy="114" r="4"/><circle cx="274" cy="114" r="4"/><circle cx="298" cy="114" r="4"/>
+            <circle cx="380" cy="164" r="4"/><circle cx="404" cy="164" r="4"/><circle cx="428" cy="164" r="4"/>
+            <circle cx="380" cy="138" r="4"/><circle cx="404" cy="138" r="4"/><circle cx="428" cy="138" r="4"/>
+            <circle cx="380" cy="114" r="4"/><circle cx="404" cy="114" r="4"/><circle cx="428" cy="114" r="4"/>
+          </g>
+          <g font-size="13" font-weight="800" fill="#125E8F">
+            <text x="330" y="98">水上乐园 🛝</text>
+            <text x="330" y="166">大剧院 🎭</text>
+            <text x="300" y="228">餐厅 · 免税店 · 儿童乐园</text>
+            <text x="330" y="54">大烟囱(还有“魔都”两个字哦!)</text>
+          </g>
+          <line x1="320" y1="200" x2="320" y2="230" stroke="#125E8F" stroke-width="2"/>
+          <circle cx="320" cy="234" r="7" fill="#FFC53D" stroke="#125E8F" stroke-width="2.5"/>
+          <line x1="112" y1="196" x2="112" y2="196" stroke="#125E8F" stroke-width="2"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><span class="num">323.6米</span><span class="lbl">船长 · 比3个足球场还长</span></div>
+      <div class="stat"><span class="num">13.55万吨</span><span class="lbl">总吨位 · 海上大城堡</span></div>
+      <div class="stat"><span class="num">5246人</span><span class="lbl">可以载这么多人一起玩</span></div>
+      <div class="stat"><span class="num">16层</span><span class="lbl">甲板 · 有20多层楼高</span></div>
+      <div class="stat"><span class="num">2125间</span><span class="lbl">客房 · 像小酒店一样</span></div>
+    </div>
+
+    <div class="fac">
+      <div class="f"><span class="ic">🏊</span>泳池</div>
+      <div class="f"><span class="ic">🛝</span>水上滑梯</div>
+      <div class="f"><span class="ic">🎭</span>演艺大剧院</div>
+      <div class="f"><span class="ic">🧸</span>儿童乐园</div>
+      <div class="f"><span class="ic">🍜</span>20多家餐厅酒吧</div>
+      <div class="f"><span class="ic">🛍️</span>海上免税店</div>
+      <div class="f"><span class="ic">🎳</span>游戏厅</div>
+      <div class="f"><span class="ic">🏋️</span>健身房</div>
+    </div>
+
+    <div class="knowchips">
+      <div class="k"><b>🧭 指南针</b>海上看方向就靠它,指针总是指向北方。</div>
+      <div class="k"><b>📖 航海日志</b>船长每天把小船去了哪里记在本子上,就像你的日记。</div>
+      <div class="k"><b>🚩 信号旗</b>船上挂彩色小旗子,是跟别的船“说话”的秘密语言。</div>
+      <div class="k"><b>🔭 望远镜</b>站在甲板上,用它能看到海豚跃出水面!</div>
+    </div>
+
+    <div class="lab">
+      <div class="labhead">
+        <h3>🧪 浮力小实验:铝箔小船能载几枚硬币?</h3>
+        <span class="lbl" id="labBest">🏆 最高纪录:还没有,快来挑战!</span>
+      </div>
+      <div class="labstage">
+        <div class="waterline"></div>
+        <div class="waves"></div>
+        <div class="foil" id="foilBoat">
+          <svg width="110" height="34" viewBox="0 0 110 34" aria-hidden="true">
+            <path d="M8 26 L14 8 Q18 4 24 4 L86 4 Q92 4 96 8 L102 26 Z" fill="#C9CDD3" stroke="#8A919B" stroke-width="2"/>
+            <path d="M24 4 L24 26 M60 4 L60 26 M14 8 L96 8" stroke="#A7ADB6" stroke-width="1.5" fill="none"/>
+            <path d="M0 26 L110 26 L110 34 L0 34 Z" fill="#E2E6EB"/>
+          </svg>
+          <div class="coins" id="foilCoins"></div>
+        </div>
+      </div>
+      <div class="labinfo" id="labInfo">小船下水啦!点“+1 枚硬币”,看看它能载几枚才沉。</div>
+      <div class="labbtns">
+        <button class="btn aqua" id="addCoin">+1 枚硬币</button>
+        <button class="btn" id="resetFoil">🔄 倒掉,重新折一只</button>
+      </div>
+      <div class="labnote">原理:船里充满空气,海水把船“托”起来,这就是浮力!硬币放得太多、太重,浮力托不住,船就会沉。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 任务清单 ===== -->
+<section class="sec" id="goals">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">2</span><h2 class="tape">全能小航海家任务清单</h2></div>
+    <p class="sub">完成所有任务,集齐 13 个勾勾,你就是全能小航海家!</p>
+    <div class="stampprogress"><div class="bar" id="goalBar"></div></div>
+    <p class="sub" style="margin-top:10px">已完成 <b id="goalCount">0</b> / 13 个任务</p>
+    <div class="goals">
+      <div class="goal">
+        <h3>🔭 海洋观察家</h3>
+        <span class="gtag">用眼睛发现</span>
+        <ul>
+          <li><label><input type="checkbox" data-task="g1"> 在甲板上找到 3 种不同的海洋颜色</label></li>
+          <li><label><input type="checkbox" data-task="g2"> 记录一次日出或日落的天空颜色变化</label></li>
+        </ul>
+      </div>
+      <div class="goal">
+        <h3>🌏 文化小使者</h3>
+        <span class="gtag">和济州岛做朋友</span>
+        <ul>
+          <li><label><input type="checkbox" data-task="g3"> 学会 3 句韩语(去地理课的小课堂学!)</label></li>
+          <li><label><input type="checkbox" data-task="g4"> 品尝 2 种韩国特色美食</label></li>
+          <li><label><input type="checkbox" data-task="g5"> 画一画济州岛的“石头爷爷”</label></li>
+        </ul>
+      </div>
+      <div class="goal">
+        <h3>⚙️ 船舶工程师</h3>
+        <span class="gtag">动脑想一想</span>
+        <ul>
+          <li><label><input type="checkbox" data-task="g6"> 做一次浮力小实验,知道大船为什么不沉</label></li>
+          <li><label><input type="checkbox" data-task="g7"> 找到邮轮的“方向盘”和“发动机”</label></li>
+        </ul>
+      </div>
+      <div class="goal">
+        <h3>🔬 自然科学家</h3>
+        <span class="gtag">发现大自然的秘密</span>
+        <ul>
+          <li><label><input type="checkbox" data-task="g8"> 在济州岛捡一块特别的火山石</label></li>
+          <li><label><input type="checkbox" data-task="g9"> 观察济州岛的植物,说说它和上海的不同</label></li>
+        </ul>
+      </div>
+      <div class="goal">
+        <h3>🍽️ 美食探险家</h3>
+        <span class="gtag">吃遍好吃的</span>
+        <ul>
+          <li><label><input type="checkbox" data-task="g10"> 画出最喜欢的一道船上美食</label></li>
+          <li><label><input type="checkbox" data-task="g11"> 记录每天吃到的新水果</label></li>
+        </ul>
+      </div>
+      <div class="goal">
+        <h3>🧭 小小船长</h3>
+        <span class="gtag">勇敢又有礼貌</span>
+        <ul>
+          <li><label><input type="checkbox" data-task="g12"> 向一位船员问好,说声“谢谢”</label></li>
+          <li><label><input type="checkbox" data-task="g13"> 拍一张和爱达魔都号的合影</label></li>
+        </ul>
+      </div>
+    </div>
+    <div class="gear">
+      <div class="gearhead">🧳 我的探险装备 · 准备好了就点亮它</div>
+      <div class="gearitems">
+        <button class="gbtn" data-g="lug">🧳 行李箱</button>
+        <button class="gbtn" data-g="bin">🔭 望远镜</button>
+        <button class="gbtn" data-g="hat">👒 遮阳帽</button>
+        <button class="gbtn" data-g="bag">🎒 双肩背包</button>
+        <button class="gbtn" data-g="swim">🏊 泳衣</button>
+        <button class="gbtn" data-g="note">📝 记录本</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 航线地图 ===== -->
+<section class="sec" id="map">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">3</span><h2 class="tape">我的航线地图</h2></div>
+    <p class="sub">点点小船,看看我们这三天走到哪里啦!</p>
+
+    <div class="mapbox">
+      <svg viewBox="0 0 820 520" id="journeyMap" role="img" aria-label="上海到济州岛再回上海的航线图">
+        <defs>
+          <linearGradient id="seaBig" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#CFF0FC"/><stop offset="1" stop-color="#A9DFF3"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="820" height="520" fill="url(#seaBig)"/>
+        <g stroke="#8FC9E8" stroke-width="2" fill="none" opacity=".6">
+          <path d="M0 60 q30 -10 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+          <path d="M0 460 q30 -10 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+        </g>
+        <g stroke="#8FC9E8" stroke-width="1.5" fill="none" opacity=".4">
+          <path d="M0 200 q30 -10 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+          <path d="M0 320 q30 -10 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+        </g>
+
+        <!-- 中国大陆 -->
+        <path d="M0 520 L0 320 C 30 296 78 302 118 284 C 150 270 168 236 214 244 C 244 249 252 276 288 282 C 322 288 352 274 386 284 C 412 291 412 320 448 322 C 470 324 484 340 500 360 L 500 520 Z" fill="#F4E3C1" stroke="#C9A95F" stroke-width="3"/>
+        <text x="150" y="470" font-size="30" font-weight="800" fill="#8A6A2F">中国</text>
+        <text x="208" y="410" font-size="15" font-weight="700" fill="#8A6A2F">东海和黄海</text>
+
+        <!-- 朝鲜半岛 -->
+        <path d="M560 40 C 520 60 480 100 486 140 C 490 170 520 190 548 186 C 600 178 640 208 662 252 C 674 276 662 300 634 298 C 596 296 566 270 540 260 C 512 250 488 258 470 282 L 452 300 C 440 250 430 150 450 100 C 470 55 510 30 560 40 Z" fill="#F4E3C1" stroke="#C9A95F" stroke-width="3"/>
+        <text x="600" y="120" font-size="26" font-weight="800" fill="#8A6A2F">韩国</text>
+        <text x="596" y="150" font-size="14" font-weight="700" fill="#8A6A2F">(大韩民国)</text>
+
+        <!-- 济州岛 -->
+        <path d="M520 316 C 545 300 585 300 608 318 C 622 330 620 352 602 362 C 578 374 540 372 524 356 C 512 344 510 326 520 316 Z" fill="#DFE8B4" stroke="#8FA24A" stroke-width="3"/>
+        <text x="562" y="350" font-size="18" font-weight="800" fill="#5C6B2E" text-anchor="middle">济州岛</text>
+        <text x="640" y="386" font-size="13" font-weight="700" fill="#5C6B2E">一座火山岛 🌋</text>
+
+        <!-- 航线 -->
+        <path id="routeOut" d="M 236 268 C 330 190 460 240 540 320" fill="none" stroke="#FF7A6B" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 0"/>
+        <path id="routeIn" d="M 548 330 C 470 420 360 390 268 296" fill="none" stroke="#4FC6C0" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 10"/>
+        <path d="M 536 316 l 14 -16 m -20 12 l 20 8" stroke="#FF7A6B" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M 552 336 l -14 -18 m 16 14 l -22 -2" stroke="#4FC6C0" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <text x="330" y="216" font-size="15" font-weight="800" fill="#C24A3E" transform="rotate(-18 330 216)">去程 ➜</text>
+        <text x="400" y="380" font-size="15" font-weight="800" fill="#2E8F89" transform="rotate(18 400 380)">回程 ➜</text>
+
+        <!-- 港口 -->
+        <g id="portShanghai" class="portdot" style="cursor:pointer">
+          <circle cx="236" cy="268" r="14" fill="#FFC53D" stroke="#1D3A5F" stroke-width="4"/>
+          <circle cx="236" cy="268" r="5" fill="#1D3A5F"/>
+          <text x="236" y="236" font-size="17" font-weight="800" fill="#1D3A5F" text-anchor="middle">上海</text>
+          <text x="236" y="306" font-size="12" font-weight="700" fill="#1D3A5F" text-anchor="middle">吴淞口国际邮轮港</text>
+        </g>
+        <g id="portJeju" class="portdot" style="cursor:pointer">
+          <circle cx="562" cy="336" r="14" fill="#FFC53D" stroke="#1D3A5F" stroke-width="4"/>
+          <circle cx="562" cy="336" r="5" fill="#1D3A5F"/>
+          <text x="562" y="400" font-size="17" font-weight="800" fill="#1D3A5F" text-anchor="middle">济州岛</text>
+          <text x="562" y="422" font-size="12" font-weight="700" fill="#1D3A5F" text-anchor="middle">韩国 · 汉拿山脚下</text>
+        </g>
+
+        <!-- 指南针 -->
+        <g transform="translate(60 60)">
+          <circle r="26" fill="#fff" stroke="#1D3A5F" stroke-width="3"/>
+          <path d="M0 -16 L5 0 L0 16 L-5 0 Z" fill="#FF7A6B"/>
+          <path d="M0 -16 L5 0 L0 6 L-5 0 Z" fill="#FFC53D"/>
+          <text y="-34" font-size="14" font-weight="800" fill="#1D3A5F" text-anchor="middle">N</text>
+        </g>
+
+        <!-- 小船 -->
+        <g id="shipGroup">
+          <g transform="translate(-10 -22)">
+            <text font-size="34" text-anchor="middle">🚢</text>
+          </g>
+          <circle r="7" fill="#FF7A6B" stroke="#fff" stroke-width="3"/>
+        </g>
+
+        <!-- 比例说明 -->
+        <text x="700" y="470" font-size="13" font-weight="700" fill="#1D3A5F">直线约 500 公里</text>
+        <line x1="620" y1="492" x2="760" y2="492" stroke="#1D3A5F" stroke-width="3"/>
+        <text x="620" y="482" font-size="11" font-weight="700" fill="#5A6B7F">——— 图上这一小段</text>
+      </svg>
+
+      <div class="daybtns" id="dayBtns">
+        <button class="btn" data-t="0">第1天 · 上海出发</button>
+        <button class="btn" data-t="0.5">第2天 · 济州岛探险</button>
+        <button class="btn" data-t="1">第3天 · 回到上海</button>
+        <button class="btn aqua" id="autoBtn">▶ 自动航行</button>
+      </div>
+      <div class="logbox" id="sailLog">🚢 大船正在准备出发,请小船长登船!</div>
+      <div class="portinfo" id="portInfo">
+        <div class="pt">👋 点一点地图上的黄色港口</div>
+        <div>看看上海的出发港和济州岛的秘密! </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 三天计划 ===== -->
+<section class="sec" id="plan">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">4</span><h2 class="tape">三天两晚 · 行动计划</h2></div>
+    <p class="sub">勾一勾,每完成一件事就给自己打个勾!完成的勾勾会一直记住哦。</p>
+
+    <div class="tl">
+      <div class="day blue">
+        <span class="dnum">第 1 天 · 出发!上海</span>
+        <h3>🚢 大船鸣笛,我们出发啦</h3>
+        <div class="dsub">下午登船,傍晚起航</div>
+        <div class="weatherrow" data-day="d1">
+          <span class="wl">今日天气:</span>
+          <button class="wbtn" data-w="☀️">☀️</button>
+          <button class="wbtn" data-w="🌤️">🌤️</button>
+          <button class="wbtn" data-w="🌧️">🌧️</button>
+        </div>
+        <div class="sched">
+          <span class="t">下午</span><span>到达吴淞口国际邮轮港,像坐飞机一样过安检,登船!</span>
+          <span class="t">傍晚</span><span>汽笛“呜——”响起,大船慢慢离开上海,看城市越来越小。</span>
+          <span class="t">晚上</span><span>吃自助大餐 🍽️,去大剧院看演出,在甲板上数星星。</span>
+        </div>
+        <ul class="tasklist">
+          <li><label><input type="checkbox" data-task="d1t1"> 找到我们的房间(舱房)</label></li>
+          <li><label><input type="checkbox" data-task="d1t2"> 参加一次安全演习,学会穿救生衣</label></li>
+          <li><label><input type="checkbox" data-task="d1t3"> 看一次海上的日落</label></li>
+          <li><label><input type="checkbox" data-task="d1t4"> 找到游泳池和大剧院,画一张小船地图</label></li>
+        </ul>
+      </div>
+
+      <div class="day">
+        <span class="dnum">第 2 天 · 探险!济州岛</span>
+        <h3>🗻 火山岛探险日</h3>
+        <div class="dsub">早上靠岸,玩一整天,傍晚再出发</div>
+        <div class="weatherrow" data-day="d2">
+          <span class="wl">今日天气:</span>
+          <button class="wbtn" data-w="☀️">☀️</button>
+          <button class="wbtn" data-w="🌤️">🌤️</button>
+          <button class="wbtn" data-w="🌧️">🌧️</button>
+        </div>
+        <div class="sched">
+          <span class="t">早上</span><span>邮轮靠岸济州岛,第一次踏上外国的土地!</span>
+          <span class="t">上午</span><span>远远看看汉拿山,去摸摸“石头爷爷”的鼻子。</span>
+          <span class="t">中午</span><span>尝一尝济州橘子 🍊,还有新鲜的海鲜。</span>
+          <span class="t">下午</span><span>去海边捡贝壳,说不定能看到不用氧气瓶的海女奶奶。</span>
+          <span class="t">傍晚</span><span>回到船上,汽笛再次响起,向济州岛说再见!</span>
+        </div>
+        <ul class="tasklist">
+          <li><label><input type="checkbox" data-task="d2t1"> 找到一位“石头爷爷”并拍照</label></li>
+          <li><label><input type="checkbox" data-task="d2t2"> 吃到一颗济州橘子</label></li>
+          <li><label><input type="checkbox" data-task="d2t3"> 在海边捡到 1 个好看的贝壳</label></li>
+          <li><label><input type="checkbox" data-task="d2t4"> 对济州岛的朋友说一句韩语“你好”</label></li>
+        </ul>
+      </div>
+
+      <div class="day green">
+        <span class="dnum">第 3 天 · 回家!上海</span>
+        <h3>🏠 载着满满回忆回家</h3>
+        <div class="dsub">在海上睡一觉,中午就到家啦</div>
+        <div class="weatherrow" data-day="d3">
+          <span class="wl">今日天气:</span>
+          <button class="wbtn" data-w="☀️">☀️</button>
+          <button class="wbtn" data-w="🌤️">🌤️</button>
+          <button class="wbtn" data-w="🌧️">🌧️</button>
+        </div>
+        <div class="sched">
+          <span class="t">早上</span><span>在甲板上看海上日出,和船员叔叔阿姨说早上好。</span>
+          <span class="t">上午</span><span>收拾行李,把研学手册写完,拿到全部印章!</span>
+          <span class="t">中午</span><span>邮轮回到上海吴淞口,靠岸!小小航海家毕业!</span>
+        </div>
+        <ul class="tasklist">
+          <li><label><input type="checkbox" data-task="d3t1"> 看一次海上的日出</label></li>
+          <li><label><input type="checkbox" data-task="d3t2"> 完成这本研学手册的全部任务</label></li>
+          <li><label><input type="checkbox" data-task="d3t3"> 和家人分享一件最开心的事</label></li>
+          <li><label><input type="checkbox" data-task="d3t4"> 拍一张和爱达魔都号的合影</label></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 地理课 ===== -->
+<section class="sec" id="geo">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">5</span><h2 class="tape">济州岛地理小课堂</h2></div>
+    <p class="sub">济州岛是一颗“大海里的宝石”💎,她是怎么来的?按下按钮亲眼看一看!</p>
+
+    <div class="geo">
+      <div class="geocard">
+        <h3>🌋 火山岛诞生记</h3>
+        <div class="slidergoal">
+          <button class="btn" data-stage="0">第1步 · 海底火山</button>
+          <button class="btn" data-stage="1">第2步 · 大喷发!</button>
+          <button class="btn" data-stage="2">第3步 · 小岛诞生</button>
+        </div>
+        <div class="volstage">
+          <svg viewBox="0 0 360 220" id="volcanoSvg" role="img" aria-label="火山形成过程">
+            <rect x="0" y="0" width="360" height="220" fill="#CFF0FC"/>
+            <g stroke="#8FC9E8" stroke-width="1.5" fill="none" opacity=".5">
+              <path d="M0 30 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+              <path d="M0 120 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+            </g>
+            <rect x="0" y="140" width="360" height="80" fill="#3FA9DF" opacity=".55"/>
+            <g id="vMound" opacity="0">
+              <path d="M110 140 L180 96 L250 140 Z" fill="#7A5C3E"/>
+              <path d="M180 96 L180 88 L172 88 L172 96 Z" fill="#B03A2E"/>
+              <ellipse cx="180" cy="102" rx="12" ry="5" fill="#E4573D"/>
+            </g>
+            <g id="vUnder" opacity="0">
+              <path d="M110 140 L180 96 L250 140 Z" fill="#8A6B48"/>
+            </g>
+            <g id="vBubbles" opacity="0">
+              <circle cx="150" cy="120" r="4" fill="#fff" opacity=".7"/>
+              <circle cx="200" cy="112" r="3" fill="#fff" opacity=".7"/>
+              <circle cx="170" cy="104" r="2.5" fill="#fff" opacity=".7"/>
+            </g>
+            <g id="vErupt" opacity="0">
+              <path d="M180 88 L178 60 L182 60 Z" fill="#FF8A3D"/>
+              <circle cx="176" cy="46" r="7" fill="#FFC53D"/>
+              <circle cx="186" cy="38" r="5" fill="#FF8A3D"/>
+              <circle cx="172" cy="32" r="4" fill="#FFC53D"/>
+            </g>
+            <g id="vIsland" opacity="0">
+              <path d="M120 140 L180 96 L240 140 Z" fill="#8A6B48"/>
+              <path d="M120 140 L180 96 L240 140 Z" fill="#7FB069" opacity=".75"/>
+              <path d="M180 96 L180 70 L176 70 L176 96 Z" fill="#B03A2E"/>
+              <path d="M160 78 q10 -14 24 -6 M200 74 q8 -10 18 -2" stroke="#5C8A4E" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <circle cx="150" cy="150" r="6" fill="#FFC53D"/>
+              <circle cx="210" cy="148" r="6" fill="#FFC53D"/>
+            </g>
+            <g id="vClouds" opacity="0">
+              <ellipse cx="180" cy="30" rx="34" ry="12" fill="#E8F4FB" opacity=".9"/>
+              <ellipse cx="200" cy="24" rx="22" ry="10" fill="#E8F4FB" opacity=".9"/>
+            </g>
+          </svg>
+        </div>
+        <div class="volinfo" id="volInfo">点上面三个按钮,看看小岛是怎么长出来的!</div>
+      </div>
+
+      <div class="geocard">
+        <h3>🏝️ 济州岛小档案</h3>
+        <p>济州岛是<b>韩国最大的岛</b>,从上海坐船大约<b>500多公里</b>,在海上走<b>15-18个小时</b>,睡一觉就到啦!</p>
+        <p>她是一座<b>火山岛</b>:很久以前海底火山喷发,岩浆堆呀堆,慢慢堆出了这座岛。</p>
+        <p>岛上有<b>韩国最高的山——汉拿山(1950米)</b>,山顶还有火山口湖呢。岛上风很大,石头很多,所以人们说济州岛“石头多、风多、女人多”。</p>
+        <p>🧡 <b>小任务</b>:想一想,济州岛和上海哪个更靠近赤道?哪个冬天更暖和?</p>
+      </div>
+    </div>
+
+    <div class="hotspots" style="margin-top:16px">
+      <div class="hs"><span class="ic">⛰️</span><b>汉拿山</b><p>韩国最高的山,1950米,是一座“睡着了的火山”。山顶有一个火山湖,叫白鹿潭。</p></div>
+      <div class="hs"><span class="ic">🗿</span><b>石头爷爷</b><p>济州岛的守护神,圆眼睛、大鼻子、戴帽子。摸摸他的鼻子,会带来好运哦!</p></div>
+      <div class="hs"><span class="ic">🍊</span><b>济州橘子</b><p>济州岛满山都是橘子园。橘子又大又甜,是岛上的宝贝水果。</p></div>
+      <div class="hs"><span class="ic">🤿</span><b>海女奶奶</b><p>不背氧气瓶就能潜到海里抓海胆、鲍鱼的奶奶们。她们的手艺是“世界文化遗产”!</p></div>
+      <div class="hs"><span class="ic">🧱</span><b>柱状节理带</b><p>火山岩浆冷却时裂成了六角形的大柱子,一排排立在海边,像积木一样整齐。</p></div>
+      <div class="hs"><span class="ic">🌅</span><b>城山日出峰</b><p>一个像大碗一样的火山口,顶上看日出特别漂亮,还能骑马呢!</p></div>
+    </div>
+
+    <div class="geocard" style="margin-top:16px">
+      <h3>🗣️ 韩语小课堂 · 见到济州岛的朋友这样说</h3>
+      <p>济州岛说的是韩语。点一点小喇叭,听一听这几句话怎么说!</p>
+      <div class="kor">
+        <div class="k"><div class="kr">안녕하세요</div><div class="zh">你好</div><div class="py">an-nyeong-ha-se-yo</div><button class="btn aqua" data-kr="안녕하세요">🔊 听一听</button></div>
+        <div class="k"><div class="kr">감사합니다</div><div class="zh">谢谢</div><div class="py">gam-sa-ham-ni-da</div><button class="btn aqua" data-kr="감사합니다">🔊 听一听</button></div>
+        <div class="k"><div class="kr">맛있어요</div><div class="zh">真好吃</div><div class="py">ma-si-sseo-yo</div><button class="btn aqua" data-kr="맛있어요">🔊 听一听</button></div>
+        <div class="k"><div class="kr">사랑해요</div><div class="zh">我爱你</div><div class="py">sa-rang-hae-yo</div><button class="btn aqua" data-kr="사랑해요">🔊 听一听</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 幕后之旅 ===== -->
+<section class="sec" id="tour">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">6</span><h2 class="tape">特别挑战篇 · 幕后之旅</h2></div>
+    <p class="sub">⚠️ 高级任务卡:只有参加“幕后之旅”才能解锁!先上安全课,再潜入巨轮的心脏!</p>
+
+    <div class="tour">
+
+      <!-- 安全特训营 -->
+      <div class="tcard">
+        <h3>⛑️ 安全特训营 · 登船第一课</h3>
+        <span class="lvl">基础 · 人人必修</span>
+        <p>上船第一件事不是玩,是学安全!记住三样宝贝:救生衣、救生艇、安全演习。</p>
+        <div class="knowrow">
+          <div class="know"><b>🦺 救生衣</b><p>橙色的!套头、系腰带、吹哨子。落水时会自动发信号。</p></div>
+          <div class="know"><b>🚤 救生艇</b><p>像小房子一样的船,能装下全船的人,平时挂在船舷上。</p></div>
+          <div class="know"><b>📢 安全演习</b><p>开船前都要演习一次:穿救生衣、找集合点、认自己的房间。</p></div>
+        </div>
+
+        <h3 style="font-size:17px;margin:10px 0 8px">挑战① · 救生衣怎么穿?按顺序点一点!</h3>
+        <div class="steps" id="vestSteps">
+          <button class="step" data-seq="3"><span class="sno">?</span>吹响肩膀上的哨子</button>
+          <button class="step" data-seq="1"><span class="sno">?</span>把救生衣套过头顶</button>
+          <button class="step" data-seq="4"><span class="sno">?</span>拉紧胸口的带子,出发!</button>
+          <button class="step" data-seq="2"><span class="sno">?</span>拉好拉链,在肚子上系紧腰带</button>
+        </div>
+
+        <h3 style="font-size:17px;margin:14px 0 8px">挑战② · 数一数船舷上挂着几艘救生艇?</h3>
+        <div class="lbwrap">
+          <div class="lbboat" id="lbBoat">
+            <span class="lb">🚤</span><span class="lb">🚤</span><span class="lb">🚤</span><span class="lb">🚤</span>
+            <span class="lb">🚤</span><span class="lb">🚤</span><span class="lb">🚤</span><span class="lb">🚤</span>
+          </div>
+          <div>
+            <p style="font-weight:800;margin:0 0 6px">已找到 <b id="lbCount">0</b> 艘</p>
+            <div class="lbguess">
+              <button class="btn" data-ans="6">6 艘</button>
+              <button class="btn" data-ans="8">8 艘</button>
+              <button class="btn" data-ans="10">10 艘</button>
+            </div>
+            <p class="note" style="margin-top:8px">小提示:点一艘,它就“亮”起来,数一数亮了几艘!</p>
+          </div>
+        </div>
+
+        <h3 style="font-size:17px;margin:14px 0 8px">挑战③ · 认识船员 · 点一点看他们做什么</h3>
+        <div class="crew">
+          <div class="cr"><span class="ic">👨‍✈️</span><b>船长</b><span class="det">戴金色名牌,驾驶台的总指挥,船往哪开听他的!</span></div>
+          <div class="cr"><span class="ic">🔧</span><b>轮机长</b><span class="det">戴红色名牌,发动机的老大,让船一直“有力气”跑。</span></div>
+          <div class="cr"><span class="ic">👨‍🍳</span><b>厨师长</b><span class="det">戴白色名牌,带着大厨们,每天做出几千份美食。</span></div>
+          <div class="cr"><span class="ic">🧹</span><b>客房管家</b><span class="det">戴紫色名牌,把房间整理得干干净净,还会叠小动物毛巾!</span></div>
+          <div class="cr"><span class="ic">🎨</span><b>儿童俱乐部老师</b><span class="det">戴绿色名牌,带小朋友做手工、玩寻宝、看星星。</span></div>
+          <div class="cr"><span class="ic">🩺</span><b>船上医生</b><span class="det">戴蓝色名牌,有人不舒服就找他,船上也有“小医院”。</span></div>
+        </div>
+
+        <h3 style="font-size:17px;margin:14px 0 8px">挑战④ · 甲板寻宝 · 找到这些地方就点亮它</h3>
+        <div class="deckmap">
+          <div class="dm" data-dm="restaurant"><span class="ic">🍴</span><span class="nm">主餐厅</span><span class="tt">✓ 找到啦!</span></div>
+          <div class="dm" data-dm="pool"><span class="ic">🏊</span><span class="nm">游泳池</span><span class="tt">✓ 找到啦!</span></div>
+          <div class="dm" data-dm="theatre"><span class="ic">🎭</span><span class="nm">大剧场</span><span class="tt">✓ 找到啦!</span></div>
+          <div class="dm" data-dm="club"><span class="ic">🧸</span><span class="nm">儿童俱乐部</span><span class="tt">✓ 找到啦!</span></div>
+          <div class="dm" data-dm="medic"><span class="ic">🚑</span><span class="nm">医务室</span><span class="tt">✓ 找到啦!</span></div>
+          <div class="dm" data-dm="deck"><span class="ic">🔭</span><span class="nm">观景甲板</span><span class="tt">✓ 找到啦!</span></div>
+        </div>
+      </div>
+
+      <!-- 任务1 动力中心 -->
+      <div class="tcard">
+        <h3>🔧 任务 1 · 寻找“海上发动机” · 动力中心大发现</h3>
+        <span class="lvl">⭐⭐⭐⭐⭐ 高级 · 潜入巨轮的心脏</span>
+        <p><b>观察目标:</b>主发动机舱。发动机是邮轮的“心脏”,它一转动,螺旋桨就把海水往后推,船就前进啦!</p>
+        <div class="knowrow">
+          <div class="know"><b>💓 船的心脏</b><p>船上有好几台巨大的柴油发动机,它们转起来带动螺旋桨。</p></div>
+          <div class="know"><b>🔊 又热又吵</b><p>机舱里声音像打雷,温度也比外面高,所以要戴耳罩、穿厚工装。</p></div>
+          <div class="know"><b>⚓ 螺旋桨</b><p>像电风扇一样旋转,只是它吹的不是风,而是把水往后推!</p></div>
+        </div>
+
+        <h3 style="font-size:17px;margin:0 0 8px">听一听 · 发动机的声音像什么?</h3>
+        <div class="soundbox">
+          <button class="soundbtn" id="engineSound">🔊 播放发动机的声音</button>
+          <button class="btn" data-sound="thunder">像打雷 ⚡</button>
+          <button class="btn" data-sound="whale">像鲸鱼叫 🐳</button>
+          <button class="btn" data-sound="bird">像小鸟叫 🐦</button>
+        </div>
+        <p class="note" style="margin-top:10px">真正参观时:找到最大的机器、记下它的声音,感受温度——但要记住,机舱只能跟工作人员一起进去!</p>
+
+        <h3 style="font-size:17px;margin:14px 0 8px">穿什么进去?点一点防护装备,再按“检查”</h3>
+        <div class="gearbox">
+          <button class="gear-item" data-gear="ear">🎧 耳罩</button>
+          <button class="gear-item" data-gear="glove">🧤 手套</button>
+          <button class="gear-item" data-gear="helmet">⛑️ 安全帽</button>
+          <button class="gear-item" data-gear="swim">🥽 泳镜</button>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+          <button class="btn aqua" id="gearCheck">检查装备 ✓</button>
+          <span class="note" id="gearMsg" style="margin-top:0">耳罩护耳朵,手套护手,安全帽护头。泳镜是去泳池用的哦!</span>
+        </div>
+
+        <h3 style="font-size:17px;margin:14px 0 8px">我的记录 · 参观时填一填</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+          <div class="fillrow"><label>发动机数量(台)</label><input class="fill" data-fill="engineCount" placeholder="数一数"></div>
+          <div class="fillrow"><label>控制屏幕(个)</label><input class="fill" data-fill="engineScreens" placeholder="数一数"></div>
+          <div class="fillrow"><label>管道颜色</label><input class="fill" data-fill="pipeColor" placeholder="写下来"></div>
+        </div>
+      </div>
+
+      <!-- 任务2 驾驶台 -->
+      <div class="tcard">
+        <h3>🧭 任务 2 · 拜访“船长的大脑” · 驾驶台探秘</h3>
+        <span class="lvl">⭐⭐⭐⭐⭐ 高级 · 船长指挥全船的地方</span>
+        <p><b>观察目标:</b>驾驶室(舵楼 / 舰桥)。这里是全船最高的地方,船长在这里用雷达、海图和各种屏幕“看着”大海。</p>
+        <div class="knowrow">
+          <div class="know"><b>📡 雷达</b><p>像猫头鹰的眼睛:黑夜里、大雾里,也能“看见”别的船和陆地。</p></div>
+          <div class="know"><b>🗺️ 海图</b><p>海上的“地图”,标着水深、暗礁,船长用笔在上面画航线的。</p></div>
+          <div class="know"><b>🎡 舵轮</b><p>就是“方向盘”!不过大邮轮的舵轮很小,更多时候是电脑在自动驾驶。</p></div>
+        </div>
+
+        <div class="radarbox">
+          <div class="radar">
+            <div class="ring" style="width:60px;height:60px;left:50%;top:50%;transform:translate(-50%,-50%)"></div>
+            <div class="ring" style="width:110px;height:110px;left:50%;top:50%;transform:translate(-50%,-50%)"></div>
+            <div class="ring" style="width:160px;height:160px;left:50%;top:50%;transform:translate(-50%,-50%)"></div>
+            <div class="blip" style="left:58px;top:52px"></div>
+            <div class="blip" style="left:120px;top:120px"></div>
+            <div class="sweep"></div>
+          </div>
+          <div>
+            <p style="font-weight:800;margin:0 0 8px">雷达屏幕上的小光点是什么?</p>
+            <div style="display:grid;gap:8px">
+              <button class="btn" data-radar="wrong1">海鸥在飞 🕊️</button>
+              <button class="btn" data-radar="right">别的船和陆地 🚢</button>
+              <button class="btn" data-radar="wrong2">美人鱼在游泳 🧜</button>
+            </div>
+            <p class="note" id="radarMsg" style="margin-top:10px">真正的雷达:绿色小光点=船或陆地,转动一圈扫一遍。</p>
+          </div>
+        </div>
+
+        <h3 style="font-size:17px;margin:14px 0 8px">画出船舵 · 先看看真正的舵轮,再照着画一个!</h3>
+        <div class="paintbox">
+          <canvas id="paintCanvas" width="320" height="210"></canvas>
+          <div class="wheelfig">
+            <svg viewBox="0 0 120 120" aria-label="船舵参考图">
+              <circle cx="60" cy="60" r="52" fill="#8A5A2B" stroke="#5C3A1A" stroke-width="4"/>
+              <circle cx="60" cy="60" r="34" fill="#A9783F" stroke="#5C3A1A" stroke-width="3"/>
+              <circle cx="60" cy="60" r="8" fill="#3D2B16" stroke="#5C3A1A" stroke-width="3"/>
+              <g stroke="#5C3A1A" stroke-width="5" stroke-linecap="round">
+                <line x1="60" y1="10" x2="60" y2="34"/><line x1="60" y1="86" x2="60" y2="110"/>
+                <line x1="10" y1="60" x2="34" y2="60"/><line x1="86" y1="60" x2="110" y2="60"/>
+                <line x1="24" y1="24" x2="43" y2="43"/><line x1="77" y1="77" x2="96" y2="96"/>
+                <line x1="24" y1="96" x2="43" y2="77"/><line x1="77" y1="43" x2="96" y2="24"/>
+              </g>
+            </svg>
+            <div style="font-size:12px;color:#8A7A62;font-weight:700">真正的舵轮(参考)</div>
+            <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
+              <button class="btn" id="paintClear">🧽 擦掉重画</button>
+              <button class="btn aqua" id="paintDone">✅ 我画好啦!</button>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="font-size:17px;margin:14px 0 8px">最想问船长的问题</h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <input class="fill" id="captainQ" maxlength="40" placeholder="写下你的问题,比如:大风浪来了怎么办?" style="max-width:420px">
+          <button class="btn coral" id="askCaptain">🎤 问问船长</button>
+        </div>
+        <p class="note" id="captainAnswer" style="margin-top:10px">船长正在值班……点“问问船长”,听听他怎么说!</p>
+      </div>
+
+      <!-- 任务3 采访工程师 -->
+      <div class="tcard">
+        <h3>🎤 任务 3 · 采访工程师 · 问出你的问题</h3>
+        <span class="lvl">⭐⭐⭐⭐⭐ 高级 · 至少选 3 个问题</span>
+        <p><b>采访目标:</b>任何一位船员工程师。点一个问题,先听听“工程师的回答”(现场采访时,要亲口问出来哦)。</p>
+        <div class="qna" data-q="1"><div class="qq">① 您每天最重要的工作是什么?</div><div class="aa">“我要让发动机一直‘醒着’——船上的电、水、冷气,全靠它供着!”</div></div>
+        <div class="qna" data-q="2"><div class="qq">② 邮轮上最精密的仪器是什么?</div><div class="aa">“是驾驶台的卫星导航和雷达,它们比你的手表还要准一万倍。”</div></div>
+        <div class="qna" data-q="3"><div class="qq">③ 如果遇到大风浪怎么办?</div><div class="aa">“船长会调整航向,我们也会检查每一颗螺丝——机器再吵,也不能偷懒。”</div></div>
+        <div class="qna" data-q="4"><div class="qq">④ 您最喜欢邮轮的哪个部分?</div><div class="aa">“半夜的机舱:只有发动机轻轻的嗡嗡声,像在跟大海说悄悄话。”</div></div>
+        <div class="qna" data-q="5"><div class="qq">⑤ 成为船员工程师需要学习什么?</div><div class="aa">“要学数学、物理,还要有一颗不怕脏、不怕累的心——发动机可是个‘大力士’!”</div></div>
+        <div class="fillrow" style="margin-top:8px"><label>最重要的收获(写一句)</label><input class="fill" data-fill="harvest" placeholder="比如:原来发动机是船的心脏!"></div>
+        <p class="note">现场挑战:找到工程师后,亲口问他 3 个问题,请他签名留言!别忘了谢谢他。</p>
+      </div>
+
+      <!-- 技能勋章 -->
+      <div class="tcard">
+        <h3>🏅 技能勋章挑战</h3>
+        <span class="lvl">全能小航海家 · 完成一项点亮一枚</span>
+        <p>旅行中完成这些小挑战,把勋章一枚枚点亮吧!</p>
+        <div class="mbadges" id="medalWall">
+          <div class="mbadge" data-medal="shop"><span class="ic">🛍️</span><span class="nm">购物小助手</span><span class="tt">帮家人挑一件纪念品</span></div>
+          <div class="mbadge" data-medal="sport"><span class="ic">🏃</span><span class="nm">运动场健将</span><span class="tt">运动场玩满30分钟</span></div>
+          <div class="mbadge" data-medal="photo"><span class="ic">📷</span><span class="nm">观景台摄影师</span><span class="tt">拍3张不同时间的海景</span></div>
+          <div class="mbadge" data-medal="medic"><span class="ic">🚑</span><span class="nm">急救小卫士</span><span class="tt">找到医务室,学会呼救</span></div>
+          <div class="mbadge" data-medal="weather"><span class="ic">🌤️</span><span class="nm">气象观察员</span><span class="tt">记好3天的天气</span></div>
+          <div class="mbadge" data-medal="shell"><span class="ic">🐚</span><span class="nm">探险收藏家</span><span class="tt">捡到贝壳和火山石</span></div>
+        </div>
+        <p class="note">小秘密:在第 9 节印章本里,还有 7 枚印章等你收集哦!</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 闯关问答 ===== -->
+<section class="sec" id="quiz">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">7</span><h2 class="tape">闯关问答 · 小船长考考你</h2></div>
+    <p class="sub">答对一题,就点亮一颗小星星 ⭐</p>
+    <div class="quizbox">
+      <div class="qcard">
+        <div class="qstars" id="qStars">☆☆☆☆☆</div>
+        <div class="qtitle" id="qTitle">第一关</div>
+        <div class="qtext" id="qText"></div>
+        <div class="opts" id="qOpts"></div>
+        <div class="qtip" id="qTip"></div>
+        <div class="qnav">
+          <button class="btn deep" id="qNext" style="display:none">下一关 ➜</button>
+          <button class="btn aqua" id="qAgain" style="display:none">再闯一次 🔄</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 配对游戏 ===== -->
+<section class="sec" id="match">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">8</span><h2 class="tape">连一连 · 谁是谁的好朋友</h2></div>
+    <p class="sub">先点左边一个,再点右边一个。配对成功就亮起来!左边有 6 张“名片”,右边是它们的好朋友。</p>
+    <div class="matchwrap">
+      <div class="mcol">
+        <h3>📇 名片</h3>
+        <div class="lbl">(先点这里)</div>
+        <div class="mcards" id="mLeft"></div>
+      </div>
+      <div class="mcol">
+        <h3>🧐 好朋友</h3>
+        <div class="lbl">(再点这里)</div>
+        <div class="mcards" id="mRight"></div>
+      </div>
+    </div>
+    <div class="mstatus" id="mStatus">开始吧!点两边的卡片配对。</div>
+  </div>
+</section>
+
+<!-- ===== 印章本 ===== -->
+<section class="sec" id="stamp">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">9</span><h2 class="tape">我的印章本</h2></div>
+    <p class="sub">每完成一个小任务,就点一下印章,“嗒!”盖上一个漂亮的章。集满 7 枚,解锁结业证书!</p>
+    <div class="stampprogress"><div class="bar" id="stampBar"></div></div>
+    <div class="stamps" id="stampGrid"></div>
+  </div>
+</section>
+
+<!-- ===== 证书 ===== -->
+<section class="sec" id="cert">
+  <div class="wrap certwrap">
+    <div class="sechead" style="justify-content:center"><span class="secno">10</span><h2 class="tape">全能小航海家结业证书</h2></div>
+    <p class="sub" style="margin-left:0">在船票上写好你的名字,点“颁发证书”,然后可以打印出来贴在墙上!</p>
+    <button class="btn coral" id="makeCert" style="font-size:18px">🏅 颁发我的结业证书</button>
+    <div class="cert" id="certCard" style="display:none">
+      <div class="crown">👑</div>
+      <h3>全能小航海家</h3>
+      <div class="cname" id="certName">_______</div>
+      <div class="cline">乘坐「爱达魔都号」完成上海 ⇄ 济州岛 研学之旅</div>
+      <div class="cline">三天两晚 · 勇敢探索 · 收获满满</div>
+      <div class="cline" id="certProgress"></div>
+      <div class="cline" id="certDate"></div>
+      <div class="medal">🎖️</div>
+      <div class="csign">
+        <span>小鲸鱼船长助手 🐳</span>
+        <span>爱达魔都号研学手册</span>
+      </div>
+    </div>
+
+    <p class="sub" style="margin-left:0;text-align:center;margin-top:24px">📈 我的成长记录 · 回家后点亮星星,看看自己成长了多少!</p>
+    <div class="grow" id="growBox"></div>
+
+    <div class="wishes">
+      <label>💌 给爸爸妈妈的话</label>
+      <textarea id="parentNote" placeholder="谢谢爸爸妈妈带我去旅行……"></textarea>
+      <label>🗺️ 下一次探险,我想去……</label>
+      <input id="nextTrip" maxlength="30" placeholder="比如:日本、北极、月球?">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" style="height:44px">
+    <path d="M0 30 Q 75 0 150 30 T 300 30 T 450 30 T 600 30 T 750 30 T 900 30 T 1050 30 T 1200 30 V60 H0 Z" fill="#BFE8F5"/>
+  </svg>
+  <div class="wrap">
+    <div class="end">小小航海家,我们海上见!🌊</div>
+    <div class="tip">爱达魔都号 · 中国第一艘国产大型邮轮 · 从上海出发的奇妙之旅<br>灵感参考:《小小船舶工程师的探秘日志》</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<canvas id="confetti"></canvas>
+
+<script>
+'use strict';
+/* ============ 本地记忆 ============ */
+const LS_KEY = 'adora_handbook_v1';
+let store = {};
+try { store = JSON.parse(localStorage.getItem(LS_KEY) || '{}'); } catch (e) { store = {}; }
+function save() { try { localStorage.setItem(LS_KEY, JSON.stringify(store)); } catch (e) {} }
+
+const $ = s => document.querySelector(s);
+
+/* ============ 音效 ============ */
+let audioCtx = null;
+function beep(freq, dur, type, when) {
+  try {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    const t = audioCtx.currentTime + (when || 0);
+    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+    o.type = type || 'sine'; o.frequency.value = freq;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.25, t + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g); g.connect(audioCtx.destination);
+    o.start(t); o.stop(t + dur + 0.05);
+  } catch (e) {}
+}
+const ding = () => beep(880, .18, 'triangle');
+const good = () => { beep(523, .18, 'triangle'); beep(659, .18, 'triangle', .12); beep(784, .28, 'triangle', .24); };
+const oops = () => beep(196, .3, 'sawtooth');
+
+/* ============ 提示 ============ */
+let toastTimer = null;
+function toast(msg) {
+  const t = $('#toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+/* ============ 船票 ============ */
+const nameInput = $('#nameInput'), dateInput = $('#dateInput');
+if (store.name) nameInput.value = store.name;
+if (store.date) dateInput.value = store.date;
+nameInput.addEventListener('change', () => { store.name = nameInput.value.trim(); save(); });
+dateInput.addEventListener('change', () => { store.date = dateInput.value; save(); });
+
+/* ============ 行程打勾 ============ */
+store.tasks = store.tasks || {};
+document.querySelectorAll('.tasklist input').forEach(cb => {
+  if (store.tasks[cb.dataset.task]) cb.checked = true;
+  cb.addEventListener('change', () => {
+    store.tasks[cb.dataset.task] = cb.checked; save();
+    cb.closest('li').classList.toggle('done', cb.checked);
+    if (cb.checked) ding();
+  });
+  cb.closest('li').classList.toggle('done', cb.checked);
+});
+
+/* ============ 火山形成演示 ============ */
+const VOL = [
+  { info: '第1步:很久很久以前,东海的海底有一座火山在睡觉……海水下面藏着尖尖的小山。' },
+  { info: '第2步:轰隆隆——!火山醒啦!岩浆从海底喷出来,红彤彤的火柱冲出海面。' },
+  { info: '第3步:岩浆冷却变硬,一次一次喷发、一层一层堆积,终于长成一座小岛——济州岛诞生啦!后来岛上长出了山、树和橘子。' }
+];
+const vGroups = ['vUnder','vBubbles','vMound','vErupt','vIsland','vClouds'];
+function setVolStage(n) {
+  const on = { 0: ['vUnder','vBubbles'], 1: ['vMound','vErupt'], 2: ['vIsland','vClouds'] }[n];
+  vGroups.forEach(g => { document.getElementById(g).style.opacity = on.includes(g) ? 1 : 0; });
+  $('#volInfo').textContent = VOL[n].info;
+}
+document.querySelectorAll('.slidergoal .btn').forEach(b => {
+  b.addEventListener('click', () => { setVolStage(+b.dataset.stage); ding(); });
+});
+setVolStage(0);
+
+/* ============ 航线动画 ============ */
+const routeOut = document.getElementById('routeOut');
+const routeIn = document.getElementById('routeIn');
+const shipGroup = document.getElementById('shipGroup');
+const lenOut = routeOut.getTotalLength(), lenIn = routeIn.getTotalLength();
+const TOTAL = lenOut + lenIn;
+function shipPos(t) {
+  const p = t <= 0.5 ? routeOut.getPointAtLength((t * 2) * lenOut)
+                     : routeIn.getPointAtLength(((t - 0.5) * 2) * lenIn);
+  shipGroup.setAttribute('transform', `translate(${p.x} ${p.y})`);
+}
+function sailLogText(t) {
+  if (t < 0.06) return '🚢 第1天:汽笛响起,大船缓缓离开上海吴淞口……再见,上海!';
+  if (t > 0.44 && t < 0.56) return '🌋 第2天:济州岛到啦!快下船去探险!';
+  if (t > 0.94) return '🏠 第3天:回到上海啦!小小航海家,欢迎回家!';
+  if (t < 0.5) return '🌊 正在东海和黄海之间航行……海鸥在身边飞,说不定能看到海豚!';
+  return '🌊 返航中……泡面、星星、还有聊不完的天,快乐的时光过得好快!';
+}
+let autoMode = true, autoT = 0, paused = false;
+let lastFrame = 0, portFlash = 0;
+function animate(ts) {
+  if (!lastFrame) lastFrame = ts;
+  const dt = Math.min((ts - lastFrame) / 1000, .05);
+  lastFrame = ts;
+  if (autoMode && !paused) {
+    autoT += dt / 26;  // 26秒跑完一圈
+    if (autoT > 1) { autoT = 0; }
+    shipPos(autoT);
+    $('#sailLog').textContent = sailLogText(autoT);
+    highlightDay(Math.round(autoT * 2));
+  }
+  requestAnimationFrame(animate);
+}
+function highlightDay(d) {
+  document.querySelectorAll('#dayBtns .btn').forEach(b => {
+    b.classList.toggle('on', b.dataset.t !== undefined && +b.dataset.t === d / 2);
+  });
+}
+document.querySelectorAll('#dayBtns .btn[data-t]').forEach(b => {
+  b.addEventListener('click', () => {
+    autoMode = false; paused = true;
+    shipPos(+b.dataset.t);
+    $('#sailLog').textContent = sailLogText(+b.dataset.t);
+    highlightDay(+b.dataset.t * 2);
+    $('#autoBtn').textContent = '▶ 继续自动航行';
+    ding();
+  });
+});
+$('#autoBtn').addEventListener('click', () => {
+  autoMode = true; paused = false;
+  $('#autoBtn').textContent = '⏸ 暂停航行';
+  ding();
+});
+
+/* ============ 港口信息 ============ */
+const PORTINFO = {
+  shanghai: ['📍 上海 · 吴淞口国际邮轮港', '这里是爱达魔都号出发和回家的港口,在中国东海边上。排队上船前,记得抬头看看大船有多大——船头比三层楼还高呢!'],
+  jeju: ['🗻 济州岛 · 韩国最大的岛', '济州岛是一座火山岛,中间立着韩国最高的山汉拿山。岛上橘子甜、石头多、风很大,还有会潜水的海女奶奶。这里说的话是韩语,见到岛民可以说一句“안녕하세요”(你好)!']
+};
+function showPort(key) {
+  const [t, body] = PORTINFO[key];
+  $('#portInfo').innerHTML = `<div class="pt">${t}</div><div>${body}</div>`;
+  good();
+}
+document.getElementById('portShanghai').addEventListener('click', () => showPort('shanghai'));
+document.getElementById('portJeju').addEventListener('click', () => showPort('jeju'));
+
+/* ============ 闯关问答 ============ */
+const QUIZ = [
+  { q: '爱达魔都号是从哪个城市出发的呢?', opts: ['北京', '上海', '广州', '天津'], ans: 1, tip: '爱达魔都号从上海吴淞口国际邮轮港出发,“魔都”就是上海的昵称!' },
+  { q: '济州岛是怎么“长”出来的?', opts: ['陨石砸出来的', '火山喷发堆出来的', '海水冲出来的', '天上掉下来的'], ans: 1, tip: '很久以前海底火山喷发,岩浆一层一层堆成了岛,所以济州岛叫火山岛!' },
+  { q: '济州岛上最高的山叫什么?', opts: ['泰山', '富士山', '汉拿山', '黄山'], ans: 2, tip: '汉拿山有1950米,是韩国最高的山,山顶还有火山湖呢!' },
+  { q: '济州岛的守护神雕像,大家叫他什么?', opts: ['兵马俑', '石头爷爷', '自由女神', '大黄鸭'], ans: 1, tip: '石头爷爷圆眼睛、大鼻子,摸摸他的鼻子会带来好运!' },
+  { q: '济州岛属于哪个国家?', opts: ['中国', '日本', '韩国', '泰国'], ans: 2, tip: '济州岛是韩国最大的岛,从上海坐船大约走500多公里就到了!' }
+];
+let qi = 0, qStars = 0, qAnswered = false;
+function renderQuiz() {
+  const item = QUIZ[qi];
+  $('#qTitle').textContent = `第 ${qi + 1} / ${QUIZ.length} 关`;
+  $('#qText').textContent = item.q;
+  $('#qTip').textContent = '';
+  $('#qNext').style.display = 'none';
+  $('#qAgain').style.display = 'none';
+  const box = $('#qOpts');
+  box.innerHTML = '';
+  item.opts.forEach((o, i) => {
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.textContent = `${'ABCD'[i]}. ${o}`;
+    b.addEventListener('click', () => pick(i, b));
+    box.appendChild(b);
+  });
+}
+function pick(i, btn) {
+  if (qAnswered) return;
+  qAnswered = true;
+  const item = QUIZ[qi];
+  const all = $('#qOpts').querySelectorAll('.opt');
+  if (i === item.ans) {
+    btn.classList.add('right'); qStars++;
+    $('#qTip').textContent = '✅ 答对啦!' + item.tip;
+    good();
+  } else {
+    btn.classList.add('wrong');
+    all[item.ans].classList.add('right');
+    $('#qTip').textContent = '😅 没关系,看看正确答案!' + item.tip;
+    oops();
+  }
+  all.forEach(b => b.disabled = true);
+  store.quizStars = Math.max(store.quizStars || 0, qStars); save();
+  updateStars();
+  if (qi < QUIZ.length - 1) $('#qNext').style.display = 'inline-block';
+  else $('#qAgain').style.display = 'inline-block';
+}
+function updateStars() {
+  $('#qStars').textContent = '⭐'.repeat(qStars) + '☆'.repeat(5 - qStars);
+}
+$('#qNext').addEventListener('click', () => { qi++; qAnswered = false; renderQuiz(); });
+$('#qAgain').addEventListener('click', () => { qi = 0; qStars = 0; qAnswered = false; renderQuiz(); updateStars(); });
+renderQuiz(); updateStars();
+
+/* ============ 配对游戏 ============ */
+const PAIRS = [
+  { id: 'hallasan', name: '汉拿山', desc: '韩国最高的山,山顶有火山湖' },
+  { id: 'grandpa', name: '石头爷爷', desc: '济州岛的守护神,大鼻子圆眼睛' },
+  { id: 'haenyeo', name: '海女', desc: '不用氧气瓶就能潜水抓海鲜' },
+  { id: 'volcano', name: '火山岛', desc: '火山喷发慢慢堆出来的海岛' },
+  { id: 'orange', name: '济州橘子', desc: '满山都是,又大又甜的水果' },
+  { id: 'ship', name: '爱达魔都号', desc: '漂浮在海上的大城堡' }
+];
+let selLeft = null, matchedCount = 0;
+const LEFT_COL = $('#mLeft'), RIGHT_COL = $('#mRight');
+PAIRS.forEach(p => {
+  const b = document.createElement('div');
+  b.className = 'mcard'; b.dataset.pair = p.id; b.textContent = p.name;
+  b.addEventListener('click', () => pickLeft(b));
+  LEFT_COL.appendChild(b);
+});
+const shuffled = [...PAIRS].sort(() => Math.random() - 0.5);
+shuffled.forEach(p => {
+  const b = document.createElement('div');
+  b.className = 'mcard'; b.dataset.pair = p.id; b.textContent = p.desc;
+  b.addEventListener('click', () => pickRight(b));
+  RIGHT_COL.appendChild(b);
+});
+function pickLeft(el) {
+  if (el.classList.contains('ok')) return;
+  LEFT_COL.querySelectorAll('.mcard').forEach(c => c.classList.remove('sel'));
+  el.classList.add('sel'); selLeft = el;
+  ding();
+}
+function pickRight(el) {
+  if (!selLeft || el.classList.contains('ok')) return;
+  if (selLeft.dataset.pair === el.dataset.pair) {
+    selLeft.classList.remove('sel'); selLeft.classList.add('ok');
+    el.classList.add('ok');
+    matchedCount++;
+    $('#mStatus').textContent = `✅ 配对成功!还剩 ${PAIRS.length - matchedCount} 对`;
+    good();
+    if (matchedCount === PAIRS.length) {
+      $('#mStatus').textContent = '🎉 全对!你是配对小高手!';
+      store.matchDone = true; save();
+      confettiBurst();
+    }
+  } else {
+    el.classList.add('shake');
+    setTimeout(() => el.classList.remove('shake'), 400);
+    $('#mStatus').textContent = '❌ 咦?他们不是好朋友,再试试!';
+    oops();
+  }
+  selLeft = null;
+}
+
+/* ============ 印章本 ============ */
+const STAMPS = [
+  { id: 'ship', ic: '🚢', name: '认识大船' },
+  { id: 'map', ic: '🗺️', name: '航线地图' },
+  { id: 'plan', ic: '🧭', name: '每天任务' },
+  { id: 'geo', ic: '🌋', name: '地理课堂' },
+  { id: 'quiz', ic: '⭐', name: '闯关问答' },
+  { id: 'match', ic: '🧩', name: '配对游戏' },
+  { id: 'food', ic: '🍊', name: '济州美食' }
+];
+store.stamps = store.stamps || {};
+const grid = $('#stampGrid');
+STAMPS.forEach(s => {
+  const d = document.createElement('div');
+  d.className = 'stamp' + (store.stamps[s.id] ? ' stamped' : '');
+  d.dataset.sid = s.id;
+  d.innerHTML = `<span class="ic">${s.ic}</span><span class="nm">${s.name}</span>`;
+  d.addEventListener('click', () => {
+    if (store.stamps[s.id]) { toast('这个印章已经盖过啦!'); return; }
+    store.stamps[s.id] = true; save();
+    d.classList.add('stamped');
+    ding(); confettiBurst(20);
+    refreshStampBar();
+    if (countStamps() === STAMPS.length) toast('🎉 印章集齐啦!快去领结业证书!');
+  });
+  grid.appendChild(d);
+});
+function countStamps() { return STAMPS.filter(s => store.stamps[s.id]).length; }
+function refreshStampBar() {
+  const pct = countStamps() / STAMPS.length * 100;
+  $('#stampBar').style.width = pct + '%';
+  $('#stampBar').parentElement.setAttribute('title', `${countStamps()}/${STAMPS.length}`);
+}
+refreshStampBar();
+
+/* ============ 任务清单 ============ */
+function countGoals() { return document.querySelectorAll('.goals .goal input:checked').length; }
+function refreshGoal() {
+  const n = countGoals();
+  $('#goalBar').style.width = (n / 13 * 100) + '%';
+  $('#goalCount').textContent = n + ' / 13';
+  if (n === 13 && !store.goalsDone) {
+    store.goalsDone = true; save();
+    setTimeout(() => { confettiBurst(100); toast('🎉 全部任务完成!去领全能小航海家证书吧!'); }, 400);
+  }
+}
+document.querySelectorAll('.goals input[type=checkbox]').forEach(cb => {
+  if (store.tasks[cb.dataset.task]) cb.checked = true;
+  cb.addEventListener('change', () => {
+    store.tasks[cb.dataset.task] = cb.checked; save();
+    cb.closest('li').classList.toggle('done', cb.checked);
+    if (cb.checked) ding();
+    refreshGoal();
+  });
+  cb.closest('li').classList.toggle('done', cb.checked);
+});
+refreshGoal();
+
+/* ============ 探险装备 ============ */
+store.gear = store.gear || {};
+document.querySelectorAll('.gbtn').forEach(b => {
+  const id = b.dataset.g;
+  if (store.gear[id]) b.classList.add('on');
+  b.addEventListener('click', () => {
+    store.gear[id] = !store.gear[id]; save();
+    b.classList.toggle('on', store.gear[id]);
+    if (store.gear[id]) ding(); else oops();
+  });
+});
+
+/* ============ 每日天气 ============ */
+store.weather = store.weather || {};
+document.querySelectorAll('.weatherrow').forEach(row => {
+  const key = row.dataset.day;
+  const cur = store.weather[key];
+  row.querySelectorAll('.wbtn').forEach(b => {
+    if (cur === b.dataset.w) b.classList.add('on');
+    b.addEventListener('click', () => {
+      row.querySelectorAll('.wbtn').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      store.weather[key] = b.dataset.w; save(); ding();
+    });
+  });
+});
+
+/* ============ 浮力小实验 ============ */
+let foilCapacity = 0, foilCoins = 0, foilSunk = false;
+const foilBoat = $('#foilBoat'), foilCoinsBox = $('#foilCoins'),
+      labInfo = $('#labInfo'), labBest = $('#labBest');
+function updateLabBest() {
+  const best = store.foilBest || 0;
+  labBest.textContent = best ? `🏆 最高纪录:${best} 枚硬币` : '🏆 最高纪录:还没有,快来挑战!';
+}
+function renderFoilCoins() {
+  foilCoinsBox.innerHTML = '';
+  for (let i = 0; i < foilCoins; i++) {
+    const c = document.createElement('div');
+    c.className = 'coin';
+    foilCoinsBox.appendChild(c);
+  }
+}
+function resetFoil() {
+  foilCapacity = 8 + Math.floor(Math.random() * 7);
+  foilCoins = 0; foilSunk = false;
+  foilBoat.classList.remove('sinking', 'sunk');
+  renderFoilCoins();
+  labInfo.textContent = '小船下水啦!一枚一枚加硬币,猜猜它能载几枚?';
+  ding();
+}
+function addCoin() {
+  if (foilSunk) return;
+  foilCoins++;
+  renderFoilCoins();
+  if (foilCoins > foilCapacity) {
+    foilSunk = true;
+    foilBoat.classList.add('sinking');
+    setTimeout(() => {
+      foilBoat.classList.add('sunk');
+      const record = foilCoins - 1;
+      labInfo.textContent = `哗啦——!沉啦……这艘小船最多载了 ${record} 枚硬币。点“重新折一只”再挑战!`;
+      store.foilBest = Math.max(store.foilBest || 0, record); save();
+      updateLabBest(); oops();
+    }, 500);
+  } else {
+    labInfo.textContent = `小船稳稳的!已经载了 ${foilCoins} 枚硬币,还能再加吗?`;
+    ding();
+  }
+}
+$('#addCoin').addEventListener('click', addCoin);
+$('#resetFoil').addEventListener('click', resetFoil);
+resetFoil(); updateLabBest();
+
+/* ============ 韩语小课堂 ============ */
+function speakKo(text) {
+  try {
+    if (!('speechSynthesis' in window)) { toast('这个浏览器不能播放韩语语音'); return; }
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'ko-KR'; u.rate = 0.8;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+  } catch (e) { toast('韩语语音播放不了,那就跟着拼音读一读!'); }
+}
+document.querySelectorAll('[data-kr]').forEach(b => {
+  b.addEventListener('click', () => speakKo(b.dataset.kr));
+});
+
+/* ============ 成长记录 ============ */
+const GROW = ['勇气值', '知识值', '观察力', '沟通力', '独立性'];
+store.grow = store.grow || {};
+const growBox = $('#growBox');
+GROW.forEach(nm => {
+  const row = document.createElement('div');
+  row.className = 'growrow';
+  const lbl = document.createElement('span');
+  lbl.className = 'gname'; lbl.textContent = nm;
+  const stars = document.createElement('span');
+  stars.className = 'gstars';
+  const lvl = store.grow[nm] || 0;
+  for (let i = 1; i <= 5; i++) {
+    const s = document.createElement('span');
+    s.textContent = '★';
+    if (i <= lvl) s.classList.add('on');
+    s.addEventListener('click', () => {
+      store.grow[nm] = i; save();
+      stars.querySelectorAll('span').forEach((x, j) => x.classList.toggle('on', j < i));
+      ding();
+    });
+    stars.appendChild(s);
+  }
+  row.appendChild(lbl); row.appendChild(stars);
+  growBox.appendChild(row);
+});
+
+/* ============ 给家长的话 & 愿望 ============ */
+['parentNote', 'nextTrip'].forEach(id => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.value = store[id] || '';
+  el.addEventListener('change', () => { store[id] = el.value; save(); });
+});
+
+/* ============ 安全特训营 ============ */
+let vestNext = 1;
+document.querySelectorAll('#vestSteps .step').forEach(s => {
+  s.addEventListener('click', () => {
+    if (s.classList.contains('on')) return;
+    if (+s.dataset.seq === vestNext) {
+      s.classList.add('on');
+      s.querySelector('.sno').textContent = vestNext;
+      ding();
+      vestNext++;
+      if (vestNext === 5) {
+        store.vestDone = true; save();
+        setTimeout(() => { confettiBurst(50); toast('🦺 救生衣穿好啦!安全小卫士就是你!'); }, 300);
+      }
+    } else {
+      oops();
+      toast('顺序不对哦,先套头,再系腰带!');
+    }
+  });
+});
+
+let lbFound = 0;
+document.querySelectorAll('#lbBoat .lb').forEach(b => {
+  b.addEventListener('click', () => {
+    if (b.classList.contains('on')) { b.classList.remove('on'); lbFound--; }
+    else { b.classList.add('on'); lbFound++; ding(); }
+    $('#lbCount').textContent = lbFound;
+  });
+});
+document.querySelectorAll('.lbguess .btn').forEach(b => {
+  b.addEventListener('click', () => {
+    if (b.dataset.ans === '8') {
+      store.lbDone = true; save();
+      confettiBurst(50);
+      toast('🚤 数对啦!全船的救生艇,能装下所有乘客和船员!');
+    } else {
+      oops();
+      toast('再数一数:点一艘亮一艘!');
+    }
+  });
+});
+
+document.querySelectorAll('.cr').forEach(c => {
+  c.addEventListener('click', () => { c.classList.toggle('on'); ding(); });
+});
+
+let dmFound = 0;
+document.querySelectorAll('.dm').forEach(d => {
+  d.addEventListener('click', () => {
+    if (d.classList.contains('found')) return;
+    d.classList.add('found');
+    dmFound++; ding();
+    if (dmFound === 6) {
+      store.deckDone = true; save();
+      setTimeout(() => { confettiBurst(60); toast('🗺️ 甲板寻宝全找到!你已经熟悉大船啦!'); }, 300);
+    }
+  });
+});
+
+/* ============ 动力中心 ============ */
+let engineTimer = null;
+function playEngine() {
+  try {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    const t = audioCtx.currentTime;
+    const o = audioCtx.createOscillator();
+    o.type = 'sawtooth';
+    o.frequency.setValueAtTime(48, t);
+    o.frequency.linearRampToValueAtTime(52, t + 1.2);
+    o.frequency.linearRampToValueAtTime(47, t + 2.4);
+    const g = audioCtx.createGain();
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.2, t + 0.08);
+    g.gain.setValueAtTime(0.2, t + 2.2);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 2.6);
+    const n = audioCtx.createBufferSource();
+    const buf = audioCtx.createBuffer(1, audioCtx.sampleRate * 2.5, audioCtx.sampleRate);
+    const d = buf.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * 0.15;
+    const lp = audioCtx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 220;
+    n.buffer = buf; n.connect(lp); lp.connect(g);
+    o.connect(g); g.connect(audioCtx.destination);
+    o.start(t); o.stop(t + 2.7);
+    n.start(t); n.stop(t + 2.7);
+    const btn = $('#engineSound');
+    btn.classList.add('playing');
+    clearTimeout(engineTimer);
+    engineTimer = setTimeout(() => btn.classList.remove('playing'), 2800);
+  } catch (e) {}
+}
+$('#engineSound').addEventListener('click', playEngine);
+document.querySelectorAll('[data-sound]').forEach(b => {
+  b.addEventListener('click', () => {
+    if (b.dataset.sound === 'thunder') {
+      store.soundDone = true; save();
+      toast('⚡ 对啦!发动机的轰鸣声,就像低沉的打雷,又稳又有力!');
+      good();
+    } else {
+      toast('再听一听?把“播放声音”按钮按起来~');
+      oops();
+    }
+  });
+});
+
+const GEAR_GOOD = ['ear', 'glove', 'helmet'];
+let gearPicked = {};
+document.querySelectorAll('.gear-item').forEach(b => {
+  b.addEventListener('click', () => {
+    const k = b.dataset.gear;
+    gearPicked[k] = !gearPicked[k];
+    b.classList.toggle('on', gearPicked[k]);
+    if (k === 'swim' && gearPicked[k]) {
+      b.classList.add('bad');
+      toast('泳镜是去游泳池用的,机舱里可不能戴!');
+      oops();
+    } else b.classList.remove('bad');
+  });
+});
+$('#gearCheck').addEventListener('click', () => {
+  const ok = GEAR_GOOD.every(k => gearPicked[k]) && !gearPicked['swim'];
+  if (ok) {
+    store.gearDone = true; save();
+    $('#gearMsg').textContent = '✅ 全对!耳罩、手套、安全帽,一样都不能少!';
+    confettiBurst(50);
+    good();
+  } else {
+    $('#gearMsg').textContent = '还差一点点:机舱需要 耳罩 + 手套 + 安全帽,泳镜不算哦!';
+    oops();
+  }
+});
+
+/* ============ 驾驶台 ============ */
+document.querySelectorAll('[data-radar]').forEach(b => {
+  b.addEventListener('click', () => {
+    if (b.dataset.radar === 'right') {
+      store.radarDone = true; save();
+      $('#radarMsg').textContent = '✅ 对!雷达能看到别的船和陆地,黑夜里、大雾里也看得见!';
+      good();
+    } else {
+      $('#radarMsg').textContent = '再想想——雷达是用电波“摸”出来的,海鸥和美人鱼可摸不到!';
+      oops();
+    }
+  });
+});
+
+const paint = $('#paintCanvas');
+const pc = paint.getContext('2d');
+let drawing = false, lastPt = null;
+function paintPt(e) {
+  const r = paint.getBoundingClientRect();
+  return { x: (e.clientX - r.left) * (paint.width / r.width), y: (e.clientY - r.top) * (paint.height / r.height) };
+}
+paint.addEventListener('pointerdown', e => { drawing = true; lastPt = paintPt(e); });
+paint.addEventListener('pointermove', e => {
+  if (!drawing) return;
+  const p = paintPt(e);
+  pc.beginPath(); pc.lineWidth = 8; pc.lineCap = 'round'; pc.lineJoin = 'round'; pc.strokeStyle = '#1D3A5F';
+  pc.moveTo(lastPt.x, lastPt.y); pc.lineTo(p.x, p.y); pc.stroke();
+  lastPt = p;
+});
+window.addEventListener('pointerup', () => { drawing = false; });
+$('#paintClear').addEventListener('click', () => { pc.clearRect(0, 0, paint.width, paint.height); ding(); });
+$('#paintDone').addEventListener('click', () => {
+  store.wheelDrawn = true; save();
+  toast('🎡 船舵画好啦!真有小船长的架势!');
+  good();
+});
+
+const CAPTAIN_ANSWERS = [
+  '船长摘下帽子想了想:大风浪来了也不怕,大船会像摇篮一样轻轻晃。',
+  '船长指着雷达说:它像猫头鹰的眼睛,黑夜和雾天也能看见。',
+  '船长笑着说:最喜欢清晨的甲板,海豚会跟着我们的船游。',
+  '船长神秘地说:驾驶台是船的大脑,我只是帮它“想”的那个人。',
+  '船长看了看海图:去济州岛这条路走过一百遍了,可每次海浪都不一样。',
+  '船长眨眨眼:等你学会看星星认方向,就能来当我的小副手啦!',
+  '船长说:最怕的不是浪,是困了还硬撑的船员,所以我们有严格的休息表。',
+  '船长拍了拍舵轮:这艘船是我的朋友,它听得懂我。'
+];
+$('#captainQ').value = store.captainQ || '';
+$('#askCaptain').addEventListener('click', () => {
+  const q = $('#captainQ').value.trim();
+  if (!q) { toast('先写下你的问题,再问船长!'); oops(); return; }
+  store.captainQ = q; save();
+  const a = CAPTAIN_ANSWERS[Math.floor(Math.random() * CAPTAIN_ANSWERS.length)];
+  $('#captainAnswer').textContent = '🧑‍✈️ 船长说:「' + a + '」';
+  good();
+});
+
+/* ============ 采访工程师 ============ */
+document.querySelectorAll('.qna').forEach(q => {
+  q.addEventListener('click', () => {
+    q.classList.toggle('open');
+    if (q.classList.contains('open')) ding();
+  });
+});
+
+/* ============ 填一填记录 ============ */
+document.querySelectorAll('.fill[data-fill]').forEach(inp => {
+  inp.value = store[inp.dataset.fill] || '';
+  inp.addEventListener('change', () => { store[inp.dataset.fill] = inp.value; save(); });
+});
+
+/* ============ 勋章墙 ============ */
+store.medals = store.medals || {};
+const medalTotal = document.querySelectorAll('.mbadge').length;
+document.querySelectorAll('.mbadge').forEach(m => {
+  const id = m.dataset.medal;
+  if (store.medals[id]) m.classList.add('won');
+  m.addEventListener('click', () => {
+    if (store.medals[id]) { toast('这枚勋章已经拿到啦!'); return; }
+    store.medals[id] = true; save();
+    m.classList.add('won');
+    ding(); confettiBurst(25);
+    const got = Object.keys(store.medals).length;
+    if (got === medalTotal) {
+      setTimeout(() => { confettiBurst(100); toast('🏅 勋章全部点亮!去领全能小航海家证书吧!'); }, 500);
+    }
+  });
+});
+
+/* ============ 结业证书 ============ */
+function makeCert() {
+  const name = (nameInput.value || '').trim() || '小船长';
+  $('#certName').textContent = name;
+  const d = dateInput.value ? new Date(dateInput.value + 'T00:00:00') : null;
+  $('#certDate').textContent = d
+    ? `航海日期:${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`
+    : '航海日期:____年__月__日';
+  $('#certCard').style.display = 'block';
+  $('#certProgress').textContent = `任务完成 ${countGoals()} / 13 · 印章 ${countStamps()} / 7`;
+  confettiBurst(120);
+  good();
+  toast('🎓 恭喜毕业!小船长真棒!');
+}
+$('#makeCert').addEventListener('click', makeCert);
+
+/* ============ 彩带 ============ */
+const cvs = document.getElementById('confetti');
+const ctx = cvs.getContext('2d');
+let parts = [];
+function confettiBurst(n) {
+  n = n || 80;
+  cvs.width = innerWidth; cvs.height = innerHeight;
+  const colors = ['#FFC53D', '#FF7A6B', '#4FC6C0', '#35A7E2', '#FF8A3D'];
+  for (let i = 0; i < n; i++) {
+    parts.push({
+      x: innerWidth / 2 + (Math.random() - .5) * 260,
+      y: innerHeight * 0.28 + (Math.random() - .5) * 80,
+      vx: (Math.random() - .5) * 7,
+      vy: -Math.random() * 8 - 2,
+      w: 6 + Math.random() * 6,
+      h: 4 + Math.random() * 6,
+      c: colors[i % colors.length],
+      rot: Math.random() * Math.PI,
+      vr: (Math.random() - .5) * .25,
+      life: 0
+    });
+  }
+}
+function drawConfetti() {
+  if (!parts.length) return;
+  ctx.clearRect(0, 0, cvs.width, cvs.height);
+  parts = parts.filter(p => p.life < 150 && p.y < innerHeight + 40);
+  parts.forEach(p => {
+    p.x += p.vx; p.y += p.vy; p.vy += .22; p.rot += p.vr; p.life++;
+    ctx.save();
+    ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+    ctx.fillStyle = p.c;
+    ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+    ctx.restore();
+  });
+  requestAnimationFrame(drawConfetti);
+}
+requestAnimationFrame(drawConfetti);
+
+/* ============ 启动 ============ */
+shipPos(0);
+requestAnimationFrame(animate);
+setTimeout(() => {
+  if (store.name) toast(`欢迎回来,${store.name}小船长!继续你的航海冒险吧 🌊`);
+}, 800);
+</script>
+</body>
+</html>
+
+
+</body>
+</html>
+
+
