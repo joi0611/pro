@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#F2F9FF"/>
+  <circle cx="120" cy="90" r="42" fill="#FFCE54"/>
+  <g fill="#FFFFFF" opacity="0.95">
+    <ellipse cx="640" cy="90" rx="56" ry="26"/><ellipse cx="690" cy="80" rx="38" ry="22"/><ellipse cx="600" cy="82" rx="30" ry="20"/>
+    <ellipse cx="330" cy="120" rx="40" ry="18"/><ellipse cx="360" cy="114" rx="26" ry="16"/>
+  </g>
+  <!-- 远山 -->
+  <path d="M0 420 Q 120 300 260 400 Q 380 320 520 405 Q 680 300 800 400 L 800 600 H 0 Z" fill="#BFE0F5" opacity="0.7"/>
+  <path d="M0 470 Q 160 380 320 455 Q 520 380 800 465 L 800 600 H 0 Z" fill="#E9F3F9"/>
+  <!-- 蜿蜒的路 -->
+  <path d="M120 560 Q 300 500 420 540 T 700 520" stroke="#D9A25F" stroke-width="26" fill="none" stroke-linecap="round"/>
+  <path d="M120 560 Q 300 500 420 540 T 700 520" stroke="#FFF3DE" stroke-width="18" fill="none" stroke-linecap="round" stroke-dasharray="60 46"/>
+  <!-- 花朵小卡车 -->
+  <g>
+    <rect x="150" y="470" width="150" height="62" rx="12" fill="#FF8C5A"/>
+    <rect x="290" y="486" width="52" height="46" rx="8" fill="#E05A3A"/>
+    <circle cx="186" cy="542" r="18" fill="#4A90D9"/><circle cx="280" cy="542" r="18" fill="#4A90D9"/>
+    <circle cx="186" cy="542" r="8" fill="#FFF"/><circle cx="280" cy="542" r="8" fill="#FFF"/>
+    <circle cx="170" cy="466" r="12" fill="#FFCE54"/><circle cx="196" cy="458" r="12" fill="#FF8CB8"/>
+    <circle cx="222" cy="466" r="12" fill="#7CC48D"/><circle cx="248" cy="458" r="12" fill="#BF8CF0"/>
+    <circle cx="272" cy="468" r="10" fill="#FF8C5A"/>
+    <path d="M150 486 h150" stroke="#FFF" stroke-width="6" opacity="0.6"/>
+  </g>
+  <!-- 蓝色小飞机载花 -->
+  <g>
+    <path d="M430 300 l200 -34 l-18 30 l-182 -6 z" fill="#4A90D9"/>
+    <path d="M430 300 l-40 -26 l-6 22 z" fill="#3B7BC0"/>
+    <circle cx="560" cy="290" r="16" fill="#FFF" opacity="0.9"/>
+    <circle cx="430" cy="282" r="11" fill="#FFCE54"/><circle cx="452" cy="272" r="11" fill="#FF8CB8"/>
+    <circle cx="474" cy="280" r="10" fill="#7CC48D"/>
+    <path d="M455 318 q10 8 30 6 M470 330 q10 6 28 4" stroke="#B9D4F0" stroke-width="5" fill="none"/>
+  </g>
+  <!-- 唱歌的小花 -->
+  <text x="240" y="440" font-size="26">🎵</text>
+  <text x="262" y="416" font-size="26">🎵</text>
+  <!-- 花瓣点缀 -->
+  <g opacity="0.6">
+    <circle cx="520" cy="460" r="9" fill="#FF8CB8"/><circle cx="580" cy="500" r="8" fill="#FFCE54"/>
+    <circle cx="660" cy="470" r="9" fill="#BF8CF0"/><circle cx="700" cy="430" r="8" fill="#7CC48D"/>
+  </g>
+  <text x="400" y="190" font-size="26" fill="#2A6CB5" font-weight="bold" text-anchor="middle">鲜花坐上卡车和小飞机，要走过很远很远的路</text>
+</svg>

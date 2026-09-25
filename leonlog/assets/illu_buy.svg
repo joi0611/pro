@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="#FFF6ED"/>
+  <!-- 地面 -->
+  <path d="M0 430 Q 200 400 400 425 T 800 420 V 600 H 0 Z" fill="#E8F3E4"/>
+  <!-- 太阳 -->
+  <circle cx="80" cy="80" r="42" fill="#FFCE54"/>
+  <g stroke="#FFCE54" stroke-width="6" stroke-linecap="round">
+    <line x1="80" y1="18" x2="80" y2="6"/><line x1="80" y1="142" x2="80" y2="154"/>
+    <line x1="18" y1="80" x2="6" y2="80"/><line x1="142" y1="80" x2="154" y2="80"/>
+    <line x1="36" y1="36" x2="28" y2="28"/><line x1="124" y1="124" x2="132" y2="132"/>
+    <line x1="124" y1="36" x2="132" y2="28"/><line x1="36" y1="124" x2="28" y2="132"/>
+  </g>
+  <!-- 云 -->
+  <g fill="#FFFFFF" opacity="0.9">
+    <ellipse cx="240" cy="90" rx="52" ry="26"/><ellipse cx="282" cy="82" rx="36" ry="22"/><ellipse cx="208" cy="84" rx="30" ry="20"/>
+  </g>
+  <!-- 左侧：成堆鲜花 + 小男孩 -->
+  <!-- 花堆 -->
+  <g>
+    <circle cx="200" cy="408" r="18" fill="#FF8CB8"/><circle cx="228" cy="414" r="15" fill="#FFCE54"/>
+    <circle cx="172" cy="420" r="14" fill="#BF8CF0"/><circle cx="250" cy="404" r="16" fill="#FF8C5A"/>
+    <circle cx="140" cy="432" r="15" fill="#7CC48D"/><circle cx="282" cy="424" r="14" fill="#FF8CB8"/>
+    <rect x="132" y="438" width="170" height="16" rx="8" fill="#D9A25F"/>
+    <circle cx="200" cy="378" r="15" fill="#7CC48D"/><circle cx="172" cy="384" r="12" fill="#FF8C5A"/>
+    <circle cx="236" cy="380" r="12" fill="#FFCE54"/><circle cx="260" cy="392" r="11" fill="#BF8CF0"/>
+  </g>
+  <!-- 小男孩 -->
+  <g>
+    <circle cx="330" cy="318" r="40" fill="#FFD8B8"/><!-- 脸 -->
+    <path d="M296 300 q34 -16 68 0" fill="#B5845E"/><!-- 头发 -->
+    <circle cx="316" cy="322" r="5" fill="#5A4632"/><circle cx="346" cy="322" r="5" fill="#5A4632"/>
+    <path d="M322 340 q10 10 18 0" stroke="#5A4632" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M324 292 q6 -12 14 -12 q8 0 12 12" fill="#FFCE54"/><!-- 帽子 -->
+    <path d="M296 356 v90 h72 v-90" fill="#FFC94D"/><!-- 雨衣 -->
+    <circle cx="332" cy="416" r="10" fill="#E05A3A"/><circle cx="332" cy="452" r="20" fill="#4A90D9"/>
+    <path d="M330 414 l-10 -26" stroke="#FFC94D" stroke-width="12" stroke-linecap="round"/>
+    <path d="M296 356 l-14 -34 a 20 20 0 0 1 22 6 z" fill="#FFC94D"/>
+    <!-- 张开的手 -->
+    <path d="M296 430 q-30 -10 -38 -30" stroke="#FFD8B8" stroke-width="12" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- 中间小箭头 -->
+  <text x="430" y="330" font-size="44" text-anchor="middle">✈️</text>
+  <path d="M390 380 q 20 -30 40 0" stroke="#E05A3A" stroke-width="5" fill="none" marker-end="url(#arr)"/>
+  <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6 Z" fill="#E05A3A"/></marker></defs>
+  <!-- 右侧：城市小花店 -->
+  <g>
+    <rect x="560" y="250" width="150" height="180" rx="12" fill="#FFFFFF" stroke="#E8D5CC" stroke-width="4"/>
+    <rect x="570" y="330" width="130" height="100" rx="6" fill="#E9F4FB" stroke="#BFE0F5" stroke-width="4"/>
+    <rect x="570" y="240" width="150" height="36" fill="#E05A3A" rx="10"/>
+    <rect x="590" y="368" width="90" height="26" rx="13" fill="#D9A25F"/>
+    <line x1="590" y1="368" x2="590" y2="394" stroke="#8C6A3F" stroke-width="4"/>
+    <circle cx="620" cy="356" r="13" fill="#E05A3A"/>
+    <path d="M632 356 q8 -14 16 0 q-8 14 -16 0" fill="#7CC48D"/>
+    <circle cx="652" cy="362" r="11" fill="#FF8CB8"/>
+    <!-- 门 -->
+    <rect x="620" y="410" width="30" height="20" rx="6" fill="#D9A25F"/>
+    <!-- 招牌（无文字） -->
+    <text x="645" y="264" font-size="20" font-weight="bold" fill="#FFF" text-anchor="middle">花 店</text>
+  </g>
+  <!-- 花朵装饰 -->
+  <g opacity="0.8">
+    <circle cx="520" cy="470" r="10" fill="#FF8CB8"/><circle cx="505" cy="478" r="8" fill="#FFCE54"/>
+    <circle cx="500" cy="440" r="9" fill="#BF8CF0"/>
+  </g>
+  <text x="560" y="530" font-size="26" fill="#C98A00" font-weight="bold" text-anchor="middle">同样的钱，市场里能买一大捧！</text>
+</svg>

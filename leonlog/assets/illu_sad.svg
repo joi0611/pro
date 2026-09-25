@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#FFF9EE"/>
+  <path d="M0 470 Q 200 450 400 468 T 800 465 V 600 H 0 Z" fill="#E8F3E4"/>
+  <g fill="#FFFFFF" opacity="0.95">
+    <ellipse cx="660" cy="100" rx="52" ry="24"/><ellipse cx="620" cy="94" rx="30" ry="18"/>
+  </g>
+  <!-- 绿杆子 -->
+  <rect x="208" y="330" width="16" height="140" rx="8" fill="#5FA96B"/>
+  <rect x="568" y="330" width="16" height="140" rx="8" fill="#5FA96B"/>
+  <!-- 叶子 -->
+  <path d="M216 380 q-40 -18 -46 -44 q34 6 46 30 z" fill="#7CC48D"/>
+  <path d="M216 420 q-38 -12 -42 -38 q32 4 42 26 z" fill="#7CC48D"/>
+  <path d="M584 380 q40 -18 46 -44 q-34 6 -46 30 z" fill="#7CC48D"/>
+  <path d="M584 420 q38 -12 42 -38 q-32 4 -42 26 z" fill="#7CC48D"/>
+  <!-- 左侧：精神向日葵 -->
+  <g>
+    <g fill="#FFCE54">
+      <ellipse cx="160" cy="300" rx="14" ry="26" transform="rotate(0 160 300)"/>
+      <ellipse cx="216" cy="300" rx="14" ry="26" transform="rotate(72 188 300)"/>
+      <ellipse cx="160" cy="300" rx="14" ry="26" transform="rotate(-72 160 300)"/>
+      <ellipse cx="188" cy="258" rx="14" ry="26" transform="rotate(18 188 258)"/>
+      <ellipse cx="132" cy="258" rx="14" ry="26" transform="rotate(-54 132 258)"/>
+      <ellipse cx="216" cy="342" rx="14" ry="26" transform="rotate(126 216 342)"/>
+      <ellipse cx="132" cy="342" rx="14" ry="26" transform="rotate(54 132 342)"/>
+      <ellipse cx="188" cy="342" rx="14" ry="26" transform="rotate(108 188 342)"/>
+      <ellipse cx="160" cy="258" rx="14" ry="26" transform="rotate(-36 160 258)"/>
+    </g>
+    <circle cx="188" cy="300" r="34" fill="#B5845E"/>
+    <circle cx="176" cy="292" r="5" fill="#5A4632"/><circle cx="200" cy="292" r="5" fill="#5A4632"/>
+    <path d="M178 306 q10 12 20 0" stroke="#5A4632" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="150" cy="256" r="6" fill="#FF8CB8"/><circle cx="196" cy="248" r="6" fill="#FF8CB8"/>
+    <!-- 星星和彩虹 -->
+    <path d="M120 200 l6 12 13 2 -9 10 2 13 -12 -6 -12 6 2 -13 -9 -10 13 -2 z" fill="#FFCE54"/>
+    <path d="M240 210 l5 10 11 2 -8 9 2 11 -10 -5 -10 5 2 -11 -8 -9 11 -2 z" fill="#FF8CB8"/>
+    <path d="M104 300 q14 -12 28 0" stroke="#FF9FAA" stroke-width="5" fill="none"/>
+    <path d="M92 320 q14 -12 28 0" stroke="#BF8CF0" stroke-width="5" fill="none"/>
+  </g>
+  <!-- 中间箭头 -->
+  <path d="M330 300 q 30 -40 60 0" stroke="#C98A00" stroke-width="6" fill="none" stroke-dasharray="2 16" stroke-linecap="round"/>
+  <text x="400" y="240" font-size="30">😊  vs  😩</text>
+  <!-- 右侧：蔫向日葵 -->
+  <g>
+    <g fill="#FFCE54">
+      <ellipse cx="548" cy="330" rx="13" ry="24" transform="rotate(18 548 330)"/>
+      <ellipse cx="596" cy="330" rx="13" ry="24" transform="rotate(84 572 330)"/>
+      <ellipse cx="548" cy="330" rx="13" ry="24" transform="rotate(-54 548 330)"/>
+      <ellipse cx="572" cy="292" rx="13" ry="24" transform="rotate(24 572 292)"/>
+      <ellipse cx="540" cy="296" rx="13" ry="24" transform="rotate(-48 540 296)"/>
+      <ellipse cx="604" cy="368" rx="13" ry="24" transform="rotate(126 604 368)"/>
+      <ellipse cx="536" cy="372" rx="13" ry="24" transform="rotate(78 536 372)"/>
+      <ellipse cx="568" cy="374" rx="13" ry="24" transform="rotate(108 568 374)"/>
+      <ellipse cx="552" cy="292" rx="13" ry="24" transform="rotate(-24 552 292)"/>
+    </g>
+    <!-- 花头下垂 -->
+    <g transform="rotate(28 572 340)">
+      <circle cx="572" cy="340" r="32" fill="#E8B96F"/>
+      <path d="M562 332 q-5 -8 -4 -14 q8 2 10 8 M586 332 q5 -8 4 -14 q-8 2 -10 8" stroke="#8C6A3F" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M564 352 q8 10 16 0" stroke="#8C6A3F" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.5"/>
+    </g>
+    <!-- 汗滴 -->
+    <ellipse cx="630" cy="360" rx="7" ry="10" fill="#BFE8F8"/>
+    <ellipse cx="652" cy="384" rx="5" ry="8" fill="#BFE8F8"/>
+    <path d="M630 344 q-8 -14 0 -18 q8 4 0 18 z" fill="#BFE8F8"/>
+    <!-- 叹气 -->
+    <path d="M536 396 q-6 10 -16 12" stroke="#9AA7B5" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="512" cy="412" r="7" fill="none" stroke="#FFB199" stroke-width="3"/>
+    <circle cx="500" cy="426" r="5" fill="none" stroke="#FFB199" stroke-width="3"/>
+  </g>
+  <text x="400" y="520" font-size="26" fill="#C98A00" font-weight="bold" text-anchor="middle">花在路上走太久，会累、会蔫——这就是"损耗"</text>
+</svg>
