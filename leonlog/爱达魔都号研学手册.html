@@ -241,6 +241,49 @@ button{font-family:inherit}
 .fillrow{display:grid;gap:4px;margin-bottom:10px;}
 .fillrow label{font-size:13px;font-weight:800;color:#8A7A62;}
 
+/* ---------- 英语分级 ---------- */
+.engbar{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px 58px;}
+.level-tag{display:inline-block;padding:5px 14px;border-radius:20px;font-size:13px;font-weight:800;color:#fff;background:#D8C9B0;border:2px solid var(--line);transition:.2s;}
+.level-tag.l1{background:var(--green);}
+.level-tag.l2{background:var(--ocean);}
+.level-tag.l3{background:var(--coral);}
+.level-tag.done{outline:4px solid var(--sun);}
+.word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px;}
+.word{background:#fff;border:3px solid var(--line);border-radius:16px;padding:12px 10px;text-align:center;cursor:pointer;transition:.15s;box-shadow:0 4px 0 rgba(29,58,95,.06);}
+.word:hover{transform:translateY(-3px);border-color:var(--ocean);}
+.word .en{font-size:20px;font-weight:800;color:var(--deep);}
+.word .ph{font-size:12.5px;color:#8A7A62;font-weight:700;margin:2px 0;}
+.word .cn{font-size:14px;color:#B0A48C;font-weight:800;margin:4px 0 2px;}
+.word .spk{font-size:12px;color:var(--coral);font-weight:800;}
+.word.learned{border-color:var(--green);background:#DFF5EA;}
+.word.learned .cn{color:var(--ink);}
+.srow{display:flex;align-items:center;gap:10px;justify-content:space-between;border:3px solid var(--line);border-radius:14px;padding:10px 14px;margin-top:10px;cursor:pointer;background:#fff;transition:.12s;}
+.srow:hover{border-color:var(--deep);}
+.srow .sen{font-size:16.5px;font-weight:800;color:var(--deep);}
+.srow .cn{font-size:14px;color:#8A7A62;font-weight:700;}
+.srow .play{font-size:13px;font-weight:800;color:var(--coral);flex:none;}
+.srow.heard{border-color:var(--green);background:#DFF5EA;}
+.srow.heard .play{color:var(--green);}
+.storyline{font-size:17.5px;font-weight:700;line-height:2.1;cursor:pointer;color:var(--ink);border-radius:10px;padding:2px 4px;transition:.12s;}
+.storyline:hover{background:#EAF3FB;}
+.storyline .wd .nw{color:var(--deep);border-bottom:3px dotted var(--coral);cursor:pointer;font-weight:800;}
+.storyline .wd .nw:hover{background:var(--sun);border-radius:6px;}
+.storyline .wd .nw.learned{color:var(--green);border-bottom-color:var(--green);}
+.storyline.done .wd{color:#8A9BB0;}
+.sheet{position:fixed;inset:0;background:rgba(29,58,95,.45);z-index:90;display:grid;place-items:center;padding:20px;}
+.sheet-card{background:#fff;border:4px solid var(--deep);border-radius:24px;padding:26px 30px;text-align:center;max-width:420px;width:100%;box-shadow:0 12px 0 rgba(18,94,143,.25);animation:pop .25s;}
+.sheet-card .sh-en{font-size:34px;font-weight:800;color:var(--deep);}
+.sheet-card .sh-ph{font-size:15px;color:#8A7A62;font-weight:700;margin:4px 0 2px;}
+.sheet-card .sh-cn{font-size:22px;font-weight:800;color:var(--coral);margin:6px 0 10px;}
+.sheet-card .sh-ex{font-size:14.5px;color:#5A6B7F;font-weight:700;line-height:1.7;}
+.sheet-card .shbtns{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap;}
+
+/* ---------- 浮动打印按钮 ---------- */
+.printfab{position:fixed;right:18px;bottom:18px;z-index:95;width:58px;height:58px;border-radius:50%;border:3px solid var(--ink);background:var(--sun);font-size:26px;cursor:pointer;box-shadow:0 6px 0 rgba(29,58,95,.3);transition:.12s;}
+.printfab:hover{transform:translateY(-2px);}
+.printfab:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(29,58,95,.3);}
+@media print{.printfab{display:none !important;}}
+
 /* ---------- 航线地图 ---------- */
 .mapbox{background:#fff;border:4px solid var(--deep);border-radius:24px;padding:12px;box-shadow:0 8px 0 rgba(18,94,143,.12);}
 .mapbox svg{width:100%;height:auto;display:block;border-radius:14px;}
@@ -373,10 +416,12 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
     <a href="#plan">📅 三天计划</a>
     <a href="#geo">🌋 济州地理课</a>
     <a href="#tour">🔧 幕后之旅</a>
+    <a href="#eng">🇬🇧 英语分级</a>
     <a href="#quiz">⭐ 闯关问答</a>
     <a href="#match">🧩 配对游戏</a>
     <a href="#stamp">📛 印章本</a>
     <a href="#cert">🎓 结业证书</a>
+    <a href="爱达魔都号研学手册-打印版.html" target="_blank" rel="noopener">🖨️ 打印版</a>
   </div>
 </nav>
 
@@ -1076,10 +1121,39 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
   </div>
 </section>
 
+<!-- ===== 英语分级 ===== -->
+<section class="sec" id="eng">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">7</span><h2 class="tape">English Levels · 英语分级阅读</h2></div>
+    <p class="sub">从单词起步,到句子,再到小故事,一级一级往上爬。点击就能<b>听发音</b>哦!</p>
+    <div class="engbar">
+      <span class="level-tag l1" id="lv1">🌱 Level 1 · 10 词</span>
+      <span class="level-tag l2" id="lv2">🌿 Level 2 · 6 句</span>
+      <span class="level-tag l3" id="lv3">🌳 Level 3 · 小故事</span>
+    </div>
+
+    <div class="geocard">
+      <h3>🌱 Level 1 · 大船 10 词(点卡片:听发音 + 看中文)</h3>
+      <div class="word-grid" id="words"></div>
+    </div>
+
+    <div class="geocard" style="margin-top:14px">
+      <h3>🌿 Level 2 · 我读句子(点句子听发音)</h3>
+      <div id="srows"></div>
+    </div>
+
+    <div class="geocard" style="margin-top:14px">
+      <h3>🌳 Level 3 · 小故事 My Cruise Trip</h3>
+      <p style="font-size:14px;font-weight:700;color:#5A6B7F">👆 点句子听整句 · 点<b style="color:var(--deep)">蓝色生词</b>翻开单词卡</p>
+      <div id="story"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 闯关问答 ===== -->
 <section class="sec" id="quiz">
   <div class="wrap">
-    <div class="sechead"><span class="secno">7</span><h2 class="tape">闯关问答 · 小船长考考你</h2></div>
+    <div class="sechead"><span class="secno">8</span><h2 class="tape">闯关问答 · 小船长考考你</h2></div>
     <p class="sub">答对一题,就点亮一颗小星星 ⭐</p>
     <div class="quizbox">
       <div class="qcard">
@@ -1100,7 +1174,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
 <!-- ===== 配对游戏 ===== -->
 <section class="sec" id="match">
   <div class="wrap">
-    <div class="sechead"><span class="secno">8</span><h2 class="tape">连一连 · 谁是谁的好朋友</h2></div>
+    <div class="sechead"><span class="secno">9</span><h2 class="tape">连一连 · 谁是谁的好朋友</h2></div>
     <p class="sub">先点左边一个,再点右边一个。配对成功就亮起来!左边有 6 张“名片”,右边是它们的好朋友。</p>
     <div class="matchwrap">
       <div class="mcol">
@@ -1121,7 +1195,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
 <!-- ===== 印章本 ===== -->
 <section class="sec" id="stamp">
   <div class="wrap">
-    <div class="sechead"><span class="secno">9</span><h2 class="tape">我的印章本</h2></div>
+    <div class="sechead"><span class="secno">10</span><h2 class="tape">我的印章本</h2></div>
     <p class="sub">每完成一个小任务,就点一下印章,“嗒!”盖上一个漂亮的章。集满 7 枚,解锁结业证书!</p>
     <div class="stampprogress"><div class="bar" id="stampBar"></div></div>
     <div class="stamps" id="stampGrid"></div>
@@ -1131,7 +1205,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
 <!-- ===== 证书 ===== -->
 <section class="sec" id="cert">
   <div class="wrap certwrap">
-    <div class="sechead" style="justify-content:center"><span class="secno">10</span><h2 class="tape">全能小航海家结业证书</h2></div>
+    <div class="sechead" style="justify-content:center"><span class="secno">11</span><h2 class="tape">全能小航海家结业证书</h2></div>
     <p class="sub" style="margin-left:0">在船票上写好你的名字,点“颁发证书”,然后可以打印出来贴在墙上!</p>
     <button class="btn coral" id="makeCert" style="font-size:18px">🏅 颁发我的结业证书</button>
     <div class="cert" id="certCard" style="display:none">
@@ -1160,6 +1234,21 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
     </div>
   </div>
 </section>
+
+<div class="sheet" id="wordSheet" style="display:none">
+  <div class="sheet-card">
+    <div class="sh-en" id="sEn"></div>
+    <div class="sh-ph" id="sPh"></div>
+    <div class="sh-cn" id="sCn"></div>
+    <div class="sh-ex" id="sEx"></div>
+    <div class="shbtns">
+      <button class="btn aqua" id="sheetSpeak">🔊 再听一遍</button>
+      <button class="btn" id="sheetClose">收起来 ✕</button>
+    </div>
+  </div>
+</div>
+
+<button class="printfab" id="printFab" title="打印 / 保存为 PDF">🖨️</button>
 
 <footer>
   <svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" style="height:44px">
@@ -1821,6 +1910,180 @@ document.querySelectorAll('.mbadge').forEach(m => {
     }
   });
 });
+
+/* ============ 英语分级 ============ */
+store.en = store.en || {};
+let enVoice = null;
+function prepareEnVoice() {
+  if (!('speechSynthesis' in window)) return;
+  const vs = window.speechSynthesis.getVoices();
+  enVoice = vs.find(v => /^en-US$/i.test(v.lang)) || vs.find(v => /^en[-_]/i.test(v.lang)) || null;
+}
+if ('speechSynthesis' in window) {
+  prepareEnVoice();
+  window.speechSynthesis.addEventListener?.('voiceschanged', prepareEnVoice);
+}
+function speakEn(text) {
+  try {
+    if (!('speechSynthesis' in window)) { toast('这个浏览器不支持发音'); return; }
+    const synth = window.speechSynthesis;
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US'; u.rate = 0.82; u.pitch = 1;
+    if (enVoice) u.voice = enVoice;
+    synth.resume();
+    synth.speak(u);
+  } catch (e) { toast('发音播放不了,跟着音标读一读!'); }
+}
+
+const EN_WORDS = [
+  ['ship','/ʃɪp/','轮船','Adora Magic City is a big ship. 爱达魔都号是一艘大船。'],
+  ['sea','/siː/','大海','The sea is blue. 大海是蓝色的。'],
+  ['cruise','/kruːz/','邮轮之旅','We go on a cruise. 我们坐邮轮去旅行。'],
+  ['island','/ˈaɪlənd/','岛屿','Jeju is an island. 济州是一座岛屿。'],
+  ['wave','/weɪv/','海浪','The waves are big. 海浪好大呀。'],
+  ['deck','/dek/','甲板','I play on the deck. 我在甲板上玩。'],
+  ['anchor','/ˈæŋkər/','锚','The ship drops the anchor. 大船放下锚。'],
+  ['orange','/ˈɔːrɪndʒ/','橘子','Jeju oranges are sweet. 济州橘子很甜。'],
+  ['volcano','/vɒlˈkeɪnəʊ/','火山','Jeju is a volcano island. 济州是火山岛。'],
+  ['lighthouse','/ˈlaɪthaʊs/','灯塔','The lighthouse is bright. 灯塔亮亮的。']
+];
+const wgridEl = document.getElementById('words');
+EN_WORDS.forEach((w, i) => {
+  const d = document.createElement('div');
+  d.className = 'word' + (store.en['w' + i] ? ' learned' : '');
+  d.innerHTML = `<div class="en">${i + 1}. ${w[0]}</div><div class="ph">${w[1]}</div><div class="cn">${store.en['w' + i] ? w[2] : '? 点我'}</div><div class="spk">🔊 点我读</div>`;
+  d.addEventListener('click', () => {
+    d.classList.add('learned');
+    d.querySelector('.cn').textContent = w[2];
+    store.en['w' + i] = true; save();
+    speakEn(w[0]);
+    refreshEnLevels();
+  });
+  wgridEl.appendChild(d);
+});
+
+const EN_SENTS = [
+  ['The ship is big.', '这艘船好大呀。'],
+  ['We sail from Shanghai.', '我们从上海出发。'],
+  ['I see the blue sea.', '我看见蓝色的大海。'],
+  ['Jeju is a volcano island.', '济州岛是火山岛。'],
+  ['The orange is sweet.', '橘子甜甜的。'],
+  ['We sail back home.', '我们航行回家。']
+];
+const srowsEl = document.getElementById('srows');
+EN_SENTS.forEach((s, i) => {
+  const d = document.createElement('div');
+  d.className = 'srow' + (store.en['s' + i] ? ' heard' : '');
+  d.innerHTML = `<span class="sen">${s[0]}</span><span class="cn">${s[1]}</span><span class="play">${store.en['s' + i] ? '✅ 读过' : '🔊 点我读'}</span>`;
+  d.addEventListener('click', () => {
+    d.classList.add('heard');
+    d.querySelector('.play').textContent = '✅ 读过';
+    store.en['s' + i] = true; save();
+    speakEn(s[0]);
+    refreshEnLevels();
+  });
+  srowsEl.appendChild(d);
+});
+
+const EN_L3WORDS = {
+  cruise: ['cruise', '/kruːz/', '邮轮之旅', 'I love my cruise trip. 我爱我的邮轮之旅。'],
+  ship: ['ship', '/ʃɪp/', '轮船', 'The ship is as big as a city. 这艘船像一座城市那么大。'],
+  Shanghai: ['Shanghai', '/ˌʃæŋˈhaɪ/', '上海', 'We leave from Shanghai. 我们从上海出发。'],
+  waves: ['waves', '/weɪvz/', '海浪', 'The waves splash. 海浪哗哗地拍。'],
+  island: ['island', '/ˈaɪlənd/', '岛屿', 'Jeju is an island in Korea. 济州是韩国的一座岛。'],
+  volcano: ['volcano', '/vɒlˈkeɪnəʊ/', '火山', 'A volcano made this island. 火山造出了这座岛。'],
+  oranges: ['oranges', '/ˈɔːrɪndʒɪz/', '橘子', 'Jeju oranges are juicy. 济州橘子水汪汪的。'],
+  sail: ['sail', '/seɪl/', '航行', 'We sail back to Shanghai. 我们航行回上海。']
+};
+const EN_STORY = [
+  [{ k: 'cruise', t: 'My cruise trip' }, 'is', 'so', 'fun', '!'],
+  ['I', 'am', 'on', 'a', 'big', { k: 'ship', t: 'ship' }, '.'],
+  ['We', 'leave', 'from', { k: 'Shanghai', t: 'Shanghai' }, '.'],
+  ['The', 'sea', 'is', 'blue', ',', 'and', 'the', { k: 'waves', t: 'waves' }, 'are', 'big', '.'],
+  ['We', 'go', 'to', { k: 'island', t: 'Jeju island' }, '.'],
+  [{ k: 'volcano', t: 'A volcano' }, 'made', 'this', { k: 'island', t: 'island' }, ',', 'and', { k: 'oranges', t: 'oranges' }, 'grow', 'here', '.'],
+  ['We', { k: 'sail', t: 'sail' }, 'back', 'to', 'Shanghai', '.'],
+  ['Goodbye', ',', 'Adora', 'Magic', 'City', '!']
+];
+let curEnWord = null;
+function enSentText(tokens) {
+  let s = '';
+  tokens.forEach(t => {
+    const w = typeof t === 'object' ? t.t : t;
+    s += (!s || ',."\u2019!?'.includes(w[0])) ? w : ' ' + w;
+  });
+  return s.trim();
+}
+function renderEnStory() {
+  const box = document.getElementById('story');
+  box.innerHTML = EN_STORY.map((tokens, i) => {
+    const inner = tokens.map(t => {
+      if (typeof t === 'object') {
+        return `<span class="wd"><span class="nw${store.en['n' + t.k] ? ' learned' : ''}" data-w="${t.k}">${t.t}</span></span>`;
+      }
+      const punct = /^[.,!?"'（）]+$/.test(t) ? ' punct' : '';
+      return `<span class="wd${punct}">${t}</span>`;
+    }).join('');
+    return `<div class="storyline" data-i="${i}">${inner}</div>`;
+  }).join('');
+  box.querySelectorAll('.storyline').forEach((ln, i) => {
+    if (store.en['st' + i]) ln.classList.add('done');
+    ln.addEventListener('click', e => {
+      if (e.target.classList.contains('nw')) return;
+      ln.classList.add('done');
+      store.en['st' + i] = true; save();
+      speakEn(enSentText(EN_STORY[i]));
+      refreshEnLevels();
+    });
+  });
+  box.querySelectorAll('.nw').forEach(n => {
+    n.addEventListener('click', () => {
+      const key = n.dataset.w;
+      store.en['n' + key] = true; save();
+      n.classList.add('learned');
+      openEnSheet(key);
+      refreshEnLevels();
+    });
+  });
+}
+function openEnSheet(key) {
+  const d = EN_L3WORDS[key];
+  if (!d) return;
+  curEnWord = key;
+  document.getElementById('sEn').textContent = d[0];
+  document.getElementById('sPh').textContent = d[1];
+  document.getElementById('sCn').textContent = d[2];
+  document.getElementById('sEx').textContent = d[3];
+  document.getElementById('wordSheet').style.display = 'grid';
+  ding();
+}
+function refreshEnLevels() {
+  const en = store.en || {};
+  const wCount = Object.keys(en).filter(k => /^w\d+$/.test(k)).length;
+  const sCount = Object.keys(en).filter(k => /^s\d+$/.test(k)).length;
+  const nCount = Object.keys(en).filter(k => /^n/.test(k)).length;
+  const stCount = Object.keys(en).filter(k => /^st\d+$/.test(k)).length;
+  const lv1 = wCount >= 10, lv2 = sCount >= 6;
+  const lv3 = stCount >= EN_STORY.length && nCount >= Object.keys(EN_L3WORDS).length;
+  $('#lv1').classList.toggle('done', lv1);
+  $('#lv2').classList.toggle('done', lv2);
+  $('#lv3').classList.toggle('done', lv3);
+  if (lv3 && !en.lv3Done) {
+    en.lv3Done = true; save();
+    setTimeout(() => { confettiBurst(80); toast('🇬🇧 Level 3 通关!小故事读完啦,你是英语小船长!'); }, 300);
+  }
+}
+renderEnStory();
+refreshEnLevels();
+
+/* ============ 单词卡弹层 ============ */
+$('#sheetSpeak').addEventListener('click', () => speakEn(curEnWord ? EN_L3WORDS[curEnWord][0] : ''));
+$('#sheetClose').addEventListener('click', () => { document.getElementById('wordSheet').style.display = 'none'; });
+document.getElementById('wordSheet').addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.style.display = 'none'; });
+
+/* ============ 打印 ============ */
+$('#printFab').addEventListener('click', () => { window.print(); });
 
 /* ============ 结业证书 ============ */
 function makeCert() {

@@ -1,0 +1,354 @@
+<!-- AI生成 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>爱达魔都号研学手册 · 打印版</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; color:#333; background:#eef2f6; }
+  .page { width:210mm; height:297mm; background:#fff; margin:10px auto; padding:15mm 15mm; position:relative; overflow:hidden; page-break-after:always; }
+  .tag { display:inline-block; background:#4a90d9; color:#fff; font-size:12px; padding:3px 14px; border-radius:20px; letter-spacing:2px; }
+  .tag.green { background:#4caf7d; }
+  .tag.coral { background:#e0654d; }
+  .tag.orange { background:#e88b52; }
+  h1 { font-size:36px; color:#125e8f; margin:7mm 0 2mm; }
+  h2 { font-size:21px; color:#125e8f; margin:5mm 0 2.5mm; }
+  h3 { font-size:16px; margin:3mm 0 1.5mm; }
+  .sub { color:#888; font-size:13px; }
+  p, li { font-size:14px; line-height:1.8; }
+  .box { background:#f2f8fc; border:2px dashed #9ec8f0; border-radius:12px; padding:4.5mm; margin:3.5mm 0; }
+  .box.g { background:#f2faf5; border-color:#8fd4ae; }
+  .box.c { background:#fdf3f1; border-color:#f2b0a4; }
+  .fact { display:flex; gap:3.5mm; align-items:flex-start; margin:2.5mm 0; }
+  .fact .no { flex:none; width:23px; height:23px; border-radius:50%; background:#4a90d9; color:#fff; text-align:center; line-height:23px; font-size:12.5px; }
+  .fact.g .no { background:#4caf7d; }
+  .fact.c .no { background:#e0654d; }
+  table { width:100%; border-collapse:collapse; margin:3mm 0; }
+  th, td { border:1.5px solid #bcd7ef; padding:2.5mm 2mm; font-size:13px; text-align:center; }
+  th { background:#e9f3fb; color:#125e8f; }
+  .check { display:inline-block; width:15px; height:15px; border:2px solid #555; border-radius:4px; vertical-align:-2px; margin-right:2mm; }
+  .writeline { border-bottom:1.5px solid #999; display:inline-block; min-width:36mm; height:18px; vertical-align:bottom; }
+  .drawbox { width:100%; height:42mm; border:2px dashed #bbb; border-radius:10px; margin:3mm 0; }
+  .drawbox.tall { height:60mm; }
+  .star { font-size:20px; color:#ccc; letter-spacing:2px; }
+  .route { font-size:17px; font-weight:bold; color:#125e8f; margin:3mm 0; }
+  .route .a { color:#e0654d; }
+  .footer { position:absolute; bottom:7mm; left:0; right:0; text-align:center; color:#bbb; font-size:11px; }
+  .big-emoji { font-size:56px; text-align:center; margin:4mm 0; letter-spacing:8px; }
+  .mini { font-size:12px; color:#888; }
+  .line-row { margin:2.5mm 0; font-size:14px; }
+</style>
+</head>
+<body>
+
+<!-- ================= 第1页 封面 ================= -->
+<div class="page">
+  <div style="text-align:center; margin-top:16mm;">
+    <span class="tag coral">小小航海家 · 研学手册</span>
+    <h1>爱达魔都号</h1>
+    <p class="sub">中国第一艘国产大型邮轮 · 三天两晚奇妙之旅</p>
+    <div class="big-emoji">🚢 🌊 🗻 🍊 ⭐</div>
+    <p class="route">上海 ➜ <span class="a">济州岛</span> ➜ 上海</p>
+    <div class="box" style="text-align:left; width:150mm; margin:6mm auto;">
+      <p><b>小船长姓名：</b><span class="writeline" style="min-width:50mm;"></span></p>
+      <p style="margin-top:2.5mm;"><b>登船日期：</b><span class="writeline" style="min-width:22mm;"></span> 年 <span class="writeline" style="min-width:14mm;"></span> 月 <span class="writeline" style="min-width:14mm;"></span> 日</p>
+      <p style="margin-top:2.5mm;"><b>船票号码：</b><span class="writeline" style="min-width:34mm;"></span></p>
+      <p style="margin-top:2.5mm;"><b>我的登船港口：</b>上海 · 吴淞口国际邮轮港</p>
+    </div>
+    <p class="sub" style="margin-top:7mm;">完成任务手册里的挑战，集齐印章，成为“全能小航海家”！</p>
+    <div style="margin-top:6mm;">
+      <p class="mini" style="margin-bottom:2mm;">每日印章（涂色或盖章）：</p>
+      <span style="display:inline-block; width:20mm; height:20mm; border:2px dashed #999; border-radius:50%; margin-right:4mm;"></span>
+      <span style="display:inline-block; width:20mm; height:20mm; border:2px dashed #999; border-radius:50%; margin-right:4mm;"></span>
+      <span style="display:inline-block; width:20mm; height:20mm; border:2px dashed #999; border-radius:50%;"></span>
+    </div>
+  </div>
+  <div class="footer">第 1 页 · 爱达魔都号研学手册</div>
+</div>
+
+<!-- ================= 第2页 认识大船 ================= -->
+<div class="page">
+  <span class="tag">知识篇 · 你知道吗？</span>
+  <h2>认识爱达魔都号</h2>
+  <table>
+    <tr><th>船长</th><th>总吨位</th><th>能载多少人</th><th>客房</th><th>甲板</th></tr>
+    <tr><td>323.6 米</td><td>13.55 万吨</td><td>5246 人</td><td>2125 间</td><td>16 层</td></tr>
+  </table>
+  <div class="box">
+    <div class="fact"><div class="no">1</div><p><b>为什么大船不会沉？</b>因为船里充满空气，海水会把船“托”起来，这叫<b>浮力</b>。空气越多，浮力越大！</p></div>
+    <div class="fact"><div class="no">2</div><p><b>没有轮子怎么跑？</b>发动机转动，带动船尾的<b>螺旋桨</b>把水往后推，船就前进啦！</p></div>
+    <div class="fact"><div class="no">3</div><p><b>为什么叫“魔都号”？</b>“魔都”是上海的昵称；“爱达”是 AIDA（爱达邮轮）。名字里就写着家乡上海！</p></div>
+  </div>
+  <h3>🧭 船上有这些地方，找到了就打个勾</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:2mm;">
+    <p><span class="check"></span>主餐厅</p><p><span class="check"></span>游泳池</p>
+    <p><span class="check"></span>大剧场</p><p><span class="check"></span>儿童俱乐部</p>
+    <p><span class="check"></span>医务室</p><p><span class="check"></span>观景甲板</p>
+  </div>
+  <div class="box g">
+    <p><b>我的观察：</b>我最喜欢船上的 <span class="writeline" style="min-width:60mm;"></span> 因为 <span class="writeline" style="min-width:40mm;"></span></p>
+    <p style="margin-top:2mm;"><b>画一画</b>：把爱达魔都号画出来（或者贴一张照片）</p>
+    <div class="drawbox tall"></div>
+  </div>
+  <div class="footer">第 2 页 · 爱达魔都号研学手册</div>
+</div>
+
+<!-- ================= 第3页 任务清单 ================= -->
+<div class="page">
+  <span class="tag green">任务篇 · 全能小航海家</span>
+  <h2>我的探险目标</h2>
+  <p class="sub">完成以下任务，集齐 13 个勾勾，成为全能小航海家！</p>
+  <div class="box g">
+    <h3>🔭 海洋观察家</h3>
+    <p><span class="check"></span>在甲板上找到 3 种不同的海洋颜色</p>
+    <p><span class="check"></span>记录一次日出或日落的天空颜色变化</p>
+  </div>
+  <div class="box">
+    <h3>🌏 文化小使者</h3>
+    <p><span class="check"></span>学会 3 句韩语（看第 5 页的小课堂）</p>
+    <p><span class="check"></span>品尝 2 种韩国特色美食</p>
+    <p><span class="check"></span>画一画济州岛的“石头爷爷”</p>
+  </div>
+  <div class="box g">
+    <h3>⚙️ 船舶工程师</h3>
+    <p><span class="check"></span>知道大船为什么不沉（想想第 2 页的秘密）</p>
+    <p><span class="check"></span>找到邮轮的“方向盘”和“发动机”</p>
+  </div>
+  <div class="box">
+    <h3>🔬 自然科学家</h3>
+    <p><span class="check"></span>在济州岛捡一块特别的火山石</p>
+    <p><span class="check"></span>观察济州岛的植物，说说它和上海的不同</p>
+  </div>
+  <div class="box g">
+    <h3>🍽️ 美食探险家</h3>
+    <p><span class="check"></span>画出最喜欢的一道船上美食</p>
+    <p><span class="check"></span>记录每天吃到的新水果</p>
+  </div>
+  <div class="box">
+    <h3>🧭 小小船长</h3>
+    <p><span class="check"></span>向一位船员问好，说声“谢谢”</p>
+    <p><span class="check"></span>拍一张和爱达魔都号的合影</p>
+  </div>
+  <div class="box c">
+    <h3>🧳 我的探险装备（准备好了就打个勾）</h3>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr;">
+      <p><span class="check"></span>行李箱</p><p><span class="check"></span>望远镜</p><p><span class="check"></span>遮阳帽</p>
+      <p><span class="check"></span>双肩背包</p><p><span class="check"></span>泳衣</p><p><span class="check"></span>记录本</p>
+    </div>
+  </div>
+  <div class="footer">第 3 页 · 爱达魔都号研学手册</div>
+</div>
+
+<!-- ================= 第4页 航线与行程 ================= -->
+<div class="page">
+  <span class="tag">行程篇 · 三天两晚</span>
+  <h2>我们的航线与三天计划</h2>
+  <p class="route">上海吴淞口 ➜ 海上航行约 500 多公里 ➜ <span class="a">济州岛</span> ➜ 回到上海</p>
+  <div class="box">
+    <h3>📅 第 1 天 · 出发！上海（下午登船，傍晚起航）</h3>
+    <p><span class="check"></span>找到我们的房间，房号是 <span class="writeline" style="min-width:20mm;"></span></p>
+    <p><span class="check"></span>参加安全演习，学会穿救生衣</p>
+    <p><span class="check"></span>看一次海上的日落</p>
+    <p><span class="check"></span>找到游泳池和大剧院，画一张小船地图</p>
+    <p style="margin-top:1.5mm;">今日天气：<span class="check"></span>☀️ 晴　<span class="check"></span>🌤️ 多云　<span class="check"></span>🌧️ 下雨</p>
+  </div>
+  <div class="box g">
+    <h3>🗻 第 2 天 · 探险！济州岛（早上靠岸，傍晚再出发）</h3>
+    <p><span class="check"></span>找到一位“石头爷爷”并拍照</p>
+    <p><span class="check"></span>吃到一颗济州橘子</p>
+    <p><span class="check"></span>在海边捡到 1 个好看的贝壳</p>
+    <p><span class="check"></span>对济州岛的朋友说一句韩语“你好”</p>
+    <p style="margin-top:1.5mm;">今日天气：<span class="check"></span>☀️ 晴　<span class="check"></span>🌤️ 多云　<span class="check"></span>🌧️ 下雨</p>
+  </div>
+  <div class="box">
+    <h3>🏠 第 3 天 · 回家！上海（在海上睡一觉，中午到家）</h3>
+    <p><span class="check"></span>看一次海上的日出</p>
+    <p><span class="check"></span>完成这本研学手册的全部任务</p>
+    <p><span class="check"></span>和家人分享一件最开心的事</p>
+    <p style="margin-top:1.5mm;">今日天气：<span class="check"></span>☀️ 晴　<span class="check"></span>🌤️ 多云　<span class="check"></span>🌧️ 下雨</p>
+  </div>
+  <div class="box c">
+    <p><b>想想看：</b>去济州岛的时候，船是往哪个方向开？<span class="writeline" style="min-width:40mm;"></span></p>
+  </div>
+  <div class="footer">第 4 页 · 爱达魔都号研学手册</div>
+</div>
+
+<!-- ================= 第5页 济州地理 ================= -->
+<div class="page">
+  <span class="tag green">地理篇 · 济州岛小课堂</span>
+  <h2>济州岛地理小课堂</h2>
+  <div class="box g">
+    <div class="fact g"><div class="no">1</div><p><b>火山岛：</b>很久以前海底火山喷发，岩浆一层层堆出了这座岛。济州岛是<b>韩国最大的岛</b>。</p></div>
+    <div class="fact g"><div class="no">2</div><p><b>汉拿山：</b>韩国最高的山，高 1950 米，山顶有一个火山湖叫“白鹿潭”，它是一座睡着了的火山。</p></div>
+    <div class="fact g"><div class="no">3</div><p><b>石头爷爷：</b>济州岛的守护神雕像，圆眼睛、大鼻子。摸摸他的鼻子，会带来好运哦！</p></div>
+    <div class="fact g"><div class="no">4</div><p><b>济州橘子：</b>济州岛满山都是橘子园，橘子又大又甜，是岛上的宝贝水果。</p></div>
+    <div class="fact g"><div class="no">5</div><p><b>海女奶奶：</b>不用氧气瓶就能潜到海底抓海胆、鲍鱼的奶奶们，她们的手艺是世界文化遗产。</p></div>
+    <div class="fact g"><div class="no">6</div><p><b>三多：</b>济州岛“石头多、风多、女人多”，你还能看出别的“多”吗？</p></div>
+  </div>
+  <h3>🗣️ 韩语小课堂 · 见到济州岛的朋友这样说</h3>
+  <table>
+    <tr><th>韩语</th><th>读音（谐音）</th><th>意思</th></tr>
+    <tr><td>안녕하세요</td><td>安宁哈塞哟</td><td>你好</td></tr>
+    <tr><td>감사합니다</td><td>卡姆撒哈姆尼达</td><td>谢谢</td></tr>
+    <tr><td>맛있어요</td><td>马西搜哟</td><td>真好吃</td></tr>
+    <tr><td>사랑해요</td><td>萨朗嘿哟</td><td>我爱你</td></tr>
+  </table>
+  <div class="box c">
+    <p><b>小任务：</b><span class="check"></span>在济州岛捡一块特别的<b>火山石</b>（带回家前问一问能不能带哦）</p>
+    <p style="margin-top:2mm;"><b>画一画</b>：你看到的“石头爷爷”</p>
+    <div class="drawbox"></div>
+  </div>
+  <div class="footer">第 5 页 · 爱达魔都号研学手册</div>
+</div>
+
+<!-- ================= 第6页 英语分级 ================= -->
+<div class="page">
+  <span class="tag">英语篇 · English Levels</span>
+  <h2>英语分级 · 大船小课堂</h2>
+  <p class="mini">从单词起步，到句子，再到小故事，一级一级往上爬。读一读、抄一抄、念给爸爸妈妈听。</p>
+  <h3>🌱 Level 1 · 大船 10 词</h3>
+  <table>
+    <tr><th>#</th><th>单词</th><th>音标</th><th>中文</th></tr>
+    <tr><td>1</td><td>ship</td><td>/ʃɪp/</td><td>轮船</td></tr>
+    <tr><td>2</td><td>sea</td><td>/siː/</td><td>大海</td></tr>
+    <tr><td>3</td><td>cruise</td><td>/kruːz/</td><td>邮轮之旅</td></tr>
+    <tr><td>4</td><td>island</td><td>/ˈaɪlənd/</td><td>岛屿</td></tr>
+    <tr><td>5</td><td>wave</td><td>/weɪv/</td><td>海浪</td></tr>
+    <tr><td>6</td><td>deck</td><td>/dek/</td><td>甲板</td></tr>
+    <tr><td>7</td><td>anchor</td><td>/ˈæŋkər/</td><td>锚</td></tr>
+    <tr><td>8</td><td>orange</td><td>/ˈɔːrɪndʒ/</td><td>橘子</td></tr>
+    <tr><td>9</td><td>volcano</td><td>/vɒlˈkeɪnəʊ/</td><td>火山</td></tr>
+    <tr><td>10</td><td>lighthouse</td><td>/ˈlaɪthaʊs/</td><td>灯塔</td></tr>
+  </table>
+  <h3>🌿 Level 2 · 我读句子</h3>
+  <table>
+    <tr><th>英文</th><th>中文</th></tr>
+    <tr><td>The ship is big.</td><td>这艘船好大呀。</td></tr>
+    <tr><td>We sail from Shanghai.</td><td>我们从上海出发。</td></tr>
+    <tr><td>I see the blue sea.</td><td>我看见蓝色的大海。</td></tr>
+    <tr><td>Jeju is a volcano island.</td><td>济州岛是火山岛。</td></tr>
+    <tr><td>The orange is sweet.</td><td>橘子甜甜的。</td></tr>
+    <tr><td>We sail back home.</td><td>我们航行回家。</td></tr>
+  </table>
+  <div class="footer">第 6 页 · 爱达魔都号研学手册</div>
+</div>
+
+<!-- ================= 第7页 英语故事 ================= -->
+<div class="page">
+  <span class="tag">英语篇 · Level 3</span>
+  <h2>🌳 小故事 · My Cruise Trip</h2>
+  <p class="mini">读给小船长听：一句一句读，读完一个故事，你就完成 Level 3 挑战啦！</p>
+  <div class="box" style="background:#fdf9ef; border-color:#e8d9a8;">
+    <p style="font-size:16px; line-height:2.2;">
+      My cruise trip is so fun!<br>
+      I am on a big ship.<br>
+      We leave from Shanghai.<br>
+      The sea is blue, and the waves are big.<br>
+      We go to Jeju island.<br>
+      A volcano made this island, and oranges grow here.<br>
+      We sail back to Shanghai.<br>
+      Goodbye, Adora Magic City!
+    </p>
+  </div>
+  <h3>📖 生词小卡片（抄一抄）</h3>
+  <table>
+    <tr><th>单词</th><th>音标</th><th>中文</th></tr>
+    <tr><td>cruise</td><td>/kruːz/</td><td>邮轮之旅</td></tr>
+    <tr><td>waves</td><td>/weɪvz/</td><td>海浪</td></tr>
+    <tr><td>island</td><td>/ˈaɪlənd/</td><td>岛屿</td></tr>
+    <tr><td>volcano</td><td>/vɒlˈkeɪnəʊ/</td><td>火山</td></tr>
+    <tr><td>oranges</td><td>/ˈɔːrɪndʒɪz/</td><td>橘子</td></tr>
+    <tr><td>sail</td><td>/seɪl/</td><td>航行</td></tr>
+  </table>
+  <div class="box c">
+    <p><b>读后小挑战</b>：圈一圈，故事里的大船是从哪里出发的？</p>
+    <p>A. 北京　<span style="display:inline-block;width:10mm;height:10mm;border:2px solid #555;border-radius:50%;vertical-align:-1px;"></span>　B. 上海　<span style="display:inline-block;width:10mm;height:10mm;border:2px solid #555;border-radius:50%;vertical-align:-1px;"></span>　C. 广州　<span style="display:inline-block;width:10mm;height:10mm;border:2px solid #555;border-radius:50%;vertical-align:-1px;"></span></p>
+    <p style="margin-top:2mm;"><b>我最喜欢的英文句子：</b><span class="writeline" style="min-width:70mm;"></span></p>
+  </div>
+  <div class="footer">第 7 页 · 爱达魔都号研学手册</div>
+</div>
+
+<!-- ================= 第8页 幕后之旅 ================= -->
+<div class="page">
+  <span class="tag coral">特别挑战 · 幕后之旅（高级任务卡）</span>
+  <h2>潜入巨轮的心脏！</h2>
+  <p><b>⚠️ 仅限参加“幕后之旅”时使用。</b>工程师姓名：<span class="writeline" style="min-width:40mm;"></span>　任务日期：<span class="writeline" style="min-width:16mm;"></span> 月 <span class="writeline" style="min-width:16mm;"></span> 日　任务等级：⭐⭐⭐⭐⭐</p>
+  <div class="box">
+    <h3>🔧 任务 1 · 寻找“海上发动机” · 动力中心大发现</h3>
+    <p>观察目标：主发动机舱。找到最大的机器，听听它的声音。</p>
+    <p>声音像：<span class="check"></span>打雷　<span class="check"></span>鲸鱼叫　<span class="check"></span>其他</p>
+    <p>温度感受：<span class="check"></span>很热　<span class="check"></span>温暖　<span class="check"></span>凉爽</p>
+    <p>工作人员穿什么：<span class="check"></span>耳罩　<span class="check"></span>手套　<span class="check"></span>安全帽　<span class="check"></span>其他</p>
+    <p>我的记录：发动机 <span class="writeline" style="min-width:12mm;"></span> 台　控制屏幕 <span class="writeline" style="min-width:12mm;"></span> 个　管道颜色 <span class="writeline" style="min-width:20mm;"></span> 色</p>
+  </div>
+  <div class="box g">
+    <h3>🧭 任务 2 · 拜访“船长的大脑” · 驾驶台探秘</h3>
+    <p>观察目标：驾驶室（舵楼 / 舰桥）。数一数船长面前有多少个屏幕：<span class="writeline" style="min-width:14mm;"></span> 个</p>
+    <p>雷达屏幕像：<span class="check"></span>蜘蛛网　<span class="check"></span>地图　<span class="check"></span>其他</p>
+    <p>看到海图了吗？<span class="check"></span>是　<span class="check"></span>否</p>
+    <p>找到“船舵”（方向盘），画出它的形状：</p>
+    <div class="drawbox" style="height:34mm;"></div>
+    <p>最想问船长的问题：<span class="writeline" style="min-width:90mm;"></span></p>
+    <p>船长的回答：<span class="writeline" style="min-width:90mm;"></span></p>
+  </div>
+  <div class="box c">
+    <h3>🎤 任务 3 · 采访工程师</h3>
+    <p>至少问 3 个问题：<span class="check"></span>您每天最重要的工作是什么？　<span class="check"></span>邮轮上最精密的仪器是什么？　<span class="check"></span>遇到大风浪怎么办？　<span class="check"></span>您最喜欢邮轮的哪个部分？　<span class="check"></span>当工程师要学什么？</p>
+    <p>最重要的收获：<span class="writeline" style="min-width:100mm;"></span></p>
+    <p>工程师签名留言：<span class="writeline" style="min-width:70mm;"></span></p>
+  </div>
+  <div class="footer">第 8 页 · 爱达魔都号研学手册</div>
+</div>
+
+<!-- ================= 第9页 勋章与成长 ================= -->
+<div class="page">
+  <span class="tag green">成就篇 · 勋章与成长</span>
+  <h2>技能勋章挑战（做到了就涂色 / 打勾）</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:3mm;">
+    <div class="box g"><p><span class="check"></span><b>🛍️ 购物小助手</b><br><span class="mini">帮家人挑一件纪念品：<span class="writeline" style="min-width:34mm;"></span></span></p></div>
+    <div class="box g"><p><span class="check"></span><b>🏃 运动场健将</b><br><span class="mini">在运动场活动 <span class="writeline" style="min-width:10mm;"></span> 分钟</span></p></div>
+    <div class="box g"><p><span class="check"></span><b>📷 观景台摄影师</b><br><span class="mini">拍 3 张不同时间的海景：早上/中午/傍晚</span></p></div>
+    <div class="box g"><p><span class="check"></span><b>🚑 急救小卫士</b><br><span class="mini">找到医务室，学会向船员呼救</span></p></div>
+    <div class="box g"><p><span class="check"></span><b>🌤️ 气象观察员</b><br><span class="mini">把 3 天的天气都记下来（看第 4 页）</span></p></div>
+    <div class="box g"><p><span class="check"></span><b>🐚 探险收藏家</b><br><span class="mini">捡到 1 个贝壳 + 1 块火山石</span></p></div>
+  </div>
+  <h3>📈 我的成长记录（出发前 / 回家后，涂色星星）</h3>
+  <table>
+    <tr><th>能力</th><th>出发前</th><th>回家后</th></tr>
+    <tr><td>勇气值</td><td class="star">☆☆☆☆☆</td><td class="star">☆☆☆☆☆</td></tr>
+    <tr><td>知识值</td><td class="star">☆☆☆☆☆</td><td class="star">☆☆☆☆☆</td></tr>
+    <tr><td>观察力</td><td class="star">☆☆☆☆☆</td><td class="star">☆☆☆☆☆</td></tr>
+    <tr><td>沟通力</td><td class="star">☆☆☆☆☆</td><td class="star">☆☆☆☆☆</td></tr>
+    <tr><td>独立性</td><td class="star">☆☆☆☆☆</td><td class="star">☆☆☆☆☆</td></tr>
+  </table>
+  <div class="box c">
+    <h3>💌 给爸爸妈妈的话</h3>
+    <p>谢谢爸爸妈妈带我去旅行！我最想说的是：<span class="writeline" style="min-width:120mm;"></span></p>
+    <p style="margin-top:2mm;">爱你们的：<span class="writeline" style="min-width:40mm;"></span>　日期：<span class="writeline" style="min-width:40mm;"></span></p>
+  </div>
+  <div class="footer">第 9 页 · 爱达魔都号研学手册</div>
+</div>
+
+<!-- ================= 第10页 证书 ================= -->
+<div class="page">
+  <div style="text-align:center; margin-top:30mm;">
+    <div style="font-size:44px;">🏅</div>
+    <h1 style="font-size:34px;">全能小航海家</h1>
+    <p style="font-size:18px; margin:6mm 0 2mm;">恭喜</p>
+    <p style="font-size:26px; font-weight:bold; color:#e0654d; border-bottom:2px dotted #e0654d; display:inline-block; padding:0 12mm;">小船长</p>
+    <p style="margin-top:6mm;">乘坐「爱达魔都号」完成 上海 ⇄ 济州岛 研学之旅</p>
+    <p>三天两晚 · 勇敢探索 · 收获满满</p>
+    <p style="margin-top:4mm; font-size:14px;">完成日期：<span class="writeline" style="min-width:50mm;"></span></p>
+    <div style="margin-top:10mm; display:flex; justify-content:space-between; font-size:13px;">
+      <span>家长签字：<span class="writeline" style="min-width:45mm;"></span></span>
+      <span>小船长签字：<span class="writeline" style="min-width:45mm;"></span></span>
+    </div>
+    <p style="margin-top:18mm; font-size:12px; color:#888;">爱达魔都号 · 中国第一艘国产大型邮轮 · 小小航海家加油！</p>
+  </div>
+  <div class="footer">第 10 页 · 爱达魔都号研学手册 · 完</div>
+</div>
+
+</body>
+</html>
