@@ -1,0 +1,782 @@
+<!-- AI生成 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>喜洲古镇研学手册 · Leon旅行日记</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  :root{
+    --xz-ink:#2f3d38;
+    --xz-blue:#2f6f8f;
+    --xz-teal:#3f8f7f;
+    --xz-green:#9db88b;
+    --xz-green-d:#7f9f6b;
+    --xz-yellow:#e7b554;
+    --xz-paper:#f3f6f0;
+    --xz-white:#fff;
+    --xz-grey:#6f7d76;
+    --xz-border:#c9d8cd;
+    --xz-shadow:#dbe7dd;
+  }
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; background:var(--xz-paper); color:var(--xz-ink); padding-bottom:70px; }
+  header { background:var(--xz-white); border-bottom:3px dashed var(--xz-border); padding:24px 20px 18px; }
+  header .in { max-width:760px; margin:0 auto; }
+  header .kicker { display:block; font-size:11px; font-weight:800; letter-spacing:.14em; color:var(--xz-blue); margin-bottom:5px; }
+  header h1 { font-size:25px; }
+  header p { font-size:13px; color:var(--xz-grey); margin-top:4px; line-height:1.6; }
+  header .links { margin-top:10px; font-size:12.5px; display:flex; gap:8px; flex-wrap:wrap; }
+  header .links a { color:var(--xz-ink); text-decoration:none; background:#eef4ef; border:1.5px solid var(--xz-border); padding:5px 12px; border-radius:16px; min-height:34px; display:inline-flex; align-items:center; }
+  #progressWrap { margin-top:12px; background:#e8efe9; border-radius:10px; height:12px; overflow:hidden; }
+  #progressBar { height:100%; width:0; background:linear-gradient(90deg,var(--xz-teal),var(--xz-blue)); transition:width .4s; }
+  #progressText { font-size:12px; margin-top:4px; color:var(--xz-grey); }
+  .sec { display:none; padding:18px 16px; }
+  .sec.active { display:block; animation:fade .25s; }
+  @keyframes fade { from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
+  .sec-in { max-width:760px; margin:0 auto; }
+  .card { background:var(--xz-white); border-radius:15px 22px 17px 24px; padding:16px; margin-bottom:14px; border:2px solid var(--xz-border); box-shadow:4px 5px 0 var(--xz-shadow); }
+  .card h2 { font-size:17px; color:var(--xz-teal); margin-bottom:8px; }
+  .card h3 { font-size:15px; color:var(--xz-blue); margin:12px 0 6px; }
+  .card p, .card li { font-size:14px; line-height:1.8; }
+  .card img.photo { width:100%; border-radius:12px 18px 14px 20px; border:3px solid var(--xz-white); box-shadow:3px 4px 0 var(--xz-shadow); margin-bottom:4px; display:block; }
+  .card img.photo.tall { max-height:430px; object-fit:cover; object-position:center top; }
+  .credit { font-size:11px; color:var(--xz-grey); text-align:right; margin:0 0 8px; }
+  .fact { display:flex; gap:10px; padding:8px 0; border-bottom:1px dashed var(--xz-border); }
+  .fact:last-child { border:none; }
+  .fact .no { flex:none; width:22px; height:22px; border-radius:50%; background:var(--xz-teal); color:#fff; text-align:center; line-height:22px; font-size:12px; }
+  .checkrow { display:flex; align-items:center; gap:8px; padding:7px 0; font-size:14px; }
+  .checkrow input { width:20px; height:20px; accent-color:var(--xz-teal); flex:none; }
+  input[type=text], input[type=number], input[type=date] { width:100%; border:1.5px solid var(--xz-border); border-radius:10px; padding:9px 12px; font-size:14px; background:#fff; min-height:44px; color:var(--xz-ink); }
+  input:focus { outline:3px solid var(--xz-yellow); }
+  table { width:100%; border-collapse:collapse; font-size:13px; margin:8px 0; }
+  th, td { border:1px solid var(--xz-border); padding:6px 4px; text-align:center; }
+  th { background:#eef4ef; color:var(--xz-teal); }
+  td input { border:none; text-align:center; padding:4px 2px; font-size:13px; min-height:auto; }
+  .btn { display:block; width:100%; background:var(--xz-teal); color:#fff; border:2px solid var(--xz-blue); border-radius:12px; padding:12px; font-size:15px; margin-top:10px; box-shadow:3px 4px 0 var(--xz-shadow); min-height:46px; }
+  .btn:hover { background:var(--xz-blue); }
+  .btn.ghost { background:#fff; color:var(--xz-teal); }
+  .result { background:#eef4ef; border:1.5px dashed var(--xz-border); border-radius:10px; padding:10px; font-size:14px; margin-top:8px; }
+  .hero-frame { overflow:hidden; border-radius:15px 22px 17px 24px; border:3px solid var(--xz-white); box-shadow:5px 6px 0 var(--xz-shadow); margin-bottom:14px; }
+  .hero-frame svg { display:block; width:100%; height:auto; }
+  .tl { position:relative; padding-left:26px; }
+  .tl-item { position:relative; padding:2px 0 14px; }
+  .tl-item::before { content:""; position:absolute; left:-24px; top:7px; width:13px; height:13px; border-radius:50%; background:var(--xz-teal); border:2.5px solid #fff; box-shadow:0 0 0 2px var(--xz-teal); }
+  .tl-item:last-child { padding-bottom:2px; }
+  .tl::before { content:""; position:absolute; left:6px; top:10px; bottom:10px; width:3px; background:var(--xz-border); border-radius:2px; }
+  .tl-year { display:inline-block; background:var(--xz-blue); color:#fff; font-size:11px; padding:2px 11px; border-radius:20px; margin-bottom:4px; letter-spacing:.03em; }
+  .tl-item p { font-size:14px; line-height:1.8; color:var(--xz-ink); }
+  .mission { border-left:5px solid var(--xz-teal); background:#eef4ef; border-radius:0 12px 12px 0; padding:10px 12px; margin:10px 0 4px; font-size:14px; line-height:1.8; }
+  .mission b { color:var(--xz-teal); }
+  .word-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .word { background:#fff; border:2px solid var(--xz-border); border-radius:14px; padding:12px; text-align:center; cursor:pointer; transition:transform .15s; }
+  .word:active { transform:scale(.95); }
+  .word .en { font-size:18px; font-weight:bold; color:var(--xz-blue); }
+  .word .ph { font-size:11px; color:var(--xz-grey); }
+  .word .cn { font-size:13px; margin-top:2px; min-height:20px; }
+  .word .speak { font-size:11px; color:var(--xz-teal); margin-top:4px; }
+  .word.learned { background:#e8f4e4; border-color:var(--xz-green-d); }
+  .word.learned .en { color:var(--xz-green-d); }
+  .level-tag { display:inline-block; padding:3px 12px; border-radius:20px; font-size:12px; font-weight:700; margin-right:6px; color:#fff; }
+  .l1 { background:var(--xz-green-d); } .l2 { background:var(--xz-yellow); color:#6b4f1a; } .l3 { background:var(--xz-blue); }
+  .srow { display:flex; align-items:center; gap:10px; padding:11px 12px; background:#fff; border:2px solid var(--xz-border); border-radius:12px; margin-bottom:9px; cursor:pointer; flex-wrap:wrap; }
+  .srow .sen { font-size:19px; font-weight:bold; color:var(--xz-ink); flex:none; }
+  .srow .cn { font-size:12px; color:var(--xz-grey); flex:1 1 auto; min-width:90px; }
+  .srow .play { margin-left:auto; color:var(--xz-teal); font-size:14px; flex:none; }
+  .srow.heard { background:#e8f4e4; border-color:var(--xz-green-d); }
+  .srow.heard .play { color:var(--xz-green-d); }
+  .storyline { font-size:21px; font-weight:bold; line-height:1.9; margin:4px 0; cursor:pointer; color:var(--xz-ink); }
+  .storyline .wd { display:inline-block; margin-right:8px; }
+  .storyline .wd.punct { margin-right:3px; margin-left:-5px; }
+  .storyline .wd:last-child { margin-right:0; }
+  .storyline .nw { color:var(--xz-blue); text-decoration:underline; text-decoration-thickness:3px; text-underline-offset:6px; cursor:pointer; padding:0 1px; }
+  .storyline .nw.learned { color:var(--xz-green-d); }
+  .storyline .nw.learned::after { content:" ✓"; font-size:15px; }
+  .speakHint { font-size:11px; color:var(--xz-teal); text-align:center; margin-top:6px; }
+  .qcard { background:#fff; border:2px solid var(--xz-border); border-radius:14px; padding:13px 14px; margin-bottom:12px; }
+  .qtext { font-size:15px; font-weight:700; margin-bottom:8px; line-height:1.6; }
+  .opts { display:flex; flex-direction:column; gap:7px; }
+  .opts button { text-align:left; border:1.5px solid var(--xz-border); background:#fbfcfa; border-radius:10px; padding:9px 12px; font-size:13.5px; line-height:1.6; color:var(--xz-ink); min-height:42px; }
+  .opts button.right { background:#e8f4e4; border-color:var(--xz-green-d); color:var(--xz-green-d); font-weight:700; }
+  .opts button.wrong { background:#fbe9e4; border-color:#d98a7a; color:#b05a48; }
+  .opts button:disabled { cursor:default; }
+  .qtip { display:none; font-size:13px; line-height:1.7; background:#eef4ef; border-radius:10px; padding:9px 11px; margin-top:9px; }
+  .qtip.show { display:block; }
+  .star { font-size:34px; cursor:pointer; color:#ddd; transition:color .2s; }
+  .star.on { color:var(--xz-yellow); text-shadow:0 0 8px #f8dfa2; }
+  #photoWall { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+  #photoWall img { width:100%; border-radius:12px; aspect-ratio:1; object-fit:cover; }
+  .page-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 4px; }
+  .page-actions button { min-height:50px; margin:0; }
+  .page-actions button:disabled { background:#e6ece7!important; color:#a9b8ae!important; border-color:#d3ddd4!important; box-shadow:none!important; cursor:not-allowed; }
+  .page-count { grid-column:1/-1; margin:0; color:var(--xz-grey); font-size:12px; text-align:center; }
+  .trip-date-card { margin:16px 16px 0; padding:14px 16px; display:grid; grid-template-columns:minmax(130px,210px) 1fr; align-items:center; gap:14px; background:#fff; border:2px solid var(--xz-border); border-radius:15px 22px 17px 24px; box-shadow:4px 5px 0 var(--xz-shadow); }
+  .trip-date-card label { color:var(--xz-blue); font-family:"STKaiti","KaiTi",serif; font-size:17px; font-weight:700; }
+  .trip-date-card input { min-height:46px; }
+  .date-hint { grid-column:1/-1; margin:0; color:var(--xz-grey); font-size:12px; line-height:1.6; }
+  @media(max-width:520px){.trip-date-card{grid-template-columns:1fr;gap:7px;margin:12px 12px 0}.date-hint{grid-column:auto}}
+  .cert { background:linear-gradient(135deg,#fdf6e3,#f8ecd2); border:2px dashed var(--xz-yellow); text-align:center; }
+  .cert h2 { color:#a97b1e; }
+  nav { position:fixed; bottom:0; left:0; right:0; display:flex; background:#fff; border-top:1px solid var(--xz-border); z-index:9; box-shadow:0 -5px 18px rgba(47,61,56,.08); }
+  nav button { flex:1; border:none; background:none; padding:8px 0 6px; font-size:11px; color:var(--xz-grey); }
+  nav button .ic { font-size:19px; display:block; }
+  nav button.active { color:var(--xz-teal); font-weight:bold; background:#eef4ef; }
+  #mask { position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:20; display:none; }
+  #sheet { position:fixed; left:0; right:0; bottom:0; z-index:21; background:#fff; border-radius:22px 22px 0 0; padding:22px 20px 30px; max-width:760px; margin:0 auto; transform:translateY(110%); transition:transform .3s; box-shadow:0 -6px 30px rgba(0,0,0,.2); }
+  #sheet.open { transform:none; }
+  #sheet .en { font-size:32px; font-weight:bold; color:var(--xz-blue); }
+  #sheet .ph { color:var(--xz-grey); font-size:15px; margin:4px 0; }
+  #sheet .cn { font-size:17px; margin:4px 0; }
+  #sheet .ex { background:#eef4ef; border:1.5px solid var(--xz-border); border-radius:12px; padding:10px; font-size:15px; margin:10px 0; }
+  #sheet .row { display:flex; gap:8px; margin-top:12px; }
+  #sheet .row button { flex:1; border:none; border-radius:12px; padding:11px; font-size:14px; min-height:46px; }
+  #sheet .speak { background:var(--xz-teal); color:#fff; }
+  #sheet .done { background:#e8f4e4; color:var(--xz-green-d); border:1.5px solid var(--xz-green-d); }
+  #sheet .close { background:#eef4ef; color:var(--xz-teal); }
+</style>
+<link rel="stylesheet" href="assets/leon-vi.css">
+</head>
+<body class="xizhou">
+
+<header>
+  <div class="in">
+    <span class="kicker">LEON'S TRAVEL JOURNAL · CHAPTER 02 · DALI XIZHOU</span>
+    <h1>🌾 Leon的喜洲古镇大冒险</h1>
+    <p>Leon旅行日记 · 小小白族文化探险家 · 茶马古道上的千年古镇</p>
+    <div class="links">
+      <a href="云南大理研学日记.html">← 大理主目录</a>
+      <a href="云南昆明研学日记.html">🌻 昆明篇</a>
+      <a href="index.html">🗺️ 全国地图</a>
+    </div>
+    <div id="progressWrap"><div id="progressBar"></div></div>
+    <div id="progressText">完成度 0%</div>
+  </div>
+</header>
+
+<section class="trip-date-card" aria-labelledby="trip-date-label">
+  <label id="trip-date-label" for="tripDate">研学日期（必填）</label>
+  <input type="date" class="save" id="tripDate" required aria-describedby="tripDateHint">
+  <p class="date-hint" id="tripDateHint" role="status">选择日期后会自动保存，并显示在云南地图的大理定位点。</p>
+</section>
+
+<!-- ===== 认识喜洲 ===== -->
+<div class="sec active" id="sec-cover">
+  <div class="sec-in">
+    <div class="hero-frame"><img class="photo" style="margin:0;border:none;box-shadow:none;border-radius:0" src="assets/xizhou_town1.jpg" alt="喜洲古镇全景：白族青瓦白墙民居与稻田"><p class="credit" style="padding:0 10px 8px;margin:0">📷 Wikimedia Commons · Xizhou Town</p></div>
+    <div class="card">
+      <h2>🏠 你好，喜洲！</h2>
+      <img class="photo" src="assets/xizhou_erhai.jpg" alt="苍山与洱海">
+      <p class="credit">📷 Wikimedia Commons · 大理洱海及苍山</p>
+      <p>喜洲在云南大理，洱海的西岸，离大理古城大约 20 公里。这里住着很多<b>白族</b>人家，是一千多年的<b>千年古镇</b>，也是古代<b>茶马古道</b>上的重要驿站。今天，Leon 要当一名"白族文化小探险家"，去寻找古镇的秘密！</p>
+    </div>
+    <div class="card">
+      <h2>📇 研学小档案</h2>
+      <table>
+        <tr><th>项目</th><th>喜洲</th></tr>
+        <tr><td>位置</td><td>云南省大理市喜洲镇（洱海西岸）</td></tr>
+        <tr><td>民族</td><td>白族为主</td></tr>
+        <tr><td>年龄</td><td>一千多年（南诏国时期就存在）</td></tr>
+        <tr><td>古称</td><td>大厘城 · 史城</td></tr>
+        <tr><td>名产</td><td>喜洲粑粑 · 乳扇 · 扎染</td></tr>
+        <tr><td>邻居</td><td>苍山 · 洱海 · 大理古城</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2>🔍 关于喜洲的 6 个秘密</h2>
+      <div class="fact"><div class="no">1</div><p><b>千年古镇：</b>喜洲古称"大厘城"，南诏国时期就是洱海边的重镇，已经一千多岁啦。</p></div>
+      <div class="fact"><div class="no">2</div><p><b>白族人家：</b>镇上大多是白族。白族爱穿白色，男孩叫"阿鹏"，女孩叫"金花"。</p></div>
+      <div class="fact"><div class="no">3</div><p><b>商帮传奇：</b>一百多年前，"喜洲商帮"走茶马古道做买卖，生意做到缅甸、印度，出了"四大家"。</p></div>
+      <div class="fact"><div class="no">4</div><p><b>房子会说话：</b>白族民居"三坊一照壁"，青瓦白墙，照壁上还要写下家风。</p></div>
+      <div class="fact"><div class="no">5</div><p><b>三道茶：</b>白族待客的最高礼仪——一苦、二甜、三回味。</p></div>
+      <div class="fact"><div class="no">6</div><p><b>稻田与洱海：</b>走出古镇就是稻田，田那边是洱海，海那边是苍山。</p></div>
+    </div>
+    <div class="page-actions" aria-label="手册翻页">
+      <button class="btn ghost" type="button" disabled>← 上一页</button>
+      <button class="btn" type="button" onclick="turnPage(1)">下一页：千年历史 →</button>
+      <p class="page-count">第 1 页，共 7 页</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 历史 ===== -->
+<div class="sec" id="sec-history">
+  <div class="sec-in">
+    <div class="card">
+      <h2>📜 千年历史时间轴</h2>
+      <p style="font-size:13px;color:var(--xz-grey);margin-bottom:10px;">跟着时间箭头，从一千多年前走到今天。</p>
+      <div class="tl">
+        <div class="tl-item"><span class="tl-year">🐉 南诏国时期 · 约1200年前</span><p>喜洲一带叫"大厘城"，是南诏国洱海西岸的重镇，白族祖先就在这里生活、种田、赶海。</p></div>
+        <div class="tl-item"><span class="tl-year">🏯 大理国时期 · 937—1253年</span><p>大理国继承南诏，白族文化兴盛，佛教大盛，这一带被称为"妙香佛国"，寺庙特别多。</p></div>
+        <div class="tl-item"><span class="tl-year">🐎 茶马古道 · 宋元明清</span><p>一队队马帮驮着茶叶、盐巴、丝绸，从云南走向西藏和东南亚。喜洲是马帮歇脚的重要驿站，"赶马调"响了一千多年。</p></div>
+        <div class="tl-item"><span class="tl-year">🏮 商帮时代 · 清末民初</span><p>喜洲商人组成"喜洲商帮"，严、董、尹、杨"四大家"的商号走遍滇西，生意做到缅甸、印度，喜洲成了有名的商业小镇。</p></div>
+        <div class="tl-item"><span class="tl-year">📖 徐霞客来过 · 约300年前</span><p>明朝大旅行家徐霞客到云南，把喜洲写进了他的游记里——原来古人也会"写旅行日记"！</p></div>
+        <div class="tl-item"><span class="tl-year">🌾 今天 · 现在</span><p>喜洲被评为"历史文化名镇"，老房子、老街道还在。今天，轮到 Leon 来寻宝啦！</p></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>🐎 马帮小知识</h2>
+      <img class="photo" src="assets/xizhou_tearoad.jpg" alt="茶马古道">
+      <p class="credit">📷 Wikimedia Commons · Tea-Horse Ancient Road</p>
+      <p style="font-size:13px;color:var(--xz-grey);margin-top:8px;">马帮的矮马驮着两大包茶叶。走茶马古道，一匹马能驮上百斤货，跟着赶马人的铃声翻山越岭。</p>
+      <div class="mission"><b>想一想：</b>为什么喜洲商人要走那么远的路去做生意？外面的世界需要什么？（提示：西藏缺茶叶，云南缺盐和布……）</div>
+    </div>
+    <div class="card">
+      <h2>🔎 历史寻宝任务（找到了就打勾）</h2>
+      <label class="checkrow"><input type="checkbox" class="save" id="h1">找到一块青石板路，摸一摸（凉凉的、磨得光滑）</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="h2">找到一座老门楼，看看上面的雕花</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="h3">问一问当地人："喜洲以前叫什么？"</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="h4">数一数老房子用的颜色（青瓦 + 白墙）</label>
+      <p style="margin-top:10px;font-size:14px;">🧐 我打听到的历史小故事：<input type="text" class="save" id="hq1" autocomplete="off" placeholder="把听来的故事记在这里"></p>
+    </div>
+    <div class="page-actions" aria-label="手册翻页">
+      <button class="btn ghost" type="button" onclick="turnPage(-1)">← 上一页</button>
+      <button class="btn" type="button" onclick="turnPage(1)">下一页：白族文化 →</button>
+      <p class="page-count">第 2 页，共 7 页</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 文化 ===== -->
+<div class="sec" id="sec-culture">
+  <div class="sec-in">
+    <div class="card">
+      <h2>🏠 白族民居 · 三坊一照壁</h2>
+      <img class="photo" src="assets/xizhou_house_model.jpg" alt="白族民居三坊一照壁">
+      <p class="credit">📷 Wikimedia Commons · 大理州博物馆 白族民居"三坊一照壁"模型</p>
+      <p>白族人家盖房子有自己的<b>秘密配方</b>：墙是<b>白色</b>的，瓦是<b>青色</b>的，院子正面有一面<b>照壁</b>——像一面"挡风墙"，挡住洱海吹来的风，还能晒谷子。</p>
+      <p>照壁上还要<b>写上家风</b>，比如"清白传家"。每天一抬头就能看见，提醒家人做一个清白的人。</p>
+    </div>
+    <div class="card">
+      <h2>🍵 三道茶 · 一苦二甜三回味</h2>
+      <img class="photo" src="assets/xizhou_tea.jpg" alt="白族三道茶">
+      <p class="credit">📷 Wikimedia Commons · Three-Course Tea</p>
+      <p>白族请客人喝三道茶，这是待客的<b>最高礼仪</b>：</p>
+      <ul style="padding-left:20px;">
+        <li><b>第一道 苦茶：</b>炭火上烤过的茶，苦苦的，提神醒脑。</li>
+        <li><b>第二道 甜茶：</b>加上核桃仁、乳扇和红糖，甜甜的。</li>
+        <li><b>第三道 回味茶：</b>加上花椒、桂皮、生姜，又麻又香，喝完整个人都暖起来。</li>
+      </ul>
+      <p style="margin-top:6px;">三杯茶连起来，就是人生：<b>先苦，后甜，最后慢慢回味</b>。</p>
+    </div>
+    <div class="card">
+      <h2>🎨 扎染 · 蓝布上的白蝴蝶</h2>
+      <img class="photo" src="assets/xizhou_zharan.jpg" alt="晾晒中的大理喜洲扎染">
+      <p class="credit">📷 Wikimedia Commons · 大理喜洲扎染</p>
+      <p>扎染是白族的<b>传统手艺</b>。把白布<b>扎起来</b>，放进染缸里染，展开以后，扎住的地方还是白的，就变成了蝴蝶、花朵、小鸟……</p>
+      <p>蓝色是用一种叫<b>板蓝根</b>的植物染出来的，所以是天然的蓝色。喜洲旁边的<b>周城</b>就是有名的扎染之乡。</p>
+    </div>
+    <div class="card">
+      <h2>👗 白族服饰 · 风花雪月</h2>
+      <img class="photo tall" loading="lazy" src="assets/xizhou_baiwoman1.jpg" alt="白族服饰">
+      <p class="credit">📷 Wikimedia Commons · Bai Woman（白族服饰）</p>
+      <p>白族<b>爱白色</b>，衣服以白为主，清爽又干净。女孩叫"<b>金花</b>"，男孩叫"<b>阿鹏</b>"。</p>
+      <p>金花的头饰藏着大理的"<b>风花雪月</b>"：垂下的穗子=下关的<b>风</b>，头饰上的花=上关的<b>花</b>，白绒线=苍山的<b>雪</b>，弯弯的月牙=洱海的<b>月</b>。</p>
+    </div>
+    <div class="card">
+      <h2>🥞 喜洲粑粑 · 会走天下的饼</h2>
+      <img class="photo" src="assets/xizhou_baba.jpg" alt="喜洲破酥粑粑">
+      <p class="credit">📷 Wikimedia Commons · Xizhou baba（喜洲粑粑）</p>
+      <p><b>破酥粑粑</b>是喜洲最有名的食物，用炭火烤，有<b>甜的</b>和<b>咸的</b>两种，外皮酥酥的，一层一层像千层饼。</p>
+      <p>传说粑粑曾经跟着马帮走天下，是马帮路上的干粮。闻着香味，记得先问价再买哦！</p>
+    </div>
+    <div class="card">
+      <h2>🙏 本主信仰 · 每个村的守护神</h2>
+      <p>白族每个村子都有自己的"<b>本主</b>"——本村的保护神。本主可以是英雄、历史人物，甚至可以是石头、树。</p>
+      <p>到了本主节，人们会<b>抬着本主巡游</b>，跳霸王鞭舞，全村热热闹闹。在喜洲，你可以找找村里的小庙，看看里面的本主长什么样。</p>
+    </div>
+    <div class="card">
+      <h2>🎯 文化打卡（做到了就打勾）</h2>
+      <label class="checkrow"><input type="checkbox" class="save" id="c1">我看到了照壁（数一数它写了几个字）</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="c2">我尝了三道茶（苦茶先喝哦）</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="c3">我摸到了扎染布（蓝色的）</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="c4">我吃了喜洲粑粑（甜的还是咸的？）</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="c5">我看到了金花头饰（找找"风花雪月"）</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="c6">我学会说"金花""阿鹏"</label>
+      <p style="margin-top:10px;font-size:14px;">💭 我的猜想：白族为什么喜欢白色？<input type="text" class="save" id="cq1" autocomplete="off" placeholder="写下你的猜想"></p>
+    </div>
+    <div class="page-actions" aria-label="手册翻页">
+      <button class="btn ghost" type="button" onclick="turnPage(-1)">← 上一页</button>
+      <button class="btn" type="button" onclick="turnPage(1)">下一页：探索任务 →</button>
+      <p class="page-count">第 3 页，共 7 页</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 探索 ===== -->
+<div class="sec" id="sec-explore">
+  <div class="sec-in">
+    <div class="card">
+      <h2>🔎 任务一 · 照壁寻宝</h2>
+      <p>在古镇里找 <b>3 块不同的照壁</b>，把上面的字抄下来，猜猜它在祝福什么。</p>
+      <p style="margin-top:8px;">① 照壁上的字：<input type="text" class="save" id="xw1" autocomplete="off" placeholder="比如：清白传家"></p>
+      <p style="margin-top:8px;">② 照壁上的字：<input type="text" class="save" id="xw2" autocomplete="off" placeholder="抄下来"></p>
+      <p style="margin-top:8px;">③ 照壁上的字：<input type="text" class="save" id="xw3" autocomplete="off" placeholder="抄下来"></p>
+      <label class="checkrow"><input type="checkbox" class="save" id="xg">我猜到了它的意思（问一问大人确认）</label>
+      <p style="margin-top:8px;font-size:14px;">💬 它祝福的是：<input type="text" class="save" id="xw4" autocomplete="off" placeholder="比如：清清白白做人、全家平安"></p>
+    </div>
+    <div class="card">
+      <h2>🏯 任务二 · 门楼大侦探</h2>
+      <p>白族的门楼是房子的"名片"，上面有精美的雕花和彩画。找一座门楼，仔细观察：</p>
+      <p style="margin-top:8px;font-size:14px;">🔍 我在门楼上看到了什么图案？</p>
+      <label class="checkrow"><input type="checkbox" class="save" id="xd1">🐉 龙</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="xd2">🐦 凤凰</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="xd3">🐟 鱼</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="xd4">🌸 花</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="xd5">🦋 蝴蝶 / 小鸟</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="xd6">❓ 其他（写下来）</label>
+      <p style="margin-top:8px;font-size:14px;">🏠 这座门楼有几层屋檐？<input type="text" class="save" id="xdl" autocomplete="off" placeholder="数一数"></p>
+      <p style="margin-top:8px;font-size:14px;">✨ 我心中最好看的门楼：<input type="text" class="save" id="xdn" autocomplete="off" placeholder="它在哪里？长什么样？"></p>
+    </div>
+    <div class="card">
+      <h2>🎨 任务三 · 小小扎染师</h2>
+      <p>看一块扎染布，找找上面的图案，然后想一想：如果我自己做一块，我要扎什么？</p>
+      <p style="margin-top:8px;font-size:14px;">🔍 我看到的扎染图案：</p>
+      <label class="checkrow"><input type="checkbox" class="save" id="xz1">🦋 蝴蝶</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="xz2">🌸 花朵</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="xz3">🐦 小鸟</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="xz4">🔷 几何图形（点、圈、条纹）</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="xz5">❓ 其他</label>
+      <p style="margin-top:8px;font-size:14px;">🎨 扎染布是什么颜色？<input type="text" class="save" id="zc" autocomplete="off" placeholder="蓝色？白色？"></p>
+      <p style="margin-top:8px;font-size:14px;">✏️ 如果我自己做一块，我想扎出：<input type="text" class="save" id="zp" autocomplete="off" placeholder="比如：一只小蝴蝶"></p>
+    </div>
+    <div class="card">
+      <h2>🍵 任务四 · 三道茶品鉴官</h2>
+      <p>小口喝三道茶，把味道记下来——这可是白族的待客大礼。</p>
+      <p style="margin-top:8px;font-size:14px;">☕ 第一道苦茶：喝起来？<input type="text" class="save" id="tea1" autocomplete="off" placeholder="苦？香？"></p>
+      <p style="margin-top:8px;font-size:14px;">🍬 第二道甜茶：里面有什么？<input type="text" class="save" id="tea2" autocomplete="off" placeholder="核桃？红糖？乳扇？"></p>
+      <p style="margin-top:8px;font-size:14px;">🌶️ 第三道回味茶：什么味道？<input type="text" class="save" id="tea3" autocomplete="off" placeholder="麻？香？暖？"></p>
+      <p style="margin-top:8px;font-size:14px;">⭐ 我最喜欢的一道：</p>
+      <label class="checkrow"><input type="checkbox" class="save" id="tf1">第一道 苦茶</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="tf2">第二道 甜茶</label>
+      <label class="checkrow"><input type="checkbox" class="save" id="tf3">第三道 回味茶</label>
+    </div>
+    <div class="card">
+      <h2>🥞 任务五 · 粑粑问价 + 100元伴手礼计划</h2>
+      <p>礼貌地问粑粑的价格（"阿姨/叔叔，粑粑多少钱一个？"），然后做一份 100 元的伴手礼采购计划（只计划，不购买哦）。</p>
+      <table>
+        <tr><th>品种</th><th>价格（元）</th></tr>
+        <tr><td>甜粑粑</td><td><input class="save" id="yb1" type="number"></td></tr>
+        <tr><td>咸粑粑</td><td><input class="save" id="yb2" type="number"></td></tr>
+      </table>
+      <p style="font-size:14px;margin-top:6px;">🧮 和家乡的饼比一比，谁更大？<input type="text" class="save" id="ybc" autocomplete="off" placeholder="比如：喜洲粑粑比妈妈烙的饼大一圈"></p>
+      <div id="planRows"></div>
+      <button class="btn ghost" onclick="addRow()">＋ 加一行（粑粑/乳扇/鲜花饼/扎染手帕…）</button>
+      <button class="btn" onclick="calcPlan()">计算合计（不能超过 100 元）</button>
+      <div class="result" id="planResult">合计会显示在这里</div>
+      <p style="font-size:12px;color:var(--xz-grey);margin-top:6px;">参考价：粑粑约10元 · 乳扇约15元 · 鲜花饼约8元 · 扎染小手帕约20元 · 酸梅汤约5元（以现场价格为准）</p>
+    </div>
+    <div class="card">
+      <h2>🌾 任务六 · 稻田观察员</h2>
+      <img class="photo" src="assets/xizhou_rice.jpg" alt="大理喜洲附近的水稻村">
+      <p class="credit">📷 Wikimedia Commons · Rice village, Dali</p>
+      <p>走出古镇就是大片稻田。站在田边看一看、听一听：</p>
+      <label class="checkrow"><input type="checkbox" class="save" id="yd1">🦢 我看见一只白鹭（白鸟）</label>
+      <p style="margin-top:8px;font-size:14px;">🌱 稻田是什么颜色？<input type="text" class="save" id="yd2" autocomplete="off" placeholder="绿油油的？黄澄澄的？"></p>
+      <p style="margin-top:8px;font-size:14px;">⛰️ 远处的山叫什么名字？<input type="text" class="save" id="yd3" autocomplete="off" placeholder="苍山？"></p>
+      <p style="margin-top:8px;font-size:14px;">🌊 洱海在哪个方向？<input type="text" class="save" id="yd4" autocomplete="off" placeholder="往哪边走能看到湖？"></p>
+    </div>
+    <div class="page-actions" aria-label="手册翻页">
+      <button class="btn ghost" type="button" onclick="turnPage(-1)">← 上一页</button>
+      <button class="btn" type="button" onclick="turnPage(1)">下一页：问答挑战 →</button>
+      <p class="page-count">第 4 页，共 7 页</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 提问 ===== -->
+<div class="sec" id="sec-quiz">
+  <div class="sec-in">
+    <div class="card">
+      <h2>💭 白族文化小问答</h2>
+      <p style="font-size:13px;color:var(--xz-grey);">点一点选项，答对了会变绿。答对一题，点亮一颗小星星 ⭐</p>
+      <div id="quizBox"></div>
+    </div>
+    <div class="card">
+      <h2>🤔 想一想 · 没有标准答案</h2>
+      <p style="margin-bottom:8px;">这些问题没有对错，写下你的想法就好：</p>
+      <p style="font-size:14px;">🧳 如果我是喜洲的小商人，我会把 <input type="text" class="save" id="qa1" autocomplete="off" placeholder="什么特产" style="width:110px;display:inline-block;min-height:36px;padding:6px 10px;"> 带到远方，因为 <input type="text" class="save" id="qa2" autocomplete="off" placeholder="为什么" style="width:190px;display:inline-block;min-height:36px;padding:6px 10px;"></p>
+      <p style="font-size:14px;margin-top:8px;">🍵 "一苦二甜三回味"像不像人生？我的想法：<input type="text" class="save" id="qa3" autocomplete="off" placeholder="写下你的想法"></p>
+      <p style="font-size:14px;margin-top:8px;">📷 我最想带回家的喜洲记忆：<input type="text" class="save" id="qa4" autocomplete="off" placeholder="一道茶？一块布？一句话？"></p>
+      <p style="font-size:14px;margin-top:8px;">🙋 我还想问白族朋友一个问题：<input type="text" class="save" id="qa5" autocomplete="off" placeholder="大胆问出来"></p>
+    </div>
+    <div class="page-actions" aria-label="手册翻页">
+      <button class="btn ghost" type="button" onclick="turnPage(-1)">← 上一页</button>
+      <button class="btn" type="button" onclick="turnPage(1)">下一页：英语分级阅读 →</button>
+      <p class="page-count">第 5 页，共 7 页</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 英语分级 ===== -->
+<div class="sec" id="sec-english">
+  <div class="sec-in">
+    <div class="card">
+      <h2>🇬🇧 English Levels · 英语分级阅读</h2>
+      <p style="font-size:13px;color:var(--xz-grey);">从单词起步，到句子，再到小故事，一级一级往上爬。点击单词和句子可以<b>听发音</b>哦。</p>
+      <p style="margin-top:10px;"><span class="level-tag l1">🌱 Level 1</span><span class="level-tag l2">🌿 Level 2</span><span class="level-tag l3">🌳 Level 3</span></p>
+    </div>
+
+    <div class="card">
+      <h2>🌱 Level 1 · 古镇 10 词（点卡片听发音、看中文）</h2>
+      <div class="word-grid" id="words"></div>
+    </div>
+
+    <div class="card">
+      <h2>🌿 Level 2 · 我读句子（点句子听发音）</h2>
+      <div id="srows"></div>
+    </div>
+
+    <div class="card">
+      <h2>🌳 Level 3 · 小故事 My Xizhou Trip</h2>
+      <p style="font-size:13px;color:var(--xz-grey);">👆 点句子听整句 · 点<b style="color:var(--xz-blue);">蓝色生词</b>翻开单词卡</p>
+      <div id="story"></div>
+      <p class="speakHint">读完整本小故事，你就完成了 Level 3 挑战！</p>
+    </div>
+
+    <div class="page-actions" aria-label="手册翻页">
+      <button class="btn ghost" type="button" onclick="turnPage(-1)">← 上一页</button>
+      <button class="btn" type="button" onclick="turnPage(1)">下一页：总结与证书 →</button>
+      <p class="page-count">第 6 页，共 7 页</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 总结 ===== -->
+<div class="sec" id="sec-final">
+  <div class="sec-in">
+    <div class="card">
+      <h2>⭐ 成就墙（做到了就点亮）</h2>
+      <div id="stars" style="display:flex; justify-content:space-around; padding:8px 0;">
+        <span class="star" data-tip="历史">★</span><span class="star" data-tip="文化">★</span><span class="star" data-tip="探索">★</span><span class="star" data-tip="问答">★</span><span class="star" data-tip="10词">★</span><span class="star" data-tip="小故事">★</span>
+      </div>
+      <p style="text-align:center; font-size:12px; color:var(--xz-grey);" id="starTips">历史小博士 · 文化小达人 · 探索小侦探 · 问答小冠军 · 古镇10词 · 读完小故事</p>
+    </div>
+    <div class="card">
+      <h2>✏️ 今天我学到了</h2>
+      <p>🏛️ 我最喜欢的历史故事：<input type="text" class="save" id="s1"></p>
+      <p style="margin-top:8px;">🎨 我最喜欢的白族文化：<input type="text" class="save" id="s2"></p>
+      <p style="margin-top:8px;">⭐ 我最爱的英文单词：<input type="text" class="save" id="s3"></p>
+      <p style="margin-top:8px;">📚 回家后我还想查一查：<input type="text" class="save" id="s4" placeholder="比如：白族语言怎么说谢谢？"></p>
+    </div>
+    <div class="card">
+      <h2>📷 回忆墙（拍照上传）</h2>
+      <p style="font-size:12px; color:var(--xz-grey);">照片只保存在这台手机的本手册里，不会上传到网络。</p>
+      <label class="btn" style="text-align:center; cursor:pointer;">拍一张 / 选照片<input type="file" id="photoInput" accept="image/*" capture="environment" style="display:none"></label>
+      <div id="photoWall"></div>
+    </div>
+    <div class="card cert">
+      <h2 style="color:#a97b1e;">🏅 白族文化小探险家认证 🏅</h2>
+      <p>恭喜你完成喜洲古镇大冒险！</p>
+      <p style="margin-top:6px;">家长签字：<input type="text" class="save" id="sign" style="width:60%; display:inline-block;"></p>
+    </div>
+    <button class="btn ghost" onclick="if(confirm('确定清空所有记录吗？')){localStorage.removeItem('xizhou'); location.reload();}">🗑️ 清空重来</button>
+    <div class="page-actions" aria-label="手册翻页">
+      <button class="btn ghost" type="button" onclick="turnPage(-1)">← 上一页</button>
+      <button class="btn" type="button" disabled>已经是最后一页</button>
+      <p class="page-count">第 7 页，共 7 页</p>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <button class="active" data-sec="sec-cover"><span class="ic">🏠</span>认识</button>
+  <button data-sec="sec-history"><span class="ic">🏛️</span>历史</button>
+  <button data-sec="sec-culture"><span class="ic">🎨</span>文化</button>
+  <button data-sec="sec-explore"><span class="ic">🔍</span>探索</button>
+  <button data-sec="sec-quiz"><span class="ic">💭</span>提问</button>
+  <button data-sec="sec-english"><span class="ic">🇬🇧</span>英语</button>
+  <button data-sec="sec-final"><span class="ic">🏅</span>总结</button>
+</nav>
+
+<div id="mask" onclick="closeSheet()"></div>
+<div id="sheet">
+  <div class="en" id="sEn"></div>
+  <div class="ph" id="sPh"></div>
+  <div class="cn" id="sCn"></div>
+  <div class="ex" id="sEx"></div>
+  <div class="row">
+    <button class="speak" onclick="speakWord()">🔊 听发音</button>
+    <button class="done" id="sDone" onclick="toggleLearned()">✅ 我学会了</button>
+    <button class="close" onclick="closeSheet()">收起</button>
+  </div>
+</div>
+
+<script>
+const store = JSON.parse(localStorage.getItem('xizhou') || '{}');
+function save(){ localStorage.setItem('xizhou', JSON.stringify(store)); updateProgress(); }
+
+// ===== 导航与顺序翻页 =====
+const sectionIds = ['sec-cover','sec-history','sec-culture','sec-explore','sec-quiz','sec-english','sec-final'];
+function showSection(id){
+  document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.sec===id));
+  document.querySelectorAll('.sec').forEach(x=>x.classList.toggle('active',x.id===id));
+  window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+}
+function turnPage(direction){
+  const current = document.querySelector('.sec.active');
+  const nextIndex = Math.max(0,Math.min(sectionIds.length-1,sectionIds.indexOf(current.id)+direction));
+  showSection(sectionIds[nextIndex]);
+}
+document.querySelectorAll('nav button').forEach(b=>{ b.onclick = ()=>showSection(b.dataset.sec); });
+
+// ===== 输入与勾选自动保存 =====
+document.querySelectorAll('.save').forEach(el=>{
+  if(store[el.id] !== undefined){
+    if(el.type==='checkbox') el.checked = !!store[el.id]; else el.value = store[el.id];
+  }
+  el.onchange = ()=>{ store[el.id] = el.type==='checkbox' ? el.checked : el.value; save(); };
+});
+const tripDateInput=document.getElementById('tripDate');
+const tripDateHint=document.getElementById('tripDateHint');
+function updateTripDateHint(){
+  if(!tripDateInput.value){
+    tripDateHint.textContent='请选择研学日期；保存后会显示在云南地图的大理定位点。';
+    return;
+  }
+  const [year,month,day]=tripDateInput.value.split('-');
+  tripDateHint.textContent=`已保存：${year}年${Number(month)}月${Number(day)}日。返回地图即可看到打卡日期。`;
+}
+tripDateInput.addEventListener('change',updateTripDateHint);
+updateTripDateHint();
+
+// ===== 100元伴手礼计划 =====
+const planRows = document.getElementById('planRows');
+function addRow(name,price,qty){
+  const d = document.createElement('div');
+  d.style.cssText='display:flex; gap:6px; margin-top:8px;';
+  d.innerHTML = `<input placeholder="伴手礼" value="${name||''}"><input placeholder="单价" type="number" style="width:70px" value="${price||''}"><input placeholder="几个" type="number" style="width:60px" value="${qty||''}">`;
+  planRows.appendChild(d);
+}
+if(store.plan) store.plan.forEach(r=>addRow(r[0],r[1],r[2])); else addRow('喜洲粑粑',10,2);
+function calcPlan(){
+  let total=0, rows=[];
+  planRows.querySelectorAll('div').forEach(d=>{
+    const [n,p,q] = d.querySelectorAll('input');
+    const sub = (parseFloat(p.value)||0)*(parseFloat(q.value)||0);
+    total += sub; rows.push([n.value,p.value,q.value]);
+  });
+  store.plan = rows; save();
+  const left = 100-total;
+  document.getElementById('planResult').innerHTML =
+    `合计：<b>￥${total}</b> ${left>=0 ? `✅ 没超预算，还剩 ￥${left}` : `❌ 超出预算 ￥${-left}，调整一下吧！`}<br>
+     <span style="font-size:12px;color:var(--xz-grey);">想一想：把这些伴手礼带回你住的城市，它们的"身价"会变贵吗？</span>`;
+}
+if(store.planResult) document.getElementById('planResult').innerHTML = store.planResult;
+
+// ===== 发音 =====
+function speak(text){
+  try{ speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang='en-US'; u.rate=0.85;
+    speechSynthesis.speak(u);
+  }catch(e){}
+}
+function speakWord(){ speak(curWord ? L3WORDS[curWord][0] : ''); }
+
+// ===== Level 1 单词卡 =====
+const words = [['town','/taʊn/','小镇'],['house','/haʊs/','房子'],['wall','/wɔːl/','墙'],['yard','/jɑːrd/','院子'],['tea','/tiː/','茶'],['blue','/bluː/','蓝色'],['road','/rəʊd/','路'],['horse','/hɔːrs/','马'],['rice','/raɪs/','水稻'],['lake','/leɪk/','湖（洱海）']];
+const wgrid = document.getElementById('words');
+words.forEach((w,i)=>{
+  const d = document.createElement('div');
+  d.className = 'word' + (store['w'+i] ? ' learned' : '');
+  d.innerHTML = `<div class="en">${i+1}. ${w[0]}</div><div class="ph">${w[1]}</div><div class="cn">${store['w'+i] ? w[2] : '？点我'}</div><div class="speak">🔊 点我读 + 显示中文</div>`;
+  d.onclick = ()=>{
+    d.querySelector('.cn').textContent = w[2];
+    d.classList.add('learned');
+    store['w'+i] = true; save();
+    speak(w[0]);
+  };
+  wgrid.appendChild(d);
+});
+
+// ===== Level 2 句子 =====
+const sents = [['This is Xizhou.','这是喜洲。'],['The walls are white.','墙是白色的。'],['I see rice fields.','我看见稻田。'],['The lake is big and blue.','洱海又大又蓝。'],['I drink bitter tea.','我喝苦茶。'],['The horse walks on the old road.','马走在古道上。']];
+const srows = document.getElementById('srows');
+sents.forEach((s,i)=>{
+  const d = document.createElement('div');
+  d.className = 'srow' + (store['s'+i] ? ' heard' : '');
+  d.innerHTML = `<span class="sen">${s[0]}</span><span class="cn">${s[1]}</span><span class="play">${store['s'+i] ? '✅ 读过' : '🔊 点我读'}</span>`;
+  d.onclick = ()=>{
+    d.classList.add('heard');
+    d.querySelector('.play').textContent = '✅ 读过';
+    store['s'+i] = true; save();
+    speak(s[0]);
+  };
+  srows.appendChild(d);
+});
+
+// ===== Level 3 小故事 =====
+const L3WORDS = {
+  Xizhou:['Xizhou','/ˈʃiːˈdʒoʊ/','喜洲','Xizhou is my new friend town. 喜洲是我新认识的古镇朋友。'],
+  lake:['lake','/leɪk/','湖','Erhai is a big lake. 洱海是一个大湖。'],
+  Bai:['Bai','/baɪ/','白族','Bai people live in Xizhou. 白族人住在喜洲。'],
+  wall:['wall','/wɔːl/','墙','The wall is white. 墙是白色的。'],
+  yard:['yard','/jɑːrd/','院子','There is a tree in the yard. 院子里有一棵树。'],
+  'screen wall':['screen wall','/skriːn wɔːl/','照壁','The screen wall faces the yard. 照壁朝着院子。'],
+  blue:['blue','/bluː/','蓝色','The cloth is blue. 布是蓝色的。'],
+  'tie-dye':['tie-dye','/ˈtaɪ daɪ/','扎染','Tie-dye cloth has patterns. 扎染布上有图案。'],
+  sweet:['sweet','/swiːt/','甜的','The baba is sweet. 粑粑是甜的。'],
+  baba:['baba','/ˈbɑːbɑː/','粑粑','I eat a warm baba. 我吃一个热乎乎的粑粑。']
+};
+const STORY = [
+  [{k:'Xizhou',t:'Xizhou'},'is','an','old','town','by','the',{k:'lake',t:'lake'},'.'],
+  [{k:'Bai',t:'Bai'},'people','live','here','.'],
+  ['Their',{k:'house',t:'houses'},'have','white',{k:'wall',t:'walls'},'and','grey','roofs','.'],
+  ['In','the',{k:'yard',t:'yard'},',','there','is','a','"',{k:'screen wall',t:'screen wall'},'"','.'],
+  ['I','see',{k:'blue',t:'blue'},{k:'tie-dye',t:'tie-dye'},'cloth','.'],
+  ['Yum','!','I','eat','a',{k:'sweet',t:'sweet'},{k:'baba',t:'baba'},'.'],
+  ['I','love','Xizhou','!']
+];
+function storyHtml(){
+  return STORY.map((tokens,i)=>{
+    const inner = tokens.map(t=>{
+      if(typeof t === 'object'){
+        return `<span class="wd"><span class="nw${store['n'+t.k]?' learned':''}" data-w="${t.k}">${t.t}</span></span>`;
+      }
+      const punct = /^[.,!?"'（）]+$/.test(t) ? ' punct' : '';
+      return `<span class="wd${punct}">${t}</span>`;
+    }).join('');
+    return `<div class="storyline" data-i="${i}">${inner}</div>`;
+  }).join('');
+}
+function sentText(tokens){
+  let s='';
+  tokens.forEach(t=>{
+    const w = typeof t==='object' ? t.t : t;
+    s += (!s || ',."\u2019!?'.includes(w[0])) ? w : ' '+w;
+  });
+  return s.trim();
+}
+function openSheet(key){
+  curWord = key;
+  const d = L3WORDS[key];
+  if(!d) return;
+  document.getElementById('sEn').textContent = d[0];
+  document.getElementById('sPh').textContent = d[1];
+  document.getElementById('sCn').textContent = d[2];
+  document.getElementById('sEx').textContent = d[3];
+  document.getElementById('sDone').textContent = store['n'+key] ? '✅ 已学会' : '⭐ 我学会了';
+  document.getElementById('mask').style.display='block';
+  document.getElementById('sheet').classList.add('open');
+  speak(d[0]);
+}
+let curWord=null;
+function closeSheet(){ document.getElementById('mask').style.display='none'; document.getElementById('sheet').classList.remove('open'); }
+function toggleLearned(){
+  if(!curWord) return;
+  store['n'+curWord] = !store['n'+curWord]; save();
+  document.getElementById('sDone').textContent = store['n'+curWord] ? '✅ 已学会' : '⭐ 我学会了';
+  document.getElementById('story').innerHTML = storyHtml();
+  bindStory();
+}
+function bindStory(){
+  document.querySelectorAll('#story .storyline').forEach(el=>{
+    el.onclick = (e)=>{
+      if(e.target.classList.contains('nw')){
+        openSheet(e.target.dataset.w);
+      } else speak(sentText(STORY[el.dataset.i]));
+    };
+  });
+}
+document.getElementById('story').innerHTML = storyHtml();
+bindStory();
+
+// ===== 问答 =====
+const QUIZ = [
+  {q:'Q1. 为什么白族民居要建"照壁"？',opts:['为了好看','挡风、保护院子，还能写上家风','用来晒衣服'],c:1,why:'照壁像一面"挡风墙"，挡住洱海吹来的风、保护院子；白族人家还会在照壁上写下家风（比如"清白传家"），每天一抬头就能看见。'},
+  {q:'Q2. 三道茶的顺序是？',opts:['甜 → 苦 → 回味','苦 → 甜 → 回味','回味 → 甜 → 苦'],c:1,why:'先苦后甜再回味——苦茶、甜茶、回味茶，这是白族待客的最高礼仪。'},
+  {q:'Q3. 扎染的蓝色是用什么染出来的？',opts:['板蓝根','蓝墨水','蓝莓汁'],c:0,why:'扎染用的是植物染料板蓝根（蓝靛），所以染出来是天然的蓝色。'},
+  {q:'Q4. 喜洲商帮靠什么把生意做到远方？',opts:['骑马','茶马古道的马帮','坐船'],c:1,why:'喜洲商帮靠茶马古道上的马帮，把茶叶、布匹驮到西藏和东南亚，生意越做越大。'},
+  {q:'Q5. 金花头饰上的"雪"是指？',opts:['白绒线（苍山雪）','白纸','棉花'],c:0,why:'金花头饰上白绒线象征"苍山雪"，整个头饰合起来就是"风花雪月"。'},
+  {q:'Q6. 茶马古道主要运什么？',opts:['茶叶和马','鲜花','海鲜'],c:0,why:'茶马古道，运的主要是茶叶和马，也驮盐和布。'}
+];
+const quizBox = document.getElementById('quizBox');
+QUIZ.forEach((item,i)=>{
+  const card = document.createElement('div');
+  card.className = 'qcard';
+  let html = `<p class="qtext">${item.q}</p><div class="opts">`;
+  item.opts.forEach((o,oi)=>{
+    html += `<button type="button" data-c="${oi===item.c?'1':'0'}">${String.fromCharCode(65+oi)}. ${o}</button>`;
+  });
+  html += `</div><p class="qtip">💡 ${item.why}</p>`;
+  card.innerHTML = html;
+  if(store['quiz'+i]){
+    card.querySelectorAll('.opts button').forEach(b=>{ b.disabled = true; });
+    const rightBtn = card.querySelectorAll('.opts button')[item.c];
+    rightBtn.classList.add('right');
+    card.querySelector('.qtip').classList.add('show');
+  }
+  card.querySelectorAll('.opts button').forEach(btn=>{
+    btn.onclick = ()=>{
+      if(store['quiz'+i]) return;
+      if(btn.dataset.c==='1'){
+        card.querySelectorAll('.opts button').forEach(b=>{ b.disabled = true; });
+        btn.classList.add('right');
+        card.querySelector('.qtip').classList.add('show');
+        store['quiz'+i] = true; save();
+      } else {
+        btn.classList.add('wrong');
+        setTimeout(()=>btn.classList.remove('wrong'), 600);
+      }
+    };
+  });
+  quizBox.appendChild(card);
+});
+
+// ===== 星星 =====
+document.querySelectorAll('.star').forEach((s,i)=>{
+  if(store['star'+i]) s.classList.add('on');
+  s.onclick = ()=>{ s.classList.toggle('on'); store['star'+i] = s.classList.contains('on'); save(); };
+});
+
+// ===== 照片压缩后存到当前浏览器 =====
+function compressPhoto(file,maxSize=480){
+  return new Promise((resolve,reject)=>{
+    const img = new Image();
+    const objectUrl = URL.createObjectURL(file);
+    img.onload = ()=>{
+      const c = document.createElement('canvas');
+      const sc = Math.min(1,maxSize/Math.max(img.width,img.height));
+      c.width = img.width*sc; c.height = img.height*sc;
+      c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+      URL.revokeObjectURL(objectUrl);
+      resolve(c.toDataURL('image/jpeg',.72));
+    };
+    img.onerror = ()=>{ URL.revokeObjectURL(objectUrl); reject(new Error('image-load-failed')); };
+    img.src = objectUrl;
+  });
+}
+document.getElementById('photoInput').onchange = async e=>{
+  const file = e.target.files[0]; if(!file) return;
+  try{
+    const url = await compressPhoto(file,400);
+    store.photos = store.photos||[]; store.photos.push(url); save(); renderPhotos();
+  }catch(error){ alert('这张照片暂时无法读取，请换一张试试。'); }
+  e.target.value='';
+};
+function renderPhotos(){
+  document.getElementById('photoWall').innerHTML = (store.photos||[]).map((u,i)=>`<img src="${u}" alt="回忆墙照片 ${i+1}">`).join('');
+}
+renderPhotos();
+
+// ===== 完成度 =====
+function updateProgress(){
+  let done = 0, total = 0;
+  document.querySelectorAll('.save').forEach(el=>{
+    total++;
+    if(el.type==='checkbox' ? el.checked : (el.value && el.value.trim())) done++;
+  });
+  for(let i=0;i<10;i++){ total++; if(store['w'+i]) done++; }
+  for(let i=0;i<6;i++){ total++; if(store['s'+i]) done++; }
+  Object.keys(L3WORDS).forEach(k=>{ total++; if(store['n'+k]) done++; });
+  for(let i=0;i<6;i++){ total++; if(store['quiz'+i]) done++; }
+  for(let i=0;i<6;i++){ total++; if(store['star'+i]) done++; }
+  if((store.photos||[]).length){ total++; done++; }
+  const pct = Math.round(done/total*100);
+  document.getElementById('progressBar').style.width = pct+'%';
+  document.getElementById('progressText').textContent = '完成度 '+pct+'%';
+}
+updateProgress();
+</script>
+</body>
+</html>

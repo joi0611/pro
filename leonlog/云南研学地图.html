@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>云南研学地图 · Leon旅行日记</title>
-<meta name="description" content="Leon的云南研学地图。昆明已解锁，大理等待探索。">
+<meta name="description" content="Leon的云南研学地图。昆明与大理喜洲均已解锁。">
 <link rel="stylesheet" href="assets/leon-vi.css">
 <style>
   *{box-sizing:border-box}
@@ -58,13 +58,13 @@
   <section class="map-paper" aria-labelledby="yn-title">
     <div class="map-head">
       <div><span class="kicker">LEON'S YUNNAN MAP · 2026</span><h1 id="yn-title">云南研学地图</h1></div>
-      <p class="intro">找到地图上的旅行定位点。<br>昆明已经点亮，大理还在等 Leon 出发。</p>
+      <p class="intro">找到地图上的旅行定位点。<br>昆明、大理喜洲都已点亮，等你出发寻宝。</p>
     </div>
 
     <div class="stage">
       <svg class="map-svg" viewBox="550 605 205 183" role="img" aria-labelledby="map-name map-desc">
         <title id="map-name">云南省研学地图</title>
-        <desc id="map-desc">地图标注昆明与大理。昆明可进入研学手册，大理暂未解锁。</desc>
+        <desc id="map-desc">地图标注昆明与大理喜洲。两地均可进入研学手册。</desc>
         <use class="yn-shape" href="assets/china-provinces.svg#province-530000"></use>
         <path class="river" d="M594 650 C621 666 637 691 650 714 C661 733 680 746 706 754"></path>
 
@@ -76,16 +76,16 @@
           <text class="city-sub" id="kunming-date" x="691" y="690">点击进入研学主目录</text>
         </a>
 
-        <g class="city dali" role="button" tabindex="0" aria-label="大理，待解锁" data-city="大理">
+        <a class="city dali" href="云南大理研学日记.html" aria-label="大理，已解锁，进入大理研学主目录">
           <circle class="hit" cx="624" cy="677" r="15"></circle>
           <path class="pin-body" d="M624 662c-7.2 0-13 5.8-13 13 0 9.5 13 21 13 21s13-11.5 13-21c0-7.2-5.8-13-13-13z"></path>
           <circle class="pin-dot" cx="624" cy="675" r="4.6"></circle>
           <text class="city-label" x="594" y="674">大理</text>
-          <text class="city-sub" x="581" y="682">下一篇 · 待解锁</text>
-        </g>
+          <text class="city-sub" id="dali-date" x="581" y="682">点击进入研学主目录</text>
+        </a>
       </svg>
 
-      <div class="note" aria-hidden="true">先去昆明选择研学内容吧！</div>
+      <div class="note" aria-hidden="true">点定位点，开始研学大冒险！</div>
       <img class="leon" src="assets/leon-traveler.png" alt="Leon背着旅行包查看云南地图">
       <div class="legend" aria-label="地图图例"><span><i></i>已点亮</span><span><i class="waiting"></i>待解锁</span></div>
     </div>
@@ -93,26 +93,20 @@
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
-  const dali=document.querySelector('.dali');
   const toast=document.getElementById('toast');
   let toastTimer;
   try{
-    const tripDate=JSON.parse(localStorage.getItem('dounan')||'{}').tripDate;
-    if(tripDate){
-      const [,month,day]=tripDate.split('-');
+    const kunming=JSON.parse(localStorage.getItem('dounan')||'{}').tripDate;
+    if(kunming){
+      const [,month,day]=kunming.split('-');
       document.getElementById('kunming-date').textContent=`${Number(month)}月${Number(day)}日 · 已打卡`;
     }
+    const dali=JSON.parse(localStorage.getItem('xizhou')||'{}').tripDate;
+    if(dali){
+      const [,month,day]=dali.split('-');
+      document.getElementById('dali-date').textContent=`${Number(month)}月${Number(day)}日 · 已打卡`;
+    }
   }catch(error){}
-  function showLocked(){
-    toast.textContent='大理篇正在准备中，先去昆明完成研学任务吧';
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer=setTimeout(()=>toast.classList.remove('show'),2400);
-  }
-  dali.addEventListener('click',showLocked);
-  dali.addEventListener('keydown',event=>{
-    if(event.key==='Enter'||event.key===' '){event.preventDefault();showLocked()}
-  });
 </script>
 </body>
 </html>
