@@ -13,7 +13,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);line-height:1.65;
+body{margin:0;padding-bottom:66px;background:var(--bg);color:var(--ink);line-height:1.65;
   font-family:'Baloo 2','Varela Round','Comic Sans MS','PingFang SC','Hiragino Maru Gothic ProN','Microsoft YaHei','Noto Sans SC',sans-serif;}
 h1,h2,h3{line-height:1.3}
 button{font-family:inherit}
@@ -62,7 +62,11 @@ button{font-family:inherit}
   font-weight:800;font-size:13px;padding:3px 14px;border-radius:999px;white-space:nowrap;}
 
 /* ---------- 章节 ---------- */
-.sec{padding:52px 0 10px;scroll-margin-top:70px;}
+/* ---------- 章节（翻页结构） ---------- */
+.sec,.hero{display:none;}
+.sec{padding:22px 0 96px;}
+.sec.pg-active,.hero.pg-active{display:block;}
+.hero.pg-active{padding-bottom:70px;}
 .sechead{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
 .secno{background:var(--deep);color:#fff;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:24px;flex:none;box-shadow:0 4px 0 rgba(29,58,95,.25);}
 .sechead h2{font-size:clamp(22px,4vw,30px);margin:0;}
@@ -278,6 +282,37 @@ button{font-family:inherit}
 .sheet-card .sh-ex{font-size:14.5px;color:#5A6B7F;font-weight:700;line-height:1.7;}
 .sheet-card .shbtns{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap;}
 
+/* ---------- 底部导航与翻页 ---------- */
+.bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:80;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-top:3px solid var(--sun);display:flex;overflow-x:auto;padding:5px 4px calc(5px + env(safe-area-inset-bottom));}
+.bottomnav button{flex:none;border:none;background:none;font-family:inherit;font-size:12px;font-weight:800;color:#8A9BB0;padding:7px 6px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px;min-width:62px;border-radius:12px;}
+.bottomnav button .ic{font-size:20px;line-height:1;}
+.bottomnav button.active{color:var(--deep);background:#EAF3FB;}
+.page-actions{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px 0 8px;flex-wrap:wrap;}
+.page-count{font-size:13px;font-weight:800;color:#8A7A62;}
+.btn.ghost{background:#fff;color:var(--ink);}
+.gogo{color:var(--deep);font-weight:800;border-bottom:2px dotted var(--coral);cursor:pointer;font-size:inherit;}
+
+/* ---------- 分级阅读绘本 ---------- */
+.book{background:#fff;border:4px solid var(--deep);border-radius:24px;padding:16px;box-shadow:0 8px 0 rgba(18,94,143,.12);}
+.book img.photo{width:100%;border-radius:14px;aspect-ratio:4/3;object-fit:cover;box-shadow:0 4px 10px rgba(29,58,95,.15);}
+.book .cover{text-align:center;padding:8px 0 4px;}
+.book .cover .big{font-size:44px;letter-spacing:6px;}
+.book .credit{font-size:11px;color:#B0A48C;text-align:right;margin-top:3px;font-weight:700;}
+.book .zh{font-size:15px;color:#5A6B7F;font-weight:700;margin:10px 0 6px;line-height:1.7;}
+.book .sentence{font-size:clamp(19px,3.4vw,25px);font-weight:800;line-height:1.9;cursor:pointer;margin:4px 0;letter-spacing:.5px;color:var(--ink);}
+.book .sentence .wd{display:inline-block;margin-right:6px;}
+.book .sentence .wd:last-child{margin-right:0;}
+.book .sentence .wd.punct{margin-right:2px;}
+.book .sentence .nw{color:var(--coral);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:5px;cursor:pointer;}
+.book .sentence .nw.learned{color:var(--green);}
+.book .sentence .nw.learned::after{content:' ✓';font-size:60%;}
+.book .speakHint{font-size:12px;color:#8A7A62;text-align:center;margin-top:8px;font-weight:700;}
+.book .word-grid{grid-template-columns:repeat(auto-fill,minmax(128px,1fr));}
+.booknav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:16px;flex-wrap:wrap;}
+.booknav .dots{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;max-width:280px;}
+.booknav .dot{width:9px;height:9px;border-radius:50%;background:#D8C9B0;transition:.15s;}
+.booknav .dot.cur{background:var(--coral);transform:scale(1.35);}
+
 /* ---------- 浮动打印按钮 ---------- */
 .printfab{position:fixed;right:18px;bottom:18px;z-index:95;width:58px;height:58px;border-radius:50%;border:3px solid var(--ink);background:var(--sun);font-size:26px;cursor:pointer;box-shadow:0 6px 0 rgba(29,58,95,.3);transition:.12s;}
 .printfab:hover{transform:translateY(-2px);}
@@ -358,6 +393,15 @@ button{font-family:inherit}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 .mstatus{text-align:center;font-weight:800;font-size:17px;margin-top:14px;min-height:26px;}
 
+/* ---------- 成就统计 ---------- */
+.achieve{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:18px;}
+.achv{background:#fff;border:3px solid var(--line);border-radius:16px;padding:12px 8px;text-align:center;box-shadow:0 4px 0 rgba(29,58,95,.06);}
+.achv .ic{font-size:28px;display:block;}
+.achv .num{font-size:19px;font-weight:800;color:var(--deep);display:block;line-height:1.3;}
+.achv .lb{font-size:12px;color:#8A7A62;font-weight:800;display:block;}
+.achv.done{border-color:var(--green);background:#DFF5EA;}
+.achv.done .num{color:var(--green);}
+
 /* ---------- 印章本 ---------- */
 .stamps{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;}
 .stamp{border:3px dashed var(--line);border-radius:18px;padding:14px 8px;text-align:center;background:#fff;cursor:pointer;transition:.15s;box-shadow:0 4px 0 rgba(29,58,95,.06);}
@@ -397,33 +441,15 @@ footer .end{font-size:20px;font-weight:800;margin:8px 0 2px;}
 footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
 
 @media print{
-  .topnav,.daybtns,.btn,.stamp,.toast,#confetti,footer{display:none !important;}
-  body{background:#fff;}
-  .sec{page-break-inside:avoid;}
+  .topnav,.bottomnav,.daybtns,.btn,.stamp,.toast,#confetti,footer,.page-actions,.printfab,.sheet{display:none !important;}
+  .sec,.hero{display:block !important;}
+  body{padding-bottom:0 !important;background:#fff;}
 }
 </style>
 </head>
 <body>
 <p data-aigc-mark="1" style="margin:0 0 8px;font-size:10px;line-height:1.3;color:#6b6560;font-weight:400;">AI生成</p>
 
-
-<nav class="topnav">
-  <div class="wrap">
-    <a href="#hero">🚢 出发</a>
-    <a href="#ship">🛳️ 认识大船</a>
-    <a href="#goals">🎯 任务清单</a>
-    <a href="#map">🗺️ 航线地图</a>
-    <a href="#plan">📅 三天计划</a>
-    <a href="#geo">🌋 济州地理课</a>
-    <a href="#tour">🔧 幕后之旅</a>
-    <a href="#eng">🇬🇧 英语分级</a>
-    <a href="#quiz">⭐ 闯关问答</a>
-    <a href="#match">🧩 配对游戏</a>
-    <a href="#stamp">📛 印章本</a>
-    <a href="#cert">🎓 结业证书</a>
-    <a href="爱达魔都号研学手册-打印版.html" target="_blank" rel="noopener">🖨️ 打印版</a>
-  </div>
-</nav>
 
 <!-- ===== 封面 ===== -->
 <header class="hero" id="hero">
@@ -601,7 +627,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
         <h3>🌏 文化小使者</h3>
         <span class="gtag">和济州岛做朋友</span>
         <ul>
-          <li><label><input type="checkbox" data-task="g3"> 学会 3 句韩语(去地理课的小课堂学!)</label></li>
+          <li><label><input type="checkbox" data-task="g3"> 学会 3 句韩语(<span class="gogo" data-go="7">去地理课小课堂</span>)</label></li>
           <li><label><input type="checkbox" data-task="g4"> 品尝 2 种韩国特色美食</label></li>
           <li><label><input type="checkbox" data-task="g5"> 画一画济州岛的“石头爷爷”</label></li>
         </ul>
@@ -1114,7 +1140,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
           <div class="mbadge" data-medal="weather"><span class="ic">🌤️</span><span class="nm">气象观察员</span><span class="tt">记好3天的天气</span></div>
           <div class="mbadge" data-medal="shell"><span class="ic">🐚</span><span class="nm">探险收藏家</span><span class="tt">捡到贝壳和火山石</span></div>
         </div>
-        <p class="note">小秘密:在第 9 节印章本里,还有 7 枚印章等你收集哦!</p>
+        <p class="note">小秘密:<span class="gogo" data-go="1">去已完成板块</span>看看印章本,还有 7 枚印章等你收集哦!</p>
       </div>
 
     </div>
@@ -1124,28 +1150,20 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
 <!-- ===== 英语分级 ===== -->
 <section class="sec" id="eng">
   <div class="wrap">
-    <div class="sechead"><span class="secno">7</span><h2 class="tape">English Levels · 英语分级阅读</h2></div>
-    <p class="sub">从单词起步,到句子,再到小故事,一级一级往上爬。点击就能<b>听发音</b>哦!</p>
+    <div class="sechead"><span class="secno">🇬🇧</span><h2 class="tape">分级阅读绘本 · My Cruise to Jeju</h2></div>
+    <p class="sub">从单词到句子,再到小故事,一级一级往上爬。点句子<b>听发音</b>,点<b style="color:var(--coral)">红色生词</b>翻单词卡!</p>
     <div class="engbar">
       <span class="level-tag l1" id="lv1">🌱 Level 1 · 10 词</span>
-      <span class="level-tag l2" id="lv2">🌿 Level 2 · 6 句</span>
-      <span class="level-tag l3" id="lv3">🌳 Level 3 · 小故事</span>
+      <span class="level-tag l2" id="lv2">🌿 Level 2 · 读句子</span>
+      <span class="level-tag l3" id="lv3">🌳 Level 3 · 全本</span>
     </div>
 
-    <div class="geocard">
-      <h3>🌱 Level 1 · 大船 10 词(点卡片:听发音 + 看中文)</h3>
-      <div class="word-grid" id="words"></div>
-    </div>
-
-    <div class="geocard" style="margin-top:14px">
-      <h3>🌿 Level 2 · 我读句子(点句子听发音)</h3>
-      <div id="srows"></div>
-    </div>
-
-    <div class="geocard" style="margin-top:14px">
-      <h3>🌳 Level 3 · 小故事 My Cruise Trip</h3>
-      <p style="font-size:14px;font-weight:700;color:#5A6B7F">👆 点句子听整句 · 点<b style="color:var(--deep)">蓝色生词</b>翻开单词卡</p>
-      <div id="story"></div>
+    <div class="book" id="bookBox" data-nw="18" data-st="10"></div>
+    <div class="booknav">
+      <button class="btn ghost" id="engPrev">← 上一页</button>
+      <div class="dots" id="engDots"></div>
+      <span class="page-count" id="engPg"></span>
+      <button class="btn" id="engNext">下一页 →</button>
     </div>
   </div>
 </section>
@@ -1197,6 +1215,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
   <div class="wrap">
     <div class="sechead"><span class="secno">10</span><h2 class="tape">我的印章本</h2></div>
     <p class="sub">每完成一个小任务,就点一下印章,“嗒!”盖上一个漂亮的章。集满 7 枚,解锁结业证书!</p>
+    <div class="achieve" id="achieveBox"></div>
     <div class="stampprogress"><div class="bar" id="stampBar"></div></div>
     <div class="stamps" id="stampGrid"></div>
   </div>
@@ -1248,6 +1267,37 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
   </div>
 </div>
 
+<!-- ===== 打印板块 ===== -->
+<section class="sec" id="printpage">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">🖨️</span><h2 class="tape">打印我的研学手册</h2></div>
+    <p class="sub">两种方式:直接打印网页版,或打开 A4 纸质版。</p>
+    <div class="geocard">
+      <h3>方式一 · 打印网页版</h3>
+      <p>点击按钮,把整本手册打印出来。做过的任务勾选、印章和记录都会一起打出来。</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <button class="btn coral" id="printNow" style="font-size:17px">🖨️ 打印网页版</button>
+        <button class="btn ghost" id="printFab2" title="打印 / 保存为 PDF">🖨️ 浮动打印按钮(右下角)</button>
+      </div>
+      <p class="note">小提示:打印对话框里选择 A4、边距选“默认”或“最小”,效果最好。</p>
+    </div>
+    <div class="geocard" style="margin-top:14px">
+      <h3>方式二 · A4 纸质版(推荐)</h3>
+      <p>10 页 A4 手册:封面、认识大船、任务清单、航线行程、济州地理+韩语、英语分级+小故事、幕后之旅任务卡、勋章与成长、结业证书——全部是填空线、勾选框和涂色星星,黑白彩色都好看。</p>
+      <a class="btn deep" href="爱达魔都号研学手册-打印版.html" target="_blank" rel="noopener">📄 打开 A4 打印版(10 页)</a>
+      <p class="note">打印版清单:① 封面 ② 认识大船 ③ 任务清单 ④ 航线行程 ⑤ 济州地理+韩语 ⑥ 英语分级 ⑦ 小故事 ⑧ 幕后之旅 ⑨ 勋章成长 ⑩ 结业证书</p>
+    </div>
+  </div>
+</section>
+
+<nav class="bottomnav" aria-label="手册板块">
+  <button data-block="0" class="active"><span class="ic">🏠</span>封面</button>
+  <button data-block="1"><span class="ic">🏅</span>已完成</button>
+  <button data-block="2"><span class="ic">🎒</span>互动手册</button>
+  <button data-block="3"><span class="ic">🇬🇧</span>分级</button>
+  <button data-block="4"><span class="ic">🖨️</span>打印</button>
+</nav>
+
 <button class="printfab" id="printFab" title="打印 / 保存为 PDF">🖨️</button>
 
 <footer>
@@ -1257,6 +1307,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
   <div class="wrap">
     <div class="end">小小航海家,我们海上见!🌊</div>
     <div class="tip">爱达魔都号 · 中国第一艘国产大型邮轮 · 从上海出发的奇妙之旅<br>灵感参考:《小小船舶工程师的探秘日志》</div>
+    <p style="margin-top:8px"><a class="gogo" href="爱达魔都号研学手册-打印版.html" target="_blank" rel="noopener">🖨️ 打开 A4 打印版(10 页)</a></p>
   </div>
 </footer>
 
@@ -1447,6 +1498,7 @@ function pick(i, btn) {
   }
   all.forEach(b => b.disabled = true);
   store.quizStars = Math.max(store.quizStars || 0, qStars); save();
+  updateAchieve();
   updateStars();
   if (qi < QUIZ.length - 1) $('#qNext').style.display = 'inline-block';
   else $('#qAgain').style.display = 'inline-block';
@@ -1499,6 +1551,7 @@ function pickRight(el) {
     if (matchedCount === PAIRS.length) {
       $('#mStatus').textContent = '🎉 全对!你是配对小高手!';
       store.matchDone = true; save();
+      updateAchieve();
       confettiBurst();
     }
   } else {
@@ -1542,6 +1595,7 @@ function refreshStampBar() {
   const pct = countStamps() / STAMPS.length * 100;
   $('#stampBar').style.width = pct + '%';
   $('#stampBar').parentElement.setAttribute('title', `${countStamps()}/${STAMPS.length}`);
+  updateAchieve();
 }
 refreshStampBar();
 
@@ -1555,6 +1609,7 @@ function refreshGoal() {
     store.goalsDone = true; save();
     setTimeout(() => { confettiBurst(100); toast('🎉 全部任务完成!去领全能小航海家证书吧!'); }, 400);
   }
+  updateAchieve();
 }
 document.querySelectorAll('.goals input[type=checkbox]').forEach(cb => {
   if (store.tasks[cb.dataset.task]) cb.checked = true;
@@ -1602,6 +1657,7 @@ const foilBoat = $('#foilBoat'), foilCoinsBox = $('#foilCoins'),
 function updateLabBest() {
   const best = store.foilBest || 0;
   labBest.textContent = best ? `🏆 最高纪录:${best} 枚硬币` : '🏆 最高纪录:还没有,快来挑战!';
+  updateAchieve();
 }
 function renderFoilCoins() {
   foilCoinsBox.innerHTML = '';
@@ -1855,6 +1911,7 @@ window.addEventListener('pointerup', () => { drawing = false; });
 $('#paintClear').addEventListener('click', () => { pc.clearRect(0, 0, paint.width, paint.height); ding(); });
 $('#paintDone').addEventListener('click', () => {
   store.wheelDrawn = true; save();
+  updateAchieve();
   toast('🎡 船舵画好啦!真有小船长的架势!');
   good();
 });
@@ -1904,6 +1961,7 @@ document.querySelectorAll('.mbadge').forEach(m => {
     store.medals[id] = true; save();
     m.classList.add('won');
     ding(); confettiBurst(25);
+    updateAchieve();
     const got = Object.keys(store.medals).length;
     if (got === medalTotal) {
       setTimeout(() => { confettiBurst(100); toast('🏅 勋章全部点亮!去领全能小航海家证书吧!'); }, 500);
@@ -1948,92 +2006,117 @@ const EN_WORDS = [
   ['volcano','/vɒlˈkeɪnəʊ/','火山','Jeju is a volcano island. 济州是火山岛。'],
   ['lighthouse','/ˈlaɪthaʊs/','灯塔','The lighthouse is bright. 灯塔亮亮的。']
 ];
-const wgridEl = document.getElementById('words');
-EN_WORDS.forEach((w, i) => {
-  const d = document.createElement('div');
-  d.className = 'word' + (store.en['w' + i] ? ' learned' : '');
-  d.innerHTML = `<div class="en">${i + 1}. ${w[0]}</div><div class="ph">${w[1]}</div><div class="cn">${store.en['w' + i] ? w[2] : '? 点我'}</div><div class="spk">🔊 点我读</div>`;
-  d.addEventListener('click', () => {
-    d.classList.add('learned');
-    d.querySelector('.cn').textContent = w[2];
-    store.en['w' + i] = true; save();
-    speakEn(w[0]);
-    refreshEnLevels();
-  });
-  wgridEl.appendChild(d);
-});
-
-const EN_SENTS = [
-  ['The ship is big.', '这艘船好大呀。'],
-  ['We sail from Shanghai.', '我们从上海出发。'],
-  ['I see the blue sea.', '我看见蓝色的大海。'],
-  ['Jeju is a volcano island.', '济州岛是火山岛。'],
-  ['The orange is sweet.', '橘子甜甜的。'],
-  ['We sail back home.', '我们航行回家。']
-];
-const srowsEl = document.getElementById('srows');
-EN_SENTS.forEach((s, i) => {
-  const d = document.createElement('div');
-  d.className = 'srow' + (store.en['s' + i] ? ' heard' : '');
-  d.innerHTML = `<span class="sen">${s[0]}</span><span class="cn">${s[1]}</span><span class="play">${store.en['s' + i] ? '✅ 读过' : '🔊 点我读'}</span>`;
-  d.addEventListener('click', () => {
-    d.classList.add('heard');
-    d.querySelector('.play').textContent = '✅ 读过';
-    store.en['s' + i] = true; save();
-    speakEn(s[0]);
-    refreshEnLevels();
-  });
-  srowsEl.appendChild(d);
-});
-
 const EN_L3WORDS = {
-  cruise: ['cruise', '/kruːz/', '邮轮之旅', 'I love my cruise trip. 我爱我的邮轮之旅。'],
-  ship: ['ship', '/ʃɪp/', '轮船', 'The ship is as big as a city. 这艘船像一座城市那么大。'],
-  Shanghai: ['Shanghai', '/ˌʃæŋˈhaɪ/', '上海', 'We leave from Shanghai. 我们从上海出发。'],
-  waves: ['waves', '/weɪvz/', '海浪', 'The waves splash. 海浪哗哗地拍。'],
-  island: ['island', '/ˈaɪlənd/', '岛屿', 'Jeju is an island in Korea. 济州是韩国的一座岛。'],
-  volcano: ['volcano', '/vɒlˈkeɪnəʊ/', '火山', 'A volcano made this island. 火山造出了这座岛。'],
-  oranges: ['oranges', '/ˈɔːrɪndʒɪz/', '橘子', 'Jeju oranges are juicy. 济州橘子水汪汪的。'],
-  sail: ['sail', '/seɪl/', '航行', 'We sail back to Shanghai. 我们航行回上海。']
+  cruise: ['cruise','/kruːz/','邮轮之旅','I love my cruise trip. 我爱我的邮轮之旅。'],
+  ship: ['ship','/ʃɪp/','轮船','The ship is as big as a city. 这艘船像一座城市那么大。'],
+  huge: ['huge','/hjuːdʒ/','巨大的','The ship is huge. 这艘船好大呀。'],
+  floats: ['floats','/fləʊts/','漂浮','The ship floats on the sea. 船漂在海面上。'],
+  air: ['air','/eər/','空气','Air inside the ship pushes it up. 船里的空气把它托起来。'],
+  leave: ['leave','/liːv/','离开','We leave Shanghai. 我们离开上海。'],
+  lights: ['lights','/laɪts/','灯光','The city lights are bright. 城市的灯光好亮。'],
+  dolphin: ['dolphin','/ˈdɒlfɪn/','海豚','A dolphin jumps! 海豚跳起来啦!'],
+  volcano: ['volcano','/vɒlˈkeɪnəʊ/','火山','A volcano made this island. 火山造出了这座岛。'],
+  island: ['island','/ˈaɪlənd/','岛屿','Jeju is an island. 济州是一座岛。'],
+  mountain: ['mountain','/ˈmaʊntən/','山','Hallasan is a tall mountain. 汉拿山很高。'],
+  meters: ['meters','/ˈmiːtəz/','米','It is 1,950 meters high. 它有1950米高。'],
+  guards: ['guards','/ɡɑːdz/','守护','Dol Hareubang guards Jeju. 石头爷爷守护济州。'],
+  luck: ['luck','/lʌk/','好运','Good luck! 祝你好运!'],
+  sweet: ['sweet','/swiːt/','甜的','The orange is sweet. 橘子甜甜的。'],
+  oranges: ['oranges','/ˈɔːrɪndʒɪz/','橘子','Jeju oranges are juicy. 济州橘子水汪汪的。'],
+  dive: ['dive','/daɪv/','潜水','Haenyeo dive into the sea. 海女潜入海里。'],
+  sail: ['sail','/seɪl/','航行','We sail back to Shanghai. 我们航行回上海。']
 };
-const EN_STORY = [
-  [{ k: 'cruise', t: 'My cruise trip' }, 'is', 'so', 'fun', '!'],
-  ['I', 'am', 'on', 'a', 'big', { k: 'ship', t: 'ship' }, '.'],
-  ['We', 'leave', 'from', { k: 'Shanghai', t: 'Shanghai' }, '.'],
-  ['The', 'sea', 'is', 'blue', ',', 'and', 'the', { k: 'waves', t: 'waves' }, 'are', 'big', '.'],
-  ['We', 'go', 'to', { k: 'island', t: 'Jeju island' }, '.'],
-  [{ k: 'volcano', t: 'A volcano' }, 'made', 'this', { k: 'island', t: 'island' }, ',', 'and', { k: 'oranges', t: 'oranges' }, 'grow', 'here', '.'],
-  ['We', { k: 'sail', t: 'sail' }, 'back', 'to', 'Shanghai', '.'],
-  ['Goodbye', ',', 'Adora', 'Magic', 'City', '!']
+const EN_IMGS = {
+  adora: 'assets/adora/adora_kochi.jpg',
+  cns: 'assets/adora/adora_cns.jpg',
+  shanghai: 'assets/adora/shanghai_bund.jpg',
+  dolphin: 'assets/adora/dolphin.jpg',
+  seongsan: 'assets/adora/seongsan.jpg',
+  hallasan: 'assets/adora/hallasan.jpg',
+  hareubang: 'assets/adora/hareubang.jpg',
+  orange: 'assets/adora/orange.jpg',
+  haenyeo: 'assets/adora/haenyeo.jpg',
+  sunset: 'assets/adora/sunset.jpg'
+};
+const EN_PAGES = [
+  { type: 'cover', img: EN_IMGS.adora, credit: '爱达魔都号 · Wikimedia Commons',
+    zh: '我是小船长,坐上爱达魔都号,从上海去济州岛探险!',
+    ss: [['My',['cruise'],'to','Jeju','.']] },
+  { type: 'words', zh: '先把 10 个大船单词点一遍,它们会陪你读完整个故事!' },
+  { type: 'photo', img: EN_IMGS.adora, credit: '爱达魔都号 · Wikimedia Commons',
+    zh: '知识点:爱达魔都号有 323.6 米长,像三个足球场排在一起,还有 16 层甲板!',
+    ss: [['The','Adora','Magic','City','is','a',['huge'],['ship'],'.'],['It','is','as','long','as','three','football','fields','!']] },
+  { type: 'photo', img: EN_IMGS.cns, credit: '爱达魔都号 · Wikimedia Commons',
+    zh: '知识点:船为什么不沉?船里充满空气,海水把船托起来,这叫浮力!',
+    ss: [['The',['ship'],['floats'],'on','the','sea','.'],['Air','inside','pushes','it','up','.']] },
+  { type: 'photo', img: EN_IMGS.shanghai, credit: '上海外滩夜景 · Wikimedia Commons',
+    zh: '晚上从上海出发,城市的灯光越来越小,越来越小……',
+    ss: [['We',['leave'],'Shanghai','at','night','.'],['The','city',['lights'],'get','small',',','small',',','small','.']] },
+  { type: 'photo', img: EN_IMGS.dolphin, credit: '宽吻海豚 · Wikimedia Commons',
+    zh: '第二天早上,一只海豚跳出海面,跟着我们的船一起游!',
+    ss: [['In','the','morning',',','a',['dolphin'],'jumps','beside','our','ship','.']] },
+  { type: 'photo', img: EN_IMGS.seongsan, credit: '济州城山日出峰 · Wikimedia Commons',
+    zh: '知识点:济州岛是火山岛,很久很久以前,海底火山喷发造出了这座岛。',
+    ss: [['Jeju','is','a',['volcano'],['island'],'.'],['A',['volcano'],'made','it','long',',','long','ago','.']] },
+  { type: 'photo', img: EN_IMGS.hallasan, credit: '汉拿山 · Wikimedia Commons',
+    zh: '知识点:汉拿山是韩国最高的山,有 1950 米高,山顶还有一个火山湖!',
+    ss: [['Hallasan','is','the','tallest',['mountain'],'in','Korea','.'],['It','is','1,950',['meters'],'high','!']] },
+  { type: 'photo', img: EN_IMGS.hareubang, credit: '石头爷爷 · Wikimedia Commons',
+    zh: '石头爷爷是济州岛的守护神,摸摸他的鼻子,会带来好运哦!',
+    ss: [['Dol','Hareubang',['guards'],'Jeju','.'],['Touch','his','nose','for',['luck'],'!']] },
+  { type: 'photo', img: EN_IMGS.orange, credit: '济州汉拿峰橘子 · Wikimedia Commons',
+    zh: '济州岛上到处都是甜甜的橘子,摘一个当早餐!',
+    ss: [['Jeju','is','full','of',['sweet'],['oranges'],'.'],['I','pick','one','for','breakfast','.']] },
+  { type: 'photo', img: EN_IMGS.haenyeo, credit: '济州海女 · Wikimedia Commons',
+    zh: '知识点:海女奶奶不背氧气瓶就能潜到海底抓海鲜,她们的手艺是世界文化遗产。',
+    ss: [['Haenyeo',['dive'],'into','the','sea','without','air','tanks','.'],['They','are','so','brave','!']] },
+  { type: 'photo', img: EN_IMGS.sunset, credit: '港边日落 · Wikimedia Commons',
+    zh: '我们航行回上海。再见,济州!我爱我的邮轮之旅!',
+    ss: [['We',['sail'],'back','to','Shanghai','.'],['Goodbye',',','Jeju','!','I','love','my',['cruise'],'trip','!']] }
 ];
 let curEnWord = null;
+let curEng = 0;
 function enSentText(tokens) {
   let s = '';
   tokens.forEach(t => {
-    const w = typeof t === 'object' ? t.t : t;
+    const w = Array.isArray(t) ? t.join('') : t;
     s += (!s || ',."\u2019!?'.includes(w[0])) ? w : ' ' + w;
   });
   return s.trim();
 }
-function renderEnStory() {
-  const box = document.getElementById('story');
-  box.innerHTML = EN_STORY.map((tokens, i) => {
-    const inner = tokens.map(t => {
-      if (typeof t === 'object') {
-        return `<span class="wd"><span class="nw${store.en['n' + t.k] ? ' learned' : ''}" data-w="${t.k}">${t.t}</span></span>`;
-      }
-      const punct = /^[.,!?"'（）]+$/.test(t) ? ' punct' : '';
-      return `<span class="wd${punct}">${t}</span>`;
-    }).join('');
-    return `<div class="storyline" data-i="${i}">${inner}</div>`;
-  }).join('');
-  box.querySelectorAll('.storyline').forEach((ln, i) => {
-    if (store.en['st' + i]) ln.classList.add('done');
-    ln.addEventListener('click', e => {
+function renderEng() {
+  const box = document.getElementById('bookBox');
+  const p = EN_PAGES[curEng];
+  let html = '';
+  if (p.type === 'cover') {
+    html += `<img class="photo" src="${p.img}" alt="爱达魔都号"><div class="cover"><div class="big">🚢 🌊 🗻</div></div>`;
+  } else if (p.type === 'photo') {
+    html += `<img class="photo" src="${p.img}" alt="绘本配图">`;
+  }
+  if (p.credit) html += `<div class="credit">📷 ${p.credit}</div>`;
+  if (p.type === 'words') {
+    html += `<div class="word-grid">${EN_WORDS.map((w, i) =>
+      `<div class="word${store.en['w' + i] ? ' learned' : ''}" data-wi="${i}"><div class="en">${i + 1}. ${w[0]}</div><div class="ph">${w[1]}</div><div class="cn">${store.en['w' + i] ? w[2] : '? 点我'}</div><div class="spk">🔊 点我读</div></div>`).join('')}</div>`;
+  } else {
+    html += `<p class="zh">${p.zh}</p>`;
+    p.ss.forEach((s, i) => {
+      html += `<div class="sentence" data-i="${i}">${s.map(t => {
+        if (Array.isArray(t)) {
+          return `<span class="wd"><span class="nw${store.en['n' + t[0]] ? ' learned' : ''}" data-w="${t[0]}">${t.join('')}</span></span>`;
+        }
+        const punct = /^[.,!?"'（）]+$/.test(t) ? ' punct' : '';
+        return `<span class="wd${punct}">${t}</span>`;
+      }).join('')}</div>`;
+    });
+  }
+  html += `<p class="speakHint">👆 点句子听发音 · 点<b style="color:var(--coral)">红色生词</b>看卡片</p>`;
+  box.innerHTML = html;
+  box.querySelectorAll('.sentence').forEach(el => {
+    el.addEventListener('click', e => {
       if (e.target.classList.contains('nw')) return;
-      ln.classList.add('done');
-      store.en['st' + i] = true; save();
-      speakEn(enSentText(EN_STORY[i]));
+      const pi = curEng;
+      store.en['pg' + pi] = true; save();
+      speakEn(enSentText(p.ss[el.dataset.i]));
       refreshEnLevels();
     });
   });
@@ -2046,7 +2129,35 @@ function renderEnStory() {
       refreshEnLevels();
     });
   });
+  box.querySelectorAll('.word').forEach(w => {
+    w.addEventListener('click', () => {
+      const i = +w.dataset.wi;
+      w.classList.add('learned');
+      w.querySelector('.cn').textContent = EN_WORDS[i][2];
+      store.en['w' + i] = true; save();
+      speakEn(EN_WORDS[i][0]);
+      refreshEnLevels();
+    });
+  });
+  document.getElementById('engPg').textContent = `绘本 ${curEng + 1} / ${EN_PAGES.length}`;
+  document.getElementById('engPrev').disabled = curEng === 0;
+  document.getElementById('engNext').disabled = curEng === EN_PAGES.length - 1;
+  renderEngDots();
 }
+function renderEngDots() {
+  const dots = document.getElementById('engDots');
+  dots.innerHTML = EN_PAGES.map((p, i) => `<span class="dot${i === curEng ? ' cur' : ''}" data-goe="${i}"></span>`).join('');
+}
+function goEng(d) {
+  curEng = Math.max(0, Math.min(EN_PAGES.length - 1, curEng + d));
+  renderEng();
+}
+document.getElementById('engPrev').addEventListener('click', () => goEng(-1));
+document.getElementById('engNext').addEventListener('click', () => goEng(1));
+document.getElementById('engDots').addEventListener('click', e => {
+  const dot = e.target.closest('.dot');
+  if (dot) { curEng = +dot.dataset.goe; renderEng(); }
+});
 function openEnSheet(key) {
   const d = EN_L3WORDS[key];
   if (!d) return;
@@ -2061,20 +2172,24 @@ function openEnSheet(key) {
 function refreshEnLevels() {
   const en = store.en || {};
   const wCount = Object.keys(en).filter(k => /^w\d+$/.test(k)).length;
-  const sCount = Object.keys(en).filter(k => /^s\d+$/.test(k)).length;
+  const pgCount = Object.keys(en).filter(k => /^pg\d+$/.test(k)).length;
   const nCount = Object.keys(en).filter(k => /^n/.test(k)).length;
-  const stCount = Object.keys(en).filter(k => /^st\d+$/.test(k)).length;
-  const lv1 = wCount >= 10, lv2 = sCount >= 6;
-  const lv3 = stCount >= EN_STORY.length && nCount >= Object.keys(EN_L3WORDS).length;
+  const bb = document.getElementById('bookBox');
+  const stTotal = +(bb.dataset.st || 0);
+  const nwTotal = +(bb.dataset.nw || 0);
+  const lv1 = wCount >= 10;
+  const lv2 = pgCount >= 6;
+  const lv3 = pgCount >= stTotal && nCount >= nwTotal;
   $('#lv1').classList.toggle('done', lv1);
   $('#lv2').classList.toggle('done', lv2);
   $('#lv3').classList.toggle('done', lv3);
   if (lv3 && !en.lv3Done) {
     en.lv3Done = true; save();
-    setTimeout(() => { confettiBurst(80); toast('🇬🇧 Level 3 通关!小故事读完啦,你是英语小船长!'); }, 300);
+    setTimeout(() => { confettiBurst(80); toast('🇬🇧 Level 3 通关!整本绘本读完啦,你是英语小船长!'); }, 300);
   }
+  updateAchieve();
 }
-renderEnStory();
+renderEng();
 refreshEnLevels();
 
 /* ============ 单词卡弹层 ============ */
@@ -2082,8 +2197,78 @@ $('#sheetSpeak').addEventListener('click', () => speakEn(curEnWord ? EN_L3WORDS[
 $('#sheetClose').addEventListener('click', () => { document.getElementById('wordSheet').style.display = 'none'; });
 document.getElementById('wordSheet').addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.style.display = 'none'; });
 
+/* ============ 翻页结构(四大板块) ============ */
+const BLOCKS = [
+  { name: '封面', ids: ['hero'] },
+  { name: '已完成', ids: ['stamp', 'cert'] },
+  { name: '互动手册', ids: ['ship', 'goals', 'map', 'plan', 'geo', 'tour', 'quiz', 'match'] },
+  { name: '分级', ids: ['eng'] },
+  { name: '打印', ids: ['printpage'] }
+];
+const PAGE_ORDER = [];
+BLOCKS.forEach((b, bi) => b.ids.forEach(id => PAGE_ORDER.push({ bi, id })));
+let curPage = 0;
+function showPage(i) {
+  curPage = Math.max(0, Math.min(PAGE_ORDER.length - 1, i));
+  document.querySelectorAll('.sec, .hero').forEach(s => s.classList.remove('pg-active'));
+  const p = PAGE_ORDER[curPage];
+  document.getElementById(p.id).classList.add('pg-active');
+  document.querySelectorAll('.bottomnav button').forEach((b, k) => b.classList.toggle('active', k === p.bi));
+  if (p.bi === 1) updateAchieve();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+PAGE_ORDER.forEach((p, i) => {
+  const el = document.getElementById(p.id);
+  if (!el) return;
+  const pa = document.createElement('div');
+  pa.className = 'page-actions';
+  pa.innerHTML = `<button class="btn ghost" data-nav="-1" ${i === 0 ? 'disabled' : ''}>← 上一页</button>` +
+    `<span class="page-count">${BLOCKS[p.bi].name} · 第 ${i + 1} / ${PAGE_ORDER.length} 页</span>` +
+    `<button class="btn" data-nav="1" ${i === PAGE_ORDER.length - 1 ? 'disabled' : ''}>下一页 →</button>`;
+  el.appendChild(pa);
+});
+document.addEventListener('click', e => {
+  const block = e.target.closest('[data-block]');
+  if (block) { showPage(PAGE_ORDER.findIndex(p => p.bi === +block.dataset.block)); return; }
+  const go = e.target.closest('[data-go]');
+  if (go) { showPage(+go.dataset.go); return; }
+  const nav = e.target.closest('[data-nav]');
+  if (nav && !nav.disabled) showPage(curPage + (+nav.dataset.nav));
+});
+function updateAchieve() {
+  const box = document.getElementById('achieveBox');
+  if (!box) return;
+  const en = store.en || {};
+  const bb = document.getElementById('bookBox');
+  const stTotal = +(bb ? bb.dataset.st : 0);
+  const nwTotal = +(bb ? bb.dataset.nw : 0);
+  const lv = [
+    Object.keys(en).filter(k => /^w\d+$/.test(k)).length >= 10,
+    Object.keys(en).filter(k => /^pg\d+$/.test(k)).length >= 6,
+    Object.keys(en).filter(k => /^pg\d+$/.test(k)).length >= stTotal &&
+      Object.keys(en).filter(k => /^n/.test(k)).length >= nwTotal
+  ];
+  const lvTxt = lv.filter(Boolean).length;
+  const medalTotal = document.querySelectorAll('.mbadge').length;
+  const items = [
+    ['🎯', `${countGoals()} / 13`, '任务', countGoals() >= 13],
+    ['📛', `${countStamps()} / 7`, '印章', countStamps() >= 7],
+    ['🏅', `${Object.keys(store.medals || {}).length} / ${medalTotal}`, '勋章', Object.keys(store.medals || {}).length >= medalTotal],
+    ['⭐', `${store.quizStars || 0} / 5`, '问答', (store.quizStars || 0) >= 5],
+    ['🧩', store.matchDone ? '完成' : '进行中', '配对', !!store.matchDone],
+    ['🇬🇧', `${lvTxt} / 3`, '英语分级', lvTxt >= 3],
+    ['🚤', `${store.foilBest || 0} 枚`, '浮力纪录', (store.foilBest || 0) >= 10],
+    ['🎡', store.wheelDrawn ? '画好啦' : '未画', '船舵', !!store.wheelDrawn]
+  ];
+  box.innerHTML = items.map(it =>
+    `<div class="achv${it[3] ? ' done' : ''}"><span class="ic">${it[0]}</span><span class="num">${it[1]}</span><span class="lb">${it[2]}</span></div>`).join('');
+}
+showPage(0);
+
 /* ============ 打印 ============ */
 $('#printFab').addEventListener('click', () => { window.print(); });
+$('#printNow').addEventListener('click', () => { window.print(); });
+$('#printFab2').addEventListener('click', () => { window.print(); });
 
 /* ============ 结业证书 ============ */
 function makeCert() {

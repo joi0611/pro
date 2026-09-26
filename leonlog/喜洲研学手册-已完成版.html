@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Leon 于 2026 年 9 月 25 日完成的大理喜洲研学手帐，记录古镇、扎染、喜洲粑粑、稻田与太阳能杀虫灯。">
+<title>Leon 的喜洲研学手帐 · 已完成版</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e9eee8;color:#243b3b;font-family:"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:hidden}
+:root{--ink:#243b3b;--blue:#1f6381;--blue-deep:#18475d;--cyan:#b8ddea;--paper:#fbfaf2;--green:#4f7558;--yellow:#f0c75e;--red:#bd5d4b;--line:#91afb4;--shadow:#b6c7c3}
+button,a{font:inherit}button{cursor:pointer}:focus-visible{outline:4px solid var(--yellow);outline-offset:4px}.skip{position:absolute;left:-9999px}.skip:focus{left:14px;top:14px;z-index:99;background:#fff;padding:10px 14px}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px max(14px,calc((100vw - 1120px)/2));background:#edf5f2ee;border-bottom:2px dashed #78999c;backdrop-filter:blur(12px)}
+.topbar a{color:var(--blue-deep);font-weight:800;text-decoration:none}.topbar nav{display:flex;gap:5px;overflow:auto;scrollbar-width:none}.topbar nav a{flex:none;padding:8px 10px;border-radius:8px;color:#496365;font-size:12px}.topbar nav a.active{background:var(--blue-deep);color:#fff}.print{border:0;border-radius:8px;background:var(--yellow);color:#3d351c;padding:8px 12px;font-weight:900;white-space:nowrap}
+.journal{width:min(1120px,calc(100% - 24px));margin:18px auto 80px}.hero{position:relative;min-height:min(780px,84dvh);display:grid;align-items:end;overflow:hidden;border:2px solid #6f8d90;border-radius:18px 30px 20px 34px;background:#bcd8de;box-shadow:12px 14px 0 var(--shadow)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 43%}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,46,52,.04) 32%,rgba(12,46,52,.85) 100%)}
+.hero-copy{position:relative;z-index:2;width:min(760px,100%);padding:clamp(28px,7vw,76px);color:#fff}.issue{display:inline-block;padding:7px 12px;background:var(--yellow);color:#473c17;font:900 12px/1 monospace;letter-spacing:.12em;transform:rotate(-2deg)}.hero h1{margin:14px 0 10px;font-family:"STKaiti","KaiTi",sans-serif;font-size:clamp(47px,9vw,96px);line-height:.94;letter-spacing:-.045em;text-shadow:0 4px 22px #173f4d}.hero p{max-width:29ch;margin:0;font-size:clamp(17px,2.3vw,23px);line-height:1.65}.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.hero-meta span{padding:7px 10px;border:1px solid #ffffffad;border-radius:7px;background:#164c5fb8;font-size:13px;font-weight:800}
+.paper{position:relative;margin:62px auto 0;padding:clamp(22px,5vw,60px);background-color:var(--paper);background-image:linear-gradient(#d7e3dc 1px,transparent 1px);background-size:100% 32px;border:2px solid #77999c;border-radius:16px 25px 18px 29px;box-shadow:10px 12px 0 var(--shadow)}.paper:before,.paper:after{content:"";position:absolute;top:-14px;width:118px;height:30px;background:#e4cf8699;box-shadow:0 1px 2px #6e603040}.paper:before{left:10%;transform:rotate(-5deg)}.paper:after{right:11%;transform:rotate(4deg)}
+.opening{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,6vw,76px);align-items:start}.opening h2,.chapter h2{margin:0 0 15px;font:900 clamp(31px,5vw,58px)/1.05 "STKaiti","KaiTi",sans-serif;color:var(--blue-deep)}.lead{margin:0;color:#324f50;font-size:clamp(17px,2vw,21px);line-height:1.9}.scribble{position:relative;padding:22px 24px;background:#fffdf3;border:2px solid #8da6a7;border-radius:8px 15px 9px 17px;box-shadow:6px 7px 0 #c9d4cd;transform:rotate(1deg)}.scribble strong{display:block;margin-bottom:10px;color:var(--red);font:900 24px/1.2 "STKaiti","KaiTi",sans-serif}.scribble p{margin:0;font:700 18px/1.8 "STKaiti","KaiTi",sans-serif}.stamp{position:absolute;right:18px;bottom:-28px;display:grid;place-items:center;width:88px;aspect-ratio:1;border:4px double var(--red);border-radius:50%;color:var(--red);font:900 14px/1.15 monospace;text-align:center;transform:rotate(-12deg)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:36px}.stat{padding:18px 12px;background:#d9ebed;border:1.5px dashed #557f87;text-align:center;transform:rotate(-1deg)}.stat:nth-child(2){background:#f4dfa0;transform:rotate(1.2deg)}.stat:nth-child(3){background:#d7e5ce;transform:rotate(-.6deg)}.stat b{display:block;font:900 30px/1 "STKaiti","KaiTi",sans-serif}.stat span{display:block;margin-top:5px;font-size:12px;font-weight:800}
+.chapter{position:relative;margin-top:84px;scroll-margin-top:76px}.chapter-kicker{display:inline-block;margin-bottom:14px;padding:6px 10px;background:var(--blue);color:#fff;font:900 12px/1 monospace;letter-spacing:.12em;transform:rotate(-1.5deg)}.chapter-intro{max-width:700px;margin:0 0 30px;color:#4a6262;font-size:16px;line-height:1.85}
+.scrapbook-shell{position:relative;margin-top:28px;padding:clamp(12px,2vw,20px);background:#2d69a0;border:2px solid #16475d;box-shadow:10px 12px 0 #aec2c1;transform:rotate(-.35deg)}.scrapbook-shell:before{content:"翻开看看";position:absolute;z-index:2;right:7%;top:-18px;padding:8px 16px;background:#fff0a9;color:#775817;font:900 18px/1 "STKaiti","KaiTi",sans-serif;transform:rotate(4deg);box-shadow:3px 4px 0 #c5b16b}.scrapbook-main{display:block;width:100%;padding:0;border:0;background:#fff}.scrapbook-main img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}.scrapbook-tabs{display:flex;justify-content:center;gap:9px;margin-top:18px;flex-wrap:wrap}.scrapbook-tabs button{min-height:44px;padding:9px 15px;border:2px solid #16475d;border-radius:7px;background:#fff;color:#16475d;font-weight:900;box-shadow:3px 4px 0 #16475d}.scrapbook-tabs button[aria-pressed="true"]{background:#f2ca63;color:#453716}.scrapbook-caption{margin:18px auto 0;max-width:660px;text-align:center;font:700 18px/1.8 "STKaiti","KaiTi",sans-serif;color:#49615f}
+.collage{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,2vw,22px);align-items:start}.photo{position:relative;margin:0;padding:9px 9px 34px;background:#fff;border:1px solid #92a7a5;box-shadow:7px 8px 0 #c1cfca;transform:rotate(var(--tilt,0deg));overflow:hidden}.photo button{display:block;width:100%;padding:0;border:0;background:none}.photo img{display:block;width:100%;height:100%;min-height:260px;max-height:650px;object-fit:cover}.photo figcaption{position:absolute;left:12px;right:12px;bottom:8px;color:#526768;font:700 13px/1.25 "STKaiti","KaiTi",sans-serif}.p7{grid-column:span 7}.p5{grid-column:span 5}.p6{grid-column:span 6}.p4{grid-column:span 4}.p8{grid-column:span 8}.portrait img{aspect-ratio:3/4}.landscape img{aspect-ratio:4/3}.crop-low img{object-position:center 70%}.crop-top img{object-position:center 18%}
+.note{grid-column:span 5;position:relative;margin-top:28px;padding:24px;background:#fff7c9;border:1px solid #c4a654;box-shadow:7px 8px 0 #d5c98f;transform:rotate(1.4deg)}.note.p7{grid-column:span 7}.note h3{margin:0 0 10px;color:#6d5320;font:900 27px/1.1 "STKaiti","KaiTi",sans-serif}.note p,.note li{font-size:15px;line-height:1.85}.note ul{margin:10px 0 0;padding-left:21px}.task-list{grid-column:span 12;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}.task{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;padding:14px 16px;background:#f5f8f2;border:1.5px dashed #7e9b91;border-radius:7px}.check{display:grid;place-items:center;width:28px;height:28px;border:2px solid var(--green);background:#dcebd8;color:var(--green);font-weight:900;transform:rotate(-4deg)}.task b{display:block;margin-bottom:4px;color:#315d54}.task span{font-size:13px;line-height:1.6;color:#536b68}
+.answer-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}.answer{padding:16px;background:#eef6f5;border-left:5px solid var(--blue)}.answer small{display:block;color:#607676;font-weight:800}.answer b{display:block;margin-top:5px;font:900 19px/1.5 "STKaiti","KaiTi",sans-serif;color:var(--blue-deep)}
+.video-spread{display:grid;grid-template-columns:minmax(0,.78fr) minmax(320px,1.22fr);gap:clamp(22px,5vw,58px);align-items:center}.video-frame{position:relative;padding:10px 10px 42px;background:#fff;border:1.5px solid #748f91;box-shadow:9px 10px 0 #bdcbc6;transform:rotate(-.8deg)}.video-frame video{display:block;width:100%;max-height:660px;background:#132e31;object-fit:contain}.video-label{position:absolute;left:14px;bottom:11px;font:800 13px/1 monospace;color:#49615f}.field-note{padding:24px 26px;background:#dcebcf;border:1.5px solid #78916b;box-shadow:7px 8px 0 #bdcbb3;transform:rotate(1deg)}.field-note h3{margin:0 0 12px;font:900 29px/1.2 "STKaiti","KaiTi",sans-serif;color:#38573b}.field-note p{margin:0 0 12px;font-size:16px;line-height:1.85}.field-note dl{margin:18px 0 0}.field-note dt{margin-top:13px;font-weight:900;color:#3e6447}.field-note dd{margin:3px 0 0;line-height:1.7;color:#4e6152}
+.solar-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:22px}.solar-flow div{position:relative;padding:18px 12px;background:#fff;border:1.5px dashed #68846b;text-align:center;font-weight:800;line-height:1.5}.solar-flow div:not(:last-child):after{content:"→";position:absolute;right:-12px;top:50%;z-index:2;color:var(--red);font-size:20px;transform:translateY(-50%)}
+.memory-card{position:relative;margin:8px 0 46px;padding:12px 12px 42px;background:#fff;border:1.5px solid #91a7a5;box-shadow:9px 10px 0 #c2ceca;transform:rotate(.55deg)}.memory-card:before{content:"收藏这一刻";position:absolute;z-index:2;left:5%;top:-18px;padding:7px 14px;background:#c9dcae;color:#36583c;font:900 17px/1 "STKaiti","KaiTi",sans-serif;transform:rotate(-4deg)}.memory-card button{display:block;width:100%;padding:0;border:0;background:none}.memory-card img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}.memory-card figcaption{position:absolute;left:16px;bottom:10px;color:#506465;font:800 14px/1.2 "STKaiti","KaiTi",sans-serif}.finish{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.certificate{padding:34px;border:4px double #9e7925;background:#fff5c9;text-align:center;transform:rotate(-1deg);box-shadow:9px 10px 0 #d6c78c}.certificate h3{margin:10px 0;color:#775817;font:900 37px/1.1 "STKaiti","KaiTi",sans-serif}.certificate p{line-height:1.8}.signature{display:inline-block;min-width:190px;margin-top:18px;padding:5px 18px;border-bottom:2px solid #80692f;color:var(--blue);font:900 27px/1 "STKaiti","KaiTi",sans-serif}.takeaway{padding:10px 0}.takeaway blockquote{margin:0;padding:24px;border-left:6px solid var(--red);background:#fff;font:700 clamp(19px,2.4vw,26px)/1.8 "STKaiti","KaiTi",sans-serif}.takeaway ul{padding-left:22px;line-height:2}.backlinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.backlinks a{display:inline-flex;align-items:center;min-height:44px;padding:10px 15px;border:2px solid var(--blue);border-radius:8px;color:var(--blue-deep);font-weight:900;text-decoration:none;background:#fff}.backlinks a.primary{background:var(--blue-deep);color:#fff}
+.lightbox{position:fixed;inset:0;z-index:50;display:none;place-items:center;padding:18px;background:#102a2de8}.lightbox.open{display:grid}.lightbox img{display:block;max-width:min(1100px,96vw);max-height:88dvh;object-fit:contain;border:8px solid #fff}.lightbox button{position:absolute;right:18px;top:18px;width:46px;height:46px;border:2px solid #fff;border-radius:50%;background:#173f47;color:#fff;font-size:26px}.reveal{opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s ease}.reveal.seen{opacity:1;transform:none}
+@media(max-width:780px){.topbar nav{display:none}.journal{width:min(100% - 16px,680px);margin-top:8px}.hero{min-height:690px}.hero-copy{padding:28px 22px 38px}.paper{margin-top:42px;padding:28px 16px}.opening,.video-spread,.finish{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.p7,.p5,.p6,.p4,.p8,.note,.note.p7{grid-column:span 12}.photo{transform:rotate(calc(var(--tilt,0deg) * .55))}.photo img{min-height:260px;max-height:560px}.task-list{grid-template-columns:1fr}.answer-strip{grid-template-columns:1fr}.solar-flow{grid-template-columns:1fr 1fr}.solar-flow div:nth-child(2):after{display:none}.chapter{margin-top:66px}.video-frame{width:min(100%,430px);margin:auto}}
+@media(max-width:430px){.hero{min-height:620px}.hero h1{font-size:48px}.paper:after{display:none}.stats{grid-template-columns:1fr}.stat:last-child{grid-column:auto}.photo img{min-height:220px}.solar-flow{grid-template-columns:1fr}.solar-flow div:after{display:none!important}.print{padding-inline:9px}.certificate{padding:24px 16px}.scrapbook-shell{margin-inline:-10px;padding:8px}.scrapbook-tabs{padding-inline:6px}.memory-card{margin-inline:-7px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+@media print{body{background:#fff}.topbar,.backlinks,.lightbox,.scrapbook-tabs{display:none!important}.journal{width:100%;margin:0}.hero{min-height:250mm;box-shadow:none;break-after:page}.paper{margin:0;border:0;box-shadow:none}.chapter{break-before:page}.photo,.note,.video-frame,.field-note,.certificate,.scrapbook-shell,.memory-card{box-shadow:none}.reveal{opacity:1;transform:none}.video-frame video{display:none}.video-frame:before{content:"现场视频已收录在网页版";display:grid;place-items:center;min-height:220px;background:#dcebcf;font-weight:900}}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳到研学记录</a>
+<header class="topbar">
+  <a href="喜洲研学手册-网页版.html">返回互动手册</a>
+  <nav aria-label="手帐章节">
+    <a href="#scrapbook">手帐</a><a href="#old-town">古镇</a><a href="#tiedye">扎染</a><a href="#baba">粑粑</a><a href="#rice">稻田</a><a href="#finish">收获</a>
+  </nav>
+  <button class="print" type="button" onclick="window.print()">打印手帐</button>
+</header>
+
+<main class="journal" id="content">
+  <section class="hero" aria-labelledby="title">
+    <img src="assets/xizhou-20260925-rice-field.jpg" alt="Leon 站在喜洲金绿色稻田与格桑花旁">
+    <div class="hero-copy">
+      <span class="issue">FIELD JOURNAL · XIZHOU</span>
+      <h1 id="title">喜洲<br>研学手帐</h1>
+      <p>走进老街、摸一摸青石板、看扎染从染缸醒来，再到稻田边发现一盏会“吃虫”的灯。</p>
+      <div class="hero-meta"><span>2026.09.25</span><span>云南 · 大理 · 喜洲</span><span>Leon 的完成记录</span></div>
+    </div>
+  </section>
+
+  <article class="paper">
+    <section class="opening reveal" aria-labelledby="opening-title">
+      <div>
+        <span class="chapter-kicker">TODAY'S NOTE</span>
+        <h2 id="opening-title">今天，我用脚步读古镇</h2>
+        <p class="lead">喜洲不是只用眼睛看的。石板要用手摸，门楼要停下来画，粑粑要问过价格再尝，稻田里的新发现还要追问“为什么”。原来一座古镇里，同时住着历史、手艺、食物和农业科技。</p>
+        <div class="stats" aria-label="研学概览">
+          <div class="stat"><b>1 天</b><span>完整田野研学</span></div>
+          <div class="stat"><b>5 站</b><span>老街到稻田</span></div>
+          <div class="stat"><b>2 段</b><span>现场影像记录</span></div>
+        </div>
+      </div>
+      <aside class="scribble">
+        <strong>完成啦！</strong>
+        <p>我最喜欢的颜色是扎染蓝，最惊喜的发现是太阳能杀虫灯。东安门的砖纹和屋檐，我也认真画进了本子。</p>
+        <span class="stamp">LEON<br>喜洲打卡<br>09·25</span>
+      </aside>
+    </section>
+
+    <section class="chapter reveal" id="scrapbook" aria-labelledby="scrapbook-title">
+      <span class="chapter-kicker">OPEN THE SCRAPBOOK</span>
+      <h2 id="scrapbook-title">翻开，照片开始说话</h2>
+      <p class="chapter-intro">老门楼、石板路、扎染蓝、粑粑香和稻田风，都被贴进同一本手帐里。可以在“装饰丰富版”和“经典双页版”之间切换。</p>
+      <div class="scrapbook-shell">
+        <button class="scrapbook-main" type="button" data-full="assets/xizhou-scrapbook-rich.png" aria-label="放大查看装饰丰富版喜洲手帐">
+          <img id="scrapbook-image" src="assets/xizhou-scrapbook-rich.png" alt="装饰丰富的喜洲研学双页旅行手帐，包含十张现场照片、票根、挂件与贴纸">
+        </button>
+      </div>
+      <div class="scrapbook-tabs" aria-label="切换手帐样式">
+        <button type="button" aria-pressed="true" data-scrapbook="assets/xizhou-scrapbook-rich.png" data-alt="装饰丰富的喜洲研学双页旅行手帐，包含十张现场照片、票根、挂件与贴纸">装饰丰富版</button>
+        <button type="button" aria-pressed="false" data-scrapbook="assets/xizhou-scrapbook-classic.png" data-alt="经典蓝色切割垫与方格本风格的喜洲研学双页旅行手帐">经典双页版</button>
+      </div>
+      <p class="scrapbook-caption">“随手写下的字不必太整齐，因为风、阳光和当时的心情，本来就各有方向。”</p>
+    </section>
+
+    <section class="chapter reveal" id="old-town" aria-labelledby="old-title">
+      <span class="chapter-kicker">OLD TOWN CLUES</span>
+      <h2 id="old-title">第一站：老街寻宝</h2>
+      <p class="chapter-intro">脚下的青石板被来来往往的人磨得发亮。东安门把巷子、远山与老屋框在一起，像一扇通往旧时光的门。</p>
+      <div class="collage">
+        <figure class="photo p7 landscape" style="--tilt:-1.2deg"><button type="button" aria-label="放大查看东安门" data-full="assets/xizhou-20260925-dongan-gate.jpg"><img src="assets/xizhou-20260925-dongan-gate.jpg" alt="喜洲东安门的青瓦门楼与蓝天"></button><figcaption>东安门，抬头能看见层层青瓦</figcaption></figure>
+        <aside class="note">
+          <h3>我找到的历史线索</h3>
+          <ul><li>古称：大厘城</li><li>建筑主色：青瓦、灰砖、白墙</li><li>石板触感：凉凉的，有些地方被磨得很光滑</li><li>门楼像古镇的一张“老名片”</li></ul>
+        </aside>
+        <figure class="photo p4 portrait crop-low" style="--tilt:1.1deg"><button type="button" aria-label="放大查看触摸石板" data-full="assets/xizhou-20260925-stone-touch.jpg"><img src="assets/xizhou-20260925-stone-touch.jpg" loading="lazy" alt="Leon 蹲下触摸喜洲青石板路"></button><figcaption>任务完成：用手感受青石板</figcaption></figure>
+        <figure class="photo p8 landscape crop-low" style="--tilt:-.5deg"><button type="button" aria-label="放大查看东安门写生" data-full="assets/xizhou-20260925-gate-sketch.jpg"><img src="assets/xizhou-20260925-gate-sketch.jpg" loading="lazy" alt="Leon 坐在东安门旁进行观察记录"></button><figcaption>停在门边，把看到的细节记下来</figcaption></figure>
+        <figure class="photo p5 portrait" style="--tilt:1deg"><button type="button" aria-label="放大查看手帐书写" data-full="assets/xizhou-20260925-writing.jpg"><img src="assets/xizhou-20260925-writing.jpg" loading="lazy" alt="Leon 在手帐上用红笔写东安门"></button><figcaption>“东安门”写进今天的手帐</figcaption></figure>
+        <figure class="photo p7 landscape crop-low" style="--tilt:-.8deg"><button type="button" aria-label="放大查看石栏旁记录" data-full="assets/xizhou-20260925-wall-notes.jpg"><img src="assets/xizhou-20260925-wall-notes.jpg" loading="lazy" alt="Leon 坐在白族石栏旁完成研学记录"></button><figcaption>边看边写，花纹和结构都不漏掉</figcaption></figure>
+        <figure class="photo p5 portrait crop-top" style="--tilt:.8deg"><button type="button" aria-label="放大查看老街田野记录" data-full="assets/xizhou-20260925-field-notes.jpg"><img src="assets/xizhou-20260925-field-notes.jpg" loading="lazy" alt="Leon 抱着研学手册站在喜洲老街上观察"></button><figcaption>带着问题走老街，边走边找答案</figcaption></figure>
+        <div class="task-list" aria-label="老街任务完成情况">
+          <div class="task"><span class="check">✓</span><div><b>触摸青石板</b><span>发现石面温度低，常走的位置更平滑。</span></div></div>
+          <div class="task"><span class="check">✓</span><div><b>找到老门楼</b><span>东安门的拱券、灰砖和瓦檐都已观察。</span></div></div>
+          <div class="task"><span class="check">✓</span><div><b>记录古镇旧名</b><span>答案：大厘城，也曾称史城。</span></div></div>
+          <div class="task"><span class="check">✓</span><div><b>辨认建筑颜色</b><span>答案：青瓦、灰砖、白墙。</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="tiedye" aria-labelledby="tie-title">
+      <span class="chapter-kicker">BLUE CRAFT</span>
+      <h2 id="tie-title">第二站：蓝布里的白花</h2>
+      <p class="chapter-intro">扎染先把白布扎紧，再放进染液。被线绳保护的地方不容易染上颜色，展开时就留下了白色纹样。每块布都像一次不能完全复制的实验。</p>
+      <div class="collage">
+        <figure class="photo p8 landscape" style="--tilt:-.8deg"><button type="button" aria-label="放大查看扎染布" data-full="assets/xizhou-20260925-tiedye-run.jpg"><img src="assets/xizhou-20260925-tiedye-run.jpg" loading="lazy" alt="多块蓝白扎染布在阳光下晾晒，Leon 从布帘间跑过"></button><figcaption>一整面会随风摆动的蓝白图案墙</figcaption></figure>
+        <aside class="note">
+          <h3>图案观察</h3>
+          <p>我看见了圆点、月牙、花朵、波纹和重复的几何纹样。蓝色有深有浅，是因为布料折叠、捆扎与浸染的位置不同。</p>
+        </aside>
+        <figure class="photo p5 portrait" style="--tilt:1.2deg"><button type="button" aria-label="放大查看染缸" data-full="assets/xizhou-20260925-dye-vat.jpg"><img src="assets/xizhou-20260925-dye-vat.jpg" loading="lazy" alt="盛着深蓝染液的染缸与刚染过的布料"></button><figcaption>染缸近看：深蓝染液与刚染好的布</figcaption></figure>
+        <div class="note p7" style="--tilt:-.5deg">
+          <h3>我的扎染设计</h3>
+          <p>如果自己做一块，我想用一圈圈捆扎的方法做出“稻田里的太阳”，中间留白，外面从浅蓝慢慢变成深蓝。</p>
+          <div class="answer-strip">
+            <div class="answer"><small>主要颜色</small><b>靛蓝 + 白色</b></div>
+            <div class="answer"><small>发现的纹样</small><b>圆点、月牙、花</b></div>
+            <div class="answer"><small>工艺关键词</small><b>扎紧、浸染、展开</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="baba" aria-labelledby="baba-title">
+      <span class="chapter-kicker">LOCAL TASTE</span>
+      <h2 id="baba-title">第三站：先问价，再尝粑粑</h2>
+      <p class="chapter-intro">店门口的牌子就是最直接的田野资料。记录价格后再尝味道，一块小吃也能变成“会观察、会提问”的研学任务。</p>
+      <div class="video-spread">
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="assets/xizhou-20260925-baba.jpg">
+            <source src="assets/xizhou-20260925-video-1-web.mp4" type="video/mp4">
+            当前浏览器不支持视频播放。
+          </video>
+          <span class="video-label">现场影像 01 · 试吃喜洲粑粑 · 00:11</span>
+        </div>
+        <div>
+          <figure class="photo landscape" style="--tilt:1deg"><button type="button" aria-label="放大查看喜洲粑粑店" data-full="assets/xizhou-20260925-baba.jpg"><img src="assets/xizhou-20260925-baba.jpg" loading="lazy" alt="Leon 在喜洲破酥粑粑店前观察并问价"></button><figcaption>价格线索就在柜台前：小片 5 元，大片 8 元</figcaption></figure>
+          <div class="answer-strip">
+            <div class="answer"><small>现场价格</small><b>小片 5 元</b></div>
+            <div class="answer"><small>现场价格</small><b>大片 8 元</b></div>
+            <div class="answer"><small>口感记录</small><b>外酥，层次多</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="rice" aria-labelledby="rice-title">
+      <span class="chapter-kicker">EXTRA DISCOVERY</span>
+      <h2 id="rice-title">第四站：稻田边的绿色科技</h2>
+      <p class="chapter-intro">走到喜洲稻田边，除了沉甸甸的稻穗，我还发现了绿色的太阳能杀虫灯。它把“保护庄稼”和“节约能源”放在了一起。</p>
+      <div class="video-spread">
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="assets/xizhou-20260925-rice-field.jpg">
+            <source src="assets/xizhou-20260925-video-2-web.mp4" type="video/mp4">
+            当前浏览器不支持视频播放。
+          </video>
+          <span class="video-label">现场影像 02 · 太阳能杀虫灯 · 00:26</span>
+        </div>
+        <aside class="field-note">
+          <h3>额外收获：太阳能杀虫灯</h3>
+          <p>装置顶部的太阳能板在白天把阳光转成电能并储存起来。天黑后，灯光利用昆虫的趋光性把部分害虫吸引过来，再通过集虫装置减少田间害虫。</p>
+          <dl>
+            <dt>它为什么适合稻田？</dt><dd>田地开阔、日照充足，太阳能供电不必远距离拉电线。</dd>
+            <dt>它能带来什么帮助？</dt><dd>作为绿色防控的一种工具，可以辅助减少部分农药使用，但仍要和其他田间管理方法配合。</dd>
+            <dt>观察时要注意什么？</dt><dd>只看外观和工作过程，不触碰电路、灯管与集虫袋。</dd>
+          </dl>
+          <div class="solar-flow" aria-label="太阳能杀虫灯工作流程">
+            <div>白天采光</div><div>储存电能</div><div>夜间亮灯</div><div>诱集害虫</div>
+          </div>
+        </aside>
+      </div>
+      <div class="collage" style="margin-top:30px">
+        <figure class="photo p7 landscape crop-top" style="--tilt:-.9deg"><button type="button" aria-label="放大查看喜洲稻田" data-full="assets/xizhou-20260925-rice-field.jpg"><img src="assets/xizhou-20260925-rice-field.jpg" loading="lazy" alt="Leon 在喜洲稻田和格桑花旁"></button><figcaption>稻穗已经泛黄，远处是苍山</figcaption></figure>
+        <aside class="note">
+          <h3>稻田观察答题</h3>
+          <ul><li>稻田颜色：绿里带金黄</li><li>远处的山：苍山</li><li>田边植物：格桑花</li><li>新问题：灯光会吸引哪些昆虫？</li></ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="finish" aria-labelledby="finish-title">
+      <span class="chapter-kicker">MISSION COMPLETE</span>
+      <h2 id="finish-title">把发现带回家</h2>
+      <figure class="memory-card"><button type="button" data-full="assets/xizhou-memory-card-rice-field.png" aria-label="放大查看喜洲稻田旅行记忆卡"><img src="assets/xizhou-memory-card-rice-field.png" loading="lazy" alt="由喜洲稻田照片绘制的横向旅行记忆卡，右侧有六枚纸质贴纸"></button><figcaption>Rice Wind · Pink Cosmos · Blue Mountain</figcaption></figure>
+      <div class="finish">
+        <div class="certificate">
+          <p>2026 年 9 月 25 日 · 大理喜洲</p>
+          <h3>白族文化小探险家</h3>
+          <p>完成古镇建筑观察、扎染纹样记录、喜洲粑粑问价、稻田生态观察，并发现太阳能杀虫灯的工作秘密。</p>
+          <span class="signature">Leon</span>
+        </div>
+        <div class="takeaway">
+          <blockquote>今天最重要的不是“我去过喜洲”，而是我知道怎样停下来，摸一摸、画一画、问一问，再把答案记下来。</blockquote>
+          <ul><li>最喜欢的白族文化：蓝白扎染</li><li>最香的记忆：刚出炉的喜洲粑粑</li><li>最意外的新知识：太阳能杀虫灯</li><li>回家还想查：哪些昆虫会被灯光吸引</li></ul>
+          <div class="backlinks"><a class="primary" href="喜洲研学手册-网页版.html">打开原互动手册</a><a href="云南大理研学日记.html">返回大理研学日记</a></div>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="照片大图">
+  <button type="button" aria-label="关闭照片">×</button><img alt="">
+</div>
+<script>
+const box=document.getElementById('lightbox'),large=box.querySelector('img');
+document.querySelectorAll('[data-full]').forEach(button=>button.addEventListener('click',()=>{large.src=button.dataset.full;large.alt=button.querySelector('img').alt;box.classList.add('open');box.querySelector('button').focus()}));
+document.querySelectorAll('[data-scrapbook]').forEach(button=>button.addEventListener('click',()=>{const image=document.getElementById('scrapbook-image'),main=document.querySelector('.scrapbook-main');image.src=button.dataset.scrapbook;image.alt=button.dataset.alt;main.dataset.full=button.dataset.scrapbook;main.setAttribute('aria-label','放大查看'+button.textContent+'喜洲手帐');document.querySelectorAll('[data-scrapbook]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)))}));
+function closeBox(){box.classList.remove('open');large.removeAttribute('src')}
+box.querySelector('button').addEventListener('click',closeBox);box.addEventListener('click',e=>{if(e.target===box)closeBox()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBox()});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce){document.querySelectorAll('.reveal').forEach(el=>el.classList.add('seen'))}else{const reveal=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('seen');reveal.unobserve(entry.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el))}
+const links=[...document.querySelectorAll('.topbar nav a')];const sections=links.map(a=>document.querySelector(a.getAttribute('href')));const current=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id))})},{rootMargin:'-30% 0px -60%'});sections.forEach(section=>current.observe(section));
+</script>
+</body>
+</html>
