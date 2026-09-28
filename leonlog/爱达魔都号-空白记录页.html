@@ -1,0 +1,97 @@
+<!-- AI生成 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>爱达魔都号 · 空白记录页</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; color:#333; background:#eef2f6; }
+  .page { width:210mm; height:297mm; background:#fff; margin:10px auto; padding:14mm 15mm; position:relative; overflow:hidden; page-break-after:always; }
+  .tag { display:inline-block; background:#4a90d9; color:#fff; font-size:12px; padding:3px 14px; border-radius:20px; letter-spacing:2px; }
+  .tag.coral { background:#e0654d; }
+  h1 { font-size:30px; color:#125e8f; margin:4mm 0 2mm; }
+  .sub { color:#888; font-size:12.5px; }
+  .infobox { display:grid; grid-template-columns:1fr 1fr auto; gap:4mm; align-items:end; margin:5mm 0 3mm; background:#f2f8fc; border:2px dashed #9ec8f0; border-radius:12px; padding:4mm 5mm; }
+  .field label { display:block; font-size:12px; color:#7a8fa0; font-weight:700; margin-bottom:1mm; }
+  .writeline { border-bottom:1.5px solid #999; display:block; height:18px; }
+  .weather { font-size:22px; }
+  .weather i { font-style:normal; opacity:.3; cursor:pointer; border-radius:50%; padding:2mm; border:2px solid transparent; }
+  .weather i.on { opacity:1; border-color:#e0654d; background:#fff; }
+  h2 { font-size:18px; color:#125e8f; margin:5mm 0 2.5mm; }
+  .drawbox { width:100%; height:74mm; border:2px dashed #bbb; border-radius:12px; margin:2mm 0; }
+  .lines p { border-bottom:1.5px solid #d8d8d8; height:11.5mm; }
+  .words { display:grid; grid-template-columns:repeat(5,1fr); gap:3mm; }
+  .words div { border-bottom:1.5px solid #d8d8d8; height:8mm; }
+  .footer { position:absolute; bottom:7mm; left:0; right:0; text-align:center; color:#bbb; font-size:11px; }
+  .noprint { text-align:center; padding:14px; background:#fff; max-width:210mm; margin:0 auto 8px; }
+  @media print { body{background:#fff} .noprint{display:none} .page{margin:0; box-shadow:none} }
+</style>
+</head>
+<body>
+<div class="noprint"><a href="爱达魔都号研学日记.html" style="color:#125e8f;font-weight:700;">← 返回爱达魔都号主目录</a>　·　按 Ctrl+P 打印空白页</div>
+
+<div class="page">
+  <span class="tag coral">爱达魔都号 · 研学空白页</span>
+  <h1>我的航海空白记录</h1>
+  <p class="sub">把看到的、学到的、想到的，都画下来、写下来！</p>
+
+  <div class="infobox">
+    <div><label>小船长姓名</label><span class="writeline"></span></div>
+    <div><label>日期</label><span class="writeline"></span></div>
+    <div><label>今日天气(涂一涂)</label><div class="weather"><i>☀️</i><i>🌤️</i><i>🌧️</i></div></div>
+  </div>
+
+  <h2>🎨 画一画 · 今天看到的大船和大海</h2>
+  <div class="drawbox"></div>
+
+  <h2>🎨 画一画 · 最想留住的瞬间(济州岛 / 海豚 / 橘子…)</h2>
+  <div class="drawbox"></div>
+
+  <h2>✏️ 写一写 · 今天学到了什么</h2>
+  <div class="lines">
+    <p></p><p></p><p></p><p></p><p></p><p></p>
+  </div>
+
+  <h2>🔤 抄一抄 · 今天学会的英文单词</h2>
+  <div class="words">
+    <div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="footer">第 1 页 · 爱达魔都号 · 空白记录页</div>
+</div>
+
+<div class="page">
+  <span class="tag">爱达魔都号 · 研学空白页</span>
+  <h1>今天的航海日记</h1>
+  <p class="sub">睡不着的时候，把这天的故事讲给爸爸或妈妈听。</p>
+
+  <div class="infobox">
+    <div><label>第 ___ 天</label><span class="writeline"></span></div>
+    <div><label>我们在哪</label><span class="writeline"></span></div>
+    <div><label>天气</label><div class="weather"><i>☀️</i><i>🌤️</i><i>🌧️</i></div></div>
+  </div>
+
+  <h2>📖 今天发生的故事</h2>
+  <div class="lines">
+    <p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+  </div>
+
+  <h2>💌 给爸爸妈妈的话</h2>
+  <div class="lines"><p></p><p></p></div>
+
+  <div class="footer">第 2 页 · 爱达魔都号 · 空白记录页</div>
+</div>
+
+<script>
+document.querySelectorAll('.weather i').forEach(i => {
+  i.addEventListener('click', () => {
+    i.parentElement.querySelectorAll('i').forEach(x => x.classList.remove('on'));
+    i.classList.add('on');
+  });
+});
+</script>
+</body>
+</html>

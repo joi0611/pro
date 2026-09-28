@@ -1,0 +1,137 @@
+<!-- AI生成 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爱达魔都号 · 词汇表</title>
+<style>
+  :root{--paper:#eef4f7;--ink:#23465f;--blue:#2f7fb5;--deep:#125e8f;--coral:#e0654d;--line:#d8dce2}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--paper);background-image:radial-gradient(#2f7fb51a 1px,transparent 1px);background-size:7px 7px;padding-bottom:40px}
+  .wrap{max-width:900px;margin:0 auto;padding:22px 16px 30px}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+  .back{color:var(--ink);text-decoration:none;font-weight:800;border-bottom:2px solid var(--coral);padding-bottom:2px}
+  h1{font-size:clamp(26px,4vw,38px);margin:6px 0 2px;color:var(--deep)}
+  .sub{color:#77868f;font-size:14px;margin:0 0 16px}
+  .card{background:#fff;border:3px solid var(--line);border-radius:20px;padding:18px;margin-bottom:18px;box-shadow:6px 7px 0 rgba(35,70,95,.08)}
+  .card h2{font-size:20px;margin:0 0 6px;color:var(--deep)}
+  .card .hint{font-size:13px;color:#77868f;margin:0 0 12px}
+  .word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .word{background:#f5f9fd;border:3px solid var(--line);border-radius:16px;padding:12px 10px;text-align:center;cursor:pointer;transition:.15s}
+  .word:hover{transform:translateY(-3px);border-color:var(--blue)}
+  .word .en{font-size:20px;font-weight:800;color:var(--deep)}
+  .word .ph{font-size:12px;color:#8a9aa8;margin:2px 0}
+  .word .cn{font-size:14px;color:#b0a48c;font-weight:700;margin:4px 0 2px}
+  .word .spk{font-size:12px;color:var(--coral);font-weight:800}
+  .word.learned{border-color:var(--blue);background:#e8f3fb}
+  .word.learned .cn{color:var(--ink)}
+  table{width:100%;border-collapse:collapse;margin-top:6px}
+  th,td{border:1.5px solid #c9d8e4;padding:9px 10px;font-size:14px;text-align:left}
+  th{background:#e9f3fb;color:var(--deep)}
+  .btn{display:inline-block;border:3px solid var(--ink);background:var(--coral);color:#fff;font-weight:800;border-radius:999px;padding:10px 22px;text-decoration:none;cursor:pointer;box-shadow:4px 5px 0 rgba(35,70,95,.2)}
+  .btn.ghost{background:#fff;color:var(--ink)}
+  @media print{.btn,.back,.hint{display:none !important}body{background:#fff;padding:0}.card{border:none;box-shadow:none;padding:8px 0}}
+</style>
+</head>
+<body>
+<p data-aigc-mark="1" style="margin:0 0 8px;font-size:10px;line-height:1.3;color:#6b6560;font-weight:400;">AI生成</p>
+
+<div class="wrap">
+  <div class="top">
+    <a class="back" href="爱达魔都号研学日记.html">← 返回爱达魔都号主目录</a>
+    <button class="btn ghost" onclick="window.print()">🖨️ 打印词汇表</button>
+  </div>
+  <h1>📖 爱达魔都号 · 词汇表</h1>
+  <p class="sub">分级绘本《My Cruise to Jeju》的好朋友们：10 个核心词 + 18 个生词。点卡片听发音，打印出来当单词卡。</p>
+
+  <div class="card">
+    <h2>🌱 Level 1 · 大船 10 词(点卡片:听发音 + 看中文)</h2>
+    <p class="hint">读绘本前先认识它们，绘本里会一直遇到。</p>
+    <div class="word-grid" id="wgrid"></div>
+  </div>
+
+  <div class="card">
+    <h2>🌳 绘本生词表(在句子里的意思)</h2>
+    <p class="hint">这些生词藏在绘本的句子里，点击可听发音。</p>
+    <table>
+      <tr><th>单词</th><th>音标</th><th>中文</th><th>例句</th></tr>
+      <tr><td>cruise</td><td>/kruːz/</td><td>邮轮之旅</td><td>I love my cruise trip.</td></tr>
+      <tr><td>ship</td><td>/ʃɪp/</td><td>轮船</td><td>The ship is as big as a city.</td></tr>
+      <tr><td>huge</td><td>/hjuːdʒ/</td><td>巨大的</td><td>The ship is huge.</td></tr>
+      <tr><td>floats</td><td>/fləʊts/</td><td>漂浮</td><td>The ship floats on the sea.</td></tr>
+      <tr><td>air</td><td>/eər/</td><td>空气</td><td>Air inside the ship pushes it up.</td></tr>
+      <tr><td>leave</td><td>/liːv/</td><td>离开</td><td>We leave Shanghai.</td></tr>
+      <tr><td>lights</td><td>/laɪts/</td><td>灯光</td><td>The city lights are bright.</td></tr>
+      <tr><td>dolphin</td><td>/ˈdɒlfɪn/</td><td>海豚</td><td>A dolphin jumps!</td></tr>
+      <tr><td>volcano</td><td>/vɒlˈkeɪnəʊ/</td><td>火山</td><td>A volcano made this island.</td></tr>
+      <tr><td>island</td><td>/ˈaɪlənd/</td><td>岛屿</td><td>Jeju is an island.</td></tr>
+      <tr><td>mountain</td><td>/ˈmaʊntən/</td><td>山</td><td>Hallasan is a tall mountain.</td></tr>
+      <tr><td>meters</td><td>/ˈmiːtəz/</td><td>米</td><td>It is 1,950 meters high.</td></tr>
+      <tr><td>guards</td><td>/ɡɑːdz/</td><td>守护</td><td>Dol Hareubang guards Jeju.</td></tr>
+      <tr><td>luck</td><td>/lʌk/</td><td>好运</td><td>Good luck!</td></tr>
+      <tr><td>sweet</td><td>/swiːt/</td><td>甜的</td><td>The orange is sweet.</td></tr>
+      <tr><td>oranges</td><td>/ˈɔːrɪndʒɪz/</td><td>橘子</td><td>Jeju oranges are juicy.</td></tr>
+      <tr><td>dive</td><td>/daɪv/</td><td>潜水</td><td>Haenyeo dive into the sea.</td></tr>
+      <tr><td>sail</td><td>/seɪl/</td><td>航行</td><td>We sail back to Shanghai.</td></tr>
+    </table>
+  </div>
+</div>
+
+<script>
+const WORDS = [
+  ['ship','/ʃɪp/','轮船','Adora Magic City is a big ship. 爱达魔都号是一艘大船。'],
+  ['sea','/siː/','大海','The sea is blue. 大海是蓝色的。'],
+  ['cruise','/kruːz/','邮轮之旅','We go on a cruise. 我们坐邮轮去旅行。'],
+  ['island','/ˈaɪlənd/','岛屿','Jeju is an island. 济州是一座岛屿。'],
+  ['wave','/weɪv/','海浪','The waves are big. 海浪好大呀。'],
+  ['deck','/dek/','甲板','I play on the deck. 我在甲板上玩。'],
+  ['anchor','/ˈæŋkər/','锚','The ship drops the anchor. 大船放下锚。'],
+  ['orange','/ˈɔːrɪndʒ/','橘子','Jeju oranges are sweet. 济州橘子很甜。'],
+  ['volcano','/vɒlˈkeɪnəʊ/','火山','Jeju is a volcano island. 济州是火山岛。'],
+  ['lighthouse','/ˈlaɪthaʊs/','灯塔','The lighthouse is bright. 灯塔亮亮的。']
+];
+let voice = null;
+function prepareVoice(){
+  if(!('speechSynthesis' in window)) return;
+  const vs = window.speechSynthesis.getVoices();
+  voice = vs.find(v=>/^en-US$/i.test(v.lang)) || vs.find(v=>/^en[-_]/i.test(v.lang)) || null;
+}
+if('speechSynthesis' in window){
+  prepareVoice();
+  window.speechSynthesis.addEventListener?.('voiceschanged', prepareVoice);
+}
+function speak(text){
+  try{
+    const synth = window.speechSynthesis;
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US'; u.rate = 0.82;
+    if(voice) u.voice = voice;
+    synth.resume();
+    synth.speak(u);
+  }catch(e){}
+}
+const grid = document.getElementById('wgrid');
+const store = JSON.parse(localStorage.getItem('adora_handbook_v1') || '{}');
+store.en = store.en || {};
+WORDS.forEach((w, i) => {
+  const done = store.en['w' + i];
+  const d = document.createElement('div');
+  d.className = 'word' + (done ? ' learned' : '');
+  d.innerHTML = `<div class="en">${i + 1}. ${w[0]}</div><div class="ph">${w[1]}</div><div class="cn">${done ? w[2] : '? 点我'}</div><div class="spk">🔊 点我读</div>`;
+  d.addEventListener('click', () => {
+    d.classList.add('learned');
+    d.querySelector('.cn').textContent = w[2];
+    if(!store.en['w' + i]){ store.en['w' + i] = true; try{ localStorage.setItem('adora_handbook_v1', JSON.stringify(store)); }catch(e){} }
+    speak(w[0]);
+  });
+  grid.appendChild(d);
+});
+document.querySelectorAll('table td:first-child').forEach(td => {
+  td.style.cursor = 'pointer';
+  td.addEventListener('click', () => speak(td.textContent.trim()));
+});
+</script>
+</body>
+</html>

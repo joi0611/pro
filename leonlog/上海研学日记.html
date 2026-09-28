@@ -4,26 +4,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Leon上海研学主目录：爱达魔都号、张江AI应用商店、上海科技馆三个分类研学点。">
+<meta name="description" content="Leon上海研学主目录：吴淞口口岸爱达魔都号、上海科技馆两个分类研学点。">
 <title>上海研学主目录 · Leon旅行日记</title>
 <style>
   :root{--paper:#eef4f7;--ink:#23465f;--blue:#2f7fb5;--deep:#125e8f;--red:#e0654d;--orange:#e88b52;--green:#6e9b65;--yellow:#f1c85c}
   *{box-sizing:border-box}html{scroll-behavior:smooth}
   body{margin:0;font-family:"KaiTi","STKaiti","Microsoft YaHei",sans-serif;color:var(--ink);background-color:var(--paper);background-image:radial-gradient(#2f7fb51a 1px,transparent 1px);background-size:7px 7px}
   a{-webkit-tap-highlight-color:transparent}
-  header{max-width:1120px;margin:0 auto;padding:22px clamp(16px,4vw,44px) 0}
+  .topback{max-width:1120px;margin:0 auto;padding:18px clamp(16px,4vw,44px) 0}
+  .back{display:inline-flex;align-items:center;min-height:44px;padding:8px 15px;border:2px solid #c9d8e4;border-radius:18px 14px 20px 13px;background:#fff;color:var(--blue);font-weight:700;text-decoration:none;box-shadow:3px 4px 0 rgba(35,70,95,.15)}
+  .back:hover{transform:translateY(-2px);box-shadow:5px 6px 0 rgba(35,70,95,.15)}
+  header{max-width:1120px;margin:0 auto;padding:10px clamp(16px,4vw,44px) 0}
   .hero{position:relative;margin-top:24px;min-height:440px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;background:#dcebf4;border:3px solid var(--ink);box-shadow:9px 10px 0 var(--ink);overflow:hidden}
   .hero-copy{padding:clamp(30px,6vw,72px);position:relative;z-index:2}.label{font:700 13px/1 monospace;letter-spacing:.12em;color:var(--blue)}.hero h1{font-size:clamp(45px,7vw,82px);line-height:.95;margin:14px 0 20px;letter-spacing:-.06em}.hero h1 span{display:block;color:var(--red);font-size:.65em;letter-spacing:0;margin-top:12px}.hero p{line-height:1.8;max-width:530px;margin:0;color:#4d6272}
-  .hero-visual{height:100%;min-height:440px;position:relative;padding:25px;display:flex;flex-direction:column;justify-content:center;gap:18px;background:linear-gradient(160deg,#cfe7f5,#a9d3ec);border-left:3px dashed var(--blue)}
-  .hero-visual .frame{background:#fff;border:9px solid #fff;box-shadow:4px 5px 0 #7fa3bb;transform:rotate(2deg);padding:22px;text-align:center;font-size:64px;letter-spacing:10px}
-  .hero-visual .frame:nth-child(2){transform:rotate(-3deg);font-size:54px}
-  .hero-visual::after{content:"第一站 · 上海";position:absolute;right:14px;bottom:18px;padding:8px 12px;background:var(--yellow);border:2px solid var(--ink);font-weight:700;transform:rotate(-4deg)}
+  .hero-visual{height:100%;min-height:440px;position:relative;padding:20px 22px;background:linear-gradient(160deg,#cfe7f5,#9ccfeb);border-left:3px dashed var(--blue);display:flex;flex-direction:column;justify-content:center}
+  .hero-visual::after{content:"第一站 · 上海";position:absolute;right:14px;top:14px;padding:6px 10px;background:var(--yellow);border:2px solid var(--ink);font-weight:700;transform:rotate(-4deg);font-size:13px}
+  .boat-scene{width:100%;height:auto;display:block;border-radius:14px;background:#eaf7fc;border:3px solid var(--ink);box-shadow:4px 5px 0 #7fa3bb}
+  .boat-group{animation:boat-in .9s cubic-bezier(.2,.8,.2,1) .2s both}
+  @keyframes boat-in{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
+  .boat-bob{animation:bob 3.2s ease-in-out 1s infinite;transform-box:view-box;transform-origin:200px 168px}
+  @keyframes bob{0%,100%{transform:rotate(-.5deg) translateY(0)}50%{transform:rotate(1deg) translateY(-4px)}}
+  .captain-img{filter:drop-shadow(3px 4px 0 rgba(35,70,95,.16))}
+  .helm-spin{animation:helm-turn 4.6s linear infinite;transform-box:view-box;transform-origin:182px 170px}
+  @keyframes helm-turn{to{transform:rotate(360deg)}}
+  .sh-btn{display:block;margin:14px auto 0;padding:12px 30px;background:#fff;border:3px solid var(--ink);border-radius:999px;font-weight:800;color:var(--ink);text-decoration:none;box-shadow:4px 5px 0 rgba(35,70,95,.22);font-size:18px;text-align:center;opacity:0;transform:scale(.9);animation:btn-in .5s .9s forwards}
+  @keyframes btn-in{to{opacity:1;transform:scale(1)}}
+  .sh-btn:hover{background:var(--yellow);transform:translateY(-2px)}
+  .sh-btn .s{display:block;font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px}
   main{max-width:1120px;margin:0 auto;padding:58px clamp(16px,4vw,44px) 80px}.guide{max-width:760px;margin-bottom:28px;line-height:1.9;padding:18px 20px;background:#fff9e9;border-left:5px solid var(--orange);transform:rotate(-.3deg)}
   .grid{display:grid;grid-template-columns:1.08fr .92fr;gap:20px}.card{display:flex;flex-direction:column;min-height:300px;padding:28px;background:#fffaf0;border:3px solid var(--ink);box-shadow:6px 7px 0 var(--ink);text-decoration:none;color:var(--ink);transition:.2s ease}
   .card:hover,.card:focus-visible{transform:translate(-2px,-4px) rotate(-.3deg);box-shadow:9px 11px 0 var(--ink)}
   .card:nth-child(1){background:#e0eef9}
   .card:nth-child(2){background:#e9f2e4}
-  .card:nth-child(3){background:#f7e9dc;grid-column:1/-1;min-height:240px}
   .icon{font-size:38px}.icon span{font-size:44px;line-height:1}
   .card h2{font-size:clamp(23px,3vw,31px);margin:15px 0 8px}.card p{font-family:"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.75;color:#4d6272;margin:0 0 20px}
   .go{margin-top:auto;font-weight:700;color:var(--red)}.go a{color:inherit;text-decoration:none}.card:nth-child(2) .go{color:var(--green)}
@@ -31,27 +43,55 @@
   .sub-links{margin-top:10px;font-size:13px;font-weight:700;color:var(--blue)}
   footer{max-width:1120px;margin:0 auto;border-top:2px dashed #a9bcc9;padding:22px clamp(16px,4vw,44px) 36px;display:flex;justify-content:space-between;color:#77868f;font-size:13px}
   :focus-visible{outline:4px solid var(--yellow);outline-offset:4px}
-  @media(max-width:760px){.hero{grid-template-columns:1fr}.hero-copy{padding:34px 25px}.hero-visual{min-height:250px}.grid{grid-template-columns:1fr}.card{min-height:230px}footer{flex-direction:column;gap:8px}}
+  @media(max-width:760px){.hero{grid-template-columns:1fr}.hero-copy{padding:34px 25px}.hero-visual{min-height:300px}.grid{grid-template-columns:1fr}.card{min-height:230px}footer{flex-direction:column;gap:8px}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.boat-group,.boat-bob,.helm-spin,.sh-btn{animation:none}.sh-btn{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<p data-aigc-mark="1" style="margin:0 0 8px;font-size:10px;line-height:1.3;color:#6b6560;font-weight:400;">AI生成</p>
-
+<div class="topback"><a class="back" href="index.html">← 返回全国旅行地图</a></div>
 <header>
   <section class="hero">
-    <div class="hero-copy"><span class="label">LEON'S TRAVEL JOURNAL / SHANGHAI</span><h1>上海<span>研学手册主目录</span></h1><p>魔都上海的三个研学点：坐上国产大邮轮出海、在张江遇见 AI、到科技馆动手玩科学。每个研学点都有自己的互动手册和打印版。</p></div>
+    <div class="hero-copy"><span class="label">LEON'S TRAVEL JOURNAL / SHANGHAI</span><h1>上海<span>研学手册主目录</span></h1><p>魔都上海的研学点：在吴淞口登上中国第一艘国产大邮轮出海，再到上海科技馆动手玩科学。每个研学点都有自己的互动手册和打印版。</p></div>
     <div class="hero-visual">
-      <div class="frame">🚢 🤖 🚀</div>
-      <div class="frame">🌊 魔都上海</div>
+      <svg class="boat-scene" viewBox="0 0 400 250" role="img" aria-label="Leon 船长转动船舵，在上海海面上航行">
+        <defs>
+          <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#cfe7f5"/><stop offset="1" stop-color="#8fc9ea"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="250" fill="url(#seaGrad)"/>
+        <circle cx="336" cy="54" r="26" fill="#ffd75e" stroke="#e8b83a" stroke-width="3"/>
+        <ellipse cx="86" cy="48" rx="30" ry="12" fill="#fff" opacity=".85"/>
+        <ellipse cx="116" cy="42" rx="20" ry="10" fill="#fff" opacity=".8"/>
+        <path d="M0 152 q30 -8 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" stroke="#7fc4e8" stroke-width="3" fill="none"/>
+        <path d="M0 178 q30 -8 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" stroke="#9bd4ef" stroke-width="3" fill="none" opacity=".75"/>
+        <path d="M0 204 q30 -8 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" stroke="#b7e2f5" stroke-width="3" fill="none" opacity=".55"/>
+        <g class="boat-group">
+          <g class="boat-bob">
+            <path d="M82 164 Q200 186 318 164 L306 185 Q200 205 94 185 Z" fill="#8a5a2b" stroke="#5c3a1a" stroke-width="3"/>
+            <image class="captain-img" href="assets/leon-captain.png" x="134" y="34" width="132" height="152" preserveAspectRatio="xMidYMid meet"/>
+            <g class="helm-spin" fill="none" stroke="#5c3a1a" stroke-width="5" stroke-linecap="round">
+              <circle cx="182" cy="170" r="25" fill="#b97832" stroke="#5c3a1a"/>
+              <path d="M151 170H213M182 139V201M160 148L204 192M204 148L160 192"/>
+              <circle cx="182" cy="170" r="7" fill="#e0a04b"/>
+              <g fill="#b97832">
+                <circle cx="151" cy="170" r="4"/><circle cx="213" cy="170" r="4"/><circle cx="182" cy="139" r="4"/><circle cx="182" cy="201" r="4"/>
+                <circle cx="160" cy="148" r="4"/><circle cx="204" cy="192" r="4"/><circle cx="204" cy="148" r="4"/><circle cx="160" cy="192" r="4"/>
+              </g>
+            </g>
+            <text x="226" y="180" font-size="15" font-weight="800" fill="#fff" stroke="#5c3a1a" stroke-width="3" paint-order="stroke" text-anchor="middle">Leon</text>
+          </g>
+        </g>
+      </svg>
+      <a class="sh-btn" href="#places"><span class="s">📍 点击进入</span>上海研学点</a>
     </div>
   </section>
 </header>
 <main>
-  <div class="guide"><strong>推荐路线：</strong>从 <b>爱达魔都号</b> 开始——中国第一艘国产大邮轮，三天两晚从上海出发去济州岛，手册里有英语分级、地理小课堂和 A4 打印版；接下来可以去 <b>张江AI应用商店</b> 体验人工智能，再去 <b>上海科技馆</b> 玩转科学。所有互动记录都会保存在当前设备。</div>
-  <section class="grid" aria-label="上海研学主目录">
-    <div class="card"><span class="icon"><span>🚢</span></span><h2>爱达魔都号</h2><p>中国第一艘国产大型邮轮。上海 ⇄ 济州岛，三天两晚：英语分级阅读、航线地图、济州地理课、幕后之旅任务卡，全部是互动玩法。</p><span class="go"><a href="爱达魔都号研学手册.html">进入互动手册 →</a></span><span class="sub-links"><a href="爱达魔都号研学手册-打印版.html" target="_blank" rel="noopener">🖨️ A4 打印版(10 页)</a></span></div>
-    <div class="card"><span class="icon"><span>🤖</span></span><h2>张江AI应用商店</h2><p>张江科学城的人工智能应用体验地。看看机器人在做什么工作，玩玩 AI 画画、AI 问答，当一回小创客。</p><span class="lock">🔒 即将解锁</span></div>
-    <div class="card"><span class="icon"><span>🚀</span></span><h2>上海科技馆</h2><p>动物世界、机器人世界、彩虹儿童乐园、巨型科学影城……动手做实验，玩着玩着就懂了科学。</p><span class="lock">🔒 即将解锁</span></div>
+  <div class="guide"><strong>推荐路线：</strong>从 <b>吴淞口口岸 · 爱达魔都号</b> 开始——中国第一艘国产大邮轮，从上海出发去济州岛，有研学互动手册、分级绘本、词汇表和 A4 打印版；再到 <b>上海科技馆</b> 动手玩科学。所有互动记录都会保存在当前设备。</div>
+  <section class="grid" id="places" aria-label="上海研学点">
+    <div class="card"><span class="icon"><span>🚢</span></span><h2>吴淞口口岸 · 爱达魔都号</h2><p>中国第一艘国产大型邮轮在这里出发！研学互动手册、分级点读绘本《My Cruise to Jeju》、词汇表、A4 打印版，加上旅行结束后的成果上传，全部在这里。</p><span class="go"><a href="爱达魔都号研学日记.html">进入主页面 →</a></span><span class="sub-links"><a href="爱达魔都号研学手册-打印版.html" target="_blank" rel="noopener">🖨️ A4 打印版(10 页)</a></span></div>
+    <a class="card" href="上海科技馆能源研学日记.html"><span class="icon"><span style="font:900 17px/1 ui-monospace,monospace;letter-spacing:.08em">ENERGY</span></span><h2>上海科技馆 · 源动未来</h2><p>只围绕能源展开：认识可再生与不可再生能源，观察太阳能板，再通过动态实验亲手点亮未来城市。</p><span class="go">进入能源研学 →</span><span class="sub-links">互动手册 · 已完成成果 · A4 打印版</span></a>
   </section>
 </main>
 <footer><strong>Leon旅行日记 · 上海</strong><span>把今天的新发现，带回家慢慢讲。</span></footer>

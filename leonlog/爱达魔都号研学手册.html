@@ -313,6 +313,17 @@ button{font-family:inherit}
 .booknav .dot{width:9px;height:9px;border-radius:50%;background:#D8C9B0;transition:.15s;}
 .booknav .dot.cur{background:var(--coral);transform:scale(1.35);}
 
+/* ---------- 探索实验室 ---------- */
+.explore{display:grid;grid-template-columns:1fr 1.1fr;gap:14px;margin-top:12px;align-items:center;}
+@media(max-width:720px){.explore{grid-template-columns:1fr}}
+.explore img.explore-img{width:100%;border-radius:16px;aspect-ratio:4/3;object-fit:cover;border:3px solid var(--deep);box-shadow:0 5px 0 rgba(18,94,143,.15);}
+.explore-txt p{font-size:14.5px;margin:0 0 8px;line-height:1.75;color:#4A5B6E;font-weight:600;}
+.explore-txt b{color:var(--deep);}
+.buoy{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;align-items:center;margin-top:10px;}
+@media(max-width:720px){.buoy{grid-template-columns:1fr}}
+.buoy svg{width:100%;height:auto;display:block;border-radius:14px;}
+.buoy-btns{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0;}
+
 /* ---------- 浮动打印按钮 ---------- */
 .printfab{position:fixed;right:18px;bottom:18px;z-index:95;width:58px;height:58px;border-radius:50%;border:3px solid var(--ink);background:var(--sun);font-size:26px;cursor:pointer;box-shadow:0 6px 0 rgba(29,58,95,.3);transition:.12s;}
 .printfab:hover{transform:translateY(-2px);}
@@ -582,9 +593,44 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
 
     <div class="lab">
       <div class="labhead">
-        <h3>🧪 浮力小实验:铝箔小船能载几枚硬币?</h3>
-        <span class="lbl" id="labBest">🏆 最高纪录:还没有,快来挑战!</span>
+        <h3>🔍 探索实验室 · 这么重的船,为什么能浮起来?</h3>
+        <span class="lbl">爱达魔都号 13.55 万吨,比 1000 头大象还重!</span>
       </div>
+
+      <div class="explore">
+        <img class="explore-img" src="assets/adora/adora_cns.jpg" alt="爱达魔都号行驶在海面上">
+        <div class="explore-txt">
+          <p><b>🧱 它好重!</b>铁块丢进水里会沉,因为铁比水重很多。爱达魔都号是钢铁做的,却一点也不沉,这是为什么?</p>
+          <p><b>🎈 秘密在“空心”!</b>船的身体里,大部分是空的——里面装满了空气。空气很轻,把整艘船的平均重量变轻了。</p>
+          <p><b>🌊 海水托住它!</b>海水会把东西往上“托”,这种力量叫<b>浮力</b>。空心的地方越大,浮力越大,就能托住整艘船。所以大船造得越大、越“空”,越能漂在水上!</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:17px;margin:14px 0 8px">试试看 · 点一点,猜猜谁会沉、谁会浮?</h3>
+      <div class="buoy">
+        <svg viewBox="0 0 460 250" id="buoySvg" role="img" aria-label="浮力实验水槽">
+          <rect x="10" y="10" width="440" height="230" rx="18" fill="#EAF7FC" stroke="#35A7E2" stroke-width="3"/>
+          <rect x="26" y="140" width="408" height="84" rx="10" fill="#BFE8F8"/>
+          <path d="M26 148 q14 -6 28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0" stroke="#fff" stroke-width="3" fill="none" opacity=".7"/>
+          <text x="40" y="208" font-size="13" font-weight="800" fill="#2F7FB5">水</text>
+          <g id="bItem" transform="translate(120 60)">
+            <text id="bIcon" font-size="44" text-anchor="middle" y="34">🪨</text>
+            <text id="bLabel" x="16" y="58" font-size="14" font-weight="800" fill="#1D3A5F" text-anchor="middle">石头</text>
+          </g>
+          <text x="420" y="224" font-size="12" font-weight="700" fill="#2F7FB5" text-anchor="end">水槽</text>
+        </svg>
+        <div class="buoy-panel">
+          <p style="font-weight:800">选一样东西丢进水里:</p>
+          <div class="buoy-btns">
+            <button class="btn" data-b="rock">🪨 石头</button>
+            <button class="btn" data-b="iron">🧱 铁块</button>
+            <button class="btn aqua" data-b="ship">🚢 空心大船</button>
+          </div>
+          <p class="note" id="buoyMsg" style="margin-top:10px">先猜一猜,再点一点看看结果!</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:17px;margin:16px 0 8px">🧪 动手版 · 铝箔小船能载几枚硬币?</h3>
       <div class="labstage">
         <div class="waterline"></div>
         <div class="waves"></div>
@@ -597,12 +643,12 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
           <div class="coins" id="foilCoins"></div>
         </div>
       </div>
-      <div class="labinfo" id="labInfo">小船下水啦!点“+1 枚硬币”,看看它能载几枚才沉。</div>
+      <div class="labinfo" id="labInfo">小船下水啦!一枚一枚加硬币,猜猜它能载几枚?</div>
       <div class="labbtns">
         <button class="btn aqua" id="addCoin">+1 枚硬币</button>
         <button class="btn" id="resetFoil">🔄 倒掉,重新折一只</button>
       </div>
-      <div class="labnote">原理:船里充满空气,海水把船“托”起来,这就是浮力!硬币放得太多、太重,浮力托不住,船就会沉。</div>
+      <div class="labnote">原理:船里充满空气,海水把船“托”起来,这就是浮力!硬币放得太多、太重,浮力托不住,船就会沉——爱达魔都号也一样,空心的地方越多,浮力越大!</div>
     </div>
   </div>
 </section>
@@ -627,7 +673,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
         <h3>🌏 文化小使者</h3>
         <span class="gtag">和济州岛做朋友</span>
         <ul>
-          <li><label><input type="checkbox" data-task="g3"> 学会 3 句韩语(<span class="gogo" data-go="7">去地理课小课堂</span>)</label></li>
+          <li><label><input type="checkbox" data-task="g3"> 学会 3 句韩语(<span class="gogo" data-go="4">去地理课小课堂</span>)</label></li>
           <li><label><input type="checkbox" data-task="g4"> 品尝 2 种韩国特色美食</label></li>
           <li><label><input type="checkbox" data-task="g5"> 画一画济州岛的“石头爷爷”</label></li>
         </ul>
@@ -776,91 +822,10 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
   </div>
 </section>
 
-<!-- ===== 三天计划 ===== -->
-<section class="sec" id="plan">
-  <div class="wrap">
-    <div class="sechead"><span class="secno">4</span><h2 class="tape">三天两晚 · 行动计划</h2></div>
-    <p class="sub">勾一勾,每完成一件事就给自己打个勾!完成的勾勾会一直记住哦。</p>
-
-    <div class="tl">
-      <div class="day blue">
-        <span class="dnum">第 1 天 · 出发!上海</span>
-        <h3>🚢 大船鸣笛,我们出发啦</h3>
-        <div class="dsub">下午登船,傍晚起航</div>
-        <div class="weatherrow" data-day="d1">
-          <span class="wl">今日天气:</span>
-          <button class="wbtn" data-w="☀️">☀️</button>
-          <button class="wbtn" data-w="🌤️">🌤️</button>
-          <button class="wbtn" data-w="🌧️">🌧️</button>
-        </div>
-        <div class="sched">
-          <span class="t">下午</span><span>到达吴淞口国际邮轮港,像坐飞机一样过安检,登船!</span>
-          <span class="t">傍晚</span><span>汽笛“呜——”响起,大船慢慢离开上海,看城市越来越小。</span>
-          <span class="t">晚上</span><span>吃自助大餐 🍽️,去大剧院看演出,在甲板上数星星。</span>
-        </div>
-        <ul class="tasklist">
-          <li><label><input type="checkbox" data-task="d1t1"> 找到我们的房间(舱房)</label></li>
-          <li><label><input type="checkbox" data-task="d1t2"> 参加一次安全演习,学会穿救生衣</label></li>
-          <li><label><input type="checkbox" data-task="d1t3"> 看一次海上的日落</label></li>
-          <li><label><input type="checkbox" data-task="d1t4"> 找到游泳池和大剧院,画一张小船地图</label></li>
-        </ul>
-      </div>
-
-      <div class="day">
-        <span class="dnum">第 2 天 · 探险!济州岛</span>
-        <h3>🗻 火山岛探险日</h3>
-        <div class="dsub">早上靠岸,玩一整天,傍晚再出发</div>
-        <div class="weatherrow" data-day="d2">
-          <span class="wl">今日天气:</span>
-          <button class="wbtn" data-w="☀️">☀️</button>
-          <button class="wbtn" data-w="🌤️">🌤️</button>
-          <button class="wbtn" data-w="🌧️">🌧️</button>
-        </div>
-        <div class="sched">
-          <span class="t">早上</span><span>邮轮靠岸济州岛,第一次踏上外国的土地!</span>
-          <span class="t">上午</span><span>远远看看汉拿山,去摸摸“石头爷爷”的鼻子。</span>
-          <span class="t">中午</span><span>尝一尝济州橘子 🍊,还有新鲜的海鲜。</span>
-          <span class="t">下午</span><span>去海边捡贝壳,说不定能看到不用氧气瓶的海女奶奶。</span>
-          <span class="t">傍晚</span><span>回到船上,汽笛再次响起,向济州岛说再见!</span>
-        </div>
-        <ul class="tasklist">
-          <li><label><input type="checkbox" data-task="d2t1"> 找到一位“石头爷爷”并拍照</label></li>
-          <li><label><input type="checkbox" data-task="d2t2"> 吃到一颗济州橘子</label></li>
-          <li><label><input type="checkbox" data-task="d2t3"> 在海边捡到 1 个好看的贝壳</label></li>
-          <li><label><input type="checkbox" data-task="d2t4"> 对济州岛的朋友说一句韩语“你好”</label></li>
-        </ul>
-      </div>
-
-      <div class="day green">
-        <span class="dnum">第 3 天 · 回家!上海</span>
-        <h3>🏠 载着满满回忆回家</h3>
-        <div class="dsub">在海上睡一觉,中午就到家啦</div>
-        <div class="weatherrow" data-day="d3">
-          <span class="wl">今日天气:</span>
-          <button class="wbtn" data-w="☀️">☀️</button>
-          <button class="wbtn" data-w="🌤️">🌤️</button>
-          <button class="wbtn" data-w="🌧️">🌧️</button>
-        </div>
-        <div class="sched">
-          <span class="t">早上</span><span>在甲板上看海上日出,和船员叔叔阿姨说早上好。</span>
-          <span class="t">上午</span><span>收拾行李,把研学手册写完,拿到全部印章!</span>
-          <span class="t">中午</span><span>邮轮回到上海吴淞口,靠岸!小小航海家毕业!</span>
-        </div>
-        <ul class="tasklist">
-          <li><label><input type="checkbox" data-task="d3t1"> 看一次海上的日出</label></li>
-          <li><label><input type="checkbox" data-task="d3t2"> 完成这本研学手册的全部任务</label></li>
-          <li><label><input type="checkbox" data-task="d3t3"> 和家人分享一件最开心的事</label></li>
-          <li><label><input type="checkbox" data-task="d3t4"> 拍一张和爱达魔都号的合影</label></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== 地理课 ===== -->
 <section class="sec" id="geo">
   <div class="wrap">
-    <div class="sechead"><span class="secno">5</span><h2 class="tape">济州岛地理小课堂</h2></div>
+    <div class="sechead"><span class="secno">4</span><h2 class="tape">济州岛地理小课堂</h2></div>
     <p class="sub">济州岛是一颗“大海里的宝石”💎,她是怎么来的?按下按钮亲眼看一看!</p>
 
     <div class="geo">
@@ -949,7 +914,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
 <!-- ===== 幕后之旅 ===== -->
 <section class="sec" id="tour">
   <div class="wrap">
-    <div class="sechead"><span class="secno">6</span><h2 class="tape">特别挑战篇 · 幕后之旅</h2></div>
+    <div class="sechead"><span class="secno">5</span><h2 class="tape">特别挑战篇 · 幕后之旅</h2></div>
     <p class="sub">⚠️ 高级任务卡:只有参加“幕后之旅”才能解锁!先上安全课,再潜入巨轮的心脏!</p>
 
     <div class="tour">
@@ -1137,10 +1102,10 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
           <div class="mbadge" data-medal="sport"><span class="ic">🏃</span><span class="nm">运动场健将</span><span class="tt">运动场玩满30分钟</span></div>
           <div class="mbadge" data-medal="photo"><span class="ic">📷</span><span class="nm">观景台摄影师</span><span class="tt">拍3张不同时间的海景</span></div>
           <div class="mbadge" data-medal="medic"><span class="ic">🚑</span><span class="nm">急救小卫士</span><span class="tt">找到医务室,学会呼救</span></div>
-          <div class="mbadge" data-medal="weather"><span class="ic">🌤️</span><span class="nm">气象观察员</span><span class="tt">记好3天的天气</span></div>
+          <div class="mbadge" data-medal="weather"><span class="ic">🌤️</span><span class="nm">气象观察员</span><span class="tt">观察 3 次海上的云和浪</span></div>
           <div class="mbadge" data-medal="shell"><span class="ic">🐚</span><span class="nm">探险收藏家</span><span class="tt">捡到贝壳和火山石</span></div>
         </div>
-        <p class="note">小秘密:<span class="gogo" data-go="1">去已完成板块</span>看看印章本,还有 7 枚印章等你收集哦!</p>
+        <p class="note">小秘密:<span class="gogo" data-go="9">去打印页</span>看看,把得到的勋章在打印版上涂上颜色!</p>
       </div>
 
     </div>
@@ -1171,7 +1136,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
 <!-- ===== 闯关问答 ===== -->
 <section class="sec" id="quiz">
   <div class="wrap">
-    <div class="sechead"><span class="secno">8</span><h2 class="tape">闯关问答 · 小船长考考你</h2></div>
+    <div class="sechead"><span class="secno">6</span><h2 class="tape">闯关问答 · 小船长考考你</h2></div>
     <p class="sub">答对一题,就点亮一颗小星星 ⭐</p>
     <div class="quizbox">
       <div class="qcard">
@@ -1192,7 +1157,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
 <!-- ===== 配对游戏 ===== -->
 <section class="sec" id="match">
   <div class="wrap">
-    <div class="sechead"><span class="secno">9</span><h2 class="tape">连一连 · 谁是谁的好朋友</h2></div>
+    <div class="sechead"><span class="secno">7</span><h2 class="tape">连一连 · 谁是谁的好朋友</h2></div>
     <p class="sub">先点左边一个,再点右边一个。配对成功就亮起来!左边有 6 张“名片”,右边是它们的好朋友。</p>
     <div class="matchwrap">
       <div class="mcol">
@@ -1207,50 +1172,6 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
       </div>
     </div>
     <div class="mstatus" id="mStatus">开始吧!点两边的卡片配对。</div>
-  </div>
-</section>
-
-<!-- ===== 印章本 ===== -->
-<section class="sec" id="stamp">
-  <div class="wrap">
-    <div class="sechead"><span class="secno">10</span><h2 class="tape">我的印章本</h2></div>
-    <p class="sub">每完成一个小任务,就点一下印章,“嗒!”盖上一个漂亮的章。集满 7 枚,解锁结业证书!</p>
-    <div class="achieve" id="achieveBox"></div>
-    <div class="stampprogress"><div class="bar" id="stampBar"></div></div>
-    <div class="stamps" id="stampGrid"></div>
-  </div>
-</section>
-
-<!-- ===== 证书 ===== -->
-<section class="sec" id="cert">
-  <div class="wrap certwrap">
-    <div class="sechead" style="justify-content:center"><span class="secno">11</span><h2 class="tape">全能小航海家结业证书</h2></div>
-    <p class="sub" style="margin-left:0">在船票上写好你的名字,点“颁发证书”,然后可以打印出来贴在墙上!</p>
-    <button class="btn coral" id="makeCert" style="font-size:18px">🏅 颁发我的结业证书</button>
-    <div class="cert" id="certCard" style="display:none">
-      <div class="crown">👑</div>
-      <h3>全能小航海家</h3>
-      <div class="cname" id="certName">_______</div>
-      <div class="cline">乘坐「爱达魔都号」完成上海 ⇄ 济州岛 研学之旅</div>
-      <div class="cline">三天两晚 · 勇敢探索 · 收获满满</div>
-      <div class="cline" id="certProgress"></div>
-      <div class="cline" id="certDate"></div>
-      <div class="medal">🎖️</div>
-      <div class="csign">
-        <span>小鲸鱼船长助手 🐳</span>
-        <span>爱达魔都号研学手册</span>
-      </div>
-    </div>
-
-    <p class="sub" style="margin-left:0;text-align:center;margin-top:24px">📈 我的成长记录 · 回家后点亮星星,看看自己成长了多少!</p>
-    <div class="grow" id="growBox"></div>
-
-    <div class="wishes">
-      <label>💌 给爸爸妈妈的话</label>
-      <textarea id="parentNote" placeholder="谢谢爸爸妈妈带我去旅行……"></textarea>
-      <label>🗺️ 下一次探险,我想去……</label>
-      <input id="nextTrip" maxlength="30" placeholder="比如:日本、北极、月球?">
-    </div>
   </div>
 </section>
 
@@ -1274,7 +1195,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
     <p class="sub">两种方式:直接打印网页版,或打开 A4 纸质版。</p>
     <div class="geocard">
       <h3>方式一 · 打印网页版</h3>
-      <p>点击按钮,把整本手册打印出来。做过的任务勾选、印章和记录都会一起打出来。</p>
+      <p>点击按钮,把整本手册打印出来。做过的任务勾选和文字记录都会一起打出来。</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
         <button class="btn coral" id="printNow" style="font-size:17px">🖨️ 打印网页版</button>
         <button class="btn ghost" id="printFab2" title="打印 / 保存为 PDF">🖨️ 浮动打印按钮(右下角)</button>
@@ -1292,10 +1213,9 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
 
 <nav class="bottomnav" aria-label="手册板块">
   <button data-block="0" class="active"><span class="ic">🏠</span>封面</button>
-  <button data-block="1"><span class="ic">🏅</span>已完成</button>
-  <button data-block="2"><span class="ic">🎒</span>互动手册</button>
-  <button data-block="3"><span class="ic">🇬🇧</span>分级</button>
-  <button data-block="4"><span class="ic">🖨️</span>打印</button>
+  <button data-block="1"><span class="ic">🎒</span>互动手册</button>
+  <button data-block="2"><span class="ic">🇬🇧</span>分级</button>
+  <button data-block="3"><span class="ic">🖨️</span>打印</button>
 </nav>
 
 <button class="printfab" id="printFab" title="打印 / 保存为 PDF">🖨️</button>
@@ -1308,6 +1228,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
     <div class="end">小小航海家,我们海上见!🌊</div>
     <div class="tip">爱达魔都号 · 中国第一艘国产大型邮轮 · 从上海出发的奇妙之旅<br>灵感参考:《小小船舶工程师的探秘日志》</div>
     <p style="margin-top:8px"><a class="gogo" href="爱达魔都号研学手册-打印版.html" target="_blank" rel="noopener">🖨️ 打开 A4 打印版(10 页)</a></p>
+    <p style="margin-top:8px"><a class="gogo" href="爱达魔都号研学日记.html">← 返回爱达魔都号研学主目录</a></p>
   </div>
 </footer>
 
@@ -1498,7 +1419,6 @@ function pick(i, btn) {
   }
   all.forEach(b => b.disabled = true);
   store.quizStars = Math.max(store.quizStars || 0, qStars); save();
-  updateAchieve();
   updateStars();
   if (qi < QUIZ.length - 1) $('#qNext').style.display = 'inline-block';
   else $('#qAgain').style.display = 'inline-block';
@@ -1551,7 +1471,6 @@ function pickRight(el) {
     if (matchedCount === PAIRS.length) {
       $('#mStatus').textContent = '🎉 全对!你是配对小高手!';
       store.matchDone = true; save();
-      updateAchieve();
       confettiBurst();
     }
   } else {
@@ -1563,42 +1482,6 @@ function pickRight(el) {
   selLeft = null;
 }
 
-/* ============ 印章本 ============ */
-const STAMPS = [
-  { id: 'ship', ic: '🚢', name: '认识大船' },
-  { id: 'map', ic: '🗺️', name: '航线地图' },
-  { id: 'plan', ic: '🧭', name: '每天任务' },
-  { id: 'geo', ic: '🌋', name: '地理课堂' },
-  { id: 'quiz', ic: '⭐', name: '闯关问答' },
-  { id: 'match', ic: '🧩', name: '配对游戏' },
-  { id: 'food', ic: '🍊', name: '济州美食' }
-];
-store.stamps = store.stamps || {};
-const grid = $('#stampGrid');
-STAMPS.forEach(s => {
-  const d = document.createElement('div');
-  d.className = 'stamp' + (store.stamps[s.id] ? ' stamped' : '');
-  d.dataset.sid = s.id;
-  d.innerHTML = `<span class="ic">${s.ic}</span><span class="nm">${s.name}</span>`;
-  d.addEventListener('click', () => {
-    if (store.stamps[s.id]) { toast('这个印章已经盖过啦!'); return; }
-    store.stamps[s.id] = true; save();
-    d.classList.add('stamped');
-    ding(); confettiBurst(20);
-    refreshStampBar();
-    if (countStamps() === STAMPS.length) toast('🎉 印章集齐啦!快去领结业证书!');
-  });
-  grid.appendChild(d);
-});
-function countStamps() { return STAMPS.filter(s => store.stamps[s.id]).length; }
-function refreshStampBar() {
-  const pct = countStamps() / STAMPS.length * 100;
-  $('#stampBar').style.width = pct + '%';
-  $('#stampBar').parentElement.setAttribute('title', `${countStamps()}/${STAMPS.length}`);
-  updateAchieve();
-}
-refreshStampBar();
-
 /* ============ 任务清单 ============ */
 function countGoals() { return document.querySelectorAll('.goals .goal input:checked').length; }
 function refreshGoal() {
@@ -1607,9 +1490,8 @@ function refreshGoal() {
   $('#goalCount').textContent = n + ' / 13';
   if (n === 13 && !store.goalsDone) {
     store.goalsDone = true; save();
-    setTimeout(() => { confettiBurst(100); toast('🎉 全部任务完成!去领全能小航海家证书吧!'); }, 400);
+    setTimeout(() => { confettiBurst(100); toast('🎉 全部任务完成!你是全能小航海家啦!'); }, 400);
   }
-  updateAchieve();
 }
 document.querySelectorAll('.goals input[type=checkbox]').forEach(cb => {
   if (store.tasks[cb.dataset.task]) cb.checked = true;
@@ -1635,30 +1517,33 @@ document.querySelectorAll('.gbtn').forEach(b => {
   });
 });
 
-/* ============ 每日天气 ============ */
-store.weather = store.weather || {};
-document.querySelectorAll('.weatherrow').forEach(row => {
-  const key = row.dataset.day;
-  const cur = store.weather[key];
-  row.querySelectorAll('.wbtn').forEach(b => {
-    if (cur === b.dataset.w) b.classList.add('on');
-    b.addEventListener('click', () => {
-      row.querySelectorAll('.wbtn').forEach(x => x.classList.remove('on'));
-      b.classList.add('on');
-      store.weather[key] = b.dataset.w; save(); ding();
-    });
-  });
+/* ============ 浮力探索 ============ */
+const BUOY = {
+  rock: { ic: '🪨', label: '石头', top: 192, msg: '🪨 石头:实心、没有空气,水托不住它——扑通!沉到水底啦。' },
+  iron: { ic: '🧱', label: '铁块', top: 192, msg: '🧱 铁块:比水重太多了,水托不住——哗啦!沉下去了。' },
+  ship: { ic: '🚢', label: '空心大船', top: 128, msg: '🚢 大船:身体里全是空气,浮力托得住——看!漂在水面上!' }
+};
+const bItem = document.getElementById('bItem');
+function buoyTest(k) {
+  const d = BUOY[k];
+  const cur = bItem.getAttribute('transform') || 'translate(120 60)';
+  const target = `translate(230 ${d.top})`;
+  try { bItem.animate([{ transform: cur }, { transform: target }], { duration: 700, easing: 'cubic-bezier(.6,.05,.3,.95)' }); } catch (e) {}
+  bItem.setAttribute('transform', target);
+  bItem.querySelector('#bIcon').textContent = d.ic;
+  bItem.querySelector('#bLabel').textContent = d.label;
+  document.getElementById('buoyMsg').textContent = d.msg;
+  if (k === 'ship') { good(); confettiBurst(30); } else { oops(); }
+}
+document.querySelectorAll('[data-b]').forEach(b => {
+  b.addEventListener('click', () => buoyTest(b.dataset.b));
 });
+buoyTest('rock');
 
-/* ============ 浮力小实验 ============ */
+/* ============ 铝箔小船动手实验 ============ */
 let foilCapacity = 0, foilCoins = 0, foilSunk = false;
 const foilBoat = $('#foilBoat'), foilCoinsBox = $('#foilCoins'),
-      labInfo = $('#labInfo'), labBest = $('#labBest');
-function updateLabBest() {
-  const best = store.foilBest || 0;
-  labBest.textContent = best ? `🏆 最高纪录:${best} 枚硬币` : '🏆 最高纪录:还没有,快来挑战!';
-  updateAchieve();
-}
+      labInfo = $('#labInfo');
 function renderFoilCoins() {
   foilCoinsBox.innerHTML = '';
   for (let i = 0; i < foilCoins; i++) {
@@ -1687,7 +1572,7 @@ function addCoin() {
       const record = foilCoins - 1;
       labInfo.textContent = `哗啦——!沉啦……这艘小船最多载了 ${record} 枚硬币。点“重新折一只”再挑战!`;
       store.foilBest = Math.max(store.foilBest || 0, record); save();
-      updateLabBest(); oops();
+      oops();
     }, 500);
   } else {
     labInfo.textContent = `小船稳稳的!已经载了 ${foilCoins} 枚硬币,还能再加吗?`;
@@ -1696,7 +1581,7 @@ function addCoin() {
 }
 $('#addCoin').addEventListener('click', addCoin);
 $('#resetFoil').addEventListener('click', resetFoil);
-resetFoil(); updateLabBest();
+resetFoil();
 
 /* ============ 韩语小课堂 ============ */
 function speakKo(text) {
@@ -1710,41 +1595,6 @@ function speakKo(text) {
 }
 document.querySelectorAll('[data-kr]').forEach(b => {
   b.addEventListener('click', () => speakKo(b.dataset.kr));
-});
-
-/* ============ 成长记录 ============ */
-const GROW = ['勇气值', '知识值', '观察力', '沟通力', '独立性'];
-store.grow = store.grow || {};
-const growBox = $('#growBox');
-GROW.forEach(nm => {
-  const row = document.createElement('div');
-  row.className = 'growrow';
-  const lbl = document.createElement('span');
-  lbl.className = 'gname'; lbl.textContent = nm;
-  const stars = document.createElement('span');
-  stars.className = 'gstars';
-  const lvl = store.grow[nm] || 0;
-  for (let i = 1; i <= 5; i++) {
-    const s = document.createElement('span');
-    s.textContent = '★';
-    if (i <= lvl) s.classList.add('on');
-    s.addEventListener('click', () => {
-      store.grow[nm] = i; save();
-      stars.querySelectorAll('span').forEach((x, j) => x.classList.toggle('on', j < i));
-      ding();
-    });
-    stars.appendChild(s);
-  }
-  row.appendChild(lbl); row.appendChild(stars);
-  growBox.appendChild(row);
-});
-
-/* ============ 给家长的话 & 愿望 ============ */
-['parentNote', 'nextTrip'].forEach(id => {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.value = store[id] || '';
-  el.addEventListener('change', () => { store[id] = el.value; save(); });
 });
 
 /* ============ 安全特训营 ============ */
@@ -1911,7 +1761,6 @@ window.addEventListener('pointerup', () => { drawing = false; });
 $('#paintClear').addEventListener('click', () => { pc.clearRect(0, 0, paint.width, paint.height); ding(); });
 $('#paintDone').addEventListener('click', () => {
   store.wheelDrawn = true; save();
-  updateAchieve();
   toast('🎡 船舵画好啦!真有小船长的架势!');
   good();
 });
@@ -1961,10 +1810,9 @@ document.querySelectorAll('.mbadge').forEach(m => {
     store.medals[id] = true; save();
     m.classList.add('won');
     ding(); confettiBurst(25);
-    updateAchieve();
     const got = Object.keys(store.medals).length;
     if (got === medalTotal) {
-      setTimeout(() => { confettiBurst(100); toast('🏅 勋章全部点亮!去领全能小航海家证书吧!'); }, 500);
+      setTimeout(() => { confettiBurst(100); toast('🏅 勋章全部点亮!小船长真厉害!'); }, 500);
     }
   });
 });
@@ -2187,7 +2035,6 @@ function refreshEnLevels() {
     en.lv3Done = true; save();
     setTimeout(() => { confettiBurst(80); toast('🇬🇧 Level 3 通关!整本绘本读完啦,你是英语小船长!'); }, 300);
   }
-  updateAchieve();
 }
 renderEng();
 refreshEnLevels();
@@ -2200,8 +2047,7 @@ document.getElementById('wordSheet').addEventListener('click', e => { if (e.targ
 /* ============ 翻页结构(四大板块) ============ */
 const BLOCKS = [
   { name: '封面', ids: ['hero'] },
-  { name: '已完成', ids: ['stamp', 'cert'] },
-  { name: '互动手册', ids: ['ship', 'goals', 'map', 'plan', 'geo', 'tour', 'quiz', 'match'] },
+  { name: '互动手册', ids: ['ship', 'goals', 'map', 'geo', 'tour', 'quiz', 'match'] },
   { name: '分级', ids: ['eng'] },
   { name: '打印', ids: ['printpage'] }
 ];
@@ -2214,7 +2060,7 @@ function showPage(i) {
   const p = PAGE_ORDER[curPage];
   document.getElementById(p.id).classList.add('pg-active');
   document.querySelectorAll('.bottomnav button').forEach((b, k) => b.classList.toggle('active', k === p.bi));
-  if (p.bi === 1) updateAchieve();
+  if (location.hash !== '#' + p.id) history.replaceState(null, '', '#' + p.id);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 PAGE_ORDER.forEach((p, i) => {
@@ -2235,56 +2081,18 @@ document.addEventListener('click', e => {
   const nav = e.target.closest('[data-nav]');
   if (nav && !nav.disabled) showPage(curPage + (+nav.dataset.nav));
 });
-function updateAchieve() {
-  const box = document.getElementById('achieveBox');
-  if (!box) return;
-  const en = store.en || {};
-  const bb = document.getElementById('bookBox');
-  const stTotal = +(bb ? bb.dataset.st : 0);
-  const nwTotal = +(bb ? bb.dataset.nw : 0);
-  const lv = [
-    Object.keys(en).filter(k => /^w\d+$/.test(k)).length >= 10,
-    Object.keys(en).filter(k => /^pg\d+$/.test(k)).length >= 6,
-    Object.keys(en).filter(k => /^pg\d+$/.test(k)).length >= stTotal &&
-      Object.keys(en).filter(k => /^n/.test(k)).length >= nwTotal
-  ];
-  const lvTxt = lv.filter(Boolean).length;
-  const medalTotal = document.querySelectorAll('.mbadge').length;
-  const items = [
-    ['🎯', `${countGoals()} / 13`, '任务', countGoals() >= 13],
-    ['📛', `${countStamps()} / 7`, '印章', countStamps() >= 7],
-    ['🏅', `${Object.keys(store.medals || {}).length} / ${medalTotal}`, '勋章', Object.keys(store.medals || {}).length >= medalTotal],
-    ['⭐', `${store.quizStars || 0} / 5`, '问答', (store.quizStars || 0) >= 5],
-    ['🧩', store.matchDone ? '完成' : '进行中', '配对', !!store.matchDone],
-    ['🇬🇧', `${lvTxt} / 3`, '英语分级', lvTxt >= 3],
-    ['🚤', `${store.foilBest || 0} 枚`, '浮力纪录', (store.foilBest || 0) >= 10],
-    ['🎡', store.wheelDrawn ? '画好啦' : '未画', '船舵', !!store.wheelDrawn]
-  ];
-  box.innerHTML = items.map(it =>
-    `<div class="achv${it[3] ? ' done' : ''}"><span class="ic">${it[0]}</span><span class="num">${it[1]}</span><span class="lb">${it[2]}</span></div>`).join('');
+function pageFromHash() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const index = PAGE_ORDER.findIndex(p => p.id === id);
+  return index >= 0 ? index : 0;
 }
-showPage(0);
+window.addEventListener('hashchange', () => showPage(pageFromHash()));
+showPage(pageFromHash());
 
 /* ============ 打印 ============ */
 $('#printFab').addEventListener('click', () => { window.print(); });
 $('#printNow').addEventListener('click', () => { window.print(); });
 $('#printFab2').addEventListener('click', () => { window.print(); });
-
-/* ============ 结业证书 ============ */
-function makeCert() {
-  const name = (nameInput.value || '').trim() || '小船长';
-  $('#certName').textContent = name;
-  const d = dateInput.value ? new Date(dateInput.value + 'T00:00:00') : null;
-  $('#certDate').textContent = d
-    ? `航海日期:${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`
-    : '航海日期:____年__月__日';
-  $('#certCard').style.display = 'block';
-  $('#certProgress').textContent = `任务完成 ${countGoals()} / 13 · 印章 ${countStamps()} / 7`;
-  confettiBurst(120);
-  good();
-  toast('🎓 恭喜毕业!小船长真棒!');
-}
-$('#makeCert').addEventListener('click', makeCert);
 
 /* ============ 彩带 ============ */
 const cvs = document.getElementById('confetti');
@@ -2334,9 +2142,4 @@ setTimeout(() => {
 </script>
 </body>
 </html>
-
-
-</body>
-</html>
-
 

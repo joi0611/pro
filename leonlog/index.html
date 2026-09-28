@@ -1,3 +1,4 @@
+<!-- AI生成 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -26,21 +27,36 @@
   .legend{display:flex;justify-content:flex-end;gap:14px}.legend span{display:inline-flex;align-items:center;gap:5px}.legend i{width:11px;height:11px;border:1.5px solid var(--vi-ink);border-radius:50%}.legend .visited{background:var(--vi-sky-500)}.legend .waiting{background:var(--vi-sky-100)}
   .map-frame{position:relative;aspect-ratio:1.74;min-height:430px;overflow:visible}
   .china-map-object{display:block;width:100%;height:100%;border:0}
-  .leon-orbit{position:absolute;z-index:5;right:-2.5%;top:15%;width:clamp(116px,16vw,220px);pointer-events:none;animation:leon-orbit 8s ease-in-out infinite;filter:drop-shadow(7px 9px 0 rgba(65,112,131,.16))}
+  .leon-orbit{position:absolute;z-index:5;left:39%;top:57%;width:clamp(82px,10.5vw,142px);pointer-events:none;animation:leon-yunnan 5.2s ease-in-out infinite;filter:drop-shadow(6px 8px 0 rgba(65,112,131,.16))}
   .leon-orbit img{display:block;width:100%;height:auto}
-  .leon-note{position:absolute;right:4%;top:8%;z-index:6;background:#fff;border:2px solid var(--vi-ink);box-shadow:4px 5px 0 var(--vi-sky-200);border-radius:50% 45% 53% 47%;padding:10px 14px;font:700 14px/1.4 var(--vi-font-hand);transform:rotate(4deg);pointer-events:none}
-  .leon-note::after{content:"";position:absolute;right:18px;bottom:-13px;width:18px;height:18px;border-right:2px solid var(--vi-ink);transform:rotate(34deg)}
+  .leon-note{position:absolute;left:34%;top:51%;z-index:6;background:#fff;border:2px solid var(--vi-ink);box-shadow:4px 5px 0 var(--vi-sky-200);border-radius:50% 45% 53% 47%;padding:9px 13px;font:700 13px/1.4 var(--vi-font-hand);transform:rotate(-3deg);pointer-events:none}
+  .leon-note::after{content:"";position:absolute;right:16px;bottom:-13px;width:18px;height:18px;border-right:2px solid var(--vi-ink);transform:rotate(34deg)}
   .map-tip{position:absolute;left:18px;bottom:10px;z-index:6;color:var(--vi-sky-700);font:700 13px/1.4 var(--vi-font-hand);background:rgba(255,255,255,.9);border:1.5px dashed var(--vi-border);padding:7px 10px;transform:rotate(-1deg);pointer-events:none}
+  .shanghai-pin{position:absolute;z-index:8;left:76.8%;top:59.5%;display:flex;align-items:center;gap:5px;text-decoration:none;color:var(--vi-ink);filter:drop-shadow(3px 4px 0 var(--vi-shadow));animation:sh-pin-bob 3s ease-in-out infinite}
+  .shanghai-pin .sh-pin{width:12px;height:12px;background:var(--vi-yellow);border:2px solid var(--vi-ink);border-radius:50%;font-size:0;line-height:1;box-shadow:0 0 0 3px rgba(255,255,255,.78)}
+  .shanghai-pin .sh-name{font:800 15px/1.1 var(--vi-font-hand);background:var(--vi-yellow);border:2px solid var(--vi-ink);border-radius:999px;padding:3px 12px;box-shadow:2px 3px 0 var(--vi-ink)}
+  .shanghai-pin:hover .sh-pin{transform:scale(1.18) rotate(-6deg)}
+  .captain-boat{position:absolute;z-index:7;left:83.2%;top:48%;width:clamp(80px,9vw,122px);aspect-ratio:.82;text-decoration:none;filter:drop-shadow(5px 7px 0 rgba(65,112,131,.14));animation:captain-sail 4.4s ease-in-out infinite;transform-origin:50% 82%}
+  .captain-boat img{position:absolute;left:10%;bottom:15%;z-index:2;display:block;width:80%;height:auto}
+  .boat-hull{position:absolute;left:0;bottom:7%;z-index:3;width:100%;height:23%;border:2px solid var(--vi-ink);border-radius:12% 12% 52% 42%;background:var(--vi-sky-500);box-shadow:inset 0 5px 0 rgba(255,255,255,.34);clip-path:polygon(4% 0,96% 0,82% 86%,65% 100%,26% 96%,10% 72%)}
+  .boat-hull::after{content:"";position:absolute;left:22%;right:22%;top:38%;height:3px;border-radius:999px;background:var(--vi-yellow)}
+  .boat-wake,.boat-wake::before,.boat-wake::after{position:absolute;height:3px;border-radius:999px;background:var(--vi-sky-200);content:""}
+  .boat-wake{left:7%;right:1%;bottom:0}.boat-wake::before{left:15%;bottom:-6px;width:58%}.boat-wake::after{right:4%;bottom:6px;width:34%}
+  .captain-boat:hover img{transform:translateY(-3px)}
+  @keyframes sh-pin-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  @keyframes captain-sail{0%,100%{transform:translate(0,0) rotate(-1deg)}45%{transform:translate(7px,-4px) rotate(1.4deg)}70%{transform:translate(3px,1px) rotate(.2deg)}}
   .toast{position:fixed;left:50%;bottom:28px;z-index:30;transform:translate(-50%,30px);opacity:0;background:var(--vi-sky-700);color:#fff;border:2px solid #fff;box-shadow:4px 5px 0 var(--vi-sky-200);padding:12px 18px;max-width:calc(100% - 32px);text-align:center;pointer-events:none;transition:.25s ease}.toast.show{opacity:1;transform:translate(-50%,0)}
   .guestbook-button{position:fixed;right:22px;bottom:22px;z-index:20;min-height:48px;padding:10px 16px;border:2px solid var(--vi-ink);border-radius:18px 14px 21px 13px;background:var(--vi-yellow);color:var(--vi-ink);font-weight:800;box-shadow:4px 5px 0 var(--vi-ink)}
   .guestbook{width:min(680px,calc(100% - 24px));max-height:min(760px,calc(100dvh - 30px));padding:0;border:2px solid var(--vi-border);border-radius:20px 28px 18px 25px;background:var(--vi-bg);color:var(--vi-ink);box-shadow:10px 12px 0 var(--vi-shadow);overflow:auto}.guestbook::backdrop{background:rgba(28,62,75,.36);backdrop-filter:blur(3px)}.guest-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;background:var(--vi-sky-100);border-bottom:2px dashed var(--vi-border)}.guest-head h2{margin:0;font-size:27px}.guest-close{width:44px;height:44px;border:2px solid var(--vi-ink);border-radius:50%;background:#fff;font-size:24px}.guest-body{padding:18px 20px 24px}.guest-list{display:grid;gap:10px;margin-bottom:20px}.guest-note{padding:13px 15px;background:#fff;border:1.5px solid var(--vi-sky-200);border-radius:13px 19px 15px 21px}.guest-note p{margin:5px 0}.guest-note time,.guest-empty{color:var(--vi-muted);font-size:12px}.guest-form{padding:16px;background:#fff;border:2px solid var(--vi-border);border-radius:18px}.guest-form h3{margin:0 0 10px}.guest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.guest-form label{display:block;margin:8px 0 5px;font-weight:700;color:var(--vi-sky-700)}.guest-form input,.guest-form textarea{width:100%;min-height:44px;padding:9px 11px;border:1.5px solid var(--vi-sky-200);border-radius:11px;background:#fff;font:inherit}.guest-form textarea{min-height:95px;resize:vertical}.guest-submit{width:100%;min-height:48px;margin-top:11px;border:2px solid var(--vi-sky-700);border-radius:13px;background:var(--vi-sky-500);color:#fff;font-weight:800}.guest-status{min-height:22px;margin:9px 0 0;color:var(--vi-muted);font-size:13px}
-  @keyframes leon-orbit{0%,100%{transform:translate(0,0) rotate(1deg)}25%{transform:translate(-18px,13px) rotate(-1deg)}50%{transform:translate(-7px,34px) rotate(1.5deg)}75%{transform:translate(15px,17px) rotate(-.5deg)}}
-  @media(max-width:900px){.map-frame{min-height:0}.leon-orbit{right:-2%;top:25%;width:clamp(105px,23vw,165px)}.leon-note{right:1%;top:13%}}
-  @media(max-width:600px){.site-head{height:64px}.brand{font-size:21px}.brand-mark{width:38px;height:38px}.head-note{display:none}main{min-height:calc(100dvh - 64px);padding:2px 9px 26px}.map-board{padding:12px 9px}.map-head{align-items:flex-start}.map-kicker{font-size:10px}h1{font-size:28px}.map-meta{font-size:12px}.legend{display:none}.map-frame{aspect-ratio:1.58}.leon-orbit{right:-5%;top:34%;width:105px}.leon-note{right:0;top:19%;font-size:11px;padding:7px 9px}.map-tip{left:6px;bottom:3px;font-size:11px;padding:5px 7px}.guestbook-button{right:10px;bottom:10px}.guest-grid{grid-template-columns:1fr}.guest-head,.guest-body{padding-left:14px;padding-right:14px}}
-  @media(prefers-reduced-motion:reduce){.leon-orbit{animation:none}.toast{transition:none}}
+  @keyframes leon-yunnan{0%,100%{transform:translate(0,0) rotate(1deg)}45%{transform:translate(-5px,-6px) rotate(-1deg)}72%{transform:translate(3px,-2px) rotate(.5deg)}}
+  @media(max-width:900px){.map-frame{min-height:0}.leon-orbit{left:39.5%;top:58%;width:clamp(76px,12vw,110px)}.leon-note{left:32%;top:49%}.captain-boat{left:84%;top:48%;width:clamp(70px,10vw,90px)}}
+  @media(max-width:600px){.site-head{height:64px}.brand{font-size:21px}.brand-mark{width:38px;height:38px}.head-note{display:none}main{min-height:calc(100dvh - 64px);padding:2px 9px 26px}.map-board{padding:12px 9px}.map-head{align-items:flex-start}.map-kicker{font-size:10px}h1{font-size:28px}.map-meta{font-size:12px}.legend{display:none}.map-frame{aspect-ratio:1.58}.leon-orbit{left:40%;top:60%;width:72px}.leon-note{left:30%;top:49%;font-size:10px;padding:6px 8px}.shanghai-pin{left:75%;top:60%}.shanghai-pin .sh-name{font-size:11px;padding:2px 7px}.shanghai-pin .sh-pin{width:9px;height:9px}.captain-boat{left:84%;top:46%;width:67px}.map-tip{left:6px;bottom:3px;font-size:11px;padding:5px 7px}.guestbook-button{right:10px;bottom:10px}.guest-grid{grid-template-columns:1fr}.guest-head,.guest-body{padding-left:14px;padding-right:14px}}
+  @media(prefers-reduced-motion:reduce){.leon-orbit,.shanghai-pin,.captain-boat{animation:none}.toast{transition:none}}
 </style>
 </head>
 <body class="vi-home">
+<p data-aigc-mark="1" style="margin:0 0 8px;font-size:10px;line-height:1.3;color:#6b6560;font-weight:400;">AI生成</p>
+
 <a class="skip" href="#map">跳到旅行地图</a>
 <header class="site-head">
   <a class="brand" href="index.html" aria-label="Leon旅行日记首页"><span class="brand-mark">L</span><span>Leon旅行日记</span></a>
@@ -51,13 +67,20 @@
   <section class="map-board" id="map" aria-labelledby="map-title">
     <div class="map-head">
       <div><span class="map-kicker">LEON'S TRAVEL MAP · 2026</span><h1 id="map-title">展至的中国旅行地图</h1></div>
-      <div class="map-meta"><div id="map-status" aria-live="polite">34 个省级区域 · 云南已点亮</div><div class="legend"><span><i class="visited"></i>已到达</span><span><i class="waiting"></i>待探索</span></div></div>
+      <div class="map-meta"><div id="map-status" aria-live="polite">34 个省级区域 · 云南已点亮 · 上海已解锁</div><div class="legend"><span><i class="visited"></i>已到达</span><span><i class="waiting"></i>待探索</span></div></div>
     </div>
     <div class="map-frame">
       <iframe class="china-map-object" src="assets/china-provinces.svg" title="中国34个省级区域互动地图，点击云南进入云南研学地图" loading="eager"></iframe>
+      <a class="shanghai-pin" href="上海研学日记.html" aria-label="上海，已解锁，进入上海研学主目录">
+        <span class="sh-pin" aria-hidden="true"></span><span class="sh-name">上海</span>
+      </a>
+      <a class="captain-boat" href="上海研学日记.html" aria-label="从上海出海，进入上海研学主目录">
+        <img src="assets/leon-captain.png" alt="Leon船长开船插画">
+        <span class="boat-hull" aria-hidden="true"></span><span class="boat-wake" aria-hidden="true"></span>
+      </a>
       <div class="leon-note" aria-hidden="true">下一站，会是哪儿呢？</div>
       <div class="leon-orbit" aria-hidden="true"><img src="assets/leon-traveler.png" alt=""></div>
-      <div class="map-tip">点云南，看看省内研学足迹</div>
+      <div class="map-tip">点云南看省内足迹 · 点上海出海去魔都</div>
     </div>
   </section>
 </main>
