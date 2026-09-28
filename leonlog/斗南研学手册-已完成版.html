@@ -37,7 +37,8 @@ button,a{font:inherit}button{cursor:pointer}:focus-visible{outline:4px solid var
 @media(max-width:430px){.hero{min-height:620px}.hero h1{font-size:48px}.paper:after{display:none}.stats{grid-template-columns:1fr}.stat:last-child{grid-column:auto}.photo img{min-height:200px}.print{padding-inline:9px}.certificate{padding:24px 16px}.memory-card{margin-inline:-7px}.stars .star{min-width:90px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
 @media print{body{background:#fff}.topbar,.backlinks,.lightbox{display:none!important}.journal{width:100%;margin:0}.hero{min-height:250mm;box-shadow:none;break-after:page}.paper{margin:0;border:0;box-shadow:none}.chapter{break-before:page}.photo,.note,.video-frame,.field-note,.certificate,.memory-card,.ticket{box-shadow:none}.reveal{opacity:1;transform:none}.video-frame video{display:none}.video-frame:before{content:"现场视频已收录在网页版";display:grid;place-items:center;min-height:220px;background:#f9e8dc;font-weight:900}}
-.capture .topbar,.capture .backlinks,.capture .lightbox{display:none!important}.capture .journal{margin:0 auto!important}.capture .opening{grid-template-columns:1fr}.capture .reveal{opacity:1!important;transform:none!important;transition:none!important}.capture .video-frame video{display:none!important}.capture .video-frame:before{content:"▶\A点击此处播放现场视频";white-space:pre;display:grid;place-items:center;min-height:260px;padding:28px;background:repeating-linear-gradient(-8deg,#7c2448 0,#7c2448 14px,#8f2f54 14px,#8f2f54 28px);color:#fff7d5;font:900 24px/1.8 "STKaiti","KaiTi",sans-serif;text-align:center}
+.capture .topbar,.capture .backlinks,.capture .lightbox,.capture body>p[data-aigc-mark]{display:none!important}.capture .journal{margin:0 auto!important}.capture .opening{grid-template-columns:1fr}.capture .reveal{opacity:1!important;transform:none!important;transition:none!important}.capture .video-frame video{display:none!important}.capture .video-frame:before{content:"▶\A点击此处播放现场视频";white-space:pre;display:grid;place-items:center;min-height:260px;padding:28px;background:repeating-linear-gradient(-8deg,#7c2448 0,#7c2448 14px,#8f2f54 14px,#8f2f54 28px);color:#fff7d5;font:900 24px/1.8 "STKaiti","KaiTi",sans-serif;text-align:center}
+body>p[data-aigc-mark]{position:fixed;top:max(6px,env(safe-area-inset-top));right:max(8px,env(safe-area-inset-right));z-index:99;margin:0;padding:2px 7px;font-size:9px;line-height:1.4;color:#8a7a5e;background:#fff8;border:1px solid #d8c8a8;border-radius:99px;pointer-events:none;opacity:.8}
 </style>
 </head>
 <body>
@@ -101,7 +102,7 @@ button,a{font:inherit}button{cursor:pointer}:focus-visible{outline:4px solid var
       </div>
 
       <div class="collage" style="margin-top:34px">
-        <figure class="photo p8 landscape" style="--tilt:-.8deg"><button type="button" aria-label="放大查看斗南花海" data-full="assets/dounan-hero-flowers.jpg"><img src="assets/dounan-hero-flowers.jpg" loading="lazy" alt="斗南花市大棚内成片红紫橙黄蓝粉彩色满天星"><span class="tape"></span></button><figcaption>认花打卡：一眼就找到了满天星花海</figcaption></figure>
+        <figure class="photo p8 landscape crop-top" style="--tilt:-.8deg"><button type="button" aria-label="放大查看大笑的Leon" data-full="assets/dounan-leon-laugh.jpg"><img src="assets/dounan-leon-laugh.jpg" loading="lazy" alt="Leon 在花市摊位间大笑，身后是木雕摆件摊位"><span class="tape"></span></button><figcaption>认花打卡完成！花市里的开心一刻</figcaption></figure>
         <aside class="note">
           <h3>我的认花打卡</h3>
           <div class="checkrow"><span class="tick">✓</span><div><b>玫瑰</b><span>红、紫、香槟黄，套着网套成捆卖</span></div></div>
