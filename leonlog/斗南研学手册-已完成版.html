@@ -1,3 +1,4 @@
+<!-- AI生成 -->
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -32,7 +33,7 @@ button,a{font:inherit}button{cursor:pointer}:focus-visible{outline:4px solid var
 .finish{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.certificate{padding:34px;border:4px double #9e7925;background:#fff5c9;text-align:center;transform:rotate(-1deg);box-shadow:9px 10px 0 #d6c78c}.certificate h3{margin:10px 0;color:#775817;font:900 37px/1.1 "STKaiti","KaiTi",sans-serif}.certificate p{line-height:1.8}.signature{display:inline-block;min-width:190px;margin-top:18px;padding:5px 18px;border-bottom:2px solid #80692f;color:var(--pink-deep);font:900 27px/1 "STKaiti","KaiTi",sans-serif}.takeaway{padding:10px 0}.takeaway blockquote{margin:0;padding:24px;border-left:6px solid var(--pink);background:#fff;font:700 clamp(19px,2.4vw,26px)/1.8 "STKaiti","KaiTi",sans-serif}.takeaway ul{padding-left:22px;line-height:2}.backlinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.backlinks a{display:inline-flex;align-items:center;min-height:44px;padding:10px 15px;border:2px solid var(--pink);border-radius:8px;color:var(--pink-deep);font-weight:900;text-decoration:none;background:#fff}.backlinks a.primary{background:var(--pink-deep);color:#fff}
 .stars{display:flex;justify-content:space-around;gap:8px;padding:10px 0;flex-wrap:wrap}.star{flex:1;min-width:120px;padding:14px 8px;background:#fff;border:2px dashed var(--line);border-radius:14px;text-align:center;font-weight:900;color:#8a7a68}.star.on{background:#fff3c4;border-color:var(--yellow);color:#775817;box-shadow:3px 4px 0 #e6d8bd}
 .lightbox{position:fixed;inset:0;z-index:50;display:none;place-items:center;padding:18px;background:#3a1a2ee8}.lightbox.open{display:grid}.lightbox img{display:block;max-width:min(1100px,96vw);max-height:88dvh;object-fit:contain;border:8px solid #fff}.lightbox button{position:absolute;right:18px;top:18px;width:46px;height:46px;border:2px solid #fff;border-radius:50%;background:#7c2448;color:#fff;font-size:26px}.reveal{opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s ease}.reveal.seen{opacity:1;transform:none}
-@media(max-width:780px){.topbar nav{display:none}.journal{width:min(100% - 16px,680px);margin-top:8px}.hero{min-height:690px}.hero-copy{padding:28px 22px 38px}.paper{margin-top:42px;padding:28px 16px}.opening,.video-spread,.finish{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.p7,.p5,.p6,.p4,.p8,.p3,.note,.note.p7{grid-column:span 12}.photo{transform:rotate(calc(var(--tilt,0deg) * .55))}.photo img{min-height:240px;max-height:560px}.facts{grid-template-columns:1fr}.answer-strip{grid-template-columns:1fr}.chapter{margin-top:66px}.video-frame{width:min(100%,430px);margin:auto}.ticket{grid-template-columns:1fr}.ticket .hole{display:none}}
+@media(max-width:780px){.topbar nav{display:none}.journal{width:min(100% - 16px,680px);margin-top:8px}.hero{min-height:690px}.hero-copy{padding:28px 22px 38px}.paper{margin-top:42px;padding:28px 16px}.opening,.video-spread,.finish,.task-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.p7,.p5,.p6,.p4,.p8,.p3,.note,.note.p7{grid-column:span 12}.photo{transform:rotate(calc(var(--tilt,0deg) * .55))}.photo img{min-height:240px;max-height:560px}.facts{grid-template-columns:1fr}.answer-strip{grid-template-columns:1fr}.chapter{margin-top:66px}.video-frame{width:min(100%,430px);margin:auto}.ticket{grid-template-columns:1fr}.ticket .hole{display:none}}
 @media(max-width:430px){.hero{min-height:620px}.hero h1{font-size:48px}.paper:after{display:none}.stats{grid-template-columns:1fr}.stat:last-child{grid-column:auto}.photo img{min-height:200px}.print{padding-inline:9px}.certificate{padding:24px 16px}.memory-card{margin-inline:-7px}.stars .star{min-width:90px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
 @media print{body{background:#fff}.topbar,.backlinks,.lightbox{display:none!important}.journal{width:100%;margin:0}.hero{min-height:250mm;box-shadow:none;break-after:page}.paper{margin:0;border:0;box-shadow:none}.chapter{break-before:page}.photo,.note,.video-frame,.field-note,.certificate,.memory-card,.ticket{box-shadow:none}.reveal{opacity:1;transform:none}.video-frame video{display:none}.video-frame:before{content:"现场视频已收录在网页版";display:grid;place-items:center;min-height:220px;background:#f9e8dc;font-weight:900}}
@@ -40,6 +41,8 @@ button,a{font:inherit}button{cursor:pointer}:focus-visible{outline:4px solid var
 </style>
 </head>
 <body>
+<p data-aigc-mark="1" style="margin:0 0 8px;font-size:10px;line-height:1.3;color:#6b6560;font-weight:400;">AI生成</p>
+
 <a class="skip" href="#content">跳到研学记录</a>
 <header class="topbar">
   <a href="斗南花市研学手册-网页版.html">返回互动手册</a>
@@ -109,7 +112,8 @@ button,a{font:inherit}button{cursor:pointer}:focus-visible{outline:4px solid var
         <figure class="photo p4 portrait" style="--tilt:1.1deg"><button type="button" aria-label="放大查看多色玫瑰" data-full="assets/dounan-roses-bundle.jpg"><img src="assets/dounan-roses-bundle.jpg" loading="lazy" alt="成捆套网的多色玫瑰，黄白粉深红"><span class="tape"></span></button><figcaption>玫瑰 15 元 1 把（现场价签）</figcaption></figure>
         <figure class="photo p4 portrait" style="--tilt:-.6deg"><button type="button" aria-label="放大查看向日葵花束" data-full="assets/dounan-sunflower-bouquet.jpg"><img src="assets/dounan-sunflower-bouquet.jpg" loading="lazy" alt="大量牛皮纸包裹的向日葵花束"><span class="tape"></span></button><figcaption>向日葵花束，又大又亮</figcaption></figure>
         <figure class="photo p4 portrait crop-top" style="--tilt:.7deg"><button type="button" aria-label="放大查看粉紫玫瑰" data-full="assets/dounan-rose-box.jpg"><img src="assets/dounan-rose-box.jpg" loading="lazy" alt="纸箱里分层码放的粉紫色玫瑰与黄色玫瑰"><span class="tape"></span></button><figcaption>粉紫玫瑰与香槟黄玫瑰</figcaption></figure>
-        <figure class="photo p4 portrait" style="--tilt:.9deg"><button type="button" aria-label="放大查看向日葵花头" data-full="assets/dounan-sunflower-heads.jpg"><img src="assets/dounan-sunflower-heads.jpg" loading="lazy" alt="Leon 低头观察摊位上铺满的黄色向日葵花头"><span class="tape"></span></button><figcaption>蹲下来数向日葵的花瓣</figcaption></figure>
+        <figure class="photo p4 portrait crop-low" style="--tilt:.3deg"><button type="button" aria-label="放大查看橙黄粉玫瑰花束" data-full="assets/dounan-rose-bouquets.jpg"><img src="assets/dounan-rose-bouquets.jpg" loading="lazy" alt="大量橙黄色与淡粉色的玫瑰花束密集摆放"><span class="tape"></span></button><figcaption>橙黄与淡粉玫瑰，层层叠叠</figcaption></figure>
+        <figure class="photo p4 portrait" style="--tilt:.9deg"><button type="button" aria-label="放大查看向日葵花头" data-full="assets/dounan-sunflower-heads.jpg"><img src="assets/dounan-sunflower-heads.jpg" loading="lazy" alt="Leon 低头观察摊位上铺满的黄色向日葵花头"><span class="tape"></span></button><figcaption>凑近观察摊上的黄色花头</figcaption></figure>
         <figure class="photo p4 portrait" style="--tilt:-.5deg"><button type="button" aria-label="放大查看向日葵大桶" data-full="assets/dounan-sunflower-buckets.jpg"><img src="assets/dounan-sunflower-buckets.jpg" loading="lazy" alt="红色大桶里插满向日葵的花市摊位全景"><span class="tape"></span></button><figcaption>红桶向日葵，人多得像过节</figcaption></figure>
       </div>
 
@@ -159,15 +163,16 @@ button,a{font:inherit}button{cursor:pointer}:focus-visible{outline:4px solid var
         </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,44px);margin-top:44px">
+      <div class="task-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,44px);margin-top:44px">
         <aside class="field-note" style="transform:rotate(-.7deg)">
           <h3>任务二：100 元虚拟采购</h3>
           <p>今晚要坐飞机，只计划不购买。我的采购单第一次算超支了 3 元，删掉洋桔梗后就刚好。</p>
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px;margin-top:14px">
             <div style="padding:14px 8px;background:#fff;border:1.5px dashed #cf9a85;text-align:center;font-weight:800"><span style="display:block;font-size:11px;color:#8a7a68">向日葵 ×2</span>12 元</div>
             <div style="padding:14px 8px;background:#fff;border:1.5px dashed #cf9a85;text-align:center;font-weight:800"><span style="display:block;font-size:11px;color:#8a7a68">玫瑰 ×2</span>30 元</div>
             <div style="padding:14px 8px;background:#fff;border:1.5px dashed #cf9a85;text-align:center;font-weight:800"><span style="display:block;font-size:11px;color:#8a7a68">香水百合 ×1</span>25 元</div>
             <div style="padding:14px 8px;background:#fff;border:1.5px dashed #cf9a85;text-align:center;font-weight:800"><span style="display:block;font-size:11px;color:#8a7a68">睡莲 ×1</span>20 元</div>
+            <div style="padding:14px 8px;background:#fff;border:1.5px dashed #cf9a85;text-align:center;font-weight:800"><span style="display:block;font-size:11px;color:#8a7a68">洋桔梗 ×1</span>16 元</div>
           </div>
           <div class="answer-strip" style="margin:16px 0 0">
             <div class="answer"><small>第一次合计</small><b>103 元 ✗</b></div>
