@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Leon 2026 年 9 月 25 日大理喜洲研学旅行长图，点击长图中的视频区域可播放现场影像。">
+  <title>Leon 的喜洲旅行长图 · 互动版</title>
+  <style>
+    :root{color-scheme:light;--ink:#153f4c;--paper:#f6f2e7;--yellow:#f2ca63;--focus:#ed8c45}
+    *{box-sizing:border-box}
+    html{background:#dce9e4}
+    body{margin:0;overflow-x:hidden;background:radial-gradient(circle at 50% 0,#f5f1e7 0,#dce9e4 48%,#c9ddd7 100%);font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;color:var(--ink)}
+    .long-page{position:relative;width:min(100%,415px);margin:0 auto;background:var(--paper);box-shadow:0 0 38px #33595a42}
+    .long-page>img{display:block;width:100%;height:auto}
+    .video-hotspot{position:absolute;left:5.551%;width:88.946%;height:4.04%;display:grid;place-items:center;padding:0;border:2px solid #fff9;border-radius:14px;background:#123e4930;color:#fff;cursor:pointer;touch-action:manipulation;box-shadow:inset 0 0 0 2px #153f4c66;transition:background .2s ease,box-shadow .2s ease}
+    .video-hotspot[data-video="baba"]{top:57.62%}
+    .video-hotspot[data-video="solar"]{top:71.86%}
+    .video-hotspot:hover,.video-hotspot:focus-visible{background:#123e4966;box-shadow:inset 0 0 0 3px #fff,0 0 0 4px var(--focus)}
+    .play-label{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:10px 15px;border:2px solid #fff;border-radius:999px;background:#153f4ee8;color:#fff;font-size:14px;font-weight:900;box-shadow:4px 5px 0 #0c293099}
+    .play-label::before{content:"";width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:13px solid var(--yellow)}
+    dialog{width:min(92vw,760px);padding:0;border:0;border-radius:18px;background:#102e35;color:#fff;box-shadow:0 24px 80px #07191dbd}
+    dialog::backdrop{background:#07191dcc;backdrop-filter:blur(7px)}
+    .video-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px}
+    .video-head h2{margin:0;font-size:17px;line-height:1.4}
+    .close{flex:0 0 44px;width:44px;height:44px;border:2px solid #fff;border-radius:50%;background:#fff0;color:#fff;font-size:27px;line-height:1;cursor:pointer;touch-action:manipulation}
+    .close:focus-visible{outline:4px solid var(--yellow);outline-offset:3px}
+    video{display:block;width:100%;max-height:78vh;background:#061a1f}
+    .hint{position:fixed;z-index:3;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));margin:0;padding:8px 11px;border:1px solid #ffffffaa;border-radius:999px;background:#153f4ed9;color:#fff;font-size:12px;font-weight:800;box-shadow:0 5px 18px #17383b55;pointer-events:none}
+    @media(max-width:430px){.long-page{box-shadow:none}.video-hotspot{border-radius:10px}.play-label{min-height:44px;padding:8px 12px;font-size:13px}.hint{font-size:11px}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important}.video-hotspot{background:#123e494f}}
+  </style>
+</head>
+<body>
+  <main class="long-page" aria-label="喜洲研学旅行长图">
+    <img src="assets/xizhou-20260925-long-page.png" width="415" height="9280" decoding="async" fetchpriority="high" alt="Leon 在 2026 年 9 月 25 日完成的大理喜洲研学旅行手帐长图；十张现场照片各出现一次，并配有一张太阳能杀虫灯手绘插画">
+    <button class="video-hotspot" type="button" data-video="baba" data-src="assets/xizhou-20260925-video-1-web.mp4" data-title="现场影像 01 · 试吃喜洲粑粑" aria-label="播放现场影像：试吃喜洲粑粑">
+      <span class="play-label">点击播放 · 喜洲粑粑</span>
+    </button>
+    <button class="video-hotspot" type="button" data-video="solar" data-src="assets/xizhou-20260925-video-2-web.mp4" data-title="现场影像 02 · 太阳能杀虫灯" aria-label="播放现场影像：太阳能杀虫灯">
+      <span class="play-label">点击播放 · 太阳能杀虫灯</span>
+    </button>
+  </main>
+  <p class="hint">长图中有 2 段可点击视频</p>
+  <dialog id="video-dialog" aria-labelledby="video-title">
+    <div class="video-head"><h2 id="video-title">现场影像</h2><button class="close" type="button" aria-label="关闭视频">×</button></div>
+    <video controls playsinline preload="none"></video>
+  </dialog>
+  <script>
+    const dialog=document.getElementById('video-dialog');
+    const player=dialog.querySelector('video');
+    const title=document.getElementById('video-title');
+    const closeButton=dialog.querySelector('.close');
+    let opener=null;
+    document.querySelectorAll('.video-hotspot').forEach(button=>button.addEventListener('click',()=>{
+      opener=button;title.textContent=button.dataset.title;player.src=button.dataset.src;dialog.showModal();player.load();player.play().catch(()=>{});closeButton.focus();
+    }));
+    function closeVideo(){dialog.close()}
+    closeButton.addEventListener('click',closeVideo);
+    dialog.addEventListener('click',event=>{if(event.target===dialog)closeVideo()});
+    dialog.addEventListener('close',()=>{player.pause();player.removeAttribute('src');player.load();opener?.focus()});
+  </script>
+</body>
+</html>

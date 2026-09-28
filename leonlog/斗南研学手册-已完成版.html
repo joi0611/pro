@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Leon 于 2026 年 9 月 26 日完成的昆明斗南花市研学手帐，记录亚洲最大鲜花市场的认花、问价、采购计划、非遗臭豆腐烤鱼与豆荚风铃。">
+<title>Leon 的斗南花市研学手帐 · 已完成版</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f2ece0;color:#3c4a3f;font-family:"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:hidden}
+:root{--ink:#3c4a3f;--pink:#e56a8f;--pink-deep:#b8456b;--coral:#f28b4a;--yellow:#f5c94e;--green:#4c7a5c;--blue:#4a8fd4;--paper:#fdf6ec;--line:#c9b694;--shadow:#dccdb0;--red:#bd5d4b}
+button,a{font:inherit}button{cursor:pointer}:focus-visible{outline:4px solid var(--yellow);outline-offset:4px}.skip{position:absolute;left:-9999px}.skip:focus{left:14px;top:14px;z-index:99;background:#fff;padding:10px 14px}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px max(14px,calc((100vw - 1120px)/2));background:#fbf3e4ee;border-bottom:2px dashed #c9b694;backdrop-filter:blur(12px)}
+.topbar a{color:var(--pink-deep);font-weight:800;text-decoration:none}.topbar nav{display:flex;gap:5px;overflow:auto;scrollbar-width:none}.topbar nav a{flex:none;padding:8px 10px;border-radius:8px;color:#7a6a5c;font-size:12px}.topbar nav a.active{background:var(--pink-deep);color:#fff}.print{border:0;border-radius:8px;background:var(--yellow);color:#3d351c;padding:8px 12px;font-weight:900;white-space:nowrap}
+.journal{width:min(1120px,calc(100% - 24px));margin:18px auto 80px}.hero{position:relative;min-height:min(780px,84dvh);display:grid;align-items:end;overflow:hidden;border:2px solid #c29a9f;border-radius:18px 30px 20px 34px;background:#f3c9c0;box-shadow:12px 14px 0 var(--shadow)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(66,20,40,.06) 30%,rgba(70,18,38,.82) 100%)}
+.hero-copy{position:relative;z-index:2;width:min(760px,100%);padding:clamp(28px,7vw,76px);color:#fff}.issue{display:inline-block;padding:7px 12px;background:var(--yellow);color:#473c17;font:900 12px/1 monospace;letter-spacing:.12em;transform:rotate(-2deg)}.hero h1{margin:14px 0 10px;font-family:"STKaiti","KaiTi",sans-serif;font-size:clamp(47px,9vw,96px);line-height:.94;letter-spacing:-.045em;text-shadow:0 4px 22px #4d1b33}.hero p{max-width:30ch;margin:0;font-size:clamp(17px,2.3vw,23px);line-height:1.65}.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.hero-meta span{padding:7px 10px;border:1px solid #ffffffad;border-radius:7px;background:#7c2448b8;font-size:13px;font-weight:800}
+.paper{position:relative;margin:62px auto 0;padding:clamp(22px,5vw,60px);background-color:var(--paper);background-image:linear-gradient(#efe3cd 1px,transparent 1px);background-size:100% 32px;border:2px solid #c9b694;border-radius:16px 25px 18px 29px;box-shadow:10px 12px 0 var(--shadow)}.paper:before,.paper:after{content:"";position:absolute;top:-14px;width:118px;height:30px;background:#f0d9a699;box-shadow:0 1px 2px #6e603040}.paper:before{left:10%;transform:rotate(-5deg)}.paper:after{right:11%;transform:rotate(4deg)}
+.opening{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,6vw,76px);align-items:start}.opening h2,.chapter h2{margin:0 0 15px;font:900 clamp(31px,5vw,58px)/1.05 "STKaiti","KaiTi",sans-serif;color:var(--pink-deep)}.lead{margin:0;color:#4c5a4e;font-size:clamp(17px,2vw,21px);line-height:1.9}.scribble{position:relative;padding:22px 24px;background:#fffdf3;border:2px solid #c9b694;border-radius:8px 15px 9px 17px;box-shadow:6px 7px 0 #e0d3b6;transform:rotate(1deg)}.scribble strong{display:block;margin-bottom:10px;color:var(--red);font:900 24px/1.2 "STKaiti","KaiTi",sans-serif}.scribble p{margin:0;font:700 18px/1.8 "STKaiti","KaiTi",sans-serif}.stamp{position:absolute;right:18px;bottom:-28px;display:grid;place-items:center;width:88px;aspect-ratio:1;border:4px double var(--red);border-radius:50%;color:var(--red);font:900 14px/1.15 monospace;text-align:center;transform:rotate(-12deg);background:#fffdf3}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:36px}.stat{padding:18px 12px;background:#f9dfd2;border:1.5px dashed #c98a7a;text-align:center;transform:rotate(-1deg)}.stat:nth-child(2){background:#f7e4ae;transform:rotate(1.2deg)}.stat:nth-child(3){background:#dcebd8;transform:rotate(-.6deg)}.stat b{display:block;font:900 30px/1 "STKaiti","KaiTi",sans-serif}.stat span{display:block;margin-top:5px;font-size:12px;font-weight:800}
+.ticket{margin-top:34px;position:relative;display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;padding:16px 18px;background:#fff;border:2px dashed #c98a7a;border-radius:12px;box-shadow:5px 6px 0 #e6d8bd;transform:rotate(-.5deg)}.ticket:before{content:"入场券 · ADMIT ONE";position:absolute;top:-13px;left:18px;padding:4px 12px;background:var(--coral);color:#fff;font:900 12px/1 monospace;letter-spacing:.1em;border-radius:99px}.ticket b{font:900 22px/1.2 "STKaiti","KaiTi",sans-serif;color:var(--pink-deep)}.ticket span{font-size:13px;line-height:1.7;color:#7a6a5c}.ticket .hole{width:3px;height:64px;background:repeating-linear-gradient(180deg,var(--paper) 0 6px,transparent 6px 12px)}
+.chapter{position:relative;margin-top:84px;scroll-margin-top:76px}.chapter-kicker{display:inline-block;margin-bottom:14px;padding:6px 10px;background:var(--pink);color:#fff;font:900 12px/1 monospace;letter-spacing:.12em;transform:rotate(-1.5deg)}.chapter-intro{max-width:700px;margin:0 0 30px;color:#5d6a5e;font-size:16px;line-height:1.85}
+.collage{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,2vw,22px);align-items:start}.photo{position:relative;margin:0;padding:9px 9px 34px;background:#fff;border:1px solid #c9b694;box-shadow:7px 8px 0 #e0d3b6;transform:rotate(var(--tilt,0deg));overflow:hidden}.photo button{display:block;width:100%;padding:0;border:0;background:none}.photo img{display:block;width:100%;height:100%;min-height:240px;max-height:640px;object-fit:cover}.photo figcaption{position:absolute;left:12px;right:12px;bottom:8px;color:#5d6a5e;font:700 13px/1.25 "STKaiti","KaiTi",sans-serif}.tape{position:absolute;z-index:2;top:-9px;left:50%;width:74px;height:20px;background:#e9d3a866;border-left:2px dashed #ffffff80;border-right:2px dashed #ffffff80;transform:translateX(-50%) rotate(-2deg);box-shadow:0 1px 2px #00000018}
+.p7{grid-column:span 7}.p5{grid-column:span 5}.p6{grid-column:span 6}.p4{grid-column:span 4}.p8{grid-column:span 8}.p3{grid-column:span 3}.portrait img{aspect-ratio:3/4}.landscape img{aspect-ratio:4/3}.crop-low img{object-position:center 70%}.crop-top img{object-position:center 18%}
+.note{grid-column:span 5;position:relative;margin-top:28px;padding:24px;background:#fff7c9;border:1px solid #d4b45a;box-shadow:7px 8px 0 #e6d8b6;transform:rotate(1.4deg)}.note.p7{grid-column:span 7}.note h3{margin:0 0 10px;color:#6d5320;font:900 27px/1.1 "STKaiti","KaiTi",sans-serif}.note p,.note li{font-size:15px;line-height:1.85}.note ul{margin:10px 0 0;padding-left:21px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:26px}.fact{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;padding:16px;background:#fff;border:1.5px dashed var(--line);border-radius:12px 18px 13px 20px;box-shadow:4px 5px 0 #e6d8bd;transform:rotate(var(--tilt,0deg))}.fact .no{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;font-weight:900;transform:rotate(-5deg)}.fact p{margin:0;font-size:14.5px;line-height:1.8}.fact b{color:var(--green)}
+.checkrow{display:flex;gap:9px;align-items:flex-start;margin:0;padding:11px 14px;background:#f6fbf2;border:1.5px dashed #a8c79a;border-radius:10px}.checkrow .tick{flex:none;display:grid;place-items:center;width:26px;height:26px;border:2px solid var(--green);background:#dcebd8;color:var(--green);font-weight:900;transform:rotate(-4deg)}.checkrow b{display:block;color:#315d54}.checkrow span{font-size:13px;line-height:1.6;color:#5d6a5e}
+.answer-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}.answer{padding:16px;background:#f6fbf2;border-left:5px solid var(--green)}.answer small{display:block;color:#607676;font-weight:800}.answer b{display:block;margin-top:5px;font:900 19px/1.5 "STKaiti","KaiTi",sans-serif;color:var(--green)}.answer.coral{background:#fff3ea;border-left-color:var(--coral)}.answer.coral b{color:#c06a2c}.answer.blue{background:#eef5fd;border-left-color:var(--blue)}.answer.blue b{color:#2b6cb0}
+.price-board{position:relative;margin-top:24px;padding:20px;background:#fffdf3;border:2px dashed #c98a7a;border-radius:14px 20px 16px 22px;box-shadow:6px 7px 0 #e6d8bd;transform:rotate(-.4deg)}.price-board:before{content:"价签观察站";position:absolute;top:-16px;left:6%;padding:6px 14px;background:var(--coral);color:#fff;font:900 16px/1 "STKaiti","KaiTi",sans-serif;border-radius:99px;transform:rotate(-3deg)}
+.video-spread{display:grid;grid-template-columns:minmax(0,.78fr) minmax(320px,1.22fr);gap:clamp(22px,5vw,58px);align-items:center}.video-frame{position:relative;padding:10px 10px 42px;background:#fff;border:1.5px solid #c9b694;box-shadow:9px 10px 0 #e0d3b6;transform:rotate(-.8deg)}.video-frame video{display:block;width:100%;max-height:660px;background:#2b2023;object-fit:contain}.video-label{position:absolute;left:14px;bottom:11px;font:800 13px/1 monospace;color:#5d6a5e}.field-note{padding:24px 26px;background:#f9e8dc;border:1.5px solid #cf9a85;box-shadow:7px 8px 0 #e6d8bd;transform:rotate(1deg)}.field-note h3{margin:0 0 12px;font:900 29px/1.2 "STKaiti","KaiTi",sans-serif;color:#8a4a2f}.field-note p{margin:0 0 12px;font-size:16px;line-height:1.85}.field-note dl{margin:18px 0 0}.field-note dt{margin-top:13px;font-weight:900;color:#8a4a2f}.field-note dd{margin:3px 0 0;line-height:1.7;color:#5d6a5e}
+.badge-non{display:inline-flex;align-items:center;gap:7px;margin:4px 0 12px;padding:6px 12px;border:2px solid var(--red);border-radius:99px;color:var(--red);font-weight:900;font-size:13px;background:#fff;transform:rotate(-1.5deg)}.badge-non:before{content:"☆";font-size:15px}
+.memory-card{position:relative;margin:8px 0 46px;padding:12px 12px 42px;background:#fff;border:1.5px solid #c9b694;box-shadow:9px 10px 0 #e0d3b6;transform:rotate(.55deg)}.memory-card:before{content:"收藏这一刻";position:absolute;z-index:2;left:5%;top:-18px;padding:7px 14px;background:#f5c9d6;color:#a53d62;font:900 17px/1 "STKaiti","KaiTi",sans-serif;transform:rotate(-4deg)}.memory-card button{display:block;width:100%;padding:0;border:0;background:none}.memory-card img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}.memory-card figcaption{position:absolute;left:16px;bottom:10px;color:#5d6a5e;font:800 14px/1.2 "STKaiti","KaiTi",sans-serif}
+.finish{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.certificate{padding:34px;border:4px double #9e7925;background:#fff5c9;text-align:center;transform:rotate(-1deg);box-shadow:9px 10px 0 #d6c78c}.certificate h3{margin:10px 0;color:#775817;font:900 37px/1.1 "STKaiti","KaiTi",sans-serif}.certificate p{line-height:1.8}.signature{display:inline-block;min-width:190px;margin-top:18px;padding:5px 18px;border-bottom:2px solid #80692f;color:var(--pink-deep);font:900 27px/1 "STKaiti","KaiTi",sans-serif}.takeaway{padding:10px 0}.takeaway blockquote{margin:0;padding:24px;border-left:6px solid var(--pink);background:#fff;font:700 clamp(19px,2.4vw,26px)/1.8 "STKaiti","KaiTi",sans-serif}.takeaway ul{padding-left:22px;line-height:2}.backlinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.backlinks a{display:inline-flex;align-items:center;min-height:44px;padding:10px 15px;border:2px solid var(--pink);border-radius:8px;color:var(--pink-deep);font-weight:900;text-decoration:none;background:#fff}.backlinks a.primary{background:var(--pink-deep);color:#fff}
+.stars{display:flex;justify-content:space-around;gap:8px;padding:10px 0;flex-wrap:wrap}.star{flex:1;min-width:120px;padding:14px 8px;background:#fff;border:2px dashed var(--line);border-radius:14px;text-align:center;font-weight:900;color:#8a7a68}.star.on{background:#fff3c4;border-color:var(--yellow);color:#775817;box-shadow:3px 4px 0 #e6d8bd}
+.lightbox{position:fixed;inset:0;z-index:50;display:none;place-items:center;padding:18px;background:#3a1a2ee8}.lightbox.open{display:grid}.lightbox img{display:block;max-width:min(1100px,96vw);max-height:88dvh;object-fit:contain;border:8px solid #fff}.lightbox button{position:absolute;right:18px;top:18px;width:46px;height:46px;border:2px solid #fff;border-radius:50%;background:#7c2448;color:#fff;font-size:26px}.reveal{opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s ease}.reveal.seen{opacity:1;transform:none}
+@media(max-width:780px){.topbar nav{display:none}.journal{width:min(100% - 16px,680px);margin-top:8px}.hero{min-height:690px}.hero-copy{padding:28px 22px 38px}.paper{margin-top:42px;padding:28px 16px}.opening,.video-spread,.finish{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.p7,.p5,.p6,.p4,.p8,.p3,.note,.note.p7{grid-column:span 12}.photo{transform:rotate(calc(var(--tilt,0deg) * .55))}.photo img{min-height:240px;max-height:560px}.facts{grid-template-columns:1fr}.answer-strip{grid-template-columns:1fr}.chapter{margin-top:66px}.video-frame{width:min(100%,430px);margin:auto}.ticket{grid-template-columns:1fr}.ticket .hole{display:none}}
+@media(max-width:430px){.hero{min-height:620px}.hero h1{font-size:48px}.paper:after{display:none}.stats{grid-template-columns:1fr}.stat:last-child{grid-column:auto}.photo img{min-height:200px}.print{padding-inline:9px}.certificate{padding:24px 16px}.memory-card{margin-inline:-7px}.stars .star{min-width:90px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+@media print{body{background:#fff}.topbar,.backlinks,.lightbox{display:none!important}.journal{width:100%;margin:0}.hero{min-height:250mm;box-shadow:none;break-after:page}.paper{margin:0;border:0;box-shadow:none}.chapter{break-before:page}.photo,.note,.video-frame,.field-note,.certificate,.memory-card,.ticket{box-shadow:none}.reveal{opacity:1;transform:none}.video-frame video{display:none}.video-frame:before{content:"现场视频已收录在网页版";display:grid;place-items:center;min-height:220px;background:#f9e8dc;font-weight:900}}
+.capture .topbar,.capture .backlinks,.capture .lightbox{display:none!important}.capture .journal{margin:0 auto!important}.capture .opening{grid-template-columns:1fr}.capture .reveal{opacity:1!important;transform:none!important;transition:none!important}.capture .video-frame video{display:none!important}.capture .video-frame:before{content:"▶\A点击此处播放现场视频";white-space:pre;display:grid;place-items:center;min-height:260px;padding:28px;background:repeating-linear-gradient(-8deg,#7c2448 0,#7c2448 14px,#8f2f54 14px,#8f2f54 28px);color:#fff7d5;font:900 24px/1.8 "STKaiti","KaiTi",sans-serif;text-align:center}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳到研学记录</a>
+<header class="topbar">
+  <a href="斗南花市研学手册-网页版.html">返回互动手册</a>
+  <nav aria-label="手帐章节">
+    <a href="#opening">开场</a><a href="#know">知识</a><a href="#price">价格</a><a href="#extra">寻宝</a><a href="#taste">味道</a><a href="#bell">风铃</a><a href="#words">单词</a><a href="#finish">总结</a>
+  </nav>
+  <button class="print" type="button" onclick="window.print()">打印手帐</button>
+</header>
+
+<main class="journal" id="content">
+  <section class="hero" aria-labelledby="title">
+    <img src="assets/dounan-hero-flowers.jpg" alt="斗南花市大棚里成片彩色满天星花海">
+    <div class="hero-copy">
+      <span class="issue">FIELD JOURNAL · DOUNAN</span>
+      <h1 id="title">斗南<br>花市研学手帐</h1>
+      <p>走进亚洲最大的鲜花市场，认花、问价、算账，再尝尝门口的臭豆腐烤鱼，把 15 元的风铃声带回家。</p>
+      <div class="hero-meta"><span>2026.09.26</span><span>云南 · 昆明 · 斗南</span><span>Leon 的完成记录</span></div>
+    </div>
+  </section>
+
+  <article class="paper">
+    <section class="opening reveal" id="opening" aria-labelledby="opening-title">
+      <div>
+        <span class="chapter-kicker">TODAY'S NOTE</span>
+        <h2 id="opening-title">今天，我用鼻子认花市</h2>
+        <p class="lead">斗南不是用眼睛看的：花要凑近闻，价签要蹲下来读，向日葵要抱在怀里数一数花瓣，烤鱼要问过摊主才知道它是非遗。原来一个花市里，同时住着花朵、生意、味道和叮叮当当的声音。</p>
+        <div class="stats" aria-label="研学概览">
+          <div class="stat"><b>1 天</b><span>完整花市研学</span></div>
+          <div class="stat"><b>5+ 种</b><span>现场认花问价</span></div>
+          <div class="stat"><b>3 段</b><span>现场影像记录</span></div>
+        </div>
+        <div class="ticket" aria-label="花市入场券">
+          <div><b>斗南花市 · 研学入场券</b><span>亚洲最大鲜花市场<br>认花 · 问价 · 采购 · 比价</span></div>
+          <span class="hole"></span>
+          <div style="text-align:right"><b>NO.20260926</b><span>日期：2026 年 9 月 26 日<br>小研学家：LEON</span></div>
+        </div>
+      </div>
+      <aside class="scribble">
+        <strong>完成啦！</strong>
+        <p>我最喜欢彩色满天星花海，最惊喜的发现是门口的臭豆腐烤鱼是非遗美食。还有一串 15 元的豆荚风铃，声音超好听，我把它挂在了书包上。</p>
+        <span class="stamp">LEON<br>斗南打卡<br>09·26</span>
+      </aside>
+    </section>
+
+    <section class="chapter reveal" id="know" aria-labelledby="know-title">
+      <span class="chapter-kicker">PAGE 01 · 知识站</span>
+      <h2 id="know-title">关于斗南的 6 个秘密</h2>
+      <p class="chapter-intro">空白手册里的 6 个问题，今天我都找到了答案，顺便在花海里完成认花打卡。</p>
+      <div class="facts" aria-label="斗南六条秘密">
+        <div class="fact" style="--tilt:-.6deg"><div class="no">1</div><p><b>亚洲第一：</b>全中国每 10 枝鲜花，约 7 枝从斗南出发。</p></div>
+        <div class="fact" style="--tilt:.5deg"><div class="no">2</div><p><b>鲜花论斤卖：</b>“云南十八怪，鲜花论斤卖”，这里买花像买菜！</p></div>
+        <div class="fact" style="--tilt:-.4deg"><div class="no">3</div><p><b>鲜花坐飞机：</b>早上采的花，冷链运输，当晚就到北京上海，出口 50 多个国家。</p></div>
+        <div class="fact" style="--tilt:.6deg"><div class="no">4</div><p><b>花的结构：</b>花瓣、花蕊、花茎、叶子——花蕊是孕育种子的地方。</p></div>
+        <div class="fact" style="--tilt:-.5deg"><div class="no">5</div><p><b>春城花都：</b>昆明四季如春、阳光足、温差大，花儿长得又快又艳。</p></div>
+        <div class="fact" style="--tilt:.4deg"><div class="no">6</div><p><b>夜晚花拍：</b>每晚斗南有鲜花拍卖，“出价！成交！”几百万枝花几小时抢光。</p></div>
+      </div>
+
+      <div class="collage" style="margin-top:34px">
+        <figure class="photo p8 landscape" style="--tilt:-.8deg"><button type="button" aria-label="放大查看斗南花海" data-full="assets/dounan-hero-flowers.jpg"><img src="assets/dounan-hero-flowers.jpg" loading="lazy" alt="斗南花市大棚内成片红紫橙黄蓝粉彩色满天星"><span class="tape"></span></button><figcaption>认花打卡：一眼就找到了满天星花海</figcaption></figure>
+        <aside class="note">
+          <h3>我的认花打卡</h3>
+          <div class="checkrow"><span class="tick">✓</span><div><b>玫瑰</b><span>红、紫、香槟黄，套着网套成捆卖</span></div></div>
+          <div class="checkrow" style="margin-top:8px"><span class="tick">✓</span><div><b>向日葵</b><span>牛皮纸包成一大捧，抱都抱不动</span></div></div>
+          <div class="checkrow" style="margin-top:8px"><span class="tick">✓</span><div><b>满天星</b><span>在主图花海里找到了红橙黄蓝紫粉</span></div></div>
+          <div class="checkrow" style="margin-top:8px"><span class="tick">✓</span><div><b>一种我不认识的花</b><span>问了摊主：是洋桔梗！</span></div></div>
+        </aside>
+        <figure class="photo p4 portrait" style="--tilt:1.1deg"><button type="button" aria-label="放大查看多色玫瑰" data-full="assets/dounan-roses-bundle.jpg"><img src="assets/dounan-roses-bundle.jpg" loading="lazy" alt="成捆套网的多色玫瑰，黄白粉深红"><span class="tape"></span></button><figcaption>玫瑰 15 元 1 把（现场价签）</figcaption></figure>
+        <figure class="photo p4 portrait" style="--tilt:-.6deg"><button type="button" aria-label="放大查看向日葵花束" data-full="assets/dounan-sunflower-bouquet.jpg"><img src="assets/dounan-sunflower-bouquet.jpg" loading="lazy" alt="大量牛皮纸包裹的向日葵花束"><span class="tape"></span></button><figcaption>向日葵花束，又大又亮</figcaption></figure>
+        <figure class="photo p4 portrait crop-top" style="--tilt:.7deg"><button type="button" aria-label="放大查看粉紫玫瑰" data-full="assets/dounan-rose-box.jpg"><img src="assets/dounan-rose-box.jpg" loading="lazy" alt="纸箱里分层码放的粉紫色玫瑰与黄色玫瑰"><span class="tape"></span></button><figcaption>粉紫玫瑰与香槟黄玫瑰</figcaption></figure>
+        <figure class="photo p4 portrait" style="--tilt:.9deg"><button type="button" aria-label="放大查看向日葵花头" data-full="assets/dounan-sunflower-heads.jpg"><img src="assets/dounan-sunflower-heads.jpg" loading="lazy" alt="Leon 低头观察摊位上铺满的黄色向日葵花头"><span class="tape"></span></button><figcaption>蹲下来数向日葵的花瓣</figcaption></figure>
+        <figure class="photo p4 portrait" style="--tilt:-.5deg"><button type="button" aria-label="放大查看向日葵大桶" data-full="assets/dounan-sunflower-buckets.jpg"><img src="assets/dounan-sunflower-buckets.jpg" loading="lazy" alt="红色大桶里插满向日葵的花市摊位全景"><span class="tape"></span></button><figcaption>红桶向日葵，人多得像过节</figcaption></figure>
+      </div>
+
+      <div class="video-spread" style="margin-top:44px">
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="assets/dounan-video1-poster.jpg">
+            <source src="assets/dounan-20260928-video-1-web.mp4" type="video/mp4">
+            当前浏览器不支持视频播放。
+          </video>
+          <span class="video-label">现场影像 01 · 向日葵花摊逛花市 · 00:26</span>
+        </div>
+        <div>
+          <div class="answer-strip" style="margin:0 0 22px">
+            <div class="answer"><small>认花打卡</small><b>玫瑰 · 向日葵 · 满天星 · 洋桔梗</b></div>
+            <div class="answer coral"><small>花市氛围</small><b>人人手捧花束</b></div>
+            <div class="answer blue"><small>现场观察</small><b>花摊有编号，价签手写</b></div>
+          </div>
+          <aside class="field-note">
+            <h3>镜头里的花市</h3>
+            <p>视频里我在向日葵花摊前看了又看，又抱着花束在摊位间穿行。摊位的台面上标着编号，价签都是手写的——原来花市里每一束花都有自己的“身份证”。</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="price" aria-labelledby="price-title">
+      <span class="chapter-kicker">PAGE 02 · 任务站</span>
+      <h2 id="price-title">问价、采购、比价</h2>
+      <p class="chapter-intro">空白手册的三项任务今天全部完成：礼貌问价、100 元虚拟采购、还有“钱去哪了”的比价侦探。</p>
+      <div class="price-board">
+        <h3 style="margin:0 0 14px;color:#c06a2c;font:900 26px/1.2 'STKaiti','KaiTi',sans-serif">任务一：问价大挑战（5 张现场价签）</h3>
+        <div class="collage">
+          <figure class="photo p3 portrait" style="--tilt:-.7deg"><button type="button" aria-label="放大查看玫瑰价签" data-full="assets/dounan-rose-tag.jpg"><img src="assets/dounan-rose-tag.jpg" loading="lazy" alt="成捆玫瑰旁的手写价签"><span class="tape"></span></button><figcaption>玫瑰 15 元 / 把</figcaption></figure>
+          <figure class="photo p3 portrait" style="--tilt:.6deg"><button type="button" aria-label="放大查看向日葵价签" data-full="assets/dounan-sunflower-tag.jpg"><img src="assets/dounan-sunflower-tag.jpg" loading="lazy" alt="报纸包裹向日葵旁的手写价签"><span class="tape"></span></button><figcaption>向日葵 6 元 / 把</figcaption></figure>
+          <figure class="photo p3 portrait" style="--tilt:-.5deg"><button type="button" aria-label="放大查看香水百合价签" data-full="assets/dounan-lily-tag.jpg"><img src="assets/dounan-lily-tag.jpg" loading="lazy" alt="绿粉香水百合花苞与手写价签"><span class="tape"></span></button><figcaption>香水百合 25 元 / 把</figcaption></figure>
+          <figure class="photo p3 portrait" style="--tilt:.7deg"><button type="button" aria-label="放大查看睡莲价签" data-full="assets/dounan-waterlily-tag.jpg"><img src="assets/dounan-waterlily-tag.jpg" loading="lazy" alt="紫粉黑美人睡莲花束与手写价签"><span class="tape"></span></button><figcaption>睡莲 20 元 / 把（黑美人 25）</figcaption></figure>
+          <figure class="photo p4 portrait" style="--tilt:.4deg"><button type="button" aria-label="放大查看洋桔梗价签" data-full="assets/dounan-eustoma-tag.jpg"><img src="assets/dounan-eustoma-tag.jpg" loading="lazy" alt="洋桔梗睡莲莲蓬摊位与手写价签"><span class="tape"></span></button><figcaption>洋桔梗 16 元 / 把（30 元 2 把）</figcaption></figure>
+          <aside class="note p4" style="grid-column:span 4;margin-top:0">
+            <h3>价签上认识的字</h3>
+            <p>“元”、“把”、“2把”、“扫码自取”。原来“一把花”就是花市里最小的一单生意。</p>
+          </aside>
+          <div class="answer-strip" style="grid-column:span 8">
+            <div class="answer"><small>摊位 1 · 玫瑰</small><b>15 元 / 把</b></div>
+            <div class="answer coral"><small>摊位 2 · 向日葵</small><b>6 元 / 把</b></div>
+            <div class="answer blue"><small>摊位 3 · 睡莲</small><b>20 元 / 把</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,44px);margin-top:44px">
+        <aside class="field-note" style="transform:rotate(-.7deg)">
+          <h3>任务二：100 元虚拟采购</h3>
+          <p>今晚要坐飞机，只计划不购买。我的采购单第一次算超支了 3 元，删掉洋桔梗后就刚好。</p>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px">
+            <div style="padding:14px 8px;background:#fff;border:1.5px dashed #cf9a85;text-align:center;font-weight:800"><span style="display:block;font-size:11px;color:#8a7a68">向日葵 ×2</span>12 元</div>
+            <div style="padding:14px 8px;background:#fff;border:1.5px dashed #cf9a85;text-align:center;font-weight:800"><span style="display:block;font-size:11px;color:#8a7a68">玫瑰 ×2</span>30 元</div>
+            <div style="padding:14px 8px;background:#fff;border:1.5px dashed #cf9a85;text-align:center;font-weight:800"><span style="display:block;font-size:11px;color:#8a7a68">香水百合 ×1</span>25 元</div>
+            <div style="padding:14px 8px;background:#fff;border:1.5px dashed #cf9a85;text-align:center;font-weight:800"><span style="display:block;font-size:11px;color:#8a7a68">睡莲 ×1</span>20 元</div>
+          </div>
+          <div class="answer-strip" style="margin:16px 0 0">
+            <div class="answer"><small>第一次合计</small><b>103 元 ✗</b></div>
+            <div class="answer coral"><small>调整后合计</small><b>87 元 ✓</b></div>
+            <div class="answer blue"><small>还剩</small><b>13 元</b></div>
+          </div>
+        </aside>
+        <aside class="field-note" style="transform:rotate(.8deg)">
+          <h3>任务三：比价小侦探</h3>
+          <p>用玫瑰做样本：斗南现场 15 元，美团查昆明花店约 40 元，切到乌鲁木齐约 70 元。差价约 55 元，钱去哪了？</p>
+          <dl>
+            <dt>① 花农的成本和辛苦钱</dt><dd>✓ 讨论过：种花、浇水、剪枝都要花时间。</dd>
+            <dt>② 冷链运输费</dt><dd>✓ 云南到新疆 3000 多公里！</dd>
+            <dt>③ 损耗</dt><dd>✓ 鲜花会蔫，越远损耗越大。</dd>
+            <dt>④ 花店房租、店员、包装</dt><dd>✓ 城市里开花店很贵。</dd>
+            <dt>⑤ 花艺师的手艺钱</dt><dd>✓ 包成一束漂亮的花也要功夫。</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="extra" aria-labelledby="extra-title">
+      <span class="chapter-kicker">EXTRA DISCOVERY</span>
+      <h2 id="extra-title">花市里不只有花</h2>
+      <p class="chapter-intro">在花市深处，我还发现了圆圆滚滚的观赏葫芦、香香的佛手柑，和一屋子会“变身”的南瓜。</p>
+      <div class="collage">
+        <figure class="photo p4 portrait crop-top" style="--tilt:-.9deg"><button type="button" aria-label="放大查看举葫芦的Leon" data-full="assets/dounan-gourd-leon.jpg"><img src="assets/dounan-gourd-leon.jpg" loading="lazy" alt="Leon 双手把一个绿色葫芦举过头顶，笑得眯起眼"><span class="tape"></span></button><figcaption>把葫芦举过头顶，任务完成</figcaption></figure>
+        <figure class="photo p4 portrait" style="--tilt:.8deg"><button type="button" aria-label="放大查看南瓜摊" data-full="assets/dounan-pumpkin-stall.jpg"><img src="assets/dounan-pumpkin-stall.jpg" loading="lazy" alt="Leon 俯身观看南瓜造型工艺品摊位"><span class="tape"></span></button><figcaption>会“变身”的观赏南瓜小屋</figcaption></figure>
+        <figure class="photo p4 portrait" style="--tilt:-.5deg"><button type="button" aria-label="放大查看摸南瓜" data-full="assets/dounan-pumpkin-touch.jpg"><img src="assets/dounan-pumpkin-touch.jpg" loading="lazy" alt="Leon 伸手摸观赏南瓜，摊位上有微信支付二维码"><span class="tape"></span></button><figcaption>摸一摸，南瓜上有小疙瘩</figcaption></figure>
+        <aside class="note">
+          <h3>观赏南瓜观察</h3>
+          <ul><li>颜色：黄绿相间，像小灯笼</li><li>手感：表面有小小的疙瘩</li><li>作用：不切开吃，用来装饰和观赏</li><li>新问题：南瓜为什么有那么多形状？</li></ul>
+        </aside>
+        <figure class="photo p5 portrait" style="--tilt:1deg"><button type="button" aria-label="放大查看捧佛手柑的Leon" data-full="assets/dounan-foshou-leon.jpg"><img src="assets/dounan-foshou-leon.jpg" loading="lazy" alt="Leon 在路边摊双手捧着一颗佛手柑端详"><span class="tape"></span></button><figcaption>佛手柑：像小手一样的果子</figcaption></figure>
+        <figure class="photo p4 portrait crop-low" style="--tilt:-.7deg"><button type="button" aria-label="放大查看佛手柑特写" data-full="assets/dounan-foshou-closeup.jpg"><img src="assets/dounan-foshou-closeup.jpg" loading="lazy" alt="黄绿色佛手柑果实堆叠特写"><span class="tape"></span></button><figcaption>佛手柑堆成小山，香气扑鼻</figcaption></figure>
+        <div class="note p3" style="margin-top:0">
+          <h3>闻一闻</h3>
+          <p>佛手柑不是花，是香香的果子，掰开像手指一样张开。花市里原来还卖果子和蔬菜。</p>
+        </div>
+      </div>
+      <div class="video-spread" style="margin-top:44px">
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="assets/dounan-video3-poster.jpg">
+            <source src="assets/dounan-20260928-video-3-web.mp4" type="video/mp4">
+            当前浏览器不支持视频播放。
+          </video>
+          <span class="video-label">现场影像 03 · 挑一只观赏葫芦 · 00:20</span>
+        </div>
+        <aside class="field-note">
+          <h3>镜头里的挑选</h3>
+          <p>视频里我蹲在长桌前，把黄绿花纹的小南瓜翻来翻去看，最后选中了一只最特别的葫芦。挑选的过程，比买到还开心。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="taste" aria-labelledby="taste-title">
+      <span class="chapter-kicker">LOCAL TASTE</span>
+      <h2 id="taste-title">门口的味道：非遗臭豆腐烤鱼</h2>
+      <p class="chapter-intro">逛完花市，一出门就被香味拦住——门口小吃摊的臭豆腐烤鱼，竟然是非遗美食！</p>
+      <div class="video-spread">
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="assets/dounan-video2-poster.jpg">
+            <source src="assets/dounan-20260928-video-2-web.mp4" type="video/mp4">
+            当前浏览器不支持视频播放。
+          </video>
+          <span class="video-label">现场影像 02 · 大口吃臭豆腐烤鱼 · 00:08</span>
+        </div>
+        <div>
+          <figure class="photo landscape" style="--tilt:1deg"><button type="button" aria-label="放大查看臭豆腐烤鱼特写" data-full="assets/dounan-roastfish-closeup.jpg"><img src="assets/dounan-roastfish-closeup.jpg" loading="lazy" alt="不锈钢托盘里的烤鱼，上面码着臭豆腐块，撒满花生碎葱花薄荷香菜"><span class="tape"></span></button><figcaption>烤鱼配臭豆腐，非遗美食本尊</figcaption></figure>
+          <div class="answer-strip">
+            <div class="answer"><small>身份</small><b>非物质文化遗产</b></div>
+            <div class="answer coral"><small>配料</small><b>花生碎 · 葱花 · 薄荷</b></div>
+            <div class="answer blue"><small>口感记录</small><b>外焦里嫩，又臭又香</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="collage" style="margin-top:30px">
+        <figure class="photo p5 portrait" style="--tilt:-.6deg"><button type="button" aria-label="放大查看吃烤鱼的Leon" data-full="assets/dounan-roastfish-eating.jpg"><img src="assets/dounan-roastfish-eating.jpg" loading="lazy" alt="餐厅里 Leon 用筷子夹红油烤鱼"><span class="tape"></span></button><figcaption>开动！一口接一口</figcaption></figure>
+        <aside class="field-note">
+          <h3>为什么是“非遗”？</h3>
+          <p>非遗就是“非物质文化遗产”，指祖祖辈辈传下来的手艺和味道。臭豆腐烤鱼用特制的臭豆腐配烤鱼，加上花生碎、葱花和薄荷，是当地人爱吃的老味道，所以要好好保护和传承。</p>
+          <div class="badge-non">非遗美食 · 好吃到停不下来</div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="bell" aria-labelledby="bell-title">
+      <span class="chapter-kicker">SOUVENIR</span>
+      <h2 id="bell-title">15 元的豆荚风铃</h2>
+      <p class="chapter-intro">花市门口的小店，我用 15 元买下一串豆荚风铃。豆荚和果核串在一起，一晃就叮叮当当。</p>
+      <figure class="memory-card"><button type="button" data-full="assets/dounan-windchime.jpg" aria-label="放大查看豆荚风铃"><img src="assets/dounan-windchime.jpg" loading="lazy" alt="Leon 手握蓝绳豆荚风铃，风铃挂在他彩色印花书包上"></button><figcaption>豆荚风铃 · 15 元 · 挂上书包</figcaption></figure>
+      <div class="finish">
+        <div>
+          <div class="answer-strip" style="margin:0">
+            <div class="answer"><small>价格</small><b>15 元</b></div>
+            <div class="answer coral"><small>材料</small><b>豆荚 · 果核 · 蓝绳</b></div>
+            <div class="answer blue"><small>声音</small><b>清脆 · 叮叮当当</b></div>
+          </div>
+        </div>
+        <aside class="field-note">
+          <h3>LEON 的喜欢</h3>
+          <p>这串风铃的声音我很喜欢，走一步就响一下。现在它挂在书包上，走到哪儿，斗南的风铃声就跟我到哪儿。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="words" aria-labelledby="words-title">
+      <span class="chapter-kicker">PAGE 03 · 单词站</span>
+      <h2 id="words-title">花市 10 词</h2>
+      <p class="chapter-intro">空白手册的 10 个单词，今天在花市里全部见到了实物，边看边念记得最牢。</p>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px" class="word-grid">
+        <div class="word"><div class="en">flower</div><div class="ph">/ˈflaʊər/</div><div class="cn">花 · 花朵</div></div>
+        <div class="word"><div class="en">rose</div><div class="ph">/rəʊz/</div><div class="cn">玫瑰</div></div>
+        <div class="word"><div class="en">sunflower</div><div class="ph">/ˈsʌnflaʊər/</div><div class="cn">向日葵</div></div>
+        <div class="word"><div class="en">lily</div><div class="ph">/ˈlɪli/</div><div class="cn">百合</div></div>
+        <div class="word"><div class="en">carnation</div><div class="ph">/kɑːrˈneɪʃn/</div><div class="cn">康乃馨</div></div>
+        <div class="word"><div class="en">price</div><div class="ph">/praɪs/</div><div class="cn">价格</div></div>
+        <div class="word"><div class="en">cheap</div><div class="ph">/tʃiːp/</div><div class="cn">便宜的</div></div>
+        <div class="word"><div class="en">expensive</div><div class="ph">/ɪkˈspensɪv/</div><div class="cn">昂贵的</div></div>
+        <div class="word"><div class="en">money</div><div class="ph">/ˈmʌni/</div><div class="cn">钱</div></div>
+        <div class="word"><div class="en">buy</div><div class="ph">/baɪ/</div><div class="cn">买</div></div>
+      </div>
+      <div class="answer-strip">
+        <div class="answer"><small>最爱的单词</small><b>sunflower</b></div>
+        <div class="answer coral"><small>最常用到的词</small><b>price · buy</b></div>
+        <div class="answer blue"><small>造句</small><b>I buy flowers in Dounan.</b></div>
+      </div>
+    </section>
+
+    <section class="chapter reveal" id="finish" aria-labelledby="finish-title">
+      <span class="chapter-kicker">MISSION COMPLETE</span>
+      <h2 id="finish-title">把发现带回家</h2>
+      <div class="stars" aria-label="成就墙">
+        <div class="star on">✓ 问价</div>
+        <div class="star on">✓ 采购计划</div>
+        <div class="star on">✓ 比价</div>
+        <div class="star on">✓ 差价归因</div>
+        <div class="star on">✓ 5 个单词</div>
+        <div class="star on">✓ 设计花束</div>
+      </div>
+      <div class="finish" style="margin-top:34px">
+        <div class="certificate">
+          <p>2026 年 9 月 26 日 · 昆明斗南花市</p>
+          <h3>金牌花艺小商人</h3>
+          <p>完成斗南花市认花打卡、五张价签问价、100 元采购计划与玫瑰比价侦探，并发现非遗臭豆腐烤鱼与豆荚风铃的秘密。</p>
+          <span class="signature">Leon</span>
+        </div>
+        <div class="takeaway">
+          <blockquote>今天最重要的不是“我买到了花”，而是我学会了蹲下来读价签、开口问价、掰着手指算账，还记住了一个非遗的味道。</blockquote>
+          <ul><li>最喜欢的花：彩色满天星花海</li><li>最香的味道：门口的臭豆腐烤鱼（非遗）</li><li>最响亮的纪念品：15 元的豆荚风铃</li><li>回家还想查：洋桔梗的花语是什么</li></ul>
+          <div class="backlinks"><a class="primary" href="斗南花市研学手册-网页版.html">打开原互动手册</a><a href="云南昆明研学日记.html">返回昆明研学日记</a></div>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="照片大图">
+  <button type="button" aria-label="关闭照片">×</button><img alt="">
+</div>
+<style>
+.word{position:relative;padding:16px 10px;background:#f3e8ff;border:2px solid #d8c4ee;border-radius:14px;text-align:center;transform:rotate(var(--tilt,0deg))}.word .en{font-size:17px;font-weight:900;color:#7b4fc4}.word .ph{font-size:11px;color:#999;margin-top:3px}.word .cn{font-size:13px;margin-top:3px;color:#4c3a66;font-weight:800}
+@media(max-width:780px){.word-grid{grid-template-columns:repeat(2,1fr)!important}}
+</style>
+<script>
+const captureMode=new URLSearchParams(location.search).has('capture');if(captureMode){document.body.classList.add('capture');document.querySelectorAll('video').forEach(video=>{video.removeAttribute('controls');video.pause()});document.querySelectorAll('img').forEach(img=>img.loading='eager');Promise.all([...document.images].map(img=>img.decode().catch(()=>{}))).catch(()=>{})}
+const box=document.getElementById('lightbox'),large=box.querySelector('img');
+document.querySelectorAll('[data-full]').forEach(button=>button.addEventListener('click',()=>{large.src=button.dataset.full;large.alt=button.querySelector('img').alt;box.classList.add('open');box.querySelector('button').focus()}));
+function closeBox(){box.classList.remove('open');large.removeAttribute('src')}
+box.querySelector('button').addEventListener('click',closeBox);box.addEventListener('click',e=>{if(e.target===box)closeBox()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBox()});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce){document.querySelectorAll('.reveal').forEach(el=>el.classList.add('seen'))}else{const reveal=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('seen');reveal.unobserve(entry.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el))}
+const links=[...document.querySelectorAll('.topbar nav a')];const sections=links.map(a=>document.querySelector(a.getAttribute('href')));const current=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id))})},{rootMargin:'-30% 0px -60%'});sections.forEach(section=>current.observe(section));
+</script>
+</body>
+</html>
