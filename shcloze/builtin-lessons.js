@@ -1,0 +1,7313 @@
+window.BUILTIN_LESSONS = [
+  {
+    "id": "cloze-上海-001",
+    "title_cn": "分歧面前如何沟通",
+    "title_en": "Talking Through Disagreements",
+    "level": "中考",
+    "difficulty": "简单",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2026年上海市中考英语真题回忆整理",
+    "tags": [
+      "真题回忆整理",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Talking with others when disagreements happen is often very ____ .",
+    "last_sentence": "Never forget that the ____ of communication is to solve problems, not to win a debate.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：文章说明意见不合时应先等情绪平复，再用合理的表达方式解决问题。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "首句给出一个判断 ——「Talking with others when disagreements happen …」，后文靠举例或数据来支撑（for example / such as / 研究结论）。读的时候先抓住观点句，再看它用什么例子证实，答案常出现在例子的细节里。"
+    },
+    "route_summary": {
+      "线索词优先": 5,
+      "固定搭配优先": 0,
+      "双路径": 1,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 9,
+    "article_text_with_blanks": "Talking with others when disagreements happen is often very __1__ . Most people tend to __2__ their true feelings when they are in a fight. However, this way will never work out the problems. The right way is to __3__ first. Don't speak until your strong feelings cool down. While communicating, try __4__ \"I-sentences\" instead of \"you-sentences\". For example, say \"I feel sad when we disagree\" rather than \"You make me so angry\". This small change can cut down unnecessary __5__ and keep the talk reasonable. Never forget that the __6__ of communication is to solve problems, not to win a debate.",
+    "reading_sentences": [
+      "Talking with others when disagreements happen is often very __1__ .",
+      "Most people tend to __2__ their true feelings when they are in a fight.",
+      "However, this way will never work out the problems.",
+      "The right way is to __3__ first.",
+      "Don't speak until your strong feelings cool down.",
+      "While communicating, try __4__ \"I-sentences\" instead of \"you-sentences\".",
+      "For example, say \"I feel sad when we disagree\" rather than \"You make me so angry\".",
+      "This small change can cut down unnecessary __5__ and keep the talk reasonable.",
+      "Never forget that the __6__ of communication is to solve problems, not to win a debate."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "exciting",
+          "quick",
+          "simple",
+          "difficult"
+        ],
+        "answer": "difficult",
+        "clues": [
+          "never work out the problems",
+          "when they are in a fight",
+          "You make me so angry"
+        ],
+        "clueTypes": {
+          "never work out the problems": "逻辑线索·转折",
+          "when they are in a fight": "复现线索·同场复现",
+          "You make me so angry": "情感线索·情感一致"
+        },
+        "explanation": "线索　首句是全文窗口：它后面整篇都在教「怎么做」——先冷静、换句式、少争执、盯住解决问题。要教方法，说明这件事本身不容易。\n印证　第二句 Most people tend to hide their true feelings when they are in a fight（争执中把真实感受藏起来）——人们的本能反应是回避，已经把「难」写出来了。\n印证　再往下一条 However：this way will never work out the problems（这种做法永远解决不了问题）——连最常用的本能做法都被判无效，方向只能是负面。\n排除　simple 与全篇方向正好相反：不难就不需要后面四条建议（方向否）；exciting 是正向兴奋，与 fight、I feel sad、so angry 连成的消极场冲突（异场否）；quick 讲速度，而后文支的全是「慢功夫」（等情绪冷却、换说话方式），全文找不到速度的呼应（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "show",
+          "share",
+          "hide",
+          "record"
+        ],
+        "answer": "hide",
+        "clues": [
+          "this way will never work",
+          "I feel sad when we disagree",
+          "their true feelings"
+        ],
+        "clueTypes": {
+          "this way will never work": "逻辑线索·转折",
+          "I feel sad when we disagree": "复现线索·同场复现",
+          "their true feelings": "情感线索·情感一致"
+        },
+        "explanation": "线索　空后面紧接一句 However, this way will never work out the problems——However 是转折信号，被它否掉的「this way」就是上一句 Most people tend to ______ their true feelings 里的做法。\n印证　后文给出正确做法，正好是反面对照：say \"I feel sad when we disagree\"（把感受直接说出来）。推荐「说出来」，反推被批评的做法就是「不说」。\n印证　in a fight（在争执中）+ strong feelings（强烈情绪）构成场景：情绪激烈时人的本能是收起来，这与「藏」同一方向。\n排除　show、share 都是把感受表达出来，与第 7 句推荐的 I-sentences 是同一件事，不可能被 However 判为无效（方向否）；record（记录）在全篇找不到任何呼应（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "情感态度",
+        "route": "双路径",
+        "options": [
+          "wait",
+          "talk",
+          "help",
+          "leave"
+        ],
+        "answer": "wait",
+        "clues": [
+          "Don't speak until your strong",
+          "solve problems, not to win",
+          "strong feelings cool down"
+        ],
+        "clueTypes": {
+          "Don't speak until your strong": "逻辑线索·时间",
+          "solve problems, not to win": "情感线索·情感一致",
+          "strong feelings cool down": "复现线索·同场复现"
+        },
+        "explanation": "线索　空后一句直接把答案说出来：Don't speak until your strong feelings cool down——not ... until 把顺序定死了：先别开口，等到情绪冷却。\n印证　本句的 first（首先）与后句的 until（直到……才）是一条先后链：先做这一步，冷却之后再开口——中间隔的就是「等」。\n排除　talk 是最强干扰项，被 Don't speak 直接否掉（方向否）；leave（离开现场）后文没有对应的说法（呼应否）；help 与「解决问题」这条链接不上，也不是文章给出的第一步。",
+        "collocation": {
+          "name": "介词短语",
+          "type": "介词短语",
+          "structure": "介词 + (冠词/物主代词) + 名词（in front of / on time / with the help of / in danger / at night / by accident …）"
+        }
+      },
+      {
+        "q": 4,
+        "pos": "动词",
+        "topic": "固定搭配",
+        "route": "线索词优先",
+        "options": [
+          "making",
+          "using",
+          "changing",
+          "copying"
+        ],
+        "answer": "using",
+        "clues": [
+          "instead of \"you-sentences\"",
+          "For example, say",
+          "While communicating, try"
+        ],
+        "clueTypes": {
+          "instead of \"you-sentences\"": "逻辑线索·转折",
+          "For example, say": "举例说明",
+          "While communicating, try": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在结构是 try ______ \"I-sentences\"：宾语是「句子」，要填的是对句子发出的动作；instead of \"you-sentences\"（而不是「你」句式）给出对立面——两种说法二选一。\n印证　下一句以 For example 开头举例：say \"I feel sad when we disagree\"——例子说的正是「用」这个句式说话，不是造它、改它。\n排除　making sentences 是「造句」，而后文例子是直接说一句现成的话（方向否）；changing 与 instead of 冲突——要换掉的是「你」句式，不是换「我」句式（方向否）；copying 全篇无呼应（呼应否）。\n补充　try doing sth.（尝试做某事）是固定结构，但即使不认这个结构，instead of 的对立加后文举例也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "动词",
+        "topic": "上下文复现",
+        "route": "线索词优先",
+        "options": [
+          "sadness",
+          "noise",
+          "trouble",
+          "arguments"
+        ],
+        "answer": "arguments",
+        "clues": [
+          "Talking with others when disagreements",
+          "when disagreements happen",
+          "keep the talk reasonable"
+        ],
+        "clueTypes": {
+          "Talking with others when disagreements": "复现线索·同场复现",
+          "when disagreements happen": "复现线索·近义词复现",
+          "keep the talk reasonable": "复现线索·同场复现"
+        },
+        "explanation": "线索　空落在 cut down unnecessary ______ 里：cut down（减少）要求填一个可以被「减少」的负面名词；主语 This small change 回指上一句换句式的做法。\n印证　同场词群贯穿全篇：disagreements（分歧）→ fight（争执）→ disagree / angry → 本空的 arguments，全文都在「分歧—争执」这个语义场里。\n印证　后半句 keep the talk reasonable（让谈话保持理性）也在限定：要减少的是情绪化的争执，不是理性讨论本身。\n排除　sadness 是情绪不是争执，且与 keep the talk reasonable 搭不上（异场否）；noise（噪声）是凭空出现的异场词（异场否）；trouble 太宽泛，全篇语义场是言语冲突而非一般麻烦（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "形容词副词",
+        "topic": "逻辑推理",
+        "route": "线索词优先",
+        "options": [
+          "goal",
+          "duty",
+          "reply",
+          "advice"
+        ],
+        "answer": "goal",
+        "clues": [
+          "to solve problems, not to win",
+          "until your strong feelings cool",
+          "when disagreements happen"
+        ],
+        "clueTypes": {
+          "to solve problems, not to win": "逻辑线索·转折",
+          "until your strong feelings cool": "情感线索·情感一致",
+          "when disagreements happen": "复现线索·同场复现"
+        },
+        "explanation": "线索　空后是 is to solve problems, not to win a debate——「是……而不是……」这组对立同时约束两头，能同时与 solve problems 和 win a debate 搭上的，只有「目的 / 目标」。\n印证　全文四条建议都指向同一个终点：先等（冷静）、用「我」句式（降火）、减少争执、保持理性——每一步都是为了把分歧解决掉。\n印证　首句 when disagreements happen（分歧出现时）开篇定场景，尾句回到 solve problems 收口，首尾闭环。\n排除　duty（职责）是外部要求，与 to solve problems 这个动作目标不匹配；reply、advice 都不受 not to win a debate 这组对立约束（方向否）。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "正式真题",
+    "exam_year": 2026,
+    "tone_markers": [
+      {
+        "word": "keep",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ]
+  },
+  {
+    "id": "cloze-上海-002",
+    "title_cn": "快时尚的隐形代价",
+    "title_en": "The Hidden Cost of Fast Fashion",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2025年上海市中考英语真题整理版",
+    "tags": [
+      "真题整理",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Going shopping with your parents can be great fun.",
+    "last_sentence": "You could also raise awareness of the problem among your family and friends or ask a teacher to help you spread the word at your school.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：文章介绍快时尚对环境和劳动者的影响，并倡导公众关注这一问题。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "首句就把问题摆到台面上 ——「Going shopping with your parents can be great …」。后文顺着这个问题给可操作的做法，读的时候重点找 should / try to / remember to 这类建议句，答案多半落在「做法」所在的句子里。"
+    },
+    "route_summary": {
+      "线索词优先": 4,
+      "固定搭配优先": 2,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 16,
+    "article_text_with_blanks": "Going shopping with your parents can be great fun. In the UK we buy more clothes than any other country in Europe. What people might not realise is that the fashion industry, and particularly\"fast fashion\", is __1__ to the planet. Fast fashion refers to cheap clothes that are quickly produced by large companies to __2__ the latest styles. Styles change all the time and lots of people like to buy clothes that are in fashion right now. The aim of fast fashion is to get these new styles into shops as fast as possible, so customers can buy them. The fashion industry is __3__ for between 8 and 10% of the greenhouse gas emissions（排放）.Making clothes also requires lots of water. Cotton comes from plants that need to be watered frequently to make them grow, and turning raw cotton into clothes needs even more water. The clothes then have to be shipped to the countries where they're going to be sold, which produces even more pollution. Fast fashion items aren't made to last forever because they often go out of style quite __4__ .Some people throw their clothes away when they don't want them any more. Companies often employ people in other countries to make their clothes, and some don't pay their workers very much. People then have to work __5__ hours to earn enough money to live on. Some countries have fewer rules than the UK, which means that factories aren't always well looked after and checked for safety. That could mean workers having to make clothes in dangerous or unhealthy __6__ . Lots of people are working for change. You could also raise awareness of the problem among your family and friends or ask a teacher to help you spread the word at your school.",
+    "reading_sentences": [
+      "Going shopping with your parents can be great fun.",
+      "In the UK we buy more clothes than any other country in Europe.",
+      "What people might not realise is that the fashion industry, and particularly\"fast fashion\", is __1__ to the planet.",
+      "Fast fashion refers to cheap clothes that are quickly produced by large companies to __2__ the latest styles.",
+      "Styles change all the time and lots of people like to buy clothes that are in fashion right now.",
+      "The aim of fast fashion is to get these new styles into shops as fast as possible, so customers can buy them.",
+      "The fashion industry is __3__ for between 8 and 10% of the greenhouse gas emissions（排放）.Making clothes also requires lots of water.",
+      "Cotton comes from plants that need to be watered frequently to make them grow, and turning raw cotton into clothes needs even more water.",
+      "The clothes then have to be shipped to the countries where they're going to be sold, which produces even more pollution.",
+      "Fast fashion items aren't made to last forever because they often go out of style quite __4__ .Some people throw their clothes away when they don't want them any more.",
+      "Companies often employ people in other countries to make their clothes, and some don't pay their workers very much.",
+      "People then have to work __5__ hours to earn enough money to live on.",
+      "Some countries have fewer rules than the UK, which means that factories aren't always well looked after and checked for safety.",
+      "That could mean workers having to make clothes in dangerous or unhealthy __6__ .",
+      "Lots of people are working for change.",
+      "You could also raise awareness of the problem among your family and friends or ask a teacher to help you spread the word at your school."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "上下文复现",
+        "route": "固定搭配优先",
+        "options": [
+          "unfair",
+          "benefit",
+          "harmful",
+          "familiar"
+        ],
+        "answer": "harmful",
+        "clues": [
+          "What people might not realise",
+          "greenhouse gas emissions",
+          "to the planet"
+        ],
+        "clueTypes": {
+          "What people might not realise": "逻辑线索·转折",
+          "greenhouse gas emissions": "复现线索·同场复现",
+          "to the planet": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　前两句先铺「逛街很开心、英国人衣服买得最多」，紧接着 What people might not realise（人们可能没意识到）是反预期信号——方向从这里转向负面。\n印证　往后三段连列罪状：greenhouse gas emissions（温室气体排放）、requires lots of water（耗水）、produces even more pollution（更多污染），尾段还落到 the problem。全篇都在算环境账，to the planet 前只能是负面词。\n排除　benefit（益处）与整条污染链直接冲突；unfair 说的是分配不公，后文讲的是环境代价；familiar 在全文找不到任何呼应。\n补充　be harmful to 是固定搭配，但即使不认这个搭配，后文三条环境证据也足以定住答案。",
+        "collocation": {
+          "name": "be ____ to",
+          "type": "形容词 / 系表搭配",
+          "structure": "对…有害｜be ____ to"
+        }
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "固定搭配",
+        "route": "线索词优先",
+        "options": [
+          "check",
+          "follow",
+          "fight",
+          "compare"
+        ],
+        "answer": "follow",
+        "clues": [
+          "Styles change all the time",
+          "as fast as possible",
+          "the latest styles"
+        ],
+        "clueTypes": {
+          "Styles change all the time": "逻辑线索·因果",
+          "as fast as possible": "复现线索·同场复现",
+          "the latest styles": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空在不定式表目的：大公司快速生产廉价衣服，为的是 ______ 最新款式——目的要在后文找。\n印证　紧接一句 Styles change all the time（款式一直在变）：既然一直在变，厂家的目的只能是「跟上」最新款式；再下一句 get these new styles into shops as fast as possible 把同样的意思又说了一遍。\n印证　段内三条「快」同指一处：quickly produced（生产快）、as fast as possible（上架快）、Styles change all the time（变得快）——都在说「追」。\n排除　check（检查款式）后文没提质检；fight（对抗款式）与「把新款式送进店」直接矛盾；compare 需要两个对象，后文只讲 latest styles 一个。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "good",
+          "ready",
+          "famous",
+          "responsible"
+        ],
+        "answer": "responsible",
+        "clues": [
+          "also requires lots of water",
+          "between 8 and 10% of",
+          "fashion industry is"
+        ],
+        "clueTypes": {
+          "also requires lots of water": "复现线索·同场复现",
+          "between 8 and 10% of": "复现线索·同场复现",
+          "fashion industry is": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　关键逻辑词在空后一句：Making clothes also requires lots of water.——also（还）表示并列同向，前后两句讲的是同一类事：都是代价。\n印证　既然后半句是负面的耗水，前半句 is __3__ for ... emissions 也必须是负面归因；空后 between 8 and 10% of the greenhouse gas emissions 是占比数字，正需要一个表示「造成、是……成因」的词。\n印证　段落位置也在提示：第 2 段讲完快时尚是什么、目的多快，第 3 段换段讲后果——要开始算账了。\n排除　good for（有益）被 also 引出的耗水证据否掉；ready for、famous for 都引不出「8~10% 排放」这样的后果数据。\n补充　be responsible for 是固定搭配，与归因语义一致。",
+        "collocation": {
+          "name": "be ____ for",
+          "type": "形容词 / 系表搭配",
+          "structure": "对…负责｜be ____ for"
+        }
+      },
+      {
+        "q": 4,
+        "pos": "形容词副词",
+        "topic": "上下文复现",
+        "route": "线索词优先",
+        "options": [
+          "simply",
+          "quickly",
+          "gradually",
+          "accidentally"
+        ],
+        "answer": "quickly",
+        "clues": [
+          "aren't made to last forever",
+          "throw their clothes away",
+          "quickly produced"
+        ],
+        "clueTypes": {
+          "aren't made to last forever": "逻辑线索·因果",
+          "throw their clothes away": "逻辑线索·因果",
+          "quickly produced": "复现线索·原词复现"
+        },
+        "explanation": "线索　空在 because 引导的原因从句里：aren't made to last forever（做出来就不是为了穿很久），因为过时得 ______。because 要求填一个能解释「不耐用」的原因。\n印证　后一句给后果印证：Some people throw their clothes away（直接扔掉）——扔得快，说明过时也快。\n印证　同一个 quick 贯穿全篇：第 2 段 quickly produced（生产快），这里 go out of style quite quickly（过时快）——「快」是这篇文章的主线词。\n排除　gradually 是最强干扰项：它跟「变化」搭配很自然，但 because 的方向把它否掉了——逐渐过时反而更耐穿，与 aren't made to last forever 正好相反。simply、accidentally 都解释不了「为什么不耐用」。\n补充　fast fashion、aren't made to last forever 已把「快」和「不持久」绑在一起，答案只需在这条链上取值。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "动词",
+        "topic": "逻辑推理",
+        "route": "线索词优先",
+        "options": [
+          "longer",
+          "happier",
+          "earlier",
+          "busier"
+        ],
+        "answer": "longer",
+        "clues": [
+          "don't pay their workers very much",
+          "to earn enough money",
+          "People then"
+        ],
+        "clueTypes": {
+          "don't pay their workers very much": "逻辑线索·因果",
+          "to earn enough money": "逻辑线索·因果",
+          "People then": "逻辑线索·时间"
+        },
+        "explanation": "线索　空前的 then 是承接词：这一句是上一句 some don't pay their workers very much（工资很低）的直接结果。\n印证　空后 to earn enough money to live on 是目的状语——enough（够）是核心线索：钱不够、要挣够，低工资下只能靠延长工时，即 longer hours。\n印证　完整因果链：don't pay ... very much → then → have to work longer hours → to earn enough money。\n排除　busier 最容易误选，但前后文说的是工资低、不是订单多，「忙」也不是「钱不够」的解法；earlier（更早）与因果方向相反——早下班只会挣得更少；happier 与挣钱糊口无关。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "动词",
+        "topic": "逻辑推理",
+        "route": "线索词优先",
+        "options": [
+          "diets",
+          "habits",
+          "conditions",
+          "relationships"
+        ],
+        "answer": "conditions",
+        "clues": [
+          "That could mean workers",
+          "dangerous or unhealthy",
+          "checked for safety"
+        ],
+        "clueTypes": {
+          "That could mean workers": "逻辑线索·因果",
+          "dangerous or unhealthy": "情感线索·情感一致",
+          "checked for safety": "复现线索·同场复现"
+        },
+        "explanation": "线索　真正的定位线索在空前一句：factories aren't always well looked after and checked for safety——safety（安全）是钥匙。工厂没人维护、不做安全检查，后果就落在下一句。\n印证　That could mean 是指代衔接（That 回指上一整句），明确告诉你本句是上一句的后果，要顺着「安全监管缺失」往下推，不能另起话题。\n印证　整段是劳动者代价的递进链：工资低 → 工时长 → 监管松（safety）→ 环境差（dangerous / unhealthy）。conditions（工作条件）正是这条链的终点。\n排除　本段语义场是 factories / workers / safety / clothes；diets（饮食）、habits（习惯）、relationships（人际关系）三个词在全篇都没有任何对应内容，属于凭空出现的选项。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "正式真题",
+    "exam_year": 2025,
+    "tone_markers": [
+      {
+        "word": "friends",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ]
+  },
+  {
+    "id": "cloze-上海-003",
+    "title_cn": "打造更好的睡前习惯",
+    "title_en": "Build a Better Bedtime Routine",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2024年上海市中考英语真题回忆重编版",
+    "tags": [
+      "真题回忆重编",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "A bedtime routine (睡前习惯) is the activities you do every night before going to bed.",
+    "last_sentence": "Make this the very last thing you do, and once your head hits the pillow, do not do anything else other than try to fall asleep.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：文章从固定作息、洗温水澡、听音乐和布置卧室等方面给出改善睡眠的建议。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "首句给出一个判断 ——「A bedtime routine (睡前习惯) is the activities you…」，后文靠举例或数据来支撑（for example / such as / 研究结论）。读的时候先抓住观点句，再看它用什么例子证实，答案常出现在例子的细节里。"
+    },
+    "route_summary": {
+      "线索词优先": 4,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 2
+    },
+    "reading_sentence_count": 18,
+    "article_text_with_blanks": "A bedtime routine (睡前习惯) is the activities you do every night before going to bed. Your bedtime routine can fit your needs and sleep environment. It can also help form habits to tell your brain it is time for bed. The following __1__ may help you get a better bedtime routine. Decide on a Set Bedtime Decide on a bedtime and wake-up time and stick to (坚持) them every day, including at weekends. A(n) __2__ bedtime routine isn't good for training your brain to naturally feel tired before sleep. Take a Warm Shower Consider taking a warm shower at least 20 minutes before you go to sleep. Your body will heat up from the water, and cool down __3__ as the water dries up. The sudden change of your body temperature can usually help you feel relaxed, and even a little tired. Researchers at the University of Texas found that showering with water of 40°C~42. 5°C one to two hours before bedtime was __4__ better sleep. Listen to Music Music can be a powerful relaxation tool. You may choose any type of music you like, as long as it __5__ you effectively. Close your eyes, listen to the music, and let it turn your attention away from worries. Prepare Your Bedroom Your bedtime routine can include turning your bedroom into a relaxing place, making things as cool, dark, and quiet as possible. __6__ , use blinds (眼罩) or blackout curtains to keep out light, while keeping electronic devices out of the bedroom is also necessary. The final step of your bedtime routine should be getting into bed. Make this the very last thing you do, and once your head hits the pillow, do not do anything else other than try to fall asleep.",
+    "reading_sentences": [
+      "A bedtime routine (睡前习惯) is the activities you do every night before going to bed.",
+      "Your bedtime routine can fit your needs and sleep environment.",
+      "It can also help form habits to tell your brain it is time for bed.",
+      "The following __1__ may help you get a better bedtime routine.",
+      "Decide on a Set Bedtime Decide on a bedtime and wake-up time and stick to (坚持) them every day, including at weekends.",
+      "A(n) __2__ bedtime routine isn't good for training your brain to naturally feel tired before sleep.",
+      "Take a Warm Shower Consider taking a warm shower at least 20 minutes before you go to sleep.",
+      "Your body will heat up from the water, and cool down __3__ as the water dries up.",
+      "The sudden change of your body temperature can usually help you feel relaxed, and even a little tired.",
+      "Researchers at the University of Texas found that showering with water of 40°C~42.",
+      "5°C one to two hours before bedtime was __4__ better sleep.",
+      "Listen to Music Music can be a powerful relaxation tool.",
+      "You may choose any type of music you like, as long as it __5__ you effectively.",
+      "Close your eyes, listen to the music, and let it turn your attention away from worries.",
+      "Prepare Your Bedroom Your bedtime routine can include turning your bedroom into a relaxing place, making things as cool, dark, and quiet as possible.",
+      "__6__ , use blinds (眼罩) or blackout curtains to keep out light, while keeping electronic devices out of the bedroom is also necessary.",
+      "The final step of your bedtime routine should be getting into bed.",
+      "Make this the very last thing you do, and once your head hits the pillow, do not do anything else other than try to fall asleep."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "advantages",
+          "suggestions",
+          "hobbies",
+          "experiences"
+        ],
+        "answer": "suggestions",
+        "clues": [
+          "may help",
+          "The following"
+        ],
+        "clueTypes": {
+          "may help": "情感线索·情感一致",
+          "The following": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　情感一致：「may help」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（搭配骨架）：「The following」与主线指向一致。\n排除　advantages、hobbies、experiences三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「The following」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "形容词副词",
+        "topic": "逻辑推理",
+        "route": "线索词优先",
+        "options": [
+          "ordinary",
+          "pleasant",
+          "strict",
+          "changeable"
+        ],
+        "answer": "changeable",
+        "clues": [
+          "The sudden change",
+          "bedtime routine"
+        ],
+        "clueTypes": {
+          "The sudden change": "复现线索·派生词复现",
+          "bedtime routine": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　派生复现：「The sudden change」已给出答案的词根，选它的同根派生形式即可。\n印证　空所在句里还有同向佐证（搭配骨架）：「bedtime routine」与主线指向一致。\n排除　ordinary、pleasant、strict三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「bedtime routine」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "形容词副词",
+        "topic": "上下文复现",
+        "route": "线索词优先",
+        "options": [
+          "safely",
+          "quietly",
+          "quickly",
+          "gently"
+        ],
+        "answer": "quickly",
+        "clues": [
+          "usually help you feel relaxed",
+          "and cool down",
+          "as the water"
+        ],
+        "clueTypes": {
+          "usually help you feel relaxed": "复现线索·同场复现",
+          "and cool down": "逻辑线索·并列",
+          "as the water": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「and cool down」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　紧邻的下一句里还有同向佐证（同场词群）：「usually help you feel relaxed」与主线指向一致。\n排除　quietly 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；gently、safely 则异场否、呼应否。\n补充　「as the water」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "connected with",
+          "based on",
+          "full of",
+          "different from"
+        ],
+        "answer": "connected with",
+        "clues": [
+          "found that showering with",
+          "The sudden change of",
+          "one to two hours"
+        ],
+        "clueTypes": {
+          "found that showering with": "逻辑线索·因果",
+          "The sudden change of": "复现线索·同场复现",
+          "one to two hours": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的上一句里处在因果链上（「found that showering with」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（同场词群）：「The sudden change of」与主线指向一致。\n排除　based on、full of、different from三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「one to two hours」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "动词",
+        "topic": "上下文复现",
+        "route": "线索词优先",
+        "options": [
+          "calms",
+          "disturbs",
+          "reminds",
+          "awards"
+        ],
+        "answer": "calms",
+        "clues": [
+          "you effectively",
+          "as long as it"
+        ],
+        "clueTypes": {
+          "you effectively": "固定搭配",
+          "as long as it": "逻辑线索·条件"
+        },
+        "explanation": "线索　固定搭配：「you effectively」是常见搭配结构，空格词由搭配骨架锁定。\n印证　空所在句里还有同向佐证（条件结构）：「as long as it」与主线指向一致。\n排除　disturbs、reminds、awards三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "动词短语",
+        "topic": "逻辑推理",
+        "route": "整组短语直接辨析",
+        "options": [
+          "In conclusion",
+          "For example",
+          "What's more",
+          "After all"
+        ],
+        "answer": "For example",
+        "clues": [
+          "turning your bedroom into",
+          "or blackout curtains to",
+          "making things as cool"
+        ],
+        "clueTypes": {
+          "turning your bedroom into": "逻辑线索·举例",
+          "or blackout curtains to": "举例说明",
+          "making things as cool": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　例证：「or blackout curtains to」在说明空格所在的观点，方向与例子一致。\n印证　紧邻的上一句里还有同向佐证（举例信号）：「turning your bedroom into」与主线指向一致。\n排除　In conclusion、What's more、After all三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「making things as cool」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "正式真题",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "keeping",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-004",
+    "title_cn": "家长该租玩具吗？",
+    "title_en": "Should Parents Rent Toys?",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2023年上海市中考英语真题",
+    "tags": [
+      "正式真题",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Playing with toys is an essential part of childhood.",
+    "last_sentence": "What do you think?",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：文章从环保、家庭整洁、情感联系和运输污染等方面讨论是否应给孩子租玩具。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "首句给出一个判断 ——「Playing with toys is an essential part of chil…」，后文靠举例或数据来支撑（for example / such as / 研究结论）。读的时候先抓住观点句，再看它用什么例子证实，答案常出现在例子的细节里。"
+    },
+    "route_summary": {
+      "线索词优先": 3,
+      "固定搭配优先": 2,
+      "双路径": 1,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 21,
+    "article_text_with_blanks": "Playing with toys is an essential part of childhood. Then what happens to the toys that are no longer enjoyed? Usually they get stored somewhere and forgotten. To __1__ this, several companies offer the service of renting (租用) toys. Should parents rent toys for their kids? Some people say \"YES\". They think if lots of children play with the same toys, fewer toys will be __2__ . This is better for the environment because making toys uses resources, such as metal, plastic, wood and energy. __3__ , to share toys is a good way to protect the environment. Besides, renting toys allows children to try out lots of different types of toys. Another advantage is that there will be less __4__ at home. This will save time to tidy up. But some people think differently. For them, owning a favourite toy is a special thing. The owner takes good care of the toy and every time he plays with it, his connection with the toy becomes __5__ . Changing toys all the time makes such connection less possible. In addition, sending rented toys back to those companies is a lot of work, and the delivery vans which take the toys around create __6__ . This brings harm to the environment. So if toy owners get bored, they can simply pass the toys on to their friends or relatives. People have different opinions on renting toys. What do you think?",
+    "reading_sentences": [
+      "Playing with toys is an essential part of childhood.",
+      "Then what happens to the toys that are no longer enjoyed?",
+      "Usually they get stored somewhere and forgotten.",
+      "To __1__ this, several companies offer the service of renting (租用) toys.",
+      "Should parents rent toys for their kids?",
+      "Some people say \"YES\".",
+      "They think if lots of children play with the same toys, fewer toys will be __2__ .",
+      "This is better for the environment because making toys uses resources, such as metal, plastic, wood and energy.",
+      "__3__ , to share toys is a good way to protect the environment.",
+      "Besides, renting toys allows children to try out lots of different types of toys.",
+      "Another advantage is that there will be less __4__ at home.",
+      "This will save time to tidy up.",
+      "But some people think differently.",
+      "For them, owning a favourite toy is a special thing.",
+      "The owner takes good care of the toy and every time he plays with it, his connection with the toy becomes __5__ .",
+      "Changing toys all the time makes such connection less possible.",
+      "In addition, sending rented toys back to those companies is a lot of work, and the delivery vans which take the toys around create __6__ .",
+      "This brings harm to the environment.",
+      "So if toy owners get bored, they can simply pass the toys on to their friends or relatives.",
+      "People have different opinions on renting toys.",
+      "What do you think?"
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词",
+        "topic": "上下文复现",
+        "route": "线索词优先",
+        "options": [
+          "remember",
+          "prove",
+          "explain",
+          "avoid"
+        ],
+        "answer": "avoid",
+        "clues": [
+          "stored somewhere and forgotten",
+          "toys that are no longer",
+          "several companies offer the"
+        ],
+        "clueTypes": {
+          "stored somewhere and forgotten": "逻辑线索·因果",
+          "toys that are no longer": "复现线索·同场复现",
+          "several companies offer the": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的上一句里处在因果链上（「stored somewhere and forgotten」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（同场词群）：「toys that are no longer」与主线指向一致。\n排除　remember 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；explain、prove 则异场否、呼应否。\n补充　「several companies offer the」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "produced",
+          "collected",
+          "compared",
+          "noticed"
+        ],
+        "answer": "produced",
+        "clues": [
+          "if lots of children",
+          "toys will be"
+        ],
+        "clueTypes": {
+          "if lots of children": "逻辑线索·条件",
+          "toys will be": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里带条件结构（「if lots of children」）：先有前提再有结果，所填词要满足这条前提下的结果方向。\n印证　空所在句里还有同向佐证（搭配骨架）：「toys will be」与主线指向一致。\n排除　noticed 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；collected、compared 则呼应否×2。\n补充　「toys will be」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "连词逻辑",
+        "topic": "逻辑推理",
+        "route": "固定搭配优先",
+        "options": [
+          "Therefore",
+          "However",
+          "Instead",
+          "Also"
+        ],
+        "answer": "Therefore",
+        "clues": [
+          "to share toys is a good"
+        ],
+        "clueTypes": {
+          "to share toys is a good": "逻辑线索·因果"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「to share toys is a good」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　答案词根 therefore 在文中他处也出现（… to protect the environment Besides renti …），全篇方向一致。\n排除　However 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；Instead、Also 则呼应否×2。",
+        "collocation": {
+          "name": "过渡语 / 衔接词",
+          "type": "固定短语",
+          "structure": "at first / at last / in fact / after all / above all / on the contrary / as a result / in addition / what's more / for example / such as / from now on / in the end"
+        }
+      },
+      {
+        "q": 4,
+        "pos": "形容词副词",
+        "topic": "上下文复现",
+        "route": "双路径",
+        "options": [
+          "heat",
+          "mess",
+          "noise",
+          "fight"
+        ],
+        "answer": "mess",
+        "clues": [
+          "will be less",
+          "at home"
+        ],
+        "clueTypes": {
+          "will be less": "固定搭配·结构骨架",
+          "at home": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　结构骨架：「will be less」搭出固定框架，先满足骨架，再验证词义方向。\n印证　空所在句里还有同向佐证（结构骨架）：「at home」与主线指向一致。\n排除　fight 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；heat、noise 则呼应否×2。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "worse",
+          "easier",
+          "poorer",
+          "stronger"
+        ],
+        "answer": "stronger",
+        "clues": [
+          "Changing toys all the time",
+          "The owner takes good care",
+          "his connection with the"
+        ],
+        "clueTypes": {
+          "Changing toys all the time": "复现线索·反义词复现",
+          "The owner takes good care": "情感线索·情感一致",
+          "his connection with the": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　情感一致：「The owner takes good care」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　紧邻的下一句里还有同向佐证（反义对照）：「Changing toys all the time」与主线指向一致。\n排除　worse 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；easier、poorer 则呼应否×2。\n补充　「his connection with the」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "名词",
+        "topic": "上下文复现",
+        "route": "固定搭配优先",
+        "options": [
+          "value",
+          "jobs",
+          "pollution",
+          "accidents"
+        ],
+        "answer": "pollution",
+        "clues": [
+          "toys around create"
+        ],
+        "clueTypes": {
+          "toys around create": "固定搭配"
+        },
+        "explanation": "线索　固定搭配：「toys around create」是常见搭配结构，空格词由搭配骨架锁定。\n排除　value 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；jobs、accidents 则呼应否×2。",
+        "collocation": {
+          "name": "过渡语 / 衔接词",
+          "type": "固定短语",
+          "structure": "at first / at last / in fact / after all / above all / on the contrary / as a result / in addition / what's more / for example / such as / from now on / in the end"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "正式真题",
+    "exam_year": 2023,
+    "tone_markers": [
+      {
+        "word": "friends",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-005",
+    "title_cn": "女科学家王贞仪",
+    "title_en": "Star Woman: Wang Zhenyi",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2022年上海市中考英语真题",
+    "tags": [
+      "正式真题",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Star Woman Wang Zhenyi (王贞仪) (1768—1797) Have you ever heard of Wang Zhenyi?",
+    "last_sentence": "She helped make science available to more people.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：文章介绍清代女科学家王贞仪的自学经历、天文实验和科学传播贡献。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "首句就把问题摆到台面上 ——「Star Woman Wang Zhenyi (王贞仪) (1768—1797) Have …」。后文顺着这个问题给可操作的做法，读的时候重点找 should / try to / remember to 这类建议句，答案多半落在「做法」所在的句子里。"
+    },
+    "route_summary": {
+      "线索词优先": 5,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 20,
+    "article_text_with_blanks": "Star Woman Wang Zhenyi (王贞仪) (1768—1797) Have you ever heard of Wang Zhenyi? Perhaps most of us didn't know this great name until she was introduced in a CCTV programme. Wang Zhenyi was a great Chinese __1__. She was born in the Qing Dynasty. At that time, girls had no chance to get a formal education. However, her father and grandfather were open-minded. They thought girls should share equal opportunities with boys. They __2__ her to read the books in their home library. Wang Zhenyi educated herself and read a lot about astronomy (the study of the stars, planets, etc.), maths, geography as well as medicine. Later, she decided to __3__ astronomy. In her time, many people expected the stars to tell what was going to happen. They thought certain events in the sky, such as lunar eclipses(月食) happened when gods were angry. But Wang Zhenyi thought differently. She believed in facts and observation. In order to explain those \"strange\" events, she did some __4__. In one, she used a round table as the Earth, a lamp as the Sun and a mirror as the Moon. She moved them around to show what __5__ happens during a lunar eclipse: when the Earth is passing directly between the Sun and the Moon, the sunlight cannot reach the Moon and the Moon \"disappears\". Throughout her short life, Wang Zhenyi wrote many articles about her research. In her articles, she explained difficult ideas in clear and __6__ ways so that people could understand science more easily. She helped make science available to more people.",
+    "reading_sentences": [
+      "Star Woman Wang Zhenyi (王贞仪) (1768—1797) Have you ever heard of Wang Zhenyi?",
+      "Perhaps most of us didn't know this great name until she was introduced in a CCTV programme.",
+      "Wang Zhenyi was a great Chinese __1__ .",
+      "She was born in the Qing Dynasty.",
+      "At that time, girls had no chance to get a formal education.",
+      "However, her father and grandfather were open-minded.",
+      "They thought girls should share equal opportunities with boys.",
+      "They __2__ her to read the books in their home library.",
+      "Wang Zhenyi educated herself and read a lot about astronomy (the study of the stars, planets, etc.), maths, geography as well as medicine.",
+      "Later, she decided to __3__ astronomy.",
+      "In her time, many people expected the stars to tell what was going to happen.",
+      "They thought certain events in the sky, such as lunar eclipses(月食) happened when gods were angry.",
+      "But Wang Zhenyi thought differently.",
+      "She believed in facts and observation.",
+      "In order to explain those \"strange\" events, she did some __4__ .",
+      "In one, she used a round table as the Earth, a lamp as the Sun and a mirror as the Moon.",
+      "She moved them around to show what __5__ happens during a lunar eclipse: when the Earth is passing directly between the Sun and the Moon, the sunlight cannot reach the Moon and the Moon \"disappears\".",
+      "Throughout her short life, Wang Zhenyi wrote many articles about her research.",
+      "In her articles, she explained difficult ideas in clear and __6__ ways so that people could understand science more easily.",
+      "She helped make science available to more people."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "doctor",
+          "scientist",
+          "lawyer",
+          "teacher"
+        ],
+        "answer": "scientist",
+        "clues": [
+          "a great Chinese"
+        ],
+        "clueTypes": {
+          "a great Chinese": "情感线索·情感一致"
+        },
+        "explanation": "线索　情感一致：「a great Chinese」定了情绪方向，句间无转折词，空格延续这条褒贬。\n排除　doctor、lawyer、teacher三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "invited",
+          "selected",
+          "followed",
+          "encouraged"
+        ],
+        "answer": "encouraged",
+        "clues": [
+          "girls should share equal",
+          "were open-minded",
+          "her to read the books"
+        ],
+        "clueTypes": {
+          "girls should share equal": "逻辑线索·因果",
+          "were open-minded": "情感线索·情感一致",
+          "her to read the books": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的上一句里处在因果链上（「girls should share equal」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「were open-minded」与主线指向一致。\n排除　followed 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；invited、selected 则呼应否×2。\n补充　「her to read the books」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "rely on",
+          "show off",
+          "focus on",
+          "talk about"
+        ],
+        "answer": "focus on",
+        "clues": [
+          "Later, she decided",
+          "she decided to"
+        ],
+        "clueTypes": {
+          "Later, she decided": "逻辑线索·时间",
+          "she decided to": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里有时间信号（「Later, she decided」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（搭配骨架）：「she decided to」与主线指向一致。\n排除　show off 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；rely on、talk about 则呼应否×2。\n补充　「she decided to」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 4,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "exercises",
+          "drawings",
+          "reviews",
+          "experiments"
+        ],
+        "answer": "experiments",
+        "clues": [
+          "did some"
+        ],
+        "clueTypes": {
+          "did some": "固定搭配"
+        },
+        "explanation": "线索　固定搭配：「did some」是常见搭配结构，空格词由搭配骨架锁定。\n排除　exercises、drawings、reviews三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "actually",
+          "suddenly",
+          "nearly",
+          "recently"
+        ],
+        "answer": "actually",
+        "clues": [
+          "happens during a lunar",
+          "to show what"
+        ],
+        "clueTypes": {
+          "happens during a lunar": "逻辑线索·时间",
+          "to show what": "逻辑线索·时间"
+        },
+        "explanation": "线索　空所在句里有时间信号（「happens during a lunar」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（时间信号）：「to show what」与主线指向一致。\n排除　suddenly 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；nearly、recently 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "动词",
+        "topic": "上下文复现",
+        "route": "线索词优先",
+        "options": [
+          "simple",
+          "polite",
+          "funny",
+          "traditional"
+        ],
+        "answer": "simple",
+        "clues": [
+          "so that people could",
+          "ways so",
+          "could understand science more easily"
+        ],
+        "clueTypes": {
+          "so that people could": "逻辑线索·因果",
+          "ways so": "逻辑线索·因果",
+          "could understand science more easily": "复现线索·同场复现"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「so that people could」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（因果信号）：「ways so」与主线指向一致。\n排除　polite、funny、traditional三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "正式真题",
+    "exam_year": 2022,
+    "tone_markers": [
+      {
+        "word": "helped",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-006",
+    "title_cn": "用废料造巨人的艺术家",
+    "title_en": "Thomas Dambo's Giants from Trash",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "人物故事",
+    "region": "上海",
+    "source": "2026年上海市嘉定区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Imagine you are hiking in the woods.",
+    "last_sentence": "Above all, he hopes his environmental message will be known to everyone.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：文章介绍艺术家Thomas Dambo用废弃材料创作巨人雕塑，借艺术传播环保理念。",
+      "kind": "narrative"
+    },
+    "route_summary": {
+      "线索词优先": 5,
+      "固定搭配优先": 1,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 22,
+    "article_text_with_blanks": "Imagine you are hiking in the woods. Suddenly you see a huge wooden giant under the trees. Don't worry! It will not hurt you. It is a sculpture by Thomas Dambo, and it is made completely from trash. Thomas grew up in a poor family in Denmark. His father had a second-hand bike shop, which taught him from an early age that old things can still be valuable. As a child, he was __1__ and a real 'builder'. __2__ he had no money to buy materials, riding his bike to collect waste from local bins and building sites became the most common thing he did in his childhood. He said, 'If I have an idea, I must make it right away with things around me.' In 2005, he started his recycled art journey while studying design. At first, he made thousands of colourful birdhouses from recycled wood. These works made him understand that creating with trash was not just a hobby, but a way to __3__ environmental ideas. Now Thomas's art is famous all over the world. Most of his recent works are giants. These giants are very big. People can even sit inside some of them. He __4__ these giants outside and into nature to make them look real and alive, such as resting on trees or sitting under bridges. They can be found in forests, mountains and grasslands in many countries. He wants people to experience the __5__ of trees, lakes and wildlife, and to get into places they may never have visited before. His works attract 4.5 million visitors every year. He wants people to look at trash __6__ and hopes to show everyone that trash can be beautiful and useful. Above all, he hopes his environmental message will be known to everyone.",
+    "reading_sentences": [
+      "Imagine you are hiking in the woods.",
+      "Suddenly you see a huge wooden giant under the trees.",
+      "Don't worry!",
+      "It will not hurt you.",
+      "It is a sculpture by Thomas Dambo, and it is made completely from trash.",
+      "Thomas grew up in a poor family in Denmark.",
+      "His father had a second-hand bike shop, which taught him from an early age that old things can still be valuable.",
+      "As a child, he was __1__ and a real 'builder'.",
+      "__2__ he had no money to buy materials, riding his bike to collect waste from local bins and building sites became the most common thing he did in his childhood.",
+      "He said, 'If I have an idea, I must make it right away with things around me.' In 2005, he started his recycled art journey while studying design.",
+      "At first, he made thousands of colourful birdhouses from recycled wood.",
+      "These works made him understand that creating with trash was not just a hobby, but a way to __3__ environmental ideas.",
+      "Now Thomas's art is famous all over the world.",
+      "Most of his recent works are giants.",
+      "These giants are very big.",
+      "People can even sit inside some of them.",
+      "He __4__ these giants outside and into nature to make them look real and alive, such as resting on trees or sitting under bridges.",
+      "They can be found in forests, mountains and grasslands in many countries.",
+      "He wants people to experience the __5__ of trees, lakes and wildlife, and to get into places they may never have visited before.",
+      "His works attract 4.5 million visitors every year.",
+      "He wants people to look at trash __6__ and hopes to show everyone that trash can be beautiful and useful.",
+      "Above all, he hopes his environmental message will be known to everyone."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "上下文复现",
+        "route": "线索词优先",
+        "options": [
+          "careful",
+          "strict",
+          "creative",
+          "helpful"
+        ],
+        "answer": "creative",
+        "clues": [
+          "understand that creating",
+          "and a real"
+        ],
+        "clueTypes": {
+          "understand that creating": "复现线索·派生词复现",
+          "and a real": "逻辑线索·并列"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「and a real」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　邻段 / 全篇范围里的还有同向佐证（派生词复现）：「understand that creating」与主线指向一致。\n排除　helpful 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；careful、strict 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "介词搭配",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "Before",
+          "Since",
+          "If",
+          "Unless"
+        ],
+        "answer": "Since",
+        "clues": [
+          "he had no money to buy"
+        ],
+        "clueTypes": {
+          "he had no money to buy": "逻辑线索·因果"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「he had no money to buy」）：原因与结果方向咬合，所填词要能承接这条因果。\n排除　Before、If、Unless三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "上下文复现",
+        "route": "线索词优先",
+        "options": [
+          "accept",
+          "collect",
+          "change",
+          "spread"
+        ],
+        "answer": "spread",
+        "clues": [
+          "but a way to",
+          "environmental ideas"
+        ],
+        "clueTypes": {
+          "but a way to": "逻辑线索·转折",
+          "environmental ideas": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「but a way to」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（搭配骨架）：「environmental ideas」与主线指向一致。\n排除　collect 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；change、accept 则异场否、呼应否。\n补充　「environmental ideas」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "takes up",
+          "puts up",
+          "picks up",
+          "sets up"
+        ],
+        "answer": "puts up",
+        "clues": [
+          "such as resting on",
+          "these giants",
+          "outside and into"
+        ],
+        "clueTypes": {
+          "such as resting on": "逻辑线索·举例",
+          "these giants": "固定搭配·结构骨架",
+          "outside and into": "逻辑线索·并列"
+        },
+        "explanation": "线索　空所在句里有举例信号（「such as resting on」）：例子在印证前文，所填词要与例子的方向一致。\n印证　空所在句里还有同向佐证（并列结构）：「outside and into」与主线指向一致。\n排除　takes up、picks up、sets up三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「these giants」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "过渡语 / 衔接词",
+          "type": "固定短语",
+          "structure": "at first / at last / in fact / after all / above all / on the contrary / as a result / in addition / what's more / for example / such as / from now on / in the end"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "beauty",
+          "study",
+          "health",
+          "sound"
+        ],
+        "answer": "beauty",
+        "clues": [
+          "lakes and wildlife",
+          "to experience the",
+          "of trees"
+        ],
+        "clueTypes": {
+          "lakes and wildlife": "逻辑线索·并列",
+          "to experience the": "语境线索·搭配骨架",
+          "of trees": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「lakes and wildlife」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　空所在句里还有同向佐证（搭配骨架）：「to experience the」与主线指向一致。\n排除　study 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；health、sound 则呼应否×2。\n补充　「to experience the」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "形容词副词",
+        "topic": "上下文复现",
+        "route": "线索词优先",
+        "options": [
+          "naturally",
+          "proudly",
+          "differently",
+          "seriously"
+        ],
+        "answer": "differently",
+        "clues": [
+          "look at trash",
+          "and hopes"
+        ],
+        "clueTypes": {
+          "look at trash": "情感线索·情感一致",
+          "and hopes": "逻辑线索·并列"
+        },
+        "explanation": "线索　情感一致：「look at trash」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（并列结构）：「and hopes」与主线指向一致。\n排除　naturally、proudly、seriously三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2026,
+    "tone_markers": [
+      {
+        "word": "hopes",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-007",
+    "title_cn": "房间乱一点可以吗？",
+    "title_en": "Is It OK to Have a Messy Room?",
+    "level": "中考",
+    "difficulty": "较难",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2026年上海市奉贤区一模",
+    "tags": [
+      "区级一模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Is it OK to have a messy room?",
+    "last_sentence": "By allowing children to keep their room the way they want it, parents are nurturing their kids' ____ . If adults don't like the mess, they can shut the door! Children who are messy will most likely grow out of it, so there's no reason to make them feel bad about their habits. And cleaning up your room is boring and takes time that could be spent on much more important things, like homework, hobbies, and friends. ____ , it will just get messy again. No - straightening up is a life skill Research shows messy surroundings cause stress and prevent you from ____ tasks. That's because your brain can get overwhelmed by all the visual information around you. A neat room, on the other hand, can clear your thinking, help you feel calm, and even boost your sleep. It also means you'll have enough space to do activities, and you're less likely to lose stuff. Plus, your room might be yours, but it's still part of the family home and that should be ____ . A tidy room is nice for everyone and, best of all, means no family arguments.",
+    "tone": {
+      "answer": "转折变化",
+      "reason": "文章主旨：文章从个人空间与生活技能两个角度讨论青少年卧室是否可以杂乱。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "首句就把问题摆到台面上 ——「Is it OK to have a messy room?」。后文顺着这个问题给可操作的做法，读的时候重点找 should / try to / remember to 这类建议句，答案多半落在「做法」所在的句子里。"
+    },
+    "route_summary": {
+      "线索词优先": 4,
+      "固定搭配优先": 1,
+      "双路径": 1,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 19,
+    "article_text_with_blanks": "Is it OK to have a messy room? If you have ever heard the words \"Clean up your room,\" you're not alone. It's not uncommon for kids and teens to be a little messy because they're still learning how to be __1__ . But studies have shown that a messy or disorganized living space can cause anxiety and even prevent people from thinking clearly. On the other hand, research has also found that some untidiness may be the sign of a __2__ mind. What do you think? Is it OK to have a messy bedroom? Yes - it's really not a big deal It's important for young people to have their own space where they can be in control and be themselves, whether they're messy or tidy. By allowing children to keep their room the way they want it, parents are nurturing their kids' __3__ . If adults don't like the mess, they can shut the door! Children who are messy will most likely grow out of it, so there's no reason to make them feel bad about their habits. And cleaning up your room is boring and takes time that could be spent on much more important things, like homework, hobbies, and friends. __4__ , it will just get messy again. No - straightening up is a life skill Research shows messy surroundings cause stress and prevent you from __5__ tasks. That's because your brain can get overwhelmed by all the visual information around you. A neat room, on the other hand, can clear your thinking, help you feel calm, and even boost your sleep. It also means you'll have enough space to do activities, and you're less likely to lose stuff. Plus, your room might be yours, but it's still part of the family home and that should be __6__ . A tidy room is nice for everyone and, best of all, means no family arguments.",
+    "reading_sentences": [
+      "Is it OK to have a messy room?",
+      "If you have ever heard the words \"Clean up your room,\" you're not alone.",
+      "It's not uncommon for kids and teens to be a little messy because they're still learning how to be __1__ .",
+      "But studies have shown that a messy or disorganized living space can cause anxiety and even prevent people from thinking clearly.",
+      "On the other hand, research has also found that some untidiness may be the sign of a __2__ mind.",
+      "What do you think?",
+      "Is it OK to have a messy bedroom?",
+      "Yes - it's really not a big deal It's important for young people to have their own space where they can be in control and be themselves, whether they're messy or tidy.",
+      "By allowing children to keep their room the way they want it, parents are nurturing their kids' __3__ .",
+      "If adults don't like the mess, they can shut the door!",
+      "Children who are messy will most likely grow out of it, so there's no reason to make them feel bad about their habits.",
+      "And cleaning up your room is boring and takes time that could be spent on much more important things, like homework, hobbies, and friends.",
+      "__4__ , it will just get messy again.",
+      "No - straightening up is a life skill Research shows messy surroundings cause stress and prevent you from __5__ tasks.",
+      "That's because your brain can get overwhelmed by all the visual information around you.",
+      "A neat room, on the other hand, can clear your thinking, help you feel calm, and even boost your sleep.",
+      "It also means you'll have enough space to do activities, and you're less likely to lose stuff.",
+      "Plus, your room might be yours, but it's still part of the family home and that should be __6__ .",
+      "A tidy room is nice for everyone and, best of all, means no family arguments."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "上下文复现",
+        "route": "线索词优先",
+        "options": [
+          "responsible",
+          "relaxed",
+          "organized",
+          "efficient"
+        ],
+        "answer": "organized",
+        "clues": [
+          "because they're still learning",
+          "how to be"
+        ],
+        "clueTypes": {
+          "because they're still learning": "逻辑线索·因果",
+          "how to be": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「because they're still learning」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（搭配骨架）：「how to be」与主线指向一致。\n排除　relaxed 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；responsible、efficient 则呼应否×2。\n补充　「how to be」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "creative",
+          "peaceful",
+          "confused",
+          "simple"
+        ],
+        "answer": "creative",
+        "clues": [
+          "On the other hand",
+          "be in control and",
+          "the sign of a"
+        ],
+        "clueTypes": {
+          "On the other hand": "逻辑线索·转折",
+          "be in control and": "情感线索·情感一致",
+          "the sign of a": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「On the other hand」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「be in control and」与主线指向一致。\n排除　peaceful 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；simple、confused 则异场否、呼应否。\n补充　「the sign of a」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "介词短语",
+          "type": "介词短语",
+          "structure": "介词 + (冠词/物主代词) + 名词（in front of / on time / with the help of / in danger / at night / by accident …）"
+        }
+      },
+      {
+        "q": 3,
+        "pos": "名词",
+        "topic": "上下文复现",
+        "route": "线索词优先",
+        "options": [
+          "skills",
+          "interests",
+          "confidence",
+          "independence"
+        ],
+        "answer": "independence",
+        "clues": [
+          "the way they want",
+          "have their own space",
+          "nurturing their kids'"
+        ],
+        "clueTypes": {
+          "the way they want": "逻辑线索·因果",
+          "have their own space": "复现线索·同场复现",
+          "nurturing their kids'": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「the way they want」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　紧邻的上一句里还有同向佐证（同场词群）：「have their own space」与主线指向一致。\n排除　skills 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；confidence、interests 则异场否、呼应否。\n补充　「nurturing their kids'」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "连词逻辑",
+        "topic": "逻辑推理",
+        "route": "线索词优先",
+        "options": [
+          "However",
+          "Besides",
+          "Instead",
+          "Otherwise"
+        ],
+        "answer": "Besides",
+        "clues": [
+          "so there's no reason",
+          "And cleaning up your",
+          "it will just get"
+        ],
+        "clueTypes": {
+          "so there's no reason": "逻辑线索·因果",
+          "And cleaning up your": "逻辑线索·并列",
+          "it will just get": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的上一句里出现并列信号（「And cleaning up your」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　邻段 / 全篇范围里的还有同向佐证（因果信号）：「so there's no reason」与主线指向一致。\n排除　However 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；Otherwise、Instead 则方向否、呼应否。\n补充　「it will just get」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "动词短语",
+        "topic": "上下文复现",
+        "route": "固定搭配优先",
+        "options": [
+          "giving up",
+          "putting off",
+          "focusing on",
+          "carrying on"
+        ],
+        "answer": "focusing on",
+        "clues": [
+          "prevent you from"
+        ],
+        "clueTypes": {
+          "prevent you from": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　结构骨架：「prevent you from」搭出固定框架，先满足骨架，再验证词义方向。\n排除　giving up、putting off、carrying on三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "prevent * from doing",
+          "type": "动词短语",
+          "structure": "阻止某人做｜prevent * from ____"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "respected",
+          "remembered",
+          "ignored",
+          "changed"
+        ],
+        "answer": "respected",
+        "clues": [
+          "but it's still part",
+          "like homework, hobbies, and friends",
+          "can clear your thinking, help"
+        ],
+        "clueTypes": {
+          "but it's still part": "逻辑线索·转折",
+          "like homework, hobbies, and friends": "情感线索·情感一致",
+          "can clear your thinking, help": "情感线索·情感一致"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「but it's still part」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「can clear your thinking, help」与主线指向一致。\n排除　changed 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；remembered、ignored 则呼应否×2。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级一模",
+    "exam_year": 2026,
+    "tone_markers": [
+      {
+        "word": "messy",
+        "label": "起",
+        "pos": "start"
+      },
+      {
+        "word": "important",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-008",
+    "title_cn": "该不该改动童书？",
+    "title_en": "Editing Children's Books",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2025年上海市徐汇区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "A UK book company recently changed some words in Roald Dahl's famous children's books.",
+    "last_sentence": "After all, books are like time capsules-they help us understand the past.",
+    "tone": {
+      "answer": "转折变化",
+      "reason": "文章主旨：文章讲述了英国一家图书公司修改罗尔德 达尔儿童书籍中的部分词汇, 试图让故事更易被大众接受, 却引发众多读者和作家的反对, 他们认为这损害创造力、破坏作者原有风格, 最终出版社决定同时销售修改版与原版书籍, 这场争论也体现了语言随时间的变化以及人们对经典作品原貌保留的思考.",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "首句给出一个判断 ——「A UK book company recently changed some words …」，后文靠举例或数据来支撑（for example / such as / 研究结论）。读的时候先抓住观点句，再看它用什么例子证实，答案常出现在例子的细节里。"
+    },
+    "route_summary": {
+      "线索词优先": 5,
+      "固定搭配优先": 0,
+      "双路径": 1,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 22,
+    "article_text_with_blanks": "A UK book company recently changed some words in Roald Dahl's famous children's books. The company said they wanted the stories to be \"enjoyed by everyone\" by removing words that might hurt people's feelings. But many people disagreed, saying this censorship (changing or hiding content) __1__ creativity. Roald Dahl was a popular British writer who wrote funny and magical stories like Charlie and the Chocolate Factory and Matilda. His books are full of silly __2__ and wild ideas. For example, in The Twits, a man eats spaghetti mixed with worms! Dahl often made children the heroes, while adults in his stories were sometimes stupid or unkind. His writing style is loud, funny, and exaggerated, which has made kids __3__ for over 50 years. However, some people think certain words in Dahl's books are not __4__ today. The publisher Puffin then asked a team to edit the books. Words like \"fat\" or \"ugly\" were removed. Descriptions like \"tiny\" became \"small\", and \"mothers\" or \"fathers\" were changed to \"parents\" or \"family\". These changes made many readers and writers angry. They argue that rewriting books takes away the author's original style. They think the changes are unnecessary. Roald Dahl, who died in 1990, always refused to change his books. He once said, \"Children __5__ complain about my stories.\" Considering people's dissatisfaction, Puffin says they will also sell the original versions of the books, called The Roald Dahl Classic Collection. Now, readers can choose between the edited and original texts. This debate shows how __6__ changes over time. Old books might include words we find unfair or rude today. But many believe stories should stay as the author wrote them, even if they have old-fashioned ideas. After all, books are like time capsules-they help us understand the past.",
+    "reading_sentences": [
+      "A UK book company recently changed some words in Roald Dahl's famous children's books.",
+      "The company said they wanted the stories to be \"enjoyed by everyone\" by removing words that might hurt people's feelings.",
+      "But many people disagreed, saying this censorship (changing or hiding content) __1__ creativity.",
+      "Roald Dahl was a popular British writer who wrote funny and magical stories like Charlie and the Chocolate Factory and Matilda.",
+      "His books are full of silly __2__ and wild ideas.",
+      "For example, in The Twits, a man eats spaghetti mixed with worms!",
+      "Dahl often made children the heroes, while adults in his stories were sometimes stupid or unkind.",
+      "His writing style is loud, funny, and exaggerated, which has made kids __3__ for over 50 years.",
+      "However, some people think certain words in Dahl's books are not __4__ today.",
+      "The publisher Puffin then asked a team to edit the books.",
+      "Words like \"fat\" or \"ugly\" were removed.",
+      "Descriptions like \"tiny\" became \"small\", and \"mothers\" or \"fathers\" were changed to \"parents\" or \"family\".",
+      "These changes made many readers and writers angry.",
+      "They argue that rewriting books takes away the author's original style.",
+      "They think the changes are unnecessary.",
+      "Roald Dahl, who died in 1990, always refused to change his books.",
+      "He once said, \"Children __5__ complain about my stories.\" Considering people's dissatisfaction, Puffin says they will also sell the original versions of the books, called The Roald Dahl Classic Collection.",
+      "Now, readers can choose between the edited and original texts.",
+      "This debate shows how __6__ changes over time.",
+      "Old books might include words we find unfair or rude today.",
+      "But many believe stories should stay as the author wrote them, even if they have old-fashioned ideas.",
+      "After all, books are like time capsules-they help us understand the past."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "encourages",
+          "teaches",
+          "harms",
+          "receives"
+        ],
+        "answer": "harms",
+        "clues": [
+          "But many people disagreed",
+          "changing or hiding content",
+          "saying this censorship"
+        ],
+        "clueTypes": {
+          "But many people disagreed": "逻辑线索·转折",
+          "changing or hiding content": "语境线索·搭配骨架",
+          "saying this censorship": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「But many people disagreed」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（搭配骨架）：「changing or hiding content」与主线指向一致。\n排除　encourages、teaches、receives三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「changing or hiding content」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "characters",
+          "traditions",
+          "risks",
+          "reviews"
+        ],
+        "answer": "characters",
+        "clues": [
+          "His books are full of silly",
+          "and wild ideas"
+        ],
+        "clueTypes": {
+          "His books are full of silly": "语境线索·搭配骨架",
+          "and wild ideas": "逻辑线索·并列"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「and wild ideas」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　空所在句里还有同向佐证（搭配骨架）：「His books are full of silly」与主线指向一致。\n排除　traditions、risks、reviews三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「His books are full of silly」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "cry",
+          "worry",
+          "pity",
+          "laugh"
+        ],
+        "answer": "laugh",
+        "clues": [
+          "might hurt people's",
+          "which has made kids",
+          "for over"
+        ],
+        "clueTypes": {
+          "might hurt people's": "情感线索·情感一致",
+          "which has made kids": "固定搭配·结构骨架",
+          "for over": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　情感一致：「might hurt people's」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（结构骨架）：「which has made kids」与主线指向一致。\n排除　cry 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；worry、pity 则异场否、呼应否。\n补充　「which has made kids」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 4,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "modern",
+          "proper",
+          "complete",
+          "attractive"
+        ],
+        "answer": "proper",
+        "clues": [
+          "However, some people think",
+          "books are not"
+        ],
+        "clueTypes": {
+          "However, some people think": "逻辑线索·转折",
+          "books are not": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「However, some people think」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（搭配骨架）：「books are not」与主线指向一致。\n排除　modern、complete、attractive三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「books are not」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "never",
+          "sometimes",
+          "often",
+          "always"
+        ],
+        "answer": "never",
+        "clues": [
+          "They think the changes are unnecessary",
+          "always refused to change his books",
+          "complain about my stories"
+        ],
+        "clueTypes": {
+          "They think the changes are unnecessary": "逻辑线索·因果",
+          "always refused to change his books": "逻辑线索·因果",
+          "complain about my stories": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的上一句里处在因果链上（「always refused to change his books」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（因果信号）：「They think the changes are unnecessary」与主线指向一致。\n排除　sometimes、often、always三个干扰项虽在文中出现过，但与线索给的方向对不上（方向否）。\n补充　「complain about my stories」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "education",
+          "language",
+          "pressure",
+          "youth"
+        ],
+        "answer": "language",
+        "clues": [
+          "Old books might include words",
+          "like \"fat\" or \"ugly\"",
+          "This debate shows how"
+        ],
+        "clueTypes": {
+          "Old books might include words": "复现线索·上下义词复现",
+          "like \"fat\" or \"ugly\"": "举例说明",
+          "This debate shows how": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　上下义复现：「Old books might include words」是答案的上位或下位表达，按种属关系收窄词义。\n印证　邻段 / 全篇范围里的还有同向佐证（例证）：「like \"fat\" or \"ugly\"」与主线指向一致。\n排除　education、pressure、youth三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「This debate shows how」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2025,
+    "tone_markers": [
+      {
+        "word": "However",
+        "label": "转折",
+        "pos": "turn"
+      },
+      {
+        "word": "understand",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-009",
+    "title_cn": "面对被拒绝",
+    "title_en": "Facing Rejection",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2025年上海市虹口区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Maybe you are not included by a group of friends.",
+    "last_sentence": "You will succeed again and you'll probably be thankful to the rejection after getting over the problem.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文主要讲述了如何应对被拒绝带来的负面情绪, 并提供了具体建议.",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "首句就把问题摆到台面上 ——「Maybe you are not included by a group of frien…」。后文顺着这个问题给可操作的做法，读的时候重点找 should / try to / remember to 这类建议句，答案多半落在「做法」所在的句子里。"
+    },
+    "route_summary": {
+      "线索词优先": 5,
+      "固定搭配优先": 0,
+      "双路径": 1,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 19,
+    "article_text_with_blanks": "Maybe you are not included by a group of friends. Maybe you are not selected by the sports team. Rejection (拒绝) can be painful and embarrassing. But one thing is for sure at some point, everyone experiences the __1__ feelings of being rejected. Nobody likes rejection. Some people can become insecure about the possibility of getting rejected again. They may even avoid possible __2__ to make sure the rejection will never happen to them. Some of them may never raise their hands again to avoid the possibility of not being chosen. However, there are some ways to deal with those feelings. Talk it out Share how you feel with a friend or a teacher who you know will be a good listener. It's good to put your feelings into words because __3__ them can help you move on. If you keep the feelings in, you will feel harder to cheer yourself up. Once you've told someone else, you'll start to feel less hurt. Other people can help you see the reality. You may find out what seems a big deal right now might mean __4__ tomorrow. Look back and then move forward When you're ready, __5__ the situation and try to find out the real cause. Was it something beyond your control Was there anything else you could have done Think through what happened __6__ and why it didn't work out as you had expected. But don't be too hard on yourself. You will succeed again and you'll probably be thankful to the rejection after getting over the problem.",
+    "reading_sentences": [
+      "Maybe you are not included by a group of friends.",
+      "Maybe you are not selected by the sports team.",
+      "Rejection (拒绝) can be painful and embarrassing.",
+      "But one thing is for sure at some point, everyone experiences the __1__ feelings of being rejected.",
+      "Nobody likes rejection.",
+      "Some people can become insecure about the possibility of getting rejected again.",
+      "They may even avoid possible __2__ to make sure the rejection will never happen to them.",
+      "Some of them may never raise their hands again to avoid the possibility of not being chosen.",
+      "However, there are some ways to deal with those feelings.",
+      "Talk it out Share how you feel with a friend or a teacher who you know will be a good listener.",
+      "It's good to put your feelings into words because __3__ them can help you move on.",
+      "If you keep the feelings in, you will feel harder to cheer yourself up.",
+      "Once you've told someone else, you'll start to feel less hurt.",
+      "Other people can help you see the reality.",
+      "You may find out what seems a big deal right now might mean __4__ tomorrow.",
+      "Look back and then move forward When you're ready, __5__ the situation and try to find out the real cause.",
+      "Was it something beyond your control Was there anything else you could have done Think through what happened __6__ and why it didn't work out as you had expected.",
+      "But don't be too hard on yourself.",
+      "You will succeed again and you'll probably be thankful to the rejection after getting over the problem."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "unfriendly",
+          "unfamiliar",
+          "uncomfortable",
+          "unnecessary"
+        ],
+        "answer": "uncomfortable",
+        "clues": [
+          "But one thing is for sure",
+          "can be painful and embarrassing",
+          "everyone experiences the"
+        ],
+        "clueTypes": {
+          "But one thing is for sure": "情感线索·情感变化",
+          "can be painful and embarrassing": "逻辑线索·并列",
+          "everyone experiences the": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　情感变化：「But one thing is for sure」之前是另一段情绪，这里按转折后的新方向取词。\n印证　紧邻的上一句里还有同向佐证（并列结构）：「can be painful and embarrassing」与主线指向一致。\n排除　unfriendly、unfamiliar、unnecessary三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「everyone experiences the」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "chances",
+          "arguments",
+          "mistakes",
+          "ambitions"
+        ],
+        "answer": "chances",
+        "clues": [
+          "even avoid possible",
+          "to make"
+        ],
+        "clueTypes": {
+          "even avoid possible": "情感线索·情感一致",
+          "to make": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　情感一致：「even avoid possible」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（结构骨架）：「to make」与主线指向一致。\n排除　arguments 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；mistakes、ambitions 则呼应否×2。\n补充　「to make」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "changing",
+          "accepting",
+          "ignoring",
+          "protecting"
+        ],
+        "answer": "accepting",
+        "clues": [
+          "into words because"
+        ],
+        "clueTypes": {
+          "into words because": "逻辑线索·因果"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「into words because」）：原因与结果方向咬合，所填词要能承接这条因果。\n排除　changing 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；ignoring、protecting 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "代词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "everything",
+          "something",
+          "anything",
+          "nothing"
+        ],
+        "answer": "nothing",
+        "clues": [
+          "after getting over the problem",
+          "start to feel less hurt",
+          "But don't be too hard"
+        ],
+        "clueTypes": {
+          "after getting over the problem": "情感线索·情感一致",
+          "start to feel less hurt": "情感线索·情感一致",
+          "But don't be too hard": "情感线索·情感一致"
+        },
+        "explanation": "线索　情感一致：「start to feel less hurt」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「But don't be too hard」与主线指向一致。\n排除　something 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；anything、everything 则方向否、呼应否。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "memorize",
+          "divide",
+          "review",
+          "record"
+        ],
+        "answer": "review",
+        "clues": [
+          "back and then",
+          "When you're ready",
+          "the situation and"
+        ],
+        "clueTypes": {
+          "back and then": "逻辑线索·时间",
+          "When you're ready": "语境线索·搭配骨架",
+          "the situation and": "逻辑线索·并列"
+        },
+        "explanation": "线索　空所在句里有时间信号（「back and then」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（并列结构）：「the situation and」与主线指向一致。\n排除　memorize、divide、record三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「When you're ready」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "immediately",
+          "exactly",
+          "finally",
+          "certainly"
+        ],
+        "answer": "exactly",
+        "clues": [
+          "Think through what happened",
+          "and why"
+        ],
+        "clueTypes": {
+          "Think through what happened": "情感线索·情感一致",
+          "and why": "逻辑线索·并列"
+        },
+        "explanation": "线索　情感一致：「Think through what happened」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（并列结构）：「and why」与主线指向一致。\n排除　immediately、finally、certainly三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2025,
+    "tone_markers": [
+      {
+        "word": "thankful",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-010",
+    "title_cn": "肢体语言的力量",
+    "title_en": "The Power of Body Language",
+    "level": "中考",
+    "difficulty": "较难",
+    "lesson_type": "人物故事",
+    "region": "上海",
+    "source": "2025年上海市普陀区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Amy Cuddy is a social scientist who studies body language, especially how we show power with our bodies.",
+    "last_sentence": "And feeling powerful can change our lives.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文主要介绍了社会科学家Cuddy通过研究肢体语言, 让我们如何用身体展示力量.",
+      "kind": "narrative"
+    },
+    "route_summary": {
+      "线索词优先": 3,
+      "固定搭配优先": 0,
+      "双路径": 2,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 23,
+    "article_text_with_blanks": "Amy Cuddy is a social scientist who studies body language, especially how we show power with our bodies. According to her, there are two kinds of poses, high-power poses and low-power poses. For example, putting your hand on your face or neck is a low-power pose. It makes you look __1__ and shows a need for protection. Standing tall with hands on your hips like a boss is a high-power pose. It can make you appear stronger and more confident. Cuddy thinks that changing our body language can make us feel more powerful. To __2__ her idea, she did an experiment. First, she invited some candidates (候选人) to attend a job interview. Next, just before the interview, Cuddy asked half the candidates to do high-power poses and the other half to do low-power poses for two minutes each. Then they went to the interview room one by one to communicate with the interviewers. All the interviews were __3__ and later watched by another group of interviewers who had no idea about the experiment. Most of them preferred the candidates who did high-power poses before the interview. Cuddy gives a simple __4__ for this. She says that doing some poses releases particular chemicals in the brain. For low-power poses, these chemicals make people believe they are powerless. __5__ , they often do not deal with stress well, and they are less positive. Oppositely, Cuddy found that high-power poses release other chemicals in the brain. These tell people that they are powerful, so they then feel confident. __6__ , Cuddy found that it didn't matter what the candidates said or what qualifications (资格) they had. What mattered was how confident they seemed. So, doing a high-power pose for just two minutes can make us feel more powerful. And feeling powerful can change our lives.",
+    "reading_sentences": [
+      "Amy Cuddy is a social scientist who studies body language, especially how we show power with our bodies.",
+      "According to her, there are two kinds of poses, high-power poses and low-power poses.",
+      "For example, putting your hand on your face or neck is a low-power pose.",
+      "It makes you look __1__ and shows a need for protection.",
+      "Standing tall with hands on your hips like a boss is a high-power pose.",
+      "It can make you appear stronger and more confident.",
+      "Cuddy thinks that changing our body language can make us feel more powerful.",
+      "To __2__ her idea, she did an experiment.",
+      "First, she invited some candidates (候选人) to attend a job interview.",
+      "Next, just before the interview, Cuddy asked half the candidates to do high-power poses and the other half to do low-power poses for two minutes each.",
+      "Then they went to the interview room one by one to communicate with the interviewers.",
+      "All the interviews were __3__ and later watched by another group of interviewers who had no idea about the experiment.",
+      "Most of them preferred the candidates who did high-power poses before the interview.",
+      "Cuddy gives a simple __4__ for this.",
+      "She says that doing some poses releases particular chemicals in the brain.",
+      "For low-power poses, these chemicals make people believe they are powerless.",
+      "__5__ , they often do not deal with stress well, and they are less positive.",
+      "Oppositely, Cuddy found that high-power poses release other chemicals in the brain.",
+      "These tell people that they are powerful, so they then feel confident.",
+      "__6__ , Cuddy found that it didn't matter what the candidates said or what qualifications (资格) they had.",
+      "What mattered was how confident they seemed.",
+      "So, doing a high-power pose for just two minutes can make us feel more powerful.",
+      "And feeling powerful can change our lives."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "rude",
+          "weak",
+          "dishonest",
+          "ugly"
+        ],
+        "answer": "weak",
+        "clues": [
+          "and shows a need for protection",
+          "It makes you look"
+        ],
+        "clueTypes": {
+          "and shows a need for protection": "固定搭配·结构骨架",
+          "It makes you look": "情感线索·情感一致"
+        },
+        "explanation": "线索　情感一致：「It makes you look」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（结构骨架）：「and shows a need for protection」与主线指向一致。\n排除　rude、dishonest、ugly三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「and shows a need for protection」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "动介动词 + 介词",
+          "type": "动词短语",
+          "structure": "laugh at / smile at / listen to / wait for / look at / deal with / belong to / depend on / arrive at / agree with / think about / worry about / care about / hear from / learn from / suffer from / apologize to / thank …"
+        }
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "share",
+          "improve",
+          "test",
+          "develop"
+        ],
+        "answer": "test",
+        "clues": [
+          "she invited some candidates",
+          "she did an experiment",
+          "her idea, she did an"
+        ],
+        "clueTypes": {
+          "she invited some candidates": "举例说明",
+          "she did an experiment": "复现线索·近义词复现",
+          "her idea, she did an": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　近义复现：「she did an experiment」用近义表达过同一意思，空格沿这个方向取词。\n印证　紧邻的下一句里还有同向佐证（例证）：「she invited some candidates」与主线指向一致。\n排除　share 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；improve、develop 则异场否、呼应否。\n补充　「her idea, she did an」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "recorded",
+          "arranged",
+          "delayed",
+          "finished"
+        ],
+        "answer": "recorded",
+        "clues": [
+          "and later",
+          "All the interviews were"
+        ],
+        "clueTypes": {
+          "and later": "逻辑线索·时间",
+          "All the interviews were": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里有时间信号（「and later」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（搭配骨架）：「All the interviews were」与主线指向一致。\n排除　arranged、delayed、finished三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「All the interviews were」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "solution",
+          "conclusion",
+          "suggestion",
+          "explanation"
+        ],
+        "answer": "explanation",
+        "clues": [
+          "Cuddy gives a simple"
+        ],
+        "clueTypes": {
+          "Cuddy gives a simple": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　结构骨架：「Cuddy gives a simple」搭出固定框架，先满足骨架，再验证词义方向。\n排除　solution、conclusion、suggestion三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "动词短语",
+        "topic": "逻辑推理",
+        "route": "整组短语直接辨析",
+        "options": [
+          "After all",
+          "What's more",
+          "As a result",
+          "On the other hand"
+        ],
+        "answer": "As a result",
+        "clues": [
+          "they often do not deal with"
+        ],
+        "clueTypes": {
+          "they often do not deal with": "逻辑线索·因果"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「they often do not deal with」）：原因与结果方向咬合，所填词要能承接这条因果。\n排除　What's more 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；On the other hand、After all 则方向否、呼应否。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "Interestingly",
+          "Certainly",
+          "Unfortunately",
+          "Suddenly"
+        ],
+        "answer": "Interestingly",
+        "clues": [
+          "it didn't matter what the",
+          "What mattered was how confident",
+          "Cuddy found that it"
+        ],
+        "clueTypes": {
+          "it didn't matter what the": "逻辑线索·转折",
+          "What mattered was how confident": "复现线索·反义词复现",
+          "Cuddy found that it": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「it didn't matter what the」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　紧邻的下一句里还有同向佐证（反义对照）：「What mattered was how confident」与主线指向一致。\n排除　Unfortunately 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；Suddenly、Certainly 则异场否、呼应否。\n补充　「Cuddy found that it」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2025,
+    "tone_markers": [
+      {
+        "word": "lives",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-011",
+    "title_cn": "生物体内的时钟",
+    "title_en": "The Clock Inside Living Things",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2025年上海市黄浦区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "When is bedtime?",
+    "last_sentence": "So, don't worry about missing your watch—your inner clock runs on sun time.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文围绕生物钟与太阳的关系展开说明. 全文由「When is bedtime?」起，收在「So, don't worry ab」，整体情绪走向为积极，与篇末升华句相呼应。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "首句就把问题摆到台面上 ——「When is bedtime?」。后文顺着这个问题给可操作的做法，读的时候重点找 should / try to / remember to 这类建议句，答案多半落在「做法」所在的句子里。"
+    },
+    "route_summary": {
+      "线索词优先": 2,
+      "固定搭配优先": 2,
+      "双路径": 0,
+      "整组短语直接辨析": 2
+    },
+    "reading_sentence_count": 22,
+    "article_text_with_blanks": "When is bedtime? If you don't have a phone or a watch, don't worry. Every living thing has a built-in clock that __1__ the sun. For a long time, people thought daylight tells animals when to rise or rest. When it's light, rise. When it's dark, rest. But in 1729, a French scientist tested this with a mimosa (含羞草) plant. The plant's leaves folded up at night, but when he put it in a dark cupboard, the leaves still folded and unfolded __2__ . He realized that living things have a tiny clock inside them that measures day and night. This clock is called the daily cycle. Daily cycles tell our bodies when to sleep, eat, and grow. They __3__ help animals know when to move or rest for the season. These clocks help living things stay in line with the sun's light. Every cell in our body has its own tiny clock, but the brain has a main controller that keeps them working together. Like the mimosa plant, our clock counts time in __4__ , but it also reacts to light. Humans have a special light sensor (传感器) at the back of the eye. These cells help signal when it's bright or getting dark. The master clock then sends \" __5__ \" or \"sleep\" signals to all your cells. This sensor helps reset our body's clock. That's why when you travel to different places, you feel __6__ at the wrong times. Your body's clock gets out of line with the local time, but soon, sunlight and darkness help reset it. So, don't worry about missing your watch—your inner clock runs on sun time.",
+    "reading_sentences": [
+      "When is bedtime?",
+      "If you don't have a phone or a watch, don't worry.",
+      "Every living thing has a built-in clock that __1__ the sun.",
+      "For a long time, people thought daylight tells animals when to rise or rest.",
+      "When it's light, rise.",
+      "When it's dark, rest.",
+      "But in 1729, a French scientist tested this with a mimosa (含羞草) plant.",
+      "The plant's leaves folded up at night, but when he put it in a dark cupboard, the leaves still folded and unfolded __2__ .",
+      "He realized that living things have a tiny clock inside them that measures day and night.",
+      "This clock is called the daily cycle.",
+      "Daily cycles tell our bodies when to sleep, eat, and grow.",
+      "They __3__ help animals know when to move or rest for the season.",
+      "These clocks help living things stay in line with the sun's light.",
+      "Every cell in our body has its own tiny clock, but the brain has a main controller that keeps them working together.",
+      "Like the mimosa plant, our clock counts time in __4__ , but it also reacts to light.",
+      "Humans have a special light sensor (传感器) at the back of the eye.",
+      "These cells help signal when it's bright or getting dark.",
+      "The master clock then sends \" __5__ \" or \"sleep\" signals to all your cells.",
+      "This sensor helps reset our body's clock.",
+      "That's why when you travel to different places, you feel __6__ at the wrong times.",
+      "Your body's clock gets out of line with the local time, but soon, sunlight and darkness help reset it.",
+      "So, don't worry about missing your watch—your inner clock runs on sun time."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "名词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "follows",
+          "avoids",
+          "ignores",
+          "changes"
+        ],
+        "answer": "follows",
+        "clues": [
+          "daylight tells animals when to",
+          "stay in line with the sun's",
+          "a built-in clock that"
+        ],
+        "clueTypes": {
+          "daylight tells animals when to": "复现线索·近义词复现",
+          "stay in line with the sun's": "复现线索·近义词复现",
+          "a built-in clock that": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　近义复现：「daylight tells animals when to」用近义表达过同一意思，空格沿这个方向取词。\n印证　邻段 / 全篇范围里的还有同向佐证（近义表达）：「stay in line with the sun's」与主线指向一致。\n排除　avoids、ignores、changes三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「a built-in clock that」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "in a hurry",
+          "at once",
+          "by chance",
+          "as usual"
+        ],
+        "answer": "as usual",
+        "clues": [
+          "but when he put",
+          "the leaves still folded and unfolded"
+        ],
+        "clueTypes": {
+          "but when he put": "逻辑线索·转折",
+          "the leaves still folded and unfolded": "逻辑线索·并列"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「but when he put」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（并列结构）：「the leaves still folded and unfolded」与主线指向一致。\n排除　in a hurry、at once、by chance三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 3,
+        "pos": "连词逻辑",
+        "topic": "逻辑推理",
+        "route": "线索词优先",
+        "options": [
+          "only",
+          "even",
+          "rarely",
+          "simply"
+        ],
+        "answer": "even",
+        "clues": [
+          "help animals"
+        ],
+        "clueTypes": {
+          "help animals": "情感线索·情感一致"
+        },
+        "explanation": "线索　情感一致：「help animals」定了情绪方向，句间无转折词，空格延续这条褒贬。\n排除　simply 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；only、rarely 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "名词",
+        "topic": "逻辑推理 / 上下文复现",
+        "route": "双路径",
+        "options": [
+          "silence",
+          "coldness",
+          "darkness",
+          "blindness"
+        ],
+        "answer": "darkness",
+        "clues": [
+          "sunlight and darkness",
+          "but it also reacts",
+          "it's dark"
+        ],
+        "clueTypes": {
+          "sunlight and darkness": "复现线索·原词复现",
+          "but it also reacts": "逻辑线索·转折",
+          "it's dark": "复现线索·派生词复现"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「but it also reacts」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　邻段 / 全篇范围里的还有同向佐证（原词复现）：「sunlight and darkness」与主线指向一致。\n排除　silence 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；coldness、blindness 则呼应否×2。",
+        "collocation": {
+          "name": "in silence",
+          "type": "介词 / 固定短语",
+          "structure": "沉默地｜in ____"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "动词短语",
+        "topic": "逻辑推理",
+        "route": "整组短语直接辨析",
+        "options": [
+          "wake up",
+          "stay up",
+          "get up",
+          "speak up"
+        ],
+        "answer": "wake up",
+        "clues": [
+          "clock then sends",
+          "or \"sleep"
+        ],
+        "clueTypes": {
+          "clock then sends": "逻辑线索·时间",
+          "or \"sleep": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里有时间信号（「clock then sends」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（搭配骨架）：「or \"sleep」与主线指向一致。\n排除　stay up 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；get up、speak up 则方向否、呼应否。\n补充　「or \"sleep」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "surprised",
+          "bored",
+          "tired",
+          "excited"
+        ],
+        "answer": "tired",
+        "clues": [
+          "So, don't worry about missing",
+          "at the wrong times",
+          "you feel"
+        ],
+        "clueTypes": {
+          "So, don't worry about missing": "情感线索·情感一致",
+          "at the wrong times": "情感线索·情感一致",
+          "you feel": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　情感一致：「at the wrong times」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「So, don't worry about missing」与主线指向一致。\n排除　surprised 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；excited、bored 则异场否、呼应否。\n补充　「you feel」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "surprised at",
+          "type": "动词短语",
+          "structure": "对…惊讶｜____ at"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2025,
+    "tone_markers": [
+      {
+        "word": "sun",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-012",
+    "title_cn": "新西兰研学之旅",
+    "title_en": "A School Trip to New Zealand",
+    "level": "中考",
+    "difficulty": "较难",
+    "lesson_type": "人物故事",
+    "region": "上海",
+    "source": "2025年上海市杨浦区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "This report is about our recent Year 9 trip to New Zealand in March 2025.",
+    "last_sentence": "I would happily recommend this trip to other students who want to find out about new places and meet new people.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文主要评价了九年级新西兰游学的成功之处, 并提出了改进建议.",
+      "kind": "narrative"
+    },
+    "route_summary": {
+      "线索词优先": 4,
+      "固定搭配优先": 1,
+      "双路径": 1,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 24,
+    "article_text_with_blanks": "This report is about our recent Year 9 trip to New Zealand in March 2025. The aim is to see how successful the trip was and to decide if we should __1__ it to future Year 9 students who are interested in travel and learning about other cultures. Host Families We all agreed that the host families were friendly and welcome. They made us feel at home and did their best to make our stay comfortable. Many students said their families were kind and generous. __2__ , some families lived far from the school, so we had to wake up before sunrise to get there on time. I think next time, it would be better if host families lived closer to the school. School Life Experience We spent a few days attending classes at the local school. The lessons were different from ours, with more group discussions and __3__ learning. One afternoon, we had a science lesson in a nearby park, where we studied plants and insects. We also joined a geography class that took place at the beach, where we learned about the land and water. It was fun to see how students in New Zealand study, and we enjoyed working on small projects with them. Cultural Activities The teachers in New Zealand planned many fun activities for us. They found tour guides who were __4__ and easy to understand. We visited many exciting places like Auckland, Rotorua, and the Hobbiton movie set. These trips were amazing. __5__ , the local students could not join us because they had school. I think next time, they should come with us so we can spend more time together. __6__ Most of us spoke English with our host families and exchange partners, which helped us feel more confident. Some of us also spoke with the tour guides and learned about Maori culture and traditions. I think keeping a short travel diary would help us remember the trip and what we learned. Overall, both Shanghai and New Zealand students enjoyed the trip. We learned a lot about life in New Zealand and had fun together. I would happily recommend this trip to other students who want to find out about new places and meet new people.",
+    "reading_sentences": [
+      "This report is about our recent Year 9 trip to New Zealand in March 2025.",
+      "The aim is to see how successful the trip was and to decide if we should __1__ it to future Year 9 students who are interested in travel and learning about other cultures.",
+      "Host Families We all agreed that the host families were friendly and welcome.",
+      "They made us feel at home and did their best to make our stay comfortable.",
+      "Many students said their families were kind and generous.",
+      "__2__ , some families lived far from the school, so we had to wake up before sunrise to get there on time.",
+      "I think next time, it would be better if host families lived closer to the school.",
+      "School Life Experience We spent a few days attending classes at the local school.",
+      "The lessons were different from ours, with more group discussions and __3__ learning.",
+      "One afternoon, we had a science lesson in a nearby park, where we studied plants and insects.",
+      "We also joined a geography class that took place at the beach, where we learned about the land and water.",
+      "It was fun to see how students in New Zealand study, and we enjoyed working on small projects with them.",
+      "Cultural Activities The teachers in New Zealand planned many fun activities for us.",
+      "They found tour guides who were __4__ and easy to understand.",
+      "We visited many exciting places like Auckland, Rotorua, and the Hobbiton movie set.",
+      "These trips were amazing.",
+      "__5__ , the local students could not join us because they had school.",
+      "I think next time, they should come with us so we can spend more time together.",
+      "__6__ Most of us spoke English with our host families and exchange partners, which helped us feel more confident.",
+      "Some of us also spoke with the tour guides and learned about Maori culture and traditions.",
+      "I think keeping a short travel diary would help us remember the trip and what we learned.",
+      "Overall, both Shanghai and New Zealand students enjoyed the trip.",
+      "We learned a lot about life in New Zealand and had fun together.",
+      "I would happily recommend this trip to other students who want to find out about new places and meet new people."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "explain",
+          "describe",
+          "include",
+          "suggest"
+        ],
+        "answer": "suggest",
+        "clues": [
+          "decide if we should",
+          "it to future Year"
+        ],
+        "clueTypes": {
+          "decide if we should": "逻辑线索·条件",
+          "it to future Year": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里带条件结构（「decide if we should」）：先有前提再有结果，所填词要满足这条前提下的结果方向。\n印证　空所在句里还有同向佐证（搭配骨架）：「it to future Year」与主线指向一致。\n排除　explain 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；describe、include 则呼应否×2。\n补充　「it to future Year」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "explain * to",
+          "type": "动词短语",
+          "structure": "向某人解释｜____ * to"
+        }
+      },
+      {
+        "q": 2,
+        "pos": "连词逻辑",
+        "topic": "逻辑推理",
+        "route": "线索词优先",
+        "options": [
+          "For example",
+          "However",
+          "After all",
+          "In fact"
+        ],
+        "answer": "However",
+        "clues": [
+          "so we had to",
+          "to see how",
+          "These trips were amazing"
+        ],
+        "clueTypes": {
+          "so we had to": "逻辑线索·因果",
+          "to see how": "复现线索·派生词复现",
+          "These trips were amazing": "复现线索·同场复现"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「so we had to」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（派生词复现）：「to see how」与主线指向一致。\n排除　For example、After all、In fact三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "online",
+          "social",
+          "outdoor",
+          "independent"
+        ],
+        "answer": "outdoor",
+        "clues": [
+          "group discussions and"
+        ],
+        "clueTypes": {
+          "group discussions and": "逻辑线索·并列"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「group discussions and」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　答案词根 outdoor 在文中他处也出现（… to find out about new place …），全篇方向一致。\n排除　online、social、independent三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "interesting",
+          "satisfied",
+          "hopeful",
+          "enjoyable"
+        ],
+        "answer": "interesting",
+        "clues": [
+          "students who are interested",
+          "was fun to see how",
+          "guides who were"
+        ],
+        "clueTypes": {
+          "students who are interested": "复现线索·派生词复现",
+          "was fun to see how": "复现线索·同场复现",
+          "guides who were": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　语义场复现：「was fun to see how」与答案同属一个场景词群，按场景连贯取词。\n印证　邻段 / 全篇范围里的还有同向佐证（派生词复现）：「students who are interested」与主线指向一致。\n排除　enjoyable 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；hopeful、satisfied 则异场否、呼应否。\n补充　「guides who were」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "Suddenly",
+          "Seriously",
+          "Finally",
+          "Sadly"
+        ],
+        "answer": "Sadly",
+        "clues": [
+          "because they had school",
+          "were friendly and",
+          "and welcome"
+        ],
+        "clueTypes": {
+          "because they had school": "逻辑线索·因果",
+          "were friendly and": "情感线索·情感一致",
+          "and welcome": "情感线索·情感一致"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「because they had school」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「were friendly and」与主线指向一致。\n排除　Suddenly 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；Seriously、Finally 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "Food Experience",
+          "Challenges Faced",
+          "Language and Communication",
+          "Friendship and Memories"
+        ],
+        "answer": "Language and Communication",
+        "clues": [
+          "Most of us spoke English"
+        ],
+        "clueTypes": {
+          "Most of us spoke English": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　结构骨架：「Most of us spoke English」搭出固定框架，先满足骨架，再验证词义方向。\n排除　Food Experience 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；Friendship and Memories、Challenges Faced 则方向否、呼应否。",
+        "collocation": {
+          "name": "介词短语",
+          "type": "介词短语",
+          "structure": "介词 + (冠词/物主代词) + 名词（in front of / on time / with the help of / in danger / at night / by accident …）"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2025,
+    "tone_markers": [
+      {
+        "word": "happily",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-013",
+    "title_cn": "DeepSeek 与教育",
+    "title_en": "DeepSeek and Education",
+    "level": "中考",
+    "difficulty": "简单",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2025年上海市宝山区模拟预测",
+    "tags": [
+      "区级模拟",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "DeepSeek is a leading technology company that has made very important contributions to modern ____ .",
+    "last_sentence": "Students feel more confident in their abilities, and teachers can offer more targeted support.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文主要讲述了DeepSeek这家领先的科技公司如何通过人工智能（AI）技术在教育领域做出重要贡献.",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "首句给出一个判断 ——「DeepSeek is a leading technology company that …」，后文靠举例或数据来支撑（for example / such as / 研究结论）。读的时候先抓住观点句，再看它用什么例子证实，答案常出现在例子的细节里。"
+    },
+    "route_summary": {
+      "线索词优先": 4,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 2
+    },
+    "reading_sentence_count": 13,
+    "article_text_with_blanks": "DeepSeek is a leading technology company that has made very important contributions to modern __1__ . By using artificial intelligence (Al), DeepSeek has developed tools that help students learn more effectively. Their platform analyzes (分析) each student's learning habits and provides __2__ study plans. This means that students can concentrate on their weaknesses and improve their strengths. One of the most impressive features of DeepSeek's platform is its ability to __3__ instant feedback (反馈). When students complete exercises, the platform immediately points out mistakes and explains how to correct them. This helps students learn faster and reduces the need for their teachers' assistance. __4__ , teachers benefit from DeepSeek's tools. The platform allows them to check students' progress in real-time, making it easier to __5__ who needs extra help. Additionally, DeepSeek's system generates detailed reports, saving teachers time and allowing them to focus on teaching rather than paperwork. DeepSeek's technology has been __6__ used in many schools, and the results are remarkable. Schools using DeepSeek report higher student engagement (参与) and better school performance. Students feel more confident in their abilities, and teachers can offer more targeted support.",
+    "reading_sentences": [
+      "DeepSeek is a leading technology company that has made very important contributions to modern __1__ .",
+      "By using artificial intelligence (Al), DeepSeek has developed tools that help students learn more effectively.",
+      "Their platform analyzes (分析) each student's learning habits and provides __2__ study plans.",
+      "This means that students can concentrate on their weaknesses and improve their strengths.",
+      "One of the most impressive features of DeepSeek's platform is its ability to __3__ instant feedback (反馈).",
+      "When students complete exercises, the platform immediately points out mistakes and explains how to correct them.",
+      "This helps students learn faster and reduces the need for their teachers' assistance.",
+      "__4__ , teachers benefit from DeepSeek's tools.",
+      "The platform allows them to check students' progress in real-time, making it easier to __5__ who needs extra help.",
+      "Additionally, DeepSeek's system generates detailed reports, saving teachers time and allowing them to focus on teaching rather than paperwork.",
+      "DeepSeek's technology has been __6__ used in many schools, and the results are remarkable.",
+      "Schools using DeepSeek report higher student engagement (参与) and better school performance.",
+      "Students feel more confident in their abilities, and teachers can offer more targeted support."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "economy",
+          "education",
+          "industry",
+          "medicine"
+        ],
+        "answer": "education",
+        "clues": [
+          "help students learn more effectively",
+          "used in many schools",
+          "very important contributions to modern"
+        ],
+        "clueTypes": {
+          "help students learn more effectively": "复现线索·同场复现",
+          "used in many schools": "复现线索·上下义词复现",
+          "very important contributions to modern": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　语义场复现：「help students learn more effectively」与答案同属一个场景词群，按场景连贯取词。\n印证　邻段 / 全篇范围里的还有同向佐证（上下义呼应）：「used in many schools」与主线指向一致。\n排除　economy、industry、medicine三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「very important contributions to modern」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "common",
+          "public",
+          "the same",
+          "personal"
+        ],
+        "answer": "personal",
+        "clues": [
+          "habits and provides",
+          "study plans"
+        ],
+        "clueTypes": {
+          "habits and provides": "逻辑线索·并列",
+          "study plans": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「habits and provides」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　空所在句里还有同向佐证（搭配骨架）：「study plans」与主线指向一致。\n排除　common、public、the same三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「study plans」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "provide",
+          "prevent",
+          "protect",
+          "play"
+        ],
+        "answer": "provide",
+        "clues": [
+          "learning habits and provides",
+          "teachers can offer",
+          "instant feedback"
+        ],
+        "clueTypes": {
+          "learning habits and provides": "复现线索·派生词复现",
+          "teachers can offer": "复现线索·近义词复现",
+          "instant feedback": "固定搭配"
+        },
+        "explanation": "线索　固定搭配：「instant feedback」是常见搭配结构，空格词由搭配骨架锁定。\n印证　邻段 / 全篇范围里的还有同向佐证（派生词复现）：「learning habits and provides」与主线指向一致。\n排除　prevent、protect、play三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "In brief",
+          "In addition",
+          "As a result",
+          "On the other hand"
+        ],
+        "answer": "In addition",
+        "clues": [
+          "Additionally, DeepSeek's system generates",
+          "the need for their teachers' assistance",
+          "teachers benefit from DeepSeek's tools"
+        ],
+        "clueTypes": {
+          "Additionally, DeepSeek's system generates": "复现线索·近义词复现",
+          "the need for their teachers' assistance": "语境线索·搭配骨架",
+          "teachers benefit from DeepSeek's tools": "逻辑线索·并列"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「teachers benefit from DeepSeek's tools」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　邻段 / 全篇范围里的还有同向佐证（近义表达）：「Additionally, DeepSeek's system generates」与主线指向一致。\n排除　As a result 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；In brief、On the other hand 则呼应否×2。\n补充　「the need for their teachers' assistance」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "look out",
+          "put out",
+          "find out",
+          "take out"
+        ],
+        "answer": "find out",
+        "clues": [
+          "who needs extra help",
+          "it easier to"
+        ],
+        "clueTypes": {
+          "who needs extra help": "情感线索·情感一致",
+          "it easier to": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　情感一致：「who needs extra help」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（搭配骨架）：「it easier to」与主线指向一致。\n排除　look out、put out、take out三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「it easier to」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "easily",
+          "completely",
+          "widely",
+          "awfully"
+        ],
+        "answer": "widely",
+        "clues": [
+          "Schools using DeepSeek report higher",
+          "used in many schools",
+          "DeepSeek's technology has been"
+        ],
+        "clueTypes": {
+          "Schools using DeepSeek report higher": "举例说明",
+          "used in many schools": "复现线索·同场复现",
+          "DeepSeek's technology has been": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　语义场复现：「used in many schools」与答案同属一个场景词群，按场景连贯取词。\n印证　紧邻的下一句里还有同向佐证（例证）：「Schools using DeepSeek report higher」与主线指向一致。\n排除　easily 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；completely、awfully 则方向否、呼应否。\n补充　「DeepSeek's technology has been」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "模拟预测",
+    "exam_year": 2025,
+    "tone_markers": [
+      {
+        "word": "confident",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-014",
+    "title_cn": "用耳朵“看”世界",
+    "title_en": "Seeing with Ears",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "人物故事",
+    "region": "上海",
+    "source": "2025年上海市浦东新区一模",
+    "tags": [
+      "区级一模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Do you know some people can \"see\" the world by using their ears?",
+    "last_sentence": "Even if you can't see, your brain can learn new skills, using sounds to help you \"see\" the world!",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文是一篇说明文. 本文介绍了回声定位的原理及其在盲人中的应用, 以及科学家对大脑如何处理不同感官信息的最新研究.",
+      "kind": "narrative"
+    },
+    "route_summary": {
+      "线索词优先": 3,
+      "固定搭配优先": 1,
+      "双路径": 1,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 22,
+    "article_text_with_blanks": "Do you know some people can \"see\" the world by using their ears? People need to make clicking sounds with their tongues. When the sound waves hit an object, they come back as echoes (回声). Then people listen to the differences in the echoes and tell __1__ the thing is in the dark so they can find their way. This is called echolocation. By practicing this, blind people now can do many things, including riding bikes alone or playing basketball! All these used to be __2__ for them without this skill. In the past, scientists thought only blind people could learn echolocation. According to a research, after a person loses sight, there are some changes in his brain. So his brain works __3__ compared with the past. Scientists believed this was the key to learning echolocation. But now a new study shows that sighted (看得见的) people can learn it too! In the study, both blind and sighted people were trained for 10 weeks, learning to make clicking sounds and use them to navigate in the dark. With practice, both groups improved! What's the __4__ behind it? When scientists studied their brains after the 10-week training, they found that the visual cortex (视觉皮层) became more active when people listened. This happened to both blind and sighted people! Scientists guess this part of brain doesn't just process what people see—it also __5__ information from other senses, like hearing, smell and taste. For blind people, echolocation is more than a skill that makes their lives easier. Many said they felt more confident. Even more, this discovery shows how __6__ our brains are. Even if you can't see, your brain can learn new skills, using sounds to help you \"see\" the world!",
+    "reading_sentences": [
+      "Do you know some people can \"see\" the world by using their ears?",
+      "People need to make clicking sounds with their tongues.",
+      "When the sound waves hit an object, they come back as echoes (回声).",
+      "Then people listen to the differences in the echoes and tell __1__ the thing is in the dark so they can find their way.",
+      "This is called echolocation.",
+      "By practicing this, blind people now can do many things, including riding bikes alone or playing basketball!",
+      "All these used to be __2__ for them without this skill.",
+      "In the past, scientists thought only blind people could learn echolocation.",
+      "According to a research, after a person loses sight, there are some changes in his brain.",
+      "So his brain works __3__ compared with the past.",
+      "Scientists believed this was the key to learning echolocation.",
+      "But now a new study shows that sighted (看得见的) people can learn it too!",
+      "In the study, both blind and sighted people were trained for 10 weeks, learning to make clicking sounds and use them to navigate in the dark.",
+      "With practice, both groups improved!",
+      "What's the __4__ behind it?",
+      "When scientists studied their brains after the 10-week training, they found that the visual cortex (视觉皮层) became more active when people listened.",
+      "This happened to both blind and sighted people!",
+      "Scientists guess this part of brain doesn't just process what people see—it also __5__ information from other senses, like hearing, smell and taste.",
+      "For blind people, echolocation is more than a skill that makes their lives easier.",
+      "Many said they felt more confident.",
+      "Even more, this discovery shows how __6__ our brains are.",
+      "Even if you can't see, your brain can learn new skills, using sounds to help you \"see\" the world!"
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "how",
+          "where",
+          "when",
+          "why"
+        ],
+        "answer": "where",
+        "clues": [
+          "the thing is in the dark",
+          "so they can find",
+          "echoes and tell"
+        ],
+        "clueTypes": {
+          "the thing is in the dark": "逻辑线索·关系词",
+          "so they can find": "逻辑线索·因果",
+          "echoes and tell": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　空所在句里的关系词（「the thing is in the dark」）把前后两个分句连成一体，所填词要与从句说明的对象呼应。\n印证　空所在句里还有同向佐证（因果信号）：「so they can find」与主线指向一致。\n排除　how 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；why、when 则异场否、呼应否。\n补充　「echoes and tell」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 2,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "useless",
+          "funny",
+          "boring",
+          "impossible"
+        ],
+        "answer": "impossible",
+        "clues": [
+          "they can find their way",
+          "now can do many things",
+          "All these used to be"
+        ],
+        "clueTypes": {
+          "they can find their way": "逻辑线索·因果",
+          "now can do many things": "复现线索·反义词复现",
+          "All these used to be": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　反义对照：「now can do many things」给出了相反的表述，空格词要与它构成对照。\n印证　邻段 / 全篇范围里的还有同向佐证（因果信号）：「they can find their way」与主线指向一致。\n排除　useless 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；funny、boring 则呼应否×2。\n补充　「All these used to be」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "be + 形容词 + 介词（空在形容词）",
+          "type": "形容词短语",
+          "structure": "be + ____ + 介词（good/interested/proud/afraid/full/late/famous/ready/known/strict/pleased/busy …）"
+        }
+      },
+      {
+        "q": 3,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "slowly",
+          "truly",
+          "differently",
+          "regularly"
+        ],
+        "answer": "differently",
+        "clues": [
+          "So his brain works",
+          "compared with the past"
+        ],
+        "clueTypes": {
+          "So his brain works": "逻辑线索·因果",
+          "compared with the past": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「So his brain works」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（搭配骨架）：「compared with the past」与主线指向一致。\n排除　slowly 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；truly、regularly 则呼应否×2。\n补充　「compared with the past」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "problem",
+          "reason",
+          "advantage",
+          "purpose"
+        ],
+        "answer": "reason",
+        "clues": [
+          "they found that the visual cortex",
+          "Scientists believed this was the key",
+          "What's the"
+        ],
+        "clueTypes": {
+          "they found that the visual cortex": "逻辑线索·因果",
+          "Scientists believed this was the key": "复现线索·近义词复现",
+          "What's the": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的下一句里处在因果链上（「they found that the visual cortex」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（近义表达）：「Scientists believed this was the key」与主线指向一致。\n排除　problem 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；advantage、purpose 则呼应否×2。\n补充　「What's the」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "deals with",
+          "stands for",
+          "consists of",
+          "gives up"
+        ],
+        "answer": "deals with",
+        "clues": [
+          "more active when people listened",
+          "process what people see",
+          "it also"
+        ],
+        "clueTypes": {
+          "more active when people listened": "复现线索·同场复现",
+          "process what people see": "复现线索·近义词复现",
+          "it also": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　近义复现：「process what people see」用近义表达过同一意思，空格沿这个方向取词。\n印证　邻段 / 全篇范围里的还有同向佐证（同场词群）：「more active when people listened」与主线指向一致。\n排除　stands for、consists of、gives up三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「it also」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "rare",
+          "forgetful",
+          "usual",
+          "powerful"
+        ],
+        "answer": "powerful",
+        "clues": [
+          "your brain can learn new skills",
+          "became more active when people",
+          "this discovery shows how"
+        ],
+        "clueTypes": {
+          "your brain can learn new skills": "逻辑线索·因果",
+          "became more active when people": "复现线索·同场复现",
+          "this discovery shows how": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的下一句里处在因果链上（「your brain can learn new skills」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（同场词群）：「became more active when people」与主线指向一致。\n排除　forgetful 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；rare、usual 则呼应否×2。\n补充　「this discovery shows how」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级一模",
+    "exam_year": 2025,
+    "tone_markers": [
+      {
+        "word": "learn",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-015",
+    "title_cn": "机器人能取代艺术家吗？",
+    "title_en": "Can Robots Replace Artists?",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2025年上海市黄浦区一模",
+    "tags": [
+      "区级一模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Can robots take the place of artists?",
+    "last_sentence": "This ____ to make art will never go away, and robots cannot compete with it.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文主要讲述了机器人与艺术创作的关系. 全文由「Can robots take th」起，收在「This __6__ to make」，整体情绪走向为积极，与篇末升华句相呼应。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "首句就把问题摆到台面上 ——「Can robots take the place of artists?」。后文顺着这个问题给可操作的做法，读的时候重点找 should / try to / remember to 这类建议句，答案多半落在「做法」所在的句子里。"
+    },
+    "route_summary": {
+      "线索词优先": 3,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 3
+    },
+    "reading_sentence_count": 19,
+    "article_text_with_blanks": "Can robots take the place of artists? Some people think machines can compete with artists. Yet, many believe that true art can only come from human hands. So, can robots take the place of artists? Yes - Robots are the artists of the future Creating a robot is, in some ways, an art form. The human engineer must think creatively about what the robot will do and then bring that idea to life. Because robots are designed with imagination and creativity, they can also create art. Many famous artists today __1__ robots to help with their work. These artists believe that robots have a special ability. __2__ human artists, who might worry if their work isn't good enough or wonder whether to keep going, robots are reliable. They don't get discouraged or __3__ . Robots can be just as skilled as human artists and could even take the place of them in creating art. No - Human skill is what makes art One reason millions of people visit museums and galleries each year is to see art created by humans. Art made by a robot doesn't have the same feeling and emotion that human-made art has, and it doesn't have the same impact on the audience. People are __4__ art when they can see the love and skill behind it. Imperfections in the artwork can also make it __5__ , showing the human touch behind it. Robots can't take the place of artists because humans have a natural drive to create. From a young age, people pick up crayons, pencils, or pens and start drawing. This __6__ to make art will never go away, and robots cannot compete with it.",
+    "reading_sentences": [
+      "Can robots take the place of artists?",
+      "Some people think machines can compete with artists.",
+      "Yet, many believe that true art can only come from human hands.",
+      "So, can robots take the place of artists?",
+      "Yes - Robots are the artists of the future Creating a robot is, in some ways, an art form.",
+      "The human engineer must think creatively about what the robot will do and then bring that idea to life.",
+      "Because robots are designed with imagination and creativity, they can also create art.",
+      "Many famous artists today __1__ robots to help with their work.",
+      "These artists believe that robots have a special ability.",
+      "__2__ human artists, who might worry if their work isn't good enough or wonder whether to keep going, robots are reliable.",
+      "They don't get discouraged or __3__ .",
+      "Robots can be just as skilled as human artists and could even take the place of them in creating art.",
+      "No - Human skill is what makes art One reason millions of people visit museums and galleries each year is to see art created by humans.",
+      "Art made by a robot doesn't have the same feeling and emotion that human-made art has, and it doesn't have the same impact on the audience.",
+      "People are __4__ art when they can see the love and skill behind it.",
+      "Imperfections in the artwork can also make it __5__ , showing the human touch behind it.",
+      "Robots can't take the place of artists because humans have a natural drive to create.",
+      "From a young age, people pick up crayons, pencils, or pens and start drawing.",
+      "This __6__ to make art will never go away, and robots cannot compete with it."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "refer to",
+          "rely on",
+          "stand for",
+          "point out"
+        ],
+        "answer": "rely on",
+        "clues": [
+          "robots to help with their work",
+          "robots have a special ability",
+          "Many famous artists today"
+        ],
+        "clueTypes": {
+          "robots to help with their work": "逻辑线索·因果",
+          "robots have a special ability": "情感线索·情感一致",
+          "Many famous artists today": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「robots to help with their work」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　紧邻的下一句里还有同向佐证（情感同向）：「robots have a special ability」与主线指向一致。\n排除　refer to、stand for、point out三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「Many famous artists today」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "Besides",
+          "As",
+          "Unlike",
+          "Among"
+        ],
+        "answer": "Unlike",
+        "clues": [
+          "if their work isn't",
+          "robots are reliable",
+          "human artists"
+        ],
+        "clueTypes": {
+          "if their work isn't": "逻辑线索·条件",
+          "robots are reliable": "语境线索·搭配骨架",
+          "human artists": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里带条件结构（「if their work isn't」）：先有前提再有结果，所填词要满足这条前提下的结果方向。\n印证　空所在句里还有同向佐证（搭配骨架）：「robots are reliable」与主线指向一致。\n排除　Besides、As、Among三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「robots are reliable」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "make decisions",
+          "give up",
+          "make progress",
+          "grow up"
+        ],
+        "answer": "give up",
+        "clues": [
+          "that robots have a special",
+          "the artists of the future",
+          "could even take"
+        ],
+        "clueTypes": {
+          "that robots have a special": "情感线索·情感一致",
+          "the artists of the future": "情感线索·情感一致",
+          "could even take": "复现线索·反义词复现"
+        },
+        "explanation": "线索　反义对照：「could even take」给出了相反的表述，空格词要与它构成对照。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「that robots have a special」与主线指向一致。\n排除　make decisions 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；make progress、grow up 则方向否、呼应否。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 4,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "moved by",
+          "satisfied with",
+          "confused about",
+          "disappointed at"
+        ],
+        "answer": "moved by",
+        "clues": [
+          "true art can only come",
+          "People are",
+          "art when"
+        ],
+        "clueTypes": {
+          "true art can only come": "复现线索·同场复现",
+          "People are": "语境线索·搭配骨架",
+          "art when": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　语义场复现：「true art can only come」与答案同属一个场景词群，按场景连贯取词。\n印证　空所在句里还有同向佐证（搭配骨架）：「People are」与主线指向一致。\n排除　satisfied with、confused about、disappointed at三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「People are」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "dull",
+          "possible",
+          "difficult",
+          "special"
+        ],
+        "answer": "special",
+        "clues": [
+          "robots have a special",
+          "These artists believe",
+          "the human touch"
+        ],
+        "clueTypes": {
+          "robots have a special": "复现线索·原词复现",
+          "These artists believe": "情感线索·情感一致",
+          "the human touch": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　原词复现：「robots have a special」在邻段 / 全篇范围里的再次出现，答案就取与它同形的表达。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「These artists believe」与主线指向一致。\n排除　difficult 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；dull、possible 则呼应否×2。\n补充　「the human touch」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "wish",
+          "reason",
+          "desire",
+          "skill"
+        ],
+        "answer": "desire",
+        "clues": [
+          "From a young age",
+          "or pens and start drawing",
+          "to make"
+        ],
+        "clueTypes": {
+          "From a young age": "情感线索·情感一致",
+          "or pens and start drawing": "逻辑线索·并列",
+          "to make": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　情感一致：「From a young age」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　紧邻的上一句里还有同向佐证（并列结构）：「or pens and start drawing」与主线指向一致。\n排除　reason 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；skill、wish 则方向否、异场否。\n补充　「to make」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级一模",
+    "exam_year": 2025,
+    "tone_markers": [
+      {
+        "word": "love",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-016",
+    "title_cn": "失业者与意外的机会",
+    "title_en": "A Jobless Man and a Hidden Opportunity",
+    "level": "中考",
+    "difficulty": "简单",
+    "lesson_type": "人物故事",
+    "region": "上海",
+    "source": "2025年上海市松江区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "A jobless man applied for the position of office boy at a big company.",
+    "last_sentence": "The broker responded ____ , \"You don't have an email. Yet you've built an empire! Imagine where you'd be if you had one!\" The man smiled and replied, \"An office boy!\"",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文是一篇记叙文. 文章主要讲述了一个没有电脑和电子邮箱的失业男子在求职时因没有电子邮箱而被拒绝, 但他没有放弃, 通过自己的努力最终成为了国内最大的食品零售商之一；故事告诉我们不要因为一些外在条件的限制而放弃追求梦想, 只要努力, 就有可能取得成功.",
+      "kind": "narrative"
+    },
+    "route_summary": {
+      "线索词优先": 3,
+      "固定搭配优先": 0,
+      "双路径": 2,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 16,
+    "article_text_with_blanks": "A jobless man applied for the position of office boy at a big company. The manager interviewed him and then watched him clean the floor as a(n) __1__ . \"You are hired (雇佣).\" He said, \"Give me your email, and I'll send you the application form.\" The man replied, \"I don't have a computer or an email.\" The manager __2__ his head. \"If you don't have an email address, you do not exist. And if you don't exist, I can't give you the job.\" The man left the company, feeling __3__ . With only ten dollars in his pocket, he decided to buy 10 kilograms of tomatoes and sell them door to door. In a few hours, he managed to __4__ his money to twenty dollars. He repeated the process two more times and returned home happily with eighty dollars. Realizing that he could __5__ this way, he started working harder, going out early every day and returning late. Years later, he became one of the largest food retailers (零售商) in the country. One day, he decided to buy life insurance (保险) for his family. The insurance broker asked for his email. \"I don't have an email,\" the man said. The broker responded __6__ , \"You don't have an email. Yet you've built an empire! Imagine where you'd be if you had one!\" The man smiled and replied, \"An office boy!\"",
+    "reading_sentences": [
+      "A jobless man applied for the position of office boy at a big company.",
+      "The manager interviewed him and then watched him clean the floor as a(n) __1__ .",
+      "\"You are hired (雇佣).\" He said, \"Give me your email, and I'll send you the application form.\" The man replied, \"I don't have a computer or an email.\" The manager __2__ his head.",
+      "\"If you don't have an email address, you do not exist.",
+      "And if you don't exist, I can't give you the job.\" The man left the company, feeling __3__ .",
+      "With only ten dollars in his pocket, he decided to buy 10 kilograms of tomatoes and sell them door to door.",
+      "In a few hours, he managed to __4__ his money to twenty dollars.",
+      "He repeated the process two more times and returned home happily with eighty dollars.",
+      "Realizing that he could __5__ this way, he started working harder, going out early every day and returning late.",
+      "Years later, he became one of the largest food retailers (零售商) in the country.",
+      "One day, he decided to buy life insurance (保险) for his family.",
+      "The insurance broker asked for his email.",
+      "\"I don't have an email,\" the man said.",
+      "The broker responded __6__ , \"You don't have an email.",
+      "Yet you've built an empire!",
+      "Imagine where you'd be if you had one!\" The man smiled and replied, \"An office boy!\""
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "service",
+          "test",
+          "excuse",
+          "habit"
+        ],
+        "answer": "test",
+        "clues": [
+          "him and then",
+          "floor as a(n"
+        ],
+        "clueTypes": {
+          "him and then": "逻辑线索·时间",
+          "floor as a(n": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里有时间信号（「him and then」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（搭配骨架）：「floor as a(n」与主线指向一致。\n排除　service、excuse、habit三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「floor as a(n」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "情感态度",
+        "route": "双路径",
+        "options": [
+          "shook",
+          "raised",
+          "nodded",
+          "lowered"
+        ],
+        "answer": "shook",
+        "clues": [
+          "The manager",
+          "his head",
+          "And if you don't exist"
+        ],
+        "clueTypes": {
+          "The manager": "固定搭配·结构骨架",
+          "his head": "固定搭配·结构骨架",
+          "And if you don't exist": "逻辑线索·并列"
+        },
+        "explanation": "线索　邻段 / 全篇范围里的出现并列信号（「And if you don't exist」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　空所在句里还有同向佐证（结构骨架）：「The manager」与主线指向一致。\n排除　nodded 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；raised、lowered 则呼应否×2。\n补充　「The manager」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 3,
+        "pos": "形容词副词",
+        "topic": "情感态度",
+        "route": "线索词优先",
+        "options": [
+          "nervous",
+          "hopeless",
+          "relaxed",
+          "lonely"
+        ],
+        "answer": "hopeless",
+        "clues": [
+          "I can't give you the job",
+          "you do not exist",
+          "left the company, feeling"
+        ],
+        "clueTypes": {
+          "I can't give you the job": "逻辑线索·因果",
+          "you do not exist": "情感线索·情感一致",
+          "left the company, feeling": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的上一句里处在因果链上（「I can't give you the job」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「you do not exist」与主线指向一致。\n排除　nervous、relaxed、lonely三个干扰项属于另一个话题场景，与本篇词群对不上（异场否）。\n补充　「left the company, feeling」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "动词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "double",
+          "lend",
+          "win",
+          "save"
+        ],
+        "answer": "double",
+        "clues": [
+          "only ten dollars in his pocket",
+          "repeated the process two more times",
+          "he managed to"
+        ],
+        "clueTypes": {
+          "only ten dollars in his pocket": "逻辑线索·因果",
+          "repeated the process two more times": "复现线索·同场复现",
+          "he managed to": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的上一句里处在因果链上（「only ten dollars in his pocket」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　紧邻的下一句里还有同向佐证（同场词群）：「repeated the process two more times」与主线指向一致。\n排除　win 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；lend、save 则呼应否×2。\n补充　「he managed to」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "动词",
+        "topic": "语境推断",
+        "route": "双路径",
+        "options": [
+          "survive",
+          "suffer",
+          "connect",
+          "react"
+        ],
+        "answer": "survive",
+        "clues": [
+          "this way"
+        ],
+        "clueTypes": {
+          "this way": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　结构骨架：「this way」搭出固定框架，先满足骨架，再验证词义方向。\n排除　suffer 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；connect、react 则呼应否×2。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "动词短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "with pleasure",
+          "with fear",
+          "in surprise",
+          "in anger"
+        ],
+        "answer": "in surprise",
+        "clues": [
+          "Yet you've built an empire",
+          "You don't have an email",
+          "broker responded"
+        ],
+        "clueTypes": {
+          "Yet you've built an empire": "逻辑线索·转折",
+          "You don't have an email": "语境线索·搭配骨架",
+          "broker responded": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的下一句里出现转折信号（「Yet you've built an empire」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（搭配骨架）：「You don't have an email」与主线指向一致。\n排除　with pleasure、with fear、in anger三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「You don't have an email」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2025,
+    "tone_markers": [
+      {
+        "word": "smiled",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-017",
+    "title_cn": "阅读与心理健康",
+    "title_en": "Reading for Mental Health",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2025年上海市崇明区一模",
+    "tags": [
+      "区级一模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Do you love getting lost in the pages of a good book Whether you're a bookworm or an occasional reader, reading is a great way to ____ your worries, feel calm and make sense of the world.",
+    "last_sentence": "She says \"There are so many different books in libraries, bookshops and schools—the fun bit is discovering which book is right for you.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文主要介绍了阅读的好处. 全文由「Do you love gettin」起，收在「She says \"There ar」，整体情绪走向为积极，与篇末升华句相呼应。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "首句就把问题摆到台面上 ——「Do you love getting lost in the pages of a goo…」。后文顺着这个问题给可操作的做法，读的时候重点找 should / try to / remember to 这类建议句，答案多半落在「做法」所在的句子里。"
+    },
+    "route_summary": {
+      "线索词优先": 5,
+      "固定搭配优先": 1,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 13,
+    "article_text_with_blanks": "Do you love getting lost in the pages of a good book Whether you're a bookworm or an occasional reader, reading is a great way to __1__ your worries, feel calm and make sense of the world. Why is reading good for me Reading is like having a superpower that takes you to a different world, where you experience new feelings and ideas and know other people's thoughts. Getting lost in a story is a great way to __2__ stress and worry, understand other people's feelings and has been shown to relieve pain. Can books improve my wellbeing (feeling of being comfortable and happy) Children's author Jenny Pearson believes stories help us make sense of the world. She says \"Reading helps us to understand ourselves and others, and the world we live in. It can make us feel less anxious and show us that we aren't __3__ .\" As well as helping you understand your feelings, stories improve your empathy (共鸣) skills by showing you the world through someone else's eyes. Non-fiction books can be great for getting inspired and finding information and advice about feelings that may be __4__ to talk about, like anger or sadness. All books introduce you to new words and ideas, which help you explain your __5__ more easily. How to read more books Join The Summer of Reading challenge and see how many new books you can read and review. Start by making your own comfortable reading place, then pick a __6__ from our reading list and dive into the pages. Don't be afraid to try different genres (styles). Rebecca Hill is a children's editor at Usborne Books, where she helps authors make their stories into books. She says \"There are so many different books in libraries, bookshops and schools—the fun bit is discovering which book is right for you.",
+    "reading_sentences": [
+      "Do you love getting lost in the pages of a good book Whether you're a bookworm or an occasional reader, reading is a great way to __1__ your worries, feel calm and make sense of the world.",
+      "Why is reading good for me Reading is like having a superpower that takes you to a different world, where you experience new feelings and ideas and know other people's thoughts.",
+      "Getting lost in a story is a great way to __2__ stress and worry, understand other people's feelings and has been shown to relieve pain.",
+      "Can books improve my wellbeing (feeling of being comfortable and happy) Children's author Jenny Pearson believes stories help us make sense of the world.",
+      "She says \"Reading helps us to understand ourselves and others, and the world we live in.",
+      "It can make us feel less anxious and show us that we aren't __3__ .\" As well as helping you understand your feelings, stories improve your empathy (共鸣) skills by showing you the world through someone else's eyes.",
+      "Non-fiction books can be great for getting inspired and finding information and advice about feelings that may be __4__ to talk about, like anger or sadness.",
+      "All books introduce you to new words and ideas, which help you explain your __5__ more easily.",
+      "How to read more books Join The Summer of Reading challenge and see how many new books you can read and review.",
+      "Start by making your own comfortable reading place, then pick a __6__ from our reading list and dive into the pages.",
+      "Don't be afraid to try different genres (styles).",
+      "Rebecca Hill is a children's editor at Usborne Books, where she helps authors make their stories into books.",
+      "She says \"There are so many different books in libraries, bookshops and schools—the fun bit is discovering which book is right for you."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "question",
+          "find",
+          "escape",
+          "study"
+        ],
+        "answer": "escape",
+        "clues": [
+          "great way to",
+          "your worries"
+        ],
+        "clueTypes": {
+          "great way to": "情感线索·情感一致",
+          "your worries": "固定搭配"
+        },
+        "explanation": "线索　情感一致：「great way to」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（固定搭配）：「your worries」与主线指向一致。\n排除　find 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；question、study 则呼应否×2。\n补充　「your worries」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "forget",
+          "show",
+          "lay",
+          "repeat"
+        ],
+        "answer": "forget",
+        "clues": [
+          "great way to",
+          "stress and worry"
+        ],
+        "clueTypes": {
+          "great way to": "情感线索·情感一致",
+          "stress and worry": "逻辑线索·并列"
+        },
+        "explanation": "线索　情感一致：「great way to」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（并列结构）：「stress and worry」与主线指向一致。\n排除　show 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；lay、repeat 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "excited",
+          "alone",
+          "lazy",
+          "brave"
+        ],
+        "answer": "alone",
+        "clues": [
+          "The Summer of Reading challenge",
+          "about, like anger or sadness",
+          "been shown to relieve pain"
+        ],
+        "clueTypes": {
+          "The Summer of Reading challenge": "情感线索·情感一致",
+          "about, like anger or sadness": "复现线索·同场复现",
+          "been shown to relieve pain": "情感线索·情感一致"
+        },
+        "explanation": "线索　语义场复现：「about, like anger or sadness」与答案同属一个场景词群，按场景连贯取词。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「been shown to relieve pain」与主线指向一致。\n排除　excited 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；brave、lazy 则异场否、呼应否。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "动词",
+        "topic": "情感态度",
+        "route": "固定搭配优先",
+        "options": [
+          "interesting",
+          "exciting",
+          "useful",
+          "hard"
+        ],
+        "answer": "hard",
+        "clues": [
+          "The Summer of Reading challenge",
+          "about, like anger or sadness",
+          "to talk about"
+        ],
+        "clueTypes": {
+          "The Summer of Reading challenge": "复现线索·同场复现",
+          "about, like anger or sadness": "情感线索·情感一致",
+          "to talk about": "固定搭配"
+        },
+        "explanation": "线索　情感一致：「about, like anger or sadness」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（固定搭配）：「to talk about」与主线指向一致。\n排除　interesting 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；exciting、useful 则异场否、呼应否。\n补充　「to talk about」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "be useful to",
+          "type": "形容词 / 系表搭配",
+          "structure": "对…有用｜be ____ to"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "rules",
+          "thoughts",
+          "jokes",
+          "systems"
+        ],
+        "answer": "thoughts",
+        "clues": [
+          "know other people's thoughts",
+          "which help you explain your",
+          "more easily"
+        ],
+        "clueTypes": {
+          "know other people's thoughts": "复现线索·原词复现",
+          "which help you explain your": "情感线索·情感一致",
+          "more easily": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　情感一致：「which help you explain your」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　邻段 / 全篇范围里的还有同向佐证（原词复现）：「know other people's thoughts」与主线指向一致。\n排除　rules、jokes、systems三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「more easily」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "partner",
+          "dictionary",
+          "letter",
+          "book"
+        ],
+        "answer": "book",
+        "clues": [
+          "in libraries, bookshops",
+          "to read more books",
+          "of a good book"
+        ],
+        "clueTypes": {
+          "in libraries, bookshops": "复现线索·派生词复现",
+          "to read more books": "复现线索·派生词复现",
+          "of a good book": "复现线索·原词复现"
+        },
+        "explanation": "线索　派生复现：「to read more books」已给出答案的词根，选它的同根派生形式即可。\n印证　邻段 / 全篇范围里的还有同向佐证（派生词复现）：「in libraries, bookshops」与主线指向一致。\n排除　partner、dictionary、letter三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级一模",
+    "exam_year": 2025,
+    "tone_markers": [
+      {
+        "word": "helps",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-018",
+    "title_cn": "限时考试公平吗？",
+    "title_en": "Timed Tests: Fair or Not?",
+    "level": "中考",
+    "difficulty": "较难",
+    "lesson_type": "人物故事",
+    "region": "上海",
+    "source": "2024年上海市宝山区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Exams help teachers see what kids know, but some say it's time to stop the clock Students in the US are regularly tested on their knowledge of class materials, from midterms to finals.",
+    "last_sentence": "Learning to work efficiently and quickly is also important in the real world, including in the workplace.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文就是否应该取消计时测试表达了不同的观点. 全文由「Exams help teacher」起，收在「Learning to work e」，整体情绪走向为积极，与篇末升华句相呼应。",
+      "kind": "narrative"
+    },
+    "route_summary": {
+      "线索词优先": 5,
+      "固定搭配优先": 0,
+      "双路径": 1,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 15,
+    "article_text_with_blanks": "Exams help teachers see what kids know, but some say it's time to stop the clock Students in the US are regularly tested on their knowledge of class materials, from midterms to finals. Traditionally, educators have put time limits on tests __1__ they believe it's fair to give most students the same amount of time, and they also think students who really know the material should be able to answer all the questions during that time. Studies have shown, however, that the __2__ to take a test quickly doesn't reflect (反映) a student's intelligence or knowledge of the material. Timed tests simply favour (有利于) students who can think under pressure. What do you think Should we get rid of timed tests Yes—having a time limit on tests can be unfair Time limits on tests give an advantage to students who can think quickly and stay calm. That has __3__ to do with how much they know or how much they've studied. Many students, including people with learning difficulties, need more time to focus on their thoughts. They can get stressed and anxious (焦虑的) and even have trouble sleeping the night before a test, which will affect their performance. Not everyone can express his ideas or knowledge while the clock is ticking. Studies show that when students have time to focus on the questions, they give more thoughtful answers and __4__ remember the material better. No—it's important to have time limits on tests Giving students the same test with the same time limit is a fair way to test and compare their knowledge and abilities. While some students may need extra time due to specific needs, not everyone does. __5__ there is a time limit for students to finish a test, they won't learn how to manage their time or decide how much time to spend on each question. Time limits encourage students to trust their knowledge, make decisions and move forward, which helps build __6__ . Learning to work efficiently and quickly is also important in the real world, including in the workplace.",
+    "reading_sentences": [
+      "Exams help teachers see what kids know, but some say it's time to stop the clock Students in the US are regularly tested on their knowledge of class materials, from midterms to finals.",
+      "Traditionally, educators have put time limits on tests __1__ they believe it's fair to give most students the same amount of time, and they also think students who really know the material should be able to answer all the questions during that time.",
+      "Studies have shown, however, that the __2__ to take a test quickly doesn't reflect (反映) a student's intelligence or knowledge of the material.",
+      "Timed tests simply favour (有利于) students who can think under pressure.",
+      "What do you think Should we get rid of timed tests Yes—having a time limit on tests can be unfair Time limits on tests give an advantage to students who can think quickly and stay calm.",
+      "That has __3__ to do with how much they know or how much they've studied.",
+      "Many students, including people with learning difficulties, need more time to focus on their thoughts.",
+      "They can get stressed and anxious (焦虑的) and even have trouble sleeping the night before a test, which will affect their performance.",
+      "Not everyone can express his ideas or knowledge while the clock is ticking.",
+      "Studies show that when students have time to focus on the questions, they give more thoughtful answers and __4__ remember the material better.",
+      "No—it's important to have time limits on tests Giving students the same test with the same time limit is a fair way to test and compare their knowledge and abilities.",
+      "While some students may need extra time due to specific needs, not everyone does.",
+      "__5__ there is a time limit for students to finish a test, they won't learn how to manage their time or decide how much time to spend on each question.",
+      "Time limits encourage students to trust their knowledge, make decisions and move forward, which helps build __6__ .",
+      "Learning to work efficiently and quickly is also important in the real world, including in the workplace."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "连词逻辑",
+        "topic": "逻辑推理",
+        "route": "线索词优先",
+        "options": [
+          "therefore",
+          "although",
+          "until",
+          "because"
+        ],
+        "answer": "because",
+        "clues": [
+          "they believe it's fair to give",
+          "limits on tests"
+        ],
+        "clueTypes": {
+          "they believe it's fair to give": "逻辑线索·因果",
+          "limits on tests": "逻辑线索·因果"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「they believe it's fair to give」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（因果信号）：「limits on tests」与主线指向一致。\n排除　therefore 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；although、until 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "decision",
+          "ability",
+          "moment",
+          "opinion"
+        ],
+        "answer": "ability",
+        "clues": [
+          "knowledge and abilities",
+          "however, that the",
+          "to take"
+        ],
+        "clueTypes": {
+          "knowledge and abilities": "复现线索·派生词复现",
+          "however, that the": "逻辑线索·转折",
+          "to take": "固定搭配"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「however, that the」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（固定搭配）：「to take」与主线指向一致。\n排除　decision 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；moment、opinion 则呼应否×2。\n补充　「to take」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "代词",
+        "topic": "逻辑推理",
+        "route": "双路径",
+        "options": [
+          "everything",
+          "something",
+          "anything",
+          "nothing"
+        ],
+        "answer": "nothing",
+        "clues": [
+          "can get stressed and anxious",
+          "That has"
+        ],
+        "clueTypes": {
+          "can get stressed and anxious": "情感线索·情感一致",
+          "That has": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　情感一致：「can get stressed and anxious」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（搭配骨架）：「That has」与主线指向一致。\n排除　something 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；everything、anything 则呼应否×2。\n补充　「That has」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 4,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "immediately",
+          "rarely",
+          "actually",
+          "suddenly"
+        ],
+        "answer": "actually",
+        "clues": [
+          "remember the material better",
+          "thoughtful answers and"
+        ],
+        "clueTypes": {
+          "remember the material better": "逻辑线索·时间",
+          "thoughtful answers and": "逻辑线索·时间"
+        },
+        "explanation": "线索　空所在句里有时间信号（「remember the material better」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（时间信号）：「thoughtful answers and」与主线指向一致。\n排除　suddenly 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；immediately、rarely 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "连词逻辑",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "Since",
+          "Unless",
+          "Even if",
+          "When"
+        ],
+        "answer": "Unless",
+        "clues": [
+          "there is a time limit for"
+        ],
+        "clueTypes": {
+          "there is a time limit for": "逻辑线索·条件"
+        },
+        "explanation": "线索　空所在句里带条件结构（「there is a time limit for」）：先有前提再有结果，所填词要满足这条前提下的结果方向。\n排除　Since、Even if、When三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "progress",
+          "friendship",
+          "behavior",
+          "confidence"
+        ],
+        "answer": "confidence",
+        "clues": [
+          "questions, they give more thoughtful",
+          "limits encourage students to trust",
+          "and move forward, which helps"
+        ],
+        "clueTypes": {
+          "questions, they give more thoughtful": "情感线索·情感一致",
+          "limits encourage students to trust": "情感线索·情感一致",
+          "and move forward, which helps": "情感线索·情感一致"
+        },
+        "explanation": "线索　情感一致：「limits encourage students to trust」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（情感同向）：「and move forward, which helps」与主线指向一致。\n排除　progress 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；friendship、behavior 则呼应否×2。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "important",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-019",
+    "title_cn": "埃米莉·戴维森与女性投票权",
+    "title_en": "Emily Davison and Votes for Women",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2024年上海市松江区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "On 4 June 1913, a woman called Emily Davison① went to a horse race, threw herself under the king's horse and later died from her injuries.",
+    "last_sentence": "The situation has been ____ since the suffragettes' time but many people say that men and women are still not equal in society. ____ , now in the UK, men earn 20 per cent more than women for the same work. If you are a male manager, your chance of being promoted④ is 40 per cent higher than a female manager's. That's why many people are still fighting for equal rights for women in the UK.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文主要讲述了英国妇女为争取平等权利而作出的努力与抗争.",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "首句是在介绍一个事物或现象 ——「On 4 June 1913, a woman called Emily Davison① …」，后文按「是什么 — 为什么 — 怎么样」铺开。读的时候留意解释性表达（is called / means / is used for），答案多藏在解释的补语里。"
+    },
+    "route_summary": {
+      "线索词优先": 3,
+      "固定搭配优先": 0,
+      "双路径": 1,
+      "整组短语直接辨析": 2
+    },
+    "reading_sentence_count": 16,
+    "article_text_with_blanks": "On 4 June 1913, a woman called Emily Davison① went to a horse race, threw herself under the king's horse and later died from her injuries. A __1__ which said \"Votes for women\" was found in her pocket. All her life, Emily had been fighting for women's rights. She was a suffragette, part of a group of women who started working together in 1903 to __2__ equal rights for women. When Emily was young, she and all the other women in the UK were not allowed to vote, go to university or work in the same jobs as men. In the event of a divorce②, the husband took the children. In poor villages, wives were __3__ sold in the market. The suffragettes wanted to __4__ all this. More than a thousand were arrested③, but they did not stop. They went on hunger strike in prison to fight against the unfair treatment. In 1928, women in the UK finally got the right to vote and then more and more women started to go to university and get jobs. In 1952, female teachers were given the right to earn the same money as male teachers. The situation has been __5__ since the suffragettes' time but many people say that men and women are still not equal in society. __6__ , now in the UK, men earn 20 per cent more than women for the same work. If you are a male manager, your chance of being promoted④ is 40 per cent higher than a female manager's. That's why many people are still fighting for equal rights for women in the UK.",
+    "reading_sentences": [
+      "On 4 June 1913, a woman called Emily Davison① went to a horse race, threw herself under the king's horse and later died from her injuries.",
+      "A __1__ which said \"Votes for women\" was found in her pocket.",
+      "All her life, Emily had been fighting for women's rights.",
+      "She was a suffragette, part of a group of women who started working together in 1903 to __2__ equal rights for women.",
+      "When Emily was young, she and all the other women in the UK were not allowed to vote, go to university or work in the same jobs as men.",
+      "In the event of a divorce②, the husband took the children.",
+      "In poor villages, wives were __3__ sold in the market.",
+      "The suffragettes wanted to __4__ all this.",
+      "More than a thousand were arrested③, but they did not stop.",
+      "They went on hunger strike in prison to fight against the unfair treatment.",
+      "In 1928, women in the UK finally got the right to vote and then more and more women started to go to university and get jobs.",
+      "In 1952, female teachers were given the right to earn the same money as male teachers.",
+      "The situation has been __5__ since the suffragettes' time but many people say that men and women are still not equal in society.",
+      "__6__ , now in the UK, men earn 20 per cent more than women for the same work.",
+      "If you are a male manager, your chance of being promoted④ is 40 per cent higher than a female manager's.",
+      "That's why many people are still fighting for equal rights for women in the UK."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "letter",
+          "note",
+          "book",
+          "newspaper"
+        ],
+        "answer": "note",
+        "clues": [
+          "fighting for women's rights",
+          "Votes for women",
+          "was found in her"
+        ],
+        "clueTypes": {
+          "fighting for women's rights": "复现线索·同场复现",
+          "Votes for women": "同位解释",
+          "was found in her": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　同位解释：「Votes for women」（冒号 / 破折号之后）是在解释空格词，按解释内容取义。\n印证　紧邻的下一句里还有同向佐证（同场词群）：「fighting for women's rights」与主线指向一致。\n排除　letter、book、newspaper三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「was found in her」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "ask for",
+          "wait for",
+          "think about",
+          "complain about"
+        ],
+        "answer": "ask for",
+        "clues": [
+          "time but many people say",
+          "equal rights"
+        ],
+        "clueTypes": {
+          "time but many people say": "复现线索·同场复现",
+          "equal rights": "固定搭配"
+        },
+        "explanation": "线索　固定搭配：「equal rights」是常见搭配结构，空格词由搭配骨架锁定。\n印证　邻段 / 全篇范围里的还有同向佐证（同场词群）：「time but many people say」与主线指向一致。\n排除　wait for、think about、complain about三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 3,
+        "pos": "连词逻辑",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "still",
+          "also",
+          "even",
+          "already"
+        ],
+        "answer": "even",
+        "clues": [
+          "the husband took the children",
+          "sold in the market",
+          "wives were"
+        ],
+        "clueTypes": {
+          "the husband took the children": "复现线索·同场复现",
+          "sold in the market": "逻辑线索·并列",
+          "wives were": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「sold in the market」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　紧邻的上一句里还有同向佐证（同场词群）：「the husband took the children」与主线指向一致。\n排除　still、also、already三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「wives were」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "动词",
+        "topic": "语境推断",
+        "route": "双路径",
+        "options": [
+          "leave",
+          "forget",
+          "encourage",
+          "change"
+        ],
+        "answer": "change",
+        "clues": [
+          "but they did not stop",
+          "wanted to",
+          "all this"
+        ],
+        "clueTypes": {
+          "but they did not stop": "逻辑线索·转折",
+          "wanted to": "固定搭配·结构骨架",
+          "all this": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　紧邻的下一句里出现转折信号（「but they did not stop」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（结构骨架）：「wanted to」与主线指向一致。\n排除　forget 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；leave、encourage 则异场否、呼应否。\n补充　「wanted to」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "介词短语",
+          "type": "介词短语",
+          "structure": "介词 + (冠词/物主代词) + 名词（in front of / on time / with the help of / in danger / at night / by accident …）"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "形容词副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "discussed",
+          "considered",
+          "affected",
+          "improved"
+        ],
+        "answer": "improved",
+        "clues": [
+          "suffragettes' time but",
+          "In 1952, female teachers were given",
+          "situation has been"
+        ],
+        "clueTypes": {
+          "suffragettes' time but": "逻辑线索·转折",
+          "In 1952, female teachers were given": "情感线索·情感一致",
+          "situation has been": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「suffragettes' time but」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　紧邻的上一句里还有同向佐证（情感同向）：「In 1952, female teachers were given」与主线指向一致。\n排除　discussed、considered、affected三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「situation has been」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "动词短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "As a result",
+          "For example",
+          "In addition",
+          "In fact"
+        ],
+        "answer": "For example",
+        "clues": [
+          "now in the UK, men earn"
+        ],
+        "clueTypes": {
+          "now in the UK, men earn": "逻辑线索·举例"
+        },
+        "explanation": "线索　空所在句里有举例信号（「now in the UK, men earn」）：例子在印证前文，所填词要与例子的方向一致。\n排除　As a result、In addition、In fact三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "chance",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-020",
+    "title_cn": "走进蝙蝠实验室",
+    "title_en": "Inside the Bat Lab",
+    "level": "中考",
+    "difficulty": "较难",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2024年上海市普陀区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Wendy Haley works with other scientists to study how bats use their echolocation (回声定位) superpower.",
+    "last_sentence": "J: What advice do you have for someone who wants to do the same thing W: If you're interested in the research, you can find ways to get involved. ____ , volunteering with a local organization is a good way to get started.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文是Jenny 和Wendy的对话. 对话的主要内容是：两人在谈论研究蝙蝠的回声定位能力的这个实验.",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "首句给出一个判断 ——「Wendy Haley works with other scientists to stu…」，后文靠举例或数据来支撑（for example / such as / 研究结论）。读的时候先抓住观点句，再看它用什么例子证实，答案常出现在例子的细节里。"
+    },
+    "route_summary": {
+      "线索词优先": 3,
+      "固定搭配优先": 0,
+      "双路径": 1,
+      "整组短语直接辨析": 2
+    },
+    "reading_sentence_count": 22,
+    "article_text_with_blanks": "Wendy Haley works with other scientists to study how bats use their echolocation (回声定位) superpower. Their __1__ take place in a special room called the Bat Lab. Jenny Lee, an editor of school newspaper is trying to find out more about Wendy's job. (J=Jenny Lee, W=Wendy Haley) J: Can you __2__ the Bat Lab W: Well, it's some rooms covered with foams (海绵), so bats won't get the strong echoes from hard walls. And then there are some microphones spread out around the room. They are all fixed to the wall to pick up the call from the bats. We also have high-speed cameras. They allow us to record their flight. We usually let the lights __3__ , so the cameras can follow the bats by the heat energy. But we can't see very well. J: Are there obstacles (障碍物) in the room so that the bats have to fly around W: Oh, yes. We sometimes hang up some wooden boards in the rooms. We also set up a platform and train the bats to fly from one side of the room to the platform for the food __4__ . The bats really like fruits. Sometimes we tie bananas to the end of a fishing line. The bats will come through and just take the bananas. J: Can you explain how bats echolocate in the __5__ conditions W: Suppose you are standing in a group of people in a party, and everyone is chatting. You are trying to talk to one person and focus on what you yourself are saying. Then you speak louder and repeat yourself to make sure someone has heard you. This is an effect that we see in bats as well. J: What advice do you have for someone who wants to do the same thing W: If you're interested in the research, you can find ways to get involved. __6__ , volunteering with a local organization is a good way to get started.",
+    "reading_sentences": [
+      "Wendy Haley works with other scientists to study how bats use their echolocation (回声定位) superpower.",
+      "Their __1__ take place in a special room called the Bat Lab.",
+      "Jenny Lee, an editor of school newspaper is trying to find out more about Wendy's job.",
+      "(J=Jenny Lee, W=Wendy Haley) J: Can you __2__ the Bat Lab W: Well, it's some rooms covered with foams (海绵), so bats won't get the strong echoes from hard walls.",
+      "And then there are some microphones spread out around the room.",
+      "They are all fixed to the wall to pick up the call from the bats.",
+      "We also have high-speed cameras.",
+      "They allow us to record their flight.",
+      "We usually let the lights __3__ , so the cameras can follow the bats by the heat energy.",
+      "But we can't see very well.",
+      "J: Are there obstacles (障碍物) in the room so that the bats have to fly around W: Oh, yes.",
+      "We sometimes hang up some wooden boards in the rooms.",
+      "We also set up a platform and train the bats to fly from one side of the room to the platform for the food __4__ .",
+      "The bats really like fruits.",
+      "Sometimes we tie bananas to the end of a fishing line.",
+      "The bats will come through and just take the bananas.",
+      "J: Can you explain how bats echolocate in the __5__ conditions W: Suppose you are standing in a group of people in a party, and everyone is chatting.",
+      "You are trying to talk to one person and focus on what you yourself are saying.",
+      "Then you speak louder and repeat yourself to make sure someone has heard you.",
+      "This is an effect that we see in bats as well.",
+      "J: What advice do you have for someone who wants to do the same thing W: If you're interested in the research, you can find ways to get involved.",
+      "__6__ , volunteering with a local organization is a good way to get started."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "名词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "experiments",
+          "reviews",
+          "events",
+          "arguments"
+        ],
+        "answer": "experiments",
+        "clues": [
+          "take place"
+        ],
+        "clueTypes": {
+          "take place": "固定搭配"
+        },
+        "explanation": "线索　固定搭配：「take place」是常见搭配结构，空格词由搭配骨架锁定。\n排除　arguments 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；reviews、events 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "affect",
+          "afford",
+          "decorate",
+          "describe"
+        ],
+        "answer": "describe",
+        "clues": [
+          "so bats won't get",
+          "it's some rooms covered with foams",
+          "the Bat Lab"
+        ],
+        "clueTypes": {
+          "so bats won't get": "逻辑线索·因果",
+          "it's some rooms covered with foams": "语境线索·搭配骨架",
+          "the Bat Lab": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「so bats won't get」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（搭配骨架）：「it's some rooms covered with foams」与主线指向一致。\n排除　affect、afford、decorate三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「it's some rooms covered with foams」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "lose control",
+          "go out",
+          "make a noise",
+          "break down"
+        ],
+        "answer": "go out",
+        "clues": [
+          "But we can't see very well",
+          "so the cameras can",
+          "let the lights"
+        ],
+        "clueTypes": {
+          "But we can't see very well": "逻辑线索·转折",
+          "so the cameras can": "逻辑线索·因果",
+          "let the lights": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「so the cameras can」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　紧邻的下一句里还有同向佐证（转折信号）：「But we can't see very well」与主线指向一致。\n排除　make a noise 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；lose control、break down 则呼应否×2。\n补充　「let the lights」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 4,
+        "pos": "形容词副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "advice",
+          "process",
+          "chain",
+          "reward"
+        ],
+        "answer": "reward",
+        "clues": [
+          "The bats really like fruits",
+          "Sometimes we tie bananas",
+          "for the food"
+        ],
+        "clueTypes": {
+          "The bats really like fruits": "复现线索·上下义词复现",
+          "Sometimes we tie bananas": "逻辑线索·举例",
+          "for the food": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　上下义复现：「The bats really like fruits」是答案的上位或下位表达，按种属关系收窄词义。\n印证　邻段 / 全篇范围里的还有同向佐证（举例信号）：「Sometimes we tie bananas」与主线指向一致。\n排除　advice 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；process、chain 则呼应否×2。\n补充　「for the food」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "dark",
+          "unforgettable",
+          "noisy",
+          "wonderful"
+        ],
+        "answer": "noisy",
+        "clues": [
+          "conditions W",
+          "echolocate in the"
+        ],
+        "clueTypes": {
+          "conditions W": "固定搭配",
+          "echolocate in the": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　固定搭配：「conditions W」是常见搭配结构，空格词由搭配骨架锁定。\n印证　空所在句里还有同向佐证（搭配骨架）：「echolocate in the」与主线指向一致。\n排除　wonderful 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；dark、unforgettable 则呼应否×2。",
+        "collocation": {
+          "name": "介词短语",
+          "type": "介词短语",
+          "structure": "介词 + (冠词/物主代词) + 名词（in front of / on time / with the help of / in danger / at night / by accident …）"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "动词短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "For example",
+          "Even worse",
+          "In fact",
+          "What's more"
+        ],
+        "answer": "For example",
+        "clues": [
+          "volunteering with a local organization is",
+          "If you're interested in the research"
+        ],
+        "clueTypes": {
+          "volunteering with a local organization is": "逻辑线索·举例",
+          "If you're interested in the research": "逻辑线索·条件"
+        },
+        "explanation": "线索　空所在句里有举例信号（「volunteering with a local organization is」）：例子在印证前文，所填词要与例子的方向一致。\n印证　紧邻的上一句里还有同向佐证（条件结构）：「If you're interested in the research」与主线指向一致。\n排除　What's more 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；Even worse、In fact 则呼应否×2。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "well",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-021",
+    "title_cn": "你需要最新的科技产品吗？",
+    "title_en": "Do You Need the Latest Tech?",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2024年上海市奉贤区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Sometimes your friends start to talk about a new video game or a new application (应用软件) they have downloaded.",
+    "last_sentence": "So is this excitement over technology a good or a bad thing",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文是一篇议论文. 文章主要对人们追求最新的东西的心理进行了分析. 一些新技术会使人们兴奋, 吸引着人们去购买新产品；但是身处数码时代的我们真的有必要时刻准备更新换代吗?",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "首句给出一个判断 ——「Sometimes your friends start to talk about a n…」，后文靠举例或数据来支撑（for example / such as / 研究结论）。读的时候先抓住观点句，再看它用什么例子证实，答案常出现在例子的细节里。"
+    },
+    "route_summary": {
+      "线索词优先": 4,
+      "固定搭配优先": 0,
+      "双路径": 1,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 13,
+    "article_text_with_blanks": "Sometimes your friends start to talk about a new video game or a new application (应用软件) they have downloaded. You become so interested that you may want to buy one because your friends talk about it very __1__ . Has this ever happened to you In the US and other places around the world, there is a __2__ feeling of wanting the newest, greatest tech gadgets (小玩意). The latest technology gets people's attention even though people may not need it. But why is this There's an initial (最初的) __3__ about these technologies, according to Richard Larson, a director at MIT, US. If there's a big group of people who want these things, you will be excited, too. One of the major US companies that really __4__ this is Apple. They come out with a new iPhone with very small changes every year. But people still rush to the stores blindly even if they just got the previous phone. However, buying these things may not always be the best option (选择). You could be buying things that you don't really need and spending too much money just to get the chance to __5__ to your friends. Not only that but our need to always be on our phones or playing video games has been __6__ a lot of our time. So is this excitement over technology a good or a bad thing",
+    "reading_sentences": [
+      "Sometimes your friends start to talk about a new video game or a new application (应用软件) they have downloaded.",
+      "You become so interested that you may want to buy one because your friends talk about it very __1__ .",
+      "Has this ever happened to you In the US and other places around the world, there is a __2__ feeling of wanting the newest, greatest tech gadgets (小玩意).",
+      "The latest technology gets people's attention even though people may not need it.",
+      "But why is this There's an initial (最初的) __3__ about these technologies, according to Richard Larson, a director at MIT, US.",
+      "If there's a big group of people who want these things, you will be excited, too.",
+      "One of the major US companies that really __4__ this is Apple.",
+      "They come out with a new iPhone with very small changes every year.",
+      "But people still rush to the stores blindly even if they just got the previous phone.",
+      "However, buying these things may not always be the best option (选择).",
+      "You could be buying things that you don't really need and spending too much money just to get the chance to __5__ to your friends.",
+      "Not only that but our need to always be on our phones or playing video games has been __6__ a lot of our time.",
+      "So is this excitement over technology a good or a bad thing"
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "quickly",
+          "often",
+          "much",
+          "slowly"
+        ],
+        "answer": "often",
+        "clues": [
+          "because your friends talk",
+          "so interested that you",
+          "it very"
+        ],
+        "clueTypes": {
+          "because your friends talk": "逻辑线索·因果",
+          "so interested that you": "逻辑线索·因果",
+          "it very": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「because your friends talk」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（因果信号）：「so interested that you」与主线指向一致。\n排除　quickly 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；slowly、much 则异场否、呼应否。\n补充　「it very」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "名词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "similar",
+          "familiar",
+          "same",
+          "famous"
+        ],
+        "answer": "similar",
+        "clues": [
+          "You become so interested",
+          "other places around the world",
+          "feeling of wanting"
+        ],
+        "clueTypes": {
+          "You become so interested": "情感线索·情感一致",
+          "other places around the world": "逻辑线索·并列",
+          "feeling of wanting": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「other places around the world」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　紧邻的上一句里还有同向佐证（情感同向）：「You become so interested」与主线指向一致。\n排除　familiar、same、famous三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「feeling of wanting」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "名词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "argument",
+          "excitement",
+          "development",
+          "amusement"
+        ],
+        "answer": "excitement",
+        "clues": [
+          "you will be excited",
+          "is this excitement",
+          "But why is this"
+        ],
+        "clueTypes": {
+          "you will be excited": "复现线索·派生词复现",
+          "is this excitement": "复现线索·原词复现",
+          "But why is this": "逻辑线索·转折"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「But why is this」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　紧邻的下一句里还有同向佐证（派生词复现）：「you will be excited」与主线指向一致。\n排除　argument 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；development、amusement 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "形容词副词",
+        "topic": "语境推断",
+        "route": "双路径",
+        "options": [
+          "take charge of",
+          "take hold of",
+          "take advantage of",
+          "take the place of"
+        ],
+        "answer": "take advantage of",
+        "clues": [
+          "companies that really",
+          "this is Apple"
+        ],
+        "clueTypes": {
+          "companies that really": "固定搭配",
+          "this is Apple": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　固定搭配：「companies that really」是常见搭配结构，空格词由搭配骨架锁定。\n印证　空所在句里还有同向佐证（搭配骨架）：「this is Apple」与主线指向一致。\n排除　take the place of 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；take charge of、take hold of 则呼应否×2。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / ____ off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "动词短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "put them off",
+          "turn them off",
+          "give them off",
+          "show them off"
+        ],
+        "answer": "show them off",
+        "clues": [
+          "things that you don't really need",
+          "rush to the stores blindly",
+          "to your friends"
+        ],
+        "clueTypes": {
+          "things that you don't really need": "逻辑线索·因果",
+          "rush to the stores blindly": "情感线索·情感一致",
+          "to your friends": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「things that you don't really need」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「rush to the stores blindly」与主线指向一致。\n排除　put them off、turn them off、give them off三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「to your friends」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "形容词副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "saving",
+          "wasting",
+          "spending",
+          "making"
+        ],
+        "answer": "wasting",
+        "clues": [
+          "but our need to",
+          "a lot",
+          "games has been"
+        ],
+        "clueTypes": {
+          "but our need to": "逻辑线索·转折",
+          "a lot": "固定搭配",
+          "games has been": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「but our need to」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（固定搭配）：「a lot」与主线指向一致。\n排除　spending 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；saving、making 则呼应否×2。\n补充　「a lot」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "friends",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-022",
+    "title_cn": "人工智能与创意职业",
+    "title_en": "AI and Creative Jobs",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2024年上海市宝山区一模",
+    "tags": [
+      "区级一模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "AI is becoming more and more powerful, which makes some people worry that they will lose their jobs to machines.",
+    "last_sentence": "For the time being, AI does not have such an ability. ____ , AI must continually check the data to make sure its conclusions are accurate.",
+    "tone": {
+      "answer": "转折变化",
+      "reason": "文章主旨：本文主要介绍了人工智能的优势以及存在的问题. 全文由「AI is becoming mor」起，收在「__6__ , AI must co」，整体情绪走向为转折变化，与篇末升华句相呼应。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "首句给出一个判断 ——「AI is becoming more and more powerful, which m…」，后文靠举例或数据来支撑（for example / such as / 研究结论）。读的时候先抓住观点句，再看它用什么例子证实，答案常出现在例子的细节里。"
+    },
+    "route_summary": {
+      "线索词优先": 2,
+      "固定搭配优先": 1,
+      "双路径": 1,
+      "整组短语直接辨析": 2
+    },
+    "reading_sentence_count": 19,
+    "article_text_with_blanks": "AI is becoming more and more powerful, which makes some people worry that they will lose their jobs to machines. Nowadays, companies have released AI that can answer questions, write articles and create images. Now, even people in __1__ fields must think about the possibility of AI replacing them. However, many experts (专家) still believe that these AI programs can't really take the place of human beings. Using AI for certain tasks may be a good thing. Perhaps AI will take over less interesting work and it allows people to do more satisfying jobs. For example, washing machines save people a lot of time, so they can use that extra time productively. __2__ , AI may be able to take over dull tasks to let people do more proper thinking, since thinking up new ideas is something AI can't do. Another __3__ for AI is human interaction (互动、交流). Most people prefer to communicate with humans rather than machines. Therefore, AI is unlikely to replace humans for jobs that require personal connection, such as advising or teaching. A robot can perform tasks, but it can't truly care about others, and sometimes care is what people need. AI can process data (数据) quickly, but it can only use data that it is given. So, it isn't able to __4__ situations that are quite different from those in its data. Therefore, although some AI programs can create content, __5__ of them can be truly creative. Finally, if AI receives wrong information, it has no way of recognizing or correcting it. Humans may also make mistakes, but life experience can make them learn from their mistakes. For the time being, AI does not have such an ability. __6__ , AI must continually check the data to make sure its conclusions are accurate.",
+    "reading_sentences": [
+      "AI is becoming more and more powerful, which makes some people worry that they will lose their jobs to machines.",
+      "Nowadays, companies have released AI that can answer questions, write articles and create images.",
+      "Now, even people in __1__ fields must think about the possibility of AI replacing them.",
+      "However, many experts (专家) still believe that these AI programs can't really take the place of human beings.",
+      "Using AI for certain tasks may be a good thing.",
+      "Perhaps AI will take over less interesting work and it allows people to do more satisfying jobs.",
+      "For example, washing machines save people a lot of time, so they can use that extra time productively.",
+      "__2__ , AI may be able to take over dull tasks to let people do more proper thinking, since thinking up new ideas is something AI can't do.",
+      "Another __3__ for AI is human interaction (互动、交流).",
+      "Most people prefer to communicate with humans rather than machines.",
+      "Therefore, AI is unlikely to replace humans for jobs that require personal connection, such as advising or teaching.",
+      "A robot can perform tasks, but it can't truly care about others, and sometimes care is what people need.",
+      "AI can process data (数据) quickly, but it can only use data that it is given.",
+      "So, it isn't able to __4__ situations that are quite different from those in its data.",
+      "Therefore, although some AI programs can create content, __5__ of them can be truly creative.",
+      "Finally, if AI receives wrong information, it has no way of recognizing or correcting it.",
+      "Humans may also make mistakes, but life experience can make them learn from their mistakes.",
+      "For the time being, AI does not have such an ability.",
+      "__6__ , AI must continually check the data to make sure its conclusions are accurate."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "industry",
+          "business",
+          "creative",
+          "education"
+        ],
+        "answer": "creative",
+        "clues": [
+          "be truly creative",
+          "write articles and create images",
+          "fields must"
+        ],
+        "clueTypes": {
+          "be truly creative": "复现线索·原词复现",
+          "write articles and create images": "逻辑线索·并列",
+          "fields must": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的上一句里出现并列信号（「write articles and create images」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　邻段 / 全篇范围里的还有同向佐证（原词复现）：「be truly creative」与主线指向一致。\n排除　industry、business、education三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「fields must」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "Finally",
+          "Similarly",
+          "Instead",
+          "However"
+        ],
+        "answer": "Similarly",
+        "clues": [
+          "washing machines save people",
+          "take over less interesting work",
+          "AI may be able to"
+        ],
+        "clueTypes": {
+          "washing machines save people": "逻辑线索·举例",
+          "take over less interesting work": "逻辑线索·并列",
+          "AI may be able to": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的上一句里有举例信号（「washing machines save people」）：例子在印证前文，所填词要与例子的方向一致。\n印证　邻段 / 全篇范围里的还有同向佐证（并列结构）：「take over less interesting work」与主线指向一致。\n排除　Finally 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；However、Instead 则方向否、呼应否。\n补充　「AI may be able to」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "过渡语 / 衔接词",
+          "type": "固定短语",
+          "structure": "at first / at last / in fact / after all / above all / on the contrary / as a result / in addition / what's more / for example / such as / from now on / in the end"
+        }
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "advantage",
+          "influence",
+          "progress",
+          "challenge"
+        ],
+        "answer": "challenge",
+        "clues": [
+          "Finally, if AI receives wrong",
+          "which makes some people worry",
+          "worry that they will lose"
+        ],
+        "clueTypes": {
+          "Finally, if AI receives wrong": "复现线索·同场复现",
+          "which makes some people worry": "情感线索·情感一致",
+          "worry that they will lose": "复现线索·同场复现"
+        },
+        "explanation": "线索　语义场复现：「Finally, if AI receives wrong」与答案同属一个场景词群，按场景连贯取词。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「which makes some people worry」与主线指向一致。\n排除　progress 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；advantage、influence 则呼应否×2。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 4,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "depend on",
+          "search for",
+          "deal with",
+          "pay attention to"
+        ],
+        "answer": "deal with",
+        "clues": [
+          "So, it isn't able",
+          "isn't able to",
+          "situations that"
+        ],
+        "clueTypes": {
+          "So, it isn't able": "逻辑线索·因果",
+          "isn't able to": "情感线索·情感一致",
+          "situations that": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「So, it isn't able」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（情感同向）：「isn't able to」与主线指向一致。\n排除　depend on、search for、pay attention to三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「situations that」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "代词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "all",
+          "some",
+          "most",
+          "none"
+        ],
+        "answer": "none",
+        "clues": [
+          "Therefore, although some AI",
+          "although some AI programs",
+          "of them can be truly creative"
+        ],
+        "clueTypes": {
+          "Therefore, although some AI": "逻辑线索·因果",
+          "although some AI programs": "逻辑线索·让步",
+          "of them can be truly creative": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「Therefore, although some AI」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（让步结构）：「although some AI programs」与主线指向一致。\n排除　all、some、most三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「of them can be truly creative」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "动词短语",
+        "topic": "逻辑推理",
+        "route": "整组短语直接辨析",
+        "options": [
+          "In addition",
+          "As a result",
+          "Above all",
+          "On the other hand"
+        ],
+        "answer": "As a result",
+        "clues": [
+          "AI must continually check the data"
+        ],
+        "clueTypes": {
+          "AI must continually check the data": "逻辑线索·因果"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「AI must continually check the data」）：原因与结果方向咬合，所填词要能承接这条因果。\n排除　In addition、Above all、On the other hand三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级一模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "So",
+        "label": "转折",
+        "pos": "turn"
+      },
+      {
+        "word": "learn",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-023",
+    "title_cn": "蓝印花布与扎染",
+    "title_en": "Blue Calico and Tie-Dyeing",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2024年上海市崇明区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Blue calico (印花布) appeared in the Han and Jin dynasties, developed in the Song and Yuan dynasties, and flourished in the Ming and Qing dynasties.",
+    "last_sentence": "\"Our students will later go to Nanjing Museum to get more knowledge about life in Jiangsu and the folk customs there.\"",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文主要介绍了扎染的相关信息, 如历史, 制作过程等.",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "首句是在介绍一个事物或现象 ——「Blue calico (印花布) appeared in the Han and Jin …」，后文按「是什么 — 为什么 — 怎么样」铺开。读的时候留意解释性表达（is called / means / is used for），答案多藏在解释的补语里。"
+    },
+    "route_summary": {
+      "线索词优先": 4,
+      "固定搭配优先": 0,
+      "双路径": 1,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 20,
+    "article_text_with_blanks": "Blue calico (印花布) appeared in the Han and Jin dynasties, developed in the Song and Yuan dynasties, and flourished in the Ming and Qing dynasties. In the 1980s, women in the Jiangnan countryside liked to wear blue calico clothes, for they were not only beautiful but also comfortable for working in rice fields. Last month, students in school got the chance to see and learn about these __1__ clothes. The \"exploration of old Chinese costumes\" class on Nov 8 at Nanjing Foreign Language School went deep into learning about blue calico. The students met the __2__ of making their own bags through tie-dyeing (扎染). It is a dyeing skill used to make blue calico. \"First, fold the cloth bag the way you like,\" said he, a grade 8 student. \"Then use rubber bands (橡皮筋) to hold it. Next, __3__ blue dye which is made from the leaves of the indigo plant, to the water. Push the bag down well so the colors go through. Then wait. An hour later, wash it a few times with clean water to __4__ extra dye.\" \"Tie-dyeing is a magical art. Everyone does it a bit __5__ . You never know exactly how it will look in the end because it depends on how the rubber bands are held. It's amazing and attractive.\" said Ma Qianyu, a grade 8 student, happy with her work. \"The dye and cotton material all come from __6__ and people make blue calico all by hand. It is a symbol of folk (民间的) people and their hard work and effort.\" she said. \"Clothing is a part of culture. It is also a part of art and life,\" said Chen Xi, the teacher of the class. \"Our students will later go to Nanjing Museum to get more knowledge about life in Jiangsu and the folk customs there.\"",
+    "reading_sentences": [
+      "Blue calico (印花布) appeared in the Han and Jin dynasties, developed in the Song and Yuan dynasties, and flourished in the Ming and Qing dynasties.",
+      "In the 1980s, women in the Jiangnan countryside liked to wear blue calico clothes, for they were not only beautiful but also comfortable for working in rice fields.",
+      "Last month, students in school got the chance to see and learn about these __1__ clothes.",
+      "The \"exploration of old Chinese costumes\" class on Nov 8 at Nanjing Foreign Language School went deep into learning about blue calico.",
+      "The students met the __2__ of making their own bags through tie-dyeing (扎染).",
+      "It is a dyeing skill used to make blue calico.",
+      "\"First, fold the cloth bag the way you like,\" said he, a grade 8 student.",
+      "\"Then use rubber bands (橡皮筋) to hold it.",
+      "Next, __3__ blue dye which is made from the leaves of the indigo plant, to the water.",
+      "Push the bag down well so the colors go through.",
+      "Then wait.",
+      "An hour later, wash it a few times with clean water to __4__ extra dye.\" \"Tie-dyeing is a magical art.",
+      "Everyone does it a bit __5__ .",
+      "You never know exactly how it will look in the end because it depends on how the rubber bands are held.",
+      "It's amazing and attractive.\" said Ma Qianyu, a grade 8 student, happy with her work.",
+      "\"The dye and cotton material all come from __6__ and people make blue calico all by hand.",
+      "It is a symbol of folk (民间的) people and their hard work and effort.\" she said.",
+      "\"Clothing is a part of culture.",
+      "It is also a part of art and life,\" said Chen Xi, the teacher of the class.",
+      "\"Our students will later go to Nanjing Museum to get more knowledge about life in Jiangsu and the folk customs there.\""
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "common",
+          "strange",
+          "modern",
+          "traditional"
+        ],
+        "answer": "traditional",
+        "clues": [
+          "learn about these"
+        ],
+        "clueTypes": {
+          "learn about these": "情感线索·情感一致"
+        },
+        "explanation": "线索　情感一致：「learn about these」定了情绪方向，句间无转折词，空格延续这条褒贬。\n排除　strange 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；common、modern 则呼应否×2。",
+        "collocation": {
+          "name": "介词短语",
+          "type": "介词短语",
+          "structure": "介词 + (冠词/物主代词) + 名词（in front of / on time / with the help of / in danger / at night / by accident …）"
+        }
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "member",
+          "challenge",
+          "reason",
+          "danger"
+        ],
+        "answer": "challenge",
+        "clues": [
+          "It is a dyeing skill",
+          "making their own bags",
+          "The students met the"
+        ],
+        "clueTypes": {
+          "It is a dyeing skill": "逻辑线索·因果",
+          "making their own bags": "复现线索·同场复现",
+          "The students met the": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　语义场复现：「making their own bags」与答案同属一个场景词群，按场景连贯取词。\n印证　紧邻的下一句里还有同向佐证（因果信号）：「It is a dyeing skill」与主线指向一致。\n排除　member、reason、danger三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「The students met the」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "add",
+          "taste",
+          "repeat",
+          "catch"
+        ],
+        "answer": "add",
+        "clues": [
+          "so the colors go through",
+          "blue dye which is made",
+          "to the water"
+        ],
+        "clueTypes": {
+          "so the colors go through": "逻辑线索·因果",
+          "blue dye which is made": "复现线索·同场复现",
+          "to the water": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　语义场复现：「blue dye which is made」与答案同属一个场景词群，按场景连贯取词。\n印证　紧邻的下一句里还有同向佐证（因果信号）：「so the colors go through」与主线指向一致。\n排除　taste、repeat、catch三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「to the water」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "get rid of",
+          "get ready for",
+          "run out of",
+          "take hold of"
+        ],
+        "answer": "get rid of",
+        "clues": [
+          "Museum to get",
+          "clean water to",
+          "extra dye"
+        ],
+        "clueTypes": {
+          "Museum to get": "复现线索·原词复现",
+          "clean water to": "固定搭配",
+          "extra dye": "固定搭配"
+        },
+        "explanation": "线索　固定搭配：「clean water to」是常见搭配结构，空格词由搭配骨架锁定。\n印证　空所在句里还有同向佐证（固定搭配）：「extra dye」与主线指向一致。\n排除　get ready for 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；take hold of、run out of 则方向否、呼应否。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "simply",
+          "luckily",
+          "similarly",
+          "differently"
+        ],
+        "answer": "differently",
+        "clues": [
+          "depends on how the rubber bands",
+          "the way you like",
+          "Everyone does it a bit"
+        ],
+        "clueTypes": {
+          "depends on how the rubber bands": "逻辑线索·因果",
+          "the way you like": "复现线索·同场复现",
+          "Everyone does it a bit": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的下一句里处在因果链上（「depends on how the rubber bands」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（同场词群）：「the way you like」与主线指向一致。\n排除　simply 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；luckily、similarly 则异场否、呼应否。\n补充　「Everyone does it a bit」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "lab",
+          "industry",
+          "nature",
+          "society"
+        ],
+        "answer": "nature",
+        "clues": [
+          "all come from",
+          "and people"
+        ],
+        "clueTypes": {
+          "all come from": "固定搭配",
+          "and people": "逻辑线索·并列"
+        },
+        "explanation": "线索　固定搭配：「all come from」是常见搭配结构，空格词由搭配骨架锁定。\n印证　空所在句里还有同向佐证（并列结构）：「and people」与主线指向一致。\n排除　lab、industry、society三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "effort",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-024",
+    "title_cn": "哈尔滨冰雪节",
+    "title_en": "Harbin Ice and Snow Festival",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2024年上海市虹口区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Harbin, in northeastern China, is the site of the Harbin International Snow and Ice Festival, the biggest winter festival in the world.",
+    "last_sentence": "No wonder it attracts millions of people each year.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文主要介绍了位于中国东北部的哈尔滨国际冰雪节, 这一世界上最大的冬季节日, 从传统的冰灯展示发展到现今规模宏大的冰雪雕塑盛会, 吸引了全球艺术家和数百万游客.",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "首句是在介绍一个事物或现象 ——「Harbin, in northeastern China, is the site of …」，后文按「是什么 — 为什么 — 怎么样」铺开。读的时候留意解释性表达（is called / means / is used for），答案多藏在解释的补语里。"
+    },
+    "route_summary": {
+      "线索词优先": 3,
+      "固定搭配优先": 0,
+      "双路径": 2,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 16,
+    "article_text_with_blanks": "Harbin, in northeastern China, is the site of the Harbin International Snow and Ice Festival, the biggest winter festival in the world. Some of the biggest and most beautiful ice sculptures (雕塑) can be seen in the festival. Harbin's location and freezing temperatures make it a __1__ place to host a winter festival. The city centre sits on the banks of the Songhua River. The river freezes over in the winter and provides hundreds of thousands of cubic metres of ice. Ice artists from around the world turn the blocks of ice into buildings, animals, and other __2__ . The world's largest winter festival grew out of a traditional ice lantern display and garden party that was __3__ held in 1963. The snow and ice sculptures became part of the ice lantern festivities in 1985. In 2001, the celebration and Heilongjiang's International Ski Festival joined together and started to use its current (现行的) name. It's hard to imagine that this grand display of ice and snow sculptures started as ice in a bucket. Traditional ice lanterns were created by freezing water in a bucket, __4__ the ice, and making a hole into the block of ice. A candle was then placed inside the block to create a lantern. Today's creations are much more carefully __5__ and take much more time to form. Although the basic materials are the same-water, light, and ice-the displays now include LED lights and a lot of details. From a __6__ block of ice to the world's largest ice and snow amusement park, the festival has made a dramatic change. No wonder it attracts millions of people each year.",
+    "reading_sentences": [
+      "Harbin, in northeastern China, is the site of the Harbin International Snow and Ice Festival, the biggest winter festival in the world.",
+      "Some of the biggest and most beautiful ice sculptures (雕塑) can be seen in the festival.",
+      "Harbin's location and freezing temperatures make it a __1__ place to host a winter festival.",
+      "The city centre sits on the banks of the Songhua River.",
+      "The river freezes over in the winter and provides hundreds of thousands of cubic metres of ice.",
+      "Ice artists from around the world turn the blocks of ice into buildings, animals, and other __2__ .",
+      "The world's largest winter festival grew out of a traditional ice lantern display and garden party that was __3__ held in 1963.",
+      "The snow and ice sculptures became part of the ice lantern festivities in 1985.",
+      "In 2001, the celebration and Heilongjiang's International Ski Festival joined together and started to use its current (现行的) name.",
+      "It's hard to imagine that this grand display of ice and snow sculptures started as ice in a bucket.",
+      "Traditional ice lanterns were created by freezing water in a bucket, __4__ the ice, and making a hole into the block of ice.",
+      "A candle was then placed inside the block to create a lantern.",
+      "Today's creations are much more carefully __5__ and take much more time to form.",
+      "Although the basic materials are the same-water, light, and ice-the displays now include LED lights and a lot of details.",
+      "From a __6__ block of ice to the world's largest ice and snow amusement park, the festival has made a dramatic change.",
+      "No wonder it attracts millions of people each year."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "convenient",
+          "common",
+          "natural",
+          "necessary"
+        ],
+        "answer": "natural",
+        "clues": [
+          "Harbin's location and freezing temperatures",
+          "The river freezes over in",
+          "place to host a"
+        ],
+        "clueTypes": {
+          "Harbin's location and freezing temperatures": "逻辑线索·因果",
+          "The river freezes over in": "复现线索·同场复现",
+          "place to host a": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「Harbin's location and freezing temperatures」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（同场词群）：「The river freezes over in」与主线指向一致。\n排除　convenient、common、necessary三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「place to host a」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "attractions",
+          "characters",
+          "inventions",
+          "products"
+        ],
+        "answer": "attractions",
+        "clues": [
+          "wonder it attracts",
+          "animals, and other"
+        ],
+        "clueTypes": {
+          "wonder it attracts": "复现线索·派生词复现",
+          "animals, and other": "逻辑线索·并列"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「animals, and other」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　邻段 / 全篇范围里的还有同向佐证（派生词复现）：「wonder it attracts」与主线指向一致。\n排除　characters、inventions、products三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "数词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "only",
+          "first",
+          "even",
+          "also"
+        ],
+        "answer": "first",
+        "clues": [
+          "held in",
+          "party that was"
+        ],
+        "clueTypes": {
+          "held in": "逻辑线索·时间",
+          "party that was": "逻辑线索·时间"
+        },
+        "explanation": "线索　空所在句里有时间信号（「held in」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（时间信号）：「party that was」与主线指向一致。\n排除　only、even、also三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "throwing away",
+          "keeping off",
+          "putting up",
+          "taking out"
+        ],
+        "answer": "taking out",
+        "clues": [
+          "ice, and making",
+          "in a bucket",
+          "the ice"
+        ],
+        "clueTypes": {
+          "ice, and making": "逻辑线索·并列",
+          "in a bucket": "语境线索·搭配骨架",
+          "the ice": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「ice, and making」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　空所在句里还有同向佐证（搭配骨架）：「in a bucket」与主线指向一致。\n排除　throwing away、keeping off、putting up三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「in a bucket」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "described",
+          "designed",
+          "organized",
+          "selected"
+        ],
+        "answer": "designed",
+        "clues": [
+          "Today's creations are much more carefully",
+          "and take"
+        ],
+        "clueTypes": {
+          "Today's creations are much more carefully": "情感线索·情感一致",
+          "and take": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　情感一致：「Today's creations are much more carefully」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（结构骨架）：「and take」与主线指向一致。\n排除　described、organized、selected三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「and take」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "动介动词 + 介词",
+          "type": "动词短语",
+          "structure": "laugh at / smile at / listen to / wait for / look at / deal with / belong to / depend on / arrive at / agree with / think about / worry about / care about / hear from / learn from / suffer from / apologize to / thank …"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "名词",
+        "topic": "语境推断",
+        "route": "双路径",
+        "options": [
+          "bright",
+          "fresh",
+          "simple",
+          "perfect"
+        ],
+        "answer": "simple",
+        "clues": [
+          "block of",
+          "From a"
+        ],
+        "clueTypes": {
+          "block of": "固定搭配·结构骨架",
+          "From a": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　结构骨架：「block of」搭出固定框架，先满足骨架，再验证词义方向。\n印证　空所在句里还有同向佐证（结构骨架）：「From a」与主线指向一致。\n排除　bright 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；fresh、perfect 则呼应否×2。",
+        "collocation": {
+          "name": "介词短语",
+          "type": "介词短语",
+          "structure": "介词 + (冠词/物主代词) + 名词（in front of / on time / with the help of / in danger / at night / by accident …）"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "carefully",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-025",
+    "title_cn": "糖的隐形代价",
+    "title_en": "The Hidden Cost of Sugar",
+    "level": "中考",
+    "difficulty": "较难",
+    "lesson_type": "人物故事",
+    "region": "上海",
+    "source": "2024年上海市嘉定区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Many scientists believe our love of sugar may actually be an addiction (瘾).",
+    "last_sentence": "The battle has not yet been lost.",
+    "tone": {
+      "answer": "消极",
+      "reason": "文章主旨：本文是一篇说明文. 讲述了人们对糖上瘾, 戒不掉糖的原因以及吃糖的危害.",
+      "kind": "narrative"
+    },
+    "route_summary": {
+      "线索词优先": 3,
+      "固定搭配优先": 2,
+      "双路径": 0,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 25,
+    "article_text_with_blanks": "Many scientists believe our love of sugar may actually be an addiction (瘾). When we eat or drink sugary foods, the sugar enters our blood and affects the parts of our brain that make us feel good. Then the good feeling __1__ , leaving us wanting more. All tasty foods do this, but sugar has a particularly strong effect. In this way, it is in fact an addictive drug, one that doctors recommend we all cut down on. \"It seems like every time I __2__ an illness and trace (追踪) a path to the first cause, I find my way back to sugar,\" says scientist Richard Johnson. One-third of adults worldwide have high blood pressure, and up to 346 million have diabetes (糖尿病). Why? \"Sugar, we believe, is one of the factors, if not the major factors,\" says Johnson. Our bodies are designed to survive on very little sugar. Early humans often had very little food, so our bodies learned to be very efficient (有效率的) in storing sugar as fat. In this way, we had __3__ stored for when there was no food. But today, most people have more than enough. So the very thing that once saved us may now be killing us. So what is the __4__ ? It's obvious that we need to eat less sugar. The trouble is, in today's world, it's extremely difficult to avoid. From breakfast cereals to after-dinner desserts, our foods are increasingly filled with it. Some manufacturers (制造商) even use sugar to replace taste in foods. However, they are advertised as __5__ in fat. So while the foods seem healthier, large amounts of sugar are often added. But some people are fighting against sugar and trying to create a healthier environment. Many schools are replacing sugary desserts with healthier options, like fruit. Other schools are trying to encourage exercise by building facilities like walking tracks __6__ students and others in the community can exercise. The battle has not yet been lost.",
+    "reading_sentences": [
+      "Many scientists believe our love of sugar may actually be an addiction (瘾).",
+      "When we eat or drink sugary foods, the sugar enters our blood and affects the parts of our brain that make us feel good.",
+      "Then the good feeling __1__ , leaving us wanting more.",
+      "All tasty foods do this, but sugar has a particularly strong effect.",
+      "In this way, it is in fact an addictive drug, one that doctors recommend we all cut down on.",
+      "\"It seems like every time I __2__ an illness and trace (追踪) a path to the first cause, I find my way back to sugar,\" says scientist Richard Johnson.",
+      "One-third of adults worldwide have high blood pressure, and up to 346 million have diabetes (糖尿病).",
+      "Why?",
+      "\"Sugar, we believe, is one of the factors, if not the major factors,\" says Johnson.",
+      "Our bodies are designed to survive on very little sugar.",
+      "Early humans often had very little food, so our bodies learned to be very efficient (有效率的) in storing sugar as fat.",
+      "In this way, we had __3__ stored for when there was no food.",
+      "But today, most people have more than enough.",
+      "So the very thing that once saved us may now be killing us.",
+      "So what is the __4__ ?",
+      "It's obvious that we need to eat less sugar.",
+      "The trouble is, in today's world, it's extremely difficult to avoid.",
+      "From breakfast cereals to after-dinner desserts, our foods are increasingly filled with it.",
+      "Some manufacturers (制造商) even use sugar to replace taste in foods.",
+      "However, they are advertised as __5__ in fat.",
+      "So while the foods seem healthier, large amounts of sugar are often added.",
+      "But some people are fighting against sugar and trying to create a healthier environment.",
+      "Many schools are replacing sugary desserts with healthier options, like fruit.",
+      "Other schools are trying to encourage exercise by building facilities like walking tracks __6__ students and others in the community can exercise.",
+      "The battle has not yet been lost."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "comes back",
+          "goes away",
+          "breaks up",
+          "takes turns"
+        ],
+        "answer": "goes away",
+        "clues": [
+          "Then the good",
+          "leaving us wanting more",
+          "the good feeling"
+        ],
+        "clueTypes": {
+          "Then the good": "逻辑线索·时间",
+          "leaving us wanting more": "语境线索·搭配骨架",
+          "the good feeling": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里有时间信号（「Then the good」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（搭配骨架）：「leaving us wanting more」与主线指向一致。\n排除　breaks up 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；comes back、takes turns 则呼应否×2。\n补充　「leaving us wanting more」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "study",
+          "have",
+          "treat",
+          "spread"
+        ],
+        "answer": "study",
+        "clues": [
+          "to the first",
+          "an illness and trace",
+          "every time I"
+        ],
+        "clueTypes": {
+          "to the first": "逻辑线索·时间",
+          "an illness and trace": "逻辑线索·并列",
+          "every time I": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里有时间信号（「to the first」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（并列结构）：「an illness and trace」与主线指向一致。\n排除　have、treat、spread三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「every time I」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "过渡语 / 衔接词",
+          "type": "固定短语",
+          "structure": "at first / at last / in fact / after all / above all / on the contrary / as a result / in addition / what's more / for example / such as / from now on / in the end"
+        }
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "memories",
+          "energy",
+          "water",
+          "data"
+        ],
+        "answer": "energy",
+        "clues": [
+          "stored for"
+        ],
+        "clueTypes": {
+          "stored for": "固定搭配"
+        },
+        "explanation": "线索　固定搭配：「stored for」是常见搭配结构，空格词由搭配骨架锁定。\n排除　memories 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；water、data 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "result",
+          "reason",
+          "problem",
+          "solution"
+        ],
+        "answer": "solution",
+        "clues": [
+          "So what is the"
+        ],
+        "clueTypes": {
+          "So what is the": "逻辑线索·因果"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「So what is the」）：原因与结果方向咬合，所填词要能承接这条因果。\n排除　problem 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；result、reason 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "形容词副词",
+        "topic": "逻辑推理",
+        "route": "固定搭配优先",
+        "options": [
+          "rich",
+          "high",
+          "low",
+          "heavy"
+        ],
+        "answer": "low",
+        "clues": [
+          "However, they are advertised",
+          "worldwide have high",
+          "they are advertised as"
+        ],
+        "clueTypes": {
+          "However, they are advertised": "逻辑线索·转折",
+          "worldwide have high": "复现线索·反义词复现",
+          "they are advertised as": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「However, they are advertised」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　邻段 / 全篇范围里的还有同向佐证（反义对照）：「worldwide have high」与主线指向一致。\n排除　rich 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；high、heavy 则方向否、异场否。\n补充　「they are advertised as」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "rich in",
+          "type": "动词短语",
+          "structure": "富含｜____ in"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "连词逻辑",
+        "topic": "逻辑推理",
+        "route": "线索词优先",
+        "options": [
+          "although",
+          "because",
+          "while",
+          "so"
+        ],
+        "answer": "so",
+        "clues": [
+          "facilities like walking tracks",
+          "students and others"
+        ],
+        "clueTypes": {
+          "facilities like walking tracks": "逻辑线索·因果",
+          "students and others": "逻辑线索·并列"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「facilities like walking tracks」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（并列结构）：「students and others」与主线指向一致。\n排除　although、because、while三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "difficult",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-026",
+    "title_cn": "跑好自己的那一程",
+    "title_en": "Run Your Own Race",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2024年上海市金山区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Both my wife and I are running lovers.",
+    "last_sentence": "Don't walk when you should be running.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文通过作者跑步时的亲身经历告诉我们：我们每个人都有自己的速度. 当你应该慢速跑的时候, 不要跑得快；当你应该走的时候, 不要跑；该跑的时候不要走.",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "首句就把问题摆到台面上 ——「Both my wife and I are running lovers.」。后文顺着这个问题给可操作的做法，读的时候重点找 should / try to / remember to 这类建议句，答案多半落在「做法」所在的句子里。"
+    },
+    "route_summary": {
+      "线索词优先": 3,
+      "固定搭配优先": 1,
+      "双路径": 2,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 26,
+    "article_text_with_blanks": "Both my wife and I are running lovers. I usually run on the track in my neighbourhood. Most people walk on the track, so I am faster than them. My speed seems amazing to the walkers and I often pass by them twenty or more times around the track. This makes me feel __1__ . One day, a short man came. He didn't look like much of a runner. I saw him __2__ the car and warm up before running when I passed by two walkers. He started running a few meters ahead of me. He was fast but I __3__ and managed to catch up with him. I had someone to compete with. But after a lap (圈), I fell behind him and had great difficulty in breathing. After two laps, my foot began to hurt, so I had to slow down and began to run at my usual speed. This time I could breathe __4__ without sounding like I had a lung disease (肺病) and the pain in my foot went away. In a very short time, he was far ahead. He was too fast for me to follow. I leaned several lessons. There will always be slower and faster ones. Some have natural __5__ , and some have trained harder. Don't judge the capacity (能力) of a person by how he or she looks. The point is that we each have our own speed. When we are trying to keep up, we often end up hurting ourselves and being out of breath. Slow down or speed up, but run your race to your best. Don't run fast when you should be running __6__ . Don't run at all when you should be walking. Don't walk when you should be running.",
+    "reading_sentences": [
+      "Both my wife and I are running lovers.",
+      "I usually run on the track in my neighbourhood.",
+      "Most people walk on the track, so I am faster than them.",
+      "My speed seems amazing to the walkers and I often pass by them twenty or more times around the track.",
+      "This makes me feel __1__ .",
+      "One day, a short man came.",
+      "He didn't look like much of a runner.",
+      "I saw him __2__ the car and warm up before running when I passed by two walkers.",
+      "He started running a few meters ahead of me.",
+      "He was fast but I __3__ and managed to catch up with him.",
+      "I had someone to compete with.",
+      "But after a lap (圈), I fell behind him and had great difficulty in breathing.",
+      "After two laps, my foot began to hurt, so I had to slow down and began to run at my usual speed.",
+      "This time I could breathe __4__ without sounding like I had a lung disease (肺病) and the pain in my foot went away.",
+      "In a very short time, he was far ahead.",
+      "He was too fast for me to follow.",
+      "I leaned several lessons.",
+      "There will always be slower and faster ones.",
+      "Some have natural __5__ , and some have trained harder.",
+      "Don't judge the capacity (能力) of a person by how he or she looks.",
+      "The point is that we each have our own speed.",
+      "When we are trying to keep up, we often end up hurting ourselves and being out of breath.",
+      "Slow down or speed up, but run your race to your best.",
+      "Don't run fast when you should be running __6__ .",
+      "Don't run at all when you should be walking.",
+      "Don't walk when you should be running."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "lonely",
+          "surprised",
+          "upset",
+          "proud"
+        ],
+        "answer": "proud",
+        "clues": [
+          "This time I could breathe",
+          "seems amazing to",
+          "makes me feel"
+        ],
+        "clueTypes": {
+          "This time I could breathe": "情感线索·情感一致",
+          "seems amazing to": "情感线索·情感一致",
+          "makes me feel": "复现线索·上下义词复现"
+        },
+        "explanation": "线索　上下义复现：「makes me feel」是答案的上位或下位表达，按种属关系收窄词义。\n印证　紧邻的上一句里还有同向佐证（情感同向）：「seems amazing to」与主线指向一致。\n排除　lonely、surprised、upset三个干扰项属于另一个话题场景，与本篇词群对不上（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "come in",
+          "get out of",
+          "get into",
+          "look at"
+        ],
+        "answer": "get out of",
+        "clues": [
+          "the car and",
+          "I saw him",
+          "and warm up before running"
+        ],
+        "clueTypes": {
+          "the car and": "固定搭配",
+          "I saw him": "固定搭配",
+          "and warm up before running": "逻辑线索·并列"
+        },
+        "explanation": "线索　固定搭配：「the car and」是常见搭配结构，空格词由搭配骨架锁定。\n印证　空所在句里还有同向佐证（固定搭配）：「I saw him」与主线指向一致。\n排除　look at 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；come in、get into 则呼应否×2。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 3,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "sped up",
+          "slow down",
+          "stopped",
+          "left"
+        ],
+        "answer": "sped up",
+        "clues": [
+          "fast but I",
+          "and managed"
+        ],
+        "clueTypes": {
+          "fast but I": "逻辑线索·转折",
+          "and managed": "固定搭配"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「fast but I」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（固定搭配）：「and managed」与主线指向一致。\n排除　slow down 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；left、stopped 则异场否、呼应否。\n补充　「and managed」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "hard",
+          "carefully",
+          "easily",
+          "heavily"
+        ],
+        "answer": "easily",
+        "clues": [
+          "But after a lap",
+          "without sounding",
+          "I could breathe"
+        ],
+        "clueTypes": {
+          "But after a lap": "逻辑线索·转折",
+          "without sounding": "固定搭配·结构骨架",
+          "I could breathe": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　邻段 / 全篇范围里的出现转折信号（「But after a lap」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（结构骨架）：「without sounding」与主线指向一致。\n排除　hard 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；carefully、heavily 则方向否、呼应否。\n补充　「without sounding」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "character",
+          "voice",
+          "resource",
+          "talent"
+        ],
+        "answer": "talent",
+        "clues": [
+          "and some have trained harder",
+          "Some have natural"
+        ],
+        "clueTypes": {
+          "and some have trained harder": "逻辑线索·并列",
+          "Some have natural": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「and some have trained harder」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　空所在句里还有同向佐证（搭配骨架）：「Some have natural」与主线指向一致。\n排除　voice 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；character、resource 则呼应否×2。\n补充　「Some have natural」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "形容词副词",
+        "topic": "词义辨析 / 上下文复现",
+        "route": "双路径",
+        "options": [
+          "happily",
+          "slowly",
+          "fast",
+          "early"
+        ],
+        "answer": "slowly",
+        "clues": [
+          "always be slower",
+          "had to slow",
+          "be running"
+        ],
+        "clueTypes": {
+          "always be slower": "复现线索·派生词复现",
+          "had to slow": "复现线索·派生词复现",
+          "be running": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　派生复现：「always be slower」已给出答案的词根，选它的同根派生形式即可。\n印证　邻段 / 全篇范围里的还有同向佐证（派生词复现）：「had to slow」与主线指向一致。\n排除　fast 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；happily、early 则异场否、呼应否。\n补充　「be running」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "be + 形容词 + 介词",
+          "type": "形容词短语",
+          "structure": "be + 形容词 + 介词（good at / interested in / proud of / afraid of / late for / different from / strict with …）"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "best",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-027",
+    "title_cn": "芬兰文化初体验",
+    "title_en": "A Taste of Finnish Culture",
+    "level": "中考",
+    "difficulty": "较难",
+    "lesson_type": "人物故事",
+    "region": "上海",
+    "source": "2024年上海市静安区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "A Taste of Finnish Culture Some students came to Finland to study at Helsinki University.",
+    "last_sentence": "I think the meat filling is actually quite nice but not when you are ____ jam!",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文主要介绍了一些学生对于芬兰文化的看法. 全文由「A Taste of Finnish」起，收在「I think the meat f」，整体情绪走向为积极，与篇末升华句相呼应。",
+      "kind": "narrative"
+    },
+    "route_summary": {
+      "线索词优先": 2,
+      "固定搭配优先": 1,
+      "双路径": 2,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 31,
+    "article_text_with_blanks": "A Taste of Finnish Culture Some students came to Finland to study at Helsinki University. They are sitting in a city cafe after one of their classes. Kirsten: Talking about Finns and Finland, what do you guys think about living here __1__ Edwina: I must tell you guys that I was quite pleasantly surprised at the weather when I first arrived here in the middle of winter. The temperature was minus 15. I thought I was going to die! But I don't freeze __2__ in Finland, because all the buildings are so well heated. I freeze more in Scotland than I do here. Vishal: True. And the summertime is lovely, though. Another thing I really like about living in Finland is that it's really __3__ , at least compared to Mumbai! One day, when I was walking home, I dropped my wallet. When I noticed this, I thought it would be stolen for sure. But I found that someone had put my wallet on top of a bench so that I would find it more easily. The most surprising thing was that nothing had been taken from it! Kirsten: That's pretty __4__ . It always makes me smile to see all the lost things. Edwina: People here __5__ a lot. For example, almost no one crosses the road when the light is red, even if there are no cars coming. Kirsten: You're right! I remember I once crossed the road when the light was red. People waiting on the other side looked at me in a very annoyed way. That made me decide never to do it again! Vishal: That's funny! In India, people don't do that! Joseph: Well, another thing that can be funny is Finnish food. One day, soon after getting to Finland, I felt like having something sweet. I went into the corner shop and I saw that there were freshly baked doughnuts on the bread counter. \"Excellent!\" I thought, and I chose a big doughnut to sink my teeth into. But imagine my horror when I discovered that it was filled with meat! Edwina: Oh yes. I think the meat filling is actually quite nice but not when you are __6__ jam!",
+    "reading_sentences": [
+      "A Taste of Finnish Culture Some students came to Finland to study at Helsinki University.",
+      "They are sitting in a city cafe after one of their classes.",
+      "Kirsten: Talking about Finns and Finland, what do you guys think about living here __1__ Edwina: I must tell you guys that I was quite pleasantly surprised at the weather when I first arrived here in the middle of winter.",
+      "The temperature was minus 15.",
+      "I thought I was going to die!",
+      "But I don't freeze __2__ in Finland, because all the buildings are so well heated.",
+      "I freeze more in Scotland than I do here.",
+      "Vishal: True.",
+      "And the summertime is lovely, though.",
+      "Another thing I really like about living in Finland is that it's really __3__ , at least compared to Mumbai!",
+      "One day, when I was walking home, I dropped my wallet.",
+      "When I noticed this, I thought it would be stolen for sure.",
+      "But I found that someone had put my wallet on top of a bench so that I would find it more easily.",
+      "The most surprising thing was that nothing had been taken from it!",
+      "Kirsten: That's pretty __4__ .",
+      "It always makes me smile to see all the lost things.",
+      "Edwina: People here __5__ a lot.",
+      "For example, almost no one crosses the road when the light is red, even if there are no cars coming.",
+      "Kirsten: You're right!",
+      "I remember I once crossed the road when the light was red.",
+      "People waiting on the other side looked at me in a very annoyed way.",
+      "That made me decide never to do it again!",
+      "Vishal: That's funny!",
+      "In India, people don't do that!",
+      "Joseph: Well, another thing that can be funny is Finnish food.",
+      "One day, soon after getting to Finland, I felt like having something sweet.",
+      "I went into the corner shop and I saw that there were freshly baked doughnuts on the bread counter.",
+      "\"Excellent!\" I thought, and I chose a big doughnut to sink my teeth into.",
+      "But imagine my horror when I discovered that it was filled with meat!",
+      "Edwina: Oh yes.",
+      "I think the meat filling is actually quite nice but not when you are __6__ jam!"
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "at first",
+          "so far",
+          "now and then",
+          "for the time being"
+        ],
+        "answer": "so far",
+        "clues": [
+          "about living here",
+          "when I first"
+        ],
+        "clueTypes": {
+          "about living here": "固定搭配",
+          "when I first": "逻辑线索·时间"
+        },
+        "explanation": "线索　固定搭配：「about living here」是常见搭配结构，空格词由搭配骨架锁定。\n印证　空所在句里还有同向佐证（时间信号）：「when I first」与主线指向一致。\n排除　at first、now and then、for the time being三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "indoors",
+          "outdoors",
+          "immediately",
+          "completely"
+        ],
+        "answer": "indoors",
+        "clues": [
+          "because all the buildings",
+          "But I don't freeze",
+          "so well heated"
+        ],
+        "clueTypes": {
+          "because all the buildings": "逻辑线索·因果",
+          "But I don't freeze": "逻辑线索·转折",
+          "so well heated": "逻辑线索·因果"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「because all the buildings」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（转折信号）：「But I don't freeze」与主线指向一致。\n排除　outdoors、immediately、completely三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 3,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "smart",
+          "quiet",
+          "safe",
+          "clean"
+        ],
+        "answer": "safe",
+        "clues": [
+          "at least compared to Mumbai",
+          "it would be stolen for sure",
+          "it's really"
+        ],
+        "clueTypes": {
+          "at least compared to Mumbai": "逻辑线索·让步",
+          "it would be stolen for sure": "复现线索·反义词复现",
+          "it's really": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里带让步结构（「at least compared to Mumbai」）：先退一步再转回来，空格方向与从句预期相反。\n印证　邻段 / 全篇范围里的还有同向佐证（反义对照）：「it would be stolen for sure」与主线指向一致。\n排除　quiet 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；smart、clean 则呼应否×2。\n补充　「it's really」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "crazy",
+          "proper",
+          "attractive",
+          "amazing"
+        ],
+        "answer": "amazing",
+        "clues": [
+          "I was quite pleasantly surprised",
+          "It always makes me smile",
+          "That's pretty"
+        ],
+        "clueTypes": {
+          "I was quite pleasantly surprised": "复现线索·同场复现",
+          "It always makes me smile": "复现线索·同场复现",
+          "That's pretty": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　语义场复现：「It always makes me smile」与答案同属一个场景词群，按场景连贯取词。\n印证　邻段 / 全篇范围里的还有同向佐证（同场词群）：「I was quite pleasantly surprised」与主线指向一致。\n排除　crazy、proper、attractive三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「That's pretty」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "be + 形容词 + 介词",
+          "type": "形容词短语",
+          "structure": "be + 形容词 + 介词（good at / interested in / proud of / afraid of / late for / different from / strict with …）"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "ride bicycles",
+          "complain about drivers",
+          "follow rules",
+          "argue about laws"
+        ],
+        "answer": "follow rules",
+        "clues": [
+          "People here",
+          "a lot"
+        ],
+        "clueTypes": {
+          "People here": "固定搭配·结构骨架",
+          "a lot": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　结构骨架：「People here」搭出固定框架，先满足骨架，再验证词义方向。\n印证　空所在句里还有同向佐证（结构骨架）：「a lot」与主线指向一致。\n排除　ride bicycles、complain about drivers、argue about laws三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "tasting",
+          "expecting",
+          "touching",
+          "spreading"
+        ],
+        "answer": "expecting",
+        "clues": [
+          "but not when you",
+          "filling is actually"
+        ],
+        "clueTypes": {
+          "but not when you": "逻辑线索·转折",
+          "filling is actually": "逻辑线索·时间"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「but not when you」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（时间信号）：「filling is actually」与主线指向一致。\n排除　tasting 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；touching、spreading 则呼应否×2。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "remember",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-028",
+    "title_cn": "室内绿植：沉默的英雄",
+    "title_en": "Indoor Plants: Quiet Heroes",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "人物故事",
+    "region": "上海",
+    "source": "2024年上海市浦东新区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Do you have any indoor plants in your room?",
+    "last_sentence": "It can provide a sense of relaxation, allowing people to escape from the tiredness of daily life.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文主要介绍了什么是室内植物以及室内植物带来的好处.",
+      "kind": "narrative"
+    },
+    "route_summary": {
+      "线索词优先": 3,
+      "固定搭配优先": 0,
+      "双路径": 2,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 19,
+    "article_text_with_blanks": "Do you have any indoor plants in your room? Indoor plants might look as if they just sit around not doing much, but in many ways, they are the __1__ heroes of the home. Not only do they look beautiful, but studies have shown that they can give people a sense of wellbeing (安适). What's more, indoor plants are easy to look after and are not very expensive. Indoor plants also known as houseplants or pot plants, are plants that like to grow indoors. Many of them are not ideally fit for growing outside, especially in winter. Instead, they grow better inside, where it is __2__ . Several studies have backed this up and found that indoor plants can really lift your mood. Will Spoelstra, a British botanist (植物学家), tells us, \"There are many __3__ of growing plants indoors. I find that during the winter months, plants around the house can improve creativity and memory.\" There is also research showing that pot plants can clean the air around them by taking in harmful gases. \"Plants can __4__ some harmful chemicals after the house is newly painted. Peace lilies and ivy are among the best,\" says Will. Most indoor plants are easy to grow. You can buy them from supermarkets, garden centers or online. Younger plants are often cheaper than grown ones, but you get to care for them as they grow. Will suggests people read the instruction on the label or find out more about the plants before __5__ . The process is part of the joy of planting. It can bring a new interest and focus into people's lives and help to bridge the gap between home and __6__ . It can provide a sense of relaxation, allowing people to escape from the tiredness of daily life.",
+    "reading_sentences": [
+      "Do you have any indoor plants in your room?",
+      "Indoor plants might look as if they just sit around not doing much, but in many ways, they are the __1__ heroes of the home.",
+      "Not only do they look beautiful, but studies have shown that they can give people a sense of wellbeing (安适).",
+      "What's more, indoor plants are easy to look after and are not very expensive.",
+      "Indoor plants also known as houseplants or pot plants, are plants that like to grow indoors.",
+      "Many of them are not ideally fit for growing outside, especially in winter.",
+      "Instead, they grow better inside, where it is __2__ .",
+      "Several studies have backed this up and found that indoor plants can really lift your mood.",
+      "Will Spoelstra, a British botanist (植物学家), tells us, \"There are many __3__ of growing plants indoors.",
+      "I find that during the winter months, plants around the house can improve creativity and memory.\" There is also research showing that pot plants can clean the air around them by taking in harmful gases.",
+      "\"Plants can __4__ some harmful chemicals after the house is newly painted.",
+      "Peace lilies and ivy are among the best,\" says Will.",
+      "Most indoor plants are easy to grow.",
+      "You can buy them from supermarkets, garden centers or online.",
+      "Younger plants are often cheaper than grown ones, but you get to care for them as they grow.",
+      "Will suggests people read the instruction on the label or find out more about the plants before __5__ .",
+      "The process is part of the joy of planting.",
+      "It can bring a new interest and focus into people's lives and help to bridge the gap between home and __6__ .",
+      "It can provide a sense of relaxation, allowing people to escape from the tiredness of daily life."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "上下文复现",
+        "route": "线索词优先",
+        "options": [
+          "silent",
+          "noisy",
+          "blind",
+          "serious"
+        ],
+        "answer": "silent",
+        "clues": [
+          "but in many ways",
+          "if they just sit",
+          "heroes of"
+        ],
+        "clueTypes": {
+          "but in many ways": "逻辑线索·转折",
+          "if they just sit": "逻辑线索·条件",
+          "heroes of": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「but in many ways」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（条件结构）：「if they just sit」与主线指向一致。\n排除　noisy、blind、serious三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「heroes of」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "softer",
+          "warmer",
+          "colder",
+          "smaller"
+        ],
+        "answer": "warmer",
+        "clues": [
+          "Instead, they grow better",
+          "they grow better inside",
+          "where it is"
+        ],
+        "clueTypes": {
+          "Instead, they grow better": "逻辑线索·转折",
+          "they grow better inside": "情感线索·情感一致",
+          "where it is": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「Instead, they grow better」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（情感同向）：「they grow better inside」与主线指向一致。\n排除　softer、colder、smaller三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「where it is」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "语境推断",
+        "route": "双路径",
+        "options": [
+          "skills",
+          "habits",
+          "steps",
+          "advantages"
+        ],
+        "answer": "advantages",
+        "clues": [
+          "of growing",
+          "are many"
+        ],
+        "clueTypes": {
+          "of growing": "固定搭配·结构骨架",
+          "are many": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　结构骨架：「of growing」搭出固定框架，先满足骨架，再验证词义方向。\n印证　空所在句里还有同向佐证（结构骨架）：「are many」与主线指向一致。\n排除　skills、habits、steps三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 4,
+        "pos": "动词",
+        "topic": "语境推断",
+        "route": "双路径",
+        "options": [
+          "remove",
+          "spread",
+          "cover",
+          "develop"
+        ],
+        "answer": "remove",
+        "clues": [
+          "some harmful",
+          "Plants can",
+          "them by taking in harmful gases"
+        ],
+        "clueTypes": {
+          "some harmful": "固定搭配·结构骨架",
+          "Plants can": "固定搭配·结构骨架",
+          "them by taking in harmful gases": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　结构骨架：「some harmful」搭出固定框架，先满足骨架，再验证词义方向。\n印证　空所在句里还有同向佐证（结构骨架）：「Plants can」与主线指向一致。\n排除　spread、cover、develop三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "making a living",
+          "making a decision",
+          "making an effort",
+          "making a mistake"
+        ],
+        "answer": "making a decision",
+        "clues": [
+          "read the instruction on the label",
+          "Younger plants are often cheaper",
+          "find out more about"
+        ],
+        "clueTypes": {
+          "read the instruction on the label": "逻辑线索·时间",
+          "Younger plants are often cheaper": "复现线索·同场复现",
+          "find out more about": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里有时间信号（「read the instruction on the label」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　紧邻的上一句里还有同向佐证（同场词群）：「Younger plants are often cheaper」与主线指向一致。\n排除　making a living、making an effort、making a mistake三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「find out more about」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "ground",
+          "space",
+          "society",
+          "nature"
+        ],
+        "answer": "nature",
+        "clues": [
+          "between home and"
+        ],
+        "clueTypes": {
+          "between home and": "逻辑线索·并列"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「between home and」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n排除　ground、space、society三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "help",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-029",
+    "title_cn": "父母该替你选衣服吗？",
+    "title_en": "Should Parents Choose Your Clothes?",
+    "level": "中考",
+    "difficulty": "较难",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2024年上海市青浦区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Should parents choose your clothes?",
+    "last_sentence": "Plus, if children select their own clothes, they are more likely to wear them, which means fewer arguments and less wasted money.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文主要谈论了\"父母是否应该为你挑选衣服\". 全文由「Should parents cho」起，收在「Plus, if children 」，整体情绪走向为积极，与篇末升华句相呼应。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "首句就把问题摆到台面上 ——「Should parents choose your clothes?」。后文顺着这个问题给可操作的做法，读的时候重点找 should / try to / remember to 这类建议句，答案多半落在「做法」所在的句子里。"
+    },
+    "route_summary": {
+      "线索词优先": 4,
+      "固定搭配优先": 1,
+      "双路径": 0,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 24,
+    "article_text_with_blanks": "Should parents choose your clothes? Lots of parents choose their children's clothes, or at least have a say in what they wear. As children get older, they tend to develop stronger opinions of how they want to dress. It's common for children and teens to have different opinions with their parents over clothes. Some young people don't __1__ how they dress, others want to express their style, follow trends (n. 潮流) or dress like friends or famous people they like. What do you think? Should parents choose your clothes?? Yes — Advice is helpful. Parents can help you choose the right clothes because they have more __2__ . It's part of their job — like making sure you eat a healthy diet. As they are usually paying, it makes sense that parents have a say. If parents didn't help children choose clothes, they might wear things that aren't wise, like flip-flops (人字拖) in the rain. __3__ , at some special events, it can be necessary to dress in a certain way to show respect. Young people can feel pressure to dress in clothes that are too grown-up. Choosing clothes can be a two-way __4__ : children say what they prefer but parents have the final say. It's not just about what you wear, but how you wear it. No — It's an individual decision. You should decide because you're the one wearing the clothes. Parents don't always understand what children like or know what is trendy. What's more, choosing for yourself is an important step towards becoming __5__ and can build self-confidence. Selecting clothes can be fun and creative, and allows you to express yourself and develop an individual style. For some people, clothing is a way of showing you __6__ a certain group. Plus, if children select their own clothes, they are more likely to wear them, which means fewer arguments and less wasted money.",
+    "reading_sentences": [
+      "Should parents choose your clothes?",
+      "Lots of parents choose their children's clothes, or at least have a say in what they wear.",
+      "As children get older, they tend to develop stronger opinions of how they want to dress.",
+      "It's common for children and teens to have different opinions with their parents over clothes.",
+      "Some young people don't __1__ how they dress, others want to express their style, follow trends (n.",
+      "潮流) or dress like friends or famous people they like.",
+      "What do you think?",
+      "Should parents choose your clothes??",
+      "Yes — Advice is helpful.",
+      "Parents can help you choose the right clothes because they have more __2__ .",
+      "It's part of their job — like making sure you eat a healthy diet.",
+      "As they are usually paying, it makes sense that parents have a say.",
+      "If parents didn't help children choose clothes, they might wear things that aren't wise, like flip-flops (人字拖) in the rain.",
+      "__3__ , at some special events, it can be necessary to dress in a certain way to show respect.",
+      "Young people can feel pressure to dress in clothes that are too grown-up.",
+      "Choosing clothes can be a two-way __4__ : children say what they prefer but parents have the final say.",
+      "It's not just about what you wear, but how you wear it.",
+      "No — It's an individual decision.",
+      "You should decide because you're the one wearing the clothes.",
+      "Parents don't always understand what children like or know what is trendy.",
+      "What's more, choosing for yourself is an important step towards becoming __5__ and can build self-confidence.",
+      "Selecting clothes can be fun and creative, and allows you to express yourself and develop an individual style.",
+      "For some people, clothing is a way of showing you __6__ a certain group.",
+      "Plus, if children select their own clothes, they are more likely to wear them, which means fewer arguments and less wasted money."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "research",
+          "require",
+          "care",
+          "know"
+        ],
+        "answer": "care",
+        "clues": [
+          "certain way to show respect",
+          "clothes that are too grown",
+          "young people don't"
+        ],
+        "clueTypes": {
+          "certain way to show respect": "情感线索·情感一致",
+          "clothes that are too grown": "情感线索·情感一致",
+          "young people don't": "情感线索·情感一致"
+        },
+        "explanation": "线索　情感一致：「young people don't」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「certain way to show respect」与主线指向一致。\n排除　know 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；research、require 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "progress",
+          "wealth",
+          "health",
+          "experience"
+        ],
+        "answer": "experience",
+        "clues": [
+          "because they have more"
+        ],
+        "clueTypes": {
+          "because they have more": "逻辑线索·因果"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「because they have more」）：原因与结果方向咬合，所填词要能承接这条因果。\n排除　health 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；progress、wealth 则异场否、呼应否。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "连词逻辑",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "Therefore",
+          "Instead",
+          "Besides",
+          "However"
+        ],
+        "answer": "Besides",
+        "clues": [
+          "As they are usually paying",
+          "at some special events",
+          "it can be necessary"
+        ],
+        "clueTypes": {
+          "As they are usually paying": "逻辑线索·因果",
+          "at some special events": "逻辑线索·举例",
+          "it can be necessary": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里有举例信号（「at some special events」）：例子在印证前文，所填词要与例子的方向一致。\n印证　邻段 / 全篇范围里的还有同向佐证（因果信号）：「As they are usually paying」与主线指向一致。\n排除　Therefore 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；However、Instead 则方向否、呼应否。\n补充　「it can be necessary」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "result",
+          "effort",
+          "purpose",
+          "link"
+        ],
+        "answer": "effort",
+        "clues": [
+          "they prefer but",
+          "Parents don't always understand",
+          "children say"
+        ],
+        "clueTypes": {
+          "they prefer but": "逻辑线索·转折",
+          "Parents don't always understand": "情感线索·情感一致",
+          "children say": "情感线索·情感一致"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「they prefer but」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（情感同向）：「children say」与主线指向一致。\n排除　result、purpose、link三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "independent",
+          "successful",
+          "interested",
+          "different"
+        ],
+        "answer": "independent",
+        "clues": [
+          "step towards becoming",
+          "choosing for yourself",
+          "and can"
+        ],
+        "clueTypes": {
+          "step towards becoming": "固定搭配·结构骨架",
+          "choosing for yourself": "语境线索·搭配骨架",
+          "and can": "逻辑线索·并列"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「and can」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　空所在句里还有同向佐证（结构骨架）：「step towards becoming」与主线指向一致。\n排除　different 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；successful、interested 则异场否×2。\n补充　「step towards becoming」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "过渡语 / 衔接词",
+          "type": "固定短语",
+          "structure": "at first / at last / in fact / after all / above all / on the contrary / as a result / in addition / what's more / for example / such as / from now on / in the end"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "整组短语直接辨析",
+        "options": [
+          "focus on",
+          "depend on",
+          "agree with",
+          "belong to"
+        ],
+        "answer": "belong to",
+        "clues": [
+          "a certain group",
+          "of showing you"
+        ],
+        "clueTypes": {
+          "a certain group": "情感线索·情感一致",
+          "of showing you": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　情感一致：「a certain group」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（搭配骨架）：「of showing you」与主线指向一致。\n排除　focus on、depend on、agree with三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「of showing you」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "means",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-030",
+    "title_cn": "于漪：一辈子学做教师",
+    "title_en": "Yu Yi: Learning to Be a Teacher All My Life",
+    "level": "中考",
+    "difficulty": "较难",
+    "lesson_type": "人物故事",
+    "region": "上海",
+    "source": "2024年上海市杨浦区二模",
+    "tags": [
+      "区级二模",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Yu Yi: Learning to be a teacher all my life Yu Yi is an amazing teacher who made a big difference in elementary education.",
+    "last_sentence": "Her love for teaching, giving out to her students, and continuous ____ to improve herself make her a shining example of what a great teacher should be. 参考答案 建议先独立完成，再集中核对；每题2分，每篇12分。 逐题详细解析 每篇先看主旨，再对照四个选项核对语境依据和排除理由。",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章主旨：本文是一篇记叙文, 主要讲述了Yu Yi一生都在学习当老师的故事.",
+      "kind": "narrative"
+    },
+    "route_summary": {
+      "线索词优先": 2,
+      "固定搭配优先": 2,
+      "双路径": 2,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 26,
+    "article_text_with_blanks": "Yu Yi: Learning to be a teacher all my life Yu Yi is an amazing teacher who made a big difference in elementary education. She was born in 1929. When she was just 15 years old, her father passed away. But her mother encouraged her to become a teacher and to always be hardworking and kind. After graduating from Fudan University's Department of Education in 1951, Yu Yi started her teaching career. She gave her whole life to her students, always putting their needs first. Yu believed that being a __1__ for her students was of great importance. She wanted to encourage them and support them. One of Yu's teaching __2__ became very famous all over China. In 1977, she taught a poem called The Song of the Stormy Petrel on live television. People were so excited to see her teaching on TV because it was unique (独特的) and interesting. It was like nothing they had ever seen before! For Yu Yi, teaching the Chinese language wasn't just about learning grammar and vocabulary. She believed there must be something more __3__ than that. She wanted her students to become real people and to think critically (批判性地). Her ideas were so good that they were __4__ in the curriculum standards (课程标准) for all students. Yu respected every student and tried her best to connect with them through her teaching. She was always looking for ways to improve herself. Even after teaching for over 60 years, she still felt there was room to grow and learn. Yu __5__ taught the same thing to different classes with the same teaching plan. Every time, she added something new and exciting. In 2019, Yu was honoured \"People's Educator\" in China. This title showed how much she had affected the lives of her students and the education system. Yu Yi is truly an inspiration to both teachers and students. Her love for teaching, giving out to her students, and continuous __6__ to improve herself make her a shining example of what a great teacher should be. 参考答案 建议先独立完成，再集中核对；每题2分，每篇12分。 逐题详细解析 每篇先看主旨，再对照四个选项核对语境依据和排除理由。",
+    "reading_sentences": [
+      "Yu Yi: Learning to be a teacher all my life Yu Yi is an amazing teacher who made a big difference in elementary education.",
+      "She was born in 1929.",
+      "When she was just 15 years old, her father passed away.",
+      "But her mother encouraged her to become a teacher and to always be hardworking and kind.",
+      "After graduating from Fudan University's Department of Education in 1951, Yu Yi started her teaching career.",
+      "She gave her whole life to her students, always putting their needs first.",
+      "Yu believed that being a __1__ for her students was of great importance.",
+      "She wanted to encourage them and support them.",
+      "One of Yu's teaching __2__ became very famous all over China.",
+      "In 1977, she taught a poem called The Song of the Stormy Petrel on live television.",
+      "People were so excited to see her teaching on TV because it was unique (独特的) and interesting.",
+      "It was like nothing they had ever seen before!",
+      "For Yu Yi, teaching the Chinese language wasn't just about learning grammar and vocabulary.",
+      "She believed there must be something more __3__ than that.",
+      "She wanted her students to become real people and to think critically (批判性地).",
+      "Her ideas were so good that they were __4__ in the curriculum standards (课程标准) for all students.",
+      "Yu respected every student and tried her best to connect with them through her teaching.",
+      "She was always looking for ways to improve herself.",
+      "Even after teaching for over 60 years, she still felt there was room to grow and learn.",
+      "Yu __5__ taught the same thing to different classes with the same teaching plan.",
+      "Every time, she added something new and exciting.",
+      "In 2019, Yu was honoured \"People's Educator\" in China.",
+      "This title showed how much she had affected the lives of her students and the education system.",
+      "Yu Yi is truly an inspiration to both teachers and students.",
+      "Her love for teaching, giving out to her students, and continuous __6__ to improve herself make her a shining example of what a great teacher should be.",
+      "参考答案 建议先独立完成，再集中核对；每题2分，每篇12分。 逐题详细解析 每篇先看主旨，再对照四个选项核对语境依据和排除理由。"
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "teacher",
+          "leader",
+          "educator",
+          "model"
+        ],
+        "answer": "teacher",
+        "clues": [
+          "to become a teacher",
+          "of Yu's teaching",
+          "to both teachers"
+        ],
+        "clueTypes": {
+          "to become a teacher": "复现线索·原词复现",
+          "of Yu's teaching": "复现线索·派生词复现",
+          "to both teachers": "复现线索·派生词复现"
+        },
+        "explanation": "线索　派生复现：「of Yu's teaching」已给出答案的词根，选它的同根派生形式即可。\n印证　邻段 / 全篇范围里的还有同向佐证（原词复现）：「to become a teacher」与主线指向一致。\n排除　educator 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；leader、model 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "语境推断",
+        "route": "固定搭配优先",
+        "options": [
+          "methods",
+          "moments",
+          "skills",
+          "solutions"
+        ],
+        "answer": "moments",
+        "clues": [
+          "of Yu's teaching",
+          "became very"
+        ],
+        "clueTypes": {
+          "of Yu's teaching": "固定搭配·结构骨架",
+          "became very": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　结构骨架：「of Yu's teaching」搭出固定框架，先满足骨架，再验证词义方向。\n印证　空所在句里还有同向佐证（结构骨架）：「became very」与主线指向一致。\n排除　methods、skills、solutions三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "be + 形容词 + 介词",
+          "type": "形容词短语",
+          "structure": "be + 形容词 + 介词（good at / interested in / proud of / afraid of / late for / different from / strict with …）"
+        }
+      },
+      {
+        "q": 3,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "possible",
+          "famous",
+          "important",
+          "interesting"
+        ],
+        "answer": "important",
+        "clues": [
+          "mother encouraged her",
+          "be something more",
+          "and support them"
+        ],
+        "clueTypes": {
+          "mother encouraged her": "情感线索·情感一致",
+          "be something more": "固定搭配·结构骨架",
+          "and support them": "情感线索·情感一致"
+        },
+        "explanation": "线索　情感一致：「and support them」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「mother encouraged her」与主线指向一致。\n排除　famous 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；interesting、possible 则方向否、呼应否。\n补充　「be something more」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "比较级 + than",
+          "type": "比较结构",
+          "structure": "比较级 + than 比…更"
+        }
+      },
+      {
+        "q": 4,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "included",
+          "printed",
+          "welcomed",
+          "spread"
+        ],
+        "answer": "included",
+        "clues": [
+          "so good that they",
+          "in the curriculum standards",
+          "for all students"
+        ],
+        "clueTypes": {
+          "so good that they": "逻辑线索·因果",
+          "in the curriculum standards": "语境线索·搭配骨架",
+          "for all students": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「so good that they」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（搭配骨架）：「in the curriculum standards」与主线指向一致。\n排除　welcomed 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；printed、spread 则呼应否×2。\n补充　「in the curriculum standards」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "be + 形容词 + 介词（空在形容词）",
+          "type": "形容词短语",
+          "structure": "be + ____ + 介词（good/interested/proud/afraid/full/late/famous/ready/known/strict/pleased/busy …）"
+        }
+      },
+      {
+        "q": 5,
+        "pos": "动词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "still",
+          "already",
+          "totally",
+          "never"
+        ],
+        "answer": "never",
+        "clues": [
+          "she added something new and exciting",
+          "taught the"
+        ],
+        "clueTypes": {
+          "she added something new and exciting": "逻辑线索·并列",
+          "taught the": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的下一句里出现并列信号（「she added something new and exciting」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　空所在句里还有同向佐证（搭配骨架）：「taught the」与主线指向一致。\n排除　still、already、totally三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「taught the」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "动词",
+        "topic": "语境推断",
+        "route": "双路径",
+        "options": [
+          "wish",
+          "desire",
+          "practice",
+          "pleasure"
+        ],
+        "answer": "desire",
+        "clues": [
+          "students, and continuous",
+          "to improve"
+        ],
+        "clueTypes": {
+          "students, and continuous": "固定搭配·结构骨架",
+          "to improve": "情感线索·情感一致"
+        },
+        "explanation": "线索　情感一致：「to improve」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（结构骨架）：「students, and continuous」与主线指向一致。\n排除　wish、practice、pleasure三个干扰项属于另一个话题场景，与本篇词群对不上（异场否）。\n补充　「students, and continuous」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "区级二模",
+    "exam_year": 2024,
+    "tone_markers": [
+      {
+        "word": "improve",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-121",
+    "title_cn": "发明成功的条件",
+    "title_en": "",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2021年上海市中考英语真题",
+    "tags": [
+      "正式真题",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "What do you need for an invention to be a success?",
+    "last_sentence": "The Swiss scientist, George de Mestral, had the idea for Velcro (粘扣) when he found his clothes covered in sticky seed pods after a walk in the countryside.",
+    "tone": {
+      "answer": "积极",
+      "reason": "全文由「What do you need f」起，收在「The Swiss scientis」，整体情绪走向为积极，与篇末升华句相呼应。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "首句就把问题摆到台面上 ——「What do you need for an invention to be a succ…」。后文顺着这个问题给可操作的做法，读的时候重点找 should / try to / remember to 这类建议句，答案多半落在「做法」所在的句子里。"
+    },
+    "route_summary": {
+      "线索词优先": 5,
+      "固定搭配优先": 1,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 22,
+    "article_text_with_blanks": "What do you need for an invention to be a success? To begin with, good timing is very __1__ . You can have a good idea which the public doesn't want yet. Take Giovanni Caselli as an example. He invented the first fax machine in the 1860s. Though the quality was excellent, his invention quickly __2__ . The fax machine did not become a necessary piece of equipment in every office until the 1980s. Money also helps. The Frenchman Denis Papin had the idea for a steam engine almost a hundred years before James Watt was born. Denis never had enough money to __3__ one. You also need to be patient. It took scientists nearly eighty years to invent a light bulb. __4__ , you shouldn't be too slow. In the 1870s, Elisha Gray developed plans for a telephone. Gray saw it only as \"a beautiful toy\". When he finally sent details of his invention to the Patent Office (专利局) on February 14th, 1876, it was too __5__ . Almost the same designs had arrived just two hours earlier. The young man who sent them was Alexander Graham Bell. He is remembered as the inventor of the telephone. Of course what you really need is a wonderful idea. If you haven't got one, a walk in the countryside and a careful look at __6__ can help. The Swiss scientist, George de Mestral, had the idea for Velcro (粘扣) when he found his clothes covered in sticky seed pods after a walk in the countryside.",
+    "reading_sentences": [
+      "What do you need for an invention to be a success?",
+      "To begin with, good timing is very __1__ .",
+      "You can have a good idea which the public doesn't want yet.",
+      "Take Giovanni Caselli as an example.",
+      "He invented the first fax machine in the 1860s.",
+      "Though the quality was excellent, his invention quickly __2__ .",
+      "The fax machine did not become a necessary piece of equipment in every office until the 1980s.",
+      "Money also helps.",
+      "The Frenchman Denis Papin had the idea for a steam engine almost a hundred years before James Watt was born.",
+      "Denis never had enough money to __3__ one.",
+      "You also need to be patient.",
+      "It took scientists nearly eighty years to invent a light bulb.",
+      "__4__ , you shouldn't be too slow.",
+      "In the 1870s, Elisha Gray developed plans for a telephone.",
+      "Gray saw it only as \"a beautiful toy\".",
+      "When he finally sent details of his invention to the Patent Office (专利局) on February 14th, 1876, it was too __5__ .",
+      "Almost the same designs had arrived just two hours earlier.",
+      "The young man who sent them was Alexander Graham Bell.",
+      "He is remembered as the inventor of the telephone.",
+      "Of course what you really need is a wonderful idea.",
+      "If you haven't got one, a walk in the countryside and a careful look at __6__ can help.",
+      "The Swiss scientist, George de Mestral, had the idea for Velcro (粘扣) when he found his clothes covered in sticky seed pods after a walk in the countryside."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "interesting",
+          "important",
+          "personal",
+          "satisfying"
+        ],
+        "answer": "important",
+        "clues": [
+          "invention to be a success",
+          "also need to be patient",
+          "years to invent a light"
+        ],
+        "clueTypes": {
+          "invention to be a success": "情感线索·情感一致",
+          "also need to be patient": "情感线索·情感一致",
+          "years to invent a light": "情感线索·情感一致"
+        },
+        "explanation": "线索　情感一致：「invention to be a success」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「also need to be patient」与主线指向一致。\n排除　interesting 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；personal、satisfying 则呼应否×2。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "died",
+          "improved",
+          "spread",
+          "appeared"
+        ],
+        "answer": "died",
+        "clues": [
+          "Though the quality was",
+          "office until the",
+          "his invention quickly"
+        ],
+        "clueTypes": {
+          "Though the quality was": "逻辑线索·让步",
+          "office until the": "逻辑线索·时间",
+          "his invention quickly": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里带让步结构（「Though the quality was」）：先退一步再转回来，空格方向与从句预期相反。\n印证　紧邻的下一句里还有同向佐证（时间信号）：「office until the」与主线指向一致。\n排除　improved 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；spread、appeared 则呼应否×2。\n补充　「his invention quickly」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "deliver",
+          "repair",
+          "use",
+          "build"
+        ],
+        "answer": "build",
+        "clues": [
+          "had the idea for a",
+          "nearly eighty years to invent",
+          "enough money to"
+        ],
+        "clueTypes": {
+          "had the idea for a": "逻辑线索·转折",
+          "nearly eighty years to invent": "复现线索·近义词复现",
+          "enough money to": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的上一句里出现转折信号（「had the idea for a」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　邻段 / 全篇范围里的还有同向佐证（近义表达）：「nearly eighty years to invent」与主线指向一致。\n排除　deliver、repair、use三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「enough money to」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "连词逻辑",
+        "topic": "逻辑推理",
+        "route": "线索词优先",
+        "options": [
+          "However",
+          "Instead",
+          "So far",
+          "At last"
+        ],
+        "answer": "However",
+        "clues": [
+          "You also need to be",
+          "Elisha Gray developed plans",
+          "be too slow"
+        ],
+        "clueTypes": {
+          "You also need to be": "逻辑线索·转折",
+          "Elisha Gray developed plans": "举例说明",
+          "be too slow": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　例证：「Elisha Gray developed plans」在说明空格所在的观点，方向与例子一致。\n印证　邻段 / 全篇范围里的还有同向佐证（转折信号）：「You also need to be」与主线指向一致。\n排除　Instead、So far、At last三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「be too slow」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "modern",
+          "difficult",
+          "late",
+          "old"
+        ],
+        "answer": "late",
+        "clues": [
+          "When he finally",
+          "was too"
+        ],
+        "clueTypes": {
+          "When he finally": "逻辑线索·时间",
+          "was too": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里有时间信号（「When he finally」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（搭配骨架）：「was too」与主线指向一致。\n排除　difficult 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；modern、old 则呼应否×2。\n补充　「was too」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "society",
+          "nature",
+          "pictures",
+          "advertisements"
+        ],
+        "answer": "nature",
+        "clues": [
+          "If you haven't got",
+          "careful look at",
+          "can help"
+        ],
+        "clueTypes": {
+          "If you haven't got": "逻辑线索·条件",
+          "careful look at": "情感线索·情感一致",
+          "can help": "情感线索·情感一致"
+        },
+        "explanation": "线索　空所在句里带条件结构（「If you haven't got」）：先有前提再有结果，所填词要满足这条前提下的结果方向。\n印证　空所在句里还有同向佐证（情感同向）：「careful look at」与主线指向一致。\n排除　society、pictures、advertisements三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "be + 形容词 + 介词",
+          "type": "形容词短语",
+          "structure": "be + 形容词 + 介词（good at / interested in / proud of / afraid of / late for / different from / strict with …）"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "正式真题",
+    "exam_year": 2021,
+    "tone_markers": [
+      {
+        "word": "help",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-120",
+    "title_cn": "如何在高中学有所成",
+    "title_en": "",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2020年上海市中考英语真题",
+    "tags": [
+      "正式真题",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "You have been familiar with the learning environment in your middle school, and it feels like home.",
+    "last_sentence": "Hope you will feel confident and perform well in high school!",
+    "tone": {
+      "answer": "积极",
+      "reason": "全文由「You have been fami」起，收在「Hope you will feel」，整体情绪走向为积极，与篇末升华句相呼应。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "首句就把问题摆到台面上 ——「You have been familiar with the learning envir…」。后文顺着这个问题给可操作的做法，读的时候重点找 should / try to / remember to 这类建议句，答案多半落在「做法」所在的句子里。"
+    },
+    "route_summary": {
+      "线索词优先": 2,
+      "固定搭配优先": 1,
+      "双路径": 1,
+      "整组短语直接辨析": 2
+    },
+    "reading_sentence_count": 26,
+    "article_text_with_blanks": "You have been familiar with the learning environment in your middle school, and it feels like home. So it is not always easy to say \"__1__\" to middle school. After entering high school, you may face some new challenges. The schoolwork may become more difficult and require greater skills. Most students need support. Teachers and parents may give you a hand. However, you can't __2__ others all the time. What can you do？Here are some suggestions： Understand what kind of learner you are. Do you need silence to focus？Then make sure the TV is not on when you are studying. Provide yourself with a __3__ learning environment at home. Some students focus better in the morning；others at night. Find the right __4__ so that your efforts will work well. Learn to be better organized. It might be helpful when you get used to making a to—do—lit of all your schoolwork, and checking each item off when it is completed. Try to __5__ your work. This will create smaller, more manageable tasks out of the larger ones. Big projects seem less difficult if they are done step by step. Form good reading habits. Read every day — the more, the better. It doesn't matter what you read. Reading newspaper regularly is a good choice. Newspapers provide plenty of details and background. __6__ ,information you get from newspapers is usually official and true. High school life can be enjoyable. Old friendships might come undone and new ones will develop. Hope you will feel confident and perform well in high school!",
+    "reading_sentences": [
+      "You have been familiar with the learning environment in your middle school, and it feels like home.",
+      "So it is not always easy to say \"__1__\" to middle school.",
+      "After entering high school, you may face some new challenges.",
+      "The schoolwork may become more difficult and require greater skills.",
+      "Most students need support.",
+      "Teachers and parents may give you a hand.",
+      "However, you can't __2__ others all the time.",
+      "What can you do？Here are some suggestions： Understand what kind of learner you are.",
+      "Do you need silence to focus？Then make sure the TV is not on when you are studying.",
+      "Provide yourself with a __3__ learning environment at home.",
+      "Some students focus better in the morning；others at night.",
+      "Find the right __4__ so that your efforts will work well.",
+      "Learn to be better organized.",
+      "It might be helpful when you get used to making a to—do—lit of all your schoolwork, and checking each item off when it is completed.",
+      "Try to __5__ your work.",
+      "This will create smaller, more manageable tasks out of the larger ones.",
+      "Big projects seem less difficult if they are done step by step.",
+      "Form good reading habits.",
+      "Read every day — the more, the better.",
+      "It doesn't matter what you read.",
+      "Reading newspaper regularly is a good choice.",
+      "Newspapers provide plenty of details and background.",
+      "__6__ ,information you get from newspapers is usually official and true.",
+      "High school life can be enjoyable.",
+      "Old friendships might come undone and new ones will develop.",
+      "Hope you will feel confident and perform well in high school!"
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "hello",
+          "bye—bye",
+          "sorry",
+          "thanks"
+        ],
+        "answer": "bye—bye",
+        "clues": [
+          "So it is not",
+          "easy to say",
+          "to middle"
+        ],
+        "clueTypes": {
+          "So it is not": "逻辑线索·因果",
+          "easy to say": "情感线索·情感一致",
+          "to middle": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「So it is not」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（情感同向）：「easy to say」与主线指向一致。\n排除　thanks 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；hello、sorry 则呼应否×2。\n补充　「to middle」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "say hello to",
+          "type": "动词短语",
+          "structure": "向…问好｜say ____ to"
+        }
+      },
+      {
+        "q": 2,
+        "pos": "动词短语",
+        "topic": "逻辑推理",
+        "route": "整组短语直接辨析",
+        "options": [
+          "care for",
+          "depend on",
+          "compete with",
+          "worry about"
+        ],
+        "answer": "depend on",
+        "clues": [
+          "However, you can't",
+          "Most students need support",
+          "others all"
+        ],
+        "clueTypes": {
+          "However, you can't": "逻辑线索·转折",
+          "Most students need support": "情感线索·情感一致",
+          "others all": "固定搭配"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「However, you can't」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　空所在句里还有同向佐证（固定搭配）：「others all」与主线指向一致。\n排除　care for、compete with、worry about三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「others all」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      },
+      {
+        "q": 3,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "双路径",
+        "options": [
+          "warm",
+          "clean",
+          "quiet",
+          "safe"
+        ],
+        "answer": "quiet",
+        "clues": [
+          "Teachers and parents may give",
+          "learning environment",
+          "Do you need silence"
+        ],
+        "clueTypes": {
+          "Teachers and parents may give": "情感线索·情感一致",
+          "learning environment": "固定搭配·结构骨架",
+          "Do you need silence": "复现线索·同场复现"
+        },
+        "explanation": "线索　语义场复现：「Do you need silence」与答案同属一个场景词群，按场景连贯取词。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「Teachers and parents may give」与主线指向一致。\n排除　warm 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；clean、safe 则呼应否×2。\n补充　「learning environment」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "介词短语",
+          "type": "介词短语",
+          "structure": "介词 + (冠词/物主代词) + 名词（in front of / on time / with the help of / in danger / at night / by accident …）"
+        }
+      },
+      {
+        "q": 4,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "time",
+          "place",
+          "habit",
+          "skill"
+        ],
+        "answer": "time",
+        "clues": [
+          "so that your efforts",
+          "others all the time",
+          "Find the right"
+        ],
+        "clueTypes": {
+          "so that your efforts": "逻辑线索·因果",
+          "others all the time": "复现线索·原词复现",
+          "Find the right": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「so that your efforts」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（原词复现）：「others all the time」与主线指向一致。\n排除　habit 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；skill、place 则方向否、呼应否。\n补充　「Find the right」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "divide",
+          "finish",
+          "remember",
+          "correct"
+        ],
+        "answer": "divide",
+        "clues": [
+          "Try to",
+          "your work"
+        ],
+        "clueTypes": {
+          "Try to": "情感线索·情感一致",
+          "your work": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　情感一致：「Try to」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（搭配骨架）：「your work」与主线指向一致。\n排除　remember 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；finish、correct 则呼应否×2。\n补充　「your work」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "动词短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "For example",
+          "In brief",
+          "On average",
+          "In addition"
+        ],
+        "answer": "In addition",
+        "clues": [
+          "plenty of details and background",
+          "is usually official and true",
+          "information you get from"
+        ],
+        "clueTypes": {
+          "plenty of details and background": "复现线索·同场复现",
+          "is usually official and true": "逻辑线索·并列",
+          "information you get from": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现并列信号（「is usually official and true」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　紧邻的上一句里还有同向佐证（同场词群）：「plenty of details and background」与主线指向一致。\n排除　For example、In brief、On average三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「information you get from」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "____",
+          "type": "整组短语辨析",
+          "structure": "____ ：四个选项均为短语，需逐个代入原句，比较语义与语境是否成立"
+        }
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "正式真题",
+    "exam_year": 2020,
+    "tone_markers": [
+      {
+        "word": "well",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-118",
+    "title_cn": "教材复印之争",
+    "title_en": "",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "2018年上海市中考英语真题",
+    "tags": [
+      "正式真题",
+      "词义辨析",
+      "固定搭配",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Hi!",
+    "last_sentence": "Thank you for sharing so many ideas!",
+    "tone": {
+      "answer": "转折变化",
+      "reason": "全文由「Hi!」起，收在「Thank you for shar」，整体情绪走向为转折变化，与篇末升华句相呼应。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "首句给出一个判断 ——「Hi!」，后文靠举例或数据来支撑（for example / such as / 研究结论）。读的时候先抓住观点句，再看它用什么例子证实，答案常出现在例子的细节里。"
+    },
+    "route_summary": {
+      "线索词优先": 5,
+      "固定搭配优先": 1,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 21,
+    "article_text_with_blanks": "Hi! I'm doing a survey on teaching materials in school. What kind of textbooks do you use? Do you think the use of photocopied(复印的) textbooks and newspaper articles in the classroom can be accepted? Please give your __1__ . The use of such materials is certainly not __2__ for writers. Textbooks are like other creative works. Many people have to put their efforts in the writing of a book. The efforts of the writers and publishers will be totally wasted if everyone photocopies their textbooks. I can't imagine that! I don't think it's right to use photocopied materials even in the classroom because it's against the law. Teachers should set a good example for their students by __3__ the law. Copied books are as good as copyrighted(正版的)ones, but they don't __4__ much, usually less than half the price. In addition, it is so __5__ to use copied materials. When we want to share something good we just have it photocopied. I think photocopying is OK because publishers are still making a lot of money anyway. Most of the time, teachers make sure their students do not use photocopied materials. But I know some teachers do use photocopied newspaper articles sometimes, as their students are eager to learn more to widen their views. As you know,teachers always put the __6__ of students above anything else. After all, you can't expect all the students to buy newspapers Wow! Thank you for sharing so many ideas!",
+    "reading_sentences": [
+      "Hi!",
+      "I'm doing a survey on teaching materials in school.",
+      "What kind of textbooks do you use?",
+      "Do you think the use of photocopied(复印的) textbooks and newspaper articles in the classroom can be accepted?",
+      "Please give your __1__ .",
+      "The use of such materials is certainly not __2__ for writers.",
+      "Textbooks are like other creative works.",
+      "Many people have to put their efforts in the writing of a book.",
+      "The efforts of the writers and publishers will be totally wasted if everyone photocopies their textbooks.",
+      "I can't imagine that!",
+      "I don't think it's right to use photocopied materials even in the classroom because it's against the law.",
+      "Teachers should set a good example for their students by __3__ the law.",
+      "Copied books are as good as copyrighted(正版的)ones, but they don't __4__ much, usually less than half the price.",
+      "In addition, it is so __5__ to use copied materials.",
+      "When we want to share something good we just have it photocopied.",
+      "I think photocopying is OK because publishers are still making a lot of money anyway.",
+      "Most of the time, teachers make sure their students do not use photocopied materials.",
+      "But I know some teachers do use photocopied newspaper articles sometimes, as their students are eager to learn more to widen their views.",
+      "As you know,teachers always put the __6__ of students above anything else.",
+      "After all, you can't expect all the students to buy newspapers Wow!",
+      "Thank you for sharing so many ideas!"
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "thanks",
+          "lessons",
+          "excuses",
+          "opinions"
+        ],
+        "answer": "opinions",
+        "clues": [
+          "sharing so many ideas",
+          "Do you think the use",
+          "Please give your"
+        ],
+        "clueTypes": {
+          "sharing so many ideas": "复现线索·近义词复现",
+          "Do you think the use": "复现线索·同场复现",
+          "Please give your": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　语义场复现：「Do you think the use」与答案同属一个场景词群，按场景连贯取词。\n印证　邻段 / 全篇范围里的还有同向佐证（近义表达）：「sharing so many ideas」与主线指向一致。\n排除　thanks 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；lessons、excuses 则方向否、呼应否。\n补充　「Please give your」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "easy",
+          "fair",
+          "common",
+          "traditional"
+        ],
+        "answer": "fair",
+        "clues": [
+          "will be totally wasted",
+          "Many people have to put",
+          "is certainly not"
+        ],
+        "clueTypes": {
+          "will be totally wasted": "逻辑线索·因果",
+          "Many people have to put": "复现线索·同场复现",
+          "is certainly not": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　语义场复现：「Many people have to put」与答案同属一个场景词群，按场景连贯取词。\n印证　邻段 / 全篇范围里的还有同向佐证（因果信号）：「will be totally wasted」与主线指向一致。\n排除　easy 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；common、traditional 则呼应否×2。\n补充　「is certainly not」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "changing",
+          "explaining",
+          "respecting",
+          "making"
+        ],
+        "answer": "respecting",
+        "clues": [
+          "it's against the law",
+          "should set a good example",
+          "for their students by"
+        ],
+        "clueTypes": {
+          "it's against the law": "复现线索·原词复现",
+          "should set a good example": "复现线索·同场复现",
+          "for their students by": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　语义场复现：「should set a good example」与答案同属一个场景词群，按场景连贯取词。\n印证　紧邻的上一句里还有同向佐证（原词复现）：「it's against the law」与主线指向一致。\n排除　making 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；changing、explaining 则异场否、呼应否。\n补充　「for their students by」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "save",
+          "affect",
+          "offer",
+          "cost"
+        ],
+        "answer": "cost",
+        "clues": [
+          "but they don't",
+          "lot of money",
+          "much, usually"
+        ],
+        "clueTypes": {
+          "but they don't": "逻辑线索·转折",
+          "lot of money": "复现线索·上下义词复现",
+          "much, usually": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空所在句里出现转折信号（「but they don't」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　邻段 / 全篇范围里的还有同向佐证（上下义呼应）：「lot of money」与主线指向一致。\n排除　save、affect、offer三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「much, usually」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "固定搭配优先",
+        "options": [
+          "convenient",
+          "strange",
+          "exciting",
+          "difficult"
+        ],
+        "answer": "convenient",
+        "clues": [
+          "it is so",
+          "to use"
+        ],
+        "clueTypes": {
+          "it is so": "逻辑线索·因果",
+          "to use": "固定搭配·结构骨架"
+        },
+        "explanation": "线索　空所在句里处在因果链上（「it is so」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（结构骨架）：「to use」与主线指向一致。\n排除　strange、exciting、difficult三个干扰项属于另一个话题场景，与本篇词群对不上（异场否）。\n补充　「to use」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "过渡语 / 衔接词",
+          "type": "固定短语",
+          "structure": "at first / at last / in fact / after all / above all / on the contrary / as a result / in addition / what's more / for example / such as / from now on / in the end"
+        }
+      },
+      {
+        "q": 6,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "actions",
+          "needs",
+          "records",
+          "attitudes"
+        ],
+        "answer": "needs",
+        "clues": [
+          "you can't expect all the",
+          "are eager to learn more",
+          "of students above anything"
+        ],
+        "clueTypes": {
+          "you can't expect all the": "逻辑线索·因果",
+          "are eager to learn more": "复现线索·同场复现",
+          "of students above anything": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　紧邻的下一句里处在因果链上（「you can't expect all the」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　紧邻的上一句里还有同向佐证（同场词群）：「are eager to learn more」与主线指向一致。\n排除　actions、records、attitudes三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「of students above anything」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "正式真题",
+    "exam_year": 2018,
+    "tone_markers": [
+      {
+        "word": "But",
+        "label": "转折",
+        "pos": "turn"
+      },
+      {
+        "word": "sharing",
+        "label": "收尾",
+        "pos": "end"
+      }
+    ],
+    "_explgen_touched": true
+  }
+];
