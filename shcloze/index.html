@@ -46,10 +46,10 @@
           </div>
         </div>
         <div class="hero-routes" id="heroRoutes">
-          <span class="route-chip">线索词优先</span>
-          <span class="route-chip">固定搭配优先</span>
-          <span class="route-chip">双路径</span>
-          <span class="route-chip">整组短语直接辨析</span>
+          <span class="route-chip">逻辑线索</span>
+          <span class="route-chip">复现线索</span>
+          <span class="route-chip">情感线索</span>
+          <span class="route-chip">语境线索</span>
         </div>
       </div>
 
@@ -129,8 +129,16 @@
 
     <!-- ============ 做题视图 ============ -->
     <section id="studyView" class="view" hidden>
-      <button id="backBtn" class="btn ghost back-btn" type="button">← 返回题库</button>
-      <button id="printBtn" class="btn ghost print-btn no-print" type="button">🖨 打印练习卷</button>
+      <div class="study-toolbar no-print">
+        <button id="backBtn" class="btn ghost back-btn" type="button">← 返回题库</button>
+
+        <div class="study-tabs" role="tablist" aria-label="练习模块">
+          <button class="study-tab active" data-pane="practice" type="button" role="tab" aria-selected="true">真题练习</button>
+          <button class="study-tab" data-pane="trans" type="button" role="tab" aria-selected="false">翻译精读</button>
+        </div>
+
+        <button id="printBtn" class="btn ghost print-btn" type="button">🖨 打印练习卷</button>
+      </div>
 
       <div class="lesson-meta" id="lessonMeta"></div>
 
@@ -192,21 +200,23 @@
         <span class="q-nav-timer" id="qNavTimer" title="整篇计时"><span class="q-nav-clock" id="qNavClock">00:00</span></span>
       </nav>
 
-      <div class="training-layout">
+      <div class="training-layout" id="practicePane">
         <article id="passage" class="passage"></article>
 
         <aside class="question-panel">
           <div id="emptyState" class="empty-state">
             <strong>点击文章里的空格开始做题</strong>
-            <p>四步法：预览选项 → 判断搭配 → 找线索 → 选答案 → 代入验证</p>
+            <p>五步法：首尾定调 → 看选项定考点 → 按箭头法找线索 → 选答案 → 代入验证</p>
             <div class="step-preview">
-              <span class="step-dot">①</span> 选项
+              <span class="step-dot">①</span> 定调
               <span class="step-arrow">→</span>
-              <span class="step-dot">②</span> 搭配
+              <span class="step-dot">②</span> 看选项
               <span class="step-arrow">→</span>
-              <span class="step-dot">③</span> 线索
+              <span class="step-dot">③</span> 找线索
               <span class="step-arrow">→</span>
-              <span class="step-dot">④</span> 答案
+              <span class="step-dot">④</span> 选答案
+              <span class="step-arrow">→</span>
+              <span class="step-dot">⑤</span> 代入验证
             </div>
           </div>
 
@@ -220,12 +230,6 @@
             <section class="mini-section" id="optionPreviewStep">
               <h4>本题选项</h4>
               <div id="optionPreview" class="option-preview"></div>
-            </section>
-
-            <section class="mini-section" id="posStep">
-              <h4 id="posStepTitle">有无固定搭配</h4>
-              <div id="posOptions" class="chip-grid"></div>
-              <div id="posFeedback" class="feedback"></div>
             </section>
 
             <section class="mini-section hidden" id="toolStep">
@@ -255,9 +259,13 @@
               </div>
             </section>
           </div>
+
         </aside>
       </div>
-      <section id="collocSection" class="colloc-section no-print" hidden></section>
+
+      <!-- 翻译精读：独立成页，与「真题练习」标签并列，
+           不再塞在题目面板里挤占做题视线；打印练习卷只对真题练习生效 -->
+      <section id="transSection" class="study-tool tool-pane no-print" hidden></section>
     </section>
 
     <!-- ============ 知识点训练中心 ============ -->
@@ -292,10 +300,11 @@
       <div class="notebook-toolbar">
           <select class="filter-select" id="notebookFilter">
             <option value="all">全部错题</option>
-            <option value="线索词优先">线索词优先</option>
-            <option value="固定搭配优先">固定搭配优先</option>
-            <option value="双路径">双路径</option>
-            <option value="整组短语直接辨析">整组短语直接辨析</option>
+            <option value="逻辑线索">判断依据：逻辑线索</option>
+            <option value="复现线索">判断依据：复现线索</option>
+            <option value="情感线索">判断依据：情感线索</option>
+            <option value="语境线索">判断依据：语境线索</option>
+            <option value="其他">其他 / 未归类</option>
           </select>
         <button class="btn ghost" id="clearNotebookBtn" type="button">清空错题本</button>
       </div>

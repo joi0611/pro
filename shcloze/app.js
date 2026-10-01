@@ -80,142 +80,390 @@ function addError(lessonId, qNum, selected, correct, route) {
 function clearErrors() { var s = loadStore(); s.errors = []; saveStore(s); }
 
 /* ============================================================
- * 新增功能（2026-09-28）：固定搭配翻转卡 / 全文翻译 / 词汇卡 / 打印
+ * 新增功能（2026-09-28）：逐句翻译 / 词汇卡 / 打印
  * 上海版与全国版共用同一套实现，改这里两版同步生效。
  * ------------------------------------------------------------
- * 1) 固定搭配翻转卡：数据源 = collocation-rules.js 的 1148 条中英搭配词典，
- *    从本篇正文里抽出真实命中的搭配（实测平均 7.8 条/篇，零命中篇数 0）。
- *    正面中文释义 / 背面英文搭配，点卡片翻面，「我记住了」持久化。
- * 2) 全文翻译：点击任意句子 → 实时翻译（免费接口）+ localStorage 永久缓存。
- * 3) 词汇卡：正文双击单词 → 收录生词本 + 打开有道词典，生词本以翻转卡呈现。
- * 4) 打印：输出空白练习卷（挖空正文 + 选项，不含答案与解析），可直接发给学生做。
+ * 1) 逐句翻译：点击任意句子 → 实时翻译（免费接口）+ localStorage 永久缓存。
+ * 2) 词汇卡：正文双击单词 → 收录生词本 + 打开有道词典，生词本以翻转卡呈现。
+ * 3) 打印：输出空白练习卷（挖空正文 + 选项，不含答案与解析），可直接发给学生做。
  * ============================================================ */
 
-/* ---------- 1. 固定搭配翻转记忆卡 ---------- */
-function loadCollocMemory() { try { return JSON.parse(localStorage.getItem("cloze_colloc_memory") || "{}"); } catch (e) { return {}; } }
-function saveCollocMemory(o) { try { localStorage.setItem("cloze_colloc_memory", JSON.stringify(o)); } catch (e) {} }
-function toggleCollocMemory(lessonId, en) {
-  var m = loadCollocMemory(); m[lessonId] = m[lessonId] || {};
-  if (m[lessonId][en]) { delete m[lessonId][en]; saveCollocMemory(m); return false; }
-  m[lessonId][en] = 1; saveCollocMemory(m); return true;
+/* ---------- 练习模块标签页：真题练习 / 翻译精读 ----------
+ * 两个标签互斥，一次只显示一个面板。切走「真题练习」时用 body[data-pane] 让首尾定调卡片、
+ * 题号导航一并隐藏（纯 CSS，不碰它们自己的 hidden 状态，切回来原样恢复）。
+ * 工具面板为空时（本篇没切出句子）不强行显示，沿用渲染函数留下的 hidden。 */
+var STUDY_PANES = ["practice", "trans"];
+var currentStudyPane = "practice";
+/* 页面带 #trans 进来时，首篇直接落到该标签 */
+var pendingStudyPane = (function () {
+  try {
+    var h = String(location.hash || "").replace(/^#/, "");
+    return STUDY_PANES.indexOf(h) >= 0 ? h : null;
+  } catch (e) { return null; }
+})();
+function toolPaneHasContent(sec) {
+  return !!sec && !!sec.firstElementChild;
 }
-
-/* 词典按首词建索引：1148 条只在首次用时索引一次，之后按首词取候选 */
-var CLOZE_DICT_HEAD = null;
-function collocDictByHead() {
-  if (CLOZE_DICT_HEAD) return CLOZE_DICT_HEAD;
-  var map = {};
-  DICT_TOKENS.forEach(function (e) {
-    if (!e.lemma.length) return;
-    var head = e.lemma[0];
-    var key = DICT_WILDCARD.indexOf(head) >= 0 ? "*" : head;
-    (map[key] = map[key] || []).push(e);
+function switchStudyPane(pane) {
+  if (STUDY_PANES.indexOf(pane) < 0) pane = "practice";
+  currentStudyPane = pane;
+  var practice = $("practicePane");
+  var trans = $("transSection");
+  if (practice) practice.hidden = (pane !== "practice");
+  if (trans) trans.hidden = !(pane === "trans" && toolPaneHasContent(trans));
+  document.body.setAttribute("data-pane", pane);
+  var printBtn = $("printBtn");
+  if (printBtn) printBtn.hidden = (pane !== "practice");
+  Array.prototype.forEach.call(document.querySelectorAll(".study-tab"), function (btn) {
+    var on = btn.getAttribute("data-pane") === pane;
+    btn.classList.toggle("active", on);
+    btn.setAttribute("aria-selected", on ? "true" : "false");
   });
-  Object.keys(map).forEach(function (k) {
-    map[k].sort(function (a, b) { return b.lemma.length - a.lemma.length; });   // 长搭配优先，避免 look out 盖住 look out of
-  });
-  CLOZE_DICT_HEAD = map;
-  return map;
+  /* 标签写进 hash：刷新保持、链接可分享（file:// 下 replaceState 可能被拒，忽略即可） */
+  try { history.replaceState(null, "", "#" + pane); } catch (e) {}
+  if (window.scrollTo) window.scrollTo(0, 0);
 }
-
-/* 卡片标签专用：个别连词/副词开头的固定短语（rather than / not only …）
- * 会被 classifyDictType 判成「动词短语」，这里补正为「固定短语」。
- * 只用于翻转卡的标签，不动题目判定的原有口径。 */
-var CLOZE_CARD_HEADS = ["rather", "other", "more", "less", "no", "not", "than", "whether", "either", "neither", "so", "but", "and", "or", "while", "when", "if", "although", "though", "even", "ever", "still", "just", "only", "too", "also", "however", "therefore", "besides"];
-function collocCardType(tokens) {
-  var t = classifyDictType(tokens);
-  if (t === "动词短语" && tokens && CLOZE_CARD_HEADS.indexOf(String(tokens[0] || "").toLowerCase()) >= 0) return "固定短语";
-  return t;
-}
-/* 从本篇正文抽出真实出现的固定搭配（含词形还原；跨空格的匹配不算） */
-function collectLessonCollocations(les) {
-  var text = (les && (les.article_text_with_blanks || les.article_text)) || "";
-  if (!text || !DICT_TOKENS.length) return [];
-  var toks = wordTokens(text).map(lemma);
-  var byHead = collocDictByHead();
-  var hits = [];
-  for (var i = 0; i < toks.length; i++) {
-    var cands = (byHead[toks[i]] || []);
-    if (byHead["*"] && byHead["*"].length) cands = cands.concat(byHead["*"]);
-    for (var c = 0; c < cands.length; c++) {
-      var e = cands[c], L = e.lemma.length;
-      if (L < 2 || i + L > toks.length) continue;
-      var real = 0;
-      for (var r = 0; r < L; r++) if (DICT_WILDCARD.indexOf(e.lemma[r]) < 0) real++;
-      if (real < 2) continue;                                   // 至少两个实词，避免 "*" 造成的噪声
-      if (!seqMatch(e.lemma, toks.slice(i, i + L))) continue;
-      var span = { start: i, end: i + L };
-      var covered = false, drop = [];
-      hits.forEach(function (h, hi) {
-        if (span.start >= h.start && span.end <= h.end) covered = true;          // 已被更长的搭配覆盖
-        else if (h.start >= span.start && h.end <= span.end) drop.push(hi);      // 新搭配更长，淘汰短的
-      });
-      if (covered) continue;
-      for (var d = drop.length - 1; d >= 0; d--) hits.splice(drop[d], 1);
-      hits.push({ en: e.raw, zh: e.zh || e.raw, type: collocCardType(e.tokens), start: span.start, end: span.end });
-    }
-  }
-  hits.sort(function (a, b) { return a.start - b.start; });
-  return hits.map(function (h) { return { en: h.en, zh: h.zh, type: h.type }; });
-}
-
-/* 文章全部做完 → 展示本篇固定搭配翻转卡 */
-function maybeShowCollocations() {
-  var sec = $("collocSection"); if (!sec) return;
-  var list = collectLessonCollocations(lesson);
-  if (!list.length) { sec.hidden = true; sec.innerHTML = ""; return; }
-  sec.hidden = false;
-  var mem = loadCollocMemory();
-  var cards = list.map(function (c) {
-    var remembered = !!(mem[currentId] && mem[currentId][c.en]);
-    return '<div class="flip-card' + (remembered ? " remembered" : "") + '" tabindex="0" role="button" aria-label="' + escapeHtml(c.zh) + '">' +
-      '<div class="flip-inner">' +
-        '<div class="flip-front"><span class="flip-zh">' + escapeHtml(c.zh) + '</span><span class="flip-tag">' + escapeHtml(c.type || "固定搭配") + '</span></div>' +
-        '<div class="flip-back"><span class="flip-en">' + escapeHtml(c.en) + '</span><span class="flip-tag">再点一次翻回中文</span></div>' +
-      '</div>' +
-      '<button class="flip-remember' + (remembered ? " on" : "") + '" type="button" data-en="' + escapeHtml(c.en) + '">' + (remembered ? "✓ 已记住" : "我记住了") + '</button>' +
-    '</div>';
-  }).join("");
-  sec.innerHTML = '<div class="colloc-head">' +
-      '<h2>本篇固定搭配 · 翻转记忆卡</h2>' +
-      '<p>共 <b>' + list.length + '</b> 条，全部出自本篇正文。点卡片翻面（正面中文 / 背面英文）；记熟的打勾，卡片会淡化。</p>' +
-      '<div class="colloc-tools">' +
-        '<button class="btn ghost btn-sm" id="collocFlipAll" type="button">全部翻面</button>' +
-        '<button class="btn ghost btn-sm" id="collocReset" type="button">重置本篇记忆</button>' +
-      '</div>' +
-    '</div><div class="flip-grid">' + cards + '</div>';
-  bindFlipCards(sec);
-  var fa = $("collocFlipAll");
-  if (fa) fa.addEventListener("click", function () {
-    var all = sec.querySelectorAll(".flip-card");
-    var on = sec.querySelectorAll(".flip-card.flipped").length < all.length;
-    Array.prototype.forEach.call(all, function (c) { c.classList.toggle("flipped", on); });
-    fa.textContent = on ? "全部翻回" : "全部翻面";
-  });
-  var rs = $("collocReset");
-  if (rs) rs.addEventListener("click", function () {
-    var m = loadCollocMemory(); delete m[currentId]; saveCollocMemory(m);
-    maybeShowCollocations(); toast("本篇搭配记忆已重置");
-  });
-  setTimeout(function () { try { sec.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) {} }, 60);
-}
-function bindFlipCards(sec) {
-  Array.prototype.forEach.call(sec.querySelectorAll(".flip-card"), function (card) {
-    var flip = function () { card.classList.toggle("flipped"); };
-    card.addEventListener("click", function (e) { if (e.target.closest && e.target.closest(".flip-remember")) return; flip(); });
-    card.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); } });
-  });
-  Array.prototype.forEach.call(sec.querySelectorAll(".flip-remember"), function (btn) {
-    btn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      var en = btn.getAttribute("data-en");
-      var on = toggleCollocMemory(currentId, en);
-      btn.classList.toggle("on", on);
-      btn.textContent = on ? "✓ 已记住" : "我记住了";
-      btn.closest(".flip-card").classList.toggle("remembered", on);
+function bindStudyTabs() {
+  Array.prototype.forEach.call(document.querySelectorAll(".study-tab"), function (btn) {
+    btn.addEventListener("click", function () {
+      switchStudyPane(btn.getAttribute("data-pane"));
     });
   });
 }
+
+/* ---------- 本篇工具（逐句翻译）：常驻题目后面 ----------
+ * 折叠头收起后只留一行标题，做题时视线不受干扰。
+ * 翻译按句点击才请求 —— 一次全翻会把免费额度（匿名约 5000 字/天）烧光。 */
+function toolHeadHtml(title, sub) {
+  return '<div class="tool-head">'
+    + '<span class="tool-title">' + escapeHtml(title) + '</span>'
+    + '<span class="tool-sub">' + escapeHtml(sub) + '</span>'
+    + '<button class="tool-toggle" type="button" aria-expanded="true">收起</button>'
+    + '</div>';
+}
+function bindToolToggle(sec) {
+  var head = sec.querySelector(".tool-head");
+  var body = sec.querySelector(".tool-body");
+  if (!head || !body) return;
+  var btn = head.querySelector(".tool-toggle");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var open = body.hidden;
+    body.hidden = !open;
+    btn.textContent = open ? "收起" : "展开";
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+}
+function renderStudyTools() {
+  renderTransList();
+}
+/* ---------- 翻译精读：左原文（答案已填入）/ 右中文 + 本篇选项逐个可译 ---------- */
+/* 空号 __n__ → 该题正确答案。翻译精读是做完题后的对照环节，所以填**标准答案**，
+   不是学生的选择；取不到（数据异常）就退成 ____，别让内部记号漏到界面上。 */
+function answerOfBlank(n) {
+  var qs = (lesson && lesson.questions) || [];
+  var i = Number(n), q = null;
+  qs.forEach(function (x) { if (Number(x.q) === i) q = x; });
+  if (!q) q = qs[i - 1] || null;
+  return q && q.answer ? String(q.answer) : "____";
+}
+/* 左栏英文：答案用 .tr-ans 单独标出来，一眼看到填进去的是什么 */
+function transEnHtml(s) {
+  var raw = String(s.text || ""), out = "", last = 0, m;
+  var re = /__(\d+)__/g;
+  while ((m = re.exec(raw))) {
+    out += escapeHtml(raw.slice(last, m.index));
+    out += '<b class="tr-ans">' + escapeHtml(answerOfBlank(m[1])) + '</b>';
+    last = m.index + m[0].length;
+  }
+  out += escapeHtml(raw.slice(last));
+  return out;
+}
+function optCacheKey(o) { return "opt:" + String(o || "").trim().toLowerCase(); }
+
+/* 本篇选项：全部罗列，逐个可点译，正确答案标 ✓ */
+function optionTransHtml() {
+  var qs = (lesson && lesson.questions) || [];
+  if (!qs.length) return "";
+  var cache = loadTransCache();
+  var groups = qs.map(function (q) {
+    var items = (q.options || []).map(function (o, i) {
+      var key = optCacheKey(o);
+      var zh = cache[key] || "";
+      var right = String(o) === String(q.answer);
+      return '<div class="opt-row' + (right ? " is-right" : "") + (zh ? " done" : "") + '"'
+        + ' data-key="' + escapeHtml(key) + '" data-en="' + escapeHtml(String(o)) + '" tabindex="0" role="button">'
+        + '<span class="opt-tag">' + "ABCD".charAt(i) + '</span>'
+        + '<div class="opt-body">'
+          + '<div class="opt-en">' + escapeHtml(String(o)) + '</div>'
+          + '<div class="opt-zh">' + (zh ? escapeHtml(zh) : "点击翻译") + '</div>'
+        + '</div>'
+        + (right ? '<span class="opt-flag">✓ 答案</span>' : '')
+        + '</div>';
+    }).join("");
+    return '<div class="opt-group">'
+      + '<div class="opt-group-head">第 ' + q.q + ' 题<span>' + escapeHtml(q.pos || "") + " · " + escapeHtml(q.topic || "") + '</span></div>'
+      + '<div class="opt-list">' + items + '</div></div>';
+  }).join("");
+  return '<div class="opt-panel">'
+    + '<div class="opt-panel-head"><span class="opt-panel-title">本篇选项</span>'
+    + '<span class="opt-panel-sub">' + qs.length + ' 题 · 点选项看中文，正确答案标 ✓</span>'
+    + '<button class="btn ghost btn-sm" id="optTransAll" type="button">一键翻译全部选项</button></div>'
+    + '<div class="opt-groups">' + groups + '</div></div>';
+}
+
+function renderTransList() {
+  var sec = $("transSection"); if (!sec) return;
+  if (!currentSentences || !currentSentences.length) { sec.hidden = true; sec.innerHTML = ""; return; }
+  sec.hidden = false;
+  var cache = loadTransCache();
+  var pairs = currentSentences.map(function (s, i) {
+    var key = String(s.text || "").trim();
+    var zh = cache[key] || "";
+    return '<div class="trans-pair' + (zh ? " done" : "") + '" data-si="' + i + '" tabindex="0" role="button">'
+      + '<div class="tr-en"><span class="tr-no">' + (i + 1) + '</span>' + transEnHtml(s) + '</div>'
+      + '<div class="tr-zh">' + (zh ? escapeHtml(zh) : "点击翻译") + '</div>'
+      + '</div>';
+  }).join("");
+  sec.innerHTML = toolHeadHtml("翻译精读", "原文已填入正确答案 · 左右对照 · 双击英文单词查词")
+    /* 顺序：文章（句子对照）在上，本篇选项在下 —— 精读先看文章，选项只是回头核对用 */
+    + '<div class="tool-body">'
+      + '<div class="trans-pairs-sec"><div class="trans-pairs">' + pairs + '</div></div>'
+      + optionTransHtml()
+    + '</div>';
+  bindToolToggle(sec);
+  bindTransPairs(sec);
+  bindOptionRows(sec);
+  bindWordCard(sec);
+}
+/* 单击翻这句，双击查词。双击会先抛出两次 click，所以单击延迟 260ms 执行，
+   dblclick 一到就撤掉定时器——否则双击查词会顺手把整句翻掉（白烧免费额度）。 */
+function bindTransPairs(sec) {
+  Array.prototype.forEach.call(sec.querySelectorAll(".trans-pair"), function (pair) {
+    var timer = null;
+    pair.addEventListener("click", function () {
+      if (timer) return;
+      timer = setTimeout(function () { timer = null; translatePair(pair); }, 260);
+    });
+    pair.addEventListener("dblclick", function () { clearTimeout(timer); timer = null; });
+    pair.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); translatePair(pair); }
+    });
+  });
+}
+function translatePair(pair) {
+  var si = Number(pair.getAttribute("data-si"));
+  var s = currentSentences[si]; if (!s) return;
+  var zhEl = pair.querySelector(".tr-zh"); if (!zhEl) return;
+  var key = String(s.text || "").trim();
+  if (loadTransCache()[key]) return;          // 已有译文就不再烧额度
+  if (pair.dataset.busy === "1") return;
+  pair.dataset.busy = "1";
+  zhEl.textContent = "翻译中…";
+  fetchTranslation(sentenceInputFor(si, true)).then(function (zh) {
+    pair.dataset.busy = "";
+    if (zh) {
+      var cache = loadTransCache(); cache[key] = zh; saveTransCache(cache);
+      zhEl.textContent = zh; pair.classList.add("done");
+    } else {
+      zhEl.textContent = "（没翻成功：网络波动，或今日免费额度用完）";
+    }
+  });
+}
+function bindOptionRows(sec) {
+  Array.prototype.forEach.call(sec.querySelectorAll(".opt-row"), function (row) {
+    var timer = null;
+    row.addEventListener("click", function () {
+      if (timer) return;
+      timer = setTimeout(function () { timer = null; translateOption(row); }, 260);
+    });
+    row.addEventListener("dblclick", function () { clearTimeout(timer); timer = null; });
+    row.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); translateOption(row); }
+    });
+  });
+  var all = $("optTransAll");
+  if (all) all.addEventListener("click", function () {
+    var rows = sec.querySelectorAll(".opt-row:not(.done)");
+    if (!rows.length) { toast("本篇选项都已翻过了"); return; }
+    toast("开始翻译 " + rows.length + " 个选项…");
+    /* 错开 220ms：免费接口连着打容易被限流 */
+    Array.prototype.forEach.call(rows, function (r, i) {
+      setTimeout(function () { translateOption(r); }, i * 220);
+    });
+  });
+}
+function translateOption(row) {
+  var key = row.getAttribute("data-key");
+  var en = row.getAttribute("data-en") || "";
+  var zhEl = row.querySelector(".opt-zh");
+  if (!en || !zhEl) return;
+  if (loadTransCache()[key]) return;
+  if (row.dataset.busy === "1") return;
+  row.dataset.busy = "1";
+  zhEl.textContent = "翻译中…";
+  fetchTranslation(en).then(function (zh) {
+    row.dataset.busy = "";
+    if (zh) {
+      var c = loadTransCache(); c[key] = zh; saveTransCache(c);
+      zhEl.textContent = zh; row.classList.add("done");
+    } else {
+      zhEl.textContent = "（没翻成功）";
+    }
+  });
+}
+
+/* ---------- 双击英文单词 → 查词卡（机翻释义 + 有道 + 收录生词本） ----------
+ * 只挂在翻译精读页：正文 #passage 的「双击直接开有道」是既有习惯，不动它。 */
+function ensureWordCard() {
+  var c = $("wordCard");
+  if (c) return c;
+  c = document.createElement("div");
+  c.id = "wordCard"; c.className = "word-card no-print"; c.hidden = true;
+  document.body.appendChild(c);
+  return c;
+}
+function hideWordCard() { var c = $("wordCard"); if (c) { c.hidden = true; c._el = null; } }
+/* 查词卡用 fixed 定位（视口坐标）：absolute + 文档坐标会撑高页面、触发 scroll，
+   而 scroll 监听又立刻把它关掉——实测就是这么“渲染好了却看不见”的。
+   四边都夹一下，贴边时不出屏。 */
+function positionWordCard(card, el) {
+  if (!el || !el.getBoundingClientRect) return;
+  var r = el.getBoundingClientRect();
+  var vw = document.documentElement.clientWidth;
+  var vh = document.documentElement.clientHeight;
+  var cw = card.offsetWidth, ch = card.offsetHeight;
+  var top = r.top - ch - 10;
+  if (top < 8) top = r.bottom + 10;
+  if (top + ch > vh - 8) top = Math.max(8, vh - ch - 8);
+  var left = Math.min(Math.max(r.left, 8), Math.max(8, vw - cw - 8));
+  card.style.top = top + "px";
+  card.style.left = left + "px";
+}
+/* 单词级机翻常"原样退回"（out→out）或给出非中文，这种别当成释义展示。
+   判据：空 / 与原词相同 / 一个汉字都没有。 */
+function transLooksValid(zh, word) {
+  var t = String(zh || "").trim();
+  if (!t) return false;
+  if (t.toLowerCase() === String(word || "").toLowerCase()) return false;
+  return /[\u4e00-\u9fa5]/.test(t);
+}
+function wordCardHtml(word, state, zh, ctx) {
+  /* 机器释义只作参考（单词级机翻质量不稳，如 feelings→"感度"），
+     所以降级成灰色小字，主入口给有道。 */
+  var body = (state === "loading") ? '<div class="wc-zh wc-loading">机器释义查询中…</div>'
+    : (state === "fail") ? '<div class="wc-zh wc-fail">机器释义没取到有效结果——单词级机翻常这样，点下方有道查准确释义</div>'
+    : '<div class="wc-zh"><span class="wc-tag">机器释义 · 仅供参考</span>' + escapeHtml(zh) + '</div>';
+  return '<div class="wc-head"><span class="wc-word">' + escapeHtml(word) + '</span>'
+    + '<button class="wc-close" type="button" aria-label="关闭">×</button></div>'
+    + body
+    + (ctx ? '<div class="wc-ctx">' + escapeHtml(ctx) + '</div>' : "")
+    + '<div class="wc-actions">'
+      + '<button class="wc-btn wc-youdao" type="button">有道词典查准确释义</button>'
+      + '<button class="wc-btn wc-save" type="button">加入生词本</button>'
+    + '</div>';
+}
+function bindWordCardActions(word, ctx, el) {
+  var card = $("wordCard"); if (!card) return;
+  var y = card.querySelector(".wc-youdao");
+  if (y) y.addEventListener("click", function () { try { openYoudao(word); } catch (e) {} });
+  var s = card.querySelector(".wc-save");
+  if (s) s.addEventListener("click", function () {
+    addVocab(word, ctx); toast("已收录「" + word + "」到生词本");
+    s.textContent = "✓ 已收录"; s.disabled = true;
+  });
+  var x = card.querySelector(".wc-close");
+  if (x) x.addEventListener("click", function () { hideWordCard(); });
+}
+function showWordCard(word, ctx, el) {
+  var card = ensureWordCard();
+  var key = "word:" + word;
+  var cachedWord = loadTransCache()[key] || "";
+  /* 缓存里也可能存着无效结果（早期版本没判），这里一并复核 */
+  var zh = transLooksValid(cachedWord, word) ? cachedWord : "";
+  card.dataset.word = word;
+  card.innerHTML = wordCardHtml(word, zh ? "ok" : "loading", zh, ctx);
+  card.hidden = false;
+  card._el = el;
+  positionWordCard(card, el);
+  bindWordCardActions(word, ctx, el);
+  if (zh) return;
+  fetchTranslation(word).then(function (t) {
+    if (card.hidden || card.dataset.word !== word) return;
+    var ok = transLooksValid(t, word);
+    if (ok) { var c = loadTransCache(); c[key] = t; saveTransCache(c); }
+    card.innerHTML = wordCardHtml(word, ok ? "ok" : "fail", t, ctx);
+    bindWordCardActions(word, ctx, el);
+    positionWordCard(card, el);
+  });
+}
+/* 取词：优先用双击选中的词；取不到就按光标坐标定位到那一个词。
+   注意不能把选区里的空格直接抹掉——选 "give up" 会变成 "giveup"（踩过）。 */
+function wordFromOffset(node, off) {
+  var t = String((node && node.textContent) || "");
+  var re = /[A-Za-z][A-Za-z'\-]*/g, m;
+  while ((m = re.exec(t))) {
+    if (off >= m.index && off <= m.index + m[0].length) return m[0].toLowerCase();
+  }
+  return "";
+}
+function wordUnderPoint(e) {
+  var x = e.clientX, y = e.clientY;
+  try {
+    if (document.caretRangeFromPoint) {
+      var r = document.caretRangeFromPoint(x, y);
+      if (r && r.startContainer && r.startContainer.nodeType === 3) return wordFromOffset(r.startContainer, r.startOffset);
+    } else if (document.caretPositionFromPoint) {
+      var pos = document.caretPositionFromPoint(x, y);
+      if (pos && pos.offsetNode && pos.offsetNode.nodeType === 3) return wordFromOffset(pos.offsetNode, pos.offset);
+    }
+  } catch (err) {}
+  return "";
+}
+function wordAtEvent(e) {
+  var sel = (window.getSelection && window.getSelection().toString()) || "";
+  var s = String(sel).trim().toLowerCase();
+  /* 选区必须是「单个词」才算数，含空格/标点就交给坐标定位，免得拼出 giveup */
+  if (/^[a-z][a-z'\-]+$/.test(s)) return s;
+  var w = wordUnderPoint(e);
+  if (w) return w;
+  var node = e.target;
+  if (node && node.nodeType === 3) node = node.parentElement;
+  var m = node ? String(node.textContent || "").toLowerCase().match(/[a-z][a-z'\-]+/g) : null;
+  return (m && m.length) ? m[0] : "";
+}
+function bindWordCard(sec) {
+  if (!sec || sec.dataset.wordCard) return;
+  sec.dataset.wordCard = "1";
+  sec.addEventListener("dblclick", function (e) {
+    var word = wordAtEvent(e);
+    if (!word) return;
+    var ctx = "";
+    var pair = e.target.closest ? e.target.closest(".trans-pair") : null;
+    if (pair) {
+      var si = Number(pair.getAttribute("data-si"));
+      if (currentSentences[si]) ctx = sentenceInputFor(si, true);
+    }
+    showWordCard(word, ctx, e.target);
+  });
+}
+/* 双击选词时浏览器会把选区滚进视口，容器跟着滚一次。所以滚动不能直接关卡片，
+   否则「刚显示就被自己关掉」。改成重新贴回词旁边，滚出视口才关。 */
+window.addEventListener("scroll", function () {
+  var c = $("wordCard");
+  if (!c || c.hidden) return;
+  var el = c._el;
+  if (!el || !document.body.contains(el)) { hideWordCard(); return; }
+  var r = el.getBoundingClientRect();
+  var vh = document.documentElement.clientHeight, vw = document.documentElement.clientWidth;
+  if (r.bottom < 0 || r.top > vh || r.right < 0 || r.left > vw) { hideWordCard(); return; }
+  positionWordCard(c, el);
+}, true);
+document.addEventListener("click", function (e) {
+  var card = $("wordCard");
+  if (!card || card.hidden || card.contains(e.target)) return;
+  hideWordCard();
+});
 
 /* ---------- 2. 全文逐句翻译（点击句子 → 实时翻译 + 永久缓存） ---------- */
 var CLOZE_ABBREV = /^(mr|mrs|ms|dr|st|jr|sr|vs|etc|eg|ie|no|prof|inc|ltd|am|pm|fig)$/i;
@@ -228,11 +476,25 @@ function splitArticleSentences(text) {
   while (i < s.length) {
     var ch = s.charAt(i);
     if (ch === "." || ch === "!" || ch === "?") {
-      var j = i; while (j > 0 && /[A-Za-z]/.test(s.charAt(j - 1))) j--;
-      var word = s.slice(j, i);
+      /* 句末可能跟着闭合引号/括号（"you-sentences". / (see below).）：先跳过它们再回溯取词。
+         旧写法不跳，词取成空串，被下面的 word.length <= 1 当成缩写，整句就不切了。 */
+      var j = i; while (j > 0 && /["')\]]/.test(s.charAt(j - 1))) j--;
+      var jw = j; while (jw > 0 && /[A-Za-z]/.test(s.charAt(jw - 1))) jw--;
+      var word = s.slice(jw, j);
       var k = i + 1; while (k < s.length && /["')\]]/.test(s.charAt(k))) k++;
       var atEnd = (k >= s.length || /\s/.test(s.charAt(k)));
-      if (atEnd && !(ch === "." && (word.length <= 1 || CLOZE_ABBREV.test(word)))) {
+      /* 数字点（3.5 / 1.）不切，保持旧行为；空词（挖空后 "__n__ ." 之类）不算缩写——
+         这正是 33 篇里 23 篇句子被并在一起的根因。 */
+      /* 只挡真正的小数：「3.5」「42. 5」这类句点后（跳过空白）紧跟数字的。年份句末
+         「in March 2025. The aim…」后面跟的是大写字母，得切开，不能一并挡掉。 */
+      var after = k; while (after < s.length && /\s/.test(s.charAt(after))) after++;
+      var decimal = /[0-9]/.test(s.charAt(after));          /* 42. 5 / 3.5 */
+      var cnGloss = /[\u4e00-\u9fa5]/.test(s.charAt(after)); /* (n. 潮流) 这类词性标注 */
+      /* 单字母缩写只认「独立成词」的（J. K.：前面是空白）；否则 manager's. 的 "s"、
+         1860s. 的 "s" 都会被误当缩写而不切句。 */
+      var singleAbbrev = (word.length === 1) && (jw === 0 || /\s/.test(s.charAt(jw - 1)));
+      var abbrev = (ch === ".") && (singleAbbrev || CLOZE_ABBREV.test(word));
+      if (atEnd && !abbrev && !decimal && !cnGloss) {
         var ns = k; while (ns < s.length && /\s/.test(s.charAt(ns))) ns++;
         out.push({ start: start, end: ns, text: s.slice(start, ns) });
         start = ns; i = ns; continue;
@@ -286,9 +548,13 @@ function saveTransCache(o) {
   } catch (e) {}
 }
 /* 送去翻译的文本：已作答的空填答案，未作答填 ___，避免 __3__ 干扰机翻 */
-function sentenceInputFor(si) {
+function sentenceInputFor(si, forceAnswer) {
   var s = currentSentences[si]; if (!s) return "";
-  return s.text.replace(/__(\d+)__/g, function (_, n) { return answers[Number(n)] || "___"; }).replace(/\s+/g, " ").trim();
+  return s.text.replace(/__(\d+)__/g, function (_, n) {
+    /* forceAnswer：翻译精读要用正确答案，而不是学生填的（做题时点句子仍用自己的答案） */
+    if (forceAnswer) return answerOfBlank(n);
+    return answers[Number(n)] || "___";
+  }).replace(/\s+/g, " ").trim();
 }
 /* 免费翻译通道（浏览器直连，无需 key，已验证支持 CORS）。要加通道往这里追加即可 */
 function pickTrans(json) {
@@ -1127,6 +1393,10 @@ function openLesson(id) {
   renderQNav();                 // 题号导航格（先于正文，便于跳题）
   startLessonTimer();           // 整篇计时开表
   renderPassage();
+  renderStudyTools();          // 搭配 / 翻译：打开篇目就挂上，不等做完题
+  bindStudyTabs();
+  switchStudyPane(pendingStudyPane || "practice"); // 带 hash 进来时落到对应标签，否则回真题练习
+  pendingStudyPane = null;
   $("emptyState").classList.remove("hidden");
   $("questionBox").classList.add("hidden");
   // 页面滚动容器是 main.container（此处原先按 id 取，取到 null 会抛错）
@@ -1718,6 +1988,127 @@ function getClueSourceSentence(question, clue) {
   return found || "";
 }
 
+/* 箭头法（第 6/7/8 招）：算出一条线索相对本题空格的位置
+ * —— 本句 / 上一句 / 下一句 / 前 n 句 / 后 n 句。
+ * 纯 UI 现算，不写进数据层；算不出位置时返回 null，线索卡照常显示。 */
+function globalBlankPos(qid) {
+  var cursor = 0, blankPos = -1;
+  passageParts.forEach(function (part) {
+    if (part.type === "text") { cursor += part.text.length; return; }
+    if (part.id === qid && blankPos < 0) blankPos = cursor;
+    cursor += 4 + String(part.id).length;
+  });
+  return blankPos;
+}
+
+function sentenceIndexOf(sents, pos) {
+  if (pos < 0 || !sents || !sents.length) return -1;
+  for (var i = 0; i < sents.length; i += 1) {
+    if (pos >= sents[i].start && pos < sents[i].end) return i;
+  }
+  for (var j = sents.length - 1; j >= 0; j -= 1) { if (sents[j].start <= pos) return j; }
+  return -1;
+}
+
+function cluePositionOf(q, clue) {
+  if (!lesson || !currentSentences || !currentSentences.length) return null;
+  var blankPos = globalBlankPos(q.q);
+  if (blankPos < 0) return null;
+  var hit = null;
+  planClueMatches(q, blankPos).forEach(function (m) { if (m.clue === clue) hit = m; });
+  if (!hit) return null;
+  var bi = sentenceIndexOf(currentSentences, blankPos);
+  var ci = sentenceIndexOf(currentSentences, hit.start);
+  if (bi < 0 || ci < 0) return null;
+  var d = ci - bi, label;
+  if (d === 0) label = "本句";
+  else if (d === -1) label = "上一句";
+  else if (d === 1) label = "下一句";
+  else if (d < 0) label = "前 " + (-d) + " 句";
+  else label = "后 " + d + " 句";
+  return { dist: Math.abs(d), label: label, dir: d };
+}
+
+/* 「判断依据」：这题真正靠什么定答案 —— 离空格最近的**非骨架**线索
+ * （与生成器 _explain_gen_all.js 同口径：骨架类型沉末位后取最近的）。
+ * 纯 UI 现算，不落数据层；只给显示用，不影响任何判定。 */
+function mainClueOf(q) {
+  var items = getQuestionHighlightItems(q).map(function (it) {
+    it.pos = cluePositionOf(q, it.clue);
+    it.type = it.relationType || getClueRelationType(q, it.clue);
+    return it;
+  });
+  if (!items.length) return null;
+  var nonSkel = items.filter(function (it) { return !/骨架$/.test(String(it.type || "")); });
+  var pool = nonSkel.length ? nonSkel : items;
+  pool.sort(function (a, b) { return (a.pos ? a.pos.dist : 999) - (b.pos ? b.pos.dist : 999); });
+  return pool[0];
+}
+
+/* 类型 → 标签文字：优先二级（因果 / 同场复现 / 情感一致），没有二级就用一级 */
+function clueTypeLabel(type) {
+  var parts = String(type || "").split("·");
+  return parts[1] || parts[0] || "";
+}
+
+function evidenceLabel(q) {
+  var m = mainClueOf(q);
+  if (!m) return "";
+  var lb = clueTypeLabel(m.type);
+  if (lb === "固定搭配") lb = "其他 / 未归类";
+  return "判断依据：" + lb;
+}
+
+/* 错题本专用：错题可能来自**别的篇目**，而主线索现算依赖当前打开的篇目状态，
+ * 所以临时切到该篇目算完再切回来（按 篇目id#题号 缓存）。 */
+var _eviCache = {};
+
+/* 某条错题的判断依据「完整类型」（如 逻辑线索·因果）；取不到返回空串 */
+function evidenceTypeInLesson(lessonObj, e) {
+  if (!lessonObj) return "";
+  var key = lessonObj.id + "#" + e.q;
+  if (Object.prototype.hasOwnProperty.call(_eviCache, key)) return _eviCache[key];
+  var q = (lessonObj.questions || []).find(function (x) { return x.q === e.q; });
+  var type = "";
+  if (q) {
+    var keepLesson = lesson, keepParts = passageParts, keepSents = currentSentences;
+    var full = lessonObj.article_text_with_blanks || "";
+    lesson = lessonObj;
+    passageParts = parsePassage(full);
+    currentSentences = splitArticleSentences(full);
+    if (!currentSentences.length) currentSentences = [{ start: 0, end: full.length, text: full }];
+    var m = mainClueOf(q);
+    type = m ? String(m.type || "") : "";
+    lesson = keepLesson; passageParts = keepParts; currentSentences = keepSents;
+  }
+  _eviCache[key] = type;
+  return type;
+}
+
+function evidenceLabelInLesson(lessonObj, e) {
+  var t = evidenceTypeInLesson(lessonObj, e);
+  if (!t) return "";
+  var lb = clueTypeLabel(t);
+  if (lb === "固定搭配") lb = "其他 / 未归类";
+  return "判断依据：" + lb;
+}
+
+function errorEvidenceLabel(les, e) {
+  if (les) {
+    var lb = evidenceLabelInLesson(les, e);
+    if (lb) return lb;
+  }
+  return "路线：" + (e.route || "—");
+}
+
+/* 错题本过滤器用的一级类型 */
+function evidenceTopInLesson(lessonObj, e) {
+  var t = evidenceTypeInLesson(lessonObj, e);
+  return t ? String(t).split("·")[0] : "";
+}
+
+var EVIDENCE_TOP_TYPES = ["逻辑线索", "复现线索", "情感线索", "语境线索"];
+
 /* 路线判断 */
 function routeOf(q) { return q.route || (hasStoredCollocation(q) ? "固定搭配优先" : "线索词优先"); }
 function hasStoredCollocation(q) { return !!(q.collocation && q.collocation.name); }
@@ -1725,30 +2116,27 @@ function isDual(q) { return routeOf(q) === "双路径"; }
 function isCollocationFirst(q) { return routeOf(q) === "固定搭配优先"; }
 function isPhrase(q) { return routeOf(q) === "整组短语直接辨析"; }
 function isClueFirst(q) { return routeOf(q) === "线索词优先"; }
-function shouldSkipCollocationStep(q) { return isPhrase(q) && !isDual(q); }
-function getAcceptedReasoningRoutes(q) {
-  if (isDual(q)) return [true, false];
-  if (isCollocationFirst(q)) return [true];
-  if (isClueFirst(q)) return [false];
-  if (isPhrase(q)) return [true];
-  return [false];
-}
-
 /* 选中某题 */
 function selectQuestion(qid) {
   var q = findQuestion(qid);
   if (!q) return;
   selectedId = qid; currentQ = q;
+  /* 上海版：取消「有无固定搭配」必答步（2026-10-01 定调）——选中题目即可看线索。
+   * posPassed 仍是「本题已开做」的开关：正文高亮与后续步骤判断都要它先置位，
+   * 所以必须在 renderPassage() 之前赋值，否则 activeQuestion 取不到、高亮会全丢。 */
+  posPassed[qid] = true;
+  reasoningRoutes[qid] = false;
+  showStep("posStep", false);
   renderPassage();
   $("emptyState").classList.add("hidden");
   $("questionBox").classList.remove("hidden");
   var nextBtn = $("nextQuestionBtn"); if (nextBtn) nextBtn.hidden = true;
   var prevBtn = $("prevQuestionBtn"); if (prevBtn) prevBtn.hidden = true;
   $("questionNumber").textContent = "第 " + qid + " 题";
-  $("questionCategory").textContent = [q.pos, q.topic, routeOf(q)].filter(Boolean).join(" · ");
+  /* 第三项由「路线」改为「判断依据」：路线是数据层的归类，判断依据才是学生要用的第一步 */
+  $("questionCategory").textContent = [q.pos, q.topic, evidenceLabel(q)].filter(Boolean).join(" · ");
   updateQuestionProgress(qid);
   renderOptionPreview(q);
-  renderPosStep(q);
   renderToolStep(q);
   renderAnswerStep(q);
   renderSentenceCheck(q);
@@ -1773,71 +2161,87 @@ function renderOptionPreview(q) {
   });
 }
 
-function renderPosStep(q) {
-  var qid = q.q;
-  if (shouldSkipCollocationStep(q)) { posPassed[qid] = true; reasoningRoutes[qid] = true; showStep("posStep", false); renderPassage(); return; }
-  showStep("posStep", true);
-  var dual = isDual(q);
-  $("posStepTitle").textContent = dual ? "选择你的判断路径" : "有无固定搭配";
-  var choices = dual ? [{ label: "按固定搭配判断", value: true }, { label: "按线索词判断", value: false }] : [{ label: "固定搭配", value: true }, { label: "没有固定搭配", value: false }];
-  var wrap = $("posOptions"); wrap.innerHTML = "";
-  choices.forEach(function (c) {
-    var b = document.createElement("button");
-    b.className = "choice-button"; b.textContent = c.label;
-    if (posPassed[qid] && c.value === reasoningRoutes[qid]) b.classList.add("correct");
-    b.addEventListener("click", function () { chooseCollocationStep(q, c.value, b); });
-    wrap.appendChild(b);
-  });
-  if (posPassed[qid]) showCollocationStepResult(q);
-  else { $("posFeedback").textContent = ""; $("posFeedback").className = "feedback"; }
+/* 找线索导语（上海版口径）：线索优先，搭配只作复核 —— 2026-10-01 joi姐定调 */
+/* 本题线索的位置构成：本句几条 / 跨句几条 / 最远几句。
+ * 用于让「找线索」的提示因题而异 —— 线索全在本句时，不该再教人往外找。 */
+function clueDistProfile(q) {
+  var items = getQuestionHighlightItems(q);
+  var dists = items.map(function (it) { return cluePositionOf(q, it.clue); })
+                   .filter(function (p) { return !!p; })
+                   .map(function (p) { return p.dist; });
+  return {
+    n: dists.length,
+    inSent: dists.filter(function (d) { return d === 0; }).length,
+    outSent: dists.filter(function (d) { return d > 0; }).length,
+    maxOut: dists.reduce(function (a, d) { return Math.max(a, d); }, 0)
+  };
 }
 
-function chooseCollocationStep(q, value, btn) {
-  var qid = q.q;
-  document.querySelectorAll("#posOptions .choice-button").forEach(function (el) { el.classList.remove("correct", "wrong"); });
-  var accepted = getAcceptedReasoningRoutes(q);
-  if (accepted.includes(value)) {
-    posPassed[qid] = true; reasoningRoutes[qid] = value; btn.classList.add("correct"); showCollocationStepResult(q);
-  } else {
-    posPassed[qid] = false; delete reasoningRoutes[qid]; btn.classList.add("wrong");
-    var fb = $("posFeedback"); fb.className = "feedback bad"; fb.textContent = "再看看空格前后的结构信号，判断这里是否有固定搭配。";
-  }
-  renderPassage(); renderToolStep(q); renderAnswerStep(q);
+/* 操作类提示只说一次：记在本机，不影响判题与数据 */
+function guideSeen(k) {
+  try { return !!(JSON.parse(localStorage.getItem("cloze_guide_seen") || "{}")[k]); } catch (e) { return false; }
 }
-
-function showCollocationStepResult(q) {
-  var dual = isDual(q); var route = reasoningRoutes[q.q]; var fb = $("posFeedback"); fb.className = "feedback good";
-  if (dual && route === true) fb.textContent = "路径正确：固定搭配信号明确。继续结合上下文线索选择答案。";
-  else if (dual && route === false) fb.textContent = "路径正确：上下文线索足以锁定答案。答题后仍可查看固定搭配复盘。";
-  else if (isCollocationFirst(q)) fb.textContent = "判断正确：先看线索词和空格前后结构，选完答案后再看固定搭配解析。";
-  else fb.textContent = "判断正确：本题没有固定搭配，继续寻找上下文线索。";
+function markGuideSeen(k) {
+  try {
+    var o = JSON.parse(localStorage.getItem("cloze_guide_seen") || "{}");
+    o[k] = 1; localStorage.setItem("cloze_guide_seen", JSON.stringify(o));
+  } catch (e) {}
 }
 
 function buildToolGuide(q) {
-  var route = reasoningRoutes[q.q];
   var hasColloc = !!(q.collocation && q.collocation.name);
-  if (route === true && hasColloc) {
-    var html = '<p>本题有固定搭配：<b>' + escapeHtml(q.collocation.name) + '</b>（' + escapeHtml(q.collocation.type || "") + '）</p>';
-    if (q.collocation.structure) html += '<p class="structure">结构：' + escapeHtml(q.collocation.structure) + '</p>';
-    html += '<p class="structure">' + (isDual(q)
-      ? "本题两条路都能走通：搭配能定，原文线索也能定。下方线索一并列出，答完可以对照另一条路。"
-      : "搭配是主线。原文里的相关线索也一并高亮，供你比对印证。") + '</p>';
-    return html;
+  var pr = clueDistProfile(q);
+  var html = '';
+  if (!pr.n) {
+    html = '<p>按箭头法找：先看<b>本句</b>，没有再往<b>上下句</b>找。</p>';
+  } else if (pr.inSent === 0) {
+    /* 本句一条线索都没有：必须往外找，说清楚最远在哪 */
+    html = '<p>本句没有线索 —— 按箭头法往<b>上下句</b>找，最远的一条在 <b>' + pr.maxOut + '</b> 句外。</p>';
   }
-  return '<p>本题靠上下文线索锁定答案。先在左侧文章里看高亮的线索词，再回到选项比对。</p>';
+  /* 线索有跨句时不再另写引导段 —— 标题「本句 → 上下句」已经说完了。
+   * 「点线索卡能跳到正文」属操作说明，本机只提示一次 */
+  if (!guideSeen("jump")) {
+    html += '<p class="guide-once">点线索卡可以跳到正文对应处'
+      + '<button id="guideOnceClose" type="button">知道了</button></p>';
+  }
+  if (hasColloc) {
+    /* 结构说明本身很长（有时带十几个例句），压进 tooltip，正文只留一行 */
+    html += '<p class="structure" title="' + escapeHtml(String(q.collocation.structure || "")) + '">'
+      + '搭配复核：<b>' + escapeHtml(q.collocation.name) + '</b> —— 选完答案后复核结构，不是第一步。</p>';
+  }
+  return html;
 }
 
 function renderToolStep(q) {
   var qid = q.q;
   if (!posPassed[qid]) { showStep("toolStep", false); return; }
   showStep("toolStep", true);
-  var route = reasoningRoutes[qid];
-  var hasColloc = !!(q.collocation && q.collocation.name);
-  $("toolTitle").textContent = (route === true && hasColloc) ? "固定搭配 + 线索" : "寻找线索";
+  /* 标题也跟着本题走：全在本句就只说本句，本句没有就直说往外找 */
+  var pr2 = clueDistProfile(q), tt;
+  if (!pr2.n) tt = "找线索：本句 → 上下句 → 上下段";
+  else if (pr2.inSent === 0) tt = "找线索：本句没有 → 往外找";
+  else if (pr2.outSent) tt = "找线索：本句 → 上下句";
+  else tt = "找线索：本句";
+  $("toolTitle").innerHTML = escapeHtml(tt)
+    + '<span class="tool-help" title="箭头法：先看空格所在句，找不到再往上一句／下一句、上下段找；每条线索右上角标了它在第几句，点线索卡可跳到正文对应处。">?</span>';
+  var goc = $("guideOnceClose");
+  if (goc) {
+    markGuideSeen("jump");   /* 提示过一次就够了 */
+    goc.addEventListener("click", function () {
+      var p = goc.parentNode; if (p && p.parentNode) p.parentNode.removeChild(p);
+    });
+  }
   $("toolGuide").innerHTML = buildToolGuide(q);
   var wrap = $("clueWords"); wrap.innerHTML = "";
-  /* 走搭配路线时同样列出线索 —— 不再因为「选了搭配」就把证据藏起来 */
+  /* 箭头法：线索按「离空格的远近」排 —— 本句的先看，隔得远的后看。
+   * 位置是打开题目时现算的（cluePositionOf），不落数据层。 */
   var items = getQuestionHighlightItems(q);
+  items.forEach(function (item) { item.pos = cluePositionOf(q, item.clue); });
+  items.sort(function (a, b) {
+    return (a.pos ? a.pos.dist : 999) - (b.pos ? b.pos.dist : 999);
+  });
+  /* 全部线索都在本句时，标题已经写了「找线索：本句」，位置标签就不必每张卡都挂一遍 */
+  var showPos = !(pr2.n > 0 && pr2.outSent === 0);
   items.forEach(function (item) {
     var rel = item.relationType || getClueRelationType(q, item.clue);
     var pill = document.createElement("button");
@@ -1845,12 +2249,14 @@ function renderToolStep(q) {
     pill.dataset.clueType = rel;
     var src = checked[qid] ? getClueSourceSentence(q, item.clue) : "";
     /* 左侧小签用一级类型（逻辑线索 / 复现线索 / 情感线索 / 固定搭配…），
-     * 右侧说明是二级类型（因果 / 原词复现 / 情感变化…） */
-    pill.innerHTML = '<strong>' + escapeHtml(item.clue)
-      + '</strong><span><b class="clue-tag clue-' + clueColorOf(rel) + '">' + escapeHtml(clueTypeTag(rel)) + '</b> '
+     * 右侧说明是二级类型（因果 / 原词复现 / 情感变化…）；
+     * 右上角「本句 / 上一句 / 下一句」是箭头法算出来的位置。 */
+    pill.innerHTML = '<strong>' + escapeHtml(item.clue) + '</strong>'
+      + (showPos && item.pos ? '<i class="clue-pos' + (item.pos.dist === 0 ? ' is-near' : '') + '">' + escapeHtml(item.pos.label) + '</i>' : '')
+      + '<span><b class="clue-tag clue-' + clueColorOf(rel) + '">' + escapeHtml(clueTypeTag(rel)) + '</b> '
       + escapeHtml(String(rel).split("·").slice(1).join("·") || "") + '</span>'
       + (src ? '<small>原句：' + escapeHtml(src) + '</small>' : "");
-    pill.title = item.clue + " · " + rel + "（点击跳到正文对应处）";
+    pill.title = item.clue + " · " + rel + (item.pos ? " · " + item.pos.label : "") + "（点击跳到正文对应处）";
     pill.addEventListener("click", function () { jumpToClue(item.clue); });
     wrap.appendChild(pill);
   });
@@ -1921,7 +2327,6 @@ function checkAnswer(q) {
     markDone(currentId);
     stopLessonTimer();          // 全部判完停表（变绿，显示总用时）
     toast("本篇已全部完成 ✓");
-    maybeShowCollocations();   // 文章做完 → 展示本篇固定搭配翻转卡
   }
   updateQuestionProgress(qid);
 }
@@ -2086,7 +2491,15 @@ function renderNotebook() {
   if (!list) return;
   var errors = getErrors();
   var filter = ($("notebookFilter") || {}).value || "all";
-  var filtered = errors.filter(function (e) { return filter === "all" || e.route === filter; });
+  /* 过滤按「判断依据」的一级类型（原来是按 route 字段） */
+  var filtered = errors.filter(function (e) {
+    if (filter === "all") return true;
+    var les = library.find(function (l) { return l.id === e.lessonId; });
+    if (!les) return filter === "其他";
+    var top = evidenceTopInLesson(les, e);
+    if (filter === "其他") return !top || EVIDENCE_TOP_TYPES.indexOf(top) < 0;
+    return top === filter;
+  });
   list.innerHTML = "";
   if (!filtered.length) { empty.hidden = false; return; }
   empty.hidden = true;
@@ -2108,7 +2521,7 @@ function renderNotebook() {
     item.className = "notebook-item";
     item.innerHTML =
       '<div class="nb-title">' + escapeHtml(lessonTitle) + ' · 第 ' + e.q + ' 题</div>' +
-      '<div class="nb-meta">路线：' + escapeHtml(e.route || "—") + '</div>' +
+      '<div class="nb-meta">' + escapeHtml(errorEvidenceLabel(les, e)) + '</div>' +
       '<div class="nb-detail">你选了 <code>' + escapeHtml(e.selected) + '</code>，正确答案是 <code>' + escapeHtml(e.correct) + '</code></div>' +
       '<div class="nb-actions"><button class="nb-review-btn" type="button">回看本题</button></div>';
     var btn = item.querySelector(".nb-review-btn");

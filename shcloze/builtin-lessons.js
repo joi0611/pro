@@ -125,7 +125,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "固定搭配",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "making",
@@ -292,7 +292,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "固定搭配",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "check",
@@ -1305,7 +1305,7 @@ window.BUILTIN_LESSONS = [
       "上下文逻辑"
     ],
     "first_sentence": "Is it OK to have a messy room?",
-    "last_sentence": "By allowing children to keep their room the way they want it, parents are nurturing their kids' ____ . If adults don't like the mess, they can shut the door! Children who are messy will most likely grow out of it, so there's no reason to make them feel bad about their habits. And cleaning up your room is boring and takes time that could be spent on much more important things, like homework, hobbies, and friends. ____ , it will just get messy again. No - straightening up is a life skill Research shows messy surroundings cause stress and prevent you from ____ tasks. That's because your brain can get overwhelmed by all the visual information around you. A neat room, on the other hand, can clear your thinking, help you feel calm, and even boost your sleep. It also means you'll have enough space to do activities, and you're less likely to lose stuff. Plus, your room might be yours, but it's still part of the family home and that should be ____ . A tidy room is nice for everyone and, best of all, means no family arguments.",
+    "last_sentence": "A tidy room is nice for everyone and, best of all, means no family arguments.",
     "tone": {
       "answer": "转折变化",
       "reason": "文章主旨：文章从个人空间与生活技能两个角度讨论青少年卧室是否可以杂乱。",
@@ -3304,7 +3304,7 @@ window.BUILTIN_LESSONS = [
       "上下文逻辑"
     ],
     "first_sentence": "A jobless man applied for the position of office boy at a big company.",
-    "last_sentence": "The broker responded ____ , \"You don't have an email. Yet you've built an empire! Imagine where you'd be if you had one!\" The man smiled and replied, \"An office boy!\"",
+    "last_sentence": "The man smiled and replied, \"An office boy!\"",
     "tone": {
       "answer": "积极",
       "reason": "文章主旨：本文是一篇记叙文. 文章主要讲述了一个没有电脑和电子邮箱的失业男子在求职时因没有电子邮箱而被拒绝, 但他没有放弃, 通过自己的努力最终成为了国内最大的食品零售商之一；故事告诉我们不要因为一些外在条件的限制而放弃追求梦想, 只要努力, 就有可能取得成功.",
@@ -3938,7 +3938,7 @@ window.BUILTIN_LESSONS = [
       "上下文逻辑"
     ],
     "first_sentence": "On 4 June 1913, a woman called Emily Davison① went to a horse race, threw herself under the king's horse and later died from her injuries.",
-    "last_sentence": "The situation has been ____ since the suffragettes' time but many people say that men and women are still not equal in society. ____ , now in the UK, men earn 20 per cent more than women for the same work. If you are a male manager, your chance of being promoted④ is 40 per cent higher than a female manager's. That's why many people are still fighting for equal rights for women in the UK.",
+    "last_sentence": "That's why many people are still fighting for equal rights for women in the UK.",
     "tone": {
       "answer": "积极",
       "reason": "文章主旨：本文主要讲述了英国妇女为争取平等权利而作出的努力与抗争.",
@@ -4158,7 +4158,7 @@ window.BUILTIN_LESSONS = [
       "上下文逻辑"
     ],
     "first_sentence": "Wendy Haley works with other scientists to study how bats use their echolocation (回声定位) superpower.",
-    "last_sentence": "J: What advice do you have for someone who wants to do the same thing W: If you're interested in the research, you can find ways to get involved. ____ , volunteering with a local organization is a good way to get started.",
+    "last_sentence": "____ , volunteering with a local organization is a good way to get started.",
     "tone": {
       "answer": "积极",
       "reason": "文章主旨：本文是Jenny 和Wendy的对话. 对话的主要内容是：两人在谈论研究蝙蝠的回声定位能力的这个实验.",
@@ -4382,7 +4382,7 @@ window.BUILTIN_LESSONS = [
       "上下文逻辑"
     ],
     "first_sentence": "Sometimes your friends start to talk about a new video game or a new application (应用软件) they have downloaded.",
-    "last_sentence": "So is this excitement over technology a good or a bad thing",
+    "last_sentence": "Not only that but our need to always be on our phones or playing video games has been ____ a lot of our time.",
     "tone": {
       "answer": "积极",
       "reason": "文章主旨：本文是一篇议论文. 文章主要对人们追求最新的东西的心理进行了分析. 一些新技术会使人们兴奋, 吸引着人们去购买新产品；但是身处数码时代的我们真的有必要时刻准备更新换代吗?",
@@ -4599,7 +4599,7 @@ window.BUILTIN_LESSONS = [
       "上下文逻辑"
     ],
     "first_sentence": "AI is becoming more and more powerful, which makes some people worry that they will lose their jobs to machines.",
-    "last_sentence": "For the time being, AI does not have such an ability. ____ , AI must continually check the data to make sure its conclusions are accurate.",
+    "last_sentence": "____ , AI must continually check the data to make sure its conclusions are accurate.",
     "tone": {
       "answer": "转折变化",
       "reason": "文章主旨：本文主要介绍了人工智能的优势以及存在的问题. 全文由「AI is becoming mor」起，收在「__6__ , AI must co」，整体情绪走向为转折变化，与篇末升华句相呼应。",
@@ -6408,7 +6408,7 @@ window.BUILTIN_LESSONS = [
       "上下文逻辑"
     ],
     "first_sentence": "Yu Yi: Learning to be a teacher all my life Yu Yi is an amazing teacher who made a big difference in elementary education.",
-    "last_sentence": "Her love for teaching, giving out to her students, and continuous ____ to improve herself make her a shining example of what a great teacher should be. 参考答案 建议先独立完成，再集中核对；每题2分，每篇12分。 逐题详细解析 每篇先看主旨，再对照四个选项核对语境依据和排除理由。",
+    "last_sentence": "Her love for teaching, giving out to her students, and continuous ____ to improve herself make her a shining example of what a great teacher should be.",
     "tone": {
       "answer": "积极",
       "reason": "文章主旨：本文是一篇记叙文, 主要讲述了Yu Yi一生都在学习当老师的故事.",

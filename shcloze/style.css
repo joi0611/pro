@@ -822,6 +822,16 @@ body {
 
 .tool-guide { font-size: 14px; color: var(--ink); margin-bottom: 10px; line-height: 1.7; }
 .tool-guide .structure { color: var(--ink-soft); font-size: 13px; }
+.tool-guide .guide-once { display: flex; align-items: center; gap: 8px; margin-top: 6px;
+  padding: 5px 10px; background: var(--accent-soft); border-radius: 8px;
+  color: var(--accent-dark); font-size: 12.5px; line-height: 1.6; }
+.tool-guide .guide-once button { border: 1px solid rgba(154,111,18,.35); background: #fff;
+  color: var(--accent-dark); border-radius: 6px; padding: 1px 8px; font-size: 12px; cursor: pointer; }
+.tool-help { display: inline-flex; align-items: center; justify-content: center;
+  width: 16px; height: 16px; margin-left: 6px; border-radius: 50%;
+  background: var(--paper-2); color: var(--ink-3); font-size: 11px; font-weight: 700;
+  cursor: help; vertical-align: middle; }
+
 .clue-list { display: flex; flex-direction: column; gap: 8px; }
 .clue-pill {
   display: block; text-align: left;
@@ -840,6 +850,16 @@ body {
 .clue-pill.clue-violet,
 .clue-pill.clue-teal,
 .clue-pill.clue-mint { border-left: 4px solid var(--primary); }
+/* 箭头法位置标签（本句 / 上一句 / 下一句）—— 2026-10-01 */
+.clue-pill { position: relative; }
+.clue-pill strong { padding-right: 64px; }
+.clue-pos {
+  position: absolute; top: 9px; right: 12px;
+  font-style: normal; font-size: 12px; line-height: 18px;
+  padding: 0 7px; border-radius: 999px;
+  background: var(--paper-2); color: var(--ink-soft);
+}
+.clue-pos.is-near { background: var(--primary-50); color: var(--primary-700); }
 
 /* 线索类型标签：一级类型用彩色小签，学生一眼看出「这是逻辑线索还是复现线索」 */
 .clue-mark { cursor: help; }
@@ -1082,16 +1102,28 @@ body { margin: 0; display: flex; flex-direction: column; overflow: hidden; }
   min-height: 0;
   grid-template-rows: minmax(0, 1fr);
 }
+/* 上方「第一步」卡片占位较高时，别把做题区压到只剩一百多像素。
+   兜一个下限：超出部分交给外层 main.container 滚，两栏内部各滚各的
+   （右侧大滚动条管题目+搭配+翻译，左侧小滚动条只管原文）。 */
+@media (min-width: 881px) {
+  .training-layout { min-height: min(60vh, 640px); }
+}
 .passage, .question-panel {
   overflow-y: auto;
   min-height: 0;
   overscroll-behavior: contain;
 }
-.passage::-webkit-scrollbar,
-.question-panel::-webkit-scrollbar { width: 8px; }
-.passage::-webkit-scrollbar-thumb,
+/* 右侧题目面板：大滚动条 —— 题目 + 逐句翻译一整条都由它控制 */
+.question-panel::-webkit-scrollbar { width: 12px; }
+.question-panel::-webkit-scrollbar-track { background: var(--paper-2); border-radius: 999px; }
 .question-panel::-webkit-scrollbar-thumb {
-  background: var(--line-strong); border-radius: 999px; border: 3px solid var(--panel);
+  background: var(--ink-3); border-radius: 999px; border: 3px solid var(--panel);
+}
+.question-panel:hover::-webkit-scrollbar-thumb { background: var(--primary); }
+/* 左侧原文：小滚动条，只管原文 */
+.passage::-webkit-scrollbar { width: 6px; }
+.passage::-webkit-scrollbar-thumb {
+  background: var(--line-strong); border-radius: 999px; border: 1px solid var(--panel);
 }
 
 /* 非做题视图正常滚动 */
@@ -1189,44 +1221,132 @@ body { margin: 0; display: flex; flex-direction: column; overflow: hidden; }
 }
 
 /* ============================================================
- * 新增功能样式（2026-09-28）：固定搭配翻转卡 / 生词本 / 打印
+ * 新增功能样式（2026-09-28）：生词本 / 打印
  * ============================================================ */
 
 /* 打印按钮 */
 .print-btn { margin-left: auto; }
 
-/* 固定搭配翻转记忆卡 */
-.colloc-section { margin: 26px 0 8px; padding-top: 18px; border-top: 1px dashed var(--line); }
-.colloc-head h2 { font-size: 18px; margin: 0 0 4px; }
-.colloc-head p { margin: 0 0 14px; color: var(--ink-soft); font-size: 13px; }
-.flip-grid { display: flex; flex-wrap: wrap; gap: 16px; }
-.flip-card { width: 184px; cursor: pointer; user-select: none; }
-.flip-inner {
-  position: relative; width: 100%; height: 96px;
-  transform-style: preserve-3d; transition: transform .5s ease;
-}
-.flip-card.flipped .flip-inner { transform: rotateY(180deg); }
-.flip-front, .flip-back {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
-  border-radius: 12px; padding: 10px; text-align: center;
-  backface-visibility: hidden; -webkit-backface-visibility: hidden;
-}
-.flip-front { background: var(--primary-50); color: var(--primary-600); border: 1px solid var(--line); }
-.flip-back { background: #fff; color: var(--ink); border: 1px solid var(--line); transform: rotateY(180deg); }
-.flip-zh { font-size: 19px; font-weight: 800; line-height: 1.2; }
-.flip-en { font-size: 14px; font-weight: 700; line-height: 1.25; }
-.flip-tag { font-size: 11px; opacity: .65; }
-.flip-remember {
-  margin-top: 8px; width: 100%; padding: 5px 0; border-radius: 999px;
-  border: 1px solid var(--line); background: #fff; color: var(--ink-soft);
-  font-size: 12px; font-weight: 600; cursor: pointer; transition: all .15s ease;
-}
-.flip-remember:hover { border-color: var(--primary-600); color: var(--primary-600); }
-.flip-remember.on { background: var(--ok); color: #fff; border-color: var(--ok); }
-.flip-card.remembered .flip-front { opacity: .5; }
-.flip-card.remembered .flip-inner { filter: grayscale(.2); }
+/* ---------- 翻译精读（2026-10-02）：左原文（答案已填入）/ 右中文 ---------- */
+.trans-pairs-sec { margin-bottom: 4px; }
+.trans-pairs { display: flex; flex-direction: column; gap: 8px; }
+.trans-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; align-items: start;
+  padding: 10px 14px; border: 1px solid var(--line); border-radius: 9px;
+  background: var(--paper-2); cursor: pointer; }
+.trans-pair:hover { border-color: var(--primary); }
+.trans-pair.done { background: #fff; }
+.tr-en { font-size: 13.5px; line-height: 1.75; color: var(--ink); }
+.tr-no { display: inline-flex; align-items: center; justify-content: center; min-width: 20px;
+  height: 20px; margin-right: 8px; padding: 0 5px; border-radius: 50px; vertical-align: 1px;
+  background: var(--line-strong); color: var(--ink-soft); font-size: 11px; }
+.trans-pair.done .tr-no { background: var(--primary-50); color: var(--primary-600); }
+.tr-ans { padding: 0 4px; border-radius: 4px; background: var(--primary-50);
+  color: var(--primary-700); font-weight: 700; }
+.tr-zh { font-size: 13.5px; line-height: 1.75; color: var(--ink-3);
+  border-left: 1px dashed var(--line-strong); padding-left: 20px; }
+.trans-pair.done .tr-zh { color: var(--primary-700); }
 
+/* 本篇选项：全部罗列，逐个可译，正确答案标 ✓ */
+.opt-panel { margin: 22px 0 0; padding: 12px 14px 14px;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--paper-2); }
+.opt-panel-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 11px; }
+.opt-panel-title { font-size: 14px; font-weight: 700; color: var(--ink); }
+.opt-panel-sub { flex: 1 1 auto; font-size: 12px; color: var(--ink-3); }
+.opt-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px; align-items: start; }
+.opt-group-head { font-size: 12.5px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.opt-group-head span { margin-left: 6px; font-weight: 400; color: var(--ink-3); }
+.opt-row { display: flex; gap: 8px; align-items: flex-start; padding: 6px 9px;
+  border: 1px solid transparent; border-radius: 7px; background: #fff; cursor: pointer; }
+.opt-row:hover { border-color: var(--primary); }
+.opt-row.is-right { background: var(--primary-50); border-color: var(--primary); }
+.opt-tag { flex: 0 0 auto; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--line-strong); color: var(--ink-soft); font-size: 11px;
+  display: flex; align-items: center; justify-content: center; }
+.opt-row.is-right .opt-tag { background: var(--primary); color: #fff; }
+.opt-body { min-width: 0; flex: 1 1 auto; }
+.opt-en { font-size: 12.5px; color: var(--ink); }
+.opt-zh { margin-top: 1px; font-size: 12.5px; color: var(--ink-3); }
+.opt-row.done .opt-zh { color: var(--primary-700); }
+.opt-flag { flex: 0 0 auto; font-size: 11px; font-weight: 700; color: var(--primary-600); }
+
+/* 双击单词 → 查词卡 */
+.word-card { position: fixed; z-index: 60; width: min(320px, 88vw); padding: 12px 14px;
+  background: #fff; border: 1px solid var(--line-strong); border-radius: 10px; box-shadow: var(--shadow-lg); }
+.wc-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.wc-word { font-size: 15px; font-weight: 700; color: var(--primary-700); }
+.wc-close { margin-left: auto; border: 0; background: transparent; padding: 0 2px;
+  font-size: 18px; line-height: 1; color: var(--ink-3); cursor: pointer; }
+.wc-close:hover { color: var(--ink); }
+.wc-zh { font-size: 13px; line-height: 1.6; color: var(--ink); }
+.wc-tag { display: inline-block; margin-right: 6px; padding: 1px 7px; border-radius: 20px;
+  background: var(--paper-2); color: var(--ink-3); font-size: 10.5px; vertical-align: 1px; }
+.wc-loading, .wc-fail { color: var(--ink-3); }
+.wc-ctx { margin-top: 7px; padding-top: 7px; border-top: 1px dashed var(--line);
+  font-size: 11.5px; line-height: 1.65; color: var(--ink-3); }
+.wc-actions { display: flex; gap: 8px; margin-top: 10px; }
+.wc-btn { flex: 1 1 auto; border: 1px solid var(--line-strong); background: #fff;
+  color: var(--ink-soft); border-radius: 7px; padding: 5px 8px; font-size: 12px; cursor: pointer; }
+.wc-btn:hover { border-color: var(--primary); color: var(--primary-600); }
+.wc-btn.wc-youdao { background: var(--primary); border-color: var(--primary);
+  color: #fff; font-weight: 600; }
+.wc-btn.wc-youdao:hover { background: var(--primary-600); color: #fff; }
+.wc-btn:disabled { opacity: .6; cursor: default; }
+
+/* ---------- 练习模块标签页（2026-10-01） ----------
+   真题练习 / 翻译精读 两个标签与打印练习卷同处一条工具栏 */
+.study-toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.study-toolbar .back-btn { margin-bottom: 0; }
+.study-tabs { display: flex; gap: 4px; padding: 3px;
+  background: var(--paper-2); border: 1px solid var(--line); border-radius: 10px; }
+.study-tab { border: 0; background: transparent; color: var(--ink-soft); font: inherit;
+  font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 7px; cursor: pointer; }
+.study-tab:hover { color: var(--primary-600); }
+.study-tab.active { background: #fff; color: var(--primary-700); box-shadow: var(--shadow-sm); }
+.study-toolbar .print-btn { margin-left: auto; }
+
+/* 切到翻译精读页时，收起只属于做题流程的两块（首尾定调 + 题号导航） */
+body[data-pane="trans"] #toneCard,
+body[data-pane="trans"] #toneMini,
+body[data-pane="trans"] #qNav { display: none !important; }
+
+/* training-layout 自带 display:grid，hidden 属性得加权才能生效 */
+.training-layout[hidden], .tool-pane[hidden] { display: none !important; }
+
+/* 独立成页的工具面板：全宽卡片，内部铺得更开 */
+.tool-pane { margin-top: 2px; padding: 18px 20px 22px; background: var(--panel);
+  border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+.tool-pane .tool-head { padding-bottom: 11px; border-bottom: 1px solid var(--line); }
+.tool-pane .tool-title { font-size: 16px; }
+.tool-pane .tool-body { margin-top: 14px; }
+.tool-pane .trans-list { gap: 8px; }
+.tool-pane .trans-row { padding: 11px 14px; }
+.tool-pane .trans-en { font-size: 13.5px; }
+.tool-pane .trans-zh { font-size: 13.5px; }
+
+/* ---------- 本篇工具（逐句翻译）：常驻题目后面 ---------- */
+.study-tool { margin-top: 18px; padding-top: 13px; border-top: 1px dashed var(--line); }
+.tool-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.tool-title { font-size: 15px; font-weight: 700; color: var(--ink); }
+.tool-sub { flex: 1 1 auto; font-size: 12px; color: var(--ink-3); }
+.tool-toggle { border: 1px solid var(--line-strong); background: #fff; color: var(--ink-soft);
+  border-radius: 6px; padding: 1px 10px; font-size: 12px; cursor: pointer; }
+.tool-toggle:hover { border-color: var(--primary); color: var(--primary-600); }
+.tool-body { margin-top: 10px; }
+/* 逐句翻译 */
+.trans-list { display: flex; flex-direction: column; gap: 6px; }
+.trans-row { display: flex; gap: 9px; padding: 7px 10px; border: 1px solid var(--line);
+  border-radius: 8px; background: var(--paper-2); cursor: pointer; }
+.trans-row:hover { border-color: var(--primary); }
+.trans-row.done { background: #fff; }
+.trans-no { flex: 0 0 auto; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--line-strong); color: var(--ink-soft); font-size: 11px;
+  display: flex; align-items: center; justify-content: center; }
+.trans-row.done .trans-no { background: var(--primary-50); color: var(--primary-600); }
+.trans-body { min-width: 0; }
+.trans-en { font-size: 12.5px; line-height: 1.6; color: var(--ink); }
+.trans-zh { margin-top: 2px; font-size: 13px; line-height: 1.6; color: var(--ink-3); }
+.trans-row.done .trans-zh { color: var(--primary-700); }
 /* 生词本 */
 .vocab-head { margin-bottom: 16px; }
 .vocab-head h1 { margin: 0 0 6px; }
@@ -1291,9 +1411,6 @@ body { margin: 0; display: flex; flex-direction: column; overflow: hidden; }
 @keyframes stSpin { to { transform: rotate(360deg); } }
 .cloze-sentence { border-radius: 4px; }
 .cloze-sentence:hover { border-bottom-color: var(--primary-300, #a9c5f5); }
-
-/* 固定搭配卡工具条 */
-.colloc-tools { display: flex; gap: 8px; margin-bottom: 12px; }
 
 /* 生词本：词汇翻转卡 */
 .vocab-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; color: var(--ink-soft); font-size: 13px; }
