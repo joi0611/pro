@@ -1,8 +1,6 @@
 window.BUILTIN_LESSONS = [
   {
     "id": "cloze-上海-001",
-    
-    "freezeClues": true,
     "title_cn": "分歧面前如何沟通",
     "title_en": "Talking Through Disagreements",
     "level": "中考",
@@ -67,7 +65,7 @@ window.BUILTIN_LESSONS = [
           "when they are in a fight": "复现线索·同场复现",
           "You make me so angry": "情感线索·情感一致"
         },
-        "explanation": "线索　首句「Talking with others when disagreements happen is often very ______」是全文窗口句（→后指：后面整篇都在教「怎么做」——先冷静、换句式、少争执、盯住解决问题；要专门教方法，说明这件事本身不容易），方向顺向、褒贬为贬——空格要落在「不容易 / 难」上。\n印证　紧跟的第二句「Most people tend to hide their true feelings when they are in a fight」（→后指，同场复现）——争执中把真实感受藏起来，本能反应是回避，已经把「难」写出来了；再往下的 However「this way will never work out the problems」（→后指，转折）把最常用的本能做法也判为无效，方向只能是负面。\n排除　simple 与全篇方向正好相反：不难就不需要后面四条建议（方向否）；exciting 是正向兴奋，与 fight、I feel sad、so angry 连成的消极场冲突（异场否）；quick 讲速度，而后文支的全是「慢功夫」（等情绪冷却、换说话方式），全文找不到速度的呼应（呼应否）。\n补充　即使只认「后面整篇都在教方法」这一点，也足以定住 difficult；However 那句只是加固。",
+        "explanation": "线索　首句是全文窗口：它后面整篇都在教「怎么做」——先冷静、换句式、少争执、盯住解决问题。要教方法，说明这件事本身不容易。\n印证　第二句 Most people tend to hide their true feelings when they are in a fight（争执中把真实感受藏起来）——人们的本能反应是回避，已经把「难」写出来了。\n印证　再往下一条 However：this way will never work out the problems（这种做法永远解决不了问题）——连最常用的本能做法都被判无效，方向只能是负面。\n排除　simple 与全篇方向正好相反：不难就不需要后面四条建议（方向否）；exciting 是正向兴奋，与 fight、I feel sad、so angry 连成的消极场冲突（异场否）；quick 讲速度，而后文支的全是「慢功夫」（等情绪冷却、换说话方式），全文找不到速度的呼应（呼应否）。",
         "collocation": null
       },
       {
@@ -92,7 +90,7 @@ window.BUILTIN_LESSONS = [
           "I feel sad when we disagree": "复现线索·同场复现",
           "their true feelings": "情感线索·情感一致"
         },
-        "explanation": "线索　空后紧接一句 However「this way will never work out the problems」（→后指，转折）——被 However 否掉的「this way」正是本句 Most people tend to ______ their true feelings 里的做法；方向逆向、褒贬为贬——这个做法被判无效，空格要落在「不说 / 收起来」上。\n印证　后文给出正确做法作反面对照：say 「I feel sad when we disagree」（→后指，把感受直接说出来）——推荐「说出来」，反推被批评的做法就是「不说」；同句场景 in a fight 与后文 strong feelings 也支撑：情绪激烈时人的本能是收起来，与「藏」同一方向。\n排除　show、share 都是把感受表达出来，与后文推荐的 I-sentences 是同一件事，不可能被 However 判为无效（方向否）；record（记录）在全篇找不到任何呼应（呼应否）。\n补充　However 的否定指向与后文正确做法的反面对照，两者任取其一都能定住 hide。",
+        "explanation": "线索　空后面紧接一句 However, this way will never work out the problems——However 是转折信号，被它否掉的「this way」就是上一句 Most people tend to ______ their true feelings 里的做法。\n印证　后文给出正确做法，正好是反面对照：say \"I feel sad when we disagree\"（把感受直接说出来）。推荐「说出来」，反推被批评的做法就是「不说」。\n印证　in a fight（在争执中）+ strong feelings（强烈情绪）构成场景：情绪激烈时人的本能是收起来，这与「藏」同一方向。\n排除　show、share 都是把感受表达出来，与第 7 句推荐的 I-sentences 是同一件事，不可能被 However 判为无效（方向否）；record（记录）在全篇找不到任何呼应（呼应否）。",
         "collocation": null
       },
       {
@@ -109,16 +107,20 @@ window.BUILTIN_LESSONS = [
         "answer": "wait",
         "clues": [
           "Don't speak until your strong",
-          "strong feelings cool down",
-          "The right way is to"
+          "solve problems, not to win",
+          "strong feelings cool down"
         ],
         "clueTypes": {
           "Don't speak until your strong": "逻辑线索·时间",
-          "strong feelings cool down": "复现线索·同场复现",
-          "The right way is to": "语境线索·搭配骨架"
+          "solve problems, not to win": "情感线索·情感一致",
+          "strong feelings cool down": "复现线索·同场复现"
         },
-        "explanation": "线索　空后一句直接把答案说出来：Don't speak until your strong feelings cool down（→后指，时间）——not ... until 把顺序定死了：先别开口，等到情绪冷却；方向顺向、褒贬中性——空格要落在「等」这个动作上。\n印证　本句的 first（首先）与后句的 until（直到……才）构成先后链（→后指）：先做这一步，冷却之后再开口——中间隔的就是「等」；这条链与全文四条建议的排序一致。\n排除　talk 是最强干扰项，被 Don't speak 直接否掉（方向否）；leave（离开现场）后文没有对应的说法（呼应否）；help 与「解决问题」这条链接不上，也不是文章给出的第一步（异场否）。\n补充　not ... until 一处就足以定住 wait；first / until 的先后链只是让「等」的位置更明确。",
-        "collocation": null
+        "explanation": "线索　空后一句直接把答案说出来：Don't speak until your strong feelings cool down——not ... until 把顺序定死了：先别开口，等到情绪冷却。\n印证　本句的 first（首先）与后句的 until（直到……才）是一条先后链：先做这一步，冷却之后再开口——中间隔的就是「等」。\n排除　talk 是最强干扰项，被 Don't speak 直接否掉（方向否）；leave（离开现场）后文没有对应的说法（呼应否）；help 与「解决问题」这条链接不上，也不是文章给出的第一步。",
+        "collocation": {
+          "name": "介词短语",
+          "type": "介词短语",
+          "structure": "介词 + (冠词/物主代词) + 名词（in front of / on time / with the help of / in danger / at night / by accident …）"
+        }
       },
       {
         "q": 4,
@@ -142,7 +144,7 @@ window.BUILTIN_LESSONS = [
           "For example, say": "举例说明",
           "While communicating, try": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空所在结构 try ______ 「I-sentences」（本句内，搭配骨架）：宾语是「句子」，要填的是对句子发出的动作；instead of 「you-sentences」（而不是「你」句式）给出对立面——两种说法二选一；方向顺向、褒贬中性——空格要落在「使用」上。\n印证　下一句以 For example 开头举例（→后指，举例说明）：say 「I feel sad when we disagree」——例子说的正是「用」这个句式说话，不是造它、改它。\n排除　making sentences 是「造句」，而后文例子是直接说一句现成的话（方向否）；changing 与 instead of 冲突——要换掉的是「你」句式，不是换「我」句式（方向否）；copying 全篇无呼应（呼应否）。\n补充　try doing sth.（尝试做某事）是固定结构，但即使不认这个结构，instead of 的对立加后文举例也足以定住 using。",
+        "explanation": "线索　空所在结构是 try ______ \"I-sentences\"：宾语是「句子」，要填的是对句子发出的动作；instead of \"you-sentences\"（而不是「你」句式）给出对立面——两种说法二选一。\n印证　下一句以 For example 开头举例：say \"I feel sad when we disagree\"——例子说的正是「用」这个句式说话，不是造它、改它。\n排除　making sentences 是「造句」，而后文例子是直接说一句现成的话（方向否）；changing 与 instead of 冲突——要换掉的是「你」句式，不是换「我」句式（方向否）；copying 全篇无呼应（呼应否）。\n补充　try doing sth.（尝试做某事）是固定结构，但即使不认这个结构，instead of 的对立加后文举例也足以定住答案。",
         "collocation": null
       },
       {
@@ -167,7 +169,7 @@ window.BUILTIN_LESSONS = [
           "when disagreements happen": "复现线索·近义词复现",
           "keep the talk reasonable": "复现线索·同场复现"
         },
-        "explanation": "线索　空落在 cut down unnecessary ______ 里（本句内，搭配骨架）：cut down（减少）要求填一个可以被「减少」的负面名词；方向顺向、褒贬为贬——空格要落在「争执 / 冲突」类名词上。\n印证　同场词群贯穿全篇（←前指 + →后指，同场复现）：disagreements（分歧）→ fight（争执）→ disagree / angry → 本空的 arguments，全文都在「分歧—争执」这个语义场里；后半句 keep the talk reasonable（让谈话保持理性）也在限定：要减少的是情绪化的争执，不是理性讨论本身。\n排除　sadness 是情绪不是争执，且与 keep the talk reasonable 搭不上（异场否）；noise（噪声）是凭空出现的异场词（异场否）；trouble 太宽泛，全篇语义场是言语冲突而非一般麻烦（异场否）。\n补充　cut down + unnecessary 的搭配先圈定「负面、可减少」，同场词群再把答案钉死在 arguments 上。",
+        "explanation": "线索　空落在 cut down unnecessary ______ 里：cut down（减少）要求填一个可以被「减少」的负面名词；主语 This small change 回指上一句换句式的做法。\n印证　同场词群贯穿全篇：disagreements（分歧）→ fight（争执）→ disagree / angry → 本空的 arguments，全文都在「分歧—争执」这个语义场里。\n印证　后半句 keep the talk reasonable（让谈话保持理性）也在限定：要减少的是情绪化的争执，不是理性讨论本身。\n排除　sadness 是情绪不是争执，且与 keep the talk reasonable 搭不上（异场否）；noise（噪声）是凭空出现的异场词（异场否）；trouble 太宽泛，全篇语义场是言语冲突而非一般麻烦（呼应否）。",
         "collocation": null
       },
       {
@@ -184,15 +186,15 @@ window.BUILTIN_LESSONS = [
         "answer": "goal",
         "clues": [
           "to solve problems, not to win",
-          "of communication is to solve",
-          "Never forget that the"
+          "until your strong feelings cool",
+          "when disagreements happen"
         ],
         "clueTypes": {
           "to solve problems, not to win": "逻辑线索·转折",
-          "of communication is to solve": "语境线索·搭配骨架",
-          "Never forget that the": "语境线索·主旨收束"
+          "until your strong feelings cool": "情感线索·情感一致",
+          "when disagreements happen": "复现线索·同场复现"
         },
-        "explanation": "线索　空后是 is to solve problems, not to win a debate（→后指，对立）——「是……而不是……」这组对立同时约束两头，能同时与 solve problems 和 win a debate 搭上的，只有「目的 / 目标」；方向顺向、褒贬中性——空格要落在「目的」上。\n印证　全文四条建议都指向同一个终点（←前指）：先等（冷静）、用「我」句式（降火）、减少争执、保持理性——每一步都是为了把分歧解决掉；首句 when disagreements happen 开篇定场景，尾句回到 solve problems 收口，首尾闭环。\n排除　duty（责任）讲义务不讲方向，与 solve problems / win a debate 这组对立搭不上（异场否）；reply（回应）是对话动作，全文没有「回应某人」的落点（呼应否）；advice（建议）是全文给出的东西，而本空要填的是这些建议指向的终点（方向否）。\n补充　「是……而不是……」一处就足以定住 goal；全文四条建议的同向印证只是加固。",
+        "explanation": "线索　空后是 is to solve problems, not to win a debate——「是……而不是……」这组对立同时约束两头，能同时与 solve problems 和 win a debate 搭上的，只有「目的 / 目标」。\n印证　全文四条建议都指向同一个终点：先等（冷静）、用「我」句式（降火）、减少争执、保持理性——每一步都是为了把分歧解决掉。\n印证　首句 when disagreements happen（分歧出现时）开篇定场景，尾句回到 solve problems 收口，首尾闭环。\n排除　duty（职责）是外部要求，与 to solve problems 这个动作目标不匹配；reply、advice 都不受 not to win a debate 这组对立约束（方向否）。",
         "collocation": null
       }
     ],
@@ -209,7 +211,6 @@ window.BUILTIN_LESSONS = [
   },
   {
     "id": "cloze-上海-002",
-    "freezeClues": true,
     "title_cn": "快时尚的隐形代价",
     "title_en": "The Hidden Cost of Fast Fashion",
     "level": "中考",
@@ -239,7 +240,7 @@ window.BUILTIN_LESSONS = [
       "整组短语直接辨析": 0
     },
     "reading_sentence_count": 16,
-    "article_text_with_blanks": "Going shopping with your parents can be great fun. In the UK we buy more clothes than any other country in Europe. What people might not realise is that the fashion industry, and particularly \"fast fashion\", is __1__ to the planet. Fast fashion refers to cheap clothes that are quickly produced by large companies to __2__ the latest styles. Styles change all the time and lots of people like to buy clothes that are in fashion right now. The aim of fast fashion is to get these new styles into shops as fast as possible, so customers can buy them. The fashion industry is __3__ for between 8 and 10% of the greenhouse gas emissions（排放）. Making clothes also requires lots of water. Cotton comes from plants that need to be watered frequently to make them grow, and turning raw cotton into clothes needs even more water. The clothes then have to be shipped to the countries where they're going to be sold, which produces even more pollution. Fast fashion items aren't made to last forever because they often go out of style quite __4__ . Some people throw their clothes away when they don't want them any more. Companies often employ people in other countries to make their clothes, and some don't pay their workers very much. People then have to work __5__ hours to earn enough money to live on. Some countries have fewer rules than the UK, which means that factories aren't always well looked after and checked for safety. That could mean workers having to make clothes in dangerous or unhealthy __6__ . Lots of people are working for change. You could also raise awareness of the problem among your family and friends or ask a teacher to help you spread the word at your school.",
+    "article_text_with_blanks": "Going shopping with your parents can be great fun. In the UK we buy more clothes than any other country in Europe. What people might not realise is that the fashion industry, and particularly\"fast fashion\", is __1__ to the planet. Fast fashion refers to cheap clothes that are quickly produced by large companies to __2__ the latest styles. Styles change all the time and lots of people like to buy clothes that are in fashion right now. The aim of fast fashion is to get these new styles into shops as fast as possible, so customers can buy them. The fashion industry is __3__ for between 8 and 10% of the greenhouse gas emissions（排放）.Making clothes also requires lots of water. Cotton comes from plants that need to be watered frequently to make them grow, and turning raw cotton into clothes needs even more water. The clothes then have to be shipped to the countries where they're going to be sold, which produces even more pollution. Fast fashion items aren't made to last forever because they often go out of style quite __4__ .Some people throw their clothes away when they don't want them any more. Companies often employ people in other countries to make their clothes, and some don't pay their workers very much. People then have to work __5__ hours to earn enough money to live on. Some countries have fewer rules than the UK, which means that factories aren't always well looked after and checked for safety. That could mean workers having to make clothes in dangerous or unhealthy __6__ . Lots of people are working for change. You could also raise awareness of the problem among your family and friends or ask a teacher to help you spread the word at your school.",
     "reading_sentences": [
       "Going shopping with your parents can be great fun.",
       "In the UK we buy more clothes than any other country in Europe.",
@@ -281,7 +282,7 @@ window.BUILTIN_LESSONS = [
           "greenhouse gas emissions": "复现线索·同场复现",
           "to the planet": "固定搭配·结构骨架"
         },
-        "explanation": "线索　空所在句「What people might not realise is that the fashion industry ... is __1__ to the planet」（←前指，转折）——might not realise 是反预期信号：前两句刚铺完「逛街很开心、英国人衣服买得最多」，方向从这里转向负面；褒贬为贬，空格要落在「有害」上。\n印证　往后三段连列罪状（→后指，同场复现）：greenhouse gas emissions（温室气体排放）、requires lots of water（耗水）、produces even more pollution（更多污染），尾段还落到 the problem——全篇都在算环境账，to the planet 前只能是负面词。\n排除　benefit（益处）与整条污染链直接冲突（方向否）；unfair 说的是分配不公，而后文讲的是环境代价（异场否）；familiar 在全文找不到任何呼应（呼应否）。\n补充　be harmful to 是固定搭配，但即使不认这个搭配，后文三条环境证据也足以定住 harmful。",
+        "explanation": "线索　前两句先铺「逛街很开心、英国人衣服买得最多」，紧接着 What people might not realise（人们可能没意识到）是反预期信号——方向从这里转向负面。\n印证　往后三段连列罪状：greenhouse gas emissions（温室气体排放）、requires lots of water（耗水）、produces even more pollution（更多污染），尾段还落到 the problem。全篇都在算环境账，to the planet 前只能是负面词。\n排除　benefit（益处）与整条污染链直接冲突；unfair 说的是分配不公，后文讲的是环境代价；familiar 在全文找不到任何呼应。\n补充　be harmful to 是固定搭配，但即使不认这个搭配，后文三条环境证据也足以定住答案。",
         "collocation": {
           "name": "be ____ to",
           "type": "形容词 / 系表搭配",
@@ -310,7 +311,7 @@ window.BUILTIN_LESSONS = [
           "as fast as possible": "复现线索·同场复现",
           "the latest styles": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空在不定式表目的里（本句内，搭配骨架）：大公司快速生产廉价衣服，为的是 ______ the latest styles——目的要在后文找；褒贬中性。\n印证　紧接一句 Styles change all the time（→后指，因果）：既然款式一直在变，厂家的目的只能是「跟上」最新款式；再下一句 get these new styles into shops as fast as possible（→后指，同场复现）把同样的意思又说了一遍——段内三条「快」同指一处：quickly produced（生产快）、as fast as possible（上架快）、Styles change all the time（变得快）。\n排除　check（检查款式）后文没提质检（呼应否）；fight（对抗款式）与「把新款式送进店」直接矛盾（方向否）；compare 需要两个对象，后文只讲 latest styles 一个（异场否）。\n补充　follow the latest styles（追款式）是常见动宾组合，但即使不认搭配，Styles change all the time 一处也足以定住 follow。",
+        "explanation": "线索　空在不定式表目的：大公司快速生产廉价衣服，为的是 ______ 最新款式——目的要在后文找。\n印证　紧接一句 Styles change all the time（款式一直在变）：既然一直在变，厂家的目的只能是「跟上」最新款式；再下一句 get these new styles into shops as fast as possible 把同样的意思又说了一遍。\n印证　段内三条「快」同指一处：quickly produced（生产快）、as fast as possible（上架快）、Styles change all the time（变得快）——都在说「追」。\n排除　check（检查款式）后文没提质检；fight（对抗款式）与「把新款式送进店」直接矛盾；compare 需要两个对象，后文只讲 latest styles 一个。",
         "collocation": null
       },
       {
@@ -335,7 +336,7 @@ window.BUILTIN_LESSONS = [
           "between 8 and 10% of": "复现线索·同场复现",
           "fashion industry is": "固定搭配·结构骨架"
         },
-        "explanation": "线索　空后一句以 also 开头（→后指，并列）：Making clothes also requires lots of water——also 表示并列同向，前后两句讲的是同一类事，都是代价；褒贬为贬。\n印证　空后紧接 between 8 and 10% of the greenhouse gas emissions（→后指，同场复现）：占比数字正需要一个表示「造成、是……成因」的词；段落位置也在提示——第 2 段讲完快时尚是什么、目的多快，第 3 段换段讲后果，要开始算账了。\n排除　good for（有益）被 also 引出的耗水证据否掉（方向否）；ready for、famous for 都引不出「8~10% 排放」这样的后果数据（异场否）。\n补充　be responsible for 是固定搭配，与归因语义一致。",
+        "explanation": "线索　关键逻辑词在空后一句：Making clothes also requires lots of water.——also（还）表示并列同向，前后两句讲的是同一类事：都是代价。\n印证　既然后半句是负面的耗水，前半句 is __3__ for ... emissions 也必须是负面归因；空后 between 8 and 10% of the greenhouse gas emissions 是占比数字，正需要一个表示「造成、是……成因」的词。\n印证　段落位置也在提示：第 2 段讲完快时尚是什么、目的多快，第 3 段换段讲后果——要开始算账了。\n排除　good for（有益）被 also 引出的耗水证据否掉；ready for、famous for 都引不出「8~10% 排放」这样的后果数据。\n补充　be responsible for 是固定搭配，与归因语义一致。",
         "collocation": {
           "name": "be ____ for",
           "type": "形容词 / 系表搭配",
@@ -364,7 +365,7 @@ window.BUILTIN_LESSONS = [
           "throw their clothes away": "逻辑线索·因果",
           "quickly produced": "复现线索·原词复现"
         },
-        "explanation": "线索　空在 because 引导的原因从句里（←前指，因果）：aren't made to last forever（做出来就不是为了穿很久），because 要求填一个能解释「不耐用」的原因；褒贬中性。\n印证　后一句给后果（→后指，因果）：Some people throw their clothes away（直接扔掉）——扔得快，说明过时也快；同一个 quick 贯穿全篇：第 2 段 quickly produced（←前指，原词复现，生产快），这里 go out of style quite quickly（过时快）——「快」是这篇文章的主线词。\n排除　gradually 是最强干扰项：它跟「变化」搭配很自然，但 because 的方向把它否掉了——逐渐过时反而更耐穿，与 aren't made to last forever 正好相反（方向否）；simply、accidentally 都解释不了「为什么不耐用」（异场否）。\n补充　fast fashion、aren't made to last forever 已把「快」和「不持久」绑在一起，答案只需在这条链上取值。",
+        "explanation": "线索　空在 because 引导的原因从句里：aren't made to last forever（做出来就不是为了穿很久），因为过时得 ______。because 要求填一个能解释「不耐用」的原因。\n印证　后一句给后果印证：Some people throw their clothes away（直接扔掉）——扔得快，说明过时也快。\n印证　同一个 quick 贯穿全篇：第 2 段 quickly produced（生产快），这里 go out of style quite quickly（过时快）——「快」是这篇文章的主线词。\n排除　gradually 是最强干扰项：它跟「变化」搭配很自然，但 because 的方向把它否掉了——逐渐过时反而更耐穿，与 aren't made to last forever 正好相反。simply、accidentally 都解释不了「为什么不耐用」。\n补充　fast fashion、aren't made to last forever 已把「快」和「不持久」绑在一起，答案只需在这条链上取值。",
         "collocation": null
       },
       {
@@ -389,7 +390,7 @@ window.BUILTIN_LESSONS = [
           "to earn enough money": "逻辑线索·因果",
           "People then": "逻辑线索·时间"
         },
-        "explanation": "线索　空前的 then 是承接词（←前指，时间 + 因果）：这一句是上一句 some don't pay their workers very much（工资很低）的直接结果；褒贬为贬。\n印证　空后 to earn enough money to live on 是目的状语（→后指，因果）——enough（够）是核心线索：钱不够、要挣够，低工资下只能靠延长工时，即 longer hours。\n排除　busier 最容易误选，但前后文说的是工资低、不是订单多，「忙」也不是「钱不够」的解法（异场否）；earlier（更早）与因果方向相反——早下班只会挣得更少（方向否）；happier 与挣钱糊口无关（异场否）。\n补充　don't pay ... very much → then → work longer hours → to earn enough money，这条因果链任取一段都能定住 longer。",
+        "explanation": "线索　空前的 then 是承接词：这一句是上一句 some don't pay their workers very much（工资很低）的直接结果。\n印证　空后 to earn enough money to live on 是目的状语——enough（够）是核心线索：钱不够、要挣够，低工资下只能靠延长工时，即 longer hours。\n印证　完整因果链：don't pay ... very much → then → have to work longer hours → to earn enough money。\n排除　busier 最容易误选，但前后文说的是工资低、不是订单多，「忙」也不是「钱不够」的解法；earlier（更早）与因果方向相反——早下班只会挣得更少；happier 与挣钱糊口无关。",
         "collocation": null
       },
       {
@@ -414,7 +415,7 @@ window.BUILTIN_LESSONS = [
           "dangerous or unhealthy": "情感线索·情感一致",
           "checked for safety": "复现线索·同场复现"
         },
-        "explanation": "线索　真正的定位线索在空前一句（←前指，同场复现）：factories aren't always well looked after and checked for safety——safety（安全）是钥匙，工厂没人维护、不做安全检查，后果就落在下一句；褒贬为贬。\n印证　That could mean 是指代衔接（←前指，因果：That 回指上一整句），明确告诉你本句是上一句的后果；空前的 dangerous or unhealthy（←前指，情感一致）直接把褒贬写死——能同时被 dangerous、unhealthy 修饰的只有「条件 / 环境」。\n排除　本段语义场是 factories / workers / safety / clothes；diets（饮食）、habits（习惯）、relationships（人际关系）在全篇都没有任何对应内容（异场否）。\n补充　整段是劳动者代价的递进链：工资低 → 工时长 → 监管松（safety）→ 环境差（dangerous / unhealthy），conditions 正是这条链的终点。",
+        "explanation": "线索　真正的定位线索在空前一句：factories aren't always well looked after and checked for safety——safety（安全）是钥匙。工厂没人维护、不做安全检查，后果就落在下一句。\n印证　That could mean 是指代衔接（That 回指上一整句），明确告诉你本句是上一句的后果，要顺着「安全监管缺失」往下推，不能另起话题。\n印证　整段是劳动者代价的递进链：工资低 → 工时长 → 监管松（safety）→ 环境差（dangerous / unhealthy）。conditions（工作条件）正是这条链的终点。\n排除　本段语义场是 factories / workers / safety / clothes；diets（饮食）、habits（习惯）、relationships（人际关系）三个词在全篇都没有任何对应内容，属于凭空出现的选项。",
         "collocation": null
       }
     ],
@@ -431,7 +432,6 @@ window.BUILTIN_LESSONS = [
   },
   {
     "id": "cloze-上海-003",
-    "freezeClues": true,
     "title_cn": "打造更好的睡前习惯",
     "title_en": "Build a Better Bedtime Routine",
     "level": "中考",
@@ -496,16 +496,14 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "suggestions",
         "clues": [
-          "The following",
-          "Decide on a Set Bedtime",
-          "Take a Warm Shower"
+          "may help",
+          "The following"
         ],
         "clueTypes": {
-          "The following": "语境线索·搭配骨架",
-          "Decide on a Set Bedtime": "举例说明",
-          "Take a Warm Shower": "举例说明"
+          "may help": "情感线索·情感一致",
+          "The following": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空所在句 The following __1__ may help you get a better bedtime routine（→后指，情感一致）——may help 定了正向情绪，句间无转折词，空格延续这条褒贬；褒贬为褒，空格要落在「有帮助的东西」上。\n印证　The following 直接指向下文（→后指，搭配骨架）：紧接着的四个小标题 Decide on a Set Bedtime / Take a Warm Shower / Listen to Music / Prepare Your Bedroom 全是具体做法——「下列」要接的正是这些建议。\n排除　advantages（优势）是「好处」而不是「做法」，下文列的是该做什么，不是有什么好处（方向否）；hobbies（爱好）、experiences（经历）在全篇找不到任何呼应（异场否）。\n补充　The following 属搭配骨架，但即使不认它，下文四个做法清单也足以定住 suggestions。",
+        "explanation": "线索　情感一致：「may help」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（搭配骨架）：「The following」与主线指向一致。\n排除　advantages、hobbies、experiences三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「The following」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -521,16 +519,14 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "changeable",
         "clues": [
-          "wake-up time and stick to",
-          "isn't good for training your brain",
+          "The sudden change",
           "bedtime routine"
         ],
         "clueTypes": {
-          "wake-up time and stick to": "复现线索·反义词复现",
-          "isn't good for training your brain": "情感线索·情感一致",
+          "The sudden change": "复现线索·派生词复现",
           "bedtime routine": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空所在句 A(n) __2__ bedtime routine isn't good for training your brain（←前指，对立）——上一句要求 Decide on a bedtime and wake-up time and stick to them every day（定好时间并每天坚持）；褒贬为贬，空格要落在「不固定、常变」上。\n印证　stick to them every day 表示每天遵守同一套时间，与 changeable 构成直接反义复现；isn't good for training your brain 则说明这种作息带来负面结果。\n排除　ordinary（普通）、pleasant（令人愉快）偏中性甚至褒义，解释不了「为什么不好」（方向否）；strict（严格）与作息是否稳定无关（异场否）。\n补充　后文 The sudden change 说的是洗澡后体温的突然变化，与本题作息是否固定无关，不能作为本题的派生词复现。",
+        "explanation": "线索　派生复现：「The sudden change」已给出答案的词根，选它的同根派生形式即可。\n印证　空所在句里还有同向佐证（搭配骨架）：「bedtime routine」与主线指向一致。\n排除　ordinary、pleasant、strict三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「bedtime routine」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -546,16 +542,16 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "quickly",
         "clues": [
-          "The sudden change of your body temperature",
+          "usually help you feel relaxed",
           "and cool down",
-          "as the water dries up"
+          "as the water"
         ],
         "clueTypes": {
-          "The sudden change of your body temperature": "复现线索·近义词复现",
+          "usually help you feel relaxed": "复现线索·同场复现",
           "and cool down": "逻辑线索·并列",
-          "as the water dries up": "逻辑线索·时间"
+          "as the water": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空所在句里的 and 是并列信号（←前指，并列）：Your body will heat up from the water, and cool down __3__ as the water dries up——and 两端属性一致，空格要与「水一干、体温骤变」的走向同向；褒贬中性。\n印证　下一句 The sudden change of your body temperature（→后指，同场复现）——sudden（突然）是钥匙：既然是突然的变化，降温必然快；再往下 usually help you feel relaxed（→后指）说明这条链路的终点是放松、犯困。\n排除　gently 是最强干扰项：它跟洗澡、擦干的场景很搭，但被 sudden 直接否掉——温和与突然正好相反（方向否）；safely（安全地）、quietly（安静地）在全篇找不到任何呼应（呼应否）。\n补充　sudden change 一处就足以定住 quickly；and 的并列只是加固。",
+        "explanation": "线索　空所在句里出现并列信号（「and cool down」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　紧邻的下一句里还有同向佐证（同场词群）：「usually help you feel relaxed」与主线指向一致。\n排除　quietly 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；gently、safely 则异场否、呼应否。\n补充　「as the water」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -580,7 +576,7 @@ window.BUILTIN_LESSONS = [
           "The sudden change of": "复现线索·同场复现",
           "one to two hours": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空所在句是研究结论（←前指，因果）：Researchers ... found that showering with water of 40°C~42.5°C one to two hours before bedtime was __4__ better sleep——found that 后面要填的是「洗澡」与「更好睡眠」之间的关系；褒贬为褒。\n印证　本段整段都在讲洗澡促眠（←前指，同场复现）：heat up → cool down → The sudden change ... help you feel relaxed, and even a little tired——这条生理链正好把「水温 / 时间」和「睡得好」接起来，结论只能是两者相关。\n排除　based on（以……为基础）方向反了——是睡得好基于洗澡，不能说洗澡基于睡得好（方向否）；full of（充满）要求主语是容器，与 better sleep 搭不上（异场否）；different from（不同于）与整段的促眠论证相反（方向否）。\n补充　研究类句式 found that A ... be __ B 里，能同时连接「做法」与「结果」的只有 connected with。",
+        "explanation": "线索　紧邻的上一句里处在因果链上（「found that showering with」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（同场词群）：「The sudden change of」与主线指向一致。\n排除　based on、full of、different from三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「one to two hours」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": {
           "name": "____",
           "type": "整组短语辨析",
@@ -600,16 +596,14 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "calms",
         "clues": [
-          "a powerful relaxation tool",
-          "turn your attention away from worries",
+          "you effectively",
           "as long as it"
         ],
         "clueTypes": {
-          "a powerful relaxation tool": "复现线索·同场复现",
-          "turn your attention away from worries": "情感线索·情感一致",
+          "you effectively": "固定搭配",
           "as long as it": "逻辑线索·条件"
         },
-        "explanation": "线索　空前的 as long as 是条件结构（←前指，条件）：You may choose any type of music you like, as long as it __5__ you effectively——只要音乐能「怎样」你，随便选哪种都行；褒贬为褒。\n印证　段首句 Music can be a powerful relaxation tool（←前指，情感一致）先定褒贬：音乐是放松工具，那么条件就是「能让你平静」；后两句 Close your eyes ... let it turn your attention away from worries（→后指）也在说同一件事——把注意力从担忧上移开。\n排除　disturbs（打扰）与 relaxation tool 直接冲突（方向否）；reminds（提醒）通常要接 of sb./sth.，本句只接 you effectively，搭不上（异场否）；awards（奖励）全篇无呼应（异场否）。\n补充　relaxation tool 一处就足以定住 calms；turn your attention away from worries 只是把「平静」具体化。",
+        "explanation": "线索　固定搭配：「you effectively」是常见搭配结构，空格词由搭配骨架锁定。\n印证　空所在句里还有同向佐证（条件结构）：「as long as it」与主线指向一致。\n排除　disturbs、reminds、awards三个干扰项全文找不到任何呼应落点（呼应否）。",
         "collocation": null
       },
       {
@@ -634,7 +628,7 @@ window.BUILTIN_LESSONS = [
           "or blackout curtains to": "举例说明",
           "making things as cool": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空后紧接着 use blinds or blackout curtains to keep out light（→后指，举例说明）——后句讲具体怎么遮光，正是前句观点的实例；褒贬中性。\n印证　空前的 turning your bedroom into a relaxing place, making things as cool, dark, and quiet as possible（←前指，举例）是总述：要又凉快又暗又安静——后面接的遮光帘正是「暗」这条的具体做法。\n排除　In conclusion（总之）位置不对：本段还有后续 keeping electronic devices out of the bedroom is also necessary，且后文是做法不是结论（方向否）；What's more（而且）表递进，而遮光帘与「暗」是总分关系，不是新增论点（方向否）；After all（毕竟）表让步追补，与本处语境不合（异场否）。\n补充　「总述（cool, dark, quiet）→ 举例（blinds / blackout curtains）」这条结构一处就足以定住 For example。",
+        "explanation": "线索　例证：「or blackout curtains to」在说明空格所在的观点，方向与例子一致。\n印证　紧邻的上一句里还有同向佐证（举例信号）：「turning your bedroom into」与主线指向一致。\n排除　In conclusion、What's more、After all三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「making things as cool」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": {
           "name": "____",
           "type": "整组短语辨析",
@@ -656,7 +650,6 @@ window.BUILTIN_LESSONS = [
   },
   {
     "id": "cloze-上海-004",
-    "freezeClues": true,
     "title_cn": "家长该租玩具吗？",
     "title_en": "Should Parents Rent Toys?",
     "level": "中考",
@@ -733,7 +726,7 @@ window.BUILTIN_LESSONS = [
           "toys that are no longer": "复现线索·同场复现",
           "several companies offer the": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空前的 this 是回指代词（←前指，因果）：Usually they get stored somewhere and forgotten——玩具被收起来、被遗忘；褒贬为贬，空格要落在「不让这件事发生」上。\n印证　空后的 several companies offer the service of renting toys（→后指，同场复现）是解法：提供租赁正是为了不让玩具闲置；toys that are no longer enjoyed（←前指，同场复现）也把场景说清楚了——玩腻的玩具。\n排除　remember（记住）与「提供租赁服务」构不成目的关系（方向否）；prove（证明）、explain（解释）后面要接观点或事实，而 this 指的是一种浪费现象（异场否）。\n补充　this 的回指一处就足以定住 avoid；后半句的租赁服务只是把「怎么避免」说出来。",
+        "explanation": "线索　紧邻的上一句里处在因果链上（「stored somewhere and forgotten」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（同场词群）：「toys that are no longer」与主线指向一致。\n排除　remember 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；explain、prove 则异场否、呼应否。\n补充　「several companies offer the」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -750,15 +743,13 @@ window.BUILTIN_LESSONS = [
         "answer": "produced",
         "clues": [
           "if lots of children",
-          "making toys uses resources",
-          "better for the environment"
+          "toys will be"
         ],
         "clueTypes": {
           "if lots of children": "逻辑线索·条件",
-          "making toys uses resources": "逻辑线索·因果",
-          "better for the environment": "情感线索·情感一致"
+          "toys will be": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空前是 if 条件句（←前指，条件）：if lots of children play with the same toys, fewer toys will be __2__——同一件玩具被更多孩子玩，需要的玩具总数就少；褒贬中性。\n印证　空后一句以 because 给出理由（→后指，因果）：making toys uses resources, such as metal, plastic, wood and energy——正因为造玩具要耗资源，所以「少造」才环保，被减少的只能是「生产」；This is better for the environment（→后指）再次确认这条链。\n排除　collected（收集）、compared（比较）、noticed（注意）都接不上「造玩具耗资源」这条理由（异场否）；也只有「少生产」能同时满足 fewer toys 与 better for the environment（方向否）。\n补充　making toys uses resources 一处就足以定住 produced；fewer toys 只是把量说清楚。",
+        "explanation": "线索　空所在句里带条件结构（「if lots of children」）：先有前提再有结果，所填词要满足这条前提下的结果方向。\n印证　空所在句里还有同向佐证（搭配骨架）：「toys will be」与主线指向一致。\n排除　noticed 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；collected、compared 则呼应否×2。\n补充　「toys will be」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -774,16 +765,12 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "Therefore",
         "clues": [
-          "This is better for the environment",
-          "making toys uses resources",
           "to share toys is a good"
         ],
         "clueTypes": {
-          "This is better for the environment": "逻辑线索·因果",
-          "making toys uses resources": "逻辑线索·因果",
-          "to share toys is a good": "逻辑线索·结论"
+          "to share toys is a good": "逻辑线索·因果"
         },
-        "explanation": "线索　空后一句 to share toys is a good way to protect the environment（→后指，因果）——「是保护环境的良好方式」是结论句，需要一个引出结论的词；褒贬为褒。\n印证　空前的理由是完整的（←前指，因果）：共享 → fewer toys will be produced → making toys uses resources → This is better for the environment——理由在前、结论在后，方向顺向。\n排除　However（然而）要求前后转折，而前后都在说环保好处，方向一致（方向否）；Instead（而是）表替代，本处没有「不做 A 而做 B」的结构（异场否）；Also（而且）表并列补充，而空后是收束性的判断句，不是新增论点（方向否）。\n补充　「理由 → 结论」这一结构一处就足以定住 Therefore。",
+        "explanation": "线索　空所在句里处在因果链上（「to share toys is a good」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　答案词根 therefore 在文中他处也出现（… to protect the environment Besides renti …），全篇方向一致。\n排除　However 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；Instead、Also 则呼应否×2。",
         "collocation": {
           "name": "过渡语 / 衔接词",
           "type": "固定短语",
@@ -803,17 +790,19 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "mess",
         "clues": [
-          "save time to tidy up",
           "will be less",
           "at home"
         ],
         "clueTypes": {
-          "save time to tidy up": "复现线索·同场复现",
-          "will be less": "语境线索·搭配骨架",
-          "at home": "语境线索·搭配骨架"
+          "will be less": "固定搭配·结构骨架",
+          "at home": "固定搭配·结构骨架"
         },
-        "explanation": "线索　空所在句 Another advantage is that there will be less __4__ at home（←前指，同场复现：本段在列租赁玩具的好处），褒贬为贬——被减少的是一件坏事。\n印证　紧跟一句 This will save time to tidy up（→后指，因果）——tidy up（收拾）是钥匙：需要收拾的是「乱」，less mess（少乱）与 save time（省时间）正好咬合。\n排除　heat（热量）、noise（噪声）、fight（争吵）都与 tidy up 没有呼应——收拾房间收拾不了热度、声音或争执（异场否）。\n补充　tidy up 一处就足以定住 mess；less 与 save time 只是把好处说完整。",
-        "collocation": null
+        "explanation": "线索　结构骨架：「will be less」搭出固定框架，先满足骨架，再验证词义方向。\n印证　空所在句里还有同向佐证（结构骨架）：「at home」与主线指向一致。\n排除　fight 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；heat、noise 则呼应否×2。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
       },
       {
         "q": 5,
@@ -837,7 +826,7 @@ window.BUILTIN_LESSONS = [
           "The owner takes good care": "情感线索·情感一致",
           "his connection with the": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空所在句 his connection with the toy becomes __5__（←前指，情感一致：The owner takes good care of the toy，主人很爱惜），褒贬为褒——空格要落在「越来越深」上。\n印证　后一句从反面加锁（→后指，反义复现）：Changing toys all the time makes such connection less possible——老换玩具会让这种连接「不太可能」，反推本空是连接变强；every time he plays with it（←前指）也说明是每次累积、逐步加深。\n排除　worse、poorer 都是负向词，与 takes good care of 的褒义场直接冲突（方向否）；easier（更容易）与 connection（情感连接）搭不上——连接只论强弱，不论难易（异场否）。\n补充　Changing toys ... less possible 一处就足以定住 stronger；takes good care 只是先把褒贬定下来。",
+        "explanation": "线索　情感一致：「The owner takes good care」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　紧邻的下一句里还有同向佐证（反义对照）：「Changing toys all the time」与主线指向一致。\n排除　worse 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；easier、poorer 则呼应否×2。\n补充　「his connection with the」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -853,17 +842,17 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "pollution",
         "clues": [
-          "This brings harm to the environment",
-          "the delivery vans",
           "toys around create"
         ],
         "clueTypes": {
-          "This brings harm to the environment": "逻辑线索·因果",
-          "the delivery vans": "复现线索·同场复现",
-          "toys around create": "语境线索·搭配骨架"
+          "toys around create": "固定搭配"
         },
-        "explanation": "线索　空所在句 the delivery vans which take the toys around create __6__（←前指，因果：送货车来回跑），褒贬为贬——create 后面接的是负面的东西。\n印证　紧跟一句 This brings harm to the environment（→后指，因果）——harm（危害）把褒贬写死：能对环境造成危害的只有「污染」；这一句也与前文「租赁更环保」的正方论点形成对立，说明本段在讲反方理由。\n排除　value（价值）、jobs（工作）都是正面词，与 harm 直接冲突（方向否）；accidents（事故）虽是负面，但讲的是安全不是环境，与 brings harm to the environment 搭不上（异场否）。\n补充　brings harm to the environment 一处就足以定住 pollution；delivery vans create 只是给出污染来源。",
-        "collocation": null
+        "explanation": "线索　固定搭配：「toys around create」是常见搭配结构，空格词由搭配骨架锁定。\n排除　value 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；jobs、accidents 则呼应否×2。",
+        "collocation": {
+          "name": "过渡语 / 衔接词",
+          "type": "固定短语",
+          "structure": "at first / at last / in fact / after all / above all / on the contrary / as a result / in addition / what's more / for example / such as / from now on / in the end"
+        }
       }
     ],
     "missingAnswer": false,
@@ -880,7 +869,6 @@ window.BUILTIN_LESSONS = [
   },
   {
     "id": "cloze-上海-005",
-    "freezeClues": true,
     "title_cn": "女科学家王贞仪",
     "title_en": "Star Woman: Wang Zhenyi",
     "level": "中考",
@@ -947,16 +935,12 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "scientist",
         "clues": [
-          "read a lot about astronomy",
-          "wrote many articles about her research",
-          "make science available to more people"
+          "a great Chinese"
         ],
         "clueTypes": {
-          "read a lot about astronomy": "复现线索·同场复现",
-          "wrote many articles about her research": "复现线索·同场复现",
-          "make science available to more people": "复现线索·同场复现"
+          "a great Chinese": "情感线索·情感一致"
         },
-        "explanation": "线索　判断人物身份要看全文行为：王贞仪自学 astronomy、maths 等学科，做实验解释月食，还写了许多研究文章（→后指，同场复现），这些都是科学研究活动。\n印证　结尾说她让 science available to more people，进一步说明她既研究科学，也向公众普及科学。\n排除　doctor 只与 medicine 一词沾边，但全文没有行医；teacher、lawyer 都没有职业行为支撑（异场否）。\n补充　a great Chinese 只能判断褒贬，不能判断具体职业；真正锁定答案的是全文的研究语义场。",
+        "explanation": "线索　情感一致：「a great Chinese」定了情绪方向，句间无转折词，空格延续这条褒贬。\n排除　doctor、lawyer、teacher三个干扰项全文找不到任何呼应落点（呼应否）。",
         "collocation": null
       },
       {
@@ -981,7 +965,7 @@ window.BUILTIN_LESSONS = [
           "were open-minded": "情感线索·情感一致",
           "her to read the books": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空格位于 ______ her to read the books，结构是 verb + sb. + to do；长辈思想开明、认为女孩应有平等机会，因此会支持她读书。\n印证　encourage sb. to do sth. 是完整结构，意为「鼓励某人做某事」；were open-minded 与 equal opportunities 又把态度定为正向。\n排除　invite 通常是邀请参加活动，select 是挑选，follow 是跟随，都不能同时承接长辈的正向态度与读书行为。\n补充　先用上下文确定「支持」，再用 encourage sb. to do sth. 复核结构。",
+        "explanation": "线索　紧邻的上一句里处在因果链上（「girls should share equal」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「were open-minded」与主线指向一致。\n排除　followed 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；invited、selected 则呼应否×2。\n补充　「her to read the books」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -997,16 +981,14 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "focus on",
         "clues": [
-          "read a lot about astronomy",
-          "wrote many articles about her research",
+          "Later, she decided",
           "she decided to"
         ],
         "clueTypes": {
-          "read a lot about astronomy": "复现线索·同场复现",
-          "wrote many articles about her research": "复现线索·同场复现",
+          "Later, she decided": "逻辑线索·时间",
           "she decided to": "语境线索·搭配骨架"
         },
-        "explanation": "线索　前文说她大量阅读 astronomy，后文又连续写她观察、实验并发表研究文章（←前指 + →后指，同场复现），说明她把精力集中到天文学研究上。\n印证　focus on 意为「专注于」，与后文围绕 lunar eclipses 展开的研究行为完全一致。\n排除　rely on 是依赖，show off 是炫耀，talk about 只是谈论，都弱于后文持续研究的投入程度。\n补充　Later 只说明时间推进，不能单独决定答案；真正证据是前后连续的研究行为。",
+        "explanation": "线索　空所在句里有时间信号（「Later, she decided」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（搭配骨架）：「she decided to」与主线指向一致。\n排除　show off 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；rely on、talk about 则呼应否×2。\n补充　「she decided to」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": {
           "name": "____",
           "type": "整组短语辨析",
@@ -1026,16 +1008,12 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "experiments",
         "clues": [
-          "used a round table as the Earth",
-          "a lamp as the Sun and a mirror as the Moon",
-          "to explain those \"strange\" events"
+          "did some"
         ],
         "clueTypes": {
-          "used a round table as the Earth": "举例说明",
-          "a lamp as the Sun and a mirror as the Moon": "复现线索·同场复现",
-          "to explain those \"strange\" events": "逻辑线索·因果"
+          "did some": "固定搭配"
         },
-        "explanation": "线索　下一句以 In one 开始举例：她用圆桌代表地球、灯代表太阳、镜子代表月亮，并移动它们模拟月食（→后指，举例说明）。这是一项可操作、可观察结果的科学实验。\n印证　前文说她相信 facts and observation，后文又具体描述实验器材与过程，答案只能是 experiments。\n排除　exercises 是练习，drawings 是绘图，reviews 是评论，都无法概括这套模拟天体运行的操作。\n补充　did some 只是通用结构，不能排除其他名词；真正锁定答案的是后面的实验过程。",
+        "explanation": "线索　固定搭配：「did some」是常见搭配结构，空格词由搭配骨架锁定。\n排除　exercises、drawings、reviews三个干扰项全文找不到任何呼应落点（呼应否）。",
         "collocation": null
       },
       {
@@ -1051,16 +1029,14 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "actually",
         "clues": [
-          "believed in facts and observation",
-          "to show what",
-          "when the Earth is passing directly"
+          "happens during a lunar",
+          "to show what"
         ],
         "clueTypes": {
-          "believed in facts and observation": "逻辑线索·转折",
-          "to show what": "语境线索·事实说明",
-          "when the Earth is passing directly": "举例说明"
+          "happens during a lunar": "逻辑线索·时间",
+          "to show what": "逻辑线索·时间"
         },
-        "explanation": "线索　前文先写人们用神意解释月食，随后用 But 转向王贞仪相信 facts and observation（←前指，转折）；她的模型要展示月食时「实际发生了什么」。\n印证　冒号后的解释说明地球位于太阳和月亮之间、阳光无法到达月球，这正是事实机制，因此用 actually。\n排除　suddenly 表突然，nearly 表几乎，recently 表最近，都不能引出对月食真实原理的说明。\n补充　本题考的是「迷信解释—事实解释」的对比，不是时间先后。",
+        "explanation": "线索　空所在句里有时间信号（「happens during a lunar」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（时间信号）：「to show what」与主线指向一致。\n排除　suddenly 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；nearly、recently 则呼应否×2。",
         "collocation": null
       },
       {
@@ -1076,16 +1052,16 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "simple",
         "clues": [
-          "clear and",
-          "explained difficult ideas",
-          "understand science more easily"
+          "so that people could",
+          "ways so",
+          "could understand science more easily"
         ],
         "clueTypes": {
-          "clear and": "逻辑线索·并列",
-          "explained difficult ideas": "逻辑线索·因果",
-          "understand science more easily": "复现线索·近义词复现"
+          "so that people could": "逻辑线索·因果",
+          "ways so": "逻辑线索·因果",
+          "could understand science more easily": "复现线索·同场复现"
         },
-        "explanation": "线索　空格与 clear 由 and 并列，两个形容词共同修饰 ways，方向一致；后面的 so that 引出结果：人们能更容易理解科学。\n印证　simple 与 easily 构成近义呼应：表达方式越简单，困难概念越容易理解。\n排除　polite、funny、traditional 都不能自然解释「为什么更容易理解科学」。\n补充　先看 clear and ______ 的并列，再用 understand...more easily 验证 simple。",
+        "explanation": "线索　空所在句里处在因果链上（「so that people could」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（因果信号）：「ways so」与主线指向一致。\n排除　polite、funny、traditional三个干扰项全文找不到任何呼应落点（呼应否）。",
         "collocation": null
       }
     ],
@@ -1103,7 +1079,6 @@ window.BUILTIN_LESSONS = [
   },
   {
     "id": "cloze-上海-006",
-    "freezeClues": true,
     "title_cn": "用废料造巨人的艺术家",
     "title_en": "Thomas Dambo's Giants from Trash",
     "level": "中考",
@@ -1247,7 +1222,11 @@ window.BUILTIN_LESSONS = [
           "outside and into": "逻辑线索·并列"
         },
         "explanation": "线索　空所在句里有举例信号（「such as resting on」）：例子在印证前文，所填词要与例子的方向一致。\n印证　空所在句里还有同向佐证（并列结构）：「outside and into」与主线指向一致。\n排除　takes up、picks up、sets up三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「these giants」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
-        "collocation": null
+        "collocation": {
+          "name": "过渡语 / 衔接词",
+          "type": "固定短语",
+          "structure": "at first / at last / in fact / after all / above all / on the contrary / as a result / in addition / what's more / for example / such as / from now on / in the end"
+        }
       },
       {
         "q": 5,
@@ -1262,16 +1241,16 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "beauty",
         "clues": [
-          "trees, lakes and wildlife",
-          "His works attract 4.5 million visitors",
-          "to experience the"
+          "lakes and wildlife",
+          "to experience the",
+          "of trees"
         ],
         "clueTypes": {
-          "trees, lakes and wildlife": "复现线索·同场复现",
-          "His works attract 4.5 million visitors": "情感线索·情感一致",
-          "to experience the": "语境线索·搭配骨架"
+          "lakes and wildlife": "逻辑线索·并列",
+          "to experience the": "语境线索·搭配骨架",
+          "of trees": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空后列举 trees, lakes and wildlife，圈定的是自然景观语义场；experience the ______ of... 需要填人们到自然中感受的正向特质。\n印证　作品每年吸引 450 万游客，说明这些自然环境具有吸引力，beauty 最符合。\n排除　study 是研究，health 是健康，sound 是声音，都不能同时概括树木、湖泊和野生动物给人的整体体验。\n补充　这里的 and 只连接三个自然事物，本身不能直接推出答案；关键是自然语义场与正向体验。",
+        "explanation": "线索　空所在句里出现并列信号（「lakes and wildlife」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　空所在句里还有同向佐证（搭配骨架）：「to experience the」与主线指向一致。\n排除　study 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；health、sound 则呼应否×2。\n补充　「to experience the」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -1287,16 +1266,14 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "differently",
         "clues": [
-          "old things can still be valuable",
-          "trash can be beautiful and useful",
-          "look at trash"
+          "look at trash",
+          "and hopes"
         ],
         "clueTypes": {
-          "old things can still be valuable": "复现线索·同场复现",
-          "trash can be beautiful and useful": "逻辑线索·因果",
-          "look at trash": "语境线索·搭配骨架"
+          "look at trash": "情感线索·情感一致",
+          "and hopes": "逻辑线索·并列"
         },
-        "explanation": "线索　文章开头说旧物仍有价值，结尾又说 trash can be beautiful and useful（首尾复现）——作品要改变人们对垃圾的固有看法。\n印证　原本被丢弃的材料变成受欢迎的艺术品，说明人们需要用「不同的方式」看待垃圾，因此选 differently。\n排除　naturally、proudly、seriously 都只描述看的状态，无法表达从「无用」到「有价值」的观念变化。\n补充　决定答案的是前后认知发生改变，而不是一般的褒贬一致。",
+        "explanation": "线索　情感一致：「look at trash」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（并列结构）：「and hopes」与主线指向一致。\n排除　naturally、proudly、seriously三个干扰项全文找不到任何呼应落点（呼应否）。",
         "collocation": null
       }
     ],
@@ -1314,7 +1291,6 @@ window.BUILTIN_LESSONS = [
   },
   {
     "id": "cloze-上海-007",
-    "freezeClues": true,
     "title_cn": "房间乱一点可以吗？",
     "title_en": "Is It OK to Have a Messy Room?",
     "level": "中考",
@@ -1380,16 +1356,14 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "organized",
         "clues": [
-          "messy or disorganized living space",
           "because they're still learning",
           "how to be"
         ],
         "clueTypes": {
-          "messy or disorganized living space": "复现线索·反义词复现",
           "because they're still learning": "逻辑线索·因果",
           "how to be": "语境线索·搭配骨架"
         },
-        "explanation": "线索　空前说孩子和青少年有点 messy，是因为他们还在学习如何变得 ______；下一句直接出现 disorganized（无条理的），与答案构成反义复现。\n印证　organized 与 messy / disorganized 正好相反，符合「仍在学习」这一成长过程。\n排除　responsible、efficient 虽是正向品质，但后文没有直接对应；relaxed 与房间是否杂乱无关。\n补充　最强证据是 disorganized ↔ organized，不必只靠常识推断。",
+        "explanation": "线索　空所在句里处在因果链上（「because they're still learning」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　空所在句里还有同向佐证（搭配骨架）：「how to be」与主线指向一致。\n排除　relaxed 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；responsible、efficient 则呼应否×2。\n补充　「how to be」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -1406,15 +1380,15 @@ window.BUILTIN_LESSONS = [
         "answer": "creative",
         "clues": [
           "On the other hand",
-          "cause anxiety and even prevent people from thinking clearly",
+          "be in control and",
           "the sign of a"
         ],
         "clueTypes": {
           "On the other hand": "逻辑线索·转折",
-          "cause anxiety and even prevent people from thinking clearly": "情感线索·情感变化",
+          "be in control and": "情感线索·情感一致",
           "the sign of a": "语境线索·搭配骨架"
         },
-        "explanation": "线索　前一句说杂乱可能导致 anxiety、妨碍清晰思考，On the other hand 随即转向相反方向：某种不整洁也可能是 ______ mind 的标志。\n印证　转折后应填正向品质；四个选项中 creative 最符合研究发现中「不整洁与创造力相关」的表达。\n排除　confused 延续前面的负面方向，违背 On the other hand；peaceful、simple 与 untidiness 没有语义联系。\n补充　关键是先利用 On the other hand 判断褒贬反转，再在正向选项中确定 creative。",
+        "explanation": "线索　空所在句里出现转折信号（「On the other hand」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「be in control and」与主线指向一致。\n排除　peaceful 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；simple、confused 则异场否、呼应否。\n补充　「the sign of a」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": {
           "name": "介词短语",
           "type": "介词短语",
@@ -1443,7 +1417,7 @@ window.BUILTIN_LESSONS = [
           "have their own space": "复现线索·同场复现",
           "nurturing their kids'": "语境线索·搭配骨架"
         },
-        "explanation": "线索　上一句连续给出 own space、be in control、be themselves（←前指，同场复现）：年轻人自己掌控空间、按自己的方式生活，指向独立。\n印证　父母允许孩子 keep their room the way they want，正是在培养孩子自行决定和负责的 independence。\n排除　skills 太宽泛；interests 是兴趣；confidence 虽为正向品质，但不能完整概括「自己的空间 + 自己掌控」。\n补充　三处自主性表达共同锁定 independence。",
+        "explanation": "线索　空所在句里处在因果链上（「the way they want」）：原因与结果方向咬合，所填词要能承接这条因果。\n印证　紧邻的上一句里还有同向佐证（同场词群）：「have their own space」与主线指向一致。\n排除　skills 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；confidence、interests 则异场否、呼应否。\n补充　「nurturing their kids'」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -1468,7 +1442,7 @@ window.BUILTIN_LESSONS = [
           "And cleaning up your": "逻辑线索·并列",
           "it will just get": "语境线索·搭配骨架"
         },
-        "explanation": "线索　本段站在「房间乱一点没关系」的一方，前一句已经给出一个理由：打扫无聊又费时；空后又补充另一个同向理由——反正房间还会再次变乱。\n印证　Besides 表示「此外」，正好把两个并列的支持理由连接起来。\n排除　However 表转折，Instead 表替代，Otherwise 表否则，三者都不能连接两个同向补充理由。\n补充　本题不能借用后面反方段落的 stress 作为依据；只看空格所在的正方段落。",
+        "explanation": "线索　紧邻的上一句里出现并列信号（「And cleaning up your」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。\n印证　邻段 / 全篇范围里的还有同向佐证（因果信号）：「so there's no reason」与主线指向一致。\n排除　However 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；Otherwise、Instead 则方向否、呼应否。\n补充　「it will just get」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -1509,16 +1483,16 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "respected",
         "clues": [
-          "but it's still part of the family home",
-          "A tidy room is nice for everyone",
-          "means no family arguments"
+          "but it's still part",
+          "like homework, hobbies, and friends",
+          "can clear your thinking, help"
         ],
         "clueTypes": {
-          "but it's still part of the family home": "逻辑线索·转折",
-          "A tidy room is nice for everyone": "情感线索·情感一致",
-          "means no family arguments": "逻辑线索·因果"
+          "but it's still part": "逻辑线索·转折",
+          "like homework, hobbies, and friends": "情感线索·情感一致",
+          "can clear your thinking, help": "情感线索·情感一致"
         },
-        "explanation": "线索　句中 but 把「房间属于你」转向「它仍是家庭住宅的一部分」，因此个人使用空间时要顾及共同生活者。\n印证　下一句说整洁的房间对 everyone 都好，并能避免 family arguments，说明共享空间应被尊重。\n排除　ignored 与全文倡导的家庭责任相反；remembered、changed 都不能表达对公共空间应有的态度。\n补充　family home、everyone、family arguments 三处共同把答案锁定为 respected。",
+        "explanation": "线索　空所在句里出现转折信号（「but it's still part」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「can clear your thinking, help」与主线指向一致。\n排除　changed 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；remembered、ignored 则呼应否×2。",
         "collocation": null
       }
     ],
@@ -1541,7 +1515,6 @@ window.BUILTIN_LESSONS = [
   },
   {
     "id": "cloze-上海-008",
-    "freezeClues": true,
     "title_cn": "该不该改动童书？",
     "title_en": "Editing Children's Books",
     "level": "中考",
@@ -1660,9 +1633,9 @@ window.BUILTIN_LESSONS = [
           "attractive"
         ],
         "answer": "proper",
-        "clues": ["However, some people think", "Words like \"fat\" or \"ugly\" were removed", "books are not"],
-        "clueTypes": {"However, some people think": "逻辑线索·转折", "Words like \"fat\" or \"ugly\" were removed": "举例说明", "books are not": "语境线索·搭配骨架"},
-        "explanation": "线索　空所在句以 However 转折：前文赞美达尔作品，随后转到有人认为某些词在今天不再 ______，方向转为负面评价。\n印证　下一段举例说 fat、ugly 等词被删除（→后指，举例说明），说明出版商认为这些表达在今天不够恰当，因此选 proper。\n排除　modern 只表示是否现代，不能准确说明为什么词语会伤害感受并被删除；complete、attractive 与删词理由无关。\n补充　反对改写者关于 original style 的观点属于争论的另一方，不能拿来直接证明出版商为什么删词。",
+        "clues": ["However, some people think", "books are not", "They argue that rewriting books"],
+        "clueTypes": {"However, some people think": "逻辑线索·转折", "books are not": "语境线索·搭配骨架", "They argue that rewriting books": "复现线索·同场复现"},
+        "explanation": "线索　空所在句「However, some people think」是转折信号（←前指：与上文对达尔的赞美相反，转而说有人觉得某些词不妥），方向逆向、褒贬为贬——空格要落在「不妥 / 不当」的语义上。「books are not」是 not + ___ 的搭配骨架（本句内一致），圈定形容词填空。\n印证　后句「They argue that rewriting books takes away the author's original style」是同场复现（→后指一致）：反对改写的人认为原词自有其风格，正说明那些词在原语境里是「得当 / 合适」的，与 proper 同向。\n排除　modern 是最强干扰项：老旧词确实「不现代」，但本篇争论的是社会接受度而非新旧，modern 与举例给出的「冒犯 / 不当」方向对不上（方向否）；complete、attractive 呼应否。\n补充　However 转折 + 同场复现两条线索已足够把答案钉在 proper 上。",
         "collocation": null
       },
       {
@@ -1719,7 +1692,6 @@ window.BUILTIN_LESSONS = [
   },
   {
     "id": "cloze-上海-009",
-    "freezeClues": true,
     "title_cn": "面对被拒绝",
     "title_en": "Facing Rejection",
     "level": "中考",
@@ -1785,16 +1757,16 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "uncomfortable",
         "clues": [
+          "But one thing is for sure",
           "can be painful and embarrassing",
-          "Nobody likes rejection",
           "everyone experiences the"
         ],
         "clueTypes": {
-          "can be painful and embarrassing": "情感线索·情感一致",
-          "Nobody likes rejection": "情感线索·情感一致",
+          "But one thing is for sure": "情感线索·情感变化",
+          "can be painful and embarrassing": "逻辑线索·并列",
           "everyone experiences the": "语境线索·搭配骨架"
         },
-        "explanation": "线索　上一句用 painful and embarrassing 描写被拒绝的感受（←前指，情感一致），两者都指向令人不舒服的负面体验。\n印证　后句 Nobody likes rejection 再次确认这种感受令人不快，因此选 uncomfortable。\n排除　unfriendly 通常形容人或态度；unfamiliar 是不熟悉；unnecessary 是没必要，都不能概括 painful and embarrassing。\n补充　But one thing is for sure 只是强调人人都会经历，并没有改变情感方向。",
+        "explanation": "线索　情感变化：「But one thing is for sure」之前是另一段情绪，这里按转折后的新方向取词。\n印证　紧邻的上一句里还有同向佐证（并列结构）：「can be painful and embarrassing」与主线指向一致。\n排除　unfriendly、unfamiliar、unnecessary三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「everyone experiences the」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -1810,17 +1782,19 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "chances",
         "clues": [
-          "never raise their hands again",
-          "avoid the possibility of not being chosen",
-          "even avoid possible"
+          "even avoid possible",
+          "to make"
         ],
         "clueTypes": {
-          "never raise their hands again": "举例说明",
-          "avoid the possibility of not being chosen": "复现线索·同场复现",
-          "even avoid possible": "情感线索·情感一致"
+          "even avoid possible": "情感线索·情感一致",
+          "to make": "固定搭配·结构骨架"
         },
-        "explanation": "线索　人们害怕再次被拒绝，所以会主动 avoid possible ______；下一句举例说他们甚至不再举手，以免再次落选。\n印证　举手本来可能带来被选中的机会，不举手就是回避机会，因此选 chances。\n排除　arguments、mistakes、ambitions 都不能与 raise their hands / not being chosen 形成直接呼应。\n补充　本题靠下句实例锁定，不是靠固定搭配。",
-        "collocation": null
+        "explanation": "线索　情感一致：「even avoid possible」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（结构骨架）：「to make」与主线指向一致。\n排除　arguments 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；mistakes、ambitions 则呼应否×2。\n补充　「to make」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
       },
       {
         "q": 3,
@@ -1835,16 +1809,12 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "accepting",
         "clues": [
-          "Share how you feel",
-          "put your feelings into words",
-          "If you keep the feelings in"
+          "into words because"
         ],
         "clueTypes": {
-          "Share how you feel": "复现线索·同场复现",
-          "put your feelings into words": "复现线索·同场复现",
-          "If you keep the feelings in": "复现线索·反义词复现"
+          "into words because": "逻辑线索·因果"
         },
-        "explanation": "线索　小标题 Talk it out 之后连续要求 Share how you feel、put your feelings into words，方向都是承认并表达自己的感受。\n印证　下一句从反面说明：如果把感受压在心里，就更难振作；因此接受感受才能帮助自己继续前进。\n排除　ignoring 与表达感受相反；changing、protecting 都不是本段建议的心理动作。\n补充　accepting 在这里不是消极忍受，而是承认感受存在、再把它说出来。",
+        "explanation": "线索　空所在句里处在因果链上（「into words because」）：原因与结果方向咬合，所填词要能承接这条因果。\n排除　changing 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；ignoring、protecting 则呼应否×2。",
         "collocation": null
       },
       {
@@ -1860,16 +1830,16 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "nothing",
         "clues": [
-          "a big deal right now",
-          "might mean",
-          "tomorrow"
+          "after getting over the problem",
+          "start to feel less hurt",
+          "But don't be too hard"
         ],
         "clueTypes": {
-          "a big deal right now": "逻辑线索·对比",
-          "might mean": "语境线索·搭配骨架",
-          "tomorrow": "逻辑线索·时间"
+          "after getting over the problem": "情感线索·情感一致",
+          "start to feel less hurt": "情感线索·情感一致",
+          "But don't be too hard": "情感线索·情感一致"
         },
-        "explanation": "线索　句中把 right now 与 tomorrow 对照：今天看起来是 big deal 的事情，换个时间和角度看，明天可能已经不算什么。\n印证　前文说与他人谈过后会 less hurt、see the reality，说明问题的重要性会减弱到 nothing。\n排除　everything、something、anything 都仍表示有某种分量，无法与 big deal 形成最强反差。\n补充　决定答案的是「现在很严重—明天不算什么」的时间对比。",
+        "explanation": "线索　情感一致：「start to feel less hurt」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「But don't be too hard」与主线指向一致。\n排除　something 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；anything、everything 则方向否、呼应否。",
         "collocation": null
       },
       {
@@ -1885,16 +1855,16 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "review",
         "clues": [
-          "Look back and then move forward",
-          "the situation and try to find out the real cause",
-          "When you're ready"
+          "back and then",
+          "When you're ready",
+          "the situation and"
         ],
         "clueTypes": {
-          "Look back and then move forward": "逻辑线索·时间",
-          "the situation and try to find out the real cause": "逻辑线索·因果",
-          "When you're ready": "语境线索·搭配骨架"
+          "back and then": "逻辑线索·时间",
+          "When you're ready": "语境线索·搭配骨架",
+          "the situation and": "逻辑线索·并列"
         },
-        "explanation": "线索　小标题 Look back and then move forward 要求先回头看；本句又说要找出真正原因，因此空格应表示重新审视当时情况。\n印证　review the situation 意为「回顾、检视情况」，正好服务于 find out the real cause。\n排除　memorize 是背诵，divide 是划分，record 是记录当下，都不符合事后回顾分析。\n补充　标题与找原因的目的共同锁定 review。",
+        "explanation": "线索　空所在句里有时间信号（「back and then」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（并列结构）：「the situation and」与主线指向一致。\n排除　memorize、divide、record三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「When you're ready」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -1911,15 +1881,13 @@ window.BUILTIN_LESSONS = [
         "answer": "exactly",
         "clues": [
           "Think through what happened",
-          "and why it didn't work out",
-          "as you had expected"
+          "and why"
         ],
         "clueTypes": {
-          "Think through what happened": "语境线索·深入分析",
-          "and why it didn't work out": "逻辑线索·并列",
-          "as you had expected": "语境线索·事实核对"
+          "Think through what happened": "情感线索·情感一致",
+          "and why": "逻辑线索·并列"
         },
-        "explanation": "线索　Think through 要求把事情想透，后面又并列追问 why it didn't work out，空格应强调准确弄清事实细节。\n印证　what exactly happened 是常见疑问表达，意为「究竟发生了什么」。\n排除　immediately 讲时间，finally 讲顺序，certainly 讲确信程度，都不能表达对事实的精确追问。\n补充　本题是副词语义辨析，不是情感线索。",
+        "explanation": "线索　情感一致：「Think through what happened」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（并列结构）：「and why」与主线指向一致。\n排除　immediately、finally、certainly三个干扰项全文找不到任何呼应落点（呼应否）。",
         "collocation": null
       }
     ],
@@ -1937,7 +1905,6 @@ window.BUILTIN_LESSONS = [
   },
   {
     "id": "cloze-上海-010",
-    "freezeClues": true,
     "title_cn": "肢体语言的力量",
     "title_en": "The Power of Body Language",
     "level": "中考",
@@ -2005,17 +1972,19 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "weak",
         "clues": [
-          "shows a need for protection",
-          "appear stronger and more confident",
-          "a low-power pose"
+          "and shows a need for protection",
+          "It makes you look"
         ],
         "clueTypes": {
-          "shows a need for protection": "复现线索·同场复现",
-          "appear stronger and more confident": "复现线索·反义词复现",
-          "a low-power pose": "语境线索·搭配骨架"
+          "and shows a need for protection": "固定搭配·结构骨架",
+          "It makes you look": "情感线索·情感一致"
         },
-        "explanation": "线索　低权力姿势 shows a need for protection，说明人显得需要被保护、力量较弱，因此选 weak。\n印证　下一种高权力姿势使人 appear stronger and more confident，与 weak 构成直接反义对照。\n排除　rude、dishonest、ugly 分别评价礼貌、诚信和外貌，都与 power / protection 语义场无关。\n补充　本题靠高低权力姿势的对比，不是固定搭配。",
-        "collocation": null
+        "explanation": "线索　情感一致：「It makes you look」定了情绪方向，句间无转折词，空格延续这条褒贬。\n印证　空所在句里还有同向佐证（结构骨架）：「and shows a need for protection」与主线指向一致。\n排除　rude、dishonest、ugly三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「and shows a need for protection」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
+        "collocation": {
+          "name": "动介动词 + 介词",
+          "type": "动词短语",
+          "structure": "laugh at / smile at / listen to / wait for / look at / deal with / belong to / depend on / arrive at / agree with / think about / worry about / care about / hear from / learn from / suffer from / apologize to / thank …"
+        }
       },
       {
         "q": 2,
@@ -2055,16 +2024,14 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "recorded",
         "clues": [
-          "and later watched",
-          "by another group of interviewers",
+          "and later",
           "All the interviews were"
         ],
         "clueTypes": {
-          "and later watched": "逻辑线索·时间",
-          "by another group of interviewers": "逻辑线索·因果",
+          "and later": "逻辑线索·时间",
           "All the interviews were": "语境线索·搭配骨架"
         },
-        "explanation": "线索　面试结束后要由另一组面试官 later watched；要在之后观看，过程必须事先被保存下来。\n印证　recorded 表示「录制」，与 later watched 形成完整的先后链。\n排除　arranged 是安排，delayed 是推迟，finished 是完成，三者都不能让另一组人事后观看面试。\n补充　later watched 一处就足以锁定 recorded。",
+        "explanation": "线索　空所在句里有时间信号（「and later」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　空所在句里还有同向佐证（搭配骨架）：「All the interviews were」与主线指向一致。\n排除　arranged、delayed、finished三个干扰项全文找不到任何呼应落点（呼应否）。\n补充　「All the interviews were」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       },
       {
@@ -2080,17 +2047,17 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "explanation",
         "clues": [
-          "releases particular chemicals in the brain",
-          "She says that doing some poses",
           "Cuddy gives a simple"
         ],
         "clueTypes": {
-          "releases particular chemicals in the brain": "举例说明",
-          "She says that doing some poses": "逻辑线索·因果",
-          "Cuddy gives a simple": "语境线索·搭配骨架"
+          "Cuddy gives a simple": "固定搭配·结构骨架"
         },
-        "explanation": "线索　空后 She says... 开始说明姿势会释放脑内化学物质，并进一步解释这些物质怎样影响信心，这是对实验现象的原因说明。\n印证　give an explanation for... 意为「对……作出解释」，与后面的生理机制完全对应。\n排除　solution 是解决办法，conclusion 是结论，suggestion 是建议，都不能概括后文的机制说明。\n补充　决定答案的是后文在回答「为什么」，不是单靠 give a simple 的局部结构。",
-        "collocation": null
+        "explanation": "线索　结构骨架：「Cuddy gives a simple」搭出固定框架，先满足骨架，再验证词义方向。\n排除　solution、conclusion、suggestion三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "collocation": {
+          "name": "短语动词（空在小品词位）",
+          "type": "动词短语",
+          "structure": "动词 + 空 + 介词/副词小品词（give up / turn off / put on / take off / look at …）；已排除 be 动词与功能词，避免误判"
+        }
       },
       {
         "q": 5,
@@ -2105,16 +2072,12 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "As a result",
         "clues": [
-          "these chemicals make people believe they are powerless",
-          "they often do not deal with stress well",
-          "they are less positive"
+          "they often do not deal with"
         ],
         "clueTypes": {
-          "these chemicals make people believe they are powerless": "逻辑线索·因果",
-          "they often do not deal with stress well": "逻辑线索·结果",
-          "they are less positive": "情感线索·情感一致"
+          "they often do not deal with": "逻辑线索·因果"
         },
-        "explanation": "线索　前句给出原因：低权力姿势释放的化学物质让人觉得自己 powerless；空后紧接应对压力差、态度更消极的后果。\n印证　As a result 表示「因此、结果」，准确连接前因与后果。\n排除　What's more 只表示补充，After all 表示毕竟，On the other hand 表示另一方面，都不能明确表达这条因果链。\n补充　完整逻辑是 chemicals → feel powerless → cannot deal with stress，先找因果再选连接语。",
+        "explanation": "线索　空所在句里处在因果链上（「they often do not deal with」）：原因与结果方向咬合，所填词要能承接这条因果。\n排除　What's more 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；On the other hand、After all 则方向否、呼应否。",
         "collocation": {
           "name": "____",
           "type": "整组短语辨析",
@@ -2143,7 +2106,7 @@ window.BUILTIN_LESSONS = [
           "What mattered was how confident": "复现线索·反义词复现",
           "Cuddy found that it": "语境线索·搭配骨架"
         },
-        "explanation": "线索　Cuddy 的发现出人意料：候选人说了什么、具备什么资格都不重要，面试官更看重他们表现出的自信。\n印证　it didn't matter 与 What mattered 构成鲜明对照，突出这个值得注意、颇有意思的研究结果，因此用 Interestingly。\n排除　Unfortunately 表遗憾，Suddenly 表事情突然发生，Certainly 表理所当然，都不符合作者介绍意外研究发现的语气。\n补充　句内对照解释研究发现的内容，而 Interestingly 负责表达作者对这一发现的评价。",
+        "explanation": "线索　空所在句里出现转折信号（「it didn't matter what the」）：转折前后表意相反，空格要取与被转折内容相对的方向。\n印证　紧邻的下一句里还有同向佐证（反义对照）：「What mattered was how confident」与主线指向一致。\n排除　Unfortunately 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；Suddenly、Certainly 则异场否、呼应否。\n补充　「Cuddy found that it」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。",
         "collocation": null
       }
     ],
@@ -7300,283 +7263,3 @@ window.BUILTIN_LESSONS = [
     "_explgen_touched": true
   }
 ];
-
-// 人工复核：第11—15篇。线索必须能在原文中精确定位，避免自动生成的截句和误判。
-(() => {
-  const reviewed = {
-    "cloze-上海-011": [
-      [["stay in line with the sun's light", "daylight tells animals when to rise or rest"], ["复现线索·近义复现", "语境线索·行为规律"], "线索　下文说这些生物钟使生物与太阳光保持同步，且日光会告诉动物何时活动或休息，因此内置时钟是“跟随”太阳。\n排除　avoids、ignores都与同步关系相反；changes表示改变太阳，不合常理。"],
-      [["when he put it in a dark cupboard", "the leaves still folded and unfolded"], ["逻辑线索·让步转折", "语境线索·状态延续"], "线索　即使被放进黑暗橱柜，叶子仍照常开合；still突出原有规律没有改变，所以选as usual（像往常一样）。\n排除　in a hurry、at once强调速度，by chance表示偶然，都不能解释规律持续。"],
-      [["Daily cycles tell our bodies when to sleep, eat, and grow", "help animals know when to move or rest for the season"], ["逻辑线索·递进", "语境线索·补充功能"], "线索　前一句已说明昼夜周期对人体的作用，后一句又补充它对动物季节性活动的作用，是递进关系，选even（甚至）。\n排除　only会限制作用，rarely与常规功能矛盾，simply不能体现递进。"],
-      [["it also reacts to light", "when it's bright or getting dark", "sunlight and darkness help reset it"], ["复现线索·反义对应", "语境线索·明暗对照", "复现线索·原词复现"], "线索　生物钟不仅计时，还会对光线作出反应；全文反复以bright/light和dark/darkness构成明暗对照，因此选darkness。\n排除　silence、coldness、blindness均不属于文中的光照语义场。"],
-      [["or \"sleep\" signals", "when to rise or rest", "When it's light, rise"], ["语境线索·并列对应", "复现线索·近义复现", "语境线索·明暗对照"], "线索　空格与sleep并列成相反的两类信号；前文rise与rest也形成对应，所以应是wake up。\n排除　stay up是熬夜，get up偏起床动作，speak up与睡眠无关。"],
-      [["travel to different places", "out of line with the local time", "at the wrong times"], ["语境线索·情境", "逻辑线索·因果", "语境线索·时间错位"], "线索　跨时区旅行使身体时钟与当地时间错位，于是在不该困的时候感到疲倦，选tired。\n排除　surprised、bored、excited都不是时差造成的典型身体反应。"]
-    ],
-    "cloze-上海-012": [
-      [["decide if we should", "to future Year 9 students", "I would happily recommend this trip"], ["语境线索·写作目的", "语境线索·对象", "复现线索·同义复现"], "线索　报告要决定是否把这次旅行推荐给未来的九年级学生，末段又直接出现recommend，因此选suggest。\n排除　explain、describe只表示说明，include表示包括，均不符合“向某人推荐”的结构。"],
-      [["the host families were friendly and welcome", "some families lived far from the school", "so we had to wake up before sunrise"], ["逻辑线索·转折", "语境线索·负面事实", "逻辑线索·因果"], "线索　前面肯定寄宿家庭友好，随后指出部分家庭离学校远并造成早起的不便，语意明显转折，选However。\n排除　For example、In fact不表示转折，After all表示解释或让步后的理由。"],
-      [["a science lesson in a nearby park", "a geography class that took place at the beach", "more group discussions"], ["语境线索·举例", "语境线索·举例", "语境线索·并列特征"], "线索　后文用公园里的科学课和海滩上的地理课具体说明课程在户外进行，因此选outdoor。\n排除　online、social、independent均与两个地点例证不符。"],
-      [["easy to understand", "We visited many exciting places", "These trips were amazing"], ["语境线索·并列评价", "语境线索·正向评价", "语境线索·情感同向"], "线索　导游既要讲得易懂，又应有趣；随后对参观活动的积极评价也支持interesting。\n排除　satisfied通常形容人的感受，hopeful与讲解无关，enjoyable一般形容活动而非此处的导游特征。"],
-      [["the local students could not join us", "because they had school", "they should come with us"], ["语境线索·遗憾事实", "逻辑线索·因果", "语境线索·愿望"], "线索　当地学生因上课不能同行，作者又希望下次他们能参加，体现遗憾，选Sadly。\n排除　Suddenly、Seriously、Finally分别表示突然、严肃地、最终，均不传达遗憾。"],
-      [["spoke English with our host families and exchange partners", "spoke with the tour guides", "feel more confident"], ["语境线索·段落主旨", "复现线索·同场复现", "逻辑线索·结果"], "线索　本段反复写与寄宿家庭、交换伙伴和导游用英语交流，并说明交流提升了自信，因此标题应为Language and Communication。\n排除　其余标题分别谈饮食、困难或友谊，不能概括全段。"]
-    ],
-    "cloze-上海-013": [
-      [["help students learn more effectively", "study plans", "used in many schools"], ["语境线索·主题", "复现线索·同场复现", "语境线索·应用场景"], "线索　全文围绕学生学习、学习计划和学校应用展开，DeepSeek作出的贡献属于education。\n排除　economy、industry、medicine均不是本文讨论的领域。"],
-      [["each student's learning habits", "concentrate on their weaknesses", "improve their strengths"], ["逻辑线索·因果", "语境线索·个体差异", "语境线索·个体差异"], "线索　平台分析每一名学生的习惯，并针对个人弱项和强项安排学习，因此是personal study plans（个性化学习计划）。\n排除　common、public、the same都无法体现因人而异。"],
-      [["instant feedback", "immediately points out mistakes", "explains how to correct them"], ["语境线索·搭配", "语境线索·具体说明", "语境线索·具体说明"], "线索　完成练习后平台立刻指出错误并讲解改法，即“提供即时反馈”，固定表达为provide feedback。\n排除　prevent、protect、play都不能与feedback构成此处语义。"],
-      [["teachers benefit from DeepSeek's tools", "Additionally, DeepSeek's system generates detailed reports"], ["逻辑线索·递进补充", "复现线索·同义衔接"], "线索　前一段说学生受益，这一段补充教师也受益；后文Additionally再次延续补充关系，所以选In addition。\n排除　In brief表示总结，As a result表示结果，On the other hand表示对比。"],
-      [["check students' progress in real-time", "who needs extra help", "making it easier to"], ["逻辑线索·因果", "语境线索·信息识别", "语境线索·搭配骨架"], "线索　实时查看学习进度能让教师更容易发现谁需要额外帮助，find out意为“查明、发现”。\n排除　look out是当心，put out是扑灭，take out是取出。"],
-      [["used in many schools", "Schools using DeepSeek", "the results are remarkable"], ["复现线索·范围", "复现线索·同义复现", "语境线索·结果"], "线索　技术已在许多学校使用，后文再次概括使用该技术的学校，说明应用范围广，选widely。\n排除　easily、completely、awfully分别表示容易地、完全地、糟糕地，均不说明覆盖范围。"]
-    ],
-    "cloze-上海-014": [
-      [["the thing is in the dark", "so they can find their way", "differences in the echoes"], ["语境线索·地点", "逻辑线索·目的", "逻辑线索·推断依据"], "线索　人们根据回声差异判断物体在黑暗中的位置，从而找到路；从句询问地点，选where。\n排除　how、when、why分别询问方式、时间和原因，均不能作tell后的地点从句。"],
-      [["now can do many things", "including riding bikes alone or playing basketball", "without this skill"], ["逻辑线索·今昔对比", "语境线索·举例", "语境线索·条件"], "线索　现在掌握技能后能独自骑车、打篮球，说明过去没有这项技能时这些事“不可能”做到，选impossible。\n排除　useless、funny、boring都不能表达能力限制。"],
-      [["there are some changes in his brain", "compared with the past", "So his brain works"], ["逻辑线索·因果", "逻辑线索·前后对比", "语境线索·结果"], "线索　失明后大脑发生变化，所以与过去相比工作方式不同，选differently。\n排除　slowly、truly、regularly均没有由“发生变化”推出。"],
-      [["What's the", "the visual cortex (视觉皮层) became more active", "Scientists believed this was the key"], ["语境线索·问答结构", "逻辑线索·原因解释", "复现线索·近义复现"], "线索　问句之后立刻用研究发现解释背后的成因，且前文key也指关键原因，因此选reason。\n排除　problem、advantage、purpose分别表示问题、优势和目的，不符合后文的成因解释。"],
-      [["process what people see", "information from other senses", "like hearing, smell and taste"], ["复现线索·同义复现", "语境线索·宾语", "语境线索·举例"], "线索　视觉皮层不仅处理视觉内容，也会处理听觉、嗅觉和味觉等其他感官信息；deals with与process同义。\n排除　stands for、consists of、gives up分别表示代表、由……组成、放弃。"],
-      [["your brain can learn new skills", "became more active when people listened", "shows how"], ["逻辑线索·具体说明", "语境线索·研究发现", "语境线索·程度结构"], "线索　大脑能调动视觉皮层处理声音并学习新技能，体现其强大能力，选powerful。\n排除　rare、forgetful、usual都不能概括这种可塑性。"]
-    ],
-    "cloze-上海-015": [
-      [["robots to help with their work", "robots have a special ability", "Many famous artists today"], ["语境线索·目的", "逻辑线索·因果", "语境线索·主语"], "线索　许多艺术家借助机器人完成创作，并认为机器人有特殊能力，因此是rely on（依靠）。\n排除　refer to、stand for、point out分别表示提及、代表、指出，都不符合“借助……工作”。"],
-      [["human artists, who might worry", "robots are reliable", "They don't get discouraged"], ["逻辑线索·对比", "语境线索·反向特征", "语境线索·具体说明"], "线索　人类艺术家会担忧、泄气，而机器人可靠且不会如此，前后是鲜明对比，选Unlike。\n排除　Besides、As、Among不能引出这种相反比较。"],
-      [["They don't get discouraged", "wonder whether to keep going", "robots are reliable"], ["语境线索·并列", "复现线索·反义复现", "语境线索·正向特征"], "线索　空格与get discouraged并列，前文又写人类会犹豫是否继续，因此机器人不会泄气或放弃，选give up。\n排除　make decisions、make progress、grow up都不与discouraged构成同向并列。"],
-      [["the same feeling and emotion", "the same impact on the audience", "see the love and skill behind it"], ["语境线索·情感", "语境线索·影响", "逻辑线索·条件"], "线索　人们看到作品背后的爱与技巧时会受到感染；前文也强调艺术的情感和影响力，因此选moved by。\n排除　satisfied with、confused about、disappointed at与正向感染不符。"],
-      [["Imperfections in the artwork", "showing the human touch behind it", "also make it"], ["语境线索·主语", "逻辑线索·结果说明", "语境线索·搭配骨架"], "线索　作品中的不完美能显出人的痕迹，反而使作品具有独特性，选special。\n排除　dull、possible、difficult均不能概括“human touch”带来的价值。"],
-      [["humans have a natural drive to create", "From a young age", "start drawing"], ["复现线索·同义复现", "语境线索·持续时间", "语境线索·行为表现"], "线索　前文的natural drive to create与空格处的“创作欲望”同义，且从小主动绘画是具体表现，因此选desire。\n排除　wish语气较弱，reason和skill分别指原因与技能，不能对应内在驱动力。"]
-    ]
-  };
-
-  for (const lesson of window.BUILTIN_LESSONS) {
-    const items = reviewed[lesson.id];
-    if (!items) continue;
-    lesson.freezeClues = true;
-    lesson.questions.forEach((question, index) => {
-      const [clues, types, explanation] = items[index];
-      question.clues = clues;
-      question.clueTypes = Object.fromEntries(clues.map((clue, i) => [clue, types[i]]));
-      question.explanation = explanation;
-    });
-  }
-})();
-
-// 人工复核：第28—33篇，并修复末组文章的元数据与明显录入瑕疵。
-(() => {
-  const reviewed = {
-    "cloze-上海-028": [
-      [["just sit around not doing much", "heroes of the home", "Not only do they look beautiful"], ["语境线索·表面状态", "语境线索·比喻", "逻辑线索·实际贡献"], "线索　绿植看似静静待着，却给家庭带来许多好处，因此被称为silent heroes。\n排除　noisy与植物状态相反，blind和serious均不能修饰此处的“英雄”。"],
-      [["especially in winter", "grow better inside", "not ideally fit for growing outside"], ["语境线索·季节", "逻辑线索·结果", "逻辑线索·室内外对比"], "线索　许多室内植物冬季不适合在室外生长，却在更温暖的室内长得好，选warmer。\n排除　colder方向相反，softer、smaller不描述适宜温度。"],
-      [["lift your mood", "improve creativity and memory", "clean the air around them"], ["语境线索·好处列举", "语境线索·好处列举", "语境线索·好处列举"], "线索　改善心情、创造力、记忆力并净化空气，都是种植室内植物的advantages。\n排除　skills、habits、steps不能概括这些积极效果。"],
-      [["taking in harmful gases", "harmful chemicals", "clean the air"], ["复现线索·近义复现", "语境线索·宾语", "逻辑线索·结果"], "线索　植物吸收有害气体、净化空气，也就是去除新装修后的部分有害化学物，选remove。\n排除　spread、cover、develop都无法产生净化效果。"],
-      [["read the instruction on the label", "find out more about the plants", "before"], ["语境线索·事前了解", "语境线索·补充信息", "逻辑线索·时间"], "线索　购买前先读标签、了解植物，是为了在作决定前掌握信息，选making a decision。\n排除　making a living/effort/mistake均不是购买植物前需要的信息决策。"],
-      [["bridge the gap between home and", "The process is part of the joy of planting", "escape from the tiredness of daily life"], ["语境线索·搭配", "语境线索·种植活动", "逻辑线索·心理作用"], "线索　室内种植把家居空间与自然连接起来，使人从日常疲惫中放松，选nature。\n排除　ground、space、society不能与home构成本文强调的室内外自然联系。"]
-    ],
-    "cloze-上海-029": [
-      [["others want to express their style", "follow trends", "how they dress"], ["逻辑线索·人群对比", "语境线索·在意表现", "语境线索·对象"], "线索　some...others构成对比：有些年轻人不在意穿着，另一些则想表达风格、追随潮流，选care。\n排除　research、require、know均不能与how they dress表达“在意”。"],
-      [["Parents can help you choose", "Advice is helpful", "like making sure you eat a healthy diet"], ["逻辑线索·原因", "语境线索·经验建议", "语境线索·家长职责"], "线索　父母能提供有帮助的选择建议，是因为他们拥有更多生活经验，选experience。\n排除　progress、wealth、health都不能普遍解释父母更会选衣服。"],
-      [["at some special events", "dress in a certain way", "to show respect"], ["逻辑线索·补充理由", "语境线索·场合要求", "逻辑线索·目的"], "线索　前面谈天气和实用性，后面又补充特殊场合的着装礼仪，因此用Besides。\n排除　Therefore表示结果，Instead表示替代，However表示转折。"],
-      [["children say what they prefer", "parents have the final say", "two-way"], ["语境线索·双方参与", "语境线索·双方分工", "语境线索·双向结构"], "线索　孩子表达偏好、父母作最终决定，需要双方共同投入，是a two-way effort。\n排除　result、purpose、link不能准确表达共同协商的过程。"],
-      [["choosing for yourself", "build self-confidence", "an important step towards becoming"], ["语境线索·自主选择", "逻辑线索·结果", "语境线索·成长过程"], "线索　自己选择衣服能建立自信，是走向独立的重要一步，选independent。\n排除　successful、interested、different都不是自主决策直接培养的核心品质。"],
-      [["showing you", "a certain group", "express yourself and develop an individual style"], ["语境线索·身份表达", "语境线索·群体", "语境线索·穿着作用"], "线索　衣着可以显示一个人属于某个群体，固定表达belong to a group。\n排除　focus on、depend on、agree with均不能表达群体归属。"]
-    ],
-    "cloze-上海-030": [
-      [["encouraged her to become a teacher", "started her teaching career", "for her students"], ["复现线索·原词复现", "语境线索·职业", "语境线索·服务对象"], "线索　母亲鼓励她成为教师，她毕业后也开始教师生涯，因此她认为为学生做一名teacher非常重要。\n排除　leader、educator、model虽与教育相关，但原文反复锁定具体职业teacher。"],
-      [["In 1977", "taught a poem", "on live television"], ["语境线索·特定时间", "语境线索·具体事件", "语境线索·传播方式"], "线索　后文叙述1977年电视直播授课这一著名教学片段，故选moments。\n排除　methods、skills、solutions分别指方法、技能、解决方案，不能指这次具体课堂事件。"],
-      [["wasn't just about learning grammar and vocabulary", "become real people", "think critically"], ["逻辑线索·不止于", "语境线索·育人目标", "语境线索·思维目标"], "线索　于漪认为语文教学不只是语法词汇，更重要的是育人和培养批判思维，因此选important。\n排除　possible、famous、interesting都不能体现价值层级。"],
-      [["in the curriculum standards", "Her ideas were so good", "for all students"], ["固定搭配·be included in", "逻辑线索·原因", "语境线索·适用范围"], "线索　她的教育理念很好，因而被纳入面向所有学生的课程标准，固定表达be included in。\n排除　printed、welcomed、spread不能与standards准确构成“纳入标准”。"],
-      [["Every time, she added something new", "different classes", "the same teaching plan"], ["逻辑线索·反义对应", "语境线索·对象变化", "语境线索·否定内容"], "线索　她每次都会加入新内容，所以从不拿同一教案教不同班级，选never。\n排除　still、already、totally都会造成与added something new矛盾或不自然。"],
-      [["looking for ways to improve herself", "room to grow and learn", "continuous"], ["复现线索·同义复现", "语境线索·持续成长", "语境线索·搭配"], "线索　她不断寻找提升方法，教书60多年仍想成长，体现持续改进自己的desire。\n排除　wish较弱且不突出长期驱动力，practice、pleasure语义不合。"]
-    ],
-    "cloze-上海-121": [
-      [["good timing", "To begin with", "for an invention to be a success"], ["语境线索·成功条件", "语境线索·首要因素", "语境线索·主题"], "线索　文章列举发明成功条件，首先强调好时机的重要性，因此选important。\n排除　interesting、personal、satisfying都不能表达时机对成功的必要程度。"],
-      [["the public doesn't want yet", "The fax machine did not become a necessary piece of equipment in every office until the 1980s", "Though the quality was excellent"], ["逻辑线索·时机不合", "语境线索·多年后才普及", "逻辑线索·让步"], "线索　传真机质量虽好，但当时公众尚不需要，发明很快夭折，died在此比喻未能发展。\n排除　improved、spread、appeared都与“直到20世纪80年代才普及”不符。"],
-      [["never had enough money", "a steam engine", "had the idea"], ["逻辑线索·资金限制", "语境线索·制作对象", "语境线索·仅有构想"], "线索　帕潘有蒸汽机设想，却没有足够资金把它制造出来，选build。\n排除　deliver、repair、use都预设机器已存在。"],
-      [["need to be patient", "you shouldn't be too slow", "It took scientists nearly eighty years"], ["逻辑线索·转折", "语境线索·相反提醒", "语境线索·耐心例证"], "线索　前一句说要有耐心，后一句却提醒不能太慢，前后转折，选However。\n排除　Instead、So far、At last分别表示替代、迄今、终于。"],
-      [["the same designs had arrived just two hours earlier", "When he finally sent details", "Patent Office"], ["逻辑线索·先后对比", "语境线索·延迟", "语境线索·申请场景"], "线索　格雷提交专利时，相同设计已早到两小时，因此为时已晚，选late。\n排除　modern、difficult、old均不说明错过申请先机。"],
-      [["a walk in the countryside", "sticky seed pods", "had the idea for Velcro"], ["语境线索·自然环境", "语境线索·自然观察", "逻辑线索·灵感来源"], "线索　乡间散步时观察黏在衣服上的种荚，使科学家获得魔术贴灵感，因此应仔细观察nature。\n排除　society、pictures、advertisements都不是该发明的灵感来源。"]
-    ],
-    "cloze-上海-120": [
-      [["not always easy to say", "to middle school", "After entering high school"], ["语境线索·固定表达", "语境线索·告别对象", "逻辑线索·阶段转换"], "线索　进入高中意味着告别初中，固定表达say bye-bye to，选bye—bye。\n排除　hello、sorry、thanks均不符合升学阶段转换。"],
-      [["Teachers and parents may give you a hand", "all the time", "However"], ["语境线索·获得帮助", "语境线索·持续限制", "逻辑线索·转折"], "线索　老师和家长可以帮助，但不能一直依赖别人，depend on意为“依靠”。\n排除　care for、compete with、worry about分别表示照顾、竞争、担心。"],
-      [["Do you need silence to focus", "make sure the TV is not on", "learning environment at home"], ["复现线索·近义复现", "语境线索·具体做法", "语境线索·修饰对象"], "线索　需要安静才能专注，就应关掉电视并创造quiet learning environment。\n排除　warm、clean、safe都不是关电视所解决的环境条件。"],
-      [["in the morning", "others at night", "focus better"], ["语境线索·时间对比", "语境线索·时间对比", "逻辑线索·学习效果"], "线索　有人早晨专注，有人夜晚专注，因此要找到适合自己的学习时间，选time。\n排除　place、habit、skill均不能概括morning/night。"],
-      [["smaller, more manageable tasks", "larger ones", "done step by step"], ["逻辑线索·化整为零", "语境线索·对比对象", "语境线索·分步完成"], "线索　把大任务变成更小、更易管理的任务，就是divide your work。\n排除　finish、remember、correct不能产生smaller tasks。"],
-      [["plenty of details and background", "official and true", "Newspapers provide"], ["逻辑线索·补充优点", "语境线索·第二个优点", "语境线索·共同主语"], "线索　报纸既提供细节和背景，此外信息通常正式可信，是补充关系，选In addition。\n排除　For example表示举例，In brief表示总结，On average表示平均。"]
-    ],
-    "cloze-上海-118": [
-      [["doing a survey", "Please give your", "sharing so many ideas"], ["语境线索·调查", "语境线索·请求", "复现线索·近义复现"], "线索　调查者询问大家对复印教材的看法，结尾感谢分享观点，因此选opinions。\n排除　thanks、lessons、excuses均不是调查所收集的内容。"],
-      [["efforts of the writers and publishers will be totally wasted", "if everyone photocopies their textbooks", "for writers"], ["逻辑线索·利益受损", "逻辑线索·条件", "语境线索·评价对象"], "线索　人人复印会使作者和出版者的劳动白费，对作者不公平，选fair。\n排除　easy、common、traditional都不能评价权益是否受损。"],
-      [["it's against the law", "set a good example", "the law"], ["复现线索·原词复现", "语境线索·教师责任", "语境线索·宾语"], "线索　既然复印违法，教师应以遵守法律为学生树立榜样，respecting the law意为“尊重、遵守法律”。\n排除　changing、explaining、making都不能体现守法示范。"],
-      [["less than half the price", "they don't", "much"], ["语境线索·价格", "逻辑线索·否定", "语境线索·数量程度"], "线索　复印书不到正版一半价格，所以花费不多，cost表示“花费”。\n排除　save、affect、offer不能以书作主语并与much表达价格。"],
-      [["we just have it photocopied", "When we want to share something good", "it is so"], ["语境线索·简便做法", "语境线索·使用场景", "语境线索·程度结构"], "线索　想分享材料时直接复印即可，说明使用复印材料很方便，选convenient。\n排除　strange、exciting、difficult都不能概括“直接复印”的便利。"],
-      [["eager to learn more", "widen their views", "above anything else"], ["语境线索·学生诉求", "逻辑线索·学习目的", "语境线索·优先顺序"], "线索　教师偶尔复印文章，是把学生拓宽视野、学习更多的需要放在首位，选needs。\n排除　actions、records、attitudes均不能与eager to learn构成需求关系。"]
-    ]
-  };
-
-  for (const lesson of window.BUILTIN_LESSONS) {
-    const items = reviewed[lesson.id];
-    if (!items) continue;
-    lesson.freezeClues = true;
-    lesson.questions.forEach((question, index) => {
-      const [clues, types, explanation] = items[index];
-      question.clues = clues;
-      question.clueTypes = Object.fromEntries(clues.map((clue, i) => [clue, types[i]]));
-      question.explanation = explanation;
-    });
-  }
-
-  const replaceEverywhere = (lesson, from, to) => {
-    lesson.article_text_with_blanks = lesson.article_text_with_blanks.replace(from, to);
-    lesson.reading_sentences = lesson.reading_sentences.map(sentence => sentence.replace(from, to));
-    lesson.first_sentence = lesson.first_sentence.replace(from, to);
-    lesson.last_sentence = lesson.last_sentence.replace(from, to);
-  };
-  const byId = id => window.BUILTIN_LESSONS.find(lesson => lesson.id === id);
-  replaceEverywhere(byId("cloze-上海-026"), "I leaned several lessons.", "I learned several lessons.");
-  replaceEverywhere(byId("cloze-上海-029"), "Should parents choose your clothes??", "Should parents choose your clothes?");
-  const yuYi = byId("cloze-上海-030");
-  const stray = " 参考答案 建议先独立完成，再集中核对；每题2分，每篇12分。 逐题详细解析 每篇先看主旨，再对照四个选项核对语境依据和排除理由。";
-  replaceEverywhere(yuYi, stray, "");
-  yuYi.reading_sentences = yuYi.reading_sentences.filter(sentence => !sentence.startsWith("参考答案"));
-  const highSchool = byId("cloze-上海-120");
-  highSchool.title_en = "How to Succeed in High School";
-  replaceEverywhere(highSchool, "to—do—lit", "to-do list");
-  const inventions = byId("cloze-上海-121");
-  inventions.title_en = "What Makes an Invention Successful?";
-  const photocopying = byId("cloze-上海-118");
-  photocopying.title_en = "The Debate over Photocopied Materials";
-  replaceEverywhere(photocopying, "photocopied(复印的)", "photocopied (复印的)");
-  replaceEverywhere(photocopying, "copyrighted(正版的)ones", "copyrighted (正版的) ones");
-  replaceEverywhere(photocopying, "As you know,teachers", "As you know, teachers");
-  replaceEverywhere(photocopying, "buy newspapers Wow!", "buy newspapers. Wow!");
-})();
-
-// 人工复核：第22—27篇。
-(() => {
-  const reviewed = {
-    "cloze-上海-022": [
-      [["write articles and create images", "thinking up new ideas", "fields"], ["语境线索·创作活动", "复现线索·近义复现", "语境线索·搭配"], "线索　AI已经能写文章、创作图像，后文又谈到提出新想法，因此连创意领域的人也担心被替代，选creative。\n排除　industry、business、education范围过窄，不能概括所列创作活动。"],
-      [["washing machines save people a lot of time", "AI may be able to take over dull tasks", "let people do more proper thinking"], ["逻辑线索·类比", "语境线索·对应事例", "逻辑线索·相似结果"], "线索　前面以洗衣机节省时间为例，后面说AI同样可接管枯燥任务，让人从事更有价值的思考，故用Similarly。\n排除　Finally表示最后，Instead表示替代或转折，However表示转折。"],
-      [["Most people prefer to communicate with humans", "jobs that require personal connection", "can't truly care about others"], ["语境线索·人际偏好", "语境线索·工作要求", "逻辑线索·能力局限"], "线索　人们偏爱与真人交流，而AI缺乏真正关怀，说明human interaction是AI面临的一项challenge。\n排除　advantage、influence、progress都不能概括这种局限。"],
-      [["it can only use data that it is given", "situations that are quite different", "from those in its data"], ["逻辑线索·能力限制", "语境线索·处理对象", "语境线索·比较"], "线索　AI只能使用已有数据，因此无法处理与数据样本差异很大的情境，deal with意为“处理、应对”。\n排除　depend on、search for、pay attention to均不能表达解决新情境。"],
-      [["thinking up new ideas is something AI can't do", "can be truly creative", "although some AI programs can create content"], ["复现线索·能力限制", "语境线索·结论", "逻辑线索·让步"], "线索　即使AI能生成内容，它不能真正提出新想法，所以没有一个能称得上真正有创造力，选none。\n排除　all、some、most都表示至少有一部分具备真正创造力，与前文判断冲突。"],
-      [["if AI receives wrong information", "no way of recognizing or correcting it", "continually check the data"], ["逻辑线索·原因", "语境线索·能力缺失", "逻辑线索·结果"], "线索　因为AI无法识别、纠正错误信息，所以必须持续检查数据以保证结论准确，选As a result。\n排除　In addition是补充，Above all是强调首要事项，On the other hand表示对比。"]
-    ],
-    "cloze-上海-023": [
-      [["appeared in the Han and Jin dynasties", "flourished in the Ming and Qing dynasties", "exploration of old Chinese costumes"], ["语境线索·历史沿革", "语境线索·历史沿革", "复现线索·近义复现"], "线索　蓝印花布起源、发展并兴盛于古代，课程也称为古代中国服饰探索，因此这些是traditional clothes。\n排除　modern与历史不符，common和strange都不能概括其传统属性。"],
-      [["making their own bags through tie-dyeing", "First, fold the cloth bag", "Then wait"], ["语境线索·实践任务", "语境线索·操作步骤", "语境线索·过程"], "线索　学生要亲手完成多步骤扎染制包，对初学者来说是在迎接challenge。\n排除　member、reason、danger均不能与met the构成此处的学习体验。"],
-      [["blue dye", "to the water", "Push the bag down"], ["语境线索·添加物", "语境线索·目标容器", "逻辑线索·后续动作"], "线索　操作顺序是把蓝色染料加入水中，再将布袋压入染液，固定搭配add...to...。\n排除　taste、repeat、catch都不能说明染料与水的关系。"],
-      [["wash it a few times with clean water", "extra dye", "An hour later"], ["语境线索·清洗动作", "语境线索·去除对象", "语境线索·步骤顺序"], "线索　用清水反复冲洗是为了去除多余染料，get rid of意为“除去”。\n排除　get ready for、run out of、take hold of分别表示准备、用完、抓住。"],
-      [["Everyone does it a bit", "You never know exactly how it will look", "depends on how the rubber bands are held"], ["语境线索·个体差异", "逻辑线索·结果不确定", "逻辑线索·原因"], "线索　橡皮筋扎法不同会产生不可预知的图案，所以每个人的做法略有不同，选differently。\n排除　similarly方向相反，simply和luckily分别表示简单地、幸运地。"],
-      [["the leaves of the indigo plant", "cotton material", "all come from"], ["语境线索·植物来源", "语境线索·天然材料", "语境线索·来源结构"], "线索　靛蓝染料来自植物叶片，棉布也是天然材料，因此都来自nature。\n排除　lab、industry、society均不是这些原材料的直接来源。"]
-    ],
-    "cloze-上海-024": [
-      [["Harbin's location and freezing temperatures", "The river freezes over in the winter", "hundreds of thousands of cubic metres of ice"], ["语境线索·自然条件", "逻辑线索·具体说明", "语境线索·资源"], "线索　哈尔滨的位置、严寒气温和松花江天然冰源使它自然适合举办冬季节庆，选natural。\n排除　convenient只表示方便，common表示普通，necessary表示必要，均不如自然条件准确。"],
-      [["buildings, animals", "turn the blocks of ice into", "Some of the biggest and most beautiful ice sculptures"], ["语境线索·举例", "语境线索·制作结果", "复现线索·同场复现"], "线索　冰雕艺术家把冰块变成建筑、动物以及其他供游客观赏的景物，attractions最能概括这些节庆看点。\n排除　characters、inventions、products范围或含义均不合。"],
-      [["grew out of a traditional ice lantern display", "held in 1963", "became part of the ice lantern festivities in 1985"], ["语境线索·起源", "语境线索·最早时间", "逻辑线索·时间对比"], "线索　传统冰灯展1963年首次举行，1985年才加入冰雪雕塑，故选first。\n排除　only、even、also不能清楚表达起始时间。"],
-      [["freezing water in a bucket", "making a hole into the block of ice", "the ice"], ["语境线索·前一步骤", "语境线索·后一步骤", "语境线索·操作对象"], "线索　水在桶中冻成冰后，需要先把冰块取出，才能在冰块上打孔，选taking out。\n排除　throwing away是扔掉，keeping off是远离，putting up是搭建。"],
-      [["take much more time to form", "include LED lights and a lot of details", "much more carefully"], ["语境线索·制作投入", "语境线索·复杂细节", "语境线索·程度"], "线索　现代冰雕耗时更长、包含灯光和大量细节，说明经过更精心的设计，选designed。\n排除　described、organized、selected都不能直接说明作品形成前的精细构思。"],
-      [["started as ice in a bucket", "Today's creations are much more carefully", "made a dramatic change"], ["语境线索·早期形态", "逻辑线索·今昔对比", "语境线索·巨大变化"], "线索　节庆从桶里的一块简单冰块发展为大型冰雪乐园，simple与后文宏大、精细形成对比。\n排除　bright、fresh、perfect不是此处强调的早期形态特征。"]
-    ],
-    "cloze-上海-025": [
-      [["leaving us wanting more", "the good feeling", "an addiction"], ["逻辑线索·结果", "语境线索·主语", "语境线索·成瘾机制"], "线索　短暂的愉悦感消失后，人会想摄入更多糖，这正构成成瘾循环，选goes away。\n排除　comes back与结果相反，breaks up和takes turns不适合形容感觉消退。"],
-      [["trace (追踪) a path to the first cause", "I find my way back to sugar", "an illness"], ["语境线索·研究过程", "逻辑线索·研究发现", "语境线索·对象"], "线索　科学家研究疾病并追溯根因时，总会发现糖的影响，因此选study。\n排除　have、treat、spread均不能与trace...to the first cause构成完整研究过程。"],
-      [["storing sugar as fat", "for when there was no food", "designed to survive"], ["语境线索·储存方式", "逻辑线索·用途", "语境线索·生存需要"], "线索　早期人类把糖转化为脂肪储存，缺少食物时可作为能量使用，因此选energy。\n排除　memories、water、data都不能由脂肪储存提供。"],
-      [["It's obvious that we need to eat less sugar", "So what is the", "The trouble is"], ["语境线索·回答内容", "语境线索·问答结构", "逻辑线索·后续困难"], "线索　问句后立即给出“少吃糖”这一解决办法，所以空格应是solution。\n排除　result、reason、problem与后面直接提出办法不匹配。"],
-      [["seem healthier", "large amounts of sugar are often added", "in fat"], ["语境线索·宣传印象", "逻辑线索·真实对比", "固定搭配·low in"], "线索　食品被宣传为低脂，看似更健康，却往往加入大量糖，固定表达low in fat。\n排除　rich/high/heavy in fat都与“看似健康”的宣传相反。"],
-      [["building facilities like walking tracks", "students and others in the community can exercise", "trying to encourage exercise"], ["语境线索·措施", "逻辑线索·目的结果", "语境线索·目标"], "线索　学校建设步道，目的是让学生和社区居民能够运动，前后为措施与结果关系，选so。\n排除　although、because、while分别表示让步、原因、同时或对比。"]
-    ],
-    "cloze-上海-026": [
-      [["faster than them", "pass by them twenty or more times", "My speed seems amazing"], ["语境线索·比较优势", "语境线索·具体表现", "语境线索·他人评价"], "线索　作者反复超过步行者，速度令他们惊叹，因此产生自豪感，选proud。\n排除　lonely、surprised、upset均不符合因表现优越而产生的情绪。"],
-      [["the car and warm up before running", "a short man came", "before running"], ["语境线索·动作顺序", "语境线索·人物到达", "语境线索·后续动作"], "线索　男子到达后从车里出来，再热身跑步，固定表达get out of the car。\n排除　come in、get into、look at分别表示进入、上车、看，不符合动作顺序。"],
-      [["managed to catch up with him", "I had someone to compete with", "He was fast but"], ["逻辑线索·结果", "语境线索·竞争动机", "逻辑线索·转折"], "线索　对方很快，作者为了追上并与之竞争而加速，选sped up。\n排除　slow down、stopped、left都无法导致catch up。"],
-      [["the pain in my foot went away", "at my usual speed", "without sounding like I had a lung disease"], ["逻辑线索·身体恢复", "语境线索·速度调整", "语境线索·呼吸状态"], "线索　恢复平常速度后脚痛消失、呼吸不再急促，说明能轻松呼吸，选easily。\n排除　hard/heavily与恢复状态相反，carefully不描述呼吸难易。"],
-      [["Some have natural", "some have trained harder", "Don't judge the capacity"], ["语境线索·先天后天对照", "逻辑线索·并列对比", "复现线索·近义复现"], "线索　句子对比先天条件与后天训练，natural talent正是“天赋”，并与capacity呼应。\n排除　character、voice、resource均不能概括跑步的先天能力。"],
-      [["Slow down or speed up", "run your race to your best", "Don't run fast when you should be running"], ["语境线索·速度选择", "语境线索·中心观点", "逻辑线索·反义对应"], "线索　文章主张按自己的节奏跑；既然不该快跑，就应慢跑，选slowly。\n排除　happily、early与速度无关，fast与前面的Don't run fast矛盾。"]
-    ],
-    "cloze-上海-027": [
-      [["what do you guys think about living here", "Talking about Finns and Finland", "came to Finland to study"], ["语境线索·询问经历", "语境线索·话题", "语境线索·时间背景"], "线索　学生已在芬兰生活一段时间，问题询问截至目前的体验，so far意为“到目前为止”。\n排除　at first只指起初，now and then表示偶尔，for the time being表示暂时。"],
-      [["all the buildings are so well heated", "I freeze more in Scotland", "in Finland"], ["逻辑线索·原因", "逻辑线索·比较", "语境线索·地点"], "线索　芬兰建筑供暖好，所以她在室内不会受冻，选indoors。\n排除　outdoors与严寒天气不符，immediately、completely不是地点副词。"],
-      [["dropped my wallet", "nothing had been taken from it", "put my wallet on top of a bench"], ["语境线索·意外事件", "逻辑线索·结果", "语境线索·善意行为"], "线索　丢失的钱包被人放在显眼处且财物未失，说明当地很安全，选safe。\n排除　smart、quiet、clean都不能由钱包事件直接证明。"],
-      [["nothing had been taken from it", "The most surprising thing", "That's pretty"], ["语境线索·意外结果", "复现线索·近义复现", "语境线索·评价"], "线索　钱包失而复得且分文未少令人惊叹，前文surprising直接提示amazing。\n排除　crazy、proper、attractive均不能准确表达惊讶赞叹。"],
-      [["no one crosses the road when the light is red", "even if there are no cars coming", "never to do it again"], ["逻辑线索·具体例子", "语境线索·严格程度", "语境线索·行为改变"], "线索　即使无车，人们也不闯红灯，说明芬兰人很遵守规则，选follow rules。\n排除　其余选项谈骑车、抱怨或争论法律，例子中均未出现。"],
-      [["I felt like having something sweet", "freshly baked doughnuts", "it was filled with meat"], ["语境线索·预期", "语境线索·选择对象", "逻辑线索·预期落差"], "线索　他本想吃甜食，看到甜甜圈自然期待果酱馅，却发现是肉馅，选expecting。\n排除　tasting、touching、spreading都不能表现这种预期落差。"]
-    ]
-  };
-  for (const lesson of window.BUILTIN_LESSONS) {
-    const items = reviewed[lesson.id];
-    if (!items) continue;
-    lesson.freezeClues = true;
-    lesson.questions.forEach((question, index) => {
-      const [clues, types, explanation] = items[index];
-      question.clues = clues;
-      question.clueTypes = Object.fromEntries(clues.map((clue, i) => [clue, types[i]]));
-      question.explanation = explanation;
-    });
-  }
-})();
-
-// 人工复核：第16—21篇。
-(() => {
-  const reviewed = {
-    "cloze-上海-016": [
-      [["The manager interviewed him", "watched him clean the floor"], ["语境线索·招聘场景", "逻辑线索·考查行为"], "线索　经理先面试，再观察应聘者打扫地板，显然是在考查其工作能力，因此是把清洁当作一项test。\n排除　service、excuse、habit分别表示服务、借口、习惯，均不能解释经理为何现场观察。"],
-      [["I can't give you the job", "If you don't have an email address", "The manager"], ["语境线索·否定态度", "逻辑线索·条件", "语境线索·动作主体"], "线索　经理因男子没有邮箱而拒绝录用，语气是否定和不认可，常见动作是shook his head（摇头）。\n排除　nodded表示点头同意；raised/lowered his head只描述抬头或低头，不能明确传达拒绝。"],
-      [["I can't give you the job", "left the company, feeling"], ["逻辑线索·原因", "语境线索·受挫情境"], "线索　男子被明确拒绝录用后离开公司，此时最符合情境的感受是hopeless（绝望的）。\n排除　nervous多指事前紧张，relaxed与受挫相反，lonely没有上下文依据。"],
-      [["only ten dollars in his pocket", "his money to twenty dollars", "returned home happily with eighty dollars"], ["语境线索·起始数量", "逻辑线索·数量变化", "语境线索·后续结果"], "线索　他从10美元变成20美元，金额恰好翻倍，选double；后面重复两次达到80美元也验证同一倍增过程。\n排除　lend、win、save都不能准确说明10变20的数量关系。"],
-      [["Realizing that he could", "he started working harder", "became one of the largest food retailers"], ["语境线索·能力", "逻辑线索·结果", "语境线索·长期发展"], "线索　卖番茄让他获得生活来源，所以他意识到能靠这种方式生存，选survive；随后加倍努力并成为大型零售商进一步印证。\n排除　suffer、connect、react都不能与this way构成“靠此谋生”的意思。"],
-      [["You don't have an email", "Yet you've built an empire", "Imagine where you'd be if you had one"], ["逻辑线索·反差", "语境线索·惊讶事实", "语境线索·感叹"], "线索　经纪人惊讶于男子没有邮箱却建立了商业帝国，转折Yet和感叹号共同表明其反应是in surprise。\n排除　with pleasure、with fear、in anger都没有对应的情绪依据。"]
-    ],
-    "cloze-上海-017": [
-      [["your worries", "feel calm", "getting lost in the pages of a good book"], ["语境线索·宾语", "逻辑线索·结果", "语境线索·阅读情境"], "线索　阅读能让人暂时摆脱烦恼并感到平静，escape one's worries意为“逃离/摆脱烦恼”。\n排除　question、find、study都不能与后面的feel calm形成合理因果。"],
-      [["stress and worry", "relieve pain", "Getting lost in a story"], ["语境线索·宾语", "语境线索·并列益处", "逻辑线索·方式"], "线索　沉浸故事能让人忘却压力和担忧，并与理解他人、缓解疼痛并列为阅读的益处，因此选forget。\n排除　show、lay、repeat都不表示减轻心理负担。"],
-      [["feel less anxious", "understand ourselves and others", "we aren't"], ["语境线索·情绪改善", "语境线索·人与人联系", "语境线索·搭配骨架"], "线索　故事帮助我们理解自己和他人、减少焦虑，并让我们知道自己并不孤单，固定表达为aren't alone。\n排除　excited、lazy、brave不能承接“减少焦虑”的心理支持作用。"],
-      [["information and advice about feelings", "like anger or sadness", "to talk about"], ["语境线索·主题", "语境线索·举例", "语境线索·搭配"], "线索　愤怒或悲伤等感受有时难以启齿，因此是feelings that may be hard to talk about。\n排除　interesting、exciting、useful均不能解释为何需要书中的信息和建议。"],
-      [["know other people's thoughts", "new words and ideas", "explain your"], ["复现线索·原词复现", "逻辑线索·工具", "语境线索·搭配骨架"], "线索　前文已出现people's thoughts；新词汇和新观点能帮助人更容易表达自己的想法，因此选thoughts。\n排除　rules、jokes、systems都不是本段所说需要表达的内心内容。"],
-      [["How to read more books", "our reading list", "dive into the pages"], ["语境线索·小标题", "语境线索·选择范围", "复现线索·同场复现"], "线索　本段主题是多读书，动作是从书单中挑选并开始阅读，所以应pick a book。\n排除　partner、dictionary、letter都不能概括书单和翻页阅读的语境。"]
-    ],
-    "cloze-上海-018": [
-      [["they believe it's fair", "give most students the same amount of time", "put time limits on tests"], ["逻辑线索·原因", "语境线索·理由内容", "语境线索·结果"], "线索　教育者设置考试时限，后面的“他们认为这样公平”是在说明原因，故用because连接。\n排除　therefore表示结果且位置不当，although表示让步，until表示时间截止。"],
-      [["to take a test quickly", "a student's intelligence or knowledge", "knowledge and abilities"], ["语境线索·不定式修饰", "逻辑线索·研究结论", "复现线索·原词复现"], "线索　研究讨论的是“快速完成考试的能力”不能反映智力或知识，且后文出现abilities复现，选ability。\n排除　decision、moment、opinion都不能与to take a test quickly构成自然搭配。"],
-      [["how much they know", "how much they've studied", "That has"], ["语境线索·比较对象", "语境线索·比较对象", "固定搭配·have nothing to do with"], "线索　快速思考、保持冷静与学生掌握多少知识或学习多少无关，固定表达has nothing to do with。\n排除　everything、something、anything都会变成“与知识有关”，违背本段反对限时考试的论点。"],
-      [["more thoughtful answers", "remember the material better", "when students have time to focus"], ["语境线索·并列结果", "语境线索·正向结果", "逻辑线索·条件"], "线索　研究实际发现，给足思考时间不仅使答案更周全，也确实能让学生记得更好，选actually作强调。\n排除　immediately、rarely、suddenly分别强调立即、很少、突然，均无上下文依据。"],
-      [["there is a time limit", "they won't learn how to manage their time", "not everyone does"], ["逻辑线索·条件", "逻辑线索·结果", "语境线索·否定背景"], "线索　句意为“除非有时间限制，否则学生学不会管理时间”，Unless正好表示“如果不/除非”。\n排除　Since、When会把有时限变成不会管理时间的原因，Even if则表示让步，逻辑均相反。"],
-      [["trust their knowledge", "make decisions and move forward", "helps build"], ["语境线索·自我信任", "语境线索·行为表现", "逻辑线索·结果"], "线索　相信自己的知识并果断前进会建立自信，固定表达build confidence。\n排除　progress、friendship、behavior都不能直接由“信任自己”推出。"]
-    ],
-    "cloze-上海-019": [
-      [["Votes for women", "was found in her pocket", "which said"], ["语境线索·文字内容", "语境线索·随身物品", "语境线索·定语从句"], "线索　该物品上写着“Votes for women”，并被发现于口袋中，最符合的是一张note（便条）。\n排除　letter通常有收信对象，book和newspaper体量及语境均不合。"],
-      [["equal rights for women", "working together", "fighting for women's rights"], ["语境线索·诉求", "语境线索·集体行动", "复现线索·近义复现"], "线索　妇女参政者组织起来是为了争取平等权利，ask for在此表示“要求、争取”。\n排除　wait for是等待，think about是思考，complain about只是抱怨，都弱于实际争取权利的行动。"],
-      [["the husband took the children", "In poor villages", "wives were", "sold in the market"], ["语境线索·极端不公", "语境线索·范围", "语境线索·主语", "语境线索·事实"], "线索　前文已列举女性遭受的不公，妻子被当作商品出售是更极端、出人意料的一例，even表示“甚至”。\n排除　still、also只是延续或并列，already表示已经，都不能突出程度升级。"],
-      [["were not allowed to vote", "the husband took the children", "sold in the market", "wanted to"], ["语境线索·问题列举", "语境线索·问题列举", "语境线索·问题列举", "逻辑线索·行动目标"], "线索　this指代前面一系列不平等制度，妇女参政者的目标是改变这些状况，选change。\n排除　leave、forget意味着维持或忽略问题，encourage更不可能以不公现象为对象。"],
-      [["finally got the right to vote", "given the right to earn the same money", "but many people say"], ["语境线索·进步事实", "语境线索·进步事实", "逻辑线索·转折"], "线索　女性取得投票权和同工同酬权，说明情况已经改善；but随后说明仍未完全平等，进一步限定这种改善，选improved。\n排除　discussed、considered、affected只表示讨论、考虑、影响，不能概括权利进步。"],
-      [["men and women are still not equal in society", "men earn 20 per cent more than women", "your chance of being promoted"], ["语境线索·观点", "逻辑线索·举例", "语境线索·第二例证"], "线索　前一句提出社会仍不平等，后面用收入差距和晋升概率作具体例证，因此选For example。\n排除　As a result表示结果，In addition只表示补充，In fact强调事实但不明确标示举例。"]
-    ],
-    "cloze-上海-020": [
-      [["study how bats use their echolocation", "take place in a special room", "the Bat Lab"], ["语境线索·科研活动", "语境线索·发生地点", "语境线索·实验室"], "线索　科学家在Bat Lab研究蝙蝠回声定位，发生在实验室中的研究活动应为experiments。\n排除　reviews、events、arguments分别指评论、活动、争论，都不符合科研场景。"],
-      [["Well, it's some rooms covered with foams", "there are some microphones", "We also have high-speed cameras"], ["语境线索·回答内容", "语境线索·设施描述", "语境线索·补充设施"], "线索　回答逐一介绍房间、海绵、麦克风和高速摄像机，说明问题是在请她describe the Bat Lab。\n排除　affect、afford、decorate分别表示影响、负担得起、装饰，均不能引出整段介绍。"],
-      [["the cameras can follow the bats by the heat energy", "But we can't see very well", "let the lights"], ["逻辑线索·目的", "逻辑线索·结果", "语境线索·使役结构"], "线索　摄像机靠热能追踪而研究者看不清，说明实验时让灯熄灭，选go out。\n排除　lose control、make a noise、break down都不能解释为何改用热成像且人看不清。"],
-      [["train the bats to fly", "The bats really like fruits", "tie bananas to the end of a fishing line"], ["语境线索·训练", "逻辑线索·奖励偏好", "语境线索·具体奖励"], "线索　研究者训练蝙蝠飞向平台，并用它们喜欢的水果和香蕉作食物奖励，因此选reward。\n排除　advice、process、chain都不能说明食物在训练中的作用。"],
-      [["everyone is chatting", "speak louder and repeat yourself", "This is an effect that we see in bats"], ["语境线索·嘈杂场景", "逻辑线索·应对方式", "逻辑线索·类比"], "线索　后文以聚会中众人交谈、需要提高音量并重复话语作类比，说明研究的是蝙蝠在noisy conditions下的回声定位。\n排除　dark虽与蝙蝠有关，却不能解释“说得更响、重复”的例子；其余两项更无依据。"],
-      [["find ways to get involved", "volunteering with a local organization", "a good way to get started"], ["语境线索·概括", "逻辑线索·具体例子", "语境线索·评价"], "线索　先概括可以寻找参与方式，再列出到当地组织做志愿者这一具体做法，故用For example。\n排除　Even worse表示负面递进，In fact表示强调事实，What's more只补充而不明确举例。"]
-    ],
-    "cloze-上海-021": [
-      [["you may want to buy one", "because your friends talk about it"], ["逻辑线索·结果", "逻辑线索·原因"], "线索　朋友频繁谈论新游戏或应用，才会持续引起你的兴趣并促使购买，talk about it very often最自然。\n排除　quickly、slowly修饰说话速度，much一般不直接修饰talk about it。"],
-      [["this ever happened to you", "In the US and other places around the world", "feeling of wanting the newest"], ["语境线索·前文现象", "语境线索·范围扩展", "语境线索·共同感受"], "线索　前文描述你的感受，随后说美国及世界其他地方也存在相似的追新心理，因此选similar。\n排除　same通常需the same，familiar表示熟悉，famous表示著名。"],
-      [["you will be excited, too", "is this excitement", "The latest technology gets people's attention"], ["复现线索·派生复现", "复现线索·原词复现", "语境线索·心理反应"], "线索　后文excited和末句excitement直接复现同一概念，新科技最初引发的是excitement。\n排除　argument、development、amusement分别指争论、发展、娱乐，均不能与群体追新心理呼应。"],
-      [["a new iPhone with very small changes every year", "people still rush to the stores blindly"], ["语境线索·商业做法", "逻辑线索·获利条件"], "线索　苹果利用消费者对新科技的兴奋，每年只作小改动也能吸引人抢购，take advantage of意为“利用”。\n排除　take charge of是负责，take hold of是抓住，take the place of是取代。"],
-      [["things that you don't really need", "spending too much money", "to your friends"], ["语境线索·非理性消费", "语境线索·代价", "语境线索·展示对象"], "线索　购买并不需要的产品、花很多钱，只为向朋友炫耀，show them off正合语境。\n排除　put them off、turn them off、give them off分别表示推迟/使反感、关闭、发出，均不能接to your friends表达炫耀。"],
-      [["our need to always be on our phones", "a lot of our time", "may not always be the best option"], ["语境线索·过度使用", "固定搭配·waste time", "语境线索·负面评价"], "线索　总想玩手机或游戏正在浪费大量时间，固定搭配为waste time，且上下文明确持负面态度。\n排除　saving、making方向相反；spending time本身中性，不能体现文章批评的“无谓消耗”。"]
-    ]
-  };
-
-  for (const lesson of window.BUILTIN_LESSONS) {
-    const items = reviewed[lesson.id];
-    if (!items) continue;
-    lesson.freezeClues = true;
-    lesson.questions.forEach((question, index) => {
-      const [clues, types, explanation] = items[index];
-      question.clues = clues;
-      question.clueTypes = Object.fromEntries(clues.map((clue, i) => [clue, types[i]]));
-      question.explanation = explanation;
-    });
-  }
-})();

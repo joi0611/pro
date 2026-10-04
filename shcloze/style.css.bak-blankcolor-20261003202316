@@ -29,13 +29,6 @@
   --accent-soft: #FDF3DE;
   --accent-dark: #9A6F12;
 
-  /* 已填空格色（靛蓝）：与文章的绿色线索高亮区分，避免学生混淆
-   * 「已填未判」= 中性底墨字（沿用旧逻辑，不抢 active 的当前题高亮）
-   * 「判分正确」= 靛蓝底深蓝字；「判分错误」= 红（红绿本就不冲突，保留） */
-  --fill: #2F5FD0;
-  --fill-700: #1E4BB8;
-  --fill-50: #E6EEFC;
-
   /* 状态色 */
   --ok: #178A50;
   --ok-50: #E4F5EB;
@@ -750,10 +743,10 @@ body {
 }
 .blank-btn:hover { background: var(--primary-50); }
 .blank-btn:active { transform: translateY(1px); }
-/* 选中态：浅绿底 + 深绿字；判分后：正确靛蓝（避开绿色高亮）、错误红色 */
+/* 选中态：浅绿底 + 深绿字；判分后：正确深绿、错误红色 */
 .blank-btn.active { background: var(--primary-50); color: var(--primary-700); border-bottom-color: var(--primary); }
 .blank-btn.answered { border-bottom-style: solid; color: var(--ink); }
-.blank-btn.answered.correct { border-bottom-color: var(--fill); color: var(--fill-700); background: var(--fill-50); font-weight: 700; }
+.blank-btn.answered.correct { border-bottom-color: var(--ok); color: var(--ok); background: var(--ok-50); font-weight: 700; }
 .blank-btn.answered.wrong { border-bottom-color: var(--bad); color: var(--bad); background: var(--bad-50); font-weight: 700; }
 
 /* 线索词高亮 —— 统一单色系（简约不混乱）：

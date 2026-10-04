@@ -1382,7 +1382,6 @@ function openLesson(id) {
   if (!les) return;
   currentId = id; lesson = les;
   (lesson.questions || []).forEach(function (q) {
-    if (lesson.freezeClues) return;
     normalizeQuestionRouteAndCollocation(q, lesson.article_text_with_blanks || "");
     normalizeQuestionClues(q, lesson.article_text_with_blanks || "");
   });
