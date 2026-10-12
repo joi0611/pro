@@ -1,0 +1,33 @@
+<svg viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>两种做题策略的实测对比</title>
+  <text x="40" y="34" style="font-size:15px;font-weight:500;fill:#2C2C2A">两种做题策略 · 实测对比</text>
+  <text x="40" y="56" style="font-size:12px;fill:#5F5E5A">基于 33 篇 198 题的干扰项来源统计</text>
+
+  <g>
+    <rect x="40" y="78" width="280" height="200" rx="12" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.6"/>
+    <text x="64" y="110" style="font-size:14px;font-weight:500;fill:#501313">策略 A · 回原文找词</text>
+    <text x="64" y="132" style="font-size:12px;fill:#791F1F">看到选项就去原文找出现过的词</text>
+    <text x="64" y="190" style="font-size:46px;font-weight:500;fill:#A32D2D">92.3%</text>
+    <text x="64" y="214" style="font-size:12px;fill:#791F1F">干扰项不在原文里（594 个里仅 46 个）</text>
+    <rect x="64" y="234" width="118" height="30" rx="8" fill="#F09595" stroke="#A32D2D" stroke-width="0.5"/>
+    <text x="123" y="249" text-anchor="middle" dominant-baseline="central" style="font-size:13px;fill:#501313">实测失效</text>
+  </g>
+
+  <g>
+    <rect x="360" y="78" width="280" height="200" rx="12" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.6"/>
+    <text x="384" y="110" style="font-size:14px;font-weight:500;fill:#173404">策略 B · 就近取证 + 语义辨析</text>
+    <text x="384" y="132" style="font-size:12px;fill:#27500A">看空格附近、比搭配与情感方向</text>
+    <text x="384" y="190" style="font-size:46px;font-weight:500;fill:#3B6D11">63%</text>
+    <text x="384" y="214" style="font-size:12px;fill:#27500A">线索在空格前后 60 字符内（581 条）</text>
+    <rect x="384" y="234" width="118" height="30" rx="8" fill="#97C459" stroke="#3B6D11" stroke-width="0.5"/>
+    <text x="443" y="249" text-anchor="middle" dominant-baseline="central" style="font-size:13px;fill:#173404">实测有效</text>
+  </g>
+
+  <line x1="324" y1="178" x2="356" y2="178" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="340" y="170" text-anchor="middle" style="font-size:12px;fill:#5F5E5A">改用</text>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+</svg>
