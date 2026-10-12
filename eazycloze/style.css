@@ -1757,6 +1757,17 @@ body[data-pane="trans"] #qNav { display: none !important; }
   #printArea .matrix-table th, #printArea .matrix-table td { padding: 5px 6px; }
   #printArea .ho-note, #printArea .exam-passage { background: #f4f6fa !important; }
   #printArea h2 { font-size: 17px; }
+
+  /* 首页“打印知识点合集”：按类别整理，避免知识点卡片被跨页截断 */
+  #printArea .kp-print-cover { padding-bottom: 12px; border-bottom: 2px solid #1f3a68; }
+  #printArea .kp-print-toc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 18px; margin-top: 10px; font-size: 11.5px; }
+  #printArea .kp-print-category { break-before: page; page-break-before: always; }
+  #printArea .kp-print-category h2 { margin: 0 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1f3a68; color: #1f3a68; }
+  #printArea .kp-print-item { break-inside: avoid; page-break-inside: avoid; margin: 0 0 14px; padding: 10px 12px; border: 1px solid #cfd6e2; border-radius: 6px; }
+  #printArea .kp-print-item h3 { margin: 0 0 7px; font-size: 14px; color: #182b4d; }
+  #printArea .kp-print-item p { margin: 3px 0; }
+  #printArea .kp-print-strategy { margin-top: 7px; padding: 7px 9px; background: #f2f5f9 !important; border-left: 3px solid #1f3a68; }
+  #printArea .kp-print-foot { margin-top: 18px; text-align: center; font-size: 10.5px; color: #666; }
 }
 
 /* ===== 讲义 · 五维技法专题卡（27 个技法统一五段式） ===== */

@@ -1,3 +1,7 @@
+/* 完形填空训练系统 · 全国版 · 内置题库
+   共 213 篇题库，2091 道题
+   ============================================================ */
+
 window.BUILTIN_LESSONS = [
   {
     "id": "sample-cloze-demo-001",
@@ -58,7 +62,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "情感态度 / 上下文复现",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "busy",
@@ -158,7 +162,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "上下文复现 / 固定搭配",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "fear",
@@ -186,7 +190,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "常识推断",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "voice",
@@ -237,32 +241,32 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 8,
-        "pos": "形容词副词",
-        "topic": "上下文复现 / 情感态度",
+        "pos": "形容词",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
-          "silent",
+          "peaceful",
           "noisy",
-          "hungry"
+          "lonely"
         ],
-        "answer": "silent",
+        "answer": "peaceful",
         "clues": [
-          "He said nothing",
-          "He felt lonely",
-          "Soon Bill"
+          "Bill gave him a small smile in return",
+          "Soon Bill began to talk to other students",
+          "He felt he was one of"
         ],
-        "explanation": "线索　紧邻的下一句里有时间信号（「Soon Bill」）：动作分先后，所填词要落在这条时间链的位置上。\n印证　邻段 / 全篇范围里的还有同向佐证（情感同向）：「He said nothing」与主线指向一致。\n排除　noisy、hungry三个干扰项全文找不到任何呼应落点（呼应否）。",
+        "explanation": "线索　Bill 从沉默不回应，到回以微笑并主动与同学交谈，说明新生活逐渐变得温暖、平静，空格应填 peaceful。\n印证　后文 Soon Bill began to talk to other students 和 one of them 说明他已放松并融入集体。\n排除　noisy 强调声音嘈杂，全文没有对应；lonely 与后文主动交谈、融入同学的变化方向相反。",
         "collocation": null,
         "clueTypes": {
-          "He said nothing": "情感线索·情感一致",
-          "He felt lonely": "复现线索·同场复现",
-          "Soon Bill": "逻辑线索·时间"
+          "Bill gave him a small smile in return": "情感线索·情感变化",
+          "Soon Bill began to talk to other students": "逻辑线索·因果",
+          "He felt he was one of": "复现线索·同场复现"
         }
       },
       {
         "q": 9,
         "pos": "代词",
-        "topic": "逻辑推理",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "all",
@@ -286,7 +290,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "代词",
-        "topic": "语法 / 指代",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "its",
@@ -354,7 +358,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "形容词副词",
-        "topic": "固定搭配 / 逻辑推理",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "well",
@@ -382,7 +386,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "形容词副词",
-        "topic": "主旨升华",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "simple",
@@ -410,7 +414,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "形容词副词",
-        "topic": "主旨升华",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "warm",
@@ -510,7 +514,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "介词搭配",
-        "topic": "介词辨析",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "to",
@@ -538,7 +542,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "上下文语义",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "grew",
@@ -562,7 +566,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "并列结构",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "sick",
@@ -588,7 +592,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "上下文语义",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "left",
@@ -616,7 +620,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "代词",
-        "topic": "代词辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "his",
@@ -640,7 +644,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "上下文语义",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "boring",
@@ -686,7 +690,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "固定句型",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "too",
@@ -708,7 +712,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "连词逻辑",
-        "topic": "逻辑关系",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Or",
@@ -758,7 +762,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "形容词副词",
-        "topic": "上下文语义",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "dark",
@@ -810,7 +814,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "名词",
-        "topic": "上下文语义",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "duty",
@@ -832,7 +836,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "形容词副词",
-        "topic": "上下文语义",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "slowly",
@@ -954,7 +958,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动名词",
-        "topic": "主题复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "fishing",
@@ -982,7 +986,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "上下文语义",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "games",
@@ -1006,7 +1010,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "上下文复现",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "first",
@@ -1030,7 +1034,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "上下文语义",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "sad",
@@ -1054,7 +1058,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "连词逻辑",
-        "topic": "时间状语从句",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "where",
@@ -1080,7 +1084,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "代词",
-        "topic": "上下文语义",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "something",
@@ -1104,7 +1108,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "上下文语义",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "patient",
@@ -1128,7 +1132,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "上下文语义",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "hug",
@@ -1152,7 +1156,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "上下文语义",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "surprised",
@@ -1176,7 +1180,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "上下文语义",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "fast",
@@ -1200,7 +1204,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "形容词副词",
-        "topic": "上下文语义",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "just now",
@@ -1226,7 +1230,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "连词逻辑",
-        "topic": "因果逻辑",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "so",
@@ -1248,7 +1252,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "上下文语义",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "encouraged",
@@ -1272,7 +1276,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "上下文语义",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "protected",
@@ -1298,7 +1302,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "形容词副词",
-        "topic": "上下文语义",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "meaningless",
@@ -1406,7 +1410,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "daily",
@@ -1433,7 +1437,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "candies",
@@ -1458,7 +1462,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "fresh",
@@ -1479,7 +1483,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "bought",
@@ -1500,7 +1504,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "badly",
@@ -1525,7 +1529,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "found",
@@ -1554,7 +1558,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "tried",
@@ -1583,7 +1587,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "appeared",
@@ -1608,7 +1612,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "excited",
@@ -1637,7 +1641,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "change",
@@ -1666,7 +1670,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词短语",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "spread out",
@@ -1695,7 +1699,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "rode",
@@ -1718,7 +1722,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "wind",
@@ -1743,7 +1747,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "介词搭配",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "and",
@@ -1768,7 +1772,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "hide",
@@ -1865,7 +1869,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "looks",
@@ -1888,7 +1892,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "介词搭配",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "or",
@@ -1911,7 +1915,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "impatient",
@@ -1934,7 +1938,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "dreamed",
@@ -1959,7 +1963,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "survive",
@@ -1984,7 +1988,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "taught",
@@ -2013,7 +2017,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "calm",
@@ -2038,7 +2042,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "duty",
@@ -2063,7 +2067,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "found",
@@ -2088,7 +2092,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Luckily",
@@ -2111,7 +2115,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "word",
@@ -2138,7 +2142,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "generous",
@@ -2241,7 +2245,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "人物故事 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "back",
@@ -2266,7 +2270,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "sadly",
@@ -2289,7 +2293,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "Why",
@@ -2312,7 +2316,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "common",
@@ -2337,7 +2341,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "discovery",
@@ -2362,7 +2366,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "replied",
@@ -2387,7 +2391,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "excuse",
@@ -2412,7 +2416,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "stories",
@@ -2435,7 +2439,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "excited",
@@ -2464,7 +2468,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "humorous",
@@ -2572,7 +2576,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "tool",
@@ -2597,7 +2601,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "find",
@@ -2622,7 +2626,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "gave up",
@@ -2651,7 +2655,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "funny",
@@ -2676,7 +2680,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "excited",
@@ -2701,7 +2705,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "new",
@@ -2724,7 +2728,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "chance",
@@ -2745,7 +2749,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "surprised",
@@ -2770,7 +2774,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "lucky",
@@ -2795,7 +2799,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "人物故事 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "music",
@@ -2888,7 +2892,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "hardworking",
@@ -2913,7 +2917,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "accepted",
@@ -2936,7 +2940,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "few",
@@ -2961,7 +2965,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "headed for",
@@ -2990,7 +2994,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "介词搭配",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "In",
@@ -3015,7 +3019,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "letter",
@@ -3036,7 +3040,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "happy",
@@ -3061,7 +3065,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "连词逻辑",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "then",
@@ -3086,7 +3090,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "join",
@@ -3111,7 +3115,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Suddenly",
@@ -3134,7 +3138,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "cried",
@@ -3159,7 +3163,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "helping",
@@ -3184,7 +3188,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "friend’s",
@@ -3207,7 +3211,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "day",
@@ -3232,7 +3236,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "代词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "how",
@@ -3321,7 +3325,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "leg",
@@ -3348,7 +3352,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "watching",
@@ -3377,7 +3381,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "touch",
@@ -3402,7 +3406,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "Instead of",
@@ -3429,7 +3433,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "accept",
@@ -3452,7 +3456,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "painful",
@@ -3481,7 +3485,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "shape",
@@ -3506,7 +3510,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "strawberry",
@@ -3535,7 +3539,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "overcome",
@@ -3564,7 +3568,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "smart",
@@ -3663,7 +3667,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "surprised",
@@ -3692,7 +3696,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "compare",
@@ -3719,7 +3723,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "cheerfully",
@@ -3744,7 +3748,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "人物故事 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "record",
@@ -3769,7 +3773,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "served",
@@ -3794,7 +3798,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "trust",
@@ -3819,7 +3823,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "cheating",
@@ -3842,7 +3846,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "space",
@@ -3929,8 +3933,8 @@ window.BUILTIN_LESSONS = [
     "questions": [
       {
         "q": 1,
-        "pos": "名词",
-        "topic": "人物故事",
+        "pos": "形容词",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "lively",
@@ -3954,7 +3958,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "strange",
@@ -3982,7 +3986,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "decided",
@@ -4006,7 +4010,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "连词逻辑",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "although",
@@ -4032,7 +4036,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "介词搭配",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "for",
@@ -4059,8 +4063,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 6,
-        "pos": "动词",
-        "topic": "人物故事",
+        "pos": "名词",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "buttons",
@@ -4088,7 +4092,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "explain",
@@ -4116,7 +4120,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "bringing",
@@ -4142,7 +4146,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "代词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "when",
@@ -4167,8 +4171,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 10,
-        "pos": "动词",
-        "topic": "人物故事",
+        "pos": "名词",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "feeling",
@@ -4258,7 +4262,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词短语",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "go off",
@@ -4287,7 +4291,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "seriously",
@@ -4312,7 +4316,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "water",
@@ -4335,7 +4339,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sleep",
@@ -4360,7 +4364,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "body",
@@ -4385,7 +4389,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "school",
@@ -4414,7 +4418,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "surprised",
@@ -4443,7 +4447,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "人物故事 / 上下文复现",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "rushed",
@@ -4472,7 +4476,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "介词搭配",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "After",
@@ -4493,7 +4497,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "energetic",
@@ -4576,7 +4580,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "brothers",
@@ -4601,7 +4605,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "chatting",
@@ -4626,7 +4630,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "代词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "any",
@@ -4649,7 +4653,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "连词逻辑",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "Besides",
@@ -4678,7 +4682,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "uneasy",
@@ -4705,7 +4709,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "surprise",
@@ -4734,7 +4738,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "tails",
@@ -4759,7 +4763,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "continued",
@@ -4786,7 +4790,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "词义辨析",
         "route": "双路径",
         "options": [
           "back",
@@ -4813,7 +4817,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "lovely",
@@ -4928,7 +4932,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "joy",
@@ -4957,7 +4961,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "sunny",
@@ -4982,7 +4986,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "warn",
@@ -5009,7 +5013,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "cake",
@@ -5038,7 +5042,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "missed",
@@ -5063,7 +5067,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "closed",
@@ -5088,7 +5092,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "shout",
@@ -5113,7 +5117,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Medicine",
@@ -5138,7 +5142,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "rapidly",
@@ -5163,7 +5167,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "wait for",
@@ -5192,7 +5196,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "careful",
@@ -5217,7 +5221,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "sit",
@@ -5242,7 +5246,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "lost",
@@ -5267,7 +5271,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "buy",
@@ -5292,7 +5296,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "imagination",
@@ -5384,7 +5388,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "supported",
@@ -5412,7 +5416,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "sat down",
@@ -5440,7 +5444,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "bird",
@@ -5464,7 +5468,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "brave",
@@ -5484,7 +5488,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "doing",
@@ -5508,7 +5512,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "music",
@@ -5536,7 +5540,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "quietly",
@@ -5558,7 +5562,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "help",
@@ -5582,7 +5586,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "visited",
@@ -5606,7 +5610,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "serious",
@@ -5711,7 +5715,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "beach",
@@ -5736,7 +5740,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "threw away",
@@ -5765,7 +5769,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "fill",
@@ -5790,7 +5794,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "silent",
@@ -5819,7 +5823,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "share",
@@ -5848,7 +5852,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "lazily",
@@ -5873,7 +5877,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "noise",
@@ -5898,7 +5902,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "needed",
@@ -5921,7 +5925,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "tent",
@@ -5950,7 +5954,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "人物故事",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "game",
@@ -6044,7 +6048,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "staying",
@@ -6068,7 +6072,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "parents",
@@ -6092,7 +6096,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "about",
@@ -6116,7 +6120,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "taller",
@@ -6138,7 +6142,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "连词逻辑",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "why",
@@ -6163,8 +6167,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 6,
-        "pos": "动词",
-        "topic": "生活哲理",
+        "pos": "名词",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "knowledge",
@@ -6186,7 +6190,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "went by",
@@ -6214,7 +6218,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "politely",
@@ -6242,7 +6246,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词短语",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "was busy with",
@@ -6268,7 +6272,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "代词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "your",
@@ -6354,7 +6358,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "money",
@@ -6379,7 +6383,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "kitchen",
@@ -6404,7 +6408,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "hid",
@@ -6429,7 +6433,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "lend",
@@ -6458,7 +6462,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "calm",
@@ -6487,7 +6491,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "介词搭配",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Though",
@@ -6512,7 +6516,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "jumped",
@@ -6533,7 +6537,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "longer",
@@ -6556,7 +6560,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "fill",
@@ -6581,7 +6585,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "threw away",
@@ -6702,7 +6706,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "carefully",
@@ -6727,7 +6731,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "boring",
@@ -6750,7 +6754,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "touched",
@@ -6775,7 +6779,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "warm",
@@ -6800,7 +6804,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "words",
@@ -6825,7 +6829,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "连词逻辑",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "Or",
@@ -6854,7 +6858,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "代词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "how",
@@ -6883,7 +6887,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Unluckily",
@@ -6904,7 +6908,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "bought",
@@ -6933,7 +6937,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "time",
@@ -6962,7 +6966,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "名词",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "test",
@@ -6991,7 +6995,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "teach",
@@ -7016,7 +7020,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "介词搭配",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "at",
@@ -7041,7 +7045,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "offered",
@@ -7066,7 +7070,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "生活哲理 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "road",
@@ -7154,7 +7158,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "visiting",
@@ -7182,7 +7186,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "girl",
@@ -7206,7 +7210,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "dreamed",
@@ -7230,7 +7234,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "hungry",
@@ -7254,7 +7258,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "dirty",
@@ -7278,7 +7282,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "food",
@@ -7298,7 +7302,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "sold",
@@ -7326,7 +7330,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "relative",
@@ -7350,7 +7354,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "example",
@@ -7378,7 +7382,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "cook",
@@ -7478,7 +7482,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Happily",
@@ -7501,7 +7505,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "Thanks",
@@ -7524,7 +7528,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "his brother",
@@ -7553,7 +7557,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "boring",
@@ -7578,7 +7582,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "介词搭配",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "back",
@@ -7605,7 +7609,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "two",
@@ -7630,7 +7634,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "mistook",
@@ -7659,7 +7663,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词短语",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "gave up",
@@ -7686,7 +7690,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词短语",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "Although",
@@ -7711,7 +7715,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "modest",
@@ -7740,7 +7744,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "连词逻辑",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "and",
@@ -7767,7 +7771,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "write",
@@ -7792,7 +7796,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "名词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "running",
@@ -7819,7 +7823,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "spoke",
@@ -7848,7 +7852,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "replied",
@@ -7939,7 +7943,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "took",
@@ -7968,7 +7972,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "good",
@@ -7993,7 +7997,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "in",
@@ -8018,7 +8022,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "sad",
@@ -8047,7 +8051,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "连词逻辑",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "if",
@@ -8070,7 +8074,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "put up",
@@ -8099,7 +8103,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "介词搭配",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "but",
@@ -8124,7 +8128,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "grade",
@@ -8147,7 +8151,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "quickly",
@@ -8172,7 +8176,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "代词",
-        "topic": "生活哲理",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "myself",
@@ -8267,7 +8271,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "mother",
@@ -8292,7 +8296,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "make",
@@ -8317,7 +8321,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "cake",
@@ -8346,7 +8350,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "low",
@@ -8375,7 +8379,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "smelt",
@@ -8400,7 +8404,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "told",
@@ -8425,7 +8429,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "slowly",
@@ -8450,7 +8454,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "no",
@@ -8475,7 +8479,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词短语",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "before",
@@ -8498,7 +8502,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "生活哲理",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "take out",
@@ -8586,7 +8590,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "happy",
@@ -8610,7 +8614,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "介词搭配",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "but",
@@ -8632,7 +8636,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "flew",
@@ -8656,7 +8660,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "生活哲理",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "small",
@@ -8680,7 +8684,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "stones",
@@ -8704,7 +8708,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "生活哲理",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "smiled",
@@ -8728,7 +8732,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "生活哲理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "chess",
@@ -8818,7 +8822,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "keep",
@@ -8842,7 +8846,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "special",
@@ -8866,7 +8870,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "book",
@@ -8892,7 +8896,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "连词逻辑",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "and",
@@ -8914,7 +8918,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "with",
@@ -9008,7 +9012,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "suggestions",
@@ -9037,7 +9041,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "expected",
@@ -9060,7 +9064,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "performed",
@@ -9083,7 +9087,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "quietly",
@@ -9108,7 +9112,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "low",
@@ -9137,7 +9141,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "size",
@@ -9166,7 +9170,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "介词搭配",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "for",
@@ -9195,7 +9199,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "long",
@@ -9218,7 +9222,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "where",
@@ -9239,7 +9243,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "harder",
@@ -9326,7 +9330,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "avoids",
@@ -9349,7 +9353,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "说明建议 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "cancel",
@@ -9378,7 +9382,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "stressed",
@@ -9399,7 +9403,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "real",
@@ -9424,7 +9428,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "prefer",
@@ -9449,7 +9453,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "连词逻辑",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Before",
@@ -9470,7 +9474,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "date",
@@ -9495,7 +9499,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "crazy",
@@ -9522,7 +9526,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "stupid",
@@ -9551,7 +9555,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "map",
@@ -9640,7 +9644,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "代词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "some",
@@ -9666,7 +9670,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "语境推断",
         "route": "双路径",
         "options": [
           "sizes",
@@ -9694,7 +9698,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "数词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "one",
@@ -9714,7 +9718,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "smelled",
@@ -9742,7 +9746,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "another",
@@ -9764,7 +9768,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "borrow",
@@ -9790,7 +9794,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "代词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "his",
@@ -9812,7 +9816,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "writing",
@@ -9840,7 +9844,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "quite",
@@ -9860,7 +9864,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "friends",
@@ -9955,7 +9959,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "man",
@@ -9984,7 +9988,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "Growing up",
@@ -10013,7 +10017,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sports",
@@ -10038,7 +10042,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "engineers",
@@ -10063,7 +10067,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "failed",
@@ -10092,7 +10096,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "relaxing",
@@ -10117,7 +10121,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "代词",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "everything",
@@ -10142,7 +10146,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "successfully",
@@ -10229,7 +10233,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "thick",
@@ -10253,7 +10257,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "smell",
@@ -10277,7 +10281,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sleep",
@@ -10301,7 +10305,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "get",
@@ -10323,7 +10327,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "介词搭配",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "around",
@@ -10349,7 +10353,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "why",
@@ -10436,7 +10440,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "fast",
@@ -10461,7 +10465,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "sit",
@@ -10488,7 +10492,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "risk",
@@ -10515,7 +10519,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "So",
@@ -10538,7 +10542,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "代词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "one",
@@ -10565,7 +10569,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "water",
@@ -10592,7 +10596,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "介词搭配",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "in",
@@ -10617,7 +10621,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "crazy about",
@@ -10646,7 +10650,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "hardly",
@@ -10671,7 +10675,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sleep",
@@ -10760,7 +10764,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "ears",
@@ -10788,7 +10792,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "can",
@@ -10812,7 +10816,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "secretly",
@@ -10836,7 +10840,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "连词逻辑",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "When",
@@ -10856,7 +10860,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "介词搭配",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "To",
@@ -10880,7 +10884,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "pick up",
@@ -10908,7 +10912,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "believe",
@@ -10930,7 +10934,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "beautiful",
@@ -11028,7 +11032,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "questioned",
@@ -11053,7 +11057,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "traditional",
@@ -11074,7 +11078,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "sold",
@@ -11099,7 +11103,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "chosen",
@@ -11126,7 +11130,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "high",
@@ -11155,7 +11159,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "coats",
@@ -11176,7 +11180,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "address",
@@ -11197,7 +11201,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "strict",
@@ -11224,7 +11228,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "strongest",
@@ -11251,7 +11255,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "copying",
@@ -11278,7 +11282,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "joke",
@@ -11303,7 +11307,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "naturally",
@@ -11330,7 +11334,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "说明建议",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "traveled",
@@ -11357,7 +11361,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "名词",
-        "topic": "说明建议",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "language",
@@ -11380,7 +11384,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "形容词副词",
-        "topic": "说明建议",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "honest",
@@ -11462,7 +11466,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "never",
@@ -11487,7 +11491,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "work",
@@ -11510,7 +11514,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "up",
@@ -11539,7 +11543,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "puts down",
@@ -11568,7 +11572,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "hides",
@@ -11651,7 +11655,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "forgets",
@@ -11678,7 +11682,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "owners",
@@ -11701,7 +11705,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "after",
@@ -11728,7 +11732,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "run",
@@ -11753,7 +11757,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "boring",
@@ -11835,7 +11839,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "clothes",
@@ -11864,7 +11868,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "bamboo",
@@ -11887,7 +11891,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "hate",
@@ -11912,7 +11916,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "traditional",
@@ -11941,7 +11945,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "gone off",
@@ -12025,7 +12029,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "happily",
@@ -12050,7 +12054,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "连词逻辑",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "When",
@@ -12077,7 +12081,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "present",
@@ -12106,7 +12110,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "fairness",
@@ -12131,7 +12135,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "encourage",
@@ -12216,7 +12220,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "Dangerous",
@@ -12241,7 +12245,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "代词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "her",
@@ -12266,7 +12270,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "soil",
@@ -12289,7 +12293,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "cleaned",
@@ -12318,7 +12322,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "house",
@@ -12401,7 +12405,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "shop",
@@ -12430,7 +12434,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "save",
@@ -12455,7 +12459,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "lost",
@@ -12482,7 +12486,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "helped",
@@ -12511,7 +12515,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "encouraged",
@@ -12607,7 +12611,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "wonderful",
@@ -12632,7 +12636,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "play",
@@ -12655,7 +12659,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "friends",
@@ -12680,7 +12684,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "keeps",
@@ -12703,7 +12707,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "beauty",
@@ -12785,7 +12789,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "代词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "who",
@@ -12808,7 +12812,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Doctors",
@@ -12831,7 +12835,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "thankful",
@@ -12860,7 +12864,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "break",
@@ -12887,7 +12891,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "介词搭配",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "to",
@@ -12977,7 +12981,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "lie",
@@ -13001,7 +13005,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "looked up",
@@ -13029,7 +13033,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "fighting",
@@ -13053,7 +13057,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "inside",
@@ -13079,7 +13083,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "friend",
@@ -13167,7 +13171,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "England",
@@ -13191,7 +13195,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "代词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "she",
@@ -13213,7 +13217,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "different",
@@ -13237,7 +13241,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "planes",
@@ -13261,7 +13265,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "short",
@@ -13346,7 +13350,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "asks",
@@ -13371,7 +13375,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "连词逻辑",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "what",
@@ -13398,7 +13402,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "waste",
@@ -13427,7 +13431,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "in",
@@ -13456,7 +13460,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "problem",
@@ -13535,7 +13539,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "介词搭配",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "in",
@@ -13562,7 +13566,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "borrowed",
@@ -13589,7 +13593,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "positions",
@@ -13614,7 +13618,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "lonely",
@@ -13641,7 +13645,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "controlled",
@@ -13724,7 +13728,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "popular",
@@ -13750,7 +13754,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sharing",
@@ -13774,7 +13778,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "old",
@@ -13802,7 +13806,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "sit",
@@ -13828,7 +13832,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "guide",
@@ -13915,7 +13919,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "minutes",
@@ -13941,7 +13945,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "tickets",
@@ -13969,7 +13973,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "cheerfully",
@@ -13995,7 +13999,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "on",
@@ -14019,7 +14023,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "own",
@@ -14092,7 +14096,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "wasted",
@@ -14117,7 +14121,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "restaurants",
@@ -14144,7 +14148,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "tiring",
@@ -14169,7 +14173,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "before",
@@ -14196,7 +14200,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "training",
@@ -14282,7 +14286,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "lessons",
@@ -14307,7 +14311,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "cleverer",
@@ -14330,7 +14334,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "plant",
@@ -14359,7 +14363,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "sing",
@@ -14384,7 +14388,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "walk",
@@ -14467,7 +14471,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "used",
@@ -14496,7 +14500,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "food",
@@ -14521,7 +14525,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "easily",
@@ -14546,7 +14550,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "picking",
@@ -14571,7 +14575,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "interesting",
@@ -14657,7 +14661,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "train",
@@ -14686,7 +14690,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "四川 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "bag",
@@ -14711,7 +14715,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "got on",
@@ -14740,7 +14744,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "四川 / 上下文复现",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "money",
@@ -14767,7 +14771,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "good",
@@ -14855,7 +14859,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "连词逻辑",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "again",
@@ -14876,7 +14880,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "home",
@@ -14905,7 +14909,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "bottle",
@@ -14932,7 +14936,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "appeared",
@@ -14961,7 +14965,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "easy",
@@ -15046,7 +15050,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "relaxed",
@@ -15071,7 +15075,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "连词逻辑",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Unless",
@@ -15092,7 +15096,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "always",
@@ -15117,7 +15121,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "meat",
@@ -15140,7 +15144,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Meet",
@@ -15213,7 +15217,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "careful",
@@ -15240,7 +15244,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "break",
@@ -15269,7 +15273,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "代词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "they",
@@ -15294,7 +15298,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "do",
@@ -15321,7 +15325,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "prizes",
@@ -15406,7 +15410,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Suddenly",
@@ -15428,7 +15432,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "result",
@@ -15452,7 +15456,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "fresh",
@@ -15472,7 +15476,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "interested",
@@ -15496,7 +15500,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "speak",
@@ -15570,7 +15574,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "介词搭配",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Without",
@@ -15592,7 +15596,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "help",
@@ -15616,7 +15620,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "habits",
@@ -15642,7 +15646,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Luckily",
@@ -15664,7 +15668,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "wash",
@@ -15737,7 +15741,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "介词搭配",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "off",
@@ -15762,7 +15766,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "arrive",
@@ -15791,7 +15795,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "are",
@@ -15818,7 +15822,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "parts",
@@ -15843,7 +15847,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "冠词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "a",
@@ -15926,7 +15930,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "knowledge",
@@ -15954,7 +15958,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "break",
@@ -15980,7 +15984,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "never",
@@ -16004,7 +16008,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "the most convenient",
@@ -16032,7 +16036,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "east",
@@ -16115,7 +16119,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "won",
@@ -16143,7 +16147,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "education",
@@ -16165,7 +16169,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "had read",
@@ -16189,7 +16193,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "was chosen",
@@ -16211,7 +16215,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Whatever",
@@ -16288,7 +16292,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词短语",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "care for",
@@ -16317,7 +16321,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "介词搭配",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "on",
@@ -16340,7 +16344,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "四川",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "how",
@@ -16365,7 +16369,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "四川",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "size",
@@ -16390,7 +16394,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "四川",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "useful",
@@ -16484,7 +16488,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "山西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "old",
@@ -16508,7 +16512,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "连词逻辑",
-        "topic": "山西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "If",
@@ -16528,7 +16532,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "山西",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "eye",
@@ -16556,7 +16560,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "山西",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "doubted",
@@ -16580,7 +16584,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "山西",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "cut off",
@@ -16606,7 +16610,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "山西",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "lake",
@@ -16634,7 +16638,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "山西",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "clearly",
@@ -16658,7 +16662,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "山西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "tidy",
@@ -16737,7 +16741,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "连词逻辑",
-        "topic": "山西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "If",
@@ -16759,7 +16763,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "山西",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "ate up",
@@ -16787,7 +16791,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "山西",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "carefully",
@@ -16809,7 +16813,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "山西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "room",
@@ -16831,7 +16835,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "山西",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "refused",
@@ -16859,7 +16863,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "山西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "hope",
@@ -16883,7 +16887,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "山西",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "imagine",
@@ -16911,7 +16915,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "山西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "greater",
@@ -16998,7 +17002,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "山西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "need",
@@ -17022,7 +17026,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "山西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "worried",
@@ -17046,7 +17050,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "山西",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "forget",
@@ -17072,7 +17076,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "山西",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "nice",
@@ -17100,7 +17104,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "山西",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "talk about",
@@ -17128,7 +17132,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "山西",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "class",
@@ -17156,7 +17160,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "山西",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "ways",
@@ -17184,7 +17188,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "山西",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Suddenly",
@@ -17271,7 +17275,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "山西",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "clear",
@@ -17299,7 +17303,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "山西",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "cut out",
@@ -17327,7 +17331,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "山西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "if",
@@ -17349,7 +17353,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "山西",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "secret",
@@ -17377,7 +17381,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "山西",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "hurt",
@@ -17401,7 +17405,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "山西",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "rest",
@@ -17429,7 +17433,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "山西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "always",
@@ -17451,7 +17455,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "介词搭配",
-        "topic": "山西",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "toward",
@@ -17538,7 +17542,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "supported",
@@ -17566,7 +17570,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "sat down",
@@ -17594,7 +17598,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "bird",
@@ -17618,7 +17622,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "brave",
@@ -17638,7 +17642,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "doing",
@@ -17662,7 +17666,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "music",
@@ -17690,7 +17694,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "quietly",
@@ -17712,7 +17716,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "help",
@@ -17736,7 +17740,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "visited",
@@ -17760,7 +17764,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "serious",
@@ -17850,7 +17854,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "good",
@@ -17878,7 +17882,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "badly",
@@ -17902,7 +17906,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "invention",
@@ -17922,7 +17926,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sea",
@@ -17946,7 +17950,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "广西 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "rubbish",
@@ -17974,7 +17978,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "nervous",
@@ -17998,7 +18002,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "studying",
@@ -18022,7 +18026,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词短语",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "pick up",
@@ -18048,7 +18052,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "连词逻辑",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "or",
@@ -18072,7 +18076,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "find",
@@ -18160,7 +18164,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "students",
@@ -18184,7 +18188,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "work",
@@ -18208,7 +18212,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "chalk",
@@ -18236,7 +18240,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "after",
@@ -18258,7 +18262,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "watched",
@@ -18280,7 +18284,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "代词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "my",
@@ -18308,7 +18312,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "pull",
@@ -18336,7 +18340,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "easy",
@@ -18360,7 +18364,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "连词逻辑",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Or",
@@ -18384,7 +18388,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "early",
@@ -18477,7 +18481,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "actress",
@@ -18500,7 +18504,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "runs",
@@ -18529,7 +18533,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "easy",
@@ -18554,7 +18558,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "or",
@@ -18577,7 +18581,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "mistake",
@@ -18600,7 +18604,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "refused",
@@ -18625,7 +18629,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Generally",
@@ -18650,7 +18654,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "excited",
@@ -18675,7 +18679,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词短语",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "go on",
@@ -18704,7 +18708,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "treat",
@@ -18795,7 +18799,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "student",
@@ -18820,7 +18824,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "unless",
@@ -18841,7 +18845,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "proudly",
@@ -18868,7 +18872,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "forgot",
@@ -18891,7 +18895,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "sorry",
@@ -18916,7 +18920,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "in",
@@ -18941,7 +18945,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "tidy",
@@ -18970,7 +18974,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "led",
@@ -18999,7 +19003,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "代词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "her",
@@ -19024,7 +19028,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "question",
@@ -19129,7 +19133,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "important",
@@ -19157,7 +19161,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "clearly",
@@ -19181,7 +19185,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "hide",
@@ -19205,7 +19209,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "get on with",
@@ -19233,7 +19237,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "note",
@@ -19255,7 +19259,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "surprised",
@@ -19283,7 +19287,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "always",
@@ -19307,7 +19311,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "bookstore",
@@ -19333,7 +19337,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "介词搭配",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "and",
@@ -19355,7 +19359,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "promised",
@@ -19453,7 +19457,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "knowledge",
@@ -19475,7 +19479,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "saw",
@@ -19501,7 +19505,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "worry",
@@ -19529,7 +19533,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "common",
@@ -19555,7 +19559,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "face",
@@ -19575,7 +19579,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "happily",
@@ -19603,7 +19607,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "make",
@@ -19627,7 +19631,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "realized",
@@ -19655,7 +19659,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "连词逻辑",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "never",
@@ -19679,7 +19683,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "广西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "remember",
@@ -19774,7 +19778,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "busy",
@@ -19802,7 +19806,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "changed",
@@ -19830,7 +19834,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "excited",
@@ -19854,7 +19858,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "数词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "last",
@@ -19880,7 +19884,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "joked",
@@ -19908,7 +19912,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "新疆",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "window",
@@ -19934,7 +19938,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "介词搭配",
-        "topic": "新疆",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "in",
@@ -19958,7 +19962,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "suddenly",
@@ -19982,7 +19986,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "新疆",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "silent",
@@ -20006,7 +20010,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "代词",
-        "topic": "新疆",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "all",
@@ -20034,7 +20038,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "代词",
-        "topic": "新疆",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "its",
@@ -20056,7 +20060,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "名词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "work",
@@ -20084,7 +20088,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "worse",
@@ -20108,7 +20112,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "形容词副词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "well",
@@ -20136,7 +20140,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "形容词副词",
-        "topic": "新疆",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "just",
@@ -20225,7 +20229,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "代词",
-        "topic": "新疆",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "others",
@@ -20245,7 +20249,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "got",
@@ -20273,7 +20277,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "连词逻辑",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "although",
@@ -20295,7 +20299,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "crying",
@@ -20319,7 +20323,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "politely",
@@ -20341,7 +20345,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "介词搭配",
-        "topic": "新疆",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "to",
@@ -20365,7 +20369,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "代词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "what",
@@ -20389,7 +20393,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "代词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "everything",
@@ -20413,7 +20417,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "later",
@@ -20433,7 +20437,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "新疆",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "made up",
@@ -20461,7 +20465,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "always",
@@ -20481,7 +20485,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "介词搭配",
-        "topic": "新疆",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "at",
@@ -20505,7 +20509,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "happy",
@@ -20533,7 +20537,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "新疆 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "books",
@@ -20561,7 +20565,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "gifts",
@@ -20650,7 +20654,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "children",
@@ -20675,7 +20679,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "driving",
@@ -20698,7 +20702,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "新疆",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "talked about",
@@ -20727,7 +20731,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "词义辨析",
         "route": "双路径",
         "options": [
           "autumn",
@@ -20752,7 +20756,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Normally",
@@ -20773,7 +20777,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "surprised",
@@ -20798,7 +20802,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "stopped",
@@ -20825,7 +20829,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "useful",
@@ -20850,7 +20854,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "新疆",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "story",
@@ -20875,7 +20879,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "busy",
@@ -20970,7 +20974,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "Kite",
@@ -20995,7 +20999,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "dropping",
@@ -21020,7 +21024,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "higher",
@@ -21045,7 +21049,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "excited",
@@ -21070,7 +21074,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "新疆",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "run away",
@@ -21099,7 +21103,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "介词搭配",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "before",
@@ -21122,7 +21126,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Who",
@@ -21143,7 +21147,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "jump",
@@ -21170,7 +21174,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "paper",
@@ -21195,7 +21199,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "新疆",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "in total",
@@ -21282,7 +21286,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "felt",
@@ -21307,7 +21311,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "tried",
@@ -21332,7 +21336,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "running",
@@ -21355,7 +21359,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "up",
@@ -21380,7 +21384,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "find",
@@ -21405,7 +21409,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "after",
@@ -21428,7 +21432,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "新疆",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "how",
@@ -21455,7 +21459,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "新疆",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "mother",
@@ -21480,7 +21484,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "新疆",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "happiness",
@@ -21505,7 +21509,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "新疆",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Thank you",
@@ -21599,7 +21603,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "hall",
@@ -21626,7 +21630,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "saw",
@@ -21651,7 +21655,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "ran away",
@@ -21680,7 +21684,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "hid",
@@ -21707,7 +21711,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "safer",
@@ -21736,7 +21740,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "scared",
@@ -21765,7 +21769,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "代词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "yes",
@@ -21786,7 +21790,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "sign",
@@ -21809,7 +21813,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "Somebody",
@@ -21834,7 +21838,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "brave",
@@ -21858,8 +21862,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 11,
-        "pos": "介词搭配",
-        "topic": "江苏",
+        "pos": "连词",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "and",
@@ -21884,7 +21888,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "sold",
@@ -21909,7 +21913,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "once",
@@ -21932,7 +21936,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "work",
@@ -21957,7 +21961,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "gift",
@@ -22057,7 +22061,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "lazy",
@@ -22080,7 +22084,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "always",
@@ -22105,7 +22109,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "widely",
@@ -22130,7 +22134,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "excited",
@@ -22155,7 +22159,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "to",
@@ -22184,7 +22188,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "Fix",
@@ -22209,7 +22213,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "helpful",
@@ -22232,7 +22236,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "endless",
@@ -22257,7 +22261,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "night",
@@ -22282,7 +22286,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "buy",
@@ -22311,7 +22315,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Just",
@@ -22334,7 +22338,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "代词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "you",
@@ -22359,7 +22363,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "share",
@@ -22382,7 +22386,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "try",
@@ -22411,7 +22415,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "take on",
@@ -22509,7 +22513,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "bored",
@@ -22534,7 +22538,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "though",
@@ -22559,7 +22563,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "dictionary",
@@ -22582,7 +22586,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "stand up",
@@ -22611,7 +22615,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "slowly",
@@ -22636,7 +22640,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "simple",
@@ -22661,7 +22665,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "book",
@@ -22684,7 +22688,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "farther",
@@ -22707,7 +22711,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "fun",
@@ -22732,7 +22736,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "returned",
@@ -22832,7 +22836,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "cakes",
@@ -22855,7 +22859,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "prepared",
@@ -22880,7 +22884,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "carried",
@@ -22903,7 +22907,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "lent",
@@ -22928,7 +22932,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "forgot",
@@ -22957,7 +22961,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "left",
@@ -22984,7 +22988,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "pushed",
@@ -23013,7 +23017,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "careful",
@@ -23042,7 +23046,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "safe",
@@ -23067,7 +23071,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "repaired",
@@ -23092,7 +23096,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "sunny",
@@ -23121,7 +23125,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "thought",
@@ -23144,7 +23148,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "smile",
@@ -23171,7 +23175,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "lost",
@@ -23196,7 +23200,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "recently",
@@ -23301,7 +23305,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "or",
@@ -23326,7 +23330,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "why",
@@ -23351,7 +23355,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "examples",
@@ -23378,7 +23382,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "active",
@@ -23403,7 +23407,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "form",
@@ -23428,7 +23432,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "watching",
@@ -23453,7 +23457,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "volunteers",
@@ -23478,7 +23482,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "feelings",
@@ -23503,7 +23507,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "peace",
@@ -23532,7 +23536,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "devote",
@@ -23650,7 +23654,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "noon",
@@ -23675,7 +23679,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "probably",
@@ -23700,7 +23704,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "Unless",
@@ -23725,7 +23729,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "hung",
@@ -23752,7 +23756,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "purpose",
@@ -23775,7 +23779,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "gold",
@@ -23798,7 +23802,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "pain",
@@ -23823,7 +23827,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "bench",
@@ -23850,7 +23854,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "notice",
@@ -23879,7 +23883,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "dark",
@@ -23900,7 +23904,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "joy",
@@ -23929,7 +23933,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "brought",
@@ -23956,7 +23960,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "名词",
-        "topic": "江苏 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "painting",
@@ -23983,7 +23987,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "sadly",
@@ -24012,7 +24016,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "brave",
@@ -24109,7 +24113,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Suddenly",
@@ -24132,7 +24136,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "amazing",
@@ -24159,7 +24163,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "With",
@@ -24182,7 +24186,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "eyes",
@@ -24207,7 +24211,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "why",
@@ -24236,7 +24240,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "save",
@@ -24261,7 +24265,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "changed",
@@ -24286,7 +24290,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "江苏 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "dirtier",
@@ -24315,7 +24319,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "before",
@@ -24338,7 +24342,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "finished",
@@ -24363,7 +24367,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "interests",
@@ -24392,7 +24396,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "broken",
@@ -24417,7 +24421,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "challenge",
@@ -24440,7 +24444,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "代词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "anybody",
@@ -24465,7 +24469,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "experience",
@@ -24565,7 +24569,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "Not at all",
@@ -24594,7 +24598,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "exciting",
@@ -24619,7 +24623,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "below",
@@ -24644,7 +24648,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "fails",
@@ -24665,7 +24669,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "two",
@@ -24694,7 +24698,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "lake",
@@ -24723,7 +24727,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "explained",
@@ -24752,7 +24756,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "and",
@@ -24779,7 +24783,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Careless",
@@ -24804,7 +24808,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "stopped",
@@ -24829,7 +24833,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "away",
@@ -24852,7 +24856,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Which",
@@ -24875,7 +24879,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "laughed",
@@ -24900,7 +24904,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "all the time",
@@ -24927,7 +24931,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "noise",
@@ -25017,7 +25021,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "why",
@@ -25038,7 +25042,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "Otherwise",
@@ -25063,7 +25067,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "ability",
@@ -25086,7 +25090,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "checking",
@@ -25115,7 +25119,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "As usual",
@@ -25140,7 +25144,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "product",
@@ -25163,7 +25167,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "代词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "anything",
@@ -25188,7 +25192,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "end",
@@ -25213,7 +25217,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "humour",
@@ -25238,7 +25242,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "quickly",
@@ -25327,7 +25331,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "worker",
@@ -25350,7 +25354,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "useful",
@@ -25377,7 +25381,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "replied",
@@ -25398,7 +25402,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "look after",
@@ -25427,7 +25431,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "down",
@@ -25452,7 +25456,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "avoid",
@@ -25477,7 +25481,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "jumped",
@@ -25500,7 +25504,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "in all",
@@ -25527,7 +25531,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "money",
@@ -25552,7 +25556,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "asked",
@@ -25581,7 +25585,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "代词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "them",
@@ -25606,7 +25610,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "watched",
@@ -25633,7 +25637,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "Unless",
@@ -25658,7 +25662,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "Then",
@@ -25687,7 +25691,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "buy",
@@ -25782,7 +25786,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "abilities",
@@ -25805,7 +25809,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "see",
@@ -25832,7 +25836,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "village",
@@ -25857,7 +25861,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "finally",
@@ -25882,7 +25886,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "locked",
@@ -25907,7 +25911,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "sold",
@@ -25934,7 +25938,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "river",
@@ -25957,7 +25961,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "interesting",
@@ -25978,7 +25982,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "数词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "First",
@@ -26003,7 +26007,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "story",
@@ -26032,7 +26036,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "hope",
@@ -26061,7 +26065,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "But",
@@ -26084,7 +26088,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "cry",
@@ -26109,7 +26113,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "shy",
@@ -26138,7 +26142,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "prove",
@@ -26243,7 +26247,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "bored",
@@ -26272,7 +26276,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "how",
@@ -26297,7 +26301,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "work",
@@ -26322,7 +26326,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "excitedly",
@@ -26347,7 +26351,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "secrets",
@@ -26370,7 +26374,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "understanding",
@@ -26395,7 +26399,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "faster",
@@ -26420,7 +26424,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "lending",
@@ -26445,7 +26449,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "ideas",
@@ -26470,7 +26474,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "afford",
@@ -26563,7 +26567,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "took",
@@ -26588,7 +26592,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "surprised",
@@ -26617,7 +26621,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "easily",
@@ -26642,7 +26646,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "testing",
@@ -26665,7 +26669,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "healthier",
@@ -26690,7 +26694,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "set up",
@@ -26717,7 +26721,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "future",
@@ -26746,7 +26750,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "江苏 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "noisy",
@@ -26775,7 +26779,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "friend",
@@ -26802,7 +26806,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "imagine",
@@ -26915,7 +26919,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "cooking",
@@ -26940,7 +26944,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "endless",
@@ -26969,7 +26973,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "Watch",
@@ -26998,7 +27002,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "jumped",
@@ -27023,7 +27027,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "order",
@@ -27048,7 +27052,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Moreover",
@@ -27073,7 +27077,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Can",
@@ -27098,7 +27102,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "wounds",
@@ -27123,7 +27127,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "hard",
@@ -27148,7 +27152,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "doubted",
@@ -27173,7 +27177,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "代词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Nothing",
@@ -27198,7 +27202,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "citizens",
@@ -27223,7 +27227,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Whenever",
@@ -27248,7 +27252,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "questions",
@@ -27271,7 +27275,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "all",
@@ -27367,7 +27371,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "praise",
@@ -27388,7 +27392,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "answer",
@@ -27413,7 +27417,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "special",
@@ -27438,7 +27442,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "knew",
@@ -27463,7 +27467,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "dream",
@@ -27486,7 +27490,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "woke up",
@@ -27513,7 +27517,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "exercise",
@@ -27536,7 +27540,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "broke",
@@ -27563,7 +27567,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "clean",
@@ -27586,7 +27590,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "garden",
@@ -27613,7 +27617,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "choices",
@@ -27640,7 +27644,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "Quietly",
@@ -27665,7 +27669,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "free",
@@ -27690,7 +27694,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "agreed",
@@ -27719,7 +27723,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "surprise",
@@ -27815,7 +27819,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "exactly",
@@ -27840,7 +27844,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Otherwise",
@@ -27863,7 +27867,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "joy",
@@ -27888,7 +27892,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "reading",
@@ -27917,7 +27921,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "someone",
@@ -27938,7 +27942,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "unhappy",
@@ -27967,7 +27971,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "shared",
@@ -27992,7 +27996,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "hopeful",
@@ -28017,7 +28021,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "understand",
@@ -28046,7 +28050,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "thanks",
@@ -28071,7 +28075,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "sign",
@@ -28100,7 +28104,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "at",
@@ -28191,7 +28195,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "fails",
@@ -28214,7 +28218,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "If",
@@ -28237,7 +28241,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "hide",
@@ -28264,7 +28268,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "joy",
@@ -28287,7 +28291,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "repeated",
@@ -28312,7 +28316,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "amazing",
@@ -28341,7 +28345,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "off",
@@ -28366,7 +28370,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "never",
@@ -28389,7 +28393,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "receive",
@@ -28414,7 +28418,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "horror",
@@ -28521,7 +28525,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "worried",
@@ -28550,7 +28554,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "in all",
@@ -28577,7 +28581,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "whether",
@@ -28600,7 +28604,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Since",
@@ -28621,7 +28625,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "fast",
@@ -28646,7 +28650,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "satisfied",
@@ -28671,7 +28675,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "expected",
@@ -28694,7 +28698,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "代词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Anybody",
@@ -28719,7 +28723,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "appeared",
@@ -28746,7 +28750,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "strange",
@@ -28771,7 +28775,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Finally",
@@ -28792,7 +28796,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "badly",
@@ -28817,7 +28821,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "prove",
@@ -28842,7 +28846,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Warmth",
@@ -28867,7 +28871,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "able",
@@ -28973,7 +28977,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "months",
@@ -28994,7 +28998,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "interested",
@@ -29017,7 +29021,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "ability",
@@ -29040,7 +29044,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "leave",
@@ -29065,7 +29069,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "car",
@@ -29090,7 +29094,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "couldn’t",
@@ -29115,7 +29119,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "Wonderful",
@@ -29142,7 +29146,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "went back into",
@@ -29171,7 +29175,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "how",
@@ -29196,7 +29200,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "protecting",
@@ -29221,7 +29225,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "garden",
@@ -29248,7 +29252,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "work",
@@ -29273,7 +29277,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "calm",
@@ -29296,7 +29300,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "play",
@@ -29325,7 +29329,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "copy",
@@ -29454,7 +29458,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "talking",
@@ -29479,7 +29483,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "mistakes",
@@ -29502,7 +29506,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "speak",
@@ -29527,7 +29531,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "the day before",
@@ -29554,7 +29558,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "good",
@@ -29579,7 +29583,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "nuts",
@@ -29604,7 +29608,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "see",
@@ -29629,7 +29633,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "milk",
@@ -29654,7 +29658,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "alone",
@@ -29677,7 +29681,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "代词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "nobody",
@@ -29700,7 +29704,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "before",
@@ -29723,7 +29727,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "saying",
@@ -29746,7 +29750,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "shouted",
@@ -29771,7 +29775,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "easier",
@@ -29796,7 +29800,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "practicing",
@@ -29889,7 +29893,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "borrowed",
@@ -29914,7 +29918,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "friends",
@@ -29937,7 +29941,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "why",
@@ -29962,7 +29966,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "代词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "everything",
@@ -29987,7 +29991,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "quickly",
@@ -30012,7 +30016,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "wonderful",
@@ -30037,7 +30041,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "abilities",
@@ -30062,7 +30066,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "confirms",
@@ -30087,7 +30091,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "look up",
@@ -30116,7 +30120,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "kindness",
@@ -30216,7 +30220,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "policewoman",
@@ -30241,7 +30245,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "question",
@@ -30266,7 +30270,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "where",
@@ -30291,7 +30295,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "look down",
@@ -30320,7 +30324,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "cry",
@@ -30345,7 +30349,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "difficult",
@@ -30370,7 +30374,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "excited",
@@ -30395,7 +30399,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Since",
@@ -30416,7 +30420,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词短语",
-        "topic": "江苏 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "keeping in touch",
@@ -30443,7 +30447,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "always",
@@ -30466,7 +30470,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Can",
@@ -30491,7 +30495,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "and",
@@ -30514,7 +30518,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "encourage",
@@ -30535,7 +30539,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "talent",
@@ -30560,7 +30564,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "body",
@@ -30691,7 +30695,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "or",
@@ -30714,7 +30718,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "waited",
@@ -30741,7 +30745,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "small",
@@ -30766,7 +30770,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "sitting",
@@ -30793,7 +30797,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "help",
@@ -30818,7 +30822,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Until",
@@ -30841,7 +30845,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "pleased",
@@ -30866,7 +30870,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "e-mail",
@@ -30895,7 +30899,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "whether",
@@ -30922,7 +30926,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "style",
@@ -30945,7 +30949,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "realized",
@@ -30970,7 +30974,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "searched",
@@ -30997,7 +31001,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sweaters",
@@ -31022,7 +31026,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "never",
@@ -31047,7 +31051,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "forgot",
@@ -31156,7 +31160,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "disappear",
@@ -31181,7 +31185,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "saw",
@@ -31206,7 +31210,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "confirmed",
@@ -31235,7 +31239,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "watch",
@@ -31264,7 +31268,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "Indeed",
@@ -31293,7 +31297,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "polite",
@@ -31322,7 +31326,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "finally",
@@ -31351,7 +31355,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "make",
@@ -31380,7 +31384,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "trick",
@@ -31403,7 +31407,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "surprised",
@@ -31499,7 +31503,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "student",
@@ -31528,7 +31532,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "mustn’t",
@@ -31551,7 +31555,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "catches",
@@ -31574,7 +31578,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "pleasant",
@@ -31599,7 +31603,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "worried",
@@ -31628,7 +31632,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "noisily",
@@ -31657,7 +31661,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "joke",
@@ -31680,7 +31684,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "humorous",
@@ -31709,7 +31713,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "everywhere",
@@ -31734,7 +31738,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "nervous",
@@ -31759,7 +31763,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "started",
@@ -31784,7 +31788,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "welcoming",
@@ -31809,7 +31813,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "shamefully",
@@ -31836,7 +31840,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "money",
@@ -31865,7 +31869,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "cared",
@@ -31951,7 +31955,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "lighted",
@@ -31980,7 +31984,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "about",
@@ -32005,7 +32009,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "fun",
@@ -32030,7 +32034,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "act",
@@ -32055,7 +32059,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "mind",
@@ -32084,7 +32088,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "hope",
@@ -32109,7 +32113,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "looked up",
@@ -32136,7 +32140,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "nor",
@@ -32161,7 +32165,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "selling",
@@ -32186,7 +32190,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Teachers",
@@ -32301,7 +32305,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "discussing",
@@ -32326,7 +32330,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "dropped",
@@ -32351,7 +32355,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "pronunciation",
@@ -32376,7 +32380,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "if",
@@ -32399,7 +32403,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "break",
@@ -32428,7 +32432,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "recommended",
@@ -32453,7 +32457,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "change",
@@ -32478,7 +32482,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "How",
@@ -32503,7 +32507,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "sadness",
@@ -32532,7 +32536,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "in luck",
@@ -32561,7 +32565,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "heavy",
@@ -32590,7 +32594,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "took out",
@@ -32619,7 +32623,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "promised",
@@ -32642,7 +32646,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "just",
@@ -32665,7 +32669,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "room",
@@ -32761,7 +32765,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "promised",
@@ -32790,7 +32794,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "turned out",
@@ -32815,7 +32819,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "till",
@@ -32840,7 +32844,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "excited",
@@ -32869,7 +32873,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "energy",
@@ -32892,7 +32896,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "game",
@@ -32917,7 +32921,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "before",
@@ -32944,7 +32948,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "代词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "them",
@@ -32973,7 +32977,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "advice",
@@ -33002,7 +33006,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "met",
@@ -33025,7 +33029,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "faced",
@@ -33050,7 +33054,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "even",
@@ -33077,7 +33081,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "stricter",
@@ -33104,7 +33108,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "smart",
@@ -33133,7 +33137,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "activities",
@@ -33216,7 +33220,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "notice",
@@ -33241,7 +33245,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "连词逻辑",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "when",
@@ -33266,7 +33270,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "fought",
@@ -33291,7 +33295,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "explained",
@@ -33316,7 +33320,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "nearer",
@@ -33339,7 +33343,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "discovery",
@@ -33362,7 +33366,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "patient",
@@ -33387,7 +33391,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "wider",
@@ -33410,7 +33414,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "pulled",
@@ -33435,7 +33439,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "trust",
@@ -33464,7 +33468,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "shutting",
@@ -33489,7 +33493,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "江苏",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "angry",
@@ -33586,7 +33590,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "连词逻辑",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "when",
@@ -33613,7 +33617,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "shy",
@@ -33642,7 +33646,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "collect",
@@ -33671,7 +33675,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "pity",
@@ -33700,7 +33704,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "served",
@@ -33729,7 +33733,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "funny",
@@ -33754,7 +33758,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "leave",
@@ -33779,7 +33783,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "chance",
@@ -33806,7 +33810,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "coldly",
@@ -33831,7 +33835,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "slow",
@@ -33860,7 +33864,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "passing",
@@ -33883,7 +33887,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词短语",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "sent off",
@@ -33912,7 +33916,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "attention",
@@ -33941,7 +33945,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "trip",
@@ -33970,7 +33974,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "return",
@@ -34073,7 +34077,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "bad",
@@ -34100,7 +34104,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "list",
@@ -34125,7 +34129,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "talk about",
@@ -34152,7 +34156,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "河南 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "results",
@@ -34177,7 +34181,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "expected",
@@ -34202,7 +34206,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "repairing",
@@ -34231,7 +34235,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "anger",
@@ -34260,7 +34264,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "tied",
@@ -34281,7 +34285,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "cry",
@@ -34306,7 +34310,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sadly",
@@ -34331,7 +34335,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "dreams",
@@ -34356,7 +34360,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "kept",
@@ -34377,7 +34381,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "wish",
@@ -34402,7 +34406,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "连词逻辑",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "unless",
@@ -34429,7 +34433,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "right",
@@ -34541,7 +34545,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "cold",
@@ -34564,7 +34568,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "raised",
@@ -34593,7 +34597,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "heavily",
@@ -34622,7 +34626,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "guided",
@@ -34645,7 +34649,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "replied",
@@ -34670,7 +34674,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "right",
@@ -34695,7 +34699,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "came up",
@@ -34724,7 +34728,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "连词逻辑",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "when",
@@ -34747,7 +34751,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "ugly",
@@ -34772,7 +34776,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "mind",
@@ -34797,7 +34801,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "show",
@@ -34826,7 +34830,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "skill",
@@ -34855,7 +34859,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "party",
@@ -34884,7 +34888,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "choice",
@@ -34909,7 +34913,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "surprised",
@@ -35002,7 +35006,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "连词逻辑",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "still",
@@ -35031,7 +35035,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "look for",
@@ -35060,7 +35064,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "as",
@@ -35087,7 +35091,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "clear",
@@ -35110,7 +35114,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "brother",
@@ -35135,7 +35139,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "explained",
@@ -35160,7 +35164,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "moved",
@@ -35185,7 +35189,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "bed",
@@ -35212,7 +35216,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "excuse",
@@ -35239,7 +35243,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "full",
@@ -35268,7 +35272,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "simply",
@@ -35297,7 +35301,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "decide",
@@ -35326,7 +35330,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "terrible",
@@ -35351,7 +35355,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "bring",
@@ -35374,7 +35378,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "refuse",
@@ -35466,7 +35470,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "active",
@@ -35491,7 +35495,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "reading",
@@ -35516,7 +35520,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "warned",
@@ -35543,7 +35547,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "difficult",
@@ -35572,7 +35576,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "mad",
@@ -35597,7 +35601,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "instruction",
@@ -35620,7 +35624,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "realize",
@@ -35641,7 +35645,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "介词搭配",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "By",
@@ -35662,7 +35666,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "job",
@@ -35691,7 +35695,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "连词逻辑",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "When",
@@ -35712,7 +35716,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词短语",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "woke up",
@@ -35739,7 +35743,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "secret",
@@ -35760,7 +35764,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "agreed",
@@ -35785,7 +35789,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "easily",
@@ -35810,7 +35814,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "expect",
@@ -35896,7 +35900,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "wake",
@@ -35918,7 +35922,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "short of",
@@ -35946,7 +35950,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "clever",
@@ -35970,7 +35974,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "look after",
@@ -35998,7 +36002,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Clearly",
@@ -36018,7 +36022,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "celebrated",
@@ -36046,7 +36050,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "travelers",
@@ -36068,7 +36072,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "连词逻辑",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Unless",
@@ -36092,7 +36096,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "interests",
@@ -36116,7 +36120,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "called",
@@ -36203,7 +36207,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sing",
@@ -36227,7 +36231,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "bad",
@@ -36253,7 +36257,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "连词逻辑",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Unless",
@@ -36273,7 +36277,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "proud of",
@@ -36301,7 +36305,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "face",
@@ -36325,7 +36329,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "代词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "our",
@@ -36347,7 +36351,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "changes",
@@ -36375,7 +36379,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "duty",
@@ -36403,7 +36407,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "copy",
@@ -36427,7 +36431,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "active",
@@ -36512,7 +36516,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "tired",
@@ -36536,7 +36540,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "calm",
@@ -36562,7 +36566,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "boss",
@@ -36586,7 +36590,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "fell",
@@ -36610,7 +36614,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "politely",
@@ -36634,7 +36638,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "catch",
@@ -36658,7 +36662,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "get over",
@@ -36686,7 +36690,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "pleasure",
@@ -36710,7 +36714,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "介词搭配",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "but",
@@ -36738,7 +36742,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "advice",
@@ -36826,7 +36830,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "badly",
@@ -36848,7 +36852,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "代词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "something",
@@ -36872,7 +36876,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "talked about",
@@ -36900,7 +36904,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "so",
@@ -36922,7 +36926,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "pain",
@@ -36946,7 +36950,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "warned",
@@ -36974,7 +36978,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "disappointed",
@@ -36998,7 +37002,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "福建 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "help",
@@ -37026,7 +37030,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "happy",
@@ -37054,7 +37058,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "little",
@@ -37144,7 +37148,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "strict",
@@ -37172,7 +37176,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "playing",
@@ -37196,7 +37200,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "to",
@@ -37224,7 +37228,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "warned",
@@ -37250,7 +37254,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "everybody",
@@ -37278,7 +37282,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "福建 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "spread",
@@ -37306,7 +37310,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "role",
@@ -37330,7 +37334,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "careful",
@@ -37354,7 +37358,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "never",
@@ -37378,7 +37382,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "song",
@@ -37469,7 +37473,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "happy",
@@ -37497,7 +37501,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "uses",
@@ -37521,7 +37525,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "knowledge",
@@ -37545,7 +37549,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "unusual",
@@ -37569,7 +37573,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "similar to",
@@ -37597,7 +37601,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "代词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "something",
@@ -37625,7 +37629,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "介词搭配",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "As",
@@ -37649,7 +37653,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "position",
@@ -37673,7 +37677,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "increased",
@@ -37697,7 +37701,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "connect with",
@@ -37793,7 +37797,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "冠词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "/",
@@ -37819,7 +37823,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "goes",
@@ -37845,7 +37849,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "product",
@@ -37871,7 +37875,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "连词逻辑",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "very",
@@ -37895,7 +37899,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "find",
@@ -37917,7 +37921,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "are made",
@@ -37945,7 +37949,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "代词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "other",
@@ -37967,7 +37971,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "wetness",
@@ -37989,7 +37993,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "good",
@@ -38013,7 +38017,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "design",
@@ -38105,7 +38109,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "福建 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "water",
@@ -38131,7 +38135,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "lonely",
@@ -38155,7 +38159,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "accept",
@@ -38179,7 +38183,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "连词逻辑",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "So",
@@ -38199,7 +38203,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "paper",
@@ -38223,7 +38227,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "spirit",
@@ -38243,7 +38247,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "take a risk",
@@ -38267,7 +38271,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "数词",
-        "topic": "福建",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "first",
@@ -38291,7 +38295,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "介词搭配",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "For",
@@ -38313,7 +38317,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "thirsty",
@@ -38405,7 +38409,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "fitness",
@@ -38433,7 +38437,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "got wet",
@@ -38459,7 +38463,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "quickly",
@@ -38483,7 +38487,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "in",
@@ -38509,7 +38513,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "taste",
@@ -38537,7 +38541,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "uncompleted",
@@ -38565,7 +38569,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "admiring",
@@ -38591,7 +38595,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "mouth-watering",
@@ -38615,7 +38619,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "cakes",
@@ -38643,7 +38647,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "介词搭配",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "so",
@@ -38726,7 +38730,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "hopeless",
@@ -38750,7 +38754,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "work",
@@ -38774,7 +38778,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "sometimes",
@@ -38798,7 +38802,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "连词逻辑",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "but",
@@ -38822,7 +38826,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "greeted",
@@ -38846,7 +38850,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "give up",
@@ -38872,7 +38876,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "unknown",
@@ -38894,7 +38898,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "hope",
@@ -38918,7 +38922,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "act",
@@ -38940,7 +38944,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "dream",
@@ -39035,7 +39039,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "medical",
@@ -39061,7 +39065,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "bird",
@@ -39083,7 +39087,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "to",
@@ -39109,7 +39113,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "excited",
@@ -39133,7 +39137,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "disease",
@@ -39157,7 +39161,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "agreed",
@@ -39177,7 +39181,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "depends on",
@@ -39205,7 +39209,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "介词搭配",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "so",
@@ -39227,7 +39231,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "However",
@@ -39247,7 +39251,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "remained",
@@ -39335,7 +39339,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "crazy",
@@ -39359,7 +39363,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "代词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Something",
@@ -39381,7 +39385,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "suggestions",
@@ -39405,7 +39409,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "连词逻辑",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "just",
@@ -39431,7 +39435,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "disabled",
@@ -39453,7 +39457,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "give up",
@@ -39481,7 +39485,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "hardest",
@@ -39505,7 +39509,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "stop",
@@ -39525,7 +39529,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Rapidly",
@@ -39549,7 +39553,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "happen",
@@ -39633,7 +39637,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "problems",
@@ -39659,7 +39663,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "happily",
@@ -39683,7 +39687,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "practice",
@@ -39707,7 +39711,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "As",
@@ -39727,7 +39731,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "代词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "our",
@@ -39753,7 +39757,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "making",
@@ -39777,7 +39781,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "time",
@@ -39801,7 +39805,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "helpful",
@@ -39825,7 +39829,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "In fact",
@@ -39853,7 +39857,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "limited",
@@ -39947,7 +39951,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "wealth",
@@ -39973,7 +39977,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "difficult",
@@ -39997,7 +40001,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "afraid of",
@@ -40025,7 +40029,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "offered",
@@ -40049,7 +40053,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "simple",
@@ -40077,7 +40081,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "连词逻辑",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "so",
@@ -40097,7 +40101,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "easily",
@@ -40119,7 +40123,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "put away",
@@ -40147,7 +40151,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "代词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "his",
@@ -40169,7 +40173,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "brain",
@@ -40271,7 +40275,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "beach",
@@ -40296,7 +40300,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "threw away",
@@ -40325,7 +40329,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "fill",
@@ -40350,7 +40354,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "silent",
@@ -40379,7 +40383,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "share",
@@ -40408,7 +40412,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "lazily",
@@ -40433,7 +40437,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "noise",
@@ -40458,7 +40462,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "needed",
@@ -40481,7 +40485,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "tent",
@@ -40510,7 +40514,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "game",
@@ -40615,7 +40619,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "fed",
@@ -40640,7 +40644,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "辽宁 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "changes",
@@ -40667,7 +40671,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "helpful",
@@ -40690,7 +40694,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "jokes",
@@ -40713,7 +40717,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "put away",
@@ -40740,7 +40744,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "belt",
@@ -40765,7 +40769,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "report",
@@ -40790,7 +40794,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "soft",
@@ -40815,7 +40819,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "waited",
@@ -40840,7 +40844,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "hopelessly",
@@ -40929,7 +40933,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "heard",
@@ -40958,7 +40962,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "harmful",
@@ -40987,7 +40991,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "accepted",
@@ -41008,7 +41012,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "连词逻辑",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "unless",
@@ -41031,7 +41035,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "girl",
@@ -41060,7 +41064,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "agreed",
@@ -41083,7 +41087,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "数词",
-        "topic": "辽宁",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "first",
@@ -41106,7 +41110,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "hardly",
@@ -41135,7 +41139,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "介词搭配",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "for",
@@ -41162,7 +41166,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "连词逻辑",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "either",
@@ -41255,7 +41259,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "介词搭配",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "from",
@@ -41282,7 +41286,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "spirit",
@@ -41307,7 +41311,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "better",
@@ -41336,7 +41340,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "took out",
@@ -41363,7 +41367,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "do",
@@ -41392,7 +41396,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "accept",
@@ -41421,7 +41425,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "代词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "nothing",
@@ -41450,7 +41454,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "代词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "ourselves",
@@ -41475,7 +41479,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Suddenly",
@@ -41500,7 +41504,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "连词逻辑",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "and",
@@ -41598,7 +41602,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "cold",
@@ -41621,7 +41625,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "peacefully",
@@ -41648,7 +41652,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "open",
@@ -41673,7 +41677,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "spend",
@@ -41700,7 +41704,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "介词搭配",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "along",
@@ -41727,7 +41731,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "stand",
@@ -41756,7 +41760,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "take off",
@@ -41785,7 +41789,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "market",
@@ -41814,7 +41818,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "breakfast",
@@ -41841,7 +41845,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "词义辨析",
         "route": "线索词优先",
         "options": [
           "smooth",
@@ -41935,7 +41939,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "much",
@@ -41964,7 +41968,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "offered",
@@ -41987,7 +41991,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "served",
@@ -42008,7 +42012,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "连词逻辑",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "always",
@@ -42031,7 +42035,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "moved",
@@ -42058,7 +42062,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "persons",
@@ -42083,7 +42087,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "break",
@@ -42110,7 +42114,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "In fact",
@@ -42226,7 +42230,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "play",
@@ -42247,7 +42251,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "broke",
@@ -42274,7 +42278,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "strangely",
@@ -42299,7 +42303,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "excited",
@@ -42324,7 +42328,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "preparation",
@@ -42349,7 +42353,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "介词搭配",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "in",
@@ -42378,7 +42382,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "代词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "you",
@@ -42399,7 +42403,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "changed",
@@ -42420,7 +42424,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "praise",
@@ -42445,7 +42449,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "being",
@@ -42535,7 +42539,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "partner",
@@ -42560,7 +42564,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "连词逻辑",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "when",
@@ -42589,7 +42593,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "relaxed",
@@ -42612,7 +42616,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "with",
@@ -42637,7 +42641,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "found",
@@ -42664,7 +42668,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "back",
@@ -42691,7 +42695,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "wealth",
@@ -42716,7 +42720,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "spent",
@@ -42741,7 +42745,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "glad",
@@ -42770,7 +42774,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "代词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "Their",
@@ -42875,7 +42879,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "interested",
@@ -42900,7 +42904,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "介词搭配",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "to",
@@ -42925,7 +42929,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "noisy",
@@ -42950,7 +42954,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "everywhere",
@@ -42971,7 +42975,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "letters",
@@ -43000,7 +43004,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "left",
@@ -43025,7 +43029,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "set up",
@@ -43054,7 +43058,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "think",
@@ -43079,7 +43083,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "full",
@@ -43106,7 +43110,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "代词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "the others",
@@ -43209,7 +43213,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "parents",
@@ -43234,7 +43238,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "介词搭配",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "behind",
@@ -43259,7 +43263,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "covered",
@@ -43284,7 +43288,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "find",
@@ -43307,7 +43311,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "介词搭配",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "or",
@@ -43336,7 +43340,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "代词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "his",
@@ -43359,7 +43363,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "strangely",
@@ -43382,7 +43386,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "taller",
@@ -43411,7 +43415,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "sweet",
@@ -43436,7 +43440,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "walk into",
@@ -43531,7 +43535,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "promise",
@@ -43556,7 +43560,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "cheerful",
@@ -43585,7 +43589,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "letter",
@@ -43614,7 +43618,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "time",
@@ -43635,7 +43639,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "paint",
@@ -43660,7 +43664,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "strictly",
@@ -43685,7 +43689,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "wind",
@@ -43714,7 +43718,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "invite",
@@ -43743,7 +43747,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "believed",
@@ -43772,7 +43776,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "empty",
@@ -43797,7 +43801,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "took off",
@@ -43826,7 +43830,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "worried",
@@ -43855,7 +43859,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "simple",
@@ -43882,7 +43886,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "controlled",
@@ -43911,7 +43915,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "water",
@@ -44008,7 +44012,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "cup",
@@ -44037,7 +44041,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "介词搭配",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "at",
@@ -44064,7 +44068,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "afraid",
@@ -44089,7 +44093,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "And",
@@ -44110,7 +44114,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "To be honest",
@@ -44135,7 +44139,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "forgot",
@@ -44164,7 +44168,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "call in",
@@ -44193,7 +44197,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "happily",
@@ -44216,7 +44220,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "代词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "yourselves",
@@ -44245,7 +44249,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "rule",
@@ -44338,7 +44342,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "responsible",
@@ -44363,7 +44367,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "comfort",
@@ -44384,7 +44388,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "happy",
@@ -44409,7 +44413,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "home",
@@ -44434,7 +44438,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "help",
@@ -44457,7 +44461,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "looked",
@@ -44480,7 +44484,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "nearly",
@@ -44505,7 +44509,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "apologized",
@@ -44528,7 +44532,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "influence",
@@ -44557,7 +44561,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "loneliness",
@@ -44584,7 +44588,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "left",
@@ -44609,7 +44613,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "luck",
@@ -44636,7 +44640,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "数词",
-        "topic": "辽宁",
+        "topic": "词义辨析",
         "route": "双路径",
         "options": [
           "year",
@@ -44661,7 +44665,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "unclear",
@@ -44686,7 +44690,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "lesson",
@@ -44780,7 +44784,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "busy",
@@ -44805,7 +44809,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "shook",
@@ -44830,7 +44834,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "carry",
@@ -44855,7 +44859,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "alive",
@@ -44880,7 +44884,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "lift",
@@ -44905,7 +44909,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "look for",
@@ -44934,7 +44938,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "hardly",
@@ -44957,7 +44961,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "plan",
@@ -44986,7 +44990,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "situation",
@@ -45011,7 +45015,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "kindness",
@@ -45099,7 +45103,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "happy",
@@ -45124,7 +45128,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "辽宁 / 上下文复现",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "leave",
@@ -45153,7 +45157,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "secrets",
@@ -45176,7 +45180,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "carry",
@@ -45205,7 +45209,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "normal",
@@ -45230,7 +45234,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "set up",
@@ -45259,7 +45263,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "diary",
@@ -45282,7 +45286,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Clearly",
@@ -45307,7 +45311,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "laughed",
@@ -45334,7 +45338,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "helpful",
@@ -45435,7 +45439,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "gives away",
@@ -45462,7 +45466,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "happiness",
@@ -45487,7 +45491,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "crowd",
@@ -45512,7 +45516,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "freely",
@@ -45537,7 +45541,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "forgetful",
@@ -45562,7 +45566,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "enemies",
@@ -45587,7 +45591,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "saw",
@@ -45612,7 +45616,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "encourage",
@@ -45637,7 +45641,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "heads",
@@ -45660,7 +45664,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "holds",
@@ -45748,7 +45752,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "dream",
@@ -45772,7 +45776,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "each other",
@@ -45794,7 +45798,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "fastest",
@@ -45818,7 +45822,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "calls",
@@ -45846,7 +45850,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "代词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "their",
@@ -45870,7 +45874,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "辽宁",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "luck",
@@ -45894,7 +45898,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "介词搭配",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "But",
@@ -45918,7 +45922,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "easily",
@@ -45940,7 +45944,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "written",
@@ -45966,7 +45970,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "辽宁",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "by",
@@ -46052,7 +46056,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "sand",
@@ -46078,7 +46082,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "seasons",
@@ -46100,7 +46104,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "other",
@@ -46124,7 +46128,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "bank",
@@ -46152,7 +46156,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "same",
@@ -46176,7 +46180,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "its",
@@ -46200,7 +46204,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "from",
@@ -46222,7 +46226,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "groups",
@@ -46246,7 +46250,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "have",
@@ -46274,7 +46278,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "inside",
@@ -46298,7 +46302,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "known",
@@ -46326,7 +46330,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "height",
@@ -46350,7 +46354,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "tests",
@@ -46372,7 +46376,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "cool",
@@ -46400,7 +46404,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "dream",
@@ -46489,7 +46493,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "is",
@@ -46513,7 +46517,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "take",
@@ -46537,7 +46541,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "good",
@@ -46561,7 +46565,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "anything",
@@ -46587,7 +46591,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "with",
@@ -46613,7 +46617,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "quick",
@@ -46639,7 +46643,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "连词逻辑",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "if",
@@ -46667,7 +46671,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "make a living",
@@ -46693,7 +46697,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "clothes",
@@ -46715,7 +46719,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "get",
@@ -46809,7 +46813,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "before",
@@ -46831,7 +46835,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "how much",
@@ -46857,7 +46861,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "simple",
@@ -46885,7 +46889,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "diary",
@@ -46907,7 +46911,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Sadly",
@@ -46931,7 +46935,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "lifted",
@@ -46957,7 +46961,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "in",
@@ -46981,7 +46985,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "why",
@@ -47001,7 +47005,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "makes",
@@ -47025,7 +47029,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "everything",
@@ -47049,7 +47053,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "your",
@@ -47073,7 +47077,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "depend on",
@@ -47101,7 +47105,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "book",
@@ -47125,7 +47129,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "strong",
@@ -47149,7 +47153,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "can’t",
@@ -47239,7 +47243,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "drive",
@@ -47263,7 +47267,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "easy",
@@ -47291,7 +47295,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "got out",
@@ -47317,7 +47321,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "his",
@@ -47341,7 +47345,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Where",
@@ -47361,7 +47365,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "Two",
@@ -47385,7 +47389,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "was strict with",
@@ -47413,7 +47417,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "angrily",
@@ -47437,7 +47441,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "flower",
@@ -47465,7 +47469,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "Anything",
@@ -47551,7 +47555,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "singer",
@@ -47576,7 +47580,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "warm up",
@@ -47605,7 +47609,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "better",
@@ -47634,7 +47638,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "as long as",
@@ -47661,7 +47665,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "realised",
@@ -47686,7 +47690,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "politeness",
@@ -47711,7 +47715,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "punish",
@@ -47732,7 +47736,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "standing",
@@ -47761,7 +47765,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "happily",
@@ -47786,7 +47790,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "careful",
@@ -47874,7 +47878,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "黑龙江 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "late",
@@ -47902,7 +47906,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "depend on",
@@ -47930,7 +47934,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "dancing",
@@ -47950,7 +47954,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "unfair",
@@ -47976,7 +47980,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "what",
@@ -48004,7 +48008,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Even if",
@@ -48026,7 +48030,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "clear",
@@ -48054,7 +48058,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "problem",
@@ -48082,7 +48086,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "offered",
@@ -48110,7 +48114,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "accepted",
@@ -48134,7 +48138,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "decision",
@@ -48156,7 +48160,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "cared for",
@@ -48184,7 +48188,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "itself",
@@ -48208,7 +48212,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "because of",
@@ -48236,7 +48240,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "find",
@@ -48327,7 +48331,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "cloudy",
@@ -48351,7 +48355,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "连词逻辑",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "and",
@@ -48373,7 +48377,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Firstly",
@@ -48393,7 +48397,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "trying",
@@ -48417,7 +48421,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "With",
@@ -48439,7 +48443,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "黑龙江 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "cry",
@@ -48467,7 +48471,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "showed",
@@ -48487,7 +48491,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "sit",
@@ -48515,7 +48519,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "happy",
@@ -48541,7 +48545,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "different",
@@ -48567,7 +48571,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "doing",
@@ -48591,7 +48595,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "sing",
@@ -48619,7 +48623,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "her",
@@ -48643,7 +48647,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "连词逻辑",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "then",
@@ -48663,7 +48667,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "another",
@@ -48750,7 +48754,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "played",
@@ -48774,7 +48778,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "outside",
@@ -48800,7 +48804,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "feel",
@@ -48824,7 +48828,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "talk",
@@ -48848,7 +48852,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "fall asleep",
@@ -48874,7 +48878,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "wouldn’t",
@@ -48898,7 +48902,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "she",
@@ -48918,7 +48922,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "连词逻辑",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "then",
@@ -48942,7 +48946,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "doubt",
@@ -48966,7 +48970,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "leaf",
@@ -49060,7 +49064,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "After all",
@@ -49088,7 +49092,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "anything",
@@ -49114,7 +49118,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "why",
@@ -49142,7 +49146,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "smile",
@@ -49166,7 +49170,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "discovered",
@@ -49190,7 +49194,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "but",
@@ -49212,7 +49216,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "we",
@@ -49234,7 +49238,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "thankful",
@@ -49258,7 +49262,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "wise",
@@ -49278,7 +49282,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "other",
@@ -49300,7 +49304,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "ever",
@@ -49328,7 +49332,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "winner",
@@ -49356,7 +49360,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "strange",
@@ -49384,7 +49388,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "In a word",
@@ -49412,7 +49416,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "to",
@@ -49509,7 +49513,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "took",
@@ -49533,7 +49537,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "cool",
@@ -49561,7 +49565,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "strawberries",
@@ -49585,7 +49589,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "made up",
@@ -49609,7 +49613,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "herself",
@@ -49631,7 +49635,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "other",
@@ -49653,7 +49657,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "set out",
@@ -49681,7 +49685,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "连词逻辑",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "that",
@@ -49703,7 +49707,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "When",
@@ -49725,7 +49729,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "happily",
@@ -49817,7 +49821,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "glad",
@@ -49842,7 +49846,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "weight",
@@ -49871,7 +49875,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "safe",
@@ -49894,7 +49898,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "repeated",
@@ -49923,7 +49927,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "连词逻辑",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "If",
@@ -49948,7 +49952,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "连词逻辑",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "even",
@@ -49975,7 +49979,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "keep calm",
@@ -50000,7 +50004,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "except for",
@@ -50027,7 +50031,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "黑龙江 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "confidence",
@@ -50056,7 +50060,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "hope",
@@ -50156,7 +50160,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "黑龙江 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "talk",
@@ -50184,7 +50188,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "sad",
@@ -50208,7 +50212,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "other",
@@ -50232,7 +50236,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "on time",
@@ -50258,7 +50262,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "nothing",
@@ -50282,7 +50286,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "left",
@@ -50306,7 +50310,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "will come",
@@ -50334,7 +50338,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "loud",
@@ -50358,7 +50362,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "couldn’t",
@@ -50382,7 +50386,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "trouble",
@@ -50410,7 +50414,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "caught",
@@ -50432,7 +50436,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "why",
@@ -50460,7 +50464,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "noise",
@@ -50488,7 +50492,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "whom",
@@ -50510,7 +50514,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "who",
@@ -50594,7 +50598,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "arrived",
@@ -50618,7 +50622,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "little",
@@ -50642,7 +50646,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "before",
@@ -50670,7 +50674,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "much delicious",
@@ -50698,7 +50702,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "especially",
@@ -50726,7 +50730,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "excite",
@@ -50750,7 +50754,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "have",
@@ -50774,7 +50778,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "surprise",
@@ -50798,7 +50802,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "With",
@@ -50822,7 +50826,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "sit",
@@ -50848,7 +50852,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "from",
@@ -50872,7 +50876,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "writing",
@@ -50898,7 +50902,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "takes",
@@ -50920,7 +50924,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词短语",
-        "topic": "黑龙江 / 上下文复现",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "prepare",
@@ -50948,7 +50952,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "well",
@@ -51039,7 +51043,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "tired",
@@ -51061,7 +51065,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "is spent",
@@ -51087,7 +51091,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "so that",
@@ -51113,7 +51117,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "for",
@@ -51135,7 +51139,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "invention",
@@ -51157,7 +51161,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "ago",
@@ -51181,7 +51185,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "sounded",
@@ -51207,7 +51211,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "British",
@@ -51231,7 +51235,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "means",
@@ -51255,7 +51259,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "In fact",
@@ -51281,7 +51285,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "代词",
-        "topic": "黑龙江",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "One",
@@ -51305,7 +51309,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "名词",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "table",
@@ -51333,7 +51337,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "连词逻辑",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "only",
@@ -51361,7 +51365,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "介词搭配",
-        "topic": "黑龙江",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "and",
@@ -51383,7 +51387,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词短语",
-        "topic": "黑龙江",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "to cook",
@@ -51477,7 +51481,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "安徽",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "read",
@@ -51502,7 +51506,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "安徽",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "missing",
@@ -51529,7 +51533,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "安徽",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "returned",
@@ -51552,7 +51556,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "安徽",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "added",
@@ -51577,7 +51581,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "安徽",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "hide",
@@ -51602,7 +51606,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "安徽",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "clean",
@@ -51627,7 +51631,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "安徽",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "rest",
@@ -51650,7 +51654,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "安徽",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sadly",
@@ -51675,7 +51679,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "安徽",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "job",
@@ -51704,7 +51708,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "安徽",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "come up",
@@ -51794,7 +51798,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "安徽",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "record",
@@ -51823,7 +51827,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "安徽",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "skill",
@@ -51848,7 +51852,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "安徽",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "finding",
@@ -51871,7 +51875,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "安徽",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "humor",
@@ -51894,7 +51898,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "安徽",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "wash",
@@ -51919,7 +51923,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "安徽",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "moving",
@@ -51948,7 +51952,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "安徽",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "warns",
@@ -51975,7 +51979,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词副词",
-        "topic": "安徽",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "cheap",
@@ -52000,7 +52004,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词短语",
-        "topic": "安徽",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "try on",
@@ -52029,7 +52033,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "安徽",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "start",
@@ -52111,7 +52115,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "福建 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "short",
@@ -52139,7 +52143,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "连词逻辑",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "heard",
@@ -52167,7 +52171,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "quietly",
@@ -52191,7 +52195,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "surprised at",
@@ -52219,7 +52223,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "art",
@@ -52243,7 +52247,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "福建",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "museum",
@@ -52269,7 +52273,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词副词",
-        "topic": "福建",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "found",
@@ -52295,7 +52299,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "teacher",
@@ -52323,7 +52327,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "played",
@@ -52347,7 +52351,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "福建",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "accept",
@@ -52453,7 +52457,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "prizes",
@@ -52478,7 +52482,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "practice",
@@ -52501,7 +52505,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "coldly",
@@ -52526,7 +52530,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "problem",
@@ -52549,7 +52553,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "purpose",
@@ -52574,7 +52578,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "Look at",
@@ -52601,7 +52605,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "连词逻辑",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "but",
@@ -52628,7 +52632,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "rule",
@@ -52651,7 +52655,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "manage",
@@ -52680,7 +52684,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "simple",
@@ -52709,7 +52713,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "started",
@@ -52736,7 +52740,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "形容词副词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "pleased",
@@ -52765,7 +52769,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sent",
@@ -52790,7 +52794,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "连词逻辑",
-        "topic": "河南",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "cheered",
@@ -52815,7 +52819,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "河南",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "regretful",
@@ -52939,7 +52943,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "湖北 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "wash",
@@ -52968,7 +52972,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "湖北",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "size",
@@ -52991,7 +52995,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "湖北",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "dream",
@@ -53014,7 +53018,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "湖北",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "finished",
@@ -53039,7 +53043,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "湖北",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "hungry",
@@ -53064,7 +53068,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "湖北",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "Great",
@@ -53089,7 +53093,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "代词",
-        "topic": "湖北",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "something",
@@ -53112,7 +53116,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词短语",
-        "topic": "湖北",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "got up",
@@ -53141,7 +53145,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "湖北",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "talk",
@@ -53166,7 +53170,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "连词逻辑",
-        "topic": "湖北",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "because",
@@ -53189,7 +53193,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "湖北",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "drivers",
@@ -53214,7 +53218,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "湖北",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "wished",
@@ -53239,7 +53243,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "形容词副词",
-        "topic": "湖北",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "secretly",
@@ -53264,7 +53268,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "湖北",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "shut",
@@ -53287,7 +53291,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "湖北",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sound",
@@ -53381,7 +53385,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏连云港",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "lost",
@@ -53408,7 +53412,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "江苏连云港",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "yard",
@@ -53435,7 +53439,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "连词逻辑",
-        "topic": "江苏连云港",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "never",
@@ -53458,7 +53462,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏连云港",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "refused",
@@ -53483,7 +53487,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "江苏连云港",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "fixed",
@@ -53510,7 +53514,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "江苏连云港",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "sleepy",
@@ -53535,7 +53539,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏连云港",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "left",
@@ -53560,7 +53564,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词短语",
-        "topic": "江苏连云港",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "showed it off",
@@ -53587,7 +53591,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏连云港",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Hide",
@@ -53612,7 +53616,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "介词搭配",
-        "topic": "江苏连云港",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "of",
@@ -53637,7 +53641,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "连词逻辑",
-        "topic": "江苏连云港",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "when",
@@ -53664,7 +53668,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "江苏连云港",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "cut",
@@ -53689,7 +53693,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "江苏连云港",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "invited",
@@ -53714,7 +53718,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "江苏连云港",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "cheap",
@@ -53739,7 +53743,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "江苏连云港",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "prevent",
@@ -53828,7 +53832,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "江苏苏州",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "hardly",
@@ -53851,7 +53855,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "江苏苏州",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "regret",
@@ -53876,7 +53880,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江苏苏州",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "open",
@@ -53901,7 +53905,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏苏州",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "trick",
@@ -53928,7 +53932,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "江苏苏州",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "popular",
@@ -53953,7 +53957,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "江苏苏州",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "surface",
@@ -53982,7 +53986,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏苏州",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "shows",
@@ -54011,7 +54015,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "江苏苏州",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "always",
@@ -54034,7 +54038,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "代词",
-        "topic": "江苏苏州",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "something",
@@ -54057,7 +54061,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "江苏苏州",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "meant",
@@ -54158,7 +54162,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江苏扬州",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "tables",
@@ -54183,7 +54187,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "江苏扬州",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "survives",
@@ -54210,7 +54214,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "连词逻辑",
-        "topic": "江苏扬州",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "until",
@@ -54233,7 +54237,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "江苏扬州",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "active",
@@ -54262,7 +54266,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "江苏扬州",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "pay for",
@@ -54291,7 +54295,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江苏扬州",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "agreed",
@@ -54316,7 +54320,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "江苏扬州",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "protect",
@@ -54341,7 +54345,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词短语",
-        "topic": "江苏扬州",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "the biggest",
@@ -54370,7 +54374,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "江苏扬州",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "save",
@@ -54395,7 +54399,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江苏扬州",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "ever",
@@ -54420,7 +54424,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "形容词副词",
-        "topic": "江苏扬州",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "endless",
@@ -54445,7 +54449,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "代词",
-        "topic": "江苏扬州",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "Everyone",
@@ -54468,7 +54472,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "江苏扬州",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "check",
@@ -54493,7 +54497,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "代词",
-        "topic": "江苏扬州",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "It",
@@ -54518,7 +54522,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "形容词副词",
-        "topic": "江苏扬州",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "careful",
@@ -54613,7 +54617,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "江西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "painted",
@@ -54638,7 +54642,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "江西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "throw",
@@ -54663,7 +54667,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "江西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "home",
@@ -54686,7 +54690,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "江西",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "secretly",
@@ -54711,7 +54715,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "江西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "bored",
@@ -54736,7 +54740,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "江西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "watch",
@@ -54761,7 +54765,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "江西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "change",
@@ -54786,7 +54790,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词短语",
-        "topic": "江西",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "sell out",
@@ -54815,7 +54819,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "连词逻辑",
-        "topic": "江西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "only",
@@ -54840,7 +54844,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词",
-        "topic": "江西",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "habit",
@@ -54869,7 +54873,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "江西",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "trouble",
@@ -54894,7 +54898,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "动词",
-        "topic": "江西",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "first",
@@ -54923,7 +54927,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "连词逻辑",
-        "topic": "江西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "so",
@@ -54946,7 +54950,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "江西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Where",
@@ -54971,7 +54975,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "代词",
-        "topic": "江西",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "them",
@@ -55055,7 +55059,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "连词逻辑",
-        "topic": "山东烟台",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "judged",
@@ -55084,7 +55088,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "连词逻辑",
-        "topic": "山东烟台",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "accident",
@@ -55109,7 +55113,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "山东烟台",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "find",
@@ -55134,7 +55138,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "连词逻辑",
-        "topic": "山东烟台",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "careful",
@@ -55159,7 +55163,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "连词逻辑",
-        "topic": "山东烟台",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "speeding up",
@@ -55188,7 +55192,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "连词逻辑",
-        "topic": "山东烟台",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "silence",
@@ -55217,7 +55221,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "名词",
-        "topic": "山东烟台",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "achievement",
@@ -55242,7 +55246,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "连词逻辑",
-        "topic": "山东烟台",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "strong",
@@ -55265,7 +55269,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "连词逻辑",
-        "topic": "山东烟台",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "drivers",
@@ -55290,7 +55294,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "名词",
-        "topic": "山东烟台",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "shocking",
@@ -55377,7 +55381,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "连词逻辑",
-        "topic": "天津",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "so",
@@ -55400,7 +55404,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "天津",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "game",
@@ -55427,7 +55431,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "天津",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "cooking",
@@ -55450,7 +55454,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "天津",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "books",
@@ -55473,7 +55477,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "天津",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "what",
@@ -55500,7 +55504,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "天津",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "missing",
@@ -55525,7 +55529,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "天津",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "catch",
@@ -55550,7 +55554,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "天津",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "only",
@@ -55575,7 +55579,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "天津",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "kind",
@@ -55604,7 +55608,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "天津",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "picked up",
@@ -55691,8 +55695,8 @@ window.BUILTIN_LESSONS = [
     "questions": [
       {
         "q": 1,
-        "pos": "",
-        "topic": "北京",
+        "pos": "动名词",
+        "topic": "上下文复现",
         "options": [
           "Starting",
           "Visiting",
@@ -55716,8 +55720,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 2,
-        "pos": "",
-        "topic": "北京",
+        "pos": "副词",
+        "topic": "上下文复现",
         "options": [
           "suddenly",
           "excitedly",
@@ -55741,8 +55745,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 3,
-        "pos": "",
-        "topic": "北京",
+        "pos": "形容词",
+        "topic": "固定搭配",
         "options": [
           "unwise",
           "unreasonable",
@@ -55763,7 +55767,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "北京",
+        "topic": "逻辑推理",
         "options": [
           "return",
           "change",
@@ -55787,8 +55791,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 5,
-        "pos": "",
-        "topic": "北京",
+        "pos": "动词",
+        "topic": "逻辑推理",
         "options": [
           "push",
           "judge",
@@ -55811,7 +55815,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "北京",
+        "topic": "逻辑推理",
         "options": [
           "show up",
           "stand out",
@@ -55835,8 +55839,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 7,
-        "pos": "",
-        "topic": "北京",
+        "pos": "形容词",
+        "topic": "逻辑推理",
         "options": [
           "different",
           "strange",
@@ -55860,8 +55864,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 8,
-        "pos": "",
-        "topic": "北京",
+        "pos": "名词",
+        "topic": "逻辑推理",
         "options": [
           "honesty",
           "freedom",
@@ -55883,7 +55887,9 @@ window.BUILTIN_LESSONS = [
         },
         "explanation": "线索　空前 Small wins 是空位名词的来源，方向顺向、褒贬为褒，空格落在「由成功积累起的积极心理」义上。\n印证　「encouraged me to share my work」——展示作品正是建立自信的途径。\n排除　cooperation 最强，但空前来源是 Small wins 而非合作（方向否）；honesty、freedom 全文无呼应（呼应否）。\n补充　瞻前顾后法·原词复现：文档原句「small wins slowly built up my confidence」即答案，瞻前即可定住。"
       }
-    ]
+    ],
+    "disabled": true,
+    "disabled_reason": "教师核查发现答案与空位整体错位，待找回原题后重新导入"
   },
   {
     "id": "cloze-2026-02-002",
@@ -55937,7 +55943,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "广东",
+        "topic": "固定搭配",
         "options": [
           "clearing",
           "hiding",
@@ -55962,7 +55968,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "广东",
+        "topic": "逻辑推理",
         "options": [
           "shows",
           "opens",
@@ -55987,7 +55993,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "副词",
-        "topic": "广东",
+        "topic": "固定搭配",
         "options": [
           "directly",
           "bravely",
@@ -56012,7 +56018,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "广东",
+        "topic": "逻辑推理",
         "options": [
           "guesses",
           "preparations",
@@ -56035,7 +56041,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词",
-        "topic": "广东",
+        "topic": "情感态度",
         "options": [
           "proud",
           "angry",
@@ -56060,7 +56066,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "广东",
+        "topic": "固定搭配",
         "options": [
           "biology",
           "charity",
@@ -56085,7 +56091,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "形容词",
-        "topic": "广东",
+        "topic": "逻辑推理",
         "options": [
           "honest",
           "polite",
@@ -56110,7 +56116,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "形容词",
-        "topic": "广东",
+        "topic": "逻辑推理",
         "options": [
           "cheap",
           "popular",
@@ -56135,7 +56141,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "广东",
+        "topic": "逻辑推理",
         "options": [
           "turn off",
           "benefit from",
@@ -56211,7 +56217,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "连词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "options": [
           "so",
           "but",
@@ -56234,7 +56240,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "情感态度",
         "options": [
           "agreed",
           "wished",
@@ -56259,7 +56265,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "语境推断",
         "options": [
           "join",
           "train",
@@ -56284,7 +56290,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "副词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "options": [
           "suddenly",
           "luckily",
@@ -56309,7 +56315,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "options": [
           "learned",
           "stopped",
@@ -56334,7 +56340,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "options": [
           "wonders",
           "changes",
@@ -56359,7 +56365,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "固定搭配",
         "options": [
           "kept",
           "lost",
@@ -56388,7 +56394,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "options": [
           "crying",
           "talking",
@@ -56413,7 +56419,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "名词",
-        "topic": "广西",
+        "topic": "逻辑推理",
         "options": [
           "efforts",
           "hopes",
@@ -56438,7 +56444,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "动词短语",
-        "topic": "广西",
+        "topic": "固定搭配",
         "options": [
           "lift up",
           "warm up",
@@ -56517,8 +56523,8 @@ window.BUILTIN_LESSONS = [
     "questions": [
       {
         "q": 1,
-        "pos": "",
-        "topic": "河北",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "fishbowl",
           "handbag",
@@ -56542,8 +56548,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 2,
-        "pos": "",
-        "topic": "河北",
+        "pos": "动词短语",
+        "topic": "逻辑推理",
         "options": [
           "got up",
           "came back",
@@ -56567,8 +56573,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 3,
-        "pos": "",
-        "topic": "河北",
+        "pos": "副词",
+        "topic": "上下文复现",
         "options": [
           "wisely",
           "politely",
@@ -56592,8 +56598,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 4,
-        "pos": "",
-        "topic": "河北",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "pets",
           "tools",
@@ -56617,8 +56623,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 5,
-        "pos": "",
-        "topic": "河北",
+        "pos": "动词",
+        "topic": "上下文复现",
         "options": [
           "visited",
           "followed",
@@ -56642,8 +56648,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 6,
-        "pos": "",
-        "topic": "河北",
+        "pos": "形容词",
+        "topic": "逻辑推理",
         "options": [
           "active",
           "sleepy",
@@ -56667,8 +56673,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 7,
-        "pos": "",
-        "topic": "河北",
+        "pos": "动词",
+        "topic": "情感态度",
         "options": [
           "hate",
           "doubt",
@@ -56692,8 +56698,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 8,
-        "pos": "",
-        "topic": "河北",
+        "pos": "形容词",
+        "topic": "情感态度",
         "options": [
           "proud",
           "brave",
@@ -56717,8 +56723,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 9,
-        "pos": "",
-        "topic": "河北",
+        "pos": "连词",
+        "topic": "逻辑推理",
         "options": [
           "if",
           "after",
@@ -56740,8 +56746,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 10,
-        "pos": "",
-        "topic": "河北",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "rose",
           "lantern",
@@ -56816,8 +56822,8 @@ window.BUILTIN_LESSONS = [
     "questions": [
       {
         "q": 1,
-        "pos": "",
-        "topic": "四川成都",
+        "pos": "形容词",
+        "topic": "固定搭配",
         "options": [
           "freezing",
           "small",
@@ -56841,8 +56847,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 2,
-        "pos": "",
-        "topic": "四川成都",
+        "pos": "名词",
+        "topic": "固定搭配",
         "options": [
           "month",
           "moment",
@@ -56868,8 +56874,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 3,
-        "pos": "",
-        "topic": "四川成都",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "researcher",
           "keeper",
@@ -56893,8 +56899,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 4,
-        "pos": "",
-        "topic": "四川成都",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "animals",
           "plants",
@@ -56918,8 +56924,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 5,
-        "pos": "",
-        "topic": "四川成都",
+        "pos": "形容词",
+        "topic": "逻辑推理",
         "options": [
           "fun",
           "strange",
@@ -56941,8 +56947,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 6,
-        "pos": "",
-        "topic": "四川成都",
+        "pos": "连词",
+        "topic": "逻辑推理",
         "options": [
           "if",
           "because",
@@ -56964,8 +56970,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 7,
-        "pos": "",
-        "topic": "四川成都",
+        "pos": "动词",
+        "topic": "逻辑推理",
         "options": [
           "borrowed",
           "sold",
@@ -56989,8 +56995,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 8,
-        "pos": "",
-        "topic": "四川成都",
+        "pos": "数词",
+        "topic": "逻辑推理",
         "options": [
           "first",
           "next",
@@ -57014,8 +57020,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 9,
-        "pos": "",
-        "topic": "四川成都",
+        "pos": "动词",
+        "topic": "逻辑推理",
         "options": [
           "beat",
           "follow",
@@ -57039,8 +57045,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 10,
-        "pos": "",
-        "topic": "四川成都",
+        "pos": "形容词",
+        "topic": "上下文复现",
         "options": [
           "stronger",
           "happier",
@@ -57118,8 +57124,8 @@ window.BUILTIN_LESSONS = [
     "questions": [
       {
         "q": 1,
-        "pos": "",
-        "topic": "重庆",
+        "pos": "动词短语",
+        "topic": "上下文复现",
         "options": [
           "come up",
           "get up",
@@ -57147,8 +57153,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 2,
-        "pos": "",
-        "topic": "重庆",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "money",
           "love",
@@ -57172,8 +57178,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 3,
-        "pos": "",
-        "topic": "重庆",
+        "pos": "连词",
+        "topic": "逻辑推理",
         "options": [
           "if",
           "until",
@@ -57195,8 +57201,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 4,
-        "pos": "",
-        "topic": "重庆",
+        "pos": "代词",
+        "topic": "逻辑推理",
         "options": [
           "somebody",
           "anybody",
@@ -57220,8 +57226,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 5,
-        "pos": "",
-        "topic": "重庆",
+        "pos": "形容词",
+        "topic": "逻辑推理",
         "options": [
           "easy",
           "difficult",
@@ -57243,8 +57249,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 6,
-        "pos": "",
-        "topic": "重庆",
+        "pos": "动词",
+        "topic": "逻辑推理",
         "options": [
           "burn",
           "hit",
@@ -57268,8 +57274,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 7,
-        "pos": "",
-        "topic": "重庆",
+        "pos": "动词",
+        "topic": "情感态度",
         "options": [
           "started",
           "changed",
@@ -57293,8 +57299,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 8,
-        "pos": "",
-        "topic": "重庆",
+        "pos": "名词",
+        "topic": "情感态度",
         "options": [
           "talent",
           "risk",
@@ -57316,8 +57322,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 9,
-        "pos": "",
-        "topic": "重庆",
+        "pos": "形容词",
+        "topic": "逻辑推理",
         "options": [
           "cleanest",
           "coolest",
@@ -57341,8 +57347,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 10,
-        "pos": "",
-        "topic": "重庆",
+        "pos": "名词",
+        "topic": "逻辑推理",
         "options": [
           "loss",
           "reason",
@@ -57417,7 +57423,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "介词",
-        "topic": "黑龙江齐齐哈尔",
+        "topic": "逻辑推理",
         "options": [
           "against",
           "without",
@@ -57440,7 +57446,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词",
-        "topic": "黑龙江齐齐哈尔",
+        "topic": "逻辑推理",
         "options": [
           "bad",
           "simple",
@@ -57463,7 +57469,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "连词",
-        "topic": "黑龙江齐齐哈尔",
+        "topic": "逻辑推理",
         "options": [
           "but",
           "or",
@@ -57486,7 +57492,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "黑龙江齐齐哈尔",
+        "topic": "上下文复现",
         "options": [
           "crying",
           "shouting",
@@ -57511,7 +57517,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "黑龙江齐齐哈尔",
+        "topic": "逻辑推理",
         "options": [
           "put down",
           "took off",
@@ -57534,7 +57540,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "代词",
-        "topic": "黑龙江齐齐哈尔",
+        "topic": "上下文复现",
         "options": [
           "me",
           "them",
@@ -57559,7 +57565,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "副词",
-        "topic": "黑龙江齐齐哈尔",
+        "topic": "逻辑推理",
         "options": [
           "Clearly",
           "Unluckily",
@@ -57582,7 +57588,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "黑龙江齐齐哈尔",
+        "topic": "上下文复现",
         "options": [
           "name",
           "idea",
@@ -57607,7 +57613,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "黑龙江齐齐哈尔",
+        "topic": "逻辑推理",
         "options": [
           "sounded",
           "looked",
@@ -57630,7 +57636,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "连词",
-        "topic": "黑龙江齐齐哈尔",
+        "topic": "逻辑推理",
         "options": [
           "Before",
           "After",
@@ -57703,8 +57709,8 @@ window.BUILTIN_LESSONS = [
     "questions": [
       {
         "q": 1,
-        "pos": "",
-        "topic": "湖南",
+        "pos": "名词",
+        "topic": "语境推断",
         "options": [
           "song",
           "game",
@@ -57728,8 +57734,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 2,
-        "pos": "",
-        "topic": "湖南",
+        "pos": "动词",
+        "topic": "上下文复现",
         "options": [
           "stand",
           "drive",
@@ -57753,8 +57759,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 3,
-        "pos": "",
-        "topic": "湖南",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "ways",
           "roles",
@@ -57776,8 +57782,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 4,
-        "pos": "",
-        "topic": "湖南",
+        "pos": "形容词",
+        "topic": "情感态度",
         "options": [
           "relaxed",
           "excited",
@@ -57800,7 +57806,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "湖南",
+        "topic": "逻辑推理",
         "options": [
           "stop",
           "keep",
@@ -57822,8 +57828,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 6,
-        "pos": "",
-        "topic": "湖南",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "hat",
           "scarf",
@@ -57847,8 +57853,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 7,
-        "pos": "",
-        "topic": "湖南",
+        "pos": "动词短语",
+        "topic": "逻辑推理",
         "options": [
           "care about",
           "laugh at",
@@ -57872,8 +57878,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 8,
-        "pos": "",
-        "topic": "湖南",
+        "pos": "副词",
+        "topic": "情感态度",
         "options": [
           "thankfully",
           "happily",
@@ -57897,8 +57903,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 9,
-        "pos": "",
-        "topic": "湖南",
+        "pos": "形容词",
+        "topic": "逻辑推理",
         "options": [
           "meaningful",
           "sweet",
@@ -57922,8 +57928,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 10,
-        "pos": "",
-        "topic": "湖南",
+        "pos": "动词",
+        "topic": "上下文复现",
         "options": [
           "steal",
           "forget",
@@ -57997,7 +58003,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词",
-        "topic": "吉林",
+        "topic": "固定搭配",
         "options": [
           "coolest",
           "coldest",
@@ -58020,7 +58026,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词",
-        "topic": "吉林",
+        "topic": "情感态度",
         "options": [
           "important",
           "surprising",
@@ -58043,7 +58049,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "吉林",
+        "topic": "固定搭配",
         "options": [
           "sizes",
           "clothes",
@@ -58064,7 +58070,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "副词",
-        "topic": "吉林",
+        "topic": "语境推断",
         "options": [
           "easily",
           "heavily",
@@ -58087,7 +58093,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "吉林",
+        "topic": "逻辑推理",
         "options": [
           "save",
           "lose",
@@ -58110,7 +58116,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词",
-        "topic": "吉林",
+        "topic": "逻辑推理",
         "options": [
           "warm",
           "thick",
@@ -58133,7 +58139,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "连词",
-        "topic": "吉林",
+        "topic": "逻辑推理",
         "options": [
           "but",
           "and",
@@ -58158,7 +58164,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "名词",
-        "topic": "吉林",
+        "topic": "固定搭配",
         "options": [
           "idea",
           "holiday",
@@ -58234,8 +58240,8 @@ window.BUILTIN_LESSONS = [
     "questions": [
       {
         "q": 1,
-        "pos": "",
-        "topic": "内蒙古呼和浩特",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "song",
           "story",
@@ -58259,8 +58265,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 2,
-        "pos": "",
-        "topic": "内蒙古呼和浩特",
+        "pos": "动词",
+        "topic": "情感态度",
         "options": [
           "built",
           "loved",
@@ -58284,8 +58290,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 3,
-        "pos": "",
-        "topic": "内蒙古呼和浩特",
+        "pos": "形容词",
+        "topic": "逻辑推理",
         "options": [
           "hard",
           "busy",
@@ -58309,8 +58315,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 4,
-        "pos": "",
-        "topic": "内蒙古呼和浩特",
+        "pos": "名词",
+        "topic": "逻辑推理",
         "options": [
           "dreams",
           "changes",
@@ -58330,8 +58336,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 5,
-        "pos": "",
-        "topic": "内蒙古呼和浩特",
+        "pos": "动词",
+        "topic": "固定搭配",
         "options": [
           "lost",
           "found",
@@ -58353,8 +58359,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 6,
-        "pos": "",
-        "topic": "内蒙古呼和浩特",
+        "pos": "动词",
+        "topic": "逻辑推理",
         "options": [
           "sing",
           "play",
@@ -58377,7 +58383,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "内蒙古呼和浩特",
+        "topic": "逻辑推理",
         "options": [
           "got",
           "read",
@@ -58401,8 +58407,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 8,
-        "pos": "",
-        "topic": "内蒙古呼和浩特",
+        "pos": "形容词",
+        "topic": "逻辑推理",
         "options": [
           "afraid",
           "sad",
@@ -58426,8 +58432,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 9,
-        "pos": "",
-        "topic": "内蒙古呼和浩特",
+        "pos": "连词",
+        "topic": "逻辑推理",
         "options": [
           "but",
           "or",
@@ -58449,8 +58455,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 10,
-        "pos": "",
-        "topic": "内蒙古呼和浩特",
+        "pos": "副词",
+        "topic": "逻辑推理",
         "options": [
           "Suddenly",
           "Usually",
@@ -58472,8 +58478,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 11,
-        "pos": "",
-        "topic": "内蒙古呼和浩特",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "boy",
           "family",
@@ -58495,8 +58501,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 12,
-        "pos": "",
-        "topic": "内蒙古呼和浩特",
+        "pos": "动词短语",
+        "topic": "逻辑推理",
         "options": [
           "pointed at",
           "smiled at",
@@ -58574,8 +58580,8 @@ window.BUILTIN_LESSONS = [
     "questions": [
       {
         "q": 1,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "名词",
+        "topic": "固定搭配",
         "options": [
           "winter",
           "summer",
@@ -58599,8 +58605,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 2,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "动词",
+        "topic": "逻辑推理",
         "options": [
           "wait",
           "hurry",
@@ -58624,8 +58630,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 3,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "man",
           "woman",
@@ -58647,8 +58653,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 4,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "名词",
+        "topic": "语境推断",
         "options": [
           "feet",
           "legs",
@@ -58672,8 +58678,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 5,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "动词短语",
+        "topic": "逻辑推理",
         "options": [
           "took off",
           "threw away",
@@ -58697,8 +58703,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 6,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "动词",
+        "topic": "逻辑推理",
         "options": [
           "reminded",
           "refused",
@@ -58722,8 +58728,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 7,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "形容词",
+        "topic": "上下文复现",
         "options": [
           "poor",
           "strong",
@@ -58747,8 +58753,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 8,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "动词",
+        "topic": "逻辑推理",
         "options": [
           "believe",
           "teach",
@@ -58772,8 +58778,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 9,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "children",
           "brothers",
@@ -58797,8 +58803,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 10,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "名词",
+        "topic": "逻辑推理",
         "options": [
           "space",
           "time",
@@ -58822,8 +58828,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 11,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "形容词",
+        "topic": "情感态度",
         "options": [
           "patient",
           "happy",
@@ -58847,8 +58853,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 12,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "名词",
+        "topic": "语境推断",
         "options": [
           "materials",
           "colors",
@@ -58872,8 +58878,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 13,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "Shoes",
           "Gloves",
@@ -58895,8 +58901,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 14,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "形容词",
+        "topic": "逻辑推理",
         "options": [
           "long",
           "strange",
@@ -58920,8 +58926,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 15,
-        "pos": "",
-        "topic": "陕西",
+        "pos": "名词",
+        "topic": "固定搭配",
         "options": [
           "sudden change",
           "new start",
@@ -59002,8 +59008,8 @@ window.BUILTIN_LESSONS = [
     "questions": [
       {
         "q": 1,
-        "pos": "",
-        "topic": "云南",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "street",
           "bridge",
@@ -59025,8 +59031,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 2,
-        "pos": "",
-        "topic": "云南",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "bird",
           "ant",
@@ -59050,8 +59056,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 3,
-        "pos": "",
-        "topic": "云南",
+        "pos": "副词",
+        "topic": "上下文复现",
         "options": [
           "politely",
           "safely",
@@ -59075,8 +59081,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 4,
-        "pos": "",
-        "topic": "云南",
+        "pos": "形容词",
+        "topic": "上下文复现",
         "options": [
           "deep",
           "wide",
@@ -59098,8 +59104,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 5,
-        "pos": "",
-        "topic": "云南",
+        "pos": "动词",
+        "topic": "逻辑推理",
         "options": [
           "remembered",
           "needed",
@@ -59121,8 +59127,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 6,
-        "pos": "",
-        "topic": "云南",
+        "pos": "动词",
+        "topic": "情感态度",
         "options": [
           "help",
           "protect",
@@ -59146,8 +59152,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 7,
-        "pos": "",
-        "topic": "云南",
+        "pos": "名词",
+        "topic": "上下文复现",
         "options": [
           "mother",
           "brother",
@@ -59171,8 +59177,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 8,
-        "pos": "",
-        "topic": "云南",
+        "pos": "形容词",
+        "topic": "逻辑推理",
         "options": [
           "kind",
           "small",
@@ -59196,8 +59202,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 9,
-        "pos": "",
-        "topic": "云南",
+        "pos": "动名词",
+        "topic": "上下文复现",
         "options": [
           "looking after",
           "worrying about",
@@ -59221,8 +59227,8 @@ window.BUILTIN_LESSONS = [
       },
       {
         "q": 10,
-        "pos": "",
-        "topic": "云南",
+        "pos": "形容词",
+        "topic": "情感态度",
         "options": [
           "bored",
           "afraid",
@@ -59296,7 +59302,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "全国通用 / 上下文复现",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "badly",
@@ -59322,7 +59328,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "全国通用",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "grew",
@@ -59346,7 +59352,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "介词搭配",
-        "topic": "全国通用",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "among",
@@ -59370,7 +59376,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "全国通用",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "accept",
@@ -59394,7 +59400,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "全国通用",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "hottest",
@@ -59422,7 +59428,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "全国通用",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "environmental",
@@ -59446,7 +59452,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "动词",
-        "topic": "全国通用",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "memory",
@@ -59472,7 +59478,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "介词搭配",
-        "topic": "全国通用",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "after",
@@ -59580,7 +59586,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "全国通用",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "prizes",
@@ -59605,7 +59611,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "全国通用",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "practice",
@@ -59628,7 +59634,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "全国通用",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "coldly",
@@ -59653,7 +59659,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "全国通用",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "problem",
@@ -59676,7 +59682,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "全国通用",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "purpose",
@@ -59701,7 +59707,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "全国通用",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "Look at",
@@ -59728,7 +59734,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 7,
         "pos": "连词逻辑",
-        "topic": "全国通用",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "but",
@@ -59755,7 +59761,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 8,
         "pos": "动词",
-        "topic": "全国通用",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "rule",
@@ -59778,7 +59784,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 9,
         "pos": "动词",
-        "topic": "全国通用",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "manage",
@@ -59807,7 +59813,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 10,
         "pos": "形容词副词",
-        "topic": "全国通用",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "simple",
@@ -59836,7 +59842,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 11,
         "pos": "动词",
-        "topic": "全国通用",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "started",
@@ -59863,7 +59869,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 12,
         "pos": "形容词副词",
-        "topic": "全国通用",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "pleased",
@@ -59892,7 +59898,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 13,
         "pos": "动词",
-        "topic": "全国通用",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "sent",
@@ -59917,7 +59923,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 14,
         "pos": "动词",
-        "topic": "全国通用",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "cheered",
@@ -59942,7 +59948,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 15,
         "pos": "动词",
-        "topic": "全国通用",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "regretful",
@@ -60029,7 +60035,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "语境推断",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "exciting",
@@ -60054,7 +60060,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "show",
@@ -60079,7 +60085,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "情感态度",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "wait",
@@ -60108,7 +60114,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "固定搭配",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "making",
@@ -60247,7 +60253,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "上下文复现",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "unfair",
@@ -60276,7 +60282,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "固定搭配",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "check",
@@ -60301,7 +60307,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "good",
@@ -60330,7 +60336,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "上下文复现",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "simply",
@@ -60471,7 +60477,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "advantages",
@@ -60494,7 +60500,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "逻辑推理",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "ordinary",
@@ -60542,7 +60548,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "connected with",
@@ -60571,7 +60577,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "上下文复现",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "calms",
@@ -60594,7 +60600,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "逻辑推理",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "In conclusion",
@@ -60693,7 +60699,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "上下文复现",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "remember",
@@ -60718,7 +60724,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "produced",
@@ -60741,7 +60747,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "连词逻辑",
-        "topic": "逻辑推理",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "Therefore",
@@ -60766,7 +60772,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "上下文复现",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "heat",
@@ -60793,7 +60799,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "worse",
@@ -60818,7 +60824,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "上下文复现",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "value",
@@ -60911,7 +60917,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "doctor",
@@ -60932,7 +60938,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "invited",
@@ -60957,7 +60963,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "rely on",
@@ -60984,7 +60990,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "exercises",
@@ -61005,7 +61011,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "actually",
@@ -61028,7 +61034,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "上下文复现",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "simple",
@@ -61144,7 +61150,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "介词搭配",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Before",
@@ -61165,7 +61171,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "上下文复现",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "accept",
@@ -61188,7 +61194,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "takes up",
@@ -61217,7 +61223,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "beauty",
@@ -61242,7 +61248,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "上下文复现",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "naturally",
@@ -61332,7 +61338,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "上下文复现",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "responsible",
@@ -61355,7 +61361,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "creative",
@@ -61384,7 +61390,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "上下文复现",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "skills",
@@ -61434,7 +61440,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "上下文复现",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "giving up",
@@ -61459,7 +61465,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "respected",
@@ -61560,7 +61566,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "encourages",
@@ -61583,7 +61589,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "characters",
@@ -61608,7 +61614,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "cry",
@@ -61637,7 +61643,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "modern",
@@ -61662,7 +61668,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "never",
@@ -61687,7 +61693,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "education",
@@ -61784,7 +61790,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "unfriendly",
@@ -61809,7 +61815,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "chances",
@@ -61836,7 +61842,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "changing",
@@ -61857,7 +61863,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "代词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "everything",
@@ -61882,7 +61888,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "memorize",
@@ -61907,7 +61913,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "immediately",
@@ -61999,7 +62005,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "rude",
@@ -62026,7 +62032,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "share",
@@ -62051,7 +62057,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "recorded",
@@ -62074,7 +62080,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "solution",
@@ -62099,7 +62105,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "逻辑推理",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "After all",
@@ -62124,7 +62130,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Interestingly",
@@ -62219,7 +62225,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "语境推断",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "follows",
@@ -62244,7 +62250,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "in a hurry",
@@ -62271,7 +62277,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "连词逻辑",
-        "topic": "逻辑推理",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "only",
@@ -62292,7 +62298,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "逻辑推理 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "silence",
@@ -62321,7 +62327,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "逻辑推理",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "wake up",
@@ -62348,7 +62354,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "surprised",
@@ -62447,7 +62453,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "explain",
@@ -62499,7 +62505,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "online",
@@ -62520,7 +62526,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "interesting",
@@ -62545,7 +62551,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Suddenly",
@@ -62570,7 +62576,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "Food Experience",
@@ -62656,7 +62662,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "economy",
@@ -62681,7 +62687,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "common",
@@ -62704,7 +62710,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "provide",
@@ -62729,7 +62735,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "In brief",
@@ -62758,7 +62764,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "look out",
@@ -62785,7 +62791,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "语境推断",
         "route": "线索词优先",
         "options": [
           "easily",
@@ -62878,7 +62884,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "how",
@@ -62907,7 +62913,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "useless",
@@ -62936,7 +62942,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "slowly",
@@ -62959,7 +62965,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "problem",
@@ -62984,7 +62990,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "deals with",
@@ -63013,7 +63019,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "rare",
@@ -63105,7 +63111,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "refer to",
@@ -63134,7 +63140,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "语境推断",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Besides",
@@ -63159,7 +63165,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "make decisions",
@@ -63188,7 +63194,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "moved by",
@@ -63217,7 +63223,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "dull",
@@ -63242,7 +63248,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "wish",
@@ -63329,7 +63335,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "语境推断",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "service",
@@ -63352,7 +63358,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "情感态度",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "shook",
@@ -63381,7 +63387,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "情感态度",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "nervous",
@@ -63406,7 +63412,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "语境推断",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "double",
@@ -63431,7 +63437,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "survive",
@@ -63456,7 +63462,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "with pleasure",
@@ -63546,7 +63552,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "question",
@@ -63569,7 +63575,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "forget",
@@ -63592,7 +63598,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "excited",
@@ -63617,7 +63623,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "情感态度",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "interesting",
@@ -63646,7 +63652,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "rules",
@@ -63671,7 +63677,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "partner",
@@ -63780,7 +63786,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "decision",
@@ -63805,7 +63811,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "代词",
-        "topic": "逻辑推理",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "everything",
@@ -63832,7 +63838,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "immediately",
@@ -63855,7 +63861,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "连词逻辑",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Since",
@@ -63876,7 +63882,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "progress",
@@ -63965,7 +63971,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "letter",
@@ -63990,7 +63996,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "ask for",
@@ -64017,7 +64023,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "连词逻辑",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "still",
@@ -64042,7 +64048,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "语境推断",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "leave",
@@ -64071,7 +64077,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "语境推断",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "discussed",
@@ -64096,7 +64102,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "As a result",
@@ -64191,7 +64197,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "experiments",
@@ -64212,7 +64218,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "语境推断",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "affect",
@@ -64237,7 +64243,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "lose control",
@@ -64266,7 +64272,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "语境推断",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "advice",
@@ -64291,7 +64297,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "dark",
@@ -64318,7 +64324,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "For example",
@@ -64406,7 +64412,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "语境推断",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "quickly",
@@ -64431,7 +64437,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "名词",
-        "topic": "语境推断",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "similar",
@@ -64456,7 +64462,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "语境推断",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "argument",
@@ -64481,7 +64487,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "take charge of",
@@ -64508,7 +64514,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "put them off",
@@ -64537,7 +64543,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "语境推断",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "saving",
@@ -64629,7 +64635,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "industry",
@@ -64654,7 +64660,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "Finally",
@@ -64683,7 +64689,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "advantage",
@@ -64712,7 +64718,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "depend on",
@@ -64741,7 +64747,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "代词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "all",
@@ -64766,7 +64772,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "逻辑推理",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "In addition",
@@ -64864,7 +64870,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "common",
@@ -64889,7 +64895,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "member",
@@ -64914,7 +64920,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "add",
@@ -64939,7 +64945,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "get rid of",
@@ -64968,7 +64974,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "simply",
@@ -64993,7 +64999,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "lab",
@@ -65080,7 +65086,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "convenient",
@@ -65105,7 +65111,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "attractions",
@@ -65128,7 +65134,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "数词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "only",
@@ -65151,7 +65157,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "throwing away",
@@ -65180,7 +65186,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "described",
@@ -65207,7 +65213,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "名词",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "bright",
@@ -65305,7 +65311,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "comes back",
@@ -65334,7 +65340,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "study",
@@ -65363,7 +65369,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "线索词优先",
         "options": [
           "memories",
@@ -65384,7 +65390,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "result",
@@ -65405,7 +65411,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "逻辑推理",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "rich",
@@ -65531,7 +65537,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "lonely",
@@ -65556,7 +65562,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "come in",
@@ -65585,7 +65591,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "sped up",
@@ -65608,7 +65614,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "hard",
@@ -65637,7 +65643,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "character",
@@ -65660,7 +65666,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "词义辨析 / 上下文复现",
+        "topic": "上下文复现",
         "route": "双路径",
         "options": [
           "happily",
@@ -65766,7 +65772,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "at first",
@@ -65793,7 +65799,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "双路径",
         "options": [
           "indoors",
@@ -65822,7 +65828,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "smart",
@@ -65847,7 +65853,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "crazy",
@@ -65876,7 +65882,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "ride bicycles",
@@ -65903,7 +65909,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "tasting",
@@ -65991,7 +65997,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "上下文复现",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "silent",
@@ -66016,7 +66022,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "softer",
@@ -66041,7 +66047,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "skills",
@@ -66068,7 +66074,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "remove",
@@ -66097,7 +66103,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "making a living",
@@ -66126,7 +66132,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "ground",
@@ -66219,7 +66225,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "research",
@@ -66244,7 +66250,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "progress",
@@ -66265,7 +66271,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "连词逻辑",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "Therefore",
@@ -66290,7 +66296,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "result",
@@ -66315,7 +66321,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "independent",
@@ -66344,7 +66350,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "focus on",
@@ -66443,7 +66449,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "teacher",
@@ -66468,7 +66474,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "methods",
@@ -66495,7 +66501,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "possible",
@@ -66524,7 +66530,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "included",
@@ -66553,7 +66559,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "语境推断",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "still",
@@ -66576,7 +66582,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "双路径",
         "options": [
           "wish",
@@ -66673,7 +66679,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "interesting",
@@ -66698,7 +66704,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "died",
@@ -66723,7 +66729,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "deliver",
@@ -66773,7 +66779,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "modern",
@@ -66796,7 +66802,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "society",
@@ -66899,7 +66905,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "hello",
@@ -66928,7 +66934,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词短语",
-        "topic": "逻辑推理",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "care for",
@@ -66957,7 +66963,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "双路径",
         "options": [
           "warm",
@@ -66986,7 +66992,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "time",
@@ -67011,7 +67017,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "情感态度",
         "route": "线索词优先",
         "options": [
           "divide",
@@ -67034,7 +67040,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词短语",
-        "topic": "语境推断",
+        "topic": "固定搭配",
         "route": "整组短语直接辨析",
         "options": [
           "For example",
@@ -67132,7 +67138,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 1,
         "pos": "名词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "thanks",
@@ -67157,7 +67163,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 2,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "easy",
@@ -67182,7 +67188,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 3,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "上下文复现",
         "route": "线索词优先",
         "options": [
           "changing",
@@ -67207,7 +67213,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 4,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "save",
@@ -67232,7 +67238,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 5,
         "pos": "形容词副词",
-        "topic": "词义辨析",
+        "topic": "固定搭配",
         "route": "固定搭配优先",
         "options": [
           "convenient",
@@ -67259,7 +67265,7 @@ window.BUILTIN_LESSONS = [
       {
         "q": 6,
         "pos": "动词",
-        "topic": "词义辨析",
+        "topic": "逻辑推理",
         "route": "线索词优先",
         "options": [
           "actions",

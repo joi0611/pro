@@ -1873,6 +1873,52 @@ function renderHandoutPrint() {
   window.print();
 }
 
+/* 知识点合集打印：首页一键汇总训练中心内的全部知识点（不含练习答案） */
+function renderKnowledgeCollectionPrint() {
+  var area = $("printArea");
+  var points = window.KNOWLEDGE_POINTS || [];
+  if (!area || !points.length) {
+    toast("知识点内容尚未加载，请刷新页面后重试");
+    return;
+  }
+
+  var groups = {};
+  points.forEach(function (kp) {
+    var category = kp.category || "其他知识点";
+    if (!groups[category]) groups[category] = [];
+    groups[category].push(kp);
+  });
+
+  var categoryNames = Object.keys(groups);
+  var toc = categoryNames.map(function (name, i) {
+    return '<span>' + (i + 1) + '. ' + escapeHtml(name) + '（' + groups[name].length + ' 个）</span>';
+  }).join("");
+
+  var body = categoryNames.map(function (name, categoryIndex) {
+    var items = groups[name].map(function (kp, pointIndex) {
+      var explanation = escapeHtml(kp.explanation || "")
+        .split(/\n\s*\n/)
+        .map(function (p) { return '<p>' + p.replace(/\n/g, '<br>') + '</p>'; })
+        .join("");
+      return '<article class="kp-print-item">'
+        + '<h3>' + (categoryIndex + 1) + '.' + (pointIndex + 1) + ' ' + escapeHtml(kp.title || "知识点") + '</h3>'
+        + '<div class="kp-print-explain">' + explanation + '</div>'
+        + '<div class="kp-print-strategy"><b>解题步骤：</b>' + escapeHtml(kp.strategy || "") + '</div>'
+        + '</article>';
+    }).join("");
+    return '<section class="kp-print-category">'
+      + '<h2>' + (categoryIndex + 1) + '. ' + escapeHtml(name) + '</h2>'
+      + items + '</section>';
+  }).join("");
+
+  area.innerHTML = '<div class="print-wrap kp-print-cover">'
+    + '<h1>中考完形填空 · 知识点合集</h1>'
+    + '<p class="print-meta">知识点讲解 · 核心原则 · 解题步骤 ｜ 共 ' + points.length + ' 个知识点</p>'
+    + '<div class="kp-print-toc">' + toc + '</div></div>' + body
+    + '<p class="kp-print-foot">中考完形填空重构 · 知识点集合文档</p>';
+  window.print();
+}
+
 /* ==================== 题库渲染与筛选 ==================== */
 function normalizeLesson(l) {
   var art = l.article_text_with_blanks || "";
@@ -3544,7 +3590,7 @@ function init() {
   blockWheelZoom();
   /* 内置题库（「自编」3 套示范篇不进列表，数据保留在题库文件里随时可恢复） */
   var BUILTIN = ((typeof window !== "undefined" && window.BUILTIN_LESSONS) || [])
-    .filter(function (l) { return l.source_kind !== "自编"; });
+    .filter(function (l) { return !l.disabled && l.source_kind !== "自编"; });
   BUILTIN.forEach(normalizeLesson);
   library = BUILTIN;
   BLANK_KEYS = null;   // 题库定了才统计空数
@@ -3694,9 +3740,7 @@ function init() {
   if (hpH) hpH.addEventListener("click", function () { renderHandoutPrint(); });
   var hpq = document.getElementById("homePrintQuiz");
   if (hpq) hpq.addEventListener("click", function () {
-    if (quizState) { renderQuizPrint(); return; }
-    showView("handout");
-    toast("选择任意一课，进入精练后点「打印本课卷」即可打印该课题目");
+    renderKnowledgeCollectionPrint();
   });
   /* 讲义主页：卡片点击进单讲 / 返回目录 / 上一讲下一讲 */
   var homeBox = document.getElementById("handoutHome");
