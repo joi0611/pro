@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>完形填空训练系统 · 全国中考 · 无限进步</title>
+  <link rel="stylesheet" href="style.css?v=20261012b" />
+</head>
+<body>
+
+  <!-- ============ 激活码门禁 ============ -->
+  <div id="gateView" hidden>
+    <div class="gate-card">
+      <h1 class="gate-title"><span class="gate-key" aria-hidden="true">🔑</span>输入激活码解锁学习</h1>
+      <p class="gate-sub">一码最多绑定4台设备，换设备或清除浏览器数据可能会占用新设备名额。</p>
+      <input id="gateCode" class="gate-input" type="text" autocomplete="off" spellcheck="false" placeholder="请输入激活码" maxlength="32" />
+      <p id="gateMsg" class="gate-msg" hidden></p>
+      <button id="gateBtn" class="gate-btn" type="button">激活并学习</button>
+      <p class="gate-note">进入后，讲义和题目均可打印。</p>
+    </div>
+  </div>
+
+
+
+  <!-- ============ 顶栏导航 ============ -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-mark">∞</span>
+      <span class="logo-text">无限进步</span>
+      <span class="brand-sub">完形填空训练系统</span>
+    </div>
+    <nav class="nav-tabs">
+      <button class="nav-tab" data-view="handout" type="button">讲义</button>
+      <button class="nav-tab" data-view="quiz" type="button">讲义配套题库</button>
+      <button class="nav-tab" data-view="library" type="button">中考真题题库</button>
+      <button class="nav-tab" data-view="notebook" type="button">错题本 <span class="nav-badge" id="navNotebookCount" hidden>0</span></button>
+      <button class="nav-tab" data-view="vocab" type="button">生词本 <span class="nav-badge" id="navVocabCount" hidden>0</span></button>
+    </nav>
+    <div class="topbar-actions">
+      <span class="trust-pill" id="trustPill">逐空复核</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ============ 首页 landing ============ -->
+    <section id="homeView" class="view active">
+
+      <!-- Hero -->
+      <div class="hero">
+        <div class="hero-text">
+          <span class="hero-kicker"><span class="kicker-dot" aria-hidden="true"></span>中考完形 · 真题逐空 · 前后文取证</span>
+          <h1>不是你语感差，是没人告诉你<span class="hero-hl">怎么找答案</span></h1>
+          <p id="heroSub">专为读得懂却总选错、全凭语感蒙、线索看不清的同学设计。逐空拆解前后文证据，讲清线索定位、干扰项排除和判断依据，学一篇会一篇。</p>
+          <div class="hero-actions">
+            <button class="btn primary hero-cta" type="button" data-go="quiz">开始今天的训练 <span aria-hidden="true">→</span></button>
+            <span class="hero-note"><span class="note-check" aria-hidden="true">✓</span> 每道题都有证据可复核</span>
+          </div>
+        </div>
+        <div class="hero-side" aria-label="学习进度概览">
+          <div class="hero-side-top"><span>今日学习</span><span class="hero-side-status">建议 20 分钟</span></div>
+          <div class="hero-progress"><span style="width: 42%"></span></div>
+          <div class="hero-progress-meta"><strong>4 / 10</strong><span>篇目已完成</span></div>
+          <div class="hero-side-divider"></div>
+          <div class="hero-side-tip"><span class="tip-mark" aria-hidden="true">↗</span><span>先看线索，再选答案<br><b>今天从「词汇复现」开始</b></span></div>
+        </div>
+      </div>
+
+      <div class="home-section-head">
+        <div><span class="section-eyebrow">学习路径</span><h2>从方法到真题，三步建立解题感</h2></div>
+        <span class="section-caption">按顺序练，效果更稳定</span>
+      </div>
+
+      <!-- 三板块入口 -->
+      <div class="home-cards">
+        <div class="home-card hc-handout">
+          <span class="hc-icon hc-icon-book" aria-hidden="true"><span></span></span>
+          <span class="hc-step">01 · 先学方法</span>
+          <span class="hc-t">知识点讲解</span>
+          <span class="hc-d">五维一体方法讲义 · 11 讲 / 27 课技法 · 学完即练</span>
+          <span class="hc-go" data-go="handout">进入讲义 →</span>
+          <button class="hc-print" id="homePrintHandout" type="button">打印讲义</button>
+        </div>
+        <div class="home-card hc-quiz">
+          <span class="hc-icon hc-icon-pen" aria-hidden="true"><span></span></span>
+          <span class="hc-step">02 · 同步巩固</span>
+          <span class="hc-t">知识点同步练习</span>
+          <span class="hc-d">300 题真题靶向精练 · 按课同步 · 先答后揭，提交后亮出原文证据</span>
+          <span class="hc-go" data-go="quiz">开始精练 →</span>
+          <button class="hc-print" id="homePrintQuiz" type="button">打印精练卷</button>
+        </div>
+        <div class="home-card hc-train">
+          <span class="hc-icon hc-icon-target" aria-hidden="true"><span></span></span>
+          <span class="hc-step">03 · 真题迁移</span>
+          <span class="hc-t">中考真题训练</span>
+          <span class="hc-d">海量真题 · 逐空复核 · 五步法 · 可打印空白练习卷</span>
+          <span class="hc-go" data-go="library">进入真题库 →</span>
+        </div>
+      </div>
+
+      <div class="home-footer-strip">
+        <div class="home-metric"><strong>210</strong><span>篇精选真题</span></div>
+        <div class="home-metric"><strong>2,046</strong><span>道逐空解析</span></div>
+        <div class="home-metric"><strong>5</strong><span>个证据维度</span></div>
+        <div class="home-footer-copy"><span class="footer-spark" aria-hidden="true">✦</span><span><b>每次练习都留下可复盘的痕迹</b><br>错题本和生词本会自动帮你整理重点</span></div>
+      </div>
+      </section>
+
+      <!-- ============ 真题库视图（独立页面，进入即显示筛选器与列表） ============ -->
+      <section id="libraryView" class="view" hidden>
+        <div class="study-toolbar no-print">
+          <button id="libraryHomeBtn" class="btn ghost back-btn" type="button">← 返回首页</button>
+          <span class="study-toolbar-title">中考真题库</span>
+        </div>
+      <!-- 数据范围说明 -->
+      <p class="scope-note" id="scopeNote">本系统收录全国各省市中考完形填空题目，按省份与来源逐篇标注。每篇均含可验证的线索证据，共 <span id="scopeLessons">0</span> 篇 / <span id="scopeQuestions">0</span> 道。</p>
+
+      <!-- 筛选器（点「中考真题训练」卡片后展开） -->
+      <div class="filter-bar" id="filterBar" hidden>
+        <!-- 第 1 行：来源分层 -->
+        <div class="filter-row">
+          <div class="filter-group">
+            <span class="filter-label">来源</span>
+            <div class="filter-chips" id="kindFilters"></div>
+          </div>
+        </div>
+        <!-- 第 2 行：题型 + 空数 -->
+        <div class="filter-row">
+          <div class="filter-group">
+            <span class="filter-label">题型</span>
+            <div class="filter-chips" id="typeFilters">
+              <button class="filter-chip active" data-dim="type" data-value="all" type="button">全部</button>
+              <button class="filter-chip" data-dim="type" data-value="人物故事" type="button">人物故事</button>
+              <button class="filter-chip" data-dim="type" data-value="生活哲理" type="button">生活哲理</button>
+              <button class="filter-chip" data-dim="type" data-value="说明建议" type="button">说明建议</button>
+            </div>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">空数</span>
+            <div class="filter-chips filter-chips-num" id="blanksFilters"></div>
+          </div>
+        </div>
+        <!-- 第 2.5 行：五维（讲义联动） -->
+        <div class="filter-row">
+          <div class="filter-group">
+            <span class="filter-label">维度</span>
+            <div class="filter-chips" id="dimFilters"></div>
+          </div>
+        </div>
+        <!-- 第 3 行：地区 / 年份 / 难度 -->
+        <div class="filter-row filter-row-selects">
+          <div class="filter-group">
+            <span class="filter-label">地区</span>
+            <div class="combo" id="regionCombo">
+              <button class="combo-btn" id="regionBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <span id="regionLabel">全部地区</span>
+                <span class="combo-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="combo-pop" id="regionPop" hidden>
+                <input class="combo-input" id="regionSearch" type="text" autocomplete="off"
+                       placeholder="搜索省 / 市，如「江苏」「南通」" />
+                <div class="combo-list" id="regionList" role="listbox"></div>
+              </div>
+            </div>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">年份</span>
+            <select class="filter-select" id="yearFilter"></select>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">难度</span>
+            <select class="filter-select" id="difficultyFilter">
+              <option value="all">全部难度</option>
+              <option value="简单">简单</option>
+              <option value="中等">中等</option>
+              <option value="较难">较难</option>
+            </select>
+          </div>
+          <div class="filter-group filter-actions">
+            <button class="btn ghost btn-sm" id="resetFilters" type="button">重置筛选</button>
+            <button class="btn ghost btn-sm" id="shareFilters" type="button">复制筛选链接</button>
+          </div>
+        </div>
+        <!-- 当前筛选摘要 -->
+        <div class="filter-summary" id="filterSummary" hidden></div>
+      </div>
+
+      <!-- 题库列表（点「中考真题训练」卡片后展开） -->
+      <div id="libraryGrid" class="lesson-list" hidden></div>
+      <div id="emptyLibrary" class="empty-state-box" hidden>
+        <strong>没有符合条件的篇目</strong>
+        <p>试试调整筛选条件，或者切换到「全部」。</p>
+      </div>
+    </section>
+
+    <!-- ============ 做题视图 ============ -->
+    <section id="studyView" class="view" hidden>
+      <div class="study-toolbar no-print">
+        <button id="backBtn" class="btn ghost back-btn" type="button">← 返回题库</button>
+
+        <div class="study-tabs" role="tablist" aria-label="练习模块">
+          <button class="study-tab active" data-pane="practice" type="button" role="tab" aria-selected="true">真题练习</button>
+          <button class="study-tab" data-pane="trans" type="button" role="tab" aria-selected="false">翻译精读</button>
+        </div>
+
+        <button id="printBtn" class="btn ghost print-btn" type="button">🖨 打印练习卷</button>
+      </div>
+
+      <div class="lesson-meta" id="lessonMeta"></div>
+
+      <!-- 第一步 · 首尾定调：读全文之前，先看首尾句判断文章走向 -->
+      <section id="toneCard" class="tone-card no-print" hidden>
+        <div class="tone-head">
+          <span class="tone-badge">第一步</span>
+          <span class="tone-title" id="toneTitle">首尾定调</span>
+          <span class="tone-sub" id="toneSub">读全文之前，先看首尾句，判断文章往哪走</span>
+          <button id="toneCollapseBtn" class="tone-collapse" type="button" aria-expanded="true">收起</button>
+        </div>
+
+        <div class="tone-body">
+          <div class="tone-anchors">
+            <div class="tone-anchor">
+              <span class="tone-anchor-label" id="toneLabelFirst">首句 · 起</span>
+              <p class="tone-anchor-text" id="toneFirst"></p>
+            </div>
+            <div class="tone-anchor">
+              <span class="tone-anchor-label" id="toneLabelLast">尾句 · 合</span>
+              <p class="tone-anchor-text" id="toneLast"></p>
+            </div>
+          </div>
+
+          <!-- 走向图：叙事类画情感曲线，说明建议类画结构骨架。两端锚点已知，中段待揭晓 -->
+          <div class="tone-chart">
+            <svg id="toneChartSvg" class="tone-chart-svg" viewBox="0 0 600 150" preserveAspectRatio="none" role="img" aria-label="文章走向曲线"></svg>
+            <div class="tone-chart-legend">
+              <span class="tone-lg tone-lg-given">已给：首尾句</span>
+              <span class="tone-lg tone-lg-hidden" id="toneLgHidden">待判断：中段走向</span>
+              <span class="tone-lg tone-lg-revealed" id="toneLgRevealed" hidden>已揭晓：走向曲线</span>
+            </div>
+          </div>
+
+          <div class="tone-ask">
+            <p class="tone-ask-q" id="toneAskQ">这篇文章的走向是？</p>
+            <div class="tone-options" id="toneOptions"></div>
+            <p class="tone-feedback" id="toneFeedback"></p>
+          </div>
+
+          <div class="tone-result" id="toneResult" hidden>
+            <div class="tone-result-head">
+              <span class="tone-verdict" id="toneVerdict"></span>
+              <span class="tone-verdict-tag" id="toneVerdictTag">定调成功</span>
+            </div>
+            <p class="tone-reason" id="toneReason"></p>
+            <div class="tone-routes" id="toneRoutes"></div>
+          </div>
+        </div>
+
+        <!-- 收起后的状态条 -->
+        <button id="toneMini" class="tone-mini" type="button" hidden></button>
+      </section>
+
+      <!-- 题号导航格：1..N 快速跳题 + 答题状态 + 整篇计时 -->
+      <nav id="qNav" class="q-nav no-print" hidden aria-label="题号导航">
+        <span class="q-nav-label">题号</span>
+        <div class="q-nav-grid" id="qNavGrid"></div>
+        <span class="q-nav-timer" id="qNavTimer" title="整篇计时"><span class="q-nav-clock" id="qNavClock">00:00</span></span>
+      </nav>
+
+      <div class="training-layout" id="practicePane">
+        <article id="passage" class="passage"></article>
+
+        <aside class="question-panel">
+          <div id="emptyState" class="empty-state">
+            <strong>点击文章里的空格开始做题</strong>
+            <p>五步法：首尾定调 → 看选项定考点 → 按箭头法找线索 → 选答案 → 代入验证</p>
+            <div class="step-preview">
+              <span class="step-dot">①</span> 定调
+              <span class="step-arrow">→</span>
+              <span class="step-dot">②</span> 看选项
+              <span class="step-arrow">→</span>
+              <span class="step-dot">③</span> 找线索
+              <span class="step-arrow">→</span>
+              <span class="step-dot">④</span> 选答案
+              <span class="step-arrow">→</span>
+              <span class="step-dot">⑤</span> 代入验证
+            </div>
+          </div>
+
+          <div id="questionBox" class="question-box hidden">
+            <div class="question-title">
+              <span id="questionNumber"></span>
+              <span id="questionCategory"></span>
+              <span class="progress-tag" id="questionProgress"></span>
+            </div>
+
+            <section class="mini-section" id="optionPreviewStep">
+              <h4>本题选项</h4>
+              <div id="optionPreview" class="option-preview"></div>
+            </section>
+
+            <section class="mini-section hidden" id="toolStep">
+              <h4 id="toolTitle"></h4>
+              <div id="toolGuide" class="tool-guide"></div>
+              <div id="clueWords" class="clue-list"></div>
+            </section>
+
+            <section class="mini-section hidden" id="answerStep">
+              <h4>选择答案</h4>
+              <div id="answerOptions" class="answer-grid"></div>
+              <button id="checkAnswerBtn" class="btn primary" type="button" hidden>检查答案</button>
+              <p id="answerFeedback" class="feedback"></p>
+            </section>
+
+            <section class="mini-section hidden" id="sentenceCheckStep">
+              <h4>代入原句验证 <small>把答案代回去读一遍，不通就重选</small></h4>
+              <p id="sentenceCheck" class="sentence-check"></p>
+            </section>
+
+            <section class="mini-section hidden" id="diagStep">
+              <h4>你错在哪一步 <small>错因归类，不靠猜</small></h4>
+              <div id="diagBox" class="diag-box"></div>
+            </section>
+
+            <section class="mini-section hidden" id="explainStep">
+              <h4>解析</h4>
+              <div id="explainBox" class="explain-box"></div>
+              <div class="explain-actions">
+                <button id="prevQuestionBtn" class="btn ghost" type="button" hidden>← 上一题</button>
+                <button id="nextQuestionBtn" class="btn primary next-q-btn" type="button" hidden>下一题 →</button>
+              </div>
+            </section>
+          </div>
+
+        </aside>
+      </div>
+
+      <!-- 翻译精读：独立成页，与「真题练习」标签并列，
+           不再塞在题目面板里挤占做题视线；打印练习卷只对真题练习生效 -->
+      <section id="transSection" class="study-tool tool-pane no-print" hidden></section>
+    </section>
+
+    <!-- ============ 知识点训练中心 ============ -->
+    <section id="methodologyView" class="view" hidden>
+      <!-- ============ 完形解题心法（静态板块，不依赖判分逻辑与题库） ============ -->
+      <div id="clozeInsight" class="insight-block">
+        <div class="insight-hero">
+          <h2>完形解题心法 · 来自 33 篇的实测</h2>
+          <p class="insight-lead">完形 33 篇 198 题中，<b>92.3%</b> 的干扰项在原文里根本没出现过。所以「回原文找词」这条路 92% 的情况下走不通——真正提分靠的是 <b>就近取证 + 语义辨析</b>。</p>
+        </div>
+        <div class="insight-flow">
+          <img src="assets/methodology/flow_strategy.svg" alt="两种策略对比" />
+          <img src="assets/methodology/flow_steps.svg" alt="三步辨析法" />
+          <img src="assets/methodology/flow_kills.svg" alt="三种杀法" />
+        </div>
+        <h3 class="insight-sub">真题示范 · 三道典型错例</h3>
+        <div class="insight-demos">
+          <figure><img src="assets/methodology/demo_001_q1.png" alt="001 Q1 窗口句推断" /><figcaption>001 Q1 · 窗口句推断：simple 用「方向否」打掉</figcaption></figure>
+          <figure><img src="assets/methodology/demo_021_q4.png" alt="021 Q4 短语辨析" /><figcaption>021 Q4 · 四个 take 短语，逐个释义不靠原文</figcaption></figure>
+          <figure><img src="assets/methodology/demo_018_q3.png" alt="018 Q3 固定搭配" /><figcaption>018 Q3 · 选错 everything，代回原句直接矛盾</figcaption></figure>
+        </div>
+      </div>
+
+      <!-- 知识点列表 -->
+      <div id="kpListView">
+        <div class="methodology-head">
+          <h1>知识点训练中心</h1>
+          <p id="kpSub">每个知识点包含讲解和 5-10 道专项训练题。从具体技能开始，一道一道练透。</p>
+        </div>
+        <div id="kpGrid"></div>
+      </div>
+
+      <!-- 知识点训练界面 -->
+      <div id="kpTrainView" hidden>
+        <button class="btn ghost back-btn" id="kpBackBtn" type="button">← 返回知识点列表</button>
+        <div class="kp-header">
+          <h2 id="kpTitle"></h2>
+          <span class="kp-category-tag" id="kpCategory"></span>
+        </div>
+        <div class="kp-explanation" id="kpExplanation"></div>
+        <div class="kp-practice" id="kpPractice"></div>
+      </div>
+    </section>
+
+    <!-- ============ 讲义视图 ============ -->
+    <section id="handoutView" class="view" hidden>
+      <div class="handout-toolbar no-print">
+        <h1 class="handout-title">完形填空方法讲义矩阵</h1>
+        <span class="handout-sub">五维一体 · 全 11 讲 ｜ 学完即练 · 可打印</span>
+        <button class="btn ghost no-print" id="handoutBackBtn" type="button" hidden>← 返回讲义目录</button>
+        <button class="btn ghost" id="handoutPrintBtn" type="button">🖨 打印讲义</button>
+      </div>
+      <div class="handout-home" id="handoutHome"></div>
+      <div class="handout-lessonbar no-print" id="handoutLessonBar" hidden></div>
+      <div class="handout-layout" hidden>
+        <nav class="handout-toc no-print" id="handoutToc" aria-label="讲义目录">
+          <div class="toc-title">讲义目录</div>
+          <ol class="toc-list" id="tocList"></ol>
+        </nav>
+        <article class="handout-content" id="handoutContent">
+          <!-- renderHandout() 注入 -->
+        </article>
+      </div>
+      <div class="handout-lessonfoot no-print" id="handoutLessonFoot" hidden></div>
+      <div class="handout-quiz no-print" id="handoutQuiz" hidden></div>
+    </section>
+
+    <!-- ============ 讲义配套题库（独立精练落地页） ============ -->
+    <section id="quizView" class="view" hidden>
+      <div class="handout-toolbar no-print" style="display:block">
+        <h1 class="handout-title">讲义配套题库 · 300 题真题靶向精练</h1>
+        <span class="handout-sub">按 27 课同步 · 先答后揭，提交后才亮出原文证据与解析</span>
+      </div>
+      <div id="quizHome"></div>
+      <div id="quizBox" class="handout-quiz no-print" hidden></div>
+    </section>
+
+    <!-- ============ 错题本视图 ============ -->
+    <section id="notebookView" class="view" hidden>
+      <div class="notebook-head">
+        <h1>错题本</h1>
+        <p>自动收集答错的题。点击「回看」直接跳回对应文章那道题。</p>
+      </div>
+      <div class="notebook-toolbar">
+          <select class="filter-select" id="notebookFilter">
+            <option value="all">全部错题</option>
+            <option value="逻辑线索">判断依据：逻辑线索</option>
+            <option value="复现线索">判断依据：复现线索</option>
+            <option value="情感线索">判断依据：情感线索</option>
+            <option value="语境线索">判断依据：语境线索</option>
+            <option value="其他">其他 / 未归类</option>
+          </select>
+        <button class="btn ghost" id="clearNotebookBtn" type="button">清空错题本</button>
+      </div>
+      <div id="notebookList" class="notebook-list"></div>
+      <div id="emptyNotebook" class="empty-state-box" hidden>
+        <strong>还没有错题</strong>
+        <p>做错的题会自动收集到这里，方便针对性复习。</p>
+      </div>
+    </section>
+
+    <!-- ============ 进度视图 ============ -->
+    <section id="progressView" class="view" hidden>
+      <div class="progress-head">
+        <h1>训练进度</h1>
+        <p>记录你在本设备上的做题数据。换浏览器或清缓存会丢失。</p>
+      </div>
+      <div class="progress-dashboard" id="progressDashboard"></div>
+    </section>
+
+    <!-- ============ 生词本视图 ============ -->
+    <section id="vocabView" class="view" hidden>
+      <div class="vocab-head">
+        <h1>生词本</h1>
+        <p>在正文里<strong>双击任意单词</strong>，会自动生成一张词汇卡并打开有道词典。卡片正面是单词，点一下翻面看出处原句。</p>
+        <button class="btn ghost" id="vocabBackBtn" type="button">← 返回题库</button>
+      </div>
+      <div id="vocabList" class="vocab-list"></div>
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <div id="printArea" class="print-area" hidden></div>
+
+  <script src="collocation-rules.js"></script>
+  <script src="clue-rules.js"></script>
+  <script src="diag-classify.js"></script>
+  <script src="builtin-lessons.js"></script>
+  <script src="methodology.js"></script>
+  <script src="quiz-300.js?v=20261012b"></script>
+  <script src="handout-content.js?v=20261012b"></script>
+  <script src="app.js?v=20261012b"></script>
+</body>
+</html>
