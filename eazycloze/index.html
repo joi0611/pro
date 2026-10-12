@@ -4,12 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>完形填空训练系统 · 全国中考 · 无限进步</title>
+  <style>body.gate-locked>*:not(#gateView){display:none!important}body.gate-locked #gateView{display:flex!important}</style>
   <link rel="stylesheet" href="style.css?v=20261012b" />
 </head>
-<body>
+<body class="gate-locked">
 
   <!-- ============ 激活码门禁 ============ -->
-  <div id="gateView" hidden>
+  <div id="gateView">
     <div class="gate-card">
       <h1 class="gate-title"><span class="gate-key" aria-hidden="true">🔑</span>输入激活码解锁学习</h1>
       <p class="gate-sub">一码最多绑定4台设备，换设备或清除浏览器数据可能会占用新设备名额。</p>
@@ -30,6 +31,7 @@
       <span class="brand-sub">完形填空训练系统</span>
     </div>
     <nav class="nav-tabs">
+      <button class="nav-tab" data-view="home" type="button">首页</button>
       <button class="nav-tab" data-view="handout" type="button">讲义</button>
       <button class="nav-tab" data-view="quiz" type="button">讲义配套题库</button>
       <button class="nav-tab" data-view="library" type="button">中考真题题库</button>
@@ -59,8 +61,8 @@
         </div>
         <div class="hero-side" aria-label="学习进度概览">
           <div class="hero-side-top"><span>今日学习</span><span class="hero-side-status">建议 20 分钟</span></div>
-          <div class="hero-progress"><span style="width: 42%"></span></div>
-          <div class="hero-progress-meta"><strong>4 / 10</strong><span>篇目已完成</span></div>
+          <div class="hero-progress"><span id="homeProgressBar" style="width: 0%"></span></div>
+          <div class="hero-progress-meta"><strong id="homeProgressCount">0 / 10</strong><span>篇目已完成</span></div>
           <div class="hero-side-divider"></div>
           <div class="hero-side-tip"><span class="tip-mark" aria-hidden="true">↗</span><span>先看线索，再选答案<br><b>今天从「词汇复现」开始</b></span></div>
         </div>
@@ -442,7 +444,7 @@
     <section id="progressView" class="view" hidden>
       <div class="progress-head">
         <h1>训练进度</h1>
-        <p>记录你在本设备上的做题数据。换浏览器或清缓存会丢失。</p>
+        <p>学习记录与当前登录码绑定，并自动保存到云端。</p>
       </div>
       <div class="progress-dashboard" id="progressDashboard"></div>
     </section>
@@ -470,6 +472,6 @@
   <script src="methodology.js"></script>
   <script src="quiz-300.js?v=20261012b"></script>
   <script src="handout-content.js?v=20261012b"></script>
-  <script src="app.js?v=20261012b"></script>
+  <script src="app.js?v=20261012c"></script>
 </body>
 </html>

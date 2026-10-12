@@ -9,7 +9,15 @@
 
 /* ==================== 存储与状态 ==================== */
 /* v2：题号已统一重排为 1..N，旧版错题本里的题号会错位，故升版让旧数据自然作废 */
-var STORAGE_KEY = "cloze-national-v2";
+var STORAGE_BASE_KEY = "cloze-national-v2";
+var STORAGE_KEY = STORAGE_BASE_KEY;
+var ACTIVE_LOGIN_CODE = "";
+var APP_INITIALIZED = false;
+var REMOTE_SAVE_TIMER = null;
+var SUPABASE_CONFIG = {
+  url: "https://gbjmylxohacppnybfssh.supabase.co",
+  anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdiam15bHhvaGFjcHBueWJmc3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDA1NzgsImV4cCI6MjA5ODI3NjU3OH0.mz5srsxdbZa4__oqKjlcysWuDo00w7UQaV8n2VNP4eE"
+};
 var clueColors = ["blue", "green", "yellow", "red", "violet"];
 
 var library = [];
@@ -88,14 +96,62 @@ function loadStore() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); }
   catch (e) { return _memStore; }
 }
-function saveStore(s) {
+function writeStoreLocal(s) {
   if (!_probeStorage()) { _memStore = s; return; }
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
-  catch (e) { _memStore = s; }
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s || {})); }
+  catch (e) { _memStore = s || {}; }
+}
+function activationRpc(name, payload) {
+  return fetch(SUPABASE_CONFIG.url + "/rest/v1/rpc/" + name, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "apikey": SUPABASE_CONFIG.anonKey,
+      "Authorization": "Bearer " + SUPABASE_CONFIG.anonKey
+    },
+    body: JSON.stringify(payload || {})
+  }).then(function (response) {
+    return response.json().catch(function () { return null; }).then(function (data) {
+      if (!response.ok) {
+        var message = data && (data.message || data.error_description || data.hint);
+        throw new Error(message || "SUPABASE_RPC_FAILED");
+      }
+      return data;
+    });
+  });
+}
+function setActiveLoginCode(code) {
+  ACTIVE_LOGIN_CODE = String(code || "").trim().toUpperCase();
+  STORAGE_KEY = ACTIVE_LOGIN_CODE ? STORAGE_BASE_KEY + ":" + ACTIVE_LOGIN_CODE : STORAGE_BASE_KEY;
+}
+function loadRemoteProgress(code) {
+  return activationRpc("get_activation_progress", {
+    input_code: code,
+    input_region: "national"
+  }).then(function (data) {
+    return data && typeof data === "object" && !Array.isArray(data) ? data : {};
+  });
+}
+function queueRemoteProgressSave(s) {
+  if (!ACTIVE_LOGIN_CODE) return;
+  clearTimeout(REMOTE_SAVE_TIMER);
+  var code = ACTIVE_LOGIN_CODE;
+  var snapshot = JSON.parse(JSON.stringify(s || {}));
+  REMOTE_SAVE_TIMER = setTimeout(function () {
+    activationRpc("save_activation_progress", {
+      input_code: code,
+      input_region: "national",
+      input_progress: snapshot
+    }).catch(function () { /* 保留本地缓存，网络恢复后下一次变更会再次同步 */ });
+  }, 600);
+}
+function saveStore(s) {
+  writeStoreLocal(s);
+  queueRemoteProgressSave(s);
 }
 
 function getDone() { return loadStore().done || {}; }
-function markDone(id) { var s = loadStore(); s.done = s.done || {}; s.done[id] = true; saveStore(s); }
+function markDone(id) { var s = loadStore(); s.done = s.done || {}; s.done[id] = true; saveStore(s); renderHomeProgress(); }
 function isDone(id) { return !!getDone()[id]; }
 
 /* 错题本存储 */
@@ -667,8 +723,15 @@ function bindTipActions(si, el) {
 function hideSentenceTip() { var t = $("sentenceTip"); if (t) { t.hidden = true; t._el = null; } }
 
 /* ---------- 3. 词汇卡：双击单词 → 有道词典 + 收录 ---------- */
-function loadVocab() { try { return JSON.parse(localStorage.getItem("cloze_vocab") || "[]"); } catch (e) { return []; } }
-function saveVocab(v) { try { localStorage.setItem("cloze_vocab", JSON.stringify(v)); } catch (e) {} }
+function loadVocab() {
+  var vocab = loadStore().vocab;
+  return Array.isArray(vocab) ? vocab : [];
+}
+function saveVocab(v) {
+  var s = loadStore();
+  s.vocab = Array.isArray(v) ? v : [];
+  saveStore(s);
+}
 function openYoudao(word) { window.open("https://dict.youdao.com/search?q=" + encodeURIComponent(word), "_blank", "noopener"); }
 function addVocab(word, ctx) {
   word = String(word || "").toLowerCase().replace(/[^a-z'\-]/g, "");
@@ -3464,8 +3527,20 @@ function renderProgress() {
   updateNavBadge();
 }
 
+function renderHomeProgress() {
+  var count = Object.keys(getDone()).length;
+  var target = 10;
+  var shown = Math.min(count, target);
+  var label = document.getElementById("homeProgressCount");
+  var bar = document.getElementById("homeProgressBar");
+  if (label) label.textContent = shown + " / " + target;
+  if (bar) bar.style.width = Math.round(shown / target * 100) + "%";
+}
+
 /* ==================== 初始化 ==================== */
 function init() {
+  if (APP_INITIALIZED) return;
+  APP_INITIALIZED = true;
   blockWheelZoom();
   /* 内置题库（「自编」3 套示范篇不进列表，数据保留在题库文件里随时可恢复） */
   var BUILTIN = ((typeof window !== "undefined" && window.BUILTIN_LESSONS) || [])
@@ -3733,10 +3808,9 @@ function init() {
   writeHashFilters();
   renderLibrary();
   updateNavBadge();
+  renderHomeProgress();
   showView("home");   // 首屏 = 首页 landing；真题库为独立页面，进入时才展开
 }
-
-init();
 
 
 /* ==================== 激活码门禁（后端校验 + 本地模拟设备名额） ==================== */
@@ -3745,10 +3819,6 @@ init();
   var DEV_KEY = "wbx_device_id";
   var SLOT_KEY = "wbx_code_slots_v1";
   var MAX_DEVICES = 4;
-  var SUPABASE_CONFIG = {
-    url: "https://gbjmylxohacppnybfssh.supabase.co",
-    anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdiam15bHhvaGFjcHBueWJmc3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDA1NzgsImV4cCI6MjA5ODI3NjU3OH0.mz5srsxdbZa4__oqKjlcysWuDo00w7UQaV8n2VNP4eE"
-  };
 
   function $(id) { return document.getElementById(id); }
 
@@ -3810,23 +3880,20 @@ init();
   }
 
   function verifyActivationCode(code) {
-    return fetch(SUPABASE_CONFIG.url + "/rest/v1/rpc/verify_activation_code", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "apikey": SUPABASE_CONFIG.anonKey,
-        "Authorization": "Bearer " + SUPABASE_CONFIG.anonKey
-      },
-      body: JSON.stringify({ input_code: code, input_region: "national" })
-    }).then(function (response) {
-      return response.json().catch(function () { return null; }).then(function (data) {
-        if (!response.ok) {
-          var message = data && (data.message || data.error_description || data.hint);
-          throw new Error(message || "SUPABASE_RPC_FAILED");
-        }
-        return data === true;
-      });
+    return activationRpc("verify_activation_code", {
+      input_code: code,
+      input_region: "national"
+    }).then(function (data) {
+      return data === true;
     });
+  }
+
+  function startAuthorizedSession(code, progress) {
+    setActiveLoginCode(code);
+    writeStoreLocal(progress || {});
+    try { localStorage.setItem(ACT_KEY, JSON.stringify({ code: code, at: Date.now() })); } catch (e) {}
+    init();
+    unlockBody();
   }
 
   function submit() {
@@ -3836,21 +3903,26 @@ init();
     setBusy(true);
     var m = $("gateMsg");
     if (m) m.hidden = true;
-    function done(err) {
+    function done(err, progress) {
       setBusy(false);
       if (err) { showMsg(err, false); return; }
       if (!checkDeviceSlot(code)) {
         showMsg("\u8BE5\u6FC0\u6D3B\u7801\u5DF2\u5728 4 \u53F0\u8BBE\u5907\u4E0A\u6FC0\u6D3B\uFF0C\u540D\u989D\u5DF2\u6EE1", false);
         return;
       }
-      try { localStorage.setItem(ACT_KEY, JSON.stringify({ code: code, at: Date.now() })); } catch (e) {}
       showMsg("\u6FC0\u6D3B\u6210\u529F\uFF0C\u6B63\u5728\u8FDB\u5165\u2026", true);
-      setTimeout(unlockBody, 350);
+      setTimeout(function () { startAuthorizedSession(code, progress); }, 250);
     }
     verifyActivationCode(code).then(function (valid) {
-      if (valid) done(null);
-      else done("\u6FC0\u6D3B\u7801\u65E0\u6548\uFF0C\u8BF7\u6838\u5BF9\u540E\u91CD\u8BD5");
-    }).catch(function () {
+      if (!valid) throw new Error("INVALID_CODE");
+      return loadRemoteProgress(code);
+    }).then(function (progress) {
+      done(null, progress);
+    }).catch(function (error) {
+      if (error && error.message === "INVALID_CODE") {
+        done("\u6FC0\u6D3B\u7801\u65E0\u6548\uFF0C\u8BF7\u6838\u5BF9\u540E\u91CD\u8BD5");
+        return;
+      }
       done("\u65E0\u6CD5\u8FDE\u63A5\u6FC0\u6D3B\u670D\u52A1\uFF0C\u8BF7\u68C0\u67E5\u7F51\u7EDC\u540E\u91CD\u8BD5");
     });
   }
@@ -3858,13 +3930,36 @@ init();
   function boot() {
     var g = $("gateView");
     if (!g) return;
-    if (activated()) return;   /* 已激活：不显示门禁 */
     lockBody();
     var btn = $("gateBtn");
     var input = $("gateCode");
     if (btn) btn.addEventListener("click", submit);
     if (input) input.addEventListener("keydown", function (e) {
       if (e.key === "Enter") submit();
+    });
+    var saved = readJson(ACT_KEY, null);
+    var savedCode = saved && String(saved.code || "").trim().toUpperCase();
+    if (!savedCode) {
+      if (input) input.focus();
+      return;
+    }
+    setBusy(true);
+    showMsg("\u6B63\u5728\u8BFB\u53D6\u5B66\u4E60\u8BB0\u5F55\u2026", true);
+    verifyActivationCode(savedCode).then(function (valid) {
+      if (!valid) throw new Error("INVALID_CODE");
+      return loadRemoteProgress(savedCode);
+    }).then(function (progress) {
+      setBusy(false);
+      startAuthorizedSession(savedCode, progress);
+    }).catch(function (error) {
+      setBusy(false);
+      if (error && error.message === "INVALID_CODE") {
+        try { localStorage.removeItem(ACT_KEY); } catch (e) {}
+        showMsg("\u539F\u6FC0\u6D3B\u7801\u5DF2\u5931\u6548\uFF0C\u8BF7\u91CD\u65B0\u8F93\u5165", false);
+      } else {
+        showMsg("\u65E0\u6CD5\u8BFB\u53D6\u5B66\u4E60\u8BB0\u5F55\uFF0C\u8BF7\u68C0\u67E5\u7F51\u7EDC\u540E\u91CD\u8BD5", false);
+      }
+      if (input) input.focus();
     });
   }
 
