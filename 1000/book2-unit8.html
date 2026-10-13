@@ -1143,19 +1143,13 @@
     }
 
     async function playOnlineWord(word) {
-      // 本地文件打开时，优先使用浏览器英文语音，避免外部/本地音频加载失败后只剩中文音频。
-      if ("speechSynthesis" in window) {
-        await speak(word, "en-US", 0.82);
-        return;
-      }
-
+      // 本地英文音频可用时优先播放；旧的外部词典地址已失效，统一改走可用的有道音频。
       const key = word.toLowerCase();
-      const audioUrl = verifiedAudioUrls[key] || await getOnlineAudioUrl(word);
-      if (audioUrl) {
-        await playAudioUrl(audioUrl, word, "en-US");
-        return;
-      }
-      await speak(word, "en-US", 0.82);
+      const verifiedUrl = verifiedAudioUrls[key] || "";
+      const audioUrl = verifiedUrl && !/^https?:/i.test(verifiedUrl)
+        ? verifiedUrl
+        : youdaoAudioBase + encodeURIComponent(key) + "&type=2";
+      await playAudioUrl(audioUrl, word, "en-US");
     }
 
     async function playChineseMeaning(item) {
@@ -1171,9 +1165,11 @@
       const item = words[index];
       if (!item) return;
       const key = item.word.toLowerCase();
-      preloadAudioUrl(verifiedAudioUrls[key]);
+      const verifiedUrl = verifiedAudioUrls[key] || "";
+      preloadAudioUrl(verifiedUrl && !/^https?:/i.test(verifiedUrl)
+        ? verifiedUrl
+        : youdaoAudioBase + encodeURIComponent(key) + "&type=2");
       preloadAudioUrl(chineseAudioUrls[key]);
-      if (!verifiedAudioUrls[key]) getOnlineAudioUrl(item.word);
     }
 
     function resetPracticeHighlight() {
