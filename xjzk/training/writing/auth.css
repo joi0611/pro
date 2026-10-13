@@ -1,0 +1,114 @@
+body.auth-locked > .topbar,
+body.auth-locked > main,
+body.auth-locked > #toast,
+body.auth-locked > #printArea {
+  visibility: hidden;
+}
+
+.writing-login-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background:
+    radial-gradient(circle at 15% 12%, rgba(222, 208, 247, .65), transparent 30%),
+    linear-gradient(160deg, #fff 0%, #f7f3ff 100%);
+}
+
+.writing-login-card {
+  width: min(430px, 100%);
+  padding: 30px;
+  border: 1px solid #e5dcf2;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 22px 60px rgba(83, 58, 112, .17);
+}
+
+.writing-login-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.writing-login-mark {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  color: #fff;
+  background: #7655a6;
+  font-size: 21px;
+  font-weight: 900;
+  box-shadow: 0 9px 22px rgba(83, 58, 112, .2);
+}
+
+.writing-login-brand strong,
+.writing-login-brand span {
+  display: block;
+}
+
+.writing-login-brand strong { font-size: 16px; }
+.writing-login-brand span { margin-top: 3px; color: #746b88; font-size: 12px; }
+.writing-login-card h1 { margin: 0; font-size: 28px; line-height: 1.25; }
+.writing-login-intro { margin: 10px 0 22px; color: #746b88; font-size: 14px; line-height: 1.7; }
+.writing-login-card label { display: block; margin-bottom: 8px; font-weight: 800; }
+
+.writing-login-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 18px; padding: 4px; border-radius: 11px; background: #f2eef8; }
+.writing-login-tabs button { min-height: 38px; border: 0; border-radius: 8px; color: #746b88; background: transparent; font-weight: 800; }
+.writing-login-tabs button.active { color: #65458f; background: #fff; box-shadow: 0 2px 8px rgba(83, 58, 112, .12); }
+.writing-login-help { margin: 7px 0 0; color: #746b88; font-size: 12px; }
+
+.writing-login-card input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 13px;
+  border: 1px solid #ddd5ed;
+  border-radius: 10px;
+  color: #21183b;
+  background: #fbfaff;
+  outline: none;
+}
+
+.writing-login-card input:focus {
+  border-color: #7655a6;
+  box-shadow: 0 0 0 3px rgba(118, 85, 166, .13);
+}
+
+.writing-login-submit {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 14px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: #7655a6;
+  font-weight: 800;
+}
+
+.writing-login-submit:hover { background: #65458f; }
+.writing-login-submit:disabled { opacity: .6; cursor: wait; }
+.writing-login-message { min-height: 24px; margin: 10px 0 0; color: #b42318; font-size: 13px; }
+.writing-login-home { display: block; margin-top: 18px; color: #65458f; text-align: center; text-decoration: none; font-size: 13px; font-weight: 700; }
+.writing-login-home:hover { text-decoration: underline; }
+
+.writing-logout {
+  padding: 7px 11px;
+  border: 1px solid #ddd5ed;
+  border-radius: 10px;
+  color: #65458f;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.writing-logout:hover { border-color: #7655a6; background: #f7f3ff; }
+
+@media (max-width: 600px) {
+  .writing-login-card { padding: 24px 20px; }
+  .writing-login-card h1 { font-size: 24px; }
+  .writing-logout { flex: 0 0 auto; }
+}
