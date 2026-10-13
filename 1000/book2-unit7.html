@@ -632,7 +632,7 @@
       <header class="topbar" id="learnHeader">
         <div>
           <h2>[2]UNIT 7 单词学习</h2>
-          <p>点喇叭：本地英文 3 遍、中文 1 遍。</p>
+          <p>点喇叭：英文语音 3 遍、中文 1 遍。</p>
         </div>
         <div class="actions">
           <button class="icon-btn" id="prevBtn" title="上一个" aria-label="上一个">‹</button>
@@ -1137,13 +1137,19 @@
     }
 
     async function playOnlineWord(word) {
-      const key = word.toLowerCase();
-      const audioUrl = verifiedAudioUrls[key] || await getOnlineAudioUrl(word);
-      if (!audioUrl) {
+      // 本地文件打开时，优先使用浏览器英文语音，避免外部/本地音频加载失败后只剩中文音频。
+      if ("speechSynthesis" in window) {
         await speak(word, "en-US", 0.82);
         return;
       }
-      await playAudioUrl(audioUrl, word, "en-US");
+
+      const key = word.toLowerCase();
+      const audioUrl = verifiedAudioUrls[key] || await getOnlineAudioUrl(word);
+      if (audioUrl) {
+        await playAudioUrl(audioUrl, word, "en-US");
+        return;
+      }
+      await speak(word, "en-US", 0.82);
     }
 
     async function playChineseMeaning(item) {
