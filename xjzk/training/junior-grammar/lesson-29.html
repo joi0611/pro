@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>应用2课：情景交际——真实场景里怎么说 — 初中英语语法重构</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f2f5; color: #2c3e50; min-height: 100vh; }
+
+/* ===== 顶部导航条 ===== */
+.lesson-topbar { background: #2c3e50; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.topbar-inner { max-width: 900px; margin: 0 auto; padding: 11px 24px; display: flex; align-items: center; gap: 14px; }
+.topbar-back { color: #f1c40f; text-decoration: none; font-size: 14px; font-weight: bold; display: flex; align-items: center; gap: 5px; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
+.topbar-back:hover { opacity: 0.75; }
+.topbar-sep { color: #4a6278; font-size: 16px; flex-shrink: 0; }
+.topbar-lesson-info { flex: 1; min-width: 0; }
+.topbar-lesson-info .tl-tag { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 2px; }
+.topbar-lesson-info .tl-title { font-size: 15px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-print { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.85); cursor: pointer; font-family: inherit; flex-shrink: 0; transition: background 0.15s; }
+.topbar-print:hover { background: rgba(255,255,255,0.18); }
+
+/* ===== 主内容 ===== */
+.lesson-main { max-width: 900px; margin: 0 auto; padding: 36px 24px 20px; }
+.book-container { background: #fff; padding: 50px 60px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+
+/* ===== 底部导航 ===== */
+.lesson-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 28px 0 20px; flex-wrap: wrap; }
+.nav-btn { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #2c3e50; font-size: 14px; transition: all 0.15s; flex: 1; min-width: 160px; max-width: 280px; }
+.nav-btn:hover { border-color: #2980b9; box-shadow: 0 4px 12px rgba(41,128,185,0.15); transform: translateY(-1px); }
+.nav-btn.prev { justify-content: flex-start; }
+.nav-btn.next { justify-content: flex-end; margin-left: auto; }
+.nav-btn .nb-arrow { font-size: 18px; color: #aaa; flex-shrink: 0; }
+.nav-btn:hover .nb-arrow { color: #2980b9; }
+.nav-btn .nb-text { min-width: 0; }
+.nav-btn .nb-label { font-size: 11px; color: #aaa; display: block; }
+.nav-btn .nb-title { font-size: 14px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-btn-home { display: flex; align-items: center; gap: 6px; background: #2c3e50; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #f1c40f; font-size: 14px; font-weight: bold; flex-shrink: 0; transition: opacity 0.15s; }
+.nav-btn-home:hover { opacity: 0.85; }
+.lesson-footer { text-align: center; padding: 20px 24px 36px; font-size: 12px; color: #aaa; line-height: 1.8; }
+
+/* ===== 封面 ===== */
+.chapter-cover { background: linear-gradient(135deg, #1a252f 0%, #2c3e50 55%, #8e44ad 100%); border-radius: 15px; padding: 40px 40px 35px; margin-bottom: 40px; color: #fff; position: relative; overflow: hidden; }
+.chapter-cover::before { content: "talk"; position: absolute; right: 24px; top: 18px; font-size: 60px; font-weight: 900; color: rgba(255,255,255,0.06); line-height: 1; letter-spacing: -5px; }
+.lesson-tag { background: #f1c40f; color: #2c3e50; font-weight: 900; font-size: 13px; padding: 5px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em; }
+.chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.chapter-cover h1 span { color: #f1c40f; }
+.chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.meta-row { display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px; }
+
+/* ===== 回顾 / 目标 ===== */
+.review-bar { background: #f0f7ff; border: 1.5px solid #b3d4ff; border-left: 5px solid #2980b9; border-radius: 8px; padding: 14px 18px; margin-bottom: 30px; font-size: 14px; color: #1a5276; line-height: 1.75; }
+.review-bar strong { color: #1a252f; }
+.goal-box { background: #fffde7; border: 2px solid #ffe082; border-radius: 12px; padding: 20px 25px; margin-bottom: 35px; display: flex; gap: 15px; align-items: flex-start; }
+.goal-icon { font-size: 28px; flex-shrink: 0; line-height: 1.2; }
+.goal-box h3 { font-size: 16px; color: #e65100; margin-bottom: 6px; font-weight: 900; }
+.goal-box p  { font-size: 15px; color: #5d4037; line-height: 1.7; }
+
+/* ===== 通用卡片 ===== */
+.module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+.badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+.card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }   .badge-blue  { background: #2980b9; color: #fff; }
+.card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }   .badge-green { background: #27ae60; color: #fff; }
+.card-red    { background: #fff5f5; border: 2px solid #ffcccc; }   .badge-red   { background: #e74c3c; color: #fff; }
+.card-yellow { background: #fffde7; border: 2px solid #ffe082; }   .badge-yellow{ background: #f1c40f; color: #333; }
+.card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }   .badge-purple{ background: #8e44ad; color: #fff; }
+.card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }   .badge-orange{ background: #e67e22; color: #fff; }
+.card-teal   { background: #f0fffc; border: 2px solid #b2dfdb; }   .badge-teal  { background: #16a085; color: #fff; }
+
+/* ===== 高亮 ===== */
+.hl-red { color: #e74c3c; font-weight: bold; } .hl-blue { color: #2980b9; font-weight: bold; } .hl-green { color: #27ae60; font-weight: bold; } .hl-orange { color: #e67e22; font-weight: bold; } .hl-purple { color: #8e44ad; font-weight: bold; }
+.mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+.mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+.mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+.mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+.mark-purple { background: #e8daef; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #6c3483; }
+
+/* ===== 标签 ===== */
+.tag-hot  { background: #ff4757; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+.tag-easy { background: #2ed573; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+
+/* ===== 脑回路 ===== */
+.brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+.brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+/* ===== 对错 ===== */
+.wrong-text { color: #c0392b; font-size: 17px; font-weight: bold; text-decoration: line-through; }
+.right-text { color: #27ae60; font-size: 17px; font-weight: bold; }
+
+/* ===== 句子解剖 ===== */
+.sentence-dissect { display: flex; align-items: flex-end; gap: 6px; flex-wrap: wrap; margin: 14px 0; background: #f8f9fa; border-radius: 10px; padding: 14px 16px 18px; }
+.word-block { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.word-text { padding: 6px 12px; border-radius: 8px; font-size: 16px; font-weight: 900; white-space: nowrap; }
+.word-label { font-size: 11px; font-weight: 500; color: #777; }
+.wt-s  { background: #fff3e0; color: #e65100;  border: 2px solid #ffb74d; }
+.wt-v  { background: #e8f5e9; color: #1b5e20;  border: 2px solid #a5d6a7; }
+.wt-o  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-t  { background: #e3f2fd; color: #1565c0;  border: 2px solid #90caf9; }
+.wt-wl { background: #d5f5e3; color: #1e8449;  border: 2px solid #52be80; }
+.wt-bg { background: #f3e5f5; color: #6a1b9a;  border: 2px solid #ce93d8; }
+.wt-x  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+
+/* ===== 结构公式块 ===== */
+.formula-block { background: #fff; border: 2px solid #a5d6a7; border-radius: 10px; overflow: hidden; margin: 16px 0; }
+.formula-row { display: flex; align-items: stretch; border-bottom: 1px solid #e8f5e9; }
+.formula-row:last-child { border-bottom: none; }
+.formula-label { background: #27ae60; color: #fff; font-weight: 900; font-size: 13px; padding: 12px 14px; min-width: 72px; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; }
+.formula-content { padding: 12px 18px; flex: 1; font-size: 15px; line-height: 1.75; color: #333; }
+.formula-content strong { color: #1b5e20; }
+.formula-eg { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* ===== 辨析表 ===== */
+.magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+.magic-table th { background: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+.magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+.magic-table tr:last-child td { border-bottom: none; }
+.magic-table tr:hover td { background: #f8f9fa; }
+
+/* ===== 警告 / 提示 ===== */
+.warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+.warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 15px; margin-bottom: 8px; }
+.warn-box p { font-size: 14px; color: #444; line-height: 1.75; margin: 5px 0; }
+.tip-box { background: #f4fbf4; border: 2px solid #c3e6c3; border-left: 5px solid #27ae60; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #1e8449; line-height: 1.75; }
+
+/* ===== 练习题 ===== */
+.quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+.quiz-q { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; line-height: 1.65; }
+.quiz-opts { font-size: 15px; color: #555; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+.reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+.answer-box { display: none; margin-top: 14px; }
+
+/* ===== 分割线 ===== */
+.section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+.section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+/* ===== 小抄 ===== */
+.cheatsheet { margin: 50px 0 30px; background: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+.cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+.cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+.cs-block.red    { border-left-color: #e74c3c; }
+.cs-block.green  { border-left-color: #2ecc71; }
+.cs-block.yellow { border-left-color: #f1c40f; }
+.cs-block.purple { border-left-color: #9b59b6; }
+.cs-block strong { font-size: 16px; display: block; margin-bottom: 10px; }
+.cs-block p, .cs-block li { font-size: 14px; line-height: 1.85; color: #ecf0f1; margin: 4px 0; }
+.cs-block ul { padding-left: 18px; }
+.cs-block table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.cs-block table th { background: rgba(255,255,255,0.14); color: #f1c40f; padding: 7px 12px; text-align: left; }
+.cs-block table td { padding: 7px 12px; border-bottom: 1px solid rgba(255,255,255,0.07); color: #ecf0f1; vertical-align: top; line-height: 1.6; }
+.cs-block table tr:last-child td { border-bottom: none; }
+
+/* ===== 转化钩子 ===== */
+.cta-box { margin-top: 40px; padding: 32px; background: #fff3e0; border: 2px dashed #e67e22; border-radius: 14px; text-align: center; box-shadow: 0 5px 15px rgba(230,126,34,0.12); }
+.cta-box h3 { color: #d35400; font-size: 22px; margin-bottom: 14px; font-weight: 900; }
+.cta-box p  { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 20px; text-align: left; }
+.cta-btn { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; display: inline-block; padding: 14px 35px; border-radius: 30px; font-weight: bold; font-size: 17px; text-decoration: none; box-shadow: 0 4px 12px rgba(230,126,34,0.4); transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); }
+
+/* ===== 打印 ===== */
+@media print {
+    .lesson-topbar, .lesson-nav, .lesson-footer { display: none !important; }
+    body { background: #fff; }
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container { padding: 20px 24px; border-radius: 0; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .module-card, .quiz-block, .warn-box, .cheatsheet, .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+    .cheatsheet { page-break-before: always; break-before: page; }
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+}
+
+/* ============================================================
+   新版救命小抄 V2：浅色、紧凑、打印友好（不改全局字体）
+   ============================================================ */
+.cheatsheet-v2 {
+  margin: 42px 0 28px;
+  background: #fffdf5;
+  border: 2px solid #f1c40f;
+  border-radius: 14px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  color: #2c3e50;
+}
+.cheatsheet-v2-header {
+  background: linear-gradient(135deg, #fff3c4, #fff8df);
+  border-bottom: 2px solid #f1c40f;
+  padding: 16px 22px 14px;
+}
+.cheatsheet-v2-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+.cheatsheet-v2-subtitle {
+  font-size: 13px;
+  color: #7d6608;
+  line-height: 1.6;
+}
+.cheatsheet-v2-body { padding: 18px 20px 20px; }
+.cheat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cheat-card {
+  background: #fff;
+  border: 1.5px solid #e8e8e8;
+  border-left: 5px solid #3498db;
+  border-radius: 10px;
+  padding: 13px 14px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.cheat-card.core { border-left-color: #e74c3c; }
+.cheat-card.method { border-left-color: #2980b9; }
+.cheat-card.trap { border-left-color: #e67e22; }
+.cheat-card.example { border-left-color: #27ae60; }
+.cheat-card.memory { border-left-color: #8e44ad; }
+.cheat-card.exam { border-left-color: #16a085; }
+.cheat-card h4 {
+  font-size: 15px;
+  font-weight: 900;
+  color: #1a252f;
+  margin-bottom: 7px;
+  line-height: 1.45;
+}
+.cheat-card p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.65;
+  margin: 5px 0;
+}
+.cheat-card ul { padding-left: 18px; margin: 6px 0 0; }
+.cheat-card li {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.65;
+  margin: 3px 0;
+}
+.cheat-rule {
+  display: inline-block;
+  background: #fff3c4;
+  color: #7d6608;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+.cheat-good { color: #1e8449; font-weight: 900; }
+.cheat-bad { color: #c0392b; font-weight: 900; text-decoration: line-through; }
+.cheat-note {
+  background: #f8f9fa;
+  border: 1px dashed #d0d0d0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-top: 8px;
+  font-size: 13px !important;
+  color: #666 !important;
+}
+.cheatsheet-v2-footer {
+  margin-top: 14px;
+  background: #f8f9fa;
+  border: 1.5px dashed #d0d0d0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+}
+.cheatsheet-v2-footer strong { color:#c0392b; }
+@media (max-width: 680px) {
+  .cheatsheet-v2 { margin:30px 0 24px !important; border-radius:12px !important; }
+  .cheatsheet-v2-header { padding:14px 14px 12px !important; }
+  .cheatsheet-v2-title { font-size:18px !important; }
+  .cheatsheet-v2-body { padding:14px 12px 16px !important; }
+  .cheat-grid { grid-template-columns:1fr !important; gap:10px !important; }
+  .cheat-card { padding:12px 12px !important; }
+}
+@media print {
+  .cheatsheet-v2 {
+    background:#fff !important;
+    border:1.5px solid #333 !important;
+    box-shadow:none !important;
+    border-radius:8px !important;
+    margin:18px 0 !important;
+    page-break-before:auto !important;
+    break-before:auto !important;
+    page-break-inside:auto !important;
+    break-inside:auto !important;
+  }
+  .cheatsheet-v2-header {
+    background:#fff !important;
+    border-bottom:1.5px solid #333 !important;
+    padding:10px 12px !important;
+  }
+  .cheatsheet-v2-title { color:#000 !important; font-size:17px !important; }
+  .cheatsheet-v2-subtitle { color:#333 !important; font-size:12px !important; }
+  .cheatsheet-v2-body { padding:12px !important; }
+  .cheat-grid { grid-template-columns:1fr 1fr !important; gap:8px !important; }
+  .cheat-card {
+    background:#fff !important;
+    border:1px solid #555 !important;
+    border-left:4px solid #000 !important;
+    box-shadow:none !important;
+    padding:8px 10px !important;
+  }
+  .cheat-card h4 { color:#000 !important; font-size:13px !important; margin-bottom:4px !important; }
+  .cheat-card p, .cheat-card li { color:#111 !important; font-size:12px !important; line-height:1.45 !important; margin:2px 0 !important; }
+  .cheat-rule { background:#fff !important; border:1px solid #999 !important; color:#000 !important; padding:1px 4px !important; }
+  .cheat-note { background:#fff !important; border:1px dashed #777 !important; color:#222 !important; font-size:11px !important; padding:5px 7px !important; }
+  .cheatsheet-v2-footer { background:#fff !important; border:1px dashed #777 !important; color:#000 !important; padding:7px 9px !important; font-size:12px !important; line-height:1.45 !important; }
+}
+
+
+@media (max-width: 640px) {
+    .module-card table { display: block; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+    .zone-header { flex-wrap: wrap; }
+    .zone-header hr { display: none; }
+    .zone-desc { white-space: normal !important; }
+    .book-container p, .book-container div { word-break: break-word; overflow-wrap: break-word; }
+}
+
+/* ===== 内容丰富优化：新增模块，不改变原页面主体风格 ===== */
+.enrich-route {
+    margin: 0 0 36px;
+    padding: 22px 24px;
+    border: 2px solid #b3d4ff;
+    border-radius: 14px;
+    background: linear-gradient(135deg,#eef7ff,#fbfdff);
+}
+.enrich-route h3 {
+    margin-bottom: 14px;
+    color: #1a5276;
+    font-size: 17px;
+    font-weight: 900;
+}
+.enrich-route-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+.enrich-route-step {
+    padding: 13px 11px;
+    border: 1.5px solid #d6eaf8;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+}
+.enrich-route-step b {
+    display: block;
+    margin-bottom: 5px;
+    color: #2980b9;
+    font-size: 13px;
+}
+.enrich-route-step span {
+    display: block;
+    color: #555;
+    font-size: 13px;
+    line-height: 1.55;
+}
+.enrich-card {
+    margin: 35px 0;
+    padding: 28px 28px 24px;
+    border: 2px solid #b3d4ff;
+    border-radius: 12px;
+    background: #f7fbff;
+    font-size: 15px;
+    line-height: 1.8;
+}
+.enrich-card-title {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 8px 17px;
+    border-radius: 8px;
+    background: #2980b9;
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+}
+.enrich-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 15px 0;
+}
+.enrich-item {
+    padding: 14px 16px;
+    border: 1.5px solid #dce6ef;
+    border-radius: 10px;
+    background: #fff;
+}
+.enrich-item h4 {
+    margin-bottom: 7px;
+    color: #1a5276;
+    font-size: 15px;
+}
+.enrich-item p {
+    margin: 4px 0;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.72;
+}
+.enrich-table-wrap {
+    overflow-x: auto;
+    margin: 14px 0;
+    border-radius: 10px;
+}
+.enrich-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 14px;
+}
+.enrich-table th {
+    padding: 9px 12px;
+    background: #2c3e50;
+    color: #f1c40f;
+    text-align: left;
+}
+.enrich-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    line-height: 1.65;
+    vertical-align: top;
+}
+.enrich-table tr:last-child td { border-bottom: 0; }
+.enrich-correction {
+    margin: 14px 0;
+    padding: 14px 17px;
+    border: 1.5px solid #f5c56b;
+    border-left: 5px solid #e67e22;
+    border-radius: 9px;
+    background: #fff8e8;
+    color: #5d4037;
+    font-size: 14px;
+    line-height: 1.75;
+}
+.enrich-correction strong { color: #b45309; }
+.enrich-flow {
+    margin: 15px 0;
+    overflow: hidden;
+    border: 1.5px solid #b3d4ff;
+    border-radius: 10px;
+    background: #fff;
+}
+.enrich-flow-row {
+    display: flex;
+    border-bottom: 1px solid #d6eaf8;
+}
+.enrich-flow-row:last-child { border-bottom: 0; }
+.enrich-flow-num {
+    display: flex;
+    width: 48px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    background: #2980b9;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+}
+.enrich-flow-body {
+    padding: 12px 15px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.72;
+}
+
+@media (max-width:680px) {
+    .enrich-route-grid, .enrich-grid {
+        grid-template-columns:1fr !important;
+    }
+    .enrich-route, .enrich-card {
+        padding:17px 15px !important;
+    }
+    .enrich-flow-num { width:42px; }
+    .book-container [style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns:1fr !important;
+    }
+    .book-container div[style*="overflow:hidden"] {
+        overflow-x:auto !important;
+    }
+}
+@media print {
+    .answer-box { display:block !important; }
+    .reveal-btn { display:none !important; }
+    .enrich-route, .enrich-card {
+        break-inside:auto !important;
+        page-break-inside:auto !important;
+        box-shadow:none !important;
+    }
+    .enrich-item, .enrich-flow-row {
+        break-inside:avoid;
+        page-break-inside:avoid;
+    }
+}
+
+</style>
+<link rel="stylesheet" href="/assets/grammar-mobile-print-fix.css?v=20260705">
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<div class="lesson-topbar">
+    <div class="topbar-inner">
+        <a class="topbar-back" href="/">← 学习中心</a>
+        <a class="topbar-back" href="index.html">← 目录</a>
+        <div class="topbar-sep">/</div>
+        <div class="topbar-lesson-info">
+            <div class="tl-tag">第四战区 · 应用2课 · 冲刺提分</div>
+            <div class="tl-title">情景交际——真实场景里怎么说</div>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-main">
+<div class="book-container">
+
+    <div class="chapter-cover">
+        <div class="lesson-tag">第四战区 · 应用2课 · 冲刺提分</div>
+        <h1>真实场景里<br><span>该怎么说</span></h1>
+        <p class="subtitle">别人说"谢谢"，你怎么回？别人道歉，你怎么答？<br>固定表达要记，但真正得分还要看场景、人物关系、语气和上下句逻辑</p>
+        <div class="meta-row">
+            <div class="meta-chip">⏱ 预计学习 45 分钟</div>
+            <div class="meta-chip">🎯 中考涉及约 1-3 分</div>
+            <div class="meta-chip">🔥 单选+听力固定送分题</div>
+        </div>
+    </div>
+
+    <div class="review-bar">
+        📌 <strong>为什么要专门学"情景交际"？</strong><br>
+        前面的语法教你"把句子造对"，但生活里的对话有很多<strong>固定套路</strong>——别人说 Thank you，你得回 You're welcome，而不是逐字翻译"你是受欢迎的"。<br><br>
+        听力、补全对话和选择题中经常出现这种<strong>“上句—下句”</strong>的交际判断。它不仅考固定表达，也考说话目的、人物关系、礼貌程度、情绪和上下文逻辑。只背中文翻译容易选错；这一讲会先掌握高频场景，再建立一套能迁移到陌生对话中的判断方法。
+    </div>
+
+    <div class="goal-box">
+        <div class="goal-icon">🎯</div>
+        <div>
+            <h3>学完这讲，你能做到：</h3>
+            <p>① 掌握8大高频场景的固定应答：问候、感谢、道歉、建议、请求…<br>
+            ② 记住那些"不能直译"的地道回应（Never mind / My pleasure）<br>
+            ③ 分清相似应答的细微差别（That's all right vs That's right）<br>
+            ④ 在听力、选择和补全对话中，根据语境排除“不合身份、不合语气、不合逻辑”的选项</p>
+        </div>
+    </div>
+
+    <!-- ===== 新增：情景交际判断路线 ===== -->
+    <div class="enrich-route">
+        <h3>🧭 交际题不要先看中文翻译：按这4步判断</h3>
+        <div class="enrich-route-grid">
+            <div class="enrich-route-step"><b>第1步 · 定场景</b><span>电话、购物、问路、看病、邀请，还是普通朋友对话？</span></div>
+            <div class="enrich-route-step"><b>第2步 · 判目的</b><span>对方是在感谢、道歉、请求、建议、祝福、赞美，还是传递好坏消息？</span></div>
+            <div class="enrich-route-step"><b>第3步 · 看关系</b><span>陌生人、老师、朋友还是服务人员？表达需要多正式、多委婉？</span></div>
+            <div class="enrich-route-step"><b>第4步 · 查逻辑</b><span>回应是否答非所问、情绪相反、身份错位，或只是中文直译？</span></div>
+        </div>
+    </div>
+
+
+    <div class="module-card card-green">
+        <div class="badge badge-green">👋 模块一：问候 & 介绍——对话的开场白</div>
+        <div style="background:#fff;border:2px solid #a5d6a7;border-radius:10px;overflow:hidden;margin:16px 0;">
+            <table style="width:100%;border-collapse:collapse;font-size:14.5px;">
+                <tr style="background:#e8f5e9;"><th style="padding:9px 12px;text-align:left;color:#2e7d32;">别人说（问）</th><th style="padding:9px 12px;text-align:left;color:#2e7d32;">你答（固定回应）</th></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #e8f5e9;">How are you?</td><td style="padding:9px 12px;border-top:1px solid #e8f5e9;font-weight:900;">Fine, thank you. / I'm good, thanks. / I'm OK.</td></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #e8f5e9;">How do you do?</td><td style="padding:9px 12px;border-top:1px solid #e8f5e9;font-weight:900;">How do you do?（传统、正式的初次见面问候，现代口语中较少）</td></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #e8f5e9;">Nice to meet you.</td><td style="padding:9px 12px;border-top:1px solid #e8f5e9;font-weight:900;">Nice to meet you, too.</td></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #e8f5e9;">How is it going?</td><td style="padding:9px 12px;border-top:1px solid #e8f5e9;font-weight:900;">Pretty good. / Not bad. / Great, thanks.</td></tr>
+            </table>
+        </div>
+        <div class="warn-box">
+            <p><strong>⚠️ 经典陷阱：How do you do? ≠ How are you?</strong></p>
+            <p>How do you do? 是<strong>传统、正式</strong>的初次见面问候，教材和考试中常用原句回应；现代日常口语更常说 Nice to meet you。How are you? 才是在询问近况，可回答 Fine / Good / Not bad 等。</p>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块二 · 本讲最重要</span><hr></div>
+    <div class="module-card card-red">
+        <div class="badge badge-red">🙏 模块二：感谢 & 道歉——最高频的两组应答</div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin-bottom:8px;">A. 别人感谢你（Thank you / Thanks a lot），你回：</p>
+        <div style="background:#fff5f5;border:2px solid #ffcccc;border-radius:10px;padding:14px 18px;margin:10px 0;font-size:15px;line-height:2;">
+            <strong>You're welcome.</strong>（不客气·最常用）<br>
+            <strong>You're welcome.</strong>（不客气·最稳妥）<br>
+            <strong>My pleasure. / It's my pleasure.</strong>（我的荣幸·较正式）<br>
+            <strong>Not at all. / Don't mention it.</strong>（不用谢）<br>
+            <strong>That's OK. / That's all right.</strong>（部分语境可用，但回应感谢时不如 You're welcome 直接）
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:18px 0 8px;">B. 别人道歉（I'm sorry / Sorry to trouble you），你回：</p>
+        <div style="background:#fff5f5;border:2px solid #ffcccc;border-radius:10px;padding:14px 18px;margin:10px 0;font-size:15px;line-height:2;">
+            <strong>That's all right. / That's OK.</strong>（没关系）<br>
+            <strong>Never mind.</strong>（别放在心上·常用）<br>
+            <strong>It doesn't matter.</strong>（没关系）<br>
+            <strong>No problem.</strong>（没事儿）
+        </div>
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路（感谢和道歉，回应有重叠）：</strong></p>
+            <p>回应感谢时首选 <strong>You're welcome / My pleasure</strong>；回应道歉时常用 <strong>That's all right / Never mind / It doesn't matter</strong>。有些表达在真实口语中使用范围更宽，但考试要优先选择与说话目的最直接匹配的答案。</p>
+        </div>
+        <div class="warn-box">
+            <p><strong>⚠️ 最爱考的一组区分：</strong></p>
+            <p>— Thank you. — <strong>You're welcome.</strong>（回谢谢 ✓）不能用 Never mind。</p>
+            <p>— I'm sorry. — <strong>Never mind. / That's all right.</strong>（回应道歉 ✓）不能用 You're welcome。</p>
+        </div>
+    </div>
+
+    <div class="section-divider"><hr><span>模块三</span><hr></div>
+    <div class="module-card card-teal">
+        <div class="badge badge-teal">💡 模块三：建议 & 请求——提议和求助的套路</div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin-bottom:8px;">A. 提建议的常用句型（呼应第16讲情态动词）</p>
+        <div style="background:#f0fffc;border:1.5px solid #b2dfdb;border-radius:10px;padding:14px 18px;margin:10px 0;font-size:14.5px;line-height:2;">
+            <strong>Why not</strong> + 动词原形?（为什么不…呢）—— Why not go by bus?<br>
+            <strong>Why don't you</strong> + 动词原形?（你为什么不…）<br>
+            <strong>What/How about</strong> + 名词/doing?（…怎么样）—— How about going swimming?<br>
+            <strong>Shall we</strong> + 动词原形?（我们…好吗）<br>
+            <strong>You'd better</strong>（=You had better）+ 动词原形（你最好…）
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:16px 0 8px;">回应建议：</p>
+        <div style="background:#f8f9fa;border-radius:10px;padding:12px 16px;margin:10px 0;font-size:14.5px;line-height:1.9;">
+            接受：Good idea! / That sounds great! / Sure. / OK, let's go.<br>
+            拒绝：Sorry, I'm afraid I can't. / I'd love to, but…
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:18px 0 8px;">B. 请求许可 / 请求帮助</p>
+        <div style="background:#f0fffc;border:1.5px solid #b2dfdb;border-radius:10px;padding:14px 18px;margin:10px 0;font-size:14.5px;line-height:2;">
+            请求许可：<strong>May I…? / Could I…?</strong>（我可以…吗）<br>
+            <span style="color:#888;">回应：Sure. / Of course. / Certainly.（允许）| Sorry, I'm afraid not.（礼貌拒绝）</span><br>
+            请求帮助：<strong>Could you…? / Would you please…?</strong>（你能…吗）<br>
+            <span style="color:#888;">回应：Sure. / Of course. / No problem. / Certainly.</span>
+        </div>
+        <div class="tip-box">
+            💡 一般来说，Could / Would 比 Can 更委婉，但礼貌程度还受语气、称呼和场合影响（呼应衔接7 would 的委婉用法）。回应"能帮忙吗"这类请求时，同意常说 <strong>No problem</strong> 或 <strong>Sure</strong>，别答 You're welcome（那是回谢谢的）。
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块四</span><hr></div>
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🛒 模块四：购物 · 看病 · 问路——四大生活实景</div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin-bottom:8px;">🛒 购物场景</p>
+        <div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 18px;margin:10px 0;font-size:14.5px;line-height:1.95;">
+            店员：<strong>Can I help you? / What can I do for you?</strong>（您要买什么）<br>
+            顾客：I'd like… / I'm looking for…（我想要…）<br>
+            问价：<strong>How much is it?</strong>（多少钱）—— 呼应衔接6 how much<br>
+            成交：I'll take it.（我买了）
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:16px 0 8px;">🏥 看病场景</p>
+        <div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 18px;margin:10px 0;font-size:14.5px;line-height:1.95;">
+            医生：<strong>What's wrong? / What's the matter? / How can I help you?</strong>（哪里不舒服）<br>
+            病人：I have a cold / a headache / a fever.（我感冒/头疼/发烧）<br>
+            医生叮嘱：<strong>You'd better</strong> stay in bed and drink more water.
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:16px 0 8px;">🧭 问路场景</p>
+        <div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 18px;margin:10px 0;font-size:14.5px;line-height:1.95;">
+            问：<strong>Excuse me, how can I get to…? / Where is…?</strong>（去…怎么走）<br>
+            答：Go straight. / Turn left/right. / It's on your left.（一直走/左拐/在你左边）<br>
+            距离：<strong>How far is it?</strong>（多远）—— 呼应衔接6 how far
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:16px 0 8px;">📞 打电话场景</p>
+        <div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 18px;margin:10px 0;font-size:14.5px;line-height:1.95;">
+            <strong>Who's that (speaking)? / May I ask who's calling?</strong>（请问您是哪位）<br>
+            <strong>This is Tom (speaking). / Tom speaking.</strong>（我是Tom）<br>
+            <strong>Hold on, please. / Just a moment.</strong>（请稍等）
+        </div>
+        <div class="warn-box">
+            <p><strong>⚠️ 打电话的"专用说法"最爱考：</strong></p>
+            <p>电话开场询问来电者常说 <strong>Who's that (speaking)? / May I ask who's calling?</strong>；自报身份常说 <strong>This is… speaking</strong>。Who are you? 语法没有错，但电话开场中通常显得直接、不够礼貌。</p>
+        </div>
+    </div>
+
+    <div class="section-divider"><hr><span>模块五</span><hr></div>
+    <div class="module-card card-orange">
+        <div class="badge badge-orange">😊 模块五：祝福 · 邀请 · 安慰——情感类应答</div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin-bottom:8px;">A. 祝福与回应</p>
+        <div style="background:#fff8f0;border:1.5px solid #ffd8a8;border-radius:10px;padding:14px 18px;margin:10px 0;font-size:14.5px;line-height:2;">
+            Happy birthday! → <strong>Thank you!</strong><br>
+            Have a good trip! → <strong>Thank you.</strong>（只有对方也要旅行时才适合说 You too）<br>
+            Good luck! → <strong>Thank you.</strong><br>
+            Congratulations!（祝贺你）→ <strong>Thank you.</strong>
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:16px 0 8px;">B. 邀请与回应</p>
+        <div style="background:#fff8f0;border:1.5px solid #ffd8a8;border-radius:10px;padding:14px 18px;margin:10px 0;font-size:14.5px;line-height:2;">
+            邀请：<strong>Would you like to…? / Will you come to…?</strong><br>
+            接受：<strong>Yes, I'd love to. / Sure, I'd be glad to.</strong><br>
+            婉拒：<strong>I'd love to, but I'm afraid I can't.</strong>（我很想去，但恐怕不行）
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:16px 0 8px;">C. 安慰与鼓励</p>
+        <div style="background:#fff8f0;border:1.5px solid #ffd8a8;border-radius:10px;padding:14px 18px;margin:10px 0;font-size:14.5px;line-height:2;">
+            <strong>Don't worry.</strong>（别担心）<br>
+            <strong>Take it easy.</strong>（放轻松）<br>
+            <strong>Cheer up!</strong>（振作起来）<br>
+            <strong>I'm sorry to hear that.</strong>（听到坏消息时表示同情）<br>
+            <strong>Everything will be OK.</strong>（一切都会好起来）
+        </div>
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>收到直接的赞美、祝贺或针对自己的祝福时，<strong>Thank you</strong> 通常最稳妥；若祝福也适用于对方，如 Happy New Year，则可以说 The same to you / You too。邀请要"想去但去不了"时，先说 I'd love to（表达意愿），再用 but 转折——这是最得体的婉拒句式。</p>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>新增补充 · 从背答案到会判断</span><hr></div>
+
+    <div class="enrich-card">
+        <div class="enrich-card-title">🎯 交际题真正考什么：一句话背后有“说话动作”</div>
+        <div class="enrich-table-wrap">
+            <table class="enrich-table">
+                <tr><th>上句表面内容</th><th>真正的说话目的</th><th>下句应该完成什么任务</th></tr>
+                <tr><td>Thank you for...</td><td>感谢</td><td>接受感谢：You're welcome / My pleasure.</td></tr>
+                <tr><td>I'm sorry...</td><td>道歉</td><td>接受道歉或减轻对方负担：That's all right.</td></tr>
+                <tr><td>Would you like to...?</td><td>邀请</td><td>明确接受或礼貌拒绝，并给出合理语气</td></tr>
+                <tr><td>Could you...?</td><td>请求帮助</td><td>说明愿不愿意帮忙，而不是回答“能不能”这一字面问题</td></tr>
+                <tr><td>I failed the exam.</td><td>传递坏消息</td><td>表示同情、安慰或鼓励</td></tr>
+                <tr><td>You look great today.</td><td>赞美</td><td>礼貌接受：Thank you.</td></tr>
+            </table>
+        </div>
+        <div class="enrich-correction">
+            <strong>核心：</strong>先判断对方“在做什么”，再选回应。语法正确但没有完成对话任务的选项，仍然是错项。
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#d8b4fe;background:#fcf8ff;">
+        <div class="enrich-card-title" style="background:#8e44ad;">🆚 My pleasure 和 With pleasure：一个回感谢，一个接请求</div>
+        <div class="enrich-grid">
+            <div class="enrich-item">
+                <h4>My pleasure.</h4>
+                <p>用于事情已经做完，对方表示感谢之后。</p>
+                <p>— Thanks for your help.</p>
+                <p>— <strong>My pleasure.</strong></p>
+            </div>
+            <div class="enrich-item">
+                <h4>With pleasure.</h4>
+                <p>用于别人提出请求时，表示“很乐意”。语气较正式。</p>
+                <p>— Could you help me?</p>
+                <p>— <strong>With pleasure.</strong></p>
+            </div>
+        </div>
+        <div class="warn-box">
+            <p>基础交际题中，My pleasure 常回应感谢，With pleasure 常表示乐意接受请求。实际口语中 My pleasure 也可提前表示愿意帮忙，不能将另一用法一概判为语法错误。</p>
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#c3e6c3;background:#f6fcf7;">
+        <div class="enrich-card-title" style="background:#27ae60;">🙋 Would you mind...? 最容易把“同意”和“反对”选反</div>
+        <div class="enrich-table-wrap">
+            <table class="enrich-table">
+                <tr><th>问句</th><th>愿意配合/不介意</th><th>不愿意/介意</th></tr>
+                <tr><td>Would you mind opening the window?</td><td>Not at all. / Of course not. / No problem.</td><td>Sorry, I'm afraid I can't.</td></tr>
+                <tr><td>Do you mind if I sit here?</td><td>No, not at all. / Of course not.</td><td>Sorry, this seat is taken.</td></tr>
+            </table>
+        </div>
+        <div class="brain-box">
+            <p><strong>🧠 中文绕弯：</strong>问题问的是“你介意吗”。回答 Not at all = 一点也不介意 = 同意；直接回答 Yes 往往表示“我介意”。</p>
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#ffd8a8;background:#fffaf3;">
+        <div class="enrich-card-title" style="background:#e67e22;">💬 好消息、坏消息、赞美和祝福：情绪方向必须一致</div>
+        <div class="enrich-table-wrap">
+            <table class="enrich-table">
+                <tr><th>对方说</th><th>合适回应</th><th>不能选</th></tr>
+                <tr><td>I won first prize!</td><td>Congratulations! / That's great!</td><td>I'm sorry to hear that.</td></tr>
+                <tr><td>My grandfather is ill.</td><td>I'm sorry to hear that.</td><td>Congratulations!</td></tr>
+                <tr><td>Your English is excellent.</td><td>Thank you.</td><td>The same to you.（不一定符合事实与语境）</td></tr>
+                <tr><td>Happy New Year!</td><td>The same to you. / You too.</td><td>My pleasure.</td></tr>
+                <tr><td>Have a good trip!</td><td>Thank you.</td><td>You too.（除非对方也要旅行）</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#b2dfdb;background:#f4fffd;">
+        <div class="enrich-card-title" style="background:#16a085;">📞 电话对话不仅是“Who's that?”</div>
+        <div class="enrich-grid">
+            <div class="enrich-item">
+                <h4>找某人</h4>
+                <p>May I speak to Linda, please?</p>
+                <p>Could I speak to Mr Brown?</p>
+            </div>
+            <div class="enrich-item">
+                <h4>本人接听</h4>
+                <p>Speaking. / This is Linda speaking.</p>
+                <p>Linda speaking.</p>
+            </div>
+            <div class="enrich-item">
+                <h4>请稍等</h4>
+                <p>Hold on, please.</p>
+                <p>Just a moment, please.</p>
+            </div>
+            <div class="enrich-item">
+                <h4>人不在</h4>
+                <p>I'm afraid she isn't in right now.</p>
+                <p>Can I take a message?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#ffcccc;background:#fff8f8;">
+        <div class="enrich-card-title" style="background:#e74c3c;">🧹 交际题4类高频错项</div>
+        <div class="enrich-flow">
+            <div class="enrich-flow-row"><div class="enrich-flow-num">1</div><div class="enrich-flow-body"><strong>答非所问：</strong>别人请求帮助，却回答 You're welcome。</div></div>
+            <div class="enrich-flow-row"><div class="enrich-flow-num">2</div><div class="enrich-flow-body"><strong>情绪相反：</strong>别人传来坏消息，却回答 Congratulations。</div></div>
+            <div class="enrich-flow-row"><div class="enrich-flow-num">3</div><div class="enrich-flow-body"><strong>角色错位：</strong>顾客说 Can I help you，店员反而说 I'd like...</div></div>
+            <div class="enrich-flow-row"><div class="enrich-flow-num">4</div><div class="enrich-flow-body"><strong>字面正确但不得体：</strong>语法没错，却太直接、太生硬或不符合人物关系。</div></div>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块六</span><hr></div>
+    <div class="module-card card-green">
+        <div class="badge badge-green">🎭 模块六：易混应答大辨析 + 下一讲</div>
+        <p>交际题常用<strong>“形式相近、使用场景不同”</strong>的表达设置干扰。这几组务必分清：</p>
+        <div style="background:#fff;border:2px solid #a5d6a7;border-radius:10px;overflow:hidden;margin:16px 0;">
+            <table style="width:100%;border-collapse:collapse;font-size:14px;">
+                <tr style="background:#e8f5e9;"><th style="padding:8px 12px;text-align:left;color:#2e7d32;">易混</th><th style="padding:8px 12px;text-align:left;color:#2e7d32;">区别</th></tr>
+                <tr><td style="padding:8px 12px;border-top:1px solid #e8f5e9;"><strong>That's all right</strong> vs <strong>That's right</strong></td><td style="padding:8px 12px;border-top:1px solid #e8f5e9;">前者常表示“没关系”；后者表示“说得对、是正确的”</td></tr>
+                <tr><td style="padding:8px 12px;border-top:1px solid #e8f5e9;"><strong>Never mind</strong> vs <strong>You're welcome</strong></td><td style="padding:8px 12px;border-top:1px solid #e8f5e9;">前者常用于回应小失误、道歉或表示“不必了”；后者主要回应感谢</td></tr>
+                <tr><td style="padding:8px 12px;border-top:1px solid #e8f5e9;"><strong>Help yourself / yourselves</strong></td><td style="padding:8px 12px;border-top:1px solid #e8f5e9;">招待一人说 Help yourself；招待多人说 Help yourselves</td></tr>
+                <tr><td style="padding:8px 12px;border-top:1px solid #e8f5e9;"><strong>The same to you / You too</strong></td><td style="padding:8px 12px;border-top:1px solid #e8f5e9;">只在祝福也适用于对方时表示“你也一样”，不能回复所有祝愿</td></tr>
+            </table>
+        </div>
+        <div class="warn-box">
+            <p><strong>⚠️ 招待客人经典对话（必背）：</strong></p>
+            <p>— Would you like some more? （再来点吗？）<br>— <strong>No, thanks. I've had enough.</strong>（不了，我吃饱了）<br>主人请吃：<strong>Help yourself.</strong>（随便吃）—— 不是叫你"自己帮自己"！</p>
+        </div>
+        <div style="background:#e8f4fd;border:2px dashed #2980b9;border-radius:10px;padding:16px 20px;margin-top:22px;">
+            <p style="font-weight:900;color:#1a5276;font-size:15px;margin-bottom:6px;">🔗 下一讲预告：把所有语法放进整篇短文</p>
+            <p style="font-size:14.5px;color:#333;line-height:1.8;">前面学的所有语法——词性、时态、从句、词形变化，最后都要在一篇<strong>连续的短文</strong>里综合运用。<strong>应用3：短文语法综合</strong>会带你像做中考语法选择、缺词填空一样，在真实语篇里灵活调用全部知识。这是把语法"用起来"的最后一步。</p>
+        </div>
+    </div>
+
+    <div class="section-divider"><hr><span>实战练习 · 做完再走</span><hr></div>
+
+    <div class="quiz-block" style="margin-top:20px;">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 1 · 感谢应答</p>
+        <div class="quiz-q">— Thank you for helping me. — ______<br><span style="font-size:14px;font-weight:400;color:#888;">（谢谢你帮我。—— 不客气。）</span></div>
+        <div class="quiz-opts"><span>A. Never mind.</span><span>B. You're welcome.</span><span>C. It doesn't matter.</span><span>D. No, thanks.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q1').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q1"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>本题是直接回应感谢，You're welcome 最准确。Never mind 和 It doesn't matter 更常用于安慰、取消请求或回应道歉。</p>
+            <p><span class="right-text">✅ 答案：B（You're welcome.）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 2 · 道歉应答</p>
+        <div class="quiz-q">— I'm sorry I'm late. — ______<br><span style="font-size:14px;font-weight:400;color:#888;">（对不起我迟到了。—— 没关系。）</span></div>
+        <div class="quiz-opts"><span>A. You're welcome.</span><span>B. Never mind.</span><span>C. Thank you.</span><span>D. The same to you.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q2').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q2"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>回应道歉用 Never mind（别放心上）或 That's all right。A 是回谢谢的。</p>
+            <p><span class="right-text">✅ 答案：B（Never mind.）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 3 · 打电话专用语</p>
+        <div class="quiz-q">（电话里）— Hello, ______ — This is Mike.<br><span style="font-size:14px;font-weight:400;color:#888;">（喂，你是哪位？—— 我是Mike。）</span></div>
+        <div class="quiz-opts"><span>A. who are you?</span><span>B. what's your name?</span><span>C. who's that?</span><span>D. are you Mike?</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q3').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q3"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>教材式电话对话中，询问对方身份常用 Who's that (speaking)?。Who are you? 语法成立，但电话开场中通常过于直接。答语 This is Mike 也印证了这是电话场景。</p>
+            <p><span class="right-text">✅ 答案：C（Who's that?）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 4 · 招待客人</p>
+        <div class="quiz-q">— The cake is delicious! — Thanks. ______<br><span style="font-size:14px;font-weight:400;color:#888;">（蛋糕真好吃！—— 谢谢，随便吃。）</span></div>
+        <div class="quiz-opts"><span>A. Help yourself.</span><span>B. Never mind.</span><span>C. It doesn't matter.</span><span>D. Not at all.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q4').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q4"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>招待客人吃东西，说 Help yourself（请随便吃），不是"帮你自己"。这是餐桌固定用语。</p>
+            <p><span class="right-text">✅ 答案：A（Help yourself.）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 5 · 婉拒邀请</p>
+        <div class="quiz-q">— Would you like to go to the movies with me? — ______<br><span style="font-size:14px;font-weight:400;color:#888;">（想和我去看电影吗？—— 我很想去，但恐怕不行。）</span></div>
+        <div class="quiz-opts"><span>A. Yes, I'd love to.</span><span>B. I'd love to, but I'm afraid I can't.</span><span>C. No, I don't like you.</span><span>D. That's all right.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q5').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q5"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>题目是"想去但去不了"→ 先说 I'd love to 表意愿，再 but 转折婉拒。这是最得体的拒绝方式。</p>
+            <p><span class="right-text">✅ 答案：B</span>&nbsp;&nbsp;<span class="wrong-text">C 与题目表达的“想去但不能去”不一致，而且语气生硬，不符合得体交际。</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 6 · 易混辨析（That's right vs all right）</p>
+        <div class="quiz-q">— Sorry, I broke your cup. — ______ I have another one.<br><span style="font-size:14px;font-weight:400;color:#888;">（抱歉，我打碎了你的杯子。—— 没关系，我还有一个。）</span></div>
+        <div class="quiz-opts"><span>A. That's right.</span><span>B. That's all right.</span><span>C. All right?</span><span>D. You're right.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q6').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q6"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>回应道歉表示"没关系"用 <strong>That's all right</strong>。That's right 是"对的/正确"，用在这里意思不通（难道"你打碎杯子是对的"？）。一词之差，意思天壤之别。</p>
+            <p><span class="right-text">✅ 答案：B（That's all right.）</span></p>
+        </div></div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>新增进阶练习 · 判断说话目的与得体程度</span><hr></div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 7 · My pleasure / With pleasure</p>
+        <div class="quiz-q">— Could you help me carry this box? — ______</div>
+        <div class="quiz-opts"><span>A. Yes, I helped you yesterday.</span><span>B. With pleasure.</span><span>C. Never mind.</span><span>D. You're welcome.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q7').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q7"><div class="brain-box">
+            <p>对方正在提出请求，With pleasure 表示“很乐意”。My pleasure 通常用于事情完成、对方感谢之后。</p>
+            <p><span class="right-text">✅ 答案：B（With pleasure.）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 8 · Would you mind</p>
+        <div class="quiz-q">— Would you mind turning down the music? — ______ I'll do it right away.</div>
+        <div class="quiz-opts"><span>A. Yes, please.</span><span>B. Not at all.</span><span>C. Never mind.</span><span>D. You're welcome.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q8').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q8"><div class="brain-box">
+            <p>后句 I'll do it right away 表示愿意配合，因此应说 Not at all，意思是“一点也不介意”。</p>
+            <p><span class="right-text">✅ 答案：B（Not at all.）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 9 · 坏消息应答</p>
+        <div class="quiz-q">— I didn't pass the exam. — ______ You can try again next time.</div>
+        <div class="quiz-opts"><span>A. Congratulations!</span><span>B. I'm sorry to hear that.</span><span>C. The same to you.</span><span>D. Yes, I helped you yesterday.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q9').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q9"><div class="brain-box">
+            <p>没通过考试是坏消息，先表示同情，再鼓励对方，情绪方向必须一致。</p>
+            <p><span class="right-text">✅ 答案：B（I'm sorry to hear that.）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 10 · 相互祝福</p>
+        <div class="quiz-q">— Happy New Year! — ______</div>
+        <div class="quiz-opts"><span>A. The same to you.</span><span>B. With pleasure.</span><span>C. Never mind.</span><span>D. That's right.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q10').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q10"><div class="brain-box">
+            <p>新年祝福同样适用于对方，所以可以回应 The same to you。</p>
+            <p><span class="right-text">✅ 答案：A（The same to you.）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 11 · 电话找人</p>
+        <div class="quiz-q">— May I speak to Linda, please? — ______</div>
+        <div class="quiz-opts"><span>A. Speaking.</span><span>B. I am Linda.</span><span>C. Yes, you may.</span><span>D. Who are you?</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q11').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q11"><div class="brain-box">
+            <p>Linda本人接听时可以直接说 Speaking，表示“我就是”。不是在回答是否获得许可。</p>
+            <p><span class="right-text">✅ 答案：A（Speaking.）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 12 · 回应建议</p>
+        <div class="quiz-q">— Why don't we visit the science museum this Sunday? — ______</div>
+        <div class="quiz-opts"><span>A. That's a good idea.</span><span>B. Yes, I helped you yesterday.</span><span>C. It doesn't matter.</span><span>D. You're welcome.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q12').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q12"><div class="brain-box">
+            <p>Why don't we...? 是提出建议，That's a good idea 表示赞同建议。</p>
+            <p><span class="right-text">✅ 答案：A（That's a good idea.）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 13 · 看病场景</p>
+        <div class="quiz-q">— I have a terrible headache. — ______</div>
+        <div class="quiz-opts"><span>A. You'd better see a doctor.</span><span>B. Congratulations!</span><span>C. The same to you.</span><span>D. Yes, I helped you yesterday.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q13').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q13"><div class="brain-box">
+            <p>对方说自己头痛，合理回应应是关心并提出建议：You'd better see a doctor。</p>
+            <p><span class="right-text">✅ 答案：A</span></p>
+        </div></div>
+    </div>
+
+
+    <div style="margin:50px 0 30px;background:#fffdf5;border:2px solid #f1c40f;border-radius:14px;padding:28px 26px 24px;box-shadow:0 8px 18px rgba(0,0,0,0.08);">
+        <div style="text-align:center;margin-bottom:22px;">
+            <div style="display:inline-block;background:#f1c40f;color:#2c3e50;padding:8px 24px;border-radius:22px;font-weight:900;font-size:17px;box-shadow:0 3px 8px rgba(0,0,0,0.12);">🎒 应用2课 · 考前救命小抄（必背）</div>
+            <p style="font-size:13px;color:#777;margin-top:12px;line-height:1.7;">固定表达要熟悉，更要先判断场景、说话目的、人物关系和语气</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div style="background:#f0f7ff;border:1.5px solid #b3d4ff;border-left:5px solid #2980b9;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#1a5276;margin-bottom:8px;">🙏 感谢vs道歉</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">回感谢：You're welcome / My pleasure。<br>回道歉：That's all right / Never mind / It doesn't matter。<br>考试优先选与说话目的最直接匹配的表达。</p>
+            </div>
+            <div style="background:#fff5f5;border:1.5px solid #ffcccc;border-left:5px solid #e74c3c;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#c0392b;margin-bottom:8px;">📞 电话专用</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">问来电者：Who's that speaking? / Who's calling, please?<br>自报身份：This is … speaking. / … speaking.</p>
+            </div>
+            <div style="background:#f0fffc;border:1.5px solid #b2dfdb;border-left:5px solid #009688;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#00695c;margin-bottom:8px;">💡 建议与邀请</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">建议：Why not…? / How about…? / You'd better…<br>婉拒邀请：I'd love to, but I'm afraid I can't.</p>
+            </div>
+            <div style="background:#fff8f0;border:1.5px solid #ffd8a8;border-left:5px solid #e67e22;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#784212;margin-bottom:8px;">⚠️ 别直译的地道话</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">Help yourself（招待一人）；The same to you 只回可相互适用的祝福；That's all right ≠ That's right。</p>
+            </div>
+        </div>
+        <div style="margin-top:16px;background:#fff;border:1.5px dashed #f1c40f;border-radius:10px;padding:14px 18px;font-size:15px;line-height:1.8;color:#333;">
+            <strong>一句话记忆：</strong>先判对方在感谢、道歉、邀请、请求还是传递消息；再检查回应是否合身份、合语气、合逻辑。
+        </div>
+    </div>
+
+    <div class="cta-box">
+        <h3>😊 应用2课完成！交际送分题拿下！</h3>
+        <p>你已经掌握感谢、道歉、建议、请求、购物、看病、问路、打电话等高频场景，并能根据说话目的、人物关系、情绪和礼貌程度判断最合适的回应，而不是只靠逐字翻译。<br><br>
+        最后一步，把所有语法放进整篇短文：<br>
+        ✅ <strong>应用3：短文语法综合</strong>——像做中考语法选择、缺词填空一样，在真实语篇里综合调用全部知识，把语法彻底"用起来"。
+        </p>
+        <a href="lesson-30.html" class="cta-btn">继续学习 → 应用3课：短文语法综合</a>
+    </div>
+
+</div><!-- /book-container -->
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-29.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+<div class="lesson-nav">
+    <a class="nav-btn prev" href="lesson-34.html"><span class="nb-text"><span class="nb-label">上一讲</span><span class="nb-title">应用1课：构词法与词形变化</span></span></a>
+    <a class="nav-btn-home" href="index.html">📚 目录</a>
+    <a class="nav-btn next" href="lesson-30.html"><span class="nb-text"><span class="nb-label">下一讲</span><span class="nb-title">应用3课：短文语法综合</span></span></a>
+</div>
+
+</div><!-- /lesson-main -->
+
+<div class="lesson-footer">
+    初中英语语法重构 · 基础重构版 · 应用2课<br>
+    打印时只会打印本讲内容 · 点击浏览器返回键可回到目录
+</div>
+
+
+<script src="/assets/a4-print-entry.js?v=20260722-final-v3"></script>
+</body>
+</html>

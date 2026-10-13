@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第5讲练习册 · 苹果能数，水怎么数（可数与不可数名词） — 初中英语语法重构</title>
+<style>
+/* ============================================================
+   基础 Reset
+   ============================================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Songti SC', serif;
+    background: #e8ecee;
+    color: #1a1a2e;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+/* ============================================================
+   顶部导航条（屏幕可见，打印时隐藏）
+   ============================================================ */
+.wb-topbar {
+    background: #1a252f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+.wb-topbar-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 11px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.wb-back {
+    color: #f1c40f;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.wb-back:hover { opacity: 0.75; }
+.wb-back-lesson {
+    color: #95a5a6;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.wb-back-lesson:hover { opacity: 0.75; color: #ecf0f1; }
+.wb-sep { color: #3d5166; font-size: 14px; flex-shrink: 0; }
+.wb-info { flex: 1; min-width: 0; }
+.wb-info .wi-tag   { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 1px; }
+.wb-info .wi-title { font-size: 14px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wb-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.wb-print-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+.wb-print-btn:hover { background: #c0392b; }
+.wb-lesson-btn {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+.wb-lesson-btn:hover { background: rgba(255,255,255,0.18); }
+
+/* ============================================================
+   底部翻页导航
+   ============================================================ */
+.wb-pagenav {
+    max-width: 860px;
+    margin: 20px auto 16px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.wn-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    padding: 11px 16px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 13px;
+    transition: all 0.15s;
+    flex: 1;
+    min-width: 140px;
+    max-width: 260px;
+}
+.wn-btn:hover { border-color: #e74c3c; box-shadow: 0 4px 10px rgba(231,76,60,0.12); transform: translateY(-1px); }
+.wn-btn.prev { justify-content: flex-start; }
+.wn-btn.next { justify-content: flex-end; margin-left: auto; }
+.wn-btn .wna  { font-size: 18px; color: #ccc; flex-shrink: 0; }
+.wn-btn:hover .wna { color: #e74c3c; }
+.wn-btn .wnt  { min-width: 0; }
+.wn-btn .wnt-label { font-size: 11px; color: #aaa; display: block; }
+.wn-btn .wnt-title { font-size: 13px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wn-home {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #1a252f;
+    border-radius: 10px;
+    padding: 11px 16px;
+    text-decoration: none;
+    color: #f1c40f;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.wn-home:hover { opacity: 0.85; }
+
+/* ============================================================
+   页脚
+   ============================================================ */
+.wb-footer {
+    text-align: center;
+    padding: 16px 20px 32px;
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   A4 页面容器
+   ============================================================ */
+.a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    background: #ffffff;
+    margin: 20px auto;
+    padding: 18mm 20mm 22mm 20mm;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+/* ============================================================
+   页眉 / 页脚
+   ============================================================ */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #2c3e50;
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+}
+.page-header .brand { font-size: 13px; color: #7f8c8d; }
+.page-header .lesson-id {
+    background: #2c3e50;
+    color: #f1c40f;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.page-footer {
+    position: absolute;
+    bottom: 10mm;
+    left: 20mm;
+    right: 20mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* ============================================================
+   练习册封面
+   ============================================================ */
+.cover-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 260mm;
+    text-align: center;
+}
+.cover-logo {
+    width: 72px; height: 72px;
+    background: #2c3e50;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px;
+    margin-bottom: 28px;
+}
+.cover-series { font-size: 13px; color: #7f8c8d; letter-spacing: 0.15em; margin-bottom: 14px; text-transform: uppercase; }
+.cover-title  { font-size: 34px; font-weight: 900; color: #1a252f; line-height: 1.25; margin-bottom: 10px; }
+.cover-title span { color: #e74c3c; }
+.cover-sub    { font-size: 16px; color: #555; margin-bottom: 36px; }
+.cover-tags   { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+.cover-tag    { border: 1.5px solid #2c3e50; border-radius: 20px; padding: 5px 16px; font-size: 13px; color: #2c3e50; }
+.cover-fill   { width: 100%; border-top: 1.5px solid #ddd; padding-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; }
+.fill-item label    { font-size: 13px; color: #888; display: block; margin-bottom: 6px; }
+.fill-item .fill-line { border-bottom: 1.5px solid #2c3e50; height: 28px; width: 100%; }
+.cover-promise { margin-top: 30px; background: #fffde7; border: 1.5px dashed #f1c40f; border-radius: 10px; padding: 16px 20px; font-size: 14px; color: #555; text-align: center; width: 100%; line-height: 1.8; }
+
+/* ============================================================
+   总分框
+   ============================================================ */
+.score-box { border: 2px solid #2c3e50; border-radius: 10px; display: grid; text-align: center; overflow: hidden; margin: 16px 0; font-size: 13px; }
+.score-box .sb-head { background: #2c3e50; color: #f1c40f; padding: 7px 4px; font-weight: bold; font-size: 12px; }
+.score-box .sb-cell { padding: 10px 4px; border-right: 1px solid #ddd; border-top: 1px solid #ddd; }
+.score-box .sb-cell:last-child { border-right: none; }
+
+/* ============================================================
+   章节标题
+   ============================================================ */
+.section-title { display: flex; align-items: center; gap: 12px; margin: 26px 0 16px; }
+.section-num { background: #2c3e50; color: #f1c40f; font-weight: 900; font-size: 14px; padding: 5px 14px; border-radius: 20px; white-space: nowrap; }
+.section-title h2 { font-size: 17px; font-weight: 900; color: #1a252f; flex: 1; }
+.section-title .score-chip { font-size: 12px; color: #e74c3c; border: 1px solid #e74c3c; border-radius: 12px; padding: 2px 10px; white-space: nowrap; }
+
+/* 分组说明条 */
+.part-bar { background: #f0f7ff; border-left: 4px solid #3498db; padding: 9px 14px; font-size: 14px; font-weight: bold; color: #1a5276; border-radius: 0 6px 6px 0; margin: 14px 0 12px; }
+.part-bar.green  { background: #f4fbf4; border-left-color: #27ae60; color: #145a32; }
+.part-bar.red    { background: #fff5f5; border-left-color: #e74c3c; color: #922b21; }
+.part-bar.yellow { background: #fffde7; border-left-color: #f1c40f; color: #7d6608; }
+.part-bar.purple { background: #faf5ff; border-left-color: #8e44ad; color: #5b2c6f; }
+
+/* ============================================================
+   题目通用样式
+   ============================================================ */
+.q-block { margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px dashed #e0e0e0; }
+.q-block:last-child { border-bottom: none; }
+.q-num { display: inline-block; width: 24px; height: 24px; background: #ecf0f1; border-radius: 50%; text-align: center; line-height: 24px; font-size: 13px; font-weight: bold; color: #2c3e50; margin-right: 6px; flex-shrink: 0; }
+.q-stem { font-size: 15px; font-weight: bold; color: #1a1a2e; line-height: 1.7; margin-bottom: 8px; }
+.q-stem .blank { display: inline-block; width: 70px; border-bottom: 2px solid #2c3e50; vertical-align: bottom; text-align: center; }
+.q-stem code { font-family: 'Courier New', monospace; background: #f5f5f5; padding: 1px 6px; border-radius: 4px; font-size: 14px; }
+.q-opts { display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 14px; color: #444; margin-top: 6px; padding-left: 4px; }
+.q-opts span { min-width: 120px; }
+
+/* 答题区 */
+.answer-lines { margin-top: 10px; display: flex; flex-direction: column; gap: 10px; }
+.answer-line  { border-bottom: 1.5px solid #bbb; min-height: 28px; width: 100%; }
+
+/* 表格 */
+.wb-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0; }
+.wb-table th { background: #2c3e50; color: #f1c40f; padding: 9px 12px; text-align: left; font-size: 13px; }
+.wb-table td { padding: 9px 12px; border-bottom: 1px solid #eee; vertical-align: middle; }
+.wb-table tr:nth-child(even) td { background: #f9f9f9; }
+.wb-table .write-td { border-bottom: 1.5px solid #2c3e50 !important; min-width: 100px; background: transparent !important; }
+
+/* 改错题 */
+.error-sentence { font-size: 16px; font-weight: bold; line-height: 2.2; letter-spacing: 0.03em; }
+.underlined { text-decoration: underline; text-underline-offset: 3px; }
+.correction-line { display: flex; align-items: center; gap: 10px; margin-top: 8px; font-size: 14px; color: #555; }
+.correction-line .blank { display: inline-block; width: 100px; border-bottom: 1.5px solid #2c3e50; }
+
+/* ============================================================
+   答案解析页样式
+   ============================================================ */
+.ans-page-header { background: #1a252f; color: #f1c40f; text-align: center; padding: 16px; border-radius: 10px; font-size: 18px; font-weight: 900; margin-bottom: 20px; letter-spacing: 0.05em; }
+.ans-warning { background: #fffde7; border: 2px dashed #f1c40f; border-radius: 8px; padding: 12px 18px; font-size: 13px; color: #7d6608; text-align: center; margin-bottom: 20px; line-height: 1.7; }
+
+.ans-block { margin-bottom: 20px; border-radius: 10px; overflow: hidden; border: 1.5px solid #e0e0e0; page-break-inside: avoid; }
+.ans-q-header { display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: #f8f9fa; border-bottom: 1px solid #e0e0e0; }
+.ans-q-header .aq-num { background: #2c3e50; color: #fff; font-weight: 900; font-size: 13px; padding: 3px 12px; border-radius: 12px; white-space: nowrap; }
+.ans-q-header .aq-stem { font-size: 14px; font-weight: bold; color: #333; flex: 1; }
+.ans-answer { display: flex; align-items: center; gap: 8px; padding: 10px 16px 6px; background: #fff; }
+.ans-label { font-size: 13px; color: #888; white-space: nowrap; }
+.ans-val   { font-size: 16px; font-weight: 900; color: #27ae60; }
+.ans-body  { padding: 0 16px 14px; background: #fff; }
+.ans-step  { display: flex; gap: 10px; align-items: flex-start; margin: 6px 0; font-size: 14px; line-height: 1.7; color: #333; }
+.ans-step .step-icon { font-size: 16px; flex-shrink: 0; line-height: 1.5; }
+.ans-step p { flex: 1; }
+.ans-step p strong { color: #2c3e50; }
+.ans-step p .red   { color: #e74c3c; font-weight: bold; }
+.ans-step p .green { color: #27ae60; font-weight: bold; }
+.ans-step p .blue  { color: #2980b9; font-weight: bold; }
+.ans-tip { background: #e8f4fd; border-left: 3px solid #3498db; padding: 8px 12px; border-radius: 0 6px 6px 0; font-size: 13px; color: #1a5276; margin-top: 8px; line-height: 1.7; }
+.ans-tip.yellow { background: #fffde7; border-left-color: #f1c40f; color: #7d6608; }
+.ans-tip.red    { background: #fff5f5; border-left-color: #e74c3c; color: #922b21; }
+
+/* 得分档位 */
+.score-tier { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; font-size: 13px; text-align: center; margin: 14px 0; }
+.score-tier .st-cell { border-radius: 8px; padding: 10px; }
+.st-pass  { background: #e8f5e9; color: #2e7d32; }
+.st-mid   { background: #fff3e0; color: #e65100; }
+.st-retry { background: #fce4ec; color: #c62828; }
+.st-cell .st-num { font-size: 20px; font-weight: 900; }
+.st-cell .st-txt { margin-top: 4px; font-size: 12px; }
+
+/* ============================================================
+   分页
+   ============================================================ */
+.page-break { page-break-after: always; break-after: page; }
+.no-break   { page-break-inside: avoid; break-inside: avoid; }
+
+/* ============================================================
+   打印媒体查询
+   ============================================================ */
+@media print {
+    .wb-topbar,
+    .wb-pagenav,
+    .wb-footer { display: none !important; }
+
+    body { background: #fff; }
+
+    .a4-page {
+        width: 100%;
+        margin: 0;
+        padding: 12mm 16mm 16mm 16mm;
+        box-shadow: none;
+        border: none;
+        min-height: auto;
+    }
+
+    .page-break { page-break-after: always; break-after: page; }
+    .no-break   { page-break-inside: avoid; break-inside: avoid; }
+    .ans-block  { page-break-inside: avoid; break-inside: avoid; }
+
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    .page-footer { position: fixed; bottom: 8mm; left: 16mm; right: 16mm; }
+
+    @page { size: A4; margin: 0; }
+}
+
+/* ============================================================
+   响应式
+   ============================================================ */
+@media (max-width: 680px) {
+    .a4-page { width: 100%; padding: 20px 16px 60px; min-height: auto; }
+    .wb-actions .wb-lesson-btn { display: none; }
+    .wb-pagenav { padding: 0 14px; }
+    .wn-btn { min-width: 110px; padding: 9px 12px; }
+    .wn-btn .wnt-title { font-size: 12px; }
+}
+</style>
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="wb-topbar">
+    <div class="wb-topbar-inner">
+        <a class="wb-back" href="index.html">← 练习册目录</a>
+        <div class="wb-sep">/</div>
+       
+        <div class="wb-sep">/</div>
+        <div class="wb-info">
+            <div class="wi-tag">第5讲 · 配套练习册</div>
+            <div class="wi-title">可数与不可数名词 · 练习册</div>
+        </div>
+        <div class="wb-actions">
+     
+            <button class="wb-print-btn" onclick="window.print()">🖨️ 打印本册</button>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================
+     ↓↓↓ 粘贴区域开始 ↓↓↓
+     ============================================================ -->
+
+<!-- 第一页：封面 -->
+<div class="a4-page">
+    <div class="cover-page">
+        <div class="cover-logo">🥛</div>
+        <div class="cover-series">初中英语语法重构 · 逆袭版 · 配套练习册</div>
+        <div class="cover-title">第5讲：苹果能数，水怎么数<br><span>（可数与不可数名词）</span></div>
+        <div class="cover-sub">看清“切一刀照妖镜”，拿捏中考5大名词钉子户</div>
+        <div class="cover-tags">
+            <div class="cover-tag">📋 共5大题型</div>
+            <div class="cover-tag">🔢 共25题</div>
+            <div class="cover-tag">⏱ 建议用时 35分钟</div>
+            <div class="cover-tag">🎯 满分 100分</div>
+        </div>
+        <div class="cover-fill">
+            <div class="fill-item"><label>姓名</label><div class="fill-line"></div></div>
+            <div class="fill-item"><label>日期</label><div class="fill-line"></div></div>
+            <div class="fill-item"><label>做题时间（分钟）</label><div class="fill-line"></div></div>
+            <div class="fill-item"><label>本次得分</label><div class="fill-line"></div></div>
+        </div>
+        
+        <div style="width:100%; margin-top: 20px;">
+            <div class="score-box" style="grid-template-columns: repeat(5, 1fr);">
+                <div class="sb-head">第一题</div>
+                <div class="sb-head">第二题</div>
+                <div class="sb-head">第三题</div>
+                <div class="sb-head">第四题</div>
+                <div class="sb-head">第五题</div>
+                <div class="sb-cell">／20分</div>
+                <div class="sb-cell">／20分</div>
+                <div class="sb-cell">／20分</div>
+                <div class="sb-cell">／20分</div>
+                <div class="sb-cell">／20分</div>
+            </div>
+        </div>
+
+        <div class="cover-promise">
+            ✏️ <strong>使用说明：</strong>先闭合讲义，不要根据感觉和中文意思瞎填。<br>
+            做完后再翻到最后的答案解析，<strong>重点看看那些由于“西方人独特思维”踩雷的题目分析</strong>。<br>
+            <strong style="color:#e74c3c;">记住口诀：水面钱纸建议新闻，一律不加 a，一律不加 s！</strong>
+        </div>
+    </div>
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第5讲配套练习册</span>
+        <span>第 1 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第二页：第一题 + 第二题 -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第5讲练习册</span>
+        <span class="lesson-id">可数与不可数名词</span>
+    </div>
+
+    <!-- 第一题：切一刀照妖镜分类 -->
+    <div class="section-title">
+        <div class="section-num">第一题</div>
+        <h2>切一刀物理分类法（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar">📌 题目说明：请在横线上填入 <strong>可数</strong> 或 <strong>不可数</strong>。判定法则：物理上切一刀，如果结构完好就是可数；如果本质完全不变就是不可数！</div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">1</span> glass（玻璃，指材料时） <span class="blank" style="width:120px;"></span></div>
+    </div>
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">2</span> orange（橘子） <span class="blank" style="width:120px;"></span></div>
+    </div>
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">3</span> juice（果汁） <span class="blank" style="width:120px;"></span></div>
+    </div>
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">4</span> bread（面包） <span class="blank" style="width:120px;"></span></div>
+    </div>
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">5</span> money（钱） <span class="blank" style="width:120px;"></span></div>
+    </div>
+
+    <!-- 第二题：数量词修饰排班 -->
+    <div class="section-title" style="margin-top:28px;">
+        <div class="section-num">第二题</div>
+        <h2>修饰词排班考核（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar green">📌 题目说明：根据空格后方名词的属性，选择括号里正确的修饰词填在横线上。</div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">1</span> I have <span class="blank" style="width:100px;"></span> friends here. (many / much)</div>
+        <div style="font-size:13px; color:#888;">（我在这里有很多朋友。）</div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">2</span> There is <span class="blank" style="width:100px;"></span> water in the glass. (a few / a little)</div>
+        <div style="font-size:13px; color:#888;">（杯子里有一点儿水。）</div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">3</span> He has very <span class="blank" style="width:100px;"></span> money. He can't buy the toy. (few / little)</div>
+        <div style="font-size:13px; color:#888;">（他几乎没有钱。他买不起这个玩具。）</div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">4</span> There are <span class="blank" style="width:100px;"></span> apples on the tree. (few / little)</div>
+        <div style="font-size:13px; color:#888;">（树上几乎没有苹果了。）</div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">5</span> Would you like <span class="blank" style="width:100px;"></span> milk? (some / any)</div>
+        <div style="font-size:13px; color:#e67e22;">（⚠️ 语气陷阱：客气征求同意的疑问句中用哪个？）</div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第5讲配套练习册</span>
+        <span>第 2 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第三页：第三题（单项选择） -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第5讲练习册</span>
+        <span class="lesson-id">可数与不可数名词</span>
+    </div>
+
+    <div class="section-title">
+        <div class="section-num">第三题</div>
+        <h2>中考单项选择摸底（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar yellow">📌 题目说明：请选择最合适的选项填在括号内。重点关注不可数名词的“三不一单”原则（不能加 a/an、不能加 s、做主语当单数配 is/was）。</div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">1. The news on TV ______ very exciting tonight.</div>
+                <div style="font-size:13px; color:#888; margin-bottom:6px;">（今晚电视上的新闻非常令人兴奋。）</div>
+                <div class="q-opts">
+                    <span>A. is</span>
+                    <span>B. are</span>
+                    <span>C. am</span>
+                    <span>D. be</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">2. Could you please give me ______? I don't know what to do.</div>
+                <div style="font-size:13px; color:#888; margin-bottom:6px;">（你能给我一些建议吗？我不知道该怎么办。）</div>
+                <div class="q-opts">
+                    <span>A. some advices</span>
+                    <span>B. an advice</span>
+                    <span>C. some advice</span>
+                    <span>D. many advices</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">3. He bought three ______ in the supermarket yesterday.</div>
+                <div style="font-size:13px; color:#888; margin-bottom:6px;">（他昨天在超市买了三瓶果汁。）</div>
+                <div class="q-opts">
+                    <span>A. bottle of juice</span>
+                    <span>B. bottles of juices</span>
+                    <span>C. bottles of juice</span>
+                    <span>D. juice</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">4. I need some ______ to write down his phone number.</div>
+                <div style="font-size:13px; color:#888; margin-bottom:6px;">（我需要一些纸来写下他的电话号码。）</div>
+                <div class="q-opts">
+                    <span>A. papers</span>
+                    <span>B. paper</span>
+                    <span>C. a paper</span>
+                    <span>D. piece of paper</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">5. — How ______ bread is there on the plate?<br>— Only one piece.</div>
+                <div style="font-size:13px; color:#888; margin-bottom:6px;">（——盘子里有多少面包？——只有一片。）</div>
+                <div class="q-opts">
+                    <span>A. much</span>
+                    <span>B. many</span>
+                    <span>C. few</span>
+                    <span>D. little</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第5讲配套练习册</span>
+        <span>第 3 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第四页：第四题（改错） + 第五题（综合填空） -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第5讲练习册</span>
+        <span class="lesson-id">可数与不可数名词</span>
+    </div>
+
+    <!-- 第四题：找错并改正 -->
+    <div class="section-title">
+        <div class="section-num">第四题</div>
+        <h2>火眼金睛诊疗室（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar red">📌 题目说明：以下句子中均有一处关于不可数名词或修饰词的严重错误。请划出错误，并在下面的横线上写出正确的形式。</div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">1. I'm very hungry. I want to buy <span class="underlined">a bread</span>.</div>
+        <div class="correction-line">改为：<span class="blank"></span>（直接删掉多余的词，或增加量词）</div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">2. There <span class="underlined">are</span> some apple juice in the bottle.</div>
+        <div class="correction-line">改为：<span class="blank"></span></div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">3. We have <span class="underlined">many homework</span> to do tonight.</div>
+        <div class="correction-line">改为：<span class="blank"></span></div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">4. The <span class="underlined">news are</span> really shocking.</div>
+        <div class="correction-line">改为：<span class="blank"></span></div>
+    </div>
+
+    <div class="q-block no-break" style="border-bottom:none;">
+        <div class="error-sentence">5. How <span class="underlined">many money</span> did you spend on this bike?</div>
+        <div class="correction-line">改为：<span class="blank"></span></div>
+    </div>
+
+    <!-- 第五题：综合填空 -->
+    <div class="section-title" style="margin-top:26px;">
+        <div class="section-num">第五题</div>
+        <h2>综合填空（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar purple">📌 题目说明：根据句子，填入适当的词（可能是 some / any，或者是名词/量词的正确变形）。</div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">1</span> She drinks two <span class="blank"></span> of milk every day. (glass / glasses)</div>
+    </div>
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">2</span> There isn't <span class="blank"></span> juice left in the fridge. (some / any)</div>
+    </div>
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">3</span> A lot of homework <span class="blank"></span> waiting for me to do. (is / are)</div>
+    </div>
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">4</span> We don't have <span class="blank"></span> time. Hurry up! (many / much)</div>
+    </div>
+    <div class="q-block no-break" style="border-bottom:none;">
+        <div class="q-stem"><span class="q-num">5</span> Can you give me some <span class="blank"></span> to print this picture? (paper / papers)</div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第5讲配套练习册</span>
+        <span>第 4 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第五页：答案解析 -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第5讲练习册</span>
+        <span class="lesson-id">答案解析</span>
+    </div>
+
+    <div class="ans-page-header">📖 答案 & 大白话解析</div>
+    <div class="ans-warning">
+        ⚠️ <strong>温馨提示：</strong>做完再对答案。重点看看 money, bread, paper, news, advice 这中考五大钉子户的解释。
+    </div>
+
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin-bottom:10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第一题 · 切一刀物理分类法（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">1</span><p>glass（玻璃） ➡️ <strong><span class="green">不可数</span></strong><br>• <strong>解析：</strong>指材料“玻璃”时，切成两半本质上还是玻璃原料 ➡️ <strong>不可数</strong>。<br><small>⚠️ 注意：若指“玻璃杯”时则属于普通可数名词（a glass / two glasses）。</small></p></div>
+            <div class="ans-step"><span class="step-icon">2</span><p>orange（橘子） ➡️ <strong><span class="green">可数</span></strong><br>• <strong>解析：</strong>有固定大小和形状，切开就破坏了其完整果实物理性 ➡️ <strong>可数</strong>。</p></div>
+            <div class="ans-step"><span class="step-icon">3</span><p>juice（果汁） ➡️ <strong><span class="green">不可数</span></strong><br>• <strong>解析：</strong>液体无固定形状，怎么切都还是液体 ➡️ <strong>不可数</strong>。</p></div>
+            <div class="ans-step"><span class="step-icon">4</span><p>bread（面包） ➡️ <strong><span class="green">不可数</span></strong><br>• <strong>解析：</strong>老外眼里的面包是一大长条切片的。面包属于材料类，切一刀还是面包 ➡️ <strong>不可数</strong>。如果是可数的苹果，切开后就成了“半个苹果”而不是“苹果”了。</p></div>
+            <div class="ans-step"><span class="step-icon">5</span><p>money（钱） ➡️ <strong><span class="green">不可数</span></strong><br>• <strong>解析：</strong><span class="red">【中考骨灰级大坑】</span> 钱虽然可以数，但“money”这个单词代表的是一个抽象的财富概念，在英语里规定它是**不可数名词**！（我们可以数 dollar, yuan，但不能数 money）。</p></div>
+        </div>
+    </div>
+
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin-bottom:10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第二题 · 修饰词排班考核（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">1</span><p><strong><span class="green">many</span></strong><br>• <strong>解析：</strong>friends 是 friend 的复数形式（可数） ➡️ 必须用 <strong>many</strong> 修饰。much 只能跟不可数名词。✅</p></div>
+            <div class="ans-step"><span class="step-icon">2</span><p><strong><span class="green">a little</span></strong><br>• <strong>解析：</strong>water（水）是不可数名词 ➡️ 只能用 <strong>a little</strong>（有一点）。a few 必须跟可数复数（如 a few books）。</p></div>
+            <div class="ans-step"><span class="step-icon">3</span><p><strong><span class="green">little</span></strong><br>• <strong>解析：</strong>money（钱）是不可数名词 ➡️ 只能用 <strong>little</strong>（几乎没有）。few 用于修饰可数名词（如 few people）。</p></div>
+            <div class="ans-step"><span class="step-icon">4</span><p><strong><span class="green">few</span></strong><br>• <strong>解析：</strong>apples（苹果）是可数名词复数 ➡️ 只能用 <strong>few</strong>（几乎没有）。</p></div>
+            <div class="ans-step"><span class="step-icon">5</span><p><strong><span class="green">some</span></strong><br>• <strong>解析：</strong><span class="red">【高频特殊点】</span> 这是一个疑问句，但它的语气是“客气委婉地征求对方同意/希望得到肯定回答” ➡️ <strong>此时不选 any，必须要用 some！</strong></p></div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第5讲配套练习册</span>
+        <span>第 5 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第六页：答案解析（续） -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第5讲练习册</span>
+        <span class="lesson-id">答案解析（续）</span>
+    </div>
+
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin-bottom:10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第三题 · 单项选择（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">1</span>
+            <span class="aq-stem">The news on TV ______ very exciting tonight.</span>
+            <span style="font-size:13px; color:#27ae60; font-weight:bold; margin-left:auto;">答案：A</span>
+        </div>
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">🔍</span><p><strong>大白话分析：</strong>`news`（新闻）屁股上虽然长了 s，但它是百分之百的<strong>不可数名词</strong>（s是自带的，不是复数）。不可数名词做主语，当单数对待 ➡️ be 动词用 <strong>is</strong>。选 A。✅</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">2</span>
+            <span class="aq-stem">Could you please give me ______?</span>
+            <span style="font-size:13px; color:#27ae60; font-weight:bold; margin-left:auto;">答案：C</span>
+        </div>
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">🔍</span><p><strong>大白话分析：</strong>`advice`（建议）属于反常识不可数名词大坑。它不能加 s，前面也不能直接用 an ➡️ 排除 A, B, D。可以用 some 搭配 ➡️ <strong>some advice</strong>。选 C。✅</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">3</span>
+            <span class="aq-stem">He bought three ______ in the supermarket...</span>
+            <span style="font-size:13px; color:#27ae60; font-weight:bold; margin-left:auto;">答案：C</span>
+        </div>
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">🔍</span><p><strong>大白话分析：</strong>果汁（juice）不可数，必须借用量词（瓶子 bottle）来数。数量是 3，所以量词 bottle 要加复数 ➡️ `bottles`。而 juice 作为不可数名词，屁股上绝对不能加 s。所以是 <strong>three bottles of juice</strong>。选 C。✅</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">4</span>
+            <span class="aq-stem">I need some ______ to write down his phone number.</span>
+            <span style="font-size:13px; color:#27ae60; font-weight:bold; margin-left:auto;">答案：B</span>
+        </div>
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">🔍</span><p><strong>大白话分析：</strong>纸张（paper）作为书写材料时，不可数。不能加 s（papers 指报纸/试卷），也不能加 a。some 后面可以直接跟不可数名词 ➡️ <strong>some paper</strong>。选 B。✅</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">5</span>
+            <span class="aq-stem">— How ______ bread is there on the plate?</span>
+            <span style="font-size:13px; color:#27ae60; font-weight:bold; margin-left:auto;">答案：A</span>
+        </div>
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">🔍</span><p><strong>大白话分析：</strong>由于 `bread`（面包）属于中外认知大坑，它属于不可数名词。询问不可数的“多少”用 <strong>How much</strong>。How many 只用来问可数。选 A。✅</p></div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第5讲配套练习册</span>
+        <span>第 6 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第七页：第四、五题解析及档位 -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第5讲练习册</span>
+        <span class="lesson-id">答案解析（续）</span>
+    </div>
+
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin-bottom:10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第四题 · 火眼金睛诊疗室（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">1</span><p><strong>a bread 改为 some bread / a piece of bread / 删掉 a</strong><br>• <strong>大白话解析：</strong>因为面包（bread）是不可数名词，它是绝不能戴 a 帽子在头上的！可以换成 some bread（一些）或者 a piece of bread（一片）。✅</p></div>
+            <div class="ans-step"><span class="step-icon">2</span><p><strong>are 改为 is</strong><br>• <strong>大白话解析：</strong>果汁（juice）是不可数名词，不可数名词作为主语，发动机（be 动词）必须配单数的 <strong>is</strong>，决不用 are。✅</p></div>
+            <div class="ans-step"><span class="step-icon">3</span><p><strong>many homework 改为 much homework / a lot of homework</strong><br>• <strong>大白话解析：</strong>功课（homework）虽然我们天天写很多，但它在英语里也是**不可数名词**！修饰不可数的许多必须用 <strong>much</strong>。很多基础弱的同学这里最爱丢分。✅</p></div>
+            <div class="ans-step"><span class="step-icon">4</span><p><strong>news are 改为 news is</strong><br>• <strong>大白话解析：</strong>news（新闻）是不可数名词。发动机必须跟单数的 <strong>is</strong>！不能被屁股上的 s 骗到了。✅</p></div>
+            <div class="ans-step"><span class="step-icon">5</span><p><strong>many money 改为 much money</strong><br>• <strong>大白话解析：</strong>money 钱是不可数名词，要用 How <strong>much</strong> 提问。✅</p></div>
+        </div>
+    </div>
+
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin:18px 0 10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第五题 · 综合填空（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">1</span><p>填 <strong><span class="green">glasses</span></strong>。 <span style="color:#888;">数字是 2，所以量词“玻璃杯”必须变成复数形式 glasses。</span></p></div>
+            <div class="ans-step"><span class="step-icon">2</span><p>填 <strong><span class="green">any</span></strong>。 <span style="color:#888;">这是一个否定句（isn't），否定句中“一些”要用 any。</span></p></div>
+            <div class="ans-step"><span class="step-icon">3</span><p>填 <strong><span class="green">is</span></strong>。 <span style="color:#888;">homework 是不可数名词，作主语，发动机要用单数的 is。</span></p></div>
+            <div class="ans-step"><span class="step-icon">4</span><p>填 <strong><span class="green">much</span></strong>。 <span style="color:#888;">time（时间）是不可数名词，许多时间用 much time。</span></p></div>
+            <div class="ans-step"><span class="step-icon">5</span><p>填 <strong><span class="green">paper</span></strong>。 <span style="color:#888;">纸张是不可数名词，加了 some 之后，自身也不变复数，直接用原形 paper。</span></p></div>
+        </div>
+    </div>
+
+    <!-- 得分档位 -->
+    <div style="margin-top:20px; border:2px solid #2c3e50; border-radius:10px; padding:18px 22px; background:#fafafa;">
+        <div style="font-size:15px; font-weight:900; color:#2c3e50; margin-bottom:12px;">📊 对完答案，给自己算个分吧！</div>
+        <div class="score-tier">
+            <div class="st-cell st-pass">
+                <div class="st-num">85-100分</div>
+                <div class="st-txt">可数不可数已打通！<br>直接冲刺第6讲！</div>
+            </div>
+            <div class="st-mid">
+                <div class="st-num">60-84分</div>
+                <div class="st-txt">是不是被 homework 和 advice 坑了？<br>再看一遍讲义里的五大钉子户。</div>
+            </div>
+            <div class="st-retry">
+                <div class="st-num">60分以下</div>
+                <div class="st-txt">还在靠感觉分大小吗？<br>必须严格使用“切一刀大法”！</div>
+            </div>
+        </div>
+        <div style="font-size:13px; color:#888; text-align:center; line-height:1.7;">
+            只要你以后在写作文和做题时，看到 <code>money, bread, news, homework, advice</code> 绝不在屁股后面加 s，你的基本功就已经超过了大部分同学！加油！
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第5讲配套练习册</span>
+        <span>第 7 页</span>
+    </div>
+</div>
+
+<!-- ============================================================
+     ↑↑↑ 粘贴区域结束 ↑↑↑
+     ============================================================ -->
+
+<!-- ===== 底部翻页导航 ===== -->
+<div class="wb-pagenav">
+    <a class="wn-btn prev" href="workbook-04.html">
+        <div class="wna">‹</div>
+        <div class="wnt">
+            <span class="wnt-label">上一讲练习册</span>
+            <span class="wnt-title">a / an / the 三兄弟</span>
+        </div>
+    </a>
+
+    <a class="wn-home" href="index.html">📝 练习册目录</a>
+
+    <a class="wn-btn next" href="workbook-06.html">
+        <div class="wnt" style="text-align:right;">
+            <span class="wnt-label">下一讲练习册</span>
+            <span class="wnt-title">名词变复数</span>
+        </div>
+        <div class="wna">›</div>
+    </a>
+</div>
+
+<!-- ===== 页脚 ===== -->
+<div class="wb-footer">
+    初中英语语法重构 · 逆袭版 · 第5讲练习册<br>
+</div>
+
+</body>
+</html>

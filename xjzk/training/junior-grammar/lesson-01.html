@@ -1,0 +1,1845 @@
+<!-- AI生成 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- 修改A：改成本讲的标题 -->
+<title>第1讲：四大词性 — 初中英语语法重构</title>
+
+<style>
+/* ============================================================
+   基础 Reset
+   ============================================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #f0f2f5;
+    color: #2c3e50;
+    min-height: 100vh;
+}
+
+/* ============================================================
+   顶部导航条
+   ============================================================ */
+.lesson-topbar {
+    background: #2c3e50;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+}
+.topbar-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 11px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.topbar-back {
+    color: #f1c40f;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.topbar-back:hover { opacity: 0.75; }
+.topbar-sep { color: #4a6278; font-size: 16px; flex-shrink: 0; }
+.topbar-lesson-info { flex: 1; min-width: 0; }
+.topbar-lesson-info .tl-tag {
+    font-size: 11px;
+    color: #7f8c8d;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
+.topbar-lesson-info .tl-title {
+    font-size: 15px;
+    font-weight: 900;
+    color: #ecf0f1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.topbar-print {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    cursor: pointer;
+    font-family: inherit;
+    flex-shrink: 0;
+    transition: background 0.15s;
+}
+.topbar-print:hover { background: rgba(255,255,255,0.18); }
+
+/* ============================================================
+   主内容容器
+   ============================================================ */
+.lesson-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 36px 24px 20px;
+}
+
+/* ============================================================
+   讲义内容区（原 book-container 样式）
+   ============================================================ */
+.book-container {
+    background: #fff;
+    padding: 50px 60px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+/* ============================================================
+   底部翻页导航
+   ============================================================ */
+.lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0 20px;
+    flex-wrap: wrap;
+}
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 14px;
+    transition: all 0.15s;
+    flex: 1;
+    min-width: 160px;
+    max-width: 280px;
+}
+.nav-btn:hover {
+    border-color: #2980b9;
+    box-shadow: 0 4px 12px rgba(41,128,185,0.15);
+    transform: translateY(-1px);
+}
+.nav-btn.prev { justify-content: flex-start; }
+.nav-btn.next { justify-content: flex-end; margin-left: auto; }
+.nav-btn .nb-arrow { font-size: 18px; color: #aaa; flex-shrink: 0; }
+.nav-btn:hover .nb-arrow { color: #2980b9; }
+.nav-btn .nb-text { min-width: 0; }
+.nav-btn .nb-label { font-size: 11px; color: #aaa; display: block; }
+.nav-btn .nb-title { font-size: 14px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-btn-home {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #2c3e50;
+    border-radius: 10px;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #f1c40f;
+    font-size: 14px;
+    font-weight: bold;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.nav-btn-home:hover { opacity: 0.85; }
+
+/* ============================================================
+   页脚
+   ============================================================ */
+.lesson-footer {
+    text-align: center;
+    padding: 20px 24px 36px;
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   从原讲义继承的所有内容样式
+   （完整复制，保持与原讲义100%一致）
+   ============================================================ */
+
+/* 封面 */
+.chapter-cover {
+    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 60%, #2980b9 100%);
+    border-radius: 15px;
+    padding: 40px 40px 35px;
+    margin-bottom: 40px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.chapter-cover::before {
+    content: attr(data-num);
+    position: absolute;
+    right: 30px; top: 10px;
+    font-size: 110px; font-weight: 900;
+    color: rgba(255,255,255,0.06);
+    line-height: 1; letter-spacing: -5px;
+}
+.lesson-tag {
+    background: #f1c40f; color: #2c3e50;
+    font-weight: 900; font-size: 13px;
+    padding: 5px 14px; border-radius: 20px;
+    display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em;
+}
+.chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.chapter-cover h1 span { color: #f1c40f; }
+.chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.meta-row { display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip {
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9);
+    display: flex; align-items: center; gap: 5px;
+}
+
+/* 上一讲回顾条 */
+.review-bar {
+    background: #f0f7ff; border: 1.5px solid #b3d4ff;
+    border-left: 5px solid #2980b9; border-radius: 8px;
+    padding: 14px 18px; margin-bottom: 30px;
+    font-size: 14px; color: #1a5276; line-height: 1.75;
+}
+.review-bar strong { color: #1a252f; }
+
+/* 目标框 */
+.goal-box {
+    background: #fffde7; border: 2px solid #ffe082;
+    border-radius: 12px; padding: 20px 25px;
+    margin-bottom: 35px; display: flex; gap: 15px; align-items: flex-start;
+}
+.goal-icon { font-size: 28px; flex-shrink: 0; line-height: 1.2; }
+.goal-box h3 { font-size: 16px; color: #e65100; margin-bottom: 6px; font-weight: 900; }
+.goal-box p  { font-size: 15px; color: #5d4037; line-height: 1.7; }
+
+/* 通用模块卡片 */
+.module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+.badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+.card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }
+.badge-blue  { background: #2980b9; color: #fff; }
+.card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }
+.badge-green { background: #27ae60; color: #fff; }
+.card-red    { background: #fff5f5; border: 2px solid #ffcccc; }
+.badge-red   { background: #e74c3c; color: #fff; }
+.card-yellow { background: #fffde7; border: 2px solid #ffe082; }
+.badge-yellow{ background: #f1c40f; color: #333; }
+.card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }
+.badge-purple{ background: #8e44ad; color: #fff; }
+.card-teal   { background: #f0fffc; border: 2px solid #b2dfdb; }
+.badge-teal  { background: #16a085; color: #fff; }
+.card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }
+.badge-orange{ background: #e67e22; color: #fff; }
+.card-dark   { background: #f8f9fa; border: 2px solid #dee2e6; }
+.badge-dark  { background: #2c3e50; color: #f1c40f; }
+
+/* 文字高亮 */
+.hl-red    { color: #e74c3c; font-weight: bold; }
+.hl-blue   { color: #2980b9; font-weight: bold; }
+.hl-green  { color: #27ae60; font-weight: bold; }
+.hl-orange { color: #e67e22; font-weight: bold; }
+.hl-purple { color: #8e44ad; font-weight: bold; }
+.hl-teal   { color: #16a085; font-weight: bold; }
+.mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+.mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+.mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+.mark-purple { background: #e8daef; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #6c3483; }
+.mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+.mark-teal   { background: #d0f0ec; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #0e6655; }
+
+/* 考频标签 */
+.tag-hot  { background: #ff4757; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; box-shadow: 0 2px 4px rgba(255,71,87,0.3); }
+.tag-easy { background: #2ed573; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+.tag-core { background: #3742fa; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+
+/* 脑回路框 */
+.brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+.brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+/* 对错对比 */
+.wrong-text { color: #c0392b; font-size: 18px; font-weight: bold; text-decoration: line-through; }
+.right-text { color: #27ae60; font-size: 18px; font-weight: bold; }
+
+/* 句子解剖 */
+.sentence-dissect { display: flex; align-items: center; gap: 0; flex-wrap: wrap; margin: 18px 0; font-size: 18px; font-weight: bold; background: #f8f9fa; border-radius: 10px; padding: 14px 18px; line-height: 2; }
+.word-block { display: inline-flex; flex-direction: column; align-items: center; margin: 4px 6px; }
+.word-text  { padding: 6px 14px; border-radius: 8px; font-size: 17px; font-weight: 900; white-space: nowrap; }
+.word-label { font-size: 11px; font-weight: 500; margin-top: 4px; color: #666; }
+.wt-noun  { background: #fff3e0; color: #e65100; border: 1.5px solid #ffb74d; }
+.wt-verb  { background: #fce4ec; color: #c62828; border: 1.5px solid #f48fb1; }
+.wt-adj   { background: #e3f2fd; color: #1565c0; border: 1.5px solid #90caf9; }
+.wt-adv   { background: #e8f5e9; color: #2e7d32; border: 1.5px solid #a5d6a7; }
+.wt-other { background: #f5f5f5; color: #555;    border: 1.5px solid #ddd; }
+.wt-subj  { background: #fff3e0; color: #bf360c; border: 2px solid #ffb74d; }
+.wt-pred  { background: #fce4ec; color: #880e4f; border: 2px solid #f48fb1; }
+.wt-obj   { background: #e8f5e9; color: #1b5e20; border: 2px solid #a5d6a7; }
+.plus-sign { font-size: 20px; color: #bbb; margin: 0 2px; align-self: flex-start; padding-top: 10px; }
+
+/* 辨析表 */
+.magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+.magic-table th { background: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+.magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+.magic-table tr:last-child td { border-bottom: none; }
+.magic-table tr:hover td { background: #f8f9fa; }
+
+/* 方法卡 */
+.method-card { background: #fff; border: 2px solid #e0e0e0; border-radius: 10px; padding: 18px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.method-card .step-num { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; flex-shrink: 0; }
+.method-card .step-body h4 { font-size: 15px; font-weight: 900; margin-bottom: 5px; }
+.method-card .step-body p  { font-size: 14px; color: #555; line-height: 1.6; margin: 0; }
+.step-blue   .step-num { background: #ebf5fb; color: #2980b9; }
+.step-orange .step-num { background: #fef9e7; color: #e67e22; }
+.step-green  .step-num { background: #eafaf1; color: #27ae60; }
+
+/* 练习题 */
+.quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+.quiz-block .quiz-q { font-size: 18px; font-weight: bold; color: #2c3e50; margin-bottom: 12px; line-height: 1.6; }
+.quiz-block .quiz-opts { font-size: 15px; color: #555; margin-bottom: 16px; }
+.quiz-block .quiz-opts span { margin-right: 20px; }
+.reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+.reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+.answer-box { display: none; margin-top: 14px; }
+/* ===== 句子可视化解剖 ===== */
+    .sentence-dissect {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        flex-wrap: wrap;
+        margin: 18px 0;
+        font-size: 18px;
+        font-weight: bold;
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 14px 18px;
+        line-height: 2;
+    }
+    .word-block {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 4px 6px;
+    }
+    .word-text {
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 17px;
+        font-weight: 900;
+        white-space: nowrap;
+    }
+    .word-label {
+        font-size: 11px;
+        font-weight: 500;
+        margin-top: 4px;
+        color: #666;
+    }
+    .wt-noun { background: #fff3e0; color: #e65100; border: 1.5px solid #ffb74d; }
+    .wt-verb { background: #fce4ec; color: #c62828; border: 1.5px solid #f48fb1; }
+    .wt-adj  { background: #e3f2fd; color: #1565c0; border: 1.5px solid #90caf9; }
+    .wt-adv  { background: #e8f5e9; color: #2e7d32; border: 1.5px solid #a5d6a7; }
+    .wt-other { background: #f5f5f5; color: #555; border: 1.5px solid #ddd; }
+    .plus-sign { font-size: 20px; color: #bbb; margin: 0 2px; align-self: flex-start; padding-top: 10px; }
+
+    /* ===== 辨析对比表 ===== */
+    .magic-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+    .magic-table th { background-color: #2c3e50; color: #f1c40f; padding: 13px 16px; text-align: left; font-size: 15px; border-bottom: 3px solid #f1c40f; }
+    .magic-table td { padding: 13px 16px; border-bottom: 1px solid #eee; font-size: 15px; color: #333; vertical-align: top; }
+    .magic-table tr:last-child td { border-bottom: none; }
+    .magic-table tr:hover td { background-color: #f8f9fa; }
+    /* ===== 车型比喻四宫格 ===== */
+    .car-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin: 20px 0;
+    }
+    .car-cell {
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        border: 2px solid transparent;
+        transition: transform 0.2s;
+    }
+    .car-cell:hover { transform: translateY(-2px); }
+    .car-cell .car-icon { font-size: 42px; margin-bottom: 10px; line-height: 1; }
+    .car-cell .car-role { font-size: 13px; font-weight: bold; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .car-cell .car-name { font-size: 19px; font-weight: 900; margin-bottom: 6px; }
+    .car-cell .car-eng { font-size: 14px; margin-bottom: 8px; }
+    .car-cell .car-desc { font-size: 13px; line-height: 1.6; }
+    .cc-noun { background: #fff3e0; border-color: #ffb74d; color: #e65100; }
+    .cc-verb { background: #fce4ec; border-color: #f48fb1; color: #c62828; }
+    .cc-adj  { background: #e3f2fd; border-color: #90caf9; color: #1565c0; }
+    .cc-adv  { background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; }
+
+    /* ===== 判断方法卡 ===== */
+    .method-card {
+        background: #fff;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin: 12px 0;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+    }
+    .method-card .step-num {
+        width: 32px; height: 32px;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 900; font-size: 16px;
+        flex-shrink: 0;
+    }
+    .method-card .step-body h4 { font-size: 15px; font-weight: 900; margin-bottom: 5px; }
+    .method-card .step-body p { font-size: 14px; color: #555; line-height: 1.6; margin: 0; }
+    .step-blue .step-num { background: #ebf5fb; color: #2980b9; }
+    .step-orange .step-num { background: #fef9e7; color: #e67e22; }
+    .step-green .step-num { background: #eafaf1; color: #27ae60; }
+    /* ===== 对错对比 ===== */
+    .wrong-text { color: #c0392b; font-size: 18px; font-weight: bold; text-decoration: line-through; }
+    .right-text { color: #27ae60; font-size: 18px; font-weight: bold; }
+
+    /* ===== 句子三角色大卡片 ===== */
+    .role-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 14px;
+        margin: 22px 0;
+    }
+    .role-cell {
+        border-radius: 12px;
+        padding: 22px 16px;
+        text-align: center;
+        border: 2px solid transparent;
+        transition: transform 0.2s;
+    }
+    .role-cell:hover { transform: translateY(-2px); }
+    .role-cell .r-icon  { font-size: 40px; margin-bottom: 10px; line-height: 1; }
+    .role-cell .r-role  { font-size: 12px; font-weight: bold; letter-spacing: 0.06em; margin-bottom: 5px; }
+    .role-cell .r-name  { font-size: 20px; font-weight: 900; margin-bottom: 5px; }
+    .role-cell .r-eng   { font-size: 14px; margin-bottom: 8px; }
+    .role-cell .r-q     { font-size: 15px; font-weight: bold; border-radius: 6px; padding: 4px 10px; display: inline-block; margin-bottom: 8px; }
+    .role-cell .r-desc  { font-size: 13px; line-height: 1.65; }
+    .rc-subj { background: #fff3e0; border-color: #ffb74d; color: #bf360c; }
+    .rc-subj .r-q { background: #ffe0b2; }
+    .rc-pred { background: #fce4ec; border-color: #f48fb1; color: #880e4f; }
+    .rc-pred .r-q { background: #fce4ec; }
+    .rc-obj  { background: #e8f5e9; border-color: #a5d6a7; color: #1b5e20; }
+    .rc-obj  .r-q { background: #c8e6c9; }
+
+    /* ===== 句子可视化解剖 ===== */
+    .sentence-dissect {
+        display: flex;
+        align-items: flex-end;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin: 16px 0;
+        font-size: 18px;
+        font-weight: bold;
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 16px 18px 20px;
+    }
+    .word-block {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+    .word-text {
+        padding: 7px 14px;
+        border-radius: 8px;
+        font-size: 17px;
+        font-weight: 900;
+        white-space: nowrap;
+    }
+    .word-label { font-size: 11px; font-weight: 600; margin-top: 2px; }
+    .wt-subj  { background: #fff3e0; color: #bf360c; border: 2px solid #ffb74d; }
+    .wt-pred  { background: #fce4ec; color: #880e4f; border: 2px solid #f48fb1; }
+    .wt-obj   { background: #e8f5e9; color: #1b5e20; border: 2px solid #a5d6a7; }
+    .wt-other { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+    .wl-subj  { color: #bf360c; }
+    .wl-pred  { color: #880e4f; }
+    .wl-obj   { color: #1b5e20; }
+    .wl-other { color: #888; }
+
+    /* ===== 3步找句子结构法 ===== */
+    .step-flow {
+        display: flex;
+        gap: 0;
+        margin: 20px 0;
+        align-items: stretch;
+    }
+    .step-item {
+        flex: 1;
+        padding: 18px 16px;
+        text-align: center;
+        position: relative;
+    }
+    .step-item::after {
+        content: "→";
+        position: absolute;
+        right: -12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #bbb;
+        z-index: 1;
+    }
+    .step-item:last-child::after { display: none; }
+    .step-num-big {
+        width: 40px; height: 40px;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 900; font-size: 18px;
+        margin: 0 auto 10px;
+    }
+    .step-item h4 { font-size: 15px; font-weight: 900; margin-bottom: 6px; }
+    .step-item p  { font-size: 13px; line-height: 1.6; color: #555; }
+    .step-item .step-eg { font-size: 12px; margin-top: 6px; padding: 4px 8px; border-radius: 6px; font-weight: bold; }
+
+    .si-1 { background: #fff3e0; border-radius: 12px 0 0 12px; border: 2px solid #ffb74d; border-right: none; }
+    .si-1 .step-num-big { background: #ffb74d; color: #fff; }
+    .si-1 .step-eg { background: #ffe0b2; color: #bf360c; }
+
+    .si-2 { background: #fce4ec; border-top: 2px solid #f48fb1; border-bottom: 2px solid #f48fb1; }
+    .si-2 .step-num-big { background: #f48fb1; color: #fff; }
+    .si-2 .step-eg { background: #fce4ec; color: #880e4f; }
+
+    .si-3 { background: #e8f5e9; border-radius: 0 12px 12px 0; border: 2px solid #a5d6a7; border-left: none; }
+    .si-3 .step-num-big { background: #a5d6a7; color: #fff; }
+    .si-3 .step-eg { background: #c8e6c9; color: #1b5e20; }
+
+    /* ===== 五大句型表 ===== */
+    .pattern-table { width: 100%; border-collapse: collapse; margin: 18px 0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); font-size: 14px; }
+    .pattern-table th { background: #2c3e50; color: #f1c40f; padding: 11px 14px; text-align: left; }
+    .pattern-table td { padding: 11px 14px; border-bottom: 1px solid #eee; vertical-align: middle; line-height: 1.6; }
+    .pattern-table tr:last-child td { border-bottom: none; }
+    .pattern-table tr:hover td { background: #f8f9fa; }
+    .pt-formula { font-weight: 900; font-size: 14px; letter-spacing: 0.05em; }
+    .pt-s { color: #bf360c; }
+    .pt-v { color: #880e4f; }
+    .pt-o { color: #1b5e20; }
+    .pt-c { color: #0e6655; }
+
+    /* ===== 辨析对比表 ===== */
+    .magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+    .magic-table th { background-color: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; }
+    .magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; }
+    .magic-table tr:last-child td { border-bottom: none; }
+    .magic-table tr:hover td { background-color: #f8f9fa; }
+
+    /* ===== 练习题 ===== */
+    .quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+    .quiz-block .quiz-q { font-size: 18px; font-weight: bold; color: #2c3e50; margin-bottom: 12px; line-height: 1.6; }
+    .quiz-block .quiz-opts { font-size: 15px; color: #555; margin-bottom: 16px; }
+    .quiz-block .quiz-opts span { margin-right: 20px; }
+    .reveal-btn {
+        background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px;
+        cursor: pointer; font-weight: bold; font-size: 15px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit;
+    }
+    .reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+    .answer-box { display: none; margin-top: 14px; }
+
+    /* ===== 特别警告框 ===== */
+    .warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 15px 0; }
+    .warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 16px; margin-bottom: 8px; }
+    .warn-box p { font-size: 15px; color: #444; line-height: 1.7; margin: 0; }
+
+    /* ===== 小提示绿框 ===== */
+    .tip-box { background: #f4fbf4; border: 2px solid #c3e6c3; border-left: 5px solid #27ae60; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #1e8449; line-height: 1.75; }
+
+    /* ===== 分割线 ===== */
+    .section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+    .section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+    .section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+    /* ===== 小抄 ===== */
+    .cheatsheet {
+        margin: 50px 0 30px;
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 40px 35px 35px;
+        border-radius: 14px;
+        position: relative;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    }
+    .cheatsheet-title {
+        position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+        background: #f1c40f; color: #2c3e50;
+        padding: 8px 28px; border-radius: 20px;
+        font-weight: 900; font-size: 17px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        white-space: nowrap;
+    }
+    .cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+    .cs-block { background: rgba(255,255,255,0.09); padding: 18px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+    .cs-block.red    { border-left-color: #e74c3c; }
+    .cs-block.green  { border-left-color: #2ecc71; }
+    .cs-block.yellow { border-left-color: #f1c40f; }
+    .cs-block.orange { border-left-color: #e67e22; }
+    .cs-block strong { font-size: 16px; display: block; margin-bottom: 8px; }
+    .cs-block p, .cs-block li { font-size: 15px; line-height: 1.75; color: #ecf0f1; margin: 4px 0; }
+    .cs-block ul { padding-left: 20px; }
+
+/* 警告框 */
+.warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+.warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 16px; margin-bottom: 8px; }
+.warn-box p { font-size: 15px; color: #444; line-height: 1.7; margin: 0; }
+.tip-box { background: #f4fbf4; border: 2px solid #c3e6c3; border-left: 5px solid #27ae60; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #1e8449; line-height: 1.75; }
+
+/* 分割线 */
+.section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+.section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+/* 小抄 */
+.cheatsheet { margin: 50px 0 30px; background: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+.cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+.cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+.cs-block.red    { border-left-color: #e74c3c; }
+.cs-block.green  { border-left-color: #2ecc71; }
+.cs-block.yellow { border-left-color: #f1c40f; }
+.cs-block.orange { border-left-color: #e67e22; }
+.cs-block.purple { border-left-color: #9b59b6; }
+.cs-block strong { font-size: 17px; display: block; margin-bottom: 8px; }
+.cs-block p, .cs-block li { font-size: 15px; line-height: 1.75; color: #ecf0f1; margin: 4px 0; }
+.cs-block ul { padding-left: 20px; }
+ /* ===== 对错对比 ===== */
+    .wrong-text { color: #c0392b; font-size: 18px; font-weight: bold; text-decoration: line-through; }
+    .right-text { color: #27ae60; font-size: 18px; font-weight: bold; }
+
+    /* ===== 代词大总表 ===== */
+    .pronoun-master-table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 16px rgba(0,0,0,0.09); margin: 20px 0; font-size: 14px; }
+    .pronoun-master-table thead tr th { background: #2c3e50; color: #f1c40f; padding: 12px 14px; text-align: center; font-size: 13px; letter-spacing: 0.04em; }
+    .pronoun-master-table thead tr th:first-child { text-align: left; }
+    .pronoun-master-table .group-label { background: #34495e; color: #ecf0f1; font-size: 12px; font-weight: bold; padding: 7px 14px; letter-spacing: 0.05em; }
+    .pronoun-master-table td { padding: 11px 14px; border-bottom: 1px solid #f0f0f0; text-align: center; vertical-align: middle; }
+    .pronoun-master-table td:first-child { text-align: left; font-weight: bold; color: #555; font-size: 13px; background: #fafafa; }
+    .pronoun-master-table tr:last-child td { border-bottom: none; }
+    .pronoun-master-table tr:hover td { background: #f8f9fa; }
+    .pronoun-master-table tr:hover td:first-child { background: #f0f0f0; }
+    /* 四列颜色 */
+    .col-zhuge { color: #1565c0; font-weight: 900; font-size: 15px; }   /* 主格 蓝 */
+    .col-bin   { color: #c62828; font-weight: 900; font-size: 15px; }   /* 宾格 红 */
+    .col-xrong { color: #2e7d32; font-weight: 900; font-size: 15px; }   /* 形容性物主 绿 */
+    .col-mrong { color: #6a1b9a; font-weight: 900; font-size: 15px; }   /* 名词性物主 紫 */
+    .col-fan   { color: #e65100; font-weight: 900; font-size: 15px; }   /* 反身 橙 */
+    /* 表头背景 */
+    .th-zhuge { background: #1565c0 !important; }
+    .th-bin   { background: #c62828 !important; }
+    .th-xrong { background: #2e7d32 !important; }
+    .th-mrong { background: #6a1b9a !important; }
+    .th-fan   { background: #bf360c !important; }
+
+    /* ===== 角色卡片（三大类代词） ===== */
+    .pronoun-role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+    .pronoun-role-card { border-radius: 12px; padding: 20px 18px; border: 2px solid transparent; }
+    .pronoun-role-card .prc-icon { font-size: 36px; margin-bottom: 8px; line-height: 1; }
+    .pronoun-role-card .prc-name { font-size: 17px; font-weight: 900; margin-bottom: 5px; }
+    .pronoun-role-card .prc-q    { font-size: 13px; font-weight: bold; border-radius: 6px; padding: 3px 10px; display: inline-block; margin-bottom: 8px; }
+    .pronoun-role-card .prc-desc { font-size: 13px; line-height: 1.65; }
+    .prc-main { background: #e8f4fd; border-color: #90caf9; color: #1565c0; }
+    .prc-main .prc-q { background: #bbdefb; }
+    .prc-bin  { background: #fce4ec; border-color: #f48fb1; color: #c62828; }
+    .prc-bin  .prc-q { background: #fce4ec; border: 1px solid #f48fb1; }
+    .prc-xrong{ background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; }
+    .prc-xrong .prc-q { background: #c8e6c9; }
+    .prc-mrong{ background: #f3e5f5; border-color: #ce93d8; color: #6a1b9a; }
+    .prc-mrong .prc-q { background: #e1bee7; }
+
+    /* ===== 换装演示卡片 ===== */
+    .swap-demo { background: #fff; border: 2px solid #e0e0e0; border-radius: 12px; padding: 20px 22px; margin: 14px 0; }
+    .swap-sentence { font-size: 17px; font-weight: bold; line-height: 2; margin-bottom: 12px; }
+    .swap-arrow { color: #bbb; margin: 0 8px; font-size: 18px; }
+    .swap-steps { display: flex; flex-direction: column; gap: 8px; }
+    .swap-step { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.65; color: #444; }
+    .swap-step .ss-num { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+
+    /* ===== 位置判断流程 ===== */
+    .position-flow { display: flex; flex-direction: column; gap: 0; margin: 16px 0; border-radius: 10px; overflow: hidden; border: 1.5px solid #d8b4fe; }
+    .pf-item { display: flex; align-items: stretch; border-bottom: 1px solid #e8daef; }
+    .pf-item:last-child { border-bottom: none; }
+    .pf-num { background: #8e44ad; color: #fff; font-weight: 900; font-size: 16px; min-width: 48px; display: flex; align-items: center; justify-content: center; }
+    .pf-body { padding: 14px 18px; flex: 1; background: #fff; }
+    .pf-body:nth-child(even) { background: #faf5ff; }
+    .pf-body h4 { font-size: 15px; font-weight: 900; color: #5b2c6f; margin-bottom: 5px; }
+    .pf-body p  { font-size: 14px; color: #555; line-height: 1.65; margin: 0; }
+
+    /* ===== 辨析对比表 ===== */
+    .magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+    .magic-table th { background-color: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+    .magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+    .magic-table tr:last-child td { border-bottom: none; }
+    .magic-table tr:hover td { background-color: #f8f9fa; }
+
+    /* ===== 警告框 / 提示框 ===== */
+    .warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+    .warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 16px; margin-bottom: 8px; }
+    .warn-box p { font-size: 15px; color: #444; line-height: 1.7; margin: 0; }
+    .tip-box { background: #f4fbf4; border: 2px solid #c3e6c3; border-left: 5px solid #27ae60; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #1e8449; line-height: 1.75; }
+
+    /* ===== 练习题 ===== */
+    .quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+    .quiz-block .quiz-q { font-size: 18px; font-weight: bold; color: #2c3e50; margin-bottom: 12px; line-height: 1.6; }
+    .quiz-block .quiz-opts { font-size: 15px; color: #555; margin-bottom: 16px; }
+    .quiz-block .quiz-opts span { margin-right: 20px; }
+    .reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+    .reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+    .answer-box { display: none; margin-top: 14px; }
+
+    /* ===== 分割线 ===== */
+    .section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+    .section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+    .section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+    /* ===== 小抄 ===== */
+    .cheatsheet { margin: 50px 0 30px; background-color: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+    .cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+    .cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+    .cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+    .cs-block.red    { border-left-color: #e74c3c; }
+    .cs-block.green  { border-left-color: #2ecc71; }
+    .cs-block.yellow { border-left-color: #f1c40f; }
+    .cs-block.orange { border-left-color: #e67e22; }
+    .cs-block.purple { border-left-color: #9b59b6; }
+    .cs-block strong { font-size: 17px; display: block; margin-bottom: 8px; }
+    .cs-block p, .cs-block li { font-size: 15px; line-height: 1.8; color: #ecf0f1; margin: 4px 0; }
+    .cs-block ul { padding-left: 20px; }
+    .cs-block table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
+    .cs-block table th { background: rgba(255,255,255,0.14); color: #f1c40f; padding: 8px 12px; text-align: center; }
+    .cs-block table td { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.07); text-align: center; color: #ecf0f1; }
+    .cs-block table tr:last-child td { border-bottom: none; }
+
+/* ============================================================
+   本讲新增：打印友好小抄 + 补充模块
+   说明：不改原有模块，只给新增内容和小抄做轻量样式
+   ============================================================ */
+.exam-map-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 18px 0;
+}
+.exam-map-card {
+    background: #fff;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    line-height: 1.7;
+}
+.exam-map-card h4 {
+    font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    color: #0e6655;
+}
+.exam-map-card p {
+    font-size: 14px;
+    color: #444;
+    margin: 5px 0;
+}
+.judge-flow {
+    background: #fff;
+    border: 2px solid #b2dfdb;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 18px 0;
+}
+.judge-flow-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 1fr;
+    border-bottom: 1px solid #e0f2f1;
+}
+.judge-flow-row:last-child { border-bottom: none; }
+.judge-flow-row > div {
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.65;
+    border-right: 1px solid #e0f2f1;
+}
+.judge-flow-row > div:last-child { border-right: none; }
+.judge-flow-head > div {
+    background: #16a085;
+    color: #fff;
+    font-weight: 900;
+}
+.mini-check-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+}
+.mini-check {
+    background: #fff;
+    border: 1.5px solid #ffd8a8;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.65;
+}
+.mini-check strong { color: #d35400; }
+
+/* 小抄：浅色、紧凑、适合打印 */
+.cheatsheet.cheatsheet-printable {
+    margin: 42px 0 26px !important;
+    background: #fffdf5 !important;
+    color: #2c3e50 !important;
+    padding: 24px 24px 20px !important;
+    border-radius: 12px !important;
+    border: 2px solid #f1c40f !important;
+    box-shadow: 0 5px 16px rgba(0,0,0,0.06) !important;
+}
+.cheatsheet-printable .cheatsheet-title {
+    position: static !important;
+    transform: none !important;
+    display: inline-block !important;
+    background: #f1c40f !important;
+    color: #2c3e50 !important;
+    padding: 7px 18px !important;
+    border-radius: 18px !important;
+    font-weight: 900 !important;
+    font-size: 16px !important;
+    box-shadow: none !important;
+    margin-bottom: 10px !important;
+}
+.cheatsheet-printable .cs-sub {
+    text-align: left !important;
+    color: #777 !important;
+    font-size: 13px !important;
+    margin: 0 0 14px !important;
+}
+.cs-compact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.cheatsheet-printable .cs-block {
+    background: #fff !important;
+    color: #2c3e50 !important;
+    border: 1.5px solid #f5d77b !important;
+    border-left: 5px solid #f1c40f !important;
+    border-radius: 8px !important;
+    padding: 12px 14px !important;
+    margin-bottom: 10px !important;
+    box-shadow: none !important;
+}
+.cheatsheet-printable .cs-block.red { border-left-color: #e74c3c !important; }
+.cheatsheet-printable .cs-block.green { border-left-color: #27ae60 !important; }
+.cheatsheet-printable .cs-block.yellow { border-left-color: #f1c40f !important; }
+.cheatsheet-printable .cs-block.orange { border-left-color: #e67e22 !important; }
+.cheatsheet-printable .cs-block.purple { border-left-color: #8e44ad !important; }
+.cheatsheet-printable .cs-block strong {
+    color: #1a252f !important;
+    font-size: 15px !important;
+    display: block;
+    margin-bottom: 6px !important;
+}
+.cheatsheet-printable .cs-block p,
+.cheatsheet-printable .cs-block li {
+    color: #333 !important;
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+    margin: 3px 0 !important;
+}
+.cheatsheet-printable ul {
+    padding-left: 18px !important;
+}
+.cheatsheet-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    margin: 12px 0 10px;
+    font-size: 13px;
+}
+.cheatsheet-table th {
+    background: #2c3e50;
+    color: #f1c40f;
+    padding: 8px 9px;
+    text-align: left;
+}
+.cheatsheet-table td {
+    padding: 8px 9px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    line-height: 1.45;
+}
+.cheatsheet-table tr:last-child td { border-bottom: none; }
+
+@media (max-width: 680px) {
+    .exam-map-grid,
+    .mini-check-list,
+    .cs-compact-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .judge-flow-row {
+        grid-template-columns: 1fr !important;
+    }
+    .judge-flow-row > div {
+        border-right: none !important;
+        border-bottom: 1px solid #e0f2f1;
+    }
+    .judge-flow-row > div:last-child { border-bottom: none; }
+    .cheatsheet.cheatsheet-printable {
+        padding: 18px 14px !important;
+    }
+}
+
+@media print {
+    .cheatsheet.cheatsheet-printable {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+        background: #fff !important;
+        color: #000 !important;
+        border: 1.5px solid #999 !important;
+        box-shadow: none !important;
+        padding: 14px 16px !important;
+        margin: 16px 0 !important;
+    }
+    .cheatsheet-printable .cheatsheet-title {
+        background: #eee !important;
+        color: #000 !important;
+        border: 1px solid #999 !important;
+    }
+    .cheatsheet-printable .cs-block {
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #aaa !important;
+        border-left: 4px solid #666 !important;
+        padding: 8px 10px !important;
+        margin-bottom: 7px !important;
+    }
+    .cheatsheet-printable .cs-block p,
+    .cheatsheet-printable .cs-block li,
+    .cheatsheet-printable .cs-block strong,
+    .cheatsheet-table td {
+        color: #000 !important;
+    }
+    .cheatsheet-table th {
+        background: #eee !important;
+        color: #000 !important;
+        border: 1px solid #aaa !important;
+    }
+    .cheatsheet-table td {
+        border: 1px solid #ddd !important;
+    }
+}
+
+/* 转化钩子 */
+.cta-box { margin-top: 40px; padding: 32px; background: #fff3e0; border: 2px dashed #e67e22; border-radius: 14px; text-align: center; box-shadow: 0 5px 15px rgba(230,126,34,0.12); }
+.cta-box h3 { color: #d35400; font-size: 22px; margin-bottom: 14px; font-weight: 900; }
+.cta-box p  { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 20px; text-align: left; }
+.cta-btn { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; display: inline-block; padding: 14px 35px; border-radius: 30px; font-weight: bold; font-size: 17px; text-decoration: none; box-shadow: 0 4px 12px rgba(230,126,34,0.4); transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); }
+
+
+
+/* ============================================================
+   新版救命小抄 V2：浅色、紧凑、打印友好
+   ============================================================ */
+.cheatsheet-v2 {
+  margin: 42px 0 28px;
+  background: #fffdf5;
+  border: 2px solid #f1c40f;
+  border-radius: 14px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  color: #2c3e50;
+}
+.cheatsheet-v2-header {
+  background: linear-gradient(135deg, #fff3c4, #fff8df);
+  border-bottom: 2px solid #f1c40f;
+  padding: 16px 22px 14px;
+}
+.cheatsheet-v2-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+.cheatsheet-v2-subtitle {
+  font-size: 13px;
+  color: #7d6608;
+  line-height: 1.6;
+}
+.cheatsheet-v2-body { padding: 18px 20px 20px; }
+.cheat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.cheat-card {
+  background: #fff;
+  border: 1.5px solid #e8e8e8;
+  border-left: 5px solid #3498db;
+  border-radius: 10px;
+  padding: 13px 14px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.cheat-card.core { border-left-color: #e74c3c; }
+.cheat-card.method { border-left-color: #2980b9; }
+.cheat-card.trap { border-left-color: #e67e22; }
+.cheat-card.example { border-left-color: #27ae60; }
+.cheat-card.memory { border-left-color: #8e44ad; }
+.cheat-card.exam { border-left-color: #16a085; }
+.cheat-card h4 {
+  font-size: 15px;
+  font-weight: 900;
+  color: #1a252f;
+  margin-bottom: 7px;
+  line-height: 1.45;
+}
+.cheat-card p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.65;
+  margin: 5px 0;
+}
+.cheat-card ul { padding-left: 18px; margin: 6px 0 0; }
+.cheat-card li {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.65;
+  margin: 3px 0;
+}
+.cheat-rule {
+  display: inline-block;
+  background: #fff3c4;
+  color: #7d6608;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+.cheat-good { color: #1e8449; font-weight: 900; }
+.cheat-bad { color: #c0392b; font-weight: 900; text-decoration: line-through; }
+.cheat-note {
+  background: #f8f9fa;
+  border: 1px dashed #d0d0d0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-top: 8px;
+  font-size: 13px !important;
+  color: #666 !important;
+}
+.cheatsheet-v2-footer {
+  margin-top: 14px;
+  background: #f8f9fa;
+  border: 1.5px dashed #d0d0d0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+}
+.cheatsheet-v2-footer strong { color: #c0392b; }
+@media (max-width: 680px) {
+  .cheatsheet-v2 {
+    margin: 30px 0 24px !important;
+    border-radius: 12px !important;
+  }
+  .cheatsheet-v2-header { padding: 14px 14px 12px !important; }
+  .cheatsheet-v2-title { font-size: 18px !important; }
+  .cheatsheet-v2-body { padding: 14px 12px 16px !important; }
+  .cheat-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+  .cheat-card { padding: 12px 12px !important; }
+  .cheat-card h4 { font-size: 15px !important; }
+  .cheat-card p, .cheat-card li { font-size: 14px !important; line-height: 1.65 !important; }
+}
+@media print {
+  .cheatsheet-v2 {
+    background: #fff !important;
+    border: 1.5px solid #333 !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    margin: 18px 0 !important;
+    page-break-before: auto !important;
+    break-before: auto !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+  .cheatsheet-v2-header {
+    background: #fff !important;
+    border-bottom: 1.5px solid #333 !important;
+    padding: 10px 12px !important;
+  }
+  .cheatsheet-v2-title { color: #000 !important; font-size: 17px !important; }
+  .cheatsheet-v2-subtitle { color: #333 !important; font-size: 12px !important; }
+  .cheatsheet-v2-body { padding: 12px !important; }
+  .cheat-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  .cheat-card {
+    background: #fff !important;
+    border: 1px solid #555 !important;
+    border-left: 4px solid #000 !important;
+    box-shadow: none !important;
+    padding: 8px 10px !important;
+  }
+  .cheat-card h4 { color: #000 !important; font-size: 13px !important; margin-bottom: 4px !important; }
+  .cheat-card p, .cheat-card li {
+    color: #111 !important;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    margin: 2px 0 !important;
+  }
+  .cheat-rule {
+    background: #fff !important;
+    border: 1px solid #999 !important;
+    color: #000 !important;
+    padding: 1px 4px !important;
+  }
+  .cheat-note {
+    background: #fff !important;
+    border: 1px dashed #777 !important;
+    color: #222 !important;
+    font-size: 11px !important;
+    padding: 5px 7px !important;
+  }
+  .cheatsheet-v2-footer {
+    background: #fff !important;
+    border: 1px dashed #777 !important;
+    color: #000 !important;
+    padding: 7px 9px !important;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+  }
+  .cheatsheet-v2-footer strong { color: #000 !important; }
+}
+
+/* ============================================================
+   打印优化
+   ============================================================ */
+@media print {
+    body { background: #fff; }
+
+    /* 隐藏所有导航元素 */
+    .lesson-topbar,
+    .lesson-nav,
+    .lesson-footer { display: none !important; }
+
+    /* 内容区满版打印 */
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container {
+        padding: 20px 24px;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    /* 保留背景色 */
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    /* 避免卡片在页面中间断开 */
+    .module-card, .quiz-block, .warn-box, .cheatsheet,
+    .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+
+    /* 小抄前换页，保证在新页开始 */
+    .cheatsheet { page-break-before: always; break-before: page; }
+
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ============================================================
+   响应式
+   ============================================================ */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover { padding: 28px 20px 24px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+    .nav-btn .nb-title { font-size: 12px; }
+}
+</style>
+<link rel="stylesheet" href="/assets/grammar-mobile-print-fix.css?v=20260705">
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+<p data-aigc-mark="1" style="margin:0 0 8px;font-size:10px;line-height:1.3;color:#6b6560;font-weight:400;">AI生成</p>
+
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="lesson-topbar">
+    <div class="topbar-inner">
+        <a class="topbar-back" href="index.html">← 目录</a>
+        <div class="topbar-sep">/</div>
+        <div class="topbar-lesson-info">
+            <!-- 修改B-1：讲次区域标签，如"第一战区 · 及格必学" -->
+            <div class="tl-tag">第一战区 · 第1讲 · 及格必学</div>
+            <!-- 修改B-2：讲义标题 -->
+            <div class="tl-title">四大词性</div>
+        </div>
+        <button class="topbar-print" onclick="window.print()">🖨️ 打印本讲</button>
+    </div>
+</div>
+
+<!-- ===== 主内容区 ===== -->
+<div class="lesson-main">
+<div class="book-container">
+    <!-- 章节封面 -->
+    <div id="lesson-1" class="chapter-cover" style="scroll-margin-top:24px;">
+        <div class="lesson-tag">第一战区 · 第1讲 · 及格必学</div>
+        <h1>四大天王<span>（四大词性）</span></h1>
+        <p class="subtitle">造英语句子就像造一辆车——<br>先搞清楚零件有哪几种，你才知道该装哪里</p>
+        <div class="meta-row">
+            <div class="meta-chip">⏱ 预计学习 30 分钟</div>
+            <div class="meta-chip">🎯 中考涉及约 15-20 分</div>
+            <div class="meta-chip">⭐ 难度：入门</div>
+        </div>
+    </div>
+
+    <!-- 学习目标 -->
+    <div class="goal-box">
+        <div class="goal-icon">🎯</div>
+        <div>
+            <h3>学完这讲，你能做到：</h3>
+            <p>① 看到一个英文单词，能感觉出它是哪种"零件"<br>
+            ② 遇到形容词 vs 副词选择题，不再靠猜，有方法<br>
+            ③ 理解为什么"I very happy"是句废话</p>
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 模块一：核心比喻 -->
+    <!-- ================================================ -->
+    <div class="module-card card-blue">
+        <div class="badge badge-blue">🚗 模块一：造车理论——词性就是零件</div>
+
+        <p>先讲一个不会忘记的比喻。</p>
+        <p style="margin-top: 12px;">造一辆车，需要四种最核心的零件：</p>
+
+        <div class="car-grid" style="margin-top: 20px;">
+            <div class="car-cell cc-noun">
+                <div class="car-icon">🏠</div>
+                <div class="car-role">零件 1</div>
+                <div class="car-name">车身（骨架）</div>
+                <div class="car-eng">= <strong>名词 Noun</strong></div>
+                <div class="car-desc">代表真实存在的<strong>人、地点、东西、概念</strong>。<br>例：dog / school / China / love</div>
+            </div>
+            <div class="car-cell cc-verb">
+                <div class="car-icon">🔥</div>
+                <div class="car-role">零件 2</div>
+                <div class="car-name">发动机（灵魂）</div>
+                <div class="car-eng">= <strong>动词 Verb</strong></div>
+                <div class="car-desc">代表<strong>动作或状态</strong>。<br>没有它，句子完全开不动。<br>例：run / eat / is / think</div>
+            </div>
+            <div class="car-cell cc-adj">
+                <div class="car-icon">🎨</div>
+                <div class="car-role">零件 3</div>
+                <div class="car-name">车漆（颜值）</div>
+                <div class="car-eng">= <strong>形容词 Adjective</strong></div>
+                <div class="car-desc">专门用来<strong>描述名词（东西/人）</strong>是什么样的。<br>例：beautiful / tall / cold</div>
+            </div>
+            <div class="car-cell cc-adv">
+                <div class="car-icon">⚡</div>
+                <div class="car-role">零件 4</div>
+                <div class="car-name">加速器（助力）</div>
+                <div class="car-eng">= <strong>副词 Adverb</strong></div>
+                <div class="car-desc">专门用来<strong>描述动词（动作）</strong>是怎么发生的。<br>长相特征：很多带 <strong>-ly</strong> 结尾。<br>例：quickly / very / well</div>
+            </div>
+        </div>
+
+        <div class="warn-box" style="margin-top: 20px;">
+            <div class="warn-title">💡 死记不如理解——为什么要分这四种？</div>
+            <p>中文说"他跑得很快"，感觉很自然，不用想词性。<br>
+            但英文有一条铁律：<strong>每种零件只能装在它该装的位置上</strong>，装错了，整句话就语法错误——哪怕意思你懂，考试就是扣分。<br>
+            所以词性不是在背概念，是在学"零件装配规则"。</p>
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 模块二：解剖一个真实的句子 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>模块二</span><hr></div>
+
+    <div class="module-card card-green">
+        <div class="badge badge-green">🔬 模块二：解剖真实句子——四大天王各就各位</div>
+
+        <p>光讲四种零件太抽象。我们直接拆一个中考常考的句子，看看它们怎么拼在一起。</p>
+
+        <p style="margin: 20px 0 8px; font-weight: 900; font-size: 17px; color: #1a252f;">句子一：She runs quickly every morning.</p>
+        <p style="color: #666; font-size: 14px; margin-bottom: 12px;">（她每天早上跑得很快。）</p>
+
+        <div class="sentence-dissect">
+            <div class="word-block">
+                <span class="word-text wt-noun">She</span>
+                <span class="word-label">🏠 名词/代词<br>（车身·主角）</span>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="word-block">
+                <span class="word-text wt-verb">runs</span>
+                <span class="word-label">🔥 动词<br>（发动机·灵魂）</span>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="word-block">
+                <span class="word-text wt-adv">quickly</span>
+                <span class="word-label">⚡ 副词<br>（加速器·怎么跑）</span>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="word-block">
+                <span class="word-text wt-other">every morning</span>
+                <span class="word-label">⏰ 时间状语</span>
+            </div>
+        </div>
+
+        <p style="margin-top: 8px; font-size: 14px; color: #888;">注意：<code>quickly</code>（副词）描述的是"跑"这个<strong>动作</strong>——跑得怎么样？跑得快。这正是副词的用途。</p>
+
+        <hr style="border: none; border-top: 1px dashed #c3e6c3; margin: 25px 0;">
+
+        <p style="margin-bottom: 8px; font-weight: 900; font-size: 17px; color: #1a252f;">句子二：The small dog is cute.</p>
+        <p style="color: #666; font-size: 14px; margin-bottom: 12px;">（这只小狗很可爱。）</p>
+
+        <div class="sentence-dissect">
+            <div class="word-block">
+                <span class="word-text wt-other">The</span>
+                <span class="word-label">冠词</span>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="word-block">
+                <span class="word-text wt-adj">small</span>
+                <span class="word-label">🎨 形容词<br>（车漆·描述狗）</span>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="word-block">
+                <span class="word-text wt-noun">dog</span>
+                <span class="word-label">🏠 名词<br>（车身·主角）</span>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="word-block">
+                <span class="word-text wt-verb">is</span>
+                <span class="word-label">🔥 动词<br>（发动机）</span>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="word-block">
+                <span class="word-text wt-adj">cute</span>
+                <span class="word-label">🎨 形容词<br>（车漆·描述狗）</span>
+            </div>
+        </div>
+
+        <p style="margin-top: 8px; font-size: 14px; color: #888;">注意：<code>small</code>（形容词）描述的是"dog"这个<strong>东西</strong>——什么样的狗？小狗。<code>cute</code>也是形容词，同样在描述"dog"。这正是形容词的用途。</p>
+
+        <div class="brain-box" style="margin-top: 20px; border-color: #27ae60;">
+            <p>🧠 <strong>两句话总结"谁修饰谁"：</strong></p>
+            <p>• <span class="mark-blue">形容词（车漆）</span>只跟 <span class="hl-blue">名词（东西/人）</span> 在一起，修饰东西长什么样。</p>
+            <p>• <span class="mark-green">副词（加速器）</span>只跟 <span class="hl-green">动词（动作）</span> 在一起，修饰动作是怎么发生的。</p>
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 模块三：词性速判方法 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>模块三</span><hr></div>
+
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🔍 模块三：三步判断词性——不用背，用感觉</div>
+
+        <p>很多同学问：我怎么知道一个单词是什么词性？<br>
+        不需要背定义。用下面这三步，大部分单词秒判。</p>
+
+        <div class="method-card step-blue" style="margin-top: 20px;">
+            <div class="step-num step-blue">1</div>
+            <div class="step-body">
+                <h4>看它后面跟着什么</h4>
+                <p>如果后面是<strong>名词（东西）</strong>，它就是<span class="mark-blue">形容词</span>。<br>
+                例：a <u>beautiful</u> <strong>girl</strong>（beautiful 后面是 girl，是东西，所以 beautiful 是形容词）</p>
+            </div>
+        </div>
+        <div class="method-card step-orange">
+            <div class="step-num step-orange">2</div>
+            <div class="step-body">
+                <h4>看它后面跟着什么（第二种情况）</h4>
+                <p>如果后面是<strong>动词（动作）</strong>，它就是<span class="mark-green">副词</span>。<br>
+                例：She <u>quickly</u> <strong>ran</strong> away.（quickly 后面是 ran，是动作，所以 quickly 是副词）</p>
+            </div>
+        </div>
+        <div class="method-card step-green">
+            <div class="step-num step-green">3</div>
+            <div class="step-body">
+                <h4>看结尾有没有 -ly</h4>
+                <p>大多数副词都带 <span class="mark-green">-ly</span>：quickly / slowly / carefully / beautifully<br>
+                ⚠️ 注意例外：<span class="mark-red">good（形容词）vs well（副词）</span>——"good"是"好的"（形容词），"well"是"好地"（副词），它们是一对，别搞混。</p>
+            </div>
+        </div>
+
+        <!-- good vs well 辨析表 -->
+        <p style="font-weight: 900; margin: 20px 0 10px; font-size: 16px;">📊 中考最爱考的"好"：good vs well</p>
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th>单词</th>
+                    <th>词性</th>
+                    <th>正确用法</th>
+                    <th>翻译</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong style="color:#e74c3c;">good</strong></td>
+                    <td>形容词（车漆）</td>
+                    <td>She is a <strong class="hl-red">good</strong> student.<br>
+                    He is <strong class="hl-red">good</strong> at math.</td>
+                    <td>她是个好学生<br>他数学好</td>
+                </tr>
+                <tr>
+                    <td><strong style="color:#27ae60;">well</strong></td>
+                    <td>副词（加速器）</td>
+                    <td>She sings <strong class="hl-green">well</strong>.<br>
+                    He speaks English <strong class="hl-green">well</strong>.</td>
+                    <td>她唱得好<br>他英语说得好</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warn-box">
+            <div class="warn-title">🚨 超高频陷阱：He sings very good. ❌</div>
+            <p>"sings"是动作（发动机），修饰动作必须用副词（加速器）。<br>
+            ✅ 正确：He sings very <span class="mark-green">well</span>.<br>
+            记住：唱这个<strong>动作</strong>唱得"好"，要用 well，不能用 good。</p>
+        </div>
+    </div>
+
+
+
+    <!-- ================================================ -->
+    <!-- 加餐一：考试真正考什么 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>加餐一</span><hr></div>
+
+    <div class="module-card card-teal">
+        <div class="badge badge-teal">🧭 加餐一：中考不是考你背定义，而是考你会不会看位置</div>
+
+        <p>四大词性真正有用的地方，不是让你背"名词是什么、动词是什么"，而是让你做题时知道：<strong>空格这个位置，到底该放哪种零件。</strong></p>
+        <p style="margin-top:10px;">以后遇到选择题，不要先看哪个单词眼熟，而要先看<strong>空格前后</strong>。位置看准了，选项就会少一半。</p>
+
+        <div class="judge-flow">
+            <div class="judge-flow-row judge-flow-head">
+                <div>看到的信号</div>
+                <div>大脑要问的问题</div>
+                <div>优先考虑的词性</div>
+            </div>
+            <div class="judge-flow-row">
+                <div><strong>空格后面是名词</strong><br>如：a ___ boy</div>
+                <div>这个空是不是在描述"人/东西"是什么样？</div>
+                <div><span class="mark-blue">形容词</span><br>例：a <strong>careful</strong> boy</div>
+            </div>
+            <div class="judge-flow-row">
+                <div><strong>空格前面是普通动词</strong><br>如：run ___</div>
+                <div>这个空是不是在描述"动作怎么发生"？</div>
+                <div><span class="mark-green">副词</span><br>例：run <strong>quickly</strong></div>
+            </div>
+            <div class="judge-flow-row">
+                <div><strong>空格前面是 be 动词</strong><br>am / is / are / was / were</div>
+                <div>这个空是不是在描述主语"是什么样"？</div>
+                <div><span class="mark-blue">形容词</span><br>例：She is <strong>happy</strong>.</div>
+            </div>
+            <div class="judge-flow-row">
+                <div><strong>空格本身要当发动机</strong><br>主语后面缺动作</div>
+                <div>这个句子有没有动词？没有就要补发动机。</div>
+                <div><span class="mark-red">动词</span><br>例：Tom <strong>likes</strong> English.</div>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <strong>一句话记住：</strong>不要问"这个词我背过没有"，先问"这个位置需要什么零件"。英语选择题，很多时候考的就是位置判断。
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 模块四：最常犯的两个错误 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>模块四</span><hr></div>
+
+    <div class="module-card card-red">
+        <div class="badge badge-red">🚨 模块四：最爱犯的两种错——提前打预防针</div>
+
+        <p>下面这两个错误，是最常犯的。看完这讲你就不会再犯了。</p>
+
+        <p style="margin-top: 25px;"><strong>💣 经典错误 1：用形容词去修饰动作</strong> <span class="tag-hot">超高频失分</span></p>
+        <div style="background: #fff; border: 1.5px solid #eee; border-radius: 10px; padding: 18px 20px; margin-top: 12px;">
+            <p>情景：我想说"他跑得快"</p>
+            <p class="wrong-text">❌ He runs quick.</p>
+            <hr style="border: none; border-top: 1px dashed #eee; margin: 12px 0;">
+            <p><strong>👨‍⚕️ 诊断：</strong><br>
+            "runs"是动作（发动机）。修饰动作要用<strong>加速器（副词）</strong>，<code>quick</code>是形容词（车漆）——把车漆装到发动机上，当然不对。</p>
+            <p class="right-text">✅ He runs <span class="hl-green">quickly</span>.</p>
+        </div>
+
+        <p style="margin-top: 25px;"><strong>💣 经典错误 2：be动词后面用副词</strong> <span class="tag-hot">超高频失分</span></p>
+        <div style="background: #fff; border: 1.5px solid #eee; border-radius: 10px; padding: 18px 20px; margin-top: 12px;">
+            <p>情景：我想说"她很漂亮"</p>
+            <p class="wrong-text">❌ She is beautifully.</p>
+            <hr style="border: none; border-top: 1px dashed #eee; margin: 12px 0;">
+            <p><strong>👨‍⚕️ 诊断：</strong><br>
+            <code>is</code> 后面接的是"她是什么样的人"——这是在描述<strong>人（名词）</strong>，要用形容词（车漆）。带 -ly 的副词不能用在这里。</p>
+            <p>🧲 <strong>记住这条铁律：</strong><span class="mark-bg">am / is / are / was / were 后面永远跟形容词，不跟副词！</span></p>
+            <p class="right-text">✅ She is <span class="hl-blue">beautiful</span>.</p>
+        </div>
+
+        <div class="brain-box" style="margin-top: 20px; border-color: #e74c3c; background: #fffafa;">
+            <p>🧲 <strong>无脑秒杀外挂（把这个背下来）：</strong></p>
+            <p>• 空格前面是 <span class="mark-red">am / is / are / was / were</span> 这几个词 → 闭眼选 <span class="mark-blue">形容词（不带 -ly）</span></p>
+            <p>• 空格前面是 <span class="mark-green">普通动词（run / sing / speak…）</span> → 选 <span class="mark-green">副词（通常带 -ly）</span></p>
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 模块五：实战练习 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>模块五</span><hr></div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow">🎯 模块五：实战练习——自己先做，再看答案</div>
+
+        <p>三道中考常考题型，先自己选，再解锁大白话解析。</p>
+
+        <!-- 题1 -->
+        <div class="quiz-block" style="margin-top: 22px;">
+            <p style="font-size: 13px; color: #999; margin-bottom: 6px;">🔥 练习题 1 · 基础判断题</p>
+            <div class="quiz-q">The music sounds ______ .<br><span style="font-size:14px; font-weight:400; color:#666;">（这首音乐听起来很好听。）</span></div>
+            <div class="quiz-opts"><span>A. beautifully</span><span>B. beautiful</span></div>
+            <button class="reveal-btn" data-target="q1">👉 点击解锁答案</button>
+            <div class="answer-box" id="q1">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：找空格前面的词 —— <code>sounds</code>（听起来）。</p>
+                    <p>第二步：<code>sounds</code> 是什么？它是动词，但它是 <strong>be 动词的同类</strong>（连系动词）——专门连接"主语"和"描述词"。</p>
+                    <p>第三步：这类动词（sound / look / feel / smell / taste）后面的规则和 be 动词完全一样 → 接<strong>形容词</strong>，不接副词。</p>
+                    <p><span class="right-text">🎉 答案：B（beautiful）</span></p>
+                    <p style="font-size: 13px; color: #888; margin-top: 8px;">💡 小提示：这类动词叫"感官动词/连系动词"，后面永远跟形容词。中考很爱考！</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题2 -->
+        <div class="quiz-block">
+            <p style="font-size: 13px; color: #999; margin-bottom: 6px;">🔥 练习题 2 · 中考经典双空题</p>
+            <div class="quiz-q">She is a ______ dancer. She dances ______ .<br><span style="font-size:14px; font-weight:400; color:#666;">（她是一个出色的舞者。她跳舞跳得很好。）</span></div>
+            <div class="quiz-opts"><span>A. good; good</span><span>B. good; well</span><span>C. well; good</span></div>
+            <button class="reveal-btn" data-target="q2">👉 点击解锁答案</button>
+            <div class="answer-box" id="q2">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>拆第一句：空格后面是 <code>dancer</code>（舞者）—— 是个<strong>名词（东西）</strong>，前面修饰名词要用形容词 → 选 <code>good</code>。排除 C。</p>
+                    <p>拆第二句：空格前面是 <code>dances</code>（跳舞）—— 是个<strong>动作（动词）</strong>，修饰动作要用副词 → 选 <code>well</code>。排除 A。</p>
+                    <p><span class="right-text">🎉 答案：B（good; well）一道题带走 good 和 well 的所有用法！</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题3 -->
+        <div class="quiz-block">
+            <p style="font-size: 13px; color: #999; margin-bottom: 6px;">🔥 练习题 3 · 词性辨认（改错题）</p>
+            <div class="quiz-q">下面这句话有一个词性错误，找出来并改正：<br><code style="font-size:16px; background:#f8f8f8; padding:6px 12px; border-radius:6px; display:inline-block; margin:8px 0;">Tom is a <u>carefully</u> student.</code></div>
+            <button class="reveal-btn" data-target="q3">👉 点击解锁答案</button>
+            <div class="answer-box" id="q3">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>找问题词：<code>carefully</code>（副词，带 -ly）。</p>
+                    <p>看它在哪里：在 <code>student</code>（名词）前面。</p>
+                    <p>规则：修饰名词（东西）要用形容词，不能用副词。</p>
+                    <p>怎么改：<code>carefully</code>（副词）→ <code>careful</code>（形容词）</p>
+                    <p><span class="right-text">✅ 正确：Tom is a <strong>careful</strong> student.（Tom 是个细心的学生。）</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ================================================ -->
+    <!-- 加餐二：容易误判的边界词 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>加餐二</span><hr></div>
+
+    <div class="module-card card-orange">
+        <div class="badge badge-orange">🪤 加餐二：三个容易误判的坑——提前避开</div>
+
+        <p>基础薄弱的同学最容易以为：<strong>带 -ly 的一定是副词，不带 -ly 的一定不是副词。</strong>这句话大多数时候有用，但考试最喜欢考例外。</p>
+
+        <div class="exam-map-grid">
+            <div class="exam-map-card">
+                <h4>坑 1：friendly / lovely 不是副词</h4>
+                <p><strong>friendly</strong> = 友好的，是形容词。</p>
+                <p>✅ She is friendly. 她很友好。</p>
+                <p class="wrong-text" style="font-size:14px;">❌ She talks friendly.</p>
+                <p>要说"友好地说话"，常用：She talks <strong>in a friendly way</strong>.</p>
+            </div>
+            <div class="exam-map-card">
+                <h4>坑 2：fast 既可以形容词，也可以副词</h4>
+                <p>✅ a fast train（一列快车）→ 形容词，描述 train</p>
+                <p>✅ run fast（跑得快）→ 副词，描述 run</p>
+                <p>所以遇到 fast，不要只看单词，要看它在句子里的位置。</p>
+            </div>
+            <div class="exam-map-card">
+                <h4>坑 3：hard 不是 hardly</h4>
+                <p><strong>hard</strong> 可以表示"努力地/困难的"。</p>
+                <p>✅ study hard 努力学习</p>
+                <p><strong>hardly</strong> 是"几乎不"，意思完全变了。</p>
+                <p>✅ I can hardly hear you. 我几乎听不见你。</p>
+            </div>
+            <div class="exam-map-card">
+                <h4>坑 4：very 后面常接形容词或副词</h4>
+                <p>✅ very beautiful 很漂亮</p>
+                <p>✅ very quickly 非常快地</p>
+                <p>但 very 不能直接修饰名词，不能说：<span class="wrong-text" style="font-size:14px;">very a student</span>。</p>
+            </div>
+        </div>
+
+        <div class="brain-box" style="border-color:#e67e22;">
+            <p>🧠 <strong>遇到边界词时，不要靠长相判断，要回到三问：</strong></p>
+            <p>① 它描述的是<strong>人/东西</strong>吗？是 → 多半是形容词。</p>
+            <p>② 它描述的是<strong>动作</strong>吗？是 → 多半是副词。</p>
+            <p>③ 它是不是句子的<strong>发动机</strong>？是 → 动词。</p>
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 加餐三：通关检测 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>通关检测</span><hr></div>
+
+    <div class="module-card card-dark">
+        <div class="badge badge-dark">✅ 第1讲通关检测：你是不是真的会判断了？</div>
+
+        <p>下面这组题不是为了难倒你，而是为了检查：你有没有真正掌握"看位置判断词性"。</p>
+
+        <div class="mini-check-list">
+            <div class="mini-check">
+                <strong>① a ___ girl</strong><br>
+                空格后面是 girl（名词），空格要描述这个女孩是什么样 → 选形容词。<br>
+                例：a <span class="mark-blue">beautiful</span> girl
+            </div>
+            <div class="mini-check">
+                <strong>② He runs ___.</strong><br>
+                runs 是动作，空格要描述跑得怎么样 → 选副词。<br>
+                例：He runs <span class="mark-green">quickly</span>.
+            </div>
+            <div class="mini-check">
+                <strong>③ The soup tastes ___.</strong><br>
+                tastes 是感官动词，后面描述 soup 的味道 → 选形容词。<br>
+                例：The soup tastes <span class="mark-blue">good</span>.
+            </div>
+            <div class="mini-check">
+                <strong>④ She speaks English ___.</strong><br>
+                speaks 是动作，说得怎么样 → 选副词。<br>
+                例：She speaks English <span class="mark-green">well</span>.
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <div class="quiz-q">通关题：The baby looks ______.</div>
+            <div class="quiz-opts">
+                <span>A. happy</span>
+                <span>B. happily</span>
+            </div>
+            <button class="reveal-btn" data-target="q4" aria-expanded="false">👉 点击解锁答案</button>
+            <div class="answer-box" id="q4">
+                <div class="tip-box">
+                    <strong>答案：A. happy</strong><br>
+                    looks 是感官动词，后面不是描述"看这个动作怎么发生"，而是在描述 baby 是什么样。描述人/东西，要用形容词，所以选 happy。
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <div class="quiz-q">通关题：Please listen ______.</div>
+            <div class="quiz-opts">
+                <span>A. careful</span>
+                <span>B. carefully</span>
+            </div>
+            <button class="reveal-btn" data-target="q5" aria-expanded="false">👉 点击解锁答案</button>
+            <div class="answer-box" id="q5">
+                <div class="tip-box">
+                    <strong>答案：B. carefully</strong><br>
+                    listen 是动作，空格是在说"听得怎么样"。修饰动作要用副词，所以选 carefully。
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 新版考前救命小抄 V2 -->
+    <!-- ================================================ -->
+    <div class="cheatsheet-v2">
+      <div class="cheatsheet-v2-header">
+        <div class="cheatsheet-v2-title">📌 第1讲救命小抄：四大词性</div>
+        <div class="cheatsheet-v2-subtitle">考前 30 秒快速扫一遍：先分清“零件”，再看它装在句子的哪个位置。</div>
+      </div>
+
+      <div class="cheatsheet-v2-body">
+        <div class="cheat-grid">
+
+          <div class="cheat-card core">
+            <h4>① 四大词性 = 四种零件</h4>
+            <p>🏠 <strong>名词</strong>：人 / 地点 / 东西 / 概念</p>
+            <p>🔥 <strong>动词</strong>：动作 / 状态，句子的发动机</p>
+            <p>🎨 <strong>形容词</strong>：描述名词</p>
+            <p>⚡ <strong>副词</strong>：描述动词</p>
+          </div>
+
+          <div class="cheat-card method">
+            <h4>② 形容词 vs 副词判断</h4>
+            <ul>
+              <li>后面是名词：多半用 <span class="cheat-rule">形容词</span></li>
+              <li>前面是普通动词：多半用 <span class="cheat-rule">副词</span></li>
+              <li>be 动词后面：常接 <span class="cheat-rule">形容词</span></li>
+            </ul>
+          </div>
+
+          <div class="cheat-card exam">
+            <h4>③ 中考常见考法</h4>
+            <p>中考不爱问“什么是形容词”，更爱让你在选项里区分：</p>
+            <p><strong>careful / carefully</strong></p>
+            <p><strong>good / well</strong></p>
+            <p><strong>quick / quickly</strong></p>
+          </div>
+
+          <div class="cheat-card trap">
+            <h4>④ 高频易错坑</h4>
+            <ul>
+              <li><strong>friendly</strong> 是形容词，不是副词。</li>
+              <li><strong>fast</strong> 既可以是形容词，也可以是副词。</li>
+              <li><strong>hard</strong> 努力地；<strong>hardly</strong> 几乎不。</li>
+            </ul>
+          </div>
+
+          <div class="cheat-card example">
+            <h4>⑤ 正误对比</h4>
+            <p><span class="cheat-bad">❌ She sings beautiful.</span></p>
+            <p><span class="cheat-good">✅ She sings beautifully.</span></p>
+            <p class="cheat-note">sings 是动作，“唱得怎么样”要用副词 beautifully。</p>
+          </div>
+
+          <div class="cheat-card memory">
+            <h4>⑥ 一句话记忆</h4>
+            <p><strong>形容词看名词，副词看动词。</strong></p>
+            <p>先问它在描述“东西”，还是描述“动作”。</p>
+          </div>
+
+        </div>
+
+        <div class="cheatsheet-v2-footer">
+          <strong>本讲最重要的动作：</strong>看到空格不要先翻译，先看它旁边是什么词，再判断该用哪种“零件”。
+        </div>
+      </div>
+    </div>
+
+    <!-- 转化钩子 -->
+    <div class="cta-box no-print">
+        <h3>🚀 第1讲完成！零件已经在手里了！</h3>
+        <p>你现在已经认识了造英语句子的"四大零件"。<br>
+        但光有零件不够，还得知道<strong>怎么把零件拼成一辆不散架的车</strong>——也就是搞懂句子的骨架。<br><br>
+        接下来的讲义，你将解锁：<br>
+        ✅ <strong>第2讲：</strong>每个句子都必须有一个"发动机"（动词）——主谓宾是什么，怎么找<br>
+        ✅ <strong>第3讲：</strong>Be动词专项——"一山不容二虎"原则彻底搞懂<br>
+        ✅ <strong>全套23讲：</strong>从不及格到中考60+，一步一步来
+        </p>
+        <a href="#" class="cta-btn">🔓 解锁下一讲 → 第2讲：句子的发动机</a>
+    </div>
+</div><!-- /book-container -->
+
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-01.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析（共25题，满分100）</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+
+<!-- ===== 底部翻页导航 ===== -->
+<!-- 修改C：把 href 改成实际的上一讲/下一讲文件名 -->
+<!--        把 nb-title 改成实际的上一讲/下一讲标题  -->
+<div class="lesson-nav">
+
+    <!-- 上一讲按钮（第1讲没有上一讲，删掉这个a标签即可） -->
+    <a class="nav-btn prev" href="lesson-00.html">
+        <div class="nb-arrow">‹</div>
+        <div class="nb-text">
+            <span class="nb-label">上一讲</span>
+            <span class="nb-title">课前扫盲</span>
+        </div>
+    </a>
+
+    <!-- 返回目录 -->
+    <a class="nav-btn-home" href="index.html">📚 目录</a>
+
+    <!-- 下一讲按钮（最后一讲没有下一讲，删掉这个a标签即可） -->
+    <a class="nav-btn next" href="lesson-02.html">
+        <div class="nb-text" style="text-align:right;">
+            <span class="nb-label">下一讲</span>
+            <span class="nb-title">句子的发动机</span>
+        </div>
+        <div class="nb-arrow">›</div>
+    </a>
+
+</div>
+
+</div><!-- /lesson-main -->
+
+<!-- ===== 页脚 ===== -->
+<div class="lesson-footer">
+    初中英语语法重构 · 逆袭专版 · 第1讲<br>
+    打印时只会打印本讲内容 · 点击浏览器返回键可回到目录
+</div>
+
+<script>
+// 启用“点击解锁答案”按钮的功能
+document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.reveal-btn');
+    if (!btn) return;
+    var targetId = btn.getAttribute('data-target');
+    if (!targetId) return;
+    var box = document.getElementById(targetId);
+    if (!box) return;
+    // 切换显示
+    var isVisible = box.style.display && box.style.display !== 'none';
+    if (isVisible) {
+        box.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '👉 点击解锁答案';
+    } else {
+        box.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+        try { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (err) {}
+        btn.textContent = '👇 收起答案';
+    }
+});
+</script>
+
+</body>
+</html>

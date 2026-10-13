@@ -1,0 +1,1451 @@
+<!-- AI生成 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>初中英语语法重构 · 讲义与练习册合订版</title>
+<!-- 引入最新的双通道安全拦截脚本 -->
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #f0f2f5;
+    color: #2c3e50;
+    min-height: 100vh;
+}
+
+/* ===== 统一顶部品牌栏 ===== */
+.top-bar {
+    background: #2c3e50;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.top-bar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top-bar .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.brand-icon {
+    width: 38px; height: 38px;
+    background: #f1c40f;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+.brand-text h1 { font-size: 16px; font-weight: 900; color: #fff; line-height: 1.3; }
+.brand-text p  { font-size: 12px; color: #95a5a6; margin-top: 1px; }
+.top-bar-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.top-meta-chip {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+}
+
+/* ===== 统一 Hero 区 ===== */
+.hero {
+    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 55%, #2980b9 100%);
+    padding: 50px 24px 45px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "学";
+    position: absolute;
+    right: -20px; top: -20px;
+    font-size: 220px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+}
+.hero-tag {
+    background: #e74c3c;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 4px 14px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 18px;
+    letter-spacing: 0.08em;
+}
+.hero h2 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.35;
+    margin-bottom: 14px;
+}
+.hero h2 span { color: #f1c40f; }
+.hero p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.8;
+    max-width: 560px;
+    margin: 0 auto 28px;
+}
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.hero-stat {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 12px;
+    padding: 12px 20px;
+    text-align: center;
+    min-width: 90px;
+}
+.hero-stat .stat-num { font-size: 24px; font-weight: 900; color: #f1c40f; line-height: 1; }
+.hero-stat .stat-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+/* ===== 选项卡切换（Tabs）控制区 ===== */
+.tabs-container {
+    max-width: 960px;
+    margin: 24px auto 0;
+    padding: 0 24px;
+    display: flex;
+    gap: 12px;
+}
+.tab-btn {
+    flex: 1;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 2px solid #e8e8e8;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 900;
+    color: #7f8c8d;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    outline: none;
+}
+.tab-btn:hover {
+    color: #2c3e50;
+    border-color: #bdc3c7;
+}
+.tab-btn.active {
+    background: #2c3e50;
+    color: #fff;
+    border-color: #2c3e50;
+    box-shadow: 0 5px 15px rgba(44,62,80,0.2);
+}
+.tab-btn:focus-visible {
+    outline: 3px solid #f1c40f;
+    outline-offset: 3px;
+}
+
+/* ===== 在线专项训练 ===== */
+.quiz-card .card-desc { color: #5f6f7a; }
+.ct-quiz { background: #e8f4fd; color: #1565c0; }
+.ct-auto { background: #e8f5e9; color: #2e7d32; }
+.ct-review { background: #fff3e0; color: #b45309; }
+.quiz-card:hover .card-arrow { color: #1565c0; }
+.mistake-count { min-width: 24px; padding: 1px 7px; border-radius: 999px; background: #e74c3c; color: #fff; font-size: 12px; line-height: 1.7; }
+.mistake-panel { padding: 20px 0 10px; }
+.mistake-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin: 12px 0 18px; }
+.mistake-toolbar h2 { font-size: 22px; color: #2c3e50; }
+.mistake-toolbar p { color: #7f8c8d; font-size: 13px; }
+.mistake-clear { min-height: 44px; padding: 0 16px; border: 1px solid #e3c3c3; border-radius: 10px; background: #fff; color: #b42318; font-weight: 800; cursor: pointer; }
+.mistake-list { display: grid; gap: 14px; }
+.mistake-item { border: 1px solid #e7dff0; border-left: 5px solid #7655a6; border-radius: 14px; padding: 17px 18px; background: #fff; box-shadow: 0 4px 14px rgba(84,55,125,.06); }
+.mistake-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 9px; color: #7655a6; font-size: 12px; font-weight: 800; }
+.mistake-stem { color: #2c3e50; font-size: 15px; font-weight: 800; line-height: 1.65; }
+.mistake-answer { display: grid; gap: 5px; margin-top: 11px; padding: 11px 13px; border-radius: 10px; background: #f8f5fc; font-size: 13px; }
+.mistake-answer .wrong { color: #b42318; }.mistake-answer .right { color: #18794e; }
+.mistake-explain { margin-top: 10px; color: #5f6670; font-size: 13px; line-height: 1.7; }
+.mistake-actions { display: flex; gap: 10px; margin-top: 13px; }
+.mistake-actions a,.mistake-actions button { min-height: 42px; display: inline-flex; align-items: center; padding: 0 14px; border: 0; border-radius: 9px; font: inherit; font-size: 13px; font-weight: 800; cursor: pointer; text-decoration: none; }
+.mistake-actions a { background: #7655a6; color: #fff; }.mistake-actions button { background: #f0ebf7; color: #65458f; }
+.mistake-empty { padding: 54px 20px; border: 1px dashed #d8cde6; border-radius: 16px; background: #fff; text-align: center; color: #746b80; }
+
+/* ===== 使用提示条 ===== */
+.usage-bar {
+    background: #fffde7;
+    border-bottom: 2px solid #ffe082;
+    padding: 12px 24px;
+    margin-top: 24px;
+}
+.usage-bar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #7d6608;
+    flex-wrap: wrap;
+}
+.usage-bar strong { color: #e65100; }
+.usage-sep { color: #bbb; }
+
+/* ===== 主体内容 ===== */
+.main { max-width: 960px; margin: 0 auto; padding: 10px 24px 60px; }
+
+/* ===== 章节区块标题 ===== */
+.zone-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 40px 0 16px;
+}
+.zone-header:first-of-type { margin-top: 0; }
+.zone-badge {
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 900;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.zb-pre    { background: #fdebd0; color: #d35400; }
+.zb-pass   { background: #d5f5e3; color: #1e8449; }
+.zb-adv    { background: #e8daef; color: #6c3483; }
+.zb-bonus  { background: #fce4ec; color: #c62828; }
+.zone-header hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.zone-header .zone-desc, .zone-header .zd { font-size: 13px; color: #aaa; white-space: nowrap; }
+
+/* ===== 讲次卡片网格 ===== */
+.lesson-grid, .wb-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+/* ===== 单张讲次卡片 ===== */
+.lesson-card, .wb-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1.5px solid #e8e8e8;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    gap: 0;
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+    position: relative;
+}
+.lesson-card:hover, .wb-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border-color: #b3d4ff;
+}
+.lesson-card.pass:hover, .wb-card.pass:hover  { border-color: #a5d6a7; }
+.lesson-card.adv:hover, .wb-card.adv:hover   { border-color: #ce93d8; }
+.lesson-card.bonus:hover, .wb-card.bonus:hover { border-color: #f48fb1; }
+.lesson-card.pre:hover, .wb-card.pre:hover   { border-color: #ffb74d; }
+
+/* 左侧色条 + 编号 */
+.card-num, .wc-num {
+    width: 64px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 16px 8px;
+}
+.num-label, .wn-label { font-size: 11px; font-weight: bold; letter-spacing: 0.04em; opacity: 0.8; }
+.num-big, .wn-big   { font-size: 26px; font-weight: 900; line-height: 1; }
+.wc-num .wn-icon  { font-size: 22px; line-height: 1; margin-bottom: 2px; }
+
+/* 颜色主题 */
+.lesson-card.pre .card-num, .wb-card.pre .wc-num     { background: #fff3e0; color: #e65100; }
+.lesson-card.pass .card-num, .wb-card.pass .wc-num   { background: #e8f5e9; color: #2e7d32; }
+.lesson-card.adv .card-num, .wb-card.adv .wc-num     { background: #f3e5f5; color: #6a1b9a; }
+.lesson-card.bonus .card-num, .wb-card.bonus .wc-num { background: #fce4ec; color: #c62828; }
+
+/* 右侧内容 */
+.card-body, .wc-body {
+    padding: 15px 16px;
+    flex: 1;
+    min-width: 0;
+    border-left: 1px solid #f0f0f0;
+}
+.wc-body { padding-right: 40px; }
+
+.card-title, .wc-title {
+    font-size: 15px;
+    font-weight: 900;
+    color: #1a252f;
+    margin-bottom: 5px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-desc, .wc-desc {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.55;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card-meta, .wc-meta {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.card-tag, .wc-tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.ct-hot    { background: #fce4ec; color: #c62828; }
+.ct-score  { background: #e3f2fd; color: #1565c0; }
+.ct-time   { background: #f5f5f5; color: #666; }
+.ct-done   { background: #e8f5e9; color: #2e7d32; }
+
+.wt-q    { background: #e3f2fd; color: #1565c0; }
+.wt-sc   { background: #fce4ec; color: #c62828; }
+.wt-time { background: #f5f5f5; color: #666; }
+.wt-print{ background: #e8f5e9; color: #2e7d32; }
+
+/* 箭头 */
+.card-arrow, .wc-arrow {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #ddd;
+    transition: color 0.15s, right 0.15s;
+}
+.lesson-card:hover .card-arrow, .wb-card:hover .wc-arrow { color: #2980b9; right: 10px; }
+
+/* ===== 学习路径与配对提示 ===== */
+.path-tip, .pair-tip {
+    background: #fff;
+    border-radius: 12px;
+    border: 1.5px solid #e8e8e8;
+    padding: 22px 24px;
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+.path-tip-icon, .pair-tip-icon { font-size: 28px; flex-shrink: 0; }
+.path-tip h3, .pair-tip h3 { font-size: 15px; font-weight: 900; color: #1a252f; margin-bottom: 8px; }
+.path-tip p, .pair-tip p  { font-size: 13px; color: #666; line-height: 1.75; }
+.path-steps, .pair-steps {
+    display: flex;
+    gap: 0;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+.path-step, .ps-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+.ps-num, .ps-dot {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: #2c3e50;
+    color: #f1c40f;
+    font-size: 12px;
+    font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.ps-dot { background: #27ae60; color: #fff; width: 22px; height: 22px; font-size: 11px; }
+.ps-text { color: #444; }
+.ps-arrow, .ps-arr { color: #ccc; font-size: 14px; margin: 0 8px; }
+
+/* ===== 打印说明卡片 ===== */
+.print-guide {
+    background: #fff;
+    border-radius: 12px;
+    border: 1.5px solid #e8e8e8;
+    overflow: hidden;
+    margin-top: 16px;
+}
+.print-guide-header {
+    background: #2c3e50;
+    color: #f1c40f;
+    padding: 11px 20px;
+    font-size: 14px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.print-guide-body {
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+}
+.pg-item { font-size: 13px; color: #555; line-height: 1.7; }
+.pg-item strong { color: #2c3e50; display: block; margin-bottom: 3px; font-size: 14px; }
+
+/* ===== 页脚 ===== */
+.footer {
+    background: #2c3e50;
+    color: #7f8c8d;
+    text-align: center;
+    padding: 24px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+.footer strong { color: #f1c40f; }
+
+/* ===== 打印样式 ===== */
+@media print {
+    .top-bar, .usage-bar, .tabs-container { display: none; }
+    body { background: #fff; }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 640px) {
+    .hero h2 { font-size: 24px; }
+    .tabs-container { flex-direction: column; gap: 8px; }
+    .tab-btn { min-height: 48px; padding: 12px 16px; }
+    .lesson-grid, .wb-grid { grid-template-columns: 1fr; }
+    .top-bar-meta { display: flex; margin-left: auto; }
+    .top-meta-chip { padding: 4px 8px; font-size: 11px; white-space: nowrap; }
+    .hero-stats { gap: 12px; }
+    .hero-stat { padding: 10px 14px; min-width: 72px; }
+    .card-num, .wc-num { width: 52px; }
+    .card-num .num-big, .wc-num .wn-big { font-size: 20px; }
+    .zone-header .zone-desc, .zone-header .zd { display: none; }
+    .path-steps, .pair-steps { flex-direction: column; gap: 8px; }
+    .ps-arrow, .ps-arr { display: none; }
+    .print-guide-body { grid-template-columns: 1fr; gap: 10px; }
+}
+
+/* ===== 讲义目录新卡片扩展样式（衔接课 / 主题标签 / 最近学习） ===== */
+.card-title span { display: inline-block; margin-left: 5px; font-size: 10px; padding: 1px 8px 1px 6px; border-radius: 8px; background: #eef2f5; color: #777; font-weight: 700; vertical-align: 2px; }
+.ct-topic { background: #e3f2fd; color: #1565c0; }
+.ct-pass  { background: #d5f5e3; color: #1e8449; }
+.ct-pre   { background: #fdebd0; color: #d35400; }
+.ct-adv   { background: #e8daef; color: #6c3483; }
+.ct-bonus { background: #fce4ec; color: #c62828; }
+.ct-bridge { background: #fff3bf; color: #8a5a00; }
+.lesson-card.bridge .card-num { background: #fff8d7; color: #9a6700; }
+.lesson-card.bridge:hover { border-color: #f1c40f; }
+.lesson-card.bridge .card-title::before { content: "衔接课"; display: inline-block; margin-right: 6px; padding: 1px 7px; border-radius: 8px; background: #f1c40f; color: #4a3a00; font-size: 10px; line-height: 1.6; font-weight: 900; vertical-align: 2px; }
+.lesson-card.recent { outline: 2px solid #f1c40f; }
+@media (max-width: 640px) { .card-title span { display: none; } }
+</style>
+
+
+
+
+
+
+
+<!-- TWO_PRINT_PANEL_STYLE_START -->
+<style id="two-print-panel-style">
+#twoPrintPanel.two-print-panel {
+    max-width: 1180px !important;
+    margin: 22px auto 18px !important;
+    padding: 0 18px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(260px, 1fr)) !important;
+    gap: 18px !important;
+    position: relative !important;
+    z-index: 9999 !important;
+}
+
+#twoPrintPanel .two-print-card {
+    display: block !important;
+    text-decoration: none !important;
+    border-radius: 24px !important;
+    padding: 26px 24px !important;
+    box-shadow: 0 14px 34px rgba(15, 23, 42, .16) !important;
+    transition: transform .18s ease, box-shadow .18s ease !important;
+    font-weight: 900 !important;
+    text-align: center !important;
+}
+
+#twoPrintPanel .two-print-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, .22) !important;
+}
+
+#twoPrintPanel .two-print-card.dark {
+    background: linear-gradient(135deg, #24384f, #365a7d) !important;
+    color: #fff !important;
+}
+
+#twoPrintPanel .two-print-card.orange {
+    background: linear-gradient(135deg, #ffbf47, #f59e0b) !important;
+    color: #1f2937 !important;
+}
+
+#twoPrintPanel .two-print-main {
+    font-size: 26px !important;
+    line-height: 1.35 !important;
+}
+
+#twoPrintPanel .two-print-sub {
+    display: block !important;
+    margin-top: 8px !important;
+    font-size: 16px !important;
+    opacity: .92 !important;
+}
+
+#twoPrintPanel .two-print-tip {
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    color: #6b7280 !important;
+}
+
+@media (max-width: 768px) {
+    #twoPrintPanel.two-print-panel {
+        grid-template-columns: 1fr !important;
+        padding: 0 14px !important;
+        gap: 12px !important;
+    }
+
+    #twoPrintPanel .two-print-main {
+        font-size: 20px !important;
+    }
+
+    #twoPrintPanel .two-print-card {
+        border-radius: 18px !important;
+        padding: 20px 16px !important;
+    }
+}
+
+@media print {
+    #twoPrintPanel {
+        display: none !important;
+    }
+}
+</style>
+<!-- TWO_PRINT_PANEL_STYLE_END -->
+
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+<!-- ===== 顶部品牌栏 ===== -->
+<div class="top-bar">
+    <div class="top-bar-inner">
+        <div class="brand">
+            <div class="brand-icon">📚</div>
+            <div class="brand-text">
+                <h1>初中英语语法重构 </h1>
+                <p>讲义 + 互动专项训练一站式学习系统</p>
+            </div>
+        </div>
+        <div class="top-bar-meta"><div class="top-meta-chip">新疆学生无限进步</div></div>
+    </div>
+</div>
+
+<!-- ===== Hero ===== -->
+<div class="hero">
+    <div class="hero-tag">中考语法 · 完整体系 · 大白话教学</div>
+    <h2>不是你笨，是没人<span>用你听懂的方式</span>讲</h2>
+    <p>专为听课能懂、做题总错、语法点混乱的同学设计。用大白话讲清句子结构、时态、从句和做题步骤，在线专项训练学完就练。</p>
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <div class="stat-num">37</div>
+            <div class="stat-label">讲义</div>
+        </div>
+        <div class="hero-stat">
+            <div class="stat-num">36</div>
+            <div class="stat-label">专项训练</div>
+        </div>
+        <div class="hero-stat">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">中考考点覆盖</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 选项卡切换（Tab Switcher） ===== -->
+<div class="tabs-container" role="tablist" aria-label="学习资源目录">
+    <button id="tab-lectures" class="tab-btn active" type="button" role="tab" aria-selected="true" aria-controls="content-lectures" tabindex="0" onclick="switchTab('lectures')">📖 语法讲义目录 (全37讲)</button>
+    <button id="tab-quizzes" class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="content-quizzes" tabindex="-1" onclick="switchTab('quizzes')">🎯 初中语法训练专项 (全36套)</button>
+    <button id="tab-mistakes" class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="content-mistakes" tabindex="-1" onclick="switchTab('mistakes')">错题本 <span class="mistake-count" id="mistakeCount">0</span></button>
+</div>
+
+<!-- ===== 使用提示 ===== -->
+<div class="usage-bar">
+    <div id="usage-lectures" class="usage-bar-inner">
+        <span>📖 <strong>怎么用讲义：</strong></span>
+        <span>点击任意一讲 → 跳转到完整讲义</span>
+        <span class="usage-sep">·</span>
+        <span>学完后点浏览器「返回」回到这里</span>
+        <span class="usage-sep">·</span>
+        <span>需要打印某一讲 → 打开该讲 → Ctrl+P（只打印当前页）</span>
+    </div>
+    <div id="usage-quizzes" class="usage-bar-inner" style="display: none;">
+        <span>🎯 <strong>怎么用专项训练：</strong></span>
+        <span>学完一讲 → 立即做对应专项</span>
+        <span class="usage-sep">·</span>
+        <span>提交后自动判分并查看解析</span>
+        <span class="usage-sep">·</span>
+        <span>错题当天订正，一周后再练一次</span>
+    </div>
+    <div id="usage-mistakes" class="usage-bar-inner" style="display: none;">
+        <span><strong>错题本：</strong></span><span>专项提交后自动收集错题；重新答对后自动移除。</span>
+    </div>
+</div>
+
+<!-- ===== 主体内容 ===== -->
+<div class="main">
+
+    <!-- ========================================== -->
+    <!-- 1. 语法讲义内容分区（默认显示） -->
+    <!-- ========================================== -->
+    <div id="content-lectures" class="tab-content-zone" role="tabpanel" aria-labelledby="tab-lectures" tabindex="0">
+<section class="course-zone" id="stage-0">
+<div class="zone-header">
+<div class="zone-badge zb-pre">📍 课前扫盲</div>
+<hr/>
+<div class="zone-desc">共1个单元 · 开始之前必看，先解决“为什么总是学不明白”</div>
+</div>
+<div class="lesson-grid">
+<a class="lesson-card pre" data-search="第0讲 你不是笨——你只是用中文大脑在学英文 英语思维与学习方法 中文和英文的底层逻辑差异；词性与句子成分两套系统；怎样按正确顺序使用这套资料。 必看 学习起点" href="lesson-00.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">0</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">你不是笨——你只是用中文大脑在学英文 <span>英语思维与学习方法</span></div>
+<div class="card-desc">中文和英文的底层逻辑差异；词性与句子成分两套系统；怎样按正确顺序使用这套资料。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约15分钟</span><span class="card-tag ct-topic">英语思维与学习方法</span><span class="card-tag ct-pre">必看</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a></div>
+</section>
+<section class="course-zone" id="stage-1">
+<div class="zone-header">
+<div class="zone-badge zb-pass">🧱 第一阶段 · 认识零件，搭起句子骨架</div>
+<hr/>
+<div class="zone-desc">共11个单元 · 从词的身份进入完整句子</div>
+</div>
+<div class="lesson-grid">
+<a class="lesson-card pass" data-search="第1讲 四大天王 四大核心词性 用通俗比喻分清名词、动词、形容词和副词，知道它们在句子中的主要位置与作用。 词类地基 核心" href="lesson-01.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">1</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">四大天王 <span>四大核心词性</span></div>
+<div class="card-desc">用通俗比喻分清名词、动词、形容词和副词，知道它们在句子中的主要位置与作用。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约30分钟</span><span class="card-tag ct-topic">四大核心词性</span><span class="card-tag ct-pass">词类地基</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card pass" data-search="第2讲 句子的发动机 主谓宾与基本句型 从“谁做什么”出发寻找句子主干，掌握主谓、主谓宾、主系表等基本骨架。 句子主干 核心" href="lesson-02.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">2</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">句子的发动机 <span>主谓宾与基本句型</span></div>
+<div class="card-desc">从“谁做什么”出发寻找句子主干，掌握主谓、主谓宾、主系表等基本骨架。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约35分钟</span><span class="card-tag ct-topic">主谓宾与基本句型</span><span class="card-tag ct-pass">句子主干</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card pass" data-search="第3讲 一山不容二虎 be动词与实义动词 分清 be 动词与实义动词怎样承担谓语，掌握肯定、否定和一般疑问句的基本变化。 谓语判断 易错" href="lesson-03.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">3</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">一山不容二虎 <span>Be动词与实义动词</span></div>
+<div class="card-desc">分清 be 动词与实义动词怎样承担谓语，掌握肯定、否定和一般疑问句的基本变化。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约30分钟</span><span class="card-tag ct-topic">Be动词与实义动词</span><span class="card-tag ct-pass">谓语判断</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card pass" data-search="第4讲 a / an / the 三兄弟 冠词系统 从泛指、特指和语境出发选择 a、an、the 或零冠词，并辨析常见固定搭配。 冠词 高频" href="lesson-04.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">4</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">a / an / the 三兄弟 <span>冠词系统</span></div>
+<div class="card-desc">从泛指、特指和语境出发选择 a、an、the 或零冠词，并辨析常见固定搭配。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约30分钟</span><span class="card-tag ct-topic">冠词系统</span><span class="card-tag ct-pass">冠词</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card pass" data-search="第5讲 苹果能数，水怎么数 可数与不可数名词 判断名词能不能直接计数，正确搭配 many、much、few、little、some 和 any。 名词数量 高频" href="lesson-05.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">5</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">苹果能数，水怎么数 <span>可数与不可数名词</span></div>
+<div class="card-desc">判断名词能不能直接计数，正确搭配 many、much、few、little、some 和 any。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约30分钟</span><span class="card-tag ct-topic">可数与不可数名词</span><span class="card-tag ct-pass">名词数量</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card pass" data-search="第6讲 名词的变身规则 名词单数与复数 掌握规则复数、不规则复数、单复数同形以及常见易错名词的实际用法。 名词变化 基础" href="lesson-06.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">6</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">名词的变身规则 <span>名词单数与复数</span></div>
+<div class="card-desc">掌握规则复数、不规则复数、单复数同形以及常见易错名词的实际用法。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约25分钟</span><span class="card-tag ct-topic">名词单数与复数</span><span class="card-tag ct-pass">名词变化</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card pass bridge" data-search="衔接1课 这个东西属于谁 名词所有格 掌握 's、s'、of、双重所有格和省略结构，判断不同所属关系该走哪条表达路线。 新增补全 所属关系" href="lesson-26.html">
+<div class="card-num">
+<div class="num-label">衔接</div>
+<div class="num-big">1</div>
+<div class="num-label">课</div>
+</div>
+<div class="card-body">
+<div class="card-title">这个东西属于谁 <span>名词所有格</span></div>
+<div class="card-desc">掌握 's、s'、of、双重所有格和省略结构，判断不同所属关系该走哪条表达路线。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约40分钟</span><span class="card-tag ct-topic">名词所有格</span><span class="card-tag ct-pass">新增补全</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card pass" data-search="第7讲 代词换装游戏 人称、物主与反身代词 一次分清 i/me/my/mine/myself，按句子位置选择主格、宾格、物主和反身形式。 代词系统 易错" href="lesson-07.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">7</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">代词换装游戏 <span>人称、物主与反身代词</span></div>
+<div class="card-desc">一次分清 I/me/my/mine/myself，按句子位置选择主格、宾格、物主和反身形式。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约40分钟</span><span class="card-tag ct-topic">人称、物主与反身代词</span><span class="card-tag ct-pass">代词系统</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card pass bridge" data-search="衔接2课 没有名字的那些人 不定代词 系统辨析 some/any/no/every、both/either/neither、other 家族以及 it/one/that 的指代。 新增补全 高频辨析" href="lesson-33.html">
+<div class="card-num">
+<div class="num-label">衔接</div>
+<div class="num-big">2</div>
+<div class="num-label">课</div>
+</div>
+<div class="card-body">
+<div class="card-title">没有名字的那些人 <span>不定代词</span></div>
+<div class="card-desc">系统辨析 some/any/no/every、both/either/neither、other 家族以及 it/one/that 的指代。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约45分钟</span><span class="card-tag ct-topic">不定代词</span><span class="card-tag ct-pass">新增补全</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card pass bridge" data-search="衔接3课 数字密码 数词与数量表达 掌握基数词、序数词、日期、时间、编号、分数和百分数的表达与书写。 新增补全 数量表达" href="lesson-24.html">
+<div class="card-num">
+<div class="num-label">衔接</div>
+<div class="num-big">3</div>
+<div class="num-label">课</div>
+</div>
+<div class="card-body">
+<div class="card-title">数字密码 <span>数词与数量表达</span></div>
+<div class="card-desc">掌握基数词、序数词、日期、时间、编号、分数和百分数的表达与书写。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约45分钟</span><span class="card-tag ct-topic">数词与数量表达</span><span class="card-tag ct-pass">新增补全</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card pass bridge" data-search="衔接4课 修饰词导航 形容词与副词 判断修饰的是名词、动作还是状态，掌握系动词、比较形式、-ly 变化及特殊副词。 新增补全 修饰关系" href="lesson-25.html">
+<div class="card-num">
+<div class="num-label">衔接</div>
+<div class="num-big">4</div>
+<div class="num-label">课</div>
+</div>
+<div class="card-body">
+<div class="card-title">修饰词导航 <span>形容词与副词</span></div>
+<div class="card-desc">判断修饰的是名词、动作还是状态，掌握系动词、比较形式、-ly 变化及特殊副词。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约45分钟</span><span class="card-tag ct-topic">形容词与副词</span><span class="card-tag ct-pass">新增补全</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a></div>
+</section>
+<section class="course-zone" id="stage-2">
+<div class="zone-header">
+<div class="zone-badge zb-basic">⏰ 第二阶段 · 掌握基础时态与句型变化</div>
+<hr/>
+<div class="zone-desc">共7个单元 · 先建立时间概念，再学会否定、提问与转换</div>
+</div>
+<div class="lesson-grid">
+<a class="lesson-card basic" data-search="第8讲 时间间谍 一般现在时 用动作习惯、客观事实和时间背景判断一般现在时，并掌握第三人称单数变化。 时态起点 核心" href="lesson-08.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">8</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">时间间谍 <span>一般现在时</span></div>
+<div class="card-desc">用动作习惯、客观事实和时间背景判断一般现在时，并掌握第三人称单数变化。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约35分钟</span><span class="card-tag ct-topic">一般现在时</span><span class="card-tag ct-basic">时态起点</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card basic bridge" data-search="衔接5课 主语和动词要配套 主谓一致 找到真正主语，再判断单复数、人称、就近原则以及特殊结构中的谓语形式。 新增补全 动词地基" href="lesson-27.html">
+<div class="card-num">
+<div class="num-label">衔接</div>
+<div class="num-big">5</div>
+<div class="num-label">课</div>
+</div>
+<div class="card-body">
+<div class="card-title">主语和动词要配套 <span>主谓一致</span></div>
+<div class="card-desc">找到真正主语，再判断单复数、人称、就近原则以及特殊结构中的谓语形式。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约45分钟</span><span class="card-tag ct-topic">主谓一致</span><span class="card-tag ct-basic">新增补全</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card basic" data-search="第9讲 已经结束的过去 一般过去时 掌握规则与不规则过去式，理解 did 后动词还原，并完成否定和疑问变化。 基础时态 核心" href="lesson-09.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">9</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">已经结束的过去 <span>一般过去时</span></div>
+<div class="card-desc">掌握规则与不规则过去式，理解 did 后动词还原，并完成否定和疑问变化。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约35分钟</span><span class="card-tag ct-topic">一般过去时</span><span class="card-tag ct-basic">基础时态</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card basic" data-search="第10讲 正在发生的动作 现在进行时 掌握 am/is/are + doing，正确处理动词 -ing 拼写，并和一般现在时比较。 基础时态 高频" href="lesson-10.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">10</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">正在发生的动作 <span>现在进行时</span></div>
+<div class="card-desc">掌握 am/is/are + doing，正确处理动词 -ing 拼写，并和一般现在时比较。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约30分钟</span><span class="card-tag ct-topic">现在进行时</span><span class="card-tag ct-basic">基础时态</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card basic" data-search="第11讲 还没有发生的计划 一般将来时 辨析 will 与 be going to，表达预测、计划和安排，并初步认识时间条件从句。 基础时态 高频" href="lesson-11.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">11</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">还没有发生的计划 <span>一般将来时</span></div>
+<div class="card-desc">辨析 will 与 be going to，表达预测、计划和安排，并初步认识时间条件从句。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约30分钟</span><span class="card-tag ct-topic">一般将来时</span><span class="card-tag ct-basic">基础时态</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card basic" data-search="第12讲 句子怎样换队形 基本语序与句型变换 把肯定句变成否定句和一般疑问句，掌握回答、there be 以及基本转换流程。 句型变化 核心" href="lesson-12.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">12</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">句子怎样换队形 <span>基本语序与句型变换</span></div>
+<div class="card-desc">把肯定句变成否定句和一般疑问句，掌握回答、There be 以及基本转换流程。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约35分钟</span><span class="card-tag ct-topic">基本语序与句型变换</span><span class="card-tag ct-basic">句型变化</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card basic bridge" data-search="衔接6课 问题到底在问什么 特殊疑问句 根据预期答案选择疑问词，分清主语提问、宾语提问、直接问句和间接问句语序。 新增补全 疑问系统" href="lesson-28.html">
+<div class="card-num">
+<div class="num-label">衔接</div>
+<div class="num-big">6</div>
+<div class="num-label">课</div>
+</div>
+<div class="card-body">
+<div class="card-title">问题到底在问什么 <span>特殊疑问句</span></div>
+<div class="card-desc">根据预期答案选择疑问词，分清主语提问、宾语提问、直接问句和间接问句语序。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约45分钟</span><span class="card-tag ct-topic">特殊疑问句</span><span class="card-tag ct-basic">新增补全</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a></div>
+</section>
+<section class="course-zone" id="stage-3">
+<div class="zone-header">
+<div class="zone-badge zb-adv">🚀 第三阶段 · 补齐进阶时态与动词表达</div>
+<hr/>
+<div class="zone-desc">共10个单元 · 把时间轴、语态、语气和非谓语连成系统</div>
+</div>
+<div class="lesson-grid">
+<a class="lesson-card adv" data-search="第13讲 过去影响现在 现在完成时 理解过去与现在的联系，掌握 have/has done、since/for 及 have been/gone 的区别。 进阶时态 高频" href="lesson-13.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">13</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">过去影响现在 <span>现在完成时</span></div>
+<div class="card-desc">理解过去与现在的联系，掌握 have/has done、since/for 及 have been/gone 的区别。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约40分钟</span><span class="card-tag ct-topic">现在完成时</span><span class="card-tag ct-adv">进阶时态</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card adv" data-search="第14讲 过去某刻正在发生 过去进行时 用 was/were + doing 表达过去背景动作，辨析 when、while 和多个过去动作的关系。 进阶时态 时间线" href="lesson-14.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">14</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">过去某刻正在发生 <span>过去进行时</span></div>
+<div class="card-desc">用 was/were + doing 表达过去背景动作，辨析 when、while 和多个过去动作的关系。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约35分钟</span><span class="card-tag ct-topic">过去进行时</span><span class="card-tag ct-adv">进阶时态</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card adv bridge" data-search="衔接7课 站在过去看未来 过去将来时 找到过去观察点，辨析 would、was going to、was about to，并排除 would 的其他用法。 新增补全 时态辨析" href="lesson-31.html">
+<div class="card-num">
+<div class="num-label">衔接</div>
+<div class="num-big">7</div>
+<div class="num-label">课</div>
+</div>
+<div class="card-body">
+<div class="card-title">站在过去看未来 <span>过去将来时</span></div>
+<div class="card-desc">找到过去观察点，辨析 would、was going to、was about to，并排除 would 的其他用法。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约45分钟</span><span class="card-tag ct-topic">过去将来时</span><span class="card-tag ct-adv">新增补全</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card adv bridge" data-search="衔接8课 过去之前已经完成 过去完成时 先找过去参照点，再判断此前动作是否已经发生、完成或持续，避免机械套用 before/after。 新增补全 时间参照" href="lesson-32.html">
+<div class="card-num">
+<div class="num-label">衔接</div>
+<div class="num-big">8</div>
+<div class="num-label">课</div>
+</div>
+<div class="card-body">
+<div class="card-title">过去之前已经完成 <span>过去完成时</span></div>
+<div class="card-desc">先找过去参照点，再判断此前动作是否已经发生、完成或持续，避免机械套用 before/after。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约45分钟</span><span class="card-tag ct-topic">过去完成时</span><span class="card-tag ct-adv">新增补全</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card adv" data-search="第15讲 两者比，范围中选最好 比较级与最高级 掌握规则与不规则比较形式，辨析 as...as、than、范围和常见比较句型。 比较表达 高频" href="lesson-15.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">15</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">两者比，范围中选最好 <span>比较级与最高级</span></div>
+<div class="card-desc">掌握规则与不规则比较形式，辨析 as...as、than、范围和常见比较句型。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约35分钟</span><span class="card-tag ct-topic">比较级与最高级</span><span class="card-tag ct-adv">比较表达</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card adv" data-search="第16讲 给动作加上态度 情态动词 比较 can、could、may、must、should 等语气，分清义务、建议、许可和推测。 语气表达 高频" href="lesson-16.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">16</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">给动作加上态度 <span>情态动词</span></div>
+<div class="card-desc">比较 can、could、may、must、should 等语气，分清义务、建议、许可和推测。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约30分钟</span><span class="card-tag ct-topic">情态动词</span><span class="card-tag ct-adv">语气表达</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card adv" data-search="第17讲 谁是动作承受者 被动语态 判断主语是动作发出者还是承受者，掌握不同时间下的 be + 过去分词。 语态 核心" href="lesson-17.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">17</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">谁是动作承受者 <span>被动语态</span></div>
+<div class="card-desc">判断主语是动作发出者还是承受者，掌握不同时间下的 be + 过去分词。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约35分钟</span><span class="card-tag ct-topic">被动语态</span><span class="card-tag ct-adv">语态</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card adv" data-search="第18讲 动词不当发动机 非谓语动词 先判断句中是否已有谓语，再选择 to do、doing 或过去分词及固定搭配。 动词结构 高频" href="lesson-18.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">18</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">动词不当发动机 <span>非谓语动词</span></div>
+<div class="card-desc">先判断句中是否已有谓语，再选择 to do、doing 或过去分词及固定搭配。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约35分钟</span><span class="card-tag ct-topic">非谓语动词</span><span class="card-tag ct-adv">动词结构</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card adv" data-search="第19讲 介词地图 时间、地点与方式介词 按时间、空间、方向和方式建立介词地图，并结合固定搭配判断真实用法。 介词系统 易错" href="lesson-19.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">19</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">介词地图 <span>时间、地点与方式介词</span></div>
+<div class="card-desc">按时间、空间、方向和方式建立介词地图，并结合固定搭配判断真实用法。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约35分钟</span><span class="card-tag ct-topic">时间、地点与方式介词</span><span class="card-tag ct-adv">介词系统</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card adv" data-search="第20讲 把意思连接起来 并列连词与逻辑关系 先判断并列、转折、选择和因果关系，再选择 and、but、or、so 等连接词。 逻辑连接 从句入口" href="lesson-20.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">20</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">把意思连接起来 <span>并列连词与逻辑关系</span></div>
+<div class="card-desc">先判断并列、转折、选择和因果关系，再选择 and、but、or、so 等连接词。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约30分钟</span><span class="card-tag ct-topic">并列连词与逻辑关系</span><span class="card-tag ct-adv">逻辑连接</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a></div>
+</section>
+<section class="course-zone" id="stage-4">
+<div class="zone-header">
+<div class="zone-badge zb-clause">🔗 第四阶段 · 从简单句进入复合句</div>
+<hr/>
+<div class="zone-desc">共3个单元 · 先划分主句和从句，再判断连接关系</div>
+</div>
+<div class="lesson-grid">
+<a class="lesson-card clause" data-search="第21讲 句子里再装一个句子 宾语从句 掌握 that、if、whether 和疑问词引导，重点解决陈述语序、时态与间接引语。 三大从句 核心" href="lesson-21.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">21</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">句子里再装一个句子 <span>宾语从句</span></div>
+<div class="card-desc">掌握 that、if、whether 和疑问词引导，重点解决陈述语序、时态与间接引语。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约40分钟</span><span class="card-tag ct-topic">宾语从句</span><span class="card-tag ct-clause">三大从句</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card clause" data-search="第22讲 给名词贴一张长标签 定语从句 先找先行词，再判断关系词在从句中的作用，选择 who、which 或 that。 三大从句 高频" href="lesson-22.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">22</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">给名词贴一张长标签 <span>定语从句</span></div>
+<div class="card-desc">先找先行词，再判断关系词在从句中的作用，选择 who、which 或 that。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约40分钟</span><span class="card-tag ct-topic">定语从句</span><span class="card-tag ct-clause">三大从句</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card clause" data-search="第23讲 给动作搭建背景舞台 状语从句 系统掌握时间、条件、原因、结果、目的和让步关系，以及从句中的时态选择。 三大从句 核心" href="lesson-23.html">
+<div class="card-num">
+<div class="num-label">第</div>
+<div class="num-big">23</div>
+<div class="num-label">讲</div>
+</div>
+<div class="card-body">
+<div class="card-title">给动作搭建背景舞台 <span>状语从句</span></div>
+<div class="card-desc">系统掌握时间、条件、原因、结果、目的和让步关系，以及从句中的时态选择。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约40分钟</span><span class="card-tag ct-topic">状语从句</span><span class="card-tag ct-clause">三大从句</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a></div>
+</section>
+<section class="course-zone" id="stage-5">
+<div class="zone-header">
+<div class="zone-badge zb-app">📖 第五阶段 · 回到语境和综合题</div>
+<hr/>
+<div class="zone-desc">共5个单元 · 应用课与冲刺加餐已经全部完成</div>
+</div>
+<div class="lesson-grid">
+<a class="lesson-card app" data-search="应用1课 单词的变身术 构词法与词形变化 从句子成分和语义出发，处理真实词族、否定前缀、拼写变化、单复数、比较级和动词形式。 内容已完成 给词变形" href="lesson-34.html">
+<div class="card-num">
+<div class="num-label">应用</div>
+<div class="num-big">1</div>
+<div class="num-label">课</div>
+</div>
+<div class="card-body">
+<div class="card-title">单词的变身术 <span>构词法与词形变化</span></div>
+<div class="card-desc">从句子成分和语义出发，处理真实词族、否定前缀、拼写变化、单复数、比较级和动词形式。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约50分钟</span><span class="card-tag ct-topic">构词法与词形变化</span><span class="card-tag ct-app">内容已完成</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card app" data-search="应用2课 场景里的语法 情景表达与交际用语 先判断说话目的、人物关系和情绪，再选择感谢、道歉、邀请、电话等场景中的得体回应。 内容已完成 情景交际" href="lesson-29.html">
+<div class="card-num">
+<div class="num-label">应用</div>
+<div class="num-big">2</div>
+<div class="num-label">课</div>
+</div>
+<div class="card-body">
+<div class="card-title">场景里的语法 <span>情景表达与交际用语</span></div>
+<div class="card-desc">先判断说话目的、人物关系和情绪，再选择感谢、道歉、邀请、电话等场景中的得体回应。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约45分钟</span><span class="card-tag ct-topic">情景表达与交际用语</span><span class="card-tag ct-app">内容已完成</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card app" data-search="应用3课 从单句进入连续短文 短文语法综合 建立语篇证据链，综合判断词性、动词形式、时态、指代、搭配和上下文逻辑。 内容已完成 综合应用" href="lesson-30.html">
+<div class="card-num">
+<div class="num-label">应用</div>
+<div class="num-big">3</div>
+<div class="num-label">课</div>
+</div>
+<div class="card-body">
+<div class="card-title">从单句进入连续短文 <span>短文语法综合</span></div>
+<div class="card-desc">建立语篇证据链，综合判断词性、动词形式、时态、指代、搭配和上下文逻辑。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约55分钟</span><span class="card-tag ct-topic">短文语法综合</span><span class="card-tag ct-app">内容已完成</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card app" data-search="加餐1 感叹句 · 祈使句 · 反意疑问句 特殊句型集中突破 集中整理 what/how 感叹句、祈使句、反意疑问句及常见转换陷阱。 冲刺加餐 特殊句型" href="lesson-bonus1.html">
+<div class="card-num">
+<div class="num-label">加餐</div>
+<div class="num-big">1</div>
+<div class="num-label"></div>
+</div>
+<div class="card-body">
+<div class="card-title">感叹句 · 祈使句 · 反意疑问句 <span>特殊句型集中突破</span></div>
+<div class="card-desc">集中整理 What/How 感叹句、祈使句、反意疑问句及常见转换陷阱。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约30分钟</span><span class="card-tag ct-topic">特殊句型集中突破</span><span class="card-tag ct-app">冲刺加餐</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a>
+<a class="lesson-card app" data-search="加餐2 中考语法总复习 六大系统串联复习 把词类、句子、时态、句型、从句和语篇应用重新串联，集中检查高频易错点。 冲刺加餐 总复习" href="lesson-bonus2.html">
+<div class="card-num">
+<div class="num-label">加餐</div>
+<div class="num-big">2</div>
+<div class="num-label"></div>
+</div>
+<div class="card-body">
+<div class="card-title">中考语法总复习 <span>六大系统串联复习</span></div>
+<div class="card-desc">把词类、句子、时态、句型、从句和语篇应用重新串联，集中检查高频易错点。</div>
+<div class="card-meta"><span class="card-tag ct-time">⏱ 约60分钟</span><span class="card-tag ct-topic">六大系统串联复习</span><span class="card-tag ct-app">冲刺加餐</span></div>
+</div>
+<div class="card-arrow">›</div>
+</a></div>
+</section>
+</div>
+
+<div id="content-quizzes" class="tab-content-zone" role="tabpanel" aria-labelledby="tab-quizzes" tabindex="0" hidden style="display: none;"></div>
+
+<div id="content-mistakes" class="tab-content-zone mistake-panel" role="tabpanel" aria-labelledby="tab-mistakes" tabindex="0" hidden style="display: none;">
+    <div class="mistake-toolbar"><div><h2>错题本</h2><p>集中复习尚未掌握的题目，答对后会自动移除。</p></div><button class="mistake-clear" id="clearMistakes" type="button">清空错题</button></div>
+    <div class="mistake-list" id="mistakeList"></div>
+</div>
+
+<div id="content-workbooks" class="tab-content-zone" role="tabpanel" aria-labelledby="tab-workbooks" tabindex="0" hidden style="display: none;">
+        <div class="zone-header">
+            <div class="zone-badge zb-pass">🪖 及格保障练习册（第1-12讲）</div>
+            <hr>
+            <div class="zd">每讲学完当天做</div>
+        </div>
+        <div class="wb-grid">
+            <a class="wb-card pass" href="workbook-01.html">
+                <div class="wc-num"><div class="wn-icon">📝</div><div class="wn-label">第1讲</div><div class="wn-big">练</div></div>
+                <div class="wc-body">
+                    <div class="wc-title">四大天王（词性）· 练习册</div>
+                    <div class="wc-desc">词性配对连线 · 看单词写词性 · 形容词vs副词选择 · 改错题 · 填词综合</div>
+                    <div class="wc-meta"><span class="wc-tag wt-q">共30题</span><span class="wc-tag wt-sc">满分100分</span><span class="wc-tag wt-time">⏱ 约40分钟</span><span class="wc-tag wt-print">🖨️ 可打印</span></div>
+                </div>
+                <div class="wc-arrow">›</div>
+            </a>
+            <a class="wb-card pass" href="workbook-02.html">
+                <div class="wc-num"><div class="wn-icon">📝</div><div class="wn-label">第2讲</div><div class="wn-big">练</div></div>
+                <div class="wc-body">
+                    <div class="wc-title">句子的发动机（主谓宾）· 练习册</div>
+                    <div class="wc-desc">找主谓宾 · 补全缺失发动机 · 双发动机纠错 · 主宾格代词选择 · 句子结构分析</div>
+                    <div class="wc-meta"><span class="wc-tag wt-q">共30题</span><span class="wc-tag wt-sc">满分100分</span><span class="wc-tag wt-time">⏱ 约40分钟</span><span class="wc-tag wt-print">🖨️ 可打印</span></div>
+                </div>
+                <div class="wc-arrow">›</div>
+            </a>
+            <a class="wb-card pass" href="workbook-03.html">
+                <div class="wc-num"><div class="wn-icon">📝</div><div class="wn-label">第3讲</div><div class="wn-big">练</div></div>
+                <div class="wc-body">
+                    <div class="wc-title">一山不容二虎（Be动词）· 练习册</div>
+                    <div class="wc-desc">am/is/are/was/were选填 · 否定句变换 · 一般疑问句 · Be动词与实义动词辨析</div>
+                    <div class="wc-meta"><span class="wc-tag wt-q">共28题</span><span class="wc-tag wt-sc">满分100分</span><span class="wc-tag wt-time">⏱ 约35分钟</span><span class="wc-tag wt-print">🖨️ 可打印</span></div>
+                </div>
+                <div class="wc-arrow">›</div>
+            </a>
+            <a class="wb-card pass" href="workbook-04.html">
+                <div class="wc-num"><div class="wn-icon">📝</div><div class="wn-label">第4讲</div><div class="wn-big">练</div></div>
+                <div class="wc-body">
+                    <div class="wc-title">a / an / the 三兄弟 · 练习册</div>
+                    <div class="wc-desc">a vs an判断 · 首次/再次出现用法 · 专有名词/不可数名词填空 · 冠词改错</div>
+                    <div class="wc-meta"><span class="wc-tag wt-q">共30题</span><span class="wc-tag wt-sc">满分100分</span><span class="wc-tag wt-time">⏱ 约35分钟</span><span class="wc-tag wt-print">🖨️ 可打印</span></div>
+                </div>
+                <div class="wc-arrow">›</div>
+            </a>
+            <a class="wb-card pass" href="workbook-05.html">
+                <div class="wc-num"><div class="wn-icon">📝</div><div class="wn-label">第5讲</div><div class="wn-big">练</div></div>
+                <div class="wc-body">
+                    <div class="wc-title">苹果能数，水怎么数 · 练习册</div>
+                    <div class="wc-desc">可数/不可数判断 · many/much/a few/a little选填 · some/any辨析 · 不可数名词改错</div>
+                    <div class="wc-meta"><span class="wc-tag wt-q">共30题</span><span class="wc-tag wt-sc">满分100分</span><span class="wc-tag wt-time">⏱ 约35分钟</span><span class="wc-tag wt-print">🖨️ 可打印</span></div>
+                </div>
+                <div class="wc-arrow">›</div>
+            </a>
+            <a class="wb-card pass" href="workbook-06.html">
+                <div class="wc-num"><div class="wn-icon">📝</div><div class="wn-label">第6讲</div><div class="wn-big">练</div></div>
+                <div class="wc-body">
+                    <div class="wc-title">名词变复数 · 练习册</div>
+                    <div class="wc-desc">规则复数填写 · 不规则复数专项 · 单复数同形辨认 · 复数改错 · 综合填空</div>
+                    <div class="wc-meta"><span class="wc-tag wt-q">共30题</span><span class="wc-tag wt-sc">满分100分</span><span class="wc-tag wt-time">⏱ 约30分钟</span><span class="wc-tag wt-print">🖨️ 可打印</span></div>
+                </div>
+                <div class="wc-arrow">›</div>
+            </a>
+            <a class="wb-card pass" href="workbook-07.html">
+                <div class="wc-num"><div class="wn-icon">📝</div><div class="wn-label">第7讲</div><div class="wn-big">练</div></div>
+                <div class="wc-body">
+                    <div class="wc-title">代词换装游戏 · 练习册</div>
+                    <div class="wc-desc">主格vs宾格 · 形容性vs名词性物主代词 · 反身代词 · and连接时格的选择 · 综合改错</div>
+                    <div class="wc-meta"><span class="wc-tag wt-q">共30题</span><span class="wc-tag wt-sc">满分100分</span><span class="wc-tag wt-time">⏱ 约40分钟</span><span class="wc-tag wt-print">🖨️ 可打印</span></div>
+                </div>
+                <div class="wc-arrow">›</div>
+            </a>
+            <a class="wb-card pass" href="workbook-08.html">
+                <div class="wc-num"><div class="wn-icon">📝</div><div class="wn-label">第8讲</div><div class="wn-big">练</div></div>
+                <div class="wc-body">
+                    <div class="wc-title">时间间谍（时态入门）· 练习册</div>
+                    <div class="wc-desc">时间信号词判断时态 · 一般现在时三单变化 · 时态识别 · 综合选择填空</div>
+                    <div class="wc-meta"><span class="wc-tag wt-q">共30题</span><span class="wc-tag wt-sc">满分100分</span><span class="wc-tag wt-time">⏱ 约40分钟</span><span class="wc-tag wt-print">🖨️ 可打印</span></div>
+                </div>
+                <div class="wc-arrow">›</div>
+            </a>
+            <a class="wb-card pass" href="workbook-09.html">
+                <div class="wc-num"><div class="wn-icon">📝</div><div class="wn-label">第9讲</div><div class="wn-big">练</div></div>
+                <div class="wc-body">
+                    <div class="wc-title">一般过去时 · 练习册</div>
+                    <div class="wc-desc">规则过去式填写 · 不规则过去式 · 否定句/疑问句变换 · 改错 · 综合时态判断</div>
+                    <div class="wc-meta"><span class="wc-tag wt-q">共32题</span><span class="wc-tag wt-sc">满分100分</span><span class="wc-tag wt-time">⏱ 约40分钟</span><span class="wc-tag wt-print">🖨️ 可打印</span></div>
+                </div>
+                <div class="wc-arrow">›</div>
+            </a>
+            <a class="wb-card pass" href="workbook-10.html">
+                <div class="wc-num"><div class="wn-icon">📝</div><div class="wn-label">第10讲</div><div class="wn-big">练</div></div>
+                <div class="wc-body">
+                    <div class="wc-title">现在进行时 · 练习册</div>
+                    <div class="wc-desc">动词+ing变化 · am/is/are搭配 · 与一般现在时辨析 · 信号词判断 · 改错</div>
+                    <div class="wc-meta"><span class="wc-tag wt-q">共28题</span><span class="wc-tag wt-sc">满分100分</span><span class="wc-tag wt-time">⏱ 约35分钟</span><span class="wc-tag wt-print">🖨️ 可打印</span></div>
+                </div>
+                <div class="wc-arrow">›</div>
+            </a>
+            <a class="wb-card pass" href="workbook-11.html">
+                <div class="wc-num"><div class="wn-icon">📝</div><div class="wn-label">第11讲</div><div class="wn-big">练</div></div>
+                <div class="wc-body">
+                    <div class="wc-title">一般将来时 · 练习册</div>
+                    <div class="wc-desc">will vs be going to选择 · 否定疑问变换 · 与进行时表将来辨析 · 综合填空</div>
+                    <div class="wc-meta"><span class="wc-tag wt-q">共28题</span><span class="wc-tag wt-sc">满分100分</span><span class="wc-tag wt-time">⏱ 约35分钟</span><span class="wc-tag wt-print">🖨️ 可打印</span></div>
+                </div>
+                <div class="wc-arrow">›</div>
+            </a>
+            <a class="wb-card pass" href="workbook-12.html">
+                <div class="wc-num"><div class="wn-icon">📝</div><div class="wn-label">第12讲</div><div class="wn-big">练</div></div>
+                <div class="wc-body">
+                    <div class="wc-title">句型变换 · 练习册</div>
+                    <div class="wc-desc">肯定→否定→疑问 · There be句型 · 感叹句 · 祈使句 · 综合句型变换</div>
+                    <div class="wc-meta"><span class="wc-tag wt-q">共30题</span><span class="wc-tag wt-sc">满分100分</span><span class="wc-tag wt-time">⏱ 约40分钟</span><span class="wc-tag wt-print">🖨️ 可打印</span></div>
+                </div>
+                <div class="wc-arrow">›</div>
+            </a>
+        </div>
+
+
+        <!-- 配对使用提示 -->
+        <div class="pair-tip">
+            <div class="pair-tip-icon">🔗</div>
+            <div style="flex:1;">
+                <h3>讲义 + 练习册配合使用效果最好</h3>
+                <p>每学完一讲讲义，当天就做对应的练习册。不要等学完好几讲再一起做——间隔越长，遗忘越多。</p>
+                <div class="pair-steps">
+                    <div class="ps-item">
+                        <div class="ps-dot">1</div>
+                        <span style="margin-left:5px;color:#444;">读讲义</span>
+                    </div>
+                    <div class="ps-arr">→</div>
+                    <div class="ps-item">
+                        <div class="ps-dot" style="background:#27ae60;color:#fff;">2</div>
+                        <span style="margin-left:5px;color:#444;">当天做练习册</span>
+                    </div>
+                    <div class="ps-arr">→</div>
+                    <div class="ps-item">
+                        <div class="ps-dot" style="background:#e74c3c;color:#fff;">3</div>
+                        <span style="margin-left:5px;color:#444;">看大白话解析</span>
+                    </div>
+                    <div class="ps-arr">→</div>
+                    <div class="ps-item">
+                        <div class="ps-dot" style="background:#8e44ad;color:#fff;">4</div>
+                        <span style="margin-left:5px;color:#444;">错题圈起来</span>
+                    </div>
+                    <div class="ps-arr">→</div>
+                    <div class="ps-item">
+                        <div class="ps-dot" style="background:#e67e22;color:#fff;">5</div>
+                        <span style="margin-left:5px;color:#444;">一周后重做错题</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 打印指南 -->
+        <div class="print-guide">
+            <div class="print-guide-header">🖨️ 打印指南</div>
+            <div class="print-guide-body">
+                <div class="pg-item">
+                    <strong>打印单讲练习册</strong>
+                    点击某讲练习册 → 打开后点右上角「🖨️ 打印」按钮 → 只打印当前这一讲，不会带上其他内容
+                </div>
+                <div class="pg-item">
+                    <strong>推荐打印设置</strong>
+                    纸张：A4 · 方向：纵向 · 缩放：100% · 建议勾选"打印背景颜色"保留彩色样式
+                </div>
+                <div class="pg-item">
+                    <strong>装订建议</strong>
+                    按讲次打印后，左侧装订；答案解析页在每本的最后，可以单独折叠备用，做题时不要提前看
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /main -->
+
+<!-- ===== 页脚 ===== -->
+<div class="footer">
+    <strong>初中英语语法重构 · 全新合订版</strong><br>
+    专为成绩不好的初中生设计 · 覆盖中考100%必考语法 · 讲义与互动专项训练一站式结合<br>
+    每讲独立页面，专项可在线作答、自动判分并查看解析
+</div>
+
+<!-- ===== 极简自适应切换 Tab 脚本 ===== -->
+<script>
+function buildQuizDirectory() {
+    const target = document.getElementById('content-quizzes');
+    const lectureSections = document.querySelectorAll('#content-lectures .course-zone');
+
+    lectureSections.forEach(section => {
+        const sourceCards = Array.from(section.querySelectorAll('.lesson-card'))
+            .filter(card => !card.getAttribute('href').includes('lesson-00.html'));
+
+        if (!sourceCards.length) return;
+
+        const quizSection = section.cloneNode(true);
+        quizSection.id = 'quiz-' + section.id;
+        const quizGrid = quizSection.querySelector('.lesson-grid');
+        quizGrid.innerHTML = '';
+
+        sourceCards.forEach(sourceCard => {
+            const card = sourceCard.cloneNode(true);
+            const lessonHref = card.getAttribute('href');
+            const title = card.querySelector('.card-title').textContent.trim();
+
+            card.classList.add('quiz-card');
+            card.classList.remove('recent');
+            card.setAttribute('href', lessonHref.replace('lesson-', 'quiz-'));
+            card.setAttribute('aria-label', title + '专项训练');
+            card.querySelector('.card-desc').textContent = '围绕本讲核心考点即时练习；提交后自动判分，并可查看逐题解析。';
+            card.querySelector('.card-meta').innerHTML = '<span class="card-tag ct-quiz">🎯 互动专项</span><span class="card-tag ct-auto">⚡ 自动判分</span><span class="card-tag ct-review">📘 错题解析</span>';
+            card.querySelector('.card-arrow').textContent = '›';
+            quizGrid.appendChild(card);
+        });
+
+        const zoneDesc = quizSection.querySelector('.zone-desc, .zd');
+        if (zoneDesc) zoneDesc.textContent = `共${sourceCards.length}套专项训练 · 学完对应讲义后立即作答`;
+        target.appendChild(quizSection);
+    });
+}
+
+const MISTAKE_KEY = 'junior_grammar_mistakes_v1';
+function readMistakes() { try { const rows=JSON.parse(localStorage.getItem(MISTAKE_KEY)||'[]'); return Array.isArray(rows)?rows:[]; } catch (_) { return []; } }
+function escapeMistakeText(value) { return String(value==null?'':value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function plainMistakeText(value) { return escapeMistakeText(String(value==null?'':value).replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim()); }
+function renderMistakeBook() {
+    const rows=readMistakes(),list=document.getElementById('mistakeList'),count=document.getElementById('mistakeCount'),clear=document.getElementById('clearMistakes');
+    count.textContent=rows.length;clear.hidden=!rows.length;
+    list.innerHTML=rows.length?rows.map(row=>`<article class="mistake-item" data-mistake-id="${escapeMistakeText(row.id)}"><div class="mistake-meta"><span>${escapeMistakeText(row.lessonLabel)}</span><span>·</span><span>${escapeMistakeText(row.title)}</span></div><div class="mistake-stem">${plainMistakeText(row.stem)||'题目内容缺失'}</div><div class="mistake-answer"><span class="wrong">你的答案：${escapeMistakeText(row.userAnswer)}</span><span class="right">正确答案：${escapeMistakeText(row.correctAnswer)}</span></div><div class="mistake-explain">解析：${plainMistakeText(row.explanation)||'暂无解析'}</div><div class="mistake-actions"><a href="${escapeMistakeText(row.href)}">返回本套重练</a><button type="button" data-remove-mistake="${escapeMistakeText(row.id)}">已掌握，移除</button></div></article>`).join(''):'<div class="mistake-empty"><strong>当前没有错题</strong><br>完成专项训练并提交批改后，错题会自动出现在这里。</div>';
+    list.querySelectorAll('[data-remove-mistake]').forEach(button=>button.addEventListener('click',()=>{const id=button.dataset.removeMistake;localStorage.setItem(MISTAKE_KEY,JSON.stringify(readMistakes().filter(row=>row.id!==id)));renderMistakeBook();}));
+}
+
+function switchTab(type) {
+    // 1. 切换按钮状态，并同步无障碍属性
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        const isActive = btn.id === 'tab-' + type;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        btn.tabIndex = isActive ? 0 : -1;
+    });
+
+    // 2. 切换主区域内容显示
+    document.querySelectorAll('.tab-content-zone').forEach(zone => {
+        const isActive = zone.id === 'content-' + type;
+        zone.style.display = isActive ? 'block' : 'none';
+        zone.hidden = !isActive;
+    });
+
+    // 3. 切换提示条显示
+    document.getElementById('usage-lectures').style.display = type === 'lectures' ? 'flex' : 'none';
+    document.getElementById('usage-quizzes').style.display = type === 'quizzes' ? 'flex' : 'none';
+    document.getElementById('usage-mistakes').style.display = type === 'mistakes' ? 'flex' : 'none';
+    if (type === 'mistakes') renderMistakeBook();
+}
+
+buildQuizDirectory();
+renderMistakeBook();
+document.getElementById('clearMistakes').addEventListener('click',()=>{if(!confirm('确定清空全部错题吗？此操作无法撤销。'))return;localStorage.removeItem(MISTAKE_KEY);renderMistakeBook();});
+if(location.hash==='#mistakes') switchTab('mistakes');
+
+document.querySelector('.tabs-container').addEventListener('keydown', event => {
+    const tabs = Array.from(document.querySelectorAll('.tab-btn'));
+    const currentIndex = tabs.indexOf(document.activeElement);
+    if (currentIndex < 0) return;
+
+    let nextIndex = currentIndex;
+    if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+    if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    if (event.key === 'Home') nextIndex = 0;
+    if (event.key === 'End') nextIndex = tabs.length - 1;
+    if (nextIndex === currentIndex && !['Home', 'End'].includes(event.key)) return;
+
+    event.preventDefault();
+    tabs[nextIndex].focus();
+    tabs[nextIndex].click();
+});
+</script>
+
+<!-- 调用同目录下的安全拦截脚本 -->
+</body>
+</html>

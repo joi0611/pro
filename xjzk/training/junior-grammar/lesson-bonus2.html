@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加餐2：中考语法总复习 · 时态·从句·易错大串联</title>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #f0f2f5;
+    color: #2c3e50;
+    min-height: 100vh;
+}
+
+
+/* ===== 顶部返回栏 ===== */
+.lesson-topbar{position:sticky;top:0;z-index:100;background:#1a252f;box-shadow:0 2px 12px rgba(0,0,0,.22)}
+.lesson-topbar-inner{max-width:960px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:12px}
+.topbar-back{color:#f1c40f;text-decoration:none;font-size:14px;font-weight:bold;display:flex;align-items:center;gap:5px;white-space:nowrap;flex-shrink:0;transition:opacity .15s}
+.topbar-back:hover{opacity:.75}
+.topbar-title{flex:1;min-width:0;color:#ecf0f1;font-weight:900;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar-print{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:5px 14px;font-size:13px;color:rgba(255,255,255,.85);cursor:pointer;font-family:inherit;flex-shrink:0;transition:background .15s}
+.topbar-print:hover{background:rgba(255,255,255,.18)}
+
+    /* ===== 主内容区 ===== */
+    .main-content { flex-grow: 1; overflow-y: auto; padding: 40px; scroll-behavior: smooth; }
+    .book-container { max-width: 850px; margin: 0 auto; background-color: #fff; padding: 50px 60px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+
+    /* ===== 封面 ===== */
+    .chapter-cover { background: linear-gradient(135deg, #1a252f 0%, #922b21 60%, #e74c3c 100%); border-radius: 15px; padding: 40px 40px 35px; margin-bottom: 40px; color: #fff; position: relative; overflow: hidden; }
+    .chapter-cover::before { content: "🏁"; position: absolute; right: 36px; top: 20px; font-size: 90px; opacity: 0.12; line-height: 1; }
+    .lesson-tag { background: #f1c40f; color: #2c3e50; font-weight: 900; font-size: 13px; padding: 5px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em; }
+    .chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+    .chapter-cover h1 span { color: #f1c40f; }
+    .chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.78); line-height: 1.75; }
+    .meta-row { display: flex; gap: 16px; margin-top: 22px; flex-wrap: wrap; }
+    .meta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.92); }
+
+    /* ===== 通用卡片 ===== */
+    .module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+    .badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+    .card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }
+    .badge-blue  { background: #2980b9; color: #fff; }
+    .card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }
+    .badge-green { background: #27ae60; color: #fff; }
+    .card-red    { background: #fff5f5; border: 2px solid #ffcccc; }
+    .badge-red   { background: #e74c3c; color: #fff; }
+    .card-yellow { background: #fffde7; border: 2px solid #ffe082; }
+    .badge-yellow{ background: #f1c40f; color: #333; }
+    .card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }
+    .badge-purple{ background: #8e44ad; color: #fff; }
+    .card-dark   { background: #f8f9fa; border: 2px solid #dee2e6; }
+    .badge-dark  { background: #2c3e50; color: #f1c40f; }
+    .card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }
+    .badge-orange{ background: #e67e22; color: #fff; }
+
+    /* ===== 高亮 ===== */
+    .hl-red    { color: #e74c3c; font-weight: bold; }
+    .hl-blue   { color: #2980b9; font-weight: bold; }
+    .hl-green  { color: #27ae60; font-weight: bold; }
+    .hl-orange { color: #e67e22; font-weight: bold; }
+    .hl-purple { color: #8e44ad; font-weight: bold; }
+    .mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+    .mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+    .mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+    .mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+    .mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+
+    /* ===== 考频标签 ===== */
+    .tag-hot  { background: #ff4757; color: #fff; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; vertical-align: middle; margin-left: 6px; }
+    .tag-warn { background: #e67e22; color: #fff; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; vertical-align: middle; margin-left: 6px; }
+    .tag-core { background: #2980b9; color: #fff; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; vertical-align: middle; margin-left: 6px; }
+
+    /* ===== 分割线 ===== */
+    .section-divider { display: flex; align-items: center; gap: 12px; margin: 44px 0 32px; }
+    .section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+    .section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+    /* ===== 脑回路框 ===== */
+    .brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+    .brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+    /* ===== 对错行 ===== */
+    .wrong-right { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
+    .wr-row { display: flex; align-items: baseline; gap: 12px; font-size: 16px; font-weight: bold; }
+    .wr-wrong { color: #c0392b; text-decoration: line-through; }
+    .wr-right { color: #27ae60; }
+
+    /* ===== 时态大表 ===== */
+    .tense-table { width: 100%; border-collapse: collapse; font-size: 14px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.07); margin: 18px 0; }
+    .tense-table th { background: #2c3e50; color: #f1c40f; padding: 11px 14px; text-align: left; font-size: 13px; }
+    .tense-table td { padding: 11px 14px; border-bottom: 1px solid #eee; vertical-align: top; line-height: 1.65; }
+    .tense-table tr:last-child td { border-bottom: none; }
+    .tense-table tr:hover td { background: #f8f9fa; }
+    .tense-table .tense-name { font-weight: 900; font-size: 14px; white-space: nowrap; }
+    .tense-table code { background: #f0f7ff; padding: 2px 7px; border-radius: 4px; font-size: 13px; color: #1a5276; font-family: 'Courier New', monospace; white-space: nowrap; }
+    .tense-table .signal { font-size: 12px; color: #e67e22; font-weight: bold; }
+
+    /* ===== 从句三兄弟卡片 ===== */
+    .clause-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 18px 0; }
+    .clause-card { border-radius: 12px; padding: 20px 16px; text-align: center; border: 2px solid transparent; }
+    .clause-card .cc-icon { font-size: 36px; margin-bottom: 8px; }
+    .clause-card .cc-name { font-size: 17px; font-weight: 900; margin-bottom: 6px; }
+    .clause-card .cc-eng  { font-size: 13px; margin-bottom: 10px; opacity: 0.8; }
+    .clause-card .cc-key  { font-size: 13px; line-height: 1.6; }
+    .cc-obj   { background: #fff3e0; border-color: #ffb74d; color: #bf360c; }
+    .cc-rel   { background: #e3f2fd; border-color: #90caf9; color: #1565c0; }
+    .cc-adv   { background: #e8f5e9; border-color: #a5d6a7; color: #1b5e20; }
+
+    /* ===== 排查清单 ===== */
+    .checklist { display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
+    .check-item { display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 14px 16px; }
+    .check-box { width: 24px; height: 24px; border: 2px solid #2c3e50; border-radius: 5px; flex-shrink: 0; margin-top: 1px; }
+    .check-body h4 { font-size: 14px; font-weight: 900; color: #1a252f; margin-bottom: 4px; }
+    .check-body p  { font-size: 13px; color: #555; line-height: 1.65; margin: 0; }
+    .check-item.hot { border-color: #f48fb1; background: #fff5f8; }
+    .check-item.hot .check-box { border-color: #e74c3c; }
+
+    /* ===== 易错速查表 ===== */
+    .trap-table { width: 100%; border-collapse: collapse; font-size: 14px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.07); margin: 16px 0; }
+    .trap-table th { background: #922b21; color: #fff; padding: 10px 14px; text-align: left; font-size: 13px; }
+    .trap-table td { padding: 11px 14px; border-bottom: 1px solid #eee; vertical-align: top; line-height: 1.65; font-size: 14px; }
+    .trap-table tr:last-child td { border-bottom: none; }
+    .trap-table tr:nth-child(even) td { background: #fafafa; }
+    .trap-wrong { color: #c0392b; font-weight: bold; text-decoration: line-through; font-size: 13px; }
+    .trap-right { color: #27ae60; font-weight: bold; font-size: 13px; }
+
+    /* ===== 练习题 ===== */
+    .quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 16px 0; }
+    .quiz-q { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; line-height: 1.65; }
+    .quiz-opts { font-size: 15px; color: #555; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 24px; }
+    .reveal-btn { background: #f1c40f; border: none; padding: 9px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+    .reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+    .answer-box { display: none; margin-top: 14px; }
+
+    /* ===== 警告框 ===== */
+    .warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+    .warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 15px; margin-bottom: 6px; }
+    .warn-box p { font-size: 14px; color: #444; line-height: 1.7; margin: 0; }
+    .tip-box { background: #f4fbf4; border: 2px solid #c3e6c3; border-left: 5px solid #27ae60; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #1e8449; line-height: 1.75; }
+
+    /* ===== 小抄 ===== */
+    .cheatsheet { margin: 50px 0 30px; background: #1a252f; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 28px rgba(0,0,0,0.22); }
+    .cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #e74c3c; color: #fff; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 10px rgba(231,76,60,0.4); white-space: nowrap; }
+    .cs-sub { text-align: center; font-size: 13px; color: #7f8c8d; margin: 10px 0 28px; }
+    .cs-block { background: rgba(255,255,255,0.08); padding: 18px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+    .cs-block.red    { border-left-color: #e74c3c; }
+    .cs-block.green  { border-left-color: #2ecc71; }
+    .cs-block.yellow { border-left-color: #f1c40f; }
+    .cs-block.orange { border-left-color: #e67e22; }
+    .cs-block.purple { border-left-color: #9b59b6; }
+    .cs-block strong { font-size: 15px; display: block; margin-bottom: 10px; color: #f1c40f; }
+    .cs-block p, .cs-block li { font-size: 14px; line-height: 1.8; color: #ecf0f1; margin: 4px 0; }
+    .cs-block ul { padding-left: 18px; }
+    .cs-block table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+    .cs-block table th { background: rgba(255,255,255,0.12); color: #f1c40f; padding: 7px 10px; text-align: left; }
+    .cs-block table td { padding: 7px 10px; border-bottom: 1px solid rgba(255,255,255,0.07); color: #ecf0f1; }
+    .cs-block table tr:last-child td { border-bottom: none; }
+    .cs-hl { color: #f1c40f; font-weight: bold; }
+    .cs-red { color: #ff6b6b; font-weight: bold; }
+    .cs-green { color: #55efc4; font-weight: bold; }
+
+    /* ===== 结束横幅 ===== */
+    .finish-banner { margin-top: 40px; background: linear-gradient(135deg, #1a252f, #2c3e50); color: #fff; padding: 36px 32px; border-radius: 14px; text-align: center; }
+    .finish-banner h2 { font-size: 24px; font-weight: 900; color: #f1c40f; margin-bottom: 14px; }
+    .finish-banner p { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.85; }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 768px) {
+        body { flex-direction: column; overflow: auto; height: auto; }
+        .sidebar { width: 100%; height: auto; padding: 15px; }
+        .main-content { overflow-y: visible; padding: 20px 15px; }
+        .book-container { padding: 28px 18px; }
+        .clause-grid { grid-template-columns: 1fr; }
+        .chapter-cover h1 { font-size: 22px; }
+    }
+    /* ===== 打印 ===== */
+@media print {
+    .lesson-topbar, .lesson-nav, .lesson-footer { display: none !important; }
+    body { background: #fff; }
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container { padding: 20px 24px; border-radius: 0; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .module-card, .quiz-block, .warn-box, .cheatsheet, .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+    .cheatsheet { page-break-before: always; break-before: page; }
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .be-table { font-size: 13px; }
+}
+</style>
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+<div class="lesson-topbar"><div class="lesson-topbar-inner"><a class="topbar-back" href="/">← 学习中心</a><a class="topbar-back" href="index.html">← 目录</a><div class="topbar-title">加餐2：中考语法总复习</div></div></div>
+
+<!-- ===== 主内容区 ===== -->
+<div class="main-content">
+<div class="book-container">
+
+    <!-- 封面 -->
+    <div class="chapter-cover">
+        <div class="lesson-tag">中考冲刺 · 加餐2 · 压轴总复习</div>
+        <h1>中考语法<span>总复习</span></h1>
+        <p class="subtitle">时态 · 从句 · 易错大串联<br>你学过的所有语法，在这一讲全部串起来</p>
+        <div class="meta-row">
+            <div class="meta-chip">⏱ 预计学习 60 分钟</div>
+            <div class="meta-chip">🎯 覆盖中考语法全部考点</div>
+            <div class="meta-chip">🔥 难度：综合冲刺</div>
+        </div>
+    </div>
+
+    <!-- 目标框 -->
+    <div style="background:#fff5f5;border:2px solid #ffcccc;border-radius:12px;padding:20px 25px;margin-bottom:35px;display:flex;gap:15px;align-items:flex-start;">
+        <div style="font-size:28px;flex-shrink:0;line-height:1.2;">🏁</div>
+        <div>
+            <h3 style="font-size:16px;color:#c0392b;margin-bottom:8px;font-weight:900;">这是最后一讲，也是最重要的一讲</h3>
+            <p style="font-size:15px;color:#5d4037;line-height:1.8;">学完这讲，你将得到：① 八种核心时态的结构复习；② 三类常见从句判断方法；③ 20个易错点检查表；④ 考前速查清单。口诀只提供线索，最终按结构和语境验证。</p>
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 模块一：时态终极对比 -->
+    <!-- ================================================ -->
+    <div class="module-card card-blue">
+        <div class="badge badge-blue">⏰ 模块一：时态终极对比表——8种核心时态一次看清</div>
+
+        <p>下面集中比较八种核心时态。时间词可帮助建立参照点，但不能一看到某个词就机械选定时态。</p>
+
+        <table class="tense-table" style="margin-top:20px;">
+            <thead>
+                <tr>
+                    <th style="width:16%;">时态名称</th>
+                    <th style="width:22%;">结构公式</th>
+                    <th style="width:22%;">常见时间线索（非专属）</th>
+                    <th style="width:22%;">例句</th>
+                    <th style="width:18%;">考试最爱考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="tense-name" style="color:#2980b9;">一般现在时</span></td>
+                    <td><code>do / does</code><br><small>（三单加s/es）</small></td>
+                    <td><span class="signal">always / usually / often / every day / sometimes</span></td>
+                    <td>She <strong>runs</strong> every morning.</td>
+                    <td>三单变化；否定用 don't/doesn't</td>
+                </tr>
+                <tr>
+                    <td><span class="tense-name" style="color:#e74c3c;">一般过去时</span></td>
+                    <td><code>did</code><br><small>（动词过去式）</small></td>
+                    <td><span class="signal">yesterday / ago / last week / in 2020</span></td>
+                    <td>He <strong>ate</strong> an apple yesterday.</td>
+                    <td>不规则动词过去式；否定用 didn't+原形</td>
+                </tr>
+                <tr>
+                    <td><span class="tense-name" style="color:#27ae60;">现在进行时</span></td>
+                    <td><code>am/is/are + doing</code></td>
+                    <td><span class="signal">now / at the moment / look! / listen!</span></td>
+                    <td>They <strong>are playing</strong> football now.</td>
+                    <td>动词+ing变化规则；be动词与人称匹配</td>
+                </tr>
+                <tr>
+                    <td><span class="tense-name" style="color:#e67e22;">一般将来时</span></td>
+                    <td><code>will + 原形</code><br><code>be going to + 原形</code></td>
+                    <td><span class="signal">tomorrow / next week / soon / in the future</span></td>
+                    <td>I <strong>will go</strong> to Beijing tomorrow.</td>
+                    <td>will vs be going to区别；if从句用现在时</td>
+                </tr>
+                <tr>
+                    <td><span class="tense-name" style="color:#8e44ad;">现在完成时</span></td>
+                    <td><code>have/has + 过去分词</code></td>
+                    <td><span class="signal">ever / never / already / yet / just / since / for</span></td>
+                    <td>She <strong>has lived</strong> here for 3 years.</td>
+                    <td>have been to vs have gone to；since+时间点，for+时间段</td>
+                </tr>
+                <tr>
+                    <td><span class="tense-name" style="color:#16a085;">过去进行时</span></td>
+                    <td><code>was/were + doing</code></td>
+                    <td><span class="signal">at 8 o'clock yesterday / when… / while…</span></td>
+                    <td>I <strong>was sleeping</strong> when he called.</td>
+                    <td>when引导时间状语从句的时态搭配</td>
+                </tr>
+            <tr><td>过去将来时</td><td>would + 原形 / was-were going to + 原形</td><td>过去观察点后的动作</td><td>She said she would come.</td><td>找过去参照点，不将所有 would 当时态</td></tr><tr><td>过去完成时</td><td>had + 过去分词</td><td>某个过去参照点之前</td><td>When I arrived, they had left.</td><td>先判断先后；before/after 不机械套 had</td></tr></tbody>
+        </table>
+
+        <!-- 时态选择三步法 -->
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:24px 0 12px;">🔍 考场时态选择三步法（闭眼用）</p>
+        <div style="display:flex;flex-direction:column;gap:0;border-radius:10px;overflow:hidden;border:1.5px solid #b3d4ff;">
+            <div style="display:flex;align-items:stretch;">
+                <div style="background:#2980b9;color:#fff;font-weight:900;font-size:16px;padding:14px 18px;min-width:50px;display:flex;align-items:center;justify-content:center;">1</div>
+                <div style="padding:14px 18px;background:#f0f7ff;flex:1;border-bottom:1px solid #b3d4ff;">
+                    <p style="font-weight:900;color:#1a5276;margin-bottom:4px;font-size:15px;">找时间信号词</p>
+                    <p style="font-size:14px;color:#555;line-height:1.65;">看句子里有没有yesterday/now/tomorrow/already等时间词——它们是最直接的线索。</p>
+                </div>
+            </div>
+            <div style="display:flex;align-items:stretch;">
+                <div style="background:#1a6fa8;color:#fff;font-weight:900;font-size:16px;padding:14px 18px;min-width:50px;display:flex;align-items:center;justify-content:center;">2</div>
+                <div style="padding:14px 18px;background:#fff;flex:1;border-bottom:1px solid #b3d4ff;">
+                    <p style="font-weight:900;color:#1a5276;margin-bottom:4px;font-size:15px;">看上下文语境</p>
+                    <p style="font-size:14px;color:#555;line-height:1.65;">没有时间词时，看整段话在讲过去的事、现在的状态还是将来的计划。</p>
+                </div>
+            </div>
+            <div style="display:flex;align-items:stretch;">
+                <div style="background:#145f8a;color:#fff;font-weight:900;font-size:16px;padding:14px 18px;min-width:50px;display:flex;align-items:center;justify-content:center;">3</div>
+                <div style="padding:14px 18px;background:#f0f7ff;flex:1;">
+                    <p style="font-weight:900;color:#1a5276;margin-bottom:4px;font-size:15px;">检查动词形式对不对</p>
+                    <p style="font-size:14px;color:#555;line-height:1.65;">时态确定后，检查动词有没有正确变形（加ed/ing/过去分词），以及有没有漏写助动词（have/was/will）。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 最高频易混对比 -->
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:24px 0 12px;">⚠️ 时态最高频易混：现在完成时 vs 一般过去时</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0;">
+            <div style="background:#fff;border-radius:10px;border:2px solid #d8b4fe;padding:18px;">
+                <p style="font-weight:900;color:#8e44ad;margin-bottom:10px;font-size:15px;">🟣 现在完成时（have/has done）</p>
+                <p style="font-size:14px;color:#555;line-height:1.7;">现在完成时从现在回看过去，常描述当前结果、经历或持续情况。already/yet/just/ever/never 不是专属信号。错误：I have seen him yesterday.；正确：I saw him yesterday.。since 2020 等过去起点可以与现在完成时连用。</p>
+            </div>
+            <div style="background:#fff;border-radius:10px;border:2px solid #f48fb1;padding:18px;">
+                <p style="font-weight:900;color:#880e4f;margin-bottom:10px;font-size:15px;">🔴 一般过去时（did）</p>
+                <p style="font-size:14px;color:#555;line-height:1.7;">强调：过去某个时间点<strong>发生的具体事情</strong><br>关键词：yesterday / ago / last / in+年份<br>可以和具体时间点连用！<br><span class="trap-right">✅ I saw him yesterday.</span><br><span class="trap-right">✅ She lived here in 2010.</span></p>
+            </div>
+        </div>
+
+        <div class="warn-box">
+            <div class="warn-title">🚨 have been to vs have gone to——年年必考！</div>
+            <p><span class="mark-purple">have/has been to</span> = 去过（现在人已经回来了）&nbsp;&nbsp;例：I <strong>have been to</strong> Beijing.（我去过北京，现在在这里）<br>
+            <span class="mark-red">have/has gone to</span> = 去了（现在人还在那里，或在路上）&nbsp;&nbsp;例：He <strong>has gone to</strong> Beijing.（他去北京了，现在不在这里）</p>
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 模块二：从句三兄弟速攻 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>模块二</span><hr></div>
+
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🧩 模块二：从句三兄弟速攻手册</div>
+
+        <p>从句是中考语法里<strong>难度最高、分值最重</strong>的板块，也是很多同学到最后还是搞不清楚的地方。这里用最简单的方法，把三种从句的核心考点全部说清楚。</p>
+
+        <div class="clause-grid" style="margin-top:20px;">
+            <div class="clause-card cc-obj">
+                <div class="cc-icon">📦</div>
+                <div class="cc-name">宾语从句</div>
+                <div class="cc-eng">Object Clause</div>
+                <div class="cc-key">把一整个句子当"宾语"用<br>放在动词后面</div>
+            </div>
+            <div class="clause-card cc-rel">
+                <div class="cc-icon">🔗</div>
+                <div class="cc-name">定语从句</div>
+                <div class="cc-eng">Relative Clause</div>
+                <div class="cc-key">用一个句子来描述<br>前面的名词（人或物）</div>
+            </div>
+            <div class="clause-card cc-adv">
+                <div class="cc-icon">🌿</div>
+                <div class="cc-name">状语从句</div>
+                <div class="cc-eng">Adverbial Clause</div>
+                <div class="cc-key">交代时间/条件/原因/结果<br>相当于副词的作用</div>
+            </div>
+        </div>
+
+        <!-- 宾语从句 -->
+        <div style="margin-top:28px;padding:22px;background:#fff;border-radius:12px;border:2px solid #ffb74d;">
+            <p style="font-weight:900;font-size:16px;color:#bf360c;margin-bottom:14px;">📦 宾语从句——3个必考考点</p>
+
+            <p style="font-weight:bold;color:#333;margin-bottom:8px;">考点① 引导词怎么选</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px;font-size:14px;">
+                <div style="background:#fff3e0;border-radius:8px;padding:12px;border:1px solid #ffb74d;">
+                    <p style="font-weight:bold;color:#e65100;margin-bottom:4px;">用 that</p>
+                    <p style="color:#555;line-height:1.6;">从句是陈述句时用<br>that可以省略<br>例：I think <strong>(that)</strong> he is right.</p>
+                </div>
+                <div style="background:#fff3e0;border-radius:8px;padding:12px;border:1px solid #ffb74d;">
+                    <p style="font-weight:bold;color:#e65100;margin-bottom:4px;">用 if / whether</p>
+                    <p style="color:#555;line-height:1.6;">从句是一般疑问句时<br>意思是"是否"<br>例：I don't know <strong>if</strong> he will come.</p>
+                </div>
+                <div style="background:#fff3e0;border-radius:8px;padding:12px;border:1px solid #ffb74d;">
+                    <p style="font-weight:bold;color:#e65100;margin-bottom:4px;">用疑问词</p>
+                    <p style="color:#555;line-height:1.6;">从句是特殊疑问句时<br>保留疑问词引导<br>例：I wonder <strong>where</strong> he lives.</p>
+                </div>
+            </div>
+
+            <p style="font-weight:bold;color:#333;margin-bottom:8px;">考点② 语序必须是陈述句语序 <span class="tag-hot">超高频失分</span></p>
+            <div class="wrong-right">
+                <div class="wr-row"><span class="wr-wrong">❌ I don't know where is he.</span><span style="font-size:14px;color:#888;">（疑问句语序，错误）</span></div>
+                <div class="wr-row"><span class="wr-right">✅ I don't know where he is.</span><span style="font-size:14px;color:#888;">（陈述句语序，正确）</span></div>
+            </div>
+            <div class="brain-box" style="margin-top:10px;">
+                <p>🧠 <strong>口诀：引导词 + 主语 + 动词（永远不倒装）</strong><br>
+                从句进入主句，就要"收起疑问句的架势"，老老实实按陈述句顺序排。</p>
+            </div>
+
+            <p style="font-weight:bold;color:#333;margin:14px 0 8px;">考点③ 时态呼应规则</p>
+            <p style="font-size:14px;color:#555;line-height:1.7;">主句过去时通常引起时态后移：She said she was tired。若状态现在仍成立，也可说 She said she is tired。客观规律通常保留现在时；仍有效状态和仍在未来的计划也要按语境判断。</p>
+        </div>
+
+        <!-- 定语从句 -->
+        <div style="margin-top:16px;padding:22px;background:#fff;border-radius:12px;border:2px solid #90caf9;">
+            <p style="font-weight:900;font-size:16px;color:#1565c0;margin-bottom:14px;">🔗 定语从句——关系词怎么选</p>
+
+            <div style="overflow:hidden;border-radius:8px;border:1.5px solid #90caf9;font-size:14px;">
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:#1565c0;color:#fff;font-weight:bold;padding:10px 14px;gap:10px;">
+                    <span>先行词（被描述的词）</span><span>关系词</span><span>例句</span>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:10px 14px;gap:10px;border-bottom:1px solid #e3f2fd;background:#fff;">
+                    <span style="color:#bf360c;font-weight:bold;">人</span>
+                    <span><code style="background:#e3f2fd;padding:2px 6px;border-radius:4px;">who / that</code></span>
+                    <span style="color:#555;">The boy <strong>who/that</strong> is tall is Tom.</span>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:10px 14px;gap:10px;border-bottom:1px solid #e3f2fd;background:#f8fbff;">
+                    <span style="color:#1b5e20;font-weight:bold;">物/动物</span>
+                    <span><code style="background:#e3f2fd;padding:2px 6px;border-radius:4px;">which / that</code></span>
+                    <span style="color:#555;">The book <strong>which/that</strong> I bought is good.</span>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:10px 14px;gap:10px;background:#fff;">
+                    <span style="color:#880e4f;font-weight:bold;">人+物 / 最高级后</span>
+                    <span><code style="background:#e3f2fd;padding:2px 6px;border-radius:4px;">that（常优先用that）</code></span>
+                    <span style="color:#555;">She is the best student <strong>that</strong> I know.</span>
+                </div>
+            </div>
+
+            <div class="warn-box" style="margin-top:12px;">
+                <div class="warn-title">🚨 限制性定语从句常优先用 that 的场景（非绝对排他）</div>
+                <p>① 先行词是<strong>最高级修饰的名词</strong>（the best/biggest…）<br>
+                ② 先行词同时包括<strong>人和物</strong><br>
+                ③ 先行词前有 <strong>all / only / every / no / little / few</strong><br>
+                ④ 主句是<strong> Who / Which 开头</strong>的疑问句时</p>
+            </div>
+        </div>
+
+        <!-- 状语从句 -->
+        <div style="margin-top:16px;padding:22px;background:#fff;border-radius:12px;border:2px solid #a5d6a7;">
+            <p style="font-weight:900;font-size:16px;color:#1b5e20;margin-bottom:14px;">🌿 状语从句——引导词速查 + 最大陷阱</p>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;font-size:14px;">
+                <div style="background:#f1f9f1;border-radius:8px;padding:12px;border:1px solid #a5d6a7;">
+                    <p style="font-weight:bold;color:#1b5e20;margin-bottom:6px;">时间状语从句</p>
+                    <p style="color:#555;line-height:1.7;">引导词：<strong>when / while / before / after / until / as soon as</strong><br>例：Call me <strong>when</strong> you arrive.</p>
+                </div>
+                <div style="background:#f1f9f1;border-radius:8px;padding:12px;border:1px solid #a5d6a7;">
+                    <p style="font-weight:bold;color:#1b5e20;margin-bottom:6px;">条件状语从句</p>
+                    <p style="color:#555;line-height:1.7;">引导词：<strong>if / unless / as long as</strong><br>例：<strong>If</strong> it rains, I will stay home.</p>
+                </div>
+                <div style="background:#f1f9f1;border-radius:8px;padding:12px;border:1px solid #a5d6a7;">
+                    <p style="font-weight:bold;color:#1b5e20;margin-bottom:6px;">原因状语从句</p>
+                    <p style="color:#555;line-height:1.7;">引导词：<strong>because / since / as</strong><br>例：I stayed home <strong>because</strong> I was ill.</p>
+                </div>
+                <div style="background:#f1f9f1;border-radius:8px;padding:12px;border:1px solid #a5d6a7;">
+                    <p style="font-weight:bold;color:#1b5e20;margin-bottom:6px;">结果/目的状语从句</p>
+                    <p style="color:#555;line-height:1.7;">引导词：<strong>so that / in order that</strong><br>例：He studied hard <strong>so that</strong> he could pass.</p>
+                </div>
+            </div>
+
+            <div class="warn-box">
+                <div class="warn-title">🚨 中考最大陷阱：主将从现原则</div>
+                <p>在<strong>时间/条件状语从句</strong>里，如果主句是将来时（will），从句<strong>不能用will</strong>，必须用<strong>一般现在时</strong>代替将来。<br><br>
+                <span class="trap-wrong">If it will rain tomorrow, I will stay home.</span> ❌<br>
+                <span class="trap-right">✅ If it <strong>rains</strong> tomorrow, I will stay home.</span><br><br>
+                记忆口诀：<span class="mark-bg">主将从现——主句可以用将来时，从句必须用现在时。</span></p>
+            </div>
+
+            <div class="warn-box" style="margin-top:10px;">
+                <div class="warn-title">🚨 不要重复用 because...so 或 although...but 连接同一组分句</div>
+                <p><span class="trap-wrong">Because he was tired, so he went to bed early.</span> ❌<br>
+                <span class="trap-right">✅ Because he was tired, he went to bed early.</span><br>
+                <span class="trap-right">✅ He was tired, so he went to bed early.</span><br><br>
+                <span class="trap-wrong">Although it was raining, but we still went out.</span> ❌<br>
+                <span class="trap-right">✅ Although it was raining, we still went out.</span><br>
+                <span class="trap-right">✅ It was raining, but we still went out.</span></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 模块三：20个易错点大排查清单 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>模块三</span><hr></div>
+
+    <div class="module-card card-red">
+        <div class="badge badge-red">🚨 模块三：20个易错点大排查清单——历年真题最爱设的陷阱</div>
+
+        <p>下面这20个考点，是根据历年中考真题整理出来的<strong>最高频失分点</strong>。每一条旁边都有"差生最常犯的错误"和"正确做法"。做完卷子，用这张清单逐条排查，能帮你找回大量不该丢的分。</p>
+
+        <!-- 时态类 -->
+        <p style="font-weight:900;font-size:15px;color:#922b21;margin:20px 0 10px;padding-left:10px;border-left:4px solid #e74c3c;">⏰ 时态类（约占15-20分）</p>
+        <table class="trap-table">
+            <thead><tr><th style="width:5%">#</th><th style="width:30%">易错考点</th><th style="width:30%">常见错误写法</th><th style="width:35%">正确做法</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight:bold;color:#922b21;">1</td>
+                    <td>三单忘加s/es <span class="tag-hot">必考</span></td>
+                    <td><span class="trap-wrong">She run every day.</span></td>
+                    <td><span class="trap-right">She runs every day.</span><br><small>一般现在时，主语是第三人称单数，动词加s/es</small></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#922b21;">2</td>
+                    <td>否定句忘用原形</td>
+                    <td><span class="trap-wrong">She doesn't runs.</span></td>
+                    <td><span class="trap-right">She doesn't run.</span><br><small>助动词已经变了，动词用原形</small></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#922b21;">3</td>
+                    <td>过去时与完成时混用 <span class="tag-hot">必考</span></td>
+                    <td><span class="trap-wrong">I have seen him yesterday.</span></td>
+                    <td><span class="trap-right">I saw him yesterday.</span><br><small>有具体过去时间→用过去时，不用完成时</small></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#922b21;">4</td>
+                    <td>主将从现违反</td>
+                    <td><span class="trap-wrong">If it will rain, I'll stay.</span></td>
+                    <td><span class="trap-right">If it rains, I'll stay.</span><br><small>条件/时间从句里不能用will</small></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#922b21;">5</td>
+                    <td>been to vs gone to</td>
+                    <td><span class="trap-wrong">She has been to Paris.（如果她还在那里）</span></td>
+                    <td><span class="trap-right">She has gone to Paris.</span><br><small>还在那里=gone to；回来了=been to</small></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 动词类 -->
+        <p style="font-weight:900;font-size:15px;color:#922b21;margin:20px 0 10px;padding-left:10px;border-left:4px solid #e67e22;">🔥 动词与句子结构类（约占10-15分）</p>
+        <table class="trap-table">
+            <thead><tr><th style="width:5%">#</th><th style="width:30%">易错考点</th><th style="width:30%">常见错误写法</th><th style="width:35%">正确做法</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight:bold;color:#d35400;">6</td>
+                    <td>句子缺谓语动词</td>
+                    <td><span class="trap-wrong">My teacher very kind.</span></td>
+                    <td>My teacher is very kind. 本句形容词作表语，需要系动词；其他系动词也可以连接表语。</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#d35400;">7</td>
+                    <td>错误地把有限形式 is 与 likes 并列堆放</td>
+                    <td><span class="trap-wrong">He is likes music.</span></td>
+                    <td>He likes music. 谓语可以是动词短语；简单句也可有并列谓语，不能说一个句子永远只能有一个动词。</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#d35400;">8</td>
+                    <td>情态动词后忘用原形</td>
+                    <td><span class="trap-wrong">You must to go now.</span></td>
+                    <td><span class="trap-right">You must go now.</span><br><small>情态动词后接动词原形，不加to</small></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#d35400;">9</td>
+                    <td>被动语态结构出错</td>
+                    <td><span class="trap-wrong">The book was write by him.</span></td>
+                    <td><span class="trap-right">The book was written by him.</span><br><small>be + 过去分词（不是动词原形）</small></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#d35400;">10</td>
+                    <td>非谓语接错形式 <span class="tag-hot">必考</span></td>
+                    <td><span class="trap-wrong">I enjoy to swim.</span></td>
+                    <td><span class="trap-right">I enjoy swimming.</span><br><small>enjoy / finish / mind / avoid 后接doing</small></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 名词代词类 -->
+        <p style="font-weight:900;font-size:15px;color:#922b21;margin:20px 0 10px;padding-left:10px;border-left:4px solid #27ae60;">🏠 名词·代词·冠词类（约占10分）</p>
+        <table class="trap-table">
+            <thead><tr><th style="width:5%">#</th><th style="width:30%">易错考点</th><th style="width:30%">常见错误写法</th><th style="width:35%">正确做法</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight:bold;color:#1b5e20;">11</td>
+                    <td>不可数名词加s</td>
+                    <td><span class="trap-wrong">She gave me some advices.</span></td>
+                    <td><span class="trap-right">She gave me some advice.</span><br><small>advice/information/news/homework无复数</small></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#1b5e20;">12</td>
+                    <td>主宾格代词用错 <span class="tag-hot">必考</span></td>
+                    <td><span class="trap-wrong">Her and me are friends.</span></td>
+                    <td><span class="trap-right">She and I are friends.</span><br><small>主语位置：I/he/she/they，宾语位置：me/him/her/them</small></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#1b5e20;">13</td>
+                    <td>冠词 a/an/the 用错</td>
+                    <td><span class="trap-wrong">He is an useful man.</span></td>
+                    <td><span class="trap-right">He is a useful man.</span><br><small>useful发音以辅音/j/开头，用a不用an</small></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#1b5e20;">14</td>
+                    <td>many/much混用</td>
+                    <td><span class="trap-wrong">There are much students.</span></td>
+                    <td><span class="trap-right">There are many students.</span><br><small>可数名词复数用many，不可数名词用much</small></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 形副词·连词·从句类 -->
+        <p style="font-weight:900;font-size:15px;color:#922b21;margin:20px 0 10px;padding-left:10px;border-left:4px solid #8e44ad;">🎨 形容词·副词·连词·从句类（约占15分）</p>
+        <table class="trap-table">
+            <thead><tr><th style="width:5%">#</th><th style="width:30%">易错考点</th><th style="width:30%">常见错误写法</th><th style="width:35%">正确做法</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight:bold;color:#5b2c6f;">15</td>
+                    <td>good vs well <span class="tag-hot">必考</span></td>
+                    <td><span class="trap-wrong">She sings very good.</span></td>
+                    <td><span class="trap-right">She sings very well.</span><br><small>修饰动作用副词well，修饰名词用形容词good</small></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#5b2c6f;">16</td>
+                    <td>感官动词后用副词</td>
+                    <td><span class="trap-wrong">The flowers smell sweetly.</span></td>
+                    <td>The flowers smell sweet. smell 本句作系动词，sweet 描述 flowers；感官词作实义动词时可受副词修饰。</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#5b2c6f;">17</td>
+                    <td>because+so 同时用</td>
+                    <td><span class="trap-wrong">Because he was tired, so he slept.</span></td>
+                    <td>Because he was tired, he slept. 不重复用 because...so 连接同一组因果分句。</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#5b2c6f;">18</td>
+                    <td>although+but 同时用</td>
+                    <td><span class="trap-wrong">Although it rained, but we went out.</span></td>
+                    <td>Although it rained, we went out. 不重复用 although...but 连接同一组让步与主句。</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#5b2c6f;">19</td>
+                    <td>宾语从句语序倒装 <span class="tag-hot">必考</span></td>
+                    <td><span class="trap-wrong">I don't know where is he from.</span></td>
+                    <td><span class="trap-right">I don't know where he is from.</span><br><small>宾语从句用陈述句语序，引导词+主语+动词</small></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#5b2c6f;">20</td>
+                    <td>比较级前忘加 more</td>
+                    <td><span class="trap-wrong">This book is importanter.</span></td>
+                    <td><span class="trap-right">This book is more important.</span><br><small>多音节形容词用more+原级，不加er</small></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 模块四：实战演练 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>模块四</span><hr></div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow">🎯 模块四：实战演练——5道综合题，模拟中考题型</div>
+
+        <p>这5道题综合了本讲所有考点，全部来自中考真题题型。先独立完成，再看解析。</p>
+
+        <!-- 题1 -->
+        <div class="quiz-block" style="margin-top:20px;">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 综合题 1 · 时态选择（必考）</p>
+            <div class="quiz-q">
+                My father ______ in this company since 2010.<br>
+                <span style="font-size:14px;font-weight:400;color:#888;">（我父亲自2010年起就在这家公司工作了。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. works</span><span>B. worked</span><span>C. has worked</span><span>D. is working</span>
+            </div>
+            <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('a1').style.display='block'">👉 点击解锁答案</button>
+            <div class="answer-box" id="a1">
+                <div class="brain-box">
+                    <p><strong>🧠 脑回路：</strong></p>
+                    <p><strong>第1步，找时间信号词：</strong><span class="mark-bg">since 2010</span>——since（自从）是现在完成时的标志性信号词。</p>
+                    <p>第2步：本句描述从2010年持续到现在的工作，因此用现在完成时；不能仅凭 since 判定所有句子的时态。</p>
+                    <p><strong>第3步，确认动词形式：</strong>主语 My father 是第三人称单数，用 has worked。</p>
+                    <p><span style="color:#27ae60;font-weight:bold;">✅ 答案：C（has worked）</span></p>
+                    <p style="font-size:13px;color:#888;margin-top:6px;">since + 起点，for + 时长。两者也可用于过去完成等结构；先确认时间参照和实际含义。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题2 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 综合题 2 · 宾语从句语序（超高频陷阱）</p>
+            <div class="quiz-q">
+                Could you tell me ______?<br>
+                <span style="font-size:14px;font-weight:400;color:#888;">（你能告诉我图书馆在哪里吗？）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. where is the library</span><span>B. where the library is</span><span>C. where was the library</span><span>D. the library is where</span>
+            </div>
+            <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('a2').style.display='block'">👉 点击解锁答案</button>
+            <div class="answer-box" id="a2">
+                <div class="brain-box">
+                    <p><strong>🧠 脑回路：</strong></p>
+                    <p><strong>第1步：</strong>这是个宾语从句（tell me 后面的内容），必须用陈述句语序。</p>
+                    <p><strong>第2步：</strong>陈述句语序 = 引导词 + 主语 + 动词 → <span class="mark-green">where + the library + is</span>，不能倒装。</p>
+                    <p><strong>第3步：</strong>主句 could you tell me 是现在时语境，从句用现在时 is，排除C。</p>
+                    <p><span style="color:#27ae60;font-weight:bold;">✅ 答案：B（where the library is）</span></p>
+                    <p style="font-size:13px;color:#888;margin-top:6px;">A 是疑问句语序（where is），放进宾语从句就错了，这是最常见的陷阱！</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题3 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 综合题 3 · 连词辨析（不能同时出现）</p>
+            <div class="quiz-q">
+                ______ Tom worked very hard, he failed the exam.<br>
+                <span style="font-size:14px;font-weight:400;color:#888;">（尽管Tom努力学习，他还是考试不及格。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. Because</span><span>B. Although</span><span>C. But</span><span>D. So</span>
+            </div>
+            <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('a3').style.display='block'">👉 点击解锁答案</button>
+            <div class="answer-box" id="a3">
+                <div class="brain-box">
+                    <p><strong>🧠 脑回路：</strong></p>
+                    <p><strong>看意思：</strong>"努力学习"和"考试不及格"是<strong>转折关系</strong>，不是因果，排除 A（因为）和 D（所以）。</p>
+                    <p>本句已有两个分句：Tom worked very hard 与 he failed the exam。用 Although 使第一分句成为让步从句；But 或 So 单独放句首不能完成本句所需的连接。But 可以连接并列分句，也可以承接前文用于句首，不能一概判错。</p>
+                    <p><strong>Although</strong> 是从属连词，可以引导让步状语从句，放句首完全正确。</p>
+                    <p><span style="color:#27ae60;font-weight:bold;">✅ 答案：B（Although）</span></p>
+                    <p style="font-size:13px;color:#888;margin-top:6px;">注意：不要再用 but 重复连接本句中的让步从句与主句；其他逻辑层次另作判断。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题4 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 综合题 4 · 定语从句关系词（who/which/that）</p>
+            <div class="quiz-q">
+                The scientists ______ are working on this project come from many countries.<br>
+                <span style="font-size:14px;font-weight:400;color:#888;">（参与这个项目的科学家来自许多国家。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. which</span><span>B. what</span><span>C. who</span><span>D. where</span>
+            </div>
+            <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('a4').style.display='block'">👉 点击解锁答案</button>
+            <div class="answer-box" id="a4">
+                <div class="brain-box">
+                    <p><strong>🧠 脑回路：</strong></p>
+                    <p><strong>第1步，判断是否是定语从句：</strong>空格前面有名词 <span class="mark-blue">scientists（科学家）</span>，空格后面是一个句子在描述这个名词——是定语从句。</p>
+                    <p><strong>第2步，先行词是人还是物：</strong>scientists 是人→ 用 <span class="mark-green">who 或 that</span>，不能用 which。</p>
+                    <p>第3步：本题已有 scientists 作先行词且从句缺主语，who 适用；where 不能代替人作主语。where 可引导地点定语从句，不能把它只归为地点状语从句。</p>
+                    <p><span style="color:#27ae60;font-weight:bold;">✅ 答案：C（who）</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题5 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 综合题 5 · 改错综合题（最后压轴）</p>
+            <div class="quiz-q">
+                下面这句话有一处语法错误，找出来并改正：<br>
+                <code style="font-size:16px;background:#f8f8f8;padding:8px 14px;border-radius:6px;display:inline-block;margin:8px 0;">Although the movie was long, but everyone enjoyed it.</code>
+            </div>
+            <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('a5').style.display='block'">👉 点击解锁答案</button>
+            <div class="answer-box" id="a5">
+                <div class="brain-box">
+                    <p><strong>🧠 脑回路：</strong></p>
+                    <p><strong>找问题：</strong>句子里同时出现了 <span class="mark-red">Although</span> 和 <span class="mark-red">but</span>——这就是那个经典陷阱！</p>
+                    <p>规则：不要重复用 although...but 连接同一组让步从句与主句。</p>
+                    <p><strong>怎么改：</strong>两种都对——</p>
+                    <p><span style="color:#27ae60;font-weight:bold;">✅ 改法一：去掉 but →</span> Although the movie was long, everyone enjoyed it.</p>
+                    <p><span style="color:#27ae60;font-weight:bold;">✅ 改法二：去掉 Although →</span> The movie was long, but everyone enjoyed it.</p>
+                    <p style="font-size:13px;color:#888;margin-top:6px;">同理：不要用 because 和 so 重复连接同一组原因与结果。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 考前救命小抄（压轴版） -->
+    <!-- ================================================ -->
+    <div class="cheatsheet">
+        <div class="cheatsheet-title">🏁 中考语法 · 考前终极救命小抄</div>
+        <p class="cs-sub">进考场前的最后5分钟，把这几块过一遍——能帮你找回至少10分</p>
+
+        <!-- 时态速查 -->
+        <div class="cs-block">
+            <strong>⏰ 时态速查：时间词仅提供线索，须结合参照点和动作性质</strong>
+            <table>
+                <thead><tr><th>常见时间线索（非专属）</th><th>对应时态</th><th>结构</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="cs-hl">yesterday / ago / last / in+年份</span></td><td>一般过去时</td><td>did（动词过去式）</td></tr>
+                    <tr><td><span class="cs-hl">every day / usually / always / often</span></td><td>一般现在时</td><td>do/does</td></tr>
+                    <tr><td><span class="cs-hl">now / at the moment / look! / listen!</span></td><td>现在进行时</td><td>am/is/are + doing</td></tr>
+                    <tr><td><span class="cs-hl">tomorrow / next / soon / in the future</span></td><td>一般将来时</td><td>will + 原形</td></tr>
+                    <tr><td><span class="cs-hl">ever / never / already / yet / just / since / for</span></td><td>现在完成时</td><td>have/has + 过去分词</td></tr>
+                    <tr><td><span class="cs-hl">at…yesterday / when…past / while…past</span></td><td>过去进行时</td><td>was/were + doing</td></tr>
+                <tr><td>过去观察点后的动作</td><td>过去将来时</td><td>would do</td></tr><tr><td>过去参照点之前已发生或持续</td><td>过去完成时</td><td>had done</td></tr></tbody>
+            </table>
+        </div>
+
+        <!-- 从句速查 -->
+        <div class="cs-block green">
+            <strong>🧩 从句三条铁律（违反必丢分）</strong>
+            <ul>
+                <li><span class="cs-hl">宾语从句：</span>引导词 + <span class="cs-green">主语 + 动词</span>（陈述句语序，绝不倒装）</li>
+                <li>主将从现：表示将来事件的时间或条件状语从句，通常用现在时；if 表示“是否”的宾语从句不套用此规则。</li>
+                <li><span class="cs-hl">连词不叠用：</span><span class="cs-red">because ≠ so</span> 同用，<span class="cs-red">although ≠ but</span> 同用</li>
+            </ul>
+        </div>
+
+        <!-- 词性铁律 -->
+        <div class="cs-block yellow">
+            <strong>🎨 词性与用法铁律（选择题秒杀法）</strong>
+            <ul>
+                <li>be 后先看结构：可接名词、形容词、介词短语、doing 或 done；描述主语性质时常用形容词，不能按 -ly 判断。</li>
+                <li>look/sound/feel/smell/taste 作系动词时常接形容词；作实义动词时按动作和修饰关系判断。</li>
+                <li>普通动词（run/sing/speak）后面 → 选<span class="cs-hl">副词</span>（通常带-ly）</li>
+                <li>good（形容词）修饰名词 → <span class="cs-green">a good student</span></li>
+                <li>well（副词）修饰动作 → <span class="cs-green">sing well</span></li>
+            </ul>
+        </div>
+
+        <!-- 20大陷阱速记 -->
+        <div class="cs-block red">
+            <strong>🚨 考场必查10个最高频陷阱（快速过一遍）</strong>
+            <ul>
+                <li>三单加s → <span class="cs-hl">She runs</span>，否定用doesn't+原形 → <span class="cs-hl">She doesn't run</span></li>
+                <li>完成时不接具体时间点 → <span class="cs-red">I have seen him yesterday</span> ❌ → <span class="cs-green">I saw him yesterday</span></li>
+                <li>have <span class="cs-hl">been</span> to（去过，已回来）vs have <span class="cs-red">gone</span> to（去了，还没回）</li>
+                <li>if从句里将来用现在 → <span class="cs-green">If it rains</span>（不是 will rain）</li>
+                <li>情态动词后接原形 → <span class="cs-green">must go</span>（不是 must to go）</li>
+                <li>被动语态 = be + <span class="cs-hl">过去分词</span>（不是原形）</li>
+                <li>enjoy/finish/mind/avoid 后接 <span class="cs-hl">doing</span>（不接to do）</li>
+                <li>advice/information/news/homework 无复数</li>
+                <li>主语用主格（I/he/she），宾语用宾格（me/him/her）</li>
+                <li>宾语从句用陈述语序 → <span class="cs-green">where he is</span>（不是 where is he）</li>
+            </ul>
+        </div>
+
+        <!-- 最后一句话 -->
+        <div class="cs-block orange">
+            <strong>💪 进考场前对自己说这句话</strong>
+            <p style="font-size:16px;font-weight:900;text-align:center;padding:8px 0;color:#f1c40f;">我已经学完了所有必考语法，每道题我都有方法做，不靠感觉靠规则。</p>
+            <p style="text-align:center;font-size:14px;color:rgba(255,255,255,0.75);">碰到不会的题，先排除错误选项，再用学过的规则推理——冷静做完每一题。</p>
+        </div>
+    </div>
+
+
+    <!-- 结束横幅 -->
+    <div class="finish-banner">
+        <h2>🎉 恭喜你——全部内容学完了！</h2>
+        <p>从第0讲课前扫盲，到第23讲状语从句，再到这张总复习，<br>
+        你走过了一条很多同学都没有走完过的路。<br><br>
+        <strong style="color:#f1c40f;">分数不好，不代表学不好。从来没人教对方法，才是真正的问题。</strong><br><br>
+        现在你有了正确的方法、完整的框架、考前的武器。<br>
+        剩下的，就是拿起笔，走进考场，把这一切变成卷子上的分数。<br><br>
+        加油。你比你以为的，要强得多。</p>
+    </div>
+
+</div>
+</div>
+
+
+
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-bonus2.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+
+<script src="/assets/a4-print-entry.js?v=20260722-final-v3"></script>
+</body>
+</html>

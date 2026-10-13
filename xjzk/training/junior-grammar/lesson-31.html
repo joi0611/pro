@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>衔接7课：过去将来时——站在过去看那时的未来 — 初中英语语法重构</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f2f5; color: #2c3e50; min-height: 100vh; }
+
+/* ===== 顶部导航条 ===== */
+.lesson-topbar { background: #2c3e50; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.topbar-inner { max-width: 900px; margin: 0 auto; padding: 11px 24px; display: flex; align-items: center; gap: 14px; }
+.topbar-back { color: #f1c40f; text-decoration: none; font-size: 14px; font-weight: bold; display: flex; align-items: center; gap: 5px; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
+.topbar-back:hover { opacity: 0.75; }
+.topbar-sep { color: #4a6278; font-size: 16px; flex-shrink: 0; }
+.topbar-lesson-info { flex: 1; min-width: 0; }
+.topbar-lesson-info .tl-tag { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 2px; }
+.topbar-lesson-info .tl-title { font-size: 15px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-print { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.85); cursor: pointer; font-family: inherit; flex-shrink: 0; transition: background 0.15s; }
+.topbar-print:hover { background: rgba(255,255,255,0.18); }
+
+/* ===== 主内容 ===== */
+.lesson-main { max-width: 900px; margin: 0 auto; padding: 36px 24px 20px; }
+.book-container { background: #fff; padding: 50px 60px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+
+/* ===== 底部导航 ===== */
+.lesson-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 28px 0 20px; flex-wrap: wrap; }
+.nav-btn { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #2c3e50; font-size: 14px; transition: all 0.15s; flex: 1; min-width: 160px; max-width: 280px; }
+.nav-btn:hover { border-color: #2980b9; box-shadow: 0 4px 12px rgba(41,128,185,0.15); transform: translateY(-1px); }
+.nav-btn.prev { justify-content: flex-start; }
+.nav-btn.next { justify-content: flex-end; margin-left: auto; }
+.nav-btn .nb-arrow { font-size: 18px; color: #aaa; flex-shrink: 0; }
+.nav-btn:hover .nb-arrow { color: #2980b9; }
+.nav-btn .nb-text { min-width: 0; }
+.nav-btn .nb-label { font-size: 11px; color: #aaa; display: block; }
+.nav-btn .nb-title { font-size: 14px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-btn-home { display: flex; align-items: center; gap: 6px; background: #2c3e50; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #f1c40f; font-size: 14px; font-weight: bold; flex-shrink: 0; transition: opacity 0.15s; }
+.nav-btn-home:hover { opacity: 0.85; }
+.lesson-footer { text-align: center; padding: 20px 24px 36px; font-size: 12px; color: #aaa; line-height: 1.8; }
+
+/* ===== 封面 ===== */
+.chapter-cover { background: linear-gradient(135deg, #1a252f 0%, #2c3e50 55%, #8e44ad 100%); border-radius: 15px; padding: 40px 40px 35px; margin-bottom: 40px; color: #fff; position: relative; overflow: hidden; }
+.chapter-cover::before { content: "would"; position: absolute; right: 26px; top: 16px; font-size: 52px; font-weight: 900; color: rgba(255,255,255,0.06); line-height: 1; letter-spacing: -5px; }
+.lesson-tag { background: #f1c40f; color: #2c3e50; font-weight: 900; font-size: 13px; padding: 5px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em; }
+.chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.chapter-cover h1 span { color: #f1c40f; }
+.chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.meta-row { display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px; }
+
+/* ===== 回顾 / 目标 ===== */
+.review-bar { background: #f0f7ff; border: 1.5px solid #b3d4ff; border-left: 5px solid #2980b9; border-radius: 8px; padding: 14px 18px; margin-bottom: 30px; font-size: 14px; color: #1a5276; line-height: 1.75; }
+.review-bar strong { color: #1a252f; }
+.goal-box { background: #fffde7; border: 2px solid #ffe082; border-radius: 12px; padding: 20px 25px; margin-bottom: 35px; display: flex; gap: 15px; align-items: flex-start; }
+.goal-icon { font-size: 28px; flex-shrink: 0; line-height: 1.2; }
+.goal-box h3 { font-size: 16px; color: #e65100; margin-bottom: 6px; font-weight: 900; }
+.goal-box p  { font-size: 15px; color: #5d4037; line-height: 1.7; }
+
+/* ===== 通用卡片 ===== */
+.module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+.badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+.card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }   .badge-blue  { background: #2980b9; color: #fff; }
+.card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }   .badge-green { background: #27ae60; color: #fff; }
+.card-red    { background: #fff5f5; border: 2px solid #ffcccc; }   .badge-red   { background: #e74c3c; color: #fff; }
+.card-yellow { background: #fffde7; border: 2px solid #ffe082; }   .badge-yellow{ background: #f1c40f; color: #333; }
+.card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }   .badge-purple{ background: #8e44ad; color: #fff; }
+.card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }   .badge-orange{ background: #e67e22; color: #fff; }
+.card-teal   { background: #f0fffc; border: 2px solid #b2dfdb; }   .badge-teal  { background: #16a085; color: #fff; }
+
+/* ===== 高亮 ===== */
+.hl-red { color: #e74c3c; font-weight: bold; } .hl-blue { color: #2980b9; font-weight: bold; } .hl-green { color: #27ae60; font-weight: bold; } .hl-orange { color: #e67e22; font-weight: bold; } .hl-purple { color: #8e44ad; font-weight: bold; }
+.mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+.mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+.mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+.mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+.mark-purple { background: #e8daef; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #6c3483; }
+
+/* ===== 标签 ===== */
+.tag-hot  { background: #ff4757; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+.tag-easy { background: #2ed573; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+
+/* ===== 脑回路 ===== */
+.brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+.brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+/* ===== 对错 ===== */
+.wrong-text { color: #c0392b; font-size: 17px; font-weight: bold; text-decoration: line-through; }
+.right-text { color: #27ae60; font-size: 17px; font-weight: bold; }
+
+/* ===== 句子解剖 ===== */
+.sentence-dissect { display: flex; align-items: flex-end; gap: 6px; flex-wrap: wrap; margin: 14px 0; background: #f8f9fa; border-radius: 10px; padding: 14px 16px 18px; }
+.word-block { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.word-text { padding: 6px 12px; border-radius: 8px; font-size: 16px; font-weight: 900; white-space: nowrap; }
+.word-label { font-size: 11px; font-weight: 500; color: #777; }
+.wt-s  { background: #fff3e0; color: #e65100;  border: 2px solid #ffb74d; }
+.wt-v  { background: #e8f5e9; color: #1b5e20;  border: 2px solid #a5d6a7; }
+.wt-o  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-t  { background: #e3f2fd; color: #1565c0;  border: 2px solid #90caf9; }
+.wt-wl { background: #d5f5e3; color: #1e8449;  border: 2px solid #52be80; }
+.wt-bg { background: #f3e5f5; color: #6a1b9a;  border: 2px solid #ce93d8; }
+.wt-x  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+
+/* ===== 结构公式块 ===== */
+.formula-block { background: #fff; border: 2px solid #a5d6a7; border-radius: 10px; overflow: hidden; margin: 16px 0; }
+.formula-row { display: flex; align-items: stretch; border-bottom: 1px solid #e8f5e9; }
+.formula-row:last-child { border-bottom: none; }
+.formula-label { background: #27ae60; color: #fff; font-weight: 900; font-size: 13px; padding: 12px 14px; min-width: 72px; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; }
+.formula-content { padding: 12px 18px; flex: 1; font-size: 15px; line-height: 1.75; color: #333; }
+.formula-content strong { color: #1b5e20; }
+.formula-eg { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* ===== 辨析表 ===== */
+.magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+.magic-table th { background: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+.magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+.magic-table tr:last-child td { border-bottom: none; }
+.magic-table tr:hover td { background: #f8f9fa; }
+
+/* ===== 警告 / 提示 ===== */
+.warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+.warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 15px; margin-bottom: 8px; }
+.warn-box p { font-size: 14px; color: #444; line-height: 1.75; margin: 5px 0; }
+.tip-box { background: #f4fbf4; border: 2px solid #c3e6c3; border-left: 5px solid #27ae60; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #1e8449; line-height: 1.75; }
+
+/* ===== 练习题 ===== */
+.quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+.quiz-q { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; line-height: 1.65; }
+.quiz-opts { font-size: 15px; color: #555; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+.reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+.answer-box { display: none; margin-top: 14px; }
+
+/* ===== 分割线 ===== */
+.section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+.section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+/* ===== 小抄 ===== */
+.cheatsheet { margin: 50px 0 30px; background: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+.cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+.cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+.cs-block.red    { border-left-color: #e74c3c; }
+.cs-block.green  { border-left-color: #2ecc71; }
+.cs-block.yellow { border-left-color: #f1c40f; }
+.cs-block.purple { border-left-color: #9b59b6; }
+.cs-block strong { font-size: 16px; display: block; margin-bottom: 10px; }
+.cs-block p, .cs-block li { font-size: 14px; line-height: 1.85; color: #ecf0f1; margin: 4px 0; }
+.cs-block ul { padding-left: 18px; }
+.cs-block table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.cs-block table th { background: rgba(255,255,255,0.14); color: #f1c40f; padding: 7px 12px; text-align: left; }
+.cs-block table td { padding: 7px 12px; border-bottom: 1px solid rgba(255,255,255,0.07); color: #ecf0f1; vertical-align: top; line-height: 1.6; }
+.cs-block table tr:last-child td { border-bottom: none; }
+
+/* ===== 转化钩子 ===== */
+.cta-box { margin-top: 40px; padding: 32px; background: #fff3e0; border: 2px dashed #e67e22; border-radius: 14px; text-align: center; box-shadow: 0 5px 15px rgba(230,126,34,0.12); }
+.cta-box h3 { color: #d35400; font-size: 22px; margin-bottom: 14px; font-weight: 900; }
+.cta-box p  { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 20px; text-align: left; }
+.cta-btn { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; display: inline-block; padding: 14px 35px; border-radius: 30px; font-weight: bold; font-size: 17px; text-decoration: none; box-shadow: 0 4px 12px rgba(230,126,34,0.4); transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); }
+
+/* ===== 打印 ===== */
+@media print {
+    .lesson-topbar, .lesson-nav, .lesson-footer { display: none !important; }
+    body { background: #fff; }
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container { padding: 20px 24px; border-radius: 0; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .module-card, .quiz-block, .warn-box, .cheatsheet, .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+    .cheatsheet { page-break-before: always; break-before: page; }
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+}
+
+/* ============================================================
+   新版救命小抄 V2：浅色、紧凑、打印友好（不改全局字体）
+   ============================================================ */
+.cheatsheet-v2 {
+  margin: 42px 0 28px;
+  background: #fffdf5;
+  border: 2px solid #f1c40f;
+  border-radius: 14px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  color: #2c3e50;
+}
+.cheatsheet-v2-header {
+  background: linear-gradient(135deg, #fff3c4, #fff8df);
+  border-bottom: 2px solid #f1c40f;
+  padding: 16px 22px 14px;
+}
+.cheatsheet-v2-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+.cheatsheet-v2-subtitle {
+  font-size: 13px;
+  color: #7d6608;
+  line-height: 1.6;
+}
+.cheatsheet-v2-body { padding: 18px 20px 20px; }
+.cheat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cheat-card {
+  background: #fff;
+  border: 1.5px solid #e8e8e8;
+  border-left: 5px solid #3498db;
+  border-radius: 10px;
+  padding: 13px 14px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.cheat-card.core { border-left-color: #e74c3c; }
+.cheat-card.method { border-left-color: #2980b9; }
+.cheat-card.trap { border-left-color: #e67e22; }
+.cheat-card.example { border-left-color: #27ae60; }
+.cheat-card.memory { border-left-color: #8e44ad; }
+.cheat-card.exam { border-left-color: #16a085; }
+.cheat-card h4 {
+  font-size: 15px;
+  font-weight: 900;
+  color: #1a252f;
+  margin-bottom: 7px;
+  line-height: 1.45;
+}
+.cheat-card p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.65;
+  margin: 5px 0;
+}
+.cheat-card ul { padding-left: 18px; margin: 6px 0 0; }
+.cheat-card li {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.65;
+  margin: 3px 0;
+}
+.cheat-rule {
+  display: inline-block;
+  background: #fff3c4;
+  color: #7d6608;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+.cheat-good { color: #1e8449; font-weight: 900; }
+.cheat-bad { color: #c0392b; font-weight: 900; text-decoration: line-through; }
+.cheat-note {
+  background: #f8f9fa;
+  border: 1px dashed #d0d0d0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-top: 8px;
+  font-size: 13px !important;
+  color: #666 !important;
+}
+.cheatsheet-v2-footer {
+  margin-top: 14px;
+  background: #f8f9fa;
+  border: 1.5px dashed #d0d0d0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+}
+.cheatsheet-v2-footer strong { color:#c0392b; }
+@media (max-width: 680px) {
+  .cheatsheet-v2 { margin:30px 0 24px !important; border-radius:12px !important; }
+  .cheatsheet-v2-header { padding:14px 14px 12px !important; }
+  .cheatsheet-v2-title { font-size:18px !important; }
+  .cheatsheet-v2-body { padding:14px 12px 16px !important; }
+  .cheat-grid { grid-template-columns:1fr !important; gap:10px !important; }
+  .cheat-card { padding:12px 12px !important; }
+}
+@media print {
+  .cheatsheet-v2 {
+    background:#fff !important;
+    border:1.5px solid #333 !important;
+    box-shadow:none !important;
+    border-radius:8px !important;
+    margin:18px 0 !important;
+    page-break-before:auto !important;
+    break-before:auto !important;
+    page-break-inside:auto !important;
+    break-inside:auto !important;
+  }
+  .cheatsheet-v2-header {
+    background:#fff !important;
+    border-bottom:1.5px solid #333 !important;
+    padding:10px 12px !important;
+  }
+  .cheatsheet-v2-title { color:#000 !important; font-size:17px !important; }
+  .cheatsheet-v2-subtitle { color:#333 !important; font-size:12px !important; }
+  .cheatsheet-v2-body { padding:12px !important; }
+  .cheat-grid { grid-template-columns:1fr 1fr !important; gap:8px !important; }
+  .cheat-card {
+    background:#fff !important;
+    border:1px solid #555 !important;
+    border-left:4px solid #000 !important;
+    box-shadow:none !important;
+    padding:8px 10px !important;
+  }
+  .cheat-card h4 { color:#000 !important; font-size:13px !important; margin-bottom:4px !important; }
+  .cheat-card p, .cheat-card li { color:#111 !important; font-size:12px !important; line-height:1.45 !important; margin:2px 0 !important; }
+  .cheat-rule { background:#fff !important; border:1px solid #999 !important; color:#000 !important; padding:1px 4px !important; }
+  .cheat-note { background:#fff !important; border:1px dashed #777 !important; color:#222 !important; font-size:11px !important; padding:5px 7px !important; }
+  .cheatsheet-v2-footer { background:#fff !important; border:1px dashed #777 !important; color:#000 !important; padding:7px 9px !important; font-size:12px !important; line-height:1.45 !important; }
+}
+
+
+/* ===== 内容丰富优化：新增模块，不改变原页面主体风格 ===== */
+.enrich-route {
+    margin: 0 0 36px;
+    padding: 22px 24px;
+    border: 2px solid #b3d4ff;
+    border-radius: 14px;
+    background: linear-gradient(135deg,#eef7ff,#fbfdff);
+}
+.enrich-route h3 {
+    margin-bottom: 14px;
+    color: #1a5276;
+    font-size: 17px;
+    font-weight: 900;
+}
+.enrich-route-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+.enrich-route-step {
+    padding: 13px 11px;
+    border: 1.5px solid #d6eaf8;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+}
+.enrich-route-step b {
+    display: block;
+    margin-bottom: 5px;
+    color: #2980b9;
+    font-size: 13px;
+}
+.enrich-route-step span {
+    display: block;
+    color: #555;
+    font-size: 13px;
+    line-height: 1.55;
+}
+.enrich-card {
+    margin: 35px 0;
+    padding: 28px 28px 24px;
+    border: 2px solid #b3d4ff;
+    border-radius: 12px;
+    background: #f7fbff;
+    font-size: 15px;
+    line-height: 1.8;
+}
+.enrich-card-title {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 8px 17px;
+    border-radius: 8px;
+    background: #2980b9;
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+}
+.enrich-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 15px 0;
+}
+.enrich-item {
+    padding: 14px 16px;
+    border: 1.5px solid #dce6ef;
+    border-radius: 10px;
+    background: #fff;
+}
+.enrich-item h4 {
+    margin-bottom: 7px;
+    color: #1a5276;
+    font-size: 15px;
+}
+.enrich-item p {
+    margin: 4px 0;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.72;
+}
+.enrich-table-wrap {
+    overflow-x: auto;
+    margin: 14px 0;
+    border-radius: 10px;
+}
+.enrich-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 14px;
+}
+.enrich-table th {
+    padding: 9px 12px;
+    background: #2c3e50;
+    color: #f1c40f;
+    text-align: left;
+}
+.enrich-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    line-height: 1.65;
+    vertical-align: top;
+}
+.enrich-table tr:last-child td { border-bottom: 0; }
+.enrich-correction {
+    margin: 14px 0;
+    padding: 14px 17px;
+    border: 1.5px solid #f5c56b;
+    border-left: 5px solid #e67e22;
+    border-radius: 9px;
+    background: #fff8e8;
+    color: #5d4037;
+    font-size: 14px;
+    line-height: 1.75;
+}
+.enrich-correction strong { color: #b45309; }
+.enrich-flow {
+    margin: 15px 0;
+    overflow: hidden;
+    border: 1.5px solid #b3d4ff;
+    border-radius: 10px;
+    background: #fff;
+}
+.enrich-flow-row {
+    display: flex;
+    border-bottom: 1px solid #d6eaf8;
+}
+.enrich-flow-row:last-child { border-bottom: 0; }
+.enrich-flow-num {
+    display: flex;
+    width: 48px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    background: #2980b9;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+}
+.enrich-flow-body {
+    padding: 12px 15px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.72;
+}
+
+@media (max-width:680px) {
+    .enrich-route-grid, .enrich-grid {
+        grid-template-columns:1fr !important;
+    }
+    .enrich-route, .enrich-card {
+        padding:17px 15px !important;
+    }
+    .enrich-flow-num { width:42px; }
+    .book-container [style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns:1fr !important;
+    }
+    .book-container div[style*="overflow:hidden"] {
+        overflow-x:auto !important;
+    }
+}
+@media print {
+    .answer-box { display:block !important; }
+    .reveal-btn { display:none !important; }
+    .enrich-route, .enrich-card {
+        break-inside:auto !important;
+        page-break-inside:auto !important;
+        box-shadow:none !important;
+    }
+    .enrich-item, .enrich-flow-row {
+        break-inside:avoid;
+        page-break-inside:avoid;
+    }
+}
+
+</style>
+<link rel="stylesheet" href="/assets/grammar-mobile-print-fix.css?v=20260705">
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<div class="lesson-topbar">
+    <div class="topbar-inner">
+        <a class="topbar-back" href="/">← 学习中心</a>
+        <a class="topbar-back" href="index.html">← 目录</a>
+        <div class="topbar-sep">/</div>
+        <div class="topbar-lesson-info">
+            <div class="tl-tag">第三战区 · 衔接7课 · 冲刺提分</div>
+            <div class="tl-title">过去将来时——站在过去，看那时的未来</div>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-main">
+<div class="book-container">
+
+    <div class="chapter-cover">
+        <div class="lesson-tag">第三战区 · 衔接7课 · 冲刺提分</div>
+        <h1>站在过去<br><span>看那时的未来</span></h1>
+        <p class="subtitle">"昨天我以为第二天会下雨"——站在“昨天”这个过去时间点，后面的下雨仍属于当时的未来。<br>would do 是最常见结构，was/were going to do 则更突出当时的计划或迹象</p>
+        <div class="meta-row">
+            <div class="meta-chip">⏱ 预计学习 45 分钟</div>
+            <div class="meta-chip">🎯 中考涉及约 2-3 分</div>
+            <div class="meta-chip">⭐ 八大时态收官第7个</div>
+        </div>
+    </div>
+
+    <div class="review-bar">
+        📌 <strong>上一讲回顾（第14讲：过去进行时 · 时态总对比）</strong><br>
+        第14讲你复盘了六大时态，还学了"过去某个时刻正在做"（was/were doing）。<br><br>
+        现在我们补上八大时态里倒数第二个——<strong>过去将来时</strong>。它其实是<strong>一般将来时的"过去版"</strong>：一般将来时是"现在看未来"（I <strong>will</strong> go），过去将来时是"<strong>站在过去</strong>看未来"（I <strong>would</strong> go）。想象你在读一个昨天的故事，故事里的人说"我明天要去北京"——这个"明天"对我们来说已经是过去的事了，但对故事里的人是"将来"。这种"过去里的将来"，就用过去将来时。
+    </div>
+
+    <div class="goal-box">
+        <div class="goal-icon">🎯</div>
+        <div>
+            <h3>学完这讲，你能做到：</h3>
+            <p>① 理解"过去将来"这个时间点：站在过去的某一刻，看之后要发生的事<br>
+            ② 掌握两种结构：would + 动词原形 / was-were going to + 动词原形<br>
+            ③ 搞定它最常出现的地方——宾语从句里的时态呼应（呼应第21讲）<br>
+            ④ 分清 would 的不同身份：过去将来、礼貌请求、假设语气和过去习惯</p>
+        </div>
+    </div>
+
+    <!-- ===== 新增：过去将来时判断路线 ===== -->
+    <div class="enrich-route">
+        <h3>🧭 判断过去将来时，不要只看 would：按这4步走</h3>
+        <div class="enrich-route-grid">
+            <div class="enrich-route-step"><b>第1步 · 找观察点</b><span>句中有没有 said、thought、knew、at that time 等过去背景？</span></div>
+            <div class="enrich-route-step"><b>第2步 · 看先后</b><span>目标动作是不是发生在那个过去时间点之后？</span></div>
+            <div class="enrich-route-step"><b>第3步 · 判含义</b><span>中性预测用 would，计划意图用 was/were going to，即将发生可用 was/were about to。</span></div>
+            <div class="enrich-route-step"><b>第4步 · 排干扰</b><span>would 是否表示礼貌、假设、过去习惯？时间词是否真的需要随视角改变？</span></div>
+        </div>
+    </div>
+
+
+    <div class="module-card card-green">
+        <div class="badge badge-green">🕰️ 模块一：什么是"过去将来"——时间轴上找位置</div>
+        <p>先在时间轴上把这个时间点找准。八大时态本质就是回答两个问题：<strong>动作在什么时候？说话人站在哪个时间点看？</strong></p>
+        <div style="background:#f8f9fa;border:2px solid #ddd;border-radius:10px;padding:20px;margin:18px 0;">
+            <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#888;position:relative;">
+                <div style="text-align:center;flex:1;"><div style="font-size:22px;">🕐</div>过去</div>
+                <div style="text-align:center;flex:1;"><div style="font-size:22px;">📍</div>现在</div>
+                <div style="text-align:center;flex:1;"><div style="font-size:22px;">🕓</div>将来</div>
+            </div>
+            <div style="height:3px;background:linear-gradient(90deg,#3498db,#e74c3c);margin:14px 0;border-radius:2px;"></div>
+            <div style="font-size:14px;line-height:1.9;color:#333;">
+                <strong>一般将来时</strong>：站在 <span style="color:#e74c3c;">现在📍</span>，看将来 → I <strong>will</strong> go.<br>
+                <strong>过去将来时</strong>：站在 <span style="color:#3498db;">过去🕐</span>，看那时之后的事 → I <strong>would</strong> go.（"那时我说我会去"）
+            </div>
+        </div>
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路（一句话抓住它）：</strong></p>
+            <p>过去将来时描述的是“站在过去某一刻，观察或预计那一刻之后的事”。<strong>would + 动词原形</strong>是最常见结构，但不能把所有 would 都当作过去将来时；还要看句中有没有明确的过去观察点。</p>
+            <p>She said she <span class="mark-red">would</span> come.（她说她会来——"会来"是站在"她说"那一刻看的未来）</p>
+        </div>
+        <div class="tip-box">
+            💡 为什么要学它？它经常出现在<strong>间接引语和宾语从句</strong>中，也会出现在故事叙述、过去计划和过去预测里。基础考试中，如果主句提供过去观察点，从句表达“当时的未来”，通常使用 would。
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块二</span><hr></div>
+    <div class="module-card card-teal">
+        <div class="badge badge-teal">🔧 模块二：两种结构——would 和 was going to</div>
+        <p>过去将来时最常见的两种表达是 would do 和 was/were going to do。它们都能表示“过去视角中的后来”，但侧重点并不完全相同。</p>
+        <div class="formula-block">
+            <div class="formula-row">
+                <div class="formula-label">结构一</div>
+                <div class="formula-content"><strong>would + 动词原形</strong>（中性预测、承诺或转述中的将来）<div class="formula-eg">He said he <strong>would</strong> help me.（他说他会帮我）</div></div>
+            </div>
+            <div class="formula-row">
+                <div class="formula-label">结构二</div>
+                <div class="formula-content"><strong>was / were going to + 动词原形</strong>（当时的计划、意图或根据迹象作出的判断）<div class="formula-eg">I <strong>was going to</strong> call you, but I forgot.（我本打算给你打电话，但忘了）</div></div>
+            </div>
+        </div>
+        <div style="background:#e8f4fd;border:2px solid #64b5f6;border-radius:10px;padding:14px 18px;margin:14px 0;">
+            <p style="font-weight:900;color:#1565c0;margin-bottom:6px;">📌 和一般将来时对照记（就差一个词）：</p>
+            <div style="font-size:15px;line-height:2;color:#333;">
+                一般将来：will do&nbsp;&nbsp;/&nbsp;&nbsp;am/is/are going to do<br>
+                过去将来：<span class="mark-red">would</span> do&nbsp;&nbsp;/&nbsp;&nbsp;<span class="mark-red">was/were</span> going to do
+            </div>
+        </div>
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>可以把它理解为把一般将来表达“往过去推一格”：will → would，am/is/are going to → was/were going to。would 和 going to 后都接动词原形。</p>
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:18px 0 8px;">否定和疑问（跟一般将来时同理）：</p>
+        <div style="background:#f8f9fa;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15px;line-height:1.9;">
+            否定：He said he <strong>wouldn't</strong> come.（他说他不会来）<br>
+            疑问：I asked if she <strong>would</strong> come.（我问她会不会来）
+        </div>
+        <div style="background:#fff8f0;border:2px solid #ffcc80;border-radius:10px;padding:14px 18px;margin:12px 0;">
+            <p style="font-size:14px;color:#555;line-height:1.8;"><strong>一个重要提醒：</strong>was/were going to 本身只表示“当时计划、打算或根据迹象判断”，事情后来是否发生，要看上下文。出现 but、forgot、changed my mind 等信息时，才常表示“原打算但没做成”。</p>
+        </div>
+    </div>
+
+    <div class="section-divider"><hr><span>模块三 · 本讲最重要</span><hr></div>
+    <div class="module-card card-red">
+        <div class="badge badge-red">🔗 模块三：宾语从句里的时态呼应——先看时间关系，再决定是否后移</div>
+        <p>过去将来时最常见于这个场景：主句动词是过去时（said / told / thought / knew 等），从句表达的是<strong>相对于那个过去时间点的后来</strong>，通常把 will 后移为 would。</p>
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路（时态一致原则）：</strong></p>
+            <p>在间接引语和宾语从句中，英语常使用<strong>时态后移</strong>：主句给出过去观察点，从句原本表示将来的 will 通常后移为 would。但是否后移还要看事实在说话时是否仍成立、是否为客观真理，以及时间参照是否已经改变。</p>
+            <p>直接说：He says, "I <span style="color:#2980b9;">will</span> go."（他现在说"我会去"）<br>转述成过去：He said he <span class="mark-red">would</span> go.（他<strong>说过</strong>他会去 → will 变 would）</p>
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:18px 0 8px;">时态呼应对照表（记这一张就够）：</p>
+        <div style="background:#fff;border:2px solid #ef9a9a;border-radius:10px;overflow:hidden;margin:12px 0;">
+            <table style="width:100%;border-collapse:collapse;font-size:14.5px;">
+                <tr style="background:#ffebee;"><th style="padding:9px 12px;text-align:left;color:#c62828;">主句现在时，从句用</th><th style="padding:9px 12px;text-align:left;color:#c62828;">主句变过去时，从句变</th></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #ffebee;">will do（将来）</td><td style="padding:9px 12px;border-top:1px solid #ffebee;font-weight:900;">would do（过去将来）</td></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #ffebee;">do / does（现在）</td><td style="padding:9px 12px;border-top:1px solid #ffebee;">did（过去）</td></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #ffebee;">is doing（现在进行）</td><td style="padding:9px 12px;border-top:1px solid #ffebee;">was doing（过去进行）</td></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #ffebee;">has done（现在完成）</td><td style="padding:9px 12px;border-top:1px solid #ffebee;">had done（过去完成·下一讲）</td></tr>
+            </table>
+        </div>
+        <div class="warn-box">
+            <p><strong>⚠️ 基础考试常见规则：主句过去，从句表示“当时的未来”通常用 would</strong></p>
+            <p>△ He told me he <span style="color:#e67e22;">will</span> come.（在某些“现在仍有效、事情仍在未来”的语境中可以出现，但基础时态后移题通常不选）</p>
+            <p>✓ He told me he <span class="mark-red">would</span> come.（对！）</p>
+            <p style="margin-top:6px;"><span class="right-text">考试判断：先确认从句表达的是相对于过去主句的未来，再用 would；不要只看到 said/told 就机械替换。</span></p>
+        </div>
+        <div class="tip-box">
+            💡 这一讲和第21讲（宾语从句）是"连体婴"：第21讲会系统讲宾语从句的语序和引导词，本讲专攻其中的"时态呼应"这一块。两讲结合，宾语从句就再也不丢分。
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块四</span><hr></div>
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🆚 模块四：三组易混时态——一眼分清</div>
+        <p>would 不只承担一种语法功能，过去将来时也容易和一般过去时、一般将来时混淆。逐组对比看清：</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin:16px 0;">
+            <div style="background:#f0f7ff;border:1.5px solid #b3d4ff;border-radius:10px;padding:14px 18px;">
+                <div style="font-weight:900;color:#1565c0;margin-bottom:6px;">① will do（一般将来） vs would do（过去将来）</div>
+                <div style="font-size:14.5px;line-height:1.8;color:#333;">I think he <strong>will</strong> win.（现在想→将来）<br>I thought he <strong>would</strong> win.（过去想→过去将来）—— 主句时态决定用哪个</div>
+            </div>
+            <div style="background:#f4fbf4;border:1.5px solid #c3e6c3;border-radius:10px;padding:14px 18px;">
+                <div style="font-weight:900;color:#1e8449;margin-bottom:6px;">② would do（过去将来） vs did（一般过去）</div>
+                <div style="font-size:14.5px;line-height:1.8;color:#333;">He said he <strong>would</strong> call.（说的时候还没打→计划中）<br>He <strong>called</strong> me.（已经打了→真实发生的过去动作）</div>
+            </div>
+            <div style="background:#fff8f0;border:1.5px solid #ffd8a8;border-radius:10px;padding:14px 18px;">
+                <div style="font-weight:900;color:#e67e22;margin-bottom:6px;">③ would（过去将来） vs would（表委婉，如 Would you…）</div>
+                <div style="font-size:14.5px;line-height:1.8;color:#333;">She knew she <strong>would</strong> pass.（过去将来时）<br><strong>Would</strong> you like some tea?（这是礼貌用语，不是时态）—— 靠语境区分</div>
+            </div>
+        </div>
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>判断是不是过去将来时，就看两点——① 有没有一个"过去的时间点"作为观察站；② 动作是站在那个点往后看的。两个都满足，就是过去将来时。</p>
+        </div>
+    </div>
+
+    <div class="section-divider"><hr><span>模块五</span><hr></div>
+    <div class="module-card card-orange">
+        <div class="badge badge-orange">📅 模块五：常见信号词 + 时间状语的变化</div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin-bottom:10px;">A. 提示"过去将来"的信号</p>
+        <p>过去将来时常由主句中的过去时动词提供观察点，也可以由明确的过去时间背景或故事叙述来提示：</p>
+        <div style="background:#fff8f0;border:2px solid #ffcc80;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15px;line-height:1.9;">
+            <strong>said / told / asked / thought / knew / hoped / promised / wondered</strong><br>
+            <span style="color:#888;font-size:14px;">这些词常建立过去观察点；从句若表达相对于当时的后来，通常用 would 或 was/were going to</span>
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:20px 0 10px;">B. 时间词也要"跟着往过去挪"（写作高频）</p>
+        <p>直接引语变间接引语时，时间、地点和指示词要根据<strong>新的叙述时间与地点</strong>调整。下面是视角已经改变时最常见的对应关系：</p>
+        <div style="background:#fff;border:2px solid #ffb74d;border-radius:10px;overflow:hidden;margin:12px 0;">
+            <table style="width:100%;border-collapse:collapse;font-size:14.5px;">
+                <tr style="background:#fff3e0;"><th style="padding:8px 12px;text-align:left;color:#e65100;">直接引语（现在视角）</th><th style="padding:8px 12px;text-align:left;color:#e65100;">间接引语（过去视角）</th></tr>
+                <tr><td style="padding:8px 12px;border-top:1px solid #fff3e0;">now（现在）</td><td style="padding:8px 12px;border-top:1px solid #fff3e0;font-weight:900;">then（那时）</td></tr>
+                <tr><td style="padding:8px 12px;border-top:1px solid #fff3e0;">today（今天）</td><td style="padding:8px 12px;border-top:1px solid #fff3e0;font-weight:900;">that day（那天）</td></tr>
+                <tr><td style="padding:8px 12px;border-top:1px solid #fff3e0;">tomorrow（明天）</td><td style="padding:8px 12px;border-top:1px solid #fff3e0;font-weight:900;">the next/following day（第二天）</td></tr>
+                <tr><td style="padding:8px 12px;border-top:1px solid #fff3e0;">here（这里）</td><td style="padding:8px 12px;border-top:1px solid #fff3e0;font-weight:900;">there（那里）</td></tr>
+            </table>
+        </div>
+        <div class="tip-box">
+            💡 例：He said, “I <strong>will</strong> come <strong>tomorrow</strong>.” → He said he <strong>would</strong> come <strong>the next day</strong>. 这里说话时间已经改变，所以 will 和 tomorrow 都随视角调整；如果转述发生在同一天、同一地点，时间地点词不一定需要改变。
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>新增补充 · 过去将来完整判断系统</span><hr></div>
+
+    <div class="enrich-card">
+        <div class="enrich-card-title">🕰️ 三个时间点：过去将来时真正难在“参照点”</div>
+        <div class="enrich-flow">
+            <div class="enrich-flow-row">
+                <div class="enrich-flow-num">A</div>
+                <div class="enrich-flow-body"><strong>现在的说话点：</strong>我们此刻在叙述整个故事。</div>
+            </div>
+            <div class="enrich-flow-row">
+                <div class="enrich-flow-num">B</div>
+                <div class="enrich-flow-body"><strong>过去观察点：</strong>故事中的人物在过去说、想、知道或计划某事。</div>
+            </div>
+            <div class="enrich-flow-row">
+                <div class="enrich-flow-num">C</div>
+                <div class="enrich-flow-body"><strong>过去观察点之后：</strong>对B来说是未来，但对现在来说可能已经发生，也可能没有发生。</div>
+            </div>
+        </div>
+        <p><strong>例：</strong>In 2020, she believed she <strong>would become</strong> a doctor one day.</p>
+        <p>2020 是过去观察点；成为医生发生在她当时所想的未来。句子只说明她当时这样相信，不能单凭 would 判断她后来是否真的成为医生。</p>
+    </div>
+
+    <div class="enrich-card" style="border-color:#c3e6c3;background:#f6fcf7;">
+        <div class="enrich-card-title" style="background:#27ae60;">🔧 四种表达并不完全相同</div>
+        <div class="enrich-table-wrap">
+            <table class="enrich-table">
+                <tr><th>结构</th><th>侧重点</th><th>例句</th></tr>
+                <tr><td><strong>would do</strong></td><td>中性预测、承诺、转述中的未来</td><td>He promised he <strong>would return</strong>.</td></tr>
+                <tr><td><strong>was/were going to do</strong></td><td>当时已有计划、意图或迹象</td><td>We <strong>were going to leave</strong> early.</td></tr>
+                <tr><td><strong>was/were about to do</strong></td><td>当时马上就要发生，常与 when 连用</td><td>I <strong>was about to go</strong> out when it began to rain.</td></tr>
+                <tr><td><strong>was/were to do</strong></td><td>较正式的安排、命令或后来注定发生的事</td><td>The train <strong>was to leave</strong> at six.</td></tr>
+            </table>
+        </div>
+        <div class="enrich-correction">
+            <strong>纠偏：</strong>was/were going to 不等于“肯定没做成”。只有 but、however、forgot、changed the plan 等上下文明确阻断时，才能判断计划没有实现。
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#d8b4fe;background:#fcf8ff;">
+        <div class="enrich-card-title" style="background:#8e44ad;">🔄 时态后移不是机械铁律：三类情况要保留原时态</div>
+        <div class="enrich-grid">
+            <div class="enrich-item">
+                <h4>① 客观真理与科学事实</h4>
+                <p>The teacher told us that the earth <strong>moves</strong> around the sun.</p>
+                <p>事实现在仍成立，通常不后移。</p>
+            </div>
+            <div class="enrich-item">
+                <h4>② 现在仍然成立的状态</h4>
+                <p>She said she <strong>lives</strong> in Shanghai.</p>
+                <p>如果她现在仍住在那里，可保留现在时；若只讲过去状态，则可用 lived。</p>
+            </div>
+            <div class="enrich-item">
+                <h4>③ 事情在转述时仍属于未来</h4>
+                <p>He said this morning that he <strong>will</strong> call tonight.</p>
+                <p>同一天及时转述、计划仍有效时，现代英语可保留 will。</p>
+            </div>
+            <div class="enrich-item">
+                <h4>④ 基础考试如何处理</h4>
+                <p>题目若明确考“直接引语变间接引语”或“过去视角中的未来”，通常按 will → would 作答。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#ffd8a8;background:#fffaf3;">
+        <div class="enrich-card-title" style="background:#e67e22;">🚦 主句用 would，时间/条件从句通常不用 would</div>
+        <p>过去将来的主句后面如果带 when、before、after、until、if 等时间或条件从句，基础规则仍是：</p>
+        <div class="enrich-table-wrap">
+            <table class="enrich-table">
+                <tr><th>正确结构</th><th>说明</th></tr>
+                <tr><td>He said he <strong>would call</strong> me when he <strong>arrived</strong>.</td><td>主句用 would call；when 从句用一般过去时 arrived。</td></tr>
+                <tr><td>She knew she <strong>would wait</strong> until he <strong>came</strong>.</td><td>until 从句不用 would come。</td></tr>
+                <tr><td>I thought I <strong>would go</strong> if the weather <strong>was</strong> fine.</td><td>if 从句表示条件，用一般过去时。</td></tr>
+            </table>
+        </div>
+        <div class="warn-box">
+            <p><strong>常见错误：</strong>He said he would call me when he <span class="wrong-text">would arrive</span>.</p>
+            <p><strong>正确：</strong>He said he would call me when he <span class="mark-green">arrived</span>.</p>
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#ffcccc;background:#fff8f8;">
+        <div class="enrich-card-title" style="background:#e74c3c;">🎭 would 的5种身份：看到 would 先别急着判时态</div>
+        <div class="enrich-table-wrap">
+            <table class="enrich-table">
+                <tr><th>用法</th><th>例句</th><th>判断线索</th></tr>
+                <tr><td>过去将来</td><td>She said she <strong>would come</strong>.</td><td>有过去观察点，动作发生在其后</td></tr>
+                <tr><td>礼貌请求/意愿</td><td><strong>Would</strong> you open the door?</td><td>对话中的礼貌表达，不是在讲过去</td></tr>
+                <tr><td>假设结果</td><td>I <strong>would travel</strong> more if I had time.</td><td>常与 if 假设条件搭配</td></tr>
+                <tr><td>过去反复习惯</td><td>Every summer, we <strong>would swim</strong> in the river.</td><td>表示过去经常做，接状态动词时通常不用</td></tr>
+                <tr><td>拒绝或不肯</td><td>The car <strong>wouldn't start</strong>.</td><td>表示怎么也启动不了，并非单纯将来否定</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#b2dfdb;background:#f4fffd;">
+        <div class="enrich-card-title" style="background:#16a085;">🗣️ 直接引语变间接引语：要检查的不只时态</div>
+        <div class="enrich-table-wrap">
+            <table class="enrich-table">
+                <tr><th>检查项</th><th>直接引语</th><th>间接引语</th></tr>
+                <tr><td>人称</td><td>Mary said, “<strong>I</strong> will help <strong>you</strong>.”</td><td>Mary said <strong>she</strong> would help <strong>me</strong>.</td></tr>
+                <tr><td>时态</td><td>will help</td><td>would help（标准后移语境）</td></tr>
+                <tr><td>时间</td><td>tomorrow</td><td>the next/following day（视角改变时）</td></tr>
+                <tr><td>地点/指示词</td><td>here / this</td><td>there / that（地点或指代改变时）</td></tr>
+                <tr><td>语序与标点</td><td>有引号、第一人称原话</td><td>去引号，按陈述语序转述</td></tr>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块六</span><hr></div>
+    <div class="module-card card-green">
+        <div class="badge badge-green">🔬 模块六：解剖真实句子 + 下一讲的钩子</div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:8px 0 8px;">句子一：Mary said she would visit her grandma the next day.（玛丽说她第二天会去看奶奶。）</p>
+        <div class="sentence-dissect">
+            <div class="word-block"><span class="word-text wt-s">Mary said</span><span class="word-label">主句·过去时</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-v">she would visit</span><span class="word-label">从句·过去将来</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-t">the next day</span><span class="word-label">过去视角时间词</span></div>
+        </div>
+        <p style="font-size:14px;color:#666;">主句 said 提供过去观察点，从句 would visit 表示相对于当时的后来；the next day 说明叙述视角已经从直接引语中的 tomorrow 转移。</p>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:20px 0 8px;">句子二：I was going to buy the book, but it was sold out.（我本打算买那本书，但卖光了。）</p>
+        <p style="font-size:14px;color:#666;margin-bottom:6px;">was going to 表示当时的打算；后半句 but it was sold out 明确告诉我们这个打算后来没有实现。没有这样的上下文时，不能仅凭 was going to 断定事情没发生。</p>
+        <div style="background:#e8f4fd;border:2px dashed #2980b9;border-radius:10px;padding:16px 20px;margin-top:22px;">
+            <p style="font-weight:900;color:#1a5276;font-size:15px;margin-bottom:6px;">🔗 下一讲预告：过去的过去</p>
+            <p style="font-size:14.5px;color:#333;line-height:1.8;">过去将来是"站在过去看之后"，那"站在过去看更早"呢？这就是<strong>衔接8课：过去完成时</strong>（had done）——表示"过去某动作之前就已完成的事"。学完它，八大时态就<strong>全部集齐</strong>，你的时态版图彻底完整。</p>
+        </div>
+    </div>
+
+    <div class="section-divider"><hr><span>实战练习 · 做完再走</span><hr></div>
+
+    <div class="quiz-block" style="margin-top:20px;">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 1 · will 还是 would（时态呼应）</p>
+        <div class="quiz-q">按标准时态后移规则：He said he ______ come to my party.<br><span style="font-size:14px;font-weight:400;color:#888;">（他说他会来我的聚会。）</span></div>
+        <div class="quiz-opts"><span>A. will</span><span>B. would</span><span>C. is</span><span>D. was</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q1').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q1"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>主句 said 提供过去观察点，come 表示相对于“他说”之后的动作；在本题的标准时态后移语境中用 would。</p>
+            <p><span class="right-text">✅ 答案：B（would）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 2 · was going to（本打算）</p>
+        <div class="quiz-q">I ______ tell you the news, but I found that you had already heard it.<br><span style="font-size:14px;font-weight:400;color:#888;">（我本打算告诉你这消息，但我发现你已经听说了。）</span></div>
+        <div class="quiz-opts"><span>A. am going to</span><span>B. was going to</span><span>C. will</span><span>D. go to</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q2').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q2"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>was going to 表示当时的打算；后半句 but I found... 说明这个打算没有继续实施。</p>
+            <p><span class="right-text">✅ 答案：B（was going to）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 3 · 改错（主句过去，从句 will→would）</p>
+        <div class="quiz-q">按标准间接引语时态后移要求改写：<br>My mother told me that she will buy me a gift.<br><span style="font-size:14px;font-weight:400;color:#888;">（我妈妈告诉我她会给我买份礼物。）</span></div>
+        <div class="quiz-opts"><span>A. told → tell</span><span>B. will → would</span><span>C. buy → bought</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q3').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q3"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>本题按标准间接引语和时态后移处理：told 提供过去观察点，从句表示当时的未来，因此 will 改为 would。</p>
+            <p><span class="right-text">✅ 答案：B（will → would）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 4 · 时间词的变化</p>
+        <div class="quiz-q">He said, "I will finish it tomorrow." 按本题标准时态后移及时间状语转换要求，改为间接引语：<br>He said he would finish it ______.</div>
+        <div class="quiz-opts"><span>A. tomorrow</span><span>B. the next day</span><span>C. yesterday</span><span>D. today</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q4').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q4"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>本题的转述时间已经改变，因此 tomorrow 要根据新的叙述视角改为 the next day。</p>
+            <p><span class="right-text">✅ 答案：B（the next day）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 5 · 易混辨析（would vs did）</p>
+        <div class="quiz-q">She promised that she ______ help us, and yesterday she really ______.<br><span style="font-size:14px;font-weight:400;color:#888;">（她承诺会帮我们，昨天她真的帮了。）</span></div>
+        <div class="quiz-opts"><span>A. would; did</span><span>B. will; does</span><span>C. would; do</span><span>D. will; did</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q5').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q5"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>空一：promised 过去 → 从句用 would（承诺时还没帮）。空二：yesterday really → 真实发生的过去动作 → did。</p>
+            <p><span class="right-text">✅ 答案：A（would; did）</span>&nbsp;&nbsp;<span class="wrong-text">这题专门考"计划中的将来(would)"和"真实发生的过去(did)"的区别。</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 6 · 综合实战</p>
+        <div class="quiz-q">Tom thought the movie ______ boring, so he ______ watch it.<br><span style="font-size:14px;font-weight:400;color:#888;">（Tom觉得电影会很无聊，所以本不打算看。）</span></div>
+        <div class="quiz-opts"><span>A. will be; isn't going to</span><span>B. would be; wasn't going to</span><span>C. is; wasn't going to</span><span>D. would be; isn't going to</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q6').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q6"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>thought 提供过去观察点：电影“会很无聊”是当时的预测；“不打算看”是当时的计划。</p>
+            <p>空一："会很无聊"（预计）→ would be。空二："本不打算看"→ wasn't going to（过去将来的否定）。</p>
+            <p><span class="right-text">✅ 答案：B（would be; wasn't going to）</span></p>
+        </div></div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>新增进阶练习 · 不只识别 would</span><hr></div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 7 · would 与 going to 的侧重点</p>
+        <div class="quiz-q">We had bought the tickets and packed our bags. We ______ leave early the next morning.</div>
+        <div class="quiz-opts"><span>A. are going to</span><span>B. were going to</span><span>C. will</span><span>D. have gone to</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q7').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q7"><div class="brain-box">
+            <p>had bought、packed 建立过去背景，而且已经有明确准备和计划，使用 were going to 最自然。</p>
+            <p><span class="right-text">✅ 答案：B（were going to）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 8 · 当时的预测</p>
+        <div class="quiz-q">At the age of ten, Lisa believed she ______ become a scientist one day.</div>
+        <div class="quiz-opts"><span>A. will</span><span>B. would</span><span>C. is going to</span><span>D. has</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q8').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q8"><div class="brain-box">
+            <p>At the age of ten 和 believed 提供过去观察点，become 发生在那个时间点之后，用 would。</p>
+            <p><span class="right-text">✅ 答案：B（would）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 9 · 时间从句不用 would</p>
+        <div class="quiz-q">He said he would send me a message when he ______ at the hotel.</div>
+        <div class="quiz-opts"><span>A. would arrive</span><span>B. arrives</span><span>C. arrived</span><span>D. will arrive</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q9').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q9"><div class="brain-box">
+            <p>主句是过去视角中的将来 would send；when 时间从句使用一般过去时 arrived，不重复使用 would。</p>
+            <p><span class="right-text">✅ 答案：C（arrived）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 10 · 客观真理不后移</p>
+        <div class="quiz-q">Our science teacher told us that light ______ faster than sound.</div>
+        <div class="quiz-opts"><span>A. travel</span><span>B. would travel</span><span>C. travels</span><span>D. was traveling</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q10').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q10"><div class="brain-box">
+            <p>“光比声音传播得快”是客观科学事实，现在仍成立，因此保留一般现在时 travels。</p>
+            <p><span class="right-text">✅ 答案：C（travels）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 11 · was about to</p>
+        <div class="quiz-q">I ______ leave the house when the phone rang.</div>
+        <div class="quiz-opts"><span>A. was about to</span><span>B. would</span><span>C. am going to</span><span>D. have to</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q11').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q11"><div class="brain-box">
+            <p>“电话响时，我正要出门”表示过去某刻马上就要发生，固定用 was about to do when...</p>
+            <p><span class="right-text">✅ 答案：A（was about to）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 12 · would 的身份判断</p>
+        <div class="quiz-q">“Would you please close the window?” 中的 would 表示什么？</div>
+        <div class="quiz-opts"><span>A. 过去将来</span><span>B. 礼貌请求</span><span>C. 过去习惯</span><span>D. 客观预测</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q12').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q12"><div class="brain-box">
+            <p>句中没有过去观察点，而是在礼貌地请对方关窗，因此 would 是礼貌请求用法。</p>
+            <p><span class="right-text">✅ 答案：B（礼貌请求）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 13 · 间接引语综合变换</p>
+        <div class="quiz-q">Mary said to me, “I will show you my new school tomorrow.” 按本题标准时态后移及时间状语转换要求，改为间接引语：</div>
+        <div class="quiz-opts" style="flex-direction:column;gap:8px;">
+            <span>A. Mary told me that I would show her my new school tomorrow.</span>
+            <span>B. Mary told me that she would show me her new school the next day.</span>
+            <span>C. Mary said me that she will show me my new school the next day.</span>
+            <span>D. Mary told that she would show you her new school yesterday.</span>
+        </div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q13').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q13"><div class="brain-box">
+            <p>said to me → told me；I → she；you → me；my → her；will → would；tomorrow → the next day。</p>
+            <p><span class="right-text">✅ 答案：B</span></p>
+        </div></div>
+    </div>
+
+
+    <div style="margin:50px 0 30px;background:#fffdf5;border:2px solid #f1c40f;border-radius:14px;padding:28px 26px 24px;box-shadow:0 8px 18px rgba(0,0,0,0.08);">
+        <div style="text-align:center;margin-bottom:22px;">
+            <div style="display:inline-block;background:#f1c40f;color:#2c3e50;padding:8px 24px;border-radius:22px;font-weight:900;font-size:17px;box-shadow:0 3px 8px rgba(0,0,0,0.12);">🎒 衔接7课 · 考前救命小抄（必背）</div>
+            <p style="font-size:13px;color:#777;margin-top:12px;line-height:1.7;">核心不是机械换词，而是找到“过去观察点”和“当时的后来”</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div style="background:#f0f7ff;border:1.5px solid #b3d4ff;border-left:5px solid #2980b9;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#1a5276;margin-bottom:8px;">🕰️ 本质</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">站在<strong>过去</strong>看当时之后的事。常用 would do，也可用 was/were going to do。</p>
+            </div>
+            <div style="background:#fff5f5;border:1.5px solid #ffcccc;border-left:5px solid #e74c3c;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#c0392b;margin-bottom:8px;">🔗 核心考点</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">主句提供过去观察点，从句表示“当时的未来”→ 通常用 <strong>would</strong>；客观真理、仍有效事实等要结合语境判断。</p>
+            </div>
+            <div style="background:#f0fffc;border:1.5px solid #b2dfdb;border-left:5px solid #009688;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#00695c;margin-bottom:8px;">🔧 两种结构</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">would + 动词原形：中性预测或转述；was/were going to：当时的计划、意图或迹象，是否实现看上下文。</p>
+            </div>
+            <div style="background:#fff8f0;border:1.5px solid #ffd8a8;border-left:5px solid #e67e22;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#784212;margin-bottom:8px;">📅 时间词跟着变</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">叙述视角改变时常见：now→then，today→that day，tomorrow→the next day，here→there；不是无条件替换。</p>
+            </div>
+        </div>
+        <div style="margin-top:16px;background:#fff;border:1.5px dashed #f1c40f;border-radius:10px;padding:14px 18px;font-size:15px;line-height:1.8;color:#333;">
+            <strong>一句话记忆：</strong>先找过去观察点，再看动作是否属于“当时的后来”；would 不一定是过去将来，时间词也要根据实际叙述视角调整。
+        </div>
+    </div>
+
+    <div class="cta-box">
+        <h3>🕰️ 衔接7课完成！八大时态只差最后一个！</h3>
+        <p>过去将来时拿下——你现在会先找过去观察点，再判断后面的动作是预测、承诺、计划还是即将发生，并能区分 would 的其他常见用法以及间接引语中的时间视角变化。<br><br>
+        八大时态还剩最后一块拼图：<br>
+        ✅ <strong>衔接8课：过去完成时</strong>（had done）——"过去的过去"，学完它，你的时态版图就彻底完整了。
+        </p>
+        <a href="lesson-32.html" class="cta-btn">继续学习 → 衔接8课：过去完成时</a>
+    </div>
+
+</div><!-- /book-container -->
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-31.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+<div class="lesson-nav">
+    <a class="nav-btn prev" href="lesson-14.html"><span class="nb-text"><span class="nb-label">上一讲</span><span class="nb-title">第14讲：过去进行时</span></span></a>
+    <a class="nav-btn-home" href="index.html">📚 目录</a>
+    <a class="nav-btn next" href="lesson-32.html"><span class="nb-text"><span class="nb-label">下一讲</span><span class="nb-title">衔接8课：过去完成时</span></span></a>
+</div>
+
+</div><!-- /lesson-main -->
+
+<div class="lesson-footer">
+    初中英语语法重构 · 基础重构版 · 衔接7课<br>
+    打印时只会打印本讲内容 · 点击浏览器返回键可回到目录
+</div>
+
+
+<script src="/assets/a4-print-entry.js?v=20260722-final-v3"></script>
+</body>
+</html>

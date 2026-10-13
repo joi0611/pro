@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第22讲：定语从句 — 初中英语语法重构</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f2f5; color: #2c3e50; min-height: 100vh; }
+
+/* ===== 顶部导航条 ===== */
+.lesson-topbar { background: #2c3e50; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.topbar-inner { max-width: 900px; margin: 0 auto; padding: 11px 24px; display: flex; align-items: center; gap: 14px; }
+.topbar-back { color: #f1c40f; text-decoration: none; font-size: 14px; font-weight: bold; display: flex; align-items: center; gap: 5px; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
+.topbar-back:hover { opacity: 0.75; }
+.topbar-sep { color: #4a6278; font-size: 16px; flex-shrink: 0; }
+.topbar-lesson-info { flex: 1; min-width: 0; }
+.topbar-lesson-info .tl-tag { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 2px; }
+.topbar-lesson-info .tl-title { font-size: 15px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-print { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.85); cursor: pointer; font-family: inherit; flex-shrink: 0; transition: background 0.15s; }
+.topbar-print:hover { background: rgba(255,255,255,0.18); }
+
+/* ===== 主内容 ===== */
+.lesson-main { max-width: 900px; margin: 0 auto; padding: 36px 24px 20px; }
+.book-container { background: #fff; padding: 50px 60px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+
+/* ===== 底部导航 ===== */
+.lesson-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 28px 0 20px; flex-wrap: wrap; }
+.nav-btn { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #2c3e50; font-size: 14px; transition: all 0.15s; flex: 1; min-width: 160px; max-width: 280px; }
+.nav-btn:hover { border-color: #2980b9; box-shadow: 0 4px 12px rgba(41,128,185,0.15); transform: translateY(-1px); }
+.nav-btn.prev { justify-content: flex-start; }
+.nav-btn.next { justify-content: flex-end; margin-left: auto; }
+.nav-btn .nb-arrow { font-size: 18px; color: #aaa; flex-shrink: 0; }
+.nav-btn:hover .nb-arrow { color: #2980b9; }
+.nav-btn .nb-text { min-width: 0; }
+.nav-btn .nb-label { font-size: 11px; color: #aaa; display: block; }
+.nav-btn .nb-title { font-size: 14px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-btn-home { display: flex; align-items: center; gap: 6px; background: #2c3e50; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #f1c40f; font-size: 14px; font-weight: bold; flex-shrink: 0; transition: opacity 0.15s; }
+.nav-btn-home:hover { opacity: 0.85; }
+.lesson-footer { text-align: center; padding: 20px 24px 36px; font-size: 12px; color: #aaa; line-height: 1.8; }
+
+/* ===== 封面 ===== */
+.chapter-cover { background: linear-gradient(135deg, #1a252f 0%, #2c3e50 55%, #8e44ad 100%); border-radius: 15px; padding: 40px 40px 35px; margin-bottom: 40px; color: #fff; position: relative; overflow: hidden; }
+.chapter-cover::before { content: "22"; position: absolute; right: 30px; top: 10px; font-size: 110px; font-weight: 900; color: rgba(255,255,255,0.06); line-height: 1; letter-spacing: -5px; }
+.lesson-tag { background: #f1c40f; color: #2c3e50; font-weight: 900; font-size: 13px; padding: 5px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em; }
+.chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.chapter-cover h1 span { color: #f1c40f; }
+.chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.meta-row { display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px; }
+
+/* ===== 回顾 / 目标 ===== */
+.review-bar { background: #f0f7ff; border: 1.5px solid #b3d4ff; border-left: 5px solid #2980b9; border-radius: 8px; padding: 14px 18px; margin-bottom: 30px; font-size: 14px; color: #1a5276; line-height: 1.75; }
+.review-bar strong { color: #1a252f; }
+.goal-box { background: #fffde7; border: 2px solid #ffe082; border-radius: 12px; padding: 20px 25px; margin-bottom: 35px; display: flex; gap: 15px; align-items: flex-start; }
+.goal-icon { font-size: 28px; flex-shrink: 0; line-height: 1.2; }
+.goal-box h3 { font-size: 16px; color: #e65100; margin-bottom: 6px; font-weight: 900; }
+.goal-box p  { font-size: 15px; color: #5d4037; line-height: 1.7; }
+
+/* ===== 通用卡片 ===== */
+.module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+.badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+.card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }   .badge-blue  { background: #2980b9; color: #fff; }
+.card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }   .badge-green { background: #27ae60; color: #fff; }
+.card-red    { background: #fff5f5; border: 2px solid #ffcccc; }   .badge-red   { background: #e74c3c; color: #fff; }
+.card-yellow { background: #fffde7; border: 2px solid #ffe082; }   .badge-yellow{ background: #f1c40f; color: #333; }
+.card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }   .badge-purple{ background: #8e44ad; color: #fff; }
+.card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }   .badge-orange{ background: #e67e22; color: #fff; }
+.card-teal   { background: #f0fffc; border: 2px solid #b2dfdb; }   .badge-teal  { background: #16a085; color: #fff; }
+
+/* ===== 高亮 ===== */
+.hl-red { color: #e74c3c; font-weight: bold; } .hl-blue { color: #2980b9; font-weight: bold; } .hl-green { color: #27ae60; font-weight: bold; } .hl-orange { color: #e67e22; font-weight: bold; } .hl-purple { color: #8e44ad; font-weight: bold; }
+.mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+.mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+.mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+.mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+.mark-purple { background: #e8daef; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #6c3483; }
+
+/* ===== 标签 ===== */
+.tag-hot  { background: #ff4757; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+.tag-easy { background: #2ed573; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+
+/* ===== 脑回路 ===== */
+.brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+.brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+/* ===== 对错 ===== */
+.wrong-text { color: #c0392b; font-size: 17px; font-weight: bold; text-decoration: line-through; }
+.right-text { color: #27ae60; font-size: 17px; font-weight: bold; }
+
+/* ===== 句子解剖 ===== */
+.sentence-dissect { display: flex; align-items: flex-end; gap: 6px; flex-wrap: wrap; margin: 14px 0; background: #f8f9fa; border-radius: 10px; padding: 14px 16px 18px; }
+.word-block { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.word-text { padding: 6px 12px; border-radius: 8px; font-size: 16px; font-weight: 900; white-space: nowrap; }
+.word-label { font-size: 11px; font-weight: 500; color: #777; }
+.wt-s  { background: #fff3e0; color: #e65100;  border: 2px solid #ffb74d; }
+.wt-v  { background: #fce4ec; color: #c62828;  border: 2px solid #f48fb1; }   /* 主引擎用红色 */
+.wt-o  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-t  { background: #e3f2fd; color: #1565c0;  border: 2px solid #90caf9; }
+.wt-be { background: #e3f2fd; color: #1565c0; border: 2px solid #90caf9; }
+.wt-x  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-inf { background: #f3e5f5; color: #6a1b9a; border: 2px solid #ce93d8; }  /* 变装从句部分用预设紫色 */
+
+/* ===== 结构公式块 ===== */
+.formula-block { background: #fff; border: 2px solid #ce93d8; border-radius: 10px; overflow: hidden; margin: 16px 0; }
+.formula-row { display: flex; align-items: stretch; border-bottom: 1px solid #f3e5f5; }
+.formula-row:last-child { border-bottom: none; }
+.formula-label { background: #8e44ad; color: #fff; font-weight: 900; font-size: 13px; padding: 12px 14px; min-width: 72px; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; }
+.formula-content { padding: 12px 18px; flex: 1; font-size: 15px; line-height: 1.75; color: #333; }
+.formula-content strong { color: #6a1b9a; }
+.formula-eg { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* ===== 辨析表 ===== */
+.magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+.magic-table th { background: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+.magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+.magic-table tr:last-child td { border-bottom: none; }
+.magic-table tr:hover td { background: #f8f9fa; }
+
+/* ===== 警告 / 提示 ===== */
+.warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+.warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 15px; margin-bottom: 8px; }
+.warn-box p { font-size: 14px; color: #444; line-height: 1.75; margin: 5px 0; }
+.tip-box { background: #faf5ff; border: 2px solid #d8b4fe; border-left: 5px solid #8e44ad; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #6c3483; line-height: 1.75; }
+
+/* ===== 练习题 ===== */
+.quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+.quiz-q { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; line-height: 1.65; }
+.quiz-opts { font-size: 15px; color: #555; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+.reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+.answer-box { display: none; margin-top: 14px; }
+
+/* ===== 分割线 ===== */
+.section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+.section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+/* ===== 小抄 ===== */
+.cheatsheet { margin: 50px 0 30px; background: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+.cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+.cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+.cs-block.red    { border-left-color: #e74c3c; }
+.cs-block.green  { border-left-color: #2ecc71; }
+.cs-block.yellow { border-left-color: #f1c40f; }
+.cs-block.purple { border-left-color: #9b59b6; }
+.cs-block strong { font-size: 16px; display: block; margin-bottom: 10px; }
+.cs-block p, .cs-block li { font-size: 14px; line-height: 1.85; color: #ecf0f1; margin: 4px 0; }
+.cs-block ul { padding-left: 18px; }
+.cs-block table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.cs-block table th { background: rgba(255,255,255,0.14); color: #f1c40f; padding: 7px 12px; text-align: center; }
+.cs-block table td { padding: 7px 12px; border-bottom: 1px solid rgba(255,255,255,0.07); color: #ecf0f1; text-align: center; vertical-align: top; line-height: 1.6; }
+.cs-block table tr:last-child td { border-bottom: none; }
+
+/* ===== 转化钩子 ===== */
+.cta-box { margin-top: 40px; padding: 32px; background: #fff3e0; border: 2px dashed #e67e22; border-radius: 14px; text-align: center; box-shadow: 0 5px 15px rgba(230,126,34,0.12); }
+.cta-box h3 { color: #d35400; font-size: 22px; margin-bottom: 14px; font-weight: 900; }
+.cta-box p  { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 20px; text-align: left; }
+.cta-btn { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; display: inline-block; padding: 14px 35px; border-radius: 30px; font-weight: bold; font-size: 17px; text-decoration: none; box-shadow: 0 4px 12px rgba(230,126,34,0.4); transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); }
+
+/* ===== 打印 ===== */
+@media print {
+    .lesson-topbar, .lesson-nav, .lesson-footer { display: none !important; }
+    body { background: #fff; }
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container { padding: 20px 24px; border-radius: 0; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .module-card, .quiz-block, .warn-box, .cheatsheet, .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+    .cheatsheet { page-break-before: always; break-before: page; }
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+}
+</style>
+<link rel="stylesheet" href="/assets/grammar-mobile-print-fix.css?v=20260705">
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="lesson-topbar">
+    <div class="topbar-inner">
+        <a class="topbar-back" href="/">← 学习中心</a>
+        <a class="topbar-back" href="index.html">← 目录</a>
+        <div class="topbar-sep">/</div>
+        <div class="topbar-lesson-info">
+            <div class="tl-tag">从句专题 · 第22讲 · 进阶提分</div>
+            <div class="tl-title">定语从句——加长版的定制标签贴纸</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 主内容区 ===== -->
+<div class="lesson-main">
+<div class="book-container">
+
+    <!-- 封面 -->
+    <div class="chapter-cover">
+        <div class="lesson-tag">从句专题 · 第22讲 · 进阶提分</div>
+        <h1>长修饰句中的<br><span>粘合胶分类法</span></h1>
+        <p class="subtitle">定语从句——大白话详解先行词与关系代词的配对，快速判断 that 优先规则高频考点</p>
+        <div class="meta-row">
+            <div class="meta-chip">⏱ 预计学习 40 分钟</div>
+            <div class="meta-chip">🎯 中考王牌拉分考点 6-10 分</div>
+            <div class="meta-chip">⭐ 难度：难（三大从句重点二）</div>
+        </div>
+    </div>
+
+    <!-- 上一讲回顾 -->
+    <div class="review-bar">
+        📌 <strong>上一讲回顾（第21讲：宾语从句）</strong><br>
+        上一讲我们攻克了三大从句中的第一个重点——<strong>宾语从句</strong>，搞懂了“巨型货物塞入宾语尾箱”的原理。最重要的是，我们抓牢了“进入从句后必须使用陈述句语序（主+谓）”的核心考点，并理顺了“大齿轮咬合小齿轮（主过从过）”的时态联动规则（客观事实除外）。<br><br>
+        这一讲，我们迎战三大从句的第二个重点，也是中考写作提分含金量最高的武器——<strong>定语从句</strong>。
+    </div>
+
+    <!-- 目标 -->
+    <div class="goal-box">
+        <div class="goal-icon">🎯</div>
+        <div>
+            <h3>学完这讲，你能做到：</h3>
+            <p>① 理解定语从句的本质：它不是独立车厢，而是一个加长版、定制款的“句子贴纸”，贴在名词后面起描述作用<br>
+            ② 轻松找出“先行词（被贴贴纸的名词）”，并根据人或物的属性选择正确的“粘合胶（关系代词）”<br>
+            ③ 熟记常优先用 `that` 的“四大必须特别记住场景”，绝不在中考单选题里踩雷<br>
+            ④ 避开从句内部代词重复放置的“双重送礼重复错误”</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块一：定语从句是贴纸 ===== -->
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🎨 模块一：加长版定制标签——贴在名词后面的长贴纸</div>
+
+        <p>我们在第1讲学过：<code>形容词（如 beautiful）</code> 就像是一张简单的彩色贴纸，用来修饰名词。中文和英文都习惯把它放在名词前面：<span class="mark-blue">a beautiful girl</span>（一个漂亮的女孩）。</p>
+        <p style="margin-top:10px;">但是，如果我们想表达一种更复杂、更高级的修饰：“一个<strong>长着一头金色长发、手里拿着一本书的</strong>女孩”。</p>
+        <p style="margin-top:10px;">由于这个修饰语太长了，长成了一个带动作的句子的模样，英语里为了避免“头重脚轻”现象（头重脚轻），就会把这张巨型贴纸<strong>塞到被修饰名词的后面</strong>——这就是<strong>定语从句</strong>。</p>
+
+        <!-- 句子可视化解剖 -->
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin-bottom:10px;">🔬 贴纸句子结构解剖演示：</p>
+        <div class="sentence-dissect">
+            <div class="word-block"><span class="word-text wt-s">I</span><span class="word-label">主句主语</span></div>
+            <div class="word-block"><span class="word-text wt-v">like</span><span class="word-label">主句动词</span></div>
+            <div class="word-block"><span class="word-text wt-o">the book</span><span class="word-label">🏠 先行词（被贴贴纸的名词）</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">⬇️ 贴纸挂钩开始</div>
+            <div class="word-block"><span class="word-text wt-inf">which</span><span class="word-label">🔗 粘合胶（关系代词）</span></div>
+            <div class="word-block"><span class="word-text wt-inf" style="background:#f3e5f5;color:#6a1b9a;border-color:#ce93d8;">you bought yesterday.</span><span class="word-label">🎨 描述书的长贴纸（定语从句）</span></div>
+        </div>
+        <p style="font-size:14px;color:#888;">
+            • <strong>先行词：</strong>那个被描述、被贴贴纸的名词，在语法书里叫“先行词” ➡️ 本句中是 `the book`。<br>
+            • <strong>关系代词：</strong>用来粘合贴纸和名词的挂钩（glue），在语法书里叫“关系代词” ➡️ 本句中是 `which`。
+        </p>
+    </div>
+
+
+    <!-- ===== 模块二：关系词粘合胶挑选指南 ===== -->
+    <div class="section-divider"><hr><span>模块二</span><hr></div>
+
+    <div class="module-card card-teal">
+        <div class="badge badge-teal">🔑 模块二：粘合胶挑选法则——看先行词是人还是物？</div>
+
+        <p>怎么挑选最合适的关系代词粘合胶？我们第一步先看被修饰的<strong>先行词（名词）</strong>是人还是东西：</p>
+
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th style="width:22%;">先行词属性</th>
+                    <th style="width:28%;">关系代词</th>
+                    <th style="width:25%;">说明</th>
+                    <th style="width:25%;">中考例句 ✅</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2" style="font-weight:bold;color:#1e8449;vertical-align:middle;">1. 先行词是人</td>
+                    <td class="hl-green" style="font-size:16px;">who / that</td>
+                    <td>最常用，可在从句里做<strong>主语</strong>或<strong>宾语</strong></td>
+                    <td>The man <strong>who</strong> lives next door is kind.<br><small>（住在隔壁的男人很和蔼）</small></td>
+                </tr>
+                <tr>
+                    <td class="hl-green" style="font-size:16px;">whom</td>
+                    <td>只能在从句里做<strong>宾语</strong>（不常用，常被 who 替代）</td>
+                    <td>The girl <strong>whom</strong> I saw is Lily.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#1565c0;vertical-align:middle;">2. 先行词是物</td>
+                    <td class="hl-blue" style="font-size:16px;">which / that</td>
+                    <td>在从句里做主语或宾语</td>
+                    <td>This is the book <strong>which</strong> you lost.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold;color:#6a1b9a;vertical-align:middle;">3. 带有“……的”</td>
+                    <td class="hl-purple" style="font-size:16px;">whose</td>
+                    <td>表示所属关系（人、物都可用）</td>
+                    <td>The boy <strong>whose</strong> hair is red is Tom.<br><small>（红头发的男孩是 Tom）</small></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            💡 <strong>大白话极简配对规律：</strong><br>
+            • 修饰人 ➡️ 选 <code>who / that</code> &nbsp;|&nbsp; 修饰物 ➡️ 选 <code>which / that</code>。<br>
+            • 表示所属（他的、她的、书的） ➡️ 用 <code>whose</code>（whose + 名词）。
+        </div>
+    </div>
+
+
+    <!-- ===== 模块三：常优先用 that 的三大天王 ===== -->
+    <div class="section-divider"><hr><span>模块三</span><hr></div>
+
+    <div class="module-card card-red">
+        <div class="badge badge-red">🚨 模块三：中考高频规则——常优先用 that 的四大 that 常见优先场景</div>
+
+        <p>大家发现没有，无论是修饰人还是物，<code>that</code> 都是个万能的交际花，两头都讨好。但这导致许多同学在单选题中看到 `which` 和 `that` 并存时就会纠结。</p>
+        <p style="margin-top:10px;">以下是限制性定语从句中常见的 that 优先场景。它们是基础考试的常用选择习惯，并非把所有 which/who 都判为不合语法。非限制性定语从句、前置介词后不能用 that。</p>
+
+        <!-- 4大场景 -->
+        <div class="formula-block" style="margin-top:18px;">
+            <div class="formula-row">
+                <div class="formula-label">场景一</div>
+                <div class="formula-content">
+                    <strong>先行词被最高级修饰时</strong> ➡️ 优先用 <strong class="hl-red">that</strong>！
+                    <div class="formula-eg">✅ This is the <strong>best</strong> book <strong>that</strong> I have read.（有 best，that 常见，which 也可能正确）</div>
+                </div>
+            </div>
+            <div class="formula-row">
+                <div class="formula-label">场景二</div>
+                <div class="formula-content">
+                    <strong>先行词被序数词修饰时</strong> ➡️ 优先用 <strong class="hl-red">that</strong>！
+                    <div class="formula-eg">✅ This is the <strong>first</strong> movie <strong>that</strong> I watched at the cinema.（有 first，that 常见，which 也可能正确）</div>
+                </div>
+            </div>
+            <div class="formula-row">
+                <div class="formula-label">场景三</div>
+                <div class="formula-content">
+                    <strong>先行词是不定代词，或被 all / any / no / few 等词修饰时</strong> ➡️ 优先用 <strong class="hl-red">that</strong>！
+                    <div class="formula-eg">✅ There is <strong>nothing</strong> <strong>that</strong> I can do.（nothing 是不定代词）</div>
+                    <div class="formula-eg">✅ <strong>All</strong> <strong>that</strong> you said is true.（all 后面用 that）</div>
+                </div>
+            </div>
+            <div class="formula-row">
+                <div class="formula-label">场景四</div>
+                <div class="formula-content">
+                    <strong>先行词既有人又有物时</strong> ➡️ 优先用 <strong class="hl-red">that</strong>！
+                    <div class="formula-eg">✅ He talked about the <strong>people and things</strong> <strong>that</strong> he saw.（又有 people 又是 things，who/which 都不合适，通常用 that）</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="brain-box" style="border-color:#e74c3c; background:#fffafa;">
+            <p>🧲 <strong>常优先用 that 的快速判断记忆口诀：</strong></p>
+            <p style="font-size:16px;font-weight:900;text-align:center;padding:8px;background:#ffe0e0;border-radius:8px;color:#c0392b;margin:8px 0;">最高级、序数词、不定代词等常优先用 that；人与物合并作先行词也常用 that。先看从句结构，再判断关系词。</p>
+            <p style="font-size:14px;color:#555;line-height:1.7;">最高级、序数词、the only/the very 等不同类型的限定语常使 that 更常见；only、very、last 不能全部归类为序数词。</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块四：最常犯的 3 个结构错 ===== -->
+    <div class="section-divider"><hr><span>模块四</span><hr></div>
+
+    <div class="module-card card-red">
+        <div class="badge badge-red">🚨 模块四：定语从句 3 大易错点——提前打预防针</div>
+
+        <!-- 错误1 -->
+        <p style="margin-top:10px;"><strong>💣 典型错误 1：双重送礼重复错误——从句中保留替身代词</strong> <span class="tag-hot">重灾区</span></p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:18px 20px;margin:10px 0;">
+            <p style="color:#888;font-size:14px;margin-bottom:8px;">情景：这就是你昨天买的那本书。</p>
+            <p class="wrong-text">❌ This is the book which you bought it yesterday.</p>
+            <hr style="border:none;border-top:1px dashed #eee;margin:12px 0;">
+            <p style="font-size:15px;"><strong>👨‍⚕️ 诊断：</strong>关系代词 <code>which</code> 在这里不仅是粘合剂，它本身<strong>已经在从句里充当了“书”这个名词货物了</strong>。既然 which 已经是书了，你在买（bought）的后面居然又加上一个 <code>it</code> 替身，这叫重复送礼，直接判错！</p>
+            <p class="right-text" style="margin-top:8px;">✅ This is the book which you bought <span style="text-decoration:line-through;color:#aaa;">it</span> yesterday. ➡️ This is the book which you bought yesterday.</p>
+        </div>
+
+        <!-- 错误2 -->
+        <p style="margin-top:22px;"><strong>💣 典型错误 2：人、物混淆，乱贴贴纸</strong></p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:18px 20px;margin:10px 0;">
+            <p style="color:#888;font-size:14px;margin-bottom:8px;">情景：他是一个热爱唱歌的男孩。</p>
+            <p class="wrong-text">❌ He is a boy which loves singing.</p>
+            <hr style="border:none;border-top:1px dashed #eee;margin:12px 0;">
+            <p style="font-size:15px;"><strong>👨‍⚕️ 诊断：</strong>被贴贴纸的名词（先行词）是 <code>boy</code>（人）。<code>which</code> 只能修饰物/物件，绝对不适合贴在人身上，必须用 <code>who</code> 或万能 <code>that</code>。</p>
+            <p class="right-text" style="margin-top:8px;">✅ He is a boy <span class="hl-green">who / that</span> loves singing.</p>
+        </div>
+
+        <!-- 错误3 -->
+        <p style="margin-top:22px;"><strong>💣 典型错误 3：主谓一致易错点——忘了从句也有单复数联动</strong> <span class="tag-hot">必考点</span></p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:18px 20px;margin:10px 0;">
+            <p style="color:#888;font-size:14px;margin-bottom:8px;">情景：我喜欢那些会唱歌的鸟。</p>
+            <p class="wrong-text">❌ I like the birds which sings.</p>
+            <hr style="border:none;border-top:1px dashed #eee;margin:12px 0;">
+            <p style="font-size:15px;"><strong>👨‍⚕️ 诊断：</strong>从句里的动词用什么形式，取决于关系代词 which 代替谁。which 此时代表的是 birds<code></code>（复数名词）。 birds 是复数，从句动词当然要用复数形式（不用s），不能用 sings 三单！</p>
+            <p class="right-text" style="margin-top:8px;">✅ I like the birds which sing<span class="hl-green"></span>.</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块五：实战练习 ===== -->
+    <div class="section-divider"><hr><span>模块五</span><hr></div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow">🎯 模块五：实战练习——单选题中的快速判断</div>
+
+        <!-- 题1 -->
+        <div class="quiz-block" style="margin-top:20px;">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 1 · 先行词属性判断</p>
+            <div class="quiz-q">
+                Do you know the woman ______ is speaking on the stage?<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（你认识正在台上演讲的那位女士吗？）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. which</span>
+                <span>| B. who</span>
+                <span>| C. whose</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson22-q1">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson22-q1">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：找先行词。离空格左边最近、被贴贴纸的名词是 <code>the woman</code>（女士，是人）。</p>
+                    <p>第二步：判断关系。既然先行词是人，<code>which</code> 只能修饰物，第一个排除 A。</p>
+                    <p>第三步：看后面。空格后面是 <code>is speaking</code>（是动作发动机），说明空格处扮演的是主语角色，表示“谁正在演讲”，锁定 <strong>who</strong>。</p>
+                    <p><span class="right-text">🎉 正确答案是：B</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题2 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 2 · 常优先用 that 固定规则易错点</p>
+            <div class="quiz-q">
+                The yellow car is the most beautiful thing ______ I have ever seen.<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（那辆黄色的跑车是我见过的最美丽的东西。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. where</span>
+                <span>| B. that</span>
+                <span>| C. who</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson22-q2">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson22-q2">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：找被修饰的名词。先行词是 <code>thing</code>（东西，是物）。理论上 which 和 that 好像都能用。</p>
+                    <p>第二步：盯着名词前面看！发现有 <code>the most beautiful</code>（最高级修饰）！</p>
+                    <p>第三步：从句缺 seen 的宾语，that 可以代替先行词 thing 作宾语，选 B；where 不能补足该宾语，who 不指本句的物。which 也可用于这类限制性定语从句，但本题未提供。</p>
+                    <p><span class="right-text">🎉 正确答案是：B</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题3 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 3 · 关系代词 whose “……的”</p>
+            <div class="quiz-q">
+                I like the girl ______ eyes are very beautiful.<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（我喜欢那个眼睛很漂亮的女孩。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. who</span>
+                <span>| B. whose</span>
+                <span>| C. that</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson22-q3">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson22-q3">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：读懂逻辑。“我喜欢女孩” + “（女孩的）眼睛很漂亮”。</p>
+                    <p>第二步：空格处翻译成“……的”。即“她的”眼睛。表示所属关系。</p>
+                    <p>第三步：唯一的“……的”专属挂钩是 <strong>whose</strong>（whose + 名词 ➡️ whose eyes ＝ 她的眼睛）。如果选 who，带入翻译成了“我喜欢那个谁眼睛很漂亮的女孩”，语法完全残缺。</p>
+                    <p><span class="right-text">🎉 正确答案是：B</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="section-divider"><hr><span>加餐深化</span><hr></div>
+
+    <div class="module-card card-blue">
+        <div class="badge badge-blue">🧭 加餐一：定语从句题的 5 秒判断流程</div>
+
+        <p>定语从句题不要一上来就背 who / which / that。真正稳定的做题顺序，是先找“被修饰的名词”，再看从句里面缺什么。</p>
+
+        <div class="formula-block" style="border-color:#90caf9;">
+            <div class="formula-row">
+                <div class="formula-label" style="background:#2980b9;">第 1 步</div>
+                <div class="formula-content"><strong>找先行词：</strong>空格前面那个被描述、被限定的名词，通常就是先行词。先确定它是人、物、时间、地点，还是表示所属关系。</div>
+            </div>
+            <div class="formula-row">
+                <div class="formula-label" style="background:#3498db;">第 2 步</div>
+                <div class="formula-content"><strong>看从句缺什么：</strong>空格后面的从句如果缺主语或宾语，多半用关系代词；如果不缺主宾，只缺“在哪里、什么时候、为什么”，就要考虑关系副词。</div>
+            </div>
+            <div class="formula-row">
+                <div class="formula-label" style="background:#2980b9;">第 3 步</div>
+                <div class="formula-content"><strong>按属性配关系词：</strong>人用 who / that，物用 which / that，表示“……的”用 whose，地点用 where，时间用 when，原因用 why。</div>
+            </div>
+            <div class="formula-row">
+                <div class="formula-label" style="background:#3498db;">第 4 步</div>
+                <div class="formula-content"><strong>检查 that 常见优先场景：</strong>最高级、序数词、不定代词、先行词同时含有人和物时，优先选 that。</div>
+            </div>
+            <div class="formula-row">
+                <div class="formula-label" style="background:#2980b9;">第 5 步</div>
+                <div class="formula-content"><strong>排结构错误：</strong>关系词已经代替先行词进入从句，从句里不要再重复写 it / him / them；从句动词还要和先行词保持单复数一致。</div>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            💡 <strong>一句话记忆：</strong>先找先行词，再看从句缺什么；缺人选 who，缺物选 which，表示“……的”选 whose，遇到特殊限定优先 that。
+        </div>
+    </div>
+
+    <div class="module-card card-green">
+        <div class="badge badge-green">🔍 加餐二：关系词不是只看人和物，还要看“缺什么成分”</div>
+
+        <p>很多同学只背“人 who，物 which”，但中考会故意把题做得更细：同样是地点名词，后面从句缺宾语时用 which / that；后面从句不缺宾语，只缺地点状语时用 where。</p>
+
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:22%;">空格后面的从句状态</th>
+                    <th style="width:22%;">应该选</th>
+                    <th style="width:28%;">判断方法</th>
+                    <th style="width:28%;">例句</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>缺主语：谁做动作？</strong></td>
+                    <td>人：who / that<br>物：which / that</td>
+                    <td>空格后直接出现动词，说明空格处在从句里当主语。</td>
+                    <td>The boy <strong>who</strong> is singing is Tom.<br>The book <strong>which</strong> is on the desk is mine.</td>
+                </tr>
+                <tr>
+                    <td><strong>缺宾语：动作作用到谁？</strong></td>
+                    <td>人：who / whom / that<br>物：which / that</td>
+                    <td>从句里主语和动词都有了，但动词后面缺对象。</td>
+                    <td>The girl <strong>who</strong> I met yesterday is Lily.<br>The film <strong>that</strong> we watched was moving.</td>
+                </tr>
+                <tr>
+                    <td><strong>表示“……的”</strong></td>
+                    <td>whose + 名词</td>
+                    <td>空格后面紧跟名词，表达所属关系。</td>
+                    <td>The student <strong>whose</strong> father is a doctor studies hard.</td>
+                </tr>
+                <tr>
+                    <td><strong>不缺主宾，只缺地点</strong></td>
+                    <td>where</td>
+                    <td>从句主语、动词、宾语都完整，只差“在哪里”。</td>
+                    <td>This is the school <strong>where</strong> I studied.</td>
+                </tr>
+                <tr>
+                    <td><strong>不缺主宾，只缺时间</strong></td>
+                    <td>when</td>
+                    <td>从句结构完整，只差“在什么时候”。</td>
+                    <td>I still remember the day <strong>when</strong> we first met.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warn-box">
+            <div class="warn-title">⚠️ 关键提醒：地点名词后面不一定都用 where</div>
+            <p>看这组对比：This is the school <strong>where</strong> I studied.（studied 不需要宾语，缺地点）</p>
+            <p>但：This is the school <strong>which</strong> I visited yesterday.（visited 后面缺宾语，所以用 which / that）</p>
+        </div>
+    </div>
+
+    <div class="module-card card-orange">
+        <div class="badge badge-orange">🧩 加餐三：定语从句写作合并法——把两个短句变成长句</div>
+
+        <p>定语从句不仅会考选择题，也能让作文句子更高级。合并时不要硬拼，按下面 4 步来：</p>
+
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:18%;">步骤</th>
+                    <th style="width:34%;">怎么做</th>
+                    <th style="width:48%;">示范</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>第1步</strong></td>
+                    <td>找两个句子重复的名词</td>
+                    <td>I like the book. The book was written by Lu Xun.</td>
+                </tr>
+                <tr>
+                    <td><strong>第2步</strong></td>
+                    <td>留下第一个名词作先行词</td>
+                    <td>I like <strong>the book</strong> ...</td>
+                </tr>
+                <tr>
+                    <td><strong>第3步</strong></td>
+                    <td>把第二个重复名词换成关系词</td>
+                    <td>The book 是物，换成 <strong>which / that</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>第4步</strong></td>
+                    <td>把从句放到先行词后面</td>
+                    <td>I like the book <strong>which was written by Lu Xun</strong>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            💡 <strong>作文提醒：</strong>定语从句不要堆太长。中考作文里，用 1—2 个准确的定语从句，比乱写很多复杂句更稳。
+        </div>
+    </div>
+
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">📌 加餐四：定语从句 4 类高频边界点</div>
+
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:24%;">边界点</th>
+                    <th style="width:38%;">正确理解</th>
+                    <th style="width:38%;">中考常见排错</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>who 和 whom</strong></td>
+                    <td>who 可作主语或宾语，whom 主要作宾语；初中题里 who 更常见。</td>
+                    <td>The man <strong>who</strong> helped me is kind. 这里空格作主语，不能用 whom。</td>
+                </tr>
+                <tr>
+                    <td><strong>which / that 和 where</strong></td>
+                    <td>缺宾语用 which / that；不缺主宾、只缺地点状语用 where。</td>
+                    <td>This is the factory <strong>that</strong> we visited. 不能只看到 factory 就选 where。</td>
+                </tr>
+                <tr>
+                    <td><strong>whose</strong></td>
+                    <td>whose 后面必须跟名词，表达“某人的 / 某物的”。</td>
+                    <td>The girl <strong>whose</strong> mother is a teacher is my friend.</td>
+                </tr>
+                <tr>
+                    <td><strong>关系词省略</strong></td>
+                    <td>关系代词在从句里作宾语时，口语或简单句中常可省略；作主语时不能省。</td>
+                    <td>The book (that) I bought is interesting. 但 The boy who sits there is Tom 中 who 不能省。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow">🎯 第22讲通关检测：先行词、成分、关系词三步联动</div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 1 · 人作主语</p>
+            <div class="quiz-q">The doctor ______ saved the old man is very patient.</div>
+            <div class="quiz-opts"><span>A. which</span><span>| B. who</span><span>| C. whose</span></div>
+            <button class="reveal-btn" data-target="lesson22-check1">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson22-check1">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>先行词是 <code>The doctor</code>，表示人；空格后面直接是动词 <code>saved</code>，说明空格在从句里作主语，所以选 <strong>who</strong>。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 2 · 物作宾语</p>
+            <div class="quiz-q">The movie ______ we watched last night was exciting.</div>
+            <div class="quiz-opts"><span>A. who</span><span>| B. whose</span><span>| C. that</span></div>
+            <button class="reveal-btn" data-target="lesson22-check2">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson22-check2">
+                <div class="brain-box">
+                    <p><strong>答案：C</strong></p>
+                    <p>先行词是 <code>The movie</code>，表示物；从句 <code>we watched</code> 里 watched 后面缺宾语，所以可以用 <strong>that / which</strong>，本题选项里只有 that。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 3 · 地点名词不一定用 where</p>
+            <div class="quiz-q">This is the museum ______ we visited during the trip.</div>
+            <div class="quiz-opts"><span>A. where</span><span>| B. that</span><span>| C. when</span></div>
+            <button class="reveal-btn" data-target="lesson22-check3">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson22-check3">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>虽然 <code>museum</code> 是地点，但从句里 <code>visited</code> 后面缺宾语，空格要代替 museum 作宾语，所以用 <strong>that / which</strong>，不能用 where。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 4 · 所属关系</p>
+            <div class="quiz-q">Do you know the boy ______ bike was stolen?</div>
+            <div class="quiz-opts"><span>A. who</span><span>| B. whose</span><span>| C. which</span></div>
+            <button class="reveal-btn" data-target="lesson22-check4">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson22-check4">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>空格后面是名词 <code>bike</code>，意思是“那个男孩的自行车”。表示所属关系时用 <strong>whose + 名词</strong>。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 5 · that 常见优先场景</p>
+            <div class="quiz-q">This is the first English song ______ I learned.</div>
+            <div class="quiz-opts"><span>A. that</span><span>| B. when</span><span>| C. who</span></div>
+            <button class="reveal-btn" data-target="lesson22-check5">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson22-check5">
+                <div class="brain-box">
+                    <p><strong>答案：A</strong></p>
+                    <p>从句缺 learned 的宾语，that 代替 song 作宾语，选 A；when 不能补足该宾语，who 不指歌曲。which 也可能成立，但本题未提供。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== 考前速查清单 ===== -->
+    <div class="module-card card-blue" style="margin:50px 0 30px; padding:34px 30px 28px; border-radius:14px;">
+        <div class="badge badge-blue">🎒 第22讲 · 考前速查清单</div>
+        <p style="font-size:14px;color:#555;line-height:1.8;margin-bottom:16px;">
+            定语从句题不要靠感觉。临考前按“先行词 → 从句缺什么 → 特殊规则 → 结构排错”四步检查。
+        </p>
+
+        <div class="brain-box" style="border-color:#2980b9;">
+            <p><strong>① 先行词定位：先找被修饰的名词</strong></p>
+            <p>空格前面那个被描述、被限定的名词，就是定语从句的核心。先看它是人、物、时间、地点，还是表示所属关系。</p>
+        </div>
+
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:26%;">先行词 / 从句状态</th>
+                    <th style="width:26%;">优先关系词</th>
+                    <th style="width:48%;">考前判断</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>人</strong>，从句缺主语或宾语</td>
+                    <td><strong>who / that</strong><br><small>宾语位置也可见 whom</small></td>
+                    <td>The man <strong>who</strong> lives next door is kind.</td>
+                </tr>
+                <tr>
+                    <td><strong>物</strong>，从句缺主语或宾语</td>
+                    <td><strong>which / that</strong></td>
+                    <td>The book <strong>that</strong> I bought is useful.</td>
+                </tr>
+                <tr>
+                    <td>表示“……的”，空格后有名词</td>
+                    <td><strong>whose + 名词</strong></td>
+                    <td>The girl <strong>whose</strong> eyes are bright is Lily.</td>
+                </tr>
+                <tr>
+                    <td>地点名词，且从句不缺主宾</td>
+                    <td><strong>where</strong></td>
+                    <td>This is the school <strong>where</strong> I studied.</td>
+                </tr>
+                <tr>
+                    <td>时间名词，且从句不缺主宾</td>
+                    <td><strong>when</strong></td>
+                    <td>I remember the day <strong>when</strong> we met.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warn-box">
+            <div class="warn-title">② that 优先规则：看到这些信号，优先选 that</div>
+            <p><strong>最高级：</strong>the best / the most... + 名词 + that</p>
+            <p>序数词：the first / second 等；另有 the last / only / very 等限定表达，不能全叫序数词。</p>
+            <p><strong>不定代词：</strong>anything / everything / nothing / all / little / few + that</p>
+            <p><strong>人和物同时出现：</strong>the people and things + that</p>
+        </div>
+
+        <div class="tip-box">
+            <strong>③ which / that 和 where 的分界：</strong><br>
+            This is the school <strong>where</strong> I studied.（studied 不缺宾语，只缺地点）<br>
+            This is the school <strong>that</strong> I visited.（visited 后面缺宾语，所以不能用 where）
+        </div>
+
+        <div class="brain-box" style="border-color:#e67e22;">
+            <p><strong>④ 考前排错顺序</strong></p>
+            <p>1. 关系词是否和先行词匹配；2. that 常见优先场景有没有触发；3. 从句里是否重复出现 it / him / them；4. 从句动词是否和先行词单复数一致。</p>
+            <p>❌ This is the book which I bought <span style="text-decoration:line-through;color:#999;">it</span> yesterday. → ✅ This is the book which I bought yesterday.</p>
+        </div>
+    </div>
+
+
+    <!-- 转化钩子 -->
+    <div class="cta-box">
+        <h3>🚀 第22讲通关！三大从句的第二个重点也被你成功掌握！</h3>
+        <p>你真的太棒了！定语从句这一考卷上最长、最容易绕晕的题型，今天已经被你用“定制长贴纸、粘合胶配对、4个常优先用 that 的固定规则、双重送礼易错点”等几套逻辑彻底掌握了。<br><br>
+        现在，我们要挑战三大从句的最后一个——<strong>状语从句</strong>。它是三大从句里变化最多，但用在作文里也最容易惊艳老师的法宝，包括让无数学生混乱的“主将从现”齿轮大呼应：<br><br>
+        ✅ <strong>第23讲：</strong>状语从句 —— 时间、条件、让步综合判断，中考最终齿轮闭环
+        </p>
+        <a href="lesson-23.html" class="cta-btn" style="background:linear-gradient(135deg, #8e44ad, #6c3483);">继续学习 → 第23讲：状语从句</a>
+    </div>
+
+</div><!-- /book-container -->
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-22.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+<!-- 底部翻页导航 -->
+<div class="lesson-nav">
+    <a class="nav-btn prev" href="lesson-21.html"><span class="nb-text"><span class="nb-label">上一讲</span><span class="nb-title">第21讲：宾语从句</span></span></a>
+    <a class="nav-btn-home" href="index.html">📚 目录</a>
+    <a class="nav-btn next" href="lesson-23.html"><span class="nb-text"><span class="nb-label">下一讲</span><span class="nb-title">第23讲：状语从句</span></span></a>
+</div>
+
+</div><!-- /lesson-main -->
+
+<div class="lesson-footer">
+    初中英语语法重构 · 进阶提分 · 第22讲<br>
+    打印时只会打印本讲内容 · 点击浏览器返回键可回到目录
+</div>
+
+<script>
+// 统一管理所有的点击展开动作
+document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.reveal-btn');
+    if (!btn) return;
+    var targetId = btn.getAttribute('data-target');
+    if (!targetId) return;
+    var box = document.getElementById(targetId);
+    if (!box) return;
+    var isVisible = box.style.display && box.style.display !== 'none';
+    if (isVisible) {
+        box.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '👉 点击解锁答案';
+    } else {
+        box.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+        try { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (err) {}
+        btn.textContent = '👇 收起答案';
+    }
+});
+</script>
+
+<script src="/assets/a4-print-entry.js?v=20260722-final-v3"></script>
+</body>
+</html>

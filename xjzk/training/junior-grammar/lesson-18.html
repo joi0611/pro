@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第18讲：非谓语动词 — 初中英语语法重构</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f2f5; color: #2c3e50; min-height: 100vh; }
+
+/* ===== 顶部导航条 ===== */
+.lesson-topbar { background: #2c3e50; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.topbar-inner { max-width: 900px; margin: 0 auto; padding: 11px 24px; display: flex; align-items: center; gap: 14px; }
+.topbar-back { color: #f1c40f; text-decoration: none; font-size: 14px; font-weight: bold; display: flex; align-items: center; gap: 5px; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
+.topbar-back:hover { opacity: 0.75; }
+.topbar-sep { color: #4a6278; font-size: 16px; flex-shrink: 0; }
+.topbar-lesson-info { flex: 1; min-width: 0; }
+.topbar-lesson-info .tl-tag { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 2px; }
+.topbar-lesson-info .tl-title { font-size: 15px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-print { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.85); cursor: pointer; font-family: inherit; flex-shrink: 0; transition: background 0.15s; }
+.topbar-print:hover { background: rgba(255,255,255,0.18); }
+
+/* ===== 主内容 ===== */
+.lesson-main { max-width: 900px; margin: 0 auto; padding: 36px 24px 20px; }
+.book-container { background: #fff; padding: 50px 60px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+
+/* ===== 底部导航 ===== */
+.lesson-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 28px 0 20px; flex-wrap: wrap; }
+.nav-btn { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #2c3e50; font-size: 14px; transition: all 0.15s; flex: 1; min-width: 160px; max-width: 280px; }
+.nav-btn:hover { border-color: #2980b9; box-shadow: 0 4px 12px rgba(41,128,185,0.15); transform: translateY(-1px); }
+.nav-btn.prev { justify-content: flex-start; }
+.nav-btn.next { justify-content: flex-end; margin-left: auto; }
+.nav-btn .nb-arrow { font-size: 18px; color: #aaa; flex-shrink: 0; }
+.nav-btn:hover .nb-arrow { color: #2980b9; }
+.nav-btn .nb-text { min-width: 0; }
+.nav-btn .nb-label { font-size: 11px; color: #aaa; display: block; }
+.nav-btn .nb-title { font-size: 14px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-btn-home { display: flex; align-items: center; gap: 6px; background: #2c3e50; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #f1c40f; font-size: 14px; font-weight: bold; flex-shrink: 0; transition: opacity 0.15s; }
+.nav-btn-home:hover { opacity: 0.85; }
+.lesson-footer { text-align: center; padding: 20px 24px 36px; font-size: 12px; color: #aaa; line-height: 1.8; }
+
+/* ===== 封面 ===== */
+.chapter-cover { background: linear-gradient(135deg, #1a252f 0%, #2c3e50 55%, #8e44ad 100%); border-radius: 15px; padding: 40px 40px 35px; margin-bottom: 40px; color: #fff; position: relative; overflow: hidden; }
+.chapter-cover::before { content: "18"; position: absolute; right: 30px; top: 10px; font-size: 110px; font-weight: 900; color: rgba(255,255,255,0.06); line-height: 1; letter-spacing: -5px; }
+.lesson-tag { background: #f1c40f; color: #2c3e50; font-weight: 900; font-size: 13px; padding: 5px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em; }
+.chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.chapter-cover h1 span { color: #f1c40f; }
+.chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.meta-row { display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px; }
+
+/* ===== 回顾 / 目标 ===== */
+.review-bar { background: #f0f7ff; border: 1.5px solid #b3d4ff; border-left: 5px solid #2980b9; border-radius: 8px; padding: 14px 18px; margin-bottom: 30px; font-size: 14px; color: #1a5276; line-height: 1.75; }
+.review-bar strong { color: #1a252f; }
+.goal-box { background: #fffde7; border: 2px solid #ffe082; border-radius: 12px; padding: 20px 25px; margin-bottom: 35px; display: flex; gap: 15px; align-items: flex-start; }
+.goal-icon { font-size: 28px; flex-shrink: 0; line-height: 1.2; }
+.goal-box h3 { font-size: 16px; color: #e65100; margin-bottom: 6px; font-weight: 900; }
+.goal-box p  { font-size: 15px; color: #5d4037; line-height: 1.7; }
+
+/* ===== 通用卡片 ===== */
+.module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+.badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+.card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }   .badge-blue  { background: #2980b9; color: #fff; }
+.card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }   .badge-green { background: #27ae60; color: #fff; }
+.card-red    { background: #fff5f5; border: 2px solid #ffcccc; }   .badge-red   { background: #e74c3c; color: #fff; }
+.card-yellow { background: #fffde7; border: 2px solid #ffe082; }   .badge-yellow{ background: #f1c40f; color: #333; }
+.card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }   .badge-purple{ background: #8e44ad; color: #fff; }
+.card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }   .badge-orange{ background: #e67e22; color: #fff; }
+.card-teal   { background: #f0fffc; border: 2px solid #b2dfdb; }   .badge-teal  { background: #16a085; color: #fff; }
+
+/* ===== 高亮 ===== */
+.hl-red { color: #e74c3c; font-weight: bold; } .hl-blue { color: #2980b9; font-weight: bold; } .hl-green { color: #27ae60; font-weight: bold; } .hl-orange { color: #e67e22; font-weight: bold; } .hl-purple { color: #8e44ad; font-weight: bold; }
+.mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+.mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+.mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+.mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+.mark-purple { background: #e8daef; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #6c3483; }
+
+/* ===== 标签 ===== */
+.tag-hot  { background: #ff4757; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+.tag-easy { background: #2ed573; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+
+/* ===== 脑回路 ===== */
+.brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+.brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+/* ===== 对错 ===== */
+.wrong-text { color: #c0392b; font-size: 17px; font-weight: bold; text-decoration: line-through; }
+.right-text { color: #27ae60; font-size: 17px; font-weight: bold; }
+
+/* ===== 句子解剖 ===== */
+.sentence-dissect { display: flex; align-items: flex-end; gap: 6px; flex-wrap: wrap; margin: 14px 0; background: #f8f9fa; border-radius: 10px; padding: 14px 16px 18px; }
+.word-block { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.word-text { padding: 6px 12px; border-radius: 8px; font-size: 16px; font-weight: 900; white-space: nowrap; }
+.word-label { font-size: 11px; font-weight: 500; color: #777; }
+.wt-s  { background: #fff3e0; color: #e65100;  border: 2px solid #ffb74d; }
+.wt-v  { background: #fce4ec; color: #c62828;  border: 2px solid #f48fb1; }   /* 主引擎用红色 */
+.wt-o  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-t  { background: #e3f2fd; color: #1565c0;  border: 2px solid #90caf9; }
+.wt-be { background: #e3f2fd; color: #1565c0; border: 2px solid #90caf9; }
+.wt-x  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-inf { background: #f3e5f5; color: #6a1b9a; border: 2px solid #ce93d8; }  /* 变装零件用紫色 */
+
+/* ===== 结构公式块 ===== */
+.formula-block { background: #fff; border: 2px solid #ce93d8; border-radius: 10px; overflow: hidden; margin: 16px 0; }
+.formula-row { display: flex; align-items: stretch; border-bottom: 1px solid #f3e5f5; }
+.formula-row:last-child { border-bottom: none; }
+.formula-label { background: #8e44ad; color: #fff; font-weight: 900; font-size: 13px; padding: 12px 14px; min-width: 72px; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; }
+.formula-content { padding: 12px 18px; flex: 1; font-size: 15px; line-height: 1.75; color: #333; }
+.formula-content strong { color: #6a1b9a; }
+.formula-eg { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* ===== 辨析表 ===== */
+.magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+.magic-table th { background: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+.magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+.magic-table tr:last-child td { border-bottom: none; }
+.magic-table tr:hover td { background: #f8f9fa; }
+
+/* ===== 警告 / 提示 ===== */
+.warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+.warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 15px; margin-bottom: 8px; }
+.warn-box p { font-size: 14px; color: #444; line-height: 1.75; margin: 5px 0; }
+.tip-box { background: #faf5ff; border: 2px solid #d8b4fe; border-left: 5px solid #8e44ad; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #6c3483; line-height: 1.75; }
+
+/* ===== 练习题 ===== */
+.quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+.quiz-q { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; line-height: 1.65; }
+.quiz-opts { font-size: 15px; color: #555; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+.reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+.answer-box { display: none; margin-top: 14px; }
+
+/* ===== 分割线 ===== */
+.section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+.section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+/* ===== 小抄 ===== */
+.cheatsheet { margin: 50px 0 30px; background: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+.cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+.cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+.cs-block.red    { border-left-color: #e74c3c; }
+.cs-block.green  { border-left-color: #2ecc71; }
+.cs-block.yellow { border-left-color: #f1c40f; }
+.cs-block.purple { border-left-color: #9b59b6; }
+.cs-block strong { font-size: 16px; display: block; margin-bottom: 10px; }
+.cs-block p, .cs-block li { font-size: 14px; line-height: 1.85; color: #ecf0f1; margin: 4px 0; }
+.cs-block ul { padding-left: 18px; }
+.cs-block table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.cs-block table th { background: rgba(255,255,255,0.14); color: #f1c40f; padding: 7px 12px; text-align: center; }
+.cs-block table td { padding: 7px 12px; border-bottom: 1px solid rgba(255,255,255,0.07); color: #ecf0f1; text-align: center; vertical-align: top; line-height: 1.6; }
+.cs-block table tr:last-child td { border-bottom: none; }
+
+/* ===== 转化钩子 ===== */
+.cta-box { margin-top: 40px; padding: 32px; background: #fff3e0; border: 2px dashed #e67e22; border-radius: 14px; text-align: center; box-shadow: 0 5px 15px rgba(230,126,34,0.12); }
+.cta-box h3 { color: #d35400; font-size: 22px; margin-bottom: 14px; font-weight: 900; }
+.cta-box p  { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 20px; text-align: left; }
+.cta-btn { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; display: inline-block; padding: 14px 35px; border-radius: 30px; font-weight: bold; font-size: 17px; text-decoration: none; box-shadow: 0 4px 12px rgba(230,126,34,0.4); transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); }
+
+/* ===== 打印 ===== */
+@media print {
+    .lesson-topbar, .lesson-nav, .lesson-footer { display: none !important; }
+    body { background: #fff; }
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container { padding: 20px 24px; border-radius: 0; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .module-card, .quiz-block, .warn-box, .cheatsheet, .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+    .cheatsheet { page-break-before: always; break-before: page; }
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+}
+</style>
+<link rel="stylesheet" href="/assets/grammar-mobile-print-fix.css?v=20260705">
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="lesson-topbar">
+    <div class="topbar-inner">
+        <a class="topbar-back" href="/">← 学习中心</a>
+        <a class="topbar-back" href="index.html">← 目录</a>
+        <div class="topbar-sep">/</div>
+        <div class="topbar-lesson-info">
+            <div class="tl-tag"> 第18讲 · 进阶提分</div>
+            <div class="tl-title">非谓语动词——动词的零件变身术</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 主内容区 ===== -->
+<div class="lesson-main">
+<div class="book-container">
+
+    <!-- 封面 -->
+    <div class="chapter-cover">
+        <div class="lesson-tag"> 第18讲 · 进阶提分</div>
+        <h1>动词不做发动机<br><span>当零件</span></h1>
+        <p class="subtitle">非谓语动词——大白话详解 to do 与 doing 的核心分工，吃透双面动词易错点</p>
+        <div class="meta-row">
+            <div class="meta-chip">⏱ 预计学习 35 分钟</div>
+            <div class="meta-chip">🎯 中考超高分分水岭 6-10 分</div>
+            <div class="meta-chip">⭐ 难度：中等偏难</div>
+        </div>
+    </div>
+
+    <!-- 上一讲回顾 -->
+    <div class="review-bar">
+        📌 <strong>上一讲回顾（第17讲：被动语态）</strong><br>
+        上一讲我们攻克了被动语态（be + done），用“受害者聚光灯反转法”理清了思路。同时，我们扫除了 `happen / take place` 没有被动语态的特殊考点，并牢记了在被动语态下，被老大压迫的动词必须把“安全帽 `to` 戴回来”的硬规则（be made to do）。<br><br>
+        这一讲，我们来搞定中考拉开差距最明显的语法点——<strong>非谓语动词</strong>。我们要看看，动词在不当发动机时，是如何变成其他零件的。
+    </div>
+
+    <!-- 目标 -->
+    <div class="goal-box">
+        <div class="goal-icon">🎯</div>
+        <div>
+            <h3>学完这讲，你能做到：</h3>
+            <p>① 判断动词是谓语、并列谓语、从句谓语还是非谓语；② 依据搭配选择 to do / doing / do / done；③ 记常见固定搭配；④ 结合语境区分 remember / forget / stop / try。</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块一：为什么需要非谓语动词 ===== -->
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🚗 模块一：一车不装两个发动机——动词怎么变身当零件？</div>
+
+        <p>在第2讲中，基本句子用谓语动词或动词短语组织主干。一个句子还可有并列谓语或多个从句谓语；不能记成一整句只能有一个动词。</p>
+        <p style="margin-top:10px;">那么问题来了：如果一句话里，我确实需要表达两个动作，该怎么办？</p>
+        <p style="margin-top:10px; font-size:15px; color:#555;">比如我想说：“他决定买一辆车。” 这里有 <code>决定（decide）</code> 和 <code>买（buy）</code> 两个动词。</p>
+
+        <div style="background:#fff5f5;border-radius:12px;border:2px solid #ffcccc;padding:20px;margin:20px 0;">
+            <p class="wrong-text">❌ He decided buy a car.</p>
+            <p style="font-size:14px;color:#c0392b;margin-top:8px;line-height:1.75;">
+                <strong>👨‍⚕️ 诊断报告：</strong><br>
+                在这辆车上，<code>decided</code> 已经抢占了司机的发动机座位（主谓动词）。<br>
+                <code>buy</code> 没地方坐，还要强行当发动机。一辆车装两个发动机，结构就不成立。
+            </p>
+        </div>
+
+        <p style="margin-top:10px;"><strong>拯救方案：非谓语动词（动词变装当零件）！</strong></p>
+        <p style="margin-top:8px;">后一个动词的形式取决于结构和搭配：want 后可接不定式，enjoy 后接动名词；若属于并列谓语或从句，则另作判断。</p>
+
+        <div style="background: #eafaf1; padding: 14px 20px; border-radius: 8px; font-weight: bold; font-size: 16px; color: #27ae60; margin:14px 0;">
+            ✅ He decided <span class="mark-bg">to buy</span> a car.
+        </div>
+
+        <!-- 句子解剖 -->
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin-bottom:10px;">🔬 零件变装句型解剖演示：</p>
+        <div class="sentence-dissect">
+            <div class="word-block"><span class="word-text wt-s">He</span><span class="word-label">主语</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-v">decided</span><span class="word-label">🔥 唯一的发动机（谓语）</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-inf">to buy</span><span class="word-label">🎨 变装零件（非谓语·不定式）</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-o">a car</span><span class="word-label">宾语</span></div>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块二：to do 与 doing 的性格分工 ===== -->
+    <div class="section-divider"><hr><span>模块二</span><hr></div>
+
+    <div class="module-card card-green">
+        <div class="badge badge-green">🎨 模块二：性格决定出路——未来派 to do vs 现实派 doing</div>
+
+        <p>变身零件一共有两大最核心的长相：<strong>to do（动词不定式）</strong> 和 <strong>doing（动名词/分词）</strong>。</p>
+        <p style="margin-top:10px;">它们各自有极其鲜明的性格：</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;">
+            <div style="background:#fff;border-radius:12px;border:2px solid #ce93d8;padding:20px;color:#6a1b9a;">
+                <div style="font-size:13px;font-weight:bold;margin-bottom:8px;color:#4a148c;">🔮 第一类：未来志向派（to do）</div>
+                <p style="font-size:18px;font-weight:900;margin-bottom:10px;">“手指指着前方，还没做。”</p>
+                <p style="font-size:14px;color:#555;line-height:1.7;">to do 是不定式形式，常见于 hope、want、decide 等搭配，但不能把它理解成必然指未来，例如 I am glad to have met you.</p>
+            </div>
+            <div style="background:#fff;border-radius:12px;border:2px solid #90caf9;padding:20px;color:#1565c0;">
+                <div style="font-size:13px;font-weight:bold;margin-bottom:8px;color:#1a5276;">⏺ 既成事实派（doing）</div>
+                <p style="font-size:18px;font-weight:900;margin-bottom:10px;">“正在做，或者做完了。”</p>
+                <p style="font-size:14px;color:#555;line-height:1.7;">doing 可表示动作或活动，但不一定已经发生；look forward to meeting you 表示期待将来见面。to do 也不一定表示未来，形式必须结合搭配判断。</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块三：两大排他阵营表 ===== -->
+    <div class="section-divider"><hr><span>模块三</span><hr></div>
+
+    <div class="module-card card-teal">
+        <div class="badge badge-teal">📋 模块三：中考两大排他动词阵营（必背口诀）</div>
+
+        <p>因为动词性格各异，前方的“主发动机”动词会对后面的零件有严格的挑选要求：有些动词<strong>只配接 to do</strong>，有些动词<strong>只配接 doing</strong>。</p>
+
+        <!-- 阵营对比 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;">
+            <div style="background:#fff;border-radius:12px;border:2px solid #ce93d8;padding:20px;">
+                <p style="font-size:17px;font-weight:900;color:#6a1b9a;margin-bottom:12px;text-align:center;">🔮 常见搭配一：后接 to do 的用法</p>
+                <p style="font-size:15px;font-weight:bold;color:#4a148c;margin-bottom:8px;">口诀：想要决定同意，期望计划答应</p>
+                <p style="font-size:14px;color:#555;line-height:1.85;">
+                    • <strong>want</strong>（想要）➡️ want to do<br>
+                    • <strong>decide</strong>（决定）➡️ decide to do<br>
+                    • <strong>agree</strong>（同意）➡️ agree to do<br>
+                    • <strong>hope / wish</strong>（期望）➡️ hope to do<br>
+                    • <strong>plan</strong>（计划）➡️ plan to do<br>
+                    • <strong>promise</strong>（答应/承诺）➡️ promise to do<br>
+                    <small style="color:#888;">👉 这些词都带有浓厚的“未来派”色彩。</small>
+                </p>
+            </div>
+            <div style="background:#fff;border-radius:12px;border:2px solid #90caf9;padding:20px;">
+                <p style="font-size:17px;font-weight:900;color:#1565c0;margin-bottom:12px;text-align:center;">⏺ 常见搭配二：后接 doing 的用法</p>
+                <p style="font-size:15px;font-weight:bold;color:#1a5276;margin-bottom:8px;">口诀：享受完成介意，练习保持避免</p>
+                <p style="font-size:14px;color:#555;line-height:1.85;">
+                    • <strong>enjoy</strong>（享受）➡️ enjoy doing<br>
+                    • <strong>finish</strong>（完成）➡️ finish doing<br>
+                    • <strong>mind</strong>（介意）➡️ mind doing<br>
+                    • <strong>practice</strong>（练习）➡️ practice doing<br>
+                    • <strong>keep</strong>（保持）➡️ keep doing<br>
+                    • <strong>avoid</strong>（避免）➡️ avoid doing<br>
+                    <small style="color:#888;">👉 这些词都带有浓厚的“现状或既定事实”色彩。</small>
+                </p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            💡 <strong>中考常考超级加分点：介词后面永远加 doing！</strong><br>
+            英语里所有的介词（如 in, on, at, of, with, about, for, by, from）后面如果需要跟动作，动词<strong>无条件变成 doing 形式</strong>！<br>
+            • Thank you for <strong class="hl-purple">helping</strong> me.（for 是介词）<br>
+            • He is good at <strong class="hl-purple">swimming</strong>.（at 是介词）
+        </div>
+    </div>
+
+
+    <!-- ===== 模块四：双面动词易错边界 ===== -->
+    <div class="section-divider"><hr><span>模块四</span><hr></div>
+
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🎭 模块四：中考分水岭——4个接 to do / doing 意思天壤之别的词</div>
+
+        <p>有 4 个动词在中考里最折磨人，它们后面<strong>既可以接 to do，也可以接 doing</strong>，但两者的中文意思完全相反！</p>
+
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th style="width:20%;">动词</th>
+                    <th style="width:40%;">后接 to do（未来派：没做）</th>
+                    <th style="width:40%;">后接 doing（既成派：做了）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>forget</strong><br>（忘记）</td>
+                    <td>forget to do sth：忘记去做某事，例如 I forgot to turn off the light.（我忘了关灯。）</td>
+                    <td><strong class="hl-blue">forget doing sth</strong><br>
+                    忘记做过某事（其实做过了，忘了）<br>
+                    <small>👉 I forgot turning off the light.<br>（我忘了我已经关过灯了）</small></td>
+                </tr>
+                <tr>
+                    <td><strong>remember</strong><br>（记得）</td>
+                    <td><strong class="hl-purple">remember to do sth</strong><br>
+                    记得去干某事（还没干）</td>
+                    <td><strong class="hl-blue">remember doing sth</strong><br>
+                    记得做过某事（已经做了）</td>
+                </tr>
+                <tr>
+                    <td><strong>stop</strong><br>（停止）</td>
+                    <td><strong class="hl-purple">stop to do sth</strong><br>
+                    停下当前的事，<span class="hl-purple">转去干另外一件事</span><br>
+                    <small>👉 He was tired, so he stopped to rest.<br>（他累了，所以停下工作去休息）</small></td>
+                    <td><strong class="hl-blue">stop doing sth</strong><br>
+                    <span class="hl-blue">停止正在干的这件事</span>（不干了）<br>
+                    <small>👉 Please stop talking! The teacher is coming.<br>（请停止说话！别说了）</small></td>
+                </tr>
+                <tr>
+                    <td><strong>try</strong><br>（尝试）</td>
+                    <td>try to do sth：努力尝试完成某事，不保证成功，也不必然表示想尽所有办法。</td>
+                    <td>try doing sth：试用某种方法，看是否有效；并非随便碰运气。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- ===== 模块五：最常犯的 3 个结构错 ===== -->
+    <div class="section-divider"><hr><span>模块五</span><hr></div>
+
+    <div class="module-card card-red">
+        <div class="badge badge-red">🚨 模块五：非谓语动词 3 大易错点——提前打预防针</div>
+
+        <!-- 错误1 -->
+        <p style="margin-top:10px;"><strong>💣 典型错误 1：两个动词并列，不作任何变形</strong> <span class="tag-hot">超高频失分</span></p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:18px 20px;margin:10px 0;">
+            <p style="color:#888;font-size:14px;margin-bottom:8px;">情景：他想要去北京。</p>
+            <p class="wrong-text">❌ He wants go to Beijing.</p>
+            <hr style="border:none;border-top:1px dashed #eee;margin:12px 0;">
+            <p style="font-size:15px;">本句 want 表示想做某事，用 want to do，因此 go 要改成 to go；不是因为 to do 总表示未来。</p>
+            <p class="right-text" style="margin-top:8px;">✅ He wants <span class="hl-green">to go</span> to Beijing.</p>
+        </div>
+
+        <!-- 错误2 -->
+        <p style="margin-top:22px;">💣 典型错误 2：look forward to 后误接动词原形（这里的 to 是介词）</p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:18px 20px;margin:10px 0;">
+            <p style="color:#888;font-size:14px;margin-bottom:8px;">情景：我们正期盼着收到你的来信。</p>
+            <p class="wrong-text">❌ We look forward to receive your letter.</p>
+            <hr style="border:none;border-top:1px dashed #eee;margin:12px 0;">
+            <p style="font-size:15px;">look forward to 的 to 是介词；后面可接名词、代词，或动名词 meeting。此题后接动词时用 doing，不能误当不定式。</p>
+            <p class="right-text" style="margin-top:8px;">✅ We look forward to <span class="hl-green">receiving</span> your letter.</p>
+        </div>
+
+        <!-- 错误3 -->
+        <p style="margin-top:22px;"><strong>💣 典型错误 3：stop to do 与 stop doing 混用，导致句意反转</strong></p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:18px 20px;margin:10px 0;">
+            <p style="color:#888;font-size:14px;margin-bottom:8px;">情景：老师走进来了，大家请安静，停止说话。</p>
+            <p class="wrong-text">❌ Everyone, please stop to talk.</p>
+            <hr style="border:none;border-top:1px dashed #eee;margin:12px 0;">
+            <p style="font-size:15px;"><strong>👨‍⚕️ 诊断：</strong>`stop to talk` 意思是“大家停下别的事，<strong>开始聊天</strong>”；而 `stop talking` 才是“<strong>停止正在进行的聊天</strong>”。句意完全弄反了，这正是考题容易设错的地方。</p>
+            <p class="right-text" style="margin-top:8px;">✅ Everyone, please <span class="hl-green">stop talking</span>.</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块六：实战练习 ===== -->
+    <div class="section-divider"><hr><span>模块六</span><hr></div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow">🎯 模块六：实战练习——先做题，再拆解</div>
+
+        <!-- 题1 -->
+        <div class="quiz-block" style="margin-top:20px;">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 1 · 排他性阵营题</p>
+            <div class="quiz-q">
+                The students practiced ______ English words again and again before the exam.<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（考试前，学生们一次又一次地练习写英语单词。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. writing</span>
+                <span>| B. to write</span>
+                <span>| C. write</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson18-q1">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson18-q1">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：看谓语动词。谓语已经是 <code>practiced</code>（练习），后面的动词必须变装当零件。排除 C。</p>
+                    <p>第二步：背口诀！“享受完成介意，练习（practice）保持避免” ➡️ <strong>practice 属于纯正的 doing 阵营</strong>！</p>
+                    <p>第三步：锁定 <strong>writing</strong>（注意 write 去 e 加 ing）。</p>
+                    <p><span class="right-text">🎉 正确答案是：A</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题2 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 2 · 忘记做过还是没做？</p>
+            <div class="quiz-q">
+                — Did you turn off the light when you left the room?<br>
+                — Oh, I think I did. But I don't remember ______ it.<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（——你离开房间时关灯了吗？——噢，我觉得我关了。但我不记得我关过了。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. to turn off</span>
+                <span>| B. turning off</span>
+                <span>| C. turn off</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson18-q2">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson18-q2">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：看线索。答句说“I think I did.”（我觉得<strong>我做过这件事了</strong>）。</p>
+                    <p>第二步：也就是说，关灯这个动作<strong>已经发生了</strong>，只是我不记得“关过”这件事。</p>
+                    <p>第三步：记得做过某事 ➡️ <strong>remember doing sth</strong>（既成事实派用 doing）。如果用 remember to do 意思是“记得去关灯”，说明还没关，与前句冲突。</p>
+                    <p><span class="right-text">🎉 正确答案是：B</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题3 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 3 · 中考高频易错题</p>
+            <div class="quiz-q">
+                My grandparents are looking forward to ______ us this weekend.<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（我的爷爷奶奶正期盼着这个周末能见到我们。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. see</span>
+                <span>| B. seeing</span>
+                <span>| C. to see</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson18-q3">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson18-q3">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：盯紧 <code>look forward to</code>（期盼）这个短语。</p>
+                    <p>第二步：排雷！这个短语尾巴上的 <code>to</code>，不是不定式，而是一个名副其实的<strong>介词</strong>！</p>
+                    <p>第三步：既然是介词，后面跟着的动词必须毫无保留地变成 <strong>doing</strong> 形式！</p>
+                    <p>第四步：所以直接填 <strong>seeing</strong>。很多选 A 或者是 C 的同学，就是没看出这个 to 的伪装。</p>
+                    <p><span class="right-text">🎉 正确答案是：B</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <!-- ===== 新增加餐：非谓语动词判断系统 ===== -->
+    <div class="section-divider"><hr><span>高水准加餐</span><hr></div>
+
+    <div class="module-card card-blue">
+        <div class="badge badge-blue">🧭 加餐一：非谓语动词题的 5 秒判断流程</div>
+
+        <p>非谓语动词题不要先背答案，要先判断：这个空格到底是在考<strong>“固定搭配”</strong>，还是在考<strong>“动作先后”</strong>，还是在考<strong>“介词后接 doing”</strong>。</p>
+
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th style="width:18%;">判断顺序</th>
+                    <th style="width:34%;">你要看什么</th>
+                    <th style="width:48%;">考场处理方法</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>第1步</strong></td>
+                    <td>句子里是否已经有谓语动词？</td>
+                    <td>如果已经有 <code>want / enjoy / practice / remember</code> 这类谓语，后面的第二个动词通常不能直接用原形，要变成 <strong>to do / doing / do</strong> 中的一种。</td>
+                </tr>
+                <tr>
+                    <td><strong>第2步</strong></td>
+                    <td>前面的词有没有固定要求？</td>
+                    <td><code>want / decide / hope / plan</code> 后面多接 <strong>to do</strong>；<code>enjoy / finish / mind / practice / keep / avoid</code> 后面多接 <strong>doing</strong>。</td>
+                </tr>
+                <tr>
+                    <td><strong>第3步</strong></td>
+                    <td>空格前的 <code>to</code> 是不是介词？</td>
+                    <td>look forward to、pay attention to、be used to（习惯于）中的 to 是介词，可接名词、代词或动名词；后接动作表达时通常用 doing。</td>
+                </tr>
+                <tr>
+                    <td><strong>第4步</strong></td>
+                    <td>是不是双面动词？</td>
+                    <td><code>remember / forget / stop / try</code> 后面接 <strong>to do</strong> 和 <strong>doing</strong> 意思不同，必须结合上下文判断动作“还没做”还是“已经做过/正在做”。</td>
+                </tr>
+                <tr>
+                    <td><strong>第5步</strong></td>
+                    <td>有没有感官动词或使役动词？</td>
+                    <td>make / let / have / see / hear 等可接 sb + do。make、see、hear 等变成相应被动结构时恢复 to；let 通常改用 be allowed to，have 的使役结构不能直接套恢复 to 的公式。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            💡 <strong>一句话记忆：</strong>先找前面的“管家词”，再判断 <code>to</code> 是不定式还是介词，最后看上下文决定动作有没有发生。
+        </div>
+    </div>
+
+    <div class="module-card card-green">
+        <div class="badge badge-green">🔬 加餐二：to do / doing / do 三种长相的边界表</div>
+
+        <p>很多题的难点不在“会不会翻译”，而在于不知道三个形式各自什么时候上场。下面这张表要当成考前判断表使用。</p>
+
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th style="width:18%;">动词形式</th>
+                    <th style="width:25%;">核心含义</th>
+                    <th style="width:30%;">典型触发词</th>
+                    <th style="width:27%;">例句</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong class="hl-purple">to do</strong></td>
+                    <td>还没做，准备、打算、希望去做</td>
+                    <td>want / decide / hope / plan / promise / ask sb / tell sb / It's + adj.</td>
+                    <td>I decided <strong>to leave</strong> early.<br>It is important <strong>to listen</strong> carefully.</td>
+                </tr>
+                <tr>
+                    <td><strong class="hl-blue">doing</strong></td>
+                    <td>用于动名词搭配或介词后，不等于动作一定已经发生</td>
+                    <td>enjoy / finish / mind / practice / keep / avoid / be good at / look forward to</td>
+                    <td>She enjoys <strong>reading</strong>.<br>We look forward to <strong>seeing</strong> you.</td>
+                </tr>
+                <tr>
+                    <td><strong class="hl-green">do</strong></td>
+                    <td>被某些词直接要求用原形</td>
+                    <td>let / make / see / hear / watch + 宾语 + do</td>
+                    <td>Let him finish it. / I saw him enter the room. can/must + 原形属于谓语组合，不能据此将原形都归入非谓语。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warn-box">
+            <div class="warn-title">🚨 特别注意：不是看到 to 就填原形</div>
+            <p>want to do 里的 to 是不定式符号；look forward to 里的 to 是介词，可以接名词、代词或动名词，如 look forward to the holiday / seeing you。</p>
+        </div>
+    </div>
+
+    <div class="module-card card-orange">
+        <div class="badge badge-orange">📚 加餐三：中考常考的 8 组非谓语固定结构</div>
+
+        <p>下面这些不是零散知识点，而是中考选择、完形、完成句子里反复出现的固定结构。建议直接整组记。</p>
+
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th style="width:28%;">结构</th>
+                    <th style="width:34%;">含义</th>
+                    <th style="width:38%;">例句</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>want / would like to do</strong></td>
+                    <td>想要做某事</td>
+                    <td>I would like <strong>to join</strong> the club.</td>
+                </tr>
+                <tr>
+                    <td><strong>ask / tell / advise sb to do</strong></td>
+                    <td>要求/告诉/建议某人做某事</td>
+                    <td>The teacher told us <strong>to be</strong> quiet.</td>
+                </tr>
+                <tr>
+                    <td><strong>It is + adj. + to do</strong></td>
+                    <td>做某事是……的</td>
+                    <td>It is necessary <strong>to drink</strong> enough water.</td>
+                </tr>
+                <tr>
+                    <td><strong>too + adj. + to do</strong></td>
+                    <td>太……而不能做某事</td>
+                    <td>He is too young <strong>to go</strong> to school.</td>
+                </tr>
+                <tr>
+                    <td><strong>adj. + enough + to do</strong></td>
+                    <td>足够……可以做某事</td>
+                    <td>She is old enough <strong>to look after</strong> herself.</td>
+                </tr>
+                <tr>
+                    <td><strong>finish / enjoy / mind doing</strong></td>
+                    <td>完成/享受/介意做某事</td>
+                    <td>Would you mind <strong>opening</strong> the window?</td>
+                </tr>
+                <tr>
+                    <td><strong>be busy doing</strong></td>
+                    <td>忙于做某事</td>
+                    <td>They are busy <strong>preparing</strong> for the exam.</td>
+                </tr>
+                <tr>
+                    <td><strong>spend time doing</strong></td>
+                    <td>花时间做某事</td>
+                    <td>He spent two hours <strong>cleaning</strong> the room.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow">✅ 第18讲通关检测：看清形式，再选答案</div>
+
+        <p>这 5 题专门检查你是否真正会判断，而不是只会背几个词。</p>
+
+        <div class="quiz-block" style="margin-top:20px;">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 1 · 固定搭配 to do</p>
+            <div class="quiz-q">My parents encouraged me ______ hard and never give up.</div>
+            <div class="quiz-opts"><span>A. study</span><span>B. studying</span><span>C. to study</span></div>
+            <button class="reveal-btn" data-target="lesson18-add-q1">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson18-add-q1">
+                <div class="brain-box">
+                    <p><strong>答案：C</strong></p>
+                    <p><code>encourage sb to do sth</code> 是固定结构，表示“鼓励某人做某事”。所以选 <strong>to study</strong>。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 2 · 介词后接 doing</p>
+            <div class="quiz-q">She is interested in ______ Chinese traditional music.</div>
+            <div class="quiz-opts"><span>A. learn</span><span>B. learning</span><span>C. to learn</span></div>
+            <button class="reveal-btn" data-target="lesson18-add-q2">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson18-add-q2">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p><code>in</code> 是介词，介词后面如果接动作，动词要变成 <strong>doing</strong>。所以是 <strong>learning</strong>。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 3 · 双面动词 remember</p>
+            <div class="quiz-q">Remember ______ your homework to school tomorrow.</div>
+            <div class="quiz-opts"><span>A. bring</span><span>B. bringing</span><span>C. to bring</span></div>
+            <button class="reveal-btn" data-target="lesson18-add-q3">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson18-add-q3">
+                <div class="brain-box">
+                    <p><strong>答案：C</strong></p>
+                    <p><code>tomorrow</code> 说明动作还没发生，是“记得去带”。所以用 <strong>remember to do</strong>。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 4 · stop doing / stop to do</p>
+            <div class="quiz-q">When the teacher came in, the students stopped ______ and looked at him.（老师进来后，学生停止了交谈。）</div>
+            <div class="quiz-opts"><span>A. talk</span><span>B. talking</span><span>C. to talk</span></div>
+            <button class="reveal-btn" data-target="lesson18-add-q4">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson18-add-q4">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>老师进来后，学生是“停止正在说话”。停止正在做的事，用 <strong>stop doing</strong>。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 5 · 感官动词后接原形</p>
+            <div class="quiz-q">I heard someone ______ at the door just now.</div>
+            <div class="quiz-opts"><span>A. knock</span><span>B. knocked</span><span>C. to knock</span></div>
+            <button class="reveal-btn" data-target="lesson18-add-q5">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson18-add-q5">
+                <div class="brain-box">
+                    <p><strong>答案：A</strong></p>
+                    <p>hear sb do 强调整个动作或事件，hear sb doing 强调听见动作正在进行，两者都可用。本题只有 knock 符合选项中的结构；knocked 和 to knock 不适合此处。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== 考前考前速查 ===== -->
+    <div style="page-break-before:always;break-before:page;margin:50px 0 30px;background:#f8fafc;border:2px solid #d6eaf8;border-radius:14px;padding:34px 30px 30px;box-shadow:0 8px 22px rgba(41,128,185,0.10);">
+        <div style="text-align:center;margin-bottom:22px;">
+            <div style="display:inline-block;background:#2c3e50;color:#f1c40f;border-radius:999px;padding:8px 24px;font-weight:900;font-size:17px;">🎒 第18讲 · 考前速查清单</div>
+            <p style="font-size:13px;color:#607d8b;margin-top:10px;line-height:1.7;">非谓语动词不是死背题，先看“谁规定形式”，再看“动作有没有发生”。</p>
+        </div>
+
+        <div class="tip-box" style="background:#ffffff;border-color:#b3d4ff;border-left-color:#2980b9;color:#1a5276;">
+            <strong>考前判断：先找完整谓语短语，再排查并列谓语、从句和非谓语，不能仅按动词个数判断。</strong>前面词规定形式，介词后接 doing，双面动词看动作先后。
+        </div>
+
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th style="width:22%;">考点</th>
+                    <th style="width:38%;">快速判断</th>
+                    <th style="width:40%;">必须记住的例子</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>to do</strong></td>
+                    <td>还没做，准备/想要/决定/希望以后做</td>
+                    <td>want to do / decide to do / hope to do / plan to do / promise to do</td>
+                </tr>
+                <tr>
+                    <td><strong>doing</strong></td>
+                    <td>用于动名词搭配或介词后，不等于动作一定已经发生</td>
+                    <td>enjoy doing / finish doing / mind doing / practice doing / keep doing / avoid doing</td>
+                </tr>
+                <tr>
+                    <td><strong>do 原形</strong></td>
+                    <td>情态动词后；部分感官/使役动词后</td>
+                    <td>let sb do / make sb do / see sb do / hear sb do；can/must + 原形构成谓语，另作区分。</td>
+                </tr>
+                <tr>
+                    <td><strong>介词 + doing</strong></td>
+                    <td>看到介词，后面动作变 doing</td>
+                    <td>be good at doing / look forward to doing / pay attention to doing / thank you for doing</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;">
+            <div style="background:#fff;border:1.5px solid #d8b4fe;border-radius:12px;padding:18px 20px;">
+                <p style="font-size:15px;font-weight:900;color:#6c3483;margin-bottom:8px;">① remember / forget：看动作是否已经发生</p>
+                <p style="font-size:14px;line-height:1.8;color:#444;">
+                    • <code>remember / forget to do</code>：记得/忘记<strong>去做</strong>，动作还没发生。<br>
+                    • <code>remember / forget doing</code>：记得/忘记<strong>做过</strong>，动作已经发生。
+                </p>
+            </div>
+            <div style="background:#fff;border:1.5px solid #b3d4ff;border-radius:12px;padding:18px 20px;">
+                <p style="font-size:15px;font-weight:900;color:#1a5276;margin-bottom:8px;">② stop：看是停下当前动作，还是停下去做别的</p>
+                <p style="font-size:14px;line-height:1.8;color:#444;">
+                    • <code>stop doing</code>：停止正在做的事。<br>
+                    • <code>stop to do</code>：停下当前的事，转去做另一件事。
+                </p>
+            </div>
+        </div>
+
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:30%;">固定结构</th>
+                    <th style="width:35%;">意思</th>
+                    <th style="width:35%;">考场提醒</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>too...to do</strong></td>
+                    <td>太……而不能做某事</td>
+                    <td>后面接 <code>to do</code></td>
+                </tr>
+                <tr>
+                    <td><strong>adj. enough to do</strong></td>
+                    <td>足够……可以做某事</td>
+                    <td><code>enough</code> 放形容词后面</td>
+                </tr>
+                <tr>
+                    <td><strong>spend time doing</strong></td>
+                    <td>花时间做某事</td>
+                    <td><code>spend</code> 后常考 <code>doing</code></td>
+                </tr>
+                <tr>
+                    <td><strong>be busy doing</strong></td>
+                    <td>忙于做某事</td>
+                    <td>不要写成 <code>busy to do</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warn-box" style="background:#fff;border-color:#ffcccc;border-left-color:#e74c3c;margin-top:18px;">
+            <div class="warn-title">最后排雷：look forward to doing</div>
+            <p><code>look forward to</code> 里的 <code>to</code> 是介词，不是不定式符号，所以后面要写 <strong>doing</strong>：<code>look forward to seeing you</code>。</p>
+        </div>
+    </div>
+
+<!-- 转化钩子 -->
+    <div class="cta-box">
+        <h3>🚀 第18讲通关！你已经拿下了一个高含金量考点！</h3>
+        <p>本讲练习了不定式、动名词及常见动词搭配。遇到新句子时，先判断结构，再查搭配与语义。下一讲学习介词。</p>
+        <a href="lesson-19.html" class="cta-btn" style="background:linear-gradient(135deg, #8e44ad, #6c3483);">继续学习 → 第19讲：介词地图</a>
+    </div>
+
+</div><!-- /book-container -->
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-18.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+<!-- 底部翻页导航 -->
+<div class="lesson-nav">
+    <a class="nav-btn prev" href="lesson-17.html"><span class="nb-text"><span class="nb-label">上一讲</span><span class="nb-title">第17讲：被动语态</span></span></a>
+    <a class="nav-btn-home" href="index.html">📚 目录</a>
+    <a class="nav-btn next" href="lesson-19.html"><span class="nb-text"><span class="nb-label">下一讲</span><span class="nb-title">第19讲：介词地图</span></span></a>
+</div>
+
+</div><!-- /lesson-main -->
+
+<div class="lesson-footer">
+    初中英语语法重构 · 进阶提分 · 第18讲<br>
+    打印时只会打印本讲内容 · 点击浏览器返回键可回到目录
+</div>
+
+<script>
+// 统一管理所有的点击展开动作
+document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.reveal-btn');
+    if (!btn) return;
+    var targetId = btn.getAttribute('data-target');
+    if (!targetId) return;
+    var box = document.getElementById(targetId);
+    if (!box) return;
+    var isVisible = box.style.display && box.style.display !== 'none';
+    if (isVisible) {
+        box.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '👉 点击解锁答案';
+    } else {
+        box.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+        try { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (err) {}
+        btn.textContent = '👇 收起答案';
+    }
+});
+</script>
+
+<script src="/assets/a4-print-entry.js?v=20260722-final-v3"></script>
+</body>
+</html>

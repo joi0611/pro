@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加餐一：感叹句 · 祈使句 · 反意疑问句 — 初中英语语法重构</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f2f5; color: #2c3e50; min-height: 100vh; }
+
+/* ===== 顶部导航条 ===== */
+.lesson-topbar { background: #2c3e50; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.topbar-inner { max-width: 900px; margin: 0 auto; padding: 11px 24px; display: flex; align-items: center; gap: 14px; }
+.topbar-back { color: #f1c40f; text-decoration: none; font-size: 14px; font-weight: bold; display: flex; align-items: center; gap: 5px; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
+.topbar-back:hover { opacity: 0.75; }
+.topbar-sep { color: #4a6278; font-size: 16px; flex-shrink: 0; }
+.topbar-lesson-info { flex: 1; min-width: 0; }
+.topbar-lesson-info .tl-tag { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 2px; }
+.topbar-lesson-info .tl-title { font-size: 15px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-print { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.85); cursor: pointer; font-family: inherit; flex-shrink: 0; transition: background 0.15s; }
+.topbar-print:hover { background: rgba(255,255,255,0.18); }
+
+/* ===== 主内容 ===== */
+.lesson-main { max-width: 900px; margin: 0 auto; padding: 36px 24px 20px; }
+.book-container { background: #fff; padding: 50px 60px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+
+/* ===== 底部导航 ===== */
+.lesson-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 28px 0 20px; flex-wrap: wrap; }
+.nav-btn { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #2c3e50; font-size: 14px; transition: all 0.15s; flex: 1; min-width: 160px; max-width: 280px; }
+.nav-btn:hover { border-color: #2980b9; box-shadow: 0 4px 12px rgba(41,128,185,0.15); transform: translateY(-1px); }
+.nav-btn.prev { justify-content: flex-start; }
+.nav-btn.next { justify-content: flex-end; margin-left: auto; }
+.nav-btn .nb-arrow { font-size: 18px; color: #aaa; flex-shrink: 0; }
+.nav-btn:hover .nb-arrow { color: #2980b9; }
+.nav-btn .nb-text { min-width: 0; }
+.nav-btn .nb-label { font-size: 11px; color: #aaa; display: block; }
+.nav-btn .nb-title { font-size: 14px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-btn-home { display: flex; align-items: center; gap: 6px; background: #2c3e50; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #f1c40f; font-size: 14px; font-weight: bold; flex-shrink: 0; transition: opacity 0.15s; }
+.nav-btn-home:hover { opacity: 0.85; }
+.lesson-footer { text-align: center; padding: 20px 24px 36px; font-size: 12px; color: #aaa; line-height: 1.8; }
+
+/* ===== 封面 ===== */
+.chapter-cover { background: linear-gradient(135deg, #1a252f 0%, #2c3e50 55%, #c62828 100%); border-radius: 15px; padding: 40px 40px 35px; margin-bottom: 40px; color: #fff; position: relative; overflow: hidden; }
+.chapter-cover::before { content: "加"; position: absolute; right: 30px; top: 10px; font-size: 110px; font-weight: 900; color: rgba(255,255,255,0.06); line-height: 1; letter-spacing: -5px; }
+.lesson-tag { background: #f1c40f; color: #2c3e50; font-weight: 900; font-size: 13px; padding: 5px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em; }
+.chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.chapter-cover h1 span { color: #f1c40f; }
+.chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.meta-row { display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px; }
+
+/* ===== 回顾 / 目标 ===== */
+.review-bar { background: #f0f7ff; border: 1.5px solid #b3d4ff; border-left: 5px solid #2980b9; border-radius: 8px; padding: 14px 18px; margin-bottom: 30px; font-size: 14px; color: #1a5276; line-height: 1.75; }
+.review-bar strong { color: #1a252f; }
+.goal-box { background: #fffde7; border: 2px solid #ffe082; border-radius: 12px; padding: 20px 25px; margin-bottom: 35px; display: flex; gap: 15px; align-items: flex-start; }
+.goal-icon { font-size: 28px; flex-shrink: 0; line-height: 1.2; }
+.goal-box h3 { font-size: 16px; color: #e65100; margin-bottom: 6px; font-weight: 900; }
+.goal-box p  { font-size: 15px; color: #5d4037; line-height: 1.7; }
+
+/* ===== 通用卡片 ===== */
+.module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+.badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+.card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }   .badge-blue  { background: #2980b9; color: #fff; }
+.card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }   .badge-green { background: #27ae60; color: #fff; }
+.card-red    { background: #fff5f5; border: 2px solid #ffcccc; }   .badge-red   { background: #e74c3c; color: #fff; }
+.card-yellow { background: #fffde7; border: 2px solid #ffe082; }   .badge-yellow{ background: #f1c40f; color: #333; }
+.card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }   .badge-purple{ background: #8e44ad; color: #fff; }
+.card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }   .badge-orange{ background: #e67e22; color: #fff; }
+.card-teal   { background: #f0fffc; border: 2px solid #b2dfdb; }   .badge-teal  { background: #16a085; color: #fff; }
+
+/* ===== 高亮 ===== */
+.hl-red { color: #e74c3c; font-weight: bold; } .hl-blue { color: #2980b9; font-weight: bold; } .hl-green { color: #27ae60; font-weight: bold; } .hl-orange { color: #e67e22; font-weight: bold; } .hl-purple { color: #8e44ad; font-weight: bold; }
+.mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+.mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+.mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+.mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+.mark-purple { background: #e8daef; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #6c3483; }
+
+/* ===== 标签 ===== */
+.tag-hot  { background: #ff4757; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+.tag-easy { background: #2ed573; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+
+/* ===== 脑回路 ===== */
+.brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+.brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+/* ===== 对错 ===== */
+.wrong-text { color: #c0392b; font-size: 17px; font-weight: bold; text-decoration: line-through; }
+.right-text { color: #27ae60; font-size: 17px; font-weight: bold; }
+
+/* ===== 句子解剖 ===== */
+.sentence-dissect { display: flex; align-items: flex-end; gap: 6px; flex-wrap: wrap; margin: 14px 0; background: #f8f9fa; border-radius: 10px; padding: 14px 16px 18px; }
+.word-block { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.word-text { padding: 6px 12px; border-radius: 8px; font-size: 16px; font-weight: 900; white-space: nowrap; }
+.word-label { font-size: 11px; font-weight: 500; color: #777; }
+.wt-s  { background: #fff3e0; color: #e65100;  border: 2px solid #ffb74d; }
+.wt-v  { background: #fce4ec; color: #c62828;  border: 2px solid #f48fb1; }   /* 主引擎用红色 */
+.wt-o  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-t  { background: #e3f2fd; color: #1565c0;  border: 2px solid #90caf9; }
+.wt-be { background: #e3f2fd; color: #1565c0; border: 2px solid #90caf9; }
+.wt-x  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-inf { background: #fef9e7; color: #e67e22; border: 2px solid #ffd8a8; }  /* 加餐部分用醒目黄色 */
+
+/* ===== 结构公式块 ===== */
+.formula-block { background: #fff; border: 2px solid #ffd8a8; border-radius: 10px; overflow: hidden; margin: 16px 0; }
+.formula-row { display: flex; align-items: stretch; border-bottom: 1px solid #ffd8a8; }
+.formula-row:last-child { border-bottom: none; }
+.formula-label { background: #e67e22; color: #fff; font-weight: 900; font-size: 13px; padding: 12px 14px; min-width: 72px; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; }
+.formula-content { padding: 12px 18px; flex: 1; font-size: 15px; line-height: 1.75; color: #333; }
+.formula-content strong { color: #e67e22; }
+.formula-eg { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* ===== 辨析表 ===== */
+.magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+.magic-table th { background: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+.magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+.magic-table tr:last-child td { border-bottom: none; }
+.magic-table tr:hover td { background: #f8f9fa; }
+
+/* ===== 警告 / 提示 ===== */
+.warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+.warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 15px; margin-bottom: 8px; }
+.warn-box p { font-size: 14px; color: #444; line-height: 1.75; margin: 5px 0; }
+.tip-box { background: #fce4ec; border: 2px solid #f48fb1; border-left: 5px solid #c62828; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #c62828; line-height: 1.75; }
+
+/* ===== 练习题 ===== */
+.quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+.quiz-q { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; line-height: 1.65; }
+.quiz-opts { font-size: 15px; color: #555; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+.reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+.answer-box { display: none; margin-top: 14px; }
+
+/* ===== 分割线 ===== */
+.section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+.section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+/* ===== 小抄 ===== */
+.cheatsheet { margin: 50px 0 30px; background: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+.cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+.cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #e74c3c; margin-bottom: 14px; }
+.cs-block.red    { border-left-color: #e74c3c; }
+.cs-block.green  { border-left-color: #2ecc71; }
+.cs-block.yellow { border-left-color: #f1c40f; }
+.cs-block.purple { border-left-color: #9b59b6; }
+.cs-block strong { font-size: 16px; display: block; margin-bottom: 10px; }
+.cs-block p, .cs-block li { font-size: 14px; line-height: 1.85; color: #ecf0f1; margin: 4px 0; }
+.cs-block ul { padding-left: 18px; }
+.cs-block table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.cs-block table th { background: rgba(255,255,255,0.14); color: #f1c40f; padding: 7px 12px; text-align: center; }
+.cs-block table td { padding: 7px 12px; border-bottom: 1px solid rgba(255,255,255,0.07); color: #ecf0f1; text-align: center; vertical-align: top; line-height: 1.6; }
+.cs-block table tr:last-child td { border-bottom: none; }
+
+/* ===== 转化钩子 ===== */
+.cta-box { margin-top: 40px; padding: 32px; background: #fff3e0; border: 2px dashed #e67e22; border-radius: 14px; text-align: center; box-shadow: 0 5px 15px rgba(230,126,34,0.12); }
+.cta-box h3 { color: #d35400; font-size: 22px; margin-bottom: 14px; font-weight: 900; }
+.cta-box p  { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 20px; text-align: left; }
+.cta-btn { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; display: inline-block; padding: 14px 35px; border-radius: 30px; font-weight: bold; font-size: 17px; text-decoration: none; box-shadow: 0 4px 12px rgba(230,126,34,0.4); transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); }
+
+/* ===== 打印 ===== */
+@media print {
+    .lesson-topbar, .lesson-nav, .lesson-footer { display: none !important; }
+    body { background: #fff; }
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container { padding: 20px 24px; border-radius: 0; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .module-card, .quiz-block, .warn-box, .cheatsheet, .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+    .cheatsheet { page-break-before: always; break-before: page; }
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+}
+</style>
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="lesson-topbar">
+    <div class="topbar-inner">
+        <a class="topbar-back" href="/">← 学习中心</a>
+        <a class="topbar-back" href="index.html">← 目录</a>
+        <div class="topbar-sep">/</div>
+        <div class="topbar-lesson-info">
+            <div class="tl-tag">终极加餐 · 考前必看</div>
+            <div class="tl-title">感叹句 · 祈使句 · 反意疑问句</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 主内容区 ===== -->
+<div class="lesson-main">
+<div class="book-container">
+
+    <!-- 封面 -->
+    <div class="chapter-cover" style="background: linear-gradient(135deg, #1a252f 0%, #2c3e50 55%, #c62828 100%);">
+        <div class="lesson-tag">考前冲刺 · 加餐一 · 必考小题</div>
+        <h1>中考高频小题<br><span>提分急救箱</span></h1>
+        <p class="subtitle">感叹句切一刀判定法 · 祈使句不设司机法则 · 反意疑问句磁铁正负法则 · 句型转换与回答方式</p>
+        <div class="meta-row">
+            <div class="meta-chip">⏱ 预计学习 55 分钟</div>
+            <div class="meta-chip">🎯 中考选择、情景交际、句型转换高频考点</div>
+            <div class="meta-chip">⭐ 难度：基础巩固</div>
+        </div>
+    </div>
+
+    <!-- 上一讲回顾 -->
+    <div class="review-bar">
+        📌 <strong>你已经完成了 23 讲的全部核心大课！</strong><br>
+        上一讲我们学完了三大从句的终点站——<strong>状语从句</strong>（时间、条件、让步），理顺了“主将从现”安检降维法则和 <code>unless ➡️ if...not</code> 的换壳大法。<br><br>
+        为了确保你在考场上的选择题、改错题、填空题里不丢任何一分，这一讲是专门为你定制的<strong>考前冲刺加餐一</strong>：我们将用极简单的物理、日常和刀切模型，把中考最爱出题的三个句型——<strong>感叹句、祈使句、反意疑问句</strong>——连同它们的句型转换和回答方式，一次讲全！
+    </div>
+
+    <!-- 目标 -->
+    <div class="goal-box">
+        <div class="goal-icon">🎯</div>
+        <div>
+            <h3>学完这讲，你能做到：</h3>
+            <p>① 用感叹句“切一刀”判定法，一眼分清 What 和 How，不在 a/an、不可数名词和语序上丢分<br>
+            ② 用祈使句“不设司机”法则写对 7 种祈使句，会回答别人的祈使句，看懂公示语<br>
+            ③ 按固定步骤完成 What 句与 How 句、祈使句与 if 句的句型转换<br>
+            ④ 用“磁铁正负法则”写对反意疑问句，包括隐形否定词、特殊替身、特殊发动机和主从复合句<br>
+            ⑤ 按事实回答反意疑问句，不再被中文的“是 / 不”带反</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块一：感叹句切一刀判定法 ===== -->
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🔪 模块一：感叹句——“切一刀”判定法，What 和 How 不再选错</div>
+
+        <p>很多同学卡在这里：<strong>“What 和 How 翻译过来都是‘多么’，为什么这句用 What，那句又用 How？”</strong></p>
+        <p style="margin-top:10px;">因为选 What 还是 How，<strong>看的根本不是中文意思，而是它后面跟着的是“名词”还是“形容词/副词”</strong>。用下面这把刀，一刀下去就能看清。</p>
+
+        <div style="background:#fff;border-radius:12px;border:2px solid #ce93d8;padding:22px;margin:20px 0;">
+            <p style="font-size:18px;font-weight:900;color:#6a1b9a;margin-bottom:12px;text-align:center;">🔪 切一刀判定法 🔪</p>
+            <p style="font-size:15px;line-height:1.9;color:#4a148c;">
+                • <strong>第一刀：把句尾的“主语 + 谓语”切掉</strong><br>
+                感叹句尾巴上常挂着 <code>it is / they are / he is / she sings</code> 这种小主谓，先把它切下来放一边。<br><br>
+                • <strong>第二步：识别被感叹的结构</strong><br>What 通常引出名词短语，How 通常修饰形容词或副词；基础题可参考末词，但 How clever a boy he is! 也正确，不能只看末词。<br>• <strong>第三步：用 What 时，再看名词能不能数</strong><br>
+                可数名词单数 ➡️ What <strong>a / an</strong>；复数或不可数 ➡️ What 后面<strong>什么都不加</strong>。
+            </p>
+        </div>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin-bottom:10px;">🔬 切一刀解剖演示：</p>
+        <div style="background:#f8fafc;border:1.5px solid #e1bee7;border-radius:10px;padding:16px 20px;">
+            <p style="font-weight:bold;">① ______ clever boy he is!</p>
+            <p style="font-size:14px;color:#555;margin-top:6px;line-height:1.9;">
+                第一刀：切掉句尾主谓 <code>he is</code> ➡️ 剩下 <code>____ clever boy</code>。<br>
+                第二步：最后一个词是 <code>boy</code>——名词 ➡️ 用 What。<br>
+                第三步：boy 是可数名词单数 ➡️ 补上 a。<span class="right-text">🎉 What a clever boy he is!</span>
+            </p>
+            <hr style="border:none;border-top:1px dashed #e1bee7;margin:12px 0;">
+            <p style="font-weight:bold;">② ______ fast the boy runs!</p>
+            <p style="font-size:14px;color:#555;margin-top:6px;line-height:1.9;">
+                第一刀：切掉句尾主谓 <code>the boy runs</code> ➡️ 剩下 <code>____ fast</code>。<br>
+                第二步：fast 在这里是副词，说明“跑”得怎么样 ➡️ 用 How。<span class="right-text">🎉 How fast the boy runs!</span>
+            </p>
+        </div>
+
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th style="width:40%;">四个固定公式</th>
+                    <th style="width:60%;">例句（括号里是可以切掉的主谓）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong class="hl-purple">What + a/an + 形容词 + 可数名词单数</strong></td>
+                    <td>What <strong>an</strong> interesting book (it is)!<br>What <strong>a</strong> beautiful day (it is)!</td>
+                </tr>
+                <tr>
+                    <td><strong class="hl-purple">What + 形容词 + 可数名词复数</strong></td>
+                    <td>What beautiful flowers (they are)!<br>What lovely children (they are)!</td>
+                </tr>
+                <tr>
+                    <td><strong class="hl-purple">What + 形容词 + 不可数名词</strong></td>
+                    <td>What fine weather (it is)!<br>What delicious food (it is)!</td>
+                </tr>
+                <tr>
+                    <td><strong class="hl-blue">How + 形容词 / 副词 + 主语 + 谓语</strong></td>
+                    <td>How clever the boy is!<br>How carefully she writes!</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:22px 0 10px;">💣 中考三大坑，一坑一组错对：</p>
+
+        <p><strong>坑 1：不可数名词前面加了 a</strong> <span class="tag-hot">超高频失分</span></p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:16px 20px;margin:10px 0 16px;">
+            <p class="wrong-text">❌ What a fine weather it is!</p>
+            <p style="font-size:14px;color:#555;margin:6px 0;">👨‍⚕️ weather 是<strong>不可数名词</strong>（按 weather 表示天气这一义项的语法用法判断，不能靠真实物体能否切开），前面不能加 a。</p>
+            <p class="right-text">✅ What <span class="hl-green">fine weather</span> it is!</p>
+        </div>
+
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:26%;">中考超级大坑词</th>
+                    <th style="width:24%;">属性</th>
+                    <th style="width:50%;">大白话揭秘 + 正确感叹句</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>news</strong>（消息）</td><td>不可数，别被 s 骗了</td><td>结尾有 s 却不是复数。What <strong>good news</strong> it is!</td></tr>
+                <tr><td><strong>advice / information</strong></td><td>不可数</td><td>建议、信息都是“一堆内容”，没法一个个数。What <strong>useful advice</strong>!</td></tr>
+                <tr><td><strong>fun</strong>（乐趣）</td><td>不可数</td><td>中考常考 What fun! / What <strong>great fun</strong> we had!</td></tr>
+                <tr><td><strong>music / homework / progress</strong></td><td>不可数</td><td>What <strong>beautiful music</strong>! What <strong>great progress</strong> you have made!</td></tr>
+                <tr><td><strong>luck / bread / furniture</strong></td><td>不可数</td><td>What <strong>bad luck</strong>! What <strong>delicious bread</strong>!</td></tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:18px;"><strong>坑 2：a 和 an 选错——看读音，不看字母</strong> <span class="tag-hot">选择题常客</span></p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:16px 20px;margin:10px 0 16px;">
+            <p class="wrong-text">❌ What a honest boy he is! &nbsp;/&nbsp; ❌ What an useful book it is!</p>
+            <p style="font-size:14px;color:#555;margin:6px 0;">👨‍⚕️ a / an 由<strong>紧跟在后面那个词的第一个发音</strong>决定（第4讲冠词）：honest 的 h 不发音，开头是元音 ➡️ an；useful 开头读 /juː/，是辅音 ➡️ a。同类：an hour、an excellent idea、a university、a uniform。</p>
+            <p class="right-text">✅ What <span class="hl-green">an honest</span> boy he is! &nbsp;/&nbsp; ✅ What <span class="hl-green">a useful</span> book it is!</p>
+        </div>
+
+        <p><strong>坑 3：尾巴写成了疑问句语序</strong></p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:16px 20px;margin:10px 0 16px;">
+            <p class="wrong-text">❌ How clever is the boy!</p>
+            <p style="font-size:14px;color:#555;margin:6px 0;">👨‍⚕️ 感叹句是在“感叹”，不是在“提问”。尾巴上的主谓要用<strong>陈述语序</strong>：司机在前，发动机在后。</p>
+            <p class="right-text">✅ How clever <span class="hl-green">the boy is</span>!</p>
+        </div>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:22px 0 10px;">💬 省略式与情景交际常用感叹语</p>
+        <p>口语里感叹句的主谓经常直接省掉，中考情景交际、补全对话特别爱考下面这些：</p>
+        <table class="magic-table" style="margin-top:12px;">
+            <thead>
+                <tr>
+                    <th style="width:32%;">感叹语</th>
+                    <th style="width:30%;">意思</th>
+                    <th style="width:38%;">什么时候用</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>What a pity! / What a shame!</strong></td><td>真遗憾！</td><td>对方说没考好、错过了活动</td></tr>
+                <tr><td><strong>What fun!</strong></td><td>真有趣！</td><td>fun 不可数，不加 a</td></tr>
+                <tr><td><strong>What a surprise!</strong></td><td>真是个惊喜！</td><td>收到意外的礼物、见到老朋友</td></tr>
+                <tr><td><strong>How nice / kind of you!</strong></td><td>你真好！</td><td>对方帮了你、送你东西</td></tr>
+                <tr><td><strong>How beautiful!</strong></td><td>真漂亮！</td><td>主谓整块省掉，只留 How + 形容词</td></tr>
+            </tbody>
+        </table>
+
+        <div class="warn-box">
+            <div class="warn-title">🚨 特殊情况：形容词后面紧跟 a/an，只能用 How</div>
+            <p><code>How clever a boy he is!</code> 也是正确的句子，和 What a clever boy he is! 意思一样。判断方法：What 后面必须<strong>先出现 a/an</strong>（What a clever boy）；如果 a/an 被放在了形容词<strong>后面</strong>，开头只能是 How。中考以前面四个公式为主，看到这种语序记得别选 What。</p>
+        </div>
+
+        <div class="tip-box">
+            💡 <strong>感叹句口诀：</strong>尾巴主谓先切掉，名词结尾 What 来叫；单数可数别忘 a，不可数前啥不要；形副结尾 How 来到，尾巴语序别颠倒！
+        </div>
+    </div>
+
+
+    <!-- ===== 模块二：祈使句不设司机法则 ===== -->
+    <div class="section-divider"><hr><span>模块二</span><hr></div>
+
+    <div class="module-card card-green">
+        <div class="badge badge-green">🚦 模块二：祈使句——“不设司机”法则，直接从发动机开车</div>
+
+        <p>第2讲说过，每个句子都有司机（主语）和发动机（谓语）。祈使句是个例外：它是对<strong>面前的你</strong>下命令、提请求、给建议。司机就是站在对面的 you，大家都知道，所以<strong>司机座位直接空着，句子从发动机开始开车</strong>。</p>
+        <p style="margin-top:10px;">正因为没有司机，发动机不用跟任何人配单复数、也不分时态——<strong>永远用动词原形</strong>。</p>
+
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th style="width:26%;">句型</th>
+                    <th style="width:30%;">结构</th>
+                    <th style="width:44%;">例句</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>① 实义动词开头</strong></td><td>动词原形 + 其他</td><td>Open the window, please.<br>Please <strong>turn</strong> off the light.</td></tr>
+                <tr><td><strong>② be 动词开头</strong></td><td>Be + 形容词 / 名词</td><td><strong>Be</strong> quiet! &nbsp; <strong>Be</strong> a good boy!</td></tr>
+                <tr><td><strong>③ Let 开头</strong></td><td>Let's / Let + 宾格 + 动词原形</td><td><strong>Let's</strong> go! &nbsp; <strong>Let me</strong> help you. &nbsp; <strong>Let him</strong> try.</td></tr>
+                <tr><td><strong>④ 否定</strong></td><td>Don't / Never + 动词原形</td><td><strong>Don't</strong> talk in class. &nbsp; <strong>Never</strong> give up!</td></tr>
+                <tr><td><strong>⑤ be 的否定</strong></td><td>Don't be + 形容词</td><td><strong>Don't be</strong> late again!</td></tr>
+                <tr><td><strong>⑥ Let 的否定</strong></td><td>Let's not + 原形 / Don't let + 宾格 + 原形</td><td><strong>Let's not</strong> go there. &nbsp; <strong>Don't let</strong> him go.</td></tr>
+                <tr><td><strong>⑦ 加强语气</strong></td><td>Do + 动词原形</td><td><strong>Do</strong> be careful! （一定要小心！）</td></tr>
+            </tbody>
+        </table>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:22px 0 10px;">💣 中考三大坑，一坑一组错对：</p>
+
+        <p><strong>坑 1：否定祈使句乱放 not</strong> <span class="tag-hot">超高频失分</span></p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:16px 20px;margin:10px 0 16px;">
+            <p class="wrong-text">❌ Not be late for school! &nbsp;/&nbsp; ❌ Be not late for school!</p>
+            <p style="font-size:14px;color:#555;margin:6px 0;">👨‍⚕️ 祈使句的否定，统一在最前面放 <code>Don't</code>，连 be 动词也不例外。这是按中文“别迟到”直译出来的错。</p>
+            <p class="right-text">✅ <span class="hl-green">Don't be</span> late for school!</p>
+        </div>
+
+        <p><strong>坑 2：给发动机加了 -s 或 to</strong></p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:16px 20px;margin:10px 0 16px;">
+            <p class="wrong-text">❌ Please opens the door. &nbsp;/&nbsp; ❌ Let's to go home.</p>
+            <p style="font-size:14px;color:#555;margin:6px 0;">👨‍⚕️ please 只是礼貌词，不是主语，没人需要发动机配单复数 ➡️ 原形 open。let 后面接动词原形，不带 to。</p>
+            <p class="right-text">✅ Please <span class="hl-green">open</span> the door. &nbsp;/&nbsp; ✅ Let's <span class="hl-green">go</span> home.</p>
+        </div>
+
+        <p><strong>坑 3：Let 后面用了主格</strong></p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:16px 20px;margin:10px 0 16px;">
+            <p class="wrong-text">❌ Let he try again. &nbsp;/&nbsp; ❌ Let we go together.</p>
+            <p style="font-size:14px;color:#555;margin:6px 0;">👨‍⚕️ let 是动词，后面的人是它的宾语（货物位），要用宾格 me / him / her / us / them（第7讲代词换装）。</p>
+            <p class="right-text">✅ Let <span class="hl-green">him</span> try again. &nbsp;/&nbsp; ✅ Let <span class="hl-green">us</span> go together.</p>
+        </div>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:22px 0 10px;">🪧 公示语：最短的祈使句</p>
+        <p>公园、图书馆、马路边的标志牌，也是祈使句家族的成员。中考看图选标志、阅读 A 篇都会出现：</p>
+        <table class="magic-table" style="margin-top:12px;">
+            <thead>
+                <tr>
+                    <th style="width:34%;">标志牌</th>
+                    <th style="width:30%;">意思</th>
+                    <th style="width:36%;">结构</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>No smoking. / No parking.</strong></td><td>禁止吸烟 / 禁止停车</td><td>No + 动词 -ing</td></tr>
+                <tr><td><strong>No photos. / No food.</strong></td><td>禁止拍照 / 禁止带食物</td><td>No + 名词</td></tr>
+                <tr><td><strong>Keep off the grass.</strong></td><td>请勿践踏草坪</td><td>动词原形开头</td></tr>
+                <tr><td><strong>Don't touch.</strong></td><td>请勿触摸</td><td>Don't + 动词原形</td></tr>
+            </tbody>
+        </table>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:22px 0 10px;">💬 别人对你说祈使句，怎么回答？（情景交际高频）</p>
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:44%;">对方说</th>
+                    <th style="width:56%;">你的回答</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Please close the door.</td><td><strong>OK. / All right. / Sure.</strong>（好的）</td></tr>
+                <tr><td>Don't be late again.</td><td><strong>Sorry, I won't.</strong>（抱歉，我不会了）</td></tr>
+                <tr><td>Don't forget to bring your book.</td><td><strong>No, I won't.</strong>（好的，不会忘）</td></tr>
+                <tr><td>Let's go swimming.</td><td><strong>Good idea! / Sounds great!</strong></td></tr>
+            </tbody>
+        </table>
+        <div class="warn-box">
+            <div class="warn-title">🚨 为什么回答 “Don't forget...” 要用 No？</div>
+            <p>英文回答只看<strong>自己会不会做这件事</strong>：我不会忘 ➡️ 我“不”做“忘记”这件事 ➡️ <strong>No, I won't.</strong> 中文说“好的”，英文却用 No——这和模块八反意疑问句的回答是同一个道理。</p>
+        </div>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:22px 0 10px;">🔗 中考高频句型：祈使句 + and / or</p>
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:18%;">连接词</th>
+                    <th style="width:30%;">意思</th>
+                    <th style="width:52%;">例句与同义转换</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong class="hl-green">and</strong></td>
+                    <td>照着做，就会有<strong>好结果</strong></td>
+                    <td>Work hard, <strong>and</strong> you will pass the exam.<br><small>= If you work hard, you will pass the exam.</small></td>
+                </tr>
+                <tr>
+                    <td><strong class="hl-red">or</strong></td>
+                    <td>不照着做，<strong>否则</strong>就有坏结果</td>
+                    <td>Hurry up, <strong>or</strong> you will miss the bus.<br><small>= If you don't hurry up, you will miss the bus.<br>= Unless you hurry up, you will miss the bus.</small></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            💡 <strong>祈使句口诀：</strong>司机座位空着放，原形动词打头阵；否定前面加 Don't，be 也一样别乱放；Let 后面跟宾格，后接 and 好结果，接上 or 就要遭殃！<br>
+            <small>and / or 后面的结果句用一般将来时，和第23讲 if 条件句“主将从现”是同一个道理。</small>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块三：句型转换专题 ===== -->
+    <div class="section-divider"><hr><span>模块三</span><hr></div>
+
+    <div class="module-card card-blue">
+        <div class="badge badge-blue">🔄 模块三：句型转换专题——What 句与 How 句互换、祈使句与 if 句互换</div>
+
+        <p>中考句型转换、同义句填空特别爱考这两组。转换不靠翻译，靠<strong>固定的拆装步骤</strong>，按步骤走一遍就不会错。</p>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:18px 0 10px;">🔧 第一组：What 句 ➡️ How 句（四步拆装）</p>
+        <div style="background:#f8fafc;border:1.5px solid #d6eaf8;border-radius:10px;padding:16px 20px;">
+            <p style="font-weight:bold;">原句：What a beautiful girl she is!</p>
+            <p style="font-size:14px;color:#555;margin-top:8px;line-height:1.9;">
+                第1步：拆掉 <code>What a</code>，开头换成 <code>How</code>。<br>
+                第2步：形容词 <code>beautiful</code> 紧跟在 How 后面。<br>
+                第3步：名词 <code>girl</code> 挪到后面当主语，前面加 <code>the</code>。<br>
+                第4步：原来的代词主语 <code>she</code> 不要了，发动机 <code>is</code> 按新主语配单复数。<br>
+                <span class="right-text">🎉 How beautiful the girl is!</span>
+            </p>
+        </div>
+
+        <table class="magic-table" style="margin-top:16px;">
+            <thead>
+                <tr>
+                    <th style="width:50%;">What 句</th>
+                    <th style="width:50%;">How 句</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>What an interesting story it is!</td><td>How interesting the story is!</td></tr>
+                <tr><td>What delicious food it is!</td><td>How delicious the food is!</td></tr>
+                <tr><td>What tall trees they are!</td><td>How tall the trees <strong>are</strong>!</td></tr>
+            </tbody>
+        </table>
+        <div class="tip-box">
+            💡 <strong>反过来 How ➡️ What 也一样：</strong>名词挪回形容词后面；可数单数补 a/an，复数和不可数不补；尾巴主语换成代词 it / they / he / she。<br>
+            • How hard the question is! ➡️ What <strong>a</strong> hard question it is!
+        </div>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:22px 0 10px;">🔧 第二组：祈使句 + and / or ➡️ if 条件句</p>
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:44%;">祈使句版本</th>
+                    <th style="width:56%;">if 条件句版本</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Use your head, <strong>and</strong> you'll find a way.</td><td><strong>If you use</strong> your head, you'll find a way.</td></tr>
+                <tr><td>Take a taxi, <strong>or</strong> you'll be late.</td><td><strong>If you don't take</strong> a taxi, you'll be late.<br><strong>Unless you take</strong> a taxi, you'll be late.</td></tr>
+            </tbody>
+        </table>
+        <div class="warn-box">
+            <div class="warn-title">🚨 转换口诀</div>
+            <p>and 换成 <strong>If</strong>，肯定照抄；or 换成 <strong>If...not</strong>，或者换成 <strong>Unless</strong>（unless = if...not，第23讲讲过的换壳大法）。祈使句原来没有司机，变成 if 句要把司机 <strong>you</strong> 请回来。</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块四：反意疑问句的磁铁法则 ===== -->
+    <div class="section-divider"><hr><span>模块四</span><hr></div>
+
+    <div class="module-card card-red" style="background:#fffafa; border-color:#ffcccc;">
+        <div class="badge badge-red" style="background:#c62828;">🧲 模块四：反意疑问句——正负两极磁铁拉扯法则</div>
+
+        <p>反意疑问句，就是在陈述句后面挂一个简短的小尾巴发问。比如：<strong>“他是个老师，不是吗？”</strong></p>
+        <p style="margin-top:10px;">要写出完美的小尾巴，只需要死守三条<strong>“磁铁两极定律”</strong>：</p>
+
+        <div style="background:#fff;border-radius:12px;border:2px solid #ffcccc;padding:22px;margin:20px 0;">
+            <p style="font-size:18px;font-weight:900;color:#c62828;margin-bottom:12px;text-align:center;">🧲 磁铁三大定律 🧲</p>
+            <p style="font-size:15px;line-height:1.8;color:#5c1d16;">基础确认型反意疑问句通常前肯后否、前否后肯；尾巴用相应助动词和代词。There be 的尾巴保留 there：isn't there? 实际英语也有同极性尾巴表示惊讶等，本讲先学常规确认型。</p>
+        </div>
+
+        <!-- 句子可视化解剖 -->
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin-bottom:10px;">🔬 磁铁对称解剖演示：</p>
+
+        <div class="sentence-dissect">
+            <div class="word-block"><span class="word-text wt-s">Tom</span><span class="word-label"> </span></div>
+            <div class="word-block"><span class="word-text wt-v" style="background:#e3f2fd;color:#1565c0;border-color:#90caf9;">can</span><span class="word-label">左边：情态动词肯定（+）</span></div>
+            <div class="word-block"><span class="word-text wt-o">swim</span><span class="word-label"> </span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">,</div>
+            <div class="word-block"><span class="word-text wt-inf">can't</span><span class="word-label">右边：情态否定（-）</span></div>
+            <div class="word-block"><span class="word-text wt-s">he</span><span class="word-label">Tom变代词 he</span></div>
+            <div class="word-block"><span class="word-text wt-x">?</span><span class="word-label"> </span></div>
+        </div>
+        <p style="font-size:14px;color:#888;">✅ 左边是肯定 <code>can</code>，右边对称变为否定 <code>can't</code>，Tom 换成 <code>he</code>。</p>
+    </div>
+
+
+    <!-- ===== 模块五：暗含否定的隐形雷区 ===== -->
+    <div class="section-divider"><hr><span>模块五</span><hr></div>
+
+    <div class="module-card card-orange">
+        <div class="badge badge-orange" style="background:#e67e22;">🕵️ 模块五：暗含否定词——考场上最隐秘的隐形雷区</div>
+
+        <p>中考出题人非常坏。他们喜欢在左边写一个看起来没有 <code>not</code> 的句子，骗你以为它是肯定句，结果里面藏着<strong>“隐形否定词”</strong>。</p>
+        <p style="margin-top:10px;">few、little 表示“几乎没有”，或 never/seldom/hardly/nothing/nobody 表示否定时，常规确认型尾巴用肯定。a few/a little 不属否定，little 表示“小”时也不据此改极性。</p>
+
+        <div style="background:#fffdec;border-radius:12px;border:2px solid #ffd8a8;padding:18px;margin:15px 0;">
+            <p style="font-weight:900;color:#784212;margin-bottom:10px;font-size:16px;">💣 隐形否定词黑名单（全场拉响警报）：</p>
+            <p style="font-size:15px;color:#555;line-height:2;">
+                ❌ <span class="mark-orange">few</span>（几乎没有，修饰可数） &nbsp;|&nbsp; ❌ <span class="mark-orange">little</span>（几乎没有，修饰不可数）<br>
+                ❌ <span class="mark-orange">never</span>（从不） &nbsp;|&nbsp; ❌ <span class="mark-orange">seldom</span>（很少）<br>
+                ❌ <span class="mark-orange">hardly</span>（几乎不） &nbsp;|&nbsp; ❌ <span class="mark-orange">nothing / nobody</span>（没有人/物）
+            </p>
+        </div>
+
+        <!-- 错题诊断 -->
+        <div class="warn-box" style="margin-top:18px;">
+            <div class="warn-title">🚨 考场特大惨案诊断</div>
+            <p class="wrong-text">❌ There is little water in the bottle, isn't there?</p>
+            <hr style="border:none;border-top:1px dashed #eee;margin:12px 0;">
+            <p style="font-size:15px;"><strong>👨‍⚕️ 诊断报告：</strong><br>
+            <code>little</code> 意为“几乎没有”，是一个<strong>100%纯正的否定词</strong>。这导致左边句子属性是“负极（-）”。<br>
+            根据磁铁定律，右边尾巴必须用“正极（+）”——即 <strong>is there</strong>！</p>
+            <p class="right-text" style="margin-top:8px;">✅ There is little water in the bottle, <span class="hl-green">is there</span>?</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块六：Let's 与 Let us 的天敌区分 ===== -->
+    <div class="section-divider"><hr><span>模块六</span><hr></div>
+
+    <div class="module-card card-teal">
+        <div class="badge badge-teal" style="background:#16a085;">✈️ 模块六：人情世故二连击——Let's 还是 Let us？</div>
+
+        <p>祈使句的反意疑问句，有两组长得像双胞胎，但尾巴完全相反。在中考填空选择中是常客：</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;">
+            <div style="background:#fff;border-radius:12px;border:2px solid #52be80;padding:20px;color:#27ae60;">
+                <div style="font-size:13px;font-weight:bold;margin-bottom:8px;color:#1e8449;">✈️ 第一组：Let's...（包含听话的人）</div>
+                <p style="font-size:18px;font-weight:900;margin-bottom:10px;">尾巴配：shall we?</p>
+                <p style="font-size:14px;color:#555;line-height:1.7;">
+                    • <strong>逻辑：</strong><code>Let's</code> ＝ Let us including you（<strong>我们大家一起，包括你</strong>）。大家都是一条船上的人。<br>
+                    • <strong>语气：</strong>商量口气，“咱们去玩吧，好吗？”。所以用 <strong class="hl-green">shall we?</strong>。
+                </p>
+            </div>
+            <div style="background:#fff;border-radius:12px;border:2px solid #e74c3c;padding:20px;color:#c0392b;">
+                <div style="font-size:13px;font-weight:bold;margin-bottom:8px;color:#962d22;">✈️ 第二组：Let us...（不包含听话的人）</div>
+                <p style="font-size:18px;font-weight:900;margin-bottom:10px;">尾巴配：will you?</p>
+                <p style="font-size:14px;color:#555;line-height:1.7;">Let us 若请求对方允许我们行动，常用 will you；若表示包括听者的建议，也可用 shall we。不能只看是否缩写就断定听者一定不参与。</p>
+            </div>
+        </div>
+
+        <div class="tip-box" style="border-left-color:#16a085; background:#f0fbf9;">
+            💡 <strong>其余所有的普通祈使句（不管是肯定还是否定）：</strong><br>
+            普通否定祈使句常用，肯定祈使句也可用：<strong>will you?</strong>（表示客气的请求）。<br>
+            • Don't make a noise, <strong class="hl-teal">will you</strong>?（别吵，行吗？）<br>
+            • Please open the window, <strong class="hl-teal">will you</strong>?（请开下窗，好吗？）
+        </div>
+    </div>
+
+
+    <!-- ===== 模块七：尾巴上的特殊情况 ===== -->
+    <div class="section-divider"><hr><span>模块七</span><hr></div>
+
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🧩 模块七：反意疑问句的特殊尾巴——替身怎么选、发动机怎么配</div>
+
+        <p>磁铁三大定律能解决大部分题。剩下的丢分点，集中在两件事上：<strong>左边的主语不是普通代词时，尾巴用哪个替身？</strong>以及<strong>左边的发动机长得特别时，尾巴怎么配？</strong></p>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:18px 0 10px;">🎭 第一类：尾巴主语的替身表</p>
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:30%;">左边的主语</th>
+                    <th style="width:18%;">尾巴替身</th>
+                    <th style="width:52%;">例句</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>this / that</strong></td><td><strong class="hl-purple">it</strong></td><td>This is your bag, <strong>isn't it</strong>?</td></tr>
+                <tr><td><strong>these / those</strong></td><td><strong class="hl-purple">they</strong></td><td>Those are your shoes, <strong>aren't they</strong>?</td></tr>
+                <tr><td><strong>everything / nothing / something</strong></td><td><strong class="hl-purple">it</strong></td><td>Everything is ready, <strong>isn't it</strong>?</td></tr>
+                <tr><td><strong>everyone / somebody / nobody</strong></td><td><strong class="hl-purple">they</strong></td><td>Everyone is here, <strong>aren't they</strong>?</td></tr>
+                <tr><td><strong>There be 句型</strong></td><td><strong class="hl-purple">there</strong></td><td>There is a park near here, <strong>isn't there</strong>?</td></tr>
+                <tr><td><strong>I am ...</strong></td><td><strong class="hl-purple">aren't I</strong></td><td>I'm your new classmate, <strong>aren't I</strong>?</td></tr>
+            </tbody>
+        </table>
+        <div class="warn-box">
+            <div class="warn-title">🚨 两个一定要单独记的</div>
+            <p>① 基础题中 I am 的否定尾巴通常用 aren't I。② 常用否定缩写：isn't he? 正式不缩写时用 is he not?，不是 is not he?，所以缩写并非语法上唯一形式。</p>
+        </div>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:22px 0 10px;">⚙️ 第二类：特殊发动机怎么配尾巴</p>
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:30%;">左边的发动机</th>
+                    <th style="width:22%;">尾巴怎么配</th>
+                    <th style="width:48%;">例句</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>have / has（实义动词“有”）</strong></td><td>雇 do / does / did</td><td>He has a new bike, <strong>doesn't he</strong>?</td></tr>
+                <tr><td><strong>have / has done（完成时）</strong></td><td>用 have / has</td><td>You have finished it, <strong>haven't you</strong>?</td></tr>
+                <tr><td><strong>have to（不得不）</strong></td><td>雇 do / does / did</td><td>We have to leave now, <strong>don't we</strong>?</td></tr>
+                <tr><td><strong>had better（最好）</strong></td><td>用 hadn't</td><td>You'd better go to bed, <strong>hadn't you</strong>?</td></tr>
+            </tbody>
+        </table>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:22px 0 10px;">🕳️ 第三类：看起来否定、其实是肯定——否定前缀不算否定</p>
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:16px 20px;margin:10px 0;">
+            <p class="wrong-text">❌ She is unhappy today, is she?</p>
+            <p style="font-size:14px;color:#555;margin:6px 0;">👨‍⚕️ 模块五的隐形否定词黑名单只收 few / little / never / seldom / hardly / nothing / nobody 这类<strong>独立的否定词</strong>。<code>unhappy、dislike、unable、impossible</code> 里的 un- / dis- / im- 只是<strong>前缀</strong>，整个句子仍然算肯定句（+）。</p>
+            <p class="right-text">✅ She is unhappy today, <span class="hl-green">isn't she</span>? &nbsp;/&nbsp; ✅ He dislikes coffee, <span class="hl-green">doesn't he</span>?</p>
+        </div>
+
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin:22px 0 10px;">🏗️ 第四类：左边是主从复合句，尾巴跟谁？</p>
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:28%;">情况</th>
+                    <th style="width:24%;">尾巴跟谁</th>
+                    <th style="width:48%;">例句</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>I think / believe / suppose + 从句</strong></td><td>跟<strong>从句</strong></td><td>I think he is right, <strong>isn't he</strong>?</td></tr>
+                <tr><td><strong>I don't think + 从句</strong></td><td>跟从句，否定看主句</td><td>I don't think he will come, <strong>will he</strong>?</td></tr>
+                <tr><td><strong>其他人说 / 认为 + 从句</strong></td><td>跟<strong>主句</strong></td><td>He said he was busy, <strong>didn't he</strong>?</td></tr>
+            </tbody>
+        </table>
+        <div class="tip-box">
+            💡 <strong>大白话记忆：</strong>“我觉得”只是我的开场白，真正要对方确认的是后面那件事，所以尾巴跟从句；而 <code>I don't think</code> 里的 not 其实是在否定后面那件事，所以左边算否定，尾巴用肯定。换成“他说……”，要确认的就是“他是不是这么说了”，尾巴跟主句。
+        </div>
+    </div>
+
+
+    <!-- ===== 模块八：反意疑问句的回答 ===== -->
+    <div class="section-divider"><hr><span>模块八</span><hr></div>
+
+    <div class="module-card card-orange">
+        <div class="badge badge-orange">✋ 模块八：反意疑问句怎么回答——只看事实，不看中文</div>
+
+        <p>这是中国学生最容易答反的地方：<strong>“对方问‘他不是老师，是吗？’，我想说‘不，他是老师’——为什么英文开头要用 Yes？”</strong></p>
+        <p style="margin-top:10px;">因为英文的 Yes / No 和中文的“是 / 不”根本不是一套逻辑。英文<strong>只看事实本身</strong>：事实是肯定的，就用 Yes；事实是否定的，就用 No。而且 Yes 后面一定跟肯定，No 后面一定跟否定，永远不会拆开。</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;">
+            <div style="background:#fff;border-radius:12px;border:2px solid #a5d6a7;padding:20px;color:#1b5e20;">
+                <div style="font-size:13px;font-weight:bold;margin-bottom:8px;">✅ 事实是肯定的</div>
+                <p style="font-size:17px;font-weight:900;margin-bottom:10px;">Yes, he is.</p>
+                <p style="font-size:14px;color:#555;line-height:1.8;">不管对方怎么问，只要他<strong>确实是</strong>老师，就说 Yes。</p>
+            </div>
+            <div style="background:#fff;border-radius:12px;border:2px solid #ffcccc;padding:20px;color:#b71c1c;">
+                <div style="font-size:13px;font-weight:bold;margin-bottom:8px;">🚫 事实是否定的</div>
+                <p style="font-size:17px;font-weight:900;margin-bottom:10px;">No, he isn't.</p>
+                <p style="font-size:14px;color:#555;line-height:1.8;">只要他<strong>确实不是</strong>老师，就说 No。</p>
+            </div>
+        </div>
+
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:34%;">对方问</th>
+                    <th style="width:30%;">英文回答</th>
+                    <th style="width:36%;">中文意思</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>He isn't a teacher, is he?</td><td><strong>Yes, he is.</strong></td><td>不，他是老师。</td></tr>
+                <tr><td>He isn't a teacher, is he?</td><td><strong>No, he isn't.</strong></td><td>是的，他不是老师。</td></tr>
+                <tr><td>You didn't go to the party, did you?</td><td><strong>No, I didn't.</strong></td><td>是的，我没去。</td></tr>
+                <tr><td>You didn't go to the party, did you?</td><td><strong>Yes, I did.</strong></td><td>不，我去了。</td></tr>
+            </tbody>
+        </table>
+
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:16px 20px;margin:16px 0 10px;">
+            <p style="color:#888;font-size:14px;margin-bottom:8px;">情景：—— 你昨天没去看电影，对吧？ —— 是的，没去，我在家写作业。</p>
+            <p class="wrong-text">❌ — You didn't see the film yesterday, did you? — Yes, I didn't. I did my homework at home.</p>
+            <p style="font-size:14px;color:#555;margin:6px 0;">👨‍⚕️ 事实是“没去”（否定）➡️ 用 No，而且 No 后面跟否定。Yes 和 didn't 拆开搭配，是永远不会出现的组合。</p>
+            <p class="right-text">✅ — <span class="hl-green">No, I didn't.</span> I did my homework at home.</p>
+        </div>
+
+        <div class="tip-box">
+            💡 <strong>回答口诀：</strong>回答只看真事实，中文“是不”别掺和；事实肯定 Yes 打头，事实否定 No 来说；Yes 后肯、No 后否，永远不会拆开过！<br>
+            <small>做题小技巧：看回答后面的补充句（如 “I did my homework at home.”），它会告诉你事实是什么。</small>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块九：实战练习 ===== -->
+    <div class="section-divider"><hr><span>模块九</span><hr></div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow" style="background:#f1c40f; color:#333;">🎯 模块九：急救实战练习——看看你学会了几步？</div>
+
+        <!-- 题1 -->
+        <div class="quiz-block" style="margin-top:20px;">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 1 · 隐形雷区反意问句</p>
+            <div class="quiz-q">
+                He has few friends in his new school, ______?<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（他在新学校里几乎没有朋友，是吗？）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. hasn't he</span>
+                <span>| B. does he</span>
+                <span>| C. doesn't he</span>
+                <span>| D. is he</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-q1">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-q1">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：扫视左边。句中出现了 <code>few</code> ➡️ 这是<strong>隐形否定雷</strong>！左边是个否定句（-）。</p>
+                    <p>第二步：磁铁异极相吸 ➡️ 右边尾巴强制使用肯定（+）。排除 A 和 C。</p>
+                    <p>第三步：has 表示拥有，常用 does 构成尾巴，选 B。英式英语中也可见 has he；本题选项 D 的 is he 不符合动词结构。</p>
+                    <p>第四步：所以填 <strong>does he</strong>。has got 或完成时 has been 的尾巴用 has；表示拥有的 has 在部分英式用法中也可配 has。</p>
+                    <p><span class="right-text">🎉 正确答案是：B</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题2 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 2 · 祈使句双胞胎辨析</p>
+            <div class="quiz-q">
+                Let's go shopping at the weekend, ______?<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（我们周末一起去逛街，好吗？）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. will you</span>
+                <span>| B. shall we</span>
+                <span>| C. won't you</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-q2">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-q2">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：看开头。开头是 <code>Let's</code>（Let us 缩写形式，表示包括你在内的我们大家）。</p>
+                    <p>第二步：一家人不说两家话，大家都是一条船上的 ➡️ 锁定商量口气 <strong>shall we</strong>。</p>
+                    <p>第三步：Let us 表示请求许可时常用 will you；表示包括听者的建议时也可用 shall we，需看真实说话意图。</p>
+                    <p><span class="right-text">🎉 正确答案是：B</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题3 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 3 · 动词发动机配对考查</p>
+            <div class="quiz-q">
+                Your sister speaks French very well, ______ she?<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（你姐姐法语说得非常好，不是吗？）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. doesn't</span>
+                <span>| B. speaks not</span>
+                <span>| C. isn't</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-q3">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-q3">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：看肯定否定。左边 <code>speaks</code> 是肯定（+） ➡️ 右边必须用否定（-）。排除 B（格式不对）。</p>
+                    <p>第二步：看发动机类型。<code>speaks</code> 是普通动词，不是 be 动词。普通工人变身必须雇临时工（助动词）顶包！主语是 sister（三单） ➡️ 否定雇 <strong>doesn't</strong>。排除 C。</p>
+                    <p><span class="right-text">🎉 正确答案是：A</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题4 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 4 · 感叹句切一刀</p>
+            <div class="quiz-q">
+                ______ exciting news it is!<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（多么令人激动的消息啊！）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. What an</span>
+                <span>| B. What</span>
+                <span>| C. How</span>
+                <span>| D. How an</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-q4">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-q4">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一刀：切掉句尾主谓 <code>it is</code> ➡️ 剩下 <code>____ exciting news</code>。</p>
+                    <p>第二步：最后一个词是 <code>news</code>，名词 ➡️ 用 What，排除 C 和 D。</p>
+                    <p>第三步：news 是<strong>不可数名词</strong>，前面不能加 an ➡️ 排除 A。很多同学看到 exciting 是元音开头就条件反射选 an，这正是出题人设的坑。</p>
+                    <p><span class="right-text">🎉 正确答案是：B</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题5 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 5 · 副词结尾用 How</p>
+            <div class="quiz-q">
+                ______ carefully she writes her homework!<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（她写作业多么认真啊！）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. What</span>
+                <span>| B. What a</span>
+                <span>| C. How</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-q5">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-q5">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一刀：切掉句尾主谓 <code>she writes her homework</code> ➡️ 剩下 <code>____ carefully</code>。</p>
+                    <p>第二步：carefully 是<strong>副词</strong>，形容动作“写”的方式 ➡️ 用 How。</p>
+                    <p><span class="right-text">🎉 正确答案是：C</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题6 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 6 · 否定祈使句</p>
+            <div class="quiz-q">
+                ______ late for school again, Tom!<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（Tom，上学别再迟到了！）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. Not be</span>
+                <span>| B. Don't be</span>
+                <span>| C. Don't</span>
+                <span>| D. Be not</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-q6">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-q6">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：句子没有司机，是对 Tom 下命令 ➡️ 祈使句。</p>
+                    <p>第二步：late 是形容词，不是动词，句子缺发动机 ➡️ 需要 be。排除 C。</p>
+                    <p>第三步：祈使句否定统一在最前面加 Don't ➡️ <strong>Don't be</strong>。A 和 D 都是中文直译出来的错误语序。</p>
+                    <p><span class="right-text">🎉 正确答案是：B</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题7 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 7 · 祈使句 + and / or</p>
+            <div class="quiz-q">
+                Put on your coat, ______ you will catch a cold.<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（穿上外套，否则你会感冒的。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. and</span>
+                <span>| B. or</span>
+                <span>| C. but</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-q7">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-q7">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：前半句 Put on your coat 是祈使句。</p>
+                    <p>第二步：看后半句的结果——感冒是<strong>坏结果</strong>，是“不穿外套”才会发生的事 ➡️ 表示“否则”，用 or。</p>
+                    <p>第三步：如果后半句是 you will feel warm（好结果），才用 and。</p>
+                    <p><span class="right-text">🎉 正确答案是：B</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== 通关检测 ===== -->
+    <div class="section-divider"><hr><span>通关检测</span><hr></div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow" style="background:#f1c40f; color:#333;">✅ 加餐一通关检测：12 题覆盖三大句型全部考点</div>
+
+        <p>这 12 题每一题对应一个本讲讲过的坑。做错哪题，就回看括号里标注的模块。</p>
+
+        <div class="quiz-block" style="margin-top:20px;">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 1 · 感叹句 · a 还是 an（模块一）</p>
+            <div class="quiz-q">______ useful dictionary it is!</div>
+            <div class="quiz-opts">
+                <span>A. What a</span>
+                <span>B. What an</span>
+                <span>C. How</span>
+                <span>D. How a</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-add-q1">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-add-q1">
+                <div class="brain-box">
+                    <p><strong>答案：A</strong></p>
+                    <p>useful 开头读 /juː/，是辅音 ➡️ 用 a；切掉 it is 后以名词 dictionary 结尾 ➡️ What。看读音，不看字母 u。</p>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 2 · 感叹句 · 不可数名词（模块一）</p>
+            <div class="quiz-q">______ great fun we had at the party!</div>
+            <div class="quiz-opts">
+                <span>A. What a</span>
+                <span>B. What</span>
+                <span>C. How</span>
+                <span>D. How a</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-add-q2">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-add-q2">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>切掉 we had at the party，剩下 ____ great fun，以名词结尾 ➡️ What；fun 不可数，不加 a。</p>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 3 · 感叹句 · How + 副词（模块一）</p>
+            <div class="quiz-q">______ hard the girl works!</div>
+            <div class="quiz-opts">
+                <span>A. What</span>
+                <span>B. What a</span>
+                <span>C. How</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-add-q3">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-add-q3">
+                <div class="brain-box">
+                    <p><strong>答案：C</strong></p>
+                    <p>切掉 the girl works，剩下 ____ hard，hard 在这里是副词，说明“工作”得怎么样 ➡️ How。</p>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 4 · 句型转换（模块三）</p>
+            <div class="quiz-q">What a clever boy he is! = ______ clever the boy is!</div>
+            <div class="quiz-opts">
+                <span>A. What</span>
+                <span>B. How</span>
+                <span>C. So</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-add-q4">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-add-q4">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>What 句换 How 句：拆掉 What a，形容词紧跟 How，名词 boy 加 the 挪去当主语。</p>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 5 · 祈使句 · be 开头（模块二）</p>
+            <div class="quiz-q">______ careful when you cross the road.</div>
+            <div class="quiz-opts">
+                <span>A. Be</span>
+                <span>B. Being</span>
+                <span>C. Is</span>
+                <span>D. To be</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-add-q5">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-add-q5">
+                <div class="brain-box">
+                    <p><strong>答案：A</strong></p>
+                    <p>祈使句没有司机，从发动机开车，发动机用原形；careful 是形容词，需要 be ➡️ Be。</p>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 6 · 祈使句 · Let 的否定（模块二）</p>
+            <div class="quiz-q">______ the little boy play with fire.</div>
+            <div class="quiz-opts">
+                <span>A. Not let</span>
+                <span>B. Don't let</span>
+                <span>C. No let</span>
+                <span>D. Doesn't let</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-add-q6">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-add-q6">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>否定祈使句一律 Don't 打头 ➡️ Don't let + 宾格 + 动词原形。</p>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 7 · 祈使句 + or（模块二、三）</p>
+            <div class="quiz-q">Hurry up, ______ you will miss the early bus.</div>
+            <div class="quiz-opts">
+                <span>A. and</span>
+                <span>B. or</span>
+                <span>C. but</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-add-q7">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-add-q7">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>错过早班车是坏结果，是“不快点”才会发生的事 ➡️ or（否则）。= Unless you hurry up, ...</p>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 8 · 反意 · I am（模块七）</p>
+            <div class="quiz-q">I'm your new classmate, ______?</div>
+            <div class="quiz-opts">
+                <span>A. am not I</span>
+                <span>B. aren't I</span>
+                <span>C. are I</span>
+                <span>D. isn't I</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-add-q8">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-add-q8">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>I am 的否定尾巴固定是 aren't I，要单独记。</p>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 9 · 反意 · 否定前缀（模块七）</p>
+            <div class="quiz-q">She is unhappy about the result, ______?</div>
+            <div class="quiz-opts">
+                <span>A. is she</span>
+                <span>B. isn't she</span>
+                <span>C. does she</span>
+                <span>D. doesn't she</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-add-q9">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-add-q9">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>un- 只是前缀，不在隐形否定词黑名单里 ➡️ 左边算肯定，尾巴用否定；发动机是 is ➡️ isn't she。</p>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 10 · 反意 · I don't think（模块七）</p>
+            <div class="quiz-q">I don't think he will come tomorrow, ______?</div>
+            <div class="quiz-opts">
+                <span>A. do I</span>
+                <span>B. will he</span>
+                <span>C. won't he</span>
+                <span>D. don't I</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-add-q10">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-add-q10">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>I think 类句子尾巴跟从句 he will come；I don't think 里的 not 否定的是从句 ➡️ 左边算否定，尾巴用肯定 will he。</p>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 11 · 反意 · 主语替身（模块七）</p>
+            <div class="quiz-q">Everyone has arrived, ______?</div>
+            <div class="quiz-opts">
+                <span>A. hasn't it</span>
+                <span>B. haven't they</span>
+                <span>C. hasn't he</span>
+                <span>D. isn't it</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-add-q11">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-add-q11">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>发动机是完成时 has arrived ➡️ 尾巴用 have / has；everyone 的替身用 they，配 haven't ➡️ haven't they。</p>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测题 12 · 反意 · 怎么回答（模块八）</p>
+            <div class="quiz-q">— You didn't go to the party last night, did you?<br>— ______. I was ill in bed.</div>
+            <div class="quiz-opts">
+                <span>A. Yes, I did</span>
+                <span>B. No, I didn't</span>
+                <span>C. Yes, I didn't</span>
+                <span>D. No, I did</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson-bonus-add-q12">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson-bonus-add-q12">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>补充句 I was ill in bed 说明事实是“没去”（否定）➡️ No, I didn't。中文意思是“是的，我没去”。C 和 D 把 Yes / No 和后面拆开了，永远是错的。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== 考前救命小抄 ===== -->
+    <div class="cheatsheet" style="background:#2c3e50;">
+        <div class="cheatsheet-title" style="background:#e74c3c; color:#fff;">🎒 考前冲刺加餐一 · 救命小抄（三大句型全覆盖）</div>
+        <p class="cs-sub">高频提分小题，进考场前最后看一遍</p>
+
+        <div class="cs-block purple">
+            <strong>🔑 感叹句切一刀</strong>
+            <p>• 识别被感叹的结构：What 通常引出名词短语，How 通常修饰形容词或副词；How clever a boy he is! 也正确，末词法只适用于常见基础题。</p>
+            <p>• 可数名词单数加 a/an（看读音：an honest boy / a useful book）；复数和不可数什么都不加。</p>
+            <p>• 不可数大坑：news / advice / information / fun / weather / music / progress ➡️ What good news!</p>
+            <p>• 尾巴主谓用陈述语序：How clever <strong>the boy is</strong>!</p>
+            <p>• 转换：What a beautiful girl she is! = How beautiful the girl is!</p>
+        </div>
+
+        <div class="cs-block green">
+            <strong>🔑 祈使句不设司机</strong>
+            <p>• 没有主语，<strong>动词原形</strong>开头：Open the door. / <strong>Be</strong> quiet! / Let <strong>him</strong> try.</p>
+            <p>• 否定一律 <strong>Don't</strong> 打头：Don't be late! / Don't let him go.（不能写 Not be / Be not）</p>
+            <p>• 回答：Don't forget... ➡️ <strong>No, I won't.</strong>　Don't be late again. ➡️ <strong>Sorry, I won't.</strong></p>
+            <p>• 祈使句 + <strong>and</strong> ➡️ 好结果（= If...）；祈使句 + <strong>or</strong> ➡️ 否则坏结果（= If...not / Unless...）。</p>
+        </div>
+
+        <div class="cs-block red">
+            <strong>🔑 反意疑问句磁铁定律</strong>
+            <p>• <strong>异极相吸：</strong>前肯后否（+ ➡️ -），前否后肯（- ➡️ +）。</p>
+            <p>• <strong>代词替身：</strong>常规尾巴用代词；There be 保留 there，例如 isn't there?。</p>
+            <p>• <strong>发动机对称：</strong>be 动词配 be 动词，情态配情态，实义动词配 do/does/did 临时工。</p>
+        </div>
+
+        <div class="cs-block yellow" style="border-left-color:#f1c40f;">
+            <strong>🔑 隐形否定雷区（中考极容易丢分！）</strong>
+            <p>• few/little 表示“几乎没有”，或 never/seldom/hardly/nothing/nobody 表示否定时，常规确认型问句尾巴用肯定形式。</p>
+            <p>• a few/a little 表示肯定数量，little 表示“小”时也不作否定判断。</p>
+            <p>• 常用：He has little money, does he? 英式用法中也可见 has he；与正文统一使用 does he。</p>
+        </div>
+
+        <div class="cs-block green" style="border-left-color:#2ecc71;">
+            <strong>🔑 祈使句反意双胞胎</strong>
+            <p>• 开头是 <code>Let's...</code> （包含听话人） ➡️ 尾巴固定配 <strong>shall we?</strong></p>
+            <p>• Let us 请求许可时常用 will you；包含听者的建议也可用 shall we，不能只看拼写。</p>
+            <p>• 普通肯定祈使句可用 will you / won't you / can you 等；否定祈使句通常用 will you。</p>
+        </div>
+        <div class="cs-block purple">
+            <strong>🔑 反意疑问句特殊尾巴</strong>
+            <p>• 替身：this/that/everything ➡️ <strong>it</strong>；these/those/everyone ➡️ <strong>they</strong>；There be ➡️ <strong>there</strong>。</p>
+            <p>• I am... 的常用否定尾巴是 aren't I；否定通常缩写，正式结构也可用 is he not? 等。</p>
+            <p>• have to ➡️ don't；had better ➡️ hadn't；实义动词 has ➡️ doesn't；完成时 has done ➡️ hasn't。</p>
+            <p>• un- / dis- / im- 前缀不算否定：She is unhappy, <strong>isn't she</strong>?</p>
+            <p>• I think + 从句 ➡️ 尾巴跟从句；I don't think he will come, <strong>will he</strong>?；He said... ➡️ 尾巴跟主句。</p>
+        </div>
+
+        <div class="cs-block yellow">
+            <strong>🔑 反意疑问句怎么回答</strong>
+            <p>• 只看事实：事实肯定 ➡️ <strong>Yes + 肯定</strong>；事实否定 ➡️ <strong>No + 否定</strong>，永远不拆开。</p>
+            <p>• He isn't a teacher, is he? — <strong>Yes, he is.</strong>（不，他是。）/ <strong>No, he isn't.</strong>（是的，他不是。）</p>
+        </div>
+
+    </div>
+
+    <!-- 转化钩子 -->
+    <div class="cta-box">
+        <h3>🚀 冲刺加餐一通关！提分小题的分数彻底锁死！</h3>
+        <p>太优秀了！感叹句的“切一刀”、祈使句的“不设司机”、反意疑问句的磁铁定律、特殊尾巴和回答方式，今天全部被你拿下了。考场上遇到此类题，你基本可以做到秒杀！<br><br>
+        这是你完成的最后一讲知识输入。接下来，我们要开启整个学习大体系的<strong>终极收官战</strong>——考前终极救命小抄大串联！我会把 全套课程核心考点、全部变身口诀，浓缩到一张考前5分钟救命小抄表里：<br><br>
+        ✅ <strong>终极收官：</strong>中考语法终极总复习 —— 历年真题高频串联，考前 1 小时提分急救小抄
+        </p>
+        <a href="lesson-bonus2.html" class="cta-btn" style="background:linear-gradient(135deg, #c62828, #962d22);">继续学习 → 加餐2：中考语法总复习</a>
+    </div>
+
+</div><!-- /book-container -->
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-bonus1.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+<!-- 底部翻页导航 -->
+<div class="lesson-nav">
+    <a class="nav-btn prev" href="lesson-30.html"><span class="nb-text"><span class="nb-label">上一讲</span><span class="nb-title">应用3课：短文语法综合</span></span></a>
+    <a class="nav-btn-home" href="index.html">📚 目录</a>
+    <a class="nav-btn next" href="lesson-bonus2.html"><span class="nb-text"><span class="nb-label">下一讲</span><span class="nb-title">加餐2：中考语法总复习</span></span></a>
+</div>
+
+</div><!-- /lesson-main -->
+
+<div class="lesson-footer">
+    初中英语语法重构 · 考前冲刺 · 加餐一<br>
+    打印时只会打印本讲内容 · 点击浏览器返回键可回到目录
+</div>
+
+<script>
+// 统一管理所有的点击展开动作
+document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.reveal-btn');
+    if (!btn) return;
+    var targetId = btn.getAttribute('data-target');
+    if (!targetId) return;
+    var box = document.getElementById(targetId);
+    if (!box) return;
+    var isVisible = box.style.display && box.style.display !== 'none';
+    if (isVisible) {
+        box.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '👉 点击解锁答案';
+    } else {
+        box.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+        try { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (err) {}
+        btn.textContent = '👇 收起答案';
+    }
+});
+</script>
+
+<script src="/assets/a4-print-entry.js?v=20260722-final-v3"></script>
+</body>
+</html>

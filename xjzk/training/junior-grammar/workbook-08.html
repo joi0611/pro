@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第8讲练习册 · 时间间谍（时态入门） — 初中英语语法重构</title>
+<style>
+/* ============================================================
+   基础 Reset
+   ============================================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Songti SC', serif;
+    background: #e8ecee;
+    color: #1a1a2e;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+/* ============================================================
+   顶部导航条（屏幕可见，打印时隐藏）
+   ============================================================ */
+.wb-topbar {
+    background: #1a252f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+.wb-topbar-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 11px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.wb-back {
+    color: #f1c40f;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.wb-back:hover { opacity: 0.75; }
+.wb-back-lesson {
+    color: #95a5a6;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.wb-back-lesson:hover { opacity: 0.75; color: #ecf0f1; }
+.wb-sep { color: #3d5166; font-size: 14px; flex-shrink: 0; }
+.wb-info { flex: 1; min-width: 0; }
+.wb-info .wi-tag   { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 1px; }
+.wb-info .wi-title { font-size: 14px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wb-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.wb-print-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+.wb-print-btn:hover { background: #c0392b; }
+.wb-lesson-btn {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+.wb-lesson-btn:hover { background: rgba(255,255,255,0.18); }
+
+/* ============================================================
+   底部翻页导航
+   ============================================================ */
+.wb-pagenav {
+    max-width: 860px;
+    margin: 20px auto 16px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.wn-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    padding: 11px 16px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 13px;
+    transition: all 0.15s;
+    flex: 1;
+    min-width: 140px;
+    max-width: 260px;
+}
+.wn-btn:hover { border-color: #e74c3c; box-shadow: 0 4px 12px rgba(231,76,60,0.12); transform: translateY(-1px); }
+.wn-btn.prev { justify-content: flex-start; }
+.wn-btn.next { justify-content: flex-end; margin-left: auto; }
+.wn-btn .wna  { font-size: 18px; color: #ccc; flex-shrink: 0; }
+.wn-btn:hover .wna { color: #e74c3c; }
+.wn-btn .wnt  { min-width: 0; }
+.wn-btn .wnt-label { font-size: 11px; color: #aaa; display: block; }
+.wn-btn .wnt-title { font-size: 13px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wn-home {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #1a252f;
+    border-radius: 10px;
+    padding: 11px 16px;
+    text-decoration: none;
+    color: #f1c40f;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.wn-home:hover { opacity: 0.85; }
+
+/* ============================================================
+   页脚
+   ============================================================ */
+.wb-footer {
+    text-align: center;
+    padding: 16px 20px 32px;
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   A4 页面容器
+   ============================================================ */
+.a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    background: #ffffff;
+    margin: 20px auto;
+    padding: 18mm 20mm 22mm 20mm;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+/* ============================================================
+   页眉 / 页脚
+   ============================================================ */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #2c3e50;
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+}
+.page-header .brand { font-size: 13px; color: #7f8c8d; }
+.page-header .lesson-id {
+    background: #2c3e50;
+    color: #f1c40f;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.page-footer {
+    position: absolute;
+    bottom: 10mm;
+    left: 20mm;
+    right: 20mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* ============================================================
+   练习册封面
+   ============================================================ */
+.cover-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 260mm;
+    text-align: center;
+}
+.cover-logo {
+    width: 72px; height: 72px;
+    background: #2c3e50;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px;
+    margin-bottom: 28px;
+}
+.cover-series { font-size: 13px; color: #7f8c8d; letter-spacing: 0.15em; margin-bottom: 14px; text-transform: uppercase; }
+.cover-title  { font-size: 34px; font-weight: 900; color: #1a252f; line-height: 1.25; margin-bottom: 10px; }
+.cover-title span { color: #e74c3c; }
+.cover-sub    { font-size: 16px; color: #555; margin-bottom: 36px; }
+.cover-tags   { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+.cover-tag    { border: 1.5px solid #2c3e50; border-radius: 20px; padding: 5px 16px; font-size: 13px; color: #2c3e50; }
+.cover-fill   { width: 100%; border-top: 1.5px solid #ddd; padding-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; }
+.fill-item label    { font-size: 13px; color: #888; display: block; margin-bottom: 6px; }
+.fill-item .fill-line { border-bottom: 1.5px solid #2c3e50; height: 28px; width: 100%; }
+.cover-promise { margin-top: 30px; background: #fffde7; border: 1.5px dashed #f1c40f; border-radius: 10px; padding: 16px 20px; font-size: 14px; color: #555; text-align: center; width: 100%; line-height: 1.8; }
+
+/* ============================================================
+   总分框
+   ============================================================ */
+.score-box { border: 2px solid #2c3e50; border-radius: 10px; display: grid; text-align: center; overflow: hidden; margin: 16px 0; font-size: 13px; }
+.score-box .sb-head { background: #2c3e50; color: #f1c40f; padding: 7px 4px; font-weight: bold; font-size: 12px; }
+.score-box .sb-cell { padding: 10px 4px; border-right: 1px solid #ddd; border-top: 1px solid #ddd; }
+.score-box .sb-cell:last-child { border-right: none; }
+
+/* ============================================================
+   章节标题
+   ============================================================ */
+.section-title { display: flex; align-items: center; gap: 12px; margin: 26px 0 16px; }
+.section-num { background: #2c3e50; color: #f1c40f; font-weight: 900; font-size: 14px; padding: 5px 14px; border-radius: 20px; white-space: nowrap; }
+.section-title h2 { font-size: 17px; font-weight: 900; color: #1a252f; flex: 1; }
+.section-title .score-chip { font-size: 12px; color: #e74c3c; border: 1px solid #e74c3c; border-radius: 12px; padding: 2px 10px; white-space: nowrap; }
+
+/* 分组说明条 */
+.part-bar { background: #f0f7ff; border-left: 4px solid #3498db; padding: 9px 14px; font-size: 14px; font-weight: bold; color: #1a5276; border-radius: 0 6px 6px 0; margin: 14px 0 12px; }
+.part-bar.green  { background: #f4fbf4; border-left-color: #27ae60; color: #145a32; }
+.part-bar.red    { background: #fff5f5; border-left-color: #e74c3c; color: #922b21; }
+.part-bar.yellow { background: #fffde7; border-left-color: #f1c40f; color: #7d6608; }
+.part-bar.purple { background: #faf5ff; border-left-color: #8e44ad; color: #5b2c6f; }
+
+/* ============================================================
+   题目通用样式
+   ============================================================ */
+.q-block { margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px dashed #e0e0e0; }
+.q-block:last-child { border-bottom: none; }
+.q-num { display: inline-block; width: 24px; height: 24px; background: #ecf0f1; border-radius: 50%; text-align: center; line-height: 24px; font-size: 13px; font-weight: bold; color: #2c3e50; margin-right: 6px; flex-shrink: 0; }
+.q-stem { font-size: 15px; font-weight: bold; color: #1a1a2e; line-height: 1.7; margin-bottom: 8px; }
+.q-stem .blank { display: inline-block; width: 70px; border-bottom: 2px solid #2c3e50; vertical-align: bottom; text-align: center; }
+.q-stem code { font-family: 'Courier New', monospace; background: #f5f5f5; padding: 1px 6px; border-radius: 4px; font-size: 14px; }
+.q-opts { display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 14px; color: #444; margin-top: 6px; padding-left: 4px; }
+.q-opts span { min-width: 120px; }
+
+/* 答题区 */
+.answer-lines { margin-top: 10px; display: flex; flex-direction: column; gap: 10px; }
+.answer-line  { border-bottom: 1.5px solid #bbb; min-height: 28px; width: 100%; }
+
+/* 连线题 */
+.match-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px 20px; align-items: center; margin: 10px 0; font-size: 14px; }
+.match-left  { text-align: right; padding: 6px 10px; background: #f0f7ff; border-radius: 6px; font-weight: bold; color: #1a5276; }
+.match-line  { width: 60px; border-bottom: 1.5px dashed #bbb; }
+.match-right { padding: 6px 10px; background: #f4fbf4; border-radius: 6px; color: #145a32; font-weight: bold; }
+
+/* 表格 */
+.wb-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0; }
+.wb-table th { background: #2c3e50; color: #f1c40f; padding: 9px 12px; text-align: left; font-size: 13px; }
+.wb-table td { padding: 9px 12px; border-bottom: 1px solid #eee; vertical-align: middle; }
+.wb-table tr:nth-child(even) td { background: #f9f9f9; }
+.wb-table .write-td { border-bottom: 1.5px solid #2c3e50 !important; min-width: 100px; background: transparent !important; }
+
+/* 改错题 */
+.error-sentence { font-size: 16px; font-weight: bold; line-height: 2.2; letter-spacing: 0.03em; }
+.underlined { text-decoration: underline; text-underline-offset: 3px; }
+.correction-line { display: flex; align-items: center; gap: 10px; margin-top: 8px; font-size: 14px; color: #555; }
+.correction-line .blank { display: inline-block; width: 100px; border-bottom: 1.5px solid #2c3e50; }
+
+/* ============================================================
+   答案解析页样式
+   ============================================================ */
+.ans-page-header { background: #1a252f; color: #f1c40f; text-align: center; padding: 16px; border-radius: 10px; font-size: 18px; font-weight: 900; margin-bottom: 20px; letter-spacing: 0.05em; }
+.ans-warning { background: #fffde7; border: 2px dashed #f1c40f; border-radius: 8px; padding: 12px 18px; font-size: 13px; color: #7d6608; text-align: center; margin-bottom: 20px; line-height: 1.7; }
+
+.ans-block { margin-bottom: 20px; border-radius: 10px; overflow: hidden; border: 1.5px solid #e0e0e0; page-break-inside: avoid; }
+.ans-q-header { display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: #f8f9fa; border-bottom: 1px solid #e0e0e0; }
+.ans-q-header .aq-num { background: #2c3e50; color: #fff; font-weight: 900; font-size: 13px; padding: 3px 12px; border-radius: 12px; white-space: nowrap; }
+.ans-q-header .aq-stem { font-size: 14px; font-weight: bold; color: #333; flex: 1; }
+.ans-answer { display: flex; align-items: center; gap: 8px; padding: 10px 16px 6px; background: #fff; }
+.ans-label { font-size: 13px; color: #888; white-space: nowrap; }
+.ans-val   { font-size: 16px; font-weight: 900; color: #27ae60; }
+.ans-body  { padding: 0 16px 14px; background: #fff; }
+.ans-step  { display: flex; gap: 10px; align-items: flex-start; margin: 6px 0; font-size: 14px; line-height: 1.7; color: #333; }
+.ans-step .step-icon { font-size: 16px; flex-shrink: 0; line-height: 1.5; }
+.ans-step p { flex: 1; }
+.ans-step p strong { color: #2c3e50; }
+.ans-step p .red   { color: #e74c3c; font-weight: bold; }
+.ans-step p .green { color: #27ae60; font-weight: bold; }
+.ans-step p .blue  { color: #2980b9; font-weight: bold; }
+.ans-tip { background: #e8f4fd; border-left: 3px solid #3498db; padding: 8px 12px; border-radius: 0 6px 6px 0; font-size: 13px; color: #1a5276; margin-top: 8px; line-height: 1.7; }
+.ans-tip.yellow { background: #fffde7; border-left-color: #f1c40f; color: #7d6608; }
+.ans-tip.red    { background: #fff5f5; border-left-color: #e74c3c; color: #922b21; }
+
+/* 得分档位 */
+.score-tier { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; font-size: 13px; text-align: center; margin: 14px 0; }
+.score-tier .st-cell { border-radius: 8px; padding: 10px; }
+.st-pass  { background: #e8f5e9; color: #2e7d32; }
+.st-mid   { background: #fff3e0; color: #e65100; }
+.st-retry { background: #fce4ec; color: #c62828; }
+.st-cell .st-num { font-size: 20px; font-weight: 900; }
+.st-cell .st-txt { margin-top: 4px; font-size: 12px; }
+
+/* ============================================================
+   分页
+   ============================================================ */
+.page-break { page-break-after: always; break-after: page; }
+.no-break   { page-break-inside: avoid; break-inside: avoid; }
+
+/* ============================================================
+   打印媒体查询
+   ============================================================ */
+@media print {
+    .wb-topbar,
+    .wb-pagenav,
+    .wb-footer { display: none !important; }
+
+    body { background: #fff; }
+
+    .a4-page {
+        width: 100%;
+        margin: 0;
+        padding: 12mm 16mm 16mm 16mm;
+        box-shadow: none;
+        border: none;
+        min-height: auto;
+    }
+
+    .page-break { page-break-after: always; break-after: page; }
+    .no-break   { page-break-inside: avoid; break-inside: avoid; }
+    .ans-block  { page-break-inside: avoid; break-inside: avoid; }
+
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    .page-footer { position: fixed; bottom: 8mm; left: 16mm; right: 16mm; }
+
+    @page { size: A4; margin: 0; }
+}
+
+/* ============================================================
+   响应式
+   ============================================================ */
+@media (max-width: 680px) {
+    .a4-page { width: 100%; padding: 20px 16px 60px; min-height: auto; }
+    .wb-actions .wb-lesson-btn { display: none; }
+    .wb-pagenav { padding: 0 14px; }
+    .wn-btn { min-width: 110px; padding: 9px 12px; }
+    .wn-btn .wnt-title { font-size: 12px; }
+}
+</style>
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="wb-topbar">
+    <div class="wb-topbar-inner">
+        <a class="wb-back" href="index.html">← 练习册目录</a>
+        <div class="wb-sep">/</div>
+
+        <div class="wb-sep">/</div>
+        <div class="wb-info">
+            <div class="wi-tag">第8讲 · 配套练习册</div>
+            <div class="wi-title">时间间谍（时态入门）· 练习册</div>
+        </div>
+        <div class="wb-actions">
+        
+            <button class="wb-print-btn" onclick="window.print()">🖨️ 打印本册</button>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================
+     ↓↓↓ 粘贴区域开始 ↓↓↓
+     ============================================================ -->
+
+<!-- 第一页：封面 -->
+<div class="a4-page">
+    <div class="cover-page">
+        <div class="cover-logo">🕵️</div>
+        <div class="cover-series">初中英语语法重构 · 逆袭版 · 配套练习册</div>
+        <div class="cover-title">第8讲：时间间谍<br><span>（时态入门与三单特训）</span></div>
+        <div class="cover-sub">揪出句子里的“时间间谍”，轻松秒杀一般现在时三单大坑</div>
+        <div class="cover-tags">
+            <div class="cover-tag">📋 共5大题型</div>
+            <div class="cover-tag">🔢 共25题</div>
+            <div class="cover-tag">⏱ 建议用时 35分钟</div>
+            <div class="cover-tag">🎯 满分 100分</div>
+        </div>
+        <div class="cover-fill">
+            <div class="fill-item"><label>姓名</label><div class="fill-line"></div></div>
+            <div class="fill-item"><label>日期</label><div class="fill-line"></div></div>
+            <div class="fill-item"><label>做题时间（分钟</label><div class="fill-line"></div></div>
+            <div class="fill-item"><label>本次得分</label><div class="fill-line"></div></div>
+        </div>
+        
+        <div style="width:100%; margin-top: 20px;">
+            <div class="score-box" style="grid-template-columns: repeat(5, 1fr);">
+                <div class="sb-head">第一题</div>
+                <div class="sb-head">第二题</div>
+                <div class="sb-head">第三题</div>
+                <div class="sb-head">第四题</div>
+                <div class="sb-head">第五题</div>
+                <div class="sb-cell">／20分</div>
+                <div class="sb-cell">／20分</div>
+                <div class="sb-cell">／20分</div>
+                <div class="sb-cell">／20分</div>
+                <div class="sb-cell">／20分</div>
+            </div>
+        </div>
+
+        <div class="cover-promise">
+            ✏️ <strong>使用说明：</strong>做完题后重点阅读答案里的“大白话脑回路分析”。<br>
+            <strong style="color:#e74c3c;">记住口诀：助动词临时工只要上岗（don't/doesn't），后面的动词必须一律还原原形！</strong>
+        </div>
+    </div>
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第8讲配套练习册</span>
+        <span>第 1 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第二页：第一题 + 第二题 -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第8讲练习册</span>
+        <span class="lesson-id">时间间谍（时态入门）</span>
+    </div>
+
+    <!-- 第一题：时间信号词配对 -->
+    <div class="section-title">
+        <div class="section-num">第一题</div>
+        <h2>时间间谍信号词大配对（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar">📌 题目说明：下面左边是“时间间谍词”，右边是它们所效忠的“时态地盘”。请将左边的数字填入右边对应的括号内。</div>
+
+    <div class="q-block no-break">
+        <div class="match-grid">
+            <div class="match-left">① usually / often / every day</div>
+            <div class="match-line"></div>
+            <div class="match-right">(&nbsp;&nbsp;&nbsp;&nbsp;) 一般过去时（过去动作）</div>
+
+            <div class="match-left">② yesterday / last night / ago</div>
+            <div class="match-line"></div>
+            <div class="match-right">(&nbsp;&nbsp;&nbsp;&nbsp;) 现在进行时（现在这一秒）</div>
+
+            <div class="match-left">③ tomorrow / next week / soon</div>
+            <div class="match-line"></div>
+            <div class="match-right">(&nbsp;&nbsp;&nbsp;&nbsp;) 一般现在时（习惯规律）</div>
+
+            <div class="match-left">④ right now / Look! / Listen!</div>
+            <div class="match-line"></div>
+            <div class="match-right">(&nbsp;&nbsp;&nbsp;&nbsp;) 现在完成时（过去对现在有影响）</div>
+
+            <div class="match-left">⑤ since 2018 / already / yet</div>
+            <div class="match-line"></div>
+            <div class="match-right">(&nbsp;&nbsp;&nbsp;&nbsp;) 一般将来时（还没发生）</div>
+        </div>
+    </div>
+
+    <!-- 第二题：动词三单变装大集训 -->
+    <div class="section-title" style="margin-top:28px;">
+        <div class="section-num">第二题</div>
+        <h2>一般现在时：三单发动机大变身（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar green">📌 题目说明：写出下列动词对应的第三人称单数形式（加 s/es/ies 或特殊变化）。</div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">1</span> play (玩/打球) ➡️ <span class="blank" style="width:120px;"></span></div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">2</span> watch (观看) ➡️ <span class="blank" style="width:120px;"></span></div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">3</span> fly (飞) ➡️ <span class="blank" style="width:120px;"></span></div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">4</span> go (去) ➡️ <span class="blank" style="width:120px;"></span></div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">5</span> have (有) ➡️ <span class="blank" style="width:120px;"></span>（⚠️ 提示：不规则变化）</div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第8讲配套练习册</span>
+        <span>第 2 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第三页：第三题（单项选择） -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第8讲练习册</span>
+        <span class="lesson-id">时间间谍（时态入门）</span>
+    </div>
+
+    <div class="section-title">
+        <div class="section-num">第三题</div>
+        <h2>中考选择真题模拟（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar yellow">📌 题目说明：选出最合适的选项填在括号内。抓出句子里隐藏的时间信号词！</div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">1. He always ______ to school by bus every day.</div>
+                <div class="q-opts">
+                    <span>A. go</span>
+                    <span>B. goes</span>
+                    <span>C. going</span>
+                    <span>D. is going</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">2. Look! The girls ______ English songs in the classroom.</div>
+                <div class="q-opts">
+                    <span>A. sing</span>
+                    <span>B. are singing</span>
+                    <span>C. sang</span>
+                    <span>D. is singing</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">3. My sister ______ like milk. She hates it.</div>
+                <div class="q-opts">
+                    <span>A. doesn't</span>
+                    <span>B. don't</span>
+                    <span>C. isn't</span>
+                    <span>D. not</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">4. The geographer proved that the earth ______ around the sun.</div>
+                <div style="font-size:13px; color:#e67e22;">（⚠️ 特大雷区：客观真理/永恒事实！）</div>
+                <div class="q-opts">
+                    <span>A. went</span>
+                    <span>B. goes</span>
+                    <span>C. go</span>
+                    <span>D. was going</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">5. — ______ your father speak English? <br>— Yes, he does.</div>
+                <div class="q-opts">
+                    <span>A. Does</span>
+                    <span>B. Do</span>
+                    <span>C. Is</span>
+                    <span>D. Are</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第8讲配套练习册</span>
+        <span>第 3 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第四页：第四题（改错） + 第五题（综合填空） -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第8讲练习册</span>
+        <span class="lesson-id">时间间谍（时态入门）</span>
+    </div>
+
+    <!-- 第四题：找错并改正 -->
+    <div class="section-title">
+        <div class="section-num">第四题</div>
+        <h2>火眼金睛诊错室（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar red">📌 题目说明：以下句子关于一般现在时和三单的用法均有一处严重错误。请划出错误并写出正确的词。</div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">1. She <span class="underlined">don't</span> like watching TV in the evening.</div>
+        <div class="correction-line">改为：<span class="blank"></span></div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">2. He always <span class="underlined">finish</span> his homework very early.</div>
+        <div class="correction-line">改为：<span class="blank"></span></div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">3. Does Tom <span class="underlined">studies</span> hard at school?</div>
+        <div class="correction-line">改为：<span class="blank"></span>（提示：助动词 do/does 的“还原定律”）</div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">4. My mother <span class="underlined">is has</span> a very beautiful watch.</div>
+        <div class="correction-line">改为：<span class="blank"></span>（提示：一山不容二虎！）</div>
+    </div>
+
+    <div class="q-block no-break" style="border-bottom:none;">
+        <div class="error-sentence">5. The scientific experiment shows that water <span class="underlined">boil</span> at 100 degrees.</div>
+        <div class="correction-line">改为：<span class="blank"></span>（提示：水 boil 是科学常理，water不可数视为单数）</div>
+    </div>
+
+    <!-- 第五题：综合填空 -->
+    <div class="section-title" style="margin-top:26px;">
+        <div class="section-num">第五题</div>
+        <h2>综合填空与句型转换（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar purple">📌 题目说明：根据句子逻辑和括号内的指示，填写正确的单词。</div>
+
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">1</span> (not / drink) My cat ______ milk. It only drinks water.</div>
+    </div>
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">2</span> (do) Lucy ______ her homework every evening after dinner.</div>
+    </div>
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">3</span> (be) Tom and I ______ classmates. We always go to school together.</div>
+    </div>
+    <div class="q-block no-break">
+        <div class="q-stem"><span class="q-num">4</span> 【变一般疑问句】 He reads books every evening. <br>➡️ <span class="blank" style="width:120px;"></span> he ______ (read) books every evening?</div>
+    </div>
+    <div class="q-block no-break" style="border-bottom:none;">
+        <div class="q-stem"><span class="q-num">5</span> (rise) The geographer told us that the sun ______ in the east.</div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第8讲配套练习册</span>
+        <span>第 4 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第五页：答案解析 -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第8讲练习册</span>
+        <span class="lesson-id">答案解析</span>
+    </div>
+
+    <div class="ans-page-header">📖 答案 & 大白话解析</div>
+    <div class="ans-warning">
+        ⚠️ <strong>核对提醒：</strong>一般现在时最核心的就是主语为三单（he/she/it/单数名词）时，动词要加 s/es/ies。且助动词 do/does 出现时，动词必须原形。
+    </div>
+
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin-bottom:10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第一题 · 时间间谍信号词大配对（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-body" style="padding-top:12px;">
+            <div style="display:grid; grid-template-columns:1fr 30px 1fr; gap:6px 10px; font-size:14px; align-items:center;">
+                <div style="background:#e8f5e9; border-radius:6px; padding:6px 10px; font-weight:bold; color:#2e7d32; text-align:right;">② yesterday / last night / ago</div>
+                <div style="text-align:center; color:#27ae60; font-weight:900;">→</div>
+                <div style="background:#fafafa; border-radius:6px; padding:6px 10px; font-weight:bold; color:#333;">一般过去时（did）</div>
+
+                <div style="background:#fff3e0; border-radius:6px; padding:6px 10px; font-weight:bold; color:#e65100; text-align:right;">④ right now / Look! / Listen!</div>
+                <div style="text-align:center; color:#27ae60; font-weight:900;">→</div>
+                <div style="background:#fafafa; border-radius:6px; padding:6px 10px; font-weight:bold; color:#333;">现在进行时（be + doing）</div>
+
+                <div style="background:#e8f5e9; border-radius:6px; padding:6px 10px; font-weight:bold; color:#2e7d32; text-align:right;">① usually / often / every day</div>
+                <div style="text-align:center; color:#27ae60; font-weight:900;">→</div>
+                <div style="background:#fafafa; border-radius:6px; padding:6px 10px; font-weight:bold; color:#333;">一般现在时（do/does）</div>
+
+                <div style="background:#faf5ff; border-radius:6px; padding:6px 10px; font-weight:bold; color:#6a1b9a; text-align:right;">⑤ since 2018 / already / yet</div>
+                <div style="text-align:center; color:#27ae60; font-weight:900;">→</div>
+                <div style="background:#fafafa; border-radius:6px; padding:6px 10px; font-weight:bold; color:#333;">现在完成时（have/has done）</div>
+
+                <div style="background:#fff3e0; border-radius:6px; padding:6px 10px; font-weight:bold; color:#e65100; text-align:right;">③ tomorrow / next week / soon</div>
+                <div style="text-align:center; color:#27ae60; font-weight:900;">→</div>
+                <div style="background:#fafafa; border-radius:6px; padding:6px 10px; font-weight:bold; color:#333;">一般将来时（will / be going to）</div>
+            </div>
+            <div class="ans-tip yellow" style="margin-top:10px;">💡 脑回路：做所有时态选择填空的第一步——像雷达一样扫描句尾，找出上面这些“间谍信号词”，时态直接定局。</div>
+        </div>
+    </div>
+
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin:18px 0 10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第二题 · 一般现在时：三单大变身（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">1</span><p>play ➡️ <strong><span class="green">plays</span></strong>。 <span style="color:#888;">虽然以 y 结尾，但前面是元音字母 a，所以直接加 s（与 play 规律相同的还有 say ➡️ says / buy ➡️ buys）。</span></p></div>
+            <div class="ans-step"><span class="step-icon">2</span><p>watch ➡️ <strong><span class="green">watches</span></strong>。 <span style="color:#888;">以 ch 结尾，属于特殊尾巴，加 es。</span></p></div>
+            <div class="ans-step"><span class="step-icon">3</span><p>fly ➡️ <strong><span class="green">flies</span></strong>。 <span style="color:#888;">以辅音字母 l + y 结尾，变 y 为 i 加 es。</span></p></div>
+            <div class="ans-step"><span class="step-icon">4</span><p>go ➡️ <strong><span class="green">goes</span></strong>。 <span style="color:#888;">以 o 结尾，加 es（同理 do ➡️ does）。</span></p></div>
+            <div class="ans-step"><span class="step-icon">5</span><p>have ➡️ <strong><span class="green">has</span></strong>。 <span style="color:#e74c3c;">【最爱出题】</span><span style="color:#888;"> 不规则特殊变化，必须单独记死！</span></p></div>
+        </div>
+    </div>
+
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin:18px 0 10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第三题 · 中考选择真题模拟（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">1</span><p>选 <strong class="green">B（goes）</strong>。<br>• <strong>解析：</strong>时间信号词是 <code>every day</code>（每天），用一般现在时。主语是 <strong>He</strong>（单数第三人称），所以动词 go 变三单形式 <strong>goes</strong>。✅</p></div>
+            <div class="ans-step"><span class="step-icon">2</span><p>选 <strong class="green">B（are singing）</strong>。<br>• <strong>解析：</strong>时间信号词是句首的感叹号 <code>Look!</code>（瞧！），表示动作此时此刻正在发生 ➡️ 进行时（be + doing）。主语 the girls 是复数，用 <strong>are singing</strong>。✅</p></div>
+            <div class="ans-step"><span class="step-icon">3</span><p>选 <strong class="green">A（doesn't）</strong>。<br>• <strong>解析：</strong>主语是 <code>My sister</code>（三单），否定句需要雇佣三单助动词 <strong>doesn't</strong>，后面跟动词原形 like。don't 是非三单用的。C 选项 isn't 和 like 连用属于双发动机冲突。✅</p></div>
+            <div class="ans-step"><span class="step-icon">4</span><p>选 <strong class="green">B（goes）</strong>。<br>• <strong>解析：</strong><span class="red">【大中考暗礁】</span> 虽然主句用的是 proved 过去时，但从句“地球绕着太阳转”属于**亘古不变的客观真理**。客观事实享有宇宙级特权，强行使用**一般现在时**！地球 earth 是单数 ➡️ 选 <strong>goes</strong>。选 B。✅</p></div>
+            <div class="ans-step"><span class="step-icon">5</span><p>选 <strong class="green">A（Does）</strong>。<br>• <strong>解析：</strong>第二句回答是 "Yes, he does"，根据英语里的“问答发动机对称原则”，问句必然用 <strong>Does</strong> 提问。且主语 your father 是单数。选 A。✅</p></div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第8讲配套练习册</span>
+        <span>第 5 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第六页：答案解析（续） -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第8讲练习册</span>
+        <span class="lesson-id">答案解析（续）</span>
+    </div>
+
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin-bottom:10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第四题 · 火眼金睛找病句（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">1</span><p><strong>don't 改为 doesn't</strong><br>• <strong>大白话解析：</strong>主语是 She（三单人称），否定句不能用 don't，必须穿三单专属衣服 <strong>doesn't</strong>。✅</p></div>
+            <div class="ans-step"><span class="step-icon">2</span><p><strong>finish 改为 finishes</strong><br>• <strong>大白话解析：</strong>句尾有 every day，主语是 He（三单人称），在一般现在时肯定句中，动词必须加 es ➡️ <strong>finishes</strong>。✅</p></div>
+            <div class="ans-step"><span class="step-icon">3</span><p><strong>studies 改为 study</strong><br>• <strong>大白话解析：</strong><span class="red">【超高频丢分点】</span> 句子最前面已经有了助动词 <code>Does</code>。助动词就像临时工，既然它上岗承担了三单责任，后面的动词 studies 必须无条件解放，还原为最干净的**动词原形 study**！✅</p></div>
+            <div class="ans-step"><span class="step-icon">4</span><p><strong>is has 改为 has</strong><br>• <strong>大白话解析：</strong>一山不容二虎！有代表“有”的真实动作 <code>has</code>（发动机），绝对不允许放 be 动词 <code>is</code> 进来并排。必须删掉 is。✅</p></div>
+            <div class="ans-step"><span class="step-icon">5</span><p><strong>boil 改为 boils</strong><br>• <strong>大白话解析：</strong>水在100度沸腾是“物理常识（一般现在时）”。water属于不可数名词，作主语当单数看，所以动词必须变成三单 ➡️ <strong>boils</strong>。✅</p></div>
+        </div>
+    </div>
+
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin:18px 0 10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第五题 · 综合填空及句型转换（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-body" style="padding-top:12px;">
+            <div class="ans-step"><span class="step-icon">1</span><p>填 <strong><span class="green">doesn't drink</span></strong>。 <span style="color:#888;">主语是 My cat（它，单数），否定句用 doesn't 加上动词原形 drink。</span></p></div>
+            <div class="ans-step"><span class="step-icon">2</span><p>填 <strong><span class="green">does</span></strong>。 <span style="color:#888;">做作业是 do homework。主语 Lucy 是三单，在肯定句中，do 变三单 ➡️ does（Lucy does her homework）。</span></p></div>
+            <div class="ans-step"><span class="step-icon">3</span><p>填 <strong><span class="green">are</span></strong>。 <span style="color:#888;">Tom and I 是两个人（复数），be 动词配 are。</span></p></div>
+            <div class="ans-step"><span class="step-icon">4</span><p>第一空填 <strong><span class="green">Does</span></strong>；第二空填 <strong><span class="green">read</span></strong>。 <span style="color:#888;">肯定句变一般疑问句：主语是 He，动词是实义动词 reads ➡️ 句首借助动词 <strong>Does</strong>。Does 上岗，后面的 reads 脱掉 s 还原为原形 <strong>read</strong>。</span></p></div>
+            <div class="ans-step"><span class="step-icon">5</span><p>填 <strong><span class="green">rises</span></strong>。 <span style="color:#888;">虽然主句 told 是过去式，但“太阳从东边升起”是雷打不动的客观真理，从句强制使用现在时 ➡️ rises。</span></p></div>
+        </div>
+    </div>
+
+    <!-- 得分档位 -->
+    <div style="margin-top:20px; border:2px solid #2c3e50; border-radius:10px; padding:18px 22px; background:#fafafa;">
+        <div style="font-size:15px; font-weight:900; color:#2c3e50; margin-bottom:12px;">📊 对完答案，给自己算个分吧！</div>
+        <div class="score-tier">
+            <div class="st-cell st-pass">
+                <div class="st-num">85-100分</div>
+                <div class="st-txt">时态入门大获全胜！<br>直接昂首冲向第9讲过去时！</div>
+            </div>
+            <div class="st-mid">
+                <div class="st-num">60-84分</div>
+                <div class="st-txt">是不是在 Does Tom study 上写成 studies 了？<br>默写“助动词还原定律”。</div>
+            </div>
+            <div class="st-retry">
+                <div class="st-num">60分以下</div>
+                <div class="st-txt">时态判定和三单还完全一团糟！<br>回去重新把讲义和口诀精读3遍。</div>
+            </div>
+        </div>
+        <div style="font-size:13px; color:#888; text-align:center; line-height:1.7;">
+            恭喜你完成了时态大门的第一道关卡！时态是初中语法中分值最高的半壁江山，今天你已经成功在脑子里装载了“时间雷达”和“三单变装齿轮”。继续前进！
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第8讲配套练习册</span>
+        <span>第 7 页</span>
+    </div>
+</div>
+
+<!-- ============================================================
+     ↑↑↑ 粘贴区域结束 ↑↑↑
+     ============================================================ -->
+
+<!-- ===== 底部翻页导航 ===== -->
+<div class="wb-pagenav">
+    <a class="wn-btn prev" href="workbook-07.html">
+        <div class="wna">‹</div>
+        <div class="wnt">
+            <span class="wnt-label">上一讲练习册</span>
+            <span class="wnt-title">代词换装游戏</span>
+        </div>
+    </a>
+
+    <a class="wn-home" href="index.html">📝 练习册目录</a>
+
+    <a class="wn-btn next" href="workbook-09.html">
+        <div class="wnt" style="text-align:right;">
+            <span class="wnt-label">下一讲练习册</span>
+            <span class="wnt-title">一般过去时</span>
+        </div>
+        <div class="wna">›</div>
+    </a>
+</div>
+
+<!-- ===== 页脚 ===== -->
+<div class="wb-footer">
+    初中英语语法重构 · 逆袭版 · 第8讲练习册<br>
+  
+</div>
+
+</body>
+</html>

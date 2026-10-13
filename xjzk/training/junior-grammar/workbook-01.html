@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>第1讲练习册 · 四大词性 — 初中英语语法重构</title>
+
+<style>
+/* ============================================================
+   基础 Reset
+   ============================================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Songti SC', serif;
+    background: #e8ecee;
+    color: #1a1a2e;
+    font-size: 15px;
+    line-height: 1.75;
+}
+/* =============================================
+   练习册封面（第一页）
+   ============================================= */
+.cover-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 260mm;
+    text-align: center;
+}
+.cover-logo {
+    width: 72px; height: 72px;
+    background: #2c3e50;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px;
+    margin-bottom: 28px;
+}
+.cover-series {
+    font-size: 13px;
+    color: #7f8c8d;
+    letter-spacing: 0.15em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+.cover-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #1a252f;
+    line-height: 1.25;
+    margin-bottom: 10px;
+}
+.cover-title span { color: #e74c3c; }
+.cover-sub {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 36px;
+}
+.cover-tags {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+.cover-tag {
+    border: 1.5px solid #2c3e50;
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 13px;
+    color: #2c3e50;
+}
+.cover-fill {
+    width: 100%;
+    border-top: 1.5px solid #ddd;
+    padding-top: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    text-align: left;
+}
+.fill-item label {
+    font-size: 13px;
+    color: #888;
+    display: block;
+    margin-bottom: 6px;
+}
+.fill-item .fill-line {
+    border-bottom: 1.5px solid #2c3e50;
+    height: 28px;
+    width: 100%;
+}
+.cover-promise {
+    margin-top: 30px;
+    background: #fffde7;
+    border: 1.5px dashed #f1c40f;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    width: 100%;
+    line-height: 1.8;
+}
+/* 总分框 */
+.score-box {
+    border: 2px solid #2c3e50;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    overflow: hidden;
+    margin: 16px 0;
+    font-size: 13px;
+}
+.score-box .sb-head {
+    background: #2c3e50;
+    color: #f1c40f;
+    padding: 7px 4px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.score-box .sb-cell {
+    padding: 10px 4px;
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+.score-box .sb-cell:last-child { border-right: none; }
+/* ============================================================
+   顶部导航条（屏幕可见，打印时隐藏）
+   ============================================================ */
+.wb-topbar {
+    background: #1a252f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+.wb-topbar-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 11px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.wb-back {
+    color: #f1c40f;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.wb-back:hover { opacity: 0.75; }
+.wb-back-lesson {
+    color: #95a5a6;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.wb-back-lesson:hover { opacity: 0.75; color: #ecf0f1; }
+.wb-sep { color: #3d5166; font-size: 14px; flex-shrink: 0; }
+.wb-info { flex: 1; min-width: 0; }
+.wb-info .wi-tag   { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 1px; }
+.wb-info .wi-title { font-size: 14px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wb-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.wb-print-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+.wb-print-btn:hover { background: #c0392b; }
+.wb-lesson-btn {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+.wb-lesson-btn:hover { background: rgba(255,255,255,0.18); }
+
+/* ============================================================
+   底部翻页导航
+   ============================================================ */
+.wb-pagenav {
+    max-width: 860px;
+    margin: 20px auto 16px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.wn-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    padding: 11px 16px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 13px;
+    transition: all 0.15s;
+    flex: 1;
+    min-width: 140px;
+    max-width: 260px;
+}
+.wn-btn:hover { border-color: #e74c3c; box-shadow: 0 4px 10px rgba(231,76,60,0.12); transform: translateY(-1px); }
+.wn-btn.prev { justify-content: flex-start; }
+.wn-btn.next { justify-content: flex-end; margin-left: auto; }
+.wn-btn .wna  { font-size: 18px; color: #ccc; flex-shrink: 0; }
+.wn-btn:hover .wna { color: #e74c3c; }
+.wn-btn .wnt  { min-width: 0; }
+.wn-btn .wnt-label { font-size: 11px; color: #aaa; display: block; }
+.wn-btn .wnt-title { font-size: 13px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wn-home {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #1a252f;
+    border-radius: 10px;
+    padding: 11px 16px;
+    text-decoration: none;
+    color: #f1c40f;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.wn-home:hover { opacity: 0.85; }
+
+/* ============================================================
+   页脚
+   ============================================================ */
+.wb-footer {
+    text-align: center;
+    padding: 16px 20px 32px;
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   A4 页面容器（原练习册核心）
+   ============================================================ */
+.a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    background: #ffffff;
+    margin: 20px auto;
+    padding: 18mm 20mm 22mm 20mm;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+/* ============================================================
+   页眉 / 页脚（A4内）
+   ============================================================ */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #2c3e50;
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+}
+.page-header .brand { font-size: 13px; color: #7f8c8d; }
+.page-header .lesson-id {
+    background: #2c3e50;
+    color: #f1c40f;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.page-footer {
+    position: absolute;
+    bottom: 10mm;
+    left: 20mm;
+    right: 20mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* ============================================================
+   练习册封面
+   ============================================================ */
+.cover-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 260mm;
+    text-align: center;
+}
+.cover-logo {
+    width: 72px; height: 72px;
+    background: #2c3e50;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px;
+    margin-bottom: 28px;
+}
+.cover-series { font-size: 13px; color: #7f8c8d; letter-spacing: 0.15em; margin-bottom: 14px; text-transform: uppercase; }
+.cover-title  { font-size: 34px; font-weight: 900; color: #1a252f; line-height: 1.25; margin-bottom: 10px; }
+.cover-title span { color: #e74c3c; }
+.cover-sub    { font-size: 16px; color: #555; margin-bottom: 36px; }
+.cover-tags   { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+.cover-tag    { border: 1.5px solid #2c3e50; border-radius: 20px; padding: 5px 16px; font-size: 13px; color: #2c3e50; }
+.cover-fill   { width: 100%; border-top: 1.5px solid #ddd; padding-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; }
+.fill-item label    { font-size: 13px; color: #888; display: block; margin-bottom: 6px; }
+.fill-item .fill-line { border-bottom: 1.5px solid #2c3e50; height: 28px; width: 100%; }
+.cover-promise { margin-top: 30px; background: #fffde7; border: 1.5px dashed #f1c40f; border-radius: 10px; padding: 16px 20px; font-size: 14px; color: #555; text-align: center; width: 100%; line-height: 1.8; }
+
+/* ============================================================
+   总分框
+   ============================================================ */
+.score-box { border: 2px solid #2c3e50; border-radius: 10px; display: grid; text-align: center; overflow: hidden; margin: 16px 0; font-size: 13px; }
+.score-box .sb-head { background: #2c3e50; color: #f1c40f; padding: 7px 4px; font-weight: bold; font-size: 12px; }
+.score-box .sb-cell { padding: 10px 4px; border-right: 1px solid #ddd; border-top: 1px solid #ddd; }
+.score-box .sb-cell:last-child { border-right: none; }
+
+/* ============================================================
+   章节标题
+   ============================================================ */
+.section-title { display: flex; align-items: center; gap: 12px; margin: 26px 0 16px; }
+.section-num { background: #2c3e50; color: #f1c40f; font-weight: 900; font-size: 14px; padding: 5px 14px; border-radius: 20px; white-space: nowrap; }
+.section-title h2 { font-size: 17px; font-weight: 900; color: #1a252f; flex: 1; }
+.section-title .score-chip { font-size: 12px; color: #e74c3c; border: 1px solid #e74c3c; border-radius: 12px; padding: 2px 10px; white-space: nowrap; }
+
+/* 分组说明条 */
+.part-bar { background: #f0f7ff; border-left: 4px solid #3498db; padding: 9px 14px; font-size: 14px; font-weight: bold; color: #1a5276; border-radius: 0 6px 6px 0; margin: 14px 0 12px; }
+.part-bar.green  { background: #f4fbf4; border-left-color: #27ae60; color: #145a32; }
+.part-bar.red    { background: #fff5f5; border-left-color: #e74c3c; color: #922b21; }
+.part-bar.yellow { background: #fffde7; border-left-color: #f1c40f; color: #7d6608; }
+.part-bar.purple { background: #faf5ff; border-left-color: #8e44ad; color: #5b2c6f; }
+
+/* ============================================================
+   题目通用样式
+   ============================================================ */
+.q-block { margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px dashed #e0e0e0; }
+.q-block:last-child { border-bottom: none; }
+.q-num { display: inline-block; width: 24px; height: 24px; background: #ecf0f1; border-radius: 50%; text-align: center; line-height: 24px; font-size: 13px; font-weight: bold; color: #2c3e50; margin-right: 6px; flex-shrink: 0; }
+.q-stem { font-size: 15px; font-weight: bold; color: #1a1a2e; line-height: 1.7; margin-bottom: 8px; }
+.q-stem .blank { display: inline-block; width: 70px; border-bottom: 2px solid #2c3e50; vertical-align: bottom; text-align: center; }
+.q-stem code { font-family: 'Courier New', monospace; background: #f5f5f5; padding: 1px 6px; border-radius: 4px; font-size: 14px; }
+.q-opts { display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 14px; color: #444; margin-top: 6px; padding-left: 4px; }
+.q-opts span { min-width: 120px; }
+
+/* 答题区 */
+.answer-lines { margin-top: 10px; display: flex; flex-direction: column; gap: 10px; }
+.answer-line  { border-bottom: 1.5px solid #bbb; min-height: 28px; width: 100%; }
+
+/* 连线题 */
+.match-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px 20px; align-items: center; margin: 10px 0; font-size: 14px; }
+.match-left  { text-align: right; padding: 6px 10px; background: #f0f7ff; border-radius: 6px; font-weight: bold; color: #1a5276; }
+.match-line  { width: 60px; border-bottom: 1.5px dashed #bbb; }
+.match-right { padding: 6px 10px; background: #f4fbf4; border-radius: 6px; color: #145a32; font-weight: bold; }
+
+/* 词性标注题 */
+.tag-sentence { font-size: 16px; font-weight: bold; letter-spacing: 0.05em; display: flex; flex-wrap: wrap; gap: 12px; margin: 10px 0; align-items: flex-end; }
+.tag-word { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.tag-word .tw { font-size: 16px; font-weight: bold; color: #1a252f; }
+.tag-word .tl { border-bottom: 1.5px solid #2c3e50; width: 60px; height: 22px; font-size: 11px; text-align: center; color: #888; }
+
+/* 情境判断框 */
+.scenario-box { background: #fafafa; border: 1.5px solid #ddd; border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 14px; color: #333; line-height: 1.7; }
+.scenario-box strong { color: #e74c3c; }
+
+/* 表格 */
+.wb-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0; }
+.wb-table th { background: #2c3e50; color: #f1c40f; padding: 9px 12px; text-align: left; font-size: 13px; }
+.wb-table td { padding: 9px 12px; border-bottom: 1px solid #eee; vertical-align: middle; }
+.wb-table tr:nth-child(even) td { background: #f9f9f9; }
+.wb-table .write-td { border-bottom: 1.5px solid #2c3e50 !important; min-width: 100px; background: transparent !important; }
+
+/* 改错题 */
+.error-sentence { font-size: 16px; font-weight: bold; line-height: 2.2; letter-spacing: 0.03em; }
+.underlined { text-decoration: underline; text-underline-offset: 3px; }
+.correction-line { display: flex; align-items: center; gap: 10px; margin-top: 8px; font-size: 14px; color: #555; }
+.correction-line .blank { display: inline-block; width: 100px; border-bottom: 1.5px solid #2c3e50; }
+
+/* ============================================================
+   答案解析页样式
+   ============================================================ */
+.ans-page-header { background: #1a252f; color: #f1c40f; text-align: center; padding: 16px; border-radius: 10px; font-size: 18px; font-weight: 900; margin-bottom: 20px; letter-spacing: 0.05em; }
+.ans-warning { background: #fffde7; border: 2px dashed #f1c40f; border-radius: 8px; padding: 12px 18px; font-size: 13px; color: #7d6608; text-align: center; margin-bottom: 20px; line-height: 1.7; }
+
+.ans-block { margin-bottom: 20px; border-radius: 10px; overflow: hidden; border: 1.5px solid #e0e0e0; page-break-inside: avoid; }
+.ans-q-header { display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: #f8f9fa; border-bottom: 1px solid #e0e0e0; }
+.ans-q-header .aq-num { background: #2c3e50; color: #fff; font-weight: 900; font-size: 13px; padding: 3px 12px; border-radius: 12px; white-space: nowrap; }
+.ans-q-header .aq-stem { font-size: 14px; font-weight: bold; color: #333; flex: 1; }
+.ans-answer { display: flex; align-items: center; gap: 8px; padding: 10px 16px 6px; background: #fff; }
+.ans-label { font-size: 13px; color: #888; white-space: nowrap; }
+.ans-val   { font-size: 16px; font-weight: 900; color: #27ae60; }
+.ans-body  { padding: 0 16px 14px; background: #fff; }
+.ans-step  { display: flex; gap: 10px; align-items: flex-start; margin: 6px 0; font-size: 14px; line-height: 1.7; color: #333; }
+.ans-step .step-icon { font-size: 16px; flex-shrink: 0; line-height: 1.5; }
+.ans-step p { flex: 1; }
+.ans-step p strong { color: #2c3e50; }
+.ans-step p .red   { color: #e74c3c; font-weight: bold; }
+.ans-step p .green { color: #27ae60; font-weight: bold; }
+.ans-step p .blue  { color: #2980b9; font-weight: bold; }
+.ans-tip { background: #e8f4fd; border-left: 3px solid #3498db; padding: 8px 12px; border-radius: 0 6px 6px 0; font-size: 13px; color: #1a5276; margin-top: 8px; line-height: 1.7; }
+.ans-tip.yellow { background: #fffde7; border-left-color: #f1c40f; color: #7d6608; }
+.ans-tip.red    { background: #fff5f5; border-left-color: #e74c3c; color: #922b21; }
+
+/* 对错行 */
+.wrong-right-row { display: flex; gap: 20px; flex-wrap: wrap; margin: 6px 0; font-size: 14px; }
+.wr-wrong { color: #e74c3c; text-decoration: line-through; }
+.wr-right { color: #27ae60; font-weight: bold; }
+
+/* 得分档位 */
+.score-tier { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; font-size: 13px; text-align: center; margin: 14px 0; }
+.score-tier .st-cell { border-radius: 8px; padding: 10px; }
+.st-pass  { background: #e8f5e9; color: #2e7d32; }
+.st-mid   { background: #fff3e0; color: #e65100; }
+.st-retry { background: #fce4ec; color: #c62828; }
+.st-cell .st-num { font-size: 20px; font-weight: 900; }
+.st-cell .st-txt { margin-top: 4px; font-size: 12px; }
+
+/* ============================================================
+   分页
+   ============================================================ */
+.page-break { page-break-after: always; break-after: page; }
+.no-break   { page-break-inside: avoid; break-inside: avoid; }
+
+/* ============================================================
+   打印媒体查询
+   ============================================================ */
+@media print {
+    /* 隐藏所有页面导航 */
+    .wb-topbar,
+    .wb-pagenav,
+    .wb-footer { display: none !important; }
+
+    body { background: #fff; }
+
+    /* A4页面去掉圆角和阴影 */
+    .a4-page {
+        width: 100%;
+        margin: 0;
+        padding: 12mm 16mm 16mm 16mm;
+        box-shadow: none;
+        min-height: auto;
+    }
+
+    /* 强制分页 */
+    .page-break { page-break-after: always; break-after: page; }
+    .no-break   { page-break-inside: avoid; break-inside: avoid; }
+    .ans-block  { page-break-inside: avoid; break-inside: avoid; }
+
+    /* 保留背景色 */
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    /* 固定页脚 */
+    .page-footer { position: fixed; bottom: 8mm; left: 16mm; right: 16mm; }
+
+    @page { size: A4; margin: 0; }
+}
+
+/* ============================================================
+   响应式
+   ============================================================ */
+@media (max-width: 680px) {
+    .a4-page { width: 100%; padding: 20px 16px 60px; min-height: auto; }
+    .wb-actions .wb-lesson-btn { display: none; }
+    .wb-pagenav { padding: 0 14px; }
+    .wn-btn { min-width: 110px; padding: 9px 12px; }
+    .wn-btn .wnt-title { font-size: 12px; }
+}
+</style>
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="wb-topbar">
+    <div class="wb-topbar-inner">
+        <!-- 返回练习册目录 -->
+        <a class="wb-back" href="index.html">← 练习册目录</a>
+        <div class="wb-sep">/</div>
+    
+       
+        <div class="wb-sep">/</div>
+        <div class="wb-info">
+            <!-- 修改B-2：讲次信息 -->
+            <div class="wi-tag">第1讲 · 配套练习册</div>
+            <div class="wi-title"> 练习册</div>
+        </div>
+        <div class="wb-actions">
+            <!-- 修改B-3：href 改成对应讲义文件名 -->
+            <a class="wb-lesson-btn" href="lesson-01.html"></a>
+            <button class="wb-print-btn" onclick="window.print()">🖨️ 打印本册</button>
+        </div>
+    </div>
+</div>
+<div class="a4-page">
+    <div class="cover-page">
+        <div class="cover-logo">📝</div>
+        <div class="cover-series">初中英语语法重构 · 逆袭版 · 配套练习册</div>
+        <div class="cover-title">第1讲：四大天王<br><span>（四大词性）</span></div>
+        <div class="cover-sub">做完这本练习，你就真的学会了</div>
+
+        <div class="cover-tags">
+            <div class="cover-tag">📋 共6大题型</div>
+            <div class="cover-tag">🔢 共30题</div>
+            <div class="cover-tag">⏱ 建议用时 40分钟</div>
+            <div class="cover-tag">🎯 满分 100分</div>
+        </div>
+
+        <div class="cover-fill">
+            <div class="fill-item">
+                <label>姓名</label>
+                <div class="fill-line"></div>
+            </div>
+            <div class="fill-item">
+                <label>日期</label>
+                <div class="fill-line"></div>
+            </div>
+            <div class="fill-item">
+                <label>做题时间（分钟）</label>
+                <div class="fill-line"></div>
+            </div>
+            <div class="fill-item">
+                <label>本次得分</label>
+                <div class="fill-line"></div>
+            </div>
+        </div>
+
+        <!-- 分数登记表 -->
+        <div style="width:100%; margin-top: 24px;">
+            <div class="score-box">
+                <div class="sb-head">第一题</div>
+                <div class="sb-head">第二题</div>
+                <div class="sb-head">第三题</div>
+                <div class="sb-head">第四题</div>
+                <div class="sb-head">第五题</div>
+                <div class="sb-cell">／20分</div>
+                <div class="sb-cell">／15分</div>
+                <div class="sb-cell">／20分</div>
+                <div class="sb-cell">／25分</div>
+                <div class="sb-cell">／20分</div>
+            </div>
+        </div>
+
+        <div class="cover-promise">
+            ✏️ <strong>使用说明：</strong>先合上讲义，独立完成所有题目。做完后再翻到答案解析页，<br>
+            对答案时一定要看懂"为什么"，不是只看对错。<br>
+            <strong style="color:#e74c3c;">错了不丢人——不知道为什么错了，才真的白做了。</strong>
+        </div>
+    </div>
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第1讲配套练习册</span>
+        <span>第 1 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================
+     第二页：第一题 + 第二题
+     ================================================ -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第1讲练习册</span>
+        <span class="lesson-id">四大天王（词性）</span>
+    </div>
+
+    <!-- 第一题：词性连线 -->
+    <div class="section-title">
+        <div class="section-num">第一题</div>
+        <h2>词性配对连线（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar">📌 题目说明：左边是词性的"别名"（就是我们讲义里的比喻），右边是词性的英文名和中文名。请用直线把它们连起来。</div>
+
+    <div class="q-block no-break">
+        <div class="match-grid">
+            <div class="match-left">🏠 车身（骨架）</div>
+            <div class="match-line"></div>
+            <div class="match-right">Adverb（副词）</div>
+
+            <div class="match-left">🔥 发动机（灵魂）</div>
+            <div class="match-line"></div>
+            <div class="match-right">Adjective（形容词）</div>
+
+            <div class="match-left">🎨 车漆（颜值）</div>
+            <div class="match-line"></div>
+            <div class="match-right">Noun（名词）</div>
+
+            <div class="match-left">⚡ 加速器（助力）</div>
+            <div class="match-line"></div>
+            <div class="match-right">Verb（动词）</div>
+
+            <div class="match-left">🔥 发动机（备用款）</div>
+            <div class="match-line"></div>
+            <div class="match-right">Be动词（am/is/are）</div>
+        </div>
+        <div style="font-size:12px; color:#999; margin-top:8px;">※ 注意：最后一组有点不一样哦，想一想发动机有两种。</div>
+    </div>
+
+    <!-- 第二题：词性判断 -->
+    <div class="section-title" style="margin-top:28px;">
+        <div class="section-num">第二题</div>
+        <h2>看单词，写词性（每题3分，共15分）</h2>
+        <div class="score-chip">满分 15分</div>
+    </div>
+
+    <div class="part-bar green">📌 题目说明：看下面的单词，在括号里写出它的词性名称。词性只有四种：<strong>名词 / 动词 / 形容词 / 副词</strong>。不确定的时候，看看它有没有 -ly 结尾，或者想想它描述的是"东西"还是"动作"。</div>
+
+    <table class="wb-table">
+        <thead>
+            <tr>
+                <th style="width:10%">题号</th>
+                <th style="width:28%">单词</th>
+                <th style="width:30%">中文意思</th>
+                <th style="width:32%">词性（写在这里）</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>① </td>
+                <td><strong>slowly</strong></td>
+                <td>慢慢地</td>
+                <td class="write-td"></td>
+            </tr>
+            <tr>
+                <td>② </td>
+                <td><strong>beautiful</strong></td>
+                <td>漂亮的</td>
+                <td class="write-td"></td>
+            </tr>
+            <tr>
+                <td>③ </td>
+                <td><strong>teacher</strong></td>
+                <td>老师</td>
+                <td class="write-td"></td>
+            </tr>
+            <tr>
+                <td>④ </td>
+                <td><strong>jump</strong></td>
+                <td>跳跃</td>
+                <td class="write-td"></td>
+            </tr>
+            <tr>
+                <td>⑤ </td>
+                <td><strong>careful</strong></td>
+                <td>细心的</td>
+                <td class="write-td"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="font-size:12px; color:#999; margin-top:6px;">💡 提示：看到 -ly 结尾大概率是副词，但 good 和 well 是特殊情况要单独记。</div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第1讲配套练习册</span>
+        <span>第 2 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================
+     第三页：第三题（选择题）
+     ================================================ -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第1讲练习册</span>
+        <span class="lesson-id">四大天王（词性）</span>
+    </div>
+
+    <div class="section-title">
+        <div class="section-num">第三题</div>
+        <h2>单项选择（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar yellow">📌 题目说明：每道题选一个字母（A、B、C 或 D），把答案写在题目前面的括号里。做题时用我们学过的"无脑秒杀法"：先看空格前后是什么词，再决定选形容词还是副词。</div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">1. The old man walks very <span class="blank"></span> .</div>
+                <div style="font-size:13px; color:#888; margin-bottom:6px;">（这位老爷爷走路走得非常慢。）</div>
+                <div class="q-opts">
+                    <span>A. slow</span>
+                    <span>B. slowly</span>
+                    <span>C. slowing</span>
+                    <span>D. slowed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">2. She looks <span class="blank"></span> today. Is she okay?</div>
+                <div style="font-size:13px; color:#888; margin-bottom:6px;">（她今天看起来很难过。她还好吗？）</div>
+                <div class="q-opts">
+                    <span>A. sadly</span>
+                    <span>B. sad</span>
+                    <span>C. sadness</span>
+                    <span>D. sadden</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">3. Tom is a <span class="blank"></span> basketball player.</div>
+                <div style="font-size:13px; color:#888; margin-bottom:6px;">（Tom 是一个出色的篮球运动员。）</div>
+                <div class="q-opts">
+                    <span>A. wonderfully</span>
+                    <span>B. wonder</span>
+                    <span>C. wonderful</span>
+                    <span>D. wondering</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">4. My sister plays the piano very <span class="blank"></span> .</div>
+                <div style="font-size:13px; color:#888; margin-bottom:6px;">（我姐姐钢琴弹得很好。）</div>
+                <div class="q-opts">
+                    <span>A. good</span>
+                    <span>B. goodly</span>
+                    <span>C. better</span>
+                    <span>D. well</span>
+                </div>
+                <div style="font-size:12px; color:#e67e22; margin-top:6px;">⚠️ 小提示：这道题专门考"good 和 well 怎么选"，想清楚再做。</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+            <div style="border:1.5px solid #2c3e50; width:28px; height:28px; border-radius:4px; flex-shrink:0; margin-top:2px;"></div>
+            <div style="flex:1;">
+                <div class="q-stem">5. The soup smells <span class="blank"></span> . I want to drink it!</div>
+                <div style="font-size:13px; color:#888; margin-bottom:6px;">（这汤闻起来很香，我想喝！）</div>
+                <div class="q-opts">
+                    <span>A. deliciously</span>
+                    <span>B. delicious</span>
+                    <span>C. deliciousness</span>
+                    <span>D. deliciousing</span>
+                </div>
+                <div style="font-size:12px; color:#e67e22; margin-top:6px;">⚠️ 小提示：smell（闻起来）是感官动词，规则和 be 动词一样。</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第1讲配套练习册</span>
+        <span>第 3 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================
+     第四页：第四题（改错题）+ 第五题（综合）
+     ================================================ -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第1讲练习册</span>
+        <span class="lesson-id">四大天王（词性）</span>
+    </div>
+
+    <!-- 第四题：改错 -->
+    <div class="section-title">
+        <div class="section-num">第四题</div>
+        <h2>找错并改正（每题5分，共25分）</h2>
+        <div class="score-chip">满分 25分</div>
+    </div>
+
+    <div class="part-bar red">📌 题目说明：下面每句话里有 <strong>一个词</strong> 用错了（词性搞错了）。先找到它，在下面的横线上写出：① 错的是哪个词，② 应该改成什么。<br>不用重抄整个句子，只写改动的部分就行。</div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">1. He speaks English <span class="underlined">good</span>.</div>
+        <div style="font-size:13px; color:#888; margin-bottom:8px;">（他英语说得好。）</div>
+        <div class="correction-line">
+            <span>错误的词：</span><span class="blank" style="width:80px;"></span>
+            <span style="margin-left:10px;">应改为：</span><span class="blank" style="width:80px;"></span>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">2. She is a <span class="underlined">friendly</span> girl.</div>
+        <div style="font-size:13px; color:#888; margin-bottom:8px;">（她是个友好的女孩。）— 注意！这道题有陷阱，认真看！</div>
+        <div class="correction-line">
+            <span>错误的词：</span><span class="blank" style="width:80px;"></span>
+            <span style="margin-left:10px;">应改为：</span><span class="blank" style="width:80px;"></span>
+        </div>
+        <div style="font-size:12px; color:#e67e22; margin-top:6px;">⚠️ 特别注意：认真检查这句话有没有错误再回答，不要被题目套路了。</div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">3. The baby cries <span class="underlined">loud</span>.</div>
+        <div style="font-size:13px; color:#888; margin-bottom:8px;">（这个婴儿哭得很响。）</div>
+        <div class="correction-line">
+            <span>错误的词：</span><span class="blank" style="width:80px;"></span>
+            <span style="margin-left:10px;">应改为：</span><span class="blank" style="width:80px;"></span>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">4. My dog is <span class="underlined">happily</span>.</div>
+        <div style="font-size:13px; color:#888; margin-bottom:8px;">（我的狗很快乐。）</div>
+        <div class="correction-line">
+            <span>错误的词：</span><span class="blank" style="width:80px;"></span>
+            <span style="margin-left:10px;">应改为：</span><span class="blank" style="width:80px;"></span>
+        </div>
+    </div>
+
+    <div class="q-block no-break">
+        <div class="error-sentence">5. We finished the project <span class="underlined">successful</span>.</div>
+        <div style="font-size:13px; color:#888; margin-bottom:8px;">（我们成功地完成了这个项目。）</div>
+        <div class="correction-line">
+            <span>错误的词：</span><span class="blank" style="width:80px;"></span>
+            <span style="margin-left:10px;">应改为：</span><span class="blank" style="width:80px;"></span>
+        </div>
+    </div>
+
+    <!-- 第五题：造句/翻译 -->
+    <div class="section-title" style="margin-top:26px;">
+        <div class="section-num">第五题</div>
+        <h2>中译英连线填空（每题4分，共20分）</h2>
+        <div class="score-chip">满分 20分</div>
+    </div>
+
+    <div class="part-bar purple">📌 题目说明：根据括号里给的中文意思，从右边的词库里选一个正确的词（注意词性！）填进空格。每个词只能用一次。</div>
+
+    <div style="display:flex; gap:20px; align-items:flex-start;">
+        <div style="flex:1;">
+            <div class="q-block no-break">
+                <div class="q-stem">① The food tastes <span class="blank"></span> .<br><span style="font-size:13px; font-weight:400; color:#888;">（这食物尝起来很甜。）</span></div>
+            </div>
+            <div class="q-block no-break">
+                <div class="q-stem">② He finished his homework <span class="blank"></span> .<br><span style="font-size:13px; font-weight:400; color:#888;">（他快速地完成了作业。）</span></div>
+            </div>
+            <div class="q-block no-break">
+                <div class="q-stem">③ She is a <span class="blank"></span> student.<br><span style="font-size:13px; font-weight:400; color:#888;">（她是个聪明的学生。）</span></div>
+            </div>
+            <div class="q-block no-break">
+                <div class="q-stem">④ The boy can sing <span class="blank"></span> .<br><span style="font-size:13px; font-weight:400; color:#888;">（这个男孩唱歌唱得很好。）</span></div>
+            </div>
+            <div class="q-block no-break" style="border-bottom:none;">
+                <div class="q-stem">⑤ They played <span class="blank"></span> in the match.<br><span style="font-size:13px; font-weight:400; color:#888;">（他们在比赛中表现得很出色。）</span></div>
+            </div>
+        </div>
+
+        <!-- 词库 -->
+        <div style="width:130px; flex-shrink:0;">
+            <div style="background:#2c3e50; color:#f1c40f; text-align:center; padding:8px; border-radius:8px 8px 0 0; font-size:13px; font-weight:bold;">词 库</div>
+            <div style="border:1.5px solid #2c3e50; border-top:none; border-radius:0 0 8px 8px; padding:10px 12px;">
+                <div style="font-size:14px; font-weight:bold; color:#2c3e50; padding:5px 0; border-bottom:1px dashed #ddd;">well</div>
+                <div style="font-size:14px; font-weight:bold; color:#2c3e50; padding:5px 0; border-bottom:1px dashed #ddd;">sweet</div>
+                <div style="font-size:14px; font-weight:bold; color:#2c3e50; padding:5px 0; border-bottom:1px dashed #ddd;">quickly</div>
+                <div style="font-size:14px; font-weight:bold; color:#2c3e50; padding:5px 0; border-bottom:1px dashed #ddd;">smart</div>
+                <div style="font-size:14px; font-weight:bold; color:#2c3e50; padding:5px 0;">brilliantly</div>
+            </div>
+            <div style="font-size:11px; color:#999; margin-top:8px; text-align:center; line-height:1.5;">每个词<br>只能用一次</div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第1讲配套练习册</span>
+        <span>第 4 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================
+     第五页：答案解析（上）
+     ================================================ -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第1讲练习册</span>
+        <span class="lesson-id">答案解析</span>
+    </div>
+
+    <div class="ans-page-header">📖 答案 & 大白话解析</div>
+
+    <div class="ans-warning">
+        ⚠️ <strong>做题完了再看这一页！</strong><br>
+        对答案的时候，<strong>每道错题都要看懂为什么错</strong>，这比对对题更重要。<br>
+        看完解析，建议把错题用红笔圈出来，一周后再重做一遍。
+    </div>
+
+    <!-- 第一题答案 -->
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin-bottom:10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第一题 · 词性配对连线（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">第一题 答案</span>
+            <span class="aq-stem">四种零件和词性的对应关系</span>
+        </div>
+        <div class="ans-body" style="padding-top:12px;">
+            <div style="display:grid; grid-template-columns:1fr 30px 1fr; gap:6px 10px; font-size:14px; align-items:center;">
+                <div style="background:#fff3e0; border-radius:6px; padding:6px 10px; font-weight:bold; color:#e65100; text-align:right;">🏠 车身（骨架）</div>
+                <div style="text-align:center; color:#27ae60; font-weight:900;">→</div>
+                <div style="background:#f4fbf4; border-radius:6px; padding:6px 10px; font-weight:bold; color:#145a32;">Noun（名词）</div>
+
+                <div style="background:#fce4ec; border-radius:6px; padding:6px 10px; font-weight:bold; color:#c62828; text-align:right;">🔥 发动机（灵魂）</div>
+                <div style="text-align:center; color:#27ae60; font-weight:900;">→</div>
+                <div style="background:#f4fbf4; border-radius:6px; padding:6px 10px; font-weight:bold; color:#145a32;">Verb（动词）</div>
+
+                <div style="background:#e3f2fd; border-radius:6px; padding:6px 10px; font-weight:bold; color:#1565c0; text-align:right;">🎨 车漆（颜值）</div>
+                <div style="text-align:center; color:#27ae60; font-weight:900;">→</div>
+                <div style="background:#f4fbf4; border-radius:6px; padding:6px 10px; font-weight:bold; color:#145a32;">Adjective（形容词）</div>
+
+                <div style="background:#e8f5e9; border-radius:6px; padding:6px 10px; font-weight:bold; color:#2e7d32; text-align:right;">⚡ 加速器（助力）</div>
+                <div style="text-align:center; color:#27ae60; font-weight:900;">→</div>
+                <div style="background:#f4fbf4; border-radius:6px; padding:6px 10px; font-weight:bold; color:#145a32;">Adverb（副词）</div>
+
+                <div style="background:#fce4ec; border-radius:6px; padding:6px 10px; font-weight:bold; color:#c62828; text-align:right;">🔥 发动机（备用款）</div>
+                <div style="text-align:center; color:#27ae60; font-weight:900;">→</div>
+                <div style="background:#f4fbf4; border-radius:6px; padding:6px 10px; font-weight:bold; color:#145a32;">Be动词（am/is/are）</div>
+            </div>
+            <div class="ans-tip yellow" style="margin-top:10px;">💡 记忆口诀：发动机有两种——真正的动作（run/eat/play）是普通发动机，没有动作时借来顶包的（am/is/are）是"备用发动机"。</div>
+        </div>
+    </div>
+
+    <!-- 第二题答案 -->
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin:18px 0 10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第二题 · 词性判断（每题3分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">① slowly</span>
+            <span class="aq-stem">答案：<strong style="color:#27ae60;">副词</strong></span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">🔍</span><p>看结尾：<strong>slow + ly</strong>，带 -ly。大部分带 -ly 的单词就是副词。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>副词（加速器），描述动作是"怎么"发生的——"慢慢地"走、"慢慢地"说。</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">② beautiful</span>
+            <span class="aq-stem">答案：<strong style="color:#27ae60;">形容词</strong></span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">🔍</span><p>结尾没有 -ly，不是副词。它用来描述"东西长什么样"（漂亮的）。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>形容词（车漆），专门给名词（东西/人）涂颜色——"漂亮的女孩"、"漂亮的花"。</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">③ teacher</span>
+            <span class="aq-stem">答案：<strong style="color:#27ae60;">名词</strong></span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">🔍</span><p>"老师"是一个真实存在的<strong>人</strong>，可以看得见摸得着。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>名词（车身）= 代表人、地方、东西、概念的词。"老师"是人，所以是名词。</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">④ jump</span>
+            <span class="aq-stem">答案：<strong style="color:#27ae60;">动词</strong></span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">🔍</span><p>"跳"是一个<strong>动作</strong>，可以做出来的事情。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>动词（发动机）= 表示动作或状态的词。句子里缺了它就开不动。</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">⑤ careful</span>
+            <span class="aq-stem">答案：<strong style="color:#27ae60;">形容词</strong></span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">🔍</span><p>结尾是 -ful，不是 -ly。它描述人"是什么样的"（细心的）。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>形容词。注意：它的"兄弟"<span class="red">carefully</span>（加了ly）才是副词。这是一对很爱出题的兄弟。</p></div>
+            <div class="ans-tip red">🚨 careful（形容词） vs carefully（副词）——这对词中考必考！careful描述人是细心的，carefully描述动作是细心地做的。</div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第1讲配套练习册</span>
+        <span>第 5 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================
+     第六页：答案解析（下）
+     ================================================ -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第1讲练习册</span>
+        <span class="lesson-id">答案解析（续）</span>
+    </div>
+
+    <!-- 第三题答案 -->
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin-bottom:10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第三题 · 单项选择（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">题1</span>
+            <span class="aq-stem">The old man walks very _____ .</span>
+            <span style="font-size:13px; color:#27ae60; font-weight:bold; margin-left:auto;">答案：B（slowly）</span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">👁</span><p>看空格前面：<strong class="blue">walks（走）</strong>——这是一个真实的<strong class="red">动作</strong>（发动机）。</p></div>
+            <div class="ans-step"><span class="step-icon">⚙️</span><p>规则：修饰动作（发动机）必须用<strong class="green">副词（加速器）</strong>，也就是带 -ly 的那个。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>选 B（<span class="green">slowly</span>）。A 的 slow 是形容词，不能修饰动作。</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">题2</span>
+            <span class="aq-stem">She looks _____ today.</span>
+            <span style="font-size:13px; color:#27ae60; font-weight:bold; margin-left:auto;">答案：B（sad）</span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">👁</span><p>看空格前面：<strong class="blue">looks（看起来）</strong>——这是个<strong class="red">感官动词</strong>，和 be 动词是同一类。</p></div>
+            <div class="ans-step"><span class="step-icon">⚙️</span><p>规则：感官动词（look / sound / feel / smell / taste）后面接<strong class="green">形容词</strong>，不接副词。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>选 B（<span class="green">sad</span>，形容词）。A 的 sadly 是副词，放在这里就错了。</p></div>
+            <div class="ans-tip">💡 感官动词口诀：<strong>看（look）听（sound）摸（feel）闻（smell）尝（taste）</strong>，这五个词后面永远是形容词。</div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">题3</span>
+            <span class="aq-stem">Tom is a _____ basketball player.</span>
+            <span style="font-size:13px; color:#27ae60; font-weight:bold; margin-left:auto;">答案：C（wonderful）</span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">👁</span><p>看空格后面：<strong class="blue">player（运动员）</strong>——这是个<strong class="red">名词（东西/人）</strong>。</p></div>
+            <div class="ans-step"><span class="step-icon">⚙️</span><p>规则：名词前面用<strong class="green">形容词</strong>（车漆），不用副词。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>选 C（<span class="green">wonderful</span>，形容词）。A 的 wonderfully 有 -ly，是副词，放在名词前就错了。</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">题4</span>
+            <span class="aq-stem">My sister plays the piano very _____ .</span>
+            <span style="font-size:13px; color:#27ae60; font-weight:bold; margin-left:auto;">答案：D（well）</span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">👁</span><p>看空格前面：<strong class="blue">plays（弹奏）</strong>——是真实的<strong class="red">动作</strong>。</p></div>
+            <div class="ans-step"><span class="step-icon">⚙️</span><p>修饰动作要用副词。而"好"的副词形式是 <span class="green">well</span>，不是 <span class="red">good</span>（good 是形容词）。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>选 D（<span class="green">well</span>）。A 的 good 是形容词，绝对不能放在动作后面！</p></div>
+            <div class="ans-tip red">🚨 这是中考超高频陷阱！<span class="wr-wrong">plays good</span> ❌ → <span class="wr-right">plays well</span> ✅。记死：动作"做得好"= well，不是 good。</div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">题5</span>
+            <span class="aq-stem">The soup smells _____ .</span>
+            <span style="font-size:13px; color:#27ae60; font-weight:bold; margin-left:auto;">答案：B（delicious）</span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">👁</span><p>看空格前面：<strong class="blue">smells（闻起来）</strong>——感官动词！</p></div>
+            <div class="ans-step"><span class="step-icon">⚙️</span><p>感官动词后面接形容词，规则和 be 动词完全一样。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>选 B（<span class="green">delicious</span>，形容词 = 美味的）。A 的 deliciously 有 -ly，是副词，放这里就错了。</p></div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第1讲配套练习册</span>
+        <span>第 6 页</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================
+     第七页：第四五题答案解析
+     ================================================ -->
+<div class="a4-page">
+    <div class="page-header">
+        <span class="brand">初中英语语法重构 · 第1讲练习册</span>
+        <span class="lesson-id">答案解析（续）</span>
+    </div>
+
+    <!-- 第四题答案 -->
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin-bottom:10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第四题 · 改错题（每题5分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">第1句</span>
+            <span class="aq-stem">He speaks English <u>good</u>.</span>
+        </div>
+        <div class="ans-answer">
+            <span class="ans-label">错的词：</span><span class="ans-val">good</span>
+            <span class="ans-label" style="margin-left:16px;">改为：</span><span class="ans-val">well</span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">🔍</span><p>"speaks（说）"是一个<strong class="red">动作（发动机）</strong>，good 是形容词，不能修饰动作。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>修饰动作要用副词。"好"的副词 = <span class="green">well</span>。改为：He speaks English <span class="green">well</span>.</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">第2句</span>
+            <span class="aq-stem">She is a <u>friendly</u> girl.</span>
+        </div>
+        <div class="ans-answer">
+            <span class="ans-label">本题答案：</span><span class="ans-val" style="color:#e74c3c;">这句没有错误！</span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">🧠</span><p>很多同学一看到 <span class="red">friendly</span>（有 -ly 结尾）就以为是副词，其实它是<strong class="green">形容词</strong>！</p></div>
+            <div class="ans-step"><span class="step-icon">🔍</span><p>分析一下：空格后面是 <strong>girl（名词/人）</strong>，前面修饰人要用形容词——而 friendly（友好的）本来就是形容词，只是结尾碰巧有 -ly。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>这句话完全正确，不需要改。</p></div>
+            <div class="ans-tip red">🚨 重要提醒：不是所有 -ly 结尾的词都是副词！<br>friendly（友好的）= 形容词 ✅<br>lonely（孤独的）= 形容词 ✅<br>lovely（可爱的）= 形容词 ✅<br>这些都是形容词，只是结尾有 -ly，不要被骗了！</div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">第3句</span>
+            <span class="aq-stem">The baby cries <u>loud</u>.</span>
+        </div>
+        <div class="ans-answer">
+            <span class="ans-label">错的词：</span><span class="ans-val">loud</span>
+            <span class="ans-label" style="margin-left:16px;">改为：</span><span class="ans-val">loudly</span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">🔍</span><p>"cries（哭）"是一个<strong class="red">动作（发动机）</strong>，loud 是形容词（响亮的），不能修饰动作。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>改为副词 <span class="green">loudly</span>（响亮地）。The baby cries <span class="green">loudly</span>.</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">第4句</span>
+            <span class="aq-stem">My dog is <u>happily</u>.</span>
+        </div>
+        <div class="ans-answer">
+            <span class="ans-label">错的词：</span><span class="ans-val">happily</span>
+            <span class="ans-label" style="margin-left:16px;">改为：</span><span class="ans-val">happy</span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">👁</span><p>空格前面是 <strong class="blue">is（be动词）</strong>，这是"备用发动机"。</p></div>
+            <div class="ans-step"><span class="step-icon">⚙️</span><p>铁律：<strong class="red">be动词后面永远跟形容词，不跟副词</strong>。happily 有 -ly，是副词，放这里就错了。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>改为形容词 <span class="green">happy</span>。My dog is <span class="green">happy</span>.</p></div>
+        </div>
+    </div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">第5句</span>
+            <span class="aq-stem">We finished the project <u>successful</u>.</span>
+        </div>
+        <div class="ans-answer">
+            <span class="ans-label">错的词：</span><span class="ans-val">successful</span>
+            <span class="ans-label" style="margin-left:16px;">改为：</span><span class="ans-val">successfully</span>
+        </div>
+        <div class="ans-body">
+            <div class="ans-step"><span class="step-icon">🔍</span><p>"finished（完成了）"是一个真实的<strong class="red">动作</strong>，描述"怎么完成的"要用副词。</p></div>
+            <div class="ans-step"><span class="step-icon">✅</span><p>successful 是形容词（成功的），改为副词 <span class="green">successfully</span>（成功地）。</p></div>
+        </div>
+    </div>
+
+    <!-- 第五题答案 -->
+    <div style="font-size:15px; font-weight:900; color:#2c3e50; margin:18px 0 10px; padding-bottom:6px; border-bottom:2px solid #2c3e50;">第五题 · 填词题（每题4分）</div>
+
+    <div class="ans-block no-break">
+        <div class="ans-q-header">
+            <span class="aq-num">第五题 答案</span>
+            <span class="aq-stem">① sweet &nbsp;② quickly &nbsp;③ smart &nbsp;④ well &nbsp;⑤ brilliantly</span>
+        </div>
+        <div class="ans-body" style="padding-top:10px;">
+            <div class="ans-step"><span class="step-icon">①</span><p>tastes（尝起来）是感官动词 → 后面选<strong class="green">形容词</strong> → <span class="green">sweet</span>（甜的）✅</p></div>
+            <div class="ans-step"><span class="step-icon">②</span><p>finished（完成了）是动作 → 后面选<strong class="green">副词</strong> → <span class="green">quickly</span>（快速地）✅</p></div>
+            <div class="ans-step"><span class="step-icon">③</span><p>student（学生）是名词，前面修饰名词选<strong class="green">形容词</strong> → <span class="green">smart</span>（聪明的）✅</p></div>
+            <div class="ans-step"><span class="step-icon">④</span><p>sing（唱歌）是动作，描述"唱得好"选副词 → <span class="green">well</span>（好地）。注意不是 good！✅</p></div>
+            <div class="ans-step"><span class="step-icon">⑤</span><p>played（表现了）是动作 → 后面选副词 → <span class="green">brilliantly</span>（出色地）✅</p></div>
+            <div class="ans-tip yellow">💡 做完整套题发现：每次看到动词，就问自己"这是动作吗？"是的话就选副词；每次看到名词，就问自己"这是东西/人吗？"是的话前面就选形容词。这个习惯养成了，词性题基本不会错。</div>
+        </div>
+    </div>
+
+    <!-- 最终打分区 -->
+    <div style="margin-top:20px; border:2px solid #2c3e50; border-radius:10px; padding:18px 22px; background:#fafafa;">
+        <div style="font-size:15px; font-weight:900; color:#2c3e50; margin-bottom:14px;">📊 对完答案，给自己算分</div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; font-size:13px; text-align:center; margin-bottom:14px;">
+            <div style="background:#e8f5e9; border-radius:8px; padding:10px; color:#2e7d32;">
+                <div style="font-size:20px; font-weight:900;">85-100分</div>
+                <div style="margin-top:4px;">第1讲已掌握！<br>直接进第2讲</div>
+            </div>
+            <div style="background:#fff3e0; border-radius:8px; padding:10px; color:#e65100;">
+                <div style="font-size:20px; font-weight:900;">60-84分</div>
+                <div style="margin-top:4px;">把错题搞懂<br>再做一遍错题</div>
+            </div>
+            <div style="background:#fce4ec; border-radius:8px; padding:10px; color:#c62828;">
+                <div style="font-size:20px; font-weight:900;">60分以下</div>
+                <div style="margin-top:4px;">回去重读讲义<br>重点看模块三四</div>
+            </div>
+        </div>
+        <div style="font-size:13px; color:#888; text-align:center; line-height:1.7;">不管多少分，把错题圈出来，一周后重做一次——这是进步最快的方法。</div>
+    </div>
+
+    <div class="page-footer">
+        <span>初中英语语法重构 · 逆袭版</span>
+        <span>第1讲配套练习册</span>
+        <span>第 7 页</span>
+    </div>
+
+
+
+<!-- ===== 页脚 ===== -->
+<div class="wb-footer">
+</div>
+
+</body>
+</html>

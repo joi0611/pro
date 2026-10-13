@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第20讲：连词拼图 — 初中英语语法重构</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f2f5; color: #2c3e50; min-height: 100vh; }
+
+/* ===== 顶部导航条 ===== */
+.lesson-topbar { background: #2c3e50; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.topbar-inner { max-width: 900px; margin: 0 auto; padding: 11px 24px; display: flex; align-items: center; gap: 14px; }
+.topbar-back { color: #f1c40f; text-decoration: none; font-size: 14px; font-weight: bold; display: flex; align-items: center; gap: 5px; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
+.topbar-back:hover { opacity: 0.75; }
+.topbar-sep { color: #4a6278; font-size: 16px; flex-shrink: 0; }
+.topbar-lesson-info { flex: 1; min-width: 0; }
+.topbar-lesson-info .tl-tag { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 2px; }
+.topbar-lesson-info .tl-title { font-size: 15px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-print { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.85); cursor: pointer; font-family: inherit; flex-shrink: 0; transition: background 0.15s; }
+.topbar-print:hover { background: rgba(255,255,255,0.18); }
+
+/* ===== 主内容 ===== */
+.lesson-main { max-width: 900px; margin: 0 auto; padding: 36px 24px 20px; }
+.book-container { background: #fff; padding: 50px 60px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+
+/* ===== 底部导航 ===== */
+.lesson-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 28px 0 20px; flex-wrap: wrap; }
+.nav-btn { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #2c3e50; font-size: 14px; transition: all 0.15s; flex: 1; min-width: 160px; max-width: 280px; }
+.nav-btn:hover { border-color: #2980b9; box-shadow: 0 4px 12px rgba(41,128,185,0.15); transform: translateY(-1px); }
+.nav-btn.prev { justify-content: flex-start; }
+.nav-btn.next { justify-content: flex-end; margin-left: auto; }
+.nav-btn .nb-arrow { font-size: 18px; color: #aaa; flex-shrink: 0; }
+.nav-btn:hover .nb-arrow { color: #2980b9; }
+.nav-btn .nb-text { min-width: 0; }
+.nav-btn .nb-label { font-size: 11px; color: #aaa; display: block; }
+.nav-btn .nb-title { font-size: 14px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-btn-home { display: flex; align-items: center; gap: 6px; background: #2c3e50; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #f1c40f; font-size: 14px; font-weight: bold; flex-shrink: 0; transition: opacity 0.15s; }
+.nav-btn-home:hover { opacity: 0.85; }
+.lesson-footer { text-align: center; padding: 20px 24px 36px; font-size: 12px; color: #aaa; line-height: 1.8; }
+
+/* ===== 封面 ===== */
+.chapter-cover { background: linear-gradient(135deg, #1a252f 0%, #2c3e50 55%, #8e44ad 100%); border-radius: 15px; padding: 40px 40px 35px; margin-bottom: 40px; color: #fff; position: relative; overflow: hidden; }
+.chapter-cover::before { content: "20"; position: absolute; right: 30px; top: 10px; font-size: 110px; font-weight: 900; color: rgba(255,255,255,0.06); line-height: 1; letter-spacing: -5px; }
+.lesson-tag { background: #f1c40f; color: #2c3e50; font-weight: 900; font-size: 13px; padding: 5px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em; }
+.chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.chapter-cover h1 span { color: #f1c40f; }
+.chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.meta-row { display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px; }
+
+/* ===== 回顾 / 目标 ===== */
+.review-bar { background: #f0f7ff; border: 1.5px solid #b3d4ff; border-left: 5px solid #2980b9; border-radius: 8px; padding: 14px 18px; margin-bottom: 30px; font-size: 14px; color: #1a5276; line-height: 1.75; }
+.review-bar strong { color: #1a252f; }
+.goal-box { background: #fffde7; border: 2px solid #ffe082; border-radius: 12px; padding: 20px 25px; margin-bottom: 35px; display: flex; gap: 15px; align-items: flex-start; }
+.goal-icon { font-size: 28px; flex-shrink: 0; line-height: 1.2; }
+.goal-box h3 { font-size: 16px; color: #e65100; margin-bottom: 6px; font-weight: 900; }
+.goal-box p  { font-size: 15px; color: #5d4037; line-height: 1.7; }
+
+/* ===== 通用卡片 ===== */
+.module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+.badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+.card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }   .badge-blue  { background: #2980b9; color: #fff; }
+.card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }   .badge-green { background: #27ae60; color: #fff; }
+.card-red    { background: #fff5f5; border: 2px solid #ffcccc; }   .badge-red   { background: #e74c3c; color: #fff; }
+.card-yellow { background: #fffde7; border: 2px solid #ffe082; }   .badge-yellow{ background: #f1c40f; color: #333; }
+.card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }   .badge-purple{ background: #8e44ad; color: #fff; }
+.card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }   .badge-orange{ background: #e67e22; color: #fff; }
+.card-teal   { background: #f0fffc; border: 2px solid #b2dfdb; }   .badge-teal  { background: #16a085; color: #fff; }
+
+/* ===== 高亮 ===== */
+.hl-red { color: #e74c3c; font-weight: bold; } .hl-blue { color: #2980b9; font-weight: bold; } .hl-green { color: #27ae60; font-weight: bold; } .hl-orange { color: #e67e22; font-weight: bold; } .hl-purple { color: #8e44ad; font-weight: bold; }
+.mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+.mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+.mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+.mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+.mark-purple { background: #e8daef; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #6c3483; }
+
+/* ===== 标签 ===== */
+.tag-hot  { background: #ff4757; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+.tag-easy { background: #2ed573; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+
+/* ===== 脑回路 ===== */
+.brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+.brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+/* ===== 对错 ===== */
+.wrong-text { color: #c0392b; font-size: 17px; font-weight: bold; text-decoration: line-through; }
+.right-text { color: #27ae60; font-size: 17px; font-weight: bold; }
+
+/* ===== 句子解剖 ===== */
+.sentence-dissect { display: flex; align-items: flex-end; gap: 6px; flex-wrap: wrap; margin: 14px 0; background: #f8f9fa; border-radius: 10px; padding: 14px 16px 18px; }
+.word-block { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.word-text { padding: 6px 12px; border-radius: 8px; font-size: 16px; font-weight: 900; white-space: nowrap; }
+.word-label { font-size: 11px; font-weight: 500; color: #777; }
+.wt-s  { background: #fff3e0; color: #e65100;  border: 2px solid #ffb74d; }
+.wt-v  { background: #fce4ec; color: #c62828;  border: 2px solid #f48fb1; }   /* 主引擎用红色 */
+.wt-o  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-t  { background: #e3f2fd; color: #1565c0;  border: 2px solid #90caf9; }
+.wt-be { background: #e3f2fd; color: #1565c0; border: 2px solid #90caf9; }
+.wt-x  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-inf { background: #f3e5f5; color: #6a1b9a; border: 2px solid #ce93d8; }  /* 变装零件用紫色 */
+
+/* ===== 结构公式块 ===== */
+.formula-block { background: #fff; border: 2px solid #ce93d8; border-radius: 10px; overflow: hidden; margin: 16px 0; }
+.formula-row { display: flex; align-items: stretch; border-bottom: 1px solid #f3e5f5; }
+.formula-row:last-child { border-bottom: none; }
+.formula-label { background: #8e44ad; color: #fff; font-weight: 900; font-size: 13px; padding: 12px 14px; min-width: 72px; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; }
+.formula-content { padding: 12px 18px; flex: 1; font-size: 15px; line-height: 1.75; color: #333; }
+.formula-content strong { color: #6a1b9a; }
+.formula-eg { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* ===== 辨析表 ===== */
+.magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+.magic-table th { background: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+.magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+.magic-table tr:last-child td { border-bottom: none; }
+.magic-table tr:hover td { background: #f8f9fa; }
+
+/* ===== 警告 / 提示 ===== */
+.warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+.warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 15px; margin-bottom: 8px; }
+.warn-box p { font-size: 14px; color: #444; line-height: 1.75; margin: 5px 0; }
+.tip-box { background: #faf5ff; border: 2px solid #d8b4fe; border-left: 5px solid #8e44ad; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #6c3483; line-height: 1.75; }
+
+/* ===== 练习题 ===== */
+.quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+.quiz-q { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; line-height: 1.65; }
+.quiz-opts { font-size: 15px; color: #555; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+.reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+.answer-box { display: none; margin-top: 14px; }
+
+/* ===== 分割线 ===== */
+.section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+.section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+/* ===== 小抄 ===== */
+.cheatsheet { margin: 50px 0 30px; background: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+.cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+.cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+.cs-block.red    { border-left-color: #e74c3c; }
+.cs-block.green  { border-left-color: #2ecc71; }
+.cs-block.yellow { border-left-color: #f1c40f; }
+.cs-block.purple { border-left-color: #9b59b6; }
+.cs-block strong { font-size: 16px; display: block; margin-bottom: 10px; }
+.cs-block p, .cs-block li { font-size: 14px; line-height: 1.85; color: #ecf0f1; margin: 4px 0; }
+.cs-block ul { padding-left: 18px; }
+.cs-block table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.cs-block table th { background: rgba(255,255,255,0.14); color: #f1c40f; padding: 7px 12px; text-align: center; }
+.cs-block table td { padding: 7px 12px; border-bottom: 1px solid rgba(255,255,255,0.07); color: #ecf0f1; text-align: center; vertical-align: top; line-height: 1.6; }
+.cs-block table tr:last-child td { border-bottom: none; }
+
+/* ===== 转化钩子 ===== */
+.cta-box { margin-top: 40px; padding: 32px; background: #fff3e0; border: 2px dashed #e67e22; border-radius: 14px; text-align: center; box-shadow: 0 5px 15px rgba(230,126,34,0.12); }
+.cta-box h3 { color: #d35400; font-size: 22px; margin-bottom: 14px; font-weight: 900; }
+.cta-box p  { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 20px; text-align: left; }
+.cta-btn { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; display: inline-block; padding: 14px 35px; border-radius: 30px; font-weight: bold; font-size: 17px; text-decoration: none; box-shadow: 0 4px 12px rgba(230,126,34,0.4); transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); }
+
+/* ===== 打印 ===== */
+@media print {
+    .lesson-topbar, .lesson-nav, .lesson-footer { display: none !important; }
+    body { background: #fff; }
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container { padding: 20px 24px; border-radius: 0; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .module-card, .quiz-block, .warn-box, .cheatsheet, .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+    .cheatsheet { page-break-before: always; break-before: page; }
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+}
+</style>
+<link rel="stylesheet" href="/assets/grammar-mobile-print-fix.css?v=20260705">
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="lesson-topbar">
+    <div class="topbar-inner">
+        <a class="topbar-back" href="/">← 学习中心</a>
+        <a class="topbar-back" href="index.html">← 目录</a>
+        <div class="topbar-sep">/</div>
+        <div class="topbar-lesson-info">
+            <div class="tl-tag"> 第20讲 · 进阶提分</div>
+            <div class="tl-title">连词拼图——句子火车车厢的挂钩</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 主内容区 ===== -->
+<div class="lesson-main">
+<div class="book-container">
+
+    <!-- 封面 -->
+    <div class="chapter-cover">
+        <div class="lesson-tag"> 第20讲 · 进阶提分</div>
+        <h1>句子车厢的<br><span>磁力挂钩</span></h1>
+        <p class="subtitle">连词拼图——大白话详解 and/but/or 的组合，系统拆解 because 与 so 的互斥关系</p>
+        <div class="meta-row">
+            <div class="meta-chip">⏱ 预计学习 30 分钟</div>
+            <div class="meta-chip">🎯 中考阅读与填空高频考点 5-8 分</div>
+            <div class="meta-chip">⭐ 难度：入门</div>
+        </div>
+    </div>
+
+    <!-- 上一讲回顾 -->
+    <div class="review-bar">
+        📌 <strong>上一讲回顾（第19讲：介词地图）</strong><br>
+        上一讲我们学完了介词地图，用“时间大日历 `on`、闪电定位 `at`、大纸箱盒子 `in`”的3D法则解决了时间选择困难。同时，我们扫清了 `across`（2D平面划过）与 `through`（3D管道穿透）的空间几何大坑，并背熟了中考最常考的 15 个固定配对词组。<br><br>
+        这一讲，我们来搞懂将句子车厢粘在一起的胶水——<strong>连词</strong>。我们要用“磁力挂钩”的比喻，轻松理顺句子的四大逻辑关系！
+    </div>
+
+    <!-- 目标 -->
+    <div class="goal-box">
+        <div class="goal-icon">🎯</div>
+        <div>
+            <h3>学完这讲，你能做到：</h3>
+            <p>① 理解连词：它们不表达具体事物，只是连接两个句子的“磁力挂钩”，决定逻辑的方向<br>
+            ② 牢记 because 与 so、although 与 but 的“互斥搭配规则”<br>
+            ③ 掌握祈使句结果句型：`祈使句 + or / and` 的“否则 vs 就会”判定公式<br>
+            ④ 快速判断 `neither...nor...` 配对连词的“就近沙发原则”单复数判断</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块一：连词是车厢挂钩 ===== -->
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🔗 模块一：并列连词——决定车厢逻辑的四种挂钩</div>
+
+        <p>普通的句子（如 I like apples.）是一节独立的车厢。如果我们要把多节车厢拉在一起，就需要<strong>连词（Conjunction）</strong>来当磁力挂钩。</p>
+        <p style="margin-top:10px;">挂钩的种类，决定了前后车厢的逻辑方向是<strong>“一路向前、中途拐弯、还是二选一”</strong>：</p>
+
+        <!-- 四大逻辑挂钩 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;">
+            <div style="background:#fff;border-radius:12px;border:2px solid #52be80;padding:18px;color:#27ae60;">
+                <p style="font-size:16px;font-weight:900;margin-bottom:6px;">🚂 挂钩一：and（顺承/平行走）</p>
+                <p style="font-size:13px;color:#555;line-height:1.7;">
+                    • <strong>方向：</strong>逻辑一路向前，没有阻碍。用来拉同样性质的货物。<br>
+                    • <strong>例句：</strong>He likes apples <strong class="hl-green">and</strong> bananas.<br>
+                    • <strong>潜台词：</strong>“苹果和香蕉他都喜欢，顺理成章”。
+                </p>
+            </div>
+            <div style="background:#fff;border-radius:12px;border:2px solid #e74c3c;padding:18px;color:#c0392b;">
+                <p style="font-size:16px;font-weight:900;margin-bottom:6px;">💥 挂钩二：but（大转弯）</p>
+                <p style="font-size:13px;color:#555;line-height:1.7;">
+                    • <strong>方向：</strong>逻辑突然发生大拐弯，前后意思相反。<br>
+                    • <strong>例句：</strong>He is rich, <strong class="hl-red">but</strong> he is not happy.<br>
+                    • <strong>潜台词：</strong>“他很有钱（本该开心），但是他不高兴（大拐弯）”。
+                </p>
+            </div>
+            <div style="background:#fff;border-radius:12px;border:2px solid #90caf9;padding:18px;color:#1565c0;">
+                <p style="font-size:16px;font-weight:900;margin-bottom:6px;">❓ 挂钩三：or（选择/二选一）</p>
+                <p style="font-size:13px;color:#555;line-height:1.7;">
+                    • <strong>方向：</strong>两条路，你只能挑一条走。也常用于否定句的并列。<br>
+                    • <strong>例句：</strong>Would you like tea <strong class="hl-blue">or</strong> coffee?<br>
+                    • <strong>潜台词：</strong>“红茶还是咖啡？别贪心，挑一个”。
+                </p>
+            </div>
+            <div style="background:#fff;border-radius:12px;border:2px solid #ce93d8;padding:18px;color:#6a1b9a;">
+                <p style="font-size:16px;font-weight:900;margin-bottom:6px;">⚓ 挂钩四：so（因果）</p>
+                <p style="font-size:13px;color:#555;line-height:1.7;">
+                    • <strong>方向：</strong>前车是因，后车是果。<br>
+                    • <strong>例句：</strong>It was raining, <strong class="hl-purple">so</strong> we stayed home.<br>
+                    • <strong>潜台词：</strong>“天下雨了（因），所以我们待在家里（果）”。
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块二：互斥搭配规则 ===== -->
+    <div class="section-divider"><hr><span>模块二</span><hr></div>
+
+    <div class="module-card card-red">
+        <div class="badge badge-red">🚨 模块二：互斥搭配规则——中考高频判断题</div>
+
+        <p>中文里，我们天天说“因为……所以……”、“虽然……但是……”。写文章时自然无比。</p>
+        <p style="margin-top:10px;">但在英语中，<strong>因为与所以、虽然与但是，是不能同时承担连接功能！</strong></p>
+
+        <div style="background:#fff5f5;border-radius:12px;border:2px solid #ffcccc;padding:22px 24px;margin:20px 0;">
+            <p style="font-size:18px;font-weight:900;color:#c0392b;margin-bottom:8px;text-align:center;">⚔️ 互斥搭配公式 ⚔️</p>
+            <p style="font-size:15px;line-height:1.8;color:#5c1d16;">because 与 so 不重复连接同一组原因和结果；although/though 与 but 不重复连接同一组让步和主句。这不禁止它们在包含不同逻辑关系的长句中出现。</p>
+        </div>
+
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:18px 20px;margin:14px 0;">
+            <p style="font-weight:900;font-size:15px;color:#2c3e50;margin-bottom:14px;">对比例句感受杀伤力：</p>
+            <div style="display:flex;flex-direction:column;gap:14px;">
+                <div>
+                    <p class="wrong-text" style="font-size:16px;">❌ Because it rained, so I stayed at home.</p>
+                    <p style="font-size:14px;color:#555;margin-top:6px;"><strong>诊断：</strong>因为和所以重复连接了。必须删掉一个。</p>
+                    <p class="right-text" style="margin-top:6px;">✅ <span class="hl-green">Because</span> it rained, I stayed at home.（留 because）</p>
+                    <p class="right-text" style="margin-top:6px;">✅ It rained, <span class="hl-green">so</span> I stayed at home.（留 so）</p>
+                </div>
+                <hr style="border:none;border-top:1px dashed #eee;">
+                <div>
+                    <p class="wrong-text" style="font-size:16px;">❌ Although he is tired, but he is still working.</p>
+                    <p style="font-size:14px;color:#555;margin-top:6px;"><strong>诊断：</strong>虽然和但是重复连接了。必须删掉一个。</p>
+                    <p class="right-text" style="margin-top:6px;">✅ <span class="hl-green">Although</span> he is tired, he is still working.</p>
+                    <p class="right-text" style="margin-top:6px;">✅ He is tired, <span class="hl-green">but</span> he is still working.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块三：祈使句结果句型 ===== -->
+    <div class="section-divider"><hr><span>模块三</span><hr></div>
+
+    <div class="module-card card-teal">
+        <div class="badge badge-teal">🔫 模块三：祈使句结果句型——祈使句 + or / and</div>
+
+        <p>中考非常偏爱考查一个特殊句型。句首没有主语，直接动词原形（祈使句），后面接个 <code>or</code> 或者 <code>and</code>。</p>
+        <p style="margin-top:10px;">我们把这种格式叫做<strong>“祈使句结果句型”</strong>。意思翻译过来，逻辑非常清楚：</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;">
+            <div style="background:#fff;border-radius:12px;border:2px solid #ffb74d;padding:20px;color:#e65100;">
+                <div style="font-size:13px;font-weight:bold;margin-bottom:8px;color:#784212;">👿 不利结果型：or（否则会有不利结果）</div>
+                <p style="font-size:17px;font-weight:900;margin-bottom:10px;">祈使句, or + 坏结果</p>
+                <p style="font-size:14px;color:#555;line-height:1.75;">
+                    • <strong>意思：</strong>“做这件事，<strong>否则 / 不然</strong>就会有坏事发生”。<br>
+                    • <strong>例句：</strong>Hurry up, <strong class="hl-orange">or</strong> you'll be late.<br>
+                    • <strong>大白话：</strong>“快点！否则你就迟到了！”（迟到是个坏结果，所以用 or 不利结果）。
+                </p>
+            </div>
+            <div style="background:#fff;border-radius:12px;border:2px solid #52be80;padding:20px;color:#27ae60;">
+                <div style="font-size:13px;font-weight:bold;margin-bottom:8px;color:#1e8449;">👼 诱导流：and（你就会得到好果子）</div>
+                <p style="font-size:17px;font-weight:900;margin-bottom:10px;">祈使句, and + 好结果</p>
+                <p style="font-size:14px;color:#555;line-height:1.75;">
+                    • <strong>意思：</strong>“做这件事，<strong>你就会</strong>得到好结果”。<br>
+                    • <strong>例句：</strong>Work hard, <strong class="hl-green">and</strong> you will pass.<br>
+                    • <strong>大白话：</strong>“好好努力，你就会通过考试！”（通过是个好果子，用 and 顺承）。
+                </p>
+            </div>
+        </div>
+
+        <!-- 句子可视化解剖 -->
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin-bottom:10px;">🔬 不利结果句型解剖演示：</p>
+        <div class="sentence-dissect">
+            <div class="word-block"><span class="word-text wt-s">Hurry up</span><span class="word-label">🛑 肯定祈使句</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">,</div>
+            <div class="word-block"><span class="word-text wt-wl" style="background:#ffe0b2;color:#e65100;border-color:#ffb74d;">or</span><span class="word-label">否则！（不利结果挂钩）</span></div>
+            <div class="word-block"><span class="word-text wt-s">you</span><span class="word-label">主语</span></div>
+            <div class="word-block"><span class="word-text wt-v">will miss</span><span class="word-label">会错过（坏结果）</span></div>
+            <div class="word-block"><span class="word-text wt-o">the bus</span><span class="word-label"> </span></div>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块四：配对连词的沙发就近原则 ===== -->
+    <div class="section-divider"><hr><span>模块四</span><hr></div>
+
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🛋️ 模块四：配对连词——沙发原则的卷土重来</div>
+
+        <p>英语里有几组“买一赠一”的成对连词（如 neither...nor... / either...or...）。</p>
+        <p style="margin-top:10px;">中考考它们时，永远是在考：<strong>后面动词的单复数（is 还是 are / do 还是 does）？</strong></p>
+        <p style="margin-top:10px;">还记得第12讲里 <code>There be</code> 的“单人沙发原则”吗？这里一模一样：</p>
+
+        <div style="background:#fffde7;border:2px dashed #f1c40f;border-radius:12px;padding:22px 24px;margin:20px 0;">
+            <p style="font-size:18px;font-weight:900;color:#e65100;margin-bottom:8px;text-align:center;">🛋️ 谁离沙发最近，动词就听谁的 🛋️</p>
+            <p style="font-size:15px;line-height:1.8;color:#5d4037;">
+                适用连词：<br>
+                • <strong>neither... nor...</strong> （既不…也不…）<br>
+                • <strong>either... or...</strong> （要么…要么…）<br>
+                • <strong>not only... but also...</strong> （不仅…而且…）<br><br>
+                <strong>动词单复数由离动词最近的那个主语决定！</strong>
+            </p>
+        </div>
+
+        <div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:18px 20px;margin:14px 0;">
+            <p style="font-weight:900;font-size:15px;color:#2c3e50;margin-bottom:14px;">实战对比例子：</p>
+            <div style="display:flex;flex-direction:column;gap:14px;">
+                <div>
+                    <p style="font-size:16px;font-weight:bold;color:#2c3e50;">Neither you nor <u>Tom</u> <span class="hl-red">is</span> right.</p>
+                    <p style="font-size:14px;color:#555;margin-top:6px;"><strong>诊断：</strong>因为离 be 动词最近的主语是单数人称 <code>Tom</code>，所以用 <strong>is</strong>（无视左边的 you）。</p>
+                </div>
+                <hr style="border:none;border-top:1px dashed #eee;">
+                <div>
+                    <p style="font-size:16px;font-weight:bold;color:#2c3e50;">Neither Tom nor <u>you</u> <span class="hl-green">are</span> right.</p>
+                    <p style="font-size:14px;color:#555;margin-top:6px;"><strong>诊断：</strong>把位置换一下，离 be 动词最近的变成了 <code>you</code>，所以用 <strong>are</strong>。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块五：实战练习 ===== -->
+    <div class="section-divider"><hr><span>模块五</span><hr></div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow">🎯 模块五：实战练习——看看你学会了几步？</div>
+
+        <!-- 题1 -->
+        <div class="quiz-block" style="margin-top:20px;">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 1 · 祈使句结果选择题</p>
+            <div class="quiz-q">
+                Put on your coat, ______ you will catch a cold.<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（穿上你的外套，否则你会感冒的。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. and</span>
+                <span>| B. or</span>
+                <span>| C. but</span>
+                <span>| D. so</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson20-q1">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson20-q1">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：观察句式。句首是动词原形 <code>Put on</code> ➡️ 这是标志性的<strong>祈使句</strong>。</p>
+                    <p>第二步：判断后文结果。后文是 <code>catch a cold</code>（感冒），这是一个明显的<strong>坏结果/不利结果</strong>！</p>
+                    <p>第三步：不穿外套才可能感冒，后半句表达不照做的结果，因此用 or（否则）。用 and 会变成穿上外套导致感冒，与题意不符。</p>
+                    <p><span class="right-text">🎉 正确答案是：B</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题2 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 2 · 互斥搭配判断题</p>
+            <div class="quiz-q">
+                ______ he got up very late this morning, ______ he still caught the school bus.<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（虽然他今天早上起床很晚，但他依然赶上了学校班车。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. Although; but</span>
+                <span>| B. Because; so</span>
+                <span>| C. Although; /</span>
+                <span>| D. /; /</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson20-q2">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson20-q2">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：读懂意思。“起床晚”和“赶上车”逻辑是相反的，说明要用“虽然……但是……”。</p>
+                    <p>第二步：A 用 although 和 but 重复连接同一组让步与主句，排除 A。规则针对这组分句，不能推广为两词在任何长句中都不能出现。</p>
+                    <p>第三步：看选项 C（Although; /）表示：前面用 Although，后面留空不填（相当于用逗号连接）。这是最标准的语法格式。</p>
+                    <p><span class="right-text">🎉 正确答案是：C</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题3 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 3 · 双胞胎连词的沙发就近原则</p>
+            <div class="quiz-q">
+                Not only you but also Tom ______ interested in this comic book.<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（不仅是你，Tom 也对这本漫画书感兴趣。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. is</span>
+                <span>| B. are</span>
+                <span>| C. am</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson20-q3">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson20-q3">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：抓句型。原句是 <code>not only... but also...</code>。</p>
+                    <p>第二步：触发“就近沙发原则”：be 动词单复数只听最近的主语。最近的主语是 <strong>Tom</strong>（单数）。</p>
+                    <p>第三步：Tom 对应的 be 动词是 <strong>is</strong>（无视左边的 you）。</p>
+                    <p><span class="right-text">🎉 正确答案是：A</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- ===== 高水准加餐一：连词题的 5 秒判断流程 ===== -->
+    <div class="section-divider"><hr><span>高水准加餐一</span><hr></div>
+
+    <div class="module-card card-blue">
+        <div class="badge badge-blue">🧭 加餐一：连词题的 5 秒判断流程——先判逻辑，再选词</div>
+
+        <p>连词题最怕“看到中文就直接套词”。真正稳定的方法，是先判断前后两部分的<strong>逻辑关系</strong>。只要逻辑判准，选项基本就能排掉一大半。</p>
+
+        <div class="brain-box" style="border-color:#2980b9;background:#f7fbff;">
+            <p style="font-weight:900;color:#1a5276;font-size:16px;">✅ 5 秒判断流程：</p>
+            <p><strong>第 1 秒：</strong>看空格前后是不是两个完整意思。能各自表达清楚，就说明连词在连接两个句子或两个分句。</p>
+            <p><strong>第 2 秒：</strong>判断前后关系：是顺承、转折、选择、因果、让步，还是条件？</p>
+            <p><strong>第 3 秒：</strong>检查有没有“互斥组合”：有 <code>because</code> 就不再配 <code>so</code>；有 <code>although/though</code> 就不再配 <code>but</code>。</p>
+            <p>第4步：祈使句后表示“照做就会……”通常用 and；表示“否则……”通常用 or。判断条件与结果的关系，不能只看结果好坏。</p>
+            <p><strong>第 5 秒：</strong>如果出现成对连词，就近看离动词最近的主语，决定 <code>is/are</code> 或 <code>does/do</code>。</p>
+        </div>
+
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:22%;">前后逻辑</th>
+                    <th style="width:26%;">常用连词</th>
+                    <th style="width:52%;">判断信号</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>顺承 / 并列</strong></td>
+                    <td><strong class="hl-green">and</strong></td>
+                    <td>前后意思同方向，两个动作或两个特点可以并列出现。</td>
+                </tr>
+                <tr>
+                    <td><strong>转折</strong></td>
+                    <td><strong class="hl-red">but；however 为连接副词，标点结构不同</strong></td>
+                    <td>前后意思有反差：本来以为 A，结果却 B。</td>
+                </tr>
+                <tr>
+                    <td><strong>选择</strong></td>
+                    <td><strong class="hl-blue">or / either...or...</strong></td>
+                    <td>二选一，或否定句中并列多个对象。</td>
+                </tr>
+                <tr>
+                    <td><strong>因果</strong></td>
+                    <td><strong class="hl-purple">because / so</strong></td>
+                    <td>because 引出原因，so 引出结果；不要重复连接同一组因果分句。</td>
+                </tr>
+                <tr>
+                    <td><strong>让步</strong></td>
+                    <td><strong class="hl-orange">although / though</strong></td>
+                    <td>“虽然 A，但 B”，重点在后半句的反常结果。</td>
+                </tr>
+                <tr>
+                    <td><strong>条件</strong></td>
+                    <td><strong class="hl-green">if / unless</strong></td>
+                    <td>“如果 / 除非”后面给条件，主句给结果。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- ===== 高水准加餐二：高频边界辨析 ===== -->
+    <div class="section-divider"><hr><span>高水准加餐二</span><hr></div>
+
+    <div class="module-card card-green">
+        <div class="badge badge-green">🧩 加餐二：中考连词 6 组边界——不是中文像就能互换</div>
+
+        <p>很多连词中文翻译看起来相近，但英语考的是<strong>结构和逻辑位置</strong>。下面这 6 组是选择题、完形填空和语法填空里最容易设问的边界。</p>
+
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:24%;">易混组合</th>
+                    <th style="width:36%;">核心区别</th>
+                    <th style="width:40%;">例句与考法</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>because / so</strong></td>
+                    <td>同一组因果分句通常只用 because 或 so；不同层次的逻辑关系另作判断。</td>
+                    <td><strong>Because</strong> he was ill, he stayed at home.<br>He was ill, <strong>so</strong> he stayed at home.</td>
+                </tr>
+                <tr>
+                    <td><strong>although / but</strong></td>
+                    <td>同一组让步与主句通常只用 although 或 but；不同逻辑层次另作判断。</td>
+                    <td><strong>Although</strong> it was raining, we went out.<br>It was raining, <strong>but</strong> we went out.</td>
+                </tr>
+                <tr>
+                    <td><strong>if / unless</strong></td>
+                    <td><code>if</code> = 如果；<code>unless</code> = 如果不 / 除非，相当于 <code>if...not</code>。</td>
+                    <td>You will miss the bus <strong>if</strong> you don't hurry.<br>You will miss the bus <strong>unless</strong> you hurry.</td>
+                </tr>
+                <tr>
+                    <td><strong>when / while</strong></td>
+                    <td><code>when</code> 可接时间点或短动作；<code>while</code> 更强调一段时间内正在进行的动作。</td>
+                    <td>I was reading <strong>when</strong> he came in.<br><strong>While</strong> I was reading, he came in.</td>
+                </tr>
+                <tr>
+                    <td><strong>so...that / such...that</strong></td>
+                    <td><code>so</code> 修饰形容词/副词；<code>such</code> 修饰名词短语。</td>
+                    <td>It is <strong>so</strong> interesting that I read it twice.<br>It is <strong>such</strong> an interesting book that I read it twice.</td>
+                </tr>
+                <tr>
+                    <td><strong>so that / in order that</strong></td>
+                    <td>表示目的：“为了……”，后面常出现 <code>can / could / will / would</code>。</td>
+                    <td>He got up early <strong>so that</strong> he could catch the bus.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- ===== 高水准加餐三：句子完整度与连词位置 ===== -->
+    <div class="section-divider"><hr><span>高水准加餐三</span><hr></div>
+
+    <div class="module-card card-orange">
+        <div class="badge badge-orange">🔎 加餐三：先看“连接对象”——连词到底在连什么？</div>
+
+        <p>同一个连词，不同位置可能连接<strong>单词、短语、分句</strong>。中考喜欢在这里设置干扰项：看起来意思对，但连接对象不对。</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0;">
+            <div style="background:#fff;border:1.5px solid #ffd8a8;border-radius:10px;padding:16px;">
+                <p style="font-weight:900;color:#d35400;margin-bottom:8px;">① 连接同类成分</p>
+                <p style="font-size:14px;color:#555;line-height:1.75;">
+                    <code>and / or / but</code> 常连接同类成分：名词连名词、形容词连形容词、句子连句子。<br>
+                    ✅ She is kind <strong>and</strong> helpful.<br>
+                    ✅ Do you want tea <strong>or</strong> coffee?
+                </p>
+            </div>
+            <div style="background:#fff;border:1.5px solid #ffd8a8;border-radius:10px;padding:16px;">
+                <p style="font-weight:900;color:#d35400;margin-bottom:8px;">② 引导从句</p>
+                <p style="font-size:14px;color:#555;line-height:1.75;">
+                    <code>because / although / if / when / while / unless</code> 后面通常接一个完整小句。<br>
+                    ✅ I stayed at home <strong>because I was ill</strong>.<br>
+                    ✅ <strong>If you work hard</strong>, you will improve.
+                </p>
+            </div>
+        </div>
+
+        <div class="warn-box">
+            <div class="warn-title">🚨 考场提醒：不要把“中文顺口”当成语法正确</div>
+            <p>同一组分句不要重复使用 because...so 或 although...but。规则针对相同的连接关系，不是禁止这些词出现在整篇文章或任何同一句中。</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 高水准加餐四：成对连词与主谓一致 ===== -->
+    <div class="section-divider"><hr><span>高水准加餐四</span><hr></div>
+
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🛋️ 加餐四：成对连词主谓一致——就近原则与整体原则分清楚</div>
+
+        <p>不是所有成对连词都用就近原则。中考常考的是：哪些看最近，哪些看整体。</p>
+
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th style="width:25%;">成对连词</th>
+                    <th style="width:30%;">主谓规则</th>
+                    <th style="width:45%;">例句</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>either...or...</strong></td>
+                    <td>就近原则：动词看离它最近的主语。</td>
+                    <td>Either you or Tom <strong>is</strong> right.<br>Either Tom or you <strong>are</strong> right.</td>
+                </tr>
+                <tr>
+                    <td><strong>neither...nor...</strong></td>
+                    <td>就近原则：最近主语决定单复数。</td>
+                    <td>Neither my parents nor I <strong>am</strong> at home.<br>Neither I nor my parents <strong>are</strong> at home.</td>
+                </tr>
+                <tr>
+                    <td><strong>not only...but also...</strong></td>
+                    <td>就近原则：重点看 but also 后面的主语。</td>
+                    <td>Not only the students but also the teacher <strong>likes</strong> the song.</td>
+                </tr>
+                <tr>
+                    <td><strong>both...and...</strong></td>
+                    <td>整体原则：两者都，通常当复数。</td>
+                    <td>Both Tom and Jack <strong>are</strong> in the classroom.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- ===== 第20讲通关检测 ===== -->
+    <div class="section-divider"><hr><span>通关检测</span><hr></div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow">✅ 第20讲通关检测：5题确认真的会判断</div>
+
+        <p>这 5 题覆盖连词最常见的出题口：互斥搭配、祈使句结果、条件句、目的句、成对连词主谓一致。</p>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测 1 · because / so 互斥</p>
+            <div class="quiz-q">______ it was raining hard, we stayed at home.</div>
+            <div class="quiz-opts"><span>A. Because</span><span>| B. So</span><span>| C. Because; so</span></div>
+            <button class="reveal-btn" data-target="lesson20-extra-q1">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson20-extra-q1">
+                <div class="brain-box">
+                    <p><strong>答案：A</strong></p>
+                    <p>空格在原因句前面，直接用 <code>Because</code>。如果用 <code>Because...so...</code>，就出现重复连接。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测 2 · 祈使句 + and/or</p>
+            <div class="quiz-q">Follow the doctor's advice, ______ you will get better soon.</div>
+            <div class="quiz-opts"><span>A. and</span><span>| B. or</span><span>| C. but</span></div>
+            <button class="reveal-btn" data-target="lesson20-extra-q2">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson20-extra-q2">
+                <div class="brain-box">
+                    <p><strong>答案：A</strong></p>
+                    <p>前面是祈使句，后面是好结果“很快好起来”，所以用 <code>and</code> 表示“这样就会……”。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测 3 · unless 条件句</p>
+            <div class="quiz-q">You won't improve your English ______ you practice every day.</div>
+            <div class="quiz-opts"><span>A. if</span><span>| B. unless</span><span>| C. because</span></div>
+            <button class="reveal-btn" data-target="lesson20-extra-q3">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson20-extra-q3">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p><code>unless</code> = 如果不 / 除非。句意是“除非你每天练习，否则英语不会提高”。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测 4 · so that 目的状语</p>
+            <div class="quiz-q">He spoke loudly ______ everyone could hear him clearly.</div>
+            <div class="quiz-opts"><span>A. so that</span><span>| B. because</span><span>| C. although</span></div>
+            <button class="reveal-btn" data-target="lesson20-extra-q4">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson20-extra-q4">
+                <div class="brain-box">
+                    <p><strong>答案：A</strong></p>
+                    <p>后面有 <code>could</code>，表示目的：“为了让每个人都能听清楚”，用 <code>so that</code>。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测 5 · not only...but also 就近原则</p>
+            <div class="quiz-q">Not only my parents but also my sister ______ interested in the movie.</div>
+            <div class="quiz-opts"><span>A. are</span><span>| B. is</span><span>| C. am</span></div>
+            <button class="reveal-btn" data-target="lesson20-extra-q5">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson20-extra-q5">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p><code>not only...but also...</code> 用就近原则。离空格最近的是 <code>my sister</code>，单数，所以用 <code>is</code>。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ===== 考前速查小抄 ===== -->
+    <div class="cheatsheet" style="background:#ffffff;color:#2c3e50;border:2px solid #e8eef5;box-shadow:0 8px 24px rgba(44,62,80,0.10);padding:34px 28px 28px;border-radius:14px;">
+        <div style="text-align:center;margin-bottom:22px;">
+            <div style="display:inline-block;background:#2c3e50;color:#f1c40f;padding:8px 24px;border-radius:999px;font-weight:900;font-size:17px;box-shadow:0 4px 10px rgba(0,0,0,0.12);">🎒 第20讲 · 考前速查清单</div>
+            <p style="font-size:13px;color:#7f8c8d;margin-top:12px;line-height:1.7;">连词题不要先背中文，先判断“前后逻辑关系”。考前按这 6 步检查即可。</p>
+        </div>
+
+        <div style="background:#f0f7ff;border:1.5px solid #b3d4ff;border-left:5px solid #2980b9;border-radius:10px;padding:16px 18px;margin-bottom:14px;">
+            <strong style="display:block;color:#1a5276;font-size:16px;margin-bottom:8px;">① 先判 6 种逻辑关系</strong>
+            <table style="width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:8px;overflow:hidden;">
+                <tr>
+                    <th style="background:#2c3e50;color:#f1c40f;padding:8px;text-align:left;">逻辑</th>
+                    <th style="background:#2c3e50;color:#f1c40f;padding:8px;text-align:left;">常用词</th>
+                    <th style="background:#2c3e50;color:#f1c40f;padding:8px;text-align:left;">考场判断</th>
+                </tr>
+                <tr><td style="padding:8px;border-bottom:1px solid #eee;">并列顺承</td><td style="padding:8px;border-bottom:1px solid #eee;"><strong>and</strong></td><td style="padding:8px;border-bottom:1px solid #eee;">前后同方向、同性质。</td></tr>
+                <tr><td style="padding:8px;border-bottom:1px solid #eee;">转折反差</td><td style="padding:8px;border-bottom:1px solid #eee;"><strong>but；however 为连接副词，标点结构不同</strong></td><td style="padding:8px;border-bottom:1px solid #eee;">前后意思出现反差。</td></tr>
+                <tr><td style="padding:8px;border-bottom:1px solid #eee;">选择关系</td><td style="padding:8px;border-bottom:1px solid #eee;"><strong>or</strong></td><td style="padding:8px;border-bottom:1px solid #eee;">二选一；否定句里并列也常用 or。</td></tr>
+                <tr><td style="padding:8px;border-bottom:1px solid #eee;">因果关系</td><td style="padding:8px;border-bottom:1px solid #eee;"><strong>because / so</strong></td><td style="padding:8px;border-bottom:1px solid #eee;">原因与结果，通常只保留一个连接词。</td></tr>
+                <tr><td style="padding:8px;border-bottom:1px solid #eee;">让步关系</td><td style="padding:8px;border-bottom:1px solid #eee;"><strong>although / though</strong></td><td style="padding:8px;border-bottom:1px solid #eee;">虽然 A，但 B；通常不再配 but。</td></tr>
+                <tr><td style="padding:8px;">条件关系</td><td style="padding:8px;"><strong>if / unless</strong></td><td style="padding:8px;">if=如果；unless=除非/如果不。</td></tr>
+            </table>
+        </div>
+
+        <div style="background:#fff5f5;border:1.5px solid #ffcccc;border-left:5px solid #e74c3c;border-radius:10px;padding:16px 18px;margin-bottom:14px;">
+            <strong style="display:block;color:#c0392b;font-size:16px;margin-bottom:8px;">② 两组互斥搭配：同一句中通常只留一个</strong>
+            <p style="font-size:14px;line-height:1.8;color:#444;margin:4px 0;">❌ Because it rained, so we stayed home. → ✅ <strong>Because</strong> it rained, we stayed home. / It rained, <strong>so</strong> we stayed home.</p>
+            <p style="font-size:14px;line-height:1.8;color:#444;margin:4px 0;">❌ Although he was tired, but he kept working. → ✅ <strong>Although</strong> he was tired, he kept working. / He was tired, <strong>but</strong> he kept working.</p>
+        </div>
+
+        <div style="background:#f4fbf4;border:1.5px solid #c3e6c3;border-left:5px solid #27ae60;border-radius:10px;padding:16px 18px;margin-bottom:14px;">
+            <strong style="display:block;color:#1e8449;font-size:16px;margin-bottom:8px;">③ 祈使句 + and / or：看后面结果好坏</strong>
+            <p style="font-size:14px;line-height:1.8;color:#444;margin:4px 0;">✅ <code>祈使句, and + 好结果</code>：Work hard, <strong>and</strong> you will make progress.</p>
+            <p style="font-size:14px;line-height:1.8;color:#444;margin:4px 0;">✅ <code>祈使句, or + 不利结果</code>：Hurry up, <strong>or</strong> you will be late.</p>
+        </div>
+
+        <div style="background:#fffde7;border:1.5px solid #ffe082;border-left:5px solid #f1c40f;border-radius:10px;padding:16px 18px;margin-bottom:14px;">
+            <strong style="display:block;color:#e65100;font-size:16px;margin-bottom:8px;">④ 成对连词：就近原则 vs 整体原则</strong>
+            <p style="font-size:14px;line-height:1.8;color:#444;margin:4px 0;"><strong>就近原则：</strong><code>either...or...</code> / <code>neither...nor...</code> / <code>not only...but also...</code> → 动词看最近主语。</p>
+            <p style="font-size:14px;line-height:1.8;color:#444;margin:4px 0;">✅ Neither Tom nor his parents <strong>are</strong> at home. / Neither his parents nor Tom <strong>is</strong> at home.</p>
+            <p style="font-size:14px;line-height:1.8;color:#444;margin:4px 0;"><strong>整体原则：</strong><code>both...and...</code> 通常按复数处理：Both Tom and Jack <strong>are</strong> here.</p>
+        </div>
+
+        <div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-left:5px solid #8e44ad;border-radius:10px;padding:16px 18px;margin-bottom:14px;">
+            <strong style="display:block;color:#6c3483;font-size:16px;margin-bottom:8px;">⑤ 4 组高频边界词</strong>
+            <p style="font-size:14px;line-height:1.85;color:#444;margin:4px 0;">• <strong>if</strong> = 如果；<strong>unless</strong> = 除非 / 如果不。</p>
+            <p style="font-size:14px;line-height:1.85;color:#444;margin:4px 0;">• <strong>when</strong> 可接短动作；<strong>while</strong> 更强调一段时间内正在进行。</p>
+            <p style="font-size:14px;line-height:1.85;color:#444;margin:4px 0;">• <strong>so...that</strong> = 如此……以至于；<strong>so that</strong> = 为了。</p>
+            <p style="font-size:14px;line-height:1.85;color:#444;margin:4px 0;">• <strong>such...that</strong> 后面常接名词短语：such an interesting book that...</p>
+        </div>
+
+        <div style="background:#f8f9fa;border:1.5px solid #e0e0e0;border-left:5px solid #7f8c8d;border-radius:10px;padding:16px 18px;">
+            <strong style="display:block;color:#2c3e50;font-size:16px;margin-bottom:8px;">⑥ 考前排除清单</strong>
+            <p style="font-size:14px;line-height:1.85;color:#444;margin:4px 0;">看到 <code>because...so...</code>、<code>although...but...</code>，优先考虑是否重复连接。</p>
+            <p style="font-size:14px;line-height:1.85;color:#444;margin:4px 0;">祈使句后，and 表示照做产生的结果，or 表示不照做的结果；先检查真实逻辑。</p>
+            <p style="font-size:14px;line-height:1.85;color:#444;margin:4px 0;">看到成对连词，先圈出离动词最近的主语，再决定单复数。</p>
+        </div>
+    </div>
+
+
+    <!-- 转化钩子 -->
+    <div class="cta-box">
+        <h3>🚀 第20讲通关！你已经把句子黏合得天衣无缝了！</h3>
+        <p>很好！连词拼图这个考点，今天已经被你用“车厢挂钩、互斥原则、不利结果逻辑、单人沙发就近原则”系统拆解清楚了。<br><br>
+        到这里，我们已经学完了所有的<strong>词汇与基础句式拼接</strong>。接下来，我们要挑战中考真正的终极重点板块 —— <strong>三大从句（宾语从句、定语从句、状语从句）</strong>。这是拉开75分和及格线差距的核心高分地带：<br><br>
+        ✅ <strong>第21讲：</strong>宾语从句 —— 语序必须是陈述句语序（中考关键考点），时态呼应大原则
+        </p>
+        <a href="lesson-21.html" class="cta-btn" style="background:linear-gradient(135deg, #8e44ad, #6c3483);">继续学习 → 第21讲：宾语从句</a>
+    </div>
+
+</div><!-- /book-container -->
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-20.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+<!-- 底部翻页导航 -->
+<div class="lesson-nav">
+    <a class="nav-btn prev" href="lesson-19.html"><span class="nb-text"><span class="nb-label">上一讲</span><span class="nb-title">第19讲：介词地图</span></span></a>
+    <a class="nav-btn-home" href="index.html">📚 目录</a>
+    <a class="nav-btn next" href="lesson-21.html"><span class="nb-text"><span class="nb-label">下一讲</span><span class="nb-title">第21讲：宾语从句</span></span></a>
+</div>
+
+</div><!-- /lesson-main -->
+
+<div class="lesson-footer">
+    初中英语语法重构 · 进阶提分 · 第20讲<br>
+    打印时只会打印本讲内容 · 点击浏览器返回键可回到目录
+</div>
+
+<script>
+// 统一管理所有的点击展开动作
+document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.reveal-btn');
+    if (!btn) return;
+    var targetId = btn.getAttribute('data-target');
+    if (!targetId) return;
+    var box = document.getElementById(targetId);
+    if (!box) return;
+    var isVisible = box.style.display && box.style.display !== 'none';
+    if (isVisible) {
+        box.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '👉 点击解锁答案';
+    } else {
+        box.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+        try { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (err) {}
+        btn.textContent = '👇 收起答案';
+    }
+});
+</script>
+
+<script src="/assets/a4-print-entry.js?v=20260722-final-v3"></script>
+</body>
+</html>

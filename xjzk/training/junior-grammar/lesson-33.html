@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>衔接2课：不定代词——没有名字的那些人和东西 — 初中英语语法重构</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f2f5; color: #2c3e50; min-height: 100vh; }
+
+/* ===== 顶部导航条 ===== */
+.lesson-topbar { background: #2c3e50; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.topbar-inner { max-width: 900px; margin: 0 auto; padding: 11px 24px; display: flex; align-items: center; gap: 14px; }
+.topbar-back { color: #f1c40f; text-decoration: none; font-size: 14px; font-weight: bold; display: flex; align-items: center; gap: 5px; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
+.topbar-back:hover { opacity: 0.75; }
+.topbar-sep { color: #4a6278; font-size: 16px; flex-shrink: 0; }
+.topbar-lesson-info { flex: 1; min-width: 0; }
+.topbar-lesson-info .tl-tag { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 2px; }
+.topbar-lesson-info .tl-title { font-size: 15px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-print { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.85); cursor: pointer; font-family: inherit; flex-shrink: 0; transition: background 0.15s; }
+.topbar-print:hover { background: rgba(255,255,255,0.18); }
+
+/* ===== 主内容 ===== */
+.lesson-main { max-width: 900px; margin: 0 auto; padding: 36px 24px 20px; }
+.book-container { background: #fff; padding: 50px 60px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+
+/* ===== 底部导航 ===== */
+.lesson-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 28px 0 20px; flex-wrap: wrap; }
+.nav-btn { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #2c3e50; font-size: 14px; transition: all 0.15s; flex: 1; min-width: 160px; max-width: 280px; }
+.nav-btn:hover { border-color: #2980b9; box-shadow: 0 4px 12px rgba(41,128,185,0.15); transform: translateY(-1px); }
+.nav-btn.prev { justify-content: flex-start; }
+.nav-btn.next { justify-content: flex-end; margin-left: auto; }
+.nav-btn .nb-arrow { font-size: 18px; color: #aaa; flex-shrink: 0; }
+.nav-btn:hover .nb-arrow { color: #2980b9; }
+.nav-btn .nb-text { min-width: 0; }
+.nav-btn .nb-label { font-size: 11px; color: #aaa; display: block; }
+.nav-btn .nb-title { font-size: 14px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-btn-home { display: flex; align-items: center; gap: 6px; background: #2c3e50; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #f1c40f; font-size: 14px; font-weight: bold; flex-shrink: 0; transition: opacity 0.15s; }
+.nav-btn-home:hover { opacity: 0.85; }
+.lesson-footer { text-align: center; padding: 20px 24px 36px; font-size: 12px; color: #aaa; line-height: 1.8; }
+
+/* ===== 封面 ===== */
+.chapter-cover { background: linear-gradient(135deg, #1a252f 0%, #1c2e20 55%, #27ae60 100%); border-radius: 15px; padding: 40px 40px 35px; margin-bottom: 40px; color: #fff; position: relative; overflow: hidden; }
+.chapter-cover::before { content: "some"; position: absolute; right: 24px; top: 18px; font-size: 60px; font-weight: 900; color: rgba(255,255,255,0.06); line-height: 1; letter-spacing: -5px; }
+.lesson-tag { background: #f1c40f; color: #2c3e50; font-weight: 900; font-size: 13px; padding: 5px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em; }
+.chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.chapter-cover h1 span { color: #f1c40f; }
+.chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.meta-row { display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px; }
+
+/* ===== 回顾 / 目标 ===== */
+.review-bar { background: #f0f7ff; border: 1.5px solid #b3d4ff; border-left: 5px solid #2980b9; border-radius: 8px; padding: 14px 18px; margin-bottom: 30px; font-size: 14px; color: #1a5276; line-height: 1.75; }
+.review-bar strong { color: #1a252f; }
+.goal-box { background: #fffde7; border: 2px solid #ffe082; border-radius: 12px; padding: 20px 25px; margin-bottom: 35px; display: flex; gap: 15px; align-items: flex-start; }
+.goal-icon { font-size: 28px; flex-shrink: 0; line-height: 1.2; }
+.goal-box h3 { font-size: 16px; color: #e65100; margin-bottom: 6px; font-weight: 900; }
+.goal-box p  { font-size: 15px; color: #5d4037; line-height: 1.7; }
+
+/* ===== 通用卡片 ===== */
+.module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+.badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+.card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }   .badge-blue  { background: #2980b9; color: #fff; }
+.card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }   .badge-green { background: #27ae60; color: #fff; }
+.card-red    { background: #fff5f5; border: 2px solid #ffcccc; }   .badge-red   { background: #e74c3c; color: #fff; }
+.card-yellow { background: #fffde7; border: 2px solid #ffe082; }   .badge-yellow{ background: #f1c40f; color: #333; }
+.card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }   .badge-purple{ background: #8e44ad; color: #fff; }
+.card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }   .badge-orange{ background: #e67e22; color: #fff; }
+.card-teal   { background: #f0fffc; border: 2px solid #b2dfdb; }   .badge-teal  { background: #16a085; color: #fff; }
+
+/* ===== 高亮 ===== */
+.hl-red { color: #e74c3c; font-weight: bold; } .hl-blue { color: #2980b9; font-weight: bold; } .hl-green { color: #27ae60; font-weight: bold; } .hl-orange { color: #e67e22; font-weight: bold; } .hl-purple { color: #8e44ad; font-weight: bold; }
+.mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+.mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+.mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+.mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+.mark-purple { background: #e8daef; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #6c3483; }
+
+/* ===== 标签 ===== */
+.tag-hot  { background: #ff4757; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+.tag-easy { background: #2ed573; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+
+/* ===== 脑回路 ===== */
+.brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+.brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+/* ===== 对错 ===== */
+.wrong-text { color: #c0392b; font-size: 17px; font-weight: bold; text-decoration: line-through; }
+.right-text { color: #27ae60; font-size: 17px; font-weight: bold; }
+
+/* ===== 句子解剖 ===== */
+.sentence-dissect { display: flex; align-items: flex-end; gap: 6px; flex-wrap: wrap; margin: 14px 0; background: #f8f9fa; border-radius: 10px; padding: 14px 16px 18px; }
+.word-block { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.word-text { padding: 6px 12px; border-radius: 8px; font-size: 16px; font-weight: 900; white-space: nowrap; }
+.word-label { font-size: 11px; font-weight: 500; color: #777; }
+.wt-s  { background: #fff3e0; color: #e65100;  border: 2px solid #ffb74d; }
+.wt-v  { background: #e8f5e9; color: #1b5e20;  border: 2px solid #a5d6a7; }   /* 将来时谓语 绿色 */
+.wt-o  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-t  { background: #e8f5e9; color: #1b5e20;  border: 2px solid #a5d6a7; }   /* 时间信号词 绿色 */
+.wt-wl { background: #d5f5e3; color: #1e8449;  border: 2px solid #52be80; }   /* will */
+.wt-bg { background: #f3e5f5; color: #6a1b9a;  border: 2px solid #ce93d8; }   /* be going to */
+.wt-x  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+
+/* ===== will vs be going to 对比卡 ===== */
+.vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 18px 0; }
+.vs-card { border-radius: 12px; padding: 22px 18px; border: 2px solid transparent; }
+.vs-will { background: #d5f5e3; border-color: #52be80; }
+.vs-bgt  { background: #e8daef; border-color: #af7ac5; }
+.vs-card .vs-badge  { font-size: 12px; font-weight: 900; letter-spacing: 0.05em; margin-bottom: 8px; }
+.vs-will .vs-badge  { color: #1e8449; }
+.vs-bgt  .vs-badge  { color: #6c3483; }
+.vs-card .vs-formula { font-size: 20px; font-weight: 900; margin-bottom: 12px; line-height: 1.3; }
+.vs-will .vs-formula { color: #1e8449; }
+.vs-bgt  .vs-formula { color: #6c3483; }
+.vs-card .vs-when   { font-size: 13px; line-height: 1.75; margin-bottom: 10px; }
+.vs-card .vs-signal { font-size: 12px; font-weight: bold; margin-bottom: 8px; }
+.vs-will .vs-signal { color: #1e8449; }
+.vs-bgt  .vs-signal { color: #6c3483; }
+.vs-card .vs-eg     { font-size: 14px; font-weight: bold; background: rgba(255,255,255,0.65); border-radius: 6px; padding: 8px 12px; line-height: 1.75; }
+
+/* ===== 结构公式块 ===== */
+.formula-block { background: #fff; border: 2px solid #a5d6a7; border-radius: 10px; overflow: hidden; margin: 16px 0; }
+.formula-row { display: flex; align-items: stretch; border-bottom: 1px solid #e8f5e9; }
+.formula-row:last-child { border-bottom: none; }
+.formula-label { background: #27ae60; color: #fff; font-weight: 900; font-size: 13px; padding: 12px 14px; min-width: 72px; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; }
+.formula-content { padding: 12px 18px; flex: 1; font-size: 15px; line-height: 1.75; color: #333; }
+.formula-content strong { color: #1b5e20; }
+.formula-eg { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* ===== 三种将来时对比大表 ===== */
+.future-table { width: 100%; border-collapse: collapse; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.07); margin: 16px 0; font-size: 14px; }
+.future-table th { background: #2c3e50; color: #f1c40f; padding: 11px 14px; text-align: left; font-size: 13px; }
+.future-table td { padding: 11px 14px; border-bottom: 1px solid #eee; vertical-align: top; line-height: 1.65; }
+.future-table tr:last-child td { border-bottom: none; }
+.future-table tr:nth-child(even) td { background: #fafafa; }
+.future-table tr:hover td { background: #f4fbf4; }
+
+/* ===== 辨析表 ===== */
+.magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+.magic-table th { background: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+.magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+.magic-table tr:last-child td { border-bottom: none; }
+.magic-table tr:hover td { background: #f8f9fa; }
+
+/* ===== 警告 / 提示 ===== */
+.warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+.warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 15px; margin-bottom: 8px; }
+.warn-box p { font-size: 14px; color: #444; line-height: 1.75; margin: 5px 0; }
+.tip-box { background: #f4fbf4; border: 2px solid #c3e6c3; border-left: 5px solid #27ae60; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #1e8449; line-height: 1.75; }
+
+/* ===== 练习题 ===== */
+.quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+.quiz-q { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; line-height: 1.65; }
+.quiz-opts { font-size: 15px; color: #555; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+.reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+.answer-box { display: none; margin-top: 14px; }
+
+/* ===== 分割线 ===== */
+.section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+.section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+/* ===== 小抄 ===== */
+.cheatsheet { margin: 50px 0 30px; background: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+.cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+.cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+.cs-block.red    { border-left-color: #e74c3c; }
+.cs-block.green  { border-left-color: #2ecc71; }
+.cs-block.yellow { border-left-color: #f1c40f; }
+.cs-block.purple { border-left-color: #9b59b6; }
+.cs-block strong { font-size: 16px; display: block; margin-bottom: 10px; }
+.cs-block p, .cs-block li { font-size: 14px; line-height: 1.85; color: #ecf0f1; margin: 4px 0; }
+.cs-block ul { padding-left: 18px; }
+.cs-block table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.cs-block table th { background: rgba(255,255,255,0.14); color: #f1c40f; padding: 7px 12px; text-align: left; }
+.cs-block table td { padding: 7px 12px; border-bottom: 1px solid rgba(255,255,255,0.07); color: #ecf0f1; vertical-align: top; line-height: 1.6; }
+.cs-block table tr:last-child td { border-bottom: none; }
+
+/* ===== 转化钩子 ===== */
+.cta-box { margin-top: 40px; padding: 32px; background: #fff3e0; border: 2px dashed #e67e22; border-radius: 14px; text-align: center; box-shadow: 0 5px 15px rgba(230,126,34,0.12); }
+.cta-box h3 { color: #d35400; font-size: 22px; margin-bottom: 14px; font-weight: 900; }
+.cta-box p  { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 20px; text-align: left; }
+.cta-btn { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; display: inline-block; padding: 14px 35px; border-radius: 30px; font-weight: bold; font-size: 17px; text-decoration: none; box-shadow: 0 4px 12px rgba(230,126,34,0.4); transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); }
+
+/* ===== 打印 ===== */
+@media print {
+    .lesson-topbar, .lesson-nav, .lesson-footer { display: none !important; }
+    body { background: #fff; }
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container { padding: 20px 24px; border-radius: 0; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .module-card, .quiz-block, .warn-box, .cheatsheet, .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+    .cheatsheet { page-break-before: always; break-before: page; }
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+    .vs-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ===== 新版浅色紧凑小抄：只替换小抄UI，不影响正文原样式 ===== */
+.cheatsheet-v2 {
+  margin: 42px 0 28px;
+  background: #fffdf5;
+  border: 2px solid #f1c40f;
+  border-radius: 14px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  color: #2c3e50;
+}
+.cheatsheet-v2-header {
+  background: linear-gradient(135deg, #fff3c4, #fff8df);
+  border-bottom: 2px solid #f1c40f;
+  padding: 16px 22px 14px;
+}
+.cheatsheet-v2-title { font-size: 20px; font-weight: 900; color: #2c3e50; margin-bottom: 4px; }
+.cheatsheet-v2-subtitle { font-size: 13px; color: #7d6608; line-height: 1.6; }
+.cheatsheet-v2-body { padding: 18px 20px 20px; }
+.cheat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cheat-card {
+  background: #fff;
+  border: 1.5px solid #e8e8e8;
+  border-left: 5px solid #3498db;
+  border-radius: 10px;
+  padding: 13px 14px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.cheat-card.core { border-left-color: #e74c3c; }
+.cheat-card.method { border-left-color: #2980b9; }
+.cheat-card.trap { border-left-color: #e67e22; }
+.cheat-card.example { border-left-color: #27ae60; }
+.cheat-card.memory { border-left-color: #8e44ad; }
+.cheat-card.exam { border-left-color: #16a085; }
+.cheat-card h4 { font-size: 15px; font-weight: 900; color: #1a252f; margin-bottom: 7px; line-height: 1.45; }
+.cheat-card p { font-size: 14px; color: #444; line-height: 1.65; margin: 5px 0; }
+.cheat-card ul { padding-left: 18px; margin: 6px 0 0; }
+.cheat-card li { font-size: 14px; color: #444; line-height: 1.65; margin: 3px 0; }
+.cheat-rule { display:inline-block; background:#fff3c4; color:#7d6608; font-weight:900; padding:2px 6px; border-radius:5px; }
+.cheat-good { color:#1e8449; font-weight:900; }
+.cheat-bad { color:#c0392b; font-weight:900; text-decoration:line-through; }
+.cheat-note {
+  background:#f8f9fa;
+  border:1px dashed #d0d0d0;
+  border-radius:8px;
+  padding:8px 10px;
+  margin-top:8px;
+  font-size:13px !important;
+  color:#666 !important;
+}
+.cheatsheet-v2-footer {
+  margin-top:14px;
+  background:#f8f9fa;
+  border:1.5px dashed #d0d0d0;
+  border-radius:10px;
+  padding:12px 14px;
+  font-size:14px;
+  line-height:1.7;
+  color:#333;
+}
+.cheatsheet-v2-footer strong { color:#c0392b; }
+@media (max-width: 680px) {
+  .cheatsheet-v2 { margin:30px 0 24px !important; border-radius:12px !important; }
+  .cheatsheet-v2-header { padding:14px 14px 12px !important; }
+  .cheatsheet-v2-title { font-size:18px !important; }
+  .cheatsheet-v2-body { padding:14px 12px 16px !important; }
+  .cheat-grid { grid-template-columns:1fr !important; gap:10px !important; }
+  .cheat-card { padding:12px 12px !important; }
+  .cheat-card h4 { font-size:15px !important; }
+  .cheat-card p, .cheat-card li { font-size:14px !important; line-height:1.65 !important; }
+}
+@media print {
+  .cheatsheet-v2 {
+    background:#fff !important;
+    border:1.5px solid #333 !important;
+    box-shadow:none !important;
+    border-radius:8px !important;
+    margin:18px 0 !important;
+    page-break-before:auto !important;
+    break-before:auto !important;
+    page-break-inside:auto !important;
+    break-inside:auto !important;
+  }
+  .cheatsheet-v2-header {
+    background:#fff !important;
+    border-bottom:1.5px solid #333 !important;
+    padding:10px 12px !important;
+  }
+  .cheatsheet-v2-title { color:#000 !important; font-size:17px !important; }
+  .cheatsheet-v2-subtitle { color:#333 !important; font-size:12px !important; }
+  .cheatsheet-v2-body { padding:12px !important; }
+  .cheat-grid { grid-template-columns:1fr 1fr !important; gap:8px !important; }
+  .cheat-card {
+    background:#fff !important;
+    border:1px solid #555 !important;
+    border-left:4px solid #000 !important;
+    box-shadow:none !important;
+    padding:8px 10px !important;
+  }
+  .cheat-card h4 { color:#000 !important; font-size:13px !important; margin-bottom:4px !important; }
+  .cheat-card p, .cheat-card li { color:#111 !important; font-size:12px !important; line-height:1.45 !important; margin:2px 0 !important; }
+  .cheat-rule { background:#fff !important; border:1px solid #999 !important; color:#000 !important; padding:1px 4px !important; }
+  .cheat-note { background:#fff !important; border:1px dashed #777 !important; color:#222 !important; font-size:11px !important; padding:5px 7px !important; }
+  .cheatsheet-v2-footer { background:#fff !important; border:1px dashed #777 !important; color:#000 !important; padding:7px 9px !important; font-size:12px !important; line-height:1.45 !important; }
+  .cheatsheet-v2-footer strong { color:#000 !important; }
+}
+
+
+/* ===== 内容丰富优化：新增模块，不改变原页面主体风格 ===== */
+.step-flow {
+    margin: 16px 0;
+    overflow: hidden;
+    border: 1.5px solid #d8d8d8;
+    border-radius: 10px;
+    background: #fff;
+}
+.sf-item {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid #ececec;
+}
+.sf-item:last-child { border-bottom: none; }
+.sf-num {
+    display: flex;
+    min-width: 74px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.enrich-route {
+    margin: 0 0 36px;
+    padding: 22px 24px;
+    border: 2px solid #b3d4ff;
+    border-radius: 14px;
+    background: linear-gradient(135deg,#eef7ff,#fbfdff);
+}
+.enrich-route h3 {
+    margin-bottom: 14px;
+    color: #1a5276;
+    font-size: 17px;
+    font-weight: 900;
+}
+.enrich-route-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+.enrich-route-step {
+    padding: 13px 11px;
+    border: 1.5px solid #d6eaf8;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+}
+.enrich-route-step b {
+    display: block;
+    margin-bottom: 5px;
+    color: #2980b9;
+    font-size: 13px;
+}
+.enrich-route-step span {
+    display: block;
+    color: #555;
+    font-size: 13px;
+    line-height: 1.55;
+}
+.enrich-card {
+    margin: 35px 0;
+    padding: 28px 28px 24px;
+    border: 2px solid #b3d4ff;
+    border-radius: 12px;
+    background: #f7fbff;
+    font-size: 15px;
+    line-height: 1.8;
+}
+.enrich-card-title {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 8px 17px;
+    border-radius: 8px;
+    background: #2980b9;
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+}
+.enrich-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 15px 0;
+}
+.enrich-item {
+    padding: 14px 16px;
+    border: 1.5px solid #dce6ef;
+    border-radius: 10px;
+    background: #fff;
+}
+.enrich-item h4 {
+    margin-bottom: 7px;
+    color: #1a5276;
+    font-size: 15px;
+}
+.enrich-item p {
+    margin: 4px 0;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.72;
+}
+.enrich-table-wrap {
+    overflow-x: auto;
+    margin: 14px 0;
+    border-radius: 10px;
+}
+.enrich-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 14px;
+}
+.enrich-table th {
+    padding: 9px 12px;
+    background: #2c3e50;
+    color: #f1c40f;
+    text-align: left;
+}
+.enrich-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    line-height: 1.65;
+    vertical-align: top;
+}
+.enrich-table tr:last-child td { border-bottom: 0; }
+.enrich-correction {
+    margin: 14px 0;
+    padding: 14px 17px;
+    border: 1.5px solid #f5c56b;
+    border-left: 5px solid #e67e22;
+    border-radius: 9px;
+    background: #fff8e8;
+    color: #5d4037;
+    font-size: 14px;
+    line-height: 1.75;
+}
+.enrich-correction strong { color: #b45309; }
+.enrich-flow {
+    margin: 15px 0;
+    overflow: hidden;
+    border: 1.5px solid #b3d4ff;
+    border-radius: 10px;
+    background: #fff;
+}
+.enrich-flow-row {
+    display: flex;
+    border-bottom: 1px solid #d6eaf8;
+}
+.enrich-flow-row:last-child { border-bottom: 0; }
+.enrich-flow-num {
+    display: flex;
+    width: 48px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    background: #2980b9;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+}
+.enrich-flow-body {
+    padding: 12px 15px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.72;
+}
+
+@media (max-width:680px) {
+    .enrich-route-grid, .enrich-grid {
+        grid-template-columns:1fr !important;
+    }
+    .enrich-route, .enrich-card {
+        padding:17px 15px !important;
+    }
+    .enrich-flow-num { width:42px; }
+    .sf-num { min-width:64px; }
+    .book-container [style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns:1fr !important;
+    }
+    .book-container div[style*="overflow:hidden"] {
+        overflow-x:auto !important;
+    }
+}
+@media print {
+    .answer-box { display:block !important; }
+    .reveal-btn { display:none !important; }
+    .enrich-route, .enrich-card {
+        break-inside:auto !important;
+        page-break-inside:auto !important;
+        box-shadow:none !important;
+    }
+    .enrich-item, .enrich-flow-row, .sf-item {
+        break-inside:avoid;
+        page-break-inside:avoid;
+    }
+}
+
+</style>
+<link rel="stylesheet" href="/assets/grammar-mobile-print-fix.css?v=20260705">
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="lesson-topbar">
+    <div class="topbar-inner">
+        <a class="topbar-back" href="/">← 学习中心</a>
+        <a class="topbar-back" href="index.html">← 目录</a>
+        <div class="topbar-sep">/</div>
+        <div class="topbar-lesson-info">
+            <div class="tl-tag">第一战区 · 衔接2课 · 及格必学</div>
+            <div class="tl-title">不定代词——没有名字的那些人和东西</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 主内容区 ===== -->
+<div class="lesson-main">
+<div class="book-container">
+
+    <!-- 封面 -->
+    <div class="chapter-cover">
+        <div class="lesson-tag">第一战区 · 衔接2课 · 及格必学</div>
+        <h1>没有名字的<br><span>那些人和东西</span></h1>
+        <p class="subtitle">不定代词——当你不想（或不能）说清"具体是谁、具体是啥"，<br>就用 someone / something / anybody 这些"万能替身"</p>
+        <div class="meta-row">
+            <div class="meta-chip">⏱ 预计学习 45 分钟</div>
+            <div class="meta-chip">🎯 代词辨析与主谓一致高频考点</div>
+            <div class="meta-chip">🔥 全国常见题型规律</div>
+        </div>
+    </div>
+
+    <!-- 上一讲回顾 -->
+    <div class="review-bar">
+        📌 <strong>上一讲回顾（第7讲：代词换装游戏）</strong><br>
+        代词是名词的"替身"：Tom → he，Tom's bike → his。人称代词（I/he/they）、物主代词（my/mine）、反身代词（myself）——都是替换<strong>明确的、指定的</strong>那个人或物。<br><br>
+        这一讲的代词不一样——它们替换的是<strong>说不清、不指定</strong>的对象。"有人敲门"，谁敲的？不知道，用 <strong>somebody</strong>。"我想喝点东西"，喝啥？没定，用 <strong>something</strong>。这类"模糊替身"就叫<strong>不定代词</strong>（"不定"= 不确定指哪一个）。学完这讲，代词系统的最后一块拼图补齐。
+    </div>
+
+    <!-- 目标 -->
+    <div class="goal-box">
+        <div class="goal-icon">🎯</div>
+        <div>
+            <h3>学完这讲，你能做到：</h3>
+            <p>① 拼出 some- / any- / no- / every- 四组合成不定代词，并知道各用在哪种句子<br>
+            ② 掌握高频语序：<strong>复合不定代词后接形容词</strong>（something important）<br>
+            ③ 分清 both / all / either / neither / none——"两个"和"多个"的选择<br>
+            ④ 区分 it / one / ones / that / those，并补齐 another / other / the other / others</p>
+        </div>
+    </div>
+
+    <!-- ===== 新增：不定代词判断路线 ===== -->
+    <div class="enrich-route">
+        <h3>🧭 做不定代词题，不要只看肯定否定：按这4步走</h3>
+        <div class="enrich-route-grid">
+            <div class="enrich-route-step"><b>第1步 · 判对象</b><span>指人、物、两个对象、多个对象，还是不可数的整体？</span></div>
+            <div class="enrich-route-step"><b>第2步 · 判范围</b><span>某个、任何一个、每一个、全部，还是一个也没有？</span></div>
+            <div class="enrich-route-step"><b>第3步 · 判结构</b><span>独立作代词，还是后接名词、of短语、形容词或to do？</span></div>
+            <div class="enrich-route-step"><b>第4步 · 查一致</b><span>谓语单复数、指代对象、可数不可数和肯定否定是否匹配？</span></div>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块一：不定代词是什么 ===== -->
+    <div class="module-card card-green">
+        <div class="badge badge-green">👤 模块一：不定代词是什么——"某人""某物"的万能替身</div>
+
+        <p>先看两个场景对比：</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;">
+            <div style="background:#f0f7ff;border:1.5px solid #b3d4ff;border-radius:10px;padding:14px 16px;">
+                <div style="font-size:13px;color:#888;margin-bottom:6px;">明确的替身（第7讲）</div>
+                <div style="font-size:15px;line-height:1.9;color:#333;"><strong>Tom</strong> is at the door.<br>→ <strong>He</strong> is at the door.<br><small style="color:#888;">he 明确指 Tom 这个人</small></div>
+            </div>
+            <div style="background:#f4fbf4;border:2px solid #52be80;border-radius:10px;padding:14px 16px;">
+                <div style="font-size:13px;color:#888;margin-bottom:6px;">模糊的替身（本讲）</div>
+                <div style="font-size:15px;line-height:1.9;color:#333;"><strong>Someone</strong> is at the door.<br><small style="color:#888;">someone = 有个人，但不知道是谁</small></div>
+            </div>
+        </div>
+
+        <p>不定代词专门用来指<strong>不确定、不具体、不点名</strong>的人或物。它们由四个"前缀积木"和三个"后缀积木"拼成：</p>
+
+        <div style="background:#fff;border:2px solid #90caf9;border-radius:10px;overflow:hidden;margin:18px 0;">
+            <table style="width:100%;border-collapse:collapse;font-size:15px;text-align:center;">
+                <tr style="background:#e3f2fd;">
+                    <th style="padding:10px;color:#1565c0;">前缀 ↓ / 后缀 →</th>
+                    <th style="padding:10px;color:#1565c0;">-one / -body（人）</th>
+                    <th style="padding:10px;color:#1565c0;">-thing（物）</th>
+                </tr>
+                <tr>
+                    <td style="padding:10px;border-top:1px solid #e3f2fd;background:#f0f7ff;font-weight:900;color:#1565c0;">some-（某）</td>
+                    <td style="padding:10px;border-top:1px solid #e3f2fd;">someone / somebody<br><small style="color:#888;">某人</small></td>
+                    <td style="padding:10px;border-top:1px solid #e3f2fd;">something<br><small style="color:#888;">某物</small></td>
+                </tr>
+                <tr>
+                    <td style="padding:10px;border-top:1px solid #e3f2fd;background:#f0f7ff;font-weight:900;color:#1565c0;">any-（任一）</td>
+                    <td style="padding:10px;border-top:1px solid #e3f2fd;">anyone / anybody<br><small style="color:#888;">任何人</small></td>
+                    <td style="padding:10px;border-top:1px solid #e3f2fd;">anything<br><small style="color:#888;">任何物</small></td>
+                </tr>
+                <tr>
+                    <td style="padding:10px;border-top:1px solid #e3f2fd;background:#f0f7ff;font-weight:900;color:#1565c0;">no-（无）</td>
+                    <td style="padding:10px;border-top:1px solid #e3f2fd;">no one / nobody<br><small style="color:#888;">没有人</small></td>
+                    <td style="padding:10px;border-top:1px solid #e3f2fd;">nothing<br><small style="color:#888;">没有东西</small></td>
+                </tr>
+                <tr>
+                    <td style="padding:10px;border-top:1px solid #e3f2fd;background:#f0f7ff;font-weight:900;color:#1565c0;">every-（每）</td>
+                    <td style="padding:10px;border-top:1px solid #e3f2fd;">everyone / everybody<br><small style="color:#888;">每个人</small></td>
+                    <td style="padding:10px;border-top:1px solid #e3f2fd;">everything<br><small style="color:#888;">每样东西</small></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>前缀管"范围"，后缀管"人还是物"。</p>
+            <p>四个前缀与 -one/-body/-thing 组合成上述常见词。人称形式两种合计8个，加上4个 -thing 形式，共12个；no one 分开写。</p>
+        </div>
+
+        <div class="warn-box">
+            <p><strong>⚠️ 准确规则：-one / -body / -thing 复合不定代词通常按第三人称单数处理</strong></p>
+            <p>everyone、everybody、something 等复合不定代词在基础语法中作主语时通常配<strong>第三人称单数</strong>谓语：</p>
+            <p style="margin-top:6px;">Everyone <span class="mark-red">is</span> here.（✓ 不是 are）&nbsp;&nbsp;&nbsp;Everybody <span class="mark-red">likes</span> him.（✓ 不是 like）</p>
+            <p style="margin-top:6px;color:#888;font-size:14px;">但“不定代词”是大类，both / many / few / several 等要配复数谓语；all / some / none 的谓语还要看其所指对象，不能全部套成单数。</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块二：some / any / no 的分工 ===== -->
+    <div class="section-divider"><hr><span>模块二</span><hr></div>
+
+    <div class="module-card card-teal">
+        <div class="badge badge-teal">🚦 模块二：some- / any- / no- 怎么选——先看含义，再看句型</div>
+
+        <p>入门时常记“肯定句多用 some，否定句和一般疑问句多用 any”，但这只是常见分布，不是绝对规则。some 常表示“某个、一些”，any 还可以表示“任何一个、无论哪个”，必须结合说话人的真实意思。</p>
+
+        <div class="formula-block">
+            <div class="formula-row">
+                <div class="formula-label">肯定句</div>
+                <div class="formula-content">
+                    通常用 <strong>some-</strong> 系列，表示某个或一些不确定对象
+                    <div class="formula-eg">There is <strong>something</strong> in the box.（盒子里有东西。）<br><strong>Someone</strong> is knocking at the door.（有人在敲门。）</div>
+                </div>
+            </div>
+            <div class="formula-row">
+                <div class="formula-label">否定句</div>
+                <div class="formula-content">
+                    通常一般询问是否存在时常用 <strong>any-</strong> 系列；也可用 no- 系列构成标准否定表达
+                    <div class="formula-eg">I don't have <strong>anything</strong> to say.（我没什么可说的。）<br>= I have <strong>nothing</strong> to say.（两句意思相同）</div>
+                </div>
+            </div>
+            <div class="formula-row">
+                <div class="formula-label">疑问句</div>
+                <div class="formula-content">
+                    用 <strong>any-</strong> 系列
+                    <div class="formula-eg">Is there <strong>anyone</strong> in the room?（房间里有人吗？）</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            💡 疑问句中也能用 some-：当说话人<strong>主动提供、提出请求，或预期某物确实存在</strong>时，常用 some-：<br>
+            Would you like <strong>something</strong> to drink?（想喝点什么吗？——邀请）<br>
+            Could you give me <strong>something</strong> to eat?（能给我点吃的吗？——请求）
+        </div>
+
+        <p style="margin-top:18px;font-weight:900;font-size:16px;color:#1a252f;">🔑 no- = not any：一个坑，别踩两次否定</p>
+
+        <div class="warn-box">
+            <p><strong>⚠️ no- 系列已经表达否定；在标准考试英语中，不再用 not 对同一内容重复否定</strong></p>
+            <p>✓ I know <span class="mark-red">nothing</span>. = I <span style="color:#888;">don't</span> know <span class="mark-red">anything</span>.（我什么都不知道）</p>
+            <p>✗ I <span style="color:#e74c3c;">don't</span> know <span style="color:#e74c3c;">nothing</span>.（不符合标准考试英语；若想表达“什么都不知道”，用 don't know anything 或 know nothing）</p>
+            <p style="margin-top:6px;"><span class="right-text">考试判断：同一分句表达普通否定时，优先使用 not...any 或 no- 其中一种。</span></p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块三：形容词后置陷阱（重头戏） ===== -->
+    <div class="section-divider"><hr><span>模块三 · 本讲最重要</span><hr></div>
+
+    <div class="module-card card-red">
+        <div class="badge badge-red">🎯 模块三：形容词往后站——复合不定代词的高频语序</div>
+
+        <p>这是全讲<strong>高频且容易受中文语序影响</strong>的考点。先看中英对比：</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0;">
+            <div style="background:#f8f9fa;border:1.5px solid #e0e0e0;border-radius:10px;padding:16px;text-align:center;">
+                <div style="font-size:13px;color:#888;margin-bottom:8px;">中文语序</div>
+                <div style="font-size:18px;font-weight:900;color:#2c3e50;"><span class="mark-orange">重要的</span>事情</div>
+                <div style="font-size:13px;color:#888;margin-top:6px;">形容词在前</div>
+            </div>
+            <div style="background:#fff5f5;border:2px solid #e74c3c;border-radius:10px;padding:16px;text-align:center;">
+                <div style="font-size:13px;color:#888;margin-bottom:8px;">英文语序（反过来！）</div>
+                <div style="font-size:18px;font-weight:900;color:#c0392b;">something <span class="mark-red">important</span></div>
+                <div style="font-size:13px;color:#888;margin-top:6px;">形容词在后</div>
+            </div>
+        </div>
+
+        <p><strong>规则：</strong>形容词修饰普通名词时放前面（a <u>red</u> apple）；但修饰<strong>不定代词</strong>（something/anything/nothing/everything 等）时，必须放<strong>后面</strong>。</p>
+
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路：为什么要往后放？</strong></p>
+            <p>something、anything 等已经构成完整的复合代词，普通形容词通常放在它们<strong>后面</strong>作后置修饰语。</p>
+            <p>❌ important something&nbsp;&nbsp;&nbsp;✅ something <span class="mark-red">important</span></p>
+        </div>
+
+        <p style="margin-top:16px;font-weight:900;font-size:15px;color:#1a252f;">典型例句（全部形容词后置）：</p>
+        <div style="background:#f8f9fa;border-radius:10px;padding:16px 20px;margin:12px 0;font-size:15px;line-height:2.1;">
+            I have <strong>something important</strong> to tell you.（我有重要的事告诉你。）<br>
+            Is there <strong>anything new</strong> today?（今天有什么新鲜事吗？）<br>
+            There is <strong>nothing wrong</strong> with my computer.（我电脑没什么毛病。）<br>
+            Would you like <strong>something cold</strong> to drink?（想喝点凉的吗？）
+        </div>
+
+        <div class="warn-box">
+            <p><strong>⚠️ 进阶结构：复合不定代词 + 形容词 + to do</strong></p>
+            <p>当形容词说明性质、to do 进一步说明用途或动作时，常用：<strong>复合不定代词 + 形容词 + to do</strong></p>
+            <p style="margin-top:6px;">something <span class="mark-red">nice</span> <span style="color:#2980b9;">to eat</span>（好吃的东西）&nbsp;&nbsp;&nbsp;anything <span class="mark-red">interesting</span> <span style="color:#2980b9;">to read</span>（有趣的读物）</p>
+            <p style="margin-top:6px;color:#888;font-size:14px;">记住这个"三明治"顺序：代词打底 → 形容词夹中间 → to do 收尾。</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块四：both/all/either/neither/none ===== -->
+    <div class="section-divider"><hr><span>模块四</span><hr></div>
+
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🔢 模块四：两个还是多个——both / either / neither / all / none</div>
+
+        <p>上面那些词主要表示不确定的人或物。还有一组代词和限定词表示<strong>数量与范围</strong>。先判断是两个对象、多个对象，还是不可数的整体，再看“全都、任一、都不”哪种关系。</p>
+
+        <div style="background:#fff;border:2px solid #ce93d8;border-radius:10px;overflow:hidden;margin:18px 0;">
+            <table style="width:100%;border-collapse:collapse;font-size:15px;">
+                <tr style="background:#f3e8fd;">
+                    <th style="padding:10px 14px;text-align:left;color:#8e44ad;">词</th>
+                    <th style="padding:10px 14px;text-align:left;color:#8e44ad;">用于</th>
+                    <th style="padding:10px 14px;text-align:left;color:#8e44ad;">意思</th>
+                    <th style="padding:10px 14px;text-align:left;color:#8e44ad;">动词</th>
+                </tr>
+                <tr>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;font-weight:900;">both</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">两个</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">两个都</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">复数</td>
+                </tr>
+                <tr>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;font-weight:900;">either</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">两个</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">两个中任一个</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;"><strong>单数</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;font-weight:900;">neither</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">两个</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">两个都不</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;"><strong>单数</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;font-weight:900;">all</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">复数对象或不可数整体</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">全部、所有</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">看情况</td>
+                </tr>
+                <tr>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;font-weight:900;">none</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">两个或多个对象、不可数整体</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">一个也没有、一点也没有</td>
+                    <td style="padding:9px 14px;border-top:1px solid #f3e8fd;">单/复均可</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路（先数人头）：</strong></p>
+            <p>看到题目先问：<strong>一共几个？</strong></p>
+            <p>👉 <strong>2个</strong> → 在 both / either / neither 里选（都→both，任一→either，都不→neither）</p>
+            <p>👉 <strong>多个或不可数整体</strong> → 常考虑 all / none；指两个都不时，基础考试通常优先用 neither</p>
+        </div>
+
+        <p style="margin-top:16px;font-weight:900;font-size:15px;color:#1a252f;">经典例句：</p>
+        <div style="background:#f8f9fa;border-radius:10px;padding:16px 20px;margin:12px 0;font-size:15px;line-height:2.1;">
+            <strong>Both</strong> of my parents <strong>are</strong> teachers.（我父母俩都是老师。）<br>
+            <strong>Neither</strong> of the answers <strong>is</strong> right.（这两个答案都不对。）<br>
+            — Which book do you want? — <strong>Either</strong> is OK.（哪本都行。）<br>
+            <strong>None</strong> of the students <strong>knows/know</strong> the answer.（单复数谓语都可见；基础题要结合选项与语境。）
+        </div>
+
+        <div class="tip-box">
+            💡 别混：<strong>either…or</strong>（要么…要么…）、<strong>neither…nor</strong>（既不…也不…）是"连词搭档"，会在衔接5课主谓一致里用"就近原则"再考一次。本讲先把 either/neither 单独当代词用会。
+        </div>
+    </div>
+
+
+    <!-- ===== 模块五：one / it / that ===== -->
+    <div class="section-divider"><hr><span>模块五</span><hr></div>
+
+    <div class="module-card card-orange">
+        <div class="badge badge-orange">🔄 模块五：it / one / ones / that / those——指代对象要对得上</div>
+
+        <p>这些替代词都能避免重复名词，但要同时判断“是不是同一个、名词是否可数、单数还是复数、是否特指”：</p>
+
+        <div class="step-flow">
+            <div class="sf-item">
+                <div class="sf-num" style="background:#2980b9;">it</div>
+                <div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>同一个</strong>东西（就是刚才那个）<br>I lost my pen. Have you seen <strong>it</strong>?（就是我丢的那支）</div>
+            </div>
+            <div class="sf-item">
+                <div class="sf-num" style="background:#e67e22;">one</div>
+                <div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>同类另一个</strong>（一样的东西，但不是同一个）<br>I lost my pen. I need to buy <strong>a new one</strong>.（再买一支，不是原来那支）</div>
+            </div>
+            <div class="sf-item" style="border-bottom:none;">
+                <div class="sf-num" style="background:#8e44ad;">that</div>
+                <div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>特指的那个</strong>（常用于比较，后面带修饰）<br>The weather here is better than <strong>that</strong> of Beijing.（= the weather of Beijing）</div>
+            </div>
+        </div>
+
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路（一句话分家）：</strong></p>
+            <p><strong>it</strong> = 原物归还（同一个）；<strong>one</strong> = 同款再来一个（同类不同个）；<strong>that</strong> = 比较结构中替代前面提到的单数名词或不可数名词；复数通常用 <strong>those</strong>。</p>
+            <p><strong>one / ones</strong>通常替代可数名词：a red one / the black ones；比较中替代复数名词还常用 <strong>those</strong>：The books here are newer than those on the desk.</p>
+        </div>
+
+        <div class="warn-box">
+            <p><strong>⚠️ 高频单选陷阱：it vs one</strong></p>
+            <p>— I can't find my ruler. — Don't worry. I'll lend you ______.</p>
+            <p>答案是 <span class="mark-red">one</span>（借你同类中的另一把尺子，不是原来那把）。但不能记成“找替代永远用 one”：复数可用 ones/some，不可数名词常用 some，若找回原物仍用 it。</p>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>新增补充 · 不定代词完整辨析</span><hr></div>
+
+    <div class="enrich-card">
+        <div class="enrich-card-title">🚦 some 和 any：句型只是线索，真正决定的是说话含义</div>
+        <div class="enrich-table-wrap">
+            <table class="enrich-table">
+                <tr><th>用法</th><th>例句</th><th>含义</th></tr>
+                <tr><td>肯定陈述常用 some</td><td>Someone is waiting for you.</td><td>某个身份不明确的人</td></tr>
+                <tr><td>一般疑问常用 any</td><td>Is anyone at home?</td><td>询问是否存在</td></tr>
+                <tr><td>提供或请求常用 some</td><td>Would you like something to eat?</td><td>说话人主动提供某物</td></tr>
+                <tr><td>肯定句中的 any</td><td>Anyone can join the club.</td><td>任何人，无论是谁</td></tr>
+                <tr><td>条件句中的 any</td><td>If you need anything, call me.</td><td>若有任何需要</td></tr>
+            </table>
+        </div>
+        <div class="enrich-correction"><strong>核心：</strong>some 偏向“存在某个/一些”，any 可以表示“是否有”或“任何一个”。先理解范围，再看句型。</div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#d8b4fe;background:#fcf8ff;">
+        <div class="enrich-card-title" style="background:#8e44ad;">👥 no one / nobody / none / nothing：否定对象不同</div>
+        <div class="enrich-table-wrap">
+            <table class="enrich-table">
+                <tr><th>词</th><th>指什么</th><th>常见结构</th><th>例句</th></tr>
+                <tr><td><strong>no one / nobody</strong></td><td>没有人</td><td>通常独立使用</td><td>No one knows the answer.</td></tr>
+                <tr><td><strong>none</strong></td><td>没有一个、没有一点</td><td>none of + 名词/代词</td><td>None of the water was clean.</td></tr>
+                <tr><td><strong>nothing</strong></td><td>没有任何东西或事情</td><td>可后接形容词/to do</td><td>There is nothing unusual.</td></tr>
+                <tr><td><strong>not everyone</strong></td><td>并非每个人</td><td>部分否定</td><td>Not everyone agreed.</td></tr>
+            </table>
+        </div>
+        <div class="warn-box">
+            <p><strong>注意：</strong>not everyone = 并非所有人；no one = 一个人也没有。两者意思完全不同。</p>
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#c3e6c3;background:#f6fcf7;">
+        <div class="enrich-card-title" style="background:#27ae60;">🧍 each 和 every：中文都像“每个”，语法位置不同</div>
+        <div class="enrich-grid">
+            <div class="enrich-item">
+                <h4>each</h4>
+                <p>可作限定词：each student</p>
+                <p>可独立作代词：Each has a book.</p>
+                <p>可接 of：each of the students</p>
+                <p>强调一个一个分别看。</p>
+            </div>
+            <div class="enrich-item">
+                <h4>every</h4>
+                <p>通常作限定词：every student</p>
+                <p>不能说 every of the students</p>
+                <p>强调群体中的每一个，常用于三个或更多。</p>
+                <p>every + 单数可数名词 + 单数谓语。</p>
+            </div>
+        </div>
+        <div class="enrich-correction"><strong>易错：</strong>every one of the students 可以，因为 every one 是“每一个人/物”；everyone 是“每个人”，不能接 of the students。</div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#ffd8a8;background:#fffaf3;">
+        <div class="enrich-card-title" style="background:#e67e22;">🔁 another / other / the other / others：先看范围是否明确</div>
+        <div class="enrich-table-wrap">
+            <table class="enrich-table">
+                <tr><th>结构</th><th>意思</th><th>例句</th></tr>
+                <tr><td><strong>another + 单数名词</strong></td><td>另一个、再一个，不强调总数</td><td>Can I have another cup?</td></tr>
+                <tr><td><strong>other + 复数名词/不可数名词</strong></td><td>其他的</td><td>other students / other information</td></tr>
+                <tr><td><strong>the other</strong></td><td>两者中的另一个，或明确范围中剩下的</td><td>One is red; the other is blue.</td></tr>
+                <tr><td><strong>others</strong></td><td>其他一些人或物，范围不特指</td><td>Some agreed; others disagreed.</td></tr>
+                <tr><td><strong>the others</strong></td><td>明确范围中剩下的全部</td><td>Two stayed; the others left.</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#b2dfdb;background:#f4fffd;">
+        <div class="enrich-card-title" style="background:#16a085;">🔍 it / one / ones / that / those：四个问题锁定替代词</div>
+        <div class="enrich-flow">
+            <div class="enrich-flow-row"><div class="enrich-flow-num">1</div><div class="enrich-flow-body"><strong>是不是原来那个？</strong>是同一个具体对象，通常用 it / them。</div></div>
+            <div class="enrich-flow-row"><div class="enrich-flow-num">2</div><div class="enrich-flow-body"><strong>是不是同类另一个？</strong>可数单数用 one，可数复数用 ones。</div></div>
+            <div class="enrich-flow-row"><div class="enrich-flow-num">3</div><div class="enrich-flow-body"><strong>是不是比较中的特指替代？</strong>单数或不可数常用 that，复数常用 those。</div></div>
+            <div class="enrich-flow-row"><div class="enrich-flow-num">4</div><div class="enrich-flow-body"><strong>是不是不可数替代量？</strong>通常不用 one，可根据语境用 some / any / none。</div></div>
+        </div>
+        <p><strong>例：</strong>The air in the countryside is cleaner than <strong>that</strong> in the city. / These shoes are cheaper than <strong>those</strong> in the window.</p>
+    </div>
+
+    <div class="enrich-card" style="border-color:#ffcccc;background:#fff8f8;">
+        <div class="enrich-card-title" style="background:#e74c3c;">🧑‍🤝‍🧑 复合不定代词的人称指代：单数谓语，不等于后文只能用 he</div>
+        <p>Everyone、someone、anyone 作主语时通常配单数谓语，但后文不知道性别时，现代英语常用单数 <strong>they / them / their</strong> 回指：</p>
+        <div class="brain-box">
+            <p>Everyone <strong>is</strong> ready, and <strong>they</strong> have brought <strong>their</strong> books.</p>
+            <p>Someone left <strong>their</strong> umbrella here.</p>
+        </div>
+        <p>基础考试若明确要求传统形式，也可能出现 his or her；实际阅读与写作中，单数 they 已非常常见。关键是：谓语仍按单数判断，后文代词要保持指代清楚。</p>
+    </div>
+
+
+    <!-- ===== 模块六：解剖 + 预告 ===== -->
+    <div class="section-divider"><hr><span>模块六</span><hr></div>
+
+    <div class="module-card card-green">
+        <div class="badge badge-green">🔬 模块六：解剖真实句子 + 下一讲的钩子</div>
+
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:8px 0 8px;">句子一：Everyone wants to find something interesting to do.（每个人都想找点有趣的事做。）</p>
+        <div class="sentence-dissect">
+            <div class="word-block"><span class="word-text wt-s">Everyone</span><span class="word-label">主语 · 当单数</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-v">wants</span><span class="word-label">谓语 · 加s</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-o">something interesting to do</span><span class="word-label">宾语 · 三明治结构</span></div>
+        </div>
+        <p style="font-size:14px;color:#666;">两个考点同时出现：Everyone 当单数 → wants 加 s；something + 形容词 interesting + to do，形容词后置的"三明治"。</p>
+
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:20px 0 8px;">句子二：Neither of the two plans is good enough.（这两个方案都不够好。）</p>
+        <p style="font-size:14px;color:#666;margin-bottom:6px;">Neither 指“两个都不”；在规范书面语和基础考试中通常配单数谓语 is。</p>
+
+        <div style="background:#e8f4fd;border:2px dashed #2980b9;border-radius:10px;padding:16px 20px;margin-top:22px;">
+            <p style="font-weight:900;color:#1a5276;font-size:15px;margin-bottom:6px;">🔗 下一讲预告：给数字排排队</p>
+            <p style="font-size:14.5px;color:#333;line-height:1.8;">不定代词管"模糊的量"，但精确的量怎么说？一个、第一个、二分之一、25%……这些就是<strong>衔接3课：数词</strong>要解决的。你会发现 both / all 和数词其实是一家人——都在回答"多少"这个问题。</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 实战练习 ===== -->
+    <div class="section-divider"><hr><span>实战练习 · 做完再走</span><hr></div>
+
+    <div class="quiz-block" style="margin-top:20px;">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 1 · some / any / no 系列（中考原题型）</p>
+        <div class="quiz-q">
+            There is ______ wrong with the machine. It doesn't work.<br>
+            <span style="font-size:14px;font-weight:400;color:#888;">（机器出了点毛病，不转了。）</span>
+        </div>
+        <div class="quiz-opts">
+            <span>A. someone</span><span>B. something</span><span>C. everything</span><span>D. nothing</span>
+        </div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q1').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q1">
+            <div class="brain-box">
+                <p><strong>🧠 大白话脑回路：</strong></p>
+                <p>结合后句 It doesn't work 可知机器存在某个故障，固定表达是 There is <strong>something wrong</strong> with...。不能只凭“肯定句”机械排除 any。</p>
+                <p>后半句"不转了"说明确实有毛病 → 不能选 nothing(D)；everything(C)语义不通。</p>
+                <p><span class="right-text">✅ 答案：B（something wrong，注意形容词 wrong 后置）</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 2 · 形容词后置（本讲核心 · 五地必考）</p>
+        <div class="quiz-q">
+            I'm hungry. I'd like ______ to eat.<br>
+            <span style="font-size:14px;font-weight:400;color:#888;">（我饿了，想吃点热乎的东西。）</span>
+        </div>
+        <div class="quiz-opts">
+            <span>A. hot something</span><span>B. something hot</span><span>C. anything hot</span><span>D. hot anything</span>
+        </div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q2').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q2">
+            <div class="brain-box">
+                <p><strong>🧠 大白话脑回路（两步）：</strong></p>
+                <p>第一步看意义：I'd like... 表示想要某种东西，通常用 something；这里不是一般疑问句规则，而是肯定的愿望表达。</p>
+                <p>第二步排语序：形容词 hot 修饰不定代词要<strong>后置</strong> → hot something(A)错，something hot 对。</p>
+                <p><span class="right-text">✅ 答案：B（something hot to eat，三明治结构）</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 3 · both / either / neither（数人头）</p>
+        <div class="quiz-q">
+            — Which of the two shirts will you take?<br>
+            — I'll take ______. They are both too expensive.<br>
+            <span style="font-size:14px;font-weight:400;color:#888;">（两件衬衫你要哪件？都不要，太贵了。）</span>
+        </div>
+        <div class="quiz-opts">
+            <span>A. both</span><span>B. all</span><span>C. neither</span><span>D. either</span>
+        </div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q3').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q3">
+            <div class="brain-box">
+                <p><strong>🧠 大白话脑回路：</strong></p>
+                <p>题目明确是 two shirts：both 表示两件都要，either 表示任意一件；后句说两件都太贵，因此应选择“两个都不要”的 neither。</p>
+                <p>语义"都不要" → neither（两个都不）。</p>
+                <p><span class="right-text">✅ 答案：C（neither）</span>&nbsp;&nbsp;<span class="wrong-text">D(either) 表示任意一件，与“都太贵所以都不要”矛盾。</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 4 · 主谓一致结合（真题高频）</p>
+        <div class="quiz-q">
+            Everybody ______ ready for the exam. Nobody ______ absent today.<br>
+            <span style="font-size:14px;font-weight:400;color:#888;">（每个人都准备好考试了，今天没人缺席。）</span>
+        </div>
+        <div class="quiz-opts">
+            <span>A. is; is</span><span>B. are; are</span><span>C. is; are</span><span>D. are; is</span>
+        </div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q4').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q4">
+            <div class="brain-box">
+                <p><strong>🧠 大白话脑回路：</strong></p>
+                <p>Everybody 和 Nobody 都属于 -body 复合不定代词，作主语时通常按第三人称单数处理 → 都配 is。</p>
+                <p>别被"每个人""没有人"这种"看起来很多"的中文意思骗了。</p>
+                <p><span class="right-text">✅ 答案：A（is; is）</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 5 · it / one 辨析</p>
+        <div class="quiz-q">
+            — I forgot to bring my umbrella. — Don't worry, I have ______. You can use ______.<br>
+            <span style="font-size:14px;font-weight:400;color:#888;">（我忘带伞了。别急，我有一把，你用吧。）</span>
+        </div>
+        <div class="quiz-opts">
+            <span>A. one; it</span><span>B. it; one</span><span>C. one; one</span><span>D. it; it</span>
+        </div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q5').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q5">
+            <div class="brain-box">
+                <p><strong>🧠 大白话脑回路：</strong></p>
+                <p>空一"我有一把伞"→ 泛指同类中的一把（不是对方丢的那把）→ <strong>one</strong>。</p>
+                <p>空二"你用这把"→ 指刚提到的、我这把具体的伞 → <strong>it</strong>（同一个）。</p>
+                <p><span class="right-text">✅ 答案：A（one; it）</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 6 · 综合实战（一题串多考点）</p>
+        <div class="quiz-q">
+            ______ of the two boys has ______ new to share at today's meeting.<br>
+            <span style="font-size:14px;font-weight:400;color:#888;">（这两个男孩中，每一个都有新鲜事要在今天的会上分享。）</span>
+        </div>
+        <div class="quiz-opts">
+            <span>A. All; anything</span><span>B. Both; something</span><span>C. Each; something</span><span>D. Every; anything</span>
+        </div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q6').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q6">
+            <div class="brain-box">
+                <p><strong>🧠 大白话脑回路（三步拆）：</strong></p>
+                <p>① 谓语是 <strong>has</strong>（单数）→ 主语必须是单数 → Both(复数)、All(复数)排除。</p>
+                <p>② the two boys 是"两个中每一个" → Each of the two（Every 不能直接接 of）→ 选 Each。</p>
+                <p>③ 肯定句 + 形容词 new 后置 → something new。</p>
+                <p><span class="right-text">✅ 答案：C（Each; something new）</span></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>新增进阶练习 · 范围、结构与指代</span><hr></div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 7 · 肯定句中的 any</p>
+        <div class="quiz-q">______ can take part in the activity. There is no age limit.</div>
+        <div class="quiz-opts"><span>A. Anyone</span><span>B. Someone</span><span>C. No one</span><span>D. Everyone of</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q7').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q7"><div class="brain-box">
+            <p>There is no age limit 表示“任何人都可以参加”。anyone 在肯定句中可表示“无论谁、任何人”。</p>
+            <p><span class="right-text">✅ 答案：A（Anyone）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 8 · 疑问句中的 some</p>
+        <div class="quiz-q">Would you like ______ to drink?</div>
+        <div class="quiz-opts"><span>A. someone</span><span>B. something</span><span>C. nothing</span><span>D. everything</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q8').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q8"><div class="brain-box">
+            <p>这是主动提供饮料的邀请，说话人预期对方可能接受，因此常用 something。</p>
+            <p><span class="right-text">✅ 答案：B（something）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 9 · no one 与 none</p>
+        <div class="quiz-q">______ of the answers was correct, so ______ got full marks.</div>
+        <div class="quiz-opts"><span>A. No one; none</span><span>B. None; no one</span><span>C. Nothing; nobody of</span><span>D. Nobody; nothing</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q9').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q9"><div class="brain-box">
+            <p>none 可以接 of the answers；no one 指“没有人”，独立作主语。no one of... 不是本题需要的标准结构。</p>
+            <p><span class="right-text">✅ 答案：B（None; no one）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 10 · each 与 every</p>
+        <div class="quiz-q">______ of the students has a card, and ______ card has a different number.</div>
+        <div class="quiz-opts"><span>A. Every; each</span><span>B. Each; every</span><span>C. Every one; each of</span><span>D. All; every of</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q10').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q10"><div class="brain-box">
+            <p>第一空需要接 of the students，用 Each；第二空直接修饰单数名词 card，用 every。</p>
+            <p><span class="right-text">✅ 答案：B（Each; every）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 11 · another 与 the other</p>
+        <div class="quiz-q">I have two pens. One is black, and ______ is blue. I need ______ pen for my sister.</div>
+        <div class="quiz-opts"><span>A. another; the other</span><span>B. the other; another</span><span>C. other; another</span><span>D. others; the other</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q11').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q11"><div class="brain-box">
+            <p>两支笔中剩下的那支用 the other；还要再给妹妹一支，不限定总数，用 another。</p>
+            <p><span class="right-text">✅ 答案：B（the other; another）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 12 · others 与 the others</p>
+        <div class="quiz-q">During group work, some students preferred drawing; ______ preferred writing. There were ten students: two joined Group A, and ______ joined Group B.</div>
+        <div class="quiz-opts"><span>A. other; others</span><span>B. others; the others</span><span>C. other; the other</span><span>D. another; others</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q12').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q12"><div class="brain-box">
+            <p>第一空泛指另一些学生，用 others；第二空明确共有十人，其中两人进A组，其余八人进B组，用 the others。</p>
+            <p><span class="right-text">✅ 答案：B（others; the others）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 13 · that 与 those</p>
+        <div class="quiz-q">The weather here is warmer than ______ in the north, and the houses here are smaller than ______ there.</div>
+        <div class="quiz-opts"><span>A. it; ones</span><span>B. that; those</span><span>C. one; them</span><span>D. this; that</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q13').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q13"><div class="brain-box">
+            <p>weather 是不可数名词，比较中用 that 替代；houses 是复数名词，用 those 替代。</p>
+            <p><span class="right-text">✅ 答案：B（that; those）</span></p>
+        </div></div>
+    </div>
+
+
+    <!-- ===== 考前救命小抄 ===== -->
+    <div style="margin:50px 0 30px;background:#fffdf5;border:2px solid #f1c40f;border-radius:14px;padding:28px 26px 24px;box-shadow:0 8px 18px rgba(0,0,0,0.08);">
+        <div style="text-align:center;margin-bottom:22px;">
+            <div style="display:inline-block;background:#f1c40f;color:#2c3e50;padding:8px 24px;border-radius:22px;font-weight:900;font-size:17px;box-shadow:0 3px 8px rgba(0,0,0,0.12);">🎒 衔接2课 · 考前救命小抄（必背）</div>
+            <p style="font-size:13px;color:#777;margin-top:12px;line-height:1.7;">先判断对象与范围，再检查结构和主谓一致，避免只凭肯定否定机械选词</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div style="background:#f0f7ff;border:1.5px solid #b3d4ff;border-left:5px solid #2980b9;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#1a5276;margin-bottom:8px;">🧩 拼词 + 选前缀</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">some- 常表示某个/一些；any- 可询问是否存在，也可表示任何一个；no- 表否定；every- 表每一个。<br>提供、请求或预期存在的疑问句常用 some-。</p>
+            </div>
+
+            <div style="background:#fff5f5;border:1.5px solid #ffcccc;border-left:5px solid #e74c3c;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#c0392b;margin-bottom:8px;">🎯 形容词后置（最常考）</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">修饰不定代词，形容词放<strong>后面</strong>：something <strong>important</strong>。<br>叠 to do 的三明治：不定代词 + 形容词 + to do（something nice to eat）。</p>
+            </div>
+
+            <div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-left:5px solid #8e44ad;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#6c3483;margin-bottom:8px;">🔢 先数人头</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">2个 → both / either / neither；复数对象或不可数整体 → all / none。<br>指两个都不时，基础考试通常优先用 neither。</p>
+            </div>
+
+            <div style="background:#fff8f0;border:1.5px solid #ffd8a8;border-left:5px solid #e67e22;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#784212;margin-bottom:8px;">⚠️ 两个防错提醒</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">① -one/-body/-thing 复合不定代词通常配单数谓语；其他不定代词要分类判断。<br>② it 指同一个；one/ones 指同类可数对象；that/those 常用于比较替代。</p>
+            </div>
+        </div>
+
+        <div style="margin-top:16px;background:#fff;border:1.5px dashed #f1c40f;border-radius:10px;padding:14px 18px;font-size:15px;line-height:1.8;color:#333;">
+            <strong>一句话记忆：</strong>先判人或物、数量和范围；some/any 看含义，复合不定代词后置形容词，谓语和替代词按具体类别判断。
+        </div>
+    </div>
+
+    <!-- 转化钩子 -->
+    <div class="cta-box">
+        <h3>🎯 衔接2课完成！不定代词判断系统建立！</h3>
+        <p>从第7讲的"明确替身"（he/his/myself）到本讲的"模糊替身"（someone/something/both/none），你已经能区分明确指代与不确定指代，并掌握复合不定代词后置形容词、数量范围和替代词选择等高频规则。<br><br>
+        代词的"模糊量"讲完了，接下来处理"精确量"：<br>
+        ✅ <strong>衔接3课：数词</strong>——基数词、序数词、日期、时间、分数百分数，把数字表达一次补齐。
+        </p>
+        <a href="lesson-24.html" class="cta-btn">继续学习 → 衔接3课：数词</a>
+    </div>
+
+</div><!-- /book-container -->
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-33.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+<!-- 底部翻页导航 -->
+<div class="lesson-nav">
+    <a class="nav-btn prev" href="lesson-07.html"><span class="nb-text"><span class="nb-label">上一讲</span><span class="nb-title">第7讲：代词换装游戏</span></span></a>
+    <a class="nav-btn-home" href="index.html">📚 目录</a>
+    <a class="nav-btn next" href="lesson-24.html"><span class="nb-text"><span class="nb-label">下一讲</span><span class="nb-title">衔接3课：数词</span></span></a>
+</div>
+
+</div><!-- /lesson-main -->
+
+<div class="lesson-footer">
+    初中英语语法重构 · 基础重构版 · 衔接2课<br>
+    打印时只会打印本讲内容 · 点击浏览器返回键可回到目录
+</div>
+
+
+<script src="/assets/a4-print-entry.js?v=20260722-final-v3"></script>
+</body>
+</html>

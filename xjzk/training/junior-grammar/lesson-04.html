@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- 修改A：改成本讲的标题 -->
+<title>第4讲：a / an / the 三兄弟 — 初中英语语法重构</title>
+
+<style>
+/* ============================================================
+   基础 Reset
+   ============================================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #f0f2f5;
+    color: #2c3e50;
+    min-height: 100vh;
+}
+
+/* ============================================================
+   顶部导航条
+   ============================================================ */
+.lesson-topbar {
+    background: #2c3e50;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+}
+.topbar-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 11px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.topbar-back {
+    color: #f1c40f;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.topbar-back:hover { opacity: 0.75; }
+.topbar-sep { color: #4a6278; font-size: 16px; flex-shrink: 0; }
+.topbar-lesson-info { flex: 1; min-width: 0; }
+.topbar-lesson-info .tl-tag {
+    font-size: 11px;
+    color: #7f8c8d;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
+.topbar-lesson-info .tl-title {
+    font-size: 15px;
+    font-weight: 900;
+    color: #ecf0f1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.topbar-print {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    cursor: pointer;
+    font-family: inherit;
+    flex-shrink: 0;
+    transition: background 0.15s;
+}
+.topbar-print:hover { background: rgba(255,255,255,0.18); }
+
+/* ============================================================
+   主内容容器
+   ============================================================ */
+.lesson-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 36px 24px 20px;
+}
+
+/* ============================================================
+   讲义内容区（原 book-container 样式）
+   ============================================================ */
+.book-container {
+    background: #fff;
+    padding: 50px 60px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+/* ============================================================
+   底部翻页导航
+   ============================================================ */
+.lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0 20px;
+    flex-wrap: wrap;
+}
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 14px;
+    transition: all 0.15s;
+    flex: 1;
+    min-width: 160px;
+    max-width: 280px;
+}
+.nav-btn:hover {
+    border-color: #2980b9;
+    box-shadow: 0 4px 12px rgba(41,128,185,0.15);
+    transform: translateY(-1px);
+}
+.nav-btn.prev { justify-content: flex-start; }
+.nav-btn.next { justify-content: flex-end; margin-left: auto; }
+.nav-btn .nb-arrow { font-size: 18px; color: #aaa; flex-shrink: 0; }
+.nav-btn:hover .nb-arrow { color: #2980b9; }
+.nav-btn .nb-text { min-width: 0; }
+.nav-btn .nb-label { font-size: 11px; color: #aaa; display: block; }
+.nav-btn .nb-title { font-size: 14px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-btn-home {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #2c3e50;
+    border-radius: 10px;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #f1c40f;
+    font-size: 14px;
+    font-weight: bold;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.nav-btn-home:hover { opacity: 0.85; }
+
+/* ============================================================
+   页脚
+   ============================================================ */
+.lesson-footer {
+    text-align: center;
+    padding: 20px 24px 36px;
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   从原讲义继承的所有内容样式
+   （完整复制，保持与原讲义100%一致）
+   ============================================================ */
+
+/* 封面 */
+.chapter-cover {
+    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 60%, #2980b9 100%);
+    border-radius: 15px;
+    padding: 40px 40px 35px;
+    margin-bottom: 40px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.chapter-cover::before {
+    content: attr(data-num);
+    position: absolute;
+    right: 30px; top: 10px;
+    font-size: 110px; font-weight: 900;
+    color: rgba(255,255,255,0.06);
+    line-height: 1; letter-spacing: -5px;
+}
+.lesson-tag {
+    background: #f1c40f; color: #2c3e50;
+    font-weight: 900; font-size: 13px;
+    padding: 5px 14px; border-radius: 20px;
+    display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em;
+}
+.chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.chapter-cover h1 span { color: #f1c40f; }
+.chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.meta-row { display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip {
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9);
+    display: flex; align-items: center; gap: 5px;
+}
+
+/* 上一讲回顾条 */
+.review-bar {
+    background: #f0f7ff; border: 1.5px solid #b3d4ff;
+    border-left: 5px solid #2980b9; border-radius: 8px;
+    padding: 14px 18px; margin-bottom: 30px;
+    font-size: 14px; color: #1a5276; line-height: 1.75;
+}
+.review-bar strong { color: #1a252f; }
+
+/* 目标框 */
+.goal-box {
+    background: #fffde7; border: 2px solid #ffe082;
+    border-radius: 12px; padding: 20px 25px;
+    margin-bottom: 35px; display: flex; gap: 15px; align-items: flex-start;
+}
+.goal-icon { font-size: 28px; flex-shrink: 0; line-height: 1.2; }
+.goal-box h3 { font-size: 16px; color: #e65100; margin-bottom: 6px; font-weight: 900; }
+.goal-box p  { font-size: 15px; color: #5d4037; line-height: 1.7; }
+
+/* 通用模块卡片 */
+.module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+.badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+.card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }
+.badge-blue  { background: #2980b9; color: #fff; }
+.card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }
+.badge-green { background: #27ae60; color: #fff; }
+.card-red    { background: #fff5f5; border: 2px solid #ffcccc; }
+.badge-red   { background: #e74c3c; color: #fff; }
+.card-yellow { background: #fffde7; border: 2px solid #ffe082; }
+.badge-yellow{ background: #f1c40f; color: #333; }
+.card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }
+.badge-purple{ background: #8e44ad; color: #fff; }
+.card-teal   { background: #f0fffc; border: 2px solid #b2dfdb; }
+.badge-teal  { background: #16a085; color: #fff; }
+.card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }
+.badge-orange{ background: #e67e22; color: #fff; }
+.card-dark   { background: #f8f9fa; border: 2px solid #dee2e6; }
+.badge-dark  { background: #2c3e50; color: #f1c40f; }
+
+/* 文字高亮 */
+.hl-red    { color: #e74c3c; font-weight: bold; }
+.hl-blue   { color: #2980b9; font-weight: bold; }
+.hl-green  { color: #27ae60; font-weight: bold; }
+.hl-orange { color: #e67e22; font-weight: bold; }
+.hl-purple { color: #8e44ad; font-weight: bold; }
+.hl-teal   { color: #16a085; font-weight: bold; }
+.mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+.mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+.mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+.mark-purple { background: #e8daef; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #6c3483; }
+.mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+.mark-teal   { background: #d0f0ec; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #0e6655; }
+
+/* 考频标签 */
+.tag-hot  { background: #ff4757; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; box-shadow: 0 2px 4px rgba(255,71,87,0.3); }
+.tag-easy { background: #2ed573; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+.tag-core { background: #3742fa; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+
+/* 脑回路框 */
+.brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+.brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+/* 对错对比 */
+.wrong-text { color: #c0392b; font-size: 18px; font-weight: bold; text-decoration: line-through; }
+.right-text { color: #27ae60; font-size: 18px; font-weight: bold; }
+
+/* 句子解剖 */
+.sentence-dissect { display: flex; align-items: center; gap: 0; flex-wrap: wrap; margin: 18px 0; font-size: 18px; font-weight: bold; background: #f8f9fa; border-radius: 10px; padding: 14px 18px; line-height: 2; }
+.word-block { display: inline-flex; flex-direction: column; align-items: center; margin: 4px 6px; }
+.word-text  { padding: 6px 14px; border-radius: 8px; font-size: 17px; font-weight: 900; white-space: nowrap; }
+.word-label { font-size: 11px; font-weight: 500; margin-top: 4px; color: #666; }
+.wt-noun  { background: #fff3e0; color: #e65100; border: 1.5px solid #ffb74d; }
+.wt-verb  { background: #fce4ec; color: #c62828; border: 1.5px solid #f48fb1; }
+.wt-adj   { background: #e3f2fd; color: #1565c0; border: 1.5px solid #90caf9; }
+.wt-adv   { background: #e8f5e9; color: #2e7d32; border: 1.5px solid #a5d6a7; }
+.wt-other { background: #f5f5f5; color: #555;    border: 1.5px solid #ddd; }
+.wt-subj  { background: #fff3e0; color: #bf360c; border: 2px solid #ffb74d; }
+.wt-pred  { background: #fce4ec; color: #880e4f; border: 2px solid #f48fb1; }
+.wt-obj   { background: #e8f5e9; color: #1b5e20; border: 2px solid #a5d6a7; }
+.plus-sign { font-size: 20px; color: #bbb; margin: 0 2px; align-self: flex-start; padding-top: 10px; }
+
+/* 辨析表 */
+.magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+.magic-table th { background: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+.magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+.magic-table tr:last-child td { border-bottom: none; }
+.magic-table tr:hover td { background: #f8f9fa; }
+
+/* 方法卡 */
+.method-card { background: #fff; border: 2px solid #e0e0e0; border-radius: 10px; padding: 18px 20px; margin: 12px 0; display: flex; gap: 14px; align-items: flex-start; }
+.method-card .step-num { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; flex-shrink: 0; }
+.method-card .step-body h4 { font-size: 15px; font-weight: 900; margin-bottom: 5px; }
+.method-card .step-body p  { font-size: 14px; color: #555; line-height: 1.6; margin: 0; }
+.step-blue   .step-num { background: #ebf5fb; color: #2980b9; }
+.step-orange .step-num { background: #fef9e7; color: #e67e22; }
+.step-green  .step-num { background: #eafaf1; color: #27ae60; }
+
+/* 练习题 */
+.quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+.quiz-block .quiz-q { font-size: 18px; font-weight: bold; color: #2c3e50; margin-bottom: 12px; line-height: 1.6; }
+.quiz-block .quiz-opts { font-size: 15px; color: #555; margin-bottom: 16px; }
+.quiz-block .quiz-opts span { margin-right: 20px; }
+.reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+.reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+.answer-box { display: none; margin-top: 14px; }
+/* ===== 句子可视化解剖 ===== */
+    .sentence-dissect {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        flex-wrap: wrap;
+        margin: 18px 0;
+        font-size: 18px;
+        font-weight: bold;
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 14px 18px;
+        line-height: 2;
+    }
+    .word-block {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 4px 6px;
+    }
+    .word-text {
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 17px;
+        font-weight: 900;
+        white-space: nowrap;
+    }
+    .word-label {
+        font-size: 11px;
+        font-weight: 500;
+        margin-top: 4px;
+        color: #666;
+    }
+    .wt-noun { background: #fff3e0; color: #e65100; border: 1.5px solid #ffb74d; }
+    .wt-verb { background: #fce4ec; color: #c62828; border: 1.5px solid #f48fb1; }
+    .wt-adj  { background: #e3f2fd; color: #1565c0; border: 1.5px solid #90caf9; }
+    .wt-adv  { background: #e8f5e9; color: #2e7d32; border: 1.5px solid #a5d6a7; }
+    .wt-other { background: #f5f5f5; color: #555; border: 1.5px solid #ddd; }
+    .plus-sign { font-size: 20px; color: #bbb; margin: 0 2px; align-self: flex-start; padding-top: 10px; }
+
+    /* ===== 辨析对比表 ===== */
+    .magic-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+    .magic-table th { background-color: #2c3e50; color: #f1c40f; padding: 13px 16px; text-align: left; font-size: 15px; border-bottom: 3px solid #f1c40f; }
+    .magic-table td { padding: 13px 16px; border-bottom: 1px solid #eee; font-size: 15px; color: #333; vertical-align: top; }
+    .magic-table tr:last-child td { border-bottom: none; }
+    .magic-table tr:hover td { background-color: #f8f9fa; }
+    /* ===== 车型比喻四宫格 ===== */
+    .car-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin: 20px 0;
+    }
+    .car-cell {
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        border: 2px solid transparent;
+        transition: transform 0.2s;
+    }
+    .car-cell:hover { transform: translateY(-2px); }
+    .car-cell .car-icon { font-size: 42px; margin-bottom: 10px; line-height: 1; }
+    .car-cell .car-role { font-size: 13px; font-weight: bold; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .car-cell .car-name { font-size: 19px; font-weight: 900; margin-bottom: 6px; }
+    .car-cell .car-eng { font-size: 14px; margin-bottom: 8px; }
+    .car-cell .car-desc { font-size: 13px; line-height: 1.6; }
+    .cc-noun { background: #fff3e0; border-color: #ffb74d; color: #e65100; }
+    .cc-verb { background: #fce4ec; border-color: #f48fb1; color: #c62828; }
+    .cc-adj  { background: #e3f2fd; border-color: #90caf9; color: #1565c0; }
+    .cc-adv  { background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; }
+
+    /* ===== 判断方法卡 ===== */
+    .method-card {
+        background: #fff;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin: 12px 0;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+    }
+    .method-card .step-num {
+        width: 32px; height: 32px;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 900; font-size: 16px;
+        flex-shrink: 0;
+    }
+    .method-card .step-body h4 { font-size: 15px; font-weight: 900; margin-bottom: 5px; }
+    .method-card .step-body p { font-size: 14px; color: #555; line-height: 1.6; margin: 0; }
+    .step-blue .step-num { background: #ebf5fb; color: #2980b9; }
+    .step-orange .step-num { background: #fef9e7; color: #e67e22; }
+    .step-green .step-num { background: #eafaf1; color: #27ae60; }
+    /* ===== 对错对比 ===== */
+    .wrong-text { color: #c0392b; font-size: 18px; font-weight: bold; text-decoration: line-through; }
+    .right-text { color: #27ae60; font-size: 18px; font-weight: bold; }
+
+    /* ===== 句子三角色大卡片 ===== */
+    .role-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 14px;
+        margin: 22px 0;
+    }
+    .role-cell {
+        border-radius: 12px;
+        padding: 22px 16px;
+        text-align: center;
+        border: 2px solid transparent;
+        transition: transform 0.2s;
+    }
+    .role-cell:hover { transform: translateY(-2px); }
+    .role-cell .r-icon  { font-size: 40px; margin-bottom: 10px; line-height: 1; }
+    .role-cell .r-role  { font-size: 12px; font-weight: bold; letter-spacing: 0.06em; margin-bottom: 5px; }
+    .role-cell .r-name  { font-size: 20px; font-weight: 900; margin-bottom: 5px; }
+    .role-cell .r-eng   { font-size: 14px; margin-bottom: 8px; }
+    .role-cell .r-q     { font-size: 15px; font-weight: bold; border-radius: 6px; padding: 4px 10px; display: inline-block; margin-bottom: 8px; }
+    .role-cell .r-desc  { font-size: 13px; line-height: 1.65; }
+    .rc-subj { background: #fff3e0; border-color: #ffb74d; color: #bf360c; }
+    .rc-subj .r-q { background: #ffe0b2; }
+    .rc-pred { background: #fce4ec; border-color: #f48fb1; color: #880e4f; }
+    .rc-pred .r-q { background: #fce4ec; }
+    .rc-obj  { background: #e8f5e9; border-color: #a5d6a7; color: #1b5e20; }
+    .rc-obj  .r-q { background: #c8e6c9; }
+
+    /* ===== 句子可视化解剖 ===== */
+    .sentence-dissect {
+        display: flex;
+        align-items: flex-end;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin: 16px 0;
+        font-size: 18px;
+        font-weight: bold;
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 16px 18px 20px;
+    }
+    .word-block {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+    .word-text {
+        padding: 7px 14px;
+        border-radius: 8px;
+        font-size: 17px;
+        font-weight: 900;
+        white-space: nowrap;
+    }
+    .word-label { font-size: 11px; font-weight: 600; margin-top: 2px; }
+    .wt-subj  { background: #fff3e0; color: #bf360c; border: 2px solid #ffb74d; }
+    .wt-pred  { background: #fce4ec; color: #880e4f; border: 2px solid #f48fb1; }
+    .wt-obj   { background: #e8f5e9; color: #1b5e20; border: 2px solid #a5d6a7; }
+    .wt-other { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+    .wl-subj  { color: #bf360c; }
+    .wl-pred  { color: #880e4f; }
+    .wl-obj   { color: #1b5e20; }
+    .wl-other { color: #888; }
+
+    /* ===== 3步找句子结构法 ===== */
+    .step-flow {
+        display: flex;
+        gap: 0;
+        margin: 20px 0;
+        align-items: stretch;
+    }
+    .step-item {
+        flex: 1;
+        padding: 18px 16px;
+        text-align: center;
+        position: relative;
+    }
+    .step-item::after {
+        content: "→";
+        position: absolute;
+        right: -12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #bbb;
+        z-index: 1;
+    }
+    .step-item:last-child::after { display: none; }
+    .step-num-big {
+        width: 40px; height: 40px;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 900; font-size: 18px;
+        margin: 0 auto 10px;
+    }
+    .step-item h4 { font-size: 15px; font-weight: 900; margin-bottom: 6px; }
+    .step-item p  { font-size: 13px; line-height: 1.6; color: #555; }
+    .step-item .step-eg { font-size: 12px; margin-top: 6px; padding: 4px 8px; border-radius: 6px; font-weight: bold; }
+
+    .si-1 { background: #fff3e0; border-radius: 12px 0 0 12px; border: 2px solid #ffb74d; border-right: none; }
+    .si-1 .step-num-big { background: #ffb74d; color: #fff; }
+    .si-1 .step-eg { background: #ffe0b2; color: #bf360c; }
+
+    .si-2 { background: #fce4ec; border-top: 2px solid #f48fb1; border-bottom: 2px solid #f48fb1; }
+    .si-2 .step-num-big { background: #f48fb1; color: #fff; }
+    .si-2 .step-eg { background: #fce4ec; color: #880e4f; }
+
+    .si-3 { background: #e8f5e9; border-radius: 0 12px 12px 0; border: 2px solid #a5d6a7; border-left: none; }
+    .si-3 .step-num-big { background: #a5d6a7; color: #fff; }
+    .si-3 .step-eg { background: #c8e6c9; color: #1b5e20; }
+
+    /* ===== 五大句型表 ===== */
+    .pattern-table { width: 100%; border-collapse: collapse; margin: 18px 0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); font-size: 14px; }
+    .pattern-table th { background: #2c3e50; color: #f1c40f; padding: 11px 14px; text-align: left; }
+    .pattern-table td { padding: 11px 14px; border-bottom: 1px solid #eee; vertical-align: middle; line-height: 1.6; }
+    .pattern-table tr:last-child td { border-bottom: none; }
+    .pattern-table tr:hover td { background: #f8f9fa; }
+    .pt-formula { font-weight: 900; font-size: 14px; letter-spacing: 0.05em; }
+    .pt-s { color: #bf360c; }
+    .pt-v { color: #880e4f; }
+    .pt-o { color: #1b5e20; }
+    .pt-c { color: #0e6655; }
+
+    /* ===== 辨析对比表 ===== */
+    .magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+    .magic-table th { background-color: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; }
+    .magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; }
+    .magic-table tr:last-child td { border-bottom: none; }
+    .magic-table tr:hover td { background-color: #f8f9fa; }
+
+    /* ===== 练习题 ===== */
+    .quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+    .quiz-block .quiz-q { font-size: 18px; font-weight: bold; color: #2c3e50; margin-bottom: 12px; line-height: 1.6; }
+    .quiz-block .quiz-opts { font-size: 15px; color: #555; margin-bottom: 16px; }
+    .quiz-block .quiz-opts span { margin-right: 20px; }
+    .reveal-btn {
+        background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px;
+        cursor: pointer; font-weight: bold; font-size: 15px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit;
+    }
+    .reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+    .answer-box { display: none; margin-top: 14px; }
+
+    /* ===== 特别警告框 ===== */
+    .warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 15px 0; }
+    .warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 16px; margin-bottom: 8px; }
+    .warn-box p { font-size: 15px; color: #444; line-height: 1.7; margin: 0; }
+
+    /* ===== 小提示绿框 ===== */
+    .tip-box { background: #f4fbf4; border: 2px solid #c3e6c3; border-left: 5px solid #27ae60; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #1e8449; line-height: 1.75; }
+
+    /* ===== 分割线 ===== */
+    .section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+    .section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+    .section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+    /* ===== 小抄 ===== */
+    .cheatsheet {
+        margin: 50px 0 30px;
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 40px 35px 35px;
+        border-radius: 14px;
+        position: relative;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    }
+    .cheatsheet-title {
+        position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+        background: #f1c40f; color: #2c3e50;
+        padding: 8px 28px; border-radius: 20px;
+        font-weight: 900; font-size: 17px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        white-space: nowrap;
+    }
+    .cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+    .cs-block { background: rgba(255,255,255,0.09); padding: 18px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+    .cs-block.red    { border-left-color: #e74c3c; }
+    .cs-block.green  { border-left-color: #2ecc71; }
+    .cs-block.yellow { border-left-color: #f1c40f; }
+    .cs-block.orange { border-left-color: #e67e22; }
+    .cs-block strong { font-size: 16px; display: block; margin-bottom: 8px; }
+    .cs-block p, .cs-block li { font-size: 15px; line-height: 1.75; color: #ecf0f1; margin: 4px 0; }
+    .cs-block ul { padding-left: 20px; }
+
+/* 警告框 */
+.warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+.warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 16px; margin-bottom: 8px; }
+.warn-box p { font-size: 15px; color: #444; line-height: 1.7; margin: 0; }
+.tip-box { background: #f4fbf4; border: 2px solid #c3e6c3; border-left: 5px solid #27ae60; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #1e8449; line-height: 1.75; }
+
+/* 分割线 */
+.section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+.section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+/* 小抄 */
+.cheatsheet { margin: 50px 0 30px; background: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+.cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+.cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+.cs-block.red    { border-left-color: #e74c3c; }
+.cs-block.green  { border-left-color: #2ecc71; }
+.cs-block.yellow { border-left-color: #f1c40f; }
+.cs-block.orange { border-left-color: #e67e22; }
+.cs-block.purple { border-left-color: #9b59b6; }
+.cs-block strong { font-size: 17px; display: block; margin-bottom: 8px; }
+.cs-block p, .cs-block li { font-size: 15px; line-height: 1.75; color: #ecf0f1; margin: 4px 0; }
+.cs-block ul { padding-left: 20px; }
+ /* ===== 对错对比 ===== */
+    .wrong-text { color: #c0392b; font-size: 18px; font-weight: bold; text-decoration: line-through; }
+    .right-text { color: #27ae60; font-size: 18px; font-weight: bold; }
+
+    /* ===== 代词大总表 ===== */
+    .pronoun-master-table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 16px rgba(0,0,0,0.09); margin: 20px 0; font-size: 14px; }
+    .pronoun-master-table thead tr th { background: #2c3e50; color: #f1c40f; padding: 12px 14px; text-align: center; font-size: 13px; letter-spacing: 0.04em; }
+    .pronoun-master-table thead tr th:first-child { text-align: left; }
+    .pronoun-master-table .group-label { background: #34495e; color: #ecf0f1; font-size: 12px; font-weight: bold; padding: 7px 14px; letter-spacing: 0.05em; }
+    .pronoun-master-table td { padding: 11px 14px; border-bottom: 1px solid #f0f0f0; text-align: center; vertical-align: middle; }
+    .pronoun-master-table td:first-child { text-align: left; font-weight: bold; color: #555; font-size: 13px; background: #fafafa; }
+    .pronoun-master-table tr:last-child td { border-bottom: none; }
+    .pronoun-master-table tr:hover td { background: #f8f9fa; }
+    .pronoun-master-table tr:hover td:first-child { background: #f0f0f0; }
+    /* 四列颜色 */
+    .col-zhuge { color: #1565c0; font-weight: 900; font-size: 15px; }   /* 主格 蓝 */
+    .col-bin   { color: #c62828; font-weight: 900; font-size: 15px; }   /* 宾格 红 */
+    .col-xrong { color: #2e7d32; font-weight: 900; font-size: 15px; }   /* 形容性物主 绿 */
+    .col-mrong { color: #6a1b9a; font-weight: 900; font-size: 15px; }   /* 名词性物主 紫 */
+    .col-fan   { color: #e65100; font-weight: 900; font-size: 15px; }   /* 反身 橙 */
+    /* 表头背景 */
+    .th-zhuge { background: #1565c0 !important; }
+    .th-bin   { background: #c62828 !important; }
+    .th-xrong { background: #2e7d32 !important; }
+    .th-mrong { background: #6a1b9a !important; }
+    .th-fan   { background: #bf360c !important; }
+
+    /* ===== 角色卡片（三大类代词） ===== */
+    .pronoun-role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+    .pronoun-role-card { border-radius: 12px; padding: 20px 18px; border: 2px solid transparent; }
+    .pronoun-role-card .prc-icon { font-size: 36px; margin-bottom: 8px; line-height: 1; }
+    .pronoun-role-card .prc-name { font-size: 17px; font-weight: 900; margin-bottom: 5px; }
+    .pronoun-role-card .prc-q    { font-size: 13px; font-weight: bold; border-radius: 6px; padding: 3px 10px; display: inline-block; margin-bottom: 8px; }
+    .pronoun-role-card .prc-desc { font-size: 13px; line-height: 1.65; }
+    .prc-main { background: #e8f4fd; border-color: #90caf9; color: #1565c0; }
+    .prc-main .prc-q { background: #bbdefb; }
+    .prc-bin  { background: #fce4ec; border-color: #f48fb1; color: #c62828; }
+    .prc-bin  .prc-q { background: #fce4ec; border: 1px solid #f48fb1; }
+    .prc-xrong{ background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; }
+    .prc-xrong .prc-q { background: #c8e6c9; }
+    .prc-mrong{ background: #f3e5f5; border-color: #ce93d8; color: #6a1b9a; }
+    .prc-mrong .prc-q { background: #e1bee7; }
+
+    /* ===== 换装演示卡片 ===== */
+    .swap-demo { background: #fff; border: 2px solid #e0e0e0; border-radius: 12px; padding: 20px 22px; margin: 14px 0; }
+    .swap-sentence { font-size: 17px; font-weight: bold; line-height: 2; margin-bottom: 12px; }
+    .swap-arrow { color: #bbb; margin: 0 8px; font-size: 18px; }
+    .swap-steps { display: flex; flex-direction: column; gap: 8px; }
+    .swap-step { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.65; color: #444; }
+    .swap-step .ss-num { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+
+    /* ===== 位置判断流程 ===== */
+    .position-flow { display: flex; flex-direction: column; gap: 0; margin: 16px 0; border-radius: 10px; overflow: hidden; border: 1.5px solid #d8b4fe; }
+    .pf-item { display: flex; align-items: stretch; border-bottom: 1px solid #e8daef; }
+    .pf-item:last-child { border-bottom: none; }
+    .pf-num { background: #8e44ad; color: #fff; font-weight: 900; font-size: 16px; min-width: 48px; display: flex; align-items: center; justify-content: center; }
+    .pf-body { padding: 14px 18px; flex: 1; background: #fff; }
+    .pf-body:nth-child(even) { background: #faf5ff; }
+    .pf-body h4 { font-size: 15px; font-weight: 900; color: #5b2c6f; margin-bottom: 5px; }
+    .pf-body p  { font-size: 14px; color: #555; line-height: 1.65; margin: 0; }
+
+    /* ===== 辨析对比表 ===== */
+    .magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+    .magic-table th { background-color: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+    .magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+    .magic-table tr:last-child td { border-bottom: none; }
+    .magic-table tr:hover td { background-color: #f8f9fa; }
+
+    /* ===== 警告框 / 提示框 ===== */
+    .warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+    .warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 16px; margin-bottom: 8px; }
+    .warn-box p { font-size: 15px; color: #444; line-height: 1.7; margin: 0; }
+    .tip-box { background: #f4fbf4; border: 2px solid #c3e6c3; border-left: 5px solid #27ae60; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #1e8449; line-height: 1.75; }
+
+    /* ===== 练习题 ===== */
+    .quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+    .quiz-block .quiz-q { font-size: 18px; font-weight: bold; color: #2c3e50; margin-bottom: 12px; line-height: 1.6; }
+    .quiz-block .quiz-opts { font-size: 15px; color: #555; margin-bottom: 16px; }
+    .quiz-block .quiz-opts span { margin-right: 20px; }
+    .reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+    .reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+    .answer-box { display: none; margin-top: 14px; }
+
+    /* ===== 分割线 ===== */
+    .section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+    .section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+    .section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+    /* ===== 小抄 ===== */
+    .cheatsheet { margin: 50px 0 30px; background-color: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+    .cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+    .cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+    .cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+    .cs-block.red    { border-left-color: #e74c3c; }
+    .cs-block.green  { border-left-color: #2ecc71; }
+    .cs-block.yellow { border-left-color: #f1c40f; }
+    .cs-block.orange { border-left-color: #e67e22; }
+    .cs-block.purple { border-left-color: #9b59b6; }
+    .cs-block strong { font-size: 17px; display: block; margin-bottom: 8px; }
+    .cs-block p, .cs-block li { font-size: 15px; line-height: 1.8; color: #ecf0f1; margin: 4px 0; }
+    .cs-block ul { padding-left: 20px; }
+    .cs-block table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
+    .cs-block table th { background: rgba(255,255,255,0.14); color: #f1c40f; padding: 8px 12px; text-align: center; }
+    .cs-block table td { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.07); text-align: center; color: #ecf0f1; }
+    .cs-block table tr:last-child td { border-bottom: none; }
+/* 转化钩子 */
+.cta-box { margin-top: 40px; padding: 32px; background: #fff3e0; border: 2px dashed #e67e22; border-radius: 14px; text-align: center; box-shadow: 0 5px 15px rgba(230,126,34,0.12); }
+.cta-box h3 { color: #d35400; font-size: 22px; margin-bottom: 14px; font-weight: 900; }
+.cta-box p  { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 20px; text-align: left; }
+.cta-btn { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; display: inline-block; padding: 14px 35px; border-radius: 30px; font-weight: bold; font-size: 17px; text-decoration: none; box-shadow: 0 4px 12px rgba(230,126,34,0.4); transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); }
+
+/* ============================================================
+   打印优化
+   ============================================================ */
+@media print {
+    body { background: #fff; }
+
+    /* 隐藏所有导航元素 */
+    .lesson-topbar,
+    .lesson-nav,
+    .lesson-footer { display: none !important; }
+
+    /* 内容区满版打印 */
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container {
+        padding: 20px 24px;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    /* 保留背景色 */
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    /* 避免卡片在页面中间断开 */
+    .module-card, .quiz-block, .warn-box, .cheatsheet,
+    .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+
+    /* 小抄前换页，保证在新页开始 */
+    .cheatsheet { page-break-before: always; break-before: page; }
+
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ============================================================
+   响应式
+   ============================================================ */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover { padding: 28px 20px 24px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+    .nav-btn .nb-title { font-size: 12px; }
+}
+
+/* ============================================================
+   新版救命小抄 V2：浅色、紧凑、打印友好
+   ============================================================ */
+.green { color:#27ae60; font-weight:900; }
+.red { color:#e74c3c; font-weight:900; }
+
+.cheatsheet-v2 {
+  margin: 42px 0 28px;
+  background: #fffdf5;
+  border: 2px solid #f1c40f;
+  border-radius: 14px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  color: #2c3e50;
+}
+
+.cheatsheet-v2-header {
+  background: linear-gradient(135deg, #fff3c4, #fff8df);
+  border-bottom: 2px solid #f1c40f;
+  padding: 16px 22px 14px;
+}
+
+.cheatsheet-v2-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+
+.cheatsheet-v2-subtitle {
+  font-size: 13px;
+  color: #7d6608;
+  line-height: 1.6;
+}
+
+.cheatsheet-v2-body {
+  padding: 18px 20px 20px;
+}
+
+.cheat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.cheat-card {
+  background: #fff;
+  border: 1.5px solid #e8e8e8;
+  border-left: 5px solid #3498db;
+  border-radius: 10px;
+  padding: 13px 14px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.cheat-card.core { border-left-color: #e74c3c; }
+.cheat-card.method { border-left-color: #2980b9; }
+.cheat-card.trap { border-left-color: #e67e22; }
+.cheat-card.example { border-left-color: #27ae60; }
+.cheat-card.memory { border-left-color: #8e44ad; }
+.cheat-card.exam { border-left-color: #16a085; }
+
+.cheat-card h4 {
+  font-size: 15px;
+  font-weight: 900;
+  color: #1a252f;
+  margin-bottom: 7px;
+  line-height: 1.45;
+}
+
+.cheat-card p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.65;
+  margin: 5px 0;
+}
+
+.cheat-card ul {
+  padding-left: 18px;
+  margin: 6px 0 0;
+}
+
+.cheat-card li {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.65;
+  margin: 3px 0;
+}
+
+.cheat-rule {
+  display: inline-block;
+  background: #fff3c4;
+  color: #7d6608;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+.cheat-good {
+  color: #1e8449;
+  font-weight: 900;
+}
+
+.cheat-bad {
+  color: #c0392b;
+  font-weight: 900;
+  text-decoration: line-through;
+}
+
+.cheat-note {
+  background: #f8f9fa;
+  border: 1px dashed #d0d0d0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-top: 8px;
+  font-size: 13px !important;
+  color: #666 !important;
+}
+
+.cheatsheet-v2-footer {
+  margin-top: 14px;
+  background: #f8f9fa;
+  border: 1.5px dashed #d0d0d0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.cheatsheet-v2-footer strong {
+  color: #c0392b;
+}
+
+@media (max-width: 680px) {
+  .cheatsheet-v2 {
+    margin: 30px 0 24px !important;
+    border-radius: 12px !important;
+  }
+  .cheatsheet-v2-header {
+    padding: 14px 14px 12px !important;
+  }
+  .cheatsheet-v2-title {
+    font-size: 18px !important;
+  }
+  .cheatsheet-v2-body {
+    padding: 14px 12px 16px !important;
+  }
+  .cheat-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .cheat-card {
+    padding: 12px 12px !important;
+  }
+}
+
+@media print {
+  .cheatsheet-v2 {
+    background: #fff !important;
+    border: 1.5px solid #333 !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    margin: 18px 0 !important;
+    page-break-before: auto !important;
+    break-before: auto !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+  .cheatsheet-v2-header {
+    background: #fff !important;
+    border-bottom: 1.5px solid #333 !important;
+    padding: 10px 12px !important;
+  }
+  .cheatsheet-v2-title {
+    color: #000 !important;
+    font-size: 17px !important;
+  }
+  .cheatsheet-v2-subtitle {
+    color: #333 !important;
+    font-size: 12px !important;
+  }
+  .cheatsheet-v2-body {
+    padding: 12px !important;
+  }
+  .cheat-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+  .cheat-card {
+    background: #fff !important;
+    border: 1px solid #555 !important;
+    border-left: 4px solid #000 !important;
+    box-shadow: none !important;
+    padding: 8px 10px !important;
+  }
+  .cheat-card h4 {
+    color: #000 !important;
+    font-size: 13px !important;
+    margin-bottom: 4px !important;
+  }
+  .cheat-card p,
+  .cheat-card li {
+    color: #111 !important;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    margin: 2px 0 !important;
+  }
+  .cheat-rule {
+    background: #fff !important;
+    border: 1px solid #999 !important;
+    color: #000 !important;
+    padding: 1px 4px !important;
+  }
+  .cheat-note {
+    background: #fff !important;
+    border: 1px dashed #777 !important;
+    color: #222 !important;
+    font-size: 11px !important;
+    padding: 5px 7px !important;
+  }
+  .cheatsheet-v2-footer {
+    background: #fff !important;
+    border: 1px dashed #777 !important;
+    color: #000 !important;
+    padding: 7px 9px !important;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="/assets/grammar-mobile-print-fix.css?v=20260705">
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="lesson-topbar">
+    <div class="topbar-inner">
+        <a class="topbar-back" href="index.html">← 目录</a>
+        <div class="topbar-sep">/</div>
+        <div class="topbar-lesson-info">
+            <!-- 修改B-1：讲次区域标签，如"第一战区 · 及格必学" -->
+            <div class="tl-tag">第一战区 · 第4讲 · 及格必学</div>
+            <!-- 修改B-2：讲义标题 -->
+            <div class="tl-title">a / an / the 三兄弟</div>
+        </div>
+        <button class="topbar-print" onclick="window.print()">🖨️ 打印本讲</button>
+    </div>
+</div>
+
+<!-- ===== 主内容区 ===== -->
+<div class="lesson-main">
+<div class="book-container">
+<div id="lesson-4" class="chapter-cover" style="scroll-margin-top:24px; background: linear-gradient(135deg, #2980b9 0%, #2c3e50 60%, #e74c3c 100%);">
+        <div class="lesson-tag">第一战区 · 第4讲 · 及格必学</div>
+        <h1 style="font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; color:#fff;">a / an / the 三兄弟<span>（冠词无脑填法）</span></h1>
+        <p class="subtitle" style="font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.7;">英语里最爱挖坑的三个小词<br>彻底搞懂“元音陷阱”，秒杀单选题第一道</p>
+        <div class="meta-row" style="display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap;">
+            <div class="meta-chip" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px;">⏱ 预计学习 25 分钟</div>
+            <div class="meta-chip" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px;">🎯 中考涉及约 3-5 分</div>
+            <div class="meta-chip" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px;">⭐ 难度：避坑级</div>
+        </div>
+    </div>
+
+    <div class="review-bar">
+        📌 <strong>上一讲知识串联：</strong><br>
+        上一讲我们组装好了句子里的核心大件——<strong>发动机（动词/Be动词）</strong>。<br>
+        但在中考真题里，出题老师特别喜欢在第一道选择题给你一个下马威。他们会盯着句子里的<strong>名词（车身）</strong>，在它前面挖个空，让你填 <code>a</code>, <code>an</code>, <code>the</code>，或者干脆什么都不填。今天我们就来拿捏这三个小不点。
+    </div>
+
+    <div class="goal-box">
+        <div class="goal-icon">🎯</div>
+        <div>
+            <h3>学完这讲，你能做到：</h3>
+            <p>① 明白为什么英文里非要加 a/an/the 这些看似没用的词。<br>
+            ② 完美避开 <code>a university</code> 和 <code>an hour</code> 这两个中考必考的“高频易错点”。<br>
+            ③ 掌握霸道总裁 <code>the</code> 的唯一核心用法，不再凭语感乱选。</p>
+        </div>
+    </div>
+
+    <div class="module-card card-teal">
+        <div class="badge badge-teal">🎩 模块一：什么是冠词？——名词的“帽子”</div>
+
+        <p>中文里，我们指着桌上的东西，可以说：“我吃苹果”、“我看书”。</p>
+        <p>但在英语里，这种“没戴帽子”的表达是<strong>不符合英语规则的！</strong></p>
+        
+        <div class="warn-box" style="margin-top: 12px;">
+            <div class="warn-title">❌ 常见错误示范</div>
+            <p class="wrong-text">❌ I eat apple.</p>
+            <p class="wrong-text">❌ I read book.</p>
+            <p style="margin-top: 12px; font-size: 15px; color: #444;"><strong>👨‍⚕️ 诊断报告：</strong><br>
+            英语里的名词（苹果、书），如果是<strong>单数（只有一个）</strong>而且<strong>可以数得清</strong>，那么它绝对不能“光着头”出门！<br>
+            你必须给它戴上一顶帽子，这顶帽子在语法上就叫<strong>“冠词”（冠，就是帽子的意思）</strong>。</p>
+        </div>
+
+        <div class="brain-box" style="margin-top:20px; border-color:#16a085; background:#f0fffc;">
+            <p style="font-weight:900; color:#0e6655; font-size: 16px;">💡 给名词戴帽子的三种选择：</p>
+            <p>• <strong>第一顶帽子：a</strong> （随便一个，最普通）</p>
+            <p>• <strong>第二顶帽子：an</strong> （也是随便一个，但是专门为发音特殊的词准备的垫脚石）</p>
+            <p>• <strong>第三顶帽子：the</strong> （霸道总裁专属款，特指“那一个”）</p>
+        </div>
+        
+        <p style="margin-top: 15px;">戴上帽子后，句子瞬间有了灵魂，也符合了英语的组装规则：</p>
+        <div style="background: #eafaf1; padding: 14px 20px; border-radius: 8px; font-weight: bold; font-size: 16px; color: #27ae60;">
+            ✅ I eat <span class="mark-bg">an</span> apple. （我吃了一个苹果）<br>
+            ✅ I read <span class="mark-bg">a</span> book. （我读了一本书）
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块二</span><hr></div>
+
+    <div class="module-card card-blue">
+        <div class="badge badge-blue">⚔️ 模块二：a 和 an 的世纪大战（中考必考）</div>
+
+        <p><code>a</code> 和 <code>an</code> 的意思一模一样，都翻译成<strong>“一个 / 一本 / 一只...”</strong>。<br>
+        但为什么非要搞出两个长相不同的词呢？因为英语母语者觉得，有些词前面如果放 <code>a</code>，读起来<strong>嘴巴会打结</strong>。</p>
+
+        <p style="margin-top: 15px; font-weight: bold; font-size: 16px; color: #c0392b;">🔥 重点来了！抛弃小学老师教你的错误口诀！</p>
+        <p>很多同学从小背的口诀是：“遇到 a, e, i, o, u 这五个元音字母开头，就用 an，其余用 a”。<br>
+        <strong>这句话只对了一半，中考出题老师专门利用这个口诀来坑你！</strong></p>
+
+        <div class="brain-box" style="margin-top:20px; border-color:#2980b9; background:#f0f7ff;">
+            <p style="font-weight:900; color:#2980b9; font-size: 18px; text-align: center; margin-bottom: 10px;">🎧 真正的铁律：看发音，不看字母！</p>
+            <p style="font-size: 15px; line-height: 1.8;">
+            判断用 <code>a</code> 还是 <code>an</code>，不要用眼睛看第一个字母，要<strong>用嘴巴去读它的第一个音</strong>！<br>
+            • 如果这个单词读出来的第一个音，嘴巴是<strong>张开的、声音是从喉咙里直接冲出来的（元音，比如“啊、哦、鹅、衣、乌”）</strong>，为了发音顺滑，前面必须垫一个 <code>an</code>。<br>
+            • 如果第一个音是嘴唇或舌头挡住了气流（辅音），就安安分分用 <code>a</code>。
+            </p>
+        </div>
+
+        <table class="magic-table" style="margin-top:20px;">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">中考超级大坑</th>
+                    <th style="width: 20%;">该戴什么帽子？</th>
+                    <th style="width: 55%;">大白话揭秘</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight:900; font-size:16px;">apple<br><span style="font-size:12px;color:#888;font-weight:normal;">(苹果)</span></td>
+                    <td style="font-weight:900; color:#e74c3c; font-size:18px;">an</td>
+                    <td>读音是“<strong>啊</strong>-坡”，第一个音是敞开的“啊”，所以垫上 an：<strong style="color:#27ae60;">an apple</strong></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:900; font-size:16px;">university<br><span style="font-size:12px;color:#888;font-weight:normal;">(大学)</span></td>
+                    <td style="font-weight:900; color:#2980b9; font-size:18px;">a</td>
+                    <td><span class="tag-hot">高频易错</span> 看着是 u 开头，但读音是“<strong>由</strong>-你-波-斯-体”，开头是辅音 /j/（像 y），不用垫：<strong style="color:#27ae60;">a university</strong></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:900; font-size:16px;">hour<br><span style="font-size:12px;color:#888;font-weight:normal;">(小时)</span></td>
+                    <td style="font-weight:900; color:#e74c3c; font-size:18px;">an</td>
+                    <td><span class="tag-hot">高频易错</span> 看着是辅音 h 开头，但这哥们<strong>不发音</strong>！读音直接是“<strong>啊</strong>-我”，所以垫上 an：<strong style="color:#27ae60;">an hour</strong></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:900; font-size:16px;">useful book<br><span style="font-size:12px;color:#888;font-weight:normal;">(有用的书)</span></td>
+                    <td style="font-weight:900; color:#2980b9; font-size:18px;">a</td>
+                    <td>和大学一样，useful 读作“<strong>由</strong>-斯-否”，所以是：<strong style="color:#27ae60;">a useful book</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p style="margin-top: 15px; font-size: 14px; color: #e67e22; font-weight:bold;">💡 秒杀秘籍：考试时，看到 university (大学), useful (有用的), European (欧洲的)，毫不犹豫选 a；看到 hour (小时), honest (诚实的)，直接选 an！</p>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块三</span><hr></div>
+
+    <div class="module-card card-red">
+        <div class="badge badge-red">👑 模块三：霸道总裁“the”——这片鱼塘被我承包了</div>
+
+        <p>如果说 <code>a / an</code> 是渣男，意思是“随便给我一个苹果就行（哪个都可以）”。<br>
+        那 <code>the</code> 就是霸道总裁，它的翻译永远是：<strong>“那个 / 这个”</strong>，带有强烈的<strong>特指</strong>意味。</p>
+
+        <p style="margin-top: 15px; font-weight: bold;">什么时候出动霸道总裁 the？记住这三个无脑情境：</p>
+        
+        <div style="margin-top: 15px; padding-left: 10px; border-left: 3px solid #e74c3c;">
+            <p style="margin-bottom: 10px;"><strong>① 你知我知，心照不宣（特指）：</strong><br>
+            我说：“把<span class="hl-red">那本书</span>给我。” 这里我们都知道是哪一本书，不是随便一本书。<br>
+            👉 Give me <span class="mark-red">the</span> book.</p>
+            
+            <p style="margin-bottom: 10px;"><strong>② 上文刚提过，下文又出现了：</strong><br>
+            “我买了一个苹果（随便一个，用 a）。<span class="hl-red">那个苹果</span>（已经变成你我都知道的那个了）很好吃。”<br>
+            👉 I bought <span class="mark-bg">an</span> apple. <span class="mark-red">The</span> apple is delicious.</p>
+
+            <p><strong>③ 世界上独一无二的东西：</strong><br>
+            地球、太阳、月亮，不用特指大家也知道是哪一个，因为只有一个。它们前面必须带保镖 <code>the</code>。<br>
+            👉 <span class="mark-red">the</span> sun, <span class="mark-red">the</span> moon, <span class="mark-red">the</span> earth.</p>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块四</span><hr></div>
+
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🏃‍♂️ 模块四：不戴帽特权——什么时候坚决不戴帽子？</div>
+
+        <p>虽然单身汉（单数可数名词）必须戴帽子，但英语里也有一些贵族，它们拥有“不戴帽特权”，<strong>前面什么帽子都不用戴（填空题直接画个 <code>/</code> 即可）</strong>。</p>
+
+        <div style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap;">
+            <div style="flex: 1; background: #fff; border: 2px solid #d8b4fe; border-radius: 10px; padding: 18px;">
+                <p style="font-size: 16px; font-weight: 900; color: #8e44ad; margin-bottom: 10px;">⚽ 球类运动和棋类</p>
+                <p style="font-size: 14px; color: #555; line-height: 1.7;">踢足球、打篮球、下象棋，中间绝不加东西！<br>
+                ✅ play football<br>
+                ❌ <span style="text-decoration:line-through; color:#c0392b;">play the football</span> (大错特错！)</p>
+            </div>
+            
+            <div style="flex: 1; background: #fff; border: 2px solid #d8b4fe; border-radius: 10px; padding: 18px;">
+                <p style="font-size: 16px; font-weight: 900; color: #8e44ad; margin-bottom: 10px;">🍳 一日三餐</p>
+                <p style="font-size: 14px; color: #555; line-height: 1.7;">吃早饭、吃午饭、吃晚饭，同样不加帽子！<br>
+                ✅ have breakfast<br>
+                ❌ <span style="text-decoration:line-through; color:#c0392b;">have a breakfast</span> (错！)</p>
+            </div>
+        </div>
+        
+        <div class="warn-box" style="margin-top: 20px;">
+            <div class="warn-title">💡 中考究极对比陷阱：球类 vs 乐器</div>
+            <p>出题老师最爱把球和乐器放在一起考。记住这个反差：<br>
+            • <strong>打球不要钱（不戴帽子）：</strong> play basketball<br>
+            • <strong>玩乐器很费钱（必须戴 <code>the</code>）：</strong> play <strong style="color:#c0392b;">the</strong> piano, play <strong style="color:#c0392b;">the</strong> guitar</p>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块五</span><hr></div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow">🎯 模块五：核心实战练习——先硬啃，再看脑回路</div>
+
+        <p>不要凭语感乱选！在脑子里过一遍这节课学的“看发音”、“霸道总裁”和“不戴帽特权”。</p>
+
+        <div class="quiz-block" style="margin-top: 22px;">
+            <p style="font-size: 13px; color: #999; margin-bottom: 6px;">🔥 练习题 1 · 发音陷阱题</p>
+            <div class="quiz-q">My brother studies in ______ university. He is ______ honest boy.</div>
+            <div class="quiz-opts"><span>A. a ; a</span><span>B. an ; an</span><span>C. a ; an</span><span>D. an ; a</span></div>
+            <button class="reveal-btn" data-target="lesson4-q1">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson4-q1">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一空：university，看着是 u，读音是辅音开头（由你波斯体），所以不用垫，用 <strong class="green">a</strong>。</p>
+                    <p>第二空：honest（诚实的），h 不发音，发音是“啊-尼斯特”，敞开口的元音开头，必须垫上 <strong class="green">an</strong>。</p>
+                    <p><span class="right-text">🎉 答案：C（a ; an）</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size: 13px; color: #999; margin-bottom: 6px;">🔥 练习题 2 · 情境特指题</p>
+            <div class="quiz-q">— Look at ______ bird in the tree.<br>— Oh, it's so beautiful!</div>
+            <div class="quiz-opts"><span>A. a</span><span>B. an</span><span>C. the</span><span>D. / (不填)</span></div>
+            <button class="reveal-btn" data-target="lesson4-q2">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson4-q2">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>看句意：“看树上的 ____ 鸟”。</p>
+                    <p>这里不是在泛泛而谈世界上随便一只鸟，而是明确指着“树上”的那一只，两人都看得到。这是标准的“你知我知，心照不宣”，属于特指，必须请出霸道总裁。</p>
+                    <p><span class="right-text">🎉 答案：C（the）</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size: 13px; color: #999; margin-bottom: 6px;">🔥 练习题 3 · 不戴帽特权死角题</p>
+            <div class="quiz-q">I often play ______ basketball with my friends after ______ school.</div>
+            <div class="quiz-opts"><span>A. the ; the</span><span>B. / ; /</span><span>C. a ; the</span><span>D. the ; /</span></div>
+            <button class="reveal-btn" data-target="lesson4-q3">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson4-q3">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一空：basketball 是球类运动，拥有“不戴帽特权”，什么帽子都不加。</p>
+                    <p>第二空：after school（放学后）是固定搭配的特殊词，也不加。光凭第一空球类不加帽子，就能秒杀全场。</p>
+                    <p><span class="right-text">🎉 答案：B（/ ; /）</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <!-- ================================================ -->
+    <!-- 加餐一：冠词题做题流程 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>加餐一</span><hr></div>
+
+    <div class="module-card card-orange">
+        <div class="badge badge-orange">🧭 加餐一：冠词题 5 秒判断流程——不要先凭感觉，先走流程</div>
+
+        <p>冠词题看起来只是 <code>a / an / the / 不填</code> 四选一，但真正考的是：<strong>你能不能先判断名词的状态。</strong></p>
+        <p style="margin-top:10px;">以后遇到冠词题，不要一上来就盯着选项看，先按下面这四步走：</p>
+
+        <div class="method-card step-blue" style="margin-top:18px;">
+            <div class="step-num">1</div>
+            <div class="step-body">
+                <h4>第一步：先看空格后面是不是名词</h4>
+                <p>冠词是“名词的帽子”。如果空格后面根本不是名词，就先别急着套 a/an/the。</p>
+            </div>
+        </div>
+
+        <div class="method-card step-orange">
+            <div class="step-num">2</div>
+            <div class="step-body">
+                <h4>第二步：看这个名词是不是单数可数</h4>
+                <p>如果是一个能数清的东西，而且是单数，通常不能直接出现，要考虑戴帽子。<br>
+                例：<code>book</code>、<code>apple</code>、<code>hour</code>、<code>university</code>。</p>
+            </div>
+        </div>
+
+        <div class="method-card step-green">
+            <div class="step-num">3</div>
+            <div class="step-body">
+                <h4>第三步：看它是不是“特指”</h4>
+                <p>如果说的是“那个、这一个、双方都知道的那个、上文提过的那个”，优先用 <span class="mark-red">the</span>。</p>
+            </div>
+        </div>
+
+        <div class="method-card step-blue">
+            <div class="step-num">4</div>
+            <div class="step-body">
+                <h4>第四步：如果不是特指，再看发音选 a / an</h4>
+                <p>不是看字母，是看第一个音。元音开头用 <code>an</code>，辅音开头用 <code>a</code>。<br>
+                <span class="mark-bg">an hour</span>，<span class="mark-bg">a university</span>，这两个一定要反复看。</p>
+            </div>
+        </div>
+
+        <div class="brain-box" style="margin-top:18px;">
+            <p>🧠 <strong>一句话流程：</strong></p>
+            <p style="font-weight:900;color:#d35400;">先看是不是名词 → 再看是不是单数可数 → 再看是不是特指 → 最后才决定 a / an / the / 不填。</p>
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 加餐二：名词前到底要不要帽子 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>加餐二</span><hr></div>
+
+    <div class="module-card card-green">
+        <div class="badge badge-green">📦 加餐二：四类名词前怎么处理——先分清“车身类型”</div>
+
+        <p>很多同学冠词题容易错，是因为一看到名词就想加 <code>a</code> 或 <code>the</code>。但英语里不是所有名词都要同一种处理方式。</p>
+
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th style="width:25%;">名词类型</th>
+                    <th style="width:30%;">帽子规则</th>
+                    <th style="width:45%;">例子与提醒</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>单数可数名词</strong></td>
+                    <td>通常需要帽子</td>
+                    <td><code>a book</code> / <code>an apple</code> / <code>the boy</code><br><span style="color:#888;font-size:13px;">一个一个数得清，而且只说一个。</span></td>
+                </tr>
+                <tr>
+                    <td><strong>复数可数名词</strong></td>
+                    <td>泛指时常常不加 a/an</td>
+                    <td><code>I like books.</code><br><span style="color:#888;font-size:13px;">books 已经是很多本，不能说 a books。</span></td>
+                </tr>
+                <tr>
+                    <td><strong>不可数名词</strong></td>
+                    <td>不能直接用 a/an</td>
+                    <td><code>water</code> / <code>music</code> / <code>advice</code><br><span style="color:#888;font-size:13px;">不能说 a water。要说 a glass of water。</span></td>
+                </tr>
+                <tr>
+                    <td><strong>专有名词</strong></td>
+                    <td>多数情况下不加冠词</td>
+                    <td><code>China</code> / <code>Tom</code> / <code>Sunday</code><br><span style="color:#888;font-size:13px;">人名、地名、星期等常常自己就很明确。</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            ✅ <strong>记忆方法：</strong>单数可数名词像“一个人出门”，通常要戴帽子；复数、不可数、专有名词，要先看固定规则和句子意思，不能硬套 a/an。
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 加餐三：固定搭配与易错词 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>加餐三</span><hr></div>
+
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🧩 加餐三：中考高频搭配清单——这些不要临场现想</div>
+
+        <p>冠词题里有一类非常常见：不是让你临场推理，而是考你有没有见过固定搭配。下面这些建议直接熟脸化。</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
+            <div style="background:#fff;border:1.5px solid #d8b4fe;border-radius:10px;padding:16px 18px;">
+                <p style="font-weight:900;color:#6c3483;margin-bottom:8px;">✅ 常见不加冠词</p>
+                <p style="font-size:14px;line-height:1.75;color:#555;">• have breakfast / lunch / dinner</p>
+                <p style="font-size:14px;line-height:1.75;color:#555;">• go to school / at school / after school</p>
+                <p style="font-size:14px;line-height:1.75;color:#555;">• play basketball / football / chess</p>
+                <p style="font-size:14px;line-height:1.75;color:#555;">• by bus / by bike / on foot</p>
+            </div>
+            <div style="background:#fff;border:1.5px solid #ffd8a8;border-radius:10px;padding:16px 18px;">
+                <p style="font-weight:900;color:#d35400;margin-bottom:8px;">✅ 常见必须加 the</p>
+                <p style="font-size:14px;line-height:1.75;color:#555;">• play the piano / violin / guitar</p>
+                <p style="font-size:14px;line-height:1.75;color:#555;">• the sun / the moon / the earth</p>
+                <p style="font-size:14px;line-height:1.75;color:#555;">• the first / the second / the best</p>
+                <p style="font-size:14px;line-height:1.75;color:#555;">• the Great Wall / the Yellow River</p>
+            </div>
+        </div>
+
+        <div class="warn-box" style="margin-top:18px;">
+            <div class="warn-title">⚠️ 最容易混的一组</div>
+            <p><strong>play basketball</strong> 不加 the，因为 basketball 是球类运动；<br>
+            <strong>play the piano</strong> 要加 the，因为 piano 是西洋乐器。<br>
+            这组不是靠翻译判断，是靠固定规则判断。</p>
+        </div>
+    </div>
+
+
+    <!-- ================================================ -->
+    <!-- 第4讲通关检测 -->
+    <!-- ================================================ -->
+    <div class="section-divider"><hr><span>通关检测</span><hr></div>
+
+    <div class="module-card card-dark">
+        <div class="badge badge-dark">✅ 第4讲通关检测：5题检查你是否真正会判断</div>
+
+        <p>下面这 5 题不是为了刷题，而是为了检查你有没有形成冠词题的判断流程。每题先自己选，再点开看脑回路。</p>
+
+        <div class="quiz-block" style="margin-top:20px;">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测 1 · a/an 发音题</p>
+            <div class="quiz-q">This is ______ useful dictionary.</div>
+            <div class="quiz-opts"><span>A. a</span><span>B. an</span><span>C. the</span><span>D. /</span></div>
+            <button class="reveal-btn" data-target="lesson4-extra-q1">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson4-extra-q1">
+                <div class="brain-box">
+                    <p><strong>答案：A. a</strong></p>
+                    <p><code>useful</code> 虽然是 u 开头，但读音开头像 “you”，是辅音音 /j/，所以用 <strong>a useful dictionary</strong>。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测 2 · 特指题</p>
+            <div class="quiz-q">I have a pen. ______ pen is blue.</div>
+            <div class="quiz-opts"><span>A. A</span><span>B. An</span><span>C. The</span><span>D. /</span></div>
+            <button class="reveal-btn" data-target="lesson4-extra-q2">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson4-extra-q2">
+                <div class="brain-box">
+                    <p><strong>答案：C. The</strong></p>
+                    <p>第一句已经提过一支 pen，第二次再说这支笔，就是“上文提过的那一个”，所以用 <strong>the</strong>。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测 3 · 零冠词题</p>
+            <div class="quiz-q">We usually have ______ lunch at school.</div>
+            <div class="quiz-opts"><span>A. a</span><span>B. an</span><span>C. the</span><span>D. /</span></div>
+            <button class="reveal-btn" data-target="lesson4-extra-q3">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson4-extra-q3">
+                <div class="brain-box">
+                    <p><strong>答案：D. /</strong></p>
+                    <p>一日三餐泛指时通常不加冠词：have breakfast / lunch / dinner。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测 4 · 乐器题</p>
+            <div class="quiz-q">My sister can play ______ piano very well.</div>
+            <div class="quiz-opts"><span>A. a</span><span>B. an</span><span>C. the</span><span>D. /</span></div>
+            <button class="reveal-btn" data-target="lesson4-extra-q4">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson4-extra-q4">
+                <div class="brain-box">
+                    <p><strong>答案：C. the</strong></p>
+                    <p>西洋乐器前通常加 <strong>the</strong>：play the piano / violin / guitar。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">检测 5 · 综合判断题</p>
+            <div class="quiz-q">There is ______ hour left before the movie starts.</div>
+            <div class="quiz-opts"><span>A. a</span><span>B. an</span><span>C. the</span><span>D. /</span></div>
+            <button class="reveal-btn" data-target="lesson4-extra-q5">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson4-extra-q5">
+                <div class="brain-box">
+                    <p><strong>答案：B. an</strong></p>
+                    <p><code>hour</code> 的 h 不发音，开头读元音，所以用 <strong>an hour</strong>。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="cheatsheet-v2">
+        <div class="cheatsheet-v2-header">
+            <div class="cheatsheet-v2-title">📌 第4讲救命小抄：a / an / the 三兄弟</div>
+            <div class="cheatsheet-v2-subtitle">考前 30 秒快速扫一遍：先判断名词要不要戴帽，再判断 a / an / the / 不填。</div>
+        </div>
+
+        <div class="cheatsheet-v2-body">
+            <div class="cheat-grid">
+
+                <div class="cheat-card core">
+                    <h4>① 本讲核心一句话</h4>
+                    <p><span class="cheat-rule">冠词 = 名词的帽子。</span></p>
+                    <p>单数可数名词通常不能直接出现；先看是不是特指，再决定用什么帽子。</p>
+                </div>
+
+                <div class="cheat-card method">
+                    <h4>② a 和 an 的选择易错点</h4>
+                    <p><strong>看发音，不看字母！</strong></p>
+                    <p>✅ <strong>an</strong> apple / <strong>an</strong> hour / <strong>an</strong> honest boy</p>
+                    <p>✅ <strong>a</strong> university / <strong>a</strong> useful book / <strong>a</strong> European</p>
+                </div>
+
+                <div class="cheat-card exam">
+                    <h4>③ 什么时候用 the？特指三连</h4>
+                    <ul>
+                        <li>上文提过，第二次又提到。</li>
+                        <li>说话双方心知肚明是在说“那个”。</li>
+                        <li>世界上独一无二：the sun / the moon / the earth。</li>
+                    </ul>
+                </div>
+
+                <div class="cheat-card trap">
+                    <h4>④ 坚决不戴帽子的区域</h4>
+                    <p>• <strong>一日三餐：</strong>have breakfast / lunch / dinner</p>
+                    <p>• <strong>球类/棋类：</strong>play basketball / football / chess</p>
+                    <p class="cheat-note">对比：西洋乐器必须加 the：play <strong>the</strong> piano。</p>
+                </div>
+
+                <div class="cheat-card example">
+                    <h4>⑤ 正误对比</h4>
+                    <p><span class="cheat-bad">❌ I eat apple.</span></p>
+                    <p><span class="cheat-good">✅ I eat an apple.</span></p>
+                    <p class="cheat-note">apple 是单数可数名词，不能直接出现；且读音是元音开头，所以用 an。</p>
+                </div>
+
+                <div class="cheat-card memory">
+                    <h4>⑥ 一句话记忆</h4>
+                    <p><strong>a/an 看发音，the 看特指，不填看固定搭配。</strong></p>
+                    <p>冠词题先看名词类型，再看句子意思，最后看固定搭配。</p>
+                </div>
+
+            </div>
+
+            <div class="cheatsheet-v2-footer">
+                <strong>本讲最重要的动作：</strong>遇到冠词题不要先翻译选项，先问：这个名词是“随便一个”、还是“指定那个”、还是固定搭配不加？
+            </div>
+        </div>
+    </div>
+
+<div class="cta-box no-print">
+        <h3>🚀 第4讲拿捏！你又干掉了3分必考选择题！</h3>
+        <p>干得漂亮！现在你不仅知道句子不能没有发动机，还知道了名词（如果是单数可数的话）出门必须戴上帽子（a / an / the），而且绝对不会再掉进 university 前面填 an 的陷阱里了。<br><br>
+        但是，你有没有注意到我们刚才说了一个前提：“单数可数”的名词要戴帽子。<br>
+        那如果是一堆苹果呢？如果是水呢？<strong>英文里，居然有些东西是算不清个数的！</strong><br><br>
+        在下次的考试卷子上，老师一定会考你 how much 和 how many 的区别。为什么苹果加 s，而钱、水、面包死都不能加 s？<br>
+        下一讲，我们将破解英文中最奇葩的思维差异：<br>
+<strong>可数名词 vs 不可数名词</strong>，以及它们背后隐藏的“量感”思维。<br>
+
+</div><!-- /book-container -->
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-04.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析（满分100）</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+
+<!-- ===== 底部翻页导航 ===== -->
+<!-- 修改C：把 href 改成实际的上一讲/下一讲文件名 -->
+<!--        把 nb-title 改成实际的上一讲/下一讲标题  -->
+<div class="lesson-nav">
+
+    <!-- 上一讲按钮（第1讲没有上一讲，删掉这个a标签即可） -->
+    <a class="nav-btn prev" href="lesson-03.html">
+        <div class="nb-arrow">‹</div>
+        <div class="nb-text">
+            <span class="nb-label">上一讲</span>
+            <span class="nb-title">名词戴帽指南</span>
+        </div>
+    </a>
+
+    <!-- 返回目录 -->
+    <a class="nav-btn-home" href="index.html">📚 目录</a>
+
+    <!-- 下一讲按钮（最后一讲没有下一讲，删掉这个a标签即可） -->
+    <a class="nav-btn next" href="lesson-05.html">
+        <div class="nb-text" style="text-align:right;">
+            <span class="nb-label">下一讲</span>
+            <span class="nb-title">可数名词 vs 不可数名词</span>
+        </div>
+        <div class="nb-arrow">›</div>
+    </a>
+
+</div>
+
+</div><!-- /lesson-main -->
+
+<!-- ===== 页脚 ===== -->
+<div class="lesson-footer">
+    初中英语语法重构 · 基础重构版 · 第4讲<br>
+    打印时只会打印本讲内容 · 点击浏览器返回键可回到目录
+</div>
+<script>
+// 启用“点击解锁答案”按钮的功能（与 lesson-01 保持一致）
+document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.reveal-btn');
+    if (!btn) return;
+    var targetId = btn.getAttribute('data-target');
+    if (!targetId) return;
+    var box = document.getElementById(targetId);
+    if (!box) return;
+    var isVisible = box.style.display && box.style.display !== 'none';
+    if (isVisible) {
+        box.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '👉 点击解锁答案';
+    } else {
+        box.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+        try { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (err) {}
+        btn.textContent = '👇 收起答案';
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加餐二 · 交互练习 · 中考语法总复习 — 初中英语语法重构</title>
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+<script>
+window.QUIZ = {
+  lesson: 'bonus2',
+  title: "中考语法总复习",
+  sections: [
+    {
+      name: "本讲练习题 · 在线作答（每题4分）",
+      perQ: 4,
+      type: "choice",
+      items: [
+        { stem: "Could you tell me ______?<br><span style=\"font-size:14px;font-weight:400;color:#888;\">（你能告诉我图书馆在哪里吗？）</span>", options: ["where is the library", "where the library is", "where was the library", "the library is where"], answer: "where the library is", explain: "第1步：这是个宾语从句（tell me 后面的内容），必须用陈述句语序。 第2步：陈述句语序 = 引导词 + 主语 + 动词 → where + the library + is，不能倒装。 第3步：主句 could you tell me 是现在时语境，从句用现在时 is，排除C。 ✅ 答案：B（where the library is） A 是疑问句语序（where is），放进宾语从句就错了，这是最常见的陷阱！" },
+        { stem: "______ Tom worked very hard, he failed the exam.<br><span style=\"font-size:14px;font-weight:400;color:#888;\">（尽管Tom努力学习，他还是考试不及格。）</span>", options: ["Because", "Although", "But", "So"], answer: "Although", explain: "看意思：\"努力学习\"和\"考试不及格\"是转折关系，不是因果，排除 A（因为）和 D（所以）。 本句已有两个分句：Tom worked very hard 与 he failed the exam。用 Although 使第一分句成为让步从句；But 或 So 单独放句首不能完成本句所需的连接。But 可以连接并列分句，也可以承接前文用于句首，不能一概判错。 Although 是从属连词，可以引导让步状语从句，放句首完全正确。 ✅ 答案：B（Although） 注意：不要再用 but 重复连接本句中的让步从句与主句；其他逻辑层次另作判断。" },
+        { stem: "The scientists ______ are working on this project come from many countries.<br><span style=\"font-size:14px;font-weight:400;color:#888;\">（参与这个项目的科学家来自许多国家。）</span>", options: ["which", "what", "who", "where"], answer: "who", explain: "第1步，判断是否是定语从句：空格前面有名词 scientists（科学家），空格后面是一个句子在描述这个名词——是定语从句。 第2步，先行词是人还是物：scientists 是人→ 用 who 或 that，不能用 which。 第3步：本题已有 scientists 作先行词且从句缺主语，who 适用；where 不能代替人作主语。where 可引导地点定语从句，不能把它只归为地点状语从句。 ✅ 答案：C（who）" }
+      ]
+    },
+    {
+      name: "本讲填空练 · 在线作答（每题4分）",
+      perQ: 4,
+      type: "fill",
+      items: [
+        { stem: "下面这句话有一处语法错误，找出来并改正：<br><code style=\"font-size:16px;background:#f8f8f8;padding:8px 14px;border-radius:6px;display:inline-block;margin:8px 0;\">Although the movie was long, but everyone enjoyed it.</code>", answer: "", explain: "找问题：句子里同时出现了 Although 和 but——这就是那个经典陷阱！ 规则：不要重复用 although...but 连接同一组让步从句与主句。 怎么改：两种都对—— ✅ 改法一：去掉 but → Although the movie was long, everyone enjoyed it. ✅ 改法二：去掉 Although → The movie was long, but everyone enjoyed it. 同理：不要用 because 和 so 重复连接同一组原因与结果。" }
+      ]
+    }
+  ]
+};
+</script>
+<script src="quiz-engine.js"></script>
+</body>
+</html>

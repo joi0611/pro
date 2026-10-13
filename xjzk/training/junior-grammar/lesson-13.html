@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第13讲：现在完成时 — 初中英语语法重构</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f2f5; color: #2c3e50; min-height: 100vh; }
+
+/* ===== 顶部导航条 ===== */
+.lesson-topbar { background: #2c3e50; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.topbar-inner { max-width: 900px; margin: 0 auto; padding: 11px 24px; display: flex; align-items: center; gap: 14px; }
+.topbar-back { color: #f1c40f; text-decoration: none; font-size: 14px; font-weight: bold; display: flex; align-items: center; gap: 5px; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
+.topbar-back:hover { opacity: 0.75; }
+.topbar-sep { color: #4a6278; font-size: 16px; flex-shrink: 0; }
+.topbar-lesson-info { flex: 1; min-width: 0; }
+.topbar-lesson-info .tl-tag { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 2px; }
+.topbar-lesson-info .tl-title { font-size: 15px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-print { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.85); cursor: pointer; font-family: inherit; flex-shrink: 0; transition: background 0.15s; }
+.topbar-print:hover { background: rgba(255,255,255,0.18); }
+
+/* ===== 主内容 ===== */
+.lesson-main { max-width: 900px; margin: 0 auto; padding: 36px 24px 20px; }
+.book-container { background: #fff; padding: 50px 60px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+
+/* ===== 底部导航 ===== */
+.lesson-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 28px 0 20px; flex-wrap: wrap; }
+.nav-btn { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #2c3e50; font-size: 14px; transition: all 0.15s; flex: 1; min-width: 160px; max-width: 280px; }
+.nav-btn:hover { border-color: #2980b9; box-shadow: 0 4px 12px rgba(41,128,185,0.15); transform: translateY(-1px); }
+.nav-btn.prev { justify-content: flex-start; }
+.nav-btn.next { justify-content: flex-end; margin-left: auto; }
+.nav-btn .nb-arrow { font-size: 18px; color: #aaa; flex-shrink: 0; }
+.nav-btn:hover .nb-arrow { color: #2980b9; }
+.nav-btn .nb-text { min-width: 0; }
+.nav-btn .nb-label { font-size: 11px; color: #aaa; display: block; }
+.nav-btn .nb-title { font-size: 14px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-btn-home { display: flex; align-items: center; gap: 6px; background: #2c3e50; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #f1c40f; font-size: 14px; font-weight: bold; flex-shrink: 0; transition: opacity 0.15s; }
+.nav-btn-home:hover { opacity: 0.85; }
+.lesson-footer { text-align: center; padding: 20px 24px 36px; font-size: 12px; color: #aaa; line-height: 1.8; }
+
+/* ===== 封面 ===== */
+.chapter-cover { background: linear-gradient(135deg, #1a252f 0%, #2c3e50 55%, #8e44ad 100%); border-radius: 15px; padding: 40px 40px 35px; margin-bottom: 40px; color: #fff; position: relative; overflow: hidden; }
+.chapter-cover::before { content: "13"; position: absolute; right: 30px; top: 10px; font-size: 110px; font-weight: 900; color: rgba(255,255,255,0.06); line-height: 1; letter-spacing: -5px; }
+.lesson-tag { background: #f1c40f; color: #2c3e50; font-weight: 900; font-size: 13px; padding: 5px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em; }
+.chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.chapter-cover h1 span { color: #f1c40f; }
+.chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.meta-row { display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px; }
+
+/* ===== 回顾 / 目标 ===== */
+.review-bar { background: #f0f7ff; border: 1.5px solid #b3d4ff; border-left: 5px solid #2980b9; border-radius: 8px; padding: 14px 18px; margin-bottom: 30px; font-size: 14px; color: #1a5276; line-height: 1.75; }
+.review-bar strong { color: #1a252f; }
+.goal-box { background: #fffde7; border: 2px solid #ffe082; border-radius: 12px; padding: 20px 25px; margin-bottom: 35px; display: flex; gap: 15px; align-items: flex-start; }
+.goal-icon { font-size: 28px; flex-shrink: 0; line-height: 1.2; }
+.goal-box h3 { font-size: 16px; color: #e65100; margin-bottom: 6px; font-weight: 900; }
+.goal-box p  { font-size: 15px; color: #5d4037; line-height: 1.7; }
+
+/* ===== 通用卡片 ===== */
+.module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+.badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+.card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }   .badge-blue  { background: #2980b9; color: #fff; }
+.card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }   .badge-green { background: #27ae60; color: #fff; }
+.card-red    { background: #fff5f5; border: 2px solid #ffcccc; }   .badge-red   { background: #e74c3c; color: #fff; }
+.card-yellow { background: #fffde7; border: 2px solid #ffe082; }   .badge-yellow{ background: #f1c40f; color: #333; }
+.card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }   .badge-purple{ background: #8e44ad; color: #fff; }
+.card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }   .badge-orange{ background: #e67e22; color: #fff; }
+.card-teal   { background: #f0fffc; border: 2px solid #b2dfdb; }   .badge-teal  { background: #16a085; color: #fff; }
+
+/* ===== 高亮 ===== */
+.hl-red { color: #e74c3c; font-weight: bold; } .hl-blue { color: #2980b9; font-weight: bold; } .hl-green { color: #27ae60; font-weight: bold; } .hl-orange { color: #e67e22; font-weight: bold; } .hl-purple { color: #8e44ad; font-weight: bold; }
+.mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+.mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+.mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+.mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+.mark-purple { background: #e8daef; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #6c3483; }
+
+/* ===== 标签 ===== */
+.tag-hot  { background: #ff4757; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+.tag-easy { background: #2ed573; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+
+/* ===== 脑回路 ===== */
+.brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+.brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+/* ===== 对错 ===== */
+.wrong-text { color: #c0392b; font-size: 17px; font-weight: bold; text-decoration: line-through; }
+.right-text { color: #27ae60; font-size: 17px; font-weight: bold; }
+
+/* ===== 句子解剖 ===== */
+.sentence-dissect { display: flex; align-items: flex-end; gap: 6px; flex-wrap: wrap; margin: 14px 0; background: #f8f9fa; border-radius: 10px; padding: 14px 16px 18px; }
+.word-block { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.word-text { padding: 6px 12px; border-radius: 8px; font-size: 16px; font-weight: 900; white-space: nowrap; }
+.word-label { font-size: 11px; font-weight: 500; color: #777; }
+.wt-s  { background: #fff3e0; color: #e65100;  border: 2px solid #ffb74d; }
+.wt-v  { background: #f3e5f5; color: #6a1b9a;  border: 2px solid #ce93d8; }   /* 完成时态用紫色 */
+.wt-o  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-t  { background: #e3f2fd; color: #1565c0;  border: 2px solid #90caf9; }
+.wt-be { background: #e3f2fd; color: #1565c0; border: 2px solid #90caf9; }
+.wt-x  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+
+/* ===== 结构公式块 ===== */
+.formula-block { background: #fff; border: 2px solid #ce93d8; border-radius: 10px; overflow: hidden; margin: 16px 0; }
+.formula-row { display: flex; align-items: stretch; border-bottom: 1px solid #f3e5f5; }
+.formula-row:last-child { border-bottom: none; }
+.formula-label { background: #8e44ad; color: #fff; font-weight: 900; font-size: 13px; padding: 12px 14px; min-width: 72px; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; }
+.formula-content { padding: 12px 18px; flex: 1; font-size: 15px; line-height: 1.75; color: #333; }
+.formula-content strong { color: #6a1b9a; }
+.formula-eg { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* ===== 辨析表 ===== */
+.magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+.magic-table th { background: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+.magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+.magic-table tr:last-child td { border-bottom: none; }
+.magic-table tr:hover td { background: #f8f9fa; }
+
+/* ===== 警告 / 提示 ===== */
+.warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+.warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 15px; margin-bottom: 8px; }
+.warn-box p { font-size: 14px; color: #444; line-height: 1.75; margin: 5px 0; }
+.tip-box { background: #faf5ff; border: 2px solid #d8b4fe; border-left: 5px solid #8e44ad; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #6c3483; line-height: 1.75; }
+
+/* ===== 练习题 ===== */
+.quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+.quiz-q { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; line-height: 1.65; }
+.quiz-opts { font-size: 15px; color: #555; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+.reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+.answer-box { display: none; margin-top: 14px; }
+
+/* ===== 分割线 ===== */
+.section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+.section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+/* ===== 小抄 ===== */
+.cheatsheet { margin: 50px 0 30px; background: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+.cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+.cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+.cs-block.red    { border-left-color: #e74c3c; }
+.cs-block.green  { border-left-color: #2ecc71; }
+.cs-block.yellow { border-left-color: #f1c40f; }
+.cs-block.purple { border-left-color: #9b59b6; }
+.cs-block strong { font-size: 16px; display: block; margin-bottom: 10px; }
+.cs-block p, .cs-block li { font-size: 14px; line-height: 1.85; color: #ecf0f1; margin: 4px 0; }
+.cs-block ul { padding-left: 18px; }
+.cs-block table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.cs-block table th { background: rgba(255,255,255,0.14); color: #f1c40f; padding: 7px 12px; text-align: left; }
+.cs-block table td { padding: 7px 12px; border-bottom: 1px solid rgba(255,255,255,0.07); color: #ecf0f1; vertical-align: top; line-height: 1.6; }
+.cs-block table tr:last-child td { border-bottom: none; }
+
+
+/* ===== 新版考前小抄 V2：浅色、紧凑、打印友好；不改正文全局字体 ===== */
+.cheatsheet-v2 {
+    margin: 46px 0 30px;
+    background: #fffdf5;
+    border: 2px solid #f1c40f;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    color: #2c3e50;
+}
+.cheatsheet-v2-header {
+    background: linear-gradient(135deg, #fff3c4, #fff8df);
+    border-bottom: 2px solid #f1c40f;
+    padding: 16px 22px 14px;
+}
+.cheatsheet-v2-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+.cheatsheet-v2-subtitle {
+    font-size: 13px;
+    color: #7d6608;
+    line-height: 1.6;
+}
+.cheatsheet-v2-body { padding: 18px 20px 20px; }
+.cheat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cheat-card {
+    background: #fff;
+    border: 1.5px solid #e8e8e8;
+    border-left: 5px solid #8e44ad;
+    border-radius: 10px;
+    padding: 13px 14px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+.cheat-card.core { border-left-color: #e74c3c; }
+.cheat-card.signal { border-left-color: #2980b9; }
+.cheat-card.method { border-left-color: #27ae60; }
+.cheat-card.trap { border-left-color: #e67e22; }
+.cheat-card h4 {
+    font-size: 15px;
+    font-weight: 900;
+    color: #1a252f;
+    margin-bottom: 7px;
+    line-height: 1.45;
+}
+.cheat-card p,
+.cheat-card li {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.65;
+    margin: 4px 0;
+}
+.cheat-card ul { padding-left: 18px; margin: 6px 0 0; }
+.cheat-rule {
+    display: inline-block;
+    background: #fff3c4;
+    color: #7d6608;
+    font-weight: 900;
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+.cheat-good { color: #1e8449; font-weight: 900; }
+.cheat-bad { color: #c0392b; font-weight: 900; text-decoration: line-through; }
+.cheatsheet-v2-footer {
+    margin-top: 14px;
+    background: #f8f9fa;
+    border: 1.5px dashed #d0d0d0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+}
+.cheatsheet-v2-footer strong { color:#c0392b; }
+@media (max-width: 680px) {
+    .cheatsheet-v2 { margin: 34px 0 24px; border-radius: 12px; }
+    .cheatsheet-v2-header { padding: 14px 14px 12px; }
+    .cheatsheet-v2-title { font-size: 18px; }
+    .cheatsheet-v2-body { padding: 14px 12px 16px; }
+    .cheat-grid { grid-template-columns: 1fr; gap: 10px; }
+    .cheat-card { padding: 12px 12px; }
+}
+@media print {
+    .cheatsheet-v2 {
+        background:#fff !important;
+        border:1.5px solid #333 !important;
+        box-shadow:none !important;
+        border-radius:8px !important;
+        margin:18px 0 !important;
+        page-break-inside:auto !important;
+        break-inside:auto !important;
+    }
+    .cheatsheet-v2-header {
+        background:#fff !important;
+        border-bottom:1.5px solid #333 !important;
+        padding:10px 12px !important;
+    }
+    .cheatsheet-v2-title { color:#000 !important; font-size:17px !important; }
+    .cheatsheet-v2-subtitle { color:#333 !important; font-size:12px !important; }
+    .cheatsheet-v2-body { padding:12px !important; }
+    .cheat-grid { grid-template-columns:1fr 1fr !important; gap:8px !important; }
+    .cheat-card {
+        background:#fff !important;
+        border:1px solid #555 !important;
+        border-left:4px solid #000 !important;
+        box-shadow:none !important;
+        padding:8px 10px !important;
+    }
+    .cheat-card h4 { color:#000 !important; font-size:13px !important; margin-bottom:4px !important; }
+    .cheat-card p,
+    .cheat-card li { color:#111 !important; font-size:12px !important; line-height:1.45 !important; margin:2px 0 !important; }
+    .cheat-rule { background:#fff !important; border:1px solid #999 !important; color:#000 !important; padding:1px 4px !important; }
+    .cheatsheet-v2-footer { background:#fff !important; border:1px dashed #777 !important; color:#000 !important; padding:7px 9px !important; font-size:12px !important; line-height:1.45 !important; }
+}
+
+/* ===== 转化钩子 ===== */
+.cta-box { margin-top: 40px; padding: 32px; background: #fff3e0; border: 2px dashed #e67e22; border-radius: 14px; text-align: center; box-shadow: 0 5px 15px rgba(230,126,34,0.12); }
+.cta-box h3 { color: #d35400; font-size: 22px; margin-bottom: 14px; font-weight: 900; }
+.cta-box p  { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 20px; text-align: left; }
+.cta-btn { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; display: inline-block; padding: 14px 35px; border-radius: 30px; font-weight: bold; font-size: 17px; text-decoration: none; box-shadow: 0 4px 12px rgba(230,126,34,0.4); transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); }
+
+/* ===== 打印 ===== */
+@media print {
+    .lesson-topbar, .lesson-nav, .lesson-footer { display: none !important; }
+    body { background: #fff; }
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container { padding: 20px 24px; border-radius: 0; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .module-card, .quiz-block, .warn-box, .cheatsheet, .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+    .cheatsheet { page-break-before: always; break-before: page; }
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+}
+</style>
+<link rel="stylesheet" href="/assets/grammar-mobile-print-fix.css?v=20260705">
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="lesson-topbar">
+    <div class="topbar-inner">
+        <a class="topbar-back" href="/">← 学习中心</a>
+        <a class="topbar-back" href="index.html">← 目录</a>
+        <div class="topbar-sep">/</div>
+        <div class="topbar-lesson-info">
+            <div class="tl-tag">第13讲 · 进阶提分</div>
+            <div class="tl-title">现在完成时——过去对现在抛出的钩子</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== 主内容区 ===== -->
+<div class="lesson-main">
+<div class="book-container">
+
+    <!-- 封面 -->
+    <div class="chapter-cover">
+        <div class="lesson-tag"> 第13讲 · 进阶提分</div>
+        <h1>带着钩子的<br><span>现在时</span></h1>
+        <p class="subtitle">现在完成时——大白话破解 have done 核心奥秘，快速判断完成时所有陷阱题</p>
+        <div class="meta-row">
+            <div class="meta-chip">⏱ 预计学习 40 分钟</div>
+            <div class="meta-chip">🎯 中考分水岭必考 8-12 分</div>
+            <div class="meta-chip">⭐ 难度：中等偏难</div>
+        </div>
+    </div>
+
+    <!-- 上一讲回顾 -->
+    <div class="review-bar">
+        📌 <strong>恭喜你！正式进入：进阶提分系列！</strong><br>
+        上一讲我们学完了——<strong>句型变换</strong>（肯定、否定、疑问一键切换，There be 句型的就近沙发原则）。及格保底知识你已经牢牢掌握了。<br><br>
+        现在，我们将挑战初中英语语法里公认最大的“拦路虎”——<strong>现在完成时</strong>。别怕，这一讲依然用最接地气的大白话和比喻，带你一步一步拆懂它！
+    </div>
+
+    <!-- 目标 -->
+    <div class="goal-box">
+        <div class="goal-icon">🎯</div>
+        <div>
+            <h3>学完这讲，你能做到：</h3>
+            <p>① 理解现在完成时的真正意图：虽然事情在过去发生，但它对现在有巨大的“连带责任”<br>
+            ② 彻底搞懂 `already` 与 `yet`、`ever` 与 `never` 在句子里的真实生存环境<br>
+            ③ 一眼看穿 `have been to` 与 `have gone to` 的终极区别，杜绝考场丢分<br>
+            ④ 破解瞬间动词与 `since/for` 连用的“婚姻维持理论”，轻松快速判断这一中考必考考点</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块一：现在完成时是什么 ===== -->
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">⚓ 模块一：完成时的钩子理论——它根本不是过去时</div>
+
+        <p>很多同学一看到“现在完成时”里写着“已经完成了”，就理所当然地以为它是过去时。<strong>这个理解不准确！</strong></p>
+        <p style="margin-top:10px;">如果它只是过去时，英语里已经有“一般过去时”了，为什么还要多此一举？</p>
+
+        <div style="background:#fff;border-radius:12px;border:2px solid #d8b4fe;padding:22px;margin:20px 0;">
+            <p style="font-size:18px;font-weight:900;color:#6c3483;margin-bottom:12px;text-align:center;">⚓ 带着钩子的现在时 ⚓</p>
+            <p style="font-size:15px;line-height:1.8;color:#4a148c;">一般过去时常叙述已经结束的过去事件；现在完成时从现在回看过去，强调当前结果、经历或持续情况。过去事件也可能对现在有影响，不能把这种影响当成唯一判断标准。</p>
+        </div>
+
+        <p style="margin-top:12px;">我们来看一组大白话对比，感受这绝妙的区别：</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;">
+            <div style="background:#f5f5f5;border-radius:10px;padding:18px;border:1.5px solid #ddd;">
+                <p style="font-weight:900;color:#555;font-size:15px;margin-bottom:8px;">1. 一般过去时（历史记录）</p>
+                <p style="font-size:16px;font-weight:bold;color:#2c3e50;">I ate lunch at 12:00.</p>
+                <p style="font-size:13px;color:#777;margin-top:6px;line-height:1.6;">
+                    • <strong>翻译：</strong>我十二点吃了午饭。<br>
+                    • <strong>潜台词：</strong>这只是个单纯的历史记录。至于我现在肚子饱不饱？我没说，说不定我现在已经已经饿了。
+                </p>
+            </div>
+            <div style="background:#faf5ff;border-radius:10px;padding:18px;border:1.5px solid #ce93d8;">
+                <p style="font-weight:900;color:#6a1b9a;font-size:15px;margin-bottom:8px;">2. 现在完成时（钩子连着现在）</p>
+                <p style="font-size:16px;font-weight:bold;color:#6a1b9a;">I have eaten lunch.</p>
+                <p style="font-size:13px;color:#888;margin-top:6px;line-height:1.6;">
+                    • <strong>翻译：</strong>我已经吃过午饭了。<br>
+                    • <strong>潜台词：</strong>这个动作在过去完成，但它的结果钩连着现在：<strong>我现在肚子非常饱，所以你不要喊我去吃麦当劳了。</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            💡 <strong>考试快速判断秘诀：</strong>明确结束的过去时间直接限定事件时，通常不用现在完成时；具体选择一般过去、过去进行或过去完成，仍要看时间关系。<strong></strong><strong></strong>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块二：现在完成时的三套公式 ===== -->
+    <div class="section-divider"><hr><span>模块二</span><hr></div>
+
+    <div class="module-card card-teal">
+        <div class="badge badge-teal">📐 模块二：现在完成时的三套基本公式与“第三变装”</div>
+
+        <p>现在完成时的动词变装形式是：<strong>have / has + 动词过去分词（done）</strong>。</p>
+        <p style="margin-top:8px;">这里的“过去分词”不是过去式，而是动词的<strong>第三种特殊变装</strong>（比如 eat 的过去式是 ate，过去分词是 eaten）。</p>
+
+        <!-- 公式框 -->
+        <div class="formula-block" style="margin-top:18px;">
+            <div class="formula-row">
+                <div class="formula-label">肯定句</div>
+                <div class="formula-content">
+                    主语 + <strong>have / has</strong> + 动词<strong>过去分词（done）</strong> + 其他<br>
+                    <small style="color:#888;">主语是三单（he/she/it/单数名词）时用 has，其余全部用 have。</small>
+                    <div class="formula-eg">✅ I <strong>have read</strong> this book. / He <strong>has finished</strong> his work.</div>
+                </div>
+            </div>
+            <div class="formula-row">
+                <div class="formula-label">否定句</div>
+                <div class="formula-content">
+                    主语 + <strong>haven't / hasn't</strong> + 动词<strong>过去分词（done）</strong> + 其他<br>
+                    <small style="color:#888;">have/has 本身就是大老板，自己带 not 变身，动词仍用过去分词！</small>
+                    <div class="formula-eg">✅ I <strong>haven't read</strong> this book. / He <strong>hasn't finished</strong> his work.</div>
+                </div>
+            </div>
+            <div class="formula-row">
+                <div class="formula-label">疑问句</div>
+                <div class="formula-content">
+                    <strong>Have / Has</strong> + 主语 + 动词<strong>过去分词（done）</strong> + 其他 ？<br>
+                    肯定回答：Yes, 主语 + have/has.&nbsp;&nbsp;&nbsp;&nbsp;否定回答：No, 主语 + haven't/hasn't.
+                    <div class="formula-eg">✅ <strong>Have</strong> you read this book? — Yes, I <strong>have</strong>. / No, I <strong>haven't</strong>.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 句子可视化解剖 -->
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin-bottom:10px;">🔬 过去分词（done）长相分类解剖：</p>
+
+        <div class="sentence-dissect">
+            <div class="word-block"><span class="word-text wt-s">They</span><span class="word-label">主语</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-v" style="background:#e8f5e9;color:#2e7d32;border-color:#a5d6a7;">have lived</span><span class="word-label">have + 规则过去分词（加ed）</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-o">in Beijing</span><span class="word-label">地点状语</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-t">since 2018</span><span class="word-label">⏰ since + 时间点</span></div>
+        </div>
+
+        <div class="sentence-dissect" style="margin-top:12px;">
+            <div class="word-block"><span class="word-text wt-s">He</span><span class="word-label">主语（三单）</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-v">has written</span><span class="word-label">has + 不规则过去分词（write-wrote-written）</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-o">two letters</span><span class="word-label">宾语</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-t" style="background:#ffe0b2;color:#e65100;border-color:#ffb74d;">already</span><span class="word-label">⏰ 已经（肯定句中）</span></div>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块三：四大时间状语间谍 ===== -->
+    <div class="section-divider"><hr><span>模块三</span><hr></div>
+
+    <div class="module-card card-blue">
+        <div class="badge badge-blue">🕵️ 模块三：四大时间完成时状语——一秒判定时态</div>
+
+        <p>already、yet、just、ever、never 等常见于现在完成时，但也可用于其他时态；它们不是专属信号，要看时间参照和上下文。</p>
+
+        <!-- 辨析表 -->
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">跟班间谍词</th>
+                    <th style="width: 35%;">大白话翻译与性格</th>
+                    <th style="width: 40%;">考场例句</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong class="hl-blue">already</strong> / <strong class="hl-red">yet</strong></td>
+                    <td>already 通常表示“已经”，多见于肯定句，也可用于表示惊讶的疑问句。yet 在否定句中常表示“还（没有）”，在疑问句中常表示“已经……了吗”，通常置于句末。</td>
+                    <td>I have <strong class="hl-blue">already</strong> eaten.<br>
+                    I haven't eaten <strong class="hl-red">yet</strong>.<br>
+                    Have you eaten <strong class="hl-red">yet</strong>?</td>
+                </tr>
+                <tr>
+                    <td><strong class="hl-purple">ever</strong> / <strong class="hl-orange">never</strong></td>
+                    <td>• <strong>ever</strong> 意为“曾经”，多在<strong>疑问句</strong>中。<br>
+                    • <strong>never</strong> 意为“从未”，本身就表示否定。</td>
+                    <td>Have you <strong class="hl-purple">ever</strong> seen a tiger?<br>
+                    I have <strong class="hl-orange">never</strong> seen a tiger.</td>
+                </tr>
+                <tr>
+                    <td><strong class="hl-green">for + 时间段</strong></td>
+                    <td>表示动作持续了“多久”。</td>
+                    <td>I have learned English <strong class="hl-green">for three years</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong class="hl-teal">since + 时间点</strong></td>
+                    <td>表示动作从“过去哪个时刻”一直持续到现在。</td>
+                    <td>I have learned English <strong class="hl-teal">since 2021</strong>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- since vs for 转化公式 -->
+        <div class="brain-box" style="border-color:#3498db; background:#f4f9fd;">
+            <p style="font-weight:900; color:#2980b9; font-size:16px;">🔄 since 和 for 的一键换算公式：</p>
+            <p style="font-size:14px; line-height:1.75; color:#555;">since + 起点；for + 时长。两者换算必须先确定参照日期，since 2020 不永远等于 for six years。since 从句说明过去开始的事件时通常用一般过去时，并非所有 since 从句都必须如此。</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块四：have been to vs have gone to ===== -->
+    <div class="section-divider"><hr><span>模块四</span><hr></div>
+
+    <div class="module-card card-orange">
+        <div class="badge badge-orange">✈️ 模块四：中考必考神级辨析——去过还是去了？</div>
+
+        <p>这是中考超级大热考点，每年必出选择题。其实用大白话解释，逻辑非常简单粗暴：</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;">
+            <div style="background:#fff;border-radius:12px;border:2px solid #52be80;padding:20px;color:#27ae60;">
+                <div style="font-size:13px;font-weight:bold;margin-bottom:8px;color:#1e8449;">✈️ 第一种：have been to</div>
+                <p style="font-size:18px;font-weight:900;margin-bottom:10px;">去过（已经回来）</p>
+                <p style="font-size:14px;color:#555;line-height:1.7;">
+                    • <strong>逻辑：</strong>“去过某地，<strong>现在人已经回来了</strong>”。<br>
+                    • <strong>画面：</strong>拍拍肚子，讲讲自己的经历：“我以前去过北京哟。”（此时此刻人就在你面前聊天）。<br>
+                    • <strong>重点：</strong>可以配合 `twice`（两次）, `many times` 等次数连用。
+                </p>
+            </div>
+            <div style="background:#fff;border-radius:12px;border:2px solid #e74c3c;padding:20px;color:#c0392b;">
+                <div style="font-size:13px;font-weight:bold;margin-bottom:8px;color:#962d22;">✈️ 第二种：have gone to</div>
+                <p style="font-size:18px;font-weight:900;margin-bottom:10px;">去了（还没回来）</p>
+                <p style="font-size:14px;color:#555;line-height:1.7;">have/has gone to 表示去了某地、尚未回来；常见于第三人称，但并不禁止第一或第二人称。</p>
+            </div>
+        </div>
+
+        <div class="brain-box" style="border-color:#e67e22; background:#fffbf7;">
+            <p style="font-weight:900; color:#d35400; font-size:16px;">🧠 用逻辑来快速判断：为什么 `You have gone to Beijing` 错得离谱？</p>
+            <p style="font-size:14px; line-height:1.75; color:#555;">留言或远程交流中可以说 I have gone to the shop，例如离家时留下这句话。不能只看 I / you 就排除 have gone to，要判断说话地点、媒介和语境。</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 模块五：瞬间动词的婚姻维持理论 ===== -->
+    <div class="section-divider"><hr><span>模块五</span><hr></div>
+
+    <div class="module-card card-red">
+        <div class="badge badge-red">💍 模块五：高频易错点——瞬间动词与 since/for 的婚姻维持理论</div>
+
+        <p>很多同学在考卷上看到这道题，直接就选了 A：</p>
+        <p class="wrong-text">❌ He has joined the army for three years.</p>
+        <p style="margin-top:10px;"><strong>错在哪里？</strong>这也是中考丢分最惨烈的地方。我们来学一套<strong>“婚姻维持理论”</strong>：</p>
+
+        <div style="background:#fff;border-radius:12px;border:2px solid #ffcccc;padding:22px 24px;margin:20px 0;">
+            <p style="font-size:18px;font-weight:900;color:#c0392b;margin-bottom:8px;text-align:center;">💍 领证 vs 婚姻 💍</p>
+            <p style="font-size:15px;line-height:1.8;color:#5c1d16;">表示一次瞬间动作后的状态持续了多久，通常要改用延续状态：They have been married for ten years。否定或重复事件可以用瞬间动词配 for/since，例如 I haven't seen him for years、I have visited twice since 2020。</p>
+        </div>
+
+        <!-- 动词变装表 -->
+        <p style="font-weight:900;font-size:16px;color:#1a252f;margin-bottom:10px;">📋 中考必考瞬间动词变装对照表（背下来，直接送分）：</p>
+        <table class="magic-table">
+            <thead>
+                <tr>
+                    <th>瞬间动词（不能连 since/for）</th>
+                    <th>延续性变装（能连 since/for）</th>
+                    <th>正确示范 ✅</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>buy</strong>（买：买的那一秒完成）</td>
+                    <td><strong class="hl-green">have</strong>（拥有）</td>
+                    <td>I have <strong class="hl-green">had</strong> this phone for two years.</td>
+                </tr>
+                <tr>
+                    <td><strong>join</strong>（加入：入会那一秒）</td>
+                    <td><strong class="hl-green">be in / be a member of</strong></td>
+                    <td>He has <strong class="hl-green">been in</strong> the army for three years.</td>
+                </tr>
+                <tr>
+                    <td><strong>borrow</strong>（借：拿走的那一秒）</td>
+                    <td><strong class="hl-green">keep</strong>（保存）</td>
+                    <td>I have <strong class="hl-green">kept</strong> the book for two weeks.</td>
+                </tr>
+                <tr>
+                    <td><strong>die</strong>（去世：死的那一秒）</td>
+                    <td><strong class="hl-green">be dead</strong>（处于死亡状态）</td>
+                    <td>His dog has <strong class="hl-green">been dead</strong> since last year.</td>
+                </tr>
+                <tr>
+                    <td><strong>leave</strong>（离开：走的那一秒）</td>
+                    <td><strong class="hl-green">be away</strong>（离开状态）</td>
+                    <td>He has <strong class="hl-green">been away</strong> for three days.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- ===== 模块六：实战练习 ===== -->
+    <div class="section-divider"><hr><span>模块六</span><hr></div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow">🎯 模块六：实战练习——先硬啃，再解密</div>
+
+        <p>三道最纯正的中考真题改编，看看你能不能避开所有的误区。</p>
+
+        <!-- 题1 -->
+        <div class="quiz-block" style="margin-top:20px;">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 1 · yet 和 already 的用法</p>
+            <div class="quiz-q">
+                My brother ______ his homework ______. He can play computer games now.<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（我弟弟已经做完作业了。他现在可以玩电脑游戏了。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. has finished; already</span>
+                <span>B. has finished; yet</span>
+                <span>C. have finished; already</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson13-q1">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson13-q1">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：看主语。主语是 <code>My brother</code>，是单数三单，必须配 <strong>has</strong>！排除 C。</p>
+                    <p>第二步：判断肯定还是否定。这是一个<strong>肯定句</strong>（他已经完成了），而且句子要表达“已经”。</p>
+                    <p>第三步：本句肯定陈述表达“已经”，用 already；yet 通常用于否定句或疑问句。</p>
+                    <p><span class="right-text">🎉 正确答案是：A</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题2 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 2 · 去过还是去了？</p>
+            <div class="quiz-q">
+                — Where is Mr. Green? I can't find him.<br>
+                — Oh, he ______ Beijing. He will be back next week.<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（——格林先生在哪里？我找不到他。——噢，他去了北京。他下周才回来。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. has been to</span>
+                <span>| B. has gone to</span>
+                <span>| C. has went to</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson13-q2">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson13-q2">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：读懂情境。上句说“I can't find him”（我<strong>找不到他</strong>），下句说“He will be back next week”（他下周才回来）。</p>
+                    <p>第二步：说明格林先生<strong>人现在不在这儿，还没回来</strong>！</p>
+                    <p>第三步：没有回来 ＝ 去了还没回 ＝ <strong>has gone to</strong>。如果选 has been to，说明他去过但现在已经在这儿了，就和“找不到他”冲突了。</p>
+                    <p><span class="right-text">🎉 正确答案是：B</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 题3 -->
+        <div class="quiz-block">
+            <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 3 · 延续性动词大误区（中考高分分水岭）</p>
+            <div class="quiz-q">
+                Tom ______ the library book for two weeks. He must return it tomorrow.<br>
+                <span style="font-size:14px;font-weight:400;color:#666;">（Tom 借这本图书馆的书已经两周了。他明天必须归还。）</span>
+            </div>
+            <div class="quiz-opts">
+                <span>A. has borrowed</span>
+                <span>| B. borrowed</span>
+                <span>| C. has kept</span>
+            </div>
+            <button class="reveal-btn" data-target="lesson13-q3">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson13-q3">
+                <div class="brain-box">
+                    <p><strong>🧠 大白话脑回路：</strong></p>
+                    <p>第一步：扫描句子，看到时间信号词 <code>for two weeks</code>（持续了两周段落）。</p>
+                    <p>第二步：本句强调借阅后的持有状态持续两周，需用能表达该状态的 keep；瞬间动词在否定或重复事件结构中也可与 for/since 连用。</p>
+                    <p>本题表示借书后的持有状态已经持续两周，用 has kept。borrowed for two weeks 也可表示当时借用期限为两周，但与本题要求表达的持续至今不同。</p>
+                    <p>第四步：现在完成时结构：has + 过去分词 keep 的过去分词是 <code>kept</code>。所以选择 <strong>has kept</strong>。</p>
+                    <p><span class="right-text">🎉 正确答案是：C</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ===== 加餐一：现在完成时判断流程 ===== -->
+    <div class="section-divider"><hr><span>加餐一</span><hr></div>
+
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🧭 加餐一：现在完成时题的 5 秒判断流程</div>
+
+        <p>现在完成时的难点，不是公式本身，而是<strong>什么时候该用它、什么时候不能用它</strong>。做题时不要先凭感觉选 have done，先按下面四步走。</p>
+
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th style="width:18%;">步骤</th>
+                    <th style="width:42%;">你要检查什么</th>
+                    <th style="width:40%;">判断结果</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>① 找时间词</strong></td>
+                    <td>有没有 already / yet / ever / never / for / since / so far / recently 这类完成时信号？</td>
+                    <td>有这些词，优先考虑 <strong>have / has + 过去分词</strong>。</td>
+                </tr>
+                <tr>
+                    <td><strong>② 查过去时间点</strong></td>
+                    <td>有没有 yesterday / last night / three days ago / in 2020 这种明确过去时间？</td>
+                    <td>有明确过去时间点，通常用<strong>一般过去时</strong>，不要用现在完成时。</td>
+                </tr>
+                <tr>
+                    <td><strong>③ 看主语</strong></td>
+                    <td>主语是 he / she / it / 单数名词，还是 I / you / we / they / 复数？</td>
+                    <td>三单用 <strong>has</strong>，其他用 <strong>have</strong>。</td>
+                </tr>
+                <tr>
+                    <td><strong>④ 查动词</strong></td>
+                    <td>后面的动词是不是过去分词？规则词多为 -ed，不规则词要单独记。</td>
+                    <td>不能写 have went / has ate，要写 <strong>have gone / has eaten</strong>。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="brain-box">
+            <p>🧠 <strong>一句话流程：</strong>先看时间线索，再排除具体过去时间，最后检查 have/has 和过去分词。</p>
+            <p>例：She ______ already ______ (finish) her homework. → already 是完成时信号；She 是三单 → <strong>has finished</strong>。</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 加餐二：一般过去时 vs 现在完成时 ===== -->
+    <div class="section-divider"><hr><span>加餐二</span><hr></div>
+
+    <div class="module-card card-blue">
+        <div class="badge badge-blue">⚖️ 加餐二：一般过去时 vs 现在完成时——一个看过去，一个看现在结果</div>
+
+        <p>很多题不是单纯考公式，而是考你能不能分清：句子到底是在<strong>记录过去</strong>，还是在强调<strong>现在的结果</strong>。</p>
+
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th style="width:32%;">句子</th>
+                    <th style="width:28%;">用什么时态</th>
+                    <th style="width:40%;">为什么</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>I <strong>lost</strong> my key yesterday.</td>
+                    <td>一般过去时</td>
+                    <td>yesterday 把动作锁定在过去，只是在说昨天发生了什么。</td>
+                </tr>
+                <tr>
+                    <td>I <strong>have lost</strong> my key.</td>
+                    <td>现在完成时</td>
+                    <td>重点不是“什么时候丢”，而是现在的结果：钥匙现在还找不到。</td>
+                </tr>
+                <tr>
+                    <td>He <strong>went</strong> to Shanghai last week.</td>
+                    <td>一般过去时</td>
+                    <td>last week 是明确过去时间，动作属于过去记录。</td>
+                </tr>
+                <tr>
+                    <td>He <strong>has gone to</strong> Shanghai.</td>
+                    <td>现在完成时</td>
+                    <td>重点是现在结果：他现在不在这里，还没回来。</td>
+                </tr>
+                <tr>
+                    <td>I <strong>bought</strong> this bike two years ago.</td>
+                    <td>一般过去时</td>
+                    <td>two years ago 是过去时间点，讲“买”这个动作发生在过去。</td>
+                </tr>
+                <tr>
+                    <td>I <strong>have had</strong> this bike for two years.</td>
+                    <td>现在完成时</td>
+                    <td>for two years 表示持续到现在，所以用延续性动词 have。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            💡 <strong>做题提醒：</strong>看到“过去具体时间点”，优先一般过去时；看到“到现在为止的结果或持续”，优先现在完成时。
+        </div>
+    </div>
+
+
+    <!-- ===== 加餐三：since / for 与延续性动词专项 ===== -->
+    <div class="section-divider"><hr><span>加餐三</span><hr></div>
+
+    <div class="module-card card-red">
+        <div class="badge badge-red">🔎 加餐三：since / for 专项——不是所有动词都能“持续”</div>
+
+        <p>since / for 的本质是问：这个动作或状态<strong>持续了多久</strong>。所以它们后面最容易考“瞬间动作能不能延续”。</p>
+
+        <table class="magic-table" style="margin-top:18px;">
+            <thead>
+                <tr>
+                    <th>原本的瞬间动作</th>
+                    <th>为什么不能直接连 for / since</th>
+                    <th>要换成的延续表达</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>buy 买</td>
+                    <td>“买”是付款拿到东西的一瞬间。</td>
+                    <td><strong>have / has had</strong> 拥有</td>
+                </tr>
+                <tr>
+                    <td>borrow 借入</td>
+                    <td>“借到手”是一瞬间，之后是“保存”。</td>
+                    <td><strong>have / has kept</strong> 保存</td>
+                </tr>
+                <tr>
+                    <td>join 加入</td>
+                    <td>“加入”是一瞬间，之后是“处在组织中”。</td>
+                    <td><strong>have / has been in</strong> / <strong>been a member of</strong></td>
+                </tr>
+                <tr>
+                    <td>leave 离开</td>
+                    <td>“离开”是一瞬间，之后是“不在这里”。</td>
+                    <td><strong>have / has been away</strong></td>
+                </tr>
+                <tr>
+                    <td>die 去世</td>
+                    <td>“去世”是一瞬间，之后是“处于去世状态”。</td>
+                    <td><strong>have / has been dead</strong></td>
+                </tr>
+                <tr>
+                    <td>begin / start 开始</td>
+                    <td>“开始”是一瞬间，之后是“正在进行”。</td>
+                    <td><strong>have / has been on</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warn-box">
+            <div class="warn-title">⚠️ 高频判断句</div>
+            <p>❌ The film has begun for ten minutes.</p>
+            <p>✅ The film has <strong>been on</strong> for ten minutes.</p>
+            <p>肯定句表示一次动作后的状态持续多久时，检查是否需要延续状态；否定句、重复事件等另作判断。</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 第13讲通关检测 ===== -->
+    <div class="section-divider"><hr><span>通关检测</span><hr></div>
+
+    <div class="module-card card-yellow">
+        <div class="badge badge-yellow">✅ 第13讲通关检测：现在完成时真正会判断了吗？</div>
+
+        <p>下面 5 题覆盖本讲最核心的完成时判断点。先做，再点开答案。</p>
+
+        <div class="quiz-block">
+            <div class="quiz-q">1. She ______ already ______ (finish) her homework.</div>
+            <div class="quiz-opts"><span>A. has; finished</span><span>B. have; finished</span><span>C. has; finish</span></div>
+            <button class="reveal-btn" data-target="lesson13-plus-q1">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson13-plus-q1">
+                <div class="brain-box">
+                    <p><strong>答案：A</strong></p>
+                    <p>already 是完成时信号；She 是三单，所以用 <strong>has finished</strong>。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <div class="quiz-q">2. I haven't seen this film ______.</div>
+            <div class="quiz-opts"><span>A. already</span><span>B. yet</span><span>C. ever</span></div>
+            <button class="reveal-btn" data-target="lesson13-plus-q2">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson13-plus-q2">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>否定句中表示“还没有”，用 <strong>yet</strong>，通常放在句末。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <div class="quiz-q">3. My father ______ Beijing twice so far.</div>
+            <div class="quiz-opts"><span>A. has gone to</span><span>B. has been to</span><span>C. has went to</span></div>
+            <button class="reveal-btn" data-target="lesson13-plus-q3">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson13-plus-q3">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>twice 表示去过两次，人已经回来，所以用 <strong>has been to</strong>。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <div class="quiz-q">4. — Where is Tom? — He ______ Shanghai. He will come back next Monday.</div>
+            <div class="quiz-opts"><span>A. has been to</span><span>B. has gone to</span><span>C. has gone</span></div>
+            <button class="reveal-btn" data-target="lesson13-plus-q4">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson13-plus-q4">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>Tom 现在不在这里，下周才回来，说明“去了还没回来”，用 <strong>has gone to</strong>。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-block">
+            <div class="quiz-q">5. The film ______ for ten minutes.</div>
+            <div class="quiz-opts"><span>A. has begun</span><span>B. has been on</span><span>C. began</span></div>
+            <button class="reveal-btn" data-target="lesson13-plus-q5">👉 点击解锁答案</button>
+            <div class="answer-box" id="lesson13-plus-q5">
+                <div class="brain-box">
+                    <p><strong>答案：B</strong></p>
+                    <p>for ten minutes 表示持续时间，begin 是瞬间动词，不能直接持续，要换成 <strong>has been on</strong>。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== 考前救命小抄 ===== -->
+    <div class="cheatsheet-v2">
+        <div class="cheatsheet-v2-header">
+            <div class="cheatsheet-v2-title">🎒 第13讲 · 考前救命小抄（提分必背）</div>
+            <div class="cheatsheet-v2-subtitle">中考高频分水岭，上考场前把这 6 个判断点过一遍。</div>
+        </div>
+        <div class="cheatsheet-v2-body">
+            <div class="cheat-grid">
+                <div class="cheat-card core">
+                    <h4>1. 核心公式</h4>
+                    <p><span class="cheat-rule">have / has + 过去分词</span></p>
+                    <p>I / you / we / they 用 <strong>have</strong>；he / she / it / 单数名词用 <strong>has</strong>。</p>
+                </div>
+
+                <div class="cheat-card signal">
+                    <h4>2. 完成时常见信号</h4>
+                    <p>already、yet、ever、never、for、since、so far、recently、in the past few years。</p>
+                    <p>看到这些词，优先考虑现在完成时。</p>
+                </div>
+
+                <div class="cheat-card trap">
+                    <h4>3. 已结束的过去时间直接限定事件时，通常不用现在完成时</h4>
+                    <p><span class="cheat-bad">I have seen him yesterday.</span></p>
+                    <p><span class="cheat-good">I saw him yesterday.</span></p>
+                    <p>yesterday / ago / last... / in 2020 把动作锁在过去。</p>
+                </div>
+
+                <div class="cheat-card method">
+                    <h4>4. already / yet / ever / never</h4>
+                    <ul>
+                        <li>already 通常表示已经，多见于肯定句，也可用于惊讶的疑问句。</li>
+                        <li><strong>yet</strong>：否定句 / 疑问句句末。</li>
+                        <li><strong>ever</strong>：常用于疑问句，表示曾经。</li>
+                        <li><strong>never</strong>：本身表示从未，不再加 not。</li>
+                    </ul>
+                </div>
+
+                <div class="cheat-card trap">
+                    <h4>5. been to / gone to</h4>
+                    <p><strong>have been to</strong>：去过，人已经回来，可连 twice / many times。</p>
+                    <p><strong>have gone to</strong>：去了还没回来，常用于第三人称。</p>
+                </div>
+
+                <div class="cheat-card core">
+                    <h4>6. since / for 必查延续性</h4>
+                    <p>表示一次动作后状态的持续，通常改用延续表达；否定或重复动作不能机械套此规则。</p>
+                    <p>buy → <strong>have had</strong>；borrow → <strong>have kept</strong>；join → <strong>have been in</strong>；die → <strong>have been dead</strong>。</p>
+                </div>
+            </div>
+
+            <div class="cheatsheet-v2-footer">
+                <strong>最后一句：</strong>现在完成时不是单纯讲过去，而是讲“过去发生的事，对现在还有结果或影响”。先看时间线索，再看现在结果，最后检查 have/has 和过去分词。
+            </div>
+        </div>
+    </div>
+
+    <!-- 转化钩子 -->
+    <div class="cta-box">
+        <h3>🚀 第13讲通关！你已经拿下了中考最难的半壁江山！</h3>
+        <p>现在完成时这个不少同学都容易出错的重点难点，今天已经被你用“钩子和延续状态”的理论彻底收服了。这就是你的力量！<br><br>
+        接下来，我们要乘胜追击，把和现在完成时并称为“时态双雄”的最后一个重点时态攻克。它比完成时简单，但和 `when`、`while` 的搭配却藏有很多玄机：<br><br>
+        ✅ <strong>第14讲：</strong>过去进行时 —— 过去那一秒正在放电影，when 与 while 的绝妙选择
+        </p>
+        <a href="lesson-14.html" class="cta-btn" style="background:linear-gradient(135deg, #8e44ad, #6c3483);">继续学习 → 第14讲：过去进行时</a>
+    </div>
+
+</div><!-- /book-container -->
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-13.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+<!-- 底部翻页导航 -->
+<div class="lesson-nav">
+    <a class="nav-btn prev" href="lesson-28.html"><span class="nb-text"><span class="nb-label">上一讲</span><span class="nb-title">衔接6课：特殊疑问句</span></span></a>
+    <a class="nav-btn-home" href="index.html">📚 目录</a>
+    <a class="nav-btn next" href="lesson-14.html"><span class="nb-text"><span class="nb-label">下一讲</span><span class="nb-title">第14讲：过去进行时</span></span></a>
+</div>
+
+</div><!-- /lesson-main -->
+
+<div class="lesson-footer">
+    初中英语语法重构 · 进阶提分 · 第13讲<br>
+    打印时只会打印本讲内容 · 点击浏览器返回键可回到目录
+</div>
+
+<script>
+// 统一管理所有的点击展开动作
+document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.reveal-btn');
+    if (!btn) return;
+    var targetId = btn.getAttribute('data-target');
+    if (!targetId) return;
+    var box = document.getElementById(targetId);
+    if (!box) return;
+    var isVisible = box.style.display && box.style.display !== 'none';
+    if (isVisible) {
+        box.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '👉 点击解锁答案';
+    } else {
+        box.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+        try { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (err) {}
+        btn.textContent = '👇 收起答案';
+    }
+});
+</script>
+
+<script src="/assets/a4-print-entry.js?v=20260722-final-v3"></script>
+</body>
+</html>

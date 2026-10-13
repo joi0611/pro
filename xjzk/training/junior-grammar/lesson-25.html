@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>衔接4课：形容词与副词——一个装名词，一个装动作 — 初中英语语法重构</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f2f5; color: #2c3e50; min-height: 100vh; }
+
+/* ===== 顶部导航条 ===== */
+.lesson-topbar { background: #2c3e50; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.topbar-inner { max-width: 900px; margin: 0 auto; padding: 11px 24px; display: flex; align-items: center; gap: 14px; }
+.topbar-back { color: #f1c40f; text-decoration: none; font-size: 14px; font-weight: bold; display: flex; align-items: center; gap: 5px; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
+.topbar-back:hover { opacity: 0.75; }
+.topbar-sep { color: #4a6278; font-size: 16px; flex-shrink: 0; }
+.topbar-lesson-info { flex: 1; min-width: 0; }
+.topbar-lesson-info .tl-tag { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 2px; }
+.topbar-lesson-info .tl-title { font-size: 15px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-print { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.85); cursor: pointer; font-family: inherit; flex-shrink: 0; transition: background 0.15s; }
+.topbar-print:hover { background: rgba(255,255,255,0.18); }
+
+/* ===== 主内容 ===== */
+.lesson-main { max-width: 900px; margin: 0 auto; padding: 36px 24px 20px; }
+.book-container { background: #fff; padding: 50px 60px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+
+/* ===== 底部导航 ===== */
+.lesson-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 28px 0 20px; flex-wrap: wrap; }
+.nav-btn { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #2c3e50; font-size: 14px; transition: all 0.15s; flex: 1; min-width: 160px; max-width: 280px; }
+.nav-btn:hover { border-color: #2980b9; box-shadow: 0 4px 12px rgba(41,128,185,0.15); transform: translateY(-1px); }
+.nav-btn.prev { justify-content: flex-start; }
+.nav-btn.next { justify-content: flex-end; margin-left: auto; }
+.nav-btn .nb-arrow { font-size: 18px; color: #aaa; flex-shrink: 0; }
+.nav-btn:hover .nb-arrow { color: #2980b9; }
+.nav-btn .nb-text { min-width: 0; }
+.nav-btn .nb-label { font-size: 11px; color: #aaa; display: block; }
+.nav-btn .nb-title { font-size: 14px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-btn-home { display: flex; align-items: center; gap: 6px; background: #2c3e50; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #f1c40f; font-size: 14px; font-weight: bold; flex-shrink: 0; transition: opacity 0.15s; }
+.nav-btn-home:hover { opacity: 0.85; }
+.lesson-footer { text-align: center; padding: 20px 24px 36px; font-size: 12px; color: #aaa; line-height: 1.8; }
+
+/* ===== 封面 ===== */
+.chapter-cover { background: linear-gradient(135deg, #1a252f 0%, #1c2e20 55%, #27ae60 100%); border-radius: 15px; padding: 40px 40px 35px; margin-bottom: 40px; color: #fff; position: relative; overflow: hidden; }
+.chapter-cover::before { content: "adj"; position: absolute; right: 26px; top: 16px; font-size: 68px; font-weight: 900; color: rgba(255,255,255,0.06); line-height: 1; letter-spacing: -5px; }
+.lesson-tag { background: #f1c40f; color: #2c3e50; font-weight: 900; font-size: 13px; padding: 5px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em; }
+.chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.chapter-cover h1 span { color: #f1c40f; }
+.chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.meta-row { display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px; }
+
+/* ===== 回顾 / 目标 ===== */
+.review-bar { background: #f0f7ff; border: 1.5px solid #b3d4ff; border-left: 5px solid #2980b9; border-radius: 8px; padding: 14px 18px; margin-bottom: 30px; font-size: 14px; color: #1a5276; line-height: 1.75; }
+.review-bar strong { color: #1a252f; }
+.goal-box { background: #fffde7; border: 2px solid #ffe082; border-radius: 12px; padding: 20px 25px; margin-bottom: 35px; display: flex; gap: 15px; align-items: flex-start; }
+.goal-icon { font-size: 28px; flex-shrink: 0; line-height: 1.2; }
+.goal-box h3 { font-size: 16px; color: #e65100; margin-bottom: 6px; font-weight: 900; }
+.goal-box p  { font-size: 15px; color: #5d4037; line-height: 1.7; }
+
+/* ===== 通用卡片 ===== */
+.module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+.badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+.card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }   .badge-blue  { background: #2980b9; color: #fff; }
+.card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }   .badge-green { background: #27ae60; color: #fff; }
+.card-red    { background: #fff5f5; border: 2px solid #ffcccc; }   .badge-red   { background: #e74c3c; color: #fff; }
+.card-yellow { background: #fffde7; border: 2px solid #ffe082; }   .badge-yellow{ background: #f1c40f; color: #333; }
+.card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }   .badge-purple{ background: #8e44ad; color: #fff; }
+.card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }   .badge-orange{ background: #e67e22; color: #fff; }
+.card-teal   { background: #f0fffc; border: 2px solid #b2dfdb; }   .badge-teal  { background: #16a085; color: #fff; }
+
+/* ===== 高亮 ===== */
+.hl-red { color: #e74c3c; font-weight: bold; } .hl-blue { color: #2980b9; font-weight: bold; } .hl-green { color: #27ae60; font-weight: bold; } .hl-orange { color: #e67e22; font-weight: bold; } .hl-purple { color: #8e44ad; font-weight: bold; }
+.mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+.mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+.mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+.mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+.mark-purple { background: #e8daef; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #6c3483; }
+
+/* ===== 标签 ===== */
+.tag-hot  { background: #ff4757; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+.tag-easy { background: #2ed573; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+
+/* ===== 脑回路 ===== */
+.brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+.brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+/* ===== 对错 ===== */
+.wrong-text { color: #c0392b; font-size: 17px; font-weight: bold; text-decoration: line-through; }
+.right-text { color: #27ae60; font-size: 17px; font-weight: bold; }
+
+/* ===== 句子解剖 ===== */
+.sentence-dissect { display: flex; align-items: flex-end; gap: 6px; flex-wrap: wrap; margin: 14px 0; background: #f8f9fa; border-radius: 10px; padding: 14px 16px 18px; }
+.word-block { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.word-text { padding: 6px 12px; border-radius: 8px; font-size: 16px; font-weight: 900; white-space: nowrap; }
+.word-label { font-size: 11px; font-weight: 500; color: #777; }
+.wt-s  { background: #fff3e0; color: #e65100;  border: 2px solid #ffb74d; }
+.wt-v  { background: #e8f5e9; color: #1b5e20;  border: 2px solid #a5d6a7; }   /* 将来时谓语 绿色 */
+.wt-o  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+.wt-t  { background: #e8f5e9; color: #1b5e20;  border: 2px solid #a5d6a7; }   /* 时间信号词 绿色 */
+.wt-wl { background: #d5f5e3; color: #1e8449;  border: 2px solid #52be80; }   /* will */
+.wt-bg { background: #f3e5f5; color: #6a1b9a;  border: 2px solid #ce93d8; }   /* be going to */
+.wt-x  { background: #f5f5f5; color: #555;     border: 2px solid #ddd; }
+
+/* ===== will vs be going to 对比卡 ===== */
+.vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 18px 0; }
+.vs-card { border-radius: 12px; padding: 22px 18px; border: 2px solid transparent; }
+.vs-will { background: #d5f5e3; border-color: #52be80; }
+.vs-bgt  { background: #e8daef; border-color: #af7ac5; }
+.vs-card .vs-badge  { font-size: 12px; font-weight: 900; letter-spacing: 0.05em; margin-bottom: 8px; }
+.vs-will .vs-badge  { color: #1e8449; }
+.vs-bgt  .vs-badge  { color: #6c3483; }
+.vs-card .vs-formula { font-size: 20px; font-weight: 900; margin-bottom: 12px; line-height: 1.3; }
+.vs-will .vs-formula { color: #1e8449; }
+.vs-bgt  .vs-formula { color: #6c3483; }
+.vs-card .vs-when   { font-size: 13px; line-height: 1.75; margin-bottom: 10px; }
+.vs-card .vs-signal { font-size: 12px; font-weight: bold; margin-bottom: 8px; }
+.vs-will .vs-signal { color: #1e8449; }
+.vs-bgt  .vs-signal { color: #6c3483; }
+.vs-card .vs-eg     { font-size: 14px; font-weight: bold; background: rgba(255,255,255,0.65); border-radius: 6px; padding: 8px 12px; line-height: 1.75; }
+
+/* ===== 结构公式块 ===== */
+.formula-block { background: #fff; border: 2px solid #a5d6a7; border-radius: 10px; overflow: hidden; margin: 16px 0; }
+.formula-row { display: flex; align-items: stretch; border-bottom: 1px solid #e8f5e9; }
+.formula-row:last-child { border-bottom: none; }
+.formula-label { background: #27ae60; color: #fff; font-weight: 900; font-size: 13px; padding: 12px 14px; min-width: 72px; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; }
+.formula-content { padding: 12px 18px; flex: 1; font-size: 15px; line-height: 1.75; color: #333; }
+.formula-content strong { color: #1b5e20; }
+.formula-eg { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* ===== 三种将来时对比大表 ===== */
+.future-table { width: 100%; border-collapse: collapse; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.07); margin: 16px 0; font-size: 14px; }
+.future-table th { background: #2c3e50; color: #f1c40f; padding: 11px 14px; text-align: left; font-size: 13px; }
+.future-table td { padding: 11px 14px; border-bottom: 1px solid #eee; vertical-align: top; line-height: 1.65; }
+.future-table tr:last-child td { border-bottom: none; }
+.future-table tr:nth-child(even) td { background: #fafafa; }
+.future-table tr:hover td { background: #f4fbf4; }
+
+/* ===== 辨析表 ===== */
+.magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+.magic-table th { background: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+.magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+.magic-table tr:last-child td { border-bottom: none; }
+.magic-table tr:hover td { background: #f8f9fa; }
+
+/* ===== 警告 / 提示 ===== */
+.warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+.warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 15px; margin-bottom: 8px; }
+.warn-box p { font-size: 14px; color: #444; line-height: 1.75; margin: 5px 0; }
+.tip-box { background: #f4fbf4; border: 2px solid #c3e6c3; border-left: 5px solid #27ae60; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #1e8449; line-height: 1.75; }
+
+/* ===== 练习题 ===== */
+.quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+.quiz-q { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; line-height: 1.65; }
+.quiz-opts { font-size: 15px; color: #555; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+.reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+.answer-box { display: none; margin-top: 14px; }
+
+/* ===== 分割线 ===== */
+.section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+.section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+/* ===== 小抄 ===== */
+.cheatsheet { margin: 50px 0 30px; background: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+.cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+.cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+.cs-block.red    { border-left-color: #e74c3c; }
+.cs-block.green  { border-left-color: #2ecc71; }
+.cs-block.yellow { border-left-color: #f1c40f; }
+.cs-block.purple { border-left-color: #9b59b6; }
+.cs-block strong { font-size: 16px; display: block; margin-bottom: 10px; }
+.cs-block p, .cs-block li { font-size: 14px; line-height: 1.85; color: #ecf0f1; margin: 4px 0; }
+.cs-block ul { padding-left: 18px; }
+.cs-block table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.cs-block table th { background: rgba(255,255,255,0.14); color: #f1c40f; padding: 7px 12px; text-align: left; }
+.cs-block table td { padding: 7px 12px; border-bottom: 1px solid rgba(255,255,255,0.07); color: #ecf0f1; vertical-align: top; line-height: 1.6; }
+.cs-block table tr:last-child td { border-bottom: none; }
+
+/* ===== 转化钩子 ===== */
+.cta-box { margin-top: 40px; padding: 32px; background: #fff3e0; border: 2px dashed #e67e22; border-radius: 14px; text-align: center; box-shadow: 0 5px 15px rgba(230,126,34,0.12); }
+.cta-box h3 { color: #d35400; font-size: 22px; margin-bottom: 14px; font-weight: 900; }
+.cta-box p  { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 20px; text-align: left; }
+.cta-btn { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; display: inline-block; padding: 14px 35px; border-radius: 30px; font-weight: bold; font-size: 17px; text-decoration: none; box-shadow: 0 4px 12px rgba(230,126,34,0.4); transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); }
+
+/* ===== 打印 ===== */
+@media print {
+    .lesson-topbar, .lesson-nav, .lesson-footer { display: none !important; }
+    body { background: #fff; }
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container { padding: 20px 24px; border-radius: 0; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .module-card, .quiz-block, .warn-box, .cheatsheet, .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+    .cheatsheet { page-break-before: always; break-before: page; }
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+    .vs-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ===== 新版浅色紧凑小抄：只替换小抄UI，不影响正文原样式 ===== */
+.cheatsheet-v2 {
+  margin: 42px 0 28px;
+  background: #fffdf5;
+  border: 2px solid #f1c40f;
+  border-radius: 14px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  color: #2c3e50;
+}
+.cheatsheet-v2-header {
+  background: linear-gradient(135deg, #fff3c4, #fff8df);
+  border-bottom: 2px solid #f1c40f;
+  padding: 16px 22px 14px;
+}
+.cheatsheet-v2-title { font-size: 20px; font-weight: 900; color: #2c3e50; margin-bottom: 4px; }
+.cheatsheet-v2-subtitle { font-size: 13px; color: #7d6608; line-height: 1.6; }
+.cheatsheet-v2-body { padding: 18px 20px 20px; }
+.cheat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cheat-card {
+  background: #fff;
+  border: 1.5px solid #e8e8e8;
+  border-left: 5px solid #3498db;
+  border-radius: 10px;
+  padding: 13px 14px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.cheat-card.core { border-left-color: #e74c3c; }
+.cheat-card.method { border-left-color: #2980b9; }
+.cheat-card.trap { border-left-color: #e67e22; }
+.cheat-card.example { border-left-color: #27ae60; }
+.cheat-card.memory { border-left-color: #8e44ad; }
+.cheat-card.exam { border-left-color: #16a085; }
+.cheat-card h4 { font-size: 15px; font-weight: 900; color: #1a252f; margin-bottom: 7px; line-height: 1.45; }
+.cheat-card p { font-size: 14px; color: #444; line-height: 1.65; margin: 5px 0; }
+.cheat-card ul { padding-left: 18px; margin: 6px 0 0; }
+.cheat-card li { font-size: 14px; color: #444; line-height: 1.65; margin: 3px 0; }
+.cheat-rule { display:inline-block; background:#fff3c4; color:#7d6608; font-weight:900; padding:2px 6px; border-radius:5px; }
+.cheat-good { color:#1e8449; font-weight:900; }
+.cheat-bad { color:#c0392b; font-weight:900; text-decoration:line-through; }
+.cheat-note {
+  background:#f8f9fa;
+  border:1px dashed #d0d0d0;
+  border-radius:8px;
+  padding:8px 10px;
+  margin-top:8px;
+  font-size:13px !important;
+  color:#666 !important;
+}
+.cheatsheet-v2-footer {
+  margin-top:14px;
+  background:#f8f9fa;
+  border:1.5px dashed #d0d0d0;
+  border-radius:10px;
+  padding:12px 14px;
+  font-size:14px;
+  line-height:1.7;
+  color:#333;
+}
+.cheatsheet-v2-footer strong { color:#c0392b; }
+@media (max-width: 680px) {
+  .cheatsheet-v2 { margin:30px 0 24px !important; border-radius:12px !important; }
+  .cheatsheet-v2-header { padding:14px 14px 12px !important; }
+  .cheatsheet-v2-title { font-size:18px !important; }
+  .cheatsheet-v2-body { padding:14px 12px 16px !important; }
+  .cheat-grid { grid-template-columns:1fr !important; gap:10px !important; }
+  .cheat-card { padding:12px 12px !important; }
+  .cheat-card h4 { font-size:15px !important; }
+  .cheat-card p, .cheat-card li { font-size:14px !important; line-height:1.65 !important; }
+}
+@media print {
+  .cheatsheet-v2 {
+    background:#fff !important;
+    border:1.5px solid #333 !important;
+    box-shadow:none !important;
+    border-radius:8px !important;
+    margin:18px 0 !important;
+    page-break-before:auto !important;
+    break-before:auto !important;
+    page-break-inside:auto !important;
+    break-inside:auto !important;
+  }
+  .cheatsheet-v2-header {
+    background:#fff !important;
+    border-bottom:1.5px solid #333 !important;
+    padding:10px 12px !important;
+  }
+  .cheatsheet-v2-title { color:#000 !important; font-size:17px !important; }
+  .cheatsheet-v2-subtitle { color:#333 !important; font-size:12px !important; }
+  .cheatsheet-v2-body { padding:12px !important; }
+  .cheat-grid { grid-template-columns:1fr 1fr !important; gap:8px !important; }
+  .cheat-card {
+    background:#fff !important;
+    border:1px solid #555 !important;
+    border-left:4px solid #000 !important;
+    box-shadow:none !important;
+    padding:8px 10px !important;
+  }
+  .cheat-card h4 { color:#000 !important; font-size:13px !important; margin-bottom:4px !important; }
+  .cheat-card p, .cheat-card li { color:#111 !important; font-size:12px !important; line-height:1.45 !important; margin:2px 0 !important; }
+  .cheat-rule { background:#fff !important; border:1px solid #999 !important; color:#000 !important; padding:1px 4px !important; }
+  .cheat-note { background:#fff !important; border:1px dashed #777 !important; color:#222 !important; font-size:11px !important; padding:5px 7px !important; }
+  .cheatsheet-v2-footer { background:#fff !important; border:1px dashed #777 !important; color:#000 !important; padding:7px 9px !important; font-size:12px !important; line-height:1.45 !important; }
+  .cheatsheet-v2-footer strong { color:#000 !important; }
+}
+
+
+
+/* ===== 内容丰富版新增样式：只增加内容与必要适配 ===== */
+.step-flow { margin:14px 0; border:1.5px solid #e2e8ec; border-radius:10px; overflow:hidden; background:#fff; }
+.sf-item { display:flex; align-items:stretch; border-bottom:1px solid #edf0f2; }
+.sf-num { min-width:62px; padding:12px 8px; color:#fff; font-size:13px; font-weight:900; display:flex; align-items:center; justify-content:center; text-align:center; flex-shrink:0; }
+
+.enrich-roadmap {
+  margin: 8px 0 34px;
+  background: linear-gradient(135deg, #f8fbff, #fffdf5);
+  border: 1.5px solid #d8e6f3;
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+.enrich-roadmap h3 { font-size:17px; color:#1a252f; margin-bottom:13px; font-weight:900; }
+.enrich-roadmap-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; }
+.enrich-roadmap-item { background:#fff; border:1.5px solid #e7edf2; border-radius:10px; padding:12px 10px; text-align:center; min-height:92px; }
+.enrich-roadmap-item b { display:block; font-size:14px; color:#2c3e50; margin:5px 0 4px; }
+.enrich-roadmap-item span { display:block; font-size:12px; color:#73808c; line-height:1.55; }
+.enrich-roadmap-num { width:26px; height:26px; border-radius:50%; margin:0 auto; background:#2c3e50; color:#f1c40f !important; display:flex !important; align-items:center; justify-content:center; font-weight:900; font-size:13px !important; }
+
+.enrich-card { margin:34px 0; border-radius:13px; border:1.8px solid #dfe8ef; background:#fff; overflow:hidden; box-shadow:0 5px 16px rgba(44,62,80,0.06); }
+.enrich-card-head { padding:16px 20px; background:linear-gradient(135deg,#edf7ff,#f9fcff); border-bottom:1.5px solid #d7e8f5; }
+.enrich-card-head.green { background:linear-gradient(135deg,#edf9f0,#fbfffc); border-bottom-color:#cfe8d5; }
+.enrich-card-head.purple { background:linear-gradient(135deg,#f6effc,#fdfbff); border-bottom-color:#e1d0ef; }
+.enrich-card-head.orange { background:linear-gradient(135deg,#fff4e8,#fffaf5); border-bottom-color:#f3dcc5; }
+.enrich-card-head.red { background:linear-gradient(135deg,#fff0f0,#fffafa); border-bottom-color:#f0cccc; }
+.enrich-card-head h3 { font-size:18px; color:#1a252f; margin-bottom:5px; font-weight:900; }
+.enrich-card-head p { font-size:13px; color:#63717d; line-height:1.65; }
+.enrich-card-body { padding:20px 22px 22px; }
+.enrich-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:14px 0; }
+.enrich-mini { border:1.5px solid #e5e9ed; border-radius:10px; padding:14px 15px; background:#fbfcfd; }
+.enrich-mini h4 { font-size:15px; color:#263746; margin-bottom:7px; font-weight:900; }
+.enrich-mini p, .enrich-mini li { font-size:14px; line-height:1.75; color:#46545f; }
+.enrich-mini ul { padding-left:18px; margin:4px 0 0; }
+.enrich-rule { display:inline-block; padding:2px 7px; border-radius:5px; background:#fff3c4; color:#7d6608; font-weight:900; }
+.enrich-blue { color:#1565c0; font-weight:900; }
+.enrich-red { color:#c0392b; font-weight:900; }
+.enrich-green { color:#1e8449; font-weight:900; }
+.enrich-purple { color:#6c3483; font-weight:900; }
+.enrich-example { margin:12px 0; background:#f8f9fa; border-left:5px solid #2980b9; border-radius:8px; padding:12px 15px; font-size:14px; color:#36454f; line-height:1.85; }
+.enrich-example.green { border-left-color:#27ae60; }
+.enrich-example.orange { border-left-color:#e67e22; }
+.enrich-example.red { border-left-color:#e74c3c; }
+.enrich-callout { margin-top:14px; border:1.5px dashed #e0aa24; background:#fffdf3; border-radius:10px; padding:13px 15px; font-size:14px; line-height:1.75; color:#5d4a16; }
+.enrich-decision { display:grid; grid-template-columns:1fr auto 1fr auto 1fr; gap:8px; align-items:stretch; margin:16px 0 4px; }
+.enrich-step { border:1.5px solid #dce7ef; border-radius:10px; padding:13px 12px; background:#fff; }
+.enrich-step b { display:block; color:#1a5276; font-size:14px; margin-bottom:5px; }
+.enrich-step p { font-size:13px; color:#53636f; line-height:1.65; }
+.enrich-arrow { align-self:center; color:#b7c1c8; font-size:20px; font-weight:900; }
+.enrich-table-wrap { width:100%; overflow-x:auto; margin:14px 0; border-radius:10px; border:1.5px solid #e0e6ea; }
+.enrich-table { width:100%; border-collapse:collapse; min-width:620px; background:#fff; }
+.enrich-table th { background:#2c3e50; color:#f1c40f; padding:10px 12px; text-align:left; font-size:13px; }
+.enrich-table td { padding:10px 12px; border-bottom:1px solid #edf0f2; font-size:13.5px; line-height:1.65; color:#3f4d57; vertical-align:top; }
+.enrich-table tr:last-child td { border-bottom:0; }
+.enrich-pills { display:flex; flex-wrap:wrap; gap:7px; margin:10px 0; }
+.enrich-pill { padding:5px 10px; background:#edf6ff; border:1px solid #cfe4f7; color:#1a5276; border-radius:20px; font-size:12px; font-weight:900; }
+.enrich-checklist { margin:14px 0 4px; display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+.enrich-check { background:#f8fbf8; border:1.5px solid #d6ead8; border-radius:9px; padding:11px 13px; font-size:13.5px; color:#355b3c; line-height:1.65; }
+.enrich-level-title { margin:28px 0 12px; padding:11px 16px; border-radius:10px; background:linear-gradient(135deg,#eef6ff,#f9fcff); border:1.5px solid #cfe2f3; font-size:16px; font-weight:900; color:#1a5276; }
+
+@media (max-width:680px) {
+  .enrich-roadmap-grid { grid-template-columns:1fr 1fr; }
+  .enrich-grid, .enrich-checklist { grid-template-columns:1fr; }
+  .enrich-card-body { padding:16px 14px 18px; }
+  .enrich-card-head { padding:14px 15px; }
+  .enrich-decision { grid-template-columns:1fr; }
+  .enrich-arrow { transform:rotate(90deg); text-align:center; }
+  .enrich-roadmap { padding:16px 14px; }
+  .module-card [style*="grid-template-columns:1fr 1fr"],
+  .book-container > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+  .sf-num { min-width:54px; }
+}
+@media print {
+  .answer-box { display:block !important; }
+  .reveal-btn { display:none !important; }
+  .enrich-card, .enrich-mini, .enrich-roadmap-item, .enrich-check { box-shadow:none !important; }
+  .enrich-card-head { background:#fff !important; }
+  .enrich-card { break-inside:auto !important; page-break-inside:auto !important; }
+  .enrich-mini, .enrich-roadmap-item, .enrich-check, .enrich-example, .enrich-callout { break-inside:avoid !important; page-break-inside:avoid !important; }
+  .enrich-roadmap-grid, .enrich-grid, .enrich-checklist { gap:7px !important; }
+  .enrich-table th { background:#fff !important; color:#000 !important; border-bottom:1.5px solid #333; }
+  .enrich-table-wrap { overflow:visible; }
+  .enrich-table { min-width:0; }
+}
+
+</style>
+<link rel="stylesheet" href="/assets/grammar-mobile-print-fix.css?v=20260705">
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="lesson-topbar">
+    <div class="topbar-inner">
+        <a class="topbar-back" href="/">← 学习中心</a>
+        <a class="topbar-back" href="index.html">← 目录</a>
+        <div class="topbar-sep">/</div>
+        <div class="topbar-lesson-info">
+            <div class="tl-tag">第一战区 · 衔接4课 · 及格必学</div>
+            <div class="tl-title">形容词与副词——一个装名词，一个装动作</div>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-main">
+<div class="book-container">
+
+    <div class="chapter-cover">
+        <div class="lesson-tag">第一战区 · 衔接4课 · 及格必学</div>
+        <h1>一个装名词<br><span>一个装动作</span></h1>
+        <p class="subtitle">形容词修饰名词（a happy boy），副词修饰动作（run fast）。<br>它俩长得像、位置乱、还爱互相冒充——中考的高频失分点全在这</p>
+        <div class="meta-row">
+            <div class="meta-chip">⏱ 预计学习 45 分钟</div>
+            <div class="meta-chip">🎯 中考涉及约 4-8 分</div>
+            <div class="meta-chip">🔥 高频失分点</div>
+        </div>
+    </div>
+
+    <div class="review-bar">
+        📌 <strong>上一讲回顾（衔接3课：数词）</strong><br>
+        数词管"多少"和"第几"：基数词（one/two/three）+ 序数词（first/second/third）。日期、时间、分数、编号全靠它们。<br><br>
+        回到第1讲的造车比喻——名词是车身、动词是发动机，那<strong>形容词就是车漆（给车身上色），副词就是加速器（给发动机调性能）</strong>。这一讲把这两个"装饰零件"彻底装明白，"零件车间"（词类板块）就全部完工。
+    </div>
+
+    <div class="goal-box">
+        <div class="goal-icon">🎯</div>
+        <div>
+            <h3>学完这讲，你能做到：</h3>
+            <p>① 一眼分清形容词和副词：谁描述名词或主语状态，谁补充动作和程度<br>
+            ② 掌握"形容词变副词"的加 -ly 规则和特殊变化（good→well）<br>
+            ③ 掌握系动词后的选择：描述主语状态时用形容词，并分清 feel good / feel well 的含义<br>
+            ④ 拿下 too / enough / very 等程度词的位置——中考语序题的常客<br>
+            ⑤ 分清 -ed / -ing 形容词、-ly 结尾的形容词以及同形副词等高频陷阱</p>
+        </div>
+    </div>
+
+    <!-- ===== 新增：本讲学习路线 ===== -->
+    <div class="enrich-roadmap">
+        <h3>🗺️ 先看路线：形容词副词题，不要只盯着有没有 -ly</h3>
+        <div class="enrich-roadmap-grid">
+            <div class="enrich-roadmap-item"><span class="enrich-roadmap-num">1</span><b>先找服务对象</b><span>名词、主语状态、动作，还是另一个形容词/副词</span></div>
+            <div class="enrich-roadmap-item"><span class="enrich-roadmap-num">2</span><b>再看句子位置</b><span>名词前、系动词后、实义动词旁、句首或句尾</span></div>
+            <div class="enrich-roadmap-item"><span class="enrich-roadmap-num">3</span><b>检查特殊词</b><span>good/well、hard/hardly、friendly、-ed/-ing</span></div>
+            <div class="enrich-roadmap-item"><span class="enrich-roadmap-num">4</span><b>最后读完整句</b><span>语法对还不够，意思也必须符合上下文</span></div>
+        </div>
+        <div class="enrich-callout"><strong>重要纠偏：</strong>“贴名词用形容词，贴动作用副词”是很好用的入门口诀，但不是全部规则。形容词还常放在系动词后描述主语；副词还可以修饰形容词、另一个副词，甚至整句话。</div>
+    </div>
+
+
+    <div class="module-card card-green">
+        <div class="badge badge-green">🎨 模块一：分工——形容词装名词，副词装动作</div>
+        <p>先看一组对照，把两者的"服务对象"看清楚：</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0;">
+            <div style="background:#fff8f0;border:2px solid #ffb74d;border-radius:10px;padding:16px;">
+                <div style="font-weight:900;color:#e65100;margin-bottom:8px;font-size:15px;">🎨 形容词 = 车漆</div>
+                <div style="font-size:15px;line-height:1.9;color:#333;">给<strong>名词</strong>上色（说这个东西"什么样"）<br>a <span class="mark-orange">happy</span> boy（快乐的男孩）<br>the <span class="mark-orange">red</span> car（红色的车）</div>
+            </div>
+            <div style="background:#e8f4fd;border:2px solid #64b5f6;border-radius:10px;padding:16px;">
+                <div style="font-weight:900;color:#1565c0;margin-bottom:8px;font-size:15px;">⚡ 副词 = 加速器</div>
+                <div style="font-size:15px;line-height:1.9;color:#333;">给<strong>动作</strong>调性能（说这个动作"怎么做的"）<br>run <span style="color:#1565c0;font-weight:bold;">fast</span>（跑得快）<br>speak <span style="color:#1565c0;font-weight:bold;">loudly</span>（大声说）</div>
+            </div>
+        </div>
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路（一句话判断）：</strong></p>
+            <p>看它在句子里<strong>贴着谁</strong>：贴着<strong>名词</strong>（人/物）→ 用形容词；贴着<strong>动词</strong>（动作）→ 用副词。</p>
+            <p>He is a <span class="mark-orange">careful</span> driver.（贴着 driver 这个人 → 形容词）<br>He drives <span style="color:#1565c0;font-weight:bold;">carefully</span>.（贴着 drives 这个动作 → 副词）</p>
+        </div>
+        <p style="margin-top:14px;">同一件事，用形容词和副词都能说，只是"贴的对象"不同——这正是中考单选最爱考的转换：</p>
+        <div style="background:#f8f9fa;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15px;line-height:2;">
+            形容词版：Tom is a <span class="mark-orange">good</span> singer.（Tom是个好歌手）<br>
+            副词版：Tom sings <span style="color:#1565c0;font-weight:bold;">well</span>.（Tom唱得好）
+        </div>
+
+
+        <!-- 新增：完整分工 -->
+        <div class="enrich-example green">
+            <strong>把入门口诀补完整：</strong><br>
+            ① 形容词修饰名词：a <strong>careful</strong> student<br>
+            ② 形容词作表语，描述主语状态：The student is <strong>careful</strong>.<br>
+            ③ 副词修饰动词：She writes <strong>carefully</strong>.<br>
+            ④ 副词修饰形容词或另一个副词：<strong>very</strong> careful / <strong>really</strong> quickly<br>
+            ⑤ 有些副词修饰整句话：<strong>Luckily</strong>, nobody was hurt.
+        </div>
+        <div class="enrich-decision">
+            <div class="enrich-step"><b>第一问：空格后是名词吗？</b><p>是 → 多半用形容词。例：a ___ answer → correct。</p></div>
+            <div class="enrich-arrow">→</div>
+            <div class="enrich-step"><b>第二问：前面是系动词吗？</b><p>且空格描述主语状态 → 用形容词。例：looks happy。</p></div>
+            <div class="enrich-arrow">→</div>
+            <div class="enrich-step"><b>第三问：在说明动作怎么做吗？</b><p>是 → 多半用副词。例：answer correctly。</p></div>
+        </div>
+
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块二</span><hr></div>
+    <div class="module-card card-teal">
+        <div class="badge badge-teal">🔧 模块二：形容词变副词——大部分加 -ly，但有坑</div>
+        <p>大多数副词是形容词"加 -ly"变来的（quick → quickly）。但加 -ly 有几条变形规则，还有一批"不听话"的特殊词。</p>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:16px 0 10px;">规则变化：加 -ly 的四种情况</p>
+        <div class="formula-block">
+            <div class="formula-row"><div class="formula-label">一般</div><div class="formula-content">直接加 <strong>-ly</strong><div class="formula-eg">quick → quickly&nbsp;/&nbsp;slow → slowly&nbsp;/&nbsp;careful → carefully</div></div></div>
+            <div class="formula-row"><div class="formula-label">辅音+y</div><div class="formula-content">变 y 为 i 再加 <strong>-ly</strong><div class="formula-eg">happy → happily&nbsp;/&nbsp;easy → easily&nbsp;/&nbsp;lucky → luckily</div></div></div>
+            <div class="formula-row"><div class="formula-label">以 le 结尾</div><div class="formula-content">去 -le，加 -ly<strong></strong><div class="formula-eg">possible → possibly&nbsp;/&nbsp;terrible → terribly&nbsp;/&nbsp;gentle → gently</div></div></div>
+            <div class="formula-row"><div class="formula-label">true 的特殊变化</div><div class="formula-content">true 特殊去 e 加 -ly<strong></strong><div class="formula-eg">true → truly</div></div></div>
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:20px 0 10px;">⚠️ 特殊变化（必背，中考爱考）</p>
+        <div style="background:#fff;border:2px solid #4db6ac;border-radius:10px;overflow:hidden;margin:12px 0;">
+            <table style="width:100%;border-collapse:collapse;font-size:15px;">
+                <tr style="background:#e0f2f1;"><th style="padding:9px 14px;text-align:left;color:#00695c;">形容词</th><th style="padding:9px 14px;text-align:left;color:#00695c;">副词</th><th style="padding:9px 14px;text-align:left;color:#00695c;">注意</th></tr>
+                <tr><td style="padding:9px 14px;border-top:1px solid #e0f2f1;">good</td><td style="padding:9px 14px;border-top:1px solid #e0f2f1;font-weight:900;color:#c62828;">well</td><td style="padding:9px 14px;border-top:1px solid #e0f2f1;">完全换个词</td></tr>
+                <tr><td style="padding:9px 14px;border-top:1px solid #e0f2f1;">fast</td><td style="padding:9px 14px;border-top:1px solid #e0f2f1;font-weight:900;">fast</td><td style="padding:9px 14px;border-top:1px solid #e0f2f1;">形副同形，不加 ly</td></tr>
+                <tr><td style="padding:9px 14px;border-top:1px solid #e0f2f1;">hard</td><td style="padding:9px 14px;border-top:1px solid #e0f2f1;font-weight:900;">hard</td><td style="padding:9px 14px;border-top:1px solid #e0f2f1;">同形；hardly 是另一个词=几乎不</td></tr>
+                <tr><td style="padding:9px 14px;border-top:1px solid #e0f2f1;">early</td><td style="padding:9px 14px;border-top:1px solid #e0f2f1;font-weight:900;">early</td><td style="padding:9px 14px;border-top:1px solid #e0f2f1;">本身带 ly，不再变</td></tr>
+                <tr><td style="padding:9px 14px;border-top:1px solid #e0f2f1;">late</td><td style="padding:9px 14px;border-top:1px solid #e0f2f1;font-weight:900;">late</td><td style="padding:9px 14px;border-top:1px solid #e0f2f1;">同形；lately 是另一个词=最近</td></tr>
+            </table>
+        </div>
+        <div class="warn-box">
+            <p><strong>⚠️ 天坑：hard vs hardly / late vs lately</strong></p>
+            <p>hard（努力地）≠ hardly（几乎不）：He works <strong>hard</strong>.（他工作努力）/ He <strong>hardly</strong> works.（他几乎不工作）——意思正好相反！</p>
+            <p style="margin-top:6px;">late（晚）≠ lately（最近）：come <strong>late</strong>（来晚了）/ I haven't seen him <strong>lately</strong>（我最近没见他）。</p>
+        </div>
+    </div>
+
+    <!-- ===== 新增补充A：-ly 结尾与同形词陷阱 ===== -->
+    <div class="enrich-card">
+        <div class="enrich-card-head green">
+            <h3>🧩 必考补充一：看到 -ly，不能马上判定为副词</h3>
+            <p>词尾只能提供线索，真正决定词性的是它在句子里的作用。</p>
+        </div>
+        <div class="enrich-card-body">
+            <div class="enrich-grid">
+                <div class="enrich-mini">
+                    <h4>① 这些带 -ly 的词常常是形容词</h4>
+                    <p><span class="enrich-rule">friendly</span> 友好的、<span class="enrich-rule">lovely</span> 可爱的、<span class="enrich-rule">lively</span> 活泼的、<span class="enrich-rule">lonely</span> 孤独的。</p>
+                    <p>She is a <strong>friendly</strong> teacher. 这里 friendly 修饰 teacher，是形容词，不是副词。</p>
+                </div>
+                <div class="enrich-mini">
+                    <h4>② 这些词形容词、副词长得一样</h4>
+                    <p>fast / hard / early / late 可以直接作副词，不需要再加 -ly。</p>
+                    <p>a <strong>fast</strong> train / run <strong>fast</strong><br>a <strong>hard</strong> task / work <strong>hard</strong></p>
+                </div>
+            </div>
+            <div class="enrich-table-wrap">
+                <table class="enrich-table">
+                    <tr><th>容易混淆</th><th>常见意思</th><th>例句</th><th>判断重点</th></tr>
+                    <tr><td>high / highly</td><td>高高地 / 高度地、非常</td><td>The bird flies <strong>high</strong>.<br>He is <strong>highly</strong> praised.</td><td>实际高度用 high；抽象程度常用 highly</td></tr>
+                    <tr><td>near / nearly</td><td>在附近、接近 / 几乎</td><td>Come <strong>near</strong>.<br>It's <strong>nearly</strong> ten.</td><td>nearly = almost</td></tr>
+                    <tr><td>deep / deeply</td><td>深深地（具体深度）/ 深深地（感情、程度）</td><td>dig <strong>deep</strong><br>be <strong>deeply</strong> moved</td><td>具体空间与抽象感受不同</td></tr>
+                    <tr><td>hard / hardly</td><td>努力地 / 几乎不</td><td>work <strong>hard</strong><br><strong>hardly</strong> know him</td><td>不是“一个词的普通变化”，而是两个不同意思</td></tr>
+                </table>
+            </div>
+            <div class="enrich-callout"><strong>考试提醒：</strong>不要采用“有 -ly 就选副词、没有 -ly 就选形容词”的机械方法。先找它修饰谁，再结合词义判断。</div>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块三 · 本讲最重要</span><hr></div>
+    <div class="module-card card-red">
+        <div class="badge badge-red">🔗 模块三：系动词后描述主语状态时用形容词</div>
+        <p>这是本讲<strong>最高频的失分点</strong>。有一类特殊动词叫<strong>系动词</strong>。当后面的词是在说明<strong>主语是什么样、处于什么状态</strong>时，通常用形容词，而不是表示动作方式的副词。注意：系动词后也可以接名词或介词短语；本讲只讨论考试最常见的“形容词还是副词”选择。</p>
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路：系动词是"等号"，不是"动作"</strong></p>
+            <p>普通动词是真动作（run、eat），后面配副词说"怎么做"。但系动词其实是个<strong>等号（=）</strong>，它把前后两边划等号，等号后面描述的是<strong>主语什么样</strong>——所以用形容词。</p>
+            <p>She looks <span class="mark-red">happy</span>. = She = happy（她=开心的）→ 形容词 ✓</p>
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:18px 0 10px;">三大类常见系动词（按功能记忆）</p>
+        <div class="step-flow">
+            <div class="sf-item"><div class="sf-num" style="background:#e74c3c;">be</div><div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>是</strong>：am/is/are/was/were —— She is <strong>tall</strong>.</div></div>
+            <div class="sf-item"><div class="sf-num" style="background:#e67e22;">感官</div><div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>看起来/听起来/闻起来/尝起来/摸起来</strong>：look / sound / smell / taste / feel —— It smells <strong>good</strong>. / I feel <strong>tired</strong>.</div></div>
+            <div class="sf-item" style="border-bottom:none;"><div class="sf-num" style="background:#8e44ad;">变得</div><div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>变成/保持</strong>：become / get / turn / grow / keep —— It gets <strong>cold</strong>. / Keep <strong>quiet</strong>.</div></div>
+        </div>
+        <div class="warn-box">
+            <p><strong>⚠️ 经典对比：同一个词，跟系动词用形容词，跟实义动词用副词</strong></p>
+            <p>The soup tastes <span class="mark-red">good</span>.（汤尝起来<strong>好</strong>——taste是系动词→形容词）</p>
+            <p>He can taste the salt <span style="color:#1565c0;font-weight:bold;">easily</span>.（他能<strong>轻松地</strong>尝出盐味——taste是真动作→副词）</p>
+            <p style="margin-top:6px;"><span class="right-text">判断法：先问它是在说明“主语什么样”，还是在说明“动作怎么做”。主语 = 后面的状态 → 系动词用法 → 形容词；真正发生动作，并说明动作方式 → 实义动词用法 → 副词。“能否大致换成 be”只能作为辅助检查，不能单独死套。</span></p>
+        </div>
+        <div class="tip-box">
+            💡 最爱考的一题：feel + 形容词。I feel <strong>well</strong> 和 I feel <strong>good</strong> 都对但含义不同——well 在这里特指"身体健康"，good 指"感觉不错/心情好"。中考若问"我感觉不舒服"→ I don't feel <strong>well</strong>。
+        </div>
+
+
+        <div class="enrich-example red">
+            <strong>同一个感官动词，身份可能变化：</strong><br>
+            The flowers smell <strong>sweet</strong>.（花闻起来很香：smell 连接 flowers 和 sweet，是系动词）<br>
+            She smelled the flowers <strong>carefully</strong>.（她仔细闻了闻花：smell 表示真正动作，carefully 修饰动作）<br>
+            所以不能只背“smell 后永远用形容词”，必须看它在这句话里表示“闻起来”还是“闻”。
+        </div>
+
+    </div>
+
+    <!-- ===== 新增补充B：-ed 与 -ing 形容词 ===== -->
+    <div class="enrich-card">
+        <div class="enrich-card-head purple">
+            <h3>🎭 必考补充二：interesting 还是 interested？先看谁产生感觉</h3>
+            <p>这不是“物用 -ing、人用 -ed”的死规则，而是“令人产生感觉”和“自己感到怎样”的区别。</p>
+        </div>
+        <div class="enrich-card-body">
+            <div class="enrich-grid">
+                <div class="enrich-mini">
+                    <h4><span class="enrich-purple">-ing</span>：令人……的</h4>
+                    <p>主语本身带来某种感受。</p>
+                    <p>The story is <strong>interesting</strong>.<br>这个故事<strong>令人感兴趣</strong>。</p>
+                </div>
+                <div class="enrich-mini">
+                    <h4><span class="enrich-blue">-ed</span>：感到……的</h4>
+                    <p>主语正在体验这种感受。</p>
+                    <p>I am <strong>interested</strong> in the story.<br>我对这个故事<strong>感兴趣</strong>。</p>
+                </div>
+            </div>
+            <div class="enrich-pills">
+                <span class="enrich-pill">exciting / excited</span>
+                <span class="enrich-pill">boring / bored</span>
+                <span class="enrich-pill">surprising / surprised</span>
+                <span class="enrich-pill">tiring / tired</span>
+                <span class="enrich-pill">relaxing / relaxed</span>
+                <span class="enrich-pill">amazing / amazed</span>
+            </div>
+            <div class="enrich-callout"><strong>不要死记“人-ed，物-ing”：</strong>a boring person 是“一个令人无聊的人”，仍然用 -ing；an interested student 是“一个感兴趣的学生”，用 -ed。关键始终是：主语在<strong>制造感受</strong>，还是在<strong>体验感受</strong>。</div>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块四</span><hr></div>
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">📍 模块四：程度词的位置——too / enough / very / so</div>
+        <p>这几个词用来表示"程度"（多/太/够），中考爱考它们<strong>放在被修饰词的前面还是后面</strong>。</p>
+        <div style="background:#fff;border:2px solid #ce93d8;border-radius:10px;overflow:hidden;margin:16px 0;">
+            <table style="width:100%;border-collapse:collapse;font-size:15px;">
+                <tr style="background:#f3e8fd;"><th style="padding:9px 14px;text-align:left;color:#8e44ad;">词</th><th style="padding:9px 14px;text-align:left;color:#8e44ad;">意思</th><th style="padding:9px 14px;text-align:left;color:#8e44ad;">位置</th><th style="padding:9px 14px;text-align:left;color:#8e44ad;">例子</th></tr>
+                <tr><td style="padding:9px 14px;border-top:1px solid #f3e8fd;font-weight:900;">too</td><td style="padding:9px 14px;border-top:1px solid #f3e8fd;">太、超过合适程度（常带否定结果）</td><td style="padding:9px 14px;border-top:1px solid #f3e8fd;">放<strong>前</strong>面</td><td style="padding:9px 14px;border-top:1px solid #f3e8fd;">too hard（太难了）</td></tr>
+                <tr><td style="padding:9px 14px;border-top:1px solid #f3e8fd;font-weight:900;color:#c62828;">enough</td><td style="padding:9px 14px;border-top:1px solid #f3e8fd;">足够</td><td style="padding:9px 14px;border-top:1px solid #f3e8fd;"><strong>形/副后</strong>，名词前</td><td style="padding:9px 14px;border-top:1px solid #f3e8fd;">good <strong>enough</strong>（够好了）/ enough time</td></tr>
+                <tr><td style="padding:9px 14px;border-top:1px solid #f3e8fd;font-weight:900;">very</td><td style="padding:9px 14px;border-top:1px solid #f3e8fd;">很（中性）</td><td style="padding:9px 14px;border-top:1px solid #f3e8fd;">放<strong>前</strong>面</td><td style="padding:9px 14px;border-top:1px solid #f3e8fd;">very good</td></tr>
+                <tr><td style="padding:9px 14px;border-top:1px solid #f3e8fd;font-weight:900;">so</td><td style="padding:9px 14px;border-top:1px solid #f3e8fd;">如此</td><td style="padding:9px 14px;border-top:1px solid #f3e8fd;">放<strong>前</strong>面</td><td style="padding:9px 14px;border-top:1px solid #f3e8fd;">so happy</td></tr>
+            </table>
+        </div>
+        <div class="warn-box">
+            <p><strong>⚠️ enough 的位置最特别——修饰对象不同，位置也不同！</strong></p>
+            <p>修饰<strong>形容词/副词</strong>时，enough 放<strong>后面</strong>：old <strong>enough</strong>（够大了）、fast <strong>enough</strong>（够快了）。</p>
+            <p>但修饰<strong>名词</strong>时，enough 放<strong>前面</strong>：<strong>enough</strong> money（足够的钱）、<strong>enough</strong> time。</p>
+            <p style="margin-top:6px;"><span class="right-text">口诀：enough 修饰形副在后面，修饰名词在前面。</span></p>
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:18px 0 10px;">高频句型：too … to … / so … that …</p>
+        <div style="background:#f8f9fa;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15px;line-height:2;">
+            He is <strong>too</strong> young <strong>to</strong> go to school.（他太小了，不能上学）—— too+形容词+to+动词，表示"太…而不能…"<br>
+            He is <strong>so</strong> young <strong>that</strong> he can't go to school.（他如此小以至于不能上学）—— 同义改写
+        </div>
+    </div>
+
+    <!-- ===== 新增补充C：程度词与句型辨析 ===== -->
+    <div class="enrich-card">
+        <div class="enrich-card-head orange">
+            <h3>⚖️ 必考补充三：much too / too much / so / such 一次分清</h3>
+            <p>这些词长得很像，但它们后面接的词性不同。做题时先看后面的词。</p>
+        </div>
+        <div class="enrich-card-body">
+            <div class="enrich-table-wrap">
+                <table class="enrich-table">
+                    <tr><th>结构</th><th>后面接什么</th><th>意思</th><th>例句</th></tr>
+                    <tr><td><strong>much too + 形/副</strong></td><td>形容词或副词</td><td>实在太……</td><td>The bag is <strong>much too heavy</strong>.</td></tr>
+                    <tr><td><strong>too much + 不可数名词</strong></td><td>不可数名词</td><td>太多……</td><td>There is <strong>too much noise</strong>.</td></tr>
+                    <tr><td><strong>too many + 复数名词</strong></td><td>可数名词复数</td><td>太多……</td><td>There are <strong>too many people</strong>.</td></tr>
+                    <tr><td><strong>so + 形/副</strong></td><td>形容词或副词</td><td>如此……</td><td>She is <strong>so kind</strong>.</td></tr>
+                    <tr><td><strong>such + (a/an) + 形 + 名</strong></td><td>名词短语</td><td>如此……的……</td><td>She is <strong>such a kind girl</strong>.</td></tr>
+                </table>
+            </div>
+            <div class="enrich-checklist">
+                <div class="enrich-check">✓ old enough <strong>to do</strong>：足够大，可以做某事</div>
+                <div class="enrich-check">✓ too young <strong>to do</strong>：太小，不能做某事</div>
+                <div class="enrich-check">✓ not old enough to do ≈ too young to do</div>
+                <div class="enrich-check">✓ so + 形容词 + that 从句 / such + 名词短语 + that 从句</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块五</span><hr></div>
+    <div class="module-card card-orange">
+        <div class="badge badge-orange">📐 模块五：形容词的排列顺序 + 副词在句中的位置</div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin-bottom:10px;">A. 多个形容词一起修饰名词，谁在前谁在后？</p>
+        <p>初中阶段记住一个简化顺序就够用：<strong>“看法”在前，“事实”在后</strong>（主观评价 → 客观描述）。</p>
+        <div style="background:#fff8f0;border:2px solid #ffcc80;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15px;line-height:2;">
+            a <span style="color:#8e44ad;">nice</span>（看法） <span style="color:#e67e22;">big</span>（大小） <span style="color:#c62828;">red</span>（颜色） car<br>
+            <small style="color:#888;">常见顺序：看法 → 大小 → 年龄 → 形状 → 颜色 → 国籍/来源 → 材料 → 用途 → 名词，中考基本只考"评价词放最前、颜色靠名词最近"</small>
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:20px 0 10px;">B. 副词在句子里放哪？</p>
+        <div class="step-flow">
+            <div class="sf-item"><div class="sf-num" style="background:#2980b9;">1</div><div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>方式副词</strong>（怎么做的）→ 一般放句尾：She sings <strong>beautifully</strong>.</div></div>
+            <div class="sf-item"><div class="sf-num" style="background:#2980b9;">2</div><div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>频率副词</strong>（always/usually/often/sometimes/never）→ 放<strong>实义动词前、be动词后</strong>：I <strong>often</strong> play. / She is <strong>always</strong> late.</div></div>
+            <div class="sf-item" style="border-bottom:none;"><div class="sf-num" style="background:#2980b9;">3</div><div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>程度副词</strong>（very/quite/really）→ 放被修饰的形容词/副词前：It's <strong>really</strong> cold.</div></div>
+        </div>
+        <div class="tip-box">
+            💡 频率副词位置口诀：<strong>“实前be后”</strong>——实义动词前面、be动词后面。这条中考单选年年考，务必记死。
+        </div>
+    </div>
+
+    <!-- ===== 新增补充D：位置规则完整化 ===== -->
+    <div class="enrich-card">
+        <div class="enrich-card-head red">
+            <h3>📌 必考补充四：位置不能只背“前”或“后”，要看句子结构</h3>
+            <p>下面四条能解决大多数形容词、副词语序题。</p>
+        </div>
+        <div class="enrich-card-body">
+            <div class="enrich-grid">
+                <div class="enrich-mini"><h4>① 形容词修饰名词：通常放名词前</h4><p>a <strong>beautiful</strong> city / an <strong>important</strong> question</p></div>
+                <div class="enrich-mini"><h4>② 修饰不定代词：形容词放后面</h4><p>something <strong>interesting</strong><br>nothing <strong>serious</strong><br>anything <strong>else</strong></p></div>
+                <div class="enrich-mini"><h4>③ 频率副词遇到助动词或情态动词</h4><p>通常放在<strong>第一个助动词/情态动词之后、实义动词之前</strong>：She has <strong>never</strong> seen it. / You can <strong>always</strong> ask me.</p></div>
+                <div class="enrich-mini"><h4>④ 方式副词有宾语时</h4><p>通常放在“动词 + 宾语”之后：She speaks English <strong>fluently</strong>，不要写成 She speaks fluently English。</p></div>
+            </div>
+            <div class="enrich-callout"><strong>升级口诀：</strong>频率副词不是只有“实前 be 后”，还要补上“助后实前”——be 后、助动词/情态动词后、实义动词前。</div>
+        </div>
+    </div>
+
+
+
+    <div class="section-divider"><hr><span>模块六</span><hr></div>
+    <div class="module-card card-green">
+        <div class="badge badge-green">🔬 模块六：解剖真实句子 + 下一讲的钩子</div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:8px 0 8px;">句子一：The careful boy always does his homework carefully.（这个细心的男孩总是认真地做作业。）</p>
+        <div class="sentence-dissect">
+            <div class="word-block"><span class="word-text wt-t">careful</span><span class="word-label">形容词·修饰boy</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-s">boy</span><span class="word-label">名词·主语</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-v">always does</span><span class="word-label">频率副词·实前</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-o">carefully</span><span class="word-label">方式副词·句尾</span></div>
+        </div>
+        <p style="font-size:14px;color:#666;">同一个词根，careful（形容词）修饰 boy，carefully（副词）修饰 does his homework 这个动作。always 放在实义动词 does 前面。一个句子三个考点全齐。</p>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:20px 0 8px;">句子二：The tea is too hot for me to drink.（茶太烫了，我没法喝。）</p>
+        <p style="font-size:14px;color:#666;margin-bottom:6px;">too+形容词hot+for sb+to do 结构，"太…以至于某人不能…"。中考完成句子和单选高频。</p>
+        <div style="background:#e8f4fd;border:2px dashed #2980b9;border-radius:10px;padding:16px 20px;margin-top:22px;">
+            <p style="font-weight:900;color:#1a5276;font-size:15px;margin-bottom:6px;">🔗 下一讲预告：零件全齐，开始造发动机</p>
+            <p style="font-size:14.5px;color:#333;line-height:1.8;">到这里，造句需要的<strong>零件</strong>全部备齐了：名词、动词、形容词、副词、冠词、代词、数词、介词。接下来进入<strong>第8讲：时态入门</strong>——给发动机（动词）装上"时间开关"，让句子能表达"什么时候发生"。真正的造车，从下一讲开始。</p>
+        </div>
+    </div>
+
+    <!-- ===== 新增：固定判断流程 ===== -->
+    <div class="enrich-card">
+        <div class="enrich-card-head green">
+            <h3>🧠 形容词副词题固定“四步判断法”</h3>
+            <p>遇到给词变形、单项选择或短文填空，都按这个顺序做。</p>
+        </div>
+        <div class="enrich-card-body">
+            <div class="enrich-checklist">
+                <div class="enrich-check"><strong>第1步：圈出空格附近的核心词。</strong><br>后面是名词？前面是系动词？还是旁边有实义动词？</div>
+                <div class="enrich-check"><strong>第2步：确定空格的工作。</strong><br>描述人/物或主语状态 → 形容词；说明动作方式或程度 → 副词。</div>
+                <div class="enrich-check"><strong>第3步：检查特殊词。</strong><br>good→well、friendly 是形容词、hardly 不是 hard 的普通副词。</div>
+                <div class="enrich-check"><strong>第4步：把答案放回整句。</strong><br>再检查词义、语序和上下文是否自然，避免“形式对、意思错”。</div>
+            </div>
+            <div class="enrich-callout"><strong>学生版一句话：</strong>先找它在夸谁，再决定用哪件衣服；最后防住 -ly、系动词和特殊词三个坑。</div>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>实战练习 · 做完再走</span><hr></div>
+
+    <div class="quiz-block" style="margin-top:20px;">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 1 · 形容词还是副词</p>
+        <div class="quiz-q">Please listen ______. The story is very ______.<br><span style="font-size:14px;font-weight:400;color:#888;">（请仔细听，这个故事很有趣。）</span></div>
+        <div class="quiz-opts"><span>A. careful; interesting</span><span>B. carefully; interesting</span><span>C. carefully; interestingly</span><span>D. careful; interestingly</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q1').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q1"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong></p>
+            <p>空一：贴着 listen（动作）→ 用副词 carefully。</p>
+            <p>空二：is 是系动词（等号）→ 后面用形容词 interesting，描述 story 什么样。</p>
+            <p><span class="right-text">✅ 答案：B（carefully; interesting）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 2 · 系动词后用形容词（高频失分点）</p>
+        <div class="quiz-q">The cake smells ______ and sells ______.<br><span style="font-size:14px;font-weight:400;color:#888;">（蛋糕闻起来香，卖得好。）</span></div>
+        <div class="quiz-opts"><span>A. good; good</span><span>B. well; well</span><span>C. good; well</span><span>D. well; good</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q2').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q2"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong></p>
+            <p>空一：smells（闻起来）是系动词 → 能换成 is → 用形容词 good。</p>
+            <p>空二：sells well 表示“销路好、卖得好”，well 修饰 sells，说明这种“销售情况”如何 → 用副词 well。</p>
+            <p><span class="right-text">✅ 答案：C（good; well）</span>&nbsp;&nbsp;<span class="wrong-text">这题就是专门考"系动词vs实义动词"的区分。</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 3 · good→well 特殊变化</p>
+        <div class="quiz-q">Kate did very ______ in the English exam. She is really a ______ student.<br><span style="font-size:14px;font-weight:400;color:#888;">（Kate英语考得很好，她真是个好学生。）</span></div>
+        <div class="quiz-opts"><span>A. good; good</span><span>B. well; good</span><span>C. good; well</span><span>D. well; well</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q3').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q3"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong></p>
+            <p>空一：did（做/考）是实义动作 → 用副词 → good的副词是 well。</p>
+            <p>空二：贴着 student（名词）→ 用形容词 good。</p>
+            <p><span class="right-text">✅ 答案：B（well; good）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 4 · enough 位置（唯一叛徒）</p>
+        <div class="quiz-q">He is not ______ to reach the shelf. (tall)<br><span style="font-size:14px;font-weight:400;color:#888;">（他还不够高，够不到架子——用 tall 填空。）</span></div>
+        <div class="quiz-opts"><span>A. enough tall</span><span>B. tall enough</span><span>C. enough taller</span><span>D. too tall</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q4').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q4"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong></p>
+            <p>enough 修饰形容词 tall 时，放在<strong>后面</strong>（这是它和 too/very 的常见位置不同之处）。</p>
+            <p><span class="right-text">✅ 答案：B（tall enough）</span>&nbsp;&nbsp;<span class="wrong-text">A 语序错，enough 修饰形容词不能放前面。</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 5 · 频率副词位置</p>
+        <div class="quiz-q">选出常规中性表达中最自然的一句：</div>
+        <div class="quiz-opts" style="flex-direction:column;gap:8px;"><span>A. He always are late for school.</span><span>B. He is always late for school.</span><span>C. Always he is late for school.</span><span>D. He is late always for school.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q5').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q5"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong></p>
+            <p>频率副词 always 的位置口诀："实前 be 后"。这句有 be动词 is → always 放 is <strong>后面</strong>。</p>
+            <p>✅ 答案：B。常规中性表达中，always 通常放在 be 后：He is always late。强调语境中，always 也可以放在 be 前，但选项 A 的 are 与 He 不一致。</p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 6 · 综合实战（too…to 结构）</p>
+        <div class="quiz-q">The box is ______ heavy ______ the little boy ______ carry.<br><span style="font-size:14px;font-weight:400;color:#888;">（箱子太重了，小男孩搬不动。）</span></div>
+        <div class="quiz-opts"><span>A. too; for; to</span><span>B. so; that; to</span><span>C. too; to; for</span><span>D. very; to; for</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q6').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q6"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong></p>
+            <p>"太…以至于某人不能…" 的固定结构：<strong>too + 形容词 + for sb + to do</strong>。</p>
+            <p>too heavy for the boy to carry —— 太重了，对男孩来说搬不动。</p>
+            <p><span class="right-text">✅ 答案：A（too; for; to）</span></p>
+        </div></div>
+    </div>
+
+    <div class="enrich-level-title">🚀 进阶加练 · 把新增知识真正变成分数</div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 7 · -ed / -ing 形容词</p>
+        <div class="quiz-q">The film is very ______, and all of us are ______ in it.</div>
+        <div class="quiz-opts"><span>A. interested; interesting</span><span>B. interesting; interested</span><span>C. interesting; interesting</span><span>D. interested; interested</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q7').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q7"><div class="brain-box">
+            <p><strong>🧠 判断流程：</strong>电影带来兴趣 → interesting；我们体验到兴趣，且 be interested in 是固定搭配 → interested。</p>
+            <p><span class="right-text">✅ 答案：B（interesting; interested）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 8 · -ly 结尾不一定是副词</p>
+        <div class="quiz-q">Our new teacher is very ______ and she always speaks to us ______.</div>
+        <div class="quiz-opts"><span>A. friendly; friendly</span><span>B. friendlily; friendly</span><span>C. friendly; kindly</span><span>D. kindly; friendlily</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q8').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q8"><div class="brain-box">
+            <p><strong>🧠 判断流程：</strong>is 后描述 teacher 的特点 → friendly 是形容词；speaks 是动作，说明说话态度 → kindly 是副词。</p>
+            <p><span class="right-text">✅ 答案：C（friendly; kindly）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 9 · high / highly</p>
+        <div class="quiz-q">The kite flew ______ in the sky, and the boy was ______ praised for his skill.</div>
+        <div class="quiz-opts"><span>A. highly; high</span><span>B. high; highly</span><span>C. high; high</span><span>D. highly; highly</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q9').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q9"><div class="brain-box">
+            <p><strong>🧠 判断流程：</strong>风筝飞得“高”是实际高度 → high；“受到高度赞扬”是抽象程度 → highly praised。</p>
+            <p><span class="right-text">✅ 答案：B（high; highly）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 10 · much too / too much</p>
+        <div class="quiz-q">There is ______ noise here. It is ______ noisy for me to study.</div>
+        <div class="quiz-opts"><span>A. much too; too much</span><span>B. too much; much too</span><span>C. too many; much too</span><span>D. much too; too many</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q10').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q10"><div class="brain-box">
+            <p><strong>🧠 判断流程：</strong>noise 是不可数名词 → too much noise；noisy 是形容词 → much too noisy。</p>
+            <p><span class="right-text">✅ 答案：B（too much; much too）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 11 · 频率副词遇到助动词</p>
+        <div class="quiz-q">选出常规中性表达中最自然的一句：</div>
+        <div class="quiz-opts" style="flex-direction:column;gap:8px;"><span>A. She has never been late for school.</span><span>B. She never have been late for school.</span><span>C. She has been never late for school.</span><span>D. Never she has been late for school.</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q11').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q11"><div class="brain-box">
+            <p><strong>🧠 判断流程：</strong>现在完成时 has been 中，never 通常放在第一个助动词 has 后、主要部分 been 前：has never been。</p>
+            <p><span class="right-text">✅ 答案：A（She has never been late for school.）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 12 · 感官动词的两种身份</p>
+        <div class="quiz-q">The flowers smell ______. The girl smells them ______.</div>
+        <div class="quiz-opts"><span>A. sweet; careful</span><span>B. sweetly; carefully</span><span>C. sweet; carefully</span><span>D. sweetly; careful</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q12').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q12"><div class="brain-box">
+            <p><strong>🧠 判断流程：</strong>第一句 smell = 闻起来，描述 flowers 的状态 → sweet；第二句 smell = 闻这个动作，说明怎么闻 → carefully。</p>
+            <p><span class="right-text">✅ 答案：C（sweet; carefully）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 13 · so / such</p>
+        <div class="quiz-q">It is ______ useful book that I want to read it again.</div>
+        <div class="quiz-opts"><span>A. so a</span><span>B. such a</span><span>C. so</span><span>D. such</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q13').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q13"><div class="brain-box">
+            <p><strong>🧠 判断流程：</strong>空格后是 a useful book 整个名词短语 → 用 such a；so 通常直接接形容词或副词。</p>
+            <p><span class="right-text">✅ 答案：B（such a）</span></p>
+        </div></div>
+    </div>
+
+
+    <div style="margin:50px 0 30px;background:#fffdf5;border:2px solid #f1c40f;border-radius:14px;padding:28px 26px 24px;box-shadow:0 8px 18px rgba(0,0,0,0.08);">
+        <div style="text-align:center;margin-bottom:22px;">
+            <div style="display:inline-block;background:#f1c40f;color:#2c3e50;padding:8px 24px;border-radius:22px;font-weight:900;font-size:17px;box-shadow:0 3px 8px rgba(0,0,0,0.12);">🎒 衔接4课 · 考前救命小抄（必背）</div>
+            <p style="font-size:13px;color:#777;margin-top:12px;line-height:1.7;">形容词副词是高频失分点，这四块背熟，语序题不再丢分</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div style="background:#f0f7ff;border:1.5px solid #b3d4ff;border-left:5px solid #2980b9;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#1a5276;margin-bottom:8px;">🎨 分工判断</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">贴名词 → 形容词（a happy boy）；贴动作 → 副词（run fast）。<br>看不准就问：它在夸"东西"还是"动作"？</p>
+            </div>
+            <div style="background:#fff5f5;border:1.5px solid #ffcccc;border-left:5px solid #e74c3c;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#c0392b;margin-bottom:8px;">🔗 系动词后的选择</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">be / look / sound / smell / taste / feel / become / get / turn / keep 后若在描述<strong>主语状态</strong>，用形容词。<br>先看它表示“主语什么样”还是“动作怎么做”，不要只靠“换成 is”死套。</p>
+            </div>
+            <div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-left:5px solid #8e44ad;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#6c3483;margin-bottom:8px;">📍 enough 位置</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">修饰形/副 → 放<strong>后面</strong>（old enough）；修饰名词 → 放<strong>前面</strong>（enough time）。<br>too/very/so 一律放前面。</p>
+            </div>
+            <div style="background:#fff8f0;border:1.5px solid #ffd8a8;border-left:5px solid #e67e22;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#784212;margin-bottom:8px;">⚠️ 天坑速记</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">good的副词是 well；hard(努力)≠hardly(几乎不)；late(晚)≠lately(最近)；频率副词"实前be后"。</p>
+            </div>
+
+            <div style="background:#f4fbf4;border:1.5px solid #c3e6c3;border-left:5px solid #27ae60;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#1e8449;margin-bottom:8px;">🎭 -ed / -ing</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">-ing：令人产生感觉（interesting）；-ed：自己感到怎样（interested）。<br>不要死套“物-ing、人-ed”，要看谁制造感受、谁体验感受。</p>
+            </div>
+            <div style="background:#eef7ff;border:1.5px solid #c7def3;border-left:5px solid #2980b9;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#1a5276;margin-bottom:8px;">🧩 -ly 不是身份证</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">friendly/lovely/lively/lonely 常是形容词；fast/hard/early/late 可形副同形。<br>先看作用，再看词尾。</p>
+            </div>
+
+        </div>
+        <div style="margin-top:16px;background:#fff;border:1.5px dashed #f1c40f;border-radius:10px;padding:14px 18px;font-size:15px;line-height:1.8;color:#333;">
+            <strong>一句话记忆：</strong>形容词主要描述名词或主语状态；副词主要说明动作、程度或整句。系动词后描述主语时用形容词，enough 修饰形副放后面，频率副词记“实前、be后、助后实前”。
+        </div>
+    </div>
+
+    <div class="cta-box">
+        <h3>🎨 衔接4课完成！零件车间全部完工！</h3>
+        <p>形容词（车漆）和副词（加速器）装好，加上前面的名词、动词、冠词、代词、数词、介词——造句需要的<strong>全部零件</strong>你都认全了。系动词后描述主语状态时用形容词、enough 位置、good→well 这些高频失分点，也一并拿下。<br><br>
+        零件齐了，该造真正会动的句子了：<br>
+        ✅ <strong>第8讲：时态入门</strong>——给发动机装上"时间开关"，让句子学会说"什么时候发生"。
+        </p>
+        <a href="lesson-08.html" class="cta-btn">继续学习 → 第8讲：时间间谍（时态入门）</a>
+    </div>
+
+</div><!-- /book-container -->
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-25.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+<div class="lesson-nav">
+    <a class="nav-btn prev" href="lesson-24.html"><span class="nb-text"><span class="nb-label">上一讲</span><span class="nb-title">衔接3课：数词</span></span></a>
+    <a class="nav-btn-home" href="index.html">📚 目录</a>
+    <a class="nav-btn next" href="lesson-08.html"><span class="nb-text"><span class="nb-label">下一讲</span><span class="nb-title">第8讲：时间间谍（时态入门）</span></span></a>
+</div>
+
+</div><!-- /lesson-main -->
+
+<div class="lesson-footer">
+    初中英语语法重构 · 基础重构版 · 衔接4课<br>
+    打印时只会打印本讲内容 · 点击浏览器返回键可回到目录
+</div>
+
+
+<script src="/assets/a4-print-entry.js?v=20260722-final-v3"></script>
+</body>
+</html>

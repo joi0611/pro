@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>衔接5课：主谓一致——主语和动词必须配套 — 初中英语语法重构</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #f0f2f5;
+    color: #2c3e50;
+    min-height: 100vh;
+}
+
+/* ===== 顶部导航条 ===== */
+.lesson-topbar {
+    background: #2c3e50;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+.topbar-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 11px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.topbar-back {
+    color: #f1c40f;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+.topbar-back:hover { opacity: 0.75; }
+.topbar-sep { color: #4a6278; font-size: 16px; flex-shrink: 0; }
+.topbar-lesson-info { flex: 1; min-width: 0; }
+.topbar-lesson-info .tl-tag { font-size: 11px; color: #7f8c8d; letter-spacing: 0.05em; margin-bottom: 2px; }
+.topbar-lesson-info .tl-title { font-size: 15px; font-weight: 900; color: #ecf0f1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-print {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    cursor: pointer;
+    font-family: inherit;
+    flex-shrink: 0;
+    transition: background 0.15s;
+}
+.topbar-print:hover { background: rgba(255,255,255,0.18); }
+
+/* ===== 主内容容器 ===== */
+.lesson-main { max-width: 900px; margin: 0 auto; padding: 36px 24px 20px; }
+.book-container { background: #fff; padding: 50px 60px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+
+/* ===== 底部翻页导航 ===== */
+.lesson-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 28px 0 20px; flex-wrap: wrap; }
+.nav-btn { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #2c3e50; font-size: 14px; transition: all 0.15s; flex: 1; min-width: 160px; max-width: 280px; }
+.nav-btn:hover { border-color: #2980b9; box-shadow: 0 4px 12px rgba(41,128,185,0.15); transform: translateY(-1px); }
+.nav-btn.prev { justify-content: flex-start; }
+.nav-btn.next { justify-content: flex-end; margin-left: auto; }
+.nav-btn .nb-arrow { font-size: 18px; color: #aaa; flex-shrink: 0; }
+.nav-btn:hover .nb-arrow { color: #2980b9; }
+.nav-btn .nb-text { min-width: 0; }
+.nav-btn .nb-label { font-size: 11px; color: #aaa; display: block; }
+.nav-btn .nb-title { font-size: 14px; font-weight: bold; color: #2c3e50; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-btn-home { display: flex; align-items: center; gap: 6px; background: #2c3e50; border-radius: 10px; padding: 12px 18px; text-decoration: none; color: #f1c40f; font-size: 14px; font-weight: bold; flex-shrink: 0; transition: opacity 0.15s; }
+.nav-btn-home:hover { opacity: 0.85; }
+.lesson-footer { text-align: center; padding: 20px 24px 36px; font-size: 12px; color: #aaa; line-height: 1.8; }
+
+/* ===== 封面 ===== */
+.chapter-cover { background: linear-gradient(135deg, #1a252f 0%, #2c3e50 55%, #c0392b 100%); border-radius: 15px; padding: 40px 40px 35px; margin-bottom: 40px; color: #fff; position: relative; overflow: hidden; }
+.chapter-cover::before { content: "S+V"; position: absolute; right: 26px; top: 16px; font-size: 66px; font-weight: 900; color: rgba(255,255,255,0.06); line-height: 1; letter-spacing: -5px; }
+.lesson-tag { background: #f1c40f; color: #2c3e50; font-weight: 900; font-size: 13px; padding: 5px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em; }
+.chapter-cover h1 { font-size: 30px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+.chapter-cover h1 span { color: #f1c40f; }
+.chapter-cover .subtitle { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.meta-row { display: flex; gap: 20px; margin-top: 22px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 14px; font-size: 13px; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 5px; }
+
+/* ===== 回顾 / 目标 ===== */
+.review-bar { background: #f0f7ff; border: 1.5px solid #b3d4ff; border-left: 5px solid #2980b9; border-radius: 8px; padding: 14px 18px; margin-bottom: 30px; font-size: 14px; color: #1a5276; line-height: 1.75; }
+.review-bar strong { color: #1a252f; }
+.goal-box { background: #fffde7; border: 2px solid #ffe082; border-radius: 12px; padding: 20px 25px; margin-bottom: 35px; display: flex; gap: 15px; align-items: flex-start; }
+.goal-icon { font-size: 28px; flex-shrink: 0; line-height: 1.2; }
+.goal-box h3 { font-size: 16px; color: #e65100; margin-bottom: 6px; font-weight: 900; }
+.goal-box p  { font-size: 15px; color: #5d4037; line-height: 1.7; }
+
+/* ===== 通用卡片 ===== */
+.module-card { margin: 35px 0; padding: 30px 30px 25px; border-radius: 12px; position: relative; line-height: 1.85; font-size: 16px; }
+.badge { display: inline-block; font-weight: 900; padding: 9px 20px; border-radius: 8px; font-size: 17px; margin-bottom: 18px; margin-top: -50px; box-shadow: 0 4px 8px rgba(0,0,0,0.12); }
+.card-blue   { background: #f0f7ff; border: 2px solid #b3d4ff; }   .badge-blue  { background: #2980b9; color: #fff; }
+.card-green  { background: #f4fbf4; border: 2px solid #c3e6c3; }   .badge-green { background: #27ae60; color: #fff; }
+.card-red    { background: #fff5f5; border: 2px solid #ffcccc; }   .badge-red   { background: #e74c3c; color: #fff; }
+.card-yellow { background: #fffde7; border: 2px solid #ffe082; }   .badge-yellow{ background: #f1c40f; color: #333; }
+.card-purple { background: #faf5ff; border: 2px solid #d8b4fe; }   .badge-purple{ background: #8e44ad; color: #fff; }
+.card-orange { background: #fff8f0; border: 2px solid #ffd8a8; }   .badge-orange{ background: #e67e22; color: #fff; }
+.card-dark   { background: #f8f9fa; border: 2px solid #dee2e6; }   .badge-dark  { background: #2c3e50; color: #f1c40f; }
+
+/* ===== 高亮 ===== */
+.hl-red { color: #e74c3c; font-weight: bold; } .hl-blue { color: #2980b9; font-weight: bold; } .hl-green { color: #27ae60; font-weight: bold; } .hl-orange { color: #e67e22; font-weight: bold; } .hl-purple { color: #8e44ad; font-weight: bold; }
+.mark-bg     { background: #ffeaa7; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.mark-red    { background: #ffe0e0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #c0392b; }
+.mark-green  { background: #d5f5e3; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1e8449; }
+.mark-blue   { background: #d6eaf8; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #1a5276; }
+.mark-orange { background: #fdebd0; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #784212; }
+
+/* ===== 标签 ===== */
+.tag-hot  { background: #ff4757; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+.tag-easy { background: #2ed573; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; vertical-align: middle; margin-left: 8px; }
+
+/* ===== 脑回路 ===== */
+.brain-box { background: #fff; border: 2px dashed #f39c12; padding: 18px 22px; margin-top: 15px; border-radius: 10px; }
+.brain-box p { margin: 8px 0; font-size: 15px; line-height: 1.75; }
+
+/* ===== 对错 ===== */
+.wrong-text { color: #c0392b; font-size: 17px; font-weight: bold; text-decoration: line-through; }
+.right-text { color: #27ae60; font-size: 17px; font-weight: bold; }
+
+/* ===== 句子解剖 ===== */
+.sentence-dissect { display: flex; align-items: flex-end; gap: 6px; flex-wrap: wrap; margin: 14px 0; background: #f8f9fa; border-radius: 10px; padding: 14px 16px 18px; }
+.word-block { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.word-text { padding: 6px 12px; border-radius: 8px; font-size: 16px; font-weight: 900; white-space: nowrap; }
+.word-label { font-size: 11px; font-weight: 500; color: #777; }
+.wt-s  { background: #fff3e0; color: #e65100; border: 2px solid #ffb74d; }
+.wt-v  { background: #fce4ec; color: #c62828; border: 2px solid #f48fb1; }
+.wt-o  { background: #e8f5e9; color: #1b5e20; border: 2px solid #a5d6a7; }
+.wt-t  { background: #e3f2fd; color: #1565c0; border: 2px solid #90caf9; }
+.wt-x  { background: #f5f5f5; color: #555;    border: 2px solid #ddd; }
+
+/* ===== 过去式变化表 ===== */
+.rule-table { width: 100%; border-collapse: collapse; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.07); margin: 16px 0; font-size: 14px; }
+.rule-table th { background: #c0392b; color: #fff; padding: 11px 14px; text-align: left; }
+.rule-table td { padding: 11px 14px; border-bottom: 1px solid #eee; vertical-align: middle; line-height: 1.65; }
+.rule-table tr:last-child td { border-bottom: none; }
+.rule-table tr:hover td { background: #fff5f5; }
+.rule-table .rule-col { font-weight: 900; color: #c0392b; width: 28%; }
+.rule-table .change-col { width: 22%; }
+.rule-table code { background: #fce4ec; padding: 2px 7px; border-radius: 4px; font-size: 13px; color: #c62828; font-family: 'Courier New', monospace; white-space: nowrap; }
+
+/* ===== 不规则动词大表 ===== */
+.irreg-table { width: 100%; border-collapse: collapse; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.07); margin: 16px 0; font-size: 14px; }
+.irreg-table thead tr th { background: #2c3e50; color: #f1c40f; padding: 10px 14px; text-align: left; font-size: 13px; }
+.irreg-table td { padding: 9px 14px; border-bottom: 1px solid #eee; vertical-align: middle; }
+.irreg-table tr:nth-child(even) td { background: #fafafa; }
+.irreg-table tr:hover td { background: #fff5f5; }
+.irreg-table .orig { font-weight: 900; color: #2c3e50; font-size: 14px; }
+.irreg-table .past { font-weight: 900; color: #c0392b; font-size: 14px; }
+.irreg-table .mean { color: #888; font-size: 13px; }
+.irreg-table .group-row td { background: #f8f9fa; font-weight: 900; font-size: 12px; color: #888; letter-spacing: 0.05em; padding: 6px 14px; }
+
+/* ===== 结构公式块 ===== */
+.formula-block {
+    background: #fff;
+    border: 2px solid #ffcccc;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 16px 0;
+}
+.formula-row {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid #ffcccc;
+}
+.formula-row:last-child { border-bottom: none; }
+.formula-label {
+    background: #e74c3c;
+    color: #fff;
+    font-weight: 900;
+    font-size: 13px;
+    padding: 12px 14px;
+    min-width: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+}
+.formula-content {
+    padding: 12px 18px;
+    flex: 1;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+}
+.formula-content strong { color: #c0392b; }
+.formula-eg { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* ===== 分步流程 ===== */
+.step-flow { display: flex; flex-direction: column; gap: 0; border-radius: 10px; overflow: hidden; border: 1.5px solid #ffcccc; margin: 16px 0; }
+.sf-item { display: flex; align-items: stretch; border-bottom: 1px solid #ffcccc; }
+.sf-item:last-child { border-bottom: none; }
+.sf-num { background: #e74c3c; color: #fff; font-weight: 900; font-size: 18px; min-width: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.sf-body { padding: 14px 18px; flex: 1; background: #fff; }
+.sf-body.alt { background: #fff5f5; }
+.sf-body h4 { font-size: 15px; font-weight: 900; color: #c0392b; margin-bottom: 5px; }
+.sf-body p  { font-size: 14px; color: #555; line-height: 1.65; margin: 0; }
+
+/* ===== 辨析对比表 ===== */
+.magic-table { width: 100%; border-collapse: collapse; margin: 18px 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+.magic-table th { background: #2c3e50; color: #f1c40f; padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 3px solid #f1c40f; }
+.magic-table td { padding: 12px 16px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; vertical-align: top; line-height: 1.65; }
+.magic-table tr:last-child td { border-bottom: none; }
+.magic-table tr:hover td { background: #f8f9fa; }
+
+/* ===== 警告 / 提示 ===== */
+.warn-box { background: #fff5f5; border: 2px solid #ffcccc; border-left: 5px solid #e74c3c; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+.warn-box .warn-title { font-weight: 900; color: #c0392b; font-size: 15px; margin-bottom: 8px; }
+.warn-box p { font-size: 14px; color: #444; line-height: 1.75; margin: 5px 0; }
+.tip-box { background: #f4fbf4; border: 2px solid #c3e6c3; border-left: 5px solid #27ae60; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; color: #1e8449; line-height: 1.75; }
+
+/* ===== 练习题 ===== */
+.quiz-block { background: #fff; border: 1.5px solid #ddd; border-radius: 10px; padding: 20px 22px; margin: 18px 0; }
+.quiz-q { font-size: 17px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; line-height: 1.65; }
+.quiz-opts { font-size: 15px; color: #555; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.reveal-btn { background: #f1c40f; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.15s; font-family: inherit; }
+.reveal-btn:hover { background: #e6b800; transform: translateY(-1px); }
+.answer-box { display: none; margin-top: 14px; }
+
+/* ===== 分割线 ===== */
+.section-divider { display: flex; align-items: center; gap: 12px; margin: 40px 0 30px; }
+.section-divider hr { flex: 1; border: none; border-top: 2px dashed #e0e0e0; }
+.section-divider span { font-size: 13px; color: #aaa; white-space: nowrap; font-weight: bold; }
+
+/* ===== 小抄 ===== */
+.cheatsheet { margin: 50px 0 30px; background: #2c3e50; color: #ecf0f1; padding: 40px 35px 35px; border-radius: 14px; position: relative; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.cheatsheet-title { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #f1c40f; color: #2c3e50; padding: 8px 28px; border-radius: 20px; font-weight: 900; font-size: 17px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); white-space: nowrap; }
+.cs-sub { text-align: center; font-size: 13px; color: #95a5a6; margin: 10px 0 28px; }
+.cs-block { background: rgba(255,255,255,0.09); padding: 20px 22px; border-radius: 10px; border-left: 4px solid #3498db; margin-bottom: 14px; }
+.cs-block.red    { border-left-color: #e74c3c; }
+.cs-block.green  { border-left-color: #2ecc71; }
+.cs-block.yellow { border-left-color: #f1c40f; }
+.cs-block strong { font-size: 16px; display: block; margin-bottom: 10px; }
+.cs-block p, .cs-block li { font-size: 14px; line-height: 1.85; color: #ecf0f1; margin: 4px 0; }
+.cs-block ul { padding-left: 18px; }
+.cs-block table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+.cs-block table th { background: rgba(255,255,255,0.14); color: #f1c40f; padding: 7px 12px; text-align: left; }
+.cs-block table td { padding: 7px 12px; border-bottom: 1px solid rgba(255,255,255,0.07); color: #ecf0f1; vertical-align: top; line-height: 1.6; }
+.cs-block table tr:last-child td { border-bottom: none; }
+
+/* ===== 转化钩子 ===== */
+.cta-box { margin-top: 40px; padding: 32px; background: #fff3e0; border: 2px dashed #e67e22; border-radius: 14px; text-align: center; box-shadow: 0 5px 15px rgba(230,126,34,0.12); }
+.cta-box h3 { color: #d35400; font-size: 22px; margin-bottom: 14px; font-weight: 900; }
+.cta-box p  { font-size: 15px; color: #555; line-height: 1.85; margin-bottom: 20px; text-align: left; }
+.cta-btn { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; display: inline-block; padding: 14px 35px; border-radius: 30px; font-weight: bold; font-size: 17px; text-decoration: none; box-shadow: 0 4px 12px rgba(230,126,34,0.4); transition: transform 0.2s; }
+.cta-btn:hover { transform: translateY(-2px); }
+
+/* ===== 打印 ===== */
+@media print {
+    .lesson-topbar, .lesson-nav, .lesson-footer { display: none !important; }
+    body { background: #fff; }
+    .lesson-main { padding: 0; max-width: 100%; }
+    .book-container { padding: 20px 24px; border-radius: 0; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .module-card, .quiz-block, .warn-box, .cheatsheet, .goal-box, .review-bar, .brain-box { page-break-inside: avoid; break-inside: avoid; }
+    .cheatsheet { page-break-before: always; break-before: page; }
+    @page { size: A4; margin: 15mm 18mm; }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 680px) {
+    .book-container { padding: 28px 18px; }
+    .chapter-cover h1 { font-size: 22px; }
+    .chapter-cover::before { font-size: 70px; right: 14px; }
+    .lesson-main { padding: 20px 14px 16px; }
+    .topbar-print { display: none; }
+    .nav-btn { min-width: 120px; padding: 10px 12px; }
+}
+
+/* ===== 内容丰富优化：新增模块，不改变原页面风格 ===== */
+.enrich-route {
+    margin: 0 0 36px;
+    padding: 22px 24px;
+    border: 2px solid #b3d4ff;
+    border-radius: 14px;
+    background: linear-gradient(135deg,#eef7ff,#fbfdff);
+}
+.enrich-route h3 {
+    margin-bottom: 14px;
+    color: #1a5276;
+    font-size: 17px;
+    font-weight: 900;
+}
+.enrich-route-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+.enrich-route-step {
+    padding: 13px 11px;
+    border: 1.5px solid #d6eaf8;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+}
+.enrich-route-step b {
+    display: block;
+    margin-bottom: 5px;
+    color: #2980b9;
+    font-size: 13px;
+}
+.enrich-route-step span {
+    display: block;
+    color: #555;
+    font-size: 13px;
+    line-height: 1.55;
+}
+.enrich-card {
+    margin: 35px 0;
+    padding: 28px 28px 24px;
+    border: 2px solid #b3d4ff;
+    border-radius: 12px;
+    background: #f7fbff;
+    font-size: 15px;
+    line-height: 1.8;
+}
+.enrich-card-title {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 8px 17px;
+    border-radius: 8px;
+    background: #2980b9;
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+}
+.enrich-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 15px 0;
+}
+.enrich-item {
+    padding: 14px 16px;
+    border: 1.5px solid #dce6ef;
+    border-radius: 10px;
+    background: #fff;
+}
+.enrich-item h4 {
+    margin-bottom: 7px;
+    color: #1a5276;
+    font-size: 15px;
+}
+.enrich-item p {
+    margin: 4px 0;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.72;
+}
+.enrich-table {
+    width: 100%;
+    margin: 14px 0;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 14px;
+}
+.enrich-table th {
+    padding: 9px 12px;
+    background: #2c3e50;
+    color: #f1c40f;
+    text-align: left;
+}
+.enrich-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    line-height: 1.65;
+    vertical-align: top;
+}
+.enrich-table tr:last-child td { border-bottom: 0; }
+.enrich-correction {
+    margin: 14px 0;
+    padding: 14px 17px;
+    border: 1.5px solid #f5c56b;
+    border-left: 5px solid #e67e22;
+    border-radius: 9px;
+    background: #fff8e8;
+    color: #5d4037;
+    font-size: 14px;
+    line-height: 1.75;
+}
+.enrich-correction strong { color: #b45309; }
+.enrich-flow {
+    margin: 15px 0;
+    overflow: hidden;
+    border: 1.5px solid #b3d4ff;
+    border-radius: 10px;
+    background: #fff;
+}
+.enrich-flow-row {
+    display: flex;
+    border-bottom: 1px solid #d6eaf8;
+}
+.enrich-flow-row:last-child { border-bottom: 0; }
+.enrich-flow-num {
+    display: flex;
+    width: 48px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    background: #2980b9;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+}
+.enrich-flow-body {
+    padding: 12px 15px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.72;
+}
+@media (max-width:680px) {
+    .enrich-route-grid, .enrich-grid { grid-template-columns:1fr !important; }
+    .enrich-route, .enrich-card { padding:17px 15px !important; }
+    .enrich-flow-num { width:42px; }
+    .book-container [style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+}
+@media print {
+    .answer-box { display:block !important; }
+    .reveal-btn { display:none !important; }
+    .enrich-route, .enrich-card {
+        break-inside:auto !important;
+        page-break-inside:auto !important;
+        box-shadow:none !important;
+    }
+    .enrich-item, .enrich-flow-row {
+        break-inside:avoid;
+        page-break-inside:avoid;
+    }
+}
+
+</style>
+<link rel="stylesheet" href="/assets/grammar-mobile-print-fix.css?v=20260705">
+  <script>document.documentElement.classList.add('jgr-auth-pending');</script>
+  <link rel="stylesheet" href="junior-grammar-theme.css?v=20261012-5">
+  <script src="junior-grammar-auth.js?v=20261012-4" defer></script>
+</head>
+<body>
+
+<!-- ===== 顶部导航条 ===== -->
+<div class="lesson-topbar">
+    <div class="topbar-inner">
+        <a class="topbar-back" href="/">← 学习中心</a>
+        <a class="topbar-back" href="index.html">← 目录</a>
+        <div class="topbar-sep">/</div>
+        <div class="topbar-lesson-info">
+            <div class="tl-tag">第二战区 · 衔接5课 · 及格必学</div>
+            <div class="tl-title">主谓一致——主语和动词必须"配套"</div>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-main">
+<div class="book-container">
+
+    <div class="chapter-cover">
+        <div class="lesson-tag">第二战区 · 衔接5课 · 及格必学</div>
+        <h1>主语和动词<br><span>必须配套</span></h1>
+        <p class="subtitle">主语是"一个"，动词就得配单数（He likes）；主语是"多个"，动词配复数（They like）。<br>看着简单，但中考专挑你数不清"主语到底是几个"的地方下手</p>
+        <div class="meta-row">
+            <div class="meta-chip">⏱ 预计学习 45 分钟</div>
+            <div class="meta-chip">🎯 中考涉及约 2-4 分</div>
+            <div class="meta-chip">🔥 贯穿所有时态</div>
+        </div>
+    </div>
+
+    <div class="review-bar">
+        📌 <strong>上一讲回顾（第8讲：时态入门）</strong><br>
+        时态告诉我们动作"什么时候发生"，第三人称单数在一般现在时里动词要加 s（He plays）。<br><br>
+        但"什么时候加 s、加几个"背后其实有一条总规矩——<strong>主语和谓语动词必须在"数"上保持一致</strong>：主语单数配单数动词，主语复数配复数动词。这就是<strong>主谓一致</strong>。前面几讲我们埋过好几个伏笔（everyone 当单数、Neither 当单数、名词所有格里"谓语跟主语走"），这一讲全部收网、讲透。学完它，你写的每个句子主谓都不会打架。
+    </div>
+
+    <div class="goal-box">
+        <div class="goal-icon">🎯</div>
+        <div>
+            <h3>学完这讲，你能做到：</h3>
+            <p>① 掌握主谓一致的总原则：主语的"数"决定动词的"数"<br>
+            ② 拿下三大判断法：语法一致、意义一致、就近一致<br>
+            ③ 搞定那些"看着复数其实单数"的坑（each、every、不定代词、不可数名词）<br>
+            ④ 掌握 either…or / neither…nor / there be 的就近原则——中考必考</p>
+        </div>
+    </div>
+
+    <!-- ===== 新增：主谓一致判断路线 ===== -->
+    <div class="enrich-route">
+        <h3>🧭 做主谓一致题，不要先看动词：先完成这4步</h3>
+        <div class="enrich-route-grid">
+            <div class="enrich-route-step"><b>第1步 · 圈谓语</b><span>先找到需要变化的动词，确认它处于什么时态和结构。</span></div>
+            <div class="enrich-route-step"><b>第2步 · 找真主语</b><span>盖住 of、with、as well as 等插入成分，找到核心主语。</span></div>
+            <div class="enrich-route-step"><b>第3步 · 判断类型</b><span>固定单数、固定复数、看 of 后名词、意义一致还是就近一致？</span></div>
+            <div class="enrich-route-step"><b>第4步 · 配动词</b><span>结合人称和时态，选择 is/are、has/have 或动词原形/s形式。</span></div>
+        </div>
+    </div>
+
+
+    <div class="module-card card-green">
+        <div class="badge badge-green">⚖️ 模块一：总原则——主语几个，动词就配几个</div>
+        <p>一个句子里，<strong>主语</strong>和<strong>谓语动词</strong>要在人称和数上相互配合。这就像插座和插头，得配套才能用。初中阶段最常考的是：一般现在时中的第三人称单数，以及 be 动词的不同形式。</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0;">
+            <div style="background:#f4fbf4;border:2px solid #52be80;border-radius:10px;padding:16px;">
+                <div style="font-weight:900;color:#1e8449;margin-bottom:8px;">主语是第三人称单数</div>
+                <div style="font-size:15px;line-height:1.9;color:#333;">一般现在时实义动词通常加 s/es；be 用 is，过去时用 was<br>He <span class="mark-red">likes</span> apples.<br>My sister <span class="mark-red">is</span> here.</div>
+            </div>
+            <div style="background:#e8f4fd;border:2px solid #64b5f6;border-radius:10px;padding:16px;">
+                <div style="font-weight:900;color:#1565c0;margin-bottom:8px;">主语是复数，或主语是 I / you</div>
+                <div style="font-size:15px;line-height:1.9;color:#333;">一般现在时实义动词用原形；be 根据主语用 am/are，过去时用 was/were<br>They <span style="color:#1565c0;font-weight:bold;">like</span> apples.<br>My sisters <span style="color:#1565c0;font-weight:bold;">are</span> here.</div>
+            </div>
+        </div>
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路（记住这个"跷跷板"）：</strong></p>
+            <p>在<strong>一般现在时、普通名词作主语</strong>的基础句里，可以先用“跷跷板”帮助入门：<br>复数 dogs → dogs run；第三人称单数 dog → the dog runs。</p>
+            <p><span class="right-text">✅ 但这只是入门提示，不是总规则。</span> news、people、children、Tom's bike 等不能只看词尾有没有 s；情态动词 can/must 后面的动词也永远用原形。</p>
+        </div>
+        <div class="tip-box">
+            💡 呼应衔接1课：Tom's bike <strong>is</strong> new. 真正的主语是 bike（一辆车，单数），所以用 is——不是看 Tom。<strong>找准真主语，是主谓一致的第一步。</strong>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块二</span><hr></div>
+    <div class="module-card card-teal">
+        <div class="badge badge-teal">🔍 模块二：找准"真主语"——别被中间的修饰词骗了</div>
+        <p>中考最爱在主语后面塞一堆修饰词，让你看不清"真主语到底是几个"。破解方法：<strong>把修饰部分盖住，只看最核心的那个词。</strong></p>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:16px 0 10px;">陷阱结构：主语 + of / with / as well as 等修饰或附加成分 + 谓语；and 连接两个主语需另外判断。</p>
+        <div style="background:#fff;border:2px solid #4db6ac;border-radius:10px;overflow:hidden;margin:12px 0;">
+            <table style="width:100%;border-collapse:collapse;font-size:14.5px;">
+                <tr style="background:#e0f2f1;"><th style="padding:9px 12px;text-align:left;color:#00695c;">句子</th><th style="padding:9px 12px;text-align:left;color:#00695c;">真主语</th><th style="padding:9px 12px;text-align:left;color:#00695c;">动词</th></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #e0f2f1;">The <strong>box</strong> of apples <u>is</u> heavy.</td><td style="padding:9px 12px;border-top:1px solid #e0f2f1;">box（单）</td><td style="padding:9px 12px;border-top:1px solid #e0f2f1;">is</td></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #e0f2f1;">The <strong>students</strong> in the room <u>are</u> quiet.</td><td style="padding:9px 12px;border-top:1px solid #e0f2f1;">students（复）</td><td style="padding:9px 12px;border-top:1px solid #e0f2f1;">are</td></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #e0f2f1;">The <strong>teacher</strong> with two students <u>is</u> coming.</td><td style="padding:9px 12px;border-top:1px solid #e0f2f1;">teacher（单）</td><td style="padding:9px 12px;border-top:1px solid #e0f2f1;">is</td></tr>
+            </table>
+        </div>
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>of / with / together with / as well as / including 这些词后面的名词<strong>都不是真主语</strong>，只是"随行人员"。真主语永远是它们<strong>前面</strong>的那个核心名词。</p>
+            <p>The box <span style="color:#aaa;">of apples</span> is heavy. —— 盖住 of apples，剩 box → 单数 → is。</p>
+        </div>
+        <div class="warn-box">
+            <p><strong>⚠️ and 连接主语：通常用复数，但要看表达的是两个对象还是一个整体</strong></p>
+            <p>Tom <strong>and</strong> Mike <u>are</u> good friends.（两个人 → 复数 → are）</p>
+            <p>如果 A and B 被看作<strong>同一个人、同一道食物或一个整体概念</strong>，可以用单数：Bread and butter <u>is</u> my usual breakfast.（这里把“面包配黄油”看成一份早餐。）</p>
+        </div>
+    </div>
+
+    <div class="section-divider"><hr><span>模块三</span><hr></div>
+    <div class="module-card card-red">
+        <div class="badge badge-red">🕳️ 模块三：看着复数其实是单数——最爱考的一批坑</div>
+        <p>有一批词，中文意思虽然“感觉像很多个”，但在特定结构中要按<strong>单数</strong>处理。这是主谓一致最集中的失分区。注意：不是所有不定代词都用单数，必须分组记忆。</p>
+        <div class="step-flow">
+            <div class="sf-item"><div class="sf-num" style="background:#e74c3c;">1</div><div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>-one / -body / -thing 类不定代词，以及 each / either / neither</strong> → 基础考试按单数。<br>Everyone <span class="mark-red">is</span> here. / Something <span class="mark-red">is</span> wrong.</div></div>
+            <div class="sf-item"><div class="sf-num" style="background:#e74c3c;">2</div><div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>each / every + 名词</strong> → 单数。<br>Each student <span class="mark-red">has</span> a book. / Every boy and girl <span class="mark-red">likes</span> it.</div></div>
+            <div class="sf-item"><div class="sf-num" style="background:#e74c3c;">3</div><div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>不可数名词</strong>（呼应第5讲）：water / news / information / bread → 单数。<br>The news <span class="mark-red">is</span> good. / This information <span class="mark-red">is</span> useful.</div></div>
+            <div class="sf-item" style="border-bottom:none;"><div class="sf-num" style="background:#e74c3c;">4</div><div style="padding:12px 16px;flex:1;font-size:15px;line-height:1.7;"><strong>时间/金钱/距离</strong>当整体 → 单数。<br>Ten years <span class="mark-red">is</span> a long time. / Five dollars <span class="mark-red">is</span> enough.</div></div>
+        </div>
+        <div class="warn-box">
+            <p><strong>⚠️ 反向坑：看着单数其实是复数</strong></p>
+            <p>people（人们）、police（警察）、the rich（富人们）→ 虽然没有 s，但表示"一群人" → 用<strong>复数</strong>动词。</p>
+            <p>The people here <u>are</u> friendly. / The police <u>are</u> coming.</p>
+        </div>
+        <div class="tip-box">
+            💡 <strong>One of + 复数名词</strong>的中心词是 One，谓语用单数：One of the students <strong>is</strong> late。<br>在规范书面语和基础考试中，<strong>either of / neither of</strong>通常也配单数：Neither of the answers <strong>is</strong> right。
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块四 · 中考必考</span><hr></div>
+    <div class="module-card card-purple">
+        <div class="badge badge-purple">🎯 模块四：就近原则——动词跟着"最近的那个"走</div>
+        <p>有几类固定结构通常按<strong>就近原则</strong>处理：谓语与离它最近的主语保持一致。考试中要先确认结构，再找最靠近谓语的那个主语，不能把“就近”套到所有句子里。</p>
+        <div style="background:#fff;border:2px solid #ce93d8;border-radius:10px;overflow:hidden;margin:16px 0;">
+            <table style="width:100%;border-collapse:collapse;font-size:14.5px;">
+                <tr style="background:#f3e8fd;"><th style="padding:9px 12px;text-align:left;color:#8e44ad;">结构</th><th style="padding:9px 12px;text-align:left;color:#8e44ad;">意思</th><th style="padding:9px 12px;text-align:left;color:#8e44ad;">动词跟谁</th></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #f3e8fd;font-weight:900;">either … or …</td><td style="padding:9px 12px;border-top:1px solid #f3e8fd;">要么…要么…</td><td style="padding:9px 12px;border-top:1px solid #f3e8fd;">跟 or 后面的</td></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #f3e8fd;font-weight:900;">neither … nor …</td><td style="padding:9px 12px;border-top:1px solid #f3e8fd;">既不…也不…</td><td style="padding:9px 12px;border-top:1px solid #f3e8fd;">跟 nor 后面的</td></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #f3e8fd;font-weight:900;">not only … but also …</td><td style="padding:9px 12px;border-top:1px solid #f3e8fd;">不但…而且…</td><td style="padding:9px 12px;border-top:1px solid #f3e8fd;">跟 but also 后面的</td></tr>
+                <tr><td style="padding:9px 12px;border-top:1px solid #f3e8fd;font-weight:900;">There be …</td><td style="padding:9px 12px;border-top:1px solid #f3e8fd;">有…</td><td style="padding:9px 12px;border-top:1px solid #f3e8fd;">跟后面第一个名词</td></tr>
+            </table>
+        </div>
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路（就近 = 谁挨着动词，动词听谁的）：</strong></p>
+            <p>Either you or <strong>he</strong> <span class="mark-red">is</span> right.（he 挨着 → 单数 is）</p>
+            <p>Neither he nor <strong>they</strong> <span style="color:#1565c0;font-weight:bold;">are</span> right.（they 挨着 → 复数 are）</p>
+            <p>There <span class="mark-red">is</span> a <strong>pen</strong> and two books.（基础考试通常按后面第一个名词 a pen 使用 is）</p>
+        </div>
+        <div class="tip-box">
+            💡 呼应衔接2课：either/neither 单独当代词用时是单数（Neither is right）；但 either…or / neither…nor 当连词连接两个主语时，用<strong>就近原则</strong>。别把这两种情况搞混。
+        </div>
+    </div>
+
+    <div class="section-divider"><hr><span>模块五</span><hr></div>
+    <div class="module-card card-orange">
+        <div class="badge badge-orange">📚 模块五：集体名词 + 分数百分数——灵活判断</div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin-bottom:10px;">A. 集体名词：family / class / team / group</p>
+        <p>这类词作主语时，要看它强调“整体”还是“成员”。英式英语更常根据语义在单复数间选择；美式英语通常更偏向把集体名词当单数。基础考试会通过语境给出明显提示：</p>
+        <div style="background:#fff8f0;border:2px solid #ffcc80;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15px;line-height:2;">
+            My family <span class="mark-red">is</span> big.（把家庭看成一个整体 → 单数）<br>
+            My family <span style="color:#1565c0;font-weight:bold;">are</span> watching TV in different rooms.（英式表达中，强调家庭成员各自行动 → 可用复数）
+        </div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:20px 0 10px;">B. 分数 / 百分数 + of + 名词（呼应衔接3课数词）</p>
+        <p>动词跟着 of <strong>后面的名词</strong>走——这是"意义一致"：</p>
+        <div style="background:#f8f9fa;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15px;line-height:2;">
+            Two thirds of the <strong>cake</strong> <span class="mark-red">is</span> gone.（cake 在这里指一个整体 → is）<br>
+            Two thirds of the <strong>apples</strong> <span style="color:#1565c0;font-weight:bold;">are</span> bad.（apples 是复数 → are）<br>
+            50% of the <strong>students</strong> <span style="color:#1565c0;font-weight:bold;">are</span> boys.（students 复数 → are）
+        </div>
+        <div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>分数/百分数本身不决定单复数，<strong>看 of 后面那个名词</strong>是单数还是复数。这条和模块二"找真主语"正好相反——分数结构里，真正说了算的是 of 后面的词。</p>
+        </div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>新增补充 · 高频数量结构</span><hr></div>
+
+    <div class="enrich-card">
+        <div class="enrich-card-title">🔢 a number of 和 the number of：只差一个 the，谓语完全不同</div>
+        <table class="enrich-table">
+            <tr><th>结构</th><th>真正意思</th><th>谓语</th><th>例句</th></tr>
+            <tr><td><strong>a number of + 复数名词</strong></td><td>许多……，中心意思是“许多个”</td><td>复数</td><td>A number of students <strong>are</strong> absent.</td></tr>
+            <tr><td><strong>the number of + 复数名词</strong></td><td>……的数量，中心词是 number</td><td>单数</td><td>The number of students <strong>is</strong> 40.</td></tr>
+            <tr><td><strong>one of + 复数名词</strong></td><td>……中的一个，中心词是 one</td><td>单数</td><td>One of my friends <strong>lives</strong> here.</td></tr>
+            <tr><td><strong>each of + 复数名词</strong></td><td>……中的每一个，中心词是 each</td><td>单数</td><td>Each of the books <strong>is</strong> useful.</td></tr>
+        </table>
+        <div class="brain-box">
+            <p><strong>🧠 最快判断：</strong>a number of 可以换成 many，所以用复数；the number of 的主语是“数量”，所以用单数。</p>
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#d8b4fe;background:#fcf8ff;">
+        <div class="enrich-card-title" style="background:#8e44ad;">🧩 不定代词不能“一律单数”，需按以下4类判断</div>
+        <div class="enrich-grid">
+            <div class="enrich-item">
+                <h4>① 固定按单数</h4>
+                <p>everyone / someone / nobody / anything</p>
+                <p>each / either / neither</p>
+                <p>Everyone <strong>has</strong> a chance.</p>
+            </div>
+            <div class="enrich-item">
+                <h4>② 固定按复数</h4>
+                <p>both / few / a few / many / several</p>
+                <p>Both <strong>are</strong> correct.</p>
+                <p>Several <strong>have</strong> arrived.</p>
+            </div>
+            <div class="enrich-item">
+                <h4>③ 看后面名词</h4>
+                <p>all / some / most / none / half + of</p>
+                <p>Some of the water <strong>is</strong> dirty.</p>
+                <p>Some of the students <strong>are</strong> absent.</p>
+            </div>
+            <div class="enrich-item">
+                <h4>④ 看整体还是个体</h4>
+                <p>family / class / team / group</p>
+                <p>整体通常单数；强调成员时，英式英语可用复数。</p>
+            </div>
+        </div>
+        <div class="enrich-correction"><strong>纠偏：</strong>none 在规范英语中可接单数或复数，取决于语义和后面的名词；基础考试通常会给出明确语境，不要死记成“永远单数”。</div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#c3e6c3;background:#f6fcf7;">
+        <div class="enrich-card-title" style="background:#27ae60;">✂️ 成双用品与学科名：外表容易骗人</div>
+        <table class="enrich-table">
+            <tr><th>主语</th><th>判断</th><th>例句</th></tr>
+            <tr><td>trousers / scissors / glasses</td><td>成双用品本身按复数</td><td>These trousers <strong>are</strong> new.</td></tr>
+            <tr><td>a pair of trousers / scissors</td><td>中心词是单数 pair</td><td>This pair of trousers <strong>is</strong> new.</td></tr>
+            <tr><td>two pairs of shoes</td><td>中心词 pairs 是复数</td><td>Two pairs of shoes <strong>are</strong> under the bed.</td></tr>
+            <tr><td>maths / physics / news</td><td>虽然以 s 结尾，通常按单数</td><td>Physics <strong>is</strong> difficult for me.</td></tr>
+            <tr><td>people / police / cattle</td><td>没有普通复数词尾，也按复数</td><td>The police <strong>are</strong> investigating.</td></tr>
+        </table>
+    </div>
+
+    <div class="enrich-card" style="border-color:#ffd8a8;background:#fffaf3;">
+        <div class="enrich-card-title" style="background:#e67e22;">🧠 一个动作或一句话作主语，通常按单数</div>
+        <div class="enrich-grid">
+            <div class="enrich-item">
+                <h4>动名词作主语</h4>
+                <p><strong>Reading</strong> in the sun <strong>is</strong> bad for your eyes.</p>
+                <p>“在阳光下读书”被看成一件事。</p>
+            </div>
+            <div class="enrich-item">
+                <h4>不定式作主语</h4>
+                <p><strong>To learn English well</strong> <strong>takes</strong> time.</p>
+                <p>整个不定式短语表示一个任务。</p>
+            </div>
+            <div class="enrich-item">
+                <h4>从句作主语</h4>
+                <p><strong>What he said</strong> <strong>is</strong> true.</p>
+                <p>整句话表达一个事实，通常配单数谓语。</p>
+            </div>
+            <div class="enrich-item">
+                <h4>两个动作并列</h4>
+                <p><strong>Reading and writing</strong> <strong>are</strong> important skills.</p>
+                <p>明确表示两个不同动作时，用复数。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="enrich-card" style="border-color:#b3d4ff;background:#f7fbff;">
+        <div class="enrich-card-title">🎯 连接两个主语时，先认连接词</div>
+        <table class="enrich-table">
+            <tr><th>结构</th><th>判断原则</th><th>例句</th></tr>
+            <tr><td>both A and B</td><td>两个都包括，通常复数</td><td>Both Tom and Mike <strong>are</strong> here.</td></tr>
+            <tr><td>either A or B / neither A nor B</td><td>就近一致</td><td>Either you or he <strong>is</strong> right.</td></tr>
+            <tr><td>not only A but also B</td><td>就近一致</td><td>Not only the students but also the teacher <strong>likes</strong> it.</td></tr>
+            <tr><td>A with / as well as / together with B</td><td>跟 A 一致，B只是附加信息</td><td>Tom, as well as his friends, <strong>is</strong> coming.</td></tr>
+            <tr><td>not A but B</td><td>通常跟 B 一致</td><td>Not Tom but his friends <strong>are</strong> coming.</td></tr>
+        </table>
+    </div>
+
+
+    <div class="section-divider"><hr><span>模块六</span><hr></div>
+    <div class="module-card card-green">
+        <div class="badge badge-green">🔬 模块六：解剖真实句子 + 下一讲的钩子</div>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:8px 0 8px;">句子一：Each of the students in our class has a dictionary.（我们班每个学生都有一本词典。）</p>
+        <div class="sentence-dissect">
+            <div class="word-block"><span class="word-text wt-s">Each</span><span class="word-label">真主语·单数</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-t">of the students in our class</span><span class="word-label">修饰·盖住不看</span></div>
+            <div style="padding-top:10px;color:#ccc;font-size:18px;margin:0 4px;">+</div>
+            <div class="word-block"><span class="word-text wt-v">has</span><span class="word-label">谓语·配单数</span></div>
+        </div>
+        <p style="font-size:14px;color:#666;">虽然中间 students、class 都出现了，但真主语是 Each（单数）→ 动词用 has，不是 have。这就是"找真主语 + 不定代词单数"两个考点叠加。</p>
+        <p style="font-weight:900;font-size:15px;color:#1a252f;margin:20px 0 8px;">句子二：Not only the students but also the teacher likes this book.（不但学生们，老师也喜欢这本书。）</p>
+        <p style="font-size:14px;color:#666;margin-bottom:6px;">not only…but also 用就近原则，动词跟离它最近的 the teacher（单数）→ likes。</p>
+        <div style="background:#e8f4fd;border:2px dashed #2980b9;border-radius:10px;padding:16px 20px;margin-top:22px;">
+            <p style="font-weight:900;color:#1a5276;font-size:15px;margin-bottom:6px;">🔗 下一讲预告：让动词回到"过去"</p>
+            <p style="font-size:14.5px;color:#333;line-height:1.8;">主谓一致管的是动词的"数"（单/复）。接下来<strong>第9讲：一般过去时</strong>要管动词的"时间"——把动作送回昨天。你会看到主谓一致的规则在过去时里依然生效（was 配单数、were 配复数），只是换了个时间背景。</p>
+        </div>
+    </div>
+
+    <div class="section-divider"><hr><span>实战练习 · 做完再走</span><hr></div>
+
+    <div class="quiz-block" style="margin-top:20px;">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 1 · 找真主语</p>
+        <div class="quiz-q">The box of oranges ______ on the table.<br><span style="font-size:14px;font-weight:400;color:#888;">（那箱橘子在桌上。）</span></div>
+        <div class="quiz-opts"><span>A. is</span><span>B. are</span><span>C. am</span><span>D. be</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q1').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q1"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>盖住 of oranges，真主语是 box（单数）→ 用 is。别被后面的 oranges 骗了。</p>
+            <p><span class="right-text">✅ 答案：A（is）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 2 · 不定代词当单数（呼应衔接2）</p>
+        <div class="quiz-q">Everyone in our class ______ to help the old man.<br><span style="font-size:14px;font-weight:400;color:#888;">（我们班每个人都想帮那位老人。）</span></div>
+        <div class="quiz-opts"><span>A. want</span><span>B. wants</span><span>C. wanting</span><span>D. are wanting</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q2').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q2"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>Everyone 是不定代词 → 铁律当单数 → 动词加 s → wants。别被"每个人（感觉很多）"骗了。</p>
+            <p><span class="right-text">✅ 答案：B（wants）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 3 · 就近原则（中考必考）</p>
+        <div class="quiz-q">Neither you nor he ______ right. It's my fault.<br><span style="font-size:14px;font-weight:400;color:#888;">（你和他都不对。错误在我。）</span></div>
+        <div class="quiz-opts"><span>A. am</span><span>B. is</span><span>C. are</span><span>D. be</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q3').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q3"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>neither…nor 用就近原则，动词跟离它最近的 he（单数）→ is。</p>
+            <p><span class="right-text">✅ 答案：B（is）</span>&nbsp;&nbsp;<span class="wrong-text">如果句子是 Neither he nor you，那就跟 you，要用 are。</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 4 · There be 就近</p>
+        <div class="quiz-q">There ______ a pen and three books on the desk.<br><span style="font-size:14px;font-weight:400;color:#888;">（桌上有一支笔和三本书。）</span></div>
+        <div class="quiz-opts"><span>A. is</span><span>B. are</span><span>C. have</span><span>D. has</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q4').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q4"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>There be 跟后面<strong>第一个</strong>名词。第一个是 a pen（单数）→ is。</p>
+            <p><span class="right-text">✅ 答案：A（is）</span>&nbsp;&nbsp;<span class="wrong-text">如果顺序反过来 three books and a pen，就要用 are。</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 5 · 不可数名词 / 看着复数其实单数</p>
+        <div class="quiz-q">The news about the sports meeting ______ exciting.<br><span style="font-size:14px;font-weight:400;color:#888;">（关于运动会的消息很令人激动。）</span></div>
+        <div class="quiz-opts"><span>A. is</span><span>B. are</span><span>C. were</span><span>D. have</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q5').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q5"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>news 结尾虽有 s，但它是<strong>不可数名词</strong>，当单数 → is。about the sports meeting 是修饰，盖住不看。</p>
+            <p><span class="right-text">✅ 答案：A（is）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 6 · 综合实战（分数 + of）</p>
+        <div class="quiz-q">About two thirds of the water in the bottle ______ gone. Half of the students ______ girls.<br><span style="font-size:14px;font-weight:400;color:#888;">（瓶里约三分之二的水没了。一半学生是女生。）</span></div>
+        <div class="quiz-opts"><span>A. is; are</span><span>B. are; is</span><span>C. is; is</span><span>D. are; are</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q6').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q6"><div class="brain-box">
+            <p><strong>🧠 大白话脑回路：</strong>分数 + of 看 of 后面的名词。</p>
+            <p>空一：of the <strong>water</strong>（不可数，当单数）→ is。</p>
+            <p>空二：of the <strong>students</strong>（复数）→ are。</p>
+            <p><span class="right-text">✅ 答案：A（is; are）</span></p>
+        </div></div>
+    </div>
+
+
+    <div class="section-divider"><hr><span>新增进阶练习 · 先找真主语再配谓语</span><hr></div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 7 · a number of / the number of</p>
+        <div class="quiz-q">A number of students ______ in the playground, and the number of them ______ about fifty.</div>
+        <div class="quiz-opts"><span>A. is; is</span><span>B. are; is</span><span>C. is; are</span><span>D. are; are</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q7').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q7"><div class="brain-box">
+            <p>a number of = many → 复数 are；the number of 的中心词是 number → 单数 is。</p>
+            <p><span class="right-text">✅ 答案：B（are; is）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 8 · 不定代词分组</p>
+        <div class="quiz-q">Both of the answers ______ correct, but neither of them ______ easy to explain.</div>
+        <div class="quiz-opts"><span>A. is; is</span><span>B. are; are</span><span>C. are; is</span><span>D. is; are</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q8').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q8"><div class="brain-box">
+            <p>both 固定按复数 → are；规范书面语中 neither of 通常按单数 → is。</p>
+            <p><span class="right-text">✅ 答案：C（are; is）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 9 · all / some + of</p>
+        <div class="quiz-q">Some of the milk ______ bad, but some of the apples ______ still fresh.</div>
+        <div class="quiz-opts"><span>A. is; are</span><span>B. are; is</span><span>C. is; is</span><span>D. are; are</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q9').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q9"><div class="brain-box">
+            <p>some of 的谓语看 of 后面的名词：milk 不可数 → is；apples 复数 → are。</p>
+            <p><span class="right-text">✅ 答案：A（is; are）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 10 · a pair of</p>
+        <div class="quiz-q">This pair of glasses ______ mine, but those glasses ______ yours.</div>
+        <div class="quiz-opts"><span>A. is; are</span><span>B. are; is</span><span>C. is; is</span><span>D. are; are</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q10').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q10"><div class="brain-box">
+            <p>第一空中心词是 pair（单数）→ is；第二空主语 glasses 本身按复数 → are。</p>
+            <p><span class="right-text">✅ 答案：A（is; are）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 11 · 动名词作主语</p>
+        <div class="quiz-q">Reading books every day ______ good for your English.</div>
+        <div class="quiz-opts"><span>A. are</span><span>B. were</span><span>C. is</span><span>D. have</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q11').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q11"><div class="brain-box">
+            <p>Reading books every day 整体表示一件事，作主语时通常按单数。</p>
+            <p><span class="right-text">✅ 答案：C（is）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 12 · as well as 不改变真主语</p>
+        <div class="quiz-q">The teacher, as well as her students, ______ going to visit the museum.</div>
+        <div class="quiz-opts"><span>A. are</span><span>B. is</span><span>C. have</span><span>D. were</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q12').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q12"><div class="brain-box">
+            <p>as well as her students 是附加信息，真主语是 The teacher（单数）→ is。</p>
+            <p><span class="right-text">✅ 答案：B（is）</span></p>
+        </div></div>
+    </div>
+
+    <div class="quiz-block">
+        <p style="font-size:13px;color:#999;margin-bottom:6px;">🔥 练习题 13 · 综合连接词判断</p>
+        <div class="quiz-q">Both Tom and his brother ______ football, but neither Tom nor his sister ______ basketball.</div>
+        <div class="quiz-opts"><span>A. like; like</span><span>B. likes; likes</span><span>C. like; likes</span><span>D. likes; like</span></div>
+        <button class="reveal-btn" onclick="this.style.display='none';document.getElementById('q13').style.display='block'">👉 点击解锁答案</button>
+        <div class="answer-box" id="q13"><div class="brain-box">
+            <p>both…and 连接两个主语 → 复数，第一空用 like；neither…nor 就近，离动词最近的是 his sister（第三人称单数）→ likes。</p>
+            <p><span class="right-text">✅ 答案：C（like; likes）</span></p>
+        </div></div>
+    </div>
+
+
+    <div style="margin:50px 0 30px;background:#fffdf5;border:2px solid #f1c40f;border-radius:14px;padding:28px 26px 24px;box-shadow:0 8px 18px rgba(0,0,0,0.08);">
+        <div style="text-align:center;margin-bottom:22px;">
+            <div style="display:inline-block;background:#f1c40f;color:#2c3e50;padding:8px 24px;border-radius:22px;font-weight:900;font-size:17px;box-shadow:0 3px 8px rgba(0,0,0,0.12);">🎒 衔接5课 · 考前救命小抄（必背）</div>
+            <p style="font-size:13px;color:#777;margin-top:12px;line-height:1.7;">主谓一致贯穿所有时态，这四块背熟，写句子主谓不打架</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div style="background:#f0f7ff;border:1.5px solid #b3d4ff;border-left:5px solid #2980b9;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#1a5276;margin-bottom:8px;">⚖️ 总原则</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">一般现在时：第三人称单数主语 → 实义动词加 s/es；复数主语及 I/you → 动词原形。<br>be 动词和过去时要按人称、时态分别判断，不能只看词尾 s。</p>
+            </div>
+            <div style="background:#fff5f5;border:1.5px solid #ffcccc;border-left:5px solid #e74c3c;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#c0392b;margin-bottom:8px;">🔍 找真主语</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">盖住 of / with / as well as / including 后面的词，看前面的核心名词。<br>A and B → 复数（除非指同一样东西）。</p>
+            </div>
+            <div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-left:5px solid #8e44ad;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#6c3483;margin-bottom:8px;">🕳️ 看着复数其实单数</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">-one/-body/-thing 类、each/either/neither、不可数名词、时间金钱当整体 → 通常单数。<br>both/few/many/several、people/police → 复数；all/some/none 要看后面的名词。</p>
+            </div>
+            <div style="background:#fff8f0;border:1.5px solid #ffd8a8;border-left:5px solid #e67e22;border-radius:10px;padding:16px 18px;">
+                <strong style="display:block;font-size:16px;color:#784212;margin-bottom:8px;">🎯 就近原则</strong>
+                <p style="font-size:14px;line-height:1.75;color:#333;margin:0;">either…or / neither…nor / not only…but also / There be → 动词跟<strong>最近</strong>的那个主语。</p>
+            </div>
+        </div>
+        <div style="margin-top:16px;background:#fff;border:1.5px dashed #f1c40f;border-radius:10px;padding:14px 18px;font-size:15px;line-height:1.8;color:#333;">
+            <strong>一句话记忆：</strong>先找真主语，再判断它属于“固定单数、固定复数、看后面名词、按语义或按就近”中的哪一类；不能只看词尾有没有 s。
+        </div>
+    </div>
+
+    <div class="cta-box">
+        <h3>⚖️ 衔接5课完成！主谓一致这条暗线打通！</h3>
+        <p>从今天起，你判断主谓一致不再只靠“看 s”——先找真主语，再根据固定单数、固定复数、意义一致和就近原则选择谓语。前面几讲埋下的考点（everyone 单数、either…or 就近、名词所有格不改变核心主语）也在这里连成了完整判断系统。<br><br>
+        动词的"数"搞定了，接下来搞定动词的"时间"：<br>
+        ✅ <strong>第9讲：一般过去时</strong>——动词的"时光机"，把动作送回昨天，主谓一致规则继续生效。
+        </p>
+        <a href="lesson-09.html" class="cta-btn">继续学习 → 第9讲：一般过去时</a>
+    </div>
+
+</div><!-- /book-container -->
+<!-- ===== 交互练习入口 ===== -->
+<div style="max-width:760px; margin:24px auto 0; padding:0 24px;">
+    <a href="quiz-27.html" style="display:flex; align-items:center; gap:16px; text-decoration:none; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; border-radius:16px; padding:20px 24px; box-shadow:0 8px 24px rgba(231,76,60,.28); transition:transform .15s;">
+        <div style="width:52px; height:52px; background:rgba(255,255,255,.18); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;">✍️</div>
+        <div style="flex:1;">
+            <div style="font-size:18px; font-weight:900; line-height:1.3;">立即练习 · 交互版</div>
+            <div style="font-size:13px; color:rgba(255,255,255,.85); margin-top:3px;">本讲配套练习题，在线作答 · 自动批改 · 大白话解析</div>
+        </div>
+        <div style="font-size:26px; font-weight:900;">›</div>
+    </a>
+</div>
+<div class="lesson-nav">
+    <a class="nav-btn prev" href="lesson-08.html"><span class="nb-text"><span class="nb-label">上一讲</span><span class="nb-title">第8讲：时间间谍（时态入门）</span></span></a>
+    <a class="nav-btn-home" href="index.html">📚 目录</a>
+    <a class="nav-btn next" href="lesson-09.html"><span class="nb-text"><span class="nb-label">下一讲</span><span class="nb-title">第9讲：一般过去时</span></span></a>
+</div>
+
+</div><!-- /lesson-main -->
+
+<div class="lesson-footer">
+    初中英语语法重构 · 基础重构版 · 衔接5课<br>
+    打印时只会打印本讲内容 · 点击浏览器返回键可回到目录
+</div>
+
+
+<script src="/assets/a4-print-entry.js?v=20260722-final-v3"></script>
+</body>
+</html>
