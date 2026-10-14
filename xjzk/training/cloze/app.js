@@ -3863,6 +3863,8 @@ const storageKeys = {
   experienceMode: "clozeCoach.experienceMode.20260921",
   login: "clozeCoach.supabaseLoginOk.20260709",
   accessCode: "clozeCoach.supabaseAccessCode.20260709",
+  phone: "clozeCoach.phoneLogin.20261011",
+  loginMode: "clozeCoach.loginMode.20261011",
   loginLabel: "clozeCoach.supabaseLoginLabel.20260709",
   loginExpiresAt: "clozeCoach.supabaseLoginExpiresAt.20260709",
   trialCodes: "clozeCoach.trialCodes",
@@ -3924,6 +3926,8 @@ const els = {
   loginScreen: document.querySelector("#loginScreen"),
   loginCode: document.querySelector("#loginCode"),
   loginBtn: document.querySelector("#loginBtn"),
+  loginPhone: document.querySelector("#loginPhone"),
+  phoneLoginBtn: document.querySelector("#phoneLoginBtn"),
   experienceLoginBtn: document.querySelector("#experienceLoginBtn"),
   loginFeedback: document.querySelector("#loginFeedback"),
   experienceModeNote: document.querySelector("#experienceModeNote"),
@@ -4030,10 +4034,10 @@ async function initLogin() {
   if (isExperienceMode()) {
     els.loginScreen.classList.add("hidden");
   } else if (hasFormalLogin()) {
-    const code = getCloudAccessCode();
+    const credential = getCloudCredential();
     try {
-      const account = await verifyAccessCode(code);
-      await ensureStudentProfile(code, account);
+      const account = await verifyFormalLogin(credential);
+      await ensureStudentProfile(credential, account);
       els.loginScreen.classList.add("hidden");
     } catch (error) {
       localStorage.removeItem(storageKeys.login);
@@ -4045,10 +4049,36 @@ async function initLogin() {
   }
 
   els.loginBtn.addEventListener("click", handleLogin);
+  els.phoneLoginBtn?.addEventListener("click", handleLogin);
   els.experienceLoginBtn?.addEventListener("click", handleExperienceLogin);
+  document.querySelectorAll("[data-login-mode]").forEach((button) => {
+    button.addEventListener("click", () => setLoginMode(button.dataset.loginMode));
+  });
+  setLoginMode(getLoginMode(), false);
   els.loginCode.addEventListener("keydown", (event) => {
     if (event.key === "Enter") handleLogin();
   });
+  els.loginPhone?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") handleLogin();
+  });
+}
+
+function getLoginMode() {
+  return localStorage.getItem(storageKeys.loginMode) === "phone" ? "phone" : "code";
+}
+
+function setLoginMode(mode, persist = true) {
+  const next = mode === "phone" ? "phone" : "code";
+  if (persist) localStorage.setItem(storageKeys.loginMode, next);
+  document.querySelectorAll("[data-login-mode]").forEach((button) => {
+    const active = button.dataset.loginMode === next;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-selected", String(active));
+    button.tabIndex = active ? 0 : -1;
+  });
+  document.querySelectorAll("[data-login-field]").forEach((field) => field.classList.toggle("hidden", field.dataset.loginField !== next));
+  els.loginFeedback.className = "feedback";
+  els.loginFeedback.textContent = "";
 }
 
 function hasValidLogin() {
@@ -4058,7 +4088,7 @@ function hasValidLogin() {
 function hasFormalLogin() {
   clearGuestMode();
   if (localStorage.getItem(storageKeys.login) !== "true") return false;
-  if (!localStorage.getItem(storageKeys.accessCode)) return false;
+  if (!getCloudCredential()) return false;
   const expiresAt = Number(localStorage.getItem(storageKeys.loginExpiresAt) || 0);
   if (!expiresAt) return true;
   if (Date.now() < expiresAt) return true;
@@ -4102,6 +4132,7 @@ function showExperienceLockedMessage(message = "该内容仅限正式版使用�
 }
 
 function showFormalLoginFromExperience() {
+  setLoginMode("code");
   els.loginCode.value = "";
   els.loginFeedback.className = "feedback";
   els.loginFeedback.textContent = "请输入正式登录码，登录成功后即可解锁全部内容。";
@@ -4156,22 +4187,26 @@ async function handleExperienceLogin() {
 }
 
 async function handleLogin() {
-  const code = els.loginCode.value.trim();
-  if (!code) {
+  const mode = getLoginMode();
+  const credential = mode === "phone" ? normalizePhone(els.loginPhone?.value) : els.loginCode.value.trim();
+  if (!credential || (mode === "phone" && !/^1\d{10}$/.test(credential))) {
     els.loginFeedback.className = "feedback bad";
-    els.loginFeedback.textContent = "请输入登录码。";
+    els.loginFeedback.textContent = mode === "phone" ? "请输入正确的11位手机号。" : "请输入登录码。";
     return;
   }
 
-  els.loginBtn.disabled = true;
+  const activeButton = mode === "phone" ? els.phoneLoginBtn : els.loginBtn;
+  activeButton.disabled = true;
   els.loginFeedback.className = "feedback";
-  els.loginFeedback.textContent = "正在验证登录码...";
+  els.loginFeedback.textContent = mode === "phone" ? "正在读取手机号授权..." : "正在验证登录码...";
 
   try {
-    const account = await verifyAccessCode(code);
-    await ensureStudentProfile(code, account);
+    const account = await verifyFormalLogin(credential);
+    await ensureStudentProfile(credential, account);
     localStorage.setItem(storageKeys.login, "true");
-    localStorage.setItem(storageKeys.accessCode, code);
+    localStorage.setItem(storageKeys.loginMode, mode);
+    if (mode === "phone") localStorage.setItem(storageKeys.phone, credential);
+    else localStorage.setItem(storageKeys.accessCode, credential);
     localStorage.setItem(storageKeys.loginLabel, account.label || "");
     localStorage.removeItem(storageKeys.loginExpiresAt);
     localStorage.removeItem(storageKeys.experienceMode);
@@ -4189,8 +4224,16 @@ async function handleLogin() {
     els.loginFeedback.className = "feedback bad";
     els.loginFeedback.textContent = error.message || "登录码不正确，请检查后再试。";
   } finally {
-    els.loginBtn.disabled = false;
+    activeButton.disabled = false;
   }
+}
+
+function normalizePhone(value) {
+  return String(value || "").replace(/\D/g, "").slice(0, 11);
+}
+
+function verifyFormalLogin(credential) {
+  return getLoginMode() === "phone" ? verifyPhoneAccess(credential) : verifyAccessCode(credential);
 }
 
 function isGuestMode() {
@@ -4243,12 +4286,23 @@ async function verifyAccessCode(code) {
   return account;
 }
 
+async function verifyPhoneAccess(phone) {
+  const result = await callSupabaseRpc("verify_phone_access", {
+    input_phone: phone,
+    input_system_type: systemType
+  });
+  const account = Array.isArray(result) ? result[0] : null;
+  if (!account || !account.access_code_id) throw new Error("该手机号尚未开通完形填空，请联系老师授权。");
+  return account;
+}
+
 async function ensureStudentProfile(code, account) {
+  const phoneMode = getLoginMode() === "phone";
   const name = await window.StudentProfile.ensure({
-    code,
+    code: phoneMode ? `phone:${code}` : code,
     account,
-    bindName: studentName => callSupabaseRpc("bind_student_name", {
-      input_code: code,
+    bindName: studentName => callSupabaseRpc(phoneMode ? "bind_phone_student_name" : "bind_student_name", {
+      ...(phoneMode ? { input_phone: code } : { input_code: code }),
       input_system_type: systemType,
       input_student_name: studentName
     })
@@ -4260,14 +4314,19 @@ function getCloudAccessCode() {
   return localStorage.getItem(storageKeys.accessCode) || "";
 }
 
+function getCloudCredential() {
+  return getLoginMode() === "phone" ? (localStorage.getItem(storageKeys.phone) || "") : getCloudAccessCode();
+}
+
 async function loadCloudProgress() {
   if (isExperienceMode()) return;
-  const code = getCloudAccessCode();
-  if (!code) return;
+  const credential = getCloudCredential();
+  if (!credential) return;
 
   try {
-    const rows = await callSupabaseRpc("get_learning_progress", {
-      input_code: code,
+    const phoneMode = getLoginMode() === "phone";
+    const rows = await callSupabaseRpc(phoneMode ? "get_phone_learning_progress" : "get_learning_progress", {
+      ...(phoneMode ? { input_phone: credential } : { input_code: credential }),
       input_system_type: systemType
     });
     if (!Array.isArray(rows)) return;
@@ -4318,12 +4377,13 @@ function mergeNotebookRecords(localRecords, cloudRecords) {
 
 async function saveCloudProgress(lessonId, progress, completed = false, score = null) {
   if (isExperienceMode()) return;
-  const code = getCloudAccessCode();
-  if (!code) return;
+  const credential = getCloudCredential();
+  if (!credential) return;
 
   try {
-    await callSupabaseRpc("save_learning_progress", {
-      input_code: code,
+    const phoneMode = getLoginMode() === "phone";
+    await callSupabaseRpc(phoneMode ? "save_phone_learning_progress" : "save_learning_progress", {
+      ...(phoneMode ? { input_phone: credential } : { input_code: credential }),
       input_system_type: systemType,
       input_lesson_id: lessonId,
       input_progress: progress || {},

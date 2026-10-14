@@ -116,6 +116,11 @@ body {
   background: #f7fff0;
 }
 
+.login-modes { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:18px; padding:4px; border:1px solid var(--line); border-radius:10px; background:#fff; }
+.login-mode { min-height:44px; border:0; border-radius:7px; color:var(--muted); background:transparent; font:inherit; font-weight:800; cursor:pointer; }
+.login-mode.active { color:#fff; background:var(--accent-dark); }
+.login-form [data-login-field].hidden { display:none; }
+
 .login-form label {
   display: block;
   margin-bottom: 8px;

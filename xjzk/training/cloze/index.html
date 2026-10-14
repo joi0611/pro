@@ -20,13 +20,26 @@
           </div>
           <div class="login-panel">
             <div class="login-form">
-              <label for="loginCode">登录码 <small>新疆学生无限进步统一登录码</small></label>
-               <div class="login-row">
-                 <input id="loginCode" type="password" autocomplete="off" placeholder="请输入登录码" />
-                 <button id="loginBtn" class="primary-button">登录</button>
-               </div>
-               <button id="experienceLoginBtn" class="experience-login-button" type="button">进入体验版</button>
-               <p class="experience-login-note">体验版需输入体验码，开放5篇文章，学习记录仅保存在当前浏览器。</p>
+              <div class="login-modes" role="tablist" aria-label="选择登录方式">
+                <button class="login-mode active" type="button" role="tab" aria-selected="true" data-login-mode="code">登录码登录</button>
+                <button class="login-mode" type="button" role="tab" aria-selected="false" data-login-mode="phone">手机号登录</button>
+              </div>
+              <div data-login-field="code">
+                <label for="loginCode">登录码 <small>原登录码继续有效</small></label>
+                <div class="login-row">
+                  <input id="loginCode" type="password" autocomplete="off" placeholder="请输入登录码" />
+                  <button id="loginBtn" class="primary-button">登录</button>
+                </div>
+                <button id="experienceLoginBtn" class="experience-login-button" type="button">进入体验版</button>
+                <p class="experience-login-note">体验版需输入体验码，开放5篇文章，学习记录仅保存在当前浏览器。</p>
+              </div>
+              <div class="hidden" data-login-field="phone">
+                <label for="loginPhone">手机号 <small>需老师提前开通完形填空板块</small></label>
+                <div class="login-row">
+                  <input id="loginPhone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="请输入11位手机号" />
+                  <button id="phoneLoginBtn" class="primary-button">登录</button>
+                </div>
+              </div>
                <p id="loginFeedback" class="feedback"></p>
             </div>
           </div>
