@@ -180,6 +180,8 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .item-no{font-size:12px;font-weight:700;color:var(--primary);margin-right:8px}
 .item-note{font-size:12.5px;color:var(--ink-soft);margin-top:6px;background:var(--paper);border-radius:8px;padding:6px 10px}
 .item-note .ans-hl{color:var(--primary);font-weight:700}
+.solution-note{display:none}
+.solution-note.show{display:block}
 .ex-actions{display:flex;gap:10px;margin:14px 0 4px;flex-wrap:wrap}
 .feedback{font-size:13.5px;margin-top:10px;padding:8px 12px;border-radius:9px;display:none}
 .feedback.show{display:block}
@@ -2159,7 +2161,7 @@ function markItemHtml(x,it,i){
     <div class="sent">${toks.map((w,j)=>`<span class="tok" data-item="${it.id}" data-idx="${j}" data-w="${esc(w)}">${esc(w)}</span>`).join('')}</div>
     <div class="ex-actions"><button class="btn primary sm" data-check="${it.id}" type="button">检查答案</button><button class="btn ghost sm" data-reset="${it.id}" type="button">重新选择</button></div>
     <div class="feedback" data-fb="${it.id}"></div>
-    <div class="item-note">${esc(it.note||'')}</div>
+    ${it.note?`<div class="item-note solution-note" data-note="${it.id}"><b>解析：</b>${esc(it.note)}</div>`:''}
   </div>`;
 }
 function splitItemHtml(x,it,i){
@@ -2174,7 +2176,7 @@ function splitItemHtml(x,it,i){
     </span>`).join('')}</div>
     <div class="ex-actions"><button class="btn primary sm" data-check="${it.id}" type="button">检查答案</button><button class="btn ghost sm" data-reset="${it.id}" type="button">重新选择</button></div>
     <div class="feedback" data-fb="${it.id}"></div>
-    <div class="item-note">${esc(it.note||'')}</div>
+    ${it.note?`<div class="item-note solution-note" data-note="${it.id}"><b>解析：</b>${esc(it.note)}</div>`:''}
   </div>`;
 }
 function spanMatch(toks,span){
@@ -2219,11 +2221,13 @@ function checkItem(it,box){
   selMap.forEach((s,idx)=>{if(!claimed.has(idx)){extra++}});
   const allGood=miss===0&&extra===0&&wrongSym===0;
   const fb=box.querySelector(`[data-fb="${it.id}"]`);
+  const note=box.querySelector(`[data-note="${it.id}"]`);
+  if(note)note.classList.add('show');
   fb.classList.add('show');
   if(allGood){
     st.sel='ok';saveP();
     fb.className='feedback ok show';
-    fb.innerHTML=`✅ 全对！${it.note?esc(' — '+it.note):''}`;
+    fb.innerHTML='✅ 全对！';
     box.querySelectorAll(`.tok[data-item="${it.id}"]`).forEach(t=>{
       if(t.classList.contains('is-split')){const mk=t.querySelector('.sym-mark');if(mk)mk.style.outline='1.5px solid #fff'}
       else{t.classList.remove('on');if(t.dataset.s)t.classList.add('ok')}
@@ -2266,7 +2270,7 @@ function orderItemHtml(x,it,i){
     <div class="answer-line" data-line="${it.id}"></div>
     <div class="ex-actions"><button class="btn primary sm" data-check="${it.id}" type="button">检查答案</button><button class="btn ghost sm" data-reset-order="${it.id}" type="button">重新排列</button></div>
     <div class="feedback" data-fb="${it.id}"></div>
-    <div class="item-note">${esc(it.note||'')}</div>
+    ${it.note?`<div class="item-note solution-note" data-note="${it.id}"><b>解析：</b>${esc(it.note)}</div>`:''}
   </div>`;
 }
 function updateOrderPunct(it,box){
@@ -2287,15 +2291,17 @@ function checkOrder(it,box){
   const words=Array.from(line.querySelectorAll('.wchip[data-picked]')).map(c=>c.dataset.w);
   const user=norm(words.join(' ')),ans=norm(it.ans);
   const fb=box.querySelector(`[data-fb="${it.id}"]`);
+  const note=box.querySelector(`[data-note="${it.id}"]`);
+  if(note)note.classList.add('show');
   fb.classList.add('show');
   if(user===ans){
     st.sel='ok';saveP();
     fb.className='feedback ok show';
-    fb.innerHTML=`✅ 正确！${it.note?esc(' — '+it.note):''}`;
+    fb.innerHTML='✅ 正确！';
   }else{
     st.sel='bad';saveP();notebookAdd(it);
     fb.className='feedback bad show';
-    fb.innerHTML=`❌ 参考答案：<b style="color:var(--primary)">${esc(it.ans)}</b>${it.note?'<br><span style="color:var(--ink-soft);font-size:12.5px">'+esc(it.note)+'</span>':''}`;
+    fb.innerHTML=`❌ 参考答案：<b style="color:var(--primary)">${esc(it.ans)}</b>`;
   }
   refreshQNav();
   renderHome();
@@ -2320,6 +2326,7 @@ document.addEventListener('click',e=>{
     const line=bb.querySelector(`[data-line="${iid}"]`);line.innerHTML='';
     const p=bb.querySelector(`[data-punct="${iid}"]`);if(p)p.remove();
     const fb2=bb.querySelector(`[data-fb="${iid}"]`);if(fb2){fb2.classList.remove('show');fb2.className='feedback'}
+    const note2=bb.querySelector(`[data-note="${iid}"]`);if(note2)note2.classList.remove('show');
     const it2=findItem(currentDay,iid);const st2=itemState(it2);delete st2.sel;saveP();
     refreshQNav();
     return;
@@ -2330,6 +2337,7 @@ document.addEventListener('click',e=>{
     const box=rs.closest('.ex-body');
     box.querySelectorAll(`.tok[data-item="${itId}"]`).forEach(t=>{const sp=t.classList.contains('is-split');t.className='tok'+(sp?' is-split':'');delete t.dataset.s;const mk=t.querySelector('.sym-mark');if(mk)mk.remove()});
     const fb=box.querySelector(`[data-fb="${itId}"]`);if(fb){fb.classList.remove('show');fb.className='feedback'}
+    const note=box.querySelector(`[data-note="${itId}"]`);if(note)note.classList.remove('show');
     const st=itemState(findItem(currentDay,itId));delete st.sel;saveP();
     refreshQNav();
   }
