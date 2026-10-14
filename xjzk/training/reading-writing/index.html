@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
   <title>读写题训练系统 | 新疆学生无限进步</title>
-  <link rel="stylesheet" href="style.css?v=20260916-login-casefix-1">
+  <link rel="stylesheet" href="style.css?v=20261011-phone-login-1">
   <link rel="stylesheet" href="../../assets/theme-purple.css?v=20260716-ui3">
   <link rel="stylesheet" href="../../assets/workbook-modules.css?v=20260716-1">
 </head>
@@ -16,9 +16,13 @@
       <div class="brand-mark login-mark">新</div>
       <h1>读写题训练系统</h1>
       <p>@新疆学生无限进步</p>
+      <div class="login-mode-tabs" role="tablist" aria-label="选择登录方式">
+        <button type="button" class="login-mode-tab active" data-login-mode="code" role="tab" aria-selected="true">登录码登录</button>
+        <button type="button" class="login-mode-tab" data-login-mode="phone" role="tab" aria-selected="false">手机号登录</button>
+      </div>
       <form class="login-form" id="loginForm">
-        <label for="loginCode">请输入登录码</label>
-        <input id="loginCode" type="text" autocomplete="one-time-code" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="请输入登录码">
+        <div class="login-field" data-login-field="code"><label for="loginCode">请输入登录码</label><input id="loginCode" type="text" autocomplete="one-time-code" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="请输入登录码"></div>
+        <div class="login-field" data-login-field="phone" hidden><label for="loginPhone">已授权手机号</label><input class="phone-input" id="loginPhone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="请输入11位手机号"><small>手机号需先由老师使用授权码开通当前板块。</small></div>
         <button type="submit">进入训练</button>
         <div id="loginError" class="login-message" aria-live="polite"></div>
       </form>
@@ -41,7 +45,7 @@
         <button class="nav-item" data-section="library">题库</button>
         <button class="nav-item" data-section="learning">同义词训练</button>
       </nav>
-      <a class="home-link" href="../../index.html">返回首页训练其他题型</a>
+      <div class="header-actions"><a class="home-link" href="../../index.html">返回首页训练其他题型</a><button class="logout-button" id="logoutButton" type="button">退出登录</button></div>
     </header>
 
     <main class="main-panel">
@@ -267,6 +271,6 @@
   <script src="urumqi-no1-september-2026.js?v=20260913-1"></script>
   <script src="learning-phrase-base.js?v=20260914-latest-synonyms-1"></script>
   <script src="../../assets/student-profile.js?v=20260828-1"></script>
-  <script src="app.js?v=20260914-print-paper-1"></script>
+  <script src="app.js?v=20261011-phone-login-1"></script>
 </body>
 </html>

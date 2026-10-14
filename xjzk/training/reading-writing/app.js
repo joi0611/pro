@@ -18,6 +18,8 @@ const els = {};
 const LOGIN_STORAGE_KEY = 'rw_supabase_access_code_20260710';
 const LOGIN_OK_KEY = 'rw_supabase_login_ok_20260710';
 const LOGIN_LABEL_KEY = 'rw_supabase_login_label_20260710';
+const LOGIN_MODE_KEY = 'rw_login_mode_20261011';
+const PHONE_STORAGE_KEY = 'rw_phone_login_20261011';
 const MASTERED_KEY = 'rw_supabase_mastered_cache_20260710';
 const PRACTICE_DONE_KEY = 'rw_supabase_completed_practice_cache_20260710';
 const PRACTICE_ATTEMPTS_KEY = 'rw_supabase_practice_attempts_20260828';
@@ -67,7 +69,9 @@ async function callSupabaseRpc(functionName, payload) {
   }
   if (!response.ok) {
     const msg = data && data.message ? data.message : '云端连接失败，请稍后再试。';
-    throw new Error(String(msg).includes('INVALID_ACCESS_CODE') ? '登录码不正确，请检查后再试。' : msg);
+    if (String(msg).includes('INVALID_ACCESS_CODE')) throw new Error('登录码不正确，请检查后再试。');
+    if (String(msg).includes('PHONE_ACCESS_NOT_FOUND') || String(msg).includes('INVALID_PHONE')) throw new Error('该手机号尚未开通读写题，请联系老师授权。');
+    throw new Error(msg);
   }
   return data;
 }
@@ -84,15 +88,28 @@ async function verifyAccessCode(code) {
   return account;
 }
 
-async function ensureStudentProfile(code, account) {
+async function verifyPhoneAccess(phone) {
+  const result = await callSupabaseRpc('verify_phone_access', {
+    input_phone: phone,
+    input_system_type: SYSTEM_TYPE
+  });
+  const account = Array.isArray(result) ? result[0] : null;
+  if (!account || !account.access_code_id) {
+    throw new Error('该手机号尚未开通读写题，请联系老师授权。');
+  }
+  return account;
+}
+
+async function ensureStudentProfile(mode, credential, account) {
   const name = await window.StudentProfile.ensure({
-    code,
+    code: `${mode}:${credential}`,
     account,
-    bindName: studentName => callSupabaseRpc('bind_student_name', {
-      input_code: code,
-      input_system_type: SYSTEM_TYPE,
-      input_student_name: studentName
-    })
+    bindName: studentName => callSupabaseRpc(
+      mode === 'phone' ? 'bind_phone_student_name' : 'bind_student_name',
+      mode === 'phone'
+        ? { input_phone: credential, input_system_type: SYSTEM_TYPE, input_student_name: studentName }
+        : { input_code: credential, input_system_type: SYSTEM_TYPE, input_student_name: studentName }
+    )
   });
   window.StudentProfile.applyBrand(name, SYSTEM_TYPE);
   return name;
@@ -102,12 +119,20 @@ function cleanLoginCode(value) {
   return String(value || '').replace(/[^A-Za-z0-9]/g, '').slice(0, 12);
 }
 
-function safeGetLogin() {
+function cleanPhone(value) {
+  return String(value || '').replace(/\D/g, '').slice(0, 11);
+}
+
+function safeGetLoginMode() {
+  try { return localStorage.getItem(LOGIN_MODE_KEY) === 'phone' ? 'phone' : 'code'; } catch { return 'code'; }
+}
+
+function safeGetCredential() {
   try {
-    return cleanLoginCode(localStorage.getItem(LOGIN_STORAGE_KEY));
-  } catch {
-    return '';
-  }
+    return safeGetLoginMode() === 'phone'
+      ? cleanPhone(localStorage.getItem(PHONE_STORAGE_KEY))
+      : cleanLoginCode(localStorage.getItem(LOGIN_STORAGE_KEY));
+  } catch { return ''; }
 }
 
 function clearOldLoginData() {
@@ -123,11 +148,18 @@ function clearOldLoginData() {
   });
 }
 
-function safeSetLogin(code, label) {
+function safeSetLogin(mode, credential, label) {
   clearOldLoginData();
   try {
-    localStorage.setItem(LOGIN_STORAGE_KEY, code);
+    localStorage.setItem(LOGIN_MODE_KEY, mode);
     localStorage.setItem(LOGIN_OK_KEY, 'true');
+    if (mode === 'phone') {
+      localStorage.setItem(PHONE_STORAGE_KEY, cleanPhone(credential));
+      localStorage.removeItem(LOGIN_STORAGE_KEY);
+    } else {
+      localStorage.setItem(LOGIN_STORAGE_KEY, cleanLoginCode(credential));
+      localStorage.removeItem(PHONE_STORAGE_KEY);
+    }
     if (label) localStorage.setItem(LOGIN_LABEL_KEY, label);
   } catch {}
 }
@@ -135,6 +167,8 @@ function safeSetLogin(code, label) {
 function clearLoginState() {
   try {
     localStorage.removeItem(LOGIN_STORAGE_KEY);
+    localStorage.removeItem(PHONE_STORAGE_KEY);
+    localStorage.removeItem(LOGIN_MODE_KEY);
     localStorage.removeItem(LOGIN_OK_KEY);
     localStorage.removeItem(LOGIN_LABEL_KEY);
   } catch {}
@@ -142,12 +176,13 @@ function clearLoginState() {
 
 async function setupLoginGate() {
   clearOldLoginData();
-  const saved = safeGetLogin();
+  const savedMode = safeGetLoginMode();
+  const saved = safeGetCredential();
   if (saved && localStorage.getItem(LOGIN_OK_KEY) === 'true') {
     try {
-      const account = await verifyAccessCode(saved);
-      await ensureStudentProfile(saved, account);
-      safeSetLogin(saved, account.label);
+      const account = savedMode === 'phone' ? await verifyPhoneAccess(saved) : await verifyAccessCode(saved);
+      await ensureStudentProfile(savedMode, saved, account);
+      safeSetLogin(savedMode, saved, account.label);
       unlockApp();
       return true;
     } catch (error) {
@@ -158,37 +193,68 @@ async function setupLoginGate() {
 
   const gate = document.getElementById('loginGate');
   const form = document.getElementById('loginForm');
-  const input = document.getElementById('loginCode');
+  const codeInput = document.getElementById('loginCode');
+  const phoneInput = document.getElementById('loginPhone');
   const error = document.getElementById('loginError');
-  if (!gate || !form || !input) return true;
+  const tabs = document.querySelectorAll('[data-login-mode]');
+  if (!gate || !form || !codeInput || !phoneInput) return true;
 
   document.body.classList.add('auth-locked');
-  input.addEventListener('input', () => {
-    input.value = cleanLoginCode(input.value);
+  let mode = savedMode;
+  function setLoginMode(nextMode, persist = true) {
+    mode = nextMode === 'phone' ? 'phone' : 'code';
+    if (persist) {
+      try { localStorage.setItem(LOGIN_MODE_KEY, mode); } catch {}
+    }
+    tabs.forEach(tab => {
+      const active = tab.dataset.loginMode === mode;
+      tab.classList.toggle('active', active);
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+    });
+    document.querySelectorAll('[data-login-field]').forEach(field => {
+      field.hidden = field.dataset.loginField !== mode;
+    });
+    if (error) error.textContent = '';
+    setTimeout(() => (mode === 'phone' ? phoneInput : codeInput).focus(), 0);
+  }
+  tabs.forEach(tab => tab.addEventListener('click', () => setLoginMode(tab.dataset.loginMode)));
+  codeInput.addEventListener('input', () => {
+    codeInput.value = cleanLoginCode(codeInput.value);
+    if (error) error.textContent = '';
+  });
+  phoneInput.addEventListener('input', () => {
+    phoneInput.value = cleanPhone(phoneInput.value);
     if (error) error.textContent = '';
   });
   form.addEventListener('submit', async event => {
     event.preventDefault();
-    const code = cleanLoginCode(input.value);
-    input.value = code;
-    if (!code) {
+    const input = mode === 'phone' ? phoneInput : codeInput;
+    const credential = mode === 'phone' ? cleanPhone(input.value) : cleanLoginCode(input.value);
+    input.value = credential;
+    if (mode === 'phone' && !/^1\d{10}$/.test(credential)) {
+      if (error) { error.textContent = '请输入正确的11位手机号。'; error.className = 'login-message bad'; }
+      input.focus();
+      return;
+    }
+    if (!credential) {
       if (error) {
-        error.textContent = '请输入登录码。';
+        error.textContent = mode === 'phone' ? '请输入手机号。' : '请输入登录码。';
         error.className = 'login-message bad';
       }
       input.focus();
       return;
     }
     const button = form.querySelector('button[type="submit"]');
-    if (button) button.disabled = true;
+    if (button) { button.disabled = true; button.textContent = '正在验证…'; }
     if (error) {
-      error.textContent = '正在验证登录码...';
+      error.textContent = mode === 'phone' ? '正在验证手机号授权...' : '正在验证登录码...';
       error.className = 'login-message';
     }
     try {
-      const account = await verifyAccessCode(code);
-      await ensureStudentProfile(code, account);
-      safeSetLogin(code, account.label);
+      const account = mode === 'phone' ? await verifyPhoneAccess(credential) : await verifyAccessCode(credential);
+      await ensureStudentProfile(mode, credential, account);
+      safeSetLogin(mode, credential, account.label);
       unlockApp();
       cacheElements();
       bindEvents();
@@ -211,10 +277,10 @@ async function setupLoginGate() {
       input.focus();
       input.select();
     } finally {
-      if (button) button.disabled = false;
+      if (button) { button.disabled = false; button.textContent = '进入训练'; }
     }
   });
-  setTimeout(() => input.focus(), 80);
+  setLoginMode(savedMode, false);
   return false;
 }
 
@@ -225,6 +291,17 @@ function unlockApp() {
     gate.setAttribute('aria-hidden', 'true');
     gate.style.display = 'none';
   }
+}
+
+function logout() {
+  if (!confirm('确定退出当前账号？退出后可使用手机号或登录码重新登录。')) return;
+  clearLoginState();
+  try {
+    localStorage.removeItem(MASTERED_KEY);
+    localStorage.removeItem(PRACTICE_DONE_KEY);
+    localStorage.removeItem(PRACTICE_ATTEMPTS_KEY);
+  } catch {}
+  location.reload();
 }
 
 function cacheElements() {
@@ -269,6 +346,12 @@ function bindEvents() {
       }
     });
   });
+
+  const logoutButton = document.getElementById('logoutButton');
+  if (logoutButton && !logoutButton.dataset.bound) {
+    logoutButton.dataset.bound = '1';
+    logoutButton.addEventListener('click', logout);
+  }
 
   els.modeButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -851,13 +934,16 @@ function saveCompletedPractice() {
 }
 
 async function loadCloudProgress() {
-  const code = safeGetLogin();
-  if (!code) return;
+  const credential = safeGetCredential();
+  if (!credential) return;
   try {
-    const rows = await callSupabaseRpc('get_learning_progress', {
-      input_code: code,
-      input_system_type: SYSTEM_TYPE
-    });
+    const mode = safeGetLoginMode();
+    const rows = await callSupabaseRpc(
+      mode === 'phone' ? 'get_phone_learning_progress' : 'get_learning_progress',
+      mode === 'phone'
+        ? { input_phone: credential, input_system_type: SYSTEM_TYPE }
+        : { input_code: credential, input_system_type: SYSTEM_TYPE }
+    );
     if (!Array.isArray(rows)) return;
     const row = rows.find(item => item.lesson_id === '__reading_writing__');
     const progress = row && row.progress ? row.progress : {};
@@ -899,11 +985,12 @@ function syncCloudProgressInBackground() {
 }
 
 async function saveCloudProgress() {
-  const code = safeGetLogin();
-  if (!code) return;
+  const credential = safeGetCredential();
+  if (!credential) return;
   try {
-    await callSupabaseRpc('save_learning_progress', {
-      input_code: code,
+    const mode = safeGetLoginMode();
+    await callSupabaseRpc(mode === 'phone' ? 'save_phone_learning_progress' : 'save_learning_progress', {
+      ...(mode === 'phone' ? { input_phone: credential } : { input_code: credential }),
       input_system_type: SYSTEM_TYPE,
       input_lesson_id: '__reading_writing__',
       input_progress: {

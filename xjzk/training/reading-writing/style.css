@@ -362,6 +362,56 @@ body.auth-locked .app-shell {
   text-align: left;
 }
 
+.login-mode-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 20px 0 14px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f7f3ff;
+}
+
+.login-mode-tab {
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--muted);
+  background: transparent;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.login-mode-tab.active {
+  border-color: #d8caeb;
+  color: #5b3d86;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(83, 58, 112, 0.08);
+}
+
+.login-mode-tab:focus-visible,
+.logout-button:focus-visible {
+  outline: 3px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+.login-field {
+  display: grid;
+  gap: 8px;
+}
+
+.login-field[hidden] {
+  display: none;
+}
+
+.login-field small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
 .login-form label {
   font-weight: 700;
   color: var(--ink);
@@ -372,6 +422,29 @@ body.auth-locked .app-shell {
   font-size: 20px;
   text-align: center;
   letter-spacing: 4px;
+}
+
+.login-form input.phone-input {
+  letter-spacing: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.logout-button {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .login-form button {
