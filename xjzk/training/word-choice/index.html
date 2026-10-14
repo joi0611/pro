@@ -1479,6 +1479,7 @@
   <link rel="stylesheet" href="../../assets/theme-purple.css?v=20260716-ui3">
   <link rel="stylesheet" href="../../assets/workbook-modules.css?v=20260716-1">
   <link rel="stylesheet" href="word-choice-reading.css?v=20260920-1">
+  <style>.dual-login-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0;padding:4px;border:1px solid #ddd4ee;border-radius:8px;background:#f7f3ff}.dual-login-tab{min-height:44px;border:1px solid transparent;border-radius:6px;background:transparent;color:#706879;font:inherit;font-weight:800}.dual-login-tab.active{border-color:#d8caeb;background:#fff;color:#5b3d86}.dual-login-field[hidden]{display:none}.dual-login-help{margin:7px 0 0;color:#706879;font-size:12px;line-height:1.6}.dual-phone-input{text-transform:none!important;letter-spacing:0!important}</style>
 </head>
 <body class="module-word-choice locked">
   <a class="skip-link" href="#mainContent">跳到主要内容</a>
@@ -1490,11 +1491,9 @@
       <form class="login-card" id="loginForm">
         <h1>中考英语选词填空训练系统</h1>
         <p class="login-slogan">@新疆学生无限进步</p>
-        <label for="loginCode">请输入登录码</label>
-        <div class="login-row">
-          <input id="loginCode" name="loginCode" type="text" inputmode="text" autocomplete="one-time-code" placeholder="请输入登录码" aria-describedby="loginError" />
-          <button class="btn" type="submit">进入训练</button>
-        </div>
+        <div class="dual-login-tabs" role="tablist" aria-label="选择登录方式"><button type="button" class="dual-login-tab active" data-login-mode="code" aria-selected="true">登录码登录</button><button type="button" class="dual-login-tab" data-login-mode="phone" aria-selected="false">手机号登录</button></div>
+        <div class="dual-login-field" data-login-field="code"><label for="loginCode">请输入登录码</label><div class="login-row"><input id="loginCode" name="loginCode" type="text" inputmode="text" autocomplete="one-time-code" placeholder="请输入登录码" aria-describedby="loginError" /><button class="btn" type="submit">进入训练</button></div></div>
+        <div class="dual-login-field" data-login-field="phone" hidden><label for="loginPhone">已授权手机号</label><div class="login-row"><input class="dual-phone-input" id="loginPhone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="请输入11位手机号" aria-describedby="loginError" /><button class="btn" type="submit">进入训练</button></div><p class="dual-login-help">手机号需先由老师使用授权码开通当前板块。</p></div>
         <p class="login-error" id="loginError" aria-live="polite"></p>
         <p class="login-note">登录码不区分大小写。验证通过后，本设备会保持登录状态。</p>
       </form>
@@ -1702,6 +1701,8 @@
 
     const LOGIN_STORAGE_KEY = "word_choice_supabase_access_code_20260709";
     const LOGIN_OK_KEY = "word_choice_supabase_login_ok_20260709";
+    const LOGIN_MODE_KEY = "word_choice_login_mode_20261011";
+    const PHONE_STORAGE_KEY = "word_choice_phone_20261011";
     const ONBOARDING_STORAGE_KEY = "word_choice_onboarding_seen_20260903";
     const SUPABASE_CONFIG = {
       url: "https://gbjmylxohacppnybfssh.supabase.co",
@@ -1742,26 +1743,32 @@
       return account;
     }
 
-    async function ensureStudentProfile(code, account) {
+    async function verifyPhoneAccess(phone) {
+      const result = await callSupabaseRpc("verify_phone_access", { input_phone: phone, input_system_type: SYSTEM_TYPE });
+      const account = Array.isArray(result) ? result[0] : null;
+      if (!account || !account.access_code_id) throw new Error("该手机号尚未开通选词填空，请联系老师授权。");
+      return account;
+    }
+
+    async function ensureStudentProfile(mode, credential, account) {
       const name = await window.StudentProfile.ensure({
-        code,
+        code: `${mode}:${credential}`,
         account,
-        bindName: studentName => callSupabaseRpc("bind_student_name", {
-          input_code: code,
-          input_system_type: SYSTEM_TYPE,
-          input_student_name: studentName
-        })
+        bindName: studentName => callSupabaseRpc(mode === "phone" ? "bind_phone_student_name" : "bind_student_name", mode === "phone" ? { input_phone: credential, input_system_type: SYSTEM_TYPE, input_student_name: studentName } : { input_code: credential, input_system_type: SYSTEM_TYPE, input_student_name: studentName })
       });
       window.StudentProfile.applyBrand(name, SYSTEM_TYPE);
     }
 
+    function safeGetLoginMode() { try { return localStorage.getItem(LOGIN_MODE_KEY) === "phone" ? "phone" : "code"; } catch (error) { return "code"; } }
     function safeGetLogin() {
-      try { return normalizeLoginCode(localStorage.getItem(LOGIN_STORAGE_KEY)); } catch (error) { return ""; }
+      try { return safeGetLoginMode() === "phone" ? String(localStorage.getItem(PHONE_STORAGE_KEY)||"").replace(/\D/g,"").slice(0,11) : normalizeLoginCode(localStorage.getItem(LOGIN_STORAGE_KEY)); } catch (error) { return ""; }
     }
 
-    function safeSetLogin(code) {
+    function safeSetLogin(mode, credential) {
       try {
-        localStorage.setItem(LOGIN_STORAGE_KEY, code);
+        localStorage.setItem(LOGIN_MODE_KEY, mode);
+        if (mode === "phone") { localStorage.setItem(PHONE_STORAGE_KEY, credential); localStorage.removeItem(LOGIN_STORAGE_KEY); }
+        else { localStorage.setItem(LOGIN_STORAGE_KEY, credential); localStorage.removeItem(PHONE_STORAGE_KEY); }
         localStorage.setItem(LOGIN_OK_KEY, "true");
       } catch (error) {}
     }
@@ -1803,7 +1810,8 @@
     applyXinjiangProgressCopy();
 
     if (safeGetLogin() && localStorage.getItem(LOGIN_OK_KEY) === "true") {
-      verifyAccessCode(safeGetLogin()).then(account => ensureStudentProfile(safeGetLogin(), account)).then(unlockApp).catch(() => {
+      const savedMode = safeGetLoginMode(), savedCredential = safeGetLogin();
+      (savedMode === "phone" ? verifyPhoneAccess(savedCredential) : verifyAccessCode(savedCredential)).then(account => ensureStudentProfile(savedMode, savedCredential, account)).then(unlockApp).catch(() => {
         try { localStorage.removeItem(LOGIN_OK_KEY); } catch (error) {}
       });
     }
@@ -5008,29 +5016,36 @@
       event.target.value = normalizeLoginCode(event.target.value).slice(0, 12);
       document.getElementById("loginError").textContent = "";
     });
+    document.getElementById("loginPhone").addEventListener("input", event => { event.target.value = String(event.target.value || "").replace(/\D/g, "").slice(0, 11); document.getElementById("loginError").textContent = ""; });
+    let activeLoginMode = safeGetLoginMode();
+    function setActiveLoginMode(nextMode, persist = true) { activeLoginMode = nextMode === "phone" ? "phone" : "code"; if (persist) { try { localStorage.setItem(LOGIN_MODE_KEY, activeLoginMode); } catch (error) {} } document.querySelectorAll("[data-login-mode]").forEach(item => { const active = item.dataset.loginMode === activeLoginMode; item.classList.toggle("active", active); item.setAttribute("aria-selected", String(active)); item.tabIndex = active ? 0 : -1; }); document.querySelectorAll("[data-login-field]").forEach(field => field.hidden = field.dataset.loginField !== activeLoginMode); document.getElementById("loginError").textContent = ""; }
+    document.querySelectorAll("[data-login-mode]").forEach(tab => tab.addEventListener("click", () => { setActiveLoginMode(tab.dataset.loginMode); setTimeout(() => document.getElementById(activeLoginMode === "phone" ? "loginPhone" : "loginCode").focus(), 0); }));
+    setActiveLoginMode(activeLoginMode, false);
 
     document.getElementById("loginForm").addEventListener("submit", async event => {
       event.preventDefault();
-      const code = normalizeLoginCode(document.getElementById("loginCode").value);
-      if (!code) {
-        document.getElementById("loginError").textContent = "请输入登录码。";
-        document.getElementById("loginCode").focus();
+      const input = document.getElementById(activeLoginMode === "phone" ? "loginPhone" : "loginCode");
+      const credential = activeLoginMode === "phone" ? String(input.value || "").replace(/\D/g, "").slice(0, 11) : normalizeLoginCode(input.value);
+      if (activeLoginMode === "phone" && !/^1\d{10}$/.test(credential)) { document.getElementById("loginError").textContent = "请输入正确的11位手机号。"; input.focus(); return; }
+      if (!credential) {
+        document.getElementById("loginError").textContent = activeLoginMode === "phone" ? "请输入手机号。" : "请输入登录码。";
+        input.focus();
         return;
       }
-      const submitButton = event.currentTarget.querySelector('button[type="submit"]');
-      if (submitButton) submitButton.disabled = true;
-      document.getElementById("loginError").textContent = "正在验证登录码...";
+      const submitButtons = event.currentTarget.querySelectorAll('button[type="submit"]');
+      submitButtons.forEach(button => button.disabled = true);
+      document.getElementById("loginError").textContent = activeLoginMode === "phone" ? "正在验证手机号授权..." : "正在验证登录码...";
       try {
-        const account = await verifyAccessCode(code);
-        await ensureStudentProfile(code, account);
-        safeSetLogin(code);
+        const account = activeLoginMode === "phone" ? await verifyPhoneAccess(credential) : await verifyAccessCode(credential);
+        await ensureStudentProfile(activeLoginMode, credential, account);
+        safeSetLogin(activeLoginMode, credential);
         unlockApp();
         showToast("登录成功，请选择篇目开始训练。");
       } catch (error) {
         document.getElementById("loginError").textContent = error.message || "登录码不正确，请检查后重新输入。";
-        document.getElementById("loginCode").focus();
+        input.focus();
       } finally {
-        if (submitButton) submitButton.disabled = false;
+        submitButtons.forEach(button => button.disabled = false);
       }
     });
 
