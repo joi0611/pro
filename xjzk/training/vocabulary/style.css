@@ -184,6 +184,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .login-box input{height:54px;border:1px solid #bda5df;border-radius:8px;background:#fff;color:var(--ink);font-size:20px;letter-spacing:5px}
 .login-box input:focus{border-color:#7655a6;box-shadow:0 0 0 3px #ede4f8}
 .login-box small{color:#b42318}
+.login-modes{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 0 18px;padding:4px;border:1px solid var(--line);border-radius:10px;background:#faf8fd}.login-box .login-modes button{width:auto;min-height:44px;margin:0;padding:10px;border:0;border-radius:7px;color:var(--muted);background:transparent;box-shadow:none;font-size:14px}.login-box .login-modes button.active{color:#fff;background:#7655a6}.login-box .login-modes button:focus-visible{outline:3px solid rgba(118,85,166,.25);outline-offset:2px}.login-help{margin:8px 0 0!important;text-align:left;font-size:12px}
 .login-credit{margin-top:4px;padding:8px 14px;border:0;border-radius:8px;background:transparent;color:#665d70;letter-spacing:0}
 .memory-stage{background:#faf8fd;color:var(--ink)}
 .brain-progress,.memory-home,.memory-confirm>div{border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:0 10px 28px rgba(75,49,104,.10)}
