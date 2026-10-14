@@ -92,6 +92,53 @@ body:not(.auth-locked) .login-gate {
   margin-top: 0.15rem;
 }
 
+.login-mode-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: #f7f3ff;
+}
+
+.login-mode-tab {
+  min-height: 2.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.4rem;
+  color: var(--muted);
+  background: transparent;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.login-mode-tab.active {
+  border-color: #d8caeb;
+  color: #5b3d86;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(83, 58, 112, 0.08);
+}
+
+.login-mode-tab:focus-visible {
+  outline: 3px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+.login-field {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.login-field[hidden] {
+  display: none;
+}
+
+.login-help {
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
 .login-card label {
   font-weight: 800;
   color: var(--ink);
@@ -107,6 +154,10 @@ body:not(.auth-locked) .login-gate {
   text-transform: uppercase;
   letter-spacing: 0;
   background: #fff;
+}
+
+.login-card input.phone-input {
+  text-transform: none;
 }
 
 .login-card input:focus {
