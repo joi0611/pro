@@ -620,6 +620,12 @@
     .login-card h1 { margin: 0 0 8px; font-size: clamp(26px, 6vw, 38px); line-height: 1.2; }
     .login-copy { margin: 0 0 24px; color: var(--muted); line-height: 1.7; }
     .login-form label { display: block; margin-bottom: 8px; font-weight: 700; }
+    .login-mode-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0 0 18px; padding: 4px; border: 1px solid var(--line); border-radius: 8px; background: #f7f3ff; }
+    .login-mode-tab { min-height: 44px; border: 1px solid transparent; border-radius: 6px; color: var(--muted); background: transparent; font: inherit; font-weight: 800; cursor: pointer; }
+    .login-mode-tab.active { border-color: #d8caeb; color: #5b3d86; background: #fff; box-shadow: 0 4px 12px rgba(83,58,112,.08); }
+    .login-mode-tab:focus-visible { outline: 3px solid #7c3aed; outline-offset: 2px; }
+    .login-field[hidden] { display: none; }
+    .login-help { margin: 7px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
     .login-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
     .login-row input { width: 100%; box-sizing: border-box; border: 1px solid var(--line); border-radius: 7px; padding: 12px 14px; background: #fff; color: var(--ink); font: inherit; font-size: 16px; text-transform: none; }
     .login-row button { border: 1px solid var(--brand); border-radius: 7px; padding: 0 20px; background: var(--brand); color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
@@ -698,13 +704,11 @@
         <div><strong>新疆学生无限进步</strong><span>中考英语专项训练</span></div>
       </div>
       <h1 id="loginTitle">阅读理解训练系统</h1>
-      <p class="login-copy">输入登录码后进入阅读理解题库。首次使用会将登录码绑定到本专项。</p>
+      <p class="login-copy">使用登录码，或使用老师已经授权的手机号进入阅读理解题库。</p>
+      <div class="login-mode-tabs" role="tablist" aria-label="选择登录方式"><button type="button" class="login-mode-tab active" data-login-mode="code" role="tab" aria-selected="true">登录码登录</button><button type="button" class="login-mode-tab" data-login-mode="phone" role="tab" aria-selected="false">手机号登录</button></div>
       <form class="login-form" id="readingLoginForm">
-        <label for="readingLoginCode">登录码</label>
-        <div class="login-row">
-          <input id="readingLoginCode" name="code" type="text" maxlength="12" autocomplete="one-time-code" placeholder="请输入登录码" required>
-          <button id="readingLoginButton" type="submit">进入题库</button>
-        </div>
+        <div class="login-field" data-login-field="code"><label for="readingLoginCode">登录码</label><div class="login-row"><input id="readingLoginCode" name="code" type="text" maxlength="12" autocomplete="one-time-code" placeholder="请输入登录码"><button id="readingLoginButton" type="submit">进入题库</button></div></div>
+        <div class="login-field" data-login-field="phone" hidden><label for="readingLoginPhone">已授权手机号</label><div class="login-row"><input id="readingLoginPhone" name="phone" type="tel" inputmode="numeric" maxlength="11" autocomplete="tel" placeholder="请输入11位手机号"><button type="submit">进入题库</button></div><p class="login-help">手机号需先由老师使用授权码开通当前板块。</p></div>
         <p class="login-error" id="readingLoginError" role="alert" aria-live="polite"></p>
       </form>
       <a class="login-home" href="../../index.html">返回首页，训练其他题型</a>
@@ -946,11 +950,14 @@
     const state = { view: "home", catalogLetter: "", passage: 0, question: 0, chosenWords: [], chosenAnswer: "", attemptSubmitted: false, located: false, compared: false, keywordsConfirmed: false, answers: {}, translationCollapsed: {} };
     const SYSTEM_TYPE = "reading-comprehension";
     const LOGIN_STORAGE_KEY = "reading_comprehension_access_code_20260716";
+    const LOGIN_MODE_KEY = "reading_comprehension_login_mode_20261011";
+    const PHONE_STORAGE_KEY = "reading_comprehension_phone_20261011";
     const SUPABASE_CONFIG = {
       url: "https://gbjmylxohacppnybfssh.supabase.co",
       anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdiam15bHhvaGFjcHBueWJmc3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDA1NzgsImV4cCI6MjA5ODI3NjU3OH0.mz5srsxdbZa4__oqKjlcysWuDo00w7UQaV8n2VNP4eE"
     };
     let activeAccessCode = "";
+    let activeLoginMode = "code";
     const detailCompareLabels = ["原词复现", "同义替换", "无依据", "偷换对象", "数字/时间错误", "范围错误", "反向表达"];
     const globalCompareLabels = ["全文覆盖", "只涵盖细节", "范围过大", "范围过窄", "偏离主题", "吸引力较弱", "最佳标题"];
     const structureCompareLabels = ["结构吻合", "层次错分", "方法段误判", "总结段误判", "无依据", "最佳结构"];
@@ -2383,11 +2390,15 @@
       return account;
     }
 
-    async function loadReadingProgress(code) {
-      const rows = await callSupabaseRpc("get_learning_progress", {
-        input_code: code,
-        input_system_type: SYSTEM_TYPE
-      });
+    async function verifyReadingPhone(phone) {
+      const result = await callSupabaseRpc("verify_phone_access", { input_phone: phone, input_system_type: SYSTEM_TYPE });
+      const account = Array.isArray(result) ? result[0] : null;
+      if (!account || !account.access_code_id) throw new Error("该手机号尚未开通阅读理解，请联系老师授权。");
+      return account;
+    }
+
+    async function loadReadingProgress(mode, credential) {
+      const rows = await callSupabaseRpc(mode === "phone" ? "get_phone_learning_progress" : "get_learning_progress", mode === "phone" ? { input_phone: credential, input_system_type: SYSTEM_TYPE } : { input_code: credential, input_system_type: SYSTEM_TYPE });
       (Array.isArray(rows) ? rows : []).forEach(row => {
         if (row && row.lesson_id && row.progress && row.progress.answer) {
           state.answers[row.lesson_id] = row.progress.answer;
@@ -2399,8 +2410,8 @@
     async function saveReadingProgress(lessonId, answer) {
       if (!activeAccessCode) return;
       try {
-        await callSupabaseRpc("save_learning_progress", {
-          input_code: activeAccessCode,
+        await callSupabaseRpc(activeLoginMode === "phone" ? "save_phone_learning_progress" : "save_learning_progress", {
+          ...(activeLoginMode === "phone" ? { input_phone: activeAccessCode } : { input_code: activeAccessCode }),
           input_system_type: SYSTEM_TYPE,
           input_lesson_id: lessonId,
           input_progress: { answer },
@@ -2418,59 +2429,68 @@
       renderAll();
     }
 
-    async function completeReadingLogin(code) {
-      const account = await verifyReadingCode(code);
+    async function completeReadingLogin(mode, credential) {
+      const account = mode === "phone" ? await verifyReadingPhone(credential) : await verifyReadingCode(credential);
       const name = await window.StudentProfile.ensure({
-        code,
+        code: `${mode}:${credential}`,
         account,
-        bindName: studentName => callSupabaseRpc("bind_student_name", {
-          input_code: code,
-          input_system_type: SYSTEM_TYPE,
-          input_student_name: studentName
-        })
+        bindName: studentName => callSupabaseRpc(mode === "phone" ? "bind_phone_student_name" : "bind_student_name", mode === "phone" ? { input_phone: credential, input_system_type: SYSTEM_TYPE, input_student_name: studentName } : { input_code: credential, input_system_type: SYSTEM_TYPE, input_student_name: studentName })
       });
       window.StudentProfile.applyBrand(name, SYSTEM_TYPE);
-      activeAccessCode = code;
-      localStorage.setItem(LOGIN_STORAGE_KEY, code);
-      await loadReadingProgress(code);
+      activeAccessCode = credential;
+      activeLoginMode = mode;
+      localStorage.setItem(LOGIN_MODE_KEY, mode);
+      if (mode === "phone") { localStorage.setItem(PHONE_STORAGE_KEY, credential); localStorage.removeItem(LOGIN_STORAGE_KEY); }
+      else { localStorage.setItem(LOGIN_STORAGE_KEY, credential); localStorage.removeItem(PHONE_STORAGE_KEY); }
+      await loadReadingProgress(mode, credential);
       unlockReadingApp();
     }
 
     async function initReadingLogin() {
       const form = $("readingLoginForm");
-      const input = $("readingLoginCode");
+      const codeInput = $("readingLoginCode");
+      const phoneInput = $("readingLoginPhone");
       const button = $("readingLoginButton");
       const errorBox = $("readingLoginError");
+      const tabs = document.querySelectorAll("[data-login-mode]");
+      let mode = "code";
+      function setMode(next, persist = true) { mode = next === "phone" ? "phone" : "code"; if (persist) localStorage.setItem(LOGIN_MODE_KEY, mode); tabs.forEach(tab => { const active = tab.dataset.loginMode === mode; tab.classList.toggle("active", active); tab.setAttribute("aria-selected", String(active)); tab.tabIndex = active ? 0 : -1; }); document.querySelectorAll("[data-login-field]").forEach(field => field.hidden = field.dataset.loginField !== mode); errorBox.textContent = ""; setTimeout(() => (mode === "phone" ? phoneInput : codeInput).focus(), 0); }
+      tabs.forEach(tab => tab.addEventListener("click", () => setMode(tab.dataset.loginMode)));
+      codeInput.addEventListener("input", () => { codeInput.value = String(codeInput.value || "").replace(/[^A-Za-z0-9]/g, "").slice(0, 12); errorBox.textContent = ""; });
+      phoneInput.addEventListener("input", () => { phoneInput.value = String(phoneInput.value || "").replace(/\D/g, "").slice(0, 11); errorBox.textContent = ""; });
 
       form.addEventListener("submit", async event => {
         event.preventDefault();
-        const code = String(input.value || "").replace(/[^A-Za-z0-9]/g, "").slice(0, 12);
-        if (!code) { errorBox.textContent = "请输入登录码。"; return; }
-        button.disabled = true;
+        const input = mode === "phone" ? phoneInput : codeInput;
+        const credential = mode === "phone" ? String(input.value || "").replace(/\D/g, "").slice(0, 11) : String(input.value || "").replace(/[^A-Za-z0-9]/g, "").slice(0, 12);
+        if (mode === "phone" && !/^1\d{10}$/.test(credential)) { errorBox.textContent = "请输入正确的11位手机号。"; return; }
+        if (!credential) { errorBox.textContent = mode === "phone" ? "请输入手机号。" : "请输入登录码。"; return; }
+        form.querySelectorAll('button[type="submit"]').forEach(item => item.disabled = true);
         button.textContent = "正在验证...";
         errorBox.textContent = "";
         try {
-          await completeReadingLogin(code);
+          await completeReadingLogin(mode, credential);
         } catch (error) {
-          localStorage.removeItem(LOGIN_STORAGE_KEY);
-          errorBox.textContent = "登录码不正确，或不可用于当前专项。";
+          errorBox.textContent = error.message || "登录失败，请检查后重试。";
         } finally {
-          button.disabled = false;
+          form.querySelectorAll('button[type="submit"]').forEach(item => item.disabled = false);
           button.textContent = "进入题库";
         }
       });
 
-      const savedCode = localStorage.getItem(LOGIN_STORAGE_KEY);
-      if (!savedCode) { input.focus(); return; }
-      input.value = savedCode;
+      const savedMode = localStorage.getItem(LOGIN_MODE_KEY) === "phone" ? "phone" : "code";
+      const saved = savedMode === "phone" ? localStorage.getItem(PHONE_STORAGE_KEY) : localStorage.getItem(LOGIN_STORAGE_KEY);
+      if (!saved) { setMode(savedMode, false); return; }
+      setMode(savedMode, false);
+      (savedMode === "phone" ? phoneInput : codeInput).value = saved;
       button.disabled = true;
       button.textContent = "正在恢复进度...";
       try {
-        await completeReadingLogin(savedCode);
+        await completeReadingLogin(savedMode, saved);
       } catch (error) {
-        localStorage.removeItem(LOGIN_STORAGE_KEY);
-        errorBox.textContent = "原登录状态已失效，请重新输入登录码。";
-        input.focus();
+        localStorage.removeItem(savedMode === "phone" ? PHONE_STORAGE_KEY : LOGIN_STORAGE_KEY);
+        errorBox.textContent = "原登录状态已失效，请重新登录。";
+        (savedMode === "phone" ? phoneInput : codeInput).focus();
       } finally {
         button.disabled = false;
         button.textContent = "进入题库";
