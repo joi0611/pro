@@ -2,17 +2,22 @@
   "use strict";
   var users = [];
   var toastTimer = null;
+  var ADMIN_TOKEN_KEY = "shcloze_admin_token";
   function $(id) { return document.getElementById(id); }
 
-  function api(url, options) {
-    options = options || {};
-    options.headers = Object.assign({ "Content-Type": "application/json" }, options.headers || {});
-    return fetch(url, options).then(function (response) {
-      return response.json().catch(function () { return {}; }).then(function (data) {
-        if (response.status === 401) { showLogin("登录已失效，请重新登录"); throw new Error("登录已失效"); }
-        if (!response.ok || !data.ok) throw new Error(data.msg || "操作失败，请稍后重试");
-        return data;
-      });
+  function api(action, payload) {
+    payload = Object.assign({}, payload || {});
+    var token = localStorage.getItem(ADMIN_TOKEN_KEY);
+    if (token) payload.token = token;
+    if (typeof window.shclozeRpc !== "function") return Promise.reject(new Error("管理服务配置未加载，请刷新页面"));
+    return window.shclozeRpc(action, payload).then(function (data) {
+      if (data && data.code === 401) {
+        localStorage.removeItem(ADMIN_TOKEN_KEY);
+        showLogin("登录已失效，请重新登录");
+        throw new Error("登录已失效");
+      }
+      if (!data || !data.ok) throw new Error((data && data.msg) || "操作失败，请稍后重试");
+      return data;
     });
   }
 
@@ -109,7 +114,7 @@
       }));
       actions.appendChild(makeButton("删除", "danger", function () {
         if (!window.confirm("确定删除手机号 " + user.phone + "？删除后该账号将立即退出且无法登录。")) return;
-        api("/api/admin/phones/" + user.phone, { method: "DELETE" }).then(function () {
+        api("admin_delete", { phone: user.phone }).then(function () {
           users = users.filter(function (item) { return item.phone !== user.phone; });
           updateStats(); renderUsers(); toast("手机号已删除");
         }).catch(function (error) { toast(error.message); });
@@ -121,14 +126,14 @@
   }
 
   function patchUser(phone, changes, successText) {
-    api("/api/admin/phones/" + phone, { method: "PATCH", body: JSON.stringify(changes) }).then(function (data) {
+    api("admin_update", Object.assign({ phone: phone }, changes)).then(function (data) {
       users = users.map(function (item) { return item.phone === phone ? data.user : item; });
       updateStats(); renderUsers(); toast(successText);
     }).catch(function (error) { toast(error.message); });
   }
 
   function loadUsers() {
-    api("/api/admin/phones").then(function (data) {
+    api("admin_list").then(function (data) {
       users = data.users || []; updateStats(); renderUsers();
     }).catch(function (error) { if (error.message !== "登录已失效") toast(error.message); });
   }
@@ -139,7 +144,8 @@
     if (!password) { input.setAttribute("aria-invalid", "true"); setMessage("loginMsg", "请输入管理员密码", false); input.focus(); return; }
     input.removeAttribute("aria-invalid"); setMessage("loginMsg", "", false);
     setBusy(button, true, "进入管理后台", "正在登录…");
-    api("/api/admin/login", { method: "POST", body: JSON.stringify({ password: password }) }).then(function () {
+    api("admin_login", { password: password }).then(function (data) {
+      localStorage.setItem(ADMIN_TOKEN_KEY, data.token);
       input.value = ""; showApp();
     }).catch(function (error) {
       setMessage("loginMsg", error.message, false); input.focus();
@@ -155,7 +161,7 @@
     }
     input.removeAttribute("aria-invalid"); setMessage("openMsg", "", false);
     setBusy(button, true, "开通手机号", "正在开通…");
-    api("/api/admin/phones", { method: "POST", body: JSON.stringify({ phone: phone, note: note.value.trim() }) }).then(function (data) {
+    api("admin_add", { phone: phone, note: note.value.trim() }).then(function (data) {
       users.unshift(data.user); updateStats(); renderUsers();
       input.value = ""; note.value = ""; setMessage("openMsg", "手机号 " + phone + " 已开通，可直接登录。", true); input.focus();
     }).catch(function (error) {
@@ -174,10 +180,14 @@
   });
   $("phoneSearch").addEventListener("input", renderUsers);
   $("logoutBtn").addEventListener("click", function () {
-    api("/api/admin/logout", { method: "POST" }).finally(function () { users = []; showLogin(); });
+    api("admin_logout").finally(function () {
+      localStorage.removeItem(ADMIN_TOKEN_KEY); users = []; showLogin();
+    });
   });
 
-  fetch("/api/admin/session", { cache: "no-store" }).then(function (response) { return response.json(); }).then(function (data) {
-    if (data && data.loggedIn) showApp(); else showLogin();
-  }).catch(function () { showLogin("无法连接管理服务，请稍后刷新"); });
+  if (!localStorage.getItem(ADMIN_TOKEN_KEY)) showLogin();
+  else api("admin_session").then(function (data) {
+    if (data.loggedIn) showApp();
+    else { localStorage.removeItem(ADMIN_TOKEN_KEY); showLogin(); }
+  }).catch(function (error) { showLogin(error.message || "无法连接管理服务，请稍后刷新"); });
 })();

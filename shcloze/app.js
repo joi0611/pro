@@ -3742,6 +3742,7 @@ init();
 /* ==================== 手机号白名单登录 ==================== */
 (function () {
   var currentPhone = "";
+  var STUDENT_PHONE_KEY = "shcloze_student_phone";
   function $(id) { return document.getElementById(id); }
 
   function lockBody() {
@@ -3778,7 +3779,8 @@ init();
       button.classList.add("is-active");
       button.onclick = function () {
         if (!window.confirm("确定退出当前账号？")) return;
-        fetch("/api/logout", { method: "POST" }).finally(function () { location.reload(); });
+        localStorage.removeItem(STUDENT_PHONE_KEY);
+        location.reload();
       };
     } else {
       button.textContent = "登录";
@@ -3797,13 +3799,12 @@ init();
     }
     if (input) input.removeAttribute("aria-invalid");
     setBusy(true); showMsg("", false);
-    fetch("/api/login", {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ phone: phone })
-    }).then(function (response) {
-      return response.json().catch(function () { return {}; });
-    }).then(function (data) {
+    if (typeof window.shclozeRpc !== "function") {
+      setBusy(false); showMsg("登录服务配置未加载，请刷新页面", false); return;
+    }
+    window.shclozeRpc("student_login", { phone: phone }).then(function (data) {
       if (!data || !data.ok) throw new Error((data && data.msg) || "登录失败，请稍后重试");
+      localStorage.setItem(STUDENT_PHONE_KEY, phone);
       currentPhone = data.phone || phone;
       showMsg("登录成功，正在进入…", true);
       setTimeout(function () { unlockBody(); renderLoginBtn(); }, 250);
@@ -3832,10 +3833,16 @@ init();
       });
       input.addEventListener("keydown", function (event) { if (event.key === "Enter") submit(); });
     }
-    fetch("/api/session", { cache: "no-store" }).then(function (response) { return response.json(); }).then(function (data) {
-      if (data && data.loggedIn) { currentPhone = data.phone || "已登录"; unlockBody(); }
+    var savedPhone = localStorage.getItem(STUDENT_PHONE_KEY) || "";
+    if (!savedPhone) { renderLoginBtn(); return; }
+    if (typeof window.shclozeRpc !== "function") {
+      showMsg("登录服务配置未加载，请刷新页面", false); renderLoginBtn(); return;
+    }
+    window.shclozeRpc("student_login", { phone: savedPhone }).then(function (data) {
+      if (data && data.ok) { currentPhone = data.phone || "已登录"; unlockBody(); }
+      else localStorage.removeItem(STUDENT_PHONE_KEY);
       renderLoginBtn();
-    }).catch(function () { showMsg("无法连接登录服务，请稍后刷新页面", false); });
+    }).catch(function () { showMsg("无法连接登录服务，请稍后刷新页面", false); renderLoginBtn(); });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
