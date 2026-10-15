@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300" role="img" aria-labelledby="title desc">
+  <title id="title">Question 47 passage structure options</title>
+  <desc id="desc">Four passage structure diagrams labeled A through D. Option C shows paragraph one leading to parallel paragraphs two and three, which lead to paragraph four.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#333"/></marker>
+    <style>.label{font:700 24px Arial,sans-serif}.node{fill:#fff;stroke:#333;stroke-width:2}.txt{font:20px Arial,sans-serif;text-anchor:middle;dominant-baseline:middle}.line{stroke:#333;stroke-width:2;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <text class="label" x="15" y="32">A</text>
+  <circle class="node" cx="65" cy="72" r="25"/><text class="txt" x="65" y="72">P1</text>
+  <circle class="node" cx="125" cy="72" r="25"/><text class="txt" x="125" y="72">P2</text>
+  <circle class="node" cx="185" cy="72" r="25"/><text class="txt" x="185" y="72">P3</text>
+  <circle class="node" cx="125" cy="165" r="25"/><text class="txt" x="125" y="165">P4</text>
+  <path class="line" d="M80 92 L108 141"/><path class="line" d="M125 98 L125 137"/><path class="line" d="M170 92 L142 141"/>
+
+  <text class="label" x="260" y="32">B</text>
+  <circle class="node" cx="360" cy="72" r="25"/><text class="txt" x="360" y="72">P1</text>
+  <circle class="node" cx="300" cy="165" r="25"/><text class="txt" x="300" y="165">P2</text>
+  <circle class="node" cx="360" cy="165" r="25"/><text class="txt" x="360" y="165">P3</text>
+  <circle class="node" cx="420" cy="165" r="25"/><text class="txt" x="420" y="165">P4</text>
+  <path class="line" d="M346 94 L316 141"/><path class="line" d="M360 98 L360 137"/><path class="line" d="M374 94 L404 141"/>
+
+  <text class="label" x="505" y="32">C</text>
+  <circle class="node" cx="610" cy="62" r="25"/><text class="txt" x="610" y="62">P1</text>
+  <circle class="node" cx="565" cy="145" r="25"/><text class="txt" x="565" y="145">P2</text>
+  <circle class="node" cx="655" cy="145" r="25"/><text class="txt" x="655" y="145">P3</text>
+  <circle class="node" cx="610" cy="235" r="25"/><text class="txt" x="610" y="235">P4</text>
+  <path class="line" d="M597 84 L578 120"/><path class="line" d="M623 84 L642 120"/><path class="line" d="M579 168 L596 211"/><path class="line" d="M641 168 L624 211"/>
+
+  <text class="label" x="750" y="32">D</text>
+  <circle class="node" cx="800" cy="82" r="25"/><text class="txt" x="800" y="82">P1</text>
+  <circle class="node" cx="900" cy="82" r="25"/><text class="txt" x="900" y="82">P2</text>
+  <circle class="node" cx="800" cy="190" r="25"/><text class="txt" x="800" y="190">P3</text>
+  <circle class="node" cx="900" cy="190" r="25"/><text class="txt" x="900" y="190">P4</text>
+  <path class="line" d="M818 101 L882 171"/><path class="line" d="M882 101 L818 171"/>
+</svg>
