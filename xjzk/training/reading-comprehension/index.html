@@ -895,7 +895,18 @@
         questions: [
           q(50, "What does the underlined word “uneasy” in Paragraph 1 probably mean?", ["A. calm", "B. nervous", "C. relaxed", "D. afraid"], "B", ["uneasy", "Paragraph 1", "mean"], "Many teens feel uneasy when they don't have their phones nearby.", "mean 是词义猜测题，要回到词所在句和上下文判断情绪。", ["A/C：calm、relaxed 与不安相反。", "B：nervous 最接近 uneasy。", "D：afraid 程度过重。"], "没有手机在身边 feel uneasy，即 nervous。"),
           q(51, "What can we do to use the phone less according to the text?", ["A. Charge the phone in the bedroom at night.", "B. Keep all the notices on to know what's happening.", "C. Bring the phone to the dinner table to share interesting things.", "D. Pick a special time each day and focus on other things when it's over."], "D", ["What", "use the phone less"], "A good way to use your phone less is to pick a special time each day.", "use the phone less 原词复现，答案句通常就在其后。", ["A：原文说 charge it in the kitchen overnight。", "B：原文说 turn off notices except important ones。", "C：原文说 dinner table 不允许手机。", "D：与 pick a special time each day 一致。"], "D 与原文建议一致。"),
-          q(52, "Which of the following best shows the structure of the text?", ["A. 1 / 2-4 / 5 / 6", "B. 1-2 / 3-5 / 6", "C. 1 / 2 / 3 / 4 / 5 / 6", "D. 1 / 2-5 / 6"], "A", ["structure", "text"], "That's why the methods are mentioned above.", "structure 是结构题，要看每段功能：提出问题、给方法、说明效果、总结号召。", ["A：P1 提问题，P2-P4 三个方法，P5 解释效果，P6 总结。", "B/C/D：把第 5 段误判为方法段。"], "第 5 段说 methods above，说明方法在前面。"),
+          Object.assign(q(52, "Which of the following best shows the structure of the text?", ["A. 1 / 2-4 / 5 / 6", "B. 1-2 / 3-5 / 6", "C. 1 / 2 / 3 / 4 / 5 / 6", "D. 1 / 2-5 / 6"], "A", ["best structure", "Paragraph 1", "Paragraphs 2-4", "Paragraph 5", "Paragraph 6"], "We all love our phones, but using them too much can cause problems. / Here's how to control without giving up your phone. / A good way to use your phone less is to pick a special time each day. / Next, fight those noisy dings and buzzes. / Create places where phones aren't allowed. / Scientists found that about 1/3 of phone time is just habit, not something we truly enjoy. / That's why the methods are mentioned above. / By making such small changes, you can save over 2 hours daily! / Remember what an old Greek teacher once said, “Real freedom comes from controlling yourself.” / Start small: Try one tip this week.", "结构题要区分“方法”和“方法的依据、效果”：第1段提出手机使用问题；第2-4段并列给出三种方法；第5段用研究数据说明习惯成因和改变后的效果；第6段总结并号召行动。", ["A：P1提出问题，P2-4并列给方法，P5说明依据与效果，P6总结号召，四层结构完全吻合。", "B：把第2段第一个方法错并入开头，又把第5段的依据与效果错并入方法组。", "C：把功能相同、并列提出方法的第2-4段全部割裂。", "D：把说明依据与效果的第5段误判成第四个方法段。"], "P1指出过度使用手机的问题并引出控制方法；P2、P3、P4分别提出限定时间、关闭通知、设置无手机区域三种并列方法；P5用研究数据解释手机使用习惯，并说明这些改变能节省时间；P6用名言和行动建议总结全文。因此结构是“1—2/3/4—5—6”，选择 A。"), {
+            image: "assets/mock-2026-shisanzhong-d-q52.png",
+            structureClues: ["using them too much can cause problems", "how to control", "A good way", "Next", "Create places", "Scientists found", "methods are mentioned above", "By making such small changes", "Remember", "Start small"],
+            structureTip: "先区分段落功能：P1提出问题；P2-4并列给出三种控制手机的方法；P5说明习惯成因与改变后的效果；P6总结并号召行动。",
+            structureOutline: [
+              "P1｜problems / Here's how → 提出问题并引出方法",
+              "P2-P4｜A good way / Next / Create places → 三种并列方法",
+              "P5｜Scientists found / methods above / save over 2 hours → 说明依据与效果",
+              "P6｜Remember / Start small → 总结号召"
+            ],
+            structureConclusion: "P1 总起 → P2、P3、P4 并列给方法 → P5 说明依据与效果 → P6 总结，因此选 A。"
+          }),
           q(53, "What's the writer's main purpose of writing this text?", ["A. To tell people to throw away their phones.", "B. To introduce the latest uses of mobile phones.", "C. To complain about the negative effects of mobile phones.", "D. To encourage people to control phone use and gain more free time."], "D", ["main purpose", "writing this text"], "Start small: Try one tip this week. Your phone will remain there while you take control of it.", "main purpose 看全文态度和结尾号召。", ["A：文章说 without giving up your phone，不是扔掉手机。", "B/C：不是介绍新用途或单纯抱怨。", "D：控制使用并获得更多自由时间，符合全文。"], "作者目的是鼓励控制手机使用。")
         ]
       }
@@ -1609,6 +1620,7 @@
     }
 
     function locatedEvidenceText(q) {
+      if (isStructureQuestion(q)) return globalClueSentences(q).join(" / ") || q.evidence;
       const target = locatedEvidenceTarget(q);
       if (target) return currentPassage().paragraphs[target.paragraph].slice(target.span.start, target.span.end).trim();
       return q.evidence;
@@ -1669,7 +1681,13 @@
     }
 
     function renderStepCopy(q) {
-      if (isGlobalQuestion(q)) {
+      if (isStructureQuestion(q)) {
+        $("step2Title").textContent = "“定”——定位各段功能句";
+        $("step2Hint").textContent = "依次扫每段首句或总结句，判断各段是在总起引入、并列展开还是总结升华；点击后左侧会逐段高亮结构线索。";
+        $("locateBtn").textContent = "定位各段功能句";
+        $("step3Title").textContent = "“比”——比段落关系并作答";
+        $("step3Hint").textContent = q.stem;
+      } else if (isGlobalQuestion(q)) {
         $("step2Title").textContent = "“扫”——扫全文线索";
         $("step2Hint").textContent = "标题/主旨类题不要只找一句答案句。先扫首段、尾段、主体段和高频词，判断全文真正围绕什么展开。";
         $("locateBtn").textContent = "扫全文线索";
@@ -1823,9 +1841,12 @@
         return;
       }
       $("finalStem").textContent = `复盘：你选择 ${saved.chosen}，正确答案 ${q.answer}`;
+      const evidenceLabel = isStructureQuestion(q) ? "结构依据" : "关键依据";
+      const evidenceText = isStructureQuestion(q) ? (q.structureConclusion || globalStructureTip(q)) : locatedEvidenceText(q);
+      const reviewLegend = isStructureQuestion(q) ? "" : revLegendHtml();
       $("options").innerHTML = `
-        <div class="feedback show ${saved.correct ? "good" : "bad"}"><strong>${saved.correct ? "判断正确" : "这一次没有选对"}</strong><br>${escapeHtml(q.explanation)}<br>关键依据：${escapeHtml(locatedEvidenceText(q))}</div>
-        ${revLegendHtml()}
+        <div class="feedback show ${saved.correct ? "good" : "bad"}"><strong>${saved.correct ? "判断正确" : "这一次没有选对"}</strong><br>${escapeHtml(q.explanation)}<br>${evidenceLabel}：${escapeHtml(evidenceText)}</div>
+        ${reviewLegend}
         ${q.options.map((opt, index) => renderEnhancedReviewRow(q, opt, index)).join("")}
       `;
       const lastQuestion = state.question === currentPassage().questions.length - 1;
@@ -2007,6 +2028,16 @@
     }
 
     function renderGlobalCluePanel(q) {
+      if (isStructureQuestion(q)) {
+        const outline = Array.isArray(q.structureOutline) && q.structureOutline.length
+          ? q.structureOutline
+          : globalClueSentences(q).map((sentence, index) => `P${index + 1}｜${sentence}`);
+        return `
+          <div><strong>各段功能：</strong></div>
+          ${outline.map(item => `<div>${escapeHtml(item)}</div>`).join("")}
+          <div><strong>结构结论：</strong>${escapeHtml(q.structureConclusion || globalStructureTip(q))}</div>
+        `;
+      }
       const terms = globalClueTerms(q).join(" / ") || "看核心线索句";
       const sentences = globalClueSentences(q);
       return `
@@ -2029,7 +2060,13 @@
 
     function globalClueSentences(q) {
       const stem = q.stem.toLowerCase();
-      if (stem.includes("structure")) return [q.evidence].filter(Boolean);
+      if (stem.includes("structure")) {
+        return String(q.evidence || "")
+          .split(/\s+\/\s+/)
+          .map(sentence => sentence.trim())
+          .filter(Boolean)
+          .filter(uniqueOnly);
+      }
       const p = currentPassage();
       const first = firstSentence(p.paragraphs[0] || "");
       const lastParagraph = p.paragraphs[p.paragraphs.length - 1] || "";
@@ -2066,8 +2103,10 @@
 
     function structureClueTerms(q) {
       const text = currentPassage().paragraphs.join(" ");
+      if (Array.isArray(q.structureClues) && q.structureClues.length) {
+        return [...new Set(q.structureClues.filter(term => term && text.includes(term)))];
+      }
       const candidates = [
-        q.evidence,
         "Here's how",
         "A good way",
         "Next",
@@ -2089,7 +2128,7 @@
 
     function globalStructureTip(q) {
       const stem = q.stem.toLowerCase();
-      if (stem.includes("structure")) return "先判断每段功能：提出问题、给出方法、说明效果、总结号召。";
+      if (stem.includes("structure")) return q.structureTip || "先判断每段功能及段落关系，再把总起、并列展开和总结与选项结构逐一对应。";
       if (stem.includes("purpose")) return "看全文态度和结尾号召，判断作者真正想让读者做什么。";
       if (stem.includes("title")) return "标题要覆盖全文，不能只抓历史、过程或某个局部细节。";
       return "看首段、尾段和高频词，提炼全文中心。";
@@ -2238,6 +2277,7 @@
     function trapBadge(q, opt, info) {
       const isCorrect = optionKey(opt) === q.answer;
       if (isCorrect) return { cls: "good", text: "✓ 与原文一致" };
+      if (isStructureQuestion(q)) return { cls: "bad", text: "陷阱·结构层次错分" };
       // 判断主源 = 数据里真实的解释 feedback（已去选项前缀）；label 是 infer 推断的粗分类标签，
       // 其中“无依据”只是兜底（表示未细分），绝不能当作“无中生有”的罪名。因此：
       //   - 具体类型靠 feedback 文本关键词命中；
@@ -2339,8 +2379,16 @@
       const key = optionKey(opt);
       const info = optionCompareInfo(q, opt, index);
       const correct = key === q.answer;
-      const evText = evidenceTextFor(q);
       const badge = trapBadge(q, opt, info);
+      if (isStructureQuestion(q)) {
+        return `
+          <div class="compare-row rev-optwrap">
+            <div>${escapeHtml(opt)}<span class="rev-trapchip ${badge.cls}">${escapeHtml(badge.text)}</span></div>
+            <div class="compare-feedback show">${highlightCompareTerms(info.feedback)}</div>
+          </div>
+        `;
+      }
+      const evText = evidenceTextFor(q);
       const optHtml = decorateOption(opt, q, correct, evText, info);
       const evHtml = decorateEvidence(evText, q, correct ? opt : null);
       const absNote = (!correct && hasAbsolute(opt)) ? `<span class="rev-absnote">⚠ 含绝对化词，几乎一定是错误选项——原文很少把话说“满”。</span>` : "";
@@ -2500,7 +2548,7 @@
     renderAll();
     document.addEventListener("DOMContentLoaded", initReadingLogin);
   </script>
-  <script src="data/imported-passages.js?v=20260914-reading-print-1"></script>
+  <script src="data/imported-passages.js?v=20261015-structure-2"></script>
   <script src="../vocabulary/low_words.js?v=20260919-reading-card-1"></script>
   <script src="../vocabulary/mid_words.js?v=20260919-reading-card-1"></script>
   <script src="../vocabulary/extra_words.js?v=20260919-reading-card-1"></script>
