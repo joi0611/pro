@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>动词链条专项 · 10 题精讲 | 中考完形填空</title>
+<style>
+:root{--ink:#1D2B26;--ink-soft:#5B6B64;--border:#e6e9ef;--radius:14px;
+  --accent:#E8A33D;--accent-dark:#9A6F12;--accent-soft:#FDF3DE;
+  --dim-action:#2f5f9e;--primary:#0F9D6C;--blank-green:#0F9D6C;}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  color:var(--ink);background:#f4f6f9;line-height:1.7;}
+.wrap{max-width:780px;margin:0 auto;padding:18px 18px 60px;}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:14px 0 10px;border-bottom:2px solid var(--dim-action);margin-bottom:14px;}
+.brand{font-weight:800;color:var(--dim-action);font-size:16px;}
+.topbar .links a{color:var(--ink-soft);text-decoration:none;font-size:13px;margin-left:12px;}
+.btn-print{background:var(--dim-action);color:#fff;border:none;border-radius:10px;
+  padding:7px 13px;font-size:13px;font-weight:700;cursor:pointer;}
+.intro{background:linear-gradient(135deg,#eef3fb,#fff);border:1px solid var(--border);
+  border-left:5px solid var(--dim-action);border-radius:0 var(--radius) var(--radius) 0;
+  padding:14px 18px;margin-bottom:18px;}
+.intro h1{margin:0 0 6px;font-size:21px;}
+.intro p{margin:5px 0;font-size:14px;color:var(--ink-soft);}
+.intro .formula{font-size:13.5px;color:var(--dim-action);font-weight:700;margin-top:8px;}
+.intro .warn{font-size:12.5px;color:var(--accent-dark);background:var(--accent-soft);
+  border-radius:8px;padding:7px 10px;margin-top:8px;}
+.score{font-size:13px;color:var(--ink-soft);margin:0 0 14px;text-align:right;}
+.score b{color:var(--dim-action);font-size:16px;}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+  padding:16px 18px;margin-bottom:16px;box-shadow:0 1px 3px rgba(20,40,80,.04);}
+.q-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+.q-no{font-weight:800;font-size:15px;color:var(--dim-action);}
+.dim-pill{font-size:12px;font-weight:700;color:#fff;background:var(--dim-action);
+  border-radius:20px;padding:2px 10px;}
+.topic-pill{font-size:12px;color:var(--ink-soft);background:#f0f3f7;border-radius:6px;padding:2px 8px;}
+.src{margin-left:auto;font-size:11.5px;color:#9aa6b0;}
+.cluster{background:#f7f9fc;border:1px solid var(--border);border-left:5px solid var(--dim-action);
+  border-radius:0 10px 10px 0;padding:11px 14px;font-size:14px;margin:10px 0;}
+.cl-title{font-size:12.5px;font-weight:700;color:var(--dim-action);margin-bottom:8px;}
+.cl-flow{font-size:14.5px;line-height:1.85;color:var(--ink);padding:8px 10px;background:#eef7f1;border-radius:8px;border-left:4px solid var(--blank-green);}
+.cl-flow .bk{font-weight:800;color:#fff;background:var(--blank-green);border-radius:5px;padding:0 6px;}
+.bk0{color:#9aa6b0;font-weight:700;}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 4px;}
+.opt{display:flex;align-items:center;gap:8px;border:1.5px solid var(--border);border-radius:10px;
+  padding:9px 12px;font-size:14px;cursor:pointer;background:#fff;transition:.15s;user-select:none;}
+.opt:hover{border-color:var(--dim-action);}
+.opt .k{font-weight:800;color:var(--ink-soft);}
+.opt.correct{background:#e7f6ee;border-color:var(--primary);color:#0a6b48;}
+.opt.wrong{background:#fdeaea;border-color:#e06a6a;color:#b23b3b;}
+.opt.chosen{box-shadow:0 0 0 3px rgba(47,95,158,.18);}
+.reveal{margin-top:12px;display:none;}
+.reveal.show{display:block;}
+.ans-line{font-size:13.5px;margin-bottom:8px;}
+.ans-line .a{font-weight:800;color:var(--dim-action);}
+.seg{font-size:13px;padding:7px 11px;border-radius:8px;margin:6px 0;background:#f7f9fc;border-left:4px solid #ccc;}
+.seg .lab{font-weight:800;margin-right:6px;}
+.seg.线索{background:#eef3fb;border-color:var(--dim-action);} .seg.线索 .lab{color:var(--dim-action);}
+.seg.印证{background:#e7f6ee;border-color:var(--primary);} .seg.印证 .lab{color:#0a6b48;}
+.seg.排除{background:#fdeaea;border-color:#e06a6a;} .seg.排除 .lab{color:#b23b3b;}
+.seg.补充{background:#f3f4f6;border-color:#b9c0c9;} .seg.补充 .lab{color:#6b7480;}
+.reveal-tip{font-size:12px;color:var(--ink-soft);margin:10px 0 2px;}
+.foot{text-align:center;color:#9aa6b0;font-size:12.5px;margin-top:24px;}
+@media print{
+  body{background:#fff;}
+  .topbar .links,.btn-print,.score{display:none;}
+  .wrap{max-width:none;padding:0;}
+  .card{box-shadow:none;break-inside:avoid;border-color:#ccc;}
+  .opts{pointer-events:none;}
+  .opt.correct{background:#e7f6ee!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .bk{background:var(--blank-green)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .reveal{display:block!important;}
+  .intro{box-shadow:none;}
+}</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar no-print">
+    <span class="brand">🎬 动词链条专项 · 10 题精讲</span>
+    <span class="links">
+      <a href="index.html#handout">← 返回方法讲义</a>
+      <button class="btn-print" onclick="window.print()">🖨 打印</button>
+    </span>
+  </div>
+
+  <div class="intro">
+    <h1>动词链条：把文章当成一部电影分镜</h1>
+    <p>完形填空里，空格前后的<b>动词</b>往往串成一条「谁先做什么、再发生什么、为何如此」的因果动作线。
+       顺着这条动作链，多数答案能快速定位方向。</p>
+    <p class="warn">⚠️ 但动作链<b>不是孤立依据</b>：单靠它容易误判。每题下方先给出「原文语境」——
+       本题原句与前后邻句连成一段，先读语境、再选答案，<b>选完才展开解析</b>。</p>
+    <p class="formula">本页 10 题均来自中考真题，答案为动词，解题主线索是动作链的 时间 / 因果 / 转折 / 并列 / 让步 / 条件 信号。</p>
+  </div>
+
+  <div class="score no-print">已答对 <b id="sc">0</b> / 10 题</div>
+
+  <div id="cards"></div>
+
+  <div class="foot no-print">动词链条专项 · 选自中考真题 · 配套《方法讲义矩阵》第①讲「动作链条」</div>
+</div>
+
+<script>
+const DATA = [{"no":1,"subType":"时间","topic":"动作先后顺序","source":"2025·江苏南通·中考真题 (2025)","clusterHtml":"<div class=\"cluster\"><div class=\"cl-title\">🔍 原文语境（本题原句 + 前后邻句，连成一段）</div><div class=\"cl-flow\">But things didn’t go <span class=\"bk0\">＿＿</span> as usual. First, Tex couldn’t find his shoes. Then Mom realized she’d <span class=\"bk\">＿＿</span> her wallet at home. Halfway to Aunt Jen’s, Indi suddenly needed a bathroom. We had to take a long way to find one.</div></div>","clueCount":0,"options":["found","left","brought","checked"],"answer":"left","pos":"动词","expl":[{"label":"线索","text":"空所在句里有时间信号（「Then Mom realized」）：动作分先后，所填词要落在这条时间链的位置上。"},{"label":"印证","text":"邻段 / 全篇范围里的还有同向佐证（反义对照）：「find joy right」与主线指向一致。"},{"label":"排除","text":"found 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；brought、checked 则呼应否×2。"},{"label":"补充","text":"「her wallet」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。"}]},{"no":2,"subType":"时间","topic":"动作先后顺序","source":"2025·广西·中考真题 (2025)","clusterHtml":"<div class=\"cluster\"><div class=\"cl-title\">🔍 原文语境（本题原句 + 前后邻句，连成一段）</div><div class=\"cl-flow\">As soon as they arrived, they took a careful look at the bird and found it was hurt. Then they treated the bird with some medicine. After that, they put the nest back,<span class=\"bk\">＿＿</span> it, and left. On the second day, I got up early to check on the bird. I saw the baby bird and its parents.</div></div>","clueCount":0,"options":["visited","fixed","washed"],"answer":"fixed","pos":"动词","expl":[{"label":"线索","text":"空所在句里有时间信号（「After that, they」）：动作分先后，所填词要落在这条时间链的位置上。"},{"label":"印证","text":"空所在句里还有同向佐证（并列结构）：「it, and left」与主线指向一致。"},{"label":"排除","text":"washed 是最强干扰项：虽在文中出现过，但与线索给的方向对不上（方向否）；visited 则呼应否。"},{"label":"补充","text":"「the nest back」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。"}]},{"no":3,"subType":"因果","topic":"因果承接","source":"2025·北京·中考真题 (2025)","clusterHtml":"<div class=\"cluster\"><div class=\"cl-title\">🔍 原文语境（本题原句 + 前后邻句，连成一段）</div><div class=\"cl-flow\">You know, we always make a cake on New Year’s Day.” And he said, “Apple cake? Can you teach me?” Now, I was terrified (很害怕的). Still, I <span class=\"bk\">＿＿</span> Grandpa in making the cake because I didn’t want this tradition to die. But the whole time it just didn’t feel the same. Fast-forward to this New Year, Grandpa was in hospital, and we’d have our family get together there.</div></div>","clueCount":0,"options":["served","guided","followed","protected"],"answer":"guided","pos":"动词","expl":[{"label":"线索","text":"空所在句里处在因果链上（「because I didn’t want」）：原因与结果方向咬合，所填词要能承接这条因果。"},{"label":"印证","text":"空所在句里还有同向佐证（搭配骨架）：「Grandpa in」与主线指向一致。"},{"label":"排除","text":"followed 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；served、protected 则呼应否×2。"},{"label":"补充","text":"「Grandpa in」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。"}]},{"no":4,"subType":"因果","topic":"因果承接","source":"2025·湖北武汉·中考真题 (2025)","clusterHtml":"<div class=\"cluster\"><div class=\"cl-title\">🔍 原文语境（本题原句 + 前后邻句，连成一段）</div><div class=\"cl-flow\">We <span class=\"bk0\">＿＿</span> a rest area nearby and rushed there. The wind blew hard and I felt cold. I found I’d forgotten to take my emergency rescue blanket (紧急救生毯) when I <span class=\"bk\">＿＿</span> my bag. “Ta-da! Look!</div></div>","clueCount":0,"options":["closed","searched","dropped","tidied"],"answer":"searched","pos":"动词","expl":[{"label":"线索","text":"空所在句里处在因果链上（「I’d forgotten to take my」）：原因与结果方向咬合，所填词要能承接这条因果。"},{"label":"印证","text":"邻段 / 全篇范围里的还有同向佐证（同场词群）：「Dad pulled out a blanket」与主线指向一致。"},{"label":"排除","text":"closed、dropped、tidied三个干扰项全文找不到任何呼应落点（呼应否）。"},{"label":"补充","text":"「my bag」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。"}]},{"no":5,"subType":"转折","topic":"事件转折","source":"2025·江苏常州·中考真题 (2025)","clusterHtml":"<div class=\"cluster\"><div class=\"cl-title\">🔍 原文语境（本题原句 + 前后邻句，连成一段）</div><div class=\"cl-flow\">Although they could run faster than Emma, they <span class=\"bk0\">＿＿</span> to jog a bit behind her, laughing suddenly and commenting (评论) on how Emma jogged. “Just one more year,” Emma kept telling herself, “one more year and I’ll graduate from the middle school and won’t have to take this PE class any more.” She just wanted to <span class=\"bk0\">＿＿</span> it. But everything changed when a new girl called Kit <span class=\"bk\">＿＿</span> the class. She had bright eyes and a long scar (疤痕) across the left side of her face. Her appearance in the classroom that day was met by many <span class=\"bk0\">＿＿</span> eyes.</div></div>","clueCount":0,"options":["taught","directed","protected","joined"],"answer":"joined","pos":"动词","expl":[{"label":"线索","text":"空所在句里出现转折信号（「But everything changed when」）：转折前后表意相反，空格要取与被转折内容相对的方向。"},{"label":"印证","text":"空所在句里还有同向佐证（结构骨架）：「girl called Kit」与主线指向一致。"},{"label":"排除","text":"taught、directed、protected三个干扰项全文找不到任何呼应落点（呼应否）。"},{"label":"补充","text":"「girl called Kit」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。"}]},{"no":6,"subType":"转折","topic":"事件转折","source":"2025·湖北武汉·中考真题 (2025)","clusterHtml":"<div class=\"cluster\"><div class=\"cl-title\">🔍 原文语境（本题原句 + 前后邻句，连成一段）</div><div class=\"cl-flow\">Birds were singing along the way while we enjoyed the sunshine. But storm clouds came unexpectedly. “I checked the weather, but the app didn’t <span class=\"bk\">＿＿</span> us,” Dad explained. Mom comforted me. “Don’t worry, and maybe you’ll get a nicer <span class=\"bk0\">＿＿</span> for your birthday.” “Really?” I forced a smile.</div></div>","clueCount":0,"options":["warn","greet","cheat","fail"],"answer":"warn","pos":"动词","expl":[{"label":"线索","text":"空所在句里出现转折信号（「but the app didn’t」）：转折前后表意相反，空格要取与被转折内容相对的方向。"},{"label":"印证","text":"空所在句里还有同向佐证（结构骨架）：「us,” Dad」与主线指向一致。"},{"label":"排除","text":"fail 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；greet、cheat 则呼应否×2。"},{"label":"补充","text":"「us,” Dad」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。"}]},{"no":7,"subType":"并列","topic":"并列同向","source":"2025·山东泰安·中考真题 (2025)","clusterHtml":"<div class=\"cluster\"><div class=\"cl-title\">🔍 原文语境（本题原句 + 前后邻句，连成一段）</div><div class=\"cl-flow\">That’s why, when he saw a <span class=\"bk0\">＿＿</span> kid on the playground, he came up with Kellen’s Project for Belonging. Kellen wanted to give something <span class=\"bk0\">＿＿</span> to everyone at school to remind them they’re important. After talking with his parents and teacher, he <span class=\"bk\">＿＿</span> on buttons (纽扣). He says, “I explained the idea to my class. We had to plan it out <span class=\"bk0\">＿＿</span> my school has over 400 kids.” He and his classmates decorated (装饰) paper circles with kind slogans (口号) <span class=\"bk0\">＿＿</span>“You Belong Here!” They made the circles into <span class=\"bk0\">＿＿</span> using a machine and sent them to each classroom.</div></div>","clueCount":0,"options":["decided","kept","enjoyed"],"answer":"decided","pos":"动词","expl":[{"label":"线索","text":"空所在句里出现并列信号（「parents and teacher」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。"},{"label":"印证","text":"空所在句里还有同向佐证（搭配骨架）：「teacher, he」与主线指向一致。"},{"label":"排除","text":"kept、enjoyed三个干扰项属于另一个话题场景，与本篇词群对不上（异场否）。"},{"label":"补充","text":"「teacher, he」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。"}]},{"no":8,"subType":"并列","topic":"并列同向","source":"2025·四川广元·中考真题 (2025)","clusterHtml":"<div class=\"cluster\"><div class=\"cl-title\">🔍 原文语境（本题原句 + 前后邻句，连成一段）</div><div class=\"cl-flow\">While there are many birds that visit our leafy garden, it’s the pair of bullfinches (灰雀) that bring the most excitement. It’s been wonderful to watch how both <span class=\"bk0\">＿＿</span> shoulder the serious duty of caring for their young. Last summer the bullfinch family, parents and two babies, were happily sitting in a tree close to our back window and <span class=\"bk\">＿＿</span> the late afternoon sunshine. With <span class=\"bk0\">＿＿</span> sign, clouds appeared, and light rain began to fall. At first the birds seemed to enjoy the rain and moved out along the branch (树枝), shaking their feathers to take advantage of the wet weather.<span class=\"bk0\">＿＿</span>, day turned to night within minutes.</div></div>","clueCount":0,"options":["chatting","enjoying","burning","avoiding"],"answer":"enjoying","pos":"动词","expl":[{"label":"线索","text":"空所在句里出现并列信号（「back window and」）：and / or 两端属性一致，所填词要与并列的另一项同类同向。"},{"label":"印证","text":"邻段 / 全篇范围里的还有同向佐证（派生词复现）：「birds seemed to enjoy」与主线指向一致。"},{"label":"排除","text":"chatting、burning、avoiding三个干扰项全文找不到任何呼应落点（呼应否）。"},{"label":"补充","text":"「the late」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。"}]},{"no":9,"subType":"让步","topic":"让步反转","source":"2025·江苏常州·中考真题 (2025)","clusterHtml":"<div class=\"cluster\"><div class=\"cl-title\">🔍 原文语境（本题原句 + 前后邻句，连成一段）</div><div class=\"cl-flow\">And PE class was when she felt at her smallest. A group of loud and outspoken classmates made her feel <span class=\"bk0\">＿＿</span>. Although they could run faster than Emma, they <span class=\"bk\">＿＿</span> to jog a bit behind her, laughing suddenly and commenting (评论) on how Emma jogged. “Just one more year,” Emma kept telling herself, “one more year and I’ll graduate from the middle school and won’t have to take this PE class any more.” She just wanted to <span class=\"bk0\">＿＿</span> it. But everything changed when a new girl called Kit <span class=\"bk0\">＿＿</span> the class.</div></div>","clueCount":0,"options":["dreamed","preferred","happened","promised"],"answer":"preferred","pos":"动词","expl":[{"label":"线索","text":"空所在句里带让步结构（「Although they could run」）：先退一步再转回来，空格方向与从句预期相反。"},{"label":"印证","text":"空所在句里还有同向佐证（时间信号）：「her, laughing suddenly」与主线指向一致。"},{"label":"排除","text":"dreamed 是最强干扰项：属于另一个话题场景，与本篇词群对不上（异场否）；promised、happened 则异场否、呼应否。"},{"label":"补充","text":"「to jog」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。"}]},{"no":10,"subType":"条件","topic":"条件前提","source":"2024·江苏盐城·中考真题 (2024)","clusterHtml":"<div class=\"cluster\"><div class=\"cl-title\">🔍 原文语境（本题原句 + 前后邻句，连成一段）</div><div class=\"cl-flow\">The owner was a bad, greedy man. He <span class=\"bk0\">＿＿</span> Fifth Brother in his deepest prison. He said only if Fifth Brother <span class=\"bk\">＿＿</span> the treasure of Fire Island to him, he could set Fifth Brother free. Fire Island was in the middle of a nearby <span class=\"bk0\">＿＿</span> . A dragon lived there, guarding its treasure.</div></div>","clueCount":0,"options":["sold","lent","donated","brought"],"answer":"brought","pos":"动词","expl":[{"label":"线索","text":"空所在句里带条件结构（「if Fifth Brother」）：先有前提再有结果，所填词要满足这条前提下的结果方向。"},{"label":"印证","text":"空所在句里还有同向佐证（结构骨架）：「the treasure of」与主线指向一致。"},{"label":"排除","text":"sold、lent、donated三个干扰项全文找不到任何呼应落点（呼应否）。"},{"label":"补充","text":"「the treasure of」属搭配 / 生义类证据，但即使不认它，上面的前后文证据也足以定住答案。"}]}];
+const LETTERS = ["A","B","C","D","E","F"];
+let answered = 0, correct = 0;
+const cardsEl = document.getElementById("cards");
+DATA.forEach(q=>{
+  const card = document.createElement("div");
+  card.className = "card";
+  const optsHtml = q.options.map((o,i)=>
+    '<div class="opt" data-opt="'+o.replace(/"/g,"&quot;")+'"><span class="k">'+LETTERS[i]+'</span><span>'+o+'</span></div>'
+  ).join("");
+  const segHtml = q.expl.map(s=>
+    '<div class="seg '+s.label+'"><span class="lab">'+s.label+'</span>'+s.text+'</div>'
+  ).join("");
+  card.innerHTML =
+    '<div class="q-head"><span class="q-no">第 '+q.no+' 题</span>'+
+    '<span class="dim-pill">动作链条 · '+q.subType+'</span>'+
+    '<span class="topic-pill">'+q.topic+'</span>'+
+    '<span class="src">'+q.source+'</span></div>'+
+    q.clusterHtml +
+    '<div class="opts">'+optsHtml+'</div>'+
+    '<div class="reveal"><div class="ans-line">答案：<span class="a">'+q.answer+'</span>　·　词性：'+q.pos+'</div>'+
+      '<div class="reveal-tip">👇 选完才出解析 — 对照上方原文语境，看你的判断与线索是否一致：</div>'+segHtml+'</div>';
+  cardsEl.appendChild(card);
+
+  const reveal = card.querySelector(".reveal");
+  const optEls = card.querySelectorAll(".opt");
+  optEls.forEach(el=>{
+    el.addEventListener("click", function(){
+      if (card.dataset.done) return;
+      card.dataset.done = "1";
+      const chosen = el.dataset.opt;
+      optEls.forEach(o=>{
+        if (o.dataset.opt === q.answer) o.classList.add("correct");
+        if (o === el && chosen !== q.answer) o.classList.add("wrong");
+      });
+      el.classList.add("chosen");
+      reveal.classList.add("show");
+      answered++;
+      if (chosen === q.answer){ correct++; document.getElementById("sc").textContent = correct; }
+    });
+  });
+});
+</script>
+</body>
+</html>
