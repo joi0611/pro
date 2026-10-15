@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /* 完形填空训练系统 · 静态站点 + 手机号白名单登录（零依赖 Node）
  * 学员：管理员开通手机号后，输入手机号即可登录，无需密码或验证码。
- * 管理：访问 /admin.html，密码由 ADMIN_PASSWORD 环境变量提供。
- * 未配置时，服务启动会生成仅本次运行有效的临时密码并输出到终端。
+ * 管理：访问 /admin.html，默认密码写在下方；服务器的 ADMIN_PASSWORD 环境变量可覆盖它。
  */
 "use strict";
 const http = require("http");
+const https = require("https");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
@@ -13,8 +13,13 @@ const crypto = require("crypto");
 const ROOT = __dirname;
 const PORT = Number(process.argv[2] || process.env.PORT || 8080);
 const USERS_FILE = process.env.USERS_FILE || path.join(ROOT, "phone-users.json");
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || crypto.randomBytes(12).toString("base64url");
-const ADMIN_PASSWORD_IS_TEMP = !process.env.ADMIN_PASSWORD;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "19909946277";
+const SUPABASE_URL = String(process.env.SUPABASE_URL || "").trim().replace(/\/+$/, "");
+const SUPABASE_SECRET_KEY = String(process.env.SUPABASE_SECRET_KEY || "").trim();
+const USE_SUPABASE = !!(SUPABASE_URL && SUPABASE_SECRET_KEY);
+if (!!SUPABASE_URL !== !!SUPABASE_SECRET_KEY) {
+  throw new Error("Supabase 配置不完整：SUPABASE_URL 和 SUPABASE_SECRET_KEY 必须同时设置");
+}
 const USER_SESSION_AGE = 30 * 24 * 60 * 60 * 1000;
 const ADMIN_SESSION_AGE = 8 * 60 * 60 * 1000;
 
@@ -86,6 +91,113 @@ function saveUsers(data) {
   fs.renameSync(tmp, USERS_FILE);
 }
 
+function fromDatabaseUser(row) {
+  return {
+    phone: String(row.phone || ""),
+    note: String(row.note || ""),
+    enabled: row.enabled !== false,
+    createdAt: row.created_at || row.createdAt || "",
+    updatedAt: row.updated_at || row.updatedAt || row.created_at || row.createdAt || ""
+  };
+}
+
+function supabaseRequest(method, resource, body, prefer) {
+  return new Promise(function (resolve, reject) {
+    let target;
+    try { target = new URL(SUPABASE_URL + "/rest/v1/" + resource); }
+    catch (e) { reject(new Error("SUPABASE_URL 格式不正确")); return; }
+    const raw = body === undefined ? "" : JSON.stringify(body);
+    const headers = {
+      "apikey": SUPABASE_SECRET_KEY,
+      "Accept": "application/json",
+      "Accept-Profile": "public",
+      "Content-Profile": "public"
+    };
+    if (raw) {
+      headers["Content-Type"] = "application/json; charset=utf-8";
+      headers["Content-Length"] = Buffer.byteLength(raw);
+    }
+    if (prefer) headers["Prefer"] = prefer;
+    const transport = target.protocol === "http:" ? http : https;
+    const request = transport.request(target, { method: method, headers: headers, timeout: 12000 }, function (response) {
+      let text = "";
+      response.setEncoding("utf8");
+      response.on("data", function (chunk) { text += chunk; });
+      response.on("end", function () {
+        let data = null;
+        try { data = text ? JSON.parse(text) : null; }
+        catch (e) { data = text; }
+        if (response.statusCode >= 200 && response.statusCode < 300) { resolve(data); return; }
+        const error = new Error("Supabase 请求失败（HTTP " + response.statusCode + "）");
+        error.statusCode = response.statusCode;
+        error.details = data;
+        reject(error);
+      });
+    });
+    request.on("timeout", function () { request.destroy(new Error("Supabase 请求超时")); });
+    request.on("error", reject);
+    if (raw) request.write(raw);
+    request.end();
+  });
+}
+
+function storeListUsers() {
+  if (!USE_SUPABASE) return Promise.resolve(loadUsers().users.map(fromDatabaseUser));
+  return supabaseRequest("GET", "phone_users?select=phone,note,enabled,created_at,updated_at&order=created_at.desc", undefined)
+    .then(function (rows) { return (Array.isArray(rows) ? rows : []).map(fromDatabaseUser); });
+}
+
+function storeFindUser(phone) {
+  if (!USE_SUPABASE) {
+    return Promise.resolve(loadUsers().users.map(fromDatabaseUser).find(function (item) { return item.phone === phone; }) || null);
+  }
+  return supabaseRequest("GET", "phone_users?select=phone,note,enabled,created_at,updated_at&phone=eq." + encodeURIComponent(phone) + "&limit=1", undefined)
+    .then(function (rows) { return Array.isArray(rows) && rows[0] ? fromDatabaseUser(rows[0]) : null; });
+}
+
+function storeCreateUser(phone, note) {
+  const stamp = nowIso();
+  if (!USE_SUPABASE) {
+    const db = loadUsers();
+    const user = { phone: phone, note: note, enabled: true, createdAt: stamp, updatedAt: stamp };
+    db.users.push(user); saveUsers(db); return Promise.resolve(user);
+  }
+  return supabaseRequest("POST", "phone_users", {
+    phone: phone, note: note, enabled: true, created_at: stamp, updated_at: stamp
+  }, "return=representation").then(function (rows) { return fromDatabaseUser(rows[0]); });
+}
+
+function storeUpdateUser(phone, changes) {
+  const stamp = nowIso();
+  if (!USE_SUPABASE) {
+    const db = loadUsers(), index = db.users.findIndex(function (item) { return item.phone === phone; });
+    if (index < 0) return Promise.resolve(null);
+    if (typeof changes.enabled === "boolean") db.users[index].enabled = changes.enabled;
+    if (changes.note !== undefined) db.users[index].note = changes.note;
+    db.users[index].updatedAt = stamp; saveUsers(db); return Promise.resolve(fromDatabaseUser(db.users[index]));
+  }
+  const patch = { updated_at: stamp };
+  if (typeof changes.enabled === "boolean") patch.enabled = changes.enabled;
+  if (changes.note !== undefined) patch.note = changes.note;
+  return supabaseRequest("PATCH", "phone_users?phone=eq." + encodeURIComponent(phone), patch, "return=representation")
+    .then(function (rows) { return Array.isArray(rows) && rows[0] ? fromDatabaseUser(rows[0]) : null; });
+}
+
+function storeDeleteUser(phone) {
+  if (!USE_SUPABASE) {
+    const db = loadUsers(), index = db.users.findIndex(function (item) { return item.phone === phone; });
+    if (index < 0) return Promise.resolve(false);
+    db.users.splice(index, 1); saveUsers(db); return Promise.resolve(true);
+  }
+  return supabaseRequest("DELETE", "phone_users?phone=eq." + encodeURIComponent(phone), undefined, "return=representation")
+    .then(function (rows) { return Array.isArray(rows) && rows.length > 0; });
+}
+
+function databaseError(res, error) {
+  console.error("[database]", error && error.message ? error.message : "未知错误");
+  send(res, 502, { ok: false, msg: "数据库连接失败，请稍后重试" });
+}
+
 function publicUser(user) {
   return { phone: user.phone, note: user.note || "", enabled: user.enabled !== false,
     createdAt: user.createdAt || "", updatedAt: user.updatedAt || user.createdAt || "" };
@@ -127,10 +239,11 @@ function removeSession(store, token) { if (token) store.delete(token); }
 function userFromRequest(req) {
   const token = parseCookies(req).student_session;
   const session = getSession(userSessions, token);
-  if (!session) return null;
-  const user = loadUsers().users.find(function (item) { return item.phone === session.value; });
-  if (!user || user.enabled === false) { removeSession(userSessions, token); return null; }
-  return user;
+  if (!session) return Promise.resolve(null);
+  return storeFindUser(session.value).then(function (user) {
+    if (!user || user.enabled === false) { removeSession(userSessions, token); return null; }
+    return user;
+  });
 }
 function isAdmin(req) { return !!getSession(adminSessions, parseCookies(req).admin_session); }
 function safeEqual(a, b) {
@@ -151,8 +264,9 @@ function unauthorized(res) { send(res, 401, { ok: false, msg: "管理员登录�
 
 function handleApi(req, res, urlPath) {
   if (req.method === "GET" && urlPath === "/api/session") {
-    const user = userFromRequest(req);
-    send(res, 200, user ? { ok: true, loggedIn: true, phone: maskPhone(user.phone) } : { ok: true, loggedIn: false });
+    userFromRequest(req).then(function (user) {
+      send(res, 200, user ? { ok: true, loggedIn: true, phone: maskPhone(user.phone) } : { ok: true, loggedIn: false });
+    }).catch(function (error) { databaseError(res, error); });
     return true;
   }
   if (req.method === "POST" && urlPath === "/api/login") {
@@ -161,13 +275,14 @@ function handleApi(req, res, urlPath) {
       if (err) return send(res, 400, { ok: false, msg: err.message });
       const phone = normalizePhone(data.phone);
       if (!validPhone(phone)) return send(res, 400, { ok: false, msg: "请输入正确的 11 位手机号" });
-      const user = loadUsers().users.find(function (item) { return item.phone === phone; });
-      if (!user) return send(res, 200, { ok: false, msg: "该手机号尚未开通，请联系管理员" });
-      if (user.enabled === false) return send(res, 200, { ok: false, msg: "该手机号已停用，请联系管理员" });
-      const token = newSession(userSessions, phone, USER_SESSION_AGE);
-      send(res, 200, { ok: true, phone: maskPhone(phone) }, {
-        "Set-Cookie": cookie("student_session", token, Math.floor(USER_SESSION_AGE / 1000))
-      });
+      storeFindUser(phone).then(function (user) {
+        if (!user) return send(res, 200, { ok: false, msg: "该手机号尚未开通，请联系管理员" });
+        if (user.enabled === false) return send(res, 200, { ok: false, msg: "该手机号已停用，请联系管理员" });
+        const token = newSession(userSessions, phone, USER_SESSION_AGE);
+        send(res, 200, { ok: true, phone: maskPhone(phone) }, {
+          "Set-Cookie": cookie("student_session", token, Math.floor(USER_SESSION_AGE / 1000))
+        });
+      }).catch(function (error) { databaseError(res, error); });
     });
     return true;
   }
@@ -195,8 +310,11 @@ function handleApi(req, res, urlPath) {
   }
   if (urlPath === "/api/admin/phones" && req.method === "GET") {
     if (!isAdmin(req)) { unauthorized(res); return true; }
-    const users = loadUsers().users.map(publicUser).sort(function (a, b) { return String(b.createdAt).localeCompare(String(a.createdAt)); });
-    send(res, 200, { ok: true, users: users }); return true;
+    storeListUsers().then(function (users) {
+      users.sort(function (a, b) { return String(b.createdAt).localeCompare(String(a.createdAt)); });
+      send(res, 200, { ok: true, users: users.map(publicUser) });
+    }).catch(function (error) { databaseError(res, error); });
+    return true;
   }
   if (urlPath === "/api/admin/phones" && req.method === "POST") {
     if (!isAdmin(req)) { unauthorized(res); return true; }
@@ -204,35 +322,37 @@ function handleApi(req, res, urlPath) {
       if (err) return send(res, 400, { ok: false, msg: err.message });
       const phone = normalizePhone(data.phone), note = String(data.note || "").trim().slice(0, 80);
       if (!validPhone(phone)) return send(res, 400, { ok: false, msg: "请输入正确的 11 位手机号" });
-      const db = loadUsers();
-      if (db.users.some(function (item) { return item.phone === phone; })) return send(res, 409, { ok: false, msg: "该手机号已存在，可在列表中恢复或编辑" });
-      const stamp = nowIso();
-      db.users.push({ phone: phone, note: note, enabled: true, createdAt: stamp, updatedAt: stamp });
-      try { saveUsers(db); } catch (e) { console.error("[users] 写入失败:", e.message); return send(res, 500, { ok: false, msg: "保存失败，请稍后重试" }); }
-      send(res, 201, { ok: true, user: publicUser(db.users[db.users.length - 1]) });
+      storeFindUser(phone).then(function (existing) {
+        if (existing) { send(res, 409, { ok: false, msg: "该手机号已存在，可在列表中恢复或编辑" }); return null; }
+        return storeCreateUser(phone, note);
+      }).then(function (user) {
+        if (user) send(res, 201, { ok: true, user: publicUser(user) });
+      }).catch(function (error) { databaseError(res, error); });
     });
     return true;
   }
   const phoneMatch = urlPath.match(/^\/api\/admin\/phones\/(1[3-9]\d{9})$/);
   if (phoneMatch && (req.method === "PATCH" || req.method === "DELETE")) {
     if (!isAdmin(req)) { unauthorized(res); return true; }
-    const phone = phoneMatch[1], db = loadUsers();
-    const index = db.users.findIndex(function (item) { return item.phone === phone; });
-    if (index < 0) { send(res, 404, { ok: false, msg: "未找到该手机号" }); return true; }
+    const phone = phoneMatch[1];
     if (req.method === "DELETE") {
-      db.users.splice(index, 1);
-      try { saveUsers(db); } catch (e) { send(res, 500, { ok: false, msg: "删除失败，请稍后重试" }); return true; }
-      userSessions.forEach(function (session, token) { if (session.value === phone) userSessions.delete(token); });
-      send(res, 200, { ok: true }); return true;
+      storeDeleteUser(phone).then(function (deleted) {
+        if (!deleted) { send(res, 404, { ok: false, msg: "未找到该手机号" }); return; }
+        userSessions.forEach(function (session, token) { if (session.value === phone) userSessions.delete(token); });
+        send(res, 200, { ok: true });
+      }).catch(function (error) { databaseError(res, error); });
+      return true;
     }
     readBody(req, res, function (err, data) {
       if (err) return send(res, 400, { ok: false, msg: err.message });
-      if (typeof data.enabled === "boolean") db.users[index].enabled = data.enabled;
-      if (data.note !== undefined) db.users[index].note = String(data.note || "").trim().slice(0, 80);
-      db.users[index].updatedAt = nowIso();
-      try { saveUsers(db); } catch (e) { return send(res, 500, { ok: false, msg: "保存失败，请稍后重试" }); }
-      if (db.users[index].enabled === false) userSessions.forEach(function (session, token) { if (session.value === phone) userSessions.delete(token); });
-      send(res, 200, { ok: true, user: publicUser(db.users[index]) });
+      const changes = {};
+      if (typeof data.enabled === "boolean") changes.enabled = data.enabled;
+      if (data.note !== undefined) changes.note = String(data.note || "").trim().slice(0, 80);
+      storeUpdateUser(phone, changes).then(function (user) {
+        if (!user) { send(res, 404, { ok: false, msg: "未找到该手机号" }); return; }
+        if (user.enabled === false) userSessions.forEach(function (session, token) { if (session.value === phone) userSessions.delete(token); });
+        send(res, 200, { ok: true, user: publicUser(user) });
+      }).catch(function (error) { databaseError(res, error); });
     });
     return true;
   }
@@ -266,7 +386,7 @@ if (require.main === module) {
   server.listen(PORT, function () {
     console.log("完形填空训练系统已启动: http://localhost:" + PORT);
     console.log("管理后台: http://localhost:" + PORT + "/admin.html");
-    if (ADMIN_PASSWORD_IS_TEMP) console.log("未配置 ADMIN_PASSWORD，本次临时管理员密码: " + ADMIN_PASSWORD);
+    console.log("手机号数据存储: " + (USE_SUPABASE ? "Supabase" : "本地 phone-users.json"));
   });
 }
 
