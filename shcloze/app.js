@@ -10,6 +10,7 @@
 /* ==================== 存储与状态 ==================== */
 /* v2：题号已统一重排为 1..N，旧版错题本里的题号会错位，故升版让旧数据自然作废 */
 var STORAGE_KEY = "cloze-national-v2";
+var STUDENT_PHONE_KEY = "shcloze_student_phone";
 var clueColors = ["blue", "green", "yellow", "red", "violet"];
 
 var library = [];
@@ -83,20 +84,34 @@ function _probeStorage() {
   catch (e) { _storageOK = false; }
   return _storageOK;
 }
+function accountStorageKey(base) {
+  var phone = "";
+  try { phone = localStorage.getItem(STUDENT_PHONE_KEY) || ""; } catch (e) {}
+  return base + ":account:" + (/^1[3-9]\d{9}$/.test(phone) ? phone : "guest");
+}
 function loadStore() {
   if (!_probeStorage()) return _memStore;
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); }
+  try { return JSON.parse(localStorage.getItem(accountStorageKey(STORAGE_KEY)) || "{}"); }
   catch (e) { return _memStore; }
 }
 function saveStore(s) {
   if (!_probeStorage()) { _memStore = s; return; }
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
+  try { localStorage.setItem(accountStorageKey(STORAGE_KEY), JSON.stringify(s)); }
   catch (e) { _memStore = s; }
 }
 
 function getDone() { return loadStore().done || {}; }
-function markDone(id) { var s = loadStore(); s.done = s.done || {}; s.done[id] = true; saveStore(s); }
+function markDone(id) { var s = loadStore(); s.done = s.done || {}; s.done[id] = true; saveStore(s); updateHomeProgress(); }
 function isDone(id) { return !!getDone()[id]; }
+function updateHomeProgress() {
+  var bar = document.getElementById("homeProgressBar");
+  var text = document.getElementById("homeProgressText");
+  if (!bar || !text) return;
+  var total = Math.min(10, library.length || 10);
+  var done = library.slice(0, total).filter(function (item) { return isDone(item.id); }).length;
+  bar.style.width = (total ? Math.round(done / total * 100) : 0) + "%";
+  text.textContent = done + " / " + total;
+}
 
 /* 错题本存储 */
 function getErrors() { return loadStore().errors || []; }
@@ -667,8 +682,8 @@ function bindTipActions(si, el) {
 function hideSentenceTip() { var t = $("sentenceTip"); if (t) { t.hidden = true; t._el = null; } }
 
 /* ---------- 3. 词汇卡：双击单词 → 有道词典 + 收录 ---------- */
-function loadVocab() { try { return JSON.parse(localStorage.getItem("cloze_vocab") || "[]"); } catch (e) { return []; } }
-function saveVocab(v) { try { localStorage.setItem("cloze_vocab", JSON.stringify(v)); } catch (e) {} }
+function loadVocab() { try { return JSON.parse(localStorage.getItem(accountStorageKey("cloze_vocab")) || "[]"); } catch (e) { return []; } }
+function saveVocab(v) { try { localStorage.setItem(accountStorageKey("cloze_vocab"), JSON.stringify(v)); } catch (e) {} }
 function openYoudao(word) { window.open("https://dict.youdao.com/search?q=" + encodeURIComponent(word), "_blank", "noopener"); }
 function addVocab(word, ctx) {
   word = String(word || "").toLowerCase().replace(/[^a-z'\-]/g, "");
@@ -2047,10 +2062,10 @@ function matchesFilters(l) {
 /* ---------- 筛选状态持久化与分享 ---------- */
 
 function saveFilterPref() {
-  try { localStorage.setItem(STORAGE_KEY + ":filters", JSON.stringify(filterState)); } catch (e) { /* 忽略 */ }
+  try { localStorage.setItem(accountStorageKey(STORAGE_KEY + ":filters"), JSON.stringify(filterState)); } catch (e) { /* 忽略 */ }
 }
 function loadFilterPref() {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY + ":filters") || "null"); } catch (e) { return null; }
+  try { return JSON.parse(localStorage.getItem(accountStorageKey(STORAGE_KEY + ":filters")) || "null"); } catch (e) { return null; }
 }
 function readHashFilters() {
   var h = String(location.hash || "").replace(/^#/, "");
@@ -3733,6 +3748,7 @@ function init() {
   writeHashFilters();
   renderLibrary();
   updateNavBadge();
+  updateHomeProgress();
   showView("home");   // 首屏 = 首页 landing；真题库为独立页面，进入时才展开
 }
 
@@ -3742,7 +3758,6 @@ init();
 /* ==================== 手机号白名单登录 ==================== */
 (function () {
   var currentPhone = "";
-  var STUDENT_PHONE_KEY = "shcloze_student_phone";
   function $(id) { return document.getElementById(id); }
 
   function lockBody() {
@@ -3807,7 +3822,7 @@ init();
       localStorage.setItem(STUDENT_PHONE_KEY, phone);
       currentPhone = data.phone || phone;
       showMsg("登录成功，正在进入…", true);
-      setTimeout(function () { unlockBody(); renderLoginBtn(); }, 250);
+      setTimeout(function () { location.reload(); }, 250);
     }).catch(function (error) {
       showMsg(error.message || "无法连接登录服务，请稍后重试", false);
       if (input) input.focus();
