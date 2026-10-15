@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "users": [
+    {
+      "phone": "18409876181",
+      "note": "佳佳",
+      "enabled": true,
+      "createdAt": "2026-10-15T07:41:35.845Z",
+      "updatedAt": "2026-10-15T07:41:35.845Z"
+    }
+  ]
+}

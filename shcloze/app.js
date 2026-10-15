@@ -22,18 +22,48 @@ var checked = {};
 var posPassed = {};
 var reasoningRoutes = {};
 var currentQ = null;
-var activeView = "library";
+var activeView = "home";
 
 /* 筛选状态：六个维度，值一律用字符串（'all' 表示不限） */
-var FILTER_DIMS = ["kind", "type", "region", "year", "blanks", "difficulty"];
+var FILTER_DIMS = ["kind", "type", "region", "year", "blanks", "difficulty", "dim"];
 var DEFAULT_FILTERS = { kind: "all", type: "all", region: "上海", year: "all", blanks: "all", difficulty: "all" };
 var filterState = {};
 FILTER_DIMS.forEach(function (d) { filterState[d] = "all"; });
 
 /* URL hash 短键，用于分享筛选链接：#k=正式真题&r=江苏&y=2024&b=6 */
-var HASH_KEYS = { k: "kind", t: "type", r: "region", y: "year", b: "blanks", d: "difficulty" };
+var HASH_KEYS = { k: "kind", t: "type", r: "region", y: "year", b: "blanks", d: "difficulty", m: "dim" };
 var HASH_KEY_OF = {};
 Object.keys(HASH_KEYS).forEach(function (short) { HASH_KEY_OF[HASH_KEYS[short]] = short; });
+
+/* 五维（讲义联动）：从每题 clueTypes 反推该篇所属维度，供题库「维度」筛选与讲义 CTA 预筛。
+ * 映射口径：动作链条 = 逻辑时序/因果 + 短语动词(固定搭配) + 动词熟词生义；
+ *            词汇复现 = 复现线索；情感态度 = 情感线索；语境还原 = 语境线索；
+ *            篇章结构 = 逻辑递进/举例/关系词/首尾定调/段落功能。 */
+var DIM_KEYS = ["动作链条", "词汇复现", "情感态度", "语境还原", "篇章结构"];
+var CLUE_DIM_MAP = {
+  "动作链条": ["逻辑线索·因果", "逻辑线索·时间", "逻辑线索·并列", "逻辑线索·转折", "逻辑线索·条件", "逻辑线索·让步", "固定搭配", "固定搭配·结构骨架", "熟词生义"],
+  "词汇复现": ["复现线索"],
+  "情感态度": ["情感线索"],
+  "语境还原": ["语境线索"],
+  "篇章结构": ["逻辑线索·递进", "逻辑线索·举例", "逻辑线索·关系词", "逻辑线索·首尾定调", "逻辑线索·段落功能"]
+};
+function lessonDims(l) {
+  if (l._dims) return l._dims;
+  var set = {};
+  (l.questions || []).forEach(function (q) {
+    var ct = q.clueTypes || {};
+    Object.keys(ct).forEach(function (k) {
+      var v = ct[k]; if (!v) return;
+      DIM_KEYS.forEach(function (dim) {
+        CLUE_DIM_MAP[dim].forEach(function (pre) {
+          if (v === pre || v.indexOf(pre) === 0) set[dim] = true;
+        });
+      });
+    });
+  });
+  l._dims = Object.keys(set);
+  return l._dims;
+}
 
 /* 来源分层：按「真题优先」的教学价值排序 */
 var KIND_ORDER = ["正式真题", "区级一模", "区级二模", "模拟预测", "自编"];
@@ -972,8 +1002,812 @@ function showView(name) {
   if (name === "library") renderLibrary();
   if (name === "methodology" && window.renderKnowledgePoints) window.renderKnowledgePoints();
   if (name === "notebook") renderNotebook();
+  if (name === "handout") enterHandout();
+  if (name === "quiz") renderQuizHome();
   if (name === "progress") renderProgress();
   if (name === "vocab") renderVocab();
+}
+
+var HANDOUT_CHAPTERS = [
+  { id: "ch0", t: "开篇 · 完形到底考什么", color: "#3730A3",
+    desc: "完形填空绝非孤立词汇考查：命题心理学与客观证据链的底层逻辑，先建立五维全局观。",
+    tags: ["全词性", "打地基", "先读"] },
+  { id: "ch1", t: "第1讲　维度一　词汇复现（5技法）", color: "#2563EB",
+    desc: "原文自己会重复答案：原词 / 派生词 / 同义 / 上下义 / 同场复现五大机制逐一击破。",
+    tags: ["5 技法", "主考 名词/动词", "必考"] },
+  { id: "ch2", t: "第2讲　维度二　情感态度（4技法）", color: "#C026D3",
+    desc: "给全文画一条情感曲线：褒贬一致、情感突变律，遇转折强制反号。",
+    tags: ["4 技法", "主考 形容词/副词", "必考"] },
+  { id: "ch3", t: "第3讲　维度三　语境还原（5技法）", color: "#7C3AED",
+    desc: "当前句读不懂？后置解释、常识兜底、熟词生义——答案永远在空格后面。",
+    tags: ["5 技法", "主考 名词/搭配", "高频"] },
+  { id: "ch4", t: "第4讲　维度四　篇章结构（6技法）", color: "#0891B2",
+    desc: "先修逻辑骨架再填血肉：转折 / 因果 / 让步 / 并列 / 条件 / 总分结构。",
+    tags: ["6 技法", "主考 连词/副词", "必考"] },
+  { id: "ch5", t: "第5讲　维度五　动作链条与语法基石（7技法）", color: "#4F46E5",
+    desc: "物理时序推进 + 动宾搭配合理 + 句法严谨，附 17 组高频混淆动词辨析。",
+    tags: ["7 技法", "主考 动词", "压轴"] },
+  { id: "ch6", t: "第6讲　四步极速破局 SOP", color: "#6366F1",
+    desc: "一读观大势 → 二推查复现 → 三定审骨架 → 四扣动作链，考场 20 分钟稳定执行。",
+    tags: ["4 步", "全词性", "考场执行"] },
+  { id: "ch7", t: "第7讲　词性 × 维度 决策表", color: "#6366F1",
+    desc: "看到词性 0.5 秒激活对应维度：名 / 形 / 副 / 连 / 动五类词性条件反射速查。",
+    tags: ["5 类词性", "速查", "工具页"] },
+  { id: "ch8", t: "第8讲　干扰项三大杀伤机制", color: "#6366F1",
+    desc: "错项不是随机拼的：呼应否 1855 次 · 异场否 722 次 · 方向否 669 次，反向排除。",
+    tags: ["3 机制", "实证统计", "提分"] },
+  { id: "ch9", t: "第9讲　六大陷阱与破解铁律", color: "#6366F1",
+    desc: "单句直译 / 主客体错认 / 漏转折 / 主观臆测……六大致命坑逐条配破解铁律。",
+    tags: ["6 陷阱", "对照式", "防翻车"] },
+  { id: "appendix", t: "附录 · 考前 60 秒通关口诀", color: "#6366F1",
+    desc: "10 行口诀浓缩五维一体矩阵，进考场前默念一遍，矩阵在胸。",
+    tags: ["速记", "考前 60 秒"] }
+];
+
+function renderHandout() {
+  var toc = document.getElementById("tocList");
+  if (toc && !toc.dataset.built) {
+    toc.innerHTML = HANDOUT_CHAPTERS.map(function (c) {
+      return '<li><a href="javascript:void(0)" data-anchor="' + c.id + '">' + c.t + '</a></li>';
+    }).join("");
+    toc.dataset.built = "1";
+  }
+  var box = document.getElementById("handoutContent");
+  if (box && !box.dataset.built) {
+    var H = (typeof HANDOUT_HTML !== "undefined") ? HANDOUT_HTML : null;
+    box.innerHTML = HANDOUT_CHAPTERS.map(function (c) {
+      var inner = (H && H[c.id]) ? H[c.id] : '<p class="handout-placeholder">本讲内容建设中。</p>';
+      return '<section class="handout-ch" id="' + c.id + '">' + inner + '</section>';
+    }).join("");
+    box.dataset.built = "1";
+  }
+}
+
+/* ==================== 讲义主页（课程卡片网格）+ 单讲详情 ==================== */
+function lessonNoLabel(id) {
+  if (id === "ch0") return "开篇";
+  if (id === "appendix") return "附录";
+  return id.replace("ch", "");
+}
+
+/** 讲义主页分组：开篇 / 五大解题维度 / 实战工具 / 附录 */
+var HANDOUT_GROUPS = [
+  { t: "开篇 · 定调", ids: ["ch0"] },
+  { t: "五大解题维度（每讲一个维度色）", ids: ["ch1", "ch2", "ch3", "ch4", "ch5"] },
+  { t: "实战工具 · 考场执行", ids: ["ch6", "ch7", "ch8", "ch9"] },
+  { t: "附录 · 考前速记", ids: ["appendix"] }
+];
+
+function findChapter(id) {
+  for (var i = 0; i < HANDOUT_CHAPTERS.length; i++) {
+    if (HANDOUT_CHAPTERS[i].id === id) return HANDOUT_CHAPTERS[i];
+  }
+  return null;
+}
+
+/** 每课一句话技法简介（首页卡片第 2~3 行） */
+var HANDOUT_TECH_INTRO = {
+  "ch1#0": "答案词会在原文里原样再出现一次，往前扫两句、往后扫两句就能抓到硬证据。",
+  "ch1#1": "词根相同、词性不同：climb → climber / climbed，靠词缀变形呼应空格。",
+  "ch1#2": "换词不换义：travel → trips、gift → present，盯住近义替换就能锁定。",
+  "ch1#3": "大类词与实例词互相印证：animal（上位）↔ dog / cat（下位）。",
+  "ch1#4": "同一场景的伙伴词成群出现：hospital 必然伴随 doctor、nurse、patient。",
+  "ch2#0": "语境情感同向稳定：积极段必配褒义词，挫败段必配贬义词。",
+  "ch2#1": "but / however / unexpectedly 一出现，情感立刻调头，答案随之翻转。",
+  "ch2#2": "感叹号表激动、破折号表补充、引号常表反讽——标点就是情感体温计。",
+  "ch2#3": "同向还有深浅：calm → glad → excited → thrilled，按程度挑最贴切的那个。",
+  "ch3#0": "本句里的定语、状语、介词短语，已经把答案的取值范围限定死了。",
+  "ch3#1": "本句没有依据就往后读 1~2 句，后文常给例证、原因或结果（画箭头法）。",
+  "ch3#2": "悬念文的真正原因常在结尾才揭晓，必须跨段回溯反推前面的空格。",
+  "ch3#3": "语言线索模糊时，用物理法则与社会常识做最后一道兜底防线。",
+  "ch3#4": "破折号后、逗号短语、that is 之后的等价解释，就是空格的直译答案。",
+  "ch4#0": "and / both…and / not only…but also：前后同向平等、结构对称。",
+  "ch4#1": "but / however / instead of 一出现就调头，前后语义彻底反转。",
+  "ch4#2": "because / so / therefore：前有因后有果，按驱动链选词。",
+  "ch4#3": "although / even though：先退一步承认事实，再突出核心结论。",
+  "ch4#4": "if / unless / as long as：满足什么前提，就触发什么结果。",
+  "ch4#5": "宾从、定从、状从的引导词，既是逻辑桥梁，也是从句里的成分。",
+  "ch5#0": "准备 → 启动 → 进行 → 阻碍 → 结果，动作按物理时序一环扣一环。",
+  "ch5#1": "动词要带得动宾语，主语要发得出动作，主客体双方都得说得通。",
+  "ch5#2": "up / down / off / out 等小品词决定动作方向，换一个意思全变。",
+  "ch5#3": "哪些动词后接 to do、哪些只接 doing，是死记也得记的接续铁律。",
+  "ch5#4": "记叙文用过去时、说明文用现在时，承受者作主语就用被动语态。",
+  "ch5#5": "人称 / 物主 / 反身代词要格位正确、性数一致，是必拿的送分题。",
+  "ch5#6": "17 组高频近义动词（词组）辨析大合集，考前过一遍专治形近义近。"
+};
+
+/** 「进入测试」按本课对应的线索类型，从题库里挑一篇该线索最集中的真题 */
+var QUIZ_CLUE_LESSON = {
+  "ch1#0": "复现线索·原词复现",
+  "ch1#1": "复现线索·派生词复现",
+  "ch1#2": "复现线索·近义词复现",
+  "ch1#3": "复现线索·上下义词复现",
+  "ch1#4": "复现线索·同场复现",
+  "ch4#0": "逻辑线索·并列",
+  "ch4#1": "逻辑线索·转折",
+  "ch4#2": "逻辑线索·因果",
+  "ch4#3": "逻辑线索·让步",
+  "ch4#4": "逻辑线索·条件",
+  "ch4#5": "逻辑线索·关系词",
+  "ch5#0": "逻辑线索·时间",
+  "ch5#1": "语境线索·搭配骨架",
+  "ch5#2": "固定搭配·结构骨架",
+  "ch5#5": "复现线索·原词复现"
+};
+var QUIZ_CLUE_CHAPTER = {
+  ch0: "复现线索", ch1: "复现线索", ch2: "情感线索", ch3: "语境线索",
+  ch4: "逻辑线索", ch5: "固定搭配", ch6: "逻辑线索", ch7: "语境线索",
+  ch8: "情感线索", ch9: "固定搭配", appendix: "复现线索"
+};
+var QUIZ_CLUE_LABEL = {
+  "复现线索": "词汇复现", "情感线索": "情感态度", "语境线索": "语境还原",
+  "逻辑线索": "篇章结构", "固定搭配": "动作链条 / 语法"
+};
+
+function quizClueOf(chId, techIdx) {
+  return QUIZ_CLUE_LESSON[chId + "#" + techIdx] || QUIZ_CLUE_CHAPTER[chId] || "复现线索";
+}
+function quizClueLabel(want) {
+  var p = String(want).split("·");
+  var base = QUIZ_CLUE_LABEL[p[0]] || p[0];
+  return p[1] ? base + " · " + p[1] : base;
+}
+
+/** 讲义「进入测试」：挑一篇该线索最集中的真题直接开练 */
+function startLessonQuiz(chId, techIdx) {
+  var want = quizClueOf(chId, techIdx);
+  var pool = [];
+  (typeof library !== "undefined" ? library : []).forEach(function (l) {
+    var n = 0;
+    (l.questions || []).forEach(function (q) {
+      var ct = q.clueTypes || {};
+      var hit = false;
+      for (var k in ct) { if (String(ct[k]).indexOf(want) === 0) { hit = true; break; } }
+      if (hit) n++;
+    });
+    if (n > 0) pool.push({ id: l.id, n: n });
+  });
+  if (!pool.length) { showView("library"); return; }
+  pool.sort(function (a, b) { return b.n - a.n; });
+  var top = Math.min(3, pool.length);
+  var pick = pool[Math.floor(Math.random() * top)];
+  openLesson(pick.id);
+}
+
+/** 讲义全部「课」拉平成一维列表，供上一课 / 下一课顺序导航 */
+function handoutLessonFlat() {
+  var out = [];
+  HANDOUT_CHAPTERS.forEach(function (c) {
+    var ts = chapterTechs(c.id);
+    if (ts.length) {
+      ts.forEach(function (t, i) { out.push({ ch: c.id, idx: i, label: t.no + "　" + t.name }); });
+    } else {
+      out.push({ ch: c.id, idx: -1, label: c.t });
+    }
+  });
+  return out;
+}
+
+/* ==================== 每课精练（300 题真题靶向分册） ==================== */
+/** 取某一课配套的精练题组（键 chN#idx） */
+function getLessonQuiz(chId, techIdx) {
+  var Q = (typeof QUIZ300 !== "undefined") ? QUIZ300 : null;
+  if (!Q) return null;
+  return Q[chId + "#" + techIdx] || null;
+}
+
+var quizState = null;
+var quizContainerId = "handoutQuiz";   // 精练渲染容器：讲义内为 handoutQuiz，独立落地页为 quizBox
+var quizContext = "handout";           // handout | quiz
+
+function quizStemHtml(s) {
+  return escapeHtml(s).replace(/_{3,}(\d+)_{3,}/g, '<span class="qz-blank">____$1____</span>');
+}
+
+/* 提交后才把「核心线索」在题干里的原文证据片段标出来（hl 由 _build_clue_hl.py 预算） */
+function quizStemHl(s, hl) {
+  var html = quizStemHtml(s);
+  if (!quizState || !quizState.submitted || !hl || !hl.length) return html;
+  hl.slice().sort(function (a, b) { return b.length - a.length; }).forEach(function (frag) {
+    if (!frag) return;
+    var at = html.indexOf(escapeHtml(frag));
+    if (at < 0) return;
+    html = html.slice(0, at) + '<span class="qz-ev">' + html.slice(at, at + escapeHtml(frag).length) + '</span>' + html.slice(at + escapeHtml(frag).length);
+  });
+  return html;
+}
+
+/** 进入某一课的精练：做完提交后才出答案与解析 */
+function openHandoutQuiz(chId, techIdx) {
+  quizContainerId = "handoutQuiz"; quizContext = "handout";
+  var g = getLessonQuiz(chId, techIdx);
+  if (!g) { startLessonQuiz(chId, techIdx); return; }
+  renderHandout();
+  var home = $("handoutHome"), layout = document.querySelector("#handoutView .handout-layout");
+  var foot = $("handoutLessonFoot"), bar = $("handoutLessonBar"), back = $("handoutBackBtn");
+  if (home) home.hidden = true;
+  if (layout) layout.hidden = true;
+  if (foot) foot.hidden = true;
+  if (bar) bar.hidden = true;
+  if (back) back.hidden = true;
+  quizState = { ch: chId, idx: techIdx, answers: {}, submitted: false, warned: false, t0: Date.now() };
+  renderQuiz();
+  window.scrollTo(0, 0);
+}
+
+/* ============ 讲义配套题库 · 独立精练落地页 ============ */
+/* 课表网格：按章节列出所有带精练的「课」，点击直达该题组 */
+function renderQuizHome() {
+  var home = $("quizHome");
+  if (!home) return;
+  quizState = null; quizContext = "quiz";
+  var totalQ = 0;
+  var groups = HANDOUT_CHAPTERS.map(function (c) {
+    var color = c.color || "#2f5f9e";
+    var techs = chapterTechs(c.id);
+    var items = [], qn = 0;
+    techs.forEach(function (t, i) {
+      var g = getLessonQuiz(c.id, i);
+      if (!g) return;
+      qn += g.qs.length;
+      items.push('<button class="tcard" type="button" data-ql="' + c.id + '" data-qt="' + i + '"'
+        + ' style="--c:' + color + '" title="开始精练：' + t.no + '　' + t.name + '">'
+        + '<span class="tcard-h"><span class="tcard-no">' + (t.no || "•") + '</span>'
+        + '<span class="tcard-t">' + t.name + '</span></span>'
+        + '<span class="tcard-d">' + (t.intro || "") + '</span>'
+        + '<span class="tcard-meta">' + g.qs.length + ' 题 · 开始精练 ›</span></button>');
+    });
+    if (!items.length) return "";
+    totalQ += qn;
+    return '<div class="hgroup" style="--c:' + color + '">'
+      + '<div class="hgroup-h"><span class="hgroup-dot"></span>' + c.t
+      + '<em>' + items.length + ' 课 · ' + qn + ' 题</em></div>'
+      + '<div class="tech-grid">' + items.join("") + '</div></div>';
+  }).join("");
+  home.innerHTML = '<div class="handout-homebar"><span class="hb-pill">300 题真题靶向精练 · 按 27 课同步</span>'
+    + '<span class="hb-goal">先答后揭 · 提交后才亮出原文证据与解析 · 共 ' + totalQ + ' 题</span></div>'
+    + '<div class="handout-groups">' + groups + '</div>';
+  home.hidden = false;
+  var box = $("quizBox"); if (box) { box.hidden = true; box.innerHTML = ""; }
+}
+
+/* 课表 → 进入某一课精练（独立落地页上下文） */
+function startQuiz(ch, idx) {
+  var g = getLessonQuiz(ch, idx);
+  if (!g) return;
+  quizContainerId = "quizBox"; quizContext = "quiz";
+  var home = $("quizHome"); if (home) home.hidden = true;
+  var box = $("quizBox"); if (box) box.hidden = false;
+  quizState = { ch: ch, idx: idx, answers: {}, submitted: false, warned: false, t0: Date.now() };
+  renderQuiz();
+  window.scrollTo(0, 0);
+}
+
+/* 精练中 → 返回课表 */
+function showQuizHome() {
+  var box = $("quizBox"); if (box) { box.hidden = true; box.innerHTML = ""; }
+  var home = $("quizHome"); if (home) home.hidden = false;
+  quizState = null;
+}
+
+function renderQuiz() {
+  var box = $(quizContainerId);
+  if (!box || !quizState) return;
+  var g = getLessonQuiz(quizState.ch, quizState.idx);
+  if (!g) return;
+  var chp = findChapter(quizState.ch);
+  var ts = chapterTechs(quizState.ch);
+  var t = ts[quizState.idx] || { no: "", name: "" };
+  var qs = g.qs, done = 0;
+  qs.forEach(function (q) { if (quizState.answers[q.no]) done++; });
+
+  var backLabel = (quizContext === "quiz") ? "← 返回课表" : "← 返回本课";
+  var head = '<div class="qz-head">'
+    + '<button class="btn ghost" type="button" data-qz="back">' + backLabel + '</button>'
+    + '<button class="btn ghost" type="button" data-qz="print">🖨 打印本课卷</button>'
+    + '<div class="qz-hmain"><b>' + escapeHtml((chp ? chp.t : "") + "　" + t.no + "　" + t.name) + '</b>'
+    + '<span>共 ' + qs.length + ' 题 · 已答 <b>' + done + '</b>/' + qs.length
+    + '　｜　机制 ' + escapeHtml(g.mech + " · " + g.name) + '</span></div>'
+    + '<span class="qz-tip">' + (quizState.submitted
+        ? '解析已解锁：对照「核心线索」回原文找证据'
+        : '全部作答后点下方「提交」，才会出现答案与解析') + '</span>'
+    + '</div>';
+
+  var score = '';
+  if (quizState.submitted) {
+    var right = 0;
+    qs.forEach(function (q) { if (quizState.answers[q.no] === q.answer) right++; });
+    var pct = Math.round(right * 100 / qs.length);
+    score = '<div class="qz-score"><b>' + right + ' / ' + qs.length + '</b>'
+      + '<span>正确率 ' + pct + '%</span>'
+      + '<span class="qz-grade">' + (pct >= 90 ? '掌握牢固，可以进下一课了 👍'
+          : pct >= 70 ? '基本掌握，建议把错题的线索回原文再走一遍'
+          : '建议回看本课讲解，再做一次') + '</span></div>';
+  }
+
+  var hlCount = 0;
+  qs.forEach(function (q) { if (q.hl && q.hl.length) hlCount++; });
+  var legend = (quizState.submitted && hlCount)
+    ? '<div class="qz-evlegend"><i></i> 题干中已标黄的就是本题「核心线索」的原文证据，共 ' + hlCount + '/' + qs.length + ' 题可直接对读</div>'
+    : '';
+
+  var body = qs.map(function (q) {
+    var sel = quizState.answers[q.no] || "";
+    var ok = sel === q.answer;
+    var opts = q.options.map(function (o) {
+      var cls = "qz-opt";
+      if (quizState.submitted) {
+        if (o.k === q.answer) cls += " right";
+        else if (o.k === sel) cls += " wrong";
+      } else if (o.k === sel) cls += " sel";
+      return '<button type="button" class="' + cls + '" data-qz="opt" data-qno="' + q.no + '" data-k="' + o.k + '"'
+        + (quizState.submitted ? " disabled" : "") + '><i>' + o.k + '</i><span>' + escapeHtml(o.v) + '</span></button>';
+    }).join("");
+    var ana = '';
+    if (quizState.submitted) {
+      ana = '<div class="qz-ana ' + (ok ? "ok" : "bad") + '">'
+        + '<div class="qz-verdict">' + (ok
+            ? '✅ 答对了'
+            : '❌ 答错了：你选 ' + (sel || "（未作答）") + '，正确答案 ' + q.answer + '. ' + escapeHtml((q.options.filter(function (x) { return x.k === q.answer; })[0] || {}).v || "")) + '</div>'
+        + '<div class="qz-line"><b>核心线索</b><span>' + escapeHtml(q.clue) + '</span></div>'
+        + '<div class="qz-line"><b>矩阵解析</b><span>' + escapeHtml(q.analysis) + '</span></div>'
+        + '</div>';
+    }
+    return '<div class="qz-q">'
+      + '<div class="qz-qh"><span class="qz-no">训练 ' + q.no + '</span>'
+      + '<span class="qz-src">' + escapeHtml(q.src) + '</span></div>'
+      + '<p class="qz-stem">' + quizStemHl(q.stem, q.hl) + '</p>'
+      + '<div class="qz-opts">' + opts + '</div>' + ana + '</div>';
+  }).join("");
+
+  var warn = (quizState.warned && !quizState.submitted)
+    ? '<span class="qz-warn">还有 ' + (qs.length - done) + ' 题未作答，未作答按错题计。再点一次「提交」即确认。</span>'
+    : '';
+  var barHtml = '<div class="qz-bar">' + warn + (quizState.submitted
+    ? '<button class="btn ghost" type="button" data-qz="again">↻ 再做一次</button>'
+      + '<button class="btn ghost" type="button" data-qz="back">← 返回本课</button>'
+      + '<button class="btn primary" type="button" data-qz="next">进入下一课 →</button>'
+    : '<button class="btn primary" type="button" data-qz="submit">提交并查看解析（已答 ' + done + '/' + qs.length + '）</button>')
+    + '</div>';
+
+  box.innerHTML = head + score + legend + body + barHtml;
+  box.hidden = false;
+}
+
+function closeHandoutQuiz() {
+  var box = $("handoutQuiz");
+  if (box) { box.hidden = true; box.innerHTML = ""; }
+  quizState = null;
+}
+
+/* 精练卷打印：题干 + 选项，不含答案（复用空白练习卷打印样式） */
+function quizPrintHtml(g) {
+  var qHtml = g.qs.map(function (q) {
+    var stem = escapeHtml(q.stem).replace(/_{3,}(\d+)_{3,}/g, function (_, n) {
+      return '<span class="pb-blank"><i>' + n + '</i><u></u></span>';
+    });
+    var opts = (q.options || []).map(function (o) {
+      return '<span class="popt"><b>' + escapeHtml(o.k) + '.</b> ' + escapeHtml(o.v) + '</span>';
+    }).join("");
+    return '<div class="qzp">'
+      + '<div class="qzp-h"><b>训练 ' + q.no + '</b><span>' + escapeHtml(q.src || "") + '</span></div>'
+      + '<p class="qzp-stem">' + stem + '</p>'
+      + '<div class="qzp-opts">' + opts + '</div>'
+      + '</div>';
+  }).join("");
+  return '<div class="print-wrap"><h1>' + escapeHtml(g.name || "") + ' · 精练卷</h1>'
+    + '<div class="print-meta">' + escapeHtml(g.mech + " · " + g.name) + ' ｜ 共 ' + g.qs.length + ' 题 · 把所选答案填到对应编号的横线上</div>'
+    + '<div class="print-info"><span>班级 __________</span><span>姓名 __________</span><span>用时 ______ 分钟</span></div>'
+    + '<div class="print-qs">' + qHtml + '</div>'
+    + '<div class="print-foot">来源：中考完形填空五维一体 300 题真题精练分册</div>'
+    + '</div>';
+}
+
+function renderQuizPrint() {
+  var area = $("printArea");
+  if (!area || !quizState) return;
+  var g = getLessonQuiz(quizState.ch, quizState.idx);
+  if (!g) return;
+  area.innerHTML = quizPrintHtml(g);
+  window.print();
+}
+
+/** 从 HANDOUT_HTML 动态解析某一讲的「课」列表（标题形如「第一课　原词复现」） */
+function chapterTechs(key) {
+  var H = (typeof HANDOUT_HTML !== "undefined") ? HANDOUT_HTML : null;
+  var html = (H && H[key]) ? H[key] : "";
+  var out = [];
+  var re = /<h[34][^>]*class="tech-t"[^>]*>([\s\S]*?)<\/h[34]>/g;
+  var m;
+  while ((m = re.exec(html))) {
+    var raw = m[1].replace(/<[^>]+>/g, "").trim();
+    var mm = raw.match(/^(第[^课]{1,4}课|宝典)\s*([\s\S]*)$/);
+    var no = "", name = raw;
+    if (mm) { no = mm[1]; name = mm[2].trim(); }
+    out.push({ no: no, name: name, intro: HANDOUT_TECH_INTRO[key + "#" + out.length] || "" });
+  }
+  return out;
+}
+
+function renderHandoutHome() {
+  var box = document.getElementById("handoutHome");
+  if (!box || box.dataset.built) return;
+  var bar = '<div class="handout-homebar"><span class="hb-pill">五维一体核心解题矩阵 · 11 讲 / 27 课 / 300 道配套精练</span>'
+    + '<span class="hb-goal">点任意一「课」直达正文 · 学完即练 · 同讲同色 = 同一维度</span></div>';
+  var groups = HANDOUT_CHAPTERS.map(function (c) {
+    var color = c.color || "#2f5f9e";
+    var techs = chapterTechs(c.id);
+    var inner;
+    if (techs.length) {
+      inner = '<div class="tech-grid">' + techs.map(function (t, i) {
+        return '<button class="tcard" type="button" data-lesson="' + c.id + '" data-tech="' + i + '"'
+          + ' style="--c:' + color + '" title="点击进入：' + t.no + '　' + t.name + '">'
+          + '<span class="tcard-h"><span class="tcard-no">' + (t.no || "•") + '</span>'
+          + '<span class="tcard-t">' + t.name + '</span></span>'
+          + '<span class="tcard-d">' + (t.intro || "") + '</span>'
+          + '<span class="tcard-arrow">›</span></button>';
+      }).join("") + '</div>';
+    } else {
+      inner = '<button class="hrow" type="button" data-lesson="' + c.id + '" style="--c:' + color + '"'
+        + ' title="点击进入本讲正文">'
+        + '<span class="hrow-no">' + lessonNoLabel(c.id) + '</span>'
+        + '<span class="hrow-main"><b class="hrow-t">' + c.t + '</b>'
+        + '<span class="hrow-d">' + (c.desc || "") + '</span></span>'
+        + '<span class="hrow-arrow">›</span></button>';
+    }
+    var qn = 0;
+    techs.forEach(function (t, i) { var g = getLessonQuiz(c.id, i); if (g) qn += g.qs.length; });
+    return '<div class="hgroup" style="--c:' + color + '">'
+      + '<div class="hgroup-h"><span class="hgroup-dot"></span>' + c.t
+      + (techs.length ? '<em>' + techs.length + ' 课 · ' + qn + ' 题</em>' : '<em>整讲</em>')
+      + '</div>' + inner + '</div>';
+  }).join("");
+  box.innerHTML = bar + '<div class="handout-groups">' + groups + '</div>';
+  box.dataset.built = "1";
+}
+
+function showHandoutHome() {
+  var home = $("handoutHome"), layout = document.querySelector("#handoutView .handout-layout");
+  var back = $("handoutBackBtn"), bar = $("handoutLessonBar"), content = $("handoutContent");
+  var foot = $("handoutLessonFoot");
+  if (home) home.hidden = false;
+  if (layout) { layout.hidden = true; layout.classList.remove("single-mode"); }
+  if (back) back.hidden = true;
+  if (bar) bar.hidden = true;
+  if (foot) { foot.hidden = true; foot.innerHTML = ""; }
+  closeHandoutQuiz();
+  if (content) { content.classList.remove("single-mode"); content.classList.remove("lesson-only"); }
+  window.scrollTo(0, 0);
+}
+
+function openHandoutLesson(id, techIdx) {
+  renderHandout();
+  var home = $("handoutHome"), layout = document.querySelector("#handoutView .handout-layout");
+  var back = $("handoutBackBtn"), bar = $("handoutLessonBar"), foot = $("handoutLessonFoot");
+  var content = $("handoutContent"), target = document.getElementById(id);
+  if (!layout || !content || !target) return;
+  closeHandoutQuiz();
+  if (home) home.hidden = true;
+  layout.hidden = false;
+  layout.classList.add("single-mode");
+  content.classList.add("single-mode");
+  var chs = content.querySelectorAll(".handout-ch");
+  for (var i = 0; i < chs.length; i++) {
+    if (chs[i].id === id) { chs[i].classList.add("cur"); } else { chs[i].classList.remove("cur"); }
+  }
+
+  /* 单课模式：本章只显示被点中的那一课，其余（标题 / 导语卡 / 其他课）全部隐藏 */
+  var one = (typeof techIdx === "number" && techIdx >= 0);
+  if (one) { content.classList.add("lesson-only"); } else { content.classList.remove("lesson-only"); }
+  var tk = null, ti = 0, kids = target.children;
+  for (var k = 0; k < kids.length; k++) {
+    if (!kids[k].classList || !kids[k].classList.contains("tech")) continue;
+    if (one && ti === techIdx) { kids[k].classList.add("sel"); tk = kids[k]; }
+    else { kids[k].classList.remove("sel"); }
+    ti++;
+  }
+  decorateHandoutCourse(id, techIdx, tk);
+
+  /* 上一课 / 下一课：按拉平后的课序导航 */
+  var flat = handoutLessonFlat(), pos = -1;
+  for (var f = 0; f < flat.length; f++) {
+    if (flat[f].ch === id && flat[f].idx === (one ? techIdx : -1)) { pos = f; break; }
+  }
+  var cur = pos >= 0 ? flat[pos] : null;
+  var prev = pos > 0 ? flat[pos - 1] : null;
+  var next = (pos >= 0 && pos < flat.length - 1) ? flat[pos + 1] : null;
+  var unit = one ? "课" : "讲";
+  var chp = findChapter(id);
+  if (bar) {
+    bar.hidden = false;
+    bar.innerHTML = '<button class="btn ghost" type="button" data-hl="' + (prev ? (pos - 1) : "") + '"' + (prev ? "" : " disabled") + '>← 上一' + unit + '</button>'
+      + '<span class="hl-title"><b>' + escapeHtml(chp ? chp.t : "") + '</b>'
+      + (one && cur ? '<em>' + escapeHtml(cur.label) + '</em>' : '') + '</span>'
+      + '<button class="btn ghost" type="button" data-hl="' + (next ? (pos + 1) : "") + '"' + (next ? "" : " disabled") + '>下一' + unit + ' →</button>';
+  }
+  if (back) back.hidden = false;
+
+  /* 底部：本课精练 + 进入下一课 */
+  if (foot) {
+    foot.hidden = false;
+    var drill = getLessonQuiz(id, techIdx);
+    var drillN = drill ? drill.qs.length : 0;
+    var want = quizClueOf(id, techIdx);
+    foot.innerHTML = '<div class="lf-info"><b>本课学完了？</b>'
+      + '<span>' + (drillN
+          ? '本课配 ' + drillN + ' 道真题精练：先做完再提交，提交后才会出现答案与解析。'
+          : '本课暂无配套精练题，可做一篇「' + escapeHtml(quizClueLabel(want)) + '」线索最集中的真题。') + '</span></div>'
+      + '<div class="lf-btns">'
+      + '<button class="btn ghost" type="button" data-hf="home">← 回目录</button>'
+      + (drillN ? '<button class="btn primary" type="button" data-hf="drill" data-qc="' + id + '" data-qt="' + (one ? techIdx : -1) + '">▶ 本课精练（' + drillN + ' 题）</button>' : '')
+      + '<button class="btn primary" type="button" data-hf="next" data-qc="' + id + '" data-qt="' + (one ? techIdx : -1) + '"' + (next ? "" : " disabled") + '>进入下一' + unit + ' →</button>'
+      + '</div>';
+  }
+
+  window.scrollTo(0, 0);
+  if (tk) {
+    tk.classList.add("tech-focus");
+    setTimeout(function () { tk.classList.remove("tech-focus"); }, 2000);
+  }
+}
+
+/* 全课程统一样板：抓手 → 定义 → 动作 → 真题 → 扫描 → 检查 → 防坑。 */
+function decorateHandoutCourse(chId, techIdx, techEl) {
+  if (!techEl || typeof techIdx !== "number" || techIdx < 0) return;
+  techEl.classList.add("course-visual");
+  var chapter = findChapter(chId);
+  if (chapter && chapter.color) techEl.style.setProperty("--course-accent", chapter.color);
+  if (techEl.querySelector(".course-first-brief")) return;
+  var title = techEl.querySelector(".tech-t");
+  if (!title) return;
+  var quizGroup = getLessonQuiz(chId, techIdx);
+  var lessonName = quizGroup && quizGroup.name ? quizGroup.name : title.textContent.replace(/^第.+?课[　\s]*/, "").trim();
+  var visual = courseVisualMeta(chId, lessonName);
+  title.insertAdjacentHTML("afterend",
+    '<div class="course-first-brief">'
+    + '<div class="course-first-brief-head"><span>本课抓手</span><b>' + escapeHtml(visual.grip) + '</b><em>' + escapeHtml(visual.note) + '</em></div>'
+    + '<div class="course-first-flow" aria-label="本课三步解题动作">'
+    + '<div class="course-first-step"><b>' + escapeHtml(visual.steps[0][0]) + '</b><span>' + escapeHtml(visual.steps[0][1]) + '</span></div>'
+    + '<i aria-hidden="true">→</i>'
+    + '<div class="course-first-step"><b>' + escapeHtml(visual.steps[1][0]) + '</b><span>' + escapeHtml(visual.steps[1][1]) + '</span></div>'
+    + '<i aria-hidden="true">→</i>'
+    + '<div class="course-first-step"><b>' + escapeHtml(visual.steps[2][0]) + '</b><span>' + escapeHtml(visual.steps[2][1]) + '</span></div>'
+    + '</div>'
+    + '<div class="course-first-map" aria-label="本课证据扫描图">'
+    + '<div class="course-first-map-title"><span>' + escapeHtml(visual.mapTag) + '</span><b>' + escapeHtml(visual.mapTitle) + '</b><em>' + escapeHtml(visual.mapNote) + '</em></div>'
+    + '<div class="course-first-map-grid">'
+    + courseMapCardHtml(visual.cards[0], "near")
+    + courseMapCardHtml(visual.cards[1], "middle")
+    + courseMapCardHtml(visual.cards[2], "far")
+    + '</div>'
+    + '</div>'
+    + '<div class="course-first-checks">'
+    + '<div class="course-first-checks-title"><span>考场检查清单</span><b>' + escapeHtml(visual.checkTitle) + '</b></div>'
+    + '<div class="course-first-check-grid">' + visual.checks.map(function (item) { return '<span>' + escapeHtml(item) + '</span>'; }).join("") + '</div>'
+    + '</div>'
+    + '</div>'
+  );
+
+  /* 定义紧跟抓手出现：先知道“这是什么”，再看如何判断。 */
+  var definition = techEl.querySelector(".tech-def");
+  var briefHead = techEl.querySelector(".course-first-brief-head");
+  if (definition && briefHead) {
+    var definitionTitle = definition.querySelector("b");
+    if (definitionTitle) definitionTitle.textContent = "这是什么";
+    briefHead.insertAdjacentElement("afterend", definition);
+  }
+
+  /* 每课只保留学生真正需要执行的路径，删去与顶部流程重复的说明。 */
+  var why = techEl.querySelector(".tech-why");
+  var form = techEl.querySelector(".tech-form");
+  if (why) why.remove();
+  if (form) form.remove();
+
+  var sop = techEl.querySelector(".tech-sop");
+  if (sop) sop.remove();
+
+  /* 从本课配套题中优先取有高亮证据的两道，展示题干、空格和真实选项。 */
+  if (quizGroup && quizGroup.qs && quizGroup.qs.length >= 2) {
+    var picked = pickCourseCases(quizGroup.qs, chId, techIdx);
+    var realCases = document.createElement("div");
+    realCases.className = "course-first-real-cases";
+    realCases.setAttribute("aria-label", lessonName + "真实题目案例");
+    realCases.innerHTML = '<div class="course-first-real-head"><span>题目可视化</span><b>先认准空格，再追踪高亮证据</b><em>以下题目来自本课配套真题精练</em></div>'
+      + courseCaseHtml(picked[0], courseCaseLabel(picked[0], 1))
+      + courseCaseHtml(picked[1], courseCaseLabel(picked[1], 2));
+    var map = techEl.querySelector(".course-first-map");
+    if (map && map.parentNode) map.parentNode.insertBefore(realCases, map);
+    else techEl.appendChild(realCases);
+  }
+
+  var warn = techEl.querySelector(".tech-warn");
+  if (!warn) {
+    warn = document.createElement("div");
+    warn.className = "tech-warn";
+    techEl.appendChild(warn);
+  }
+  warn.innerHTML = '<b>考场防坑 · 记住这 4 点</b>'
+    + '<ul class="course-first-warn-list">'
+    + visual.warnings.map(function (item) { return '<li><span>' + item[0] + '</span><b>' + escapeHtml(item[1]) + '</b><em>' + escapeHtml(item[2]) + '</em></li>'; }).join("")
+    + '</ul>';
+
+  /* 第一课展示层不使用圆圈序号，避免学生误以为这是题号。 */
+  var walker = document.createTreeWalker(techEl, NodeFilter.SHOW_TEXT);
+  var node;
+  while ((node = walker.nextNode())) node.nodeValue = node.nodeValue.replace(/[①②③④⑤⑥⑦⑧⑨⑩]/g, "");
+}
+
+function courseMapCardHtml(card, tone) {
+  return '<div class="course-first-map-card ' + tone + '"><strong>' + escapeHtml(card[0]) + '</strong><b>' + escapeHtml(card[1]) + '</b><span>' + escapeHtml(card[2]) + '</span><small>' + escapeHtml(card[3]) + '</small></div>';
+}
+
+function pickCourseCases(qs, chId, techIdx) {
+  var curated = {
+    "ch1#0": [1, 3],
+    "ch1#1": [14, 16],
+    "ch1#2": [33, 34],
+    "ch1#3": [39, 41],
+    "ch1#4": [51, 56],
+    "ch2#0": [61, 62],
+    "ch2#1": [76, 84],
+    "ch2#2": [91, 93],
+    "ch2#3": [106, 112],
+    "ch3#0": [126, 127],
+    "ch3#1": [142, 144],
+    "ch3#2": [146, 155],
+    "ch3#3": [157, 159],
+    "ch3#4": [175, 179],
+    "ch4#0": [181, 182],
+    "ch4#1": [191, 192],
+    "ch4#2": [201, 202],
+    "ch4#3": [211, 212],
+    "ch4#4": [221, 222],
+    "ch4#5": [231, 232],
+    "ch5#0": [241, 243],
+    "ch5#1": [251, 253],
+    "ch5#2": [267, 269],
+    "ch5#3": [272, 273],
+    "ch5#4": [281, 284],
+    "ch5#5": [292, 295],
+    "ch5#6": [296, 300]
+  };
+  var preferredNos = curated[chId + "#" + techIdx];
+  if (preferredNos) {
+    return preferredNos.map(function (no) {
+      return qs.filter(function (q) { return q.no === no; })[0];
+    });
+  }
+  var allowed = qs.slice();
+  var withEvidence = allowed.filter(function (q) { return q.hl && q.hl.length; });
+  var pool = withEvidence.concat(allowed.filter(function (q) { return !q.hl || !q.hl.length; }));
+  var first = pool[0];
+  var firstKind = courseCaseKind(first);
+  var second = pool.filter(function (q) { return q !== first && courseCaseKind(q) !== firstKind; })[0] || pool[1];
+  return [first, second];
+}
+
+function courseCaseKind(q) {
+  var match = q && (q.analysis || "").match(/^【([^】]+)】/);
+  return match ? match[1] : "真题应用";
+}
+
+function courseCaseLabel(q, index) {
+  var kind = courseCaseKind(q).replace(/·/g, " · ");
+  return "例 " + index + " · " + kind;
+}
+
+function courseCaseHtml(q, label) {
+  var stem = escapeHtml(q.stem || "");
+  var evidenceFragments = courseEvidenceFragments(q);
+  evidenceFragments.slice().sort(function (a, b) { return b.length - a.length; }).forEach(function (fragment) {
+    var safeFragment = escapeHtml(fragment);
+    stem = stem.split(safeFragment).join('<mark class="course-first-clue">' + safeFragment + '</mark>');
+  });
+  stem = stem.replace(/_{3,}(\d+)_{3,}/g, '<span class="course-first-blank"><small>本题要选</small><b>空格 $1</b></span>');
+  var opts = (q.options || []).map(function (o) {
+    return '<span class="course-first-option"><b>' + escapeHtml(o.k) + '</b><em>' + escapeHtml(o.v) + '</em></span>';
+  }).join("");
+  var evidence = evidenceFragments.length ? evidenceFragments.join(" / ") : (q.clue || "上下文出现直接线索");
+  var answer = (q.options || []).filter(function (o) { return o.k === q.answer; })[0];
+  return '<article class="course-first-real-case">'
+    + '<div class="course-first-case-title"><span>' + escapeHtml(label) + '</span><small>' + escapeHtml(q.src || "中考真题") + '</small></div>'
+    + '<p class="course-first-real-stem">' + stem + '</p>'
+    + '<div class="course-first-options-label">请选择空格答案：</div><div class="course-first-options">' + opts + '</div>'
+    + '<div class="course-first-evidence"><b>线索</b><span>' + escapeHtml(evidence) + '</span></div>'
+    + '<div class="course-first-answer"><b>答案判断</b><span>' + escapeHtml(q.answer || "") + (answer ? " · " + escapeHtml(answer.v) : "") + '</span></div>'
+    + '</article>';
+}
+
+function courseEvidenceFragments(q) {
+  var overrides = {
+    34: ["gifts"],
+    39: ["beetles and ants"],
+    41: ["apples, pears, and especially fine ripe strawberries"],
+    84: ["sit alone in the corner with nobody to talk to", "lively"],
+    126: ["only seven square meters"],
+    127: ["help him take small steps"],
+    142: ["passed down through generations"],
+    144: ["this fear can be easily overcome"],
+    175: ["hutong—a narrow traditional"],
+    179: ["compass—a magnetic"],
+    267: ["the school building"],
+    272: ["instead of"],
+    273: ["kept"],
+    284: ["by Xu Dawei in 2010"],
+    295: ["takes", "my little brother"],
+    296: ["thirteen cents a kilogram for"]
+  };
+  return (overrides[q.no] || q.hl || []).slice();
+}
+
+function courseVisualMeta(chId, lessonName) {
+  var sharedNote = "把“凭感觉”变成可检查的动作";
+  var data = {
+    ch1: {
+      grip: "先找词义呼应，再做语法核验", note: sharedNote,
+      steps: [["发现线索", "寻找重复或相关概念"], ["确认关系", "判断同词、同根或语义关联"], ["代入核验", "词性、语义与句法都通顺"]],
+      mapTag: "证据距离", mapTitle: "答案可能藏在哪里？", mapNote: "先近后远，逐层扫描",
+      cards: [["近", "邻句线索", "前后 1 句", "优先检查，命中率高"], ["中", "同段线索", "前后 2–4 句", "沿段落展开寻找呼应"], ["远", "跨段线索", "开头 ↔ 结尾", "主题词可能首尾照应"]],
+      checkTitle: "找到词义呼应后，再问 4 个问题", checks: ["是同一概念吗？", "词义关系准确吗？", "词性形式匹配吗？", "代回后通顺吗？"],
+      warnings: [["🧭", "不要只看本句。", "线索可能在后文。"], ["🔍", "不要见词就选。", "先判断词义关系。"], ["⚠️", "小心伪复现。", "出现过不等于能代入。"], ["✅", "最后再核验。", "词性与语义都要通顺。"]]
+    },
+    ch2: {
+      grip: "先画情感曲线，再匹配选项", note: sharedNote,
+      steps: [["标情感词", "圈出褒贬、语气与标点"], ["看情绪变化", "判断延续、转折还是升级"], ["匹配强度", "方向和程度必须同时吻合"]],
+      mapTag: "情绪轨迹", mapTitle: "情感信号怎样变化？", mapNote: "方向与强度一起看",
+      cards: [["向", "情感方向", "正面 / 负面", "先判断褒贬立场"], ["转", "情感转折", "前后态度变化", "重点看 but、however 等"], ["度", "情感强度", "轻微 → 强烈", "避免程度过轻或过重"]],
+      checkTitle: "选定情感词后，再问 4 个问题", checks: ["褒贬方向一致吗？", "有转折信号吗？", "情绪强度匹配吗？", "语气自然吗？"],
+      warnings: [["🎭", "别只认褒贬。", "还要比较情绪强度。"], ["↪️", "看清转折位置。", "转折后才是重点。"], ["❗", "标点也是线索。", "叹号会强化语气。"], ["✅", "回读人物反应。", "行为要符合情绪。"]]
+    },
+    ch3: {
+      grip: "先锁定限制语，再反推答案", note: sharedNote,
+      steps: [["看空格角色", "判断谁在修饰或解释谁"], ["定位证据句", "优先查邻句与后置说明"], ["反推选项", "用证据排除不匹配项"]],
+      mapTag: "证据范围", mapTitle: "限制信息出现在哪里？", mapNote: "从句内向全文扩展",
+      cards: [["句", "句内限制", "修饰语与搭配", "先看空格左右结构"], ["邻", "邻句解释", "后一句补充说明", "答案常在后文招供"], ["段", "跨段证据", "前后事件呼应", "建立完整证据链"]],
+      checkTitle: "找到证据后，再问 4 个问题", checks: ["空格成分明确吗？", "修饰对象找对了吗？", "证据能唯一指向吗？", "常识与语境一致吗？"],
+      warnings: [["🎯", "先认空格角色。", "别急着看词义。"], ["🔦", "后文常会解释。", "多读一到两句。"], ["🧩", "证据必须闭环。", "不能只靠单个词。"], ["✅", "常识只做兜底。", "文本证据优先。"]]
+    },
+    ch4: {
+      grip: "先画逻辑箭头，再选择关系", note: sharedNote,
+      steps: [["标连接信号", "圈出转折、因果与条件词"], ["画句间关系", "判断同向、反向或推导"], ["代入验证", "前后逻辑必须形成闭环"]],
+      mapTag: "逻辑方向", mapTitle: "前后句是什么关系？", mapNote: "把抽象关系画出来",
+      cards: [["→", "同向推进", "并列 / 顺承", "信息方向保持一致"], ["↔", "反向变化", "转折 / 让步", "后半句往往是重点"], ["∵", "条件推导", "因果 / 假设", "检查原因与结果顺序"]],
+      checkTitle: "画出逻辑箭头后，再问 4 个问题", checks: ["连接词找到了吗？", "前后方向一致吗？", "因果顺序正确吗？", "代入后逻辑闭环吗？"],
+      warnings: [["➡️", "先看句间方向。", "别只翻译单句。"], ["🔄", "转折后更重要。", "注意语义反向。"], ["🧠", "因果别倒置。", "原因必须推出结果。"], ["✅", "连接词要实配。", "结构和含义都要对。"]]
+    },
+    ch5: {
+      grip: "先还原语言骨架，再检查形式", note: sharedNote,
+      steps: [["搭建骨架", "找主谓宾、介词与固定结构"], ["锁定形式", "检查搭配、时态和非谓语"], ["回读动作", "语法正确且动作合理"]],
+      mapTag: "语言骨架", mapTitle: "答案要通过哪三关？", mapNote: "动作、搭配、语法缺一不可",
+      cards: [["动", "动作顺序", "谁先做、谁后做", "符合真实物理时序"], ["配", "词语搭配", "动宾 / 介词骨架", "优先识别固定组合"], ["法", "语法形式", "时态 / 语态 / 指代", "与句子结构严格一致"]],
+      checkTitle: "锁定语言形式后，再问 4 个问题", checks: ["动作顺序合理吗？", "固定搭配正确吗？", "时态语态一致吗？", "指代与形式匹配吗？"],
+      warnings: [["🧱", "先搭句子骨架。", "别孤立背单词。"], ["🔗", "搭配不可拆看。", "动词与介词一起判断。"], ["⏱️", "注意时间锚点。", "时态跟语境走。"], ["✅", "语法语义双检。", "正确形式也要合情理。"]]
+    }
+  };
+  var result = data[chId] || data.ch3;
+  result.grip = result.grip + " · " + lessonName;
+  return result;
+}
+
+function enterHandout() {
+  renderHandoutHome();
+  renderHandout();
+  showHandoutHome();
+}
+
+/* 讲义打印：把封面 + 全部章节灌入 #printArea（复用现有打印体系），再调起打印 */
+function renderHandoutPrint() {
+  var area = $("printArea");
+  if (!area) { window.print(); return; }
+  var H = (typeof HANDOUT_HTML !== "undefined") ? HANDOUT_HTML : null;
+  var cover = '<div class="print-wrap"><h1>中考完形填空 · 五维一体核心解题矩阵</h1>'
+    + '<p class="print-meta">词汇复现 · 情感态度 · 语境还原 · 篇章结构 · 动作链条与语法基石 ｜ 纯净全量解析版</p></div>';
+  var body = HANDOUT_CHAPTERS.map(function (c) {
+    var inner = (H && H[c.id]) ? H[c.id] : '';
+    return '<section class="ho-ch">' + inner + '</section>';
+  }).join("");
+  area.innerHTML = cover + body;
+  window.print();
 }
 
 /* ==================== 题库渲染与筛选 ==================== */
@@ -1150,9 +1984,20 @@ function openRegionCombo() {
   if (inp) setTimeout(function () { inp.focus(); }, 0);
 }
 
+function renderDimFilters() {
+  var box = $("dimFilters"); if (!box) return;
+  var html = ['<button class="filter-chip' + (filterState.dim === "all" ? " active" : "") +
+    '" data-dim="dim" data-value="all" type="button">全部</button>'];
+  DIM_KEYS.forEach(function (d) {
+    html.push('<button class="filter-chip' + (filterState.dim === d ? " active" : "") +
+      '" data-dim="dim" data-value="' + d + '" type="button">' + d + '</button>');
+  });
+  box.innerHTML = html.join("");
+}
+
 function renderFilterSummary(n) {
   var box = $("filterSummary"); if (!box) return;
-  var labels = { kind: "来源", type: "题型", region: "地区", year: "年份", blanks: "空数", difficulty: "难度" };
+  var labels = { kind: "来源", type: "题型", region: "地区", year: "年份", blanks: "空数", difficulty: "难度", dim: "维度" };
   var parts = [];
   FILTER_DIMS.forEach(function (d) {
     var v = filterState[d];
@@ -1172,6 +2017,7 @@ function renderFilterControls() {
   renderKindFilters();
   renderBlanksFilters();
   renderYearFilter();
+  renderDimFilters();
   renderRegionCombo("");
   var df = $("difficultyFilter");
   if (df) df.value = filterState.difficulty;
@@ -1194,6 +2040,7 @@ function matchesFilters(l) {
       if (blankKeys().indexOf(n) >= 0) return false;
     } else if (String(n) !== String(filterState.blanks)) return false;
   }
+  if (filterState.dim !== "all" && lessonDims(l).indexOf(filterState.dim) < 0) return false;
   return true;
 }
 
@@ -1297,7 +2144,9 @@ function buildLessonRow(l, no) {
   var srcLine = srcBits.length ? srcBits.join(" · ") : "来源未标注";
 
   var chips = [];
-  chips.push('<span class="chip chip-region">上海</span>');
+  if (l.region && title.indexOf(l.region) < 0) {
+    chips.push('<span class="chip chip-region">上海</span>');
+  }
   if (l.source_kind) {
     chips.push('<span class="chip chip-kind" data-kind="' + escapeHtml(l.source_kind) + '">' + escapeHtml(l.source_kind) + '</span>');
   }
@@ -1338,6 +2187,10 @@ function renderLibrary() {
   var box = $("libraryGrid");
   var empty = $("emptyLibrary");
   if (!box) return;
+  /* 进入真题库即展开：数据范围说明 + 筛选器 + 列表直接可见，不再需要点卡片「展开」 */
+  var sn = $("scopeNote"); if (sn) sn.hidden = false;
+  var fb = $("filterBar"); if (fb) fb.hidden = false;
+  var lg = $("libraryGrid"); if (lg) lg.hidden = false;
   renderFilterControls();
   var filtered = library.filter(matchesFilters);
   /* 按 2026 → 2018 时间倒序：新真题排前面 */
@@ -1353,15 +2206,9 @@ function updateHeroStats() {
   var totalQ = library.reduce(function (s, l) { return s + (l.questions || []).length; }, 0);
   var done = library.filter(function (l) { return isDone(l.id); }).length;
   var stats = getStats();
-  $("heroTotalLessons").textContent = library.length;
-  $("heroTotalQuestions").textContent = totalQ;
-  $("heroCompleted").textContent = done;
-  $("heroAccuracy").textContent = stats.totalAnswered > 0 ? Math.round(stats.totalCorrect / stats.totalAnswered * 100) + "%" : "—";
-  // 数字由数据驱动，避免改题库后文案过期
+  // 统计数字已从 Hero 移除；trustPill 仍用数据驱动，避免改题库后文案过期
   var tp = $("trustPill");
   if (tp) tp.textContent = library.length + " 篇 · " + totalQ + " 道空逐空复核";
-  var hs = $("heroSub");
-  if (hs) hs.textContent = "不靠语感，靠路线。每道题都有可验证的线索证据——来自 " + library.length + " 篇、共 " + totalQ + " 道空的逐空复核。";
   var ks = $("kpSub");
   if (ks) ks.textContent = "每个知识点包含讲解和 5-10 道专项训练题。从具体技能开始，一道一道练透。覆盖 " + library.length + " 篇、共 " + totalQ + " 道空。";
   var sl = $("scopeLessons"); if (sl) sl.textContent = library.length;
@@ -1404,6 +2251,17 @@ function openLesson(id) {
   var scroller = document.querySelector("main.container");
   if (scroller) scroller.scrollTop = 0;
   else window.scrollTo(0, 0);
+}
+
+/* 深链：URL 带 #lesson=<id> 时直接打开指定篇目（分享 / 测试用）。
+   不影响既有筛选 hash（k=/r=/y=/b=）与标签 hash（practice/trans）——
+   lesson= 不在 HASH_KEYS 里，readHashFilters 会忽略它，互不冲突。 */
+function deepLinkLesson() {
+  try {
+    var h = String(location.hash || "").replace(/^#/, "");
+    var m = h.match(/(?:^|&)lesson=([^&]+)/);
+    if (m) { openLesson(decodeURIComponent(m[1])); }
+  } catch (e) {}
 }
 
 function backToLibrary() {
@@ -2299,12 +3157,13 @@ function getSentenceAroundBlank(qid) {
 
 function renderSentenceCheck(q) {
   var qid = q.q;
-  if (!answers[qid]) { showStep("sentenceCheckStep", false); showStep("explainStep", false); return; }
+  if (!answers[qid]) { showStep("sentenceCheckStep", false); showStep("diagStep", false); showStep("explainStep", false); return; }
   showStep("sentenceCheckStep", true);
   var sentence = getSentenceAroundBlank(qid);
   var filled = sentence.replace(/__(\d+)__/g, function (m, n) { return Number(n) === qid ? "【" + answers[qid] + "】" : "(" + n + ")"; });
   $("sentenceCheck").textContent = filled;
-  if (!checked[qid]) showStep("explainStep", false); else renderExplain(q);
+  if (!checked[qid]) { showStep("diagStep", false); showStep("explainStep", false); }
+  else { renderDiag(q); renderExplain(q); }
 }
 
 function checkAnswer(q) {
@@ -2320,7 +3179,7 @@ function checkAnswer(q) {
     el.disabled = true;
   });
   $("checkAnswerBtn").hidden = true;
-  renderPassage(); renderExplain(q);
+  renderPassage(); renderSentenceCheck(q); renderDiag(q); renderExplain(q);
   updateNavBadge();
   updateQNav();
   revealExplain();              // 判完把解析滚进视野
@@ -2330,6 +3189,42 @@ function checkAnswer(q) {
     toast("本篇已全部完成 ✓");
   }
   updateQuestionProgress(qid);
+}
+
+/* ---------- 错因归类卡片 ---------- 只在答错时出现，告诉学生错在哪一步 */
+function renderDiag(q) {
+  var qid = q.q;
+  var box = $("diagBox");
+  if (!box) return;
+  if (!checked[qid] || answers[qid] === q.answer) { showStep("diagStep", false); return; }
+  if (!window.CLOZE_DIAG_API) { showStep("diagStep", false); return; }
+
+  var d = window.CLOZE_DIAG_API.classify(lesson, q, answers[qid]);
+  if (!d) { showStep("diagStep", false); return; }
+  showStep("diagStep", true);
+
+  var html = '<div class="diag-card diag-' + d.tone + '">';
+  html += '<div class="diag-head"><span class="diag-killer">' + escapeHtml(d.killer) + '</span>';
+  html += '<span class="diag-title">' + escapeHtml(d.title) + '</span></div>';
+  html += '<p class="diag-why">' + escapeHtml(d.why) + '</p>';
+
+  if (d.lookAt) {
+    html += '<p class="diag-look"><span class="diag-look-tag">去看这句</span>' + escapeHtml(d.lookAt) + '</p>';
+  }
+
+  var named = (d.otherWrong || []).filter(function (x) { return x.kill; });
+  if (named.length) {
+    html += '<div class="diag-others"><div class="diag-others-t">其余干扰项是怎么打掉的</div><ul>';
+    named.forEach(function (x) {
+      html += '<li><b>' + escapeHtml(x.word) + '</b><span class="diag-kill-mini">' + escapeHtml(x.kill) + '</span>' +
+        (x.reason ? '<span class="diag-or-reason">' + escapeHtml(x.reason) + '</span>' : '') + '</li>';
+    });
+    html += '</ul></div>';
+  }
+
+  html += '<p class="diag-tip">这类题的答案往往<b>不在原文里</b>，回原文找词是想不通的 —— 要看的是空前后那句话把方向说成了什么样。</p>';
+  html += '</div>';
+  box.innerHTML = html;
 }
 
 function renderExplain(q) {
@@ -2647,8 +3542,10 @@ function init() {
     });
   });
 
-  /* 浏览器前进/后退或手改 hash → 同步筛选 */
+  /* 浏览器前进/后退或手改 hash → 同步筛选 / 篇目深链 */
   window.addEventListener("hashchange", function () {
+    var m = String(location.hash || "").replace(/^#/, "").match(/(?:^|&)lesson=([^&]+)/);
+    if (m) { openLesson(decodeURIComponent(m[1])); return; }
     var fromHash = readHashFilters();
     if (!fromHash) return;
     applyFilterState(fromHash);
@@ -2679,8 +3576,142 @@ function init() {
   /* 新增功能：打印 / 生词本 / 单词查询 */
   var printBtn = $("printBtn"); if (printBtn) printBtn.addEventListener("click", renderPrintView);
   var vocabBack = $("vocabBackBtn"); if (vocabBack) vocabBack.addEventListener("click", function () { showView("library"); });
+  var libHome = $("libraryHomeBtn"); if (libHome) libHome.addEventListener("click", function () { showView("home"); });
   initWordLookup();
   updateNavBadgeVocab();
+  /* 讲义视图：目录平滑滚动 + 双主线跳转 + 打印 */
+  var tocEl = document.getElementById("handoutToc");
+  if (tocEl) tocEl.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest("a[data-anchor]") : null;
+    if (!a) return;
+    e.preventDefault();
+    var sec = document.getElementById(a.dataset.anchor);
+    if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  /* 三板块入口卡片：点卡片任意处（打印按钮除外）触发内部 CTA */
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest) return;
+    if (e.target.closest("[data-go]") || e.target.closest(".hc-print")) return;
+    var card = e.target.closest(".home-card");
+    if (!card) return;
+    var go = card.querySelector("[data-go]");
+    if (go) go.click();
+  });
+  /* 讲练互跳：讲义 CTA 是 renderHandout 动态注入的，一次性绑定会漏掉 → 用事件委托兜底（静态卡片也兼容）。
+   * data-dim：跳转前预设题库「维度」筛选；data-anchor：跳转后平滑滚动到指定章节。 */
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest ? e.target.closest("[data-go]") : null;
+    if (!el) return;
+    e.preventDefault();
+    if (el.dataset.dim) { filterState.dim = el.dataset.dim; writeHashFilters(); }
+    if (el.dataset.go === "quiz") { showView("quiz"); return; }   // 同步练习 = 讲义配套题库落地页
+    showView(el.dataset.go);
+    if (el.dataset.go === "handout" && el.dataset.anchor) { openHandoutLesson(el.dataset.anchor); return; }
+    if (el.dataset.anchor) {
+      var sec = document.getElementById(el.dataset.anchor);
+      if (sec) setTimeout(function () { sec.scrollIntoView({ behavior: "smooth", block: "start" }); }, 80);
+    }
+  });
+  var hpBtn = document.getElementById("handoutPrintBtn");
+  if (hpBtn) hpBtn.addEventListener("click", function () { renderHandoutPrint(); });
+  /* 主页三板块打印按钮 */
+  var hpH = document.getElementById("homePrintHandout");
+  if (hpH) hpH.addEventListener("click", function () { renderHandoutPrint(); });
+  var hpq = document.getElementById("homePrintQuiz");
+  if (hpq) hpq.addEventListener("click", function () {
+    if (quizState) { renderQuizPrint(); return; }
+    showView("handout");
+    toast("选择任意一课，进入精练后点「打印本课卷」即可打印该课题目");
+  });
+  /* 讲义主页：卡片点击进单讲 / 返回目录 / 上一讲下一讲 */
+  var homeBox = document.getElementById("handoutHome");
+  if (homeBox) homeBox.addEventListener("click", function (e) {
+    var card = e.target.closest ? e.target.closest("[data-lesson]") : null;
+    if (!card) return;
+    var ti = (card.dataset.tech === undefined || card.dataset.tech === "") ? -1 : Number(card.dataset.tech);
+    openHandoutLesson(card.dataset.lesson, ti);
+  });
+  var hBack = document.getElementById("handoutBackBtn");
+  if (hBack) hBack.addEventListener("click", showHandoutHome);
+  var lBar = document.getElementById("handoutLessonBar");
+  if (lBar) lBar.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-hl]") : null;
+    if (!b || b.dataset.hl === "" || b.disabled) return;
+    var flat = handoutLessonFlat(), it = flat[Number(b.dataset.hl)];
+    if (it) openHandoutLesson(it.ch, it.idx);
+  });
+  /* 单课底部动作条：回目录 / 进入测试 / 进入下一课 */
+  var lFoot = document.getElementById("handoutLessonFoot");
+  if (lFoot) lFoot.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-hf]") : null;
+    if (!b || b.disabled) return;
+    var act = b.dataset.hf;
+    if (act === "home") { showHandoutHome(); return; }
+    if (act === "drill") { openHandoutQuiz(b.dataset.qc, Number(b.dataset.qt)); return; }
+    if (act === "quiz") { startLessonQuiz(b.dataset.qc, Number(b.dataset.qt)); return; }
+    if (act === "next") {
+      var flat = handoutLessonFlat(), pos = -1, chId = b.dataset.qc;
+      for (var i = 0; i < flat.length; i++) {
+        if (flat[i].ch === chId && flat[i].idx === Number(b.dataset.qt)) { pos = i; break; }
+      }
+      var nx = (pos >= 0 && pos < flat.length - 1) ? flat[pos + 1] : null;
+      if (nx) openHandoutLesson(nx.ch, nx.idx);
+    }
+  });
+  /* 每课精练：选选项 / 提交 / 再做一次 / 返回 / 下一课（讲义与独立落地页共用） */
+  function onQuizClick(e) {
+    var b = e.target.closest ? e.target.closest("[data-qz]") : null;
+    if (!b || !quizState) return;
+    var act = b.dataset.qz;
+    if (act === "opt") {
+      if (quizState.submitted) return;
+      quizState.answers[Number(b.dataset.qno)] = b.dataset.k;
+      renderQuiz();
+      return;
+    }
+    if (act === "submit") {
+      var tot = getLessonQuiz(quizState.ch, quizState.idx).qs.length;
+      var dn = Object.keys(quizState.answers).length;
+      if (dn < tot && !quizState.warned) { quizState.warned = true; renderQuiz(); return; }
+      quizState.submitted = true; renderQuiz(); window.scrollTo(0, 0); return;
+    }
+    if (act === "again") {
+      quizState.answers = {}; quizState.submitted = false; quizState.warned = false; quizState.t0 = Date.now();
+      renderQuiz(); window.scrollTo(0, 0); return;
+    }
+    if (act === "print") { renderQuizPrint(); return; }
+    if (act === "back") {
+      if (quizContext === "quiz") { showQuizHome(); return; }
+      var c = quizState.ch, i2 = quizState.idx; closeHandoutQuiz(); openHandoutLesson(c, i2); return;
+    }
+    if (act === "next") {
+      var flat2 = handoutLessonFlat(), p2 = -1;
+      for (var i3 = 0; i3 < flat2.length; i3++) {
+        if (flat2[i3].ch === quizState.ch && flat2[i3].idx === quizState.idx) { p2 = i3; break; }
+      }
+      var nx2 = (p2 >= 0 && p2 < flat2.length - 1) ? flat2[p2 + 1] : null;
+      if (!nx2) { if (quizContext === "quiz") showQuizHome(); return; }
+      if (quizContext === "quiz") {
+        if (getLessonQuiz(nx2.ch, nx2.idx)) startQuiz(nx2.ch, nx2.idx);
+        else showQuizHome();
+        return;
+      }
+      if (getLessonQuiz(nx2.ch, nx2.idx)) openHandoutQuiz(nx2.ch, nx2.idx);
+      else openHandoutLesson(nx2.ch, nx2.idx);
+    }
+  }
+  var qzBox = document.getElementById("handoutQuiz");
+  if (qzBox) qzBox.addEventListener("click", onQuizClick);
+  var qzBox2 = document.getElementById("quizBox");
+  if (qzBox2) qzBox2.addEventListener("click", onQuizClick);
+  /* 落地页课表：点「课」开练 */
+  var qzHome = document.getElementById("quizHome");
+  if (qzHome) qzHome.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-ql]") : null;
+    if (!b) return;
+    startQuiz(b.dataset.ql, Number(b.dataset.qt));
+  });
+
 
   /* 点击句子 → 显示该句译文 */
   var passageBox = $("passage");
@@ -2697,10 +3728,116 @@ function init() {
     hideSentenceTip();
   });
 
-  /* 首次渲染 */
+  /* 首次渲染（深链须在 writeHashFilters 之前读 hash，避免被清空） */
+  deepLinkLesson();
   writeHashFilters();
   renderLibrary();
   updateNavBadge();
+  showView("home");   // 首屏 = 首页 landing；真题库为独立页面，进入时才展开
 }
 
 init();
+
+
+/* ==================== 手机号白名单登录 ==================== */
+(function () {
+  var currentPhone = "";
+  function $(id) { return document.getElementById(id); }
+
+  function lockBody() {
+    document.body.classList.add("gate-locked");
+    var gate = $("gateView");
+    if (gate) gate.hidden = false;
+    setTimeout(function () { var input = $("gatePhone"); if (input) input.focus(); }, 0);
+  }
+
+  function unlockBody() {
+    document.body.classList.remove("gate-locked");
+    var gate = $("gateView");
+    if (gate) gate.hidden = true;
+  }
+
+  function showMsg(text, ok) {
+    var message = $("gateMsg");
+    if (!message) return;
+    message.textContent = text || "";
+    message.className = "gate-msg" + (ok ? " ok" : "");
+  }
+
+  function setBusy(busy) {
+    var button = $("gateBtn"), input = $("gatePhone");
+    if (button) { button.disabled = busy; button.textContent = busy ? "正在登录…" : "登录并开始学习"; }
+    if (input) input.disabled = busy;
+  }
+
+  function renderLoginBtn() {
+    var button = $("loginBtn");
+    if (!button) return;
+    if (currentPhone) {
+      button.textContent = currentPhone + " · 退出";
+      button.classList.add("is-active");
+      button.onclick = function () {
+        if (!window.confirm("确定退出当前账号？")) return;
+        fetch("/api/logout", { method: "POST" }).finally(function () { location.reload(); });
+      };
+    } else {
+      button.textContent = "登录";
+      button.classList.remove("is-active");
+      button.onclick = lockBody;
+    }
+  }
+
+  function submit() {
+    var input = $("gatePhone");
+    var phone = ((input && input.value) || "").replace(/\s|-/g, "");
+    if (!/^1[3-9]\d{9}$/.test(phone)) {
+      showMsg("请输入正确的 11 位手机号", false);
+      if (input) { input.setAttribute("aria-invalid", "true"); input.focus(); }
+      return;
+    }
+    if (input) input.removeAttribute("aria-invalid");
+    setBusy(true); showMsg("", false);
+    fetch("/api/login", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ phone: phone })
+    }).then(function (response) {
+      return response.json().catch(function () { return {}; });
+    }).then(function (data) {
+      if (!data || !data.ok) throw new Error((data && data.msg) || "登录失败，请稍后重试");
+      currentPhone = data.phone || phone;
+      showMsg("登录成功，正在进入…", true);
+      setTimeout(function () { unlockBody(); renderLoginBtn(); }, 250);
+    }).catch(function (error) {
+      showMsg(error.message || "无法连接登录服务，请稍后重试", false);
+      if (input) input.focus();
+    }).finally(function () { setBusy(false); });
+  }
+
+  function boot() {
+    var gate = $("gateView");
+    if (!gate) return;
+    lockBody();
+    var button = $("gateBtn"), input = $("gatePhone");
+    if (button) button.addEventListener("click", submit);
+    if (input) {
+      input.addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, "").slice(0, 11);
+        if (this.getAttribute("aria-invalid")) this.removeAttribute("aria-invalid");
+        showMsg("", false);
+      });
+      input.addEventListener("blur", function () {
+        if (this.value && !/^1[3-9]\d{9}$/.test(this.value)) {
+          this.setAttribute("aria-invalid", "true"); showMsg("请输入正确的 11 位手机号", false);
+        }
+      });
+      input.addEventListener("keydown", function (event) { if (event.key === "Enter") submit(); });
+    }
+    fetch("/api/session", { cache: "no-store" }).then(function (response) { return response.json(); }).then(function (data) {
+      if (data && data.loggedIn) { currentPhone = data.phone || "已登录"; unlockBody(); }
+      renderLoginBtn();
+    }).catch(function () { showMsg("无法连接登录服务，请稍后刷新页面", false); });
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+})();

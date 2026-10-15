@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>手机号管理 · 无限进步</title>
+  <link rel="stylesheet" href="admin.css?v=20261015b" />
+</head>
+<body>
+  <main>
+    <section class="admin-login" id="loginView" aria-labelledby="loginTitle">
+      <div class="login-card">
+        <a class="brand-link" href="/" aria-label="返回学习系统"><span aria-hidden="true">∞</span> 无限进步</a>
+        <p class="eyebrow">管理后台</p>
+        <h1 id="loginTitle">管理员登录</h1>
+        <p class="subtext">登录后可开通和管理学员手机号。</p>
+        <form id="loginForm" novalidate>
+          <label for="adminPassword">管理员密码</label>
+          <input id="adminPassword" type="password" autocomplete="current-password" placeholder="请输入管理员密码" required aria-describedby="loginMsg" />
+          <p class="form-msg" id="loginMsg" role="alert" aria-live="polite"></p>
+          <button class="primary-btn" id="loginSubmit" type="submit">进入管理后台</button>
+        </form>
+        <p class="login-note">首次使用请查看服务启动提示，或联系部署人员获取管理员密码。</p>
+      </div>
+    </section>
+
+    <section class="admin-app" id="appView" hidden>
+      <header class="admin-header">
+        <a class="brand-link" href="/"><span aria-hidden="true">∞</span> 无限进步</a>
+        <div class="header-actions">
+          <a class="text-link" href="/">进入学习系统</a>
+          <button class="quiet-btn" id="logoutBtn" type="button">退出管理</button>
+        </div>
+      </header>
+
+      <div class="admin-shell">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">账号与权限</p>
+            <h1>手机号管理</h1>
+            <p>开通后，学员可直接使用该手机号登录，无需验证码或密码。</p>
+          </div>
+          <div class="stat-card" aria-label="手机号统计">
+            <span><strong id="enabledCount">0</strong> 已启用</span>
+            <span><strong id="disabledCount">0</strong> 已停用</span>
+          </div>
+        </div>
+
+        <section class="panel open-panel" aria-labelledby="openTitle">
+          <div class="panel-heading">
+            <div><h2 id="openTitle">开通新手机号</h2><p>填写手机号与可选备注，提交后立即生效。</p></div>
+          </div>
+          <form class="open-form" id="openForm" novalidate>
+            <div class="field">
+              <label for="newPhone">手机号</label>
+              <input id="newPhone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="11 位手机号" required aria-describedby="openMsg" />
+            </div>
+            <div class="field field-note">
+              <label for="newNote">备注 <span>选填</span></label>
+              <input id="newNote" type="text" maxlength="80" placeholder="例如：张同学 / 秋季班" />
+            </div>
+            <button class="primary-btn open-submit" id="openSubmit" type="submit">开通手机号</button>
+          </form>
+          <p class="form-msg" id="openMsg" role="alert" aria-live="polite"></p>
+        </section>
+
+        <section class="panel list-panel" aria-labelledby="listTitle">
+          <div class="panel-heading list-heading">
+            <div><h2 id="listTitle">已开通手机号</h2><p id="resultSummary">共 0 个手机号</p></div>
+            <label class="search-box" for="phoneSearch">
+              <span>搜索</span>
+              <input id="phoneSearch" type="search" autocomplete="off" placeholder="手机号或备注" />
+            </label>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>手机号</th><th>备注</th><th>状态</th><th>开通时间</th><th><span class="sr-only">操作</span></th></tr></thead>
+              <tbody id="phoneList"></tbody>
+            </table>
+            <div class="empty-state" id="emptyState" hidden>
+              <strong>还没有已开通的手机号</strong>
+              <p>在上方填写手机号即可完成第一个账号开通。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="admin.js?v=20261015a"></script>
+</body>
+</html>
