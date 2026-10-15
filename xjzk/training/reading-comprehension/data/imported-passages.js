@@ -53,6 +53,103 @@
 })();
 
 (function () {
+  const source = "2026年乌鲁木齐市第一中学九年级上学期9月模考";
+  const add = (items) => {
+    const existing = new Set(passages.map((p) => p.id));
+    items.forEach((item) => {
+      if (!existing.has(item.id)) passages.push(item);
+    });
+    renderAll();
+  };
+
+  add([
+    {
+      id: "乌鲁木齐一中2026九月模考A",
+      title: "A. The Boy Who Cried Wolf",
+      meta: `${source} · A 篇 · 判断正误`,
+      paragraphs: [
+        "Long ago, there was a young, cheeky boy who looked after some sheep near a village. The boy was often bored. One day, he played a trick on the villagers to pass the time. “Wolf! Wolf!” he shouted loudly.",
+        "The villagers came running up the hill to save the sheep. However, when they got there, there was no wolf. The boy laughed at them. “I tricked you!” he said.",
+        "“You must not tell lies!” said the villagers angrily and went back to the village.",
+        "Soon, the boy was bored again. He thought for a minute and shouted, “Wolf! Wolf!” Again, the villagers rushed up the hill to save the sheep.",
+        "The boy laughed at them. “I tricked you again!” he said.",
+        "“You must not tell lies!” shouted the villagers. They hurried back down to the village.",
+        "Later that day, a huge wolf really did come into the field. The boy cried and cried, “Wolf! Wolf!”",
+        "This time, the villagers didn’t believe the boy. No one came to help and the wolf ate all of the sheep.",
+        "No one believes a liar, even if they are telling the truth."
+      ],
+      questions: [
+        q(32, "The boy felt bored when he looked after sheep near the village.", ["T", "F"], "T", ["boy", "bored", "looked after sheep"], "Long ago, there was a young, cheeky boy who looked after some sheep near a village. The boy was often bored.", "bored 和 looked after sheep 是原文复现，回到首段即可定位。", ["T：原文明确说男孩放羊时经常感到无聊。", "F：与原文事实不符。"], "题干与原文信息一致，所以判断为 T。"),
+        q(33, "The boy tricked the villagers only once.", ["T", "F"], "F", ["tricked", "only once"], "One day, he played a trick on the villagers to pass the time. / Soon, the boy was bored again. He thought for a minute and shouted, “Wolf! Wolf!”", "only once 是限制词，要跨段核对男孩前后两次喊“狼来了”。", ["T：漏看了 Soon...again 所提示的第二次欺骗。", "F：男孩先后两次欺骗村民。"], "男孩一共欺骗了村民两次，only once 与原文不符。"),
+        q(34, "The villagers were angry after they knew they were fooled by the boy.", ["T", "F"], "T", ["villagers", "angry", "fooled"], "“You must not tell lies!” said the villagers angrily and went back to the village.", "angry 与原文 angrily 是同根表达，定位村民识破谎言后的反应。", ["T：villagers angrily 与题干 were angry 意思一致。", "F：原文有明确依据。"], "村民发现受骗后生气地告诫男孩不要撒谎，所以判断为 T。"),
+        q(35, "Finally, the villagers came to help the boy save the sheep.", ["T", "F"], "F", ["Finally", "came to help", "save the sheep"], "This time, the villagers didn’t believe the boy. No one came to help and the wolf ate all of the sheep.", "Finally 提示看故事结局，重点核对有没有人来帮助。", ["T：把前两次村民赶来误当成最后的结果。", "F：最后无人来帮忙，羊被狼吃掉。"], "最后村民不再相信男孩，没有人来帮助他，题干表述错误。"),
+        q(36, "The story tells us that liars may lose others’ trust even when they tell the truth.", ["T", "F"], "T", ["liars", "lose trust", "tell the truth"], "No one believes a liar, even if they are telling the truth.", "这是主旨判断题，结尾句直接概括寓意。", ["T：题干是结尾寓意的同义改写。", "F：与文章结论相反。"], "说谎者即使后来讲真话也可能失去信任，题干准确概括了故事寓意。")
+      ]
+    },
+    {
+      id: "乌鲁木齐一中2026九月模考B",
+      title: "B. Amazing Native Plants and Animals in Xinjiang",
+      meta: `${source} · B 篇 · 图表阅读`,
+      paragraphs: [
+        "Xinjiang is a land of amazing natural wonders. From the vast Gobi Desert to the snow-capped Tianshan Mountains, it is home to many special plants and animals that can only be found here. These living things have adapted to the harsh environments of Xinjiang, and they are all precious treasures of our planet."
+      ],
+      chart: {
+        columns: ["Species", "Type", "Living Place", "Features", "Protection"],
+        rows: [
+          ["Populus euphratica (胡杨)", "Plant", "Tarim Desert", "It lives very long. It grows well in dry deserts.", "Important desert plant"],
+          ["Saussurea involucrata (雪莲)", "Plant", "Tianshan high mountains", "It lives in cold mountains. It flowers only once in life.", "Second-class protected plant"],
+          ["Przewalski’s Horse (普氏野马)", "Animal", "Junggar Desert", "It is the only wild horse in the world. It runs fast.", "First-class protected animal"],
+          ["Snow Leopard (雪豹)", "Animal", "Cold snowy mountains", "It is the king of snow mountains. Thick fur keeps it warm.", "First-class protected animal"]
+        ],
+        note: "Xinjiang native plants and animals"
+      },
+      questions: [
+        q(37, "What is special about Saussurea involucrata?", ["A. It runs very fast.", "B. It flowers only once in life.", "C. It lives in dry deserts.", "D. It lives in the sea."], "B", ["Saussurea involucrata", "special"], "It lives in cold mountains. It flowers only once in life.", "先在表格找到 Saussurea involucrata，再查看 Features。", ["A：runs very fast 是普氏野马的特征。", "B：雪莲一生只开一次花，与表格一致。", "C：dry deserts 对应胡杨。", "D：表格没有海洋生活信息。"], "雪莲的特殊之处是它一生只开一次花，所以选 B。"),
+        q(38, "Which animal is called the king of snow mountains?", ["A. Snow Leopard.", "B. Przewalski’s Horse.", "C. Saussurea involucrata.", "D. Populus euphratica."], "A", ["animal", "king of snow mountains"], "It is the king of snow mountains. Thick fur keeps it warm.", "king of snow mountains 是表格中的原词定位点。", ["A：Snow Leopard 的 Features 中直接出现该称号。", "B：普氏野马被介绍为世界上唯一的野马。", "C：雪莲是植物。", "D：胡杨是植物。"], "表格称雪豹为雪山之王，所以选 A。"),
+        q(39, "Where does Populus euphratica grow well?", ["A. Cold mountains.", "B. Junggar Desert.", "C. Tarim Desert.", "D. Wet grassland."], "C", ["Populus euphratica", "grow well", "Where"], "Living Place: Tarim Desert. Features: It lives very long. It grows well in dry deserts.", "先锁定胡杨所在行，再核对 Living Place。", ["A：cold mountains 对应雪莲。", "B：Junggar Desert 对应普氏野马。", "C：胡杨生长地为 Tarim Desert。", "D：表格无此信息。"], "胡杨生长在塔里木沙漠，所以选 C。"),
+        q(40, "What is the best title for the passage?", ["A. The Weather of Xinjiang.", "B. Amazing Native Plants and Animals in Xinjiang.", "C. How to Protect Wild Animals.", "D. The History of Xinjiang."], "B", ["best title", "Xinjiang", "plants and animals"], "Xinjiang is a land of amazing natural wonders. From the vast Gobi Desert to the snow-capped Tianshan Mountains, it is home to many special plants and animals that can only be found here.", "标题要覆盖首段主题和表格列举的全部动植物。", ["A：文章并非主要介绍天气。", "B：同时覆盖新疆、特有植物和动物。", "C：范围过窄，文章还介绍植物和物种特征。", "D：文章未讲新疆历史。"], "全文围绕新疆珍稀而独特的动植物展开，B 最全面。"),
+        q(41, "We can infer from the passage that ______.", ["A. all the species live in the desert", "B. these Xinjiang species are very special and rare", "C. Snow Leopard only lives in warm places", "D. all plants in Xinjiang can flower once"], "B", ["infer", "Xinjiang species"], "These living things have adapted to the harsh environments of Xinjiang, and they are all precious treasures of our planet.", "推断题要综合 special、only wild horse 和保护级别等信息。", ["A：范围错误，雪莲和雪豹生活在山地。", "B：special、precious 及保护级别共同说明它们特殊且珍稀。", "C：雪豹生活在寒冷雪山。", "D：只有表中的雪莲被描述为一生开花一次。"], "多处信息共同表明这些新疆物种特殊且珍稀，所以选 B。")
+      ]
+    },
+    {
+      id: "乌鲁木齐一中2026九月模考C",
+      title: "C. End of Heat",
+      meta: `${source} · C 篇 · 说明文`,
+      paragraphs: [
+        "The traditional Chinese solar calendar divides the year into 24 solar terms. End of Heat (Chushu, 处暑) is the 14th solar term. It usually comes between August 22nd and 24th. Its name means the end of hot summer heat.",
+        "After End of Heat, most parts of China become cooler. Daytime is still warm, but nights turn cool. The temperature difference between day and night becomes bigger. However, in South China, “autumn tigers” often comes. People still meet hot weather for some days, so autumn arrives late there.",
+        "There is an old saying: “People feel sleepy in spring, doze in summer and feel tired in autumn.” Many people feel tired in End of Heat. This is called “autumn weariness”. It comes because our bodies use lots of energy in hot summer. To fight it, we need enough sleep, take more exercise and keep some plants indoors.",
+        "End of Heat is also a busy harvest time for farmers. Crops get ripe. People have special customs. Eating duck is popular, for duck has a “cool” nature in traditional Chinese medicine. People also set off river lanterns. They wish for good luck and remember their family members who passed away.",
+        "The 24 solar terms show ancient Chinese people’s wisdom of observing nature. They still guide our life today."
+      ],
+      questions: [
+        q(42, "When does End of Heat usually come?", ["A. Between August 12th and 14th.", "B. Between August 22nd and 24th.", "C. Between September 22nd and 24th.", "D. Between July 22nd and 24th."], "B", ["When", "End of Heat", "usually come"], "It usually comes between August 22nd and 24th.", "时间题先划 usually come，再回首段找日期。", ["A：月份相同但日期偷换。", "B：与原文日期完全一致。", "C：月份和日期均不符。", "D：月份不符。"], "原文明确说处暑通常在 8 月22日至24日之间，所以选 B。"),
+        q(43, "Which of the following is TRUE about End of Heat?", ["A. All parts of China turn cool right after End of Heat.", "B. Duck is popular to eat because of its “cool” nature in traditional Chinese medicine.", "C. People set off river lanterns only to celebrate the harvest.", "D. The temperature difference between day and night becomes smaller after End of Heat."], "B", ["TRUE", "End of Heat"], "Eating duck is popular, for duck has a “cool” nature in traditional Chinese medicine.", "逐项回文核对，特别留意 all、only、smaller 等限制或方向词。", ["A：范围错误，华南仍可能持续炎热。", "B：吃鸭子受欢迎是因为中医认为鸭肉性凉。", "C：河灯还用于祈福和怀念逝去的亲人。", "D：原文说昼夜温差变大，不是变小。"], "只有 B 与原文一致。"),
+        q(44, "What does the underlined phrase “autumn weariness” mean in Paragraph 3?", ["A. 秋乏", "B. 秋老虎", "C. 秋收", "D. 秋凉"], "A", ["autumn weariness", "mean", "Paragraph 3"], "Many people feel tired in End of Heat. This is called “autumn weariness”.", "利用前句 feel tired 判断该短语的具体含义。", ["A：与 feel tired 对应，表示秋乏。", "B：autumn tigers 指秋老虎。", "C：harvest 才是秋收。", "D：cool 表示凉爽，但不是该短语含义。"], "上下文把处暑时感到疲倦称为 autumn weariness，即“秋乏”。"),
+        q(45, "What is the best title for the passage?", ["A. The 24 Solar Terms in Ancient China", "B. Different Weather in Autumn", "C. End of Heat — One of the 24 Solar Terms", "D. Traditional Chinese Food in Autumn"], "C", ["best title", "End of Heat"], "End of Heat (Chushu, 处暑) is the 14th solar term. / End of Heat is also a busy harvest time for farmers. / The 24 solar terms show ancient Chinese people’s wisdom of observing nature.", "标题题要覆盖处暑的时间、气候、健康、习俗和意义。", ["A：范围过大，全文只重点介绍处暑。", "B：只涵盖气候细节。", "C：准确覆盖全文主题。", "D：只涵盖吃鸭子的局部习俗。"], "全文集中介绍二十四节气之一的处暑，C 是最佳标题。")
+      ]
+    },
+    {
+      id: "乌鲁木齐一中2026九月模考D",
+      title: "D. Cross-cultural Tourism in Xinjiang",
+      meta: `${source} · D 篇 · 说明文`,
+      paragraphs: [
+        "Xinjiang is a wonderful cultural crossroads on the ancient Silk Road. For thousands of years, it has connected China with Central Asia and Europe. Different cultures meet, mix and develop here, making Xinjiang a special place with rich tourism and cultural resources.",
+        "Many popular tourist spots in Xinjiang show perfect cultural integration (融合). Take Ili Liuxing Street as an example. It was designed by German engineers in the 1930s. It mixes Western street styles with local Uyghur folk features. Today, it is a famous cultural street for both local people and foreign visitors. Another typical example is Xinjiang International Grand Bazaar. It combines traditional Central Asian market culture with modern tourism. Travelers from all over the world can buy local handicrafts, watch folk dances and taste Xinjiang snacks there.",
+        "Cultural tourism activities further bridge different cultures. The Xinjiang International Folk Dance Festival is held every year. It invites art teams from many countries to perform together. Dancers share different dance styles and learn from each other. Through music and dance, people break language barriers (阻碍) and build true friendship. Besides, the local intangible cultural heritage (遗产) like Maxirep and mulberry paper making is open to tourists. These traditional skills help foreign visitors truly understand local customs and Chinese traditional culture.",
+        "Cross-cultural tourism brings great value to Xinjiang. It does not only boost local tourism economy, but also helps spread real, lively and diverse Xinjiang culture to the world. It lets more global visitors see an open, inclusive and beautiful Xinjiang."
+      ],
+      questions: [
+        q(46, "When was Ili Liuxing Street designed?", ["A. In the 1910s.", "B. In the 1930s.", "C. In the 1950s.", "D. In the 1980s."], "B", ["When", "Ili Liuxing Street", "designed"], "It was designed by German engineers in the 1930s.", "专有名词和 designed 是定位点，回第二段查年代。", ["A：年代错误。", "B：与原文 in the 1930s 一致。", "C：年代错误。", "D：年代错误。"], "伊犁六星街设计于20世纪30年代，所以选 B。"),
+        Object.assign(q(47, "Which of the following shows the correct structure of the passage? (P=Paragraph)", ["A. P1, P2 and P3 lead to P4.", "B. P1 leads separately to P2, P3 and P4.", "C. P1 introduces; P2 and P3 develop in parallel; P4 concludes.", "D. P1 and P2 separately lead to P3 and P4."], "C", ["correct structure", "passage"], "Different cultures meet, mix and develop here, making Xinjiang a special place with rich tourism and cultural resources. / Many popular tourist spots in Xinjiang show perfect cultural integration. / Cultural tourism activities further bridge different cultures. / Cross-cultural tourism brings great value to Xinjiang.", "先概括每段功能：第1段总起，第2、3段并列分述，第4段总结价值。", ["A：误把前三段设为同一层级。", "B：误认为第2、3、4段都是并列分述。", "C：总起—并列分述—总结，结构吻合。", "D：段落层次关系错误。"], "全文结构为 P1 总起，P2/P3 从景点和活动两方面分述，P4 总结价值，所以选 C。"), { image: "assets/urumqi-no1-september-2026-d-q47.svg" }),
+        q(48, "What does the underlined word “These” in Paragraph 3 refer to?", ["A. Music and dance performances held in the festival.", "B. Many popular tourist spots.", "C. Local intangible cultural heritage skills.", "D. Different foreign art teams and shows."], "C", ["These", "Paragraph 3", "refer to"], "Besides, the local intangible cultural heritage (遗产) like Maxirep and mulberry paper making is open to tourists. These traditional skills help foreign visitors truly understand local customs and Chinese traditional culture.", "代词指代题向前找最近且数义一致的复数名词。", ["A：不是 These 紧邻指代的对象。", "B：tourist spots 出现在上一段。", "C：指前句列举的非遗传统技艺。", "D：art teams 不是 These traditional skills。"], "These traditional skills 指 Maxirep 和桑皮纸制作等当地非遗技艺，所以选 C。"),
+        q(49, "What is the writer’s attitude towards Xinjiang’s cross-cultural tourism?", ["A. Doubtful.", "B. Worried.", "C. Supportive.", "D. Uninterested."], "C", ["writer’s attitude", "cross-cultural tourism"], "Cross-cultural tourism brings great value to Xinjiang. It does not only boost local tourism economy, but also helps spread real, lively and diverse Xinjiang culture to the world.", "圈出 great value、boost、helps 等褒义词判断作者态度。", ["A：全文没有怀疑语气。", "B：全文没有担忧语气。", "C：积极评价其经济和文化价值，态度支持。", "D：作者详细介绍并积极评价，并非不感兴趣。"], "作者肯定跨文化旅游的多重价值，态度是 supportive。")
+      ]
+    }
+  ]);
+})();
+
+(function () {
   const sourceGX = "2026年乌鲁木齐市高新区（新市区）九年级适应性测试英语";
   const sourceSMG = "2026年乌鲁木齐市水磨沟区九年级适应性测试英语";
   const add = (items) => {
