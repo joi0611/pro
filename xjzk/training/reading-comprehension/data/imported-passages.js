@@ -45,7 +45,19 @@
       questions: [
         q(50, "What were the earliest books in ancient China made of?", ["A. Bamboo slips and silk.", "B. Turtle shells and animal bones.", "C. Silk and animal bones.", "D. Silk and paper."], "B", ["earliest books", "made of"], "people carved words on turtle shells and animal bones for predicting the future. These were the earliest books.", "earliest books 是定位词，These 指代 turtle shells and animal bones。", ["A：是纸出现前广泛使用的材料，不是最早。", "B：turtle shells and animal bones 与原文一致。", "C/D：材料混搭，信息不完整或错误。"], "原文明确说龟壳和兽骨是最早的书。"),
         q(51, "Why did ancient people often color the paper?", ["A. To make the books beautiful.", "B. To influence later book styles.", "C. To keep the paper well.", "D. To take the place of silk quickly."], "C", ["Why", "color the paper"], "Ancient people often colored paper to protect it from insects and keep it lasting long.", "why 问原因，to protect / keep 是答案依据。", ["A：beautiful 无依据。", "B：influence later book styles 对应 bamboo slips and silk。", "C：keep the paper well 是 protect it and keep it lasting long 的同义概括。", "D：与 did not take the place at once 不符。"], "染纸是为了防虫并长期保存。"),
-        Object.assign(q(52, "Which is the best structure of the passage?", ["A. ① / ②③④ / ⑤", "B. ①② / ③④⑤", "C. ① / ② / ③ / ④ / ⑤", "D. ① / ②③ / ④⑤"], "A", ["best structure", "passage"], "From shells and bones to bamboo and silk to paper, the development of books in China records rich history and culture.", "结构题要看段落功能：①引入问题，②③④按材料发展展开，⑤总结升华。", ["A：①引入，②③④主体发展，⑤总结，结构最准确。", "B/C/D：层次划分不符合文章结构。"], "文章是总起—发展过程—总结升华，所以选 A。"), { image: "assets/2026-xinjiang-d-q52-structure.svg" }),
+        Object.assign(q(52, "Which is the best structure of the passage?", ["A. ① / ②③④ / ⑤", "B. ①② / ③④⑤", "C. ① / ② / ③ / ④ / ⑤", "D. ① / ②③ / ④⑤"], "A", ["best structure", "Paragraph 1", "Paragraphs 2-4", "Paragraph 5"], "When you hold a beautiful modern book, do you know how it slowly developed from ancient books? / Over 3,000 years ago in ancient China, people carved words on turtle shells and animal bones for predicting the future. / Before paper was invented, bamboo slips and silk were widely used. / When paper first appeared, it did not take the place of bamboo and silk at once. / From shells and bones to bamboo and silk to paper, the development of books in China records rich history and culture.", "结构题先概括各段功能，再看主体段是否围绕同一条发展线索展开：第1段设问引入，第2-4段按书写材料的演变展开，第5段总结历史文化意义。", ["A：第1段设问引入；第2-4段按甲骨、竹简和丝帛、纸张的发展顺序展开；第5段总结升华，层次完全吻合。", "B：把第2段的甲骨阶段错并入开头，又把总结段第5段错并入主体。", "C：把同属书籍材料发展过程的第2-4段割裂成互不统属的独立层次。", "D：虽然合并了第2、3段，却把纸张发展段第4段与总结段第5段错误合并。"], "第1段用问题引出中国古代书籍如何发展；第2-4段依次介绍甲骨、竹简和丝帛、纸张三个材料发展阶段；第5段概括这一发展过程承载的历史文化与古人智慧。因此结构是“①总起—②③④发展过程—⑤总结”，选择 A。"), {
+          image: "assets/2026-xinjiang-d-q52-structure.svg",
+          structureClues: ["slowly developed from ancient books", "turtle shells and animal bones", "earliest books", "bamboo slips and silk", "paper first appeared", "main writing material", "From shells and bones to bamboo and silk to paper", "records rich history and culture"],
+          structureTip: "先看各段功能：第1段设问引入；第2-4段按甲骨、竹简和丝帛、纸张的材料演变展开；第5段总结历史文化意义。",
+          structureOutline: [
+            "P1｜how it slowly developed → 设问引入",
+            "P2｜turtle shells and animal bones → 最早的书",
+            "P3｜bamboo slips and silk → 纸出现前的材料",
+            "P4｜paper / main writing material → 纸张发展",
+            "P5｜records rich history and culture → 总结升华"
+          ],
+          structureConclusion: "P1 总起 → P2、P3、P4 按材料演变展开 → P5 总结，因此选 A。"
+        }),
         q(53, "Where does the passage probably come from?", ["A. A history book.", "B. A movie poster.", "C. A novel.", "D. A fashion magazine."], "A", ["Where", "come from"], "the development of books in China records rich history and culture", "出处题看主题和文体，history and culture 是核心。", ["A：文章介绍中国书籍材料发展史，符合 history book。", "B/C/D：海报、小说、时尚杂志均不符合。"], "文章讲古代书籍发展和历史文化，最可能来自历史书。")
       ]
     },
@@ -141,7 +153,18 @@
       ],
       questions: [
         q(46, "When was Ili Liuxing Street designed?", ["A. In the 1910s.", "B. In the 1930s.", "C. In the 1950s.", "D. In the 1980s."], "B", ["When", "Ili Liuxing Street", "designed"], "It was designed by German engineers in the 1930s.", "专有名词和 designed 是定位点，回第二段查年代。", ["A：年代错误。", "B：与原文 in the 1930s 一致。", "C：年代错误。", "D：年代错误。"], "伊犁六星街设计于20世纪30年代，所以选 B。"),
-        Object.assign(q(47, "Which of the following shows the correct structure of the passage? (P=Paragraph)", ["A. P1, P2 and P3 lead to P4.", "B. P1 leads separately to P2, P3 and P4.", "C. P1 introduces; P2 and P3 develop in parallel; P4 concludes.", "D. P1 and P2 separately lead to P3 and P4."], "C", ["correct structure", "passage"], "Different cultures meet, mix and develop here, making Xinjiang a special place with rich tourism and cultural resources. / Many popular tourist spots in Xinjiang show perfect cultural integration. / Cultural tourism activities further bridge different cultures. / Cross-cultural tourism brings great value to Xinjiang.", "先概括每段功能：第1段总起，第2、3段并列分述，第4段总结价值。", ["A：误把前三段设为同一层级。", "B：误认为第2、3、4段都是并列分述。", "C：总起—并列分述—总结，结构吻合。", "D：段落层次关系错误。"], "全文结构为 P1 总起，P2/P3 从景点和活动两方面分述，P4 总结价值，所以选 C。"), { image: "assets/urumqi-no1-september-2026-d-q47.svg" }),
+        Object.assign(q(47, "Which of the following shows the correct structure of the passage? (P=Paragraph)", ["A. P1, P2 and P3 lead to P4.", "B. P1 leads separately to P2, P3 and P4.", "C. P1 introduces; P2 and P3 develop in parallel; P4 concludes.", "D. P1 and P2 separately lead to P3 and P4."], "C", ["correct structure", "P=Paragraph", "P1", "P2", "P3", "P4"], "Xinjiang is a wonderful cultural crossroads on the ancient Silk Road. / Different cultures meet, mix and develop here, making Xinjiang a special place with rich tourism and cultural resources. / Many popular tourist spots in Xinjiang show perfect cultural integration (融合). / Cultural tourism activities further bridge different cultures. / Cross-cultural tourism brings great value to Xinjiang. / It does not only boost local tourism economy, but also helps spread real, lively and diverse Xinjiang culture to the world.", "看到 correct structure 和 P=Paragraph，先判定为篇章结构题；再扫每段首句或总结句，概括各段功能，而不是只定位一句细节。", ["A：把总起段 P1 与分述段 P2、P3 错放在同一层级。", "B：把总结价值的 P4 错当成与 P2、P3 并列的第三个分支。", "C：P1 引出话题，P2、P3 从景点和活动两个角度并列展开，P4 总结价值，结构完全吻合。", "D：强行把 P1/P2 与 P3/P4 拆成两组对应关系，打乱了真实层次。"], "P1 从宏观角度引出新疆跨文化旅游的话题；P2 从旅游景点、P3 从文旅活动两个并列角度说明文化融合；P4 总结跨文化旅游的经济价值和文化传播价值。因此全文结构是“总起—并列分述—总结”，选择 C。"), {
+          image: "assets/urumqi-no1-september-2026-d-q47.svg",
+          structureClues: ["cultural crossroads", "rich tourism and cultural resources", "tourist spots", "cultural integration", "Cultural tourism activities", "further bridge different cultures", "brings great value", "not only boost", "but also helps spread"],
+          structureTip: "先看各段功能：P1 宏观引出跨文化旅游；P2、P3 分别从旅游景点和文旅活动两个角度并列展开；P4 总结经济与文化传播价值。",
+          structureOutline: [
+            "P1｜cultural crossroads → 宏观引出跨文化旅游",
+            "P2｜tourist spots / cultural integration → 景点角度",
+            "P3｜Cultural tourism activities / bridge different cultures → 活动角度",
+            "P4｜brings great value / not only...but also... → 总结经济与文化传播价值"
+          ],
+          structureConclusion: "P1 总起 → P2、P3 并列分述 → P4 总结，因此选 C。"
+        }),
         q(48, "What does the underlined word “These” in Paragraph 3 refer to?", ["A. Music and dance performances held in the festival.", "B. Many popular tourist spots.", "C. Local intangible cultural heritage skills.", "D. Different foreign art teams and shows."], "C", ["These", "Paragraph 3", "refer to"], "Besides, the local intangible cultural heritage (遗产) like Maxirep and mulberry paper making is open to tourists. These traditional skills help foreign visitors truly understand local customs and Chinese traditional culture.", "代词指代题向前找最近且数义一致的复数名词。", ["A：不是 These 紧邻指代的对象。", "B：tourist spots 出现在上一段。", "C：指前句列举的非遗传统技艺。", "D：art teams 不是 These traditional skills。"], "These traditional skills 指 Maxirep 和桑皮纸制作等当地非遗技艺，所以选 C。"),
         q(49, "What is the writer’s attitude towards Xinjiang’s cross-cultural tourism?", ["A. Doubtful.", "B. Worried.", "C. Supportive.", "D. Uninterested."], "C", ["writer’s attitude", "cross-cultural tourism"], "Cross-cultural tourism brings great value to Xinjiang. It does not only boost local tourism economy, but also helps spread real, lively and diverse Xinjiang culture to the world.", "圈出 great value、boost、helps 等褒义词判断作者态度。", ["A：全文没有怀疑语气。", "B：全文没有担忧语气。", "C：积极评价其经济和文化价值，态度支持。", "D：作者详细介绍并积极评价，并非不感兴趣。"], "作者肯定跨文化旅游的多重价值，态度是 supportive。")
       ]
@@ -407,7 +430,18 @@
       questions: [
         q(50, "What does the underlined word “uneasy” in Paragraph 1 probably mean?", ["A. calm", "B. nervous", "C. relaxed", "D. afraid"], "B", ["uneasy", "don't have phones nearby"], "Many teens feel uneasy when they don't have their phones nearby.", "根据语境，没有手机在身边会感到不安。", ["B：nervous 最接近 uneasy。", "A/C：相反。", "D：程度偏重。"], "uneasy 在这里意为不安、紧张。"),
         q(51, "What can we do to use the phone less according to the text?", ["A. Charge the phone in the bedroom at night.", "B. Keep all the notices on to know what's happening.", "C. Bring the phone to the dinner table to share interesting things.", "D. Pick a special time each day and focus on other things when it's over."], "D", ["use phone less", "special time"], "A good way to use your phone less is to pick a special time each day... when time's up, put your phone away.", "use less 直接定位第二段。", ["D：与原文一致。", "A/B/C：都与建议相反。"], "每天规定用手机时间，时间到就放下。"),
-        Object.assign(q(52, "Which of the following best shows the structure of the text?", ["A. 1 / 2,3,4 / 5 / 6", "B. 1,2 / 3,4,5 / 6", "C. 1 / 2 / 3 / 4 / 5 / 6", "D. 1 / 2,3,4,5 / 6"], "D", ["best structure", "text"], "Here's how to control without giving up your phone.", "第1段提出问题和主题，第2-5段给方法与理由，第6段总结升华。", ["D：总起—主体方法—总结。", "A/B/C：层次划分不准。"], "文章结构是提出问题、展开方法、总结呼吁。"), { image: "assets/mock-2026-shisanzhong-d-q52.png" }),
+        Object.assign(q(52, "Which of the following best shows the structure of the text?", ["A. 1 / 2,3,4 / 5 / 6", "B. 1,2 / 3,4,5 / 6", "C. 1 / 2 / 3 / 4 / 5 / 6", "D. 1 / 2,3,4,5 / 6"], "A", ["best structure", "Paragraph 1", "Paragraphs 2-4", "Paragraph 5", "Paragraph 6"], "We all love our phones, but using them too much can cause problems. / Here's how to control without giving up your phone. / A good way to use your phone less is to pick a special time each day. / Next, fight those noisy dings and buzzes. / Create places where phones aren't allowed. / Scientists found that about 1/3 of phone time is just habit, not something we truly enjoy. / By making such small changes, you can save over 2 hours daily! / Remember what an old Greek teacher once said, “Real freedom comes from controlling yourself.” / Start small: Try one tip this week.", "结构题要区分“方法”和“方法的依据、效果”：第1段提出手机使用问题；第2-4段并列给出三种方法；第5段用研究数据说明习惯成因和改变后的效果；第6段总结并号召行动。", ["A：P1提出问题，P2-4并列给方法，P5说明依据与效果，P6总结号召，四层结构完全吻合。", "B：把第2段第一个方法错并入开头，又把第5段的依据与效果错并入方法组。", "C：把功能相同、并列提出方法的第2-4段全部割裂。", "D：把说明依据与效果的第5段误判成第四个方法段。"], "P1指出过度使用手机的问题并引出控制方法；P2、P3、P4分别提出限定时间、关闭通知、设置无手机区域三种并列方法；P5用研究数据解释手机使用习惯，并说明这些改变能节省时间；P6用名言和行动建议总结全文。因此结构是“1—2/3/4—5—6”，选择 A。"), {
+          image: "assets/mock-2026-shisanzhong-d-q52.png",
+          structureClues: ["using them too much can cause problems", "how to control", "A good way", "Next", "Create places", "Scientists found", "By making such small changes", "Remember", "Start small"],
+          structureTip: "先区分段落功能：P1提出问题；P2-4并列给出三种控制手机的方法；P5说明习惯成因与改变后的效果；P6总结并号召行动。",
+          structureOutline: [
+            "P1｜problems / Here's how → 提出问题并引出方法",
+            "P2-P4｜A good way / Next / Create places → 三种并列方法",
+            "P5｜Scientists found / save over 2 hours → 说明依据与效果",
+            "P6｜Remember / Start small → 总结号召"
+          ],
+          structureConclusion: "P1 总起 → P2、P3、P4 并列给方法 → P5 说明依据与效果 → P6 总结，因此选 A。"
+        }),
         q(53, "What's the writer's main purpose of writing this text?", ["A. To tell people to throw away their phones.", "B. To introduce the latest uses of mobile phones.", "C. To complain about the negative effects of mobile phones.", "D. To encourage people to control phone use and gain more free time."], "D", ["main purpose", "control phone"], "Your phone will remain there while you take control of it.", "结尾点明写作目的：控制手机而不是放弃手机。", ["D：概括全文目的。", "A/B/C：过度或偏离。"], "作者鼓励人们控制手机使用，获得更多自由时间。")
       ]
     },
@@ -471,7 +505,19 @@
       questions: [
         q(26, "Who needs to eat more carrots according to paragraph 3?", ["A. People with dry eyes.", "B. People with good teeth.", "C. People who sleep well.", "D. People who like sports."], "A", ["carrots", "dry eyes"], "If some people's eyes are dry, they can eat them.", "them 指 carrots。", ["A：dry eyes 与原文一致。", "B/C/D：无依据。"], "眼睛干的人可以多吃胡萝卜。"),
         q(27, "Which is TRUE according to the passage?", ["A. Oranges are bad for our feelings.", "B. Carrots have lots of vitamin B.", "C. Milk can help us sleep well.", "D. Apples are bad for teeth."], "C", ["TRUE", "Milk", "sleep"], "drinking some milk before going to bed helps us sleep well.", "TRUE 题逐项回文核对。", ["C：与原文一致。", "A/B/D：与原文相反或错误。"], "睡前喝牛奶有助睡眠。"),
-        Object.assign(q(28, "What's the structure of the passage?", ["A. P1 P2 / P3 P4 / P5", "B. P1 / P2 P3 P4 / P5", "C. P1 P3 / P2 P4 / P5", "D. P1 / P2 P3 P4 P5"], "D", ["structure", "passage"], "We need to choose some good things to eat in our life.", "第1段总起，后四段分别介绍 oranges、carrots、apples、milk。", ["D：总分结构最准确。", "A/B/C：段落层次划分错误。"], "文章是总起后分述四种健康食物。"), { image: "assets/mock-2026-jingkai-c-q28.png" }),
+        Object.assign(q(28, "What's the structure of the passage?", ["A. P1 P2 / P3 P4 / P5", "B. P1 / P2 P3 P4 / P5", "C. P1 P3 / P2 P4 / P5", "D. P1 / P2 P3 P4 P5"], "D", ["structure", "Paragraph 1", "Paragraphs 2-5"], "We all know that eating healthy food will make us healthy. / So we need to choose some good things to eat in our life. / There is a lot of vitamin C in oranges. / Carrots are common vegetables. / Apples are very healthy food. / Milk has a lot of protein.", "结构题先判断首段是否概括全文，再看后续段落是否从同一层级并列举例：P1提出选择健康食物的总主题；P2-5分别介绍橙子、胡萝卜、苹果和牛奶，四段功能并列。", ["A：把介绍橙子的P2错并入总起，又把四种并列食物拆成三层。", "B：虽然识别了P1总起，但把同属并列分述的牛奶段P5错误单列。", "C：把总起段P1与胡萝卜段P3拼在一起，又交叉组合P2和P4，完全打乱层次。", "D：P1总起健康饮食主题，P2-5并列介绍四种健康食物，结构完全吻合。"], "P1说明健康食物有益身体，并提出要选择合适食物；P2介绍橙子，P3介绍胡萝卜，P4介绍苹果，P5介绍牛奶，后四段都是对健康食物的并列举例。因此全文是“P1总起—P2/P3/P4/P5并列分述”的总分结构，选择 D。"), {
+          image: "assets/mock-2026-jingkai-c-q28.png",
+          structureClues: ["eating healthy food will make us healthy", "choose some good things to eat", "vitamin C in oranges", "Carrots are common vegetables", "Apples are very healthy food", "Milk has a lot of protein"],
+          structureTip: "先看各段功能：P1总起健康饮食主题；P2、P3、P4、P5分别介绍橙子、胡萝卜、苹果和牛奶，属于四个并列分支。",
+          structureOutline: [
+            "P1｜healthy food / choose good things → 总起主题",
+            "P2｜oranges / vitamin C → 分述橙子",
+            "P3｜carrots / vitamin A → 分述胡萝卜",
+            "P4｜apples → 分述苹果",
+            "P5｜milk / protein → 分述牛奶"
+          ],
+          structureConclusion: "P1 总起 → P2、P3、P4、P5 并列分述，因此选 D。"
+        }),
         q(29, "Where can we read the passage?", ["A. In a storybook.", "B. In a sports magazine.", "C. In a math book.", "D. In a health magazine."], "D", ["Where", "read"], "eating healthy food will make us healthy", "主题是健康饮食。", ["D：health magazine 符合主题。", "A/B/C：文体不符。"], "文章关于健康饮食，最可能来自健康杂志。")
       ]
     },
@@ -1125,7 +1171,18 @@
         q(50, "What’s the meaning behind the mascot?", ["A. It symbolizes a happy mood.", "B. It welcomes the arrival of spring.", "C. It brings good wishes to Chinese people.", "D. It introduces the 2025 Spring Festival Gala."], "C", ["meaning", "mascot"], "this cheerful mascot brings good wishes to Chinese people around the world", "meaning behind the mascot 定位首段。", ["C：与原文一致。", "A/B：只是局部设计含义。", "D：不是吉祥物含义。"], "吉祥物承载对中国人的美好祝福。"),
         q(51, "Where is the name of the mascot from?", ["A. Modern art and designs.", "B. The art of the Tang Dynasty.", "C. Chinese modern and historical buildings.", "D. Traditional Chinese culture and the character “巳”."], "D", ["name", "mascot", "from"], "comes from traditional Chinese culture. Its name is based on the ancient character “巳”", "Where is the name from 后直接回答。", ["D：信息完整。", "A/B/C：不符合或只对应设计细节。"], "名字来自传统文化和甲骨文“巳”。"),
         q(52, "What is the third paragraph mainly about?", ["A. The meaning of the mascot’s name.", "B. The process of designing the mascot.", "C. The design and the meaning of each part.", "D. The shapes of each part of the mascot."], "C", ["third paragraph", "mainly"], "Each part of its design symbolizes something good.", "第三段主题句在开头。", ["C：覆盖 design 和 meaning。", "A：对应第二段。", "B/D：不完整。"], "第三段主要讲各部分设计及其寓意。"),
-        Object.assign(q(53, "Which of the following shows the structure of the text?", ["A. ① / ②③④", "B. ①②③ / ④", "C. ① / ②③ / ④", "D. ①② / ③ / ④"], "A", ["structure", "text"], "The first paragraph introduces the mascot, and Paragraphs 2 to 4 explain its name, design and colors.", "结构题看段落功能：首段总介绍，后三段分说名称、外观、颜色。", ["A：总分结构最准确。", "B/C/D：层次划分不准。"], "文章结构是第1段总起，第2-4段分述。"), { image: "assets/mock-2025-tianshan-d-q53.png" })
+        Object.assign(q(53, "Which of the following shows the structure of the text?", ["A. ① / ②③④", "B. ①②③ / ④", "C. ① / ②③ / ④", "D. ①② / ③ / ④"], "A", ["structure", "Paragraph 1", "Paragraphs 2-4"], "On December 2nd, China Media Group introduced the official mascot for the 2025 Spring Festival Gala--Si Shengsheng. / Where is the name from? / The mascot “Si Shengsheng” comes from traditional Chinese culture. / Are you interested in its look? / Each part of its design symbolizes something good. / Have you been attracted by its bright colors? / The mascot’s main color is bright green, meaning the new life of spring.", "结构题先看第1段是否总介绍，再看后续各段是否围绕不同方面并列分述：P1介绍吉祥物；P2、P3、P4分别说明名称、外观设计和颜色。", ["A：P1总介绍吉祥物，P2-4从名称、外观设计和颜色三个并列方面展开，结构完全吻合。", "B：把P1-3错误合并，并把同为分述角度的颜色段P4单独当作下一层。", "C：把P4误判成总结段；实际上P4仍在介绍吉祥物的颜色，是第三个并列分支。", "D：把名称来源段P2错并入总起，又把P3、P4割裂成两个独立层次。"], "P1总体介绍春节联欢晚会吉祥物巳升升及其美好寓意；P2介绍名称来源，P3介绍外观设计及象征意义，P4介绍颜色及寓意，后三段是并列分述。因此全文是“①总—②③④分”的总分结构，选择 A。"), {
+          image: "assets/mock-2025-tianshan-d-q53.png",
+          structureClues: ["introduced the official mascot", "Where is the name from", "comes from traditional Chinese culture", "interested in its look", "design symbolizes something good", "attracted by its bright colors", "main color is bright green"],
+          structureTip: "先看各段功能：P1总介绍吉祥物；P2、P3、P4分别从名称来源、外观设计和颜色寓意三个角度并列分述。",
+          structureOutline: [
+            "P1｜introduced the official mascot → 总体介绍",
+            "P2｜Where is the name from? → 名称来源",
+            "P3｜its look / design symbolizes → 外观设计及寓意",
+            "P4｜bright colors / main color → 颜色及寓意"
+          ],
+          structureConclusion: "P1 总起 → P2、P3、P4 并列分述，因此选 A。"
+        })
       ]
     },
     ]);
