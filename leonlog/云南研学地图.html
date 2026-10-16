@@ -36,17 +36,18 @@
   .city:hover .pin-body,.city:focus-visible .pin-body{fill:#ffd958;transform:translateY(-2px)}
   .city.xishuangbanna .pin-body{fill:#7fc79b;filter:drop-shadow(0 0 4px rgba(47,143,91,.78))}.city.xishuangbanna:hover .pin-body,.city.xishuangbanna:focus-visible .pin-body{fill:#9be0b5}
   .city:focus-visible .hit{stroke:var(--vi-focus);stroke-width:2;vector-effect:non-scaling-stroke}
-  .legend{position:absolute;left:5%;bottom:6%;display:flex;gap:16px;flex-wrap:wrap;padding:9px 13px;background:#fff;border:1.5px dashed var(--vi-border);border-radius:16px;color:var(--vi-muted);font-size:13px}
+  .legend{position:absolute;left:25%;bottom:6%;display:flex;gap:16px;flex-wrap:wrap;padding:9px 13px;background:#fff;border:1.5px dashed var(--vi-border);border-radius:16px;color:var(--vi-muted);font-size:13px}
   .legend span{display:flex;align-items:center;gap:7px}.legend i{width:13px;height:13px;border:2px solid var(--vi-ink);border-radius:50%;background:var(--vi-yellow)}.legend .waiting{background:#fff;border-style:dashed}
-   .leon{position:absolute;right:1%;bottom:-8px;width:min(25vw,245px);filter:drop-shadow(0 14px 7px rgba(38,84,104,.22)) drop-shadow(5px 8px 0 rgba(184,221,234,.76));animation:leon-look 7s ease-in-out infinite;pointer-events:none;transform-origin:bottom center}
+   /* The explorer sits in the lower-left corner, leaving the Xishuangbanna pin clear. */
+  .leon{position:absolute;left:1%;right:auto;bottom:-8px;width:min(22vw,215px);filter:drop-shadow(0 14px 7px rgba(38,84,104,.22)) drop-shadow(5px 8px 0 rgba(184,221,234,.76));animation:leon-look 7s ease-in-out infinite;pointer-events:none;transform-origin:bottom center}
   .note{position:absolute;right:13%;top:13%;padding:11px 14px;background:#fff;border:2px solid var(--vi-ink);border-radius:18px 16px 20px 8px;box-shadow:4px 5px 0 var(--vi-shadow);font-family:var(--vi-font-hand);font-weight:800;transform:rotate(2deg)}
   .note::after{content:"";position:absolute;right:20px;bottom:-10px;width:16px;height:16px;background:#fff;border-right:2px solid var(--vi-ink);border-bottom:2px solid var(--vi-ink);transform:rotate(45deg)}
   .toast{position:fixed;left:50%;bottom:26px;z-index:10;max-width:calc(100% - 32px);padding:12px 18px;border-radius:16px;background:var(--vi-sky-700);color:#fff;font-weight:700;box-shadow:4px 5px 0 var(--vi-sky-200);opacity:0;transform:translate(-50%,18px);transition:.25s ease;pointer-events:none}
   .toast.show{opacity:1;transform:translate(-50%,0)}
   @keyframes pin-lit{0%,100%{filter:drop-shadow(0 0 2px rgba(241,200,92,.65))}50%{filter:drop-shadow(0 0 6px rgba(241,200,92,1))}}
   @keyframes leon-look{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(-8px,-7px,0) rotate(-1.2deg)}}
-  @media(max-width:760px){.yn-page{width:min(100% - 22px,680px);padding-top:12px}.yn-top{align-items:flex-start;flex-direction:column;gap:7px}.route{padding-left:4px}.map-paper{min-height:680px;padding:20px 14px 12px}.map-head{align-items:flex-start;flex-direction:column;gap:9px}.intro{text-align:left;font-size:14px}.stage{height:540px}.map-svg{inset:16px -46px 30px -42px;width:calc(100% + 88px);height:calc(100% - 28px)}.leon{right:-4%;width:170px}.note{right:4%;top:11%;font-size:13px}.legend{left:4%;bottom:3%;max-width:180px}}
-  @media(max-width:430px){.map-paper{min-height:620px}.stage{height:475px}.map-svg{inset:22px -58px 24px -54px;width:calc(100% + 112px);height:calc(100% - 30px)}.leon{width:132px;right:-8%;bottom:2px}.note{top:8%;right:1%;max-width:130px}.legend{font-size:12px;gap:8px;max-width:145px}}
+  @media(max-width:760px){.yn-page{width:min(100% - 22px,680px);padding-top:12px}.yn-top{align-items:flex-start;flex-direction:column;gap:7px}.route{padding-left:4px}.map-paper{min-height:680px;padding:20px 14px 12px}.map-head{align-items:flex-start;flex-direction:column;gap:9px}.intro{text-align:left;font-size:14px}.stage{height:540px}.map-svg{inset:16px -46px 30px -42px;width:calc(100% + 88px);height:calc(100% - 28px)}.leon{left:-3%;right:auto;width:170px}.note{right:4%;top:11%;font-size:13px}.legend{left:30%;bottom:3%;max-width:180px}}
+  @media(max-width:430px){.map-paper{min-height:620px}.stage{height:475px}.map-svg{inset:22px -58px 24px -54px;width:calc(100% + 112px);height:calc(100% - 30px)}.leon{left:-7%;right:auto;width:132px;bottom:2px}.note{top:8%;right:1%;max-width:130px}.legend{left:35%;font-size:12px;gap:8px;max-width:145px}}
   @media(prefers-reduced-motion:reduce){.leon,.pin-body{animation:none}.city *{transition:none}}
 </style>
 </head>
