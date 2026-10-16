@@ -133,6 +133,13 @@
   #sheet .speak { background:var(--xz-teal); color:#fff; }
   #sheet .done { background:#e8f4e4; color:var(--xz-green-d); border:1.5px solid var(--xz-green-d); }
   #sheet .close { background:#eef4ef; color:var(--xz-teal); }
+  .print-toolbar { position:sticky; top:0; z-index:30; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px max(14px,calc((100vw - 760px)/2)); background:#eef8fcf2; border-bottom:2px dashed var(--xz-border); color:var(--xz-teal); font-weight:700; backdrop-filter:blur(8px); }
+  .print-toolbar button { min-height:44px; padding:8px 15px; border:2px solid var(--xz-teal); border-radius:12px 17px 13px 16px; background:var(--xz-teal); color:#fff; font:inherit; font-weight:700; cursor:pointer; }
+  body.print-mode { padding-bottom:20px; }
+  body.print-mode nav,body.print-mode #progressWrap,body.print-mode .trip-date-card,body.print-mode .page-actions,body.print-mode #mask,body.print-mode #sheet { display:none!important; }
+  body.print-mode .sec { display:block!important; animation:none!important; break-after:page; }
+  body.print-mode.print-reading .sec:not(#sec-english),body.print-mode.print-handbook #sec-english { display:none!important; }
+  @media print { body.print-mode .print-toolbar,body.print-mode .leon-owner-ribbon { display:none!important; } body.print-mode .sec { padding:0!important; } body.print-mode .card { box-shadow:none!important; break-inside:avoid; } }
 </style>
 <link rel="stylesheet" href="assets/leon-vi.css">
 </head>
@@ -162,10 +169,10 @@
 <!-- ===== 认识喜洲 ===== -->
 <div class="sec active" id="sec-cover">
   <div class="sec-in">
-    <div class="hero-frame"><img class="photo" style="margin:0;border:none;box-shadow:none;border-radius:0" src="assets/xizhou_town1.jpg" alt="喜洲古镇全景：白族青瓦白墙民居与稻田"><p class="credit" style="padding:0 10px 8px;margin:0">📷 Wikimedia Commons · Xizhou Town</p></div>
+    <div class="hero-frame"><img class="photo" style="margin:0;border:none;box-shadow:none;border-radius:0" src="assets/xizhou_town1.webp" alt="喜洲古镇全景：白族青瓦白墙民居与稻田"><p class="credit" style="padding:0 10px 8px;margin:0">📷 Wikimedia Commons · Xizhou Town</p></div>
     <div class="card">
       <h2>🏠 你好，喜洲！</h2>
-      <img class="photo" src="assets/xizhou_erhai.jpg" alt="苍山与洱海">
+      <img class="photo" src="assets/xizhou_erhai.webp" alt="苍山与洱海">
       <p class="credit">📷 Wikimedia Commons · 大理洱海及苍山</p>
       <p>喜洲在云南大理，洱海的西岸，离大理古城大约 20 公里。这里住着很多<b>白族</b>人家，是一千多年的<b>千年古镇</b>，也是古代<b>茶马古道</b>上的重要驿站。今天，Leon 要当一名"白族文化小探险家"，去寻找古镇的秘密！</p>
     </div>
@@ -215,7 +222,7 @@
     </div>
     <div class="card">
       <h2>🐎 马帮小知识</h2>
-      <img class="photo" src="assets/xizhou_tearoad.jpg" alt="茶马古道">
+      <img class="photo" src="assets/xizhou_tearoad.webp" alt="茶马古道">
       <p class="credit">📷 Wikimedia Commons · Tea-Horse Ancient Road</p>
       <p style="font-size:13px;color:var(--xz-grey);margin-top:8px;">马帮的矮马驮着两大包茶叶。走茶马古道，一匹马能驮上百斤货，跟着赶马人的铃声翻山越岭。</p>
       <div class="mission"><b>想一想：</b>为什么喜洲商人要走那么远的路去做生意？外面的世界需要什么？（提示：西藏缺茶叶，云南缺盐和布……）</div>
@@ -241,14 +248,14 @@
   <div class="sec-in">
     <div class="card">
       <h2>🏠 白族民居 · 三坊一照壁</h2>
-      <img class="photo" src="assets/xizhou_house_model.jpg" alt="白族民居三坊一照壁">
+      <img class="photo" src="assets/xizhou_house_model.webp" alt="白族民居三坊一照壁">
       <p class="credit">📷 Wikimedia Commons · 大理州博物馆 白族民居"三坊一照壁"模型</p>
       <p>白族人家盖房子有自己的<b>秘密配方</b>：墙是<b>白色</b>的，瓦是<b>青色</b>的，院子正面有一面<b>照壁</b>——像一面"挡风墙"，挡住洱海吹来的风，还能晒谷子。</p>
       <p>照壁上还要<b>写上家风</b>，比如"清白传家"。每天一抬头就能看见，提醒家人做一个清白的人。</p>
     </div>
     <div class="card">
       <h2>🍵 三道茶 · 一苦二甜三回味</h2>
-      <img class="photo" src="assets/xizhou_tea.jpg" alt="白族三道茶">
+      <img class="photo" src="assets/xizhou_tea.webp" alt="白族三道茶">
       <p class="credit">📷 Wikimedia Commons · Three-Course Tea</p>
       <p>白族请客人喝三道茶，这是待客的<b>最高礼仪</b>：</p>
       <ul style="padding-left:20px;">
@@ -260,21 +267,21 @@
     </div>
     <div class="card">
       <h2>🎨 扎染 · 蓝布上的白蝴蝶</h2>
-      <img class="photo" src="assets/xizhou_zharan.jpg" alt="晾晒中的大理喜洲扎染">
+      <img class="photo" src="assets/xizhou_zharan.webp" alt="晾晒中的大理喜洲扎染">
       <p class="credit">📷 Wikimedia Commons · 大理喜洲扎染</p>
       <p>扎染是白族的<b>传统手艺</b>。把白布<b>扎起来</b>，放进染缸里染，展开以后，扎住的地方还是白的，就变成了蝴蝶、花朵、小鸟……</p>
       <p>蓝色是用一种叫<b>板蓝根</b>的植物染出来的，所以是天然的蓝色。喜洲旁边的<b>周城</b>就是有名的扎染之乡。</p>
     </div>
     <div class="card">
       <h2>👗 白族服饰 · 风花雪月</h2>
-      <img class="photo tall" loading="lazy" src="assets/xizhou_baiwoman1.jpg" alt="白族服饰">
+      <img class="photo tall" loading="lazy" src="assets/xizhou_baiwoman1.webp" alt="白族服饰">
       <p class="credit">📷 Wikimedia Commons · Bai Woman（白族服饰）</p>
       <p>白族<b>爱白色</b>，衣服以白为主，清爽又干净。女孩叫"<b>金花</b>"，男孩叫"<b>阿鹏</b>"。</p>
       <p>金花的头饰藏着大理的"<b>风花雪月</b>"：垂下的穗子=下关的<b>风</b>，头饰上的花=上关的<b>花</b>，白绒线=苍山的<b>雪</b>，弯弯的月牙=洱海的<b>月</b>。</p>
     </div>
     <div class="card">
       <h2>🥞 喜洲粑粑 · 会走天下的饼</h2>
-      <img class="photo" src="assets/xizhou_baba.jpg" alt="喜洲破酥粑粑">
+      <img class="photo" src="assets/xizhou_baba.webp" alt="喜洲破酥粑粑">
       <p class="credit">📷 Wikimedia Commons · Xizhou baba（喜洲粑粑）</p>
       <p><b>破酥粑粑</b>是喜洲最有名的食物，用炭火烤，有<b>甜的</b>和<b>咸的</b>两种，外皮酥酥的，一层一层像千层饼。</p>
       <p>传说粑粑曾经跟着马帮走天下，是马帮路上的干粮。闻着香味，记得先问价再买哦！</p>
@@ -367,7 +374,7 @@
     </div>
     <div class="card">
       <h2>🌾 任务六 · 稻田观察员</h2>
-      <img class="photo" src="assets/xizhou_rice.jpg" alt="大理喜洲附近的水稻村">
+      <img class="photo" src="assets/xizhou_rice.webp" alt="大理喜洲附近的水稻村">
       <p class="credit">📷 Wikimedia Commons · Rice village, Dali</p>
       <p>走出古镇就是大片稻田。站在田边看一看、听一听：</p>
       <label class="checkrow"><input type="checkbox" class="save" id="yd1">🦢 我看见一只白鹭（白鸟）</label>
@@ -518,6 +525,13 @@ function turnPage(direction){
   showSection(sectionIds[nextIndex]);
 }
 document.querySelectorAll('nav button').forEach(b=>{ b.onclick = ()=>showSection(b.dataset.sec); });
+const printMode=new URLSearchParams(location.search).get('print');
+if(printMode==='reading'||printMode==='handbook'){
+  document.body.classList.add('print-mode','print-'+printMode);
+  const bar=document.createElement('div');bar.className='print-toolbar';bar.innerHTML='<span>'+(printMode==='reading'?'喜洲分级阅读 · 打印预览':'喜洲研学手册 · 打印预览')+'</span><button type="button">开始打印</button>';bar.querySelector('button').onclick=()=>window.print();document.body.prepend(bar);
+}else if(sectionIds.includes(location.hash.slice(1))){
+  showSection(location.hash.slice(1));
+}
 
 // ===== 输入与勾选自动保存 =====
 document.querySelectorAll('.save').forEach(el=>{

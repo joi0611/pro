@@ -17,7 +17,7 @@
 <div class="state" id="loading"><div class="state-box">正在翻开研学日记…</div></div>
 <div class="state hidden" id="not-found"><div class="state-box"><h1>这篇日记还在整理</h1><p>主人尚未公开发布，过一段时间再来看看吧。</p><a href="云南研学地图.html">返回云南研学地图</a></div></div>
 <article class="hidden" id="journal">
-  <header class="hero"><img class="hero-bg" id="hero-image" src="assets/dounan_1.jpg" alt=""><div class="hero-copy"><span class="kicker">LEON'S PUBLISHED JOURNAL</span><h1 id="journal-title"></h1><div class="meta"><span id="journal-place"></span><span id="journal-date"></span></div></div></header>
+  <header class="hero"><img class="hero-bg" id="hero-image" src="assets/dounan_1.webp" alt=""><div class="hero-copy"><span class="kicker">LEON'S PUBLISHED JOURNAL</span><h1 id="journal-title"></h1><div class="meta"><span id="journal-place"></span><span id="journal-date"></span></div></div></header>
   <section class="paper"><p class="summary" id="journal-summary"></p><div class="story" id="journal-story"></div><section class="progress-journal hidden" id="progress-journal"><h2>互动手册记录</h2><p class="progress-lead" id="progress-lead"></p><div class="answer-list" id="answer-list"></div></section></section>
   <section class="gallery" id="journal-gallery" aria-label="研学照片、视频与录音"></section>
   <footer><strong>Leon旅行日记</strong><span>把走过的路，画进手帐里。</span></footer>
@@ -25,7 +25,7 @@
 </main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="assets/supabase-config.js"></script><script src="assets/leon-backend.js"></script>
 <script>
-const PLACES={'kunming-dounan':{back:'云南昆明研学日记.html',cover:'assets/dounan_1.jpg',alt:'昆明斗南花市入口'},'dali-xizhou':{back:'云南大理研学日记.html',cover:'assets/xizhou_town1.jpg',alt:'大理喜洲古镇的白族民居与田野'}};
+const PLACES={'kunming-dounan':{back:'云南昆明研学日记.html',cover:'assets/dounan_1.webp',alt:'昆明斗南花市入口'},'dali-xizhou':{back:'云南大理研学日记.html',cover:'assets/xizhou_town1.webp',alt:'大理喜洲古镇的白族民居与田野'}};
 const slug=new URLSearchParams(location.search).get('slug')||'kunming-dounan',place=PLACES[slug]||PLACES['kunming-dounan'];document.getElementById('back-link').href=place.back;document.getElementById('hero-image').src=place.cover;document.getElementById('hero-image').alt=place.alt;
 function publicUrl(storagePath){const slash=storagePath.indexOf('/'),bucket=storagePath.slice(0,slash),path=storagePath.slice(slash+1);return leonSupabase.storage.from(bucket).getPublicUrl(path).data.publicUrl}
 function addMedia(item){const figure=document.createElement('figure');figure.className='media '+(item.kind==='long_image'?'long':item.kind==='audio'?'audio':'');const url=publicUrl(item.storage_path);let element;if(item.kind==='video'){element=document.createElement('video');element.controls=true;element.preload='metadata';element.playsInline=true;element.src=url}else if(item.kind==='audio'){element=document.createElement('audio');element.controls=true;element.preload='none';element.src=url}else{element=document.createElement('img');element.loading='lazy';element.src=url;element.alt=item.label||'Leon研学照片'}figure.append(element);if(item.label){const caption=document.createElement('figcaption');caption.textContent=item.label;figure.append(caption)}document.getElementById('journal-gallery').append(figure)}

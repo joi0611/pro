@@ -101,6 +101,7 @@
   </div>
 </div>
 
+<script src="assets/reader-audio.js"></script>
 <script>
 // 数据 ============
 const WORDS = {
@@ -122,46 +123,46 @@ const WORDS = {
 };
 // 句子用 token：字符串为普通词，[wid] 为生词
 const PAGES = [
- {type:'photo', img:'assets/dounan_1.jpg', credit:'封面图：斗南花市大门（知乎）',
+ {type:'photo', img:'assets/dounan_1.webp', credit:'封面图：斗南花市大门（知乎）',
   zh:'这是斗南。它是一个大大的鲜花市场。',
   ss:[['This','is','Dounan','.'] ,['It','is','a','big',['flower'],['market'],'.'] ]},
- {type:'photo', img:'assets/dounan_2.jpg', credit:'（新华网）',
+ {type:'photo', img:'assets/dounan_2.webp', credit:'（新华网）',
   zh:'哇！好多花！红的、黄的、粉的、蓝的。',
   ss:[['Wow','!','So','many',['flower','s'],'!'],['Red',',','yellow',',','pink','and','blue','.'] ]},
- {type:'photo', img:'assets/dounan_12.jpg', credit:'（去哪儿攻略）',
+ {type:'photo', img:'assets/dounan_12.webp', credit:'（去哪儿攻略）',
   zh:'看这些玫瑰。多少钱？"十元！"叔叔说。',
   ss:[['Look','at','the',['rose','s'],'.'],['How','much','is','it','?'],['"Ten',['yuan'],'!"','says','the','man','.'] ]},
- {type:'photo', img:'assets/dounan_7.jpg', credit:'花海（新浪）',
+ {type:'photo', img:'assets/dounan_7.webp', credit:'花海（新浪）',
   zh:'看那朵向日葵，又大又黄。多少钱？"五元！"',
   ss:[['Look','at','the',['sunflower'],'.'],['It','is','big','and','yellow','.'],['"Five',['yuan'],'!"','he','says','.'] ]},
- {type:'photo', img:'assets/dounan_8.jpg', credit:'（去哪儿攻略）',
+ {type:'photo', img:'assets/dounan_8.webp', credit:'（去哪儿攻略）',
   zh:'我看到一朵百合，一朵康乃馨。康乃馨是给妈妈的。',
   ss:[['I','see','a',['lily'],'.'],['I','see','a',['carnation'],'.'],['The','carnation','is','for','Mom','.'] ]},
- {type:'photo', img:'assets/dounan_9.jpg', credit:'夜场（关注森林网）',
+ {type:'photo', img:'assets/dounan_9.webp', credit:'夜场（关注森林网）',
   zh:'"多少钱？"我问。"八元。"真便宜！',
   ss:[['"How','much','is','it','?"','I','ask','.'],['"Eight','yuan','."'],['So',['cheap'],'!'] ]},
- {type:'card', img:'assets/illu_buy.png', credit:'插画',
+ {type:'card', img:'assets/illu_buy.webp', credit:'插画',
   tag:'💡 想一想',
   zh:'在我住的城市，一枝玫瑰要十元。在这里，十元能买好多玫瑰！',
   ss:[['In','my','city',',','one','rose','is','ten','yuan','.'],['Here',',','ten','yuan',['buy','s'],'many','roses','!'] ]},
- {type:'card', img:'assets/illu_price.png', credit:'插画',
+ {type:'card', img:'assets/illu_price.webp', credit:'插画',
   tag:'🔎 比一比',
   zh:'看！新疆的价格是六十元。太贵了！为什么？',
   ss:[['Look','!','The',['price'],'in','Xinjiang','is','sixty','yuan','.'],['Too',['expensive'],'!','Why','?'] ]},
- {type:'card', img:'assets/illu_truck.png', credit:'插画',
+ {type:'card', img:'assets/illu_truck.webp', credit:'插画',
   tag:'🚚 找原因',
   zh:'鲜花坐货车，坐飞机，走很远很远的路。',
   ss:[['The','flowers','go','by',['truck'],'.'],['They','go','by',['plane'],'.'],['It','is','a','long',',','long','way','.'] ]},
- {type:'card', img:'assets/illu_sad.png', credit:'插画',
+ {type:'card', img:'assets/illu_sad.webp', credit:'插画',
   tag:'🥀 小秘密',
   zh:'有些花在路上蔫掉了，剩下的花要分担它的路费，所以价格变高了。',
   ss:[['Some','flowers','are',['sad'],'on','the','way','.'],['So','the','price','goes','up','.'] ]},
- {type:'card', img:'assets/illu_money.png', credit:'插画',
+ {type:'card', img:'assets/illu_money.webp', credit:'插画',
   tag:'🧮 我来算',
   zh:'我有 100 元，这是我的钱。我能买什么呢？让我想想！',
   btn:['🧮 翻开研学手册，做我的采购计划 →','斗南花市研学手册-网页版.html'],
   ss:[['I','have','100','yuan','.'],['It','is','my',['money'],'.'],['What','can','I','buy','?','Let','me','see','!'] ]},
- {type:'photo', img:'assets/dounan_6.jpg', credit:'鲜花特写（云南网）',
+ {type:'photo', img:'assets/dounan_6.webp', credit:'鲜花特写（云南网）',
   zh:'我爱斗南花市。花会去很远的地方，爱也会去很远的地方。',
   ss:[['I','love','the','flower','market','.'],['Flowers','go','far','.','Love','goes','far',',','too','.'] ]}
 ];
@@ -171,36 +172,8 @@ const store = JSON.parse(localStorage.getItem('flowerbook') || '{}');
 let cur = 0;
 function save(){ localStorage.setItem('flowerbook', JSON.stringify(store)); }
 
-// 发音：只在用户点击后调用，兼容手机浏览器延迟加载语音列表
-let englishVoice=null,speechWarned=false;
-function prepareEnglishVoice(){
-  if(!('speechSynthesis' in window)) return false;
-  const voices=window.speechSynthesis.getVoices();
-  englishVoice=voices.find(v=>/^en-US$/i.test(v.lang))||voices.find(v=>/^en[-_]/i.test(v.lang))||null;
-  return true;
-}
-if('speechSynthesis' in window){
-  prepareEnglishVoice();
-  window.speechSynthesis.addEventListener?.('voiceschanged',prepareEnglishVoice);
-  document.addEventListener('visibilitychange',()=>{if(!document.hidden)prepareEnglishVoice()});
-}
 function speak(text){
-  if(!text) return;
-  if(!('speechSynthesis' in window)||!('SpeechSynthesisUtterance' in window)){
-    if(!speechWarned){speechWarned=true;alert('当前浏览器不支持内置发音，请换用系统浏览器或 Chrome/Safari 打开。')}
-    return;
-  }
-  const synth=window.speechSynthesis;
-  try{
-    synth.cancel();
-    const u=new SpeechSynthesisUtterance(text);
-    u.lang='en-US';u.rate=0.82;u.pitch=1;u.volume=1;
-    if(englishVoice)u.voice=englishVoice;
-    synth.resume();
-    synth.speak(u);
-  }catch(error){
-    if(!speechWarned){speechWarned=true;alert('发音启动失败，请确认手机没有静音，并用系统浏览器重新打开。')}
-  }
+  if(window.ReaderAudio) window.ReaderAudio.play('dounan',text,{rate:.82});
 }
 function speakWord(){ speak(WORDS[curWord][0]); }
 

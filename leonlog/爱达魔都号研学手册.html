@@ -598,7 +598,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
       </div>
 
       <div class="explore">
-        <img class="explore-img" src="assets/adora/adora_cns.jpg" alt="爱达魔都号行驶在海面上">
+        <img class="explore-img" src="assets/adora/adora_cns.webp" alt="爱达魔都号行驶在海面上">
         <div class="explore-txt">
           <p><b>🧱 它好重!</b>铁块丢进水里会沉,因为铁比水重很多。爱达魔都号是钢铁做的,却一点也不沉,这是为什么?</p>
           <p><b>🎈 秘密在“空心”!</b>船的身体里,大部分是空的——里面装满了空气。空气很轻,把整艘船的平均重量变轻了。</p>
@@ -1235,6 +1235,7 @@ footer .tip{font-size:14px;color:#7A6A52;font-weight:700;}
 <div class="toast" id="toast"></div>
 <canvas id="confetti"></canvas>
 
+<script src="assets/reader-audio.js"></script>
 <script>
 'use strict';
 /* ============ 本地记忆 ============ */
@@ -1819,27 +1820,8 @@ document.querySelectorAll('.mbadge').forEach(m => {
 
 /* ============ 英语分级 ============ */
 store.en = store.en || {};
-let enVoice = null;
-function prepareEnVoice() {
-  if (!('speechSynthesis' in window)) return;
-  const vs = window.speechSynthesis.getVoices();
-  enVoice = vs.find(v => /^en-US$/i.test(v.lang)) || vs.find(v => /^en[-_]/i.test(v.lang)) || null;
-}
-if ('speechSynthesis' in window) {
-  prepareEnVoice();
-  window.speechSynthesis.addEventListener?.('voiceschanged', prepareEnVoice);
-}
 function speakEn(text) {
-  try {
-    if (!('speechSynthesis' in window)) { toast('这个浏览器不支持发音'); return; }
-    const synth = window.speechSynthesis;
-    synth.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'en-US'; u.rate = 0.82; u.pitch = 1;
-    if (enVoice) u.voice = enVoice;
-    synth.resume();
-    synth.speak(u);
-  } catch (e) { toast('发音播放不了,跟着音标读一读!'); }
+  if (window.ReaderAudio) window.ReaderAudio.play('adora', text, { rate: 0.82 });
 }
 
 const EN_WORDS = [
@@ -1875,16 +1857,16 @@ const EN_L3WORDS = {
   sail: ['sail','/seɪl/','航行','We sail back to Shanghai. 我们航行回上海。']
 };
 const EN_IMGS = {
-  adora: 'assets/adora/adora_kochi.jpg',
-  cns: 'assets/adora/adora_cns.jpg',
-  shanghai: 'assets/adora/shanghai_bund.jpg',
-  dolphin: 'assets/adora/dolphin.jpg',
-  seongsan: 'assets/adora/seongsan.jpg',
-  hallasan: 'assets/adora/hallasan.jpg',
-  hareubang: 'assets/adora/hareubang.jpg',
-  orange: 'assets/adora/orange.jpg',
-  haenyeo: 'assets/adora/haenyeo.jpg',
-  sunset: 'assets/adora/sunset.jpg'
+  adora: 'assets/adora/adora_kochi.webp',
+  cns: 'assets/adora/adora_cns.webp',
+  shanghai: 'assets/adora/shanghai_bund.webp',
+  dolphin: 'assets/adora/dolphin.webp',
+  seongsan: 'assets/adora/seongsan.webp',
+  hallasan: 'assets/adora/hallasan.webp',
+  hareubang: 'assets/adora/hareubang.webp',
+  orange: 'assets/adora/orange.webp',
+  haenyeo: 'assets/adora/haenyeo.webp',
+  sunset: 'assets/adora/sunset.webp'
 };
 const EN_PAGES = [
   { type: 'cover', img: EN_IMGS.adora, credit: '爱达魔都号 · Wikimedia Commons',
@@ -2142,4 +2124,3 @@ setTimeout(() => {
 </script>
 </body>
 </html>
-
