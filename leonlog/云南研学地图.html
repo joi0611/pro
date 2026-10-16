@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>云南研学地图 · Leon旅行日记</title>
-<meta name="description" content="Leon的云南研学地图。昆明与大理喜洲均已解锁。">
+<meta name="description" content="Leon的云南研学地图。昆明、大理喜洲与西双版纳均已解锁。">
 <link rel="stylesheet" href="assets/leon-vi.css">
 <style>
   *{box-sizing:border-box}
@@ -34,10 +34,11 @@
   .city-sub{font-family:var(--vi-font-body);font-size:4.2px;font-weight:700;fill:var(--vi-sky-700);paint-order:stroke;stroke:#fff;stroke-width:1.5;pointer-events:none}
   .city-date{font-family:var(--vi-font-body);font-size:4.4px;font-weight:900;fill:#c5553f;paint-order:stroke;stroke:#fff;stroke-width:1.7;letter-spacing:.02em;pointer-events:none}
   .city:hover .pin-body,.city:focus-visible .pin-body{fill:#ffd958;transform:translateY(-2px)}
+  .city.xishuangbanna .pin-body{fill:#7fc79b;filter:drop-shadow(0 0 4px rgba(47,143,91,.78))}.city.xishuangbanna:hover .pin-body,.city.xishuangbanna:focus-visible .pin-body{fill:#9be0b5}
   .city:focus-visible .hit{stroke:var(--vi-focus);stroke-width:2;vector-effect:non-scaling-stroke}
   .legend{position:absolute;left:5%;bottom:6%;display:flex;gap:16px;flex-wrap:wrap;padding:9px 13px;background:#fff;border:1.5px dashed var(--vi-border);border-radius:16px;color:var(--vi-muted);font-size:13px}
   .legend span{display:flex;align-items:center;gap:7px}.legend i{width:13px;height:13px;border:2px solid var(--vi-ink);border-radius:50%;background:var(--vi-yellow)}.legend .waiting{background:#fff;border-style:dashed}
-  .leon{position:absolute;right:1%;bottom:-8px;width:min(25vw,245px);filter:drop-shadow(5px 8px 0 rgba(184,221,234,.76));animation:leon-look 7s ease-in-out infinite;pointer-events:none}
+   .leon{position:absolute;right:1%;bottom:-8px;width:min(25vw,245px);filter:drop-shadow(0 14px 7px rgba(38,84,104,.22)) drop-shadow(5px 8px 0 rgba(184,221,234,.76));animation:leon-look 7s ease-in-out infinite;pointer-events:none;transform-origin:bottom center}
   .note{position:absolute;right:13%;top:13%;padding:11px 14px;background:#fff;border:2px solid var(--vi-ink);border-radius:18px 16px 20px 8px;box-shadow:4px 5px 0 var(--vi-shadow);font-family:var(--vi-font-hand);font-weight:800;transform:rotate(2deg)}
   .note::after{content:"";position:absolute;right:20px;bottom:-10px;width:16px;height:16px;background:#fff;border-right:2px solid var(--vi-ink);border-bottom:2px solid var(--vi-ink);transform:rotate(45deg)}
   .toast{position:fixed;left:50%;bottom:26px;z-index:10;max-width:calc(100% - 32px);padding:12px 18px;border-radius:16px;background:var(--vi-sky-700);color:#fff;font-weight:700;box-shadow:4px 5px 0 var(--vi-sky-200);opacity:0;transform:translate(-50%,18px);transition:.25s ease;pointer-events:none}
@@ -59,13 +60,13 @@
   <section class="map-paper" aria-labelledby="yn-title">
     <div class="map-head">
       <div><span class="kicker">LEON'S YUNNAN MAP · 2026</span><h1 id="yn-title">云南研学地图</h1></div>
-      <p class="intro">找到地图上的旅行定位点。<br>昆明、大理喜洲均已点亮，点击回看研学足迹。</p>
+      <p class="intro">找到地图上的旅行定位点。<br>昆明、大理喜洲与西双版纳均已点亮，点击开启研学足迹。</p>
     </div>
 
     <div class="stage">
       <svg class="map-svg" viewBox="550 605 205 183" role="img" aria-labelledby="map-name map-desc">
         <title id="map-name">云南省研学地图</title>
-        <desc id="map-desc">地图标注昆明与大理喜洲。两地均可进入研学手册。</desc>
+        <desc id="map-desc">地图标注昆明、大理喜洲与西双版纳。三地均可进入研学主目录。</desc>
         <use class="yn-shape" href="assets/china-provinces.svg#province-530000"></use>
         <path class="river" d="M594 650 C621 666 637 691 650 714 C661 733 680 746 706 754"></path>
 
@@ -86,11 +87,20 @@
           <text class="city-sub" id="dali-date" x="581" y="682">点击进入研学主目录</text>
           <text class="city-date" x="581" y="690">已出行 · 2026年9月25日</text>
         </a>
+
+        <a class="city xishuangbanna" href="西双版纳研学日记.html" aria-label="西双版纳，进入西双版纳研学主目录，包含基诺山和中科院植物园两个研学点">
+          <circle class="hit" cx="694" cy="748" r="16"></circle>
+          <path class="pin-body" d="M694 733c-7.2 0-13 5.8-13 13 0 9.5 13 21 13 21s13-11.5 13-21c0-7.2-5.8-13-13-13z"></path>
+          <circle class="pin-dot" cx="694" cy="746" r="4.6"></circle>
+          <text class="city-label" x="678" y="738" text-anchor="end">西双版纳</text>
+          <text class="city-sub" x="678" y="746" text-anchor="end">2 个研学点</text>
+          <text class="city-date" x="678" y="754" text-anchor="end">基诺山 · 中科院植物园</text>
+        </a>
       </svg>
 
       <div class="note" aria-hidden="true">点定位点，开始研学大冒险！</div>
-      <img class="leon" src="assets/leon-traveler.png" alt="Leon背着旅行包查看云南地图">
-      <div class="legend" aria-label="地图图例"><span><i></i>已点亮 · 已出行</span></div>
+       <img class="leon" src="assets/leon-explorer-boy.png" alt="Leon探险家男孩背着背包查看云南地图">
+      <div class="legend" aria-label="地图图例"><span><i></i>已点亮 · 已出行</span><span><i style="background:#7fc79b"></i>新研学路线</span></div>
     </div>
   </section>
 </main>

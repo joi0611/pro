@@ -1,0 +1,637 @@
+[
+  {
+    "set": "dounan",
+    "text": "flower",
+    "file": "assets/audio/dounan/5a46b8253d07.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "market",
+    "file": "assets/audio/dounan/5c9f73af7333.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "rose",
+    "file": "assets/audio/dounan/7b7074fca36f.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "sunflower",
+    "file": "assets/audio/dounan/a678a63d6add.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "lily",
+    "file": "assets/audio/dounan/fddbe01857e2.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "carnation",
+    "file": "assets/audio/dounan/d453a7cd113d.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "price",
+    "file": "assets/audio/dounan/2097c33723b6.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "cheap",
+    "file": "assets/audio/dounan/fb8df41a16b4.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "expensive",
+    "file": "assets/audio/dounan/e0d587ce038c.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "money",
+    "file": "assets/audio/dounan/c95259de1fd7.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "buy",
+    "file": "assets/audio/dounan/a066f070178f.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "yuan",
+    "file": "assets/audio/dounan/35015dd23b25.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "sad",
+    "file": "assets/audio/dounan/b4914600112b.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "truck",
+    "file": "assets/audio/dounan/7a4d63b1ba71.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "plane",
+    "file": "assets/audio/dounan/2e869b90408c.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "This is Dounan.",
+    "file": "assets/audio/dounan/6629f5d90f7a.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "It is a big flower market.",
+    "file": "assets/audio/dounan/c1d7a53cbdb7.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "Wow! So many flowers!",
+    "file": "assets/audio/dounan/3223e1ff4654.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "Red, yellow, pink and blue.",
+    "file": "assets/audio/dounan/6299cb461adc.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "Look at the roses.",
+    "file": "assets/audio/dounan/03b2d3ec7de5.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "How much is it?",
+    "file": "assets/audio/dounan/c098beb15f53.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "\"Ten yuan!\" says the man.",
+    "file": "assets/audio/dounan/a60c130735fb.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "Look at the sunflower.",
+    "file": "assets/audio/dounan/ffb6cbb0dee8.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "It is big and yellow.",
+    "file": "assets/audio/dounan/ca15100a50f1.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "\"Five yuan!\" he says.",
+    "file": "assets/audio/dounan/215b622d1dd3.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "I see a lily.",
+    "file": "assets/audio/dounan/59eded6d7366.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "I see a carnation.",
+    "file": "assets/audio/dounan/ce2c20206f72.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "The carnation is for Mom.",
+    "file": "assets/audio/dounan/341802a91e70.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "\"How much is it?\" I ask.",
+    "file": "assets/audio/dounan/c8651cb70c60.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "\"Eight yuan.\"",
+    "file": "assets/audio/dounan/4b0bac71bd92.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "So cheap!",
+    "file": "assets/audio/dounan/5e3564e22667.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "In my city, one rose is ten yuan.",
+    "file": "assets/audio/dounan/6c9670dfca8f.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "Here, ten yuan buys many roses!",
+    "file": "assets/audio/dounan/47f3243e19b5.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "Look! The price in Xinjiang is sixty yuan.",
+    "file": "assets/audio/dounan/78dc7e6cb4c5.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "Too expensive! Why?",
+    "file": "assets/audio/dounan/ab2ad3a8f584.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "The flowers go by truck.",
+    "file": "assets/audio/dounan/87bfaa3dbbfa.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "They go by plane.",
+    "file": "assets/audio/dounan/4e593183ecfa.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "It is a long, long way.",
+    "file": "assets/audio/dounan/2e50e502914b.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "Some flowers are sad on the way.",
+    "file": "assets/audio/dounan/c6778bc75591.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "So the price goes up.",
+    "file": "assets/audio/dounan/7b654464ab9c.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "I have 100 yuan.",
+    "file": "assets/audio/dounan/902ee0dd9512.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "It is my money.",
+    "file": "assets/audio/dounan/4d91a22e4c7e.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "What can I buy? Let me see!",
+    "file": "assets/audio/dounan/b8337be25e7e.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "I love the flower market.",
+    "file": "assets/audio/dounan/b646e2b84369.mp3"
+  },
+  {
+    "set": "dounan",
+    "text": "Flowers go far. Love goes far, too.",
+    "file": "assets/audio/dounan/f3b735445c3b.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "ship",
+    "file": "assets/audio/adora/ed43a8a09e9b.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "sea",
+    "file": "assets/audio/adora/6fa11fb296a8.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "cruise",
+    "file": "assets/audio/adora/b18907901692.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "island",
+    "file": "assets/audio/adora/7bd1a907a1ec.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "wave",
+    "file": "assets/audio/adora/d7ce74466d54.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "deck",
+    "file": "assets/audio/adora/7d340494ae69.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "anchor",
+    "file": "assets/audio/adora/f06df609aed5.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "orange",
+    "file": "assets/audio/adora/ef0ebbb77298.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "volcano",
+    "file": "assets/audio/adora/d129e958f86e.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "lighthouse",
+    "file": "assets/audio/adora/0ebe53fc820a.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "huge",
+    "file": "assets/audio/adora/f2104f952646.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "floats",
+    "file": "assets/audio/adora/c37c8fd2a2ac.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "air",
+    "file": "assets/audio/adora/d1d9b9355fa9.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "leave",
+    "file": "assets/audio/adora/31aed9e37eb9.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "lights",
+    "file": "assets/audio/adora/9367742c0b53.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "dolphin",
+    "file": "assets/audio/adora/4bbf2ddc3879.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "mountain",
+    "file": "assets/audio/adora/d79ac4a2b1ac.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "meters",
+    "file": "assets/audio/adora/0aa82f2a9b18.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "guards",
+    "file": "assets/audio/adora/9d06975f58c8.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "luck",
+    "file": "assets/audio/adora/7be77f1a79f4.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "sweet",
+    "file": "assets/audio/adora/457774c6f022.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "oranges",
+    "file": "assets/audio/adora/bda04628ea94.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "dive",
+    "file": "assets/audio/adora/5ea67a152cd3.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "sail",
+    "file": "assets/audio/adora/df8c165555a5.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "My cruise to Jeju.",
+    "file": "assets/audio/adora/09a3a130d0c1.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "The Adora Magic City is a huge ship.",
+    "file": "assets/audio/adora/30a636e787f1.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "It is as long as three football fields!",
+    "file": "assets/audio/adora/7d0652de687f.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "The ship floats on the sea.",
+    "file": "assets/audio/adora/e62da60aff58.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "Air inside pushes it up.",
+    "file": "assets/audio/adora/ebb3f88c00b6.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "We leave Shanghai at night.",
+    "file": "assets/audio/adora/cd9eb2ec965c.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "The city lights get small, small, small.",
+    "file": "assets/audio/adora/7dfbe8c5761a.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "In the morning, a dolphin jumps beside our ship.",
+    "file": "assets/audio/adora/81e9677a9ce4.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "Jeju is a volcano island.",
+    "file": "assets/audio/adora/c053b4801695.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "A volcano made it long, long ago.",
+    "file": "assets/audio/adora/00dc5bc9b54c.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "Hallasan is the tallest mountain in Korea.",
+    "file": "assets/audio/adora/96657f538736.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "It is 1,950 meters high!",
+    "file": "assets/audio/adora/705f286eb376.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "Dol Hareubang guards Jeju.",
+    "file": "assets/audio/adora/be4432a503bf.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "Touch his nose for luck!",
+    "file": "assets/audio/adora/7b709d874df9.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "Jeju is full of sweet oranges.",
+    "file": "assets/audio/adora/ad5219dd8f23.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "I pick one for breakfast.",
+    "file": "assets/audio/adora/c9087b9391a2.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "Haenyeo dive into the sea without air tanks.",
+    "file": "assets/audio/adora/7aa6d038a301.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "They are so brave!",
+    "file": "assets/audio/adora/312a938ae311.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "We sail back to Shanghai.",
+    "file": "assets/audio/adora/da6b7317585f.mp3"
+  },
+  {
+    "set": "adora",
+    "text": "Goodbye, Jeju! I love my cruise trip!",
+    "file": "assets/audio/adora/ed0b65a7558c.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "energy",
+    "file": "assets/audio/shanghai-energy/173d9168467e.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "renewable",
+    "file": "assets/audio/shanghai-energy/2a5888a10ad3.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "coal",
+    "file": "assets/audio/shanghai-energy/4a31e8e82ec7.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "oil",
+    "file": "assets/audio/shanghai-energy/a5f58c39cc52.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "gas",
+    "file": "assets/audio/shanghai-energy/facafa748783.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "solar panel",
+    "file": "assets/audio/shanghai-energy/59447db54018.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "cell",
+    "file": "assets/audio/shanghai-energy/5f435eb30281.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "sunlight",
+    "file": "assets/audio/shanghai-energy/1f4ae04738c5.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "electricity",
+    "file": "assets/audio/shanghai-energy/3894e2077240.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "wire",
+    "file": "assets/audio/shanghai-energy/6e1c68495f82.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "power",
+    "file": "assets/audio/shanghai-energy/b573f24e55d6.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "shade",
+    "file": "assets/audio/shanghai-energy/7f5bb03cf507.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "battery",
+    "file": "assets/audio/shanghai-energy/3f3c58ae42b9.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "clean",
+    "file": "assets/audio/shanghai-energy/6a1cec45eaf3.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "Leon is at the science museum.",
+    "file": "assets/audio/shanghai-energy/2ca48862b498.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "The city needs energy.",
+    "file": "assets/audio/shanghai-energy/f50c8439a0f3.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "Energy makes things happen.",
+    "file": "assets/audio/shanghai-energy/86f21b6737a8.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "It can light a lamp and move a train.",
+    "file": "assets/audio/shanghai-energy/df149eb5f8fb.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "The sun shines again. Wind and water keep moving.",
+    "file": "assets/audio/shanghai-energy/a876dbd7aebe.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "They are renewable energy.",
+    "file": "assets/audio/shanghai-energy/089faed17036.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "Coal, oil, and gas form very slowly.",
+    "file": "assets/audio/shanghai-energy/da04877905f2.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "They can run out.",
+    "file": "assets/audio/shanghai-energy/bf431cfd15cd.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "Leon finds a solar panel.",
+    "file": "assets/audio/shanghai-energy/12e254ab095b.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "It has many small solar cells.",
+    "file": "assets/audio/shanghai-energy/7cb615edc853.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "Sunlight hits the cells.",
+    "file": "assets/audio/shanghai-energy/7191271996e9.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "The cells make electricity.",
+    "file": "assets/audio/shanghai-energy/138816b7e12f.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "Electricity moves through wires.",
+    "file": "assets/audio/shanghai-energy/48514d0c214d.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "Now the little lamp is on.",
+    "file": "assets/audio/shanghai-energy/7c626fb31133.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "Leon turns the panel toward the sun.",
+    "file": "assets/audio/shanghai-energy/d630eddd604c.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "It makes more power.",
+    "file": "assets/audio/shanghai-energy/00b02f497204.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "A tree makes shade.",
+    "file": "assets/audio/shanghai-energy/07145909381d.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "The panel makes less power.",
+    "file": "assets/audio/shanghai-energy/2ea586bb41a3.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "Cloudy days still have some light.",
+    "file": "assets/audio/shanghai-energy/db98e9f44942.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "At night, the panel makes no power.",
+    "file": "assets/audio/shanghai-energy/bd535b89bf30.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "A battery can store energy for later.",
+    "file": "assets/audio/shanghai-energy/57d234b81198.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "Solar power, wind power, and water power can work together.",
+    "file": "assets/audio/shanghai-energy/2114bf9990de.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "The future city is bright and clean.",
+    "file": "assets/audio/shanghai-energy/5979982b9e1e.mp3"
+  },
+  {
+    "set": "shanghai-energy",
+    "text": "Leon is an Energy Explorer!",
+    "file": "assets/audio/shanghai-energy/bdb4c70159bc.mp3"
+  }
+]

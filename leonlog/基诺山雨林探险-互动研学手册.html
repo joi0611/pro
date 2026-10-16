@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="基诺山雨林探险 · 适合7岁儿童的互动研学手册：雨林生态主线 + 英文原版分级故事 + 中英词汇 + 旅途记录，可本地保存并打印成册。">
+<title>基诺山雨林探险 · 互动研学手册</title>
+<style>
+/* ===== 基诺山雨林主题 · 沿用 Leon 旅行日记手绘视觉系统（森林绿变体） ===== */
+:root{
+  --jn-green-700:#1f6b43;
+  --jn-green-500:#2f8f5b;
+  --jn-green-300:#7fc79b;
+  --jn-green-100:#e3f4ea;
+  --jn-bg:#f3faf5;
+  --jn-ink:#1f3d2b;
+  --jn-muted:#566b5d;
+  --jn-yellow:#f4cf72;
+  --jn-coral:#ef987e;
+  --jn-border:#8fceaa;
+  --jn-shadow:#cfe9d8;
+  --jn-focus:#f0b84d;
+  --font-hand:"STKaiti","KaiTi","Kaiti SC",serif;
+  --font-body:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--jn-ink);background-color:var(--jn-bg);
+  background-image:
+    radial-gradient(circle at 15% 12%,rgba(127,199,155,.18) 0 2px,transparent 2.5px),
+    radial-gradient(circle at 82% 28%,rgba(47,143,91,.10) 0 1.5px,transparent 2px);
+  background-size:34px 34px,25px 25px;
+  font-family:var(--font-body);line-height:1.75;
+}
+a,button,[role="button"],label[for]{cursor:pointer}
+h1,h2,h3,.kicker,.brand{font-family:var(--font-hand)}
+p,li{line-height:1.8}
+:focus-visible{outline:3px solid var(--jn-focus);outline-offset:4px}
+button{font-family:var(--font-body)}
+.card{
+  border:2px solid var(--jn-border);background:#fff;
+  box-shadow:4px 5px 0 var(--jn-shadow);
+  border-radius:15px 22px 17px 24px;
+}
+.btn{
+  background:var(--jn-green-500);color:#fff;border:2px solid var(--jn-green-700);
+  box-shadow:3px 4px 0 var(--jn-green-100);min-height:46px;padding:10px 18px;
+  border-radius:14px 18px 13px 19px;font-size:15px;
+}
+.btn:hover,.btn:focus-visible{background:var(--jn-green-700);transform:translateY(-2px)}
+.btn.ghost{background:#fff;color:var(--jn-green-700)}
+.btn.small{padding:6px 12px;min-height:38px;font-size:13px}
+
+/* 顶部导航 */
+.topbar{
+  position:sticky;top:0;z-index:30;display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  justify-content:space-between;padding:10px 16px;background:rgba(243,250,245,.92);
+  backdrop-filter:blur(6px);border-bottom:2px solid var(--jn-border);
+}
+.topbar .brand{font-size:18px;color:var(--jn-green-700);margin:0}
+.topbar .brand-wrap{display:flex;align-items:center;gap:10px;min-width:0}
+.topbar .hub-back{display:inline-flex;align-items:center;min-height:44px;padding:7px 11px;border:1px solid var(--jn-border);border-radius:12px;background:#fff;color:var(--jn-green-700);font-weight:700;text-decoration:none;white-space:nowrap}
+.topbar nav{display:flex;flex-wrap:wrap;gap:6px}
+.topbar nav a{
+  text-decoration:none;color:var(--jn-green-700);background:var(--jn-green-100);
+  border:1px solid var(--jn-border);border-radius:11px;padding:6px 11px;font-size:13px;
+}
+.topbar nav a:hover{background:var(--jn-green-300)}
+
+/* 通用区块 */
+.wrap{max-width:840px;margin:0 auto;padding:0 16px}
+section.block{padding:34px 0;border-top:2px dashed var(--jn-border)}
+.section-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.section-head .no{
+  flex:0 0 auto;width:46px;height:46px;border-radius:14px 18px 13px 19px;
+  background:var(--jn-green-500);color:#fff;display:grid;place-items:center;
+  font-family:var(--font-hand);font-size:20px;box-shadow:3px 4px 0 var(--jn-green-100);
+}
+.section-head h2{margin:0;color:var(--jn-green-700);font-size:24px}
+.section-head p{margin:4px 0 0;color:var(--jn-muted);font-size:14px}
+.kicker{display:inline-block;color:var(--jn-green-500);letter-spacing:1px;font-size:12px;font-family:var(--font-body)}
+
+/* 英雄区 */
+.hero{
+  position:relative;isolation:isolate;min-height:540px;overflow:hidden;
+  background:var(--jn-green-700);color:#fff;border-radius:0 0 26px 20px;
+  box-shadow:0 7px 0 var(--jn-green-100);padding:52px 20px 42px;
+}
+.hero-cover{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(10,42,27,.92) 0%,rgba(14,58,37,.73) 40%,rgba(14,58,37,.16) 70%,rgba(14,58,37,.08) 100%)}
+ .hero .wrap{min-height:446px;display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+ .hero-copy{align-self:center;max-width:680px;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero h1{margin:0;font-size:clamp(38px,7vw,64px);line-height:1.08}
+.hero h1 .sub{display:block;font-size:18px;opacity:.92;margin-top:12px;font-family:var(--font-body)}
+.hero p{max-width:500px;margin-bottom:0;font-size:17px;opacity:.96}
+.hero .mini-map{
+  background:#fff;border-radius:16px 22px 15px 24px;border:2px solid var(--jn-green-700);
+  box-shadow:5px 6px 0 rgba(0,0,0,.18);padding:12px 14px;color:var(--jn-ink);min-width:220px;
+}
+.hero .mini-map svg{display:block;width:100%;height:auto}
+.hero .mini-map .yn-shape{fill:#c9ead5;stroke:#1f6b43;stroke-width:2.2;vector-effect:non-scaling-stroke}
+.hero .mini-map .location-ring{fill:#fff;stroke:#ef987e;stroke-width:3;vector-effect:non-scaling-stroke}
+.hero .mini-map .location-dot{fill:#f4cf72;stroke:#1f6b43;stroke-width:2;vector-effect:non-scaling-stroke}
+.hero .mini-map text{font-family:var(--font-body);paint-order:stroke;stroke:#fff;stroke-width:2px;stroke-linejoin:round}
+.hero .mini-map .cap{font-size:12px;color:var(--jn-muted);margin-top:6px;text-align:center}
+
+/* 表单 */
+.field{margin:10px 0}
+.field label{display:block;font-size:14px;color:var(--jn-green-700);margin-bottom:4px}
+.field input[type=text],.field input[type=date],.field textarea{
+  width:100%;min-height:46px;padding:10px 12px;border:2px solid var(--jn-border);
+  border-radius:12px;background:#fff;font-family:var(--font-body);font-size:15px;color:var(--jn-ink);
+}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:3px solid var(--jn-yellow);box-shadow:0 0 0 4px var(--jn-green-100)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.hero{min-height:auto;padding:34px 12px}.hero::after{background:linear-gradient(180deg,rgba(10,42,27,.78),rgba(10,42,27,.5) 62%,rgba(10,42,27,.86))}.hero .wrap{min-height:640px;grid-template-columns:1fr;align-content:space-between}.hero-copy{align-self:start}.hero .mini-map{width:min(100%,280px);justify-self:end}.hero h1{font-size:40px}}
+@media(max-width:560px){.two-col{grid-template-columns:1fr}.hero h1{font-size:36px}.hero p{font-size:16px}}
+
+/* 民族背景翻转卡 */
+.fact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.flip-card{display:block;width:100%;min-height:360px;padding:0;border:0;background:transparent;color:inherit;text-align:left;perspective:1200px;touch-action:manipulation}
+.flip-card-inner{position:relative;display:block;width:100%;min-height:360px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.72,.2,1)}
+.flip-card[aria-pressed="true"] .flip-card-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;display:flex;flex-direction:column;overflow:hidden;border:2px solid var(--jn-border);border-radius:18px 24px 17px 25px;background:#fff;box-shadow:5px 7px 0 var(--jn-shadow);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.flip-front::after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(9,42,25,.9));pointer-events:none}
+.flip-front img{width:100%;height:100%;min-height:360px;object-fit:cover}
+.flip-front .museum-photo{object-position:center 42%}
+ .flip-front .drum-photo{object-position:center}
+.flip-title{position:absolute;z-index:1;left:20px;right:20px;bottom:18px;color:#fff;font-family:var(--font-hand);font-size:clamp(25px,4vw,32px);font-weight:900;line-height:1.18;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+.flip-hint{display:block;margin-top:7px;font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.04em}
+.flip-back{transform:rotateY(180deg);justify-content:center;padding:24px;background:linear-gradient(145deg,#fffdf5,#e8f6ed)}
+.flip-back .tag{align-self:flex-start;padding:3px 9px;border-radius:999px;background:var(--jn-yellow);font-size:12px;font-weight:800}
+.flip-back strong{display:block;margin:12px 0 8px;color:var(--jn-green-700);font:900 25px/1.25 var(--font-hand)}
+.flip-back p{margin:0;color:#344f3f;font-size:15px;line-height:1.82}
+.flip-back .flip-hint{margin-top:14px;color:var(--jn-green-700)}
+.flip-card:active .flip-face{box-shadow:2px 3px 0 var(--jn-shadow)}
+@media(max-width:660px){.fact-grid{grid-template-columns:1fr}.flip-card,.flip-card-inner{min-height:390px}.flip-card-inner,.flip-card[aria-pressed="true"] .flip-card-inner{transform:none}.flip-front img{min-height:390px}.flip-back{display:none;transform:none;padding:22px}.flip-card[aria-pressed="true"] .flip-front{display:none}.flip-card[aria-pressed="true"] .flip-back{display:flex}.flip-back p{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.flip-card-inner{transition:none}}
+
+/* 雨林场景 */
+.scene-card{padding:0;overflow:hidden}
+ .search-scene{position:relative;overflow:hidden;border-radius:18px;background:#dcefe2}
+ .search-scene img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+ .search-hotspot{position:absolute;width:9%;height:13%;transform:translate(-50%,-50%);border:0;background:transparent;border-radius:50%;cursor:pointer;z-index:2}
+ .search-hotspot:focus-visible{outline:3px solid var(--jn-yellow);outline-offset:3px}
+ .search-hotspot.found::after{content:'✦';position:absolute;inset:0;display:grid;place-items:center;color:#ffd45d;font-size:28px;font-weight:900;text-shadow:0 2px 6px rgba(25,76,51,.6);animation:star-pop .35s ease-out}
+ .search-hotspot.wrong{animation:wrong-shake .28s ease-in-out}
+ @keyframes star-pop{0%{transform:scale(.3) rotate(-18deg);opacity:0}70%{transform:scale(1.22) rotate(8deg);opacity:1}100%{transform:scale(1) rotate(0)}}
+ @keyframes wrong-shake{25%{transform:translate(-56%,-50%)}75%{transform:translate(-44%,-50%)}}
+.scene-hint{display:flex;flex-wrap:wrap;gap:8px;padding:12px 14px;background:var(--jn-green-100);border-top:2px solid var(--jn-border);font-size:13px;color:var(--jn-green-700)}
+.scene-hint b{color:var(--jn-coral)}
+
+/* 发现卡片 */
+.discovery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
+.disc{padding:14px;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.disc:hover,.disc:focus-within{transform:translateY(-3px);box-shadow:7px 9px 0 var(--jn-shadow)}
+ .disc .species-photo{display:block;width:100%;height:136px;object-fit:cover;border-radius:12px;border:1px solid var(--jn-border);background:#dcefe2}
+.disc h3{margin:6px 0 2px;color:var(--jn-green-700);font-size:18px;display:flex;align-items:center;gap:8px}
+.disc .en{color:var(--jn-muted);font-size:13px}
+ .disc .fact-zh{margin:8px 0 0;color:var(--jn-ink);font-size:14px;display:none}
+ .disc.open .fact-zh{display:block}
+ .disc .speak{margin-top:8px}
+ .disc .safe{display:inline-block;background:var(--jn-coral);color:#fff;border-radius:8px;padding:1px 7px;font-size:12px}
+ .explore-box{margin-top:12px;padding:11px 12px;border-radius:12px;background:#fff8df;border:1px solid #efd17a}
+ .explore-q{margin:0;color:#72551b;font-size:14px;font-weight:800;line-height:1.55}
+ .explore-toggle{margin-top:8px;border:0;border-radius:999px;padding:7px 12px;background:var(--jn-yellow);color:#5f4818;font-weight:800;cursor:pointer}
+ .explore-a{display:none;margin:9px 0 0;color:var(--jn-ink);font-size:14px;line-height:1.7}
+ .explore-box.revealed .explore-a{display:block}
+ .explore-a strong{color:var(--jn-green-700)}
+
+/* 进阶图鉴折叠 */
+.adv-wrap{margin-top:22px;border-top:2px dashed var(--jn-border);padding-top:16px;grid-column:1/-1}
+.adv-toggle{width:100%;text-align:left}
+.adv-body{margin-top:12px}
+
+/* 故事 */
+.level-switch{display:flex;gap:8px;margin-bottom:16px}
+.level-switch button{
+  flex:1;padding:10px;border:2px solid var(--jn-border);background:#fff;border-radius:12px;
+  color:var(--jn-green-700);font-size:14px;
+}
+.level-switch button.active{background:var(--jn-green-500);color:#fff;border-color:var(--jn-green-700)}
+.story-title{font-family:var(--font-hand);color:var(--jn-green-700);font-size:22px;margin:0 0 4px}
+.story-level-note{color:var(--jn-muted);font-size:13px;margin:0 0 14px}
+ .sentence{display:grid;grid-template-columns:1fr auto;gap:9px 12px;padding:14px;border:2px solid var(--jn-border);border-radius:12px 18px 12px 18px;background:#fff;margin-bottom:12px;box-shadow:3px 4px 0 var(--jn-shadow)}
+ .story-image{display:block;width:100%;height:230px;grid-column:1/-1;object-fit:cover;border-radius:10px;border:1px solid var(--jn-border)}
+ .sentence .en{font-size:18px;line-height:1.5;color:var(--jn-green-700);cursor:pointer;align-self:center;text-decoration:none}
+ .sentence .en:hover{text-decoration:underline wavy var(--jn-yellow)}
+ .sentence .zh{font-size:14px;line-height:1.6;color:var(--jn-muted);grid-column:1/-1}
+ .sentence .mini-speak{background:var(--jn-green-100);border:1px solid var(--jn-border);border-radius:10px;min-width:86px;height:38px;font-size:13px;color:var(--jn-green-700);cursor:pointer}
+.zh-toggle{font-size:13px;color:var(--jn-green-500);margin-bottom:12px;display:inline-flex;gap:6px;align-items:center}
+
+/* 词汇 */
+.vocab{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.vcard{padding:14px;display:flex;flex-direction:column;gap:6px}
+.vcard .top{display:flex;align-items:center;gap:8px}
+.vcard .emoji{font-size:26px}
+.vcard .en{font-size:18px;color:var(--jn-green-700);cursor:pointer;font-weight:600}
+.vcard .en:hover{text-decoration:underline wavy var(--jn-yellow)}
+.vcard .zh{font-size:14px;color:var(--jn-muted)}
+.vcard .ex{font-size:13px;color:var(--jn-ink);background:var(--jn-green-100);border-radius:9px;padding:6px 8px;cursor:pointer}
+.vcard .learn{margin-top:4px;align-self:flex-start;font-size:13px}
+.vcard.learned{border-color:var(--jn-green-300);background:var(--jn-green-100)}
+.vcard.learned .learn{background:var(--jn-green-500);color:#fff;border-color:var(--jn-green-700)}
+
+/* 记录 */
+.checklist{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.mission{display:flex;gap:10px;align-items:flex-start;padding:12px;border:2px solid var(--jn-border);border-radius:12px;background:#fff}
+.mission input{width:22px;height:22px;margin-top:3px;accent-color:var(--jn-green-500);flex:0 0 auto}
+.mission span{font-size:15px}
+.photo-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.photo-row .thumb{width:96px;height:96px;border-radius:12px;border:2px solid var(--jn-border);object-fit:cover;box-shadow:3px 4px 0 var(--jn-shadow)}
+.badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.badge{background:var(--jn-yellow);color:var(--jn-ink);border-radius:12px;padding:8px 14px;font-size:14px;box-shadow:3px 4px 0 var(--jn-shadow);border:2px solid var(--jn-green-700)}
+
+/* 成果证书 */
+.cert{padding:24px;text-align:center;background:var(--jn-green-100);border:2px dashed var(--jn-green-500)}
+.cert h2{color:var(--jn-green-700);font-size:26px;margin:0 0 6px}
+.cert .name{font-family:var(--font-hand);font-size:30px;color:var(--jn-green-700)}
+.cert .line{color:var(--jn-muted);margin:6px 0}
+.cert .seal{font-size:46px;margin-top:10px}
+
+/* 弹窗 */
+.modal-bg{position:fixed;inset:0;background:rgba(31,61,43,.5);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+.modal-bg.show{display:flex}
+.modal{max-width:420px;width:100%;background:#fff;border-radius:18px;border:2px solid var(--jn-green-700);box-shadow:6px 8px 0 rgba(0,0,0,.15);padding:20px;max-height:86vh;overflow:auto}
+.modal h3{margin:0 0 4px;color:var(--jn-green-700);font-size:21px}
+.modal .en{color:var(--jn-muted);font-size:14px}
+.modal .body{margin:12px 0;font-size:15px;line-height:1.8}
+.modal .safe{display:inline-block;background:var(--jn-coral);color:#fff;border-radius:8px;padding:2px 9px;font-size:13px;margin-bottom:8px}
+.modal .close{margin-top:8px}
+
+/* 进度条 */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(243,250,245,.95);border-top:2px solid var(--jn-border);padding:8px 16px;box-shadow:0 -5px 18px rgba(31,107,67,.12)}
+.dock .inner{max-width:840px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.dock .track{flex:1;height:12px;background:var(--jn-green-100);border-radius:8px;overflow:hidden;border:1px solid var(--jn-border)}
+.dock .fill{height:100%;width:0;background:var(--jn-yellow);transition:width .3s}
+.dock .pct{color:var(--jn-green-700);font-size:14px;min-width:42px;text-align:right}
+
+footer.src{border-top:2px solid var(--jn-border);padding:18px 0 90px;color:var(--jn-muted);font-size:13px}
+.toast{position:fixed;left:50%;bottom:70px;transform:translateX(-50%);background:var(--jn-green-700);color:#fff;padding:10px 18px;border-radius:12px;box-shadow:3px 4px 0 var(--jn-green-100);opacity:0;transition:opacity .3s;z-index:60;font-size:14px}
+.toast.show{opacity:1}
+
+/* ===== 打印：完整内容成册 ===== */
+@media print{
+  body{background:#fff!important;background-image:none!important}
+  .topbar,.dock,.toast,.scene-hint,.level-switch,.zh-toggle,.mini-speak,.speak,.learn,.modal-bg{display:none!important}
+  .adv-toggle{display:none!important}
+  .adv-body{display:block!important;margin-top:0}
+  section.block{border-top:none;padding:18px 0;page-break-inside:avoid}
+  .card,.disc,.vcard,.mission,.sentence,.fact,.cert{box-shadow:none!important;border:1px solid #9bbfa8!important;break-inside:avoid}
+  .disc .fact-zh{display:block!important}
+  .sentence .zh{display:block!important}
+  .hero{box-shadow:none;border-radius:0;background:#fff;color:var(--jn-ink)}
+  .hero .mini-map{box-shadow:none}
+  .wrap{max-width:100%}
+}
+</style>
+<style>
+  .culture-board{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:center;padding:20px}.textile-art{min-height:300px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(145deg,#edf8f0,#fff8e4)}.textile-art svg{width:100%;max-height:290px}.culture-list{display:grid;gap:10px}.culture-item{display:flex;align-items:flex-start;gap:11px;min-height:62px;padding:11px 12px;border:2px solid var(--jn-border);border-radius:12px;background:#fff;color:var(--jn-green-700);font-weight:800;text-align:left}.culture-item::before{content:"";flex:0 0 auto;width:20px;height:20px;margin-top:2px;border:2px solid var(--jn-green-700);border-radius:6px;background:#fff}.culture-item[aria-pressed="true"]{background:var(--jn-green-100)}.culture-item[aria-pressed="true"]::before{background:var(--jn-yellow);box-shadow:inset 0 0 0 4px #fff}.culture-item small{display:block;color:var(--jn-muted);font-weight:500}.culture-story{margin-top:14px;padding:14px 16px;border-left:5px solid var(--jn-yellow);border-radius:0 13px 13px 0;background:#fffdf4;color:var(--jn-muted)}
+   .camouflage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.camo-card{padding:16px}.camo-scene{position:relative;height:145px;margin-bottom:12px;overflow:hidden;border-radius:14px;background:linear-gradient(145deg,#d8edd7,#7db68b)}.camo-photo{display:block;width:100%;height:100%;object-fit:cover}.camo-scene .camo-creature{display:none}.camo-card h3{margin:0;color:var(--jn-green-700)}.camo-card p{min-height:46px;margin:6px 0;color:var(--jn-muted);font-size:13px}.camo-card select{width:100%;min-height:44px;padding:8px;border:2px solid var(--jn-border);border-radius:11px;background:#fff}.camo-card.correct{background:var(--jn-green-100)}.camo-card.wrong{border-color:var(--jn-coral)}
+  .safety-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.safe-task{display:flex;gap:10px;align-items:flex-start;min-height:76px;padding:12px;border:2px solid var(--jn-border);border-radius:13px;background:#fff}.safe-task input{width:21px;height:21px;margin-top:3px;accent-color:var(--jn-green-500)}.safe-task strong{display:block;color:var(--jn-green-700)}.safe-task small{color:var(--jn-muted)}.field-note{margin-top:14px;padding:12px 14px;border-radius:12px;background:#fff3cf;color:#674f1d;font-size:13px}
+  @media(max-width:720px){.culture-board{grid-template-columns:1fr}.textile-art{min-height:230px}.camouflage-grid{grid-template-columns:1fr}.camo-card p{min-height:0}}
+  @media(max-width:520px){.safety-grid{grid-template-columns:1fr}.culture-board{padding:14px}}
+</style>
+<style>
+  .pdf-shot-panel{margin:18px 0;padding:16px;border:2px solid var(--jn-border);border-radius:18px;background:#fff;box-shadow:4px 5px 0 var(--jn-green-100)}
+  .pdf-shot-panel>h3{margin:0 0 4px;color:var(--jn-green-700);font-size:21px}.pdf-shot-intro{margin:0 0 13px;color:var(--jn-muted);font-size:13px}
+  .pdf-shot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pdf-shot-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pdf-shot{margin:0;overflow:hidden;border:2px solid var(--jn-border);border-radius:14px;background:#f2f8f2}.pdf-shot img{display:block;width:100%;height:270px;object-fit:cover}.pdf-shot.costume img{height:390px;object-fit:contain}.pdf-shot figcaption{padding:9px 11px;background:#fff;color:var(--jn-muted);font-size:12px}.pdf-shot figcaption strong{color:var(--jn-green-700)}
+  @media(max-width:720px){.pdf-shot-grid.three{grid-template-columns:1fr}.pdf-shot img{height:auto;max-height:430px;object-fit:contain}.pdf-shot.costume img{height:auto;max-height:430px}}
+  @media(max-width:520px){.pdf-shot-grid{grid-template-columns:1fr}.pdf-shot-panel{padding:12px}}
+</style>
+</head>
+<body>
+
+<a href="#main" style="position:absolute;left:-9999px" onfocus="this.style.left='12px'" onblur="this.style.left='-9999px'">跳到研学内容</a>
+
+<div class="topbar">
+  <div class="brand-wrap"><a class="hub-back" href="西双版纳研学日记.html" aria-label="返回西双版纳研学主目录">← 返回目录</a><p class="brand">基诺山雨林探险</p></div>
+  <nav aria-label="页面导航">
+    <a href="#people">民族背景</a>
+    <a href="#rainforest">雨林生态</a>
+    <a href="#story">英文故事</a>
+    <a href="#vocab">词汇学习</a>
+    <a href="#record">旅途记录</a>
+    <a href="#cert">我的成果</a>
+    <a href="#" onclick="window.print();return false">🖨 打印成册</a>
+  </nav>
+</div>
+
+<header class="hero">
+  <img class="hero-cover" src="assets/jinuo-rainforest-cover.png" width="1536" height="1024" alt="孩子跟随向导走进基诺山热带雨林">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="kicker" style="color:#dff3e6">INTERACTIVE RAINFOREST FIELD GUIDE · AGE 7+</span>
+      <h1>基诺山雨林探险<span class="sub">走进雨林 · 认识文化 · 完成观察</span></h1>
+      <p>这里没有长长的课文。看雨林、点一点、听一听、记一记，亲手发现热带雨林的小秘密。英文故事和词汇还能跟着念——一边探险，一边学英语。</p>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <!-- 01 民族背景：点击翻面阅读 -->
+  <section class="block" id="people">
+    <div class="section-head"><span class="no">01</span><div>
+      <h2>民族小背景 · 基诺族是谁</h2>
+      <p>点一下卡片翻到背面。每张只讲一个小故事，读完再点一下就能翻回来。</p>
+    </div></div>
+    <div class="fact-grid">
+      <button class="flip-card" type="button" data-flip-card aria-pressed="false" aria-label="翻开卡片：基诺族是谁">
+        <span class="flip-card-inner"><span class="flip-face flip-front"><img src="assets/jinuo-rainforest-cover.png" width="1536" height="1024" alt="基诺山雨林中的孩子与向导"><span class="flip-title">基诺族是谁<span class="flip-hint">点一下，认识住在基诺山的人们</span></span></span><span class="flip-face flip-back"><span class="tag">第 56 个被正式确认的民族</span><strong>住在基诺山的老朋友</strong><p>基诺族主要生活在云南西双版纳的基诺山。1979 年，国家正式确认基诺族，中国 56 个民族大家庭的名单也完整了。“基诺”常被解释为“舅舅的后人”。这里的人们会种茶、种稻，也很懂得怎样与山林相处。今天的基诺族孩子和你一样会上学、玩耍，还会从家人那里学习本民族的语言、歌舞和手艺。</p><span class="flip-hint">再点一下，回到正面</span></span></span>
+      </button>
+      <button class="flip-card" type="button" data-flip-card aria-pressed="false" aria-label="翻开卡片：衣服会说话">
+        <span class="flip-card-inner"><span class="flip-face flip-front"><img class="museum-photo" src="assets/jinuo-costume-museum.jpg" width="1200" height="1600" loading="lazy" alt="云南民族博物馆收藏的基诺族传统女装"><span class="flip-title">衣服会说话<span class="flip-hint">点一下，找找帽子和花纹</span></span></span><span class="flip-face flip-back"><span class="tag">真实馆藏服饰</span><strong>一针一线织出山林的颜色</strong><p>传统基诺族服饰常用自己织出的棉麻布制作。女装常能看到尖顶帽、深色上衣和彩色横条；男装多见浅色对襟上衣和宽松长裤。红、黄、蓝、黑、白等色带会被巧妙地拼在一起。不同村寨、年龄和场合的穿法可能不一样，所以我们先认真观察，再听当地人讲解。</p><span class="flip-hint">再点一下，回到正面</span></span></span>
+      </button>
+      <button class="flip-card" type="button" data-flip-card aria-pressed="false" aria-label="翻开卡片：太阳鼓会唱歌">
+        <span class="flip-card-inner"><span class="flip-face flip-front"><img class="drum-photo" src="assets/jinuo-sun-drum.webp" width="1254" height="1254" loading="lazy" alt="基诺族太阳鼓节庆演奏照片"><span class="flip-title">太阳鼓会唱歌<span class="flip-hint">点一下，听懂鼓声里的故事</span></span></span><span class="flip-face flip-back"><span class="tag">大鼓舞 · 国家级非遗</span><strong>鼓声把大家聚在一起</strong><p>太阳鼓是基诺族重要的文化象征。鼓面像太阳，四周的木楔像一束束阳光。节庆时，人们会围着大鼓一起唱歌、跳舞，用鼓声表达祝福，也把祖辈的故事传给孩子。它不是普通玩具，参观时要先听讲解、得到允许，再靠近观察。</p><span class="flip-hint">再点一下，回到正面</span></span></span>
+      </button>
+      <button class="flip-card" type="button" data-flip-card aria-pressed="false" aria-label="翻开卡片：特懋克是什么节日">
+        <span class="flip-card-inner"><span class="flip-face flip-front"><img class="drum-photo" src="assets/jinuo-temaoke.webp" width="1254" height="1254" loading="lazy" alt="特懋克节中的传统打铁活动照片"><span class="flip-title">特懋克是什么<span class="flip-hint">点一下，认识盛大的打铁节</span></span></span><span class="flip-face flip-back"><span class="tag">盛大的打铁节</span><strong>感谢工具，也迎接新一年</strong><p>“特懋克”可以理解为盛大的打铁节。过去，铁刀、铁锄能帮助人们开垦、种田和生活，所以大家用节日纪念祖先学会使用铁器。后来，它也成了辞旧迎新的重要节日。人们穿上节日服装，敲响太阳鼓，一起歌舞庆祝。具体活动要以当地当年的安排为准。</p><span class="flip-hint">再点一下，回到正面</span></span></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- 02 雨林生态主线 -->
+  <section class="block" id="rainforest">
+    <div class="section-head"><span class="no">02</span><div>
+      <h2>雨林生态主线 · 去探险</h2>
+       <p>先学习 <b>15 个最容易被孩子记住的招牌物种</b>，再进入一张没有编号的完整雨林图寻找它们。点击正确位置会出现小星星；底部还有 <b>“进阶图鉴”</b>，留给想多学一点的小学霸。</p>
+     </div></div>
+
+    <div class="discovery" id="discovery"></div>
+
+    <div class="card scene-card">
+      <div class="search-scene" id="searchScene" aria-label="没有标记的基诺山雨林观察图">
+        <img src="assets/jinuo-rainforest-search.png" alt="没有编号标记的基诺山热带雨林完整观察图">
+        <button class="search-hotspot" style="left:43%;top:43%" data-id="buttress" aria-label="寻找板根"></button>
+        <button class="search-hotspot" style="left:43%;top:22%" data-id="strangler" aria-label="寻找绞杀榕"></button>
+        <button class="search-hotspot" style="left:22%;top:12%" data-id="cauliflory" aria-label="寻找老茎开花"></button>
+        <button class="search-hotspot" style="left:79%;top:10%" data-id="skytree" aria-label="寻找望天树"></button>
+        <button class="search-hotspot" style="left:58%;top:75%" data-id="taro" aria-label="寻找滴水观音"></button>
+        <button class="search-hotspot" style="left:89%;top:16%" data-id="zhuyeqing" aria-label="寻找竹叶青"></button>
+        <button class="search-hotspot" style="left:10%;top:29%" data-id="honghuoyi" aria-label="寻找红火蚁"></button>
+        <button class="search-hotspot" style="left:8%;top:21%" data-id="ant" aria-label="寻找黄猄蚁"></button>
+        <button class="search-hotspot" style="left:15%;top:86%" data-id="bianying" aria-label="寻找云南扁萤"></button>
+        <button class="search-hotspot" style="left:25%;top:65%" data-id="shilongzi" aria-label="寻找石龙子"></button>
+        <button class="search-hotspot" style="left:82%;top:43%" data-id="suoluo" aria-label="寻找桫椤"></button>
+        <button class="search-hotspot" style="left:22%;top:15%" data-id="wuhuaguo" aria-label="寻找无花果"></button>
+        <button class="search-hotspot" style="left:67%;top:84%" data-id="guibei" aria-label="寻找龟背竹"></button>
+        <button class="search-hotspot" style="left:90%;top:84%" data-id="shenmi" aria-label="寻找神秘果"></button>
+        <button class="search-hotspot" style="left:63%;top:43%" data-id="elephant" aria-label="寻找亚洲象"></button>
+      </div>
+      <div class="scene-hint"><b>无标记找一找：</b>先看完上面的物种卡片，再在完整雨林图中点击你认为正确的位置。找对会出现一颗小星星，找错了会轻轻提醒你再观察。</div>
+      <div id="findProgress" class="scene-hint" role="status">已找到 0 / 15 个物种</div>
+    </div>
+  </section>
+
+  <section class="block" id="camouflage">
+    <div class="section-head"><span class="no">伪装</span><div><h2>雨林伪装大师</h2><p>根据身体颜色和形状，判断它最像雨林里的什么。</p></div></div>
+    <div class="camouflage-grid"><article class="card camo-card" data-camo-card="snake"><div class="camo-scene"><img class="camo-photo" src="assets/jinuo-green-pit-viper-2.jpg" alt="竹叶青真实照片"><span class="camo-creature"></span></div><h3>竹叶青</h3><p>绿色身体藏进绿色叶片。</p><select data-camo="snake" aria-label="选择竹叶青的伪装环境"><option value="">选择它最像什么</option><option value="leaf">嫩叶</option><option value="branch">枯树枝</option><option value="dryleaf">枯叶</option></select></article><article class="card camo-card" data-camo-card="butterfly"><div class="camo-scene"><img class="camo-photo" src="assets/jinuo-leaf-butterfly.jpg" alt="枯叶蝶真实照片"><span class="camo-creature"></span></div><h3>枯叶蝶</h3><p>合上翅膀后，叶脉与斑点都像旧叶子。</p><select data-camo="butterfly" aria-label="选择枯叶蝶的伪装环境"><option value="">选择它最像什么</option><option value="leaf">嫩叶</option><option value="branch">枯树枝</option><option value="dryleaf">枯叶</option></select></article><article class="card camo-card" data-camo-card="stick"><div class="camo-scene"><img class="camo-photo" src="assets/jinuo-stick-insect.jpg" alt="竹节虫真实照片"><span class="camo-creature"></span></div><h3>竹节虫</h3><p>细长身体和摆动姿态都像枝条。</p><select data-camo="stick" aria-label="选择竹节虫的伪装环境"><option value="">选择它最像什么</option><option value="leaf">嫩叶</option><option value="branch">枯树枝</option><option value="dryleaf">枯叶</option></select></article></div><p class="scene-hint" id="camoFeedback" role="status">完成三个判断，解锁雨林观察力。</p>
+  </section>
+
+  <!-- 03 英文原版分级故事 -->
+  <section class="block" id="story">
+    <div class="section-head"><span class="no">03</span><div>
+      <h2>英文原版分级故事</h2>
+       <p>绘本阅读：看图、读英文、听发音，再用中文翻译理解雨林里的小发现。</p>
+    </div></div>
+
+    <div class="level-switch" role="tablist">
+      <button id="lv1btn" class="active" type="button" data-level="1">Level 1 · 入门（词短句短）</button>
+    </div>
+     <p class="zh-toggle"><label><input type="checkbox" id="zhToggle" checked> 显示中文翻译</label> ｜ 点击英文句子或“有道发音”按钮</p>
+
+    <div class="card" style="padding:18px">
+      <p class="story-title" id="storyTitle">In the Rainforest</p>
+      <p class="story-level-note" id="storyNote"></p>
+      <div id="storyBox"></div>
+    </div>
+  </section>
+
+  <!-- 04 词汇学习 -->
+  <section class="block" id="vocab">
+    <div class="section-head"><span class="no">04</span><div>
+      <h2>词汇学习 · 中英对照</h2>
+      <p>点击英文单词或例句听发音，觉得学会了就点“我学会了”，会一直记在这台设备上。</p>
+    </div></div>
+    <div class="vocab" id="vocabBox"></div>
+  </section>
+
+  <!-- 05 旅途记录 -->
+  <section class="block" id="safety">
+    <div class="section-head"><span class="no">安全</span><div><h2>雨林徒步安全约定</h2><p>先和家长、向导一起确认，再进入徒步路线。</p></div></div><div class="safety-grid"><label class="safe-task"><input type="checkbox" data-safe="guide"><span><strong>跟随正规向导</strong><small>不单独离队，不进入未开放区域。</small></span></label><label class="safe-task"><input type="checkbox" data-safe="touch"><span><strong>不摸陌生动植物</strong><small>漂亮不等于安全，尤其远离蛇、蚁和有毒汁液。</small></span></label><label class="safe-task"><input type="checkbox" data-safe="eat"><span><strong>不自行采食</strong><small>野果、昆虫和植物只能在专业人员确认后接触。</small></span></label><label class="safe-task"><input type="checkbox" data-safe="gear"><span><strong>穿防滑鞋并防蚊</strong><small>携带饮水，雨天注意湿滑石块和溪流变化。</small></span></label><label class="safe-task"><input type="checkbox" data-safe="wildlife"><span><strong>遇到动物保持距离</strong><small>不追赶、不投喂、不闪光灯近拍。</small></span></label><label class="safe-task"><input type="checkbox" data-safe="trace"><span><strong>只留下脚印</strong><small>不采摘、不刻画，把垃圾全部带走。</small></span></label></div><p class="field-note">攀爬、绳降、竹筏或涉水等体验，应以年龄、天气、现场安全条件和专业人员判断为准，不作为必须完成的研学任务。</p></section>
+
+  <section class="block" id="record">
+    <div class="section-head"><span class="no">05</span><div>
+      <h2>旅途记录 · 边走边记</h2>
+      <p>旅行中打开这一页，打勾、写日记、上传一张最喜欢的照片。都保存在本机，回家就能打印成册。</p>
+    </div></div>
+
+    <div class="card" style="padding:18px;margin-bottom:16px">
+      <h3 style="margin:0 0 10px;color:var(--jn-green-700)">✅ 我的雨林打卡</h3>
+      <div class="checklist" id="checklist"></div>
+    </div>
+
+    <div class="card" style="padding:18px;margin-bottom:16px">
+      <div class="field"><label for="diary">📝 我的探险日记</label>
+        <textarea id="diary" maxlength="500" placeholder="今天我在基诺山看见了……听见了……最有趣的是……"></textarea></div>
+    </div>
+
+    <div class="card" style="padding:18px">
+      <h3 style="margin:0 0 6px;color:var(--jn-green-700)">📷 上传一张我最喜欢的照片</h3>
+      <p style="color:var(--jn-muted);font-size:13px;margin:0 0 10px">照片只存在本机浏览器，不会上传到任何地方（后期接云端后可同步）。</p>
+      <input type="file" id="photoInput" accept="image/*">
+      <div class="photo-row" id="photoRow"></div>
+    </div>
+
+    <div class="badge-row" id="badgeRow"></div>
+  </section>
+
+  <!-- 06 我的成果 -->
+  <section class="block" id="cert">
+    <div class="section-head"><span class="no">06</span><div>
+      <h2>我的研学成果</h2>
+      <p>把下面的内容打印出来，就是一本属于孩子的《基诺山雨林探险日记》。</p>
+    </div></div>
+    <div class="card cert" id="certBox"></div>
+  </section>
+
+</main>
+
+<footer class="src wrap">
+  <strong>知识来源：</strong>景洪市人民政府·基诺山基诺族乡概况、西双版纳州政府·民族文化资料、云南民族博物馆、中国经济网/中国新闻网·基诺山茶、央视/高校雨林科普资料。服饰照片：Daderot / Wikimedia Commons（Public Domain）。本页数据暂存本机浏览器（localStorage）。
+</footer>
+
+<!-- 弹窗 -->
+<div class="modal-bg" id="modalBg"><div class="modal" id="modal" role="dialog" aria-modal="true">
+  <h3 id="mTitle"></h3><div class="en" id="mEn"></div>
+  <div id="mSafe"></div>
+  <div class="body" id="mBody"></div>
+  <button class="btn small speak" id="mSpeak">听知识点</button>
+  <button class="btn ghost small close" id="mClose">关闭</button>
+</div></div>
+
+<div class="dock"><div class="inner">
+  <span style="color:var(--jn-green-700);font-size:13px">研学进度</span>
+  <div class="track"><div class="fill" id="progFill"></div></div>
+  <span class="pct" id="progText">0%</span>
+</div></div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===================== 数据 ===================== */
+const KEY='jinuoRainforestStudy2026';
+const defaults={level:1,zh:true,disc:{},learned:[],missions:[],diary:'',photos:[],find:{},camouflage:{},safety:[]};
+let data={...defaults,...readStore()};data.disc=data.disc||{};data.learned=data.learned||[];data.missions=data.missions||[];data.photos=data.photos||[];data.find=data.find||{};data.camouflage=data.camouflage||{};data.safety=data.safety||[];
+
+function readStore(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){return{}}}
+function save(){localStorage.setItem(KEY,JSON.stringify(data));updateProgress();}
+
+document.querySelectorAll('[data-flip-card]').forEach(card=>{
+  const title=card.querySelector('.flip-title').firstChild.textContent.trim();
+  card.addEventListener('click',()=>{
+    const willOpen=card.getAttribute('aria-pressed')!=='true';
+    document.querySelectorAll('[data-flip-card]').forEach(other=>{
+      other.setAttribute('aria-pressed','false');
+      const otherTitle=other.querySelector('.flip-title').firstChild.textContent.trim();
+      other.setAttribute('aria-label','翻开卡片：'+otherTitle);
+    });
+    card.setAttribute('aria-pressed',String(willOpen));
+    card.setAttribute('aria-label',(willOpen?'合上卡片：':'翻开卡片：')+title);
+  });
+});
+const CAMO_ANSWERS={snake:'leaf',butterfly:'dryleaf',stick:'branch'};
+document.querySelectorAll('[data-camo]').forEach(select=>{select.value=data.camouflage[select.dataset.camo]||'';select.onchange=()=>{data.camouflage[select.dataset.camo]=select.value;save();renderCamouflage()}});
+document.querySelectorAll('[data-safe]').forEach(box=>{box.checked=data.safety.includes(box.dataset.safe);box.onchange=()=>{data.safety=box.checked?[...new Set([...data.safety,box.dataset.safe])]:data.safety.filter(x=>x!==box.dataset.safe);save()}});
+function renderCamouflage(){const score=Object.entries(CAMO_ANSWERS).filter(([key,value])=>data.camouflage[key]===value).length;document.querySelectorAll('[data-camo-card]').forEach(card=>{const key=card.dataset.camoCard,value=data.camouflage[key];card.classList.toggle('correct',Boolean(value)&&value===CAMO_ANSWERS[key]);card.classList.toggle('wrong',Boolean(value)&&value!==CAMO_ANSWERS[key])});document.getElementById('camoFeedback').textContent=score===3?'全部正确：真正的观察高手，会从颜色、轮廓和姿态寻找线索。':`已判断正确 ${score} / 3 个，继续观察它们的颜色和轮廓。`}
+
+/* 发现项：雨林生态主线（基诺山雨林徒步真实可能遇见的物种，分组图鉴） */
+const DISCOVERIES=[
+  /* —— 大树三大奇观（含找一找任务） —— */
+  {id:'buttress',group:'tree',emoji:'🌳',en:'Buttress roots',zh:'板根',find:true,
+   fact:'大树的根不像细筷子，而是像裙摆一样摊开在地面，像三角支架把高树撑住，还能在浅土里吸养分。'},
+  {id:'strangler',group:'tree',emoji:'🌿',en:'Strangler fig',zh:'绞杀榕',find:true,
+   fact:'小榕树从别的树身上长出来，根往下扎、往上包，像“拥抱”其实是在抢阳光和空间——这就是“绞杀现象”，被缠的树会被慢慢“抱”住。'},
+  {id:'cauliflory',group:'tree',emoji:'🌸',en:'Cauliflory',zh:'老茎开花',find:true,
+   fact:'多数花长在枝头，可有些树的花直接开在粗树干上，叫“老茎开花”，这样昆虫更容易发现并帮它传粉。'},
+  {id:'skytree',group:'tree',emoji:'🌲',en:'Sky tree',zh:'望天树',find:false,
+   fact:'望天树是雨林里“要仰头才看得到树顶”的巨人，能长几十米高，是热带雨林最招牌的树种之一。'},
+
+  /* —— 安全小课堂 —— */
+  {id:'taro',group:'safety',emoji:'🍃',en:'Elephant ear (taro)',zh:'滴水观音（海芋）',safe:true,
+   fact:'叶子大大的很好看，但全株有毒，不能摸、不能吃、不能凑近闻汁液。雨林里“漂亮≠可以碰”是第一条安全规则。'},
+  {id:'zhuyeqing',group:'safety',emoji:'🐍',en:'Green pit viper',zh:'竹叶青',safe:true,
+   fact:'竹叶青是翠绿色的小毒蛇，藏在绿叶里很难发现。看到蛇，远远看、不碰、不追，就是最安全的。'},
+  {id:'honghuoyi',group:'safety',emoji:'🔥',en:'Fire ant',zh:'红火蚁',safe:true,
+   fact:'红火蚁是很小却会蜇人的红蚂蚁，被咬又痛又痒，有的小朋友还会过敏。别踩它的土堆小丘，看到绕开走。'},
+
+  /* —— 雨林小虫图鉴 —— */
+  {id:'ant',group:'insect',emoji:'🐜',en:'Weaver ant',zh:'黄猄蚁',find:false,
+   fact:'黄猄蚁是雨林“小农夫”，会养小虫喝甜汁，还会把树叶缝起来做窝，超级聪明！'},
+  {id:'hongtou',group:'insect',emoji:'🐜',en:'Red-headed ant',zh:'红头弓背蚁',find:false,
+   fact:'红头弓背蚁脑袋红红的，是力气很大的“木工蚁”，能搬动比自己重很多的东西。雨林里还有带尖刺的多刺蚁。'},
+  {id:'suan',group:'insect',emoji:'🐜',en:'Sour ant',zh:'酸蚂蚁',find:false,
+   fact:'酸蚂蚁身体里有酸酸的味道（一种很小的蚂蚁酸），云南人有时会把它做成酸酸的特色菜。'},
+  {id:'honghei',group:'insect',emoji:'🐜',en:'Slender ant',zh:'红黑细长蚁',find:false,
+   fact:'红黑细长蚁身体又红又黑、细细长长，常常排着长队搬家，像一条小火车。'},
+  {id:'guimian',group:'insect',emoji:'🕷️',en:'Ghost-faced spider',zh:'鬼面蜘蛛',find:false,
+   fact:'鬼面蜘蛛的肚皮上像画着一张小脸，看着吓人，但它一般不咬人，是抓害虫的小帮手。'},
+  {id:'bianying',group:'insect',emoji:'✨',en:'Firefly',zh:'云南扁萤（萤火虫）',find:false,
+   fact:'云南扁萤是身体扁扁的萤火虫，夏夜会一闪一闪发光，像提着小灯笼的精灵，让雨林夜晚变得梦幻。'},
+
+  /* —— 爬行动物 —— */
+  {id:'shilongzi',group:'reptile',emoji:'🦎',en:'Skink',zh:'石龙子（四脚蛇）',find:false,
+   fact:'石龙子俗称“四脚蛇”，长得像蛇却有四只小腿，其实是一种温顺的小蜥蜴，遇到危险会断尾逃跑。'},
+  {id:'shuxi',group:'reptile',emoji:'🦎',en:'Tree lizard',zh:'树蜥蜴',find:false,
+   fact:'树蜥蜴喜欢趴在树干上晒太阳，颜色常和树皮接近，是雨林里的“隐身高手”。'},
+
+  /* —— 蕨类植物大家族 —— */
+  {id:'suoluo',group:'fern',emoji:'🌿',en:'Tree fern',zh:'桫椤',find:false,
+   fact:'桫椤是“树蕨”，长得像小树却不开花不结籽，是和恐龙同时代的“活化石”，现在是国家保护植物。'},
+  {id:'jinmao',group:'fern',emoji:'🌿',en:'Golden dog fern',zh:'金毛狗蕨',find:false,
+   fact:'金毛狗蕨的根茎上长满金黄色茸毛，像一只毛茸茸的小狗，也是国家保护植物，不能随便挖。'},
+  {id:'niaochao',group:'fern',emoji:'🌿',en:"Bird's nest fern",zh:'鸟巢蕨',find:false,
+   fact:'鸟巢蕨的叶子从中间向四周散开，像一个个绿色的小鸟窝，常长在树干上。'},
+  {id:'guanyin',group:'fern',emoji:'🌿',en:'Elephant-ear fern',zh:'观音坐莲蕨',find:false,
+   fact:'观音坐莲蕨的叶子排成圆圆的莲座，像观音坐的莲花座，所以叫这个名字。'},
+
+  /* —— 榕树大家庭与奇叶植物 —— */
+  {id:'wuhuaguo',group:'fig',emoji:'🌱',en:'Fig',zh:'无花果',find:false,
+   fact:'无花果其实有花，只是花藏在果子里面，要靠小小的榕小蜂钻进去帮忙传粉——超神奇的合作！'},
+  {id:'wuzhi',group:'fig',emoji:'🌱',en:'Hairy fig',zh:'五指毛桃',find:false,
+   fact:'五指毛桃的叶子像张开的小手（五根手指），它是榕树的一家亲戚，根还能用来煲汤。'},
+  {id:'guibei',group:'fig',emoji:'🍃',en:'Swiss cheese plant',zh:'龟背竹',find:false,
+   fact:'龟背竹的叶子上有很多大洞，这不是被虫咬了，而是帮它在风雨里少受伤的“聪明设计”。'},
+
+  /* —— 雨林的树与果实 —— */
+  {id:'chashu',group:'treecrop',emoji:'🍵',en:'Tea tree',zh:'普洱茶树',find:false,
+   fact:'基诺山是普洱茶古六大茶山之一，大叶种茶树在这里长得特别好，春天可以采嫩芽做茶。'},
+  {id:'xiangjiao',group:'treecrop',emoji:'🌳',en:'Rubber tree',zh:'橡胶树',find:false,
+   fact:'橡胶树割开树皮会流出白白的胶汁，能做橡胶。过去雨林被砍去种它，现在人们又在把雨林种回来。'},
+  {id:'shenmi',group:'treecrop',emoji:'🍬',en:'Miracle fruit',zh:'神秘果',find:false,
+   fact:'神秘果是“魔法水果”，吃一颗再吃柠檬都会变甜！因为它让舌头暂时觉得酸也是甜的。'},
+  {id:'kafei',group:'treecrop',emoji:'☕',en:'Coffee',zh:'云南小粒咖啡',find:false,
+   fact:'云南小粒咖啡长在温暖的山地里，红红的果子里的豆子，炒一炒就是香香的咖啡。'},
+
+  /* —— 雨林果园 —— */
+  {id:'huolongguo',group:'orchard',emoji:'🐉',en:'Dragon fruit',zh:'火龙果',find:false,
+   fact:'火龙果长在像仙人掌一样的植物上，外皮红红的，里面是满是黑籽的小甜点。'},
+  {id:'baixiangguo',group:'orchard',emoji:'🍈',en:'Passion fruit',zh:'百香果',find:false,
+   fact:'百香果小小的、酸酸的，泡水或做饮料都很香，是雨林边常见的水果。'},
+  {id:'xiaweiyiguo',group:'orchard',emoji:'🌰',en:'Macadamia',zh:'夏威夷果',find:false,
+   fact:'夏威夷果圆圆的、硬硬的，咬开是奶香味的果仁，壳很硬要用工具夹开。'},
+
+  /* —— 雨林里的动物邻居 —— */
+  {id:'elephant',group:'animal',emoji:'🐘',en:'Asian elephant',zh:'亚洲象',find:false,
+   fact:'亚洲象是雨林里温柔的大邻居，用长长的鼻子喝水、卷食物。它们现在数量很少，需要我们保护。'},
+  {id:'gibbon',group:'animal',emoji:'🐵',en:'Gibbon',zh:'长臂猿',find:false,
+   fact:'长臂猿是雨林里的“空中歌手”，用长长的手臂在树与树之间荡来荡去，还会唱歌呢。'},
+  {id:'hornbill',group:'animal',emoji:'🦜',en:'Hornbill',zh:'犀鸟',find:false,
+   fact:'犀鸟有一张大大的、像盔甲一样的嘴，是雨林里很特别的鸟，像“会飞的飞机”。'},
+ ];
+
+ const EXPLORE={
+  buttress:{q:'想一想：大树的根为什么要向四周展开？',a:'<strong>因为这样更稳。</strong>板根像大树的“脚”，可以帮它站稳，还能在浅浅的土里找到水和养分。'},
+  strangler:{q:'想一想：绞杀榕为什么要缠住别的树？',a:'<strong>它在努力找到阳光。</strong>绞杀榕先住在高处，再把根伸到地面，慢慢长成一棵自己的大树。'},
+  cauliflory:{q:'观察一下：花为什么会开在粗粗的树干上？',a:'<strong>这样小昆虫更容易找到花。</strong>昆虫来采花蜜，也会顺便帮花传粉。'},
+  skytree:{q:'猜一猜：望天树为什么能长得这么高？',a:'<strong>它要努力去够到阳光。</strong>雨林里树很多，长得高一点，就能让更多叶子晒到太阳。'},
+  taro:{q:'安全问题：看到漂亮的滴水观音，可以摸一摸吗？',a:'<strong>不可以摸，也不能吃。</strong>雨林里漂亮的植物不一定安全，要先问爸爸妈妈或向导。'},
+  zhuyeqing:{q:'如果在路边看见竹叶青，应该怎么做？',a:'<strong>停下来，退远一点，不碰、不追。</strong>让它安安静静地待在自己的家里。'},
+  honghuoyi:{q:'红火蚁的小土堆可以踩吗？',a:'<strong>不能踩，要绕开。</strong>红火蚁会用小嘴和尾巴保护家，靠近它们可能会被蜇。'},
+  ant:{q:'黄猄蚁为什么要把叶子缝在一起？',a:'<strong>这是它的“树上小房子”。</strong>叶子合起来以后，可以保护蚂蚁宝宝和食物。'},
+  bianying:{q:'萤火虫为什么会一闪一闪地发光？',a:'<strong>它们用小灯光互相找朋友。</strong>夜晚的微光就像雨林里的小信号。'},
+  shilongzi:{q:'石龙子到底是蛇，还是蜥蜴？',a:'<strong>它是有四条腿的小蜥蜴。</strong>它的身体细长，所以看起来有点像蛇。'},
+  wuhuaguo:{q:'无花果真的“没有花”吗？',a:'<strong>其实它有花，只是花藏在果实里面。</strong>所以我们从外面看不到小花。'},
+  guibei:{q:'龟背竹叶子上的洞有什么用？',a:'<strong>洞能让风和雨穿过去。</strong>这样大叶子不容易被风吹破，也能接到更多阳光。'},
+  shenmi:{q:'为什么吃了神秘果，再吃柠檬会觉得甜？',a:'<strong>神秘果会暂时改变舌头的感觉。</strong>柠檬还是酸的，只是舌头把酸味“听成”了甜味。'},
+  elephant:{q:'大象的长鼻子可以做什么？',a:'<strong>它可以呼吸、喝水、闻气味，还能卷起叶子。</strong>鼻子就像大象的手和吸管。'}
+ };
+
+ /* 图鉴分组顺序与说明 */
+const GROUPS=[
+   {key:'tree',title:'雨林大树三大奇观',sub:'找一找任务都在这里：板根、绞杀榕、老茎开花'},
+   {key:'safety',title:'安全小课堂',sub:'这几样再好看／再小也不能碰，记住就安全'},
+   {key:'insect',title:'雨林小虫图鉴',sub:'蹲下来仔细看，虫子世界超热闹'},
+   {key:'reptile',title:'爬行动物',sub:'有的像蛇，其实不是蛇'},
+   {key:'fern',title:'蕨类植物大家族',sub:'不开花不结籽的古老植物'},
+   {key:'fig',title:'榕树大家庭与奇叶植物',sub:'榕树的亲戚们，叶子千奇百怪'},
+   {key:'treecrop',title:'雨林的树与果实',sub:'茶树、橡胶树，还有魔法水果'},
+   {key:'orchard',title:'雨林果园',sub:'路边甜甜的水果'},
+   {key:'animal',title:'雨林里的动物邻居',sub:'大个子们'},
+];
+
+/* 英文分级故事 */
+const STORIES={
+ 1:{title:'The Rainforest of Xishuangbanna',note:'Level 1 · 句子短、词简单，像在慢慢讲西双版纳雨林的样子。',
+    lines:[
+      {en:'Xishuangbanna is a warm, green rainforest in China.',zh:'西双版纳是中国一片温暖又翠绿的热带雨林。',image:'assets/jinuo-story-01-rainforest.png'},
+      {en:'Tall trees grow close together in the forest.',zh:'高高的树在森林里一棵挨着一棵地生长。',image:'assets/jinuo-story-02-tall-trees.png'},
+      {en:'Big roots spread out on the ground.',zh:'粗粗的根在地面上向四周摊开。',image:'assets/jinuo-story-03-roots.png'},
+      {en:'A small ant climbs on a green leaf.',zh:'一只小蚂蚁爬上一片绿色的叶子。',image:'assets/jinuo-story-04-weaver-ant.png'},
+      {en:'A bright firefly glows at night.',zh:'一只明亮的萤火虫在夜里发光。',image:'assets/jinuo-story-05-firefly.png'},
+      {en:'A little skink runs over the stones.',zh:'一只小小的石龙子在石头上跑过。',image:'assets/jinuo-story-06-skink.png'},
+      {en:'A big elephant walks slowly by.',zh:'一头大象慢吞吞地从旁边走过。',image:'assets/jinuo-story-07-elephant.png'},
+      {en:'Many plants and animals live here.',zh:'许多植物和动物住在这里。',image:'assets/jinuo-story-08-wonders.png'},
+      {en:'The rainforest is a happy, busy home.',zh:'这片雨林是一个热闹又快乐的家。',image:'assets/jinuo-story-09-home.png'},
+    ]},
+};
+
+/* 词汇（中英对照）—— 全部取自上面阅读故事里出现过的词 */
+const VOCAB=[
+  {en:'rainforest',zh:'雨林',emoji:'🌴',ex:'The Xishuangbanna rainforest is green.'},
+  {en:'forest',zh:'森林',emoji:'🌲',ex:'Tall trees grow in the forest.'},
+  {en:'tree',zh:'树',emoji:'🌳',ex:'A strangler fig wraps a tall tree.'},
+  {en:'leaf',zh:'叶子',emoji:'🍃',ex:'A small ant climbs on a leaf.'},
+  {en:'root',zh:'根',emoji:'🌱',ex:'Big roots spread on the ground.'},
+  {en:'flower',zh:'花',emoji:'🌸',ex:'Red flowers bloom on the trunk.'},
+  {en:'ant',zh:'蚂蚁',emoji:'🐜',ex:'A weaver ant builds a nest.'},
+  {en:'firefly',zh:'萤火虫',emoji:'✨',ex:'A bright firefly glows at night.'},
+  {en:'skink',zh:'石龙子（四脚蛇）',emoji:'🦎',ex:'A little skink runs on stones.'},
+  {en:'elephant',zh:'大象',emoji:'🐘',ex:'A big Asian elephant walks by.'},
+  {en:'fig',zh:'无花果／绞杀榕',emoji:'🌿',ex:'A strangler fig wraps the tree.'},
+  {en:'mountain',zh:'山',emoji:'⛰️',ex:'The Jinuo Mountain is green.'},
+];
+
+/* 打卡清单 */
+const MISSIONS=[
+  '我看见了板根','我看见了绞杀榕','我找到了老茎开花',
+  '我喝了基诺茶','我听见了鸟叫','我敲了大鼓（或看大鼓舞）'
+];
+
+/* ===================== 朗读（Web Speech，零成本） ===================== */
+let voicesReady=false;
+function loadVoices(){if('speechSynthesis'in window){window.speechSynthesis.getVoices();voicesReady=true;}}
+if('speechSynthesis'in window){loadVoices();window.speechSynthesis.onvoiceschanged=loadVoices;}
+function speak(text,lang){
+  if(!('speechSynthesis'in window)){toast('当前浏览器不支持朗读');return;}
+  try{
+    window.speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text);
+    u.lang=lang||'en-US';u.rate=0.9;u.pitch=1;
+    const vs=window.speechSynthesis.getVoices();
+    const pick=vs.find(v=>v.lang&&v.lang.toLowerCase().startsWith((lang||'en').toLowerCase()));
+    if(pick)u.voice=pick;
+    window.speechSynthesis.speak(u);
+  }catch(e){toast('朗读失败');}
+}
+function youdaoUrl(text){return 'https://dict.youdao.com/search?q='+encodeURIComponent(text)}
+function youdaoAudioUrl(text){return 'https://dict.youdao.com/dictvoice?audio='+encodeURIComponent(text)+'&type=2'}
+function playYoudao(text){
+  try{const audio=new Audio(youdaoAudioUrl(text));audio.onerror=()=>speak(text,'en-US');audio.play().catch(()=>speak(text,'en-US'));}
+  catch(e){speak(text,'en-US');}
+}
+
+/* ===================== 渲染 ===================== */
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),1800);}
+
+ /* 发现卡片（按图鉴分组渲染） */
+ const discBox=document.getElementById('discovery');
+ const SPECIES_IMAGES={
+   buttress:'assets/jinuo-buttress-roots.jpg',strangler:'assets/jinuo-strangler-fig.jpg',cauliflory:'assets/jinuo-cauliflory.jpg',skytree:'assets/jinuo-sky-tree.jpg',
+   taro:'assets/xsb-plant-lily.jpg',zhuyeqing:'assets/jinuo-green-pit-viper-2.jpg',honghuoyi:'assets/jinuo-fire-ant.jpg',ant:'assets/jinuo-weaver-ant.jpg',bianying:'assets/jinuo-yunnan-firefly.jpg',
+   shilongzi:'assets/jinuo-skink.jpg',suoluo:'assets/xsb-plant-traveller.jpg',wuhuaguo:'assets/jinuo-fig-fruit.jpg',guibei:'assets/jinuo-monstera.jpg',shenmi:'assets/jinuo-miracle-fruit.jpg',elephant:'assets/jinuo-asian-elephant.jpg'
+ };
+ const SPECIES_POS={buttress:'18% 72%',strangler:'34% 28%',cauliflory:'10% 18%',skytree:'82% 14%',honghuoyi:'42% 82%',ant:'58% 66%',bianying:'73% 88%',shilongzi:'12% 80%',wuhuaguo:'16% 12%',shenmi:'88% 82%',elephant:'69% 62%'};
+  function makeDisc(d){
+   const open=data.disc[d.id];
+   const ex=EXPLORE[d.id];
+  const el=document.createElement('div');
+  el.className='card disc'+(open?' open':'');
+  el.tabIndex=0;el.setAttribute('role','button');
+   el.innerHTML=`<img class="species-photo" style="object-position:${SPECIES_POS[d.id]||'center'}" src="${SPECIES_IMAGES[d.id]||'assets/jinuo-rainforest-search.png'}" alt="${d.zh}在基诺山雨林中的观察照片" loading="lazy">
+     <h3>${d.zh}${d.find?' <span class="safe" style="background:var(--jn-coral)">找一找</span>':''}${d.safe?' <span class="safe">安全提醒</span>':''}</h3>
+     <p class="fact-zh">${d.fact}</p>
+     <button class="btn small read-fact" type="button">听知识点</button>
+     ${ex?`<div class="explore-box"><p class="explore-q">${ex.q}</p><button class="explore-toggle" type="button">点击揭晓答案</button><p class="explore-a">${ex.a}</p></div>`:''}`;
+    el.querySelector('.read-fact').onclick=(e)=>{e.stopPropagation();playYoudao(d.fact);};
+   const exploreBtn=el.querySelector('.explore-toggle');
+   if(exploreBtn)exploreBtn.onclick=(e)=>{e.stopPropagation();const box=exploreBtn.parentElement;const revealed=box.classList.toggle('revealed');exploreBtn.textContent=revealed?'收起答案':'点击揭晓答案';};
+  el.onclick=()=>openDiscovery(d.id);
+  el.onkeydown=(e)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openDiscovery(d.id);}};
+  return el;
+}
+/* 15 个招牌物种（其余归入"进阶图鉴"折叠） */
+const CORE_IDS=new Set(['buttress','strangler','cauliflory','skytree','taro','zhuyeqing','honghuoyi','ant','bianying','shilongzi','suoluo','wuhuaguo','guibei','shenmi','elephant']);
+function groupHead(g){
+  const head=document.createElement('div');
+  head.style.cssText='width:100%;grid-column:1/-1;margin:10px 0 0';
+  head.innerHTML=`<h3 style="color:var(--jn-green-700);font-size:21px;margin:14px 0 0;font-family:var(--font-hand)">${g.title}</h3><p style="color:var(--jn-muted);font-size:13px;margin:3px 0 0">${g.sub}</p>`;
+  return head;
+}
+function renderDiscovery(){
+  discBox.innerHTML='';
+  GROUPS.forEach(g=>{
+    const items=DISCOVERIES.filter(d=>d.group===g.key && CORE_IDS.has(d.id));
+    if(!items.length)return;
+    discBox.append(groupHead(g));
+    items.forEach(d=>discBox.append(makeDisc(d)));
+  });
+  /* 进阶图鉴：折叠 */
+  const adv=DISCOVERIES.filter(d=>!CORE_IDS.has(d.id));
+  const wrap=document.createElement('div');wrap.className='adv-wrap';
+  const btn=document.createElement('button');btn.type='button';btn.className='btn ghost adv-toggle';
+   btn.textContent='进阶图鉴：还有 '+adv.length+' 种雨林居民（点击展开）';
+  const body=document.createElement('div');body.className='adv-body';body.style.display='none';
+  GROUPS.forEach(g=>{
+    const items=adv.filter(d=>d.group===g.key);
+    if(!items.length)return;
+    body.append(groupHead(g));
+    items.forEach(d=>body.append(makeDisc(d)));
+  });
+  btn.onclick=()=>{
+    const open=body.style.display!=='none';
+    body.style.display=open?'none':'block';
+     btn.textContent=open?'进阶图鉴：还有 '+adv.length+' 种雨林居民（点击展开）':'收起进阶图鉴';
+  };
+  wrap.append(btn,body);
+  discBox.append(wrap);
+}
+function openDiscovery(id){
+  const d=DISCOVERIES.find(x=>x.id===id);
+  document.getElementById('mTitle').textContent=d.zh+(d.find?' · 找一找任务':'');
+   document.getElementById('mEn').textContent='';
+  document.getElementById('mSafe').innerHTML=d.safe?'<span class="safe">⚠️ 安全提醒：全株有毒，不能摸不能吃</span>':'';
+  document.getElementById('mBody').textContent=d.fact;
+   document.getElementById('mSpeak').onclick=()=>playYoudao(d.fact);
+  document.getElementById('modalBg').classList.add('show');
+  if(!data.disc[id]){data.disc[id]=true;save();renderDiscovery();}
+}
+document.getElementById('mClose').onclick=()=>document.getElementById('modalBg').classList.remove('show');
+document.getElementById('modalBg').onclick=(e)=>{if(e.target.id==='modalBg')e.currentTarget.classList.remove('show');};
+const searchHotspots=[...document.querySelectorAll('.search-hotspot')];
+function renderFindProgress(){
+  const found=CORE_IDS.size ? [...CORE_IDS].filter(id=>data.find[id]).length : 0;
+  document.getElementById('findProgress').textContent=`已找到 ${found} / ${CORE_IDS.size} 个物种`;
+  searchHotspots.forEach(h=>h.classList.toggle('found',Boolean(data.find[h.dataset.id])));
+}
+searchHotspots.forEach(h=>{
+  const act=()=>{
+    const id=h.dataset.id;
+    if(data.find[id])return;
+    if(!CORE_IDS.has(id))return;
+    data.find[id]=true;save();h.classList.add('found');renderFindProgress();paintBadges();toast('找到啦！'+(DISCOVERIES.find(x=>x.id===id)?.zh||''));
+  };
+  h.onclick=act;h.onkeydown=(e)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act();}};
+});
+renderFindProgress();
+
+/* 故事 */
+function renderStory(){
+  const s=STORIES[data.level]||STORIES[1];
+  document.getElementById('storyTitle').textContent=s.title;
+  document.getElementById('storyNote').textContent=s.note;
+  const box=document.getElementById('storyBox');box.innerHTML='';
+  s.lines.forEach(l=>{
+     const row=document.createElement('div');row.className='sentence';
+     row.innerHTML=`${l.image?`<img class="story-image" src="${l.image}" alt="绘本插图：${l.zh}" loading="lazy">`:''}
+       <a class="en" href="${youdaoUrl(l.en)}" target="_blank" rel="noopener" title="打开有道词典查看发音">${l.en}</a>
+       <button class="mini-speak" type="button" title="使用有道词典发音">有道发音</button>
+       <span class="zh" style="display:${data.zh?'block':'none'}">${l.zh}</span>`;
+     row.querySelector('.en').onclick=()=>playYoudao(l.en);
+     row.querySelector('.mini-speak').onclick=()=>playYoudao(l.en);
+    box.append(row);
+  });
+}
+document.getElementById('lv1btn').onclick=()=>{data.level=1;save();renderStory();};
+document.getElementById('zhToggle').onchange=(e)=>{data.zh=e.target.checked;save();renderStory();};
+
+/* 词汇 */
+const vocabBox=document.getElementById('vocabBox');
+function renderVocab(){
+  vocabBox.innerHTML='';
+  VOCAB.forEach(v=>{
+    const learned=data.learned.includes(v.en);
+    const el=document.createElement('div');
+    el.className='card vcard'+(learned?' learned':'');
+    el.innerHTML=`<div class="top"><span class="emoji">${v.emoji}</span>
+        <span class="en" title="点击听发音">${v.en}</span></div>
+      <div class="zh">${v.zh}</div>
+      <div class="ex" title="点击听例句">💬 ${v.ex}</div>
+      <button class="btn small learn" type="button">${learned?'✅ 我学会了':'标记为学会'}</button>`;
+    el.querySelector('.en').onclick=()=>speak(v.en,'en-US');
+    el.querySelector('.ex').onclick=()=>speak(v.ex,'en-US');
+    el.querySelector('.learn').onclick=()=>{
+      if(data.learned.includes(v.en))data.learned=data.learned.filter(x=>x!==v.en);
+      else data.learned.push(v.en);
+      save();renderVocab();updateProgress();
+    };
+    vocabBox.append(el);
+  });
+}
+
+/* 打卡 + 日记 + 照片 */
+const checklist=document.getElementById('checklist');
+function renderMissions(){
+  checklist.innerHTML='';
+  MISSIONS.forEach(m=>{
+    const el=document.createElement('label');el.className='mission';
+    const on=data.missions.includes(m);
+    el.innerHTML=`<input type="checkbox" ${on?'checked':''}><span>${m}</span>`;
+    el.querySelector('input').onchange=(e)=>{
+      data.missions=e.target.checked?[...new Set([...data.missions,m])]:data.missions.filter(x=>x!==m);
+      save();paintBadges();updateProgress();
+    };
+    checklist.append(el);
+  });
+}
+const diary=document.getElementById('diary');
+diary.oninput=()=>{data.diary=diary.value;save();};
+const photoInput=document.getElementById('photoInput'),photoRow=document.getElementById('photoRow');
+photoInput.onchange=(e)=>{
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{
+    const img=new Image();img.onload=()=>{
+      const c=document.createElement('canvas');const max=600;
+      const s=Math.min(max/img.width,max/img.height,1);c.width=img.width*s;c.height=img.height*s;
+      c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+      const url=c.toDataURL('image/jpeg',0.7);
+      data.photos.push(url);if(data.photos.length>6)data.photos.shift();
+      save();renderPhotos();toast('照片已保存到本机');
+    };img.src=r.result;
+  };r.readAsDataURL(f);
+};
+function renderPhotos(){photoRow.innerHTML='';data.photos.forEach((u,i)=>{
+  const img=document.createElement('img');img.src=u;img.className='thumb';
+  img.title='点击删除';img.onclick=()=>{if(confirm('删除这张照片？')){data.photos.splice(i,1);save();renderPhotos();}};
+  photoRow.append(img);
+});}
+
+/* 勋章 */
+const badgeRow=document.getElementById('badgeRow');
+function paintBadges(){
+  badgeRow.innerHTML='';
+  const finds=Object.values(data.find).filter(Boolean).length;
+  if(finds>=3)badgeRow.append(mkB('🔍 火眼金睛：找齐三大雨林奇观'));
+  if(data.missions.length>=4)badgeRow.append(mkB('🥾 雨林小探险家：打卡 '+data.missions.length+' 项'));
+  if(data.learned.length>=5)badgeRow.append(mkB('🔤 单词小达人：学会 '+data.learned.length+' 个词'));
+  if(Object.entries(CAMO_ANSWERS).filter(([key,value])=>data.camouflage[key]===value).length===3)badgeRow.append(mkB('伪装侦探：完成雨林伪装挑战'));
+  if(data.diary.trim())badgeRow.append(mkB('📝 小小记录员：写了探险日记'));
+}
+function mkB(t){const b=document.createElement('span');b.className='badge';b.textContent=t;return b;}
+
+/* 成果证书 */
+function renderCert(){
+  const finds=Object.values(data.find).filter(Boolean).length;
+  const box=document.getElementById('certBox');
+  box.innerHTML=`<h2>🌿 基诺山雨林探险日记</h2>
+    <p class="line">找一找任务：${finds}/3 ｜ 打卡：${data.missions.length}/${MISSIONS.length} ｜ 学会单词：${data.learned.length} 个</p>
+    <p class="line">探险日记：${data.diary.trim()?data.diary.replace(/\n/g,'<br>'):'（回家后补上吧）'}</p>
+    <p class="line">照片：${data.photos.length} 张</p>
+    <div class="seal">🏅</div>
+    <p class="line" style="margin-top:10px">完成基诺山雨林探险，你是合格的自然小侦探！</p>`;
+}
+
+/* 进度 */
+function updateProgress(){
+  const checks=[
+    Object.values(data.find).filter(Boolean).length>=3,
+    data.missions.length>=3,
+    data.learned.length>=5,
+    Boolean(data.diary.trim()),
+    data.level&&Boolean(STORIES[data.level]),
+    Object.entries(CAMO_ANSWERS).filter(([key,value])=>data.camouflage[key]===value).length===3,
+    data.safety.length>=4
+  ];
+  const pct=Math.round(checks.filter(Boolean).length/checks.length*100);
+  document.getElementById('progFill').style.width=pct+'%';
+  document.getElementById('progText').textContent=pct+'%';
+}
+
+/* ===================== 初始化 ===================== */
+function hydrate(){
+  document.getElementById('zhToggle').checked=data.zh;
+  diary.value=data.diary||'';
+  renderDiscovery();renderStory();renderVocab();renderMissions();renderPhotos();renderCamouflage();paintBadges();renderCert();updateProgress();
+}
+/* 顶部清空（调试用，隐藏） */
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('modalBg').classList.remove('show');});
+
+hydrate();
+</script>
+</body>
+</html>
