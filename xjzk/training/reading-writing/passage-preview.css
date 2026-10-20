@@ -1,0 +1,778 @@
+/* 读写题 · 篇章模式预览页样式
+   沿用站点淡紫主调：主操作 #7655A6 / 浅紫 #EDE4F8 / 背景 #FAF8FD / 错误 #B42318 */
+
+:root {
+  --pv-primary: #7655A6;
+  --pv-primary-dark: #5B3E86;
+  --pv-primary-soft: #EDE4F8;
+  --pv-bg: #FAF8FD;
+  --pv-surface: #FFFFFF;
+  --pv-border: #E4DBF1;
+  --pv-text: #2B2233;
+  --pv-muted: #6E6379;
+  --pv-good: #1F7A4D;
+  --pv-good-soft: #E7F5EE;
+  --pv-bad: #B42318;
+  --pv-bad-soft: #FDECEA;
+  --pv-warn: #8A5A12;
+  --pv-warn-soft: #FFF4E0;
+}
+
+* { box-sizing: border-box; }
+
+body.passage-preview {
+  margin: 0;
+  background: var(--pv-bg);
+  color: var(--pv-text);
+  font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif;
+  line-height: 1.75;
+}
+
+.hidden { display: none !important; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- 头部 ---------- */
+
+.pv-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px clamp(16px, 4vw, 40px);
+  background: linear-gradient(135deg, #8460AE 0%, #5B3E86 100%);
+  color: #fff;
+}
+
+.pv-brand { display: flex; align-items: center; gap: 14px; }
+
+.pv-brand .brand-mark {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #F1C40F;
+  color: #4A3312;
+  font-weight: 900;
+  font-size: 22px;
+  flex: none;
+}
+
+.pv-brand strong { display: block; font-size: 13px; opacity: .9; letter-spacing: .04em; }
+.pv-brand h1 { margin: 2px 0 2px; font-size: clamp(18px, 2.4vw, 23px); }
+.pv-brand p { margin: 0; font-size: 13px; opacity: .88; }
+
+.pv-progress {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .16);
+  border: 1px solid rgba(255, 255, 255, .28);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ---------- 篇目选择条 ---------- */
+
+.passage-picker {
+  display: flex;
+  gap: 8px;
+  padding: 10px clamp(16px, 4vw, 40px);
+  overflow-x: auto;
+  background: #fff;
+  border-bottom: 1px solid var(--pv-border);
+  scrollbar-width: thin;
+}
+
+.passage-picker:empty { display: none; }
+
+.picker-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: none;
+  padding: 6px 13px;
+  border: 1px solid var(--pv-border);
+  border-radius: 999px;
+  background: #FBF9FE;
+  color: var(--pv-muted);
+  font: inherit;
+  font-size: 13.5px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .16s ease;
+}
+
+.picker-item strong {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--pv-primary);
+}
+
+.picker-item:hover { border-color: var(--pv-primary); }
+
+.picker-item.active {
+  background: var(--pv-primary);
+  border-color: var(--pv-primary);
+  color: #fff;
+}
+
+.picker-item.active strong { color: #F1C40F; }
+
+/* ---------- 布局 ---------- */
+
+/*
+ * 桌面端核心布局：两栏各自独立滚动，整页不滚。
+ *
+ * 为什么必须这样做：右栏 6 道题展开解析后约 2000px，左栏原文只有约 850px。
+ * 如果让整页滚，页面高度由右栏决定，左栏 sticky 到底、原文根本不会内部滚，
+ * 结果就是「找一句原文」会把题目一起推走——正是你说的"文章太长不好找"。
+ * 两栏锁高、各自滚动后，视线只需在一栏内移动，另一栏完全不受干扰。
+ */
+.pv-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(16px, 3vw, 28px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(16px, 2.4vw, 24px);
+  align-items: start;
+}
+
+@media (min-width: 941px) {
+  /*
+   * 整页改成 flex 三段：头部固定 / 内容区伸缩 / 页脚固定。
+   * 用 flex 分配而不是 calc 猜高度——页脚、header 内边距都会算进去，
+   * 之前用 calc(100vh - 32px) 导致总高多出 41px，整页还能滚一点。
+   */
+  html, body.passage-preview { height: 100%; }
+  body.passage-preview {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  body.passage-preview .pv-header { flex: none; }
+  body.passage-preview .site-footer { flex: none; }
+  .pv-shell {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .pv-shell > .pv-card {
+    height: 100%;
+    max-height: 100%;
+    min-height: 0;
+  }
+}
+
+/*
+ * 左栏：标题与出处固定，正文在中间独立滚动区
+ */
+.pv-passage-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: calc(100vh - 32px);
+}
+
+/* 头部与出处不参与滚动，导读同理——它们是「看」的，不是「滚」的 */
+.pv-passage-card .pv-card-head,
+.pv-passage-card .pv-meta,
+.pv-passage-card .pv-guide { flex: none; }
+
+.pv-card--work .stage-tabs { flex: none; }
+
+.passage-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pv-primary) transparent;
+  /* 给两端留一点余量，避免首尾段落贴边 */
+  padding-right: 6px;
+}
+
+.passage-scroll::-webkit-scrollbar { width: 8px; }
+.passage-scroll::-webkit-scrollbar-track { background: transparent; }
+.passage-scroll::-webkit-scrollbar-thumb {
+  background: rgba(118, 85, 166, .32);
+  border-radius: 99px;
+}
+.passage-scroll::-webkit-scrollbar-thumb:hover { background: rgba(118, 85, 166, .5); }
+
+@media (max-width: 940px) {
+  .pv-shell { grid-template-columns: minmax(0, 1fr); }
+  /* 单栏时不再需要内部滚动区，交回整页滚动 */
+  .pv-passage-card { position: static; max-height: none; height: auto; }
+  .passage-scroll { overflow-y: visible; }
+}
+
+.pv-card {
+  background: var(--pv-surface);
+  border: 1px solid var(--pv-border);
+  border-radius: 16px;
+  padding: clamp(16px, 2.2vw, 24px);
+  box-shadow: 0 2px 14px rgba(91, 62, 134, .06);
+}
+
+/* 右栏：阶段标签固定，题目区独立滚动 */
+.pv-card--work {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.work-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pv-primary) transparent;
+  padding-right: 6px;
+}
+
+.work-scroll::-webkit-scrollbar { width: 8px; }
+.work-scroll::-webkit-scrollbar-track { background: transparent; }
+.work-scroll::-webkit-scrollbar-thumb {
+  background: rgba(118, 85, 166, .32);
+  border-radius: 99px;
+}
+.work-scroll::-webkit-scrollbar-thumb:hover { background: rgba(118, 85, 166, .5); }
+
+.pv-card-head { margin-bottom: 12px; }
+.pv-card-head h2 { margin: 0; font-size: 18px; }
+.pv-hint { margin: 3px 0 0; font-size: 12.5px; color: var(--pv-muted); }
+
+/* ---------- 原文 ---------- */
+
+.pv-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px dashed var(--pv-border);
+}
+
+.pv-meta strong { font-size: 16px; }
+
+.theme-badge {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--pv-primary-soft);
+  color: var(--pv-primary-dark);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.pv-meta .source { font-size: 12.5px; color: var(--pv-muted); }
+
+.passage-text {
+  padding: 2px 12px 2px 2px;
+  font-size: 16.5px;
+  line-height: 2.05;
+  letter-spacing: .01em;
+}
+
+.passage-paragraph { margin: 0 0 6px; text-indent: 0; }
+
+.para-index {
+  display: inline-block;
+  min-width: 20px;
+  margin-right: 6px;
+  color: var(--pv-muted);
+  font-size: 12.5px;
+  font-weight: 700;
+  vertical-align: super;
+}
+
+.sentence {
+  position: relative;
+  border-radius: 6px;
+  padding: 2px 1px;
+  cursor: pointer;
+  transition: background-color .18s ease, box-shadow .18s ease;
+}
+
+.sentence:hover { background: #F6F2FC; }
+
+.sentence.is-highlight {
+  background: var(--pv-primary-soft);
+  box-shadow: 0 0 0 2px rgba(118, 85, 166, .28);
+}
+
+.sentence.is-probed { box-shadow: 0 0 0 2px rgba(241, 196, 15, .75); }
+
+.anchor-mark {
+  background: #F1C40F;
+  color: #3F2C08;
+  border-radius: 3px;
+  padding: 0 2px;
+  font-weight: 700;
+}
+
+.sentence-refs {
+  display: inline-flex;
+  gap: 3px;
+  vertical-align: middle;
+  margin-left: 6px;
+  padding-left: 2px;
+  opacity: .62;
+  transition: opacity .18s ease;
+}
+
+.sentence:hover .sentence-refs,
+.sentence.is-highlight .sentence-refs { opacity: 1; }
+
+.sentence-ref {
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border: 1px solid var(--pv-primary);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--pv-primary);
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.sentence-ref:hover { background: var(--pv-primary); color: #fff; }
+
+.pv-guide {
+  flex: none;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--pv-border);
+  font-size: 14px;
+  color: var(--pv-muted);
+}
+
+.pv-guide summary { cursor: pointer; font-weight: 600; color: var(--pv-primary-dark); }
+.pv-guide p { margin: 8px 0 0; }
+
+/* ---------- 阶段切换 ---------- */
+
+.stage-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.stage-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 11px 14px;
+  border: 1px solid var(--pv-border);
+  border-radius: 11px;
+  background: #FBF9FE;
+  color: var(--pv-muted);
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .18s ease;
+}
+
+.stage-tab.active {
+  border-color: var(--pv-primary);
+  background: var(--pv-primary-soft);
+  color: var(--pv-primary-dark);
+}
+
+.tab-count {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--pv-border);
+  font-size: 12.5px;
+}
+
+/* ---------- 缩写文 ---------- */
+
+/*
+ * 缩写文默认折叠。
+ * 之前它是展开的长文，右栏首屏全被这段带空格的文字占满，
+ * 6 张填空卡片一条都露不出来，学生进来不知道从哪下手。
+ * 折叠成一条标题栏后，卡片直接进入首屏；需要通读缩写文时点一下即可展开。
+ */
+.summary-box {
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border: 1px dashed var(--pv-primary);
+  border-radius: 12px;
+  background: #FCFAFE;
+}
+
+.summary-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--pv-primary-dark);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.summary-toggle::after {
+  content: "展开";
+  flex: none;
+  padding: 2px 10px;
+  border: 1px solid var(--pv-primary);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.summary-box.is-open .summary-toggle::after { content: "收起"; }
+
+.summary-body { margin-top: 12px; }
+.summary-box:not(.is-open) .summary-body { display: none; }
+
+/* 折叠状态下也能一眼看到有几个空还没填 */
+.summary-progress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 9px;
+}
+
+.summary-pip {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  border: 1px solid var(--pv-border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--pv-muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+}
+
+.summary-pip.is-correct { border-color: var(--pv-good); background: var(--pv-good-soft); color: var(--pv-good); }
+.summary-pip.is-wrong { border-color: var(--pv-bad); background: var(--pv-bad-soft); color: var(--pv-bad); }
+.summary-pip.is-active { border-color: var(--pv-primary); background: var(--pv-primary-soft); color: var(--pv-primary-dark); }
+
+/* 问答阶段：题号 + 题干 + 输入框 + 提交 压成一行，视线不上下跳 */
+.question-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.question-lead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  background: #F8F6FC;
+  border-left: 3px solid var(--pv-primary);
+}
+
+.question-lead .item-no {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: var(--pv-primary);
+  color: #fff;
+  font-size: 13px;
+  align-self: flex-start;
+}
+
+.question-stem {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.item-tag {
+  flex: none;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--pv-border);
+  color: var(--pv-muted);
+  font-size: 11.5px;
+}
+
+.question-write { display: flex; gap: 8px; align-items: stretch; }
+.question-write .question-input { flex: 1 1 auto; }
+.question-write .submit-question { flex: none; align-self: stretch; }
+
+@media (max-width: 620px) {
+  .question-row { grid-template-columns: minmax(0, 1fr); }
+}
+
+.summary-instruction {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--pv-primary-dark);
+}
+
+.summary-text-flow {
+  margin: 0;
+  font-size: 16.5px;
+  line-height: 2.35;
+}
+
+.summary-blank {
+  width: 92px;
+  margin: 0 3px;
+  padding: 1px 6px;
+  border: none;
+  border-bottom: 2px solid var(--pv-primary);
+  background: transparent;
+  color: var(--pv-primary-dark);
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+}
+
+.summary-blank:focus { background: var(--pv-primary-soft); border-radius: 4px 4px 0 0; }
+.summary-blank.is-correct { border-bottom-color: var(--pv-good); color: var(--pv-good); background: var(--pv-good-soft); }
+.summary-blank.is-wrong { border-bottom-color: var(--pv-bad); color: var(--pv-bad); background: var(--pv-bad-soft); }
+
+/* ---------- 题目卡片 ---------- */
+
+.blank-item,
+.question-item {
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border: 1px solid var(--pv-border);
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.blank-item.is-active,
+.question-item.is-active {
+  border-color: var(--pv-primary);
+  box-shadow: 0 0 0 3px rgba(118, 85, 166, .14);
+}
+
+.item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.item-no { font-size: 15px; font-weight: 800; color: var(--pv-primary-dark); }
+
+.item-category {
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: #F4F0FA;
+  color: var(--pv-muted);
+  font-size: 12px;
+}
+
+.item-context { margin-bottom: 10px; }
+
+.context-label {
+  display: inline-block;
+  margin-bottom: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--pv-muted);
+}
+
+.item-context p {
+  margin: 0;
+  padding: 8px 11px;
+  border-radius: 8px;
+  background: #F8F6FC;
+  font-size: 14.5px;
+  line-height: 1.85;
+}
+
+.question-stem { margin: 0 0 10px; font-size: 16px; font-weight: 600; }
+
+.item-answer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-answer label { font-size: 13px; font-weight: 700; color: var(--pv-muted); }
+
+.blank-input,
+.question-input {
+  flex: 1 1 190px;
+  min-width: 0;
+  padding: 8px 11px;
+  border: 1px solid var(--pv-border);
+  border-radius: 9px;
+  background: #fff;
+  font: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.question-input { resize: vertical; line-height: 1.7; }
+
+.blank-input:focus,
+.question-input:focus {
+  border-color: var(--pv-primary);
+  box-shadow: 0 0 0 3px rgba(118, 85, 166, .14);
+}
+
+.submit-blank,
+.submit-question {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 9px;
+  background: var(--pv-primary);
+  color: #fff;
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color .18s ease;
+}
+
+.submit-blank:hover,
+.submit-question:hover { background: var(--pv-primary-dark); }
+
+.item-feedback {
+  margin-top: 9px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: none;
+}
+
+.item-feedback.good { display: block; background: var(--pv-good-soft); color: var(--pv-good); }
+.item-feedback.bad { display: block; background: var(--pv-bad-soft); color: var(--pv-bad); }
+.item-feedback.warn { display: block; background: var(--pv-warn-soft); color: var(--pv-warn); }
+
+.item-detail {
+  margin-top: 9px;
+  padding: 11px 13px;
+  border-left: 3px solid var(--pv-primary);
+  border-radius: 0 8px 8px 0;
+  background: #F8F6FC;
+  font-size: 13.5px;
+  line-height: 1.8;
+}
+
+.item-detail p { margin: 0 0 6px; }
+.item-detail p:last-child { margin-bottom: 0; }
+
+.detail-distractors code {
+  display: inline-block;
+  margin: 0 3px;
+  padding: 0 6px;
+  border-radius: 5px;
+  background: var(--pv-bad-soft);
+  color: var(--pv-bad);
+  font-size: 13px;
+}
+
+/* ---------- 结果条 ---------- */
+
+.stage-result {
+  margin-top: 14px;
+  padding: 13px 16px;
+  border-radius: 11px;
+  background: #F4F0FA;
+  font-size: 14px;
+  color: var(--pv-muted);
+}
+
+.stage-result.finished { background: var(--pv-good-soft); color: var(--pv-good); }
+
+.result-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.result-line strong { font-size: 19px; color: var(--pv-primary-dark); }
+.result-remind { margin: 0; font-size: 13.5px; }
+.result-remind.ok { color: var(--pv-good); font-weight: 700; }
+
+/* ---------- 反查浮层 ---------- */
+
+.ref-popover {
+  position: fixed;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  background: #2B2233;
+  color: #fff;
+  font-size: 13.5px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, .26);
+  z-index: 40;
+}
+
+.ref-jump {
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-radius: 999px;
+  background: transparent;
+  color: #F1C40F;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ref-jump:hover { background: #F1C40F; color: #3F2C08; }
+
+.site-footer {
+  padding: 22px;
+  text-align: center;
+  color: var(--pv-muted);
+  font-size: 13px;
+}

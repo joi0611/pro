@@ -1,0 +1,46 @@
+/* 读写题目录：与完形填空题库统一的横向卡片目录 */
+.module-reading-writing #libraryHome .catalog-summary { display: none; }
+.module-reading-writing #passageCatalogGrid { display: grid; gap: 9px; }
+.module-reading-writing #passageCatalogGrid .catalog-section { display: none; }
+.module-reading-writing #passageCatalogGrid .catalog-group-heading {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 2px 0 4px; padding: 0 4px;
+}
+.module-reading-writing #passageCatalogGrid .catalog-group-heading h3 { margin: 0; color: #20182f; font-size: 19px; }
+.module-reading-writing #passageCatalogGrid .catalog-group-heading span { color: #75668f; font-size: 13px; font-weight: 800; }
+.module-reading-writing #passageCatalogGrid .catalog-row {
+  position: relative; display: grid; grid-template-columns: 80px minmax(0, 1fr) 150px;
+  align-items: center; min-height: 88px; padding: 8px 18px 8px 0; overflow: hidden;
+  border: 1px solid #ded4ec !important; border-radius: 8px; background: #fff !important;
+  box-shadow: 0 2px 9px rgba(81, 48, 128, .06); text-align: left; cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.module-reading-writing #passageCatalogGrid .catalog-row:hover { transform: translateY(-1px); border-color: #c7b1ec !important; box-shadow: 0 7px 18px rgba(81, 48, 128, .12); }
+.module-reading-writing #passageCatalogGrid .catalog-row:focus-visible { outline: 3px solid rgba(108, 62, 226, .35); outline-offset: 3px; }
+.module-reading-writing .catalog-index {
+  align-self: stretch; display: grid; place-items: center; color: #fff; font: italic 700 20px/1 Georgia, serif;
+  background: #6937e8; clip-path: polygon(0 0, 78% 0, 100% 50%, 78% 100%, 0 100%);
+}
+.module-reading-writing .catalog-row:nth-child(4n + 2) .catalog-index { background: #f2c42e; color: #32250a; }
+.module-reading-writing .catalog-row:nth-child(4n + 3) .catalog-index { background: #4fc4a4; }
+.module-reading-writing .catalog-row:nth-child(4n + 4) .catalog-index { background: #ef7d78; }
+.module-reading-writing .catalog-main { min-width: 0; display: grid; gap: 4px; padding: 0 14px 0 0; }
+.module-reading-writing .catalog-badges { min-height: 20px; display: flex; align-items: center; gap: 6px; }
+.module-reading-writing .official-exam-badge { display: inline-flex; align-items: center; width: fit-content; padding: 3px 9px; border: 1px solid #e9b72a; border-radius: 999px; background: #fff0bd; color: #78530b; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.module-reading-writing .catalog-main strong { min-width: 0; overflow: hidden; color: #171526; font-size: 17px; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
+.module-reading-writing .catalog-detail-row { min-width: 0; display: flex; align-items: center; gap: 8px; }
+.module-reading-writing .catalog-detail-row .row-meta { min-width: 0; overflow: hidden; color: #65558b; font-size: 12px; line-height: 1.4; text-overflow: ellipsis; white-space: nowrap; }
+.module-reading-writing .catalog-progress { flex: 0 0 auto; padding: 3px 8px; border-radius: 999px; background: #f0ebf7; color: #6f6485; font-size: 11px; white-space: nowrap; }
+.module-reading-writing .catalog-progress.is-complete { background: #e4f7ee; color: #237752; }
+.module-reading-writing .catalog-action { justify-self: end; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 150px; min-height: 48px; border-radius: 8px; background: #7650ac; color: #fff; font-size: 16px; font-weight: 700; box-shadow: 0 5px 12px rgba(96, 57, 152, .18); }
+.module-reading-writing .catalog-action-arrow { font-size: 20px; line-height: 1; }
+@media (max-width: 700px) {
+  .module-reading-writing #passageCatalogGrid .catalog-row { grid-template-columns: 58px minmax(0, 1fr) 48px; min-height: 78px; padding-right: 8px; }
+  .module-reading-writing .catalog-main { padding-right: 8px; }
+  .module-reading-writing .catalog-main strong { font-size: 15px; }
+  .module-reading-writing .catalog-detail-row { display: block; }
+  .module-reading-writing .catalog-progress { display: inline-block; margin-top: 3px; }
+  .module-reading-writing .catalog-action { width: 48px; min-height: 44px; gap: 0; }
+  .module-reading-writing .catalog-action-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) { .module-reading-writing #passageCatalogGrid .catalog-row { transition: none; } }

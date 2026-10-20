@@ -1,6 +1,6 @@
 const state = {
   data: null,
-  activeSection: 'strategy',
+  activeSection: 'library',
   activeCategory: '',
   learningMode: 'list',
   cardFilter: 'all',
@@ -383,6 +383,14 @@ function bindEvents() {
       checkAnswer();
     }
   });
+
+  // 篇章训练：作答后同步云端，并支持打印本篇
+  const printBtn = document.getElementById('print-passage');
+  if (printBtn && !printBtn.dataset.bound) {
+    printBtn.dataset.bound = '1';
+    printBtn.addEventListener('click', printCurrentPassage);
+  }
+  document.addEventListener('passage-progress-saved', saveCloudProgress);
 }
 
 function switchSection(section) {
@@ -398,6 +406,29 @@ function switchSection(section) {
     if (!els.practiceQuestion.classList.contains('hidden')) els.answerInput.focus();
   }
   if (section === 'library') renderArticleList();
+}
+
+/* ---------------- 篇章进度云端同步 ---------------- */
+
+/*
+ * 篇章训练的进度存在 localStorage（由 passage-view.js 维护），
+ * 这里把它一并塞进同一个 learning_progress 云端记录，换设备登录后仍能接着做。
+ */
+function readPassageProgress() {
+  if (window.ReadingWritingProgress && typeof window.ReadingWritingProgress.read === 'function') {
+    try {
+      return window.ReadingWritingProgress.read() || {};
+    } catch {
+      return {};
+    }
+  }
+  return {};
+}
+
+function savePassageProgress() {
+  if (window.ReadingWritingProgress && typeof window.ReadingWritingProgress.write === 'function') {
+    window.ReadingWritingProgress.write(readPassageProgress());
+  }
 }
 
 function getLearningItems() {
@@ -600,16 +631,25 @@ function renderArticleList() {
   els.articleList.innerHTML = articles.map((article, index) => {
     const done = article.items.filter(item => hasPracticeAttempt(item.id)).length;
     const officialYear = getReadingOfficialExamYear(article.source);
+    const isComplete = done === article.items.length && article.items.length > 0;
+    const progressText = isComplete ? '已完成' : `已练 ${done}/${article.items.length} 题`;
     return `
-      <article class="article-row${officialYear ? ' official-exam-card' : ''}">
+      <article class="article-row${officialYear ? ' official-exam-card' : ''}${isComplete ? ' is-complete' : ''}">
         <div class="article-index">${String(index + 1).padStart(2, '0')}</div>
         <div class="article-main">
-          ${officialYear ? `<span class="official-exam-badge">${officialYear} 新疆中考真题</span>` : ''}${article.source.includes('乌鲁木齐市第一中学') ? '<span class="latest-update-badge">20260913 更新</span>' : ''}
+          <div class="article-badges">
+            ${officialYear ? `<span class="official-exam-badge">${officialYear} 新疆中考真题</span>` : ''}${article.source.includes('乌鲁木齐市第一中学') ? '<span class="latest-update-badge">20260913 更新</span>' : ''}
+          </div>
           <strong>${escapeHtml(article.title)}</strong>
-          <span class="article-source${officialYear ? ' real-exam-source' : ''}">${escapeHtml(getArticleDisplaySource(article.source))}</span>
+          <div class="article-detail-row">
+            <span class="article-source${officialYear ? ' real-exam-source' : ''}">${escapeHtml(getArticleDisplaySource(article.source))}</span>
+            <span class="article-progress${isComplete ? ' is-complete' : ''}">${progressText}</span>
+          </div>
         </div>
-        <div class="article-meta">${done}/${article.items.length}</div>
-        <button class="start-article" type="button" data-source="${escapeAttr(article.source)}">开始训练</button>
+        <button class="start-article" type="button" data-source="${escapeAttr(article.source)}" aria-label="开始训练：${escapeAttr(article.title)}">
+          <span class="start-article-label">${isComplete ? '再次训练' : '开始训练'}</span>
+          <span class="start-article-arrow" aria-hidden="true">→</span>
+        </button>
       </article>
     `;
   }).join('');
@@ -623,14 +663,30 @@ function startArticle(source) {
   switchSection('practice');
 }
 
+/*
+ * 同义词逐空练习的题池：从全部真题填空中提炼「不是按照原文直接填写」的题——
+ * 即答案无法从原句里直接抄到、必须做同义替换或词形调整的转换题。
+ * 原词复现的题直接剔除，只留真转换。
+ */
+function isTransformationItem(item) {
+  const original = normalizeAnswer(item.originalSentence);
+  if (!original) return false;
+  return !getAcceptableAnswers(item).some(answer => {
+    const word = normalizeAnswer(answer).replace(/[^a-z]/g, '');
+    if (!word) return false;
+    return new RegExp('(^|[^a-z])' + word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '([^a-z]|$)').test(original);
+  });
+}
+
 function getAllPracticeItems() {
-  return (state.data.practiceItems || []).filter(item => item.targetSentence && item.answer);
+  return (state.data.practiceItems || [])
+    .filter(item => item.targetSentence && item.answer)
+    .filter(isTransformationItem);
 }
 
 function getPracticeItems() {
-  const items = getAllPracticeItems();
-  if (!state.currentArticleSource) return items;
-  return items.filter(item => (String(item.source || '').trim() || '名校优质真题') === state.currentArticleSource);
+  // 单一题池：整库混练，进度按总题数走
+  return getAllPracticeItems();
 }
 
 function getUnfinishedPracticeItems() {
@@ -688,11 +744,9 @@ function nextPractice() {
 function renderPractice() {
   const item = state.currentPractice;
   const progress = getPracticeProgress();
-  const status = '本篇训练';
   const allItems = progress.items;
   const globalIndex = allItems.findIndex(candidate => String(candidate.id) === String(item.id));
-  const title = cleanSourceTitle(item.source);
-  els.practiceSource.textContent = `${status} · 第 ${globalIndex + 1}/${allItems.length} 题 · ${title} · 原题第 ${item.number} 空`;
+  els.practiceSource.textContent = `第 ${globalIndex + 1}/${allItems.length} 题 · 来源：${item.source} · 原题第 ${item.number} 空`;
   els.practiceOriginal.textContent = item.originalSentence;
   els.practiceTarget.innerHTML = escapeHtml(item.targetSentence).replace(/_+/g, '<span class="blank">______</span>');
   els.practiceQuestion.classList.remove('hidden');
@@ -701,7 +755,7 @@ function renderPractice() {
   els.answerInput.value = '';
   els.answerInput.disabled = false;
   els.nextPractice.disabled = true;
-  els.nextPractice.textContent = globalIndex === allItems.length - 1 ? '完成本篇' : '下一题';
+  els.nextPractice.textContent = globalIndex === allItems.length - 1 ? '完成本轮' : '下一题';
   els.answerInput.focus();
   setFeedback('', '');
   updatePracticeProgress();
@@ -734,14 +788,13 @@ function getArticleDisplaySource(source) {
 }
 
 function printReadingWritingPaper() {
-  const source = state.currentArticleSource;
   const items = getPracticeItems();
-  if (!source || !items.length) {
-    alert('请先在题库中选择一篇读写题，再点击打印。');
+  if (!items.length) {
+    alert('暂无可打印的同义词逐空练习题。');
     return;
   }
-  const title = cleanSourceTitle(source) || '读写题训练';
-  const displaySource = getArticleDisplaySource(source);
+  const title = '同义词逐空练习';
+  const displaySource = '真题填空同义转换汇编';
   const questions = items.map((item, index) => {
     const number = item.number || index + 1;
     const target = escapeHtml(item.targetSentence || '').replace(/_+/g, '<span class="print-blank">____________</span>');
@@ -792,7 +845,7 @@ function checkAnswer() {
   els.answerInput.disabled = true;
   els.nextPractice.disabled = false;
   const unfinished = getUnfinishedPracticeItems();
-  els.nextPractice.textContent = unfinished.length ? '下一题' : '查看本篇结果';
+  els.nextPractice.textContent = unfinished.length ? '下一题' : '查看本轮结果';
 }
 
 function getAcceptableAnswers(item) {
@@ -846,10 +899,10 @@ function showArticleSummary() {
   els.practiceQuestion.classList.add('hidden');
   els.practiceSummary.classList.remove('hidden');
   els.newPractice.classList.add('hidden');
-  els.practiceSource.textContent = `${cleanSourceTitle(state.currentArticleSource)} · 本篇已做完`;
+  els.practiceSource.textContent = '同义词逐空练习 · 本轮已全部做完';
   els.practiceSummary.innerHTML = `
     <div class="article-result-head">
-      <span class="result-finished">本篇已做完</span>
+      <span class="result-finished">本轮已做完</span>
       <strong>${correct}/${items.length}</strong>
       <span>正确率 ${accuracy}%</span>
     </div>
@@ -858,7 +911,7 @@ function showArticleSummary() {
         <h3>错题复盘（${wrong.length}题）</h3>
         ${wrong.map(({ item, attempt }) => `
           <article class="wrong-review-item">
-            <div class="wrong-review-number">原题第 ${escapeHtml(item.number)} 空</div>
+            <div class="wrong-review-number">${escapeHtml(item.source)} · 原题第 ${escapeHtml(item.number)} 空</div>
             <p><strong>原句：</strong>${escapeHtml(item.originalSentence)}</p>
             <p><strong>转化句：</strong>${escapeHtml(item.targetSentence).replace(/_+/g, '<span class="blank">______</span>')}</p>
             <p class="wrong-answer"><strong>你的答案：</strong>${escapeHtml(attempt.answer || '未填写')}</p>
@@ -968,6 +1021,11 @@ async function loadCloudProgress() {
       ]);
       localStorage.setItem(MASTERED_KEY, JSON.stringify([...state.mastered]));
     }
+    // 篇章训练进度：从云端恢复到本地
+    if (progress.passages && typeof progress.passages === 'object') {
+      savePassageProgress();
+      window.dispatchEvent(new CustomEvent('passage-progress-loaded'));
+    }
     migrateCompletedPracticeToAttempts();
   } catch (error) {
     console.warn('Load reading-writing cloud progress failed:', error);
@@ -997,6 +1055,7 @@ async function saveCloudProgress() {
         completedPractice: [...state.completedPractice],
         practiceAttempts: state.practiceAttempts,
         mastered: [...state.mastered],
+        passages: readPassageProgress(),
         updatedAt: new Date().toISOString()
       },
       input_completed: false,
@@ -1018,4 +1077,79 @@ function escapeHtml(value) {
 
 function escapeAttr(value) {
   return escapeHtml(value).replaceAll('`', '&#96;');
+}
+
+/* ---------------- 篇章训练打印 ---------------- */
+
+/*
+ * 整篇输出为 A4 练习稿：原文 + 缩写填空（含作答横线）+ 问答题，
+ * 与真实中考卷面一致，可直接打印给孩子做。
+ */
+function printCurrentPassage() {
+  const data = window.PASSAGES_DATA;
+  if (!Array.isArray(data) || !data.length) {
+    alert('篇章训练数据尚未载入。');
+    return;
+  }
+  if (typeof window.ReadingWritingProgress !== 'object') {
+    alert('请先进入篇章训练再打印。');
+    return;
+  }
+
+  // 打印当前打开的那一篇（由 view 层决定）
+  const current = document.querySelector('.picker-item.active');
+  const idx = current ? Number(current.dataset.passageIndex) : 0;
+  const p = data[idx];
+  if (!p) return;
+
+  const paragraphHtml = (p.paragraphs || [])
+    .map(par => `<p>${escapeHtml((par.sentences || []).map(s => s.text).join(' '))}</p>`)
+    .join('');
+
+  const summaryHtml = escapeHtml(p.summary || '')
+    .replace(/\{\{(\d+)\}\}/g, '<span class="print-blank"></span>');
+
+  const questionHtml = (p.questions || [])
+    .map(q => `<li>${escapeHtml(q.question)}</li>`)
+    .join('');
+
+  const popup = window.open('', '_blank', 'width=900,height=760');
+  if (!popup) {
+    alert('浏览器阻止了打印窗口，请允许弹出窗口后重试。');
+    return;
+  }
+  popup.document.open();
+  popup.document.write(`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>${escapeHtml(p.source)} - 读写题</title><style>
+    @page{size:A4;margin:16mm 15mm}*{box-sizing:border-box}
+    body{margin:0;color:#111;background:#fff;font-family:Arial,"Microsoft YaHei",sans-serif;font-size:13px;line-height:1.7}
+    .paper{max-width:760px;margin:0 auto}
+    .head{text-align:center;border-bottom:2px solid #111;padding-bottom:9px;margin-bottom:12px}
+    .head h1{margin:0 0 4px;font-size:21px}
+    .source{margin:0;color:#444;font-size:12px}
+    .student{display:flex;justify-content:space-between;margin-top:12px;font-size:12px}
+    h2{margin:14px 0 6px;font-size:15px;border-left:4px solid #333;padding-left:8px}
+    .instruction{margin:0 0 8px;font-size:12.5px;color:#333}
+    .passage p{margin:0 0 7px;text-align:justify}
+    .summary{border:1px solid #666;padding:10px 12px;margin-top:6px;border-radius:4px}
+    .print-blank{display:inline-block;min-width:104px;border-bottom:1px solid #111;height:1.05em}
+    ol{margin:6px 0 0;padding-left:22px}
+    li{margin-bottom:16px}
+    .answer{margin-top:14px;border-top:1px dashed #999;padding-top:8px;font-size:12px;color:#444}
+    .answer b{color:#111}
+    @media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+  </style></head><body><main class="paper">
+    <header class="head"><h1>读写题训练</h1><p class="source">${escapeHtml(p.source)}</p>
+      <div class="student"><span>姓名：____________</span><span>用时：____________</span><span>得分：____________</span></div>
+    </header>
+    <h2>第一节 缩写填空</h2>
+    <p class="instruction">阅读短文，根据语篇内容，在方框内的空白处，填入与短文意思最符合的单词。每空一词。</p>
+    <div class="passage">${paragraphHtml}</div>
+    <div class="summary">${summaryHtml}</div>
+    <h2>第二节 语篇问答</h2>
+    <p class="instruction">阅读短文，根据语篇内容，回答问题。</p>
+    <ol>${questionHtml}</ol>
+    <div class="answer"><b>参考答案</b>　填空：${escapeHtml((p.blanks || []).map(b => b.no + '．' + b.answer).join('　'))}<br>
+      问答：${escapeHtml((p.questions || []).map(q => q.no + '．' + q.answer).join('　'))}</div>
+  </main><script>window.addEventListener('load',()=>window.print());<\/script></body></html>`);
+  popup.document.close();
 }

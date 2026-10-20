@@ -1,0 +1,209 @@
+/* 读写题题库目录：与完形填空目录统一的横向篇目卡片。 */
+.module-reading-writing #library.section.active {
+  background:
+    linear-gradient(rgba(118, 85, 166, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(118, 85, 166, 0.035) 1px, transparent 1px),
+    rgba(255, 255, 255, 0.9) !important;
+  background-size: 28px 28px;
+}
+
+.module-reading-writing .article-list {
+  gap: 10px;
+}
+
+.module-reading-writing .article-row {
+  position: relative;
+  grid-template-columns: 80px minmax(0, 1fr) 150px;
+  gap: 18px;
+  min-height: 88px;
+  overflow: hidden;
+  padding: 8px 18px 8px 0;
+  border-color: #ded4ec !important;
+  background: rgba(255, 255, 255, 0.97) !important;
+  box-shadow: 0 5px 14px rgba(59, 40, 86, 0.07) !important;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.module-reading-writing .article-row:hover {
+  border-color: #b79be8 !important;
+  box-shadow: 0 9px 22px rgba(59, 40, 86, 0.12) !important;
+}
+
+.module-reading-writing .article-index {
+  width: auto;
+  height: auto;
+  min-height: 68px;
+  border-radius: 0;
+  font-size: 22px;
+}
+
+.module-reading-writing .article-main {
+  align-content: center;
+  gap: 4px;
+}
+
+.module-reading-writing .article-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-height: 0;
+}
+
+.module-reading-writing .article-badges:empty {
+  display: none;
+}
+
+.module-reading-writing .article-main > strong {
+  display: block;
+  overflow: hidden;
+  color: #1a1421;
+  font-size: 18px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.module-reading-writing .article-detail-row {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+}
+
+.module-reading-writing .article-source {
+  min-width: 0;
+  overflow: hidden;
+  color: #71677d;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.module-reading-writing .article-source.real-exam-source {
+  color: #6b43b5;
+  font-weight: 900;
+}
+
+.module-reading-writing .article-progress {
+  flex: 0 0 auto;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: #5f5270;
+  background: #f0ebf7;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.module-reading-writing .article-progress.is-complete {
+  color: #356247;
+  background: #e8f5ec;
+}
+
+.module-reading-writing .start-article {
+  min-width: 150px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.module-reading-writing .start-article:hover {
+  transform: none;
+  box-shadow: 0 7px 16px rgba(83, 58, 112, 0.2) !important;
+}
+
+.module-reading-writing .start-article:focus-visible {
+  outline: 3px solid #7c3aed;
+  outline-offset: 3px;
+}
+
+.module-reading-writing .start-article-arrow {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.module-reading-writing .article-row.is-complete {
+  opacity: 0.72;
+}
+
+@media (max-width: 700px) {
+  .module-reading-writing .article-row {
+    grid-template-columns: 58px minmax(0, 1fr) 48px;
+    gap: 10px;
+    min-height: 84px;
+    padding-right: 8px;
+  }
+
+  .module-reading-writing .article-index {
+    min-height: 68px;
+    font-size: 17px;
+  }
+
+  .module-reading-writing .article-main > strong {
+    font-size: 16px;
+    white-space: normal;
+  }
+
+  .module-reading-writing .article-detail-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .module-reading-writing .article-source {
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .module-reading-writing .article-progress {
+    padding: 2px 7px;
+    font-size: 11px;
+  }
+
+  .module-reading-writing .start-article {
+    min-width: 44px;
+    width: 44px;
+    min-height: 48px;
+    overflow: visible;
+    padding: 0;
+    color: #fff !important;
+    font-size: 0;
+  }
+
+  .module-reading-writing .start-article-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .module-reading-writing .start-article::after {
+    content: none;
+  }
+
+  .module-reading-writing .start-article-arrow {
+    color: #fff;
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .module-reading-writing .article-row,
+  .module-reading-writing .start-article {
+    transition: none;
+  }
+}

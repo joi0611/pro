@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <title>读写题篇章训练 · 完整篇目</title>
+  <link rel="stylesheet" href="../../assets/theme-purple.css?v=20260716-ui3">
+  <link rel="stylesheet" href="passage-preview.css?v=20261019-1">
+</head>
+<body class="passage-preview">
+  <header class="pv-header">
+    <div class="pv-brand">
+      <div class="brand-mark" aria-hidden="true">新</div>
+      <div>
+        <strong>新疆学生无限进步</strong>
+        <h1>读写题 · 篇章训练</h1>
+        <p>完整原文 + 缩写填空 + 问答，答案与原文双向高亮</p>
+      </div>
+    </div>
+    <div class="pv-progress" id="stageProgress">加载中</div>
+  </header>
+
+  <nav class="passage-picker" id="passagePicker" aria-label="篇目选择"></nav>
+
+  <main id="passageApp" class="pv-shell">
+    <section class="pv-card pv-passage-card">
+      <div class="pv-card-head">
+        <h2>阅读原文</h2>
+        <p class="pv-hint">点击文中任意一句，可反查它支撑了哪几道题</p>
+      </div>
+      <div class="pv-meta" id="passageMeta"></div>
+      <div class="passage-scroll" id="passageScroll">
+        <div class="passage-text" id="passageText"></div>
+      </div>
+      <details class="pv-guide">
+        <summary>篇章导读</summary>
+        <p id="passageGuide"></p>
+      </details>
+    </section>
+
+    <section class="pv-card pv-card--work">
+      <div class="stage-tabs" role="tablist" aria-label="作答阶段">
+        <button class="stage-tab active" type="button" data-stage="blank" role="tab" aria-selected="true">
+          第一节 · 缩写填空<span class="tab-count">0/6</span>
+        </button>
+        <button class="stage-tab" type="button" data-stage="question" role="tab" aria-selected="false">
+          第二节 · 语篇问答<span class="tab-count">0/2</span>
+        </button>
+      </div>
+
+      <div class="work-scroll" id="workScroll">
+        <div class="summary-box" id="summaryBox"></div>
+        <div class="blank-panel" id="blankPanel"></div>
+        <div class="question-panel hidden" id="questionPanel"></div>
+        <div class="stage-result" id="stageResult"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">@新疆学生无限进步</footer>
+
+  <script src="passage-engine.js?v=20261019-1"></script>
+  <script src="mvp_data.js?v=xj-progress-rw-1"></script>
+  <script src="passages-data.generated.js?v=20261019-1"></script>
+  <script>
+    // 预览页直接把批量产出当主数据，并接上同义词训练区
+    window.PASSAGE_DATA = (window.PASSAGES_DATA || [])[0] || null;
+    window.MVP_DATA = window.MVP_DATA || { categories: ['同义/反义转换、归纳概括'], learningItems: [], practiceItems: [] };
+    if (!window.MVP_DATA.categories.length) window.MVP_DATA.categories = ['同义/反义转换、归纳概括'];
+  </script>
+  <script src="passage-learning-bridge.js?v=20261019-1"></script>
+  <script src="passage-view.js?v=20261019-1"></script>
+</body>
+</html>

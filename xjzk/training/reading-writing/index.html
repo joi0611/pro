@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-  <title>读写题训练系统 | 新疆学生无限进步</title>
-  <link rel="stylesheet" href="style.css?v=20261011-phone-login-1">
+  <title>读写题（任务型阅读）训练系统 | 新疆学生无限进步</title>
+  <link rel="stylesheet" href="style.css?v=20261020-header-col-1">
+  <link rel="stylesheet" href="passage-section.css?v=20261020-3">
+  <link rel="stylesheet" href="passage-library.css?v=20261020-basic-order-1">
   <link rel="stylesheet" href="../../assets/theme-purple.css?v=20260716-ui3">
   <link rel="stylesheet" href="../../assets/workbook-modules.css?v=20260716-1">
+  <link rel="stylesheet" href="reading-library.css?v=20261020-1">
 </head>
 <body class="module-reading-writing">
   <a class="skip-link" href="#mainContent">跳到主要内容</a>
   <div class="login-gate" id="loginGate">
     <section class="login-card">
       <div class="brand-mark login-mark">新</div>
-      <h1>读写题训练系统</h1>
+      <h1>读写题（任务型阅读）训练系统</h1>
       <p>@新疆学生无限进步</p>
       <div class="login-mode-tabs" role="tablist" aria-label="选择登录方式">
         <button type="button" class="login-mode-tab active" data-login-mode="code" role="tab" aria-selected="true">登录码登录</button>
@@ -36,28 +39,83 @@
         <div class="brand-mark" aria-hidden="true">新</div>
         <div>
           <strong class="site-brand-name student-system-brand">新疆学生无限进步</strong>
-          <h1>读写题训练系统</h1>
+          <h1>读写题（任务型阅读）训练系统</h1>
           <p>考点学习与真题演练</p>
         </div>
       </div>
       <nav class="module-nav" aria-label="模块导航">
-        <button class="nav-item active" data-section="strategy">做题步骤和技巧</button>
-        <button class="nav-item" data-section="library">题库</button>
+        <button class="nav-item" data-section="strategy">做题步骤和技巧</button>
+        <button class="nav-item active" data-section="library">题库</button>
+        <button class="nav-item" data-section="practice">同义词逐空练习</button>
         <button class="nav-item" data-section="learning">同义词训练</button>
       </nav>
       <div class="header-actions"><a class="home-link" href="../../index.html">返回首页训练其他题型</a><button class="logout-button" id="logoutButton" type="button">退出登录</button></div>
     </header>
 
     <main class="main-panel">
-      <section id="library" class="section">
-        <div class="section-heading">
-          <span class="eyebrow">题库主页</span>
-          <h2>读写题真题列表</h2>
+      <section id="library" class="section active">
+        <div id="libraryHome">
+          <div class="section-heading">
+            <span class="eyebrow">题库主页</span>
+            <h2>读写题真题列表</h2>
+          </div>
+
+          <!-- 篇章目录（题库全部内容） -->
+          <div class="passage-catalog" id="passageCatalog">
+            <div class="catalog-summary" id="catalogSummary"></div>
+            <div class="passage-catalog-grid" id="passageCatalogGrid"></div>
+          </div>
         </div>
-        <div id="article-list" class="article-list"></div>
+
+        <!-- 篇章训练页 -->
+        <div class="passage-training" id="passageTraining" hidden>
+          <div class="passage-toolbar">
+            <button class="catalog-back" id="passageBack" type="button">← 返回题库</button>
+            <div class="passage-progress">
+              <span id="passageOverall">加载中</span>
+            </div>
+            <button id="print-passage" type="button">打印本篇</button>
+          </div>
+          <div class="passage-stage" id="passageApp">
+          <section class="passage-col passage-col--text">
+            <div class="passage-card">
+              <div class="passage-card-head">
+                <h3>阅读原文</h3>
+                <p class="passage-hint">点文中任意一句，可反查它支撑了哪几道题</p>
+              </div>
+              <div class="passage-scroll" id="passageScroll">
+                <div class="passage-text" id="passageText"></div>
+              </div>
+              <details class="passage-guide">
+                <summary>篇章导读</summary>
+                <p id="passageGuide"></p>
+              </details>
+            </div>
+          </section>
+          <section class="passage-col passage-col--work">
+            <div class="passage-card passage-card--work">
+              <div class="stage-tabs" role="tablist" aria-label="作答阶段">
+                <button class="stage-tab active" type="button" data-stage="blank" role="tab" aria-selected="true">
+                  第一节 · 缩写填空<span class="tab-count">0/0</span>
+                </button>
+                <button class="stage-tab" type="button" data-stage="question" role="tab" aria-selected="false">
+                  第二节 · 语篇问答<span class="tab-count">0/0</span>
+                </button>
+              </div>
+              <div class="passage-progress-text" id="stageProgress"></div>
+              <div class="work-scroll" id="workScroll">
+                <div class="summary-box" id="summaryBox"></div>
+                <div class="blank-panel" id="blankPanel"></div>
+                <div class="question-panel hidden" id="questionPanel"></div>
+                <div class="stage-result" id="stageResult"></div>
+              </div>
+            </div>
+          </section>
+          </div><!-- /passage-stage -->
+        </div><!-- /passage-training -->
       </section>
 
-      <section id="strategy" class="section active">
+      <section id="strategy" class="section">
         <div class="strategy-container">
           <div class="strategy-intro">
             <h2>读写题攻略</h2>
@@ -224,7 +282,7 @@
       <section id="practice" class="section">
         <div class="section-heading">
           <span class="eyebrow">模块三</span>
-          <h2>题目训练</h2>
+          <h2>同义词逐空练习</h2>
         </div>
         <div class="practice-toolbar">
           <div class="practice-progress">
@@ -270,7 +328,11 @@
   <script src="urumqi-may-2026-exams.js?v=20260828-urumqi-four-exams-1"></script>
   <script src="urumqi-no1-september-2026.js?v=20260913-1"></script>
   <script src="learning-phrase-base.js?v=20260914-latest-synonyms-1"></script>
-  <script src="../../assets/student-profile.js?v=20260828-1"></script>
-  <script src="app.js?v=20261011-phone-login-1"></script>
+  <script src="../../assets/student-profile.js?v=20261020-1"></script>
+  <script src="passage-engine.js?v=20261019-1"></script>
+  <script src="passages-data.generated.js?v=20261019-1"></script>
+  <script src="passage-learning-bridge.js?v=20261019-1"></script>
+  <script src="passage-view.js?v=20261020-basic-order-1"></script>
+  <script src="app.js?v=20261020-synonym-practice-1"></script>
 </body>
 </html>
