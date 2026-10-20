@@ -150,7 +150,7 @@
     const sentences = splitSentences(article);
     const total = (article.questions || []).length;
     const right = Object.values(selectedAnswers || {}).filter(item => item && item.correct).length;
-    const title = (article.serial ? article.serial + " · " : "") + (article.practiceTitle || article.title || "语法填空");
+    const title = (article.serial ? article.serial + " · " : "") + (article.practiceTitle || article.title || "短文填空");
     return '<div class="grammar-reading-view">' +
       '<section class="reading-success"><span class="reading-success-icon" aria-hidden="true">✓</span><div><h3>本篇已完成，可以查看全文精读</h3><p>全部题目完成后，集中复习逐句翻译、重点词汇和固定短语。</p></div><dl><div><dt>' + total + '/' + total + '</dt><dd>已完成</dd></div><div><dt>' + right + '</dt><dd>答对</dd></div></dl></section>' +
       '<article class="reading-paper"><header class="reading-paper-head"><div><h3>' + escapeHtml(title) + '｜全文精读</h3><p>来源：' + escapeHtml(article.source || article.title || "") + '</p></div><span>全部完成后解锁</span></header>' +
