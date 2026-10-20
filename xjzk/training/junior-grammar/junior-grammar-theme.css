@@ -189,7 +189,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .jgr-login-desc { margin: 0 0 24px; color: var(--jg-muted); font-size: 14px; line-height: 1.7; }
 .jgr-login-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 18px; padding: 4px; border-radius: 12px; background: var(--jg-soft); }
 .jgr-login-tabs button { min-height: 38px; border: 0; border-radius: 9px; color: var(--jg-muted); background: transparent; font: inherit; font-weight: 800; cursor: pointer; }
-.jgr-login-tabs button.active { color: var(--jg-primary-dark); background: #fff; box-shadow: 0 2px 8px rgba(84, 55, 125, .12); }
+  .jgr-login-tabs button.active { color: var(--jg-primary-dark); background: #fff; box-shadow: 0 2px 8px rgba(84, 55, 125, .12); }
+  .jgr-login-tabs button:focus-visible { outline: 3px solid rgba(124, 58, 237, .24); outline-offset: 2px; }
 .jgr-login-help { margin: 7px 0 0; color: var(--jg-muted); font-size: 12px; letter-spacing: 0; }
 .jgr-login-card label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 800; }
 .jgr-code-input {
@@ -239,6 +240,59 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   cursor: pointer;
 }
 
+/* Desktop learning workspace: keep the phone flow compact while using wide screens well. */
+@media (min-width: 1024px) {
+  .jgr-directory-page .top-bar-inner,
+  .jgr-directory-page .tabs-container,
+  .jgr-directory-page .usage-bar-inner,
+  .jgr-directory-page .main {
+    width: min(100%, 1280px);
+    max-width: 1280px;
+  }
+
+  .jgr-directory-page .main { padding-inline: 32px; }
+  .jgr-directory-page .tabs-container { padding-inline: 32px; }
+  .jgr-directory-page .hero p { max-width: 720px; }
+}
+
+@media (min-width: 1280px) {
+  .jgr-directory-page .lesson-grid,
+  .jgr-directory-page .wb-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .jgr-lesson-page .topbar-inner {
+    width: min(100%, 1440px);
+    max-width: 1440px;
+    padding-inline: 40px;
+  }
+
+  .jgr-lesson-page .lesson-main {
+    width: min(100%, 1440px);
+    max-width: 1440px;
+    padding: 32px 40px 24px;
+  }
+
+  .jgr-lesson-page .book-container {
+    min-width: 0;
+    padding: 48px clamp(44px, 4.2vw, 68px);
+    border-radius: 12px;
+  }
+
+  .jgr-lesson-page .book-container p,
+  .jgr-lesson-page .book-container li {
+    line-height: 1.75;
+  }
+
+  .jgr-lesson-page .book-container > p {
+    max-width: 75ch;
+  }
+
+}
+
 @media (max-width: 600px) {
   .jgr-login-layer { padding: 16px; }
   .jgr-login-card { padding: 26px 22px; border-radius: 18px; }
@@ -250,5 +304,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @media print {
   html, body { background: #fff !important; color: #111 !important; }
   .jgr-login-layer, .jgr-logout { display: none !important; }
+  .jgr-lesson-page .lesson-main { width: auto !important; max-width: none !important; padding: 0 !important; }
   .module-card, .lesson-card, .wb-card, .qe-q { box-shadow: none !important; }
 }
