@@ -1,0 +1,21 @@
+/* Shared responsive and print guardrails for the Junior Grammar Reconstruction lessons. */
+@media screen and (max-width: 768px) {
+  html, body { max-width: 100%; overflow-x: hidden; }
+  .lesson-main { padding: 14px 10px 32px !important; }
+  .book-container { width: 100% !important; max-width: 100% !important; margin-inline: auto !important; }
+  .topbar-inner { gap: 8px !important; padding-inline: 12px !important; }
+  .topbar-lesson-info { min-width: 0; }
+  .tl-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .chapter-cover { padding: 34px 20px !important; }
+  .module-card, .quiz-block, .goal-box, .brain-box, .tip-box, .warn-box { padding: 18px !important; }
+  .magic-table, .pattern-table, table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .car-grid, .exam-map-grid, .cheat-grid { grid-template-columns: 1fr !important; }
+  img, svg { max-width: 100%; }
+}
+
+@media print {
+  .lesson-topbar, .topbar, .top-bar, .topbar-print, .lesson-nav, .jgr-logout { display: none !important; }
+  html, body, .lesson-main { background: #fff !important; padding: 0 !important; }
+  .book-container { width: 100% !important; max-width: none !important; margin: 0 !important; box-shadow: none !important; }
+  .module-card, .quiz-block, table, tr, .no-break { break-inside: avoid; page-break-inside: avoid; }
+}

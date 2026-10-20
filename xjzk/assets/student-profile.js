@@ -7,11 +7,14 @@
     "reading-comprehension": "阅读理解",
     "reading-writing": "读写题",
     vocabulary: "单词训练",
-    word_choice: "选词填空"
+    word_choice: "选词填空",
+    word_formation: "构词法",
+    junior_grammar: "初中语法重构",
+    writing: "写作训练"
   };
 
   function normalizeName(value) {
-    return String(value || "").replace(/[<>&"'`]/g, "").replace(/[\u0000-\u001f\u007f]/g, "").replace(/\s+/g, " ").trim().slice(0, 20);
+    return String(value || "").trim();
   }
 
   function cacheKey(code) {
@@ -48,7 +51,7 @@
     return new Promise(resolve => {
       const mask = document.createElement("div");
       mask.className = "student-profile-mask";
-      mask.innerHTML = `<form class="student-profile-card"><h2>首次登录，请填写姓名</h2><p>姓名将与当前登录码绑定，用于生成你的专属训练系统。</p><label for="studentProfileName">学生姓名</label><input id="studentProfileName" maxlength="20" autocomplete="name" placeholder="请输入姓名"><p class="student-profile-error" aria-live="polite"></p><div class="student-profile-actions"><button class="primary" type="submit">下一步</button></div></form>`;
+      mask.innerHTML = `<form class="student-profile-card"><h2>首次登录，请填写姓名</h2><p>手机号只需填写一次，其他已开通板块会自动使用同一姓名。</p><label for="studentProfileName">学生姓名</label><input id="studentProfileName" autocomplete="name" placeholder="请输入姓名"><p class="student-profile-error" aria-live="polite"></p><div class="student-profile-actions"><button class="primary" type="submit">下一步</button></div></form>`;
       document.body.appendChild(mask);
       const form = mask.querySelector("form");
       const input = mask.querySelector("input");
@@ -58,7 +61,6 @@
         event.preventDefault();
         const name = normalizeName(input.value);
         if (!name) { error.textContent = "请输入姓名。"; input.focus(); return; }
-        if (name !== String(input.value || "").replace(/\s+/g, " ").trim()) { error.textContent = "姓名中不能包含特殊符号。"; input.focus(); return; }
         mask.remove();
         resolve(name);
       });
@@ -70,7 +72,7 @@
     return new Promise(resolve => {
       const mask = document.createElement("div");
       mask.className = "student-profile-mask";
-      mask.innerHTML = `<section class="student-profile-card" role="dialog" aria-modal="true"><h2>请再次确认</h2><p>确认后姓名将与登录码永久绑定，无法修改。</p><div class="student-profile-confirm-name"></div><p class="student-profile-error" aria-live="polite"></p><div class="student-profile-actions"><button type="button" data-action="back">返回修改</button><button class="primary" type="button" data-action="confirm">确认姓名</button></div></section>`;
+      mask.innerHTML = `<section class="student-profile-card" role="dialog" aria-modal="true"><h2>请再次确认</h2><p>确认后，同一手机号进入其他已开通板块时会自动使用这个姓名。</p><div class="student-profile-confirm-name"></div><p class="student-profile-error" aria-live="polite"></p><div class="student-profile-actions"><button type="button" data-action="back">返回修改</button><button class="primary" type="button" data-action="confirm">确认姓名</button></div></section>`;
       mask.querySelector(".student-profile-confirm-name").textContent = name;
       document.body.appendChild(mask);
       mask.querySelector('[data-action="back"]').onclick = () => { mask.remove(); resolve(false); };
