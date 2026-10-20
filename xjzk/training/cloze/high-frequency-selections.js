@@ -1,9 +1,9 @@
 window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
   "xinjiang-official-2025-cloze": [
     {
-      "word": "life",
-      "surface": "life",
-      "sentence": "Life always seemed to be happy for him.",
+      "word": "change",
+      "surface": "changed",
+      "sentence": "His life changed all of a sudden.",
       "answer": true,
       "collocation": false
     },
@@ -22,13 +22,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "answer",
-      "surface": "answered",
-      "sentence": "On the fifth day, Bill answered with a shy 'Hello!' to everybody.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "city",
       "surface": "city",
       "sentence": "Bill used to live in a big city.",
@@ -39,6 +32,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "face",
       "surface": "face",
       "sentence": "Smiles appeared on Bill's face again.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "move",
+      "surface": "move",
+      "sentence": "Last year, Bill's family had to move to a small town.",
       "answer": false,
       "collocation": false
     },
@@ -122,16 +122,16 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "face",
-      "surface": "face",
-      "sentence": "After work, I often got her thank-you note with a smiling face for my efforts.",
+      "word": "own",
+      "surface": "own",
+      "sentence": "She has her own family and children.",
       "answer": false,
       "collocation": false
     },
     {
-      "word": "own",
-      "surface": "own",
-      "sentence": "She has her own family and children.",
+      "word": "receive",
+      "surface": "receiving",
+      "sentence": "We were used to receiving Linda's love notes and always put them up on the fridge.",
       "answer": false,
       "collocation": false
     },
@@ -166,6 +166,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
+      "word": "hard",
+      "surface": "hard",
+      "sentence": "I know this world's problems sometimes seem hard, but how can we solve them?",
+      "answer": true,
+      "collocation": false
+    },
+    {
       "word": "thought",
       "surface": "thought",
       "sentence": "I thought of a spring day long ago.",
@@ -180,23 +187,9 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "along",
-      "surface": "along",
-      "sentence": "As I drove along the road in a mountain, I could see some pretty wildflowers.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "lake",
       "surface": "lake",
       "sentence": "When my children were younger, we often took a walk around the lake near our home.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "act",
-      "surface": "act",
-      "sentence": "Our small act of being kind can make this colorful world even better.",
       "answer": false,
       "collocation": false
     },
@@ -210,6 +203,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
     {
       "word": "set",
       "surface": "set",
+      "sentence": "We stopped before we went home and took one last look at the lake as the sun set.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "sun",
+      "surface": "sun",
       "sentence": "We stopped before we went home and took one last look at the lake as the sun set.",
       "answer": false,
       "collocation": false
@@ -280,9 +280,9 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "start",
-      "surface": "started",
-      "sentence": "The kite started to go higher.",
+      "word": "right",
+      "surface": "right",
+      "sentence": "Using the string, you helped the kite go up in the right direction.",
       "answer": false,
       "collocation": false
     }
@@ -324,13 +324,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "receive",
-      "surface": "received",
-      "sentence": "During my whole life I have received kindness from many strangers.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "send",
       "surface": "sent",
       "sentence": "Then he sent us to mum's workplace by taxi.",
@@ -357,6 +350,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "sentence": "It's OK if you can't find the shoe, but it is not OK to lose your brother.",
       "answer": false,
       "collocation": false
+    },
+    {
+      "word": "put",
+      "surface": "put",
+      "sentence": "So I dressed him, put on his shoes, carried him on my back and walked out.",
+      "answer": false,
+      "collocation": true
     }
   ],
   "xinjiang-official-2020-cloze": [
@@ -371,13 +371,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "summer",
       "surface": "summer",
       "sentence": "As the summer came, the 'grass' really flowered.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "value",
-      "surface": "value",
-      "sentence": "We don't give them the time to flower to prove their value.",
       "answer": false,
       "collocation": false
     },
@@ -427,6 +420,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "month",
       "surface": "month",
       "sentence": "A month later, when the leaves spread quickly, I discovered they were like wild orchids in the forest.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "yellow",
+      "surface": "yellow",
+      "sentence": "The flowers looked like those forest orchids, but they were yellow, unlike those purple or brown-red forest orchids.",
       "answer": false,
       "collocation": false
     }
@@ -547,13 +547,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "kind",
-      "surface": "kind",
-      "sentence": "The doctor said she had a kind of mental disease and couldn't look after herself like a normal person.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "long",
       "surface": "long",
       "sentence": "I hadn't seen him for a very long time.",
@@ -568,9 +561,16 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "TV",
-      "surface": "tv",
-      "sentence": "A few days ago, I sat on the sofa watching TV.",
+      "word": "school",
+      "surface": "school",
+      "sentence": "We talked about our school days on the phone, then he started talking about his mother.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "start",
+      "surface": "started",
+      "sentence": "We talked about our school days on the phone, then he started talking about his mother.",
       "answer": false,
       "collocation": false
     }
@@ -633,16 +633,16 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "language",
-      "surface": "languages",
+      "word": "subject",
+      "surface": "subjects",
       "sentence": "They learn languages and other subjects.",
       "answer": false,
       "collocation": false
     },
     {
-      "word": "subject",
-      "surface": "subjects",
-      "sentence": "They learn languages and other subjects.",
+      "word": "matter",
+      "surface": "matter",
+      "sentence": "A teacher, no matter how much he knows, cannot teach his students everything they want to know.",
       "answer": false,
       "collocation": false
     }
@@ -670,23 +670,9 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "food",
-      "surface": "food",
-      "sentence": "These animals depend on the desert plants for their food and do not need too much water.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "move",
       "surface": "moving",
       "sentence": "The people of the desert have to keep moving from place to place.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "call",
-      "surface": "call",
-      "sentence": "We call these places oases.",
       "answer": false,
       "collocation": false
     },
@@ -715,6 +701,740 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "town",
       "surface": "towns",
       "sentence": "In the oases, there are villages and towns.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "true",
+      "surface": "true",
+      "sentence": "You may think there is only sand in the desert of the world, but it is not true.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "good",
+      "surface": "good",
+      "sentence": "In the desert, as we know, there is a little rain, but it is not good enough for most plants.",
+      "answer": false,
+      "collocation": true
+    }
+  ],
+  "xinjiang-midterm-2025-cloze-01": [
+    {
+      "word": "food",
+      "surface": "food",
+      "sentence": "Of course, we didn’t forget the traditional food     of the Lantern Festival—tangyuan.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "play",
+      "surface": "played",
+      "sentence": "We also played     the lantern riddle games.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "end",
+      "surface": "end",
+      "sentence": "It was a good way to end     the festival and celebrate the end of the Spring Festival.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "area",
+      "surface": "areas",
+      "sentence": "In some areas, parents usually buy or even make lanterns for     their children as gifts.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "course",
+      "surface": "course",
+      "sentence": "Of course, we didn’t forget the traditional food     of the Lantern Festival—tangyuan.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "month",
+      "surface": "month",
+      "sentence": "It is on     the 15th day of the first     Chinese lunar month.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "park",
+      "surface": "parks",
+      "sentence": "On the evening of the Lantern Festival, we could see many lanterns hung in the streets and parks.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "size",
+      "surface": "sizes",
+      "sentence": "The lanterns were in all sizes and shapes    , from animals to plants and flowers.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "someone",
+      "surface": "someone",
+      "sentence": "If someone gave the right answer, he or she would get a gift.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "street",
+      "surface": "streets",
+      "sentence": "On the evening of the Lantern Festival, we could see many lanterns hung in the streets and parks.",
+      "answer": false,
+      "collocation": false
+    }
+  ],
+  "xinjiang-midterm-2025-cloze-02": [
+    {
+      "word": "answer",
+      "surface": "answer",
+      "sentence": "Read my story, and maybe you can find the answer    .",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "body",
+      "surface": "body",
+      "sentence": "I think it’s a good way to relax and it’s good for my body     and mind.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "holiday",
+      "surface": "holiday",
+      "sentence": "If so, how can you have a good holiday    ?",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "money",
+      "surface": "money",
+      "sentence": "But the problem is that I don’t have enough money to take a trip    .",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "activity",
+      "surface": "activity",
+      "sentence": "I think it is a(n) interesting     activity and I can learn a lot from the movies.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "computer",
+      "surface": "computer",
+      "sentence": "But I hardly ever play computer games because I think computer games are meaningless     and boring.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "Internet",
+      "surface": "internet",
+      "sentence": "Of course, like     most students, I use the Internet every day.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "name",
+      "surface": "name",
+      "sentence": "My name is Ryan and I’m a high school student.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "sport",
+      "surface": "sports",
+      "sentence": "Every morning, I arrive     at the gym early and play sports with my friends.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "like",
+      "surface": "like",
+      "sentence": "I like to travel.",
+      "answer": true,
+      "collocation": false
+    }
+  ],
+  "xinjiang-midterm-2025-cloze-03": [
+    {
+      "word": "phone",
+      "surface": "phone",
+      "sentence": "Things started with my grandpa’s phone    .",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "possible",
+      "surface": "possibly",
+      "sentence": "Then, regret came along with the fear of possibly     losing grandpa.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "value",
+      "surface": "value",
+      "sentence": "I now value     every minute with my family, friends, and other     loved ones.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "work",
+      "surface": "working",
+      "sentence": "It was very old and often stopped working.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "action",
+      "surface": "actions",
+      "sentence": "I won’t again give my bad temper to the ones I love and later regret my actions.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "condition",
+      "surface": "condition",
+      "sentence": "In the afternoon, Mom picked my sister and me up from school and told us that grandpa fell over     in the morning and was in bad condition.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "middle",
+      "surface": "middle",
+      "sentence": "I was upset     at that time because I was having difficulty learning     my lessons and was not used to middle school life.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "price",
+      "surface": "price",
+      "sentence": "This is a simple     lesson, but I paid a big price to learn it    .",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "send",
+      "surface": "sent",
+      "sentence": "We sent it to him on his seventieth     birthday.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "study",
+      "surface": "studies",
+      "sentence": "I got angry and said, “I can’t fix it and I am busy with my studies.",
+      "answer": false,
+      "collocation": false
+    }
+  ],
+  "xinjiang-midterm-2025-cloze-04": [
+    {
+      "word": "review",
+      "surface": "reviewing",
+      "sentence": "After class or before tests, review     the most important and useful parts in your notes, and you will spend     less time reviewing and get better grades.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "compare",
+      "surface": "compare",
+      "sentence": "In your free time, you may compare     your notes with others.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "ask",
+      "surface": "ask",
+      "sentence": "If you can’t follow     what the teacher is saying, don’t be afraid to ask     your teacher to repeat     what you miss.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "class",
+      "surface": "class",
+      "sentence": "Learning to take notes in class is important.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "note",
+      "surface": "notes",
+      "sentence": "Learning to take notes in class is important.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "test",
+      "surface": "tests",
+      "sentence": "After class or before tests, review     the most important and useful parts in your notes, and you will spend     less time reviewing and get better grades.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "copy",
+      "surface": "copy",
+      "sentence": "You can copy them or write down the most important     points of all in class.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "less",
+      "surface": "less",
+      "sentence": "After class or before tests, review     the most important and useful parts in your notes, and you will spend     less time reviewing and get better grades.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "point",
+      "surface": "points",
+      "sentence": "You can copy them or write down the most important     points of all in class.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "record",
+      "surface": "record",
+      "sentence": "Your notes are a good study record and taking notes is one of the best     ways to improve your grades.",
+      "answer": false,
+      "collocation": false
+    }
+  ],
+  "xinjiang-midterm-2025-cloze-05": [
+    {
+      "word": "word",
+      "surface": "words",
+      "sentence": "I couldn’t remember new words     and my pronunciation was bad.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "practice",
+      "surface": "practicing",
+      "sentence": "I will keep     practicing English every day.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "read",
+      "surface": "read",
+      "sentence": "Every time I learned a new word, I wrote it down and read     it twice a day.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "advice",
+      "surface": "advice",
+      "sentence": "I followed her advice.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "join",
+      "surface": "joined",
+      "sentence": "I also joined the school English club.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "write",
+      "surface": "wrote",
+      "sentence": "Every time I learned a new word, I wrote it down and read     it twice a day.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "club",
+      "surface": "club",
+      "sentence": "I also joined the school English club.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "movie",
+      "surface": "movies",
+      "sentence": "We talk about hobbies and movies in English there.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "short",
+      "surface": "short",
+      "sentence": "I even started to make     short sentences with my deskmate in English.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "subject",
+      "surface": "subject",
+      "sentence": "English can open many doors for you, and it will become your favorite     subject.",
+      "answer": false,
+      "collocation": false
+    }
+  ],
+  "xinjiang-midterm-2025-cloze-06": [
+    {
+      "word": "check",
+      "surface": "checked",
+      "sentence": "In the beginning, when I checked     the homework list, I found that many students didn’t hand in their homework.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "experience",
+      "surface": "experience",
+      "sentence": "I really cherish (珍惜) this experience    .",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "better",
+      "surface": "better",
+      "sentence": "To     my surprise, many students understood me much better     and finished their homework quickly.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "student",
+      "surface": "students",
+      "sentence": "In the beginning, when I checked     the homework list, I found that many students didn’t hand in their homework.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "along",
+      "surface": "along",
+      "sentence": "Now, I am getting along well with all     of my classmates.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "list",
+      "surface": "list",
+      "sentence": "In the beginning, when I checked     the homework list, I found that many students didn’t hand in their homework.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "please",
+      "surface": "please",
+      "sentence": "Could you please hand in your homework?”",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "red",
+      "surface": "red",
+      "sentence": "And I spoke so loudly     that my face turned red.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "role",
+      "surface": "role",
+      "sentence": "When our teacher asked who     would like to be the physics monitor (科代表), I put up my hand and got the role.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "term",
+      "surface": "term",
+      "sentence": "But this term, I decided to do a brave     thing.",
+      "answer": false,
+      "collocation": false
+    }
+  ],
+  "xinjiang-midterm-2025-cloze-07": [
+    {
+      "word": "safe",
+      "surface": "safe",
+      "sentence": "They guide us, keep us safe    , and help us rise higher.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "far",
+      "surface": "far",
+      "sentence": "It slowly     came down and it landed in a tree far away.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "free",
+      "surface": "free",
+      "sentence": "After that, the kite was free and flew up more.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "blue",
+      "surface": "blue",
+      "sentence": "The kite danced high in     the blue sky.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "daily",
+      "surface": "daily",
+      "sentence": "Rules are like the string that seems to hold us down in our daily lives.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "guide",
+      "surface": "guide",
+      "sentence": "They guide us, keep us safe    , and help us rise higher.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "lot",
+      "surface": "lot",
+      "sentence": "This kite is like our lives a lot.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "park",
+      "surface": "park",
+      "sentence": "Soon, a windy     day came, they took the kite to a park.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "set",
+      "surface": "set",
+      "sentence": "“I set it free.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "value",
+      "surface": "value",
+      "sentence": "So, we should remember the value (价值) of rules and always     follow them.",
+      "answer": false,
+      "collocation": false
+    }
+  ],
+  "xinjiang-midterm-2025-cloze-08": [
+    {
+      "word": "hand",
+      "surface": "hands",
+      "sentence": "He took out a knife     and ordered me to tie up my brother’s hands     with a rope (绳索).",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "easy",
+      "surface": "easily",
+      "sentence": "I tied up his hands in a special way so my brother could untie (松开) himself easily    .",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "home",
+      "surface": "home",
+      "sentence": "One Sunday afternoon, my younger brother and I were left alone at home.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "police",
+      "surface": "police",
+      "sentence": "I rushed to the telephone to call the police, but     the line was cut off.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "outside",
+      "surface": "outside",
+      "sentence": "A tall man stood outside and asked     politely if our parents were at home.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "close",
+      "surface": "close",
+      "sentence": "\" When I wanted to close the door, he suddenly pushed     the door very hard and came into our house.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "line",
+      "surface": "line",
+      "sentence": "I rushed to the telephone to call the police, but     the line was cut off.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "safety",
+      "surface": "safety",
+      "sentence": "I learned a lesson on safety.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "special",
+      "surface": "special",
+      "sentence": "I tied up his hands in a special way so my brother could untie (松开) himself easily    .",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "window",
+      "surface": "window",
+      "sentence": "We got out of the house through the window and went to the nearest pay phone to call the police.",
+      "answer": false,
+      "collocation": false
+    }
+  ],
+  "xinjiang-midterm-2025-cloze-09": [
+    {
+      "word": "life",
+      "surface": "lives",
+      "sentence": "They can bring us happiness and even save our lives    when we need help the most.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "dog",
+      "surface": "dogs",
+      "sentence": "Dogs can know danger and protect    humans.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "help",
+      "surface": "help",
+      "sentence": "“I shouted for help.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "save",
+      "surface": "saving",
+      "sentence": "She played a role in saving his life.”",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "close",
+      "surface": "close",
+      "sentence": "Then she stayed close to Mr Brown to keep him warm   .",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "face",
+      "surface": "face",
+      "sentence": "She licked (舔) his face and hands when he felt sleepy   .",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "human",
+      "surface": "humans",
+      "sentence": "Dogs can know danger and protect    humans.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "next",
+      "surface": "next",
+      "sentence": "the next day, a neighbour heard    Kelsey barking and followed her sound to Mr Brown.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "role",
+      "surface": "role",
+      "sentence": "She played a role in saving his life.”",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "sound",
+      "surface": "sound",
+      "sentence": "the next day, a neighbour heard    Kelsey barking and followed her sound to Mr Brown.",
+      "answer": false,
+      "collocation": false
+    }
+  ],
+  "xinjiang-midterm-2025-cloze-10": [
+    {
+      "word": "kind",
+      "surface": "kind",
+      "sentence": "But why does this kind of shopping become popular in China?",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "certain",
+      "surface": "certainly",
+      "sentence": "If you really love animals, you are certainly     angry.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "money",
+      "surface": "money",
+      "sentence": "As a student, you don’t have too much money     so you want to save some for yourself.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "sale",
+      "surface": "sale",
+      "sentence": "You are probably calling for an end to the crazy sale     of blind box pets like other people.",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "box",
+      "surface": "boxes",
+      "sentence": "As teenagers, maybe you are interested in blind boxes.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "sell",
+      "surface": "sold",
+      "sentence": "For example, on Taobao and Pinduoduo, some blind boxes are being sold for prices as low     as 9.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "place",
+      "surface": "places",
+      "sentence": "They were put in boxes to be sent to different places     through the express (快递).",
+      "answer": true,
+      "collocation": false
+    },
+    {
+      "word": "store",
+      "surface": "stores",
+      "sentence": "Some of you have got blind box toys from online stores.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "business",
+      "surface": "business",
+      "sentence": "On May 3, 2021, about 160 pet dogs and cats were found     at a business outlet of ZTO Express in Chengdu.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "choice",
+      "surface": "choice",
+      "sentence": "Whatever your choice is, it suggests that you are a (n) kind     teenager.",
       "answer": false,
       "collocation": false
     }
@@ -770,9 +1490,9 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "close",
-      "surface": "close",
-      "sentence": "They gathered close to one another for comfort and warmth.",
+      "word": "fire",
+      "surface": "fire",
+      "sentence": "I bring fire into the blood and make people brave.\"",
       "answer": false,
       "collocation": false
     },
@@ -821,13 +1541,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "money",
-      "surface": "money",
-      "sentence": "It turned to the emperor and said, “This man promised to keep the secret, but he betrayed me for money.”",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "news",
       "surface": "news",
       "sentence": "When the trader heard the news, he realized he must be the only one.",
@@ -859,6 +1572,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "white",
       "surface": "white",
       "sentence": "Its fur was as white as snow with nine-colored patterns, shining brightly.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "anyone",
+      "surface": "anyone",
+      "sentence": "“Just promise never to tell anyone about me,” it said.",
       "answer": false,
       "collocation": false
     }
@@ -928,9 +1648,9 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "point",
-      "surface": "points",
-      "sentence": "I tried to tell her all the good points of shopping online.",
+      "word": "almost",
+      "surface": "almost",
+      "sentence": "We spent almost an hour buying food for the coming week.",
       "answer": false,
       "collocation": false
     }
@@ -955,13 +1675,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "surface": "picture",
       "sentence": "Just like the notes inside, I saw a picture of a rose on the cover.",
       "answer": true,
-      "collocation": false
-    },
-    {
-      "word": "note",
-      "surface": "notes",
-      "sentence": "I found more notes in the pages—a supermarket list and three ticket stubs.",
-      "answer": false,
       "collocation": false
     },
     {
@@ -1005,6 +1718,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "sentence": "Inside, the smell of paper and ink hit me like an old friend.",
       "answer": false,
       "collocation": false
+    },
+    {
+      "word": "window",
+      "surface": "window",
+      "sentence": "All of them were a window to help me know about her life.",
+      "answer": false,
+      "collocation": false
     }
   ],
   "tiny-seed-growth": [
@@ -1033,13 +1753,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "body",
       "surface": "body",
       "sentence": "His body grew upwards, and his leaves opened widely to reach for the sunlight.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "heart",
-      "surface": "heart",
-      "sentence": "In the heart of a big forest, there lay a tiny seed named Bruce.",
       "answer": false,
       "collocation": false
     },
@@ -1077,6 +1790,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "sentence": "His body grew upwards, and his leaves opened widely to reach for the sunlight.",
       "answer": false,
       "collocation": false
+    },
+    {
+      "word": "go",
+      "surface": "went",
+      "sentence": "As the seasons changed, Bruce went through strong winds, heavy rains, and the heating sun.",
+      "answer": false,
+      "collocation": true
     }
   ],
   "filial-son-travels": [
@@ -1181,13 +1901,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "home",
-      "surface": "home",
-      "sentence": "She joined a club and took part in a Real Care Baby Project so she could take home a baby to care for one day!",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "project",
       "surface": "project",
       "sentence": "She joined a club and took part in a Real Care Baby Project so she could take home a baby to care for one day!",
@@ -1197,13 +1910,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
     {
       "word": "bed",
       "surface": "bed",
-      "sentence": "She put the baby on the bed and started to clean the room.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "room",
-      "surface": "room",
       "sentence": "She put the baby on the bed and started to clean the room.",
       "answer": false,
       "collocation": false
@@ -1219,6 +1925,20 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "weight",
       "surface": "weight",
       "sentence": "The baby was a doll, but he had a similar weight to a real baby and could cry at any time.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "whole",
+      "surface": "whole",
+      "sentence": "She was very happy today because she had a chance to take care of a baby for the whole day.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "today",
+      "surface": "today",
+      "sentence": "She was very happy today because she had a chance to take care of a baby for the whole day.",
       "answer": false,
       "collocation": false
     }
@@ -1346,13 +2066,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "business",
-      "surface": "business",
-      "sentence": "At first, he didn't plan to stay and start a business.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "market",
       "surface": "market",
       "sentence": "In November 2015, Chen set up Jiangguoguo to help local people sell the Xinjiang melons and fruits because there was no good market for them.",
@@ -1360,9 +2073,16 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "sell",
-      "surface": "sell",
-      "sentence": "In November 2015, Chen set up Jiangguoguo to help local people sell the Xinjiang melons and fruits because there was no good market for them.",
+      "word": "plan",
+      "surface": "plan",
+      "sentence": "At first, he didn't plan to stay and start a business.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "support",
+      "surface": "support",
+      "sentence": "Chen Wenjun came to Kashgar as a worker of Guangdong Construction Engineering Group to support Xinjiang's development.",
       "answer": false,
       "collocation": false
     }
@@ -1448,13 +2168,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": true
     },
     {
-      "word": "hard",
-      "surface": "harder",
-      "sentence": "After hearing these words, Mark was so moved that he decided to study harder and become better.",
-      "answer": true,
-      "collocation": false
-    },
-    {
       "word": "real",
       "surface": "really",
       "sentence": "And you really did a good job in the exams.",
@@ -1483,30 +2196,37 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": true
     },
     {
-      "word": "move",
-      "surface": "moved",
-      "sentence": "After hearing these words, Mark was so moved that he decided to study harder and become better.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "science",
-      "surface": "science",
-      "sentence": "It was the final science test.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "test",
-      "surface": "test",
-      "sentence": "It was the final science test.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "clear",
       "surface": "clearly",
       "sentence": "You should clearly know the truth.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "direct",
+      "surface": "directly",
+      "sentence": "Unlike other birds that fly directly into the sky, the teacher explained, the vulture depends on a run-up before flying.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "office",
+      "surface": "office",
+      "sentence": "Mark's teacher asked him to go to his office the next day.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "picture",
+      "surface": "picture",
+      "sentence": "Do you see this picture?",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "review",
+      "surface": "reviewed",
+      "sentence": "However, he never reviewed before exams.",
       "answer": false,
       "collocation": false
     }
@@ -1555,20 +2275,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "build",
-      "surface": "built",
-      "sentence": "I finally built a perfect paper bridge.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "last",
-      "surface": "last",
-      "sentence": "At last, I got a special prize!",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "music",
       "surface": "music",
       "sentence": "In my class, some of my classmates are super smart and always top in tests, while others are great at sports or music.",
@@ -1576,8 +2282,22 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "sport",
-      "surface": "sports",
+      "word": "science",
+      "surface": "science",
+      "sentence": "One day, our school announced a science competition.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "sure",
+      "surface": "sure",
+      "sentence": "I wasn’t sure what I could do.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "top",
+      "surface": "top",
       "sentence": "In my class, some of my classmates are super smart and always top in tests, while others are great at sports or music.",
       "answer": false,
       "collocation": false
@@ -1713,16 +2433,16 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "middle",
-      "surface": "middle",
-      "sentence": "As we were in the middle of nowhere, our car started making a strange noise and stopped.",
+      "word": "sound",
+      "surface": "sounding",
+      "sentence": "Help won’t come for at least an hour, Mom said, sounding tired.",
       "answer": false,
       "collocation": false
     },
     {
-      "word": "sound",
-      "surface": "sounding",
-      "sentence": "Help won’t come for at least an hour, Mom said, sounding tired.",
+      "word": "matter",
+      "surface": "matter",
+      "sentence": "We never made it to Aunt Jen’s farm, but that didn’t matter.",
       "answer": false,
       "collocation": false
     }
@@ -1771,13 +2491,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "help",
-      "surface": "helped",
-      "sentence": "His gentle voice helped me to try more times.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "lake",
       "surface": "lake",
       "sentence": "On that day, I followed him to his favorite fishing place, a beautiful lake, and I was excited.",
@@ -1795,6 +2508,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "great",
       "surface": "great",
       "sentence": "His patience made him a great man.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "time",
+      "surface": "times",
+      "sentence": "I tried a few times but got nothing.",
       "answer": false,
       "collocation": false
     }
@@ -1829,20 +2549,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": true
     },
     {
-      "word": "house",
-      "surface": "house",
-      "sentence": "And then he asked his son to plant one of them inside the house and the other one outside the house.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "outside",
-      "surface": "outside",
-      "sentence": "And then he asked his son to plant one of them inside the house and the other one outside the house.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "mean",
       "surface": "mean",
       "sentence": "One day, a little boy asked his father, “What does the word ‘great’ mean?",
@@ -1869,6 +2575,20 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "sentence": "The plant inside the house will grow bigger because it is safer, while the plant outside the house is not safe at all.",
       "answer": false,
       "collocation": false
+    },
+    {
+      "word": "able",
+      "surface": "able",
+      "sentence": "He couldn’t understand why the plant outside was able to grow much bigger than the one inside.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "weather",
+      "surface": "weather",
+      "sentence": "It doesn’t feel weather changes.",
+      "answer": false,
+      "collocation": false
     }
   ],
   "act-of-kindness": [
@@ -1876,13 +2596,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "fun",
       "surface": "fun",
       "sentence": "It was a pretty fun experience!",
-      "answer": true,
-      "collocation": false
-    },
-    {
-      "word": "phone",
-      "surface": "phone",
-      "sentence": "He was waving his phone at me and speaking in a language I couldn’t understand.",
       "answer": true,
       "collocation": false
     },
@@ -1901,9 +2614,9 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "English",
-      "surface": "english",
-      "sentence": "I realized that he was lost and couldn’t speak English.",
+      "word": "call",
+      "surface": "call",
+      "sentence": "He didn’t want to use any transportation, so I walked with him to a bus stop where he could call his son for a ride.",
       "answer": false,
       "collocation": false
     },
@@ -1911,6 +2624,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "across",
       "surface": "across",
       "sentence": "One evening, I was walking in the street when I came across an old man.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "act",
+      "surface": "act",
+      "sentence": "It was amazing how just a small act of kindness made such a big difference to him.",
       "answer": false,
       "collocation": false
     },
@@ -1945,13 +2665,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
   ],
   "sharing-juice-fairly": [
     {
-      "word": "different",
-      "surface": "different",
-      "sentence": "But the problem is that they have different cups.",
-      "answer": true,
-      "collocation": false
-    },
-    {
       "word": "full",
       "surface": "full",
       "sentence": "It was just full!",
@@ -1969,13 +2682,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "hold",
       "surface": "holds",
       "sentence": "It might look like Ella’s cup holds the most because it’s the tallest, but this may not be the truth.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "right",
-      "surface": "right",
-      "sentence": "But now we each have the same amount of juice, right?",
       "answer": false,
       "collocation": false
     },
@@ -2013,6 +2719,20 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "sentence": "Jim said, “My cup is short and wide. Ella’s cup is tall and thin. Tiva’s is in between.”",
       "answer": false,
       "collocation": false
+    },
+    {
+      "word": "today",
+      "surface": "today",
+      "sentence": "I’ve learned a lot today.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "find",
+      "surface": "find",
+      "sentence": "We cannot find out whose cup can hold the most just by looking.",
+      "answer": false,
+      "collocation": true
     }
   ],
   "jacks-birthday-picnic": [
@@ -2024,17 +2744,17 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "get",
-      "surface": "got",
-      "sentence": "The whole family got into the car and headed for the beach.",
+      "word": "share",
+      "surface": "share",
+      "sentence": "We can still share the cake.",
       "answer": true,
       "collocation": false
     },
     {
-      "word": "game",
-      "surface": "game",
-      "sentence": "Jack put down the cake and played the game, Treasure Hunt, with his parents on the beach.",
-      "answer": false,
+      "word": "get",
+      "surface": "got",
+      "sentence": "The whole family got into the car and headed for the beach.",
+      "answer": true,
       "collocation": false
     },
     {
@@ -2066,25 +2786,25 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "play",
-      "surface": "played",
-      "sentence": "Jack put down the cake and played the game, Treasure Hunt, with his parents on the beach.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "whole",
-      "surface": "whole",
-      "sentence": "The whole family got into the car and headed for the beach.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "yet",
       "surface": "yet",
       "sentence": "Mum, I’m not hungry yet.",
       "answer": false,
       "collocation": false
+    },
+    {
+      "word": "OK",
+      "surface": "ok",
+      "sentence": "Well, OK, maybe it wasn't quite 100% perfect.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "put",
+      "surface": "put",
+      "sentence": "They put up the tent and spread out the beach blanket.",
+      "answer": false,
+      "collocation": true
     }
   ],
   "seed-secret-patience": [
@@ -2117,13 +2837,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "tell",
-      "surface": "tell",
-      "sentence": "She ran quickly to tell Mr. Green about it.",
-      "answer": true,
-      "collocation": true
-    },
-    {
       "word": "time",
       "surface": "times",
       "sentence": "Every day she watered it three times, singing to it like Grandma taught her.",
@@ -2152,9 +2865,16 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "once",
-      "surface": "once",
-      "sentence": "She decided to plant it in the soil carefully at once.",
+      "word": "several",
+      "surface": "several",
+      "sentence": "And you have just spent several days on the seed.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "shop",
+      "surface": "shop",
+      "sentence": "She even used plant food which she bought from the shop.",
       "answer": false,
       "collocation": false
     }
@@ -2203,13 +2923,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "check",
-      "surface": "check",
-      "sentence": "After a quick check, he said, “This won't be simple or cheap.”",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "front",
       "surface": "front",
       "sentence": "But when Jenny saw Leo in the front row with his “Good Luck” sign, she wasn’t nervous at all.",
@@ -2217,16 +2930,23 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "money",
-      "surface": "money",
-      "sentence": "Leo said they didn’t have enough money.",
+      "word": "last",
+      "surface": "last",
+      "sentence": "A week before last year’s school photo show, Jenny’s brother Leo rushed into her room.",
       "answer": false,
       "collocation": false
     },
     {
-      "word": "next",
-      "surface": "next",
-      "sentence": "For the next three days, Jenny helped out at the repair shop.",
+      "word": "room",
+      "surface": "room",
+      "sentence": "A week before last year’s school photo show, Jenny’s brother Leo rushed into her room.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "bank",
+      "surface": "bank",
+      "sentence": "Then one night, he brought his piggy bank and said, “I will help fix it.”",
       "answer": false,
       "collocation": false
     }
@@ -2261,13 +2981,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "hand",
-      "surface": "hand",
-      "sentence": "\"Bamboo bends in the wind but never breaks,\" he said, moving her hand gently.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "week",
       "surface": "weeks",
       "sentence": "In the following weeks, they practiced every evening.",
@@ -2299,6 +3012,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "line",
       "surface": "lines",
       "sentence": "Its lines were still a little unsteady, but the bamboo looked bright and lively.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "nature",
+      "surface": "nature",
+      "sentence": "Lina held the brush carefully, and Grandpa shared something interesting about how ancient artists used Chinese ink and wash painting to show their love for nature.",
       "answer": false,
       "collocation": false
     }
@@ -2412,13 +3132,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "class",
-      "surface": "class",
-      "sentence": "Hu Ming, a Guizhou University teacher, whose 85-year-old mother has Alzheimer’s disease, has had to take his mother to class with him for years.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "pay",
       "surface": "pay",
       "sentence": "With my mother sitting quietly in class, I was able to pay more attention to teaching.",
@@ -2440,6 +3153,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
+      "word": "once",
+      "surface": "once",
+      "sentence": "To care for those who once cared for us is our duty.",
+      "answer": false,
+      "collocation": false
+    },
+    {
       "word": "table",
       "surface": "table",
       "sentence": "While eating, the mother dropped the food everywhere, on her shirt and trousers, the table, the chair and the floor.",
@@ -2456,10 +3176,10 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "China",
-      "surface": "china",
-      "sentence": "In China, more and more young people are becoming interested in Traditional Chinese Medicine.",
-      "answer": false,
+      "word": "important",
+      "surface": "important",
+      "sentence": "He realizes keeping the balance of yin and yang is important and that everyone should follow the rules of nature.",
+      "answer": true,
       "collocation": false
     },
     {
@@ -2477,30 +3197,9 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "play",
-      "surface": "playing",
-      "sentence": "He loves reading something about ancient Chinese culture and playing Taiji.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "study",
-      "surface": "studying",
-      "sentence": "Studying TCM changed Alex’s mind and lifestyle.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "survey",
       "surface": "survey",
       "sentence": "One thousand young people took part in a survey by China Youth Daily.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "advice",
-      "surface": "advice",
-      "sentence": "For example, he often provides his family members with some advice about staying healthy after he checks their faces or tongues online.",
       "answer": false,
       "collocation": false
     },
@@ -2517,6 +3216,27 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "sentence": "He used to be interested in electronic products and stay up late every night.",
       "answer": false,
       "collocation": false
+    },
+    {
+      "word": "member",
+      "surface": "members",
+      "sentence": "For example, he often provides his family members with some advice about staying healthy after he checks their faces or tongues online.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "product",
+      "surface": "products",
+      "sentence": "He used to be interested in electronic products and stay up late every night.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "provide",
+      "surface": "provides",
+      "sentence": "For example, he often provides his family members with some advice about staying healthy after he checks their faces or tongues online.",
+      "answer": false,
+      "collocation": false
     }
   ],
   "power-of-words": [
@@ -2528,9 +3248,9 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": true
     },
     {
-      "word": "word",
-      "surface": "words",
-      "sentence": "Later, my teacher’s words helped.",
+      "word": "heart",
+      "surface": "hearts",
+      "sentence": "Kind words can warm our hearts in the coldest winter, while harsh words can hurt our feelings even in the hottest summer.",
       "answer": false,
       "collocation": false
     },
@@ -2549,16 +3269,9 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "English",
-      "surface": "english",
-      "sentence": "I did well in an English test.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "experience",
-      "surface": "experience",
-      "sentence": "From this experience, I truly realized that words can hurt.",
+      "word": "game",
+      "surface": "game",
+      "sentence": "My classmates played a game.",
       "answer": false,
       "collocation": false
     },
@@ -2570,6 +3283,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
+      "word": "play",
+      "surface": "played",
+      "sentence": "My classmates played a game.",
+      "answer": false,
+      "collocation": false
+    },
+    {
       "word": "science",
       "surface": "science",
       "sentence": "My science teacher also helped.",
@@ -2577,16 +3297,16 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "test",
-      "surface": "test",
-      "sentence": "I did well in an English test.",
+      "word": "such",
+      "surface": "such",
+      "sentence": "Seeing such a hard-working kid fills my heart with pleasure.",
       "answer": false,
       "collocation": false
     },
     {
-      "word": "write",
-      "surface": "writing",
-      "sentence": "After school, I started writing.",
+      "word": "test",
+      "surface": "test",
+      "sentence": "I did well in an English test.",
       "answer": false,
       "collocation": false
     }
@@ -2628,13 +3348,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "practice",
-      "surface": "practicing",
-      "sentence": "She loves practicing Tai Chi and Kung Fu very much.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "building",
       "surface": "buildings",
       "sentence": "This village is famous for its traditional Huizhou buildings, like old Huizhou guesthouses.",
@@ -2656,6 +3369,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
+      "word": "language",
+      "surface": "languages",
+      "sentence": "More and more Wuxia novels are translated into different languages and loved by people all over the world.",
+      "answer": false,
+      "collocation": false
+    },
+    {
       "word": "side",
       "surface": "side",
       "sentence": "She shows a beautiful side of Chinese culture to others.",
@@ -2664,27 +3384,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
     }
   ],
   "nang-bowl-coffee": [
-    {
-      "word": "change",
-      "surface": "changed",
-      "sentence": "The experience changed her idea about traditional food.",
-      "answer": true,
-      "collocation": true
-    },
-    {
-      "word": "important",
-      "surface": "important",
-      "sentence": "She found that local people have made nang for hundreds of years and that it plays an important role in daily life.",
-      "answer": true,
-      "collocation": true
-    },
-    {
-      "word": "share",
-      "surface": "shares",
-      "sentence": "After returning home, Emma often shares photos and videos of Nang Bowl Coffee online.",
-      "answer": true,
-      "collocation": true
-    },
     {
       "word": "popular",
       "surface": "popular",
@@ -2707,13 +3406,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "local",
-      "surface": "local",
-      "sentence": "Last summer, a survey among young travelers showed that many visitors wanted to try local food in new ways.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "product",
       "surface": "products",
       "sentence": "She also learned how the shop owners created new products to attract tourists.",
@@ -2721,16 +3413,44 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "plan",
-      "surface": "planned",
-      "sentence": "Some even planned trips to Xinjiang.",
+      "word": "daily",
+      "surface": "daily",
+      "sentence": "She found that local people have made nang for hundreds of years and that it plays an important role in daily life.",
       "answer": false,
       "collocation": false
     },
     {
-      "word": "shop",
-      "surface": "shop",
-      "sentence": "During her trip to Urumqi, she visited a coffee shop near the Grand Bazaar and ordered one.",
+      "word": "offer",
+      "surface": "offer",
+      "sentence": "She believes that every place has something special to offer.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "several",
+      "surface": "several",
+      "sentence": "Emma spent several days learning about nang.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "social",
+      "surface": "social",
+      "sentence": "She first saw Nang Bowl Coffee on social media and became very interested in it.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "survey",
+      "surface": "survey",
+      "sentence": "Last summer, a survey among young travelers showed that many visitors wanted to try local food in new ways.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "university",
+      "surface": "university",
+      "sentence": "She hopes to visit Xinjiang again after she graduates from university.",
       "answer": false,
       "collocation": false
     }
@@ -2793,16 +3513,16 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "true",
-      "surface": "true",
-      "sentence": "Just like the Monkey King, we should try bravely and make our dreams come true.",
-      "answer": false,
-      "collocation": true
-    },
-    {
       "word": "king",
       "surface": "king",
       "sentence": "Who jumps through the waterfall will be our king.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "light",
+      "surface": "light",
+      "sentence": "It took in light from the sun and the moon.",
       "answer": false,
       "collocation": false
     }
@@ -2844,16 +3564,9 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "holiday",
-      "surface": "holidays",
-      "sentence": "They brought these magnets back from their holidays to share their exciting travels with me.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "red",
-      "surface": "red",
-      "sentence": "For example, you can see a yellow Thai elephant, England's red bus, and the Great Wall of China.",
+      "word": "local",
+      "surface": "local",
+      "sentence": "Unlike local snacks, I eat them up quickly and soon forget, these magnets stay with me for years.",
       "answer": false,
       "collocation": false
     },
@@ -2875,6 +3588,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "together",
       "surface": "together",
       "sentence": "I stick every single one of them on my refrigerator door, and they look so lively together.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "yellow",
+      "surface": "yellow",
+      "sentence": "For example, you can see a yellow Thai elephant, England's red bus, and the Great Wall of China.",
       "answer": false,
       "collocation": false
     }
@@ -2916,13 +3636,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "work",
-      "surface": "working",
-      "sentence": "On Labor Day, Briar’s parents Kelly and Jay Omar went outside working, leaving their five children at home.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "action",
       "surface": "actions",
       "sentence": "In Wisconsin, a teenager named Briar became famous for his quick actions in an accident.",
@@ -2944,8 +3657,15 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "safe",
-      "surface": "safe",
+      "word": "silver",
+      "surface": "silver",
+      "sentence": "That’s the silver lining of the accident.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "sure",
+      "surface": "sure",
       "sentence": "After making sure his sisters were all safe, the 13-year-old boy tried putting out the fire in the hope of saving their home.",
       "answer": false,
       "collocation": false
@@ -2988,6 +3708,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
+      "word": "house",
+      "surface": "house",
+      "sentence": "After hearing that, Mr. Lee invited him to his house.",
+      "answer": false,
+      "collocation": false
+    },
+    {
       "word": "glass",
       "surface": "glass",
       "sentence": "After Jeff entered the house, Mr. Lee gave him the gift he prepared-a glass of juice.",
@@ -2998,13 +3725,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "late",
       "surface": "lately",
       "sentence": "Jeff was quiet in class lately and always sat alone without saying much.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "lot",
-      "surface": "lot",
-      "sentence": "He taught me a lot and always cared about me.",
       "answer": false,
       "collocation": false
     },
@@ -3067,13 +3787,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "human",
-      "surface": "humans",
-      "sentence": "It also shows that humans can sometimes be stronger than the forces of nature.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "include",
       "surface": "include",
       "sentence": "Even more serious difficulties include freezing weather conditions and heavy storms.",
@@ -3088,9 +3801,16 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "nature",
-      "surface": "nature",
-      "sentence": "It also shows that humans can sometimes be stronger than the forces of nature.",
+      "word": "reason",
+      "surface": "reasons",
+      "sentence": "One of the main reasons is that people want to challenge themselves in the face of difficulties.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "risk",
+      "surface": "risk",
+      "sentence": "Why do so many climbers risk their lives?",
       "answer": false,
       "collocation": false
     }
@@ -3118,13 +3838,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "fire",
-      "surface": "fires",
-      "sentence": "Few flowers survived after the fires, so the amount of honey fell a lot.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "weather",
       "surface": "weather",
       "sentence": "She dreams of becoming a beekeeper, but the terrible weather makes her realize that her dream is hard to come true.",
@@ -3135,13 +3848,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "true",
       "surface": "true",
       "sentence": "She dreams of becoming a beekeeper, but the terrible weather makes her realize that her dream is hard to come true.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "close",
-      "surface": "close",
-      "sentence": "However, they are worried that a fire could possibly happen to them because they live close to the forest.",
       "answer": false,
       "collocation": false
     },
@@ -3163,6 +3869,20 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "level",
       "surface": "level",
       "sentence": "Together with the dry weather, the temperatures there rise to a high level.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "member",
+      "surface": "member",
+      "sentence": "As a member of a family of beekeepers, 11-year-old Markela is also good at keeping bees.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "number",
+      "surface": "number",
+      "sentence": "Because of the fires, a large number of people lost their houses and even their lives.",
       "answer": false,
       "collocation": false
     }
@@ -3204,6 +3924,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": true
     },
     {
+      "word": "tell",
+      "surface": "tell",
+      "sentence": "Let me tell you some of them.",
+      "answer": true,
+      "collocation": true
+    },
+    {
       "word": "use",
       "surface": "use",
       "sentence": "I can’t use my phone either.",
@@ -3227,13 +3954,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
     {
       "word": "middle",
       "surface": "middle",
-      "sentence": "I’m Molly, a middle school student.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "student",
-      "surface": "student",
       "sentence": "I’m Molly, a middle school student.",
       "answer": false,
       "collocation": false
@@ -3283,13 +4003,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": true
     },
     {
-      "word": "school",
-      "surface": "school",
-      "sentence": "We have to get up early, because Mom doesn’t want us to hurry to school.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "room",
       "surface": "rooms",
       "sentence": "We must clean our rooms every other day and brush our teeth after eating meals.",
@@ -3304,8 +4017,15 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "read",
-      "surface": "read",
+      "word": "meet",
+      "surface": "meeting",
+      "sentence": "If Mom has a meeting in the house, we mustn’t talk loudly, and we have to be quiet.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "half",
+      "surface": "half",
       "sentence": "Before we go to bed at 9:00 p.m., we have to read books for half an hour to know more about the world.",
       "answer": false,
       "collocation": false
@@ -3337,13 +4057,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "team",
       "surface": "teams",
       "sentence": "Of all the basketball teams in school, ours is the best one.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "body",
-      "surface": "body",
-      "sentence": "It builds my body and makes my life full of joy.",
       "answer": false,
       "collocation": false
     },
@@ -3381,9 +4094,23 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "sentence": "If we can pass the ball well, it’s easy for us to score.",
       "answer": false,
       "collocation": false
+    },
+    {
+      "word": "win",
+      "surface": "win",
+      "sentence": "When we win, we celebrate together.",
+      "answer": false,
+      "collocation": false
     }
   ],
   "peter-chinese-food": [
+    {
+      "word": "different",
+      "surface": "different",
+      "sentence": "But the price of the dish is quite different.",
+      "answer": true,
+      "collocation": false
+    },
     {
       "word": "double",
       "surface": "double",
@@ -3430,13 +4157,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "course",
       "surface": "course",
       "sentence": "Of course.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "easy",
-      "surface": "easy",
-      "sentence": "After all, it’s not easy to get Chinese noodles in Australia.",
       "answer": false,
       "collocation": false
     },
@@ -3492,6 +4212,20 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
+      "word": "China",
+      "surface": "china",
+      "sentence": "The Yellow River is the mother river of China.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "build",
+      "surface": "builds",
+      "sentence": "It builds a bridge between East and West.",
+      "answer": false,
+      "collocation": false
+    },
+    {
       "word": "last",
       "surface": "last",
       "sentence": "Their last stop along the Silk Road is Dunhuang.",
@@ -3501,20 +4235,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
     {
       "word": "mean",
       "surface": "meaning",
-      "sentence": "It has a special meaning to Chinese people.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "meet",
-      "surface": "meet",
-      "sentence": "People from different countries meet and trade along it.",
-      "answer": false,
-      "collocation": false
-    },
-    {
-      "word": "special",
-      "surface": "special",
       "sentence": "It has a special meaning to Chinese people.",
       "answer": false,
       "collocation": false
@@ -3578,13 +4298,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "time",
-      "surface": "time",
-      "sentence": "The new expressway helps them move their animals in much less time.",
-      "answer": true,
-      "collocation": false
-    },
-    {
       "word": "north",
       "surface": "north",
       "sentence": "This new highway connects the north and south of the Tianshan Mountains.",
@@ -3595,6 +4308,13 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "word": "south",
       "surface": "south",
       "sentence": "This new highway connects the north and south of the Tianshan Mountains.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "community",
+      "surface": "communities",
+      "sentence": "This shows how the progress in Xinjiang is truly helping local communities improve.",
       "answer": false,
       "collocation": false
     }
@@ -3657,18 +4377,18 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "such",
-      "surface": "such",
-      "sentence": "When you get angry, you can talk about it with others such as parents, friends or teachers.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "team",
       "surface": "team",
       "sentence": "When your teacher gives you too much homework, when your team loses an important game, when a friend borrows your favourite thing and then breaks it, or when you think your family rules are too strict, you may get really angry.",
       "answer": false,
       "collocation": false
+    },
+    {
+      "word": "think",
+      "surface": "think",
+      "sentence": "When your teacher gives you too much homework, when your team loses an important game, when a friend borrows your favourite thing and then breaks it, or when you think your family rules are too strict, you may get really angry.",
+      "answer": false,
+      "collocation": true
     }
   ],
   "farmer-dog-donkey": [
@@ -3773,13 +4493,6 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": true
     },
     {
-      "word": "join",
-      "surface": "joined",
-      "sentence": "I joined the group that cleaned the streets.",
-      "answer": false,
-      "collocation": false
-    },
-    {
       "word": "community",
       "surface": "community",
       "sentence": "In our community, we often organize a Community Clean-up Day.",
@@ -3801,16 +4514,23 @@ window.CLOZE_HIGH_FREQUENCY_SELECTIONS = {
       "collocation": false
     },
     {
-      "word": "street",
-      "surface": "streets",
-      "sentence": "I joined the group that cleaned the streets.",
+      "word": "age",
+      "surface": "ages",
+      "sentence": "Volunteers of all ages took part.",
       "answer": false,
       "collocation": false
     },
     {
-      "word": "age",
-      "surface": "ages",
-      "sentence": "Volunteers of all ages took part.",
+      "word": "environment",
+      "surface": "environment",
+      "sentence": "It’s a great way to improve our living environment.",
+      "answer": false,
+      "collocation": false
+    },
+    {
+      "word": "future",
+      "surface": "future",
+      "sentence": "We encourage more people to join in the future clean-up days.",
       "answer": false,
       "collocation": false
     }

@@ -3798,6 +3798,7 @@ const lessonBanks = [
     id: "basic",
     title: "初阶",
     lessons: [
+      ...(window.importedMidtermClozeLessons || []),
       refrigeratorMagnets,
       braveBoyHouseFire,
       saltyJuiceLife,
@@ -3818,7 +3819,7 @@ const lessonBanks = [
 
 lessonBanks.forEach((bank) => {
   bank.lessons.forEach((item) => {
-    item.source = normalizedLessonSources[item.id] || "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试";
+    item.source = normalizedLessonSources[item.id] || item.source || "2026年 · 新疆维吾尔自治区 · 新疆名校联合 · 初中英语阶段性测试";
   });
 });
 
@@ -3849,6 +3850,9 @@ function sortLessonsForDisplay(lessons) {
         if (aYear !== bYear) return bYear - aYear;
       }
       if (Boolean(a.item.latestUpdate) !== Boolean(b.item.latestUpdate)) return a.item.latestUpdate ? -1 : 1;
+      const aInitialOrder = Number(a.item.initialOrder) || Number.MAX_SAFE_INTEGER;
+      const bInitialOrder = Number(b.item.initialOrder) || Number.MAX_SAFE_INTEGER;
+      if (aInitialOrder !== bInitialOrder) return aInitialOrder - bInitialOrder;
       return a.originalIndex - b.originalIndex;
     })
     .map(({ item }) => item);
@@ -4504,7 +4508,7 @@ function renderHomeLibrary() {
         <span class="home-card-index">${String(index + 1).padStart(2, "0")}</span>
         <div class="home-card-main">
           ${isOfficialExam ? `<span class="official-exam-badge">${getOfficialExamBadge(item)}</span>` : ""}
-          ${item.id === "power-of-words" ? `<span class="latest-update-badge">20260913 更新</span>` : ""}
+          ${item.importBatch === window.LATEST_IMPORT_BATCH ? `<span class="latest-update-badge">${window.LATEST_IMPORT_BATCH} 更新</span>` : ""}
           <strong>${item.title}</strong>
           <p class="source-line${isOfficialExamLesson(item) ? " real-exam-source" : ""}">${item.source}</p>
         </div>
@@ -4579,7 +4583,7 @@ function renderLessonLibrary() {
           <span class="status-pill ${!isUnlocked ? "locked" : isDone ? "done" : item.available ? "ready" : "pending"}">${!isUnlocked ? "已锁定" : isDone ? "已做，可重做" : item.available ? "可练习" : "待导入"}</span>
         </div>
         ${isOfficialExam ? `<span class="official-exam-badge">${getOfficialExamBadge(item)}</span>` : ""}
-        ${item.id === "power-of-words" ? `<span class="latest-update-badge">20260913 更新</span>` : ""}
+        ${item.importBatch === window.LATEST_IMPORT_BATCH ? `<span class="latest-update-badge">${window.LATEST_IMPORT_BATCH} 更新</span>` : ""}
         <strong>${item.title}</strong>
         <p>${item.englishTitle}</p>
         ${item.source ? `<p class="source-line${isOfficialExamLesson(item) ? " real-exam-source" : ""}">${item.source}</p>` : ""}
