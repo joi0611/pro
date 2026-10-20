@@ -818,7 +818,7 @@
   </div>
   <footer class="site-footer">@新疆学生无限进步</footer>
 
-  <script src="../../assets/student-profile.js?v=20260828-1"></script>
+  <script src="../../assets/student-profile.js?v=20261020-1"></script>
   <script>
     function q(number, stem, options, answer, keywords, evidence, keywordTip, compare, explanation) {
       return { number, stem, options, answer, keywords, evidence, keywordTip, compare, explanation };
@@ -1048,11 +1048,11 @@
             const index = passages.indexOf(p);
             const official = isRealExam(p);
             const badge = official ? `<span class="official-exam-badge">${passageYear(p)} 新疆中考真题</span>` : "";
-            const latest = /乌鲁木齐市第一中学.*9月模考/.test(p.meta || "");
+            const latest = p.importBatch === window.LATEST_IMPORT_BATCH;
             const serial = String(displayIndex + 1).padStart(2, "0");
             const completed = isPassageComplete(p);
             const translationStatus = completed && hasPassageTranslation(p) ? " · 已完成，可看译文" : (completed ? " · 已完成" : "");
-            return `<button class="catalog-item${official ? " official-exam-card" : ""}" onclick="selectPassage(${index})">${badge}${latest ? '<em class="latest-update-badge">20260913 更新</em>' : ''}<strong>${serial}. ${escapeHtml(cleanSourceText(p.title))}</strong><span>${escapeHtml(cleanSourceText(p.meta))} · ${p.questions.length} 题${translationStatus}</span></button>`;
+            return `<button class="catalog-item${official ? " official-exam-card" : ""}" onclick="selectPassage(${index})">${badge}${latest ? `<em class="latest-update-badge">${window.LATEST_IMPORT_BATCH} 更新</em>` : ''}<strong>${serial}. ${escapeHtml(cleanSourceText(p.title))}</strong><span>${escapeHtml(cleanSourceText(p.meta))} · ${p.questions.length} 题${translationStatus}</span></button>`;
           }).join("") : `<div class="meta">暂未载入</div>`}
         </section>
       `;
@@ -2548,7 +2548,9 @@
     renderAll();
     document.addEventListener("DOMContentLoaded", initReadingLogin);
   </script>
+  <script>window.LATEST_IMPORT_BATCH = "20261019";</script>
   <script src="data/imported-passages.js?v=20261015-structure-2"></script>
+  <script src="data/imported-midterm-20261019.js?v=20261019-1"></script>
   <script src="../vocabulary/low_words.js?v=20260919-reading-card-1"></script>
   <script src="../vocabulary/mid_words.js?v=20260919-reading-card-1"></script>
   <script src="../vocabulary/extra_words.js?v=20260919-reading-card-1"></script>
