@@ -1016,7 +1016,31 @@
 
     .lesson-list {
       display: grid;
+      gap: 18px;
+    }
+
+    .lesson-group {
+      display: grid;
       gap: 8px;
+    }
+
+    .lesson-group-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px 4px;
+    }
+
+    .lesson-group-title h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 19px;
+    }
+
+    .lesson-group-title span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
     }
 
     .lesson-card {
@@ -1479,7 +1503,274 @@
   <link rel="stylesheet" href="../../assets/theme-purple.css?v=20260716-ui3">
   <link rel="stylesheet" href="../../assets/workbook-modules.css?v=20260716-1">
   <link rel="stylesheet" href="word-choice-reading.css?v=20260920-1">
+  <style>
+    /* Header actions: one horizontal row on desktop, compact fallback on narrow screens. */
+    .app > header .top-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      width: 100%;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .app > header .top-actions .home-link-btn {
+      width: auto;
+      min-width: 0;
+      min-height: 56px;
+      height: 100%;
+      padding: 10px 12px;
+      line-height: 1.35;
+      text-align: center;
+      white-space: normal;
+    }
+
+    @media (min-width: 900px) {
+      .app > header {
+        display: grid !important;
+      }
+
+      body:not(.training-active) .app > header {
+        grid-template-columns: minmax(320px, .8fr) minmax(0, 1.7fr) !important;
+      }
+
+      body:not(.training-active) .app > header .top-actions {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-column: 2;
+      }
+
+      body.training-active .app > header {
+        grid-template-columns: minmax(320px, 1fr) 240px !important;
+      }
+
+      body.training-active .app > header .top-actions {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .app > header .top-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
   <style>.dual-login-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0;padding:4px;border:1px solid #ddd4ee;border-radius:8px;background:#f7f3ff}.dual-login-tab{min-height:44px;border:1px solid transparent;border-radius:6px;background:transparent;color:#706879;font:inherit;font-weight:800}.dual-login-tab.active{border-color:#d8caeb;background:#fff;color:#5b3d86}.dual-login-field[hidden]{display:none}.dual-login-help{margin:7px 0 0;color:#706879;font-size:12px;line-height:1.6}.dual-phone-input{text-transform:none!important;letter-spacing:0!important}</style>
+  <style id="word-choice-library-refresh">
+    :root {
+      --wc-purple: #6c3ce7;
+      --wc-purple-dark: #4f2a9e;
+      --wc-purple-soft: #ece4ff;
+      --wc-paper: #fffdf7;
+      --wc-text: #171020;
+      --wc-muted: #71677d;
+      --wc-border: #e0d7ee;
+    }
+
+    body:not(.training-active):not(.locked) .app > header { display: none !important; }
+    body:not(.training-active):not(.locked) .library-screen {
+      margin: 0 auto 32px;
+      padding: 26px 8px 0;
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .word-library-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(430px, .8fr);
+      align-items: end;
+      gap: 34px;
+      margin-bottom: 28px;
+      padding: 14px 10px 0;
+    }
+
+    .word-library-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      margin: 0 0 18px;
+      padding: 7px 18px;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--wc-purple);
+      box-shadow: 0 8px 18px rgba(108, 60, 231, .18);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .word-library-hero h2 {
+      margin: 0;
+      color: var(--wc-text);
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.12;
+      font-weight: 900;
+      text-wrap: balance;
+    }
+
+    .word-library-hero-copy > p:last-child {
+      max-width: 680px;
+      margin: 14px 0 0;
+      color: var(--wc-muted);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .word-library-tools {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .word-library-tool {
+      min-height: 60px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border: 1px solid #c7b6e7 !important;
+      border-radius: 8px !important;
+      color: #332444 !important;
+      background: rgba(255, 255, 255, .96) !important;
+      box-shadow: 4px 5px 0 rgba(108, 60, 231, .08) !important;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.35;
+      text-decoration: none;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    .word-library-tool:hover { border-color: var(--wc-purple) !important; color: var(--wc-purple) !important; background: #faf7ff !important; }
+    .word-library-tool:focus-visible,
+    .word-home-start:focus-visible,
+    .word-home-reading:focus-visible { outline: 3px solid rgba(108, 60, 231, .38); outline-offset: 3px; }
+
+    .word-home-progress-card {
+      position: relative;
+      min-height: 174px;
+      display: grid;
+      grid-template-columns: minmax(310px, .9fr) minmax(280px, 1.2fr) 120px;
+      align-items: center;
+      gap: 32px;
+      overflow: hidden;
+      margin: 0 0 28px;
+      padding: 30px 34px 26px 56px;
+      border: 1px solid #cab8ed;
+      border-radius: 8px;
+      background: linear-gradient(90deg, transparent 0 26px, rgba(108,60,231,.10) 26px 28px, transparent 28px), var(--wc-paper);
+      box-shadow: 0 12px 26px rgba(71, 48, 105, .12);
+    }
+
+    .word-home-progress-card::before {
+      content: "";
+      position: absolute;
+      inset: 12px auto 12px 10px;
+      width: 18px;
+      background: radial-gradient(circle, #fff 0 6px, #d7c7f2 6.5px 7.5px, transparent 8px) center top / 18px 26px repeat-y;
+    }
+
+    .word-home-progress-copy > span {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 7px 14px;
+      color: #205e4c;
+      background: #dff5e9;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .word-home-progress-copy strong { display: block; color: var(--wc-text); font-size: 38px; line-height: 1.15; }
+    .word-home-progress-copy p { margin: 8px 0 0; color: var(--wc-muted); font-size: 14px; line-height: 1.55; }
+    .word-home-progress-status { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px; }
+    .word-home-progress-status b { color: #251c31; font-size: 17px; font-variant-numeric: tabular-nums; }
+    .word-home-progress-meter { height: 14px; overflow: hidden; border-radius: 7px; background: #e9e5ec; }
+    .word-home-progress-meter > span { display: block; height: 100%; border-radius: inherit; background: var(--wc-purple); }
+    .word-home-progress-icon { width: 104px; height: 104px; padding: 8px; border: 7px solid #e4d7ff; border-radius: 50%; background: #f5f0ff; object-fit: contain; filter: drop-shadow(0 7px 8px rgba(59,37,96,.14)); }
+
+    .lesson-list { gap: 28px !important; }
+    .lesson-group { gap: 9px !important; }
+    .lesson-group-title { min-height: 48px; padding: 0 8px !important; }
+    .lesson-group-title h3 { position: relative; padding-left: 40px; color: #181020 !important; font-size: 28px !important; }
+    .lesson-group-title h3::before { content: ""; position: absolute; top: 50%; left: 0; width: 30px; height: 24px; border: 3px solid var(--wc-purple); border-radius: 4px 4px 7px 7px; transform: translateY(-50%) rotate(-7deg); }
+    .lesson-group-title > span { padding: 7px 14px; border-radius: 18px; color: var(--wc-purple-dark) !important; background: var(--wc-purple-soft); }
+
+    .word-home-card {
+      position: relative;
+      min-height: 78px;
+      display: grid;
+      grid-template-columns: 80px minmax(0, 1fr) minmax(230px, auto);
+      align-items: center;
+      gap: 18px;
+      overflow: hidden;
+      padding: 8px 16px 8px 0;
+      border: 1px solid var(--wc-border) !important;
+      border-radius: 8px !important;
+      background: rgba(255,255,255,.97) !important;
+      box-shadow: 0 5px 12px rgba(59,40,86,.06) !important;
+      transition: border-color 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+    }
+
+    .word-home-card:hover { border-color: #b79be8 !important; box-shadow: 0 9px 20px rgba(59,40,86,.11) !important; }
+    .word-home-card.is-done { opacity: .66; filter: grayscale(.35); }
+    .word-home-card.official-exam-card { border-color: #e9c150 !important; background: #fff9e8 !important; }
+    .word-home-index { min-height: 60px; display: grid; place-items: center; align-self: stretch; color: #fff; background: #7250d4; clip-path: polygon(0 0,88% 0,100% 20%,91% 42%,100% 65%,91% 100%,0 100%); font-family: Georgia, serif; font-size: 22px; font-style: italic; font-variant-numeric: tabular-nums; }
+    .lesson-group .word-home-card:nth-child(4n + 3) .word-home-index { color: #2f270d; background: #f0c63b; }
+    .lesson-group .word-home-card:nth-child(4n + 4) .word-home-index { background: #54c9a3; }
+    .lesson-group .word-home-card:nth-child(4n + 5) .word-home-index { background: #ef827c; }
+    .word-home-main { min-width: 0; }
+    .word-home-badges { min-height: 22px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .word-home-card .official-exam-badge,
+    .word-home-card .latest-update-badge { position: static !important; width: fit-content; min-height: 24px; display: inline-flex; align-items: center; margin: 0; padding: 3px 9px; border-radius: 999px; font-size: 12px; line-height: 1.25; font-weight: 900; }
+    .word-home-card .official-exam-badge { border: 1px solid #dfb746; color: #6c4b09; background: #fff2bf; }
+    .word-home-card .latest-update-badge { border: 1px solid #b9a0e9; color: #4e2a99; background: #f0eaff; }
+    .word-home-main > strong { display: block; margin-top: 2px; color: #1a1421; font-size: 18px; line-height: 1.4; overflow-wrap: anywhere; }
+    .word-home-main > small { display: block; margin-top: 4px; color: var(--wc-muted); font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+    .word-home-actions { display: grid; grid-template-columns: minmax(92px, auto) minmax(122px, auto); gap: 8px; }
+    .word-home-reading,
+    .word-home-start { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 14px; border-radius: 8px; font: inherit; font-size: 14px; font-weight: 900; cursor: pointer; touch-action: manipulation; }
+    .word-home-reading { border: 1px solid #c7b6e7; color: #4e2a99; background: #faf7ff; }
+    .word-home-start { border: 1px solid var(--wc-purple); color: #fff; background: var(--wc-purple); box-shadow: 0 5px 12px rgba(96,57,152,.18); }
+    .word-home-reading:hover { border-color: var(--wc-purple); background: #f1ebff; }
+    .word-home-start:hover { background: var(--wc-purple-dark); }
+    .word-home-action-arrow { font-size: 20px; line-height: 1; }
+
+    @media (max-width: 1050px) {
+      .word-library-hero { grid-template-columns: 1fr; }
+      .word-home-progress-card { grid-template-columns: minmax(0,1fr) minmax(240px,1fr) 90px; }
+      .word-home-progress-icon { width: 84px; height: 84px; }
+    }
+
+    @media (max-width: 760px) {
+      body:not(.training-active):not(.locked) .library-screen { padding-inline: 0; }
+      .word-library-hero { gap: 20px; padding-inline: 2px; }
+      .word-library-hero h2 { font-size: 34px; }
+      .word-library-tools { grid-template-columns: 1fr; }
+      .word-library-tool { min-height: 50px; }
+      .word-home-progress-card { grid-template-columns: 1fr 74px; gap: 18px; padding: 28px 20px 24px 44px; }
+      .word-home-progress-status { grid-column: 1 / -1; grid-row: 2; }
+      .word-home-progress-icon { width: 72px; height: 72px; }
+      .lesson-group-title h3 { font-size: 24px !important; }
+      .word-home-card { grid-template-columns: 58px minmax(0,1fr) 96px; gap: 10px; padding-right: 8px; }
+      .word-home-index { font-size: 17px; }
+      .word-home-main > strong { font-size: 16px; }
+      .word-home-actions { grid-template-columns: 44px 44px; justify-content: end; }
+      .word-home-reading,
+      .word-home-start { width: 44px; min-width: 44px; min-height: 48px; overflow: hidden; padding: 0; }
+      .word-home-action-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+      .word-home-reading-mark { font-size: 16px; }
+    }
+
+    @media (max-width: 390px) {
+      .word-home-card { grid-template-columns: 52px minmax(0,1fr) 92px; gap: 8px; }
+      .word-home-main > small { font-size: 12px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .word-home-card { transition: none; }
+      html { scroll-behavior: auto !important; }
+    }
+  </style>
 </head>
 <body class="module-word-choice locked">
   <a class="skip-link" href="#mainContent">跳到主要内容</a>
@@ -1523,14 +1814,31 @@
     </header>
 
     
-    <section class="library-screen" id="libraryScreen" aria-label="题库主页">
-      <div class="library-head">
-        <div>
-          <h2>选词填空题库</h2>
-          <p>选择篇目后进入正式训练。</p>
+    <section class="library-screen" id="libraryScreen" aria-label="选词填空题库主页">
+      <div class="word-library-hero">
+        <div class="word-library-hero-copy">
+          <p class="word-library-eyebrow">题库主页</p>
+          <h2>选择一篇文章，开始训练</h2>
+          <p>先判断词性，再结合语境选词并完成词形变化。训练进度会自动保存，也可以随时重复练习。</p>
         </div>
-        <button class="btn secondary" id="openGuideBtn" type="button">第一次使用说明</button>
+        <div class="word-library-tools" aria-label="学习工具入口">
+          <a class="word-library-tool" href="../../index.html">返回首页</a>
+          <button class="word-library-tool" id="openGuideBtn" type="button">第一次使用说明</button>
+          <button class="word-library-tool" id="libraryNotebookBtn" type="button">专属错题本</button>
+        </div>
       </div>
+      <section class="word-home-progress-card" aria-label="选词填空学习进度">
+        <div class="word-home-progress-copy">
+          <span>学习进度</span>
+          <strong id="libraryProgressCount">0 / 0 篇</strong>
+          <p>已完成的文章会降低显示强度，仍可随时重新训练或查看全文翻译。</p>
+        </div>
+        <div class="word-home-progress-status">
+          <div class="word-home-progress-meter" role="progressbar" aria-label="题库完成进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="libraryProgressBar" style="width:0%"></span></div>
+          <b id="libraryProgressPercent">0%</b>
+        </div>
+        <img class="word-home-progress-icon" src="../../assets/icon-reading.png" alt="" width="104" height="104" />
+      </section>
       <div class="lesson-list" id="lessonList"></div>
     </section>
 
@@ -1690,10 +1998,11 @@
 
   <div class="toast" id="toast"></div>
 
-  <script src="../../assets/student-profile.js?v=20260828-1"></script>
+  <script src="../../assets/student-profile.js?v=20261020-1"></script>
   <script src="imported-question-bank-20260829.js?v=20260829-1"></script>
   <script src="imported-question-bank-20260902.js?v=20260902-1"></script>
   <script src="imported-question-bank-20260913.js?v=20260914-visible-print-1"></script>
+  <script src="imported-question-bank-20261019.js?v=20261020-basic-order-1"></script>
   <script src="../grammar/grammar-word-data.js?v=20260920-1"></script>
   <script src="word-choice-reading.js?v=20260920-1"></script>
   <script>
@@ -4015,6 +4324,7 @@
       ...window.WORD_CHOICE_IMPORTED_20260829,
       ...window.WORD_CHOICE_IMPORTED_20260902,
       ...window.WORD_CHOICE_IMPORTED_20260913,
+      ...window.WORD_CHOICE_IMPORTED_20261019,
       xinjiang: initialXinjiangQuestion,
       rose: roseQuestion,
       maxfood: maxFoodQuestion,
@@ -4075,28 +4385,53 @@
             if (!bYear) return -1;
             if (aYear !== bYear) return bYear - aYear;
           }
-          const aLatest = String(a.entry[1]?.source || "").includes("乌鲁木齐市第一中学");
-          const bLatest = String(b.entry[1]?.source || "").includes("乌鲁木齐市第一中学");
+          const aLatest = a.entry[1]?.importBatch === "20261019";
+          const bLatest = b.entry[1]?.importBatch === "20261019";
           if (aLatest !== bLatest) return aLatest ? -1 : 1;
+          const aOrder = Number(a.entry[1]?.initialOrder) || Number.MAX_SAFE_INTEGER;
+          const bOrder = Number(b.entry[1]?.initialOrder) || Number.MAX_SAFE_INTEGER;
+          if (aOrder !== bOrder) return aOrder - bOrder;
           return a.originalIndex - b.originalIndex;
         })
         .map(({ entry }) => entry);
     }
 
+    function getWordChoiceGroup(data) {
+      return data?.group === "初阶" ? "初阶" : "中考练习篇目";
+    }
+
     function renderLibrary() {
       const list = document.getElementById("lessonList");
       if (!list) return;
-      list.innerHTML = getSortedWordChoiceEntries().map(([key, data], index) => {
+      const entries = getSortedWordChoiceEntries();
+      const groups = { "中考练习篇目": [], "初阶": [] };
+      entries.forEach(entry => groups[getWordChoiceGroup(entry[1])].push(entry));
+      const doneCount = entries.filter(([key]) => Boolean(wordChoiceDoneArticles[key])).length;
+      const percent = entries.length ? Math.round(doneCount / entries.length * 100) : 0;
+      const progressCount = document.getElementById("libraryProgressCount");
+      const progressPercent = document.getElementById("libraryProgressPercent");
+      const progressBar = document.getElementById("libraryProgressBar");
+      const progressMeter = progressBar?.parentElement;
+      if (progressCount) progressCount.textContent = doneCount + " / " + entries.length + " 篇";
+      if (progressPercent) progressPercent.textContent = percent + "%";
+      if (progressBar) progressBar.style.width = percent + "%";
+      if (progressMeter) progressMeter.setAttribute("aria-valuenow", String(percent));
+      const renderCard = ([key, data], index) => {
         const rawTitle = getArticleTitle(key);
         const source = data.source || "名校优质真题";
         const officialYear = getWordChoiceOfficialYear(data);
         const title = officialYear ? (rawTitle.replace(/^20\d{2}\s*新疆真题\s*[·.：:]?\s*/, "").trim() || "新疆中考选词填空") : rawTitle;
         const serial = String(index + 1).padStart(2, "0");
-        const badge = officialYear ? '<span class="official-exam-badge">' + officialYear + ' 新疆中考真题</span>' : (source.includes('乌鲁木齐市第一中学') ? '<span class="latest-update-badge">20260913 更新</span>' : '');
+        const badge = officialYear ? '<span class="official-exam-badge">' + officialYear + ' 新疆中考真题</span>' : (data.importBatch === "20261019" ? '<span class="latest-update-badge">20261019 更新</span>' : '');
         const done = wordChoiceDoneArticles[key];
-        const readingButton = '<button class="reading-library-btn" type="button" data-reading-article="' + key + '">全文翻译</button>';
-        return '<article class="lesson-card' + (officialYear ? ' official-exam-card' : '') + '"><span class="lesson-index">' + serial + '</span><div class="lesson-main">' + badge + '<strong>' + title + '</strong><small>' + source + '</small></div><div class="lesson-actions">' + readingButton + '<button class="start-article-btn" type="button" data-start-article="' + key + '">' + (done ? '重新训练' : '开始训练') + '</button></div></article>';
-      }).join("");
+        const safeTitle = escapeHtml(title);
+        const readingButton = '<button class="word-home-reading" type="button" data-reading-article="' + key + '" aria-label="查看全文翻译：' + safeTitle + '"><span class="word-home-reading-mark" aria-hidden="true">译</span><span class="word-home-action-label">全文翻译</span></button>';
+        const startLabel = done ? '重新训练' : '开始训练';
+        return '<article class="word-home-card' + (officialYear ? ' official-exam-card' : '') + (done ? ' is-done' : '') + '"><span class="word-home-index">' + serial + '</span><div class="word-home-main"><div class="word-home-badges">' + badge + '</div><strong>' + safeTitle + '</strong><small>' + escapeHtml(source) + '</small></div><div class="word-home-actions">' + readingButton + '<button class="word-home-start" type="button" data-start-article="' + key + '" aria-label="' + startLabel + '：' + safeTitle + '"><span class="word-home-action-label">' + startLabel + '</span><span class="word-home-action-arrow" aria-hidden="true">→</span></button></div></article>';
+      };
+      list.innerHTML = ["中考练习篇目", "初阶"].filter(name => groups[name].length).map(name =>
+        '<section class="lesson-group" data-library-group="' + name + '"><div class="lesson-group-title"><h3>' + name + '</h3><span>' + groups[name].length + ' 篇</span></div>' + groups[name].map(renderCard).join("") + '</section>'
+      ).join("");
       list.querySelectorAll("[data-start-article]").forEach(button => {
         button.addEventListener("click", () => startArticle(button.dataset.startArticle));
       });
@@ -4966,6 +5301,7 @@
       if (event.target === popover) closePopovers();
     });
     document.getElementById("notebookBtn").addEventListener("click", openNotebook);
+    document.getElementById("libraryNotebookBtn")?.addEventListener("click", openNotebook);
     document.getElementById("printCurrentArticleBtn").addEventListener("click", printCurrentWordChoiceArticle);
     document.getElementById("notebookFilter").addEventListener("change", renderNotebook);
     document.getElementById("clearNotebookBtn").addEventListener("click", () => {
