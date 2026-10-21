@@ -1,7 +1,6 @@
 window.BUILTIN_LESSONS = [
   {
     "id": "cloze-上海-001",
-    
     "freezeClues": true,
     "title_cn": "分歧面前如何沟通",
     "title_en": "Talking Through Disagreements",
@@ -1609,8 +1608,14 @@ window.BUILTIN_LESSONS = [
           "receives"
         ],
         "answer": "harms",
-        "clues": ["But many people disagreed", "changing or hiding content"],
-        "clueTypes": {"But many people disagreed": "逻辑线索·转折", "changing or hiding content": "语境线索·搭配骨架"},
+        "clues": [
+          "But many people disagreed",
+          "changing or hiding content"
+        ],
+        "clueTypes": {
+          "But many people disagreed": "逻辑线索·转折",
+          "changing or hiding content": "语境线索·搭配骨架"
+        },
         "explanation": "线索　空所在句「But many people disagreed」是转折信号（←前指：与上一句公司想「让所有人享受故事」的善意相反），方向逆向、褒贬为贬——censorship 损害创造力，空格要落在「否定 / 伤害」语义上。\n印证　本句内还有同向佐证（搭配骨架）：「changing or hiding content」是对 censorship 的释义，坐实其「隐藏 / 删改内容」的负面色彩，与 harms 一致。\n排除　encourages 是最强干扰项：它与转折后该取的方向完全相反（方向否）；teaches、receives 全文找不到任何呼应落点（呼应否）。\n补充　即使只认「But many people disagreed」这处转折，也足以定住 harms；释义句只是加固。",
         "collocation": null
       },
@@ -1626,8 +1631,16 @@ window.BUILTIN_LESSONS = [
           "reviews"
         ],
         "answer": "characters",
-        "clues": ["His books are full of silly", "and wild ideas", "For example, in The Twits"],
-        "clueTypes": {"His books are full of silly": "语境线索·搭配骨架", "and wild ideas": "逻辑线索·并列", "For example, in The Twits": "举例说明"},
+        "clues": [
+          "His books are full of silly",
+          "and wild ideas",
+          "For example, in The Twits"
+        ],
+        "clueTypes": {
+          "His books are full of silly": "语境线索·搭配骨架",
+          "and wild ideas": "逻辑线索·并列",
+          "For example, in The Twits": "举例说明"
+        },
         "explanation": "线索　空后「and wild ideas」是并列信号（→后指一致：and 两端属性同类，silly ___ 与 wild ideas 并列，所填词须为同类名词）。更直接的是后句「For example, in The Twits, a man eats spaghetti mixed with worms!」举出具体角色（The Twits 里吃虫子面条的男人）来实例化 silly ___（→后指，举例说明），方向顺向、褒贬中性——例子里的「人 / 角色」指向 characters。\n印证　本句内还有同向佐证（搭配骨架）：「His books are full of silly」与「wild ideas」并列，共同圈定「书里充满可笑的 X 和疯狂的点子」这类名词。\n排除　traditions、risks、reviews 三个干扰项在全文找不到任何呼应落点（呼应否），且与「搞笑角色 / 疯狂点子」的场景对不上（异场否）。\n补充　即使只靠并列结构也能收窄到名词，但 For example 那句才是把答案钉死在 characters 上的关键证据。",
         "collocation": null
       },
@@ -1643,8 +1656,16 @@ window.BUILTIN_LESSONS = [
           "laugh"
         ],
         "answer": "laugh",
-        "clues": ["loud, funny, and exaggerated", "which has made kids", "Dahl often made children the heroes"],
-        "clueTypes": {"loud, funny, and exaggerated": "情感线索·情感一致", "which has made kids": "语境线索·搭配骨架", "Dahl often made children the heroes": "复现线索·同场复现"},
+        "clues": [
+          "loud, funny, and exaggerated",
+          "which has made kids",
+          "Dahl often made children the heroes"
+        ],
+        "clueTypes": {
+          "loud, funny, and exaggerated": "情感线索·情感一致",
+          "which has made kids": "语境线索·搭配骨架",
+          "Dahl often made children the heroes": "复现线索·同场复现"
+        },
         "explanation": "线索　空所在句「His writing style is loud, funny, and exaggerated」定了情绪方向（←前指，情感一致、褒贬为褒）：风格「funny（有趣）」直接解释为什么孩子会发笑，空格要落在正向、轻松的语义上；「which has made kids」是 make + sb. + do 的搭配骨架（本句内一致），语法上空格须填动词原形。\n印证　前文「Dahl often made children the heroes」是同场复现（←前指一致）：孩子当主角、故事讨孩子喜欢，与「让孩子笑」同向。\n排除　cry 是最强干扰项：它与 funny 的褒义方向完全相反（方向否）；worry、pity 同为负面情感，也与「有趣」对不上（方向否）。\n补充　laugh 既不是短语动词也不是固定搭配，纯靠「funny → 笑」的情感一致与 make sb. do 结构即可锁定，无需任何搭配标注。",
         "collocation": null
       },
@@ -1660,8 +1681,16 @@ window.BUILTIN_LESSONS = [
           "attractive"
         ],
         "answer": "proper",
-        "clues": ["However, some people think", "Words like \"fat\" or \"ugly\" were removed", "books are not"],
-        "clueTypes": {"However, some people think": "逻辑线索·转折", "Words like \"fat\" or \"ugly\" were removed": "举例说明", "books are not": "语境线索·搭配骨架"},
+        "clues": [
+          "However, some people think",
+          "Words like \"fat\" or \"ugly\" were removed",
+          "books are not"
+        ],
+        "clueTypes": {
+          "However, some people think": "逻辑线索·转折",
+          "Words like \"fat\" or \"ugly\" were removed": "举例说明",
+          "books are not": "语境线索·搭配骨架"
+        },
         "explanation": "线索　空所在句以 However 转折：前文赞美达尔作品，随后转到有人认为某些词在今天不再 ______，方向转为负面评价。\n印证　下一段举例说 fat、ugly 等词被删除（→后指，举例说明），说明出版商认为这些表达在今天不够恰当，因此选 proper。\n排除　modern 只表示是否现代，不能准确说明为什么词语会伤害感受并被删除；complete、attractive 与删词理由无关。\n补充　反对改写者关于 original style 的观点属于争论的另一方，不能拿来直接证明出版商为什么删词。",
         "collocation": null
       },
@@ -1677,8 +1706,16 @@ window.BUILTIN_LESSONS = [
           "always"
         ],
         "answer": "never",
-        "clues": ["They think the changes are unnecessary", "always refused to change his books", "complain about my stories"],
-        "clueTypes": {"They think the changes are unnecessary": "逻辑线索·因果", "always refused to change his books": "复现线索·同场复现", "complain about my stories": "语境线索·搭配骨架"},
+        "clues": [
+          "They think the changes are unnecessary",
+          "always refused to change his books",
+          "complain about my stories"
+        ],
+        "clueTypes": {
+          "They think the changes are unnecessary": "逻辑线索·因果",
+          "always refused to change his books": "复现线索·同场复现",
+          "complain about my stories": "语境线索·搭配骨架"
+        },
         "explanation": "线索　空前的「always refused to change his books」是同场复现（←前指，褒贬为褒）：达尔始终拒绝改书，说明他深信自己的故事没问题，孩子自然「从不」抱怨，空格要落在否定频率上。「complain about my stories」是 complain about 的搭配骨架（本句内一致），圈定「抱怨」语义。\n印证　前文「They think the changes are unnecessary」是因果信号（←前指一致）：读者与作家都认为改动多余，与「故事本就很好、孩子不抱怨」同向。\n排除　sometimes、often、always 三个干扰项都暗示孩子「会」抱怨，与达尔的自信立场完全相反（方向否）。\n补充　always refused 与 never complain 的「始终—从不」呼应，已把答案锁死在 never 上。",
         "collocation": null
       },
@@ -1694,8 +1731,16 @@ window.BUILTIN_LESSONS = [
           "youth"
         ],
         "answer": "language",
-        "clues": ["Old books might include words", "unfair or rude today", "This debate shows how"],
-        "clueTypes": {"Old books might include words": "复现线索·上下义词复现", "unfair or rude today": "举例说明", "This debate shows how": "语境线索·搭配骨架"},
+        "clues": [
+          "Old books might include words",
+          "unfair or rude today",
+          "This debate shows how"
+        ],
+        "clueTypes": {
+          "Old books might include words": "复现线索·上下义词复现",
+          "unfair or rude today": "举例说明",
+          "This debate shows how": "语境线索·搭配骨架"
+        },
         "explanation": "线索　空后「Old books might include words we find unfair or rude today」是上下义复现（→后指一致）：words（具体的 fat / ugly 等词）是 language 的下位词，按种属关系收窄到「语言」层面，方向顺向、褒贬中性。「This debate shows how」是 show how 的搭配骨架（本句内一致），圈定名词填空。\n印证　紧接的「unfair or rude today」是举例说明（→后指一致）：被点名的这些「词」正属于 language 的范畴，与答案同向。\n排除　education、pressure、youth 三个干扰项在全文找不到任何呼应落点（呼应否），也与「改词 / 文字」的争论场景对不上（异场否）。\n补充　全篇从「改词」到「旧词冒犯人」通篇围绕 language 展开，上下义复现已足够定住答案。",
         "collocation": null
       }
@@ -7297,6 +7342,1199 @@ window.BUILTIN_LESSONS = [
         "pos": "end"
       }
     ],
+    "_explgen_touched": true
+  },
+  {
+    "id": "cloze-上海-031",
+    "title_cn": "认清同伴压力，守住自己",
+    "title_en": "Peer Pressure: Learning to Stay True to Myself",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "成长故事",
+    "region": "上海",
+    "source": "27上海徐汇世外集团·九年级英语10月考",
+    "source_kind": "模拟题",
+    "exam_year": 2026,
+    "tags": [
+      "上海",
+      "徐汇世外",
+      "九年级月考",
+      "同伴压力",
+      "词义辨析"
+    ],
+    "first_sentence": "When I entered middle school, I had no interest in video games.",
+    "last_sentence": "I have learned that real courage is about staying true to myself.",
+    "tone": {
+      "answer": "转折变化",
+      "reason": "开篇写自己为被同伴接纳而妥协、成绩下滑、看着分数后悔焦虑，情绪落在消极一端；第三段用 However 转向「不必被同伴压力控制」，给出三条具体做法，尾段落到 real courage、staying true to myself，情绪转为积极。",
+      "kind": "narrative",
+      "shape": "问题—建议",
+      "shape_reason": "前半段用第一人称经历把「同伴压力」这件事摆出来 —— 从拒绝到屈服、成绩下滑、后悔焦虑；后半段转为给做法（First / Second / Finally），读的时候重点找 hold on to、look for support 这类建议句，答案多半落在「做法」与「方向」上。"
+    },
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 19,
+    "article_text_with_blanks": "When I entered middle school, I had no interest in video games. Yet my friends were crazy about them and laughed at me for refusing to __56__. Although I knew I should focus on my studies, I slowly gave in (屈服) and started playing just to be accepted. Soon, my grades fell noticeably. One night, looking at a __57__ test score, I felt regretful and anxious. This experience became my first __58__ about peer pressure.\nMy experience taught me what peer pressure really is. __59__ simply \"following the crowd blindly\", it's actually more about an inner conflict (内在冲突): you want to refuse, but fear being left out. Research shows that repeatedly giving in can increase anxiety, cause a __60__ of self, and lower grades.\n__61__, peer pressure does not have to control us. With clear steps and inner strength, we can face it. First, hold on to your own values. __62__ your progress, not others' choices, builds confidence to say no. Second, look for support from trusted adults. Talking to a teacher or parent can help you see the situation __63__. Finally make friends with people who respect your choices. True friends accept you rather than __64__ you to change.\nBreaking free from peer pressure is __65__ easy, but it is possible and worthwhile. Now, whenever I feel pressured to follow others, I pause and ask what I truly want. I have learned that real courage is about staying true to myself.",
+    "reading_sentences": [
+      "When I entered middle school, I had no interest in video games.",
+      "Yet my friends were crazy about them and laughed at me for refusing to __56__.",
+      "Although I knew I should focus on my studies, I slowly gave in (屈服) and started playing just to be accepted.",
+      "Soon, my grades fell noticeably.",
+      "One night, looking at a __57__ test score, I felt regretful and anxious.",
+      "This experience became my first __58__ about peer pressure.",
+      "My experience taught me what peer pressure really is.",
+      "__59__ simply \"following the crowd blindly\", it's actually more about an inner conflict (内在冲突): you want to refuse, but fear being left out.",
+      "Research shows that repeatedly giving in can increase anxiety, cause a __60__ of self, and lower grades.",
+      "__61__, peer pressure does not have to control us.",
+      "With clear steps and inner strength, we can face it.",
+      "First, hold on to your own values.",
+      "__62__ your progress, not others' choices, builds confidence to say no. Second, look for support from trusted adults.",
+      "Talking to a teacher or parent can help you see the situation __63__.",
+      "Finally make friends with people who respect your choices.",
+      "True friends accept you rather than __64__ you to change.",
+      "Breaking free from peer pressure is __65__ easy, but it is possible and worthwhile.",
+      "Now, whenever I feel pressured to follow others, I pause and ask what I truly want.",
+      "I have learned that real courage is about staying true to myself."
+    ],
+    "questions": [
+      {
+        "q": 56,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "speak up",
+          "fit in",
+          "show off",
+          "come across"
+        ],
+        "answer": "fit in",
+        "clues": [
+          "Yet my friends were",
+          "just to be accepted"
+        ],
+        "clueTypes": {
+          "Yet my friends were": "逻辑线索·转折",
+          "just to be accepted": "复现线索·近义词复现"
+        },
+        "explanation": "线索　空在 for refusing to ______ 里，前有 laughed at me（被嘲笑），后有 started playing just to be accepted（只为被接受）。Yet 把「我没兴趣」与「朋友痴迷」摆成对立，被笑的原因只能是不肯「融入」这个圈子。\n印证　后一句 just to be accepted（→后指：作者自己交代的动机）把话说透——「被接受」的反面就是「被排斥」，与 fit in 落在同一语义场。\n排除　speak up 是最强干扰项：它顺着 refusing 的方向看着很顺，但拒绝「融入」才招来嘲笑，说出来并不解决被笑这件事（方向否）；show off 是炫耀，与不敢出头的处境相反（方向否）；come across 表偶遇或给人的印象，全文找不到落点（呼应否）。\n补充　fit in 是「被群体接纳」的固定说法，但即使不认这个短语，just to be accepted 这一句也足以把答案定住，不必依赖短语记忆。",
+        "collocation": null
+      },
+      {
+        "q": 57,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "confusing",
+          "surprising",
+          "challenging",
+          "disappointing"
+        ],
+        "answer": "disappointing",
+        "clues": [
+          "my grades fell noticeably",
+          "I felt regretful and anxious"
+        ],
+        "clueTypes": {
+          "my grades fell noticeably": "逻辑线索·因果",
+          "I felt regretful and anxious": "情感线索·情感一致"
+        },
+        "explanation": "线索　空在 looking at a ______ test score 里，前一句已交代 Soon, my grades fell noticeably（→前指：成绩明显下滑）。因果顺序是「先下滑、后看分数」，分数只能落在让人失望的方向。\n印证　本句后半 I felt regretful and anxious（后悔、焦虑）是同句内的情感同向证据，褒贬为贬；两种情绪都由这个分数触发，方向只能是负面。\n排除　confusing 是最强干扰项：分数低不等于「看不懂」，前文没有任何理解障碍（方向否）；surprising 说不通——gave in、grades fell 一路写下来，下滑是渐进可预期的，谈不上意外（呼应否）；challenging 形容任务难度，与 test score 搭配不成立（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 58,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "secret",
+          "choice",
+          "lesson",
+          "treasure"
+        ],
+        "answer": "lesson",
+        "clues": [
+          "My experience taught me",
+          "This experience became"
+        ],
+        "clueTypes": {
+          "My experience taught me": "复现线索·同场复现",
+          "This experience became": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空在 This experience became my first ______ about peer pressure 里，下一段首句 my experience taught me what peer pressure really is（→后指：这段经历教会我同伴压力究竟是什么）——「教会」对应「一堂课」，方向是收获。\n印证　再往下整段都在给做法（hold on to your own values、look for support），说明这段经历留下的是可复用的认识，而不是藏起来不提的东西。\n排除　choice 是最强干扰项：前文 I slowly gave in 确实是一次选择，但空后 about peer pressure 要的是「从经历中得到的东西」，不是那个动作（方向否）；secret 讲隐瞒，全文没有隐瞒的情节（异场否）；treasure 是正面珍宝，与刚出现的 regretful and anxious 基调相抵（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 59,
+        "pos": "介词搭配",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "Unlike",
+          "Towards",
+          "Against",
+          "Without"
+        ],
+        "answer": "Unlike",
+        "clues": [
+          "it's actually more about",
+          "following the crowd blindly"
+        ],
+        "clueTypes": {
+          "it's actually more about": "逻辑线索·转折",
+          "following the crowd blindly": "复现线索·反义词复现"
+        },
+        "explanation": "线索　空在句首，后面紧跟 it's actually more about an inner conflict（→后指：实际上更是一种内在冲突）。actually 是反预期信号，前半句是被否掉的旧说法——「随大流」与「内在冲突」构成对照，只能填表对比的介词。\n印证　同一句里的 simply（不过是）在压低 following the crowd blindly 的分量，把它降为表面现象，进一步坐实前后是「不是……而是……」的关系。\n排除　Without 是最强干扰项：语法上能接动名词，但「没有随大流，它实际上是内在冲突」逻辑断裂——要否掉的是这个说法，不是这个行为（方向否）；Towards、Against 都表方向，接不进这组对比（异场否）。\n补充　Unlike 作介词表「与……不同」，即使不熟这个用法，actually / more about 的转折也足以定住这组对比关系，空在句首的位置也提示要一个连接性介词。",
+        "collocation": null
+      },
+      {
+        "q": 60,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "feeling",
+          "fear",
+          "change",
+          "loss"
+        ],
+        "answer": "loss",
+        "clues": [
+          "increase anxiety",
+          "and lower grades"
+        ],
+        "clueTypes": {
+          "increase anxiety": "逻辑线索·并列",
+          "and lower grades": "情感线索·情感一致"
+        },
+        "explanation": "线索　空在 cause a ______ of self, and lower grades 里，与前面的 increase anxiety 并列，同属 giving in 造成的后果。并列结构要求三项同向，方向一致为负面。\n印证　上一句把内在冲突写成 you want to refuse, but fear being left out——怕被抛下，正是「失去自我」的动因，前后互为呼应。\n排除　change 是最强干扰项：a change of self 语法成立，但它是中性词，放进 increase anxiety、lower grades 这串负面后果里方向不对（方向否）；feeling 太泛，与 of self 搭不出具体所指（呼应否）；fear 与上文 fear being left out 撞词，若成立则「恐惧带来恐惧」，句内自我循环（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 61,
+        "pos": "连词逻辑",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "Therefore",
+          "However",
+          "Moreover",
+          "Also"
+        ],
+        "answer": "However",
+        "clues": [
+          "does not have to control us",
+          "increase anxiety"
+        ],
+        "clueTypes": {
+          "does not have to control us": "逻辑线索·转折",
+          "increase anxiety": "情感线索·情感一致"
+        },
+        "explanation": "线索　空在段首，前一段连列 giving in 的代价（anxiety、loss of self、lower grades），本句却落到 does not have to control us（→后指：不必被它控制）。前后方向相反，只能填转折词。\n印证　下一句 With clear steps and inner strength, we can face it 立刻给办法——先承认难、再给出路，正是转折之后的正向展开，而不是又一次并列补充。\n排除　Therefore 是最强干扰项：前段全是负面，很容易顺手读成因果；但因果一旦成立，后面就该继续讲危害，而不是给三条对策（方向否）；Moreover、Also 都是递进，会把「不必被控制」接成又一条危害，与 we can face it 冲突（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 62,
+        "pos": "动名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "Worrying about",
+          "Staring at",
+          "Focusing on",
+          "Waiting for"
+        ],
+        "answer": "Focusing on",
+        "clues": [
+          "I should focus on",
+          "builds confidence to say no"
+        ],
+        "clueTypes": {
+          "I should focus on": "复现线索·原词复现",
+          "builds confidence to say no": "逻辑线索·因果"
+        },
+        "explanation": "线索　空在句首作主语，与 not others' choices 构成对比，谓语是 builds confidence to say no（→后指：结果是有底气说不）。首段 I should focus on my studies 已出现 focus on，原词复现，方向落在「盯住自己的进度」。\n印证　紧接的 Second / Finally 两条建议讲「找可信的大人」「交尊重你选择的朋友」，都在向外扩支持面；只有这一条是向内看自己的进展，位置也印证了方向。\n排除　Worrying about 是最强干扰项：它与前文 anxiety 呼应，看着顺；但 worrying 只会加重焦虑，推不出 builds confidence（方向否）；Staring at 强调盯这个动作，与 progress 搭配生硬（呼应否）；Waiting for 是等待，与主动积累进度相反（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 63,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "clearly",
+          "totally",
+          "suddenly",
+          "closely"
+        ],
+        "answer": "clearly",
+        "clues": [
+          "With clear steps",
+          "the situation"
+        ],
+        "clueTypes": {
+          "With clear steps": "复现线索·派生词复现",
+          "the situation": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空在 help you see the situation ______ 里，修饰 see。本段开头 With clear steps and inner strength（→前指：清晰的步骤）已给出 clear，派生复现，方向是「看得清楚」。\n印证　整段落点是 we can face it——要面对就先得看清局面，与「模糊」「突然」「贴近」都不搭，只有「清楚」能接上这个动作。\n排除　closely 是最强干扰项：see sth closely 搭配自然，但它讲距离近、看得细，这里要的是判断是否明白（方向否）；totally 讲范围完整，see the situation totally 搭配不成立（异场否）；suddenly 讲时间，与「找老师父母聊」这种慢慢厘清的过程相反（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 64,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "fool",
+          "advise",
+          "invite",
+          "force"
+        ],
+        "answer": "force",
+        "clues": [
+          "rather than",
+          "True friends accept you"
+        ],
+        "clueTypes": {
+          "rather than": "逻辑线索·转折",
+          "True friends accept you": "复现线索·反义词复现"
+        },
+        "explanation": "线索　空在 rather than ______ you to change 里，与前半句 True friends accept you 构成对比。rather than 之前是「接纳你本来的样子」，之后就只能是「逼你改」，方向相反。\n印证　同段上文 make friends with people who respect your choices 已把「尊重选择」定为真朋友的标准——尊重即接纳，反面正是强迫，两条标准互为对照。\n排除　advise 是最强干扰项：advise sb to change 搭配最顺，但建议改变仍然是「要你改」，与 accept you 的无条件接纳不在同一侧（方向否）；invite 是邀请，语气太轻，撑不起 rather than 要的对立（方向否）；fool 是愚弄，全文没有欺骗情节（异场否）。\n补充　force sb to do sth 是固定搭配，但即使不认它，accept / respect 与 rather than 的对照也足以定住答案，搭配只是加固，不必依赖记忆。",
+        "collocation": null
+      },
+      {
+        "q": 65,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "rather",
+          "never",
+          "quite",
+          "almost"
+        ],
+        "answer": "never",
+        "clues": [
+          "easy, but it is possible",
+          "possible and worthwhile"
+        ],
+        "clueTypes": {
+          "easy, but it is possible": "逻辑线索·转折",
+          "possible and worthwhile": "情感线索·情感一致"
+        },
+        "explanation": "线索　空在 is ______ easy, but it is possible and worthwhile 里，but 把「容易」和「可能、值得」摆成对立。后半承认它可能且值得，前半就必须否定「容易」，否则 but 无从转折。\n印证　下一句 whenever I feel pressured, I pause and ask what I truly want（→后指：每次都要停下来问自己）说明摆脱靠反复练习，不属于轻松的事。\n排除　quite 是最强干扰项：quite easy 与程度副词搭配最自然，但一旦成立，but it is possible 就成了废话——本来容易，何须再强调可能（方向否）；almost 表「几乎」，is almost easy 语义含混，同样消解 but 的转折（方向否）；rather 表「相当」，与 quite 同病（方向否）。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": 0,
+    "tone_markers": [],
+    "freezeClues": true,
+    "_explgen_touched": true,
+    "update_tag": "202610 更新",
+    "update_seq": 1
+  },
+  {
+    "id": "cloze-上海-032",
+    "title_cn": "那场平局，每个人都是赢家",
+    "title_en": "Everyone Was a Winner",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "人物故事",
+    "region": "上海",
+    "source": "27上海华师大进华中学·九年级英语10月考",
+    "source_kind": "模拟题",
+    "exam_year": 2026,
+    "tags": [
+      "上海",
+      "华师大进华",
+      "九年级月考",
+      "体育与成长",
+      "词义辨析"
+    ],
+    "first_sentence": "Yesterday was the final game for my eight-year-old son's football team.",
+    "last_sentence": "I could still remember that afternoon: both teams laughing and cheering together __47__ Mikey, which was so warm and touching.",
+    "tone": {
+      "answer": "转折变化",
+      "reason": "开篇是决赛领先的兴奋夹着担心，乌龙球之后全场沉默、气氛跌到低点；随后 Mikey 的欢呼把沉默打破，两队围上来一起加油，结尾落在 a tie、Everybody won 与 warm and touching，情绪从紧张、尴尬转到温暖，属明显的先抑后扬。",
+      "kind": "narrative",
+      "shape": "事件—升华",
+      "shape_reason": "全文按一场球赛的时间线推进 —— 领先、乌龙、沉默、欢呼、赛后问答，最后一句把这件事抬到「温暖动人」的高度。读的时候盯住时间词（Yesterday / As it was near the end / That night）和情绪词（worried、silence、joy、warm），答案基本落在情绪转向的位置。"
+    },
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 25,
+    "article_text_with_blanks": "Yesterday was the final game for my eight-year-old son's football team. There were only several minutes left. The score was 2-1, and my son's team was leading. I was excited but still worried about the final results, so we __38__ shouting words of encouragement.\nAs it was near the end of the game, with less than ten __39__ left, the ball rolled in front of my son's teammate, a boy named Mikey O'Donnel. As people cried \"Kick it!\" Mikey stepped back and kicked hard at the ball. Suddenly, everyone around me cheered loudly. Mikey had scored! But then it became __40__. Mikey had scored — but into the wrong goal. Not 3-1, but 2-2! It was a tie (平局). For a moment, nobody spoke. Mikey has Down's syndrome (唐氏综合征), and to him, every goal is a reason to be __41__. He often gives a happy hug when anyone scores.\nThe silence was __42__ broken when Mikey, his face full of joy, hugged my son and shouted, \"I scored! I scored!\" For a second, I wasn't sure how my son would __43__. I saw my son raise his hand for a high-five and begin to __44__, \"Way to go Mikey! Way to go Mikey!\" Soon, both teams gathered around Mikey, __45__ the cheer and congratulating him. That night, when my daughter asked me the result of the game, I smiled and said, \"It was a tie. Everybody __46__.\" I could still remember that afternoon: both teams laughing and cheering together __47__ Mikey, which was so warm and touching.",
+    "reading_sentences": [
+      "Yesterday was the final game for my eight-year-old son's football team.",
+      "There were only several minutes left.",
+      "The score was 2-1, and my son's team was leading.",
+      "I was excited but still worried about the final results, so we __38__ shouting words of encouragement.",
+      "As it was near the end of the game, with less than ten __39__ left, the ball rolled in front of my son's teammate, a boy named Mikey O'Donnel.",
+      "As people cried \"Kick it!\"",
+      "Mikey stepped back and kicked hard at the ball.",
+      "Suddenly, everyone around me cheered loudly.",
+      "Mikey had scored!",
+      "But then it became __40__.",
+      "Mikey had scored — but into the wrong goal.",
+      "Not 3-1, but 2-2!",
+      "It was a tie (平局).",
+      "For a moment, nobody spoke.",
+      "Mikey has Down's syndrome (唐氏综合征), and to him, every goal is a reason to be __41__.",
+      "He often gives a happy hug when anyone scores.",
+      "The silence was __42__ broken when Mikey, his face full of joy, hugged my son and shouted, \"I scored!",
+      "I scored!\"",
+      "For a second, I wasn't sure how my son would __43__.",
+      "I saw my son raise his hand for a high-five and begin to __44__, \"Way to go Mikey!",
+      "Way to go Mikey!\"",
+      "Soon, both teams gathered around Mikey, __45__ the cheer and congratulating him.",
+      "That night, when my daughter asked me the result of the game, I smiled and said, \"It was a tie.",
+      "Everybody __46__.\"",
+      "I could still remember that afternoon: both teams laughing and cheering together __47__ Mikey, which was so warm and touching."
+    ],
+    "questions": [
+      {
+        "q": 38,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "continued",
+          "forgot",
+          "stopped",
+          "avoided"
+        ],
+        "answer": "continued",
+        "clues": [
+          "worried about the final results",
+          "shouting words of encouragement"
+        ],
+        "clueTypes": {
+          "worried about the final results": "逻辑线索·因果",
+          "shouting words of encouragement": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空在 so we ______ shouting words of encouragement 里，前半句 I was excited but still worried about the final results（→前指：担心结果）交代了动机。so 表结果，越担心结果的人，越只会把加油接着喊下去。\n印证　同一句的 shouting words of encouragement 已被写成持续中的动作，说明前面已经喊了一阵，这里不是起头，而是接续。\n排除　stopped 是最强干扰项：它跟 worried 贴得很近（一紧张就停下？），但 so 的因果方向正好相反（方向否）；forgot 是忘记，与 excited 的状态冲突（方向否）；avoided 是回避，与作者此刻正在加油的动作矛盾（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 39,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "days",
+          "hours",
+          "minutes",
+          "seconds"
+        ],
+        "answer": "minutes",
+        "clues": [
+          "several minutes left",
+          "near the end of the game"
+        ],
+        "clueTypes": {
+          "several minutes left": "复现线索·原词复现",
+          "near the end of the game": "逻辑线索·时间"
+        },
+        "explanation": "线索　空在 with less than ten ______ left 里，本句开头 As it was near the end of the game（→前指：临近终场）已把时间压到最后一段。足球赛临近结束还能数到个位数的时间单位，只能是分钟。\n印证　第一段 There were only several minutes left 原词复现，同一个说法在开篇已交代过一次，方向锁定在 minutes 上，这不是新信息，而是作者自己重复过的口径。\n排除　seconds 是最强干扰项：它同样能放进「临近结束」，但前文已用 several minutes left 定过单位，换单位就与原文自相矛盾（呼应否）；hours、days 与「不到十个」和「终场前」都不相容（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 40,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "noisy",
+          "terrible",
+          "silent",
+          "awful"
+        ],
+        "answer": "silent",
+        "clues": [
+          "nobody spoke",
+          "The silence was"
+        ],
+        "clueTypes": {
+          "nobody spoke": "复现线索·近义词复现",
+          "The silence was": "复现线索·原词复现"
+        },
+        "explanation": "线索　空在 But then it became ______ 里，破折号后紧接 Mikey had scored — but into the wrong goal（→后指：把球踢进了自家球门）。前一秒还在欢呼，这一秒方向整个翻过来，取负面。\n印证　紧接着 For a moment, nobody spoke（→后指：一时没人说话）给出具体画面；下一段开头 The silence was ... broken 又原词复现 silence，把「安静」坐实。\n排除　terrible 是最强干扰项：方向没错，但它停在评价上，接不出「没人说话」这个画面（呼应否）；awful 与 terrible 同病，语气更重却没有证据支撑（呼应否）；noisy 与后文 silence 正面冲突（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 41,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "angry",
+          "joyful",
+          "bored",
+          "doubtful"
+        ],
+        "answer": "joyful",
+        "clues": [
+          "gives a happy hug",
+          "every goal is a reason"
+        ],
+        "clueTypes": {
+          "gives a happy hug": "情感线索·情感一致",
+          "every goal is a reason": "逻辑线索·因果"
+        },
+        "explanation": "线索　空在 every goal is a reason to be ______ 里，前半句 Mikey has Down's syndrome（→前指：交代他的特殊情况）先把视角交给他，to him 又把判断限定在他的世界里，方向为正。\n印证　后一句 He often gives a happy hug when anyone scores（→后指：谁进球他都开心地抱一下）把「进球＝高兴」写成固定反应，褒贬一致。\n排除　angry 是最强干扰项：顺着乌龙球的情境看着合理，但 to him 之后写的是 Mikey 的感受，不是队友的（方向否）；doubtful 是怀疑，与 happy hug 相反（方向否）；bored 是无所谓，与后文 face full of joy 冲突（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 42,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "exactly",
+          "slowly",
+          "luckily",
+          "finally"
+        ],
+        "answer": "finally",
+        "clues": [
+          "For a moment, nobody spoke",
+          "hugged my son and shouted"
+        ],
+        "clueTypes": {
+          "For a moment, nobody spoke": "逻辑线索·时间",
+          "hugged my son and shouted": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空在 The silence was ______ broken when Mikey ... shouted 里，前一句 For a moment, nobody spoke（→前指：沉默已经持续了一阵）把「等」写了出来。等过一阵才被打破，方向是「终于」。\n印证　同句里 hugged my son and shouted 是突然放开的动作，与前面的静形成时间落差；落差处要的正是「等到了」的副词。\n排除　slowly 是最强干扰项：它与「沉默一阵」贴得上，但 shouting 是一瞬间的事，慢慢打破与喊出来的画面不合（方向否）；exactly 表精确，与过程无关（呼应否）；luckily 表运气，全文没有运气成分（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 43,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "reply",
+          "check",
+          "move",
+          "treat"
+        ],
+        "answer": "reply",
+        "clues": [
+          "raise his hand for a high-five",
+          "how my son would"
+        ],
+        "clueTypes": {
+          "raise his hand for a high-five": "复现线索·同场复现",
+          "how my son would": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空在 I wasn't sure how my son would ______ 里，前一句是 Mikey 抱着他喊 I scored!（→前指：对方先开了口）。对方说了话，这里问的就是儿子会怎么回应。\n印证　后一句 I saw my son raise his hand for a high-five（→后指：抬手击掌）给出了实际反应，说明空处问的是「怎么接话」，不是某个具体动作。\n排除　check 是最强干扰项：结构上站得住，但前文没有任何要核对的信息（呼应否）；move 太空泛，接不出击掌这个具体回应（呼应否）；treat 要带宾语（treat sb），此处没有宾语，结构不成立（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 44,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "speak",
+          "warn",
+          "shout",
+          "talk"
+        ],
+        "answer": "shout",
+        "clues": [
+          "Way to go Mikey",
+          "the cheer and congratulating"
+        ],
+        "clueTypes": {
+          "Way to go Mikey": "语境线索·搭配骨架",
+          "the cheer and congratulating": "复现线索·同场复现"
+        },
+        "explanation": "线索　空在 begin to ______, \"Way to go Mikey!\" 里，引号内是连喊两遍的加油话（→后指：重复加感叹号）。重复喊两遍，是要出声，不是平常说话。\n印证　后一句 both teams gathered around Mikey, the cheer and congratulating him（→后指：全场跟着欢呼）说明此刻音量在升高，与前面的 silence 形成反差。\n排除　speak 是最强干扰项：搭配最中性、最不容易出错，但 speak 推不出连喊两遍的劲头（方向否）；talk 是不及物动词，talk \"Way to go\" 结构不成立（方向否）；warn 是警告，与祝贺语义相反（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 45,
+        "pos": "动词短语",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "giving up",
+          "joining in",
+          "depending on",
+          "worrying about"
+        ],
+        "answer": "joining in",
+        "clues": [
+          "both teams gathered around Mikey",
+          "the cheer and congratulating him"
+        ],
+        "clueTypes": {
+          "both teams gathered around Mikey": "逻辑线索·因果",
+          "the cheer and congratulating him": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空在 both teams gathered around Mikey, ______ the cheer and congratulating him 里，gathered around（→前指：围拢过来）已经把人聚到一处，后面的 the cheer 是大家一起发出的声音。\n印证　同句的 and congratulating him 是并列动作，方向是「一起参与进去」，不是站在旁边看；两队都围上来了，欢呼只能是集体加入。\n排除　giving up 是最强干扰项：give up the cheer 字面能通（放弃欢呼），但与前文 gathered around 的靠拢方向正相反（方向否）；depending on 是依靠，与欢呼接不上（异场否）；worrying about 与尾句 warm and touching 的情绪冲突（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 46,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "success",
+          "won",
+          "lost",
+          "failed"
+        ],
+        "answer": "won",
+        "clues": [
+          "It was a tie",
+          "I smiled and said"
+        ],
+        "clueTypes": {
+          "It was a tie": "逻辑线索·因果",
+          "I smiled and said": "情感线索·情感一致"
+        },
+        "explanation": "线索　空在 It was a tie. Everybody ______ 里，前一句 It was a tie（→前指：平局）意味着没有输家。平局的前提是双方都没输，方向只能落在「赢」这一侧。\n印证　同句 I smiled and said（→前指：笑着说）定了正面语气；下一段 warm and touching 继续收在温暖上，与「大家都赢了」这条线一致。\n排除　lost 是最强干扰项：平局里最容易顺手想到「没赢」，但 Everybody lost 与 a tie 直接矛盾（方向否）；failed 与 lost 同向，同样被 a tie 否掉（方向否）；success 是名词，Everybody success 缺谓语，结构不成立（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 47,
+        "pos": "介词搭配",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "in addition",
+          "instead of",
+          "because of",
+          "so as to"
+        ],
+        "answer": "because of",
+        "clues": [
+          "laughing and cheering together",
+          "which was so warm and touching"
+        ],
+        "clueTypes": {
+          "laughing and cheering together": "逻辑线索·因果",
+          "which was so warm and touching": "情感线索·情感一致"
+        },
+        "explanation": "线索　空在 laughing and cheering together ______ Mikey 里，前面是两队一起笑、一起欢呼（→前指：结果），后面是 Mikey（→后指：对象）。中间要一个表原因的介词，把「因为 Mikey」接上去。\n印证　句末 which was so warm and touching 是对整件事的评价——温暖正来自「因为他，两队才一起欢呼」，因果在这里闭合。\n排除　instead of 是最强干扰项：instead of Mikey 字面能读（而不是因为他），但与 warm and touching 的褒义评价冲突（方向否）；in addition 表递进，接不出名词性原因（方向否）；so as to 表目的，后面要接动词原形，接 Mikey 结构不成立（方向否）。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": 0,
+    "tone_markers": [],
+    "freezeClues": true,
+    "_explgen_touched": true,
+    "update_tag": "202610 更新",
+    "update_seq": 1
+  },
+  {
+    "id": "cloze-上海-033",
+    "title_cn": "留住员工的，不只是钱",
+    "title_en": "More Than Money",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "27上海静安外国语·九年级英语10月考",
+    "source_kind": "模拟题",
+    "exam_year": 2026,
+    "tags": [
+      "上海",
+      "静安外国语",
+      "九年级月考",
+      "职场与成长",
+      "词义辨析"
+    ],
+    "first_sentence": "Why do most people choose to stay with their current employer?",
+    "last_sentence": "__47__ employees with more than money, and you are likely to get more from them.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章围绕「人为什么留在现在的公司」展开：网站调查显示工资和福利排在最后，真正留住人的是工作本身、成长、贡献感与被认可。结论落在「用钱以外的东西对待员工，才能得到更多回报」，态度务实而偏正面。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "首句抛出现象与问题 ——「Why do most people choose to stay with their current employer?」，后文按调查结果的顺序逐层说明：谁排第一、谁排最后、为什么。读的时候盯住排序词（first / second / next / followed by / last）和解释词（probably because / One typical answer is），答案多落在排序或解释的补语里。"
+    },
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 27,
+    "article_text_with_blanks": "Why do most people choose to stay with their current employer? The answer usually depends on their age, life circumstances (生活情况), and personal motivations. A recent survey on our website asked the same question.\nThe __38__ reason for staying with an employer was the nature of the work and job satisfaction. Coming in a close second were flexible schedules and work-life balance. Next were the work environment and corporate culture, followed by advancement (晋升) opportunities and personal growth. Salary and benefits were the least important.\nIs it __39__ that salary comes last on this list? Not really. Salary and benefits do not usually make it into the first three reasons for job satisfaction in such surveys. Most people know they could earn more money elsewhere, but it's not enough to get them to leave a job they like.\nAdvancement is not what people value most, either. That's probably because so many people think that moving up can make life on the job more __40__. The only thing one gets in return is more money.\nSo what __41__ job satisfaction? One typical answer is \"I like to be challenged\". People who say this like to work towards __42__. They like new challenging assignments so that they can test their skills and creativity.\nAnother typical answer is \"I like to feel I'm making a contribution\". __43__, many people get a sense of community when they are working with a group of co-workers towards a(n) __44__ goal. It is very important for them to have close, friendly relationships with co-workers, and they will do better when others __45__ their efforts.\nFinally, there are those who say \"I get satisfaction from a job well done\". Such people love the technical work they do; they feel proud of the results of their efforts. These people have high standards of quality and work best when they have control over a project. They will try harder __46__ others know about the work they have done.\nBasically, the main reason why people work is to earn money, but it is not money that gives them satisfaction. __47__ employees with more than money, and you are likely to get more from them.",
+    "reading_sentences": [
+      "Why do most people choose to stay with their current employer?",
+      "The answer usually depends on their age, life circumstances (生活情况), and personal motivations.",
+      "A recent survey on our website asked the same question.",
+      "The __38__ reason for staying with an employer was the nature of the work and job satisfaction.",
+      "Coming in a close second were flexible schedules and work-life balance.",
+      "Next were the work environment and corporate culture, followed by advancement (晋升) opportunities and personal growth.",
+      "Salary and benefits were the least important.",
+      "Is it __39__ that salary comes last on this list?",
+      "Not really.",
+      "Salary and benefits do not usually make it into the first three reasons for job satisfaction in such surveys.",
+      "Most people know they could earn more money elsewhere, but it's not enough to get them to leave a job they like.",
+      "Advancement is not what people value most, either.",
+      "That's probably because so many people think that moving up can make life on the job more __40__.",
+      "The only thing one gets in return is more money.",
+      "So what __41__ job satisfaction?",
+      "One typical answer is \"I like to be challenged\".",
+      "People who say this like to work towards __42__.",
+      "They like new challenging assignments so that they can test their skills and creativity.",
+      "Another typical answer is \"I like to feel I'm making a contribution\".",
+      "__43__, many people get a sense of community when they are working with a group of co-workers towards a(n) __44__ goal.",
+      "It is very important for them to have close, friendly relationships with co-workers, and they will do better when others __45__ their efforts.",
+      "Finally, there are those who say \"I get satisfaction from a job well done\".",
+      "Such people love the technical work they do; they feel proud of the results of their efforts.",
+      "These people have high standards of quality and work best when they have control over a project.",
+      "They will try harder __46__ others know about the work they have done.",
+      "Basically, the main reason why people work is to earn money, but it is not money that gives them satisfaction.",
+      "__47__ employees with more than money, and you are likely to get more from them."
+    ],
+    "questions": [
+      {
+        "q": 38,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "top",
+          "actual",
+          "good",
+          "possible"
+        ],
+        "answer": "top",
+        "clues": [
+          "Coming in a close second",
+          "were the least important"
+        ],
+        "clueTypes": {
+          "Coming in a close second": "逻辑线索·并列",
+          "were the least important": "复现线索·反义词复现"
+        },
+        "explanation": "线索　空在 The ______ reason for staying with an employer was the nature of the work and job satisfaction 里，这一句是整段排序的第一名。空修饰 reason，后面 was the nature of the work 已经把它指认为排在最前的那一条。\n印证　下一句 Coming in a close second were flexible schedules（→后指：第二名紧随其后）把整张榜单写全，段末 Salary and benefits were the least important 又封住另一端，位置关系一目了然。\n排除　good 是最强干扰项：它评价的是理由好不好，跟排名高低无关（呼应否）；possible 表可能，与后面 the least important 的排序口径不在一条线上（异场否）；actual 指真实存在，全文没有「真假」这组对照（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 39,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "improper",
+          "unclear",
+          "unusual",
+          "usual"
+        ],
+        "answer": "unusual",
+        "clues": [
+          "do not usually make it",
+          "Not really"
+        ],
+        "clueTypes": {
+          "do not usually make it": "复现线索·派生词复现",
+          "Not really": "逻辑线索·转折"
+        },
+        "explanation": "线索　空在 Is it ______ that salary comes last on this list? 里，紧接的回答是 Not really（→后指：并不是）。问句要能被 Not really 一口否掉，空处只能是一个「不寻常」的判断。\n印证　下一句 Salary and benefits do not usually make it into the first three reasons（→后指：通常挤不进前三）把 usual 这层意思又摆了一遍，否掉 unusual 的理由就落在这句上。\n排除　improper 是最强干扰项：它带道德评价，而「工资排最后」只是调查结果，谈不上得不得体（异场否）；unclear 指不清楚，与后面解释得明明白白相冲（方向否）；usual 与 Not really 直接对不上（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 40,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "comfortable",
+          "stressful",
+          "meaningful",
+          "exciting"
+        ],
+        "answer": "stressful",
+        "clues": [
+          "gets in return is more money",
+          "not what people value most"
+        ],
+        "clueTypes": {
+          "gets in return is more money": "逻辑线索·因果",
+          "not what people value most": "情感线索·情感一致"
+        },
+        "explanation": "线索　空在 moving up can make life on the job more ______ 里，前一句 Advancement is not what people value most（→前指：人们并不看重晋升）已经把态度定成负面，这一句要说的是往上走的代价。\n印证　同句 The only thing one gets in return is more money（→后指：回报只剩钱）把代价与回报摆在一起——只多给一点钱，说明这份「往上走」并不轻松。\n排除　comfortable 是最强干扰项：方向正好反了，若真更舒服，人们就不会不看重晋升（方向否）；exciting 与 meaningful 同属正向评价，一样被前一句的 not ... most 否掉（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 41,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "stops",
+          "creates",
+          "prevents",
+          "expresses"
+        ],
+        "answer": "creates",
+        "clues": [
+          "So what",
+          "test their skills and creativity"
+        ],
+        "clueTypes": {
+          "So what": "语境线索·搭配骨架",
+          "test their skills and creativity": "逻辑线索·因果"
+        },
+        "explanation": "线索　空在 So what ______ job satisfaction? 里，So 承接上文对「钱和晋升都不是答案」的层层排除，what 作主语、job satisfaction 作宾语，问的是「什么造就了满意度」。\n印证　后文连给三个来源——One typical answer is、Another typical answer is、Finally, there are those who say（→后指：三种说法），全都在回答「什么带来满意」，动作方向是产生而不是阻止或表达。\n排除　stops 与 prevents 是最强干扰项：两者都表阻止，与后面三条正面来源正相反（方向否）；expresses 是表达，满意度不是被表达出来的，而是被造就的（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 42,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "holidays",
+          "wages",
+          "changes",
+          "goals"
+        ],
+        "answer": "goals",
+        "clues": [
+          "work towards",
+          "new challenging assignments"
+        ],
+        "clueTypes": {
+          "work towards": "语境线索·搭配骨架",
+          "new challenging assignments": "复现线索·同场复现"
+        },
+        "explanation": "线索　空在 People who say this like to work towards ______ 里，towards 表朝着某个方向走，后面只能接能被「朝着」的名词；本段写的是喜欢被挑战的那类人。\n印证　后一句 They like new challenging assignments so that they can test their skills and creativity（→后指：接有挑战的任务、检验本领）说明他们心里有要达成的东西，work towards 正是朝目标去的固定说法。\n排除　changes 是最强干扰项：challenging 里也含「求变」的意味，但 towards 后面要的是终点而不是变化（呼应否）；holidays 与 wages 是休假和工资，本段讲的是挑战与创造（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 43,
+        "pos": "连词逻辑",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "As a result",
+          "For example",
+          "In addition",
+          "In fact"
+        ],
+        "answer": "For example",
+        "clues": [
+          "I'm making a contribution",
+          "Another typical answer is"
+        ],
+        "clueTypes": {
+          "I'm making a contribution": "语境线索·举例说明",
+          "Another typical answer is": "逻辑线索·并列"
+        },
+        "explanation": "线索　空在句首、前后都是句号，是典型的过渡词位置。前一句 Another typical answer is \"I like to feel I'm making a contribution\"（→前指：一个概括的说法），后面接的却是一个具体场景。\n印证　后文 many people get a sense of community when they are working with a group of co-workers（→后指：一群人一起做事）正是「有贡献感」的实例，用例子把上句落到实处。\n排除　In addition 是最强干扰项：它表并列补充，但后句不是新观点，而是上句的例子（方向否）；In fact 表纠正或强调，此处没有要推翻的说法（呼应否）；As a result 表结果，前后不构成因果（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 44,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "ideal",
+          "common",
+          "familiar",
+          "ambitious"
+        ],
+        "answer": "common",
+        "clues": [
+          "a group of co-workers",
+          "sense of community"
+        ],
+        "clueTypes": {
+          "a group of co-workers": "语境线索·搭配骨架",
+          "sense of community": "复现线索·近义词复现"
+        },
+        "explanation": "线索　空在 working with a group of co-workers towards a(n) ______ goal 里，a group of co-workers（→前指：一群人）已经把主语定成集体，goal 前面要一个表示「共有」的形容词。\n印证　同句前半 get a sense of community（→前指：共同体感）与 common 同源同义，社区感正来自大家朝同一个目标走，而不是各走各的。\n排除　ideal 是最强干扰项：理想的目标听着合理，但它说的是目标好不好，接不出「一群人共有」这层关系（呼应否）；familiar 指熟悉，ambitious 指宏大，都与 co-workers 的协作无关（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 45,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "doubt",
+          "check",
+          "appreciate",
+          "celebrate"
+        ],
+        "answer": "appreciate",
+        "clues": [
+          "friendly relationships with co-workers",
+          "do better when others"
+        ],
+        "clueTypes": {
+          "friendly relationships with co-workers": "情感线索·情感一致",
+          "do better when others": "逻辑线索·条件"
+        },
+        "explanation": "线索　空在 they will do better when others ______ their efforts 里，their efforts 是空处的宾语，when 引出让他们干得更好的条件；前文反复写 close, friendly relationships（→前指：关系亲近）。\n印证　同句前半 It is very important for them to have close, friendly relationships with co-workers（→前指：看重友好关系）说明他们要的是被认可，而不是被查、被疑。\n排除　check 是最强干扰项：它接 their efforts 结构成立，但核对与友好的氛围不合（方向否）；doubt 是怀疑，与「干得更好」的条件正相反（方向否）；celebrate 偏庆功场合，用在日常付出上语气过重（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 46,
+        "pos": "连词逻辑",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "where",
+          "whether",
+          "who",
+          "when"
+        ],
+        "answer": "when",
+        "clues": [
+          "work best when they have",
+          "feel proud of the results"
+        ],
+        "clueTypes": {
+          "work best when they have": "逻辑线索·并列",
+          "feel proud of the results": "情感线索·情感一致"
+        },
+        "explanation": "线索　空在 They will try harder ______ others know about the work they have done 里，空后是一个完整句子 others know about the work，空处只能是从属连词，不能是代词或副词。\n印证　同段前面 These people ... work best when they have control over a project（→前指：同一个 when 引出条件）给了平行结构，也说明这类人要被看见时更使劲。\n排除　whether 是最强干扰项：它也能带完整句，但表「是否」，与 try harder 的条件关系不合（方向否）；who 后须接缺主语或宾语的句子，此处句子完整（方向否）；where 表地点，与 know about the work 无关（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 47,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "Offer",
+          "Reward",
+          "Promise",
+          "Teach"
+        ],
+        "answer": "Reward",
+        "clues": [
+          "more than money",
+          "likely to get more from them"
+        ],
+        "clueTypes": {
+          "more than money": "复现线索·原词复现",
+          "likely to get more from them": "逻辑线索·因果"
+        },
+        "explanation": "线索　空在句首的动词位置：______ employees with more than money, and you are likely to get more from them。祈使句 + and + 结果，空处要一个能带 employees 的及物动词。\n印证　前一句 it is not money that gives them satisfaction（→前指：给员工满足的不是钱）说明除钱之外还得给别的东西，more than money 正是这个意思，句末 get more 则是它的回报。\n排除　Offer 是最强干扰项：offer employees with 结构不成立，offer 只能接双宾语或直接接名词（方向否）；Promise 是承诺，停在口头上，接不出 you will get more 的实际回报（呼应否）；Teach 是教，与员工待遇无关（异场否）。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": 0,
+    "tone_markers": [],
+    "freezeClues": true,
+    "_explgen_touched": true,
+    "update_tag": "202610 更新",
+    "update_seq": 1
+  },
+  {
+    "id": "cloze-上海-034",
+    "title_cn": "天赋之外，训练才是分水岭",
+    "title_en": "Are There Really Talented Teenagers?",
+    "level": "中考",
+    "difficulty": "中等",
+    "lesson_type": "说明建议",
+    "region": "上海",
+    "source": "27上海徐汇西南模范·九年级英语10月测",
+    "source_kind": "模拟题",
+    "exam_year": 2026,
+    "tags": [
+      "上海",
+      "西南模范",
+      "九年级月考",
+      "天赋与努力",
+      "词义辨析"
+    ],
+    "first_sentence": "It is common to hear people saying, \"This kid was __58__ to do this.\"",
+    "last_sentence": "Talent may give you a head start, but hard work and the right guidance are what truly make the difference in the end.",
+    "tone": {
+      "answer": "积极",
+      "reason": "文章先抛出「天赋是否天生」这个问题，再分别摆出两方观点：一方认为每个人都带着某项天赋出生，另一方认为好老师加苦练人人可成。末段收束为「天赋只是起点，努力和正确引导才真正拉开差距」，态度克制、偏重后天。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "首段用三个问句立题，中间以 On the one hand 与 On the other hand 摆出两方观点、各配一个少年乐手的例证，末段用 All in all 收束。读的时候盯住 On the one hand / On the other hand / All in all 这些结构词，答案多落在观点句的修饰语或例证的补语里。"
+    },
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 18,
+    "article_text_with_blanks": "It is common to hear people saying, \"This kid was __58__ to do this.\" Are people indeed born with talents? Can anyone be taught how to __59__ certain skills? This question has been discussed for years, especially when we see young teenagers achieving extraordinary things at an early age.\nOn the one hand, it is thought that each of us has a __60__ talent that we were born with. There are teenagers who are very good at music or sports even from their childhood when they were not taught the skill at all. For example, some young musicians can play complex pieces without ever having a single lesson. Moreover, there are many teenagers who have managed to __61__ their skills on their own without any help from experts. This is actually what __62__ people and makes them believe that there are people who are born with specific talents. However, that does not mean that experts and teachers are not important. They help __63__ these talents in teenagers and help them improve their skills through patient guidance and professional training.\nOn the other hand, some others argue that everyone can become a good musician or athlete if they are taught by good teachers. What is needed is to be __64__ keen on learning and willing to try hard to __65__ your goals. We have seen real-life examples of this: a teenager who didn't seem to have any musical ability at all, but after years of __66__ and lessons, finally succeeded and even won a national competition. Everyone can become what they want to be through the right and __67__ training. The key is not to give up when things get difficult.\nAll in all, there are talented teenagers, but without proper training, no one can improve their skills to achieve excellence. Talent may give you a head start, but hard work and the right guidance are what truly make the difference in the end.",
+    "reading_sentences": [
+      "It is common to hear people saying, \"This kid was __58__ to do this.\"",
+      "Are people indeed born with talents?",
+      "Can anyone be taught how to __59__ certain skills?",
+      "This question has been discussed for years, especially when we see young teenagers achieving extraordinary things at an early age.",
+      "On the one hand, it is thought that each of us has a __60__ talent that we were born with.",
+      "There are teenagers who are very good at music or sports even from their childhood when they were not taught the skill at all.",
+      "For example, some young musicians can play complex pieces without ever having a single lesson.",
+      "Moreover, there are many teenagers who have managed to __61__ their skills on their own without any help from experts.",
+      "This is actually what __62__ people and makes them believe that there are people who are born with specific talents.",
+      "However, that does not mean that experts and teachers are not important.",
+      "They help __63__ these talents in teenagers and help them improve their skills through patient guidance and professional training.",
+      "On the other hand, some others argue that everyone can become a good musician or athlete if they are taught by good teachers.",
+      "What is needed is to be __64__ keen on learning and willing to try hard to __65__ your goals.",
+      "We have seen real-life examples of this: a teenager who didn't seem to have any musical ability at all, but after years of __66__ and lessons, finally succeeded and even won a national competition.",
+      "Everyone can become what they want to be through the right and __67__ training.",
+      "The key is not to give up when things get difficult.",
+      "All in all, there are talented teenagers, but without proper training, no one can improve their skills to achieve excellence.",
+      "Talent may give you a head start, but hard work and the right guidance are what truly make the difference in the end."
+    ],
+    "questions": [
+      {
+        "q": 58,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "chosen",
+          "raised",
+          "trained",
+          "born"
+        ],
+        "answer": "born",
+        "clues": [
+          "Are people indeed born",
+          "This kid was"
+        ],
+        "clueTypes": {
+          "Are people indeed born": "复现线索·原词复现",
+          "This kid was": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空在 This kid was ______ to do this 里，be born to do 是固定说法，说的是「天生就适合做某事」；This kid was 已经把主语定成一个孩子，空处要的是「与生俱来」这层意思。\n印证　后文 Are people indeed born with talents?（→后指：人是否天生有才）把 born 这个词又摆了一次，全段反复追问「天生」，空处只能是 born。\n排除　chosen 是最强干扰项：被选中也能接 to do，但它说的是机会，不是天赋（异场否）；raised 指被抚养，与 to do this 的「适合做」接不上（异场否）；trained 是被训练，正好与「天生」相反（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 59,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "lose",
+          "gain",
+          "teach",
+          "show"
+        ],
+        "answer": "gain",
+        "clues": [
+          "taught how to",
+          "improve their skills"
+        ],
+        "clueTypes": {
+          "taught how to": "语境线索·搭配骨架",
+          "improve their skills": "复现线索·同场复现"
+        },
+        "explanation": "线索　空在 Can anyone be taught how to ______ certain skills? 里，be taught how to 后面要一个「获得、学到」的动词，certain skills 就是它的宾语，空处要的是把技能拿到手这个方向。\n印证　同段后文 help them improve their skills（→后指：帮助他们提升技能）说明技能是可以后天得到、也可以被教出来的，与 be taught how to 的问法正好接上。\n排除　teach 是最强干扰项：它与前面的 be taught 撞词，taught how to teach 成了同义反复（呼应否）；lose 是失去，与 certain skills 的方向相反（方向否）；show 是展示，展示技能不等于获得技能（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 60,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "common",
+          "strange",
+          "specific",
+          "general"
+        ],
+        "answer": "specific",
+        "clues": [
+          "specific talents",
+          "talent that we were born"
+        ],
+        "clueTypes": {
+          "specific talents": "复现线索·原词复现",
+          "talent that we were born": "复现线索·同场复现"
+        },
+        "explanation": "线索　空在 each of us has a ______ talent that we were born with 里，talent 后面 that we were born with 限定这是「天生带来的那一项」，空处要一个表示「具体的、特定的」修饰语。\n印证　本段末尾 people who are born with specific talents（→后指：天生具有特定才能的人）把 specific 原词复现，正是空处的落点，同一段里前后两次出现，指向很清楚。\n排除　common 是最强干扰项：它说「普通」，与「天生才能」的稀缺意味相冲（方向否）；general 指笼统，与 that we were born with 的「某一项」不合（呼应否）；strange 指奇怪，全文没有评价天赋怪不怪（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 61,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "develop",
+          "hide",
+          "lose",
+          "share"
+        ],
+        "answer": "develop",
+        "clues": [
+          "on their own",
+          "without any help from experts"
+        ],
+        "clueTypes": {
+          "on their own": "语境线索·搭配骨架",
+          "without any help from experts": "逻辑线索·并列"
+        },
+        "explanation": "线索　空在 have managed to ______ their skills on their own 里，their skills 是宾语，on their own 说明没有老师，空处要一个「自己把技能练出来」的动词。\n印证　同句 without any help from experts（→后指：没有任何专家帮忙）与 on their own 并列，强调自学也能让技能成长；后文 improve their skills（→后指：提升技能）是同场说法。\n排除　hide 是最强干扰项：它接 their skills 结构成立，但藏着技能与「自学成才」的语境不合（异场否）；lose 是丢掉，与 on their own 的努力方向相反（方向否）；share 是分享，分享不等于练成（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 62,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "confuses",
+          "disappoints",
+          "impresses",
+          "worries"
+        ],
+        "answer": "impresses",
+        "clues": [
+          "makes them believe",
+          "born with specific talents"
+        ],
+        "clueTypes": {
+          "makes them believe": "逻辑线索·因果",
+          "born with specific talents": "复现线索·原词复现"
+        },
+        "explanation": "线索　空在 This is actually what ______ people and makes them believe 里，what 作主语、people 作宾语，and 后面的 makes them believe 是并列谓语，空处要一个「让人产生某种看法」的动词。\n印证　后文 makes them believe that there are people who are born with specific talents（→后指：让人相信有人天生有才）说明前面那个动作起了「打动、说服」的作用，impress 正是这个意思。\n排除　confuses 是最强干扰项：它也能带 people，但「让人困惑」接不出 makes them believe 的笃定（方向否）；worries 是让人担心，与「相信有天赋」的正面判断不合（方向否）；disappoints 是让人失望，同样接不出相信（方向否）。",
+        "collocation": null
+      },
+      {
+        "q": 63,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "overlook",
+          "discover",
+          "ignore",
+          "change"
+        ],
+        "answer": "discover",
+        "clues": [
+          "these talents in teenagers",
+          "help them improve their skills"
+        ],
+        "clueTypes": {
+          "these talents in teenagers": "语境线索·搭配骨架",
+          "help them improve their skills": "复现线索·同场复现"
+        },
+        "explanation": "线索　空在 They help ______ these talents in teenagers 里，help 后接动词原形，these talents 是宾语，in teenagers 说明才能藏在孩子身上，空处要一个「把它找出来」的动词。\n印证　同句 help them improve their skills through patient guidance and professional training（→后指：通过耐心指导与专业训练提升）说明老师的先手是「发现」，然后才是「提升」。\n排除　overlook 是最强干扰项：它带「看漏」的意思，与 help 的正面作用相反（方向否）；ignore 是忽视，同样与「帮助」相冲（方向否）；change 是改变，天赋不是被改掉的（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 64,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "hardly",
+          "suddenly",
+          "nearly",
+          "really"
+        ],
+        "answer": "really",
+        "clues": [
+          "keen on learning",
+          "willing to try hard"
+        ],
+        "clueTypes": {
+          "keen on learning": "语境线索·搭配骨架",
+          "willing to try hard": "情感线索·情感一致"
+        },
+        "explanation": "线索　空在 What is needed is to be ______ keen on learning 里，be 与 keen on 之间只能放副词，修饰「有多渴望学习」，程度要够足才接得上后半句。\n印证　同句 and willing to try hard（→后指：愿意下苦功）把态度推到很足的程度，前面这个副词要与「愿意拼命」同量级。\n排除　hardly 是最强干扰项：它表「几乎不」，与 willing to try hard 正相反（方向否）；nearly 是「几乎」，不能修饰 keen 这种程度（呼应否）；suddenly 是「突然」，渴望学习不是一瞬间的事（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 65,
+        "pos": "动词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "set",
+          "miss",
+          "achieve",
+          "fail"
+        ],
+        "answer": "achieve",
+        "clues": [
+          "try hard to",
+          "won a national competition"
+        ],
+        "clueTypes": {
+          "try hard to": "语境线索·搭配骨架",
+          "won a national competition": "逻辑线索·因果"
+        },
+        "explanation": "线索　空在 willing to try hard to ______ your goals 里，to 后接动词原形，your goals 是宾语，try hard 说明这个动作要费力气，方向是把目标拿到手。\n印证　后文 won a national competition（→后指：赢下全国比赛）是 goals 被达成的结果，空处要的是「达成」而不是「错过」，结果句已经把方向给死。\n排除　miss 是最强干扰项：它接 goals 结构成立，但 miss your goals 与 try hard 的努力方向相反（方向否）；fail 是失败，同样与努力的目的相冲（方向否）；set 是设定，设定目标在 try hard 之前，位置不对（呼应否）。",
+        "collocation": null
+      },
+      {
+        "q": 66,
+        "pos": "名词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "talent",
+          "practice",
+          "rest",
+          "luck"
+        ],
+        "answer": "practice",
+        "clues": [
+          "after years of",
+          "and lessons"
+        ],
+        "clueTypes": {
+          "after years of": "逻辑线索·时间",
+          "and lessons": "语境线索·搭配骨架"
+        },
+        "explanation": "线索　空在 after years of ______ and lessons 里，after years of 表时间跨度，and lessons 与之并列，空处要一个与「上课」同类、需要长期投入的名词。\n印证　同句 finally succeeded and even won a national competition（→后指：最终成功并赢得全国比赛）说明多年投入换来了结果，practice 正是这种重复训练。\n排除　talent 是最强干扰项：它接 years of 也通，但本段讲的正是「没有天赋、靠训练成功」，填 talent 会把论点推翻（方向否）；rest 是休息，与 lessons 并列不合（异场否）；luck 是运气，多年运气说法不成立（异场否）。",
+        "collocation": null
+      },
+      {
+        "q": 67,
+        "pos": "形容词副词",
+        "topic": "词义辨析",
+        "route": "线索词优先",
+        "options": [
+          "professional",
+          "difficult",
+          "expensive",
+          "simple"
+        ],
+        "answer": "professional",
+        "clues": [
+          "through the right and",
+          "proper training"
+        ],
+        "clueTypes": {
+          "through the right and": "语境线索·搭配骨架",
+          "proper training": "复现线索·近义词复现"
+        },
+        "explanation": "线索　空在 through the right and ______ training 里，and 连接两个修饰 training 的形容词，right 已经给了「对的」，空处要一个与 training 搭配、表示「专业」的形容词。\n印证　末段 without proper training（→后指：没有恰当的培训）与 professional training 同场呼应，proper 与 professional 都指向「正规、到位」的训练，两处说法互相加固。\n排除　difficult 是最强干扰项：它修饰 training 也通，但「困难的训练」接不出「人人都能成为想成为的人」的结论（方向否）；expensive 是昂贵，全文没谈钱（异场否）；simple 是简单，与 right 的「正确」不是同一维度（呼应否）。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": 0,
+    "tone_markers": [],
+    "freezeClues": true,
+    "update_tag": "202610 更新",
+    "update_seq": 1,
     "_explgen_touched": true
   }
 ];

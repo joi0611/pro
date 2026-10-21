@@ -2146,7 +2146,7 @@ function routeText(l) {
   return Object.keys(rs).filter(function (k) { return rs[k] > 0; }).join(" · ");
 }
 
-function buildLessonRow(l, no) {
+function buildLessonRow(l, no, isNew) {
   var done = isDone(l.id);
   var qCount = (l.questions || []).length;
   var title = String(l.title_cn || l.title || "未命名").trim();
@@ -2180,7 +2180,9 @@ function buildLessonRow(l, no) {
   row.innerHTML =
     '<div class="lesson-no">' + pad3(no) + '</div>' +
     '<div class="lesson-main">' +
-      '<h3>' + escapeHtml(title) + '</h3>' +
+      '<h3>' + escapeHtml(title) +
+        (isNew && l.update_tag ? '<span class="lesson-update-badge">' + escapeHtml(l.update_tag) + '</span>' : '') +
+      '</h3>' +
       '<div class="lesson-source">来源：' + srcLine + '</div>' +
       '<div class="lesson-chips">' + chips.join("") + '</div>' +
     '</div>' +
@@ -2209,12 +2211,20 @@ function renderLibrary() {
   renderFilterControls();
   var filtered = library.filter(matchesFilters);
   /* 按 2026 → 2018 时间倒序：新真题排前面 */
-  filtered.sort(function (a, b) { return (b.exam_year || 0) - (a.exam_year || 0); });
+  /* 最新更新批次优先（update_seq 越大越前，同批次后导入的在前），其余按年份倒序 */
+  var maxSeq = 0;
+  library.forEach(function (l) { if ((l.update_seq || 0) > maxSeq) maxSeq = l.update_seq || 0; });
+  filtered.sort(function (a, b) {
+    var qa = a.update_seq || 0, qb = b.update_seq || 0;
+    if (qa !== qb) return qb - qa;
+    if (qa > 0) return library.indexOf(b) - library.indexOf(a);
+    return (b.exam_year || 0) - (a.exam_year || 0);
+  });
   renderFilterSummary(filtered.length);
   box.innerHTML = "";
   if (!filtered.length) { empty.hidden = false; return; }
   empty.hidden = true;
-  filtered.forEach(function (l, i) { box.appendChild(buildLessonRow(l, i + 1)); });
+  filtered.forEach(function (l, i) { box.appendChild(buildLessonRow(l, i + 1, maxSeq > 0 && (l.update_seq || 0) === maxSeq)); });
 }
 
 function updateHeroStats() {

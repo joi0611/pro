@@ -2267,3 +2267,21 @@ body.gate-locked { overflow: hidden; }
 .gate-btn:active { transform: translateY(1px); }
 .gate-btn:disabled { opacity: .6; cursor: default; }
 @media (max-width: 520px) { #gateView { padding: 16px; } .gate-card { padding: 30px 22px 26px; } }
+
+
+/* 最新更新批次小标（橘色） */
+.lesson-update-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: #fff1e6;
+  border: 1px solid #ffb27a;
+  color: #d9601a;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  vertical-align: middle;
+  letter-spacing: .2px;
+  white-space: nowrap;
+}
