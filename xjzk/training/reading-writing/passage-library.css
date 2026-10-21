@@ -3,10 +3,12 @@
 .module-reading-writing #passageCatalogGrid { display: grid; gap: 9px; }
 .module-reading-writing #passageCatalogGrid .catalog-section { display: none; }
 .module-reading-writing #passageCatalogGrid .catalog-group-heading {
-  display: flex; align-items: center; justify-content: space-between;
-  margin: 2px 0 4px; padding: 0 4px;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin: 18px 0 4px; padding: 0 4px;
 }
+.module-reading-writing #passageCatalogGrid .catalog-group-heading:first-child { margin-top: 2px; }
 .module-reading-writing #passageCatalogGrid .catalog-group-heading h3 { margin: 0; color: #20182f; font-size: 19px; }
+.module-reading-writing #passageCatalogGrid .catalog-group-heading small { display: block; margin-top: 3px; color: #8a7a9f; font-size: 12px; font-weight: 750; }
 .module-reading-writing #passageCatalogGrid .catalog-group-heading span { color: #75668f; font-size: 13px; font-weight: 800; }
 .module-reading-writing #passageCatalogGrid .catalog-row {
   position: relative; display: grid; grid-template-columns: 80px minmax(0, 1fr) 150px;
