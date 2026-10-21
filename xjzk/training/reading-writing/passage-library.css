@@ -10,6 +10,14 @@
 .module-reading-writing #passageCatalogGrid .catalog-group-heading h3 { margin: 0; color: #20182f; font-size: 19px; }
 .module-reading-writing #passageCatalogGrid .catalog-group-heading small { display: block; margin-top: 3px; color: #8a7a9f; font-size: 12px; font-weight: 750; }
 .module-reading-writing #passageCatalogGrid .catalog-group-heading span { color: #75668f; font-size: 13px; font-weight: 800; }
+.module-reading-writing #passageCatalogGrid .catalog-subgroup-heading {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 10px 4px 2px; padding: 7px 10px;
+  border-left: 4px solid #7444d6; border-radius: 6px;
+  background: #f6f1ff; color: #473261;
+}
+.module-reading-writing #passageCatalogGrid .catalog-subgroup-heading strong { font-size: 14px; }
+.module-reading-writing #passageCatalogGrid .catalog-subgroup-heading span { color: #806d9b; font-size: 12px; font-weight: 800; }
 .module-reading-writing #passageCatalogGrid .catalog-row {
   position: relative; display: grid; grid-template-columns: 80px minmax(0, 1fr) 150px;
   align-items: center; min-height: 88px; padding: 8px 18px 8px 0; overflow: hidden;

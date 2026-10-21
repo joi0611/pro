@@ -52,6 +52,7 @@ let stageTabsBound = false;
     library = list.map((item, sourceIndex) => ({ item, sourceIndex }))
       .sort((a, b) => {
         return getPassageGroupRank(a.item) - getPassageGroupRank(b.item)
+          || getPassageTypeRank(a.item) - getPassageTypeRank(b.item)
           || getUpdatedSourceRank(a.item.source) - getUpdatedSourceRank(b.item.source)
           || a.sourceIndex - b.sourceIndex;
       })
@@ -116,6 +117,18 @@ let stageTabsBound = false;
     return getPassageGroup(passage) === 'exam' ? 0 : 1;
   }
 
+  function getPassageType(passage) {
+    const category = String(passage && passage.category || '');
+    if (/真题/.test(category)) return 'official';
+    if (/模考/.test(category)) return 'mock';
+    return 'basic';
+  }
+
+  function getPassageTypeRank(passage) {
+    const type = getPassageType(passage);
+    return type === 'official' ? 0 : type === 'mock' ? 1 : 2;
+  }
+
   function getPassageGroupMeta(group) {
     return group === 'exam'
       ? { title: '中考题目练习', note: '真题 + 模拟题' }
@@ -173,15 +186,28 @@ let stageTabsBound = false;
     }, { exam: 0, basic: 0 });
     const groupCounters = { exam: 0, basic: 0 };
     let currentGroup = '';
+    let currentType = '';
     library.forEach((p, i) => {
       const group = getPassageGroup(p);
       if (group !== currentGroup) {
         currentGroup = group;
+        currentType = '';
         const meta = getPassageGroupMeta(group);
         parts.push(`
           <div class="catalog-group-heading" data-passage-group="${group}">
             <div><h3>${meta.title}</h3><small>${meta.note}</small></div>
             <span>${groupTotals[group]} 篇</span>
+          </div>
+        `);
+      }
+      const type = getPassageType(p);
+      if (group === 'exam' && type !== currentType) {
+        currentType = type;
+        const typeCount = library.filter(item => getPassageType(item) === type).length;
+        parts.push(`
+          <div class="catalog-subgroup-heading" data-passage-type="${type}">
+            <strong>${type === 'official' ? '中考真题' : '模拟题'}</strong>
+            <span>${typeCount} 篇</span>
           </div>
         `);
       }
