@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <title>无限进步 中考7选5训练系统</title>
+    <link rel="stylesheet" href="./assets/theme-purple.css?v=20260716-ui3" />
+    <link rel="stylesheet" href="./assets/workbook-modules.css?v=20261025-seven-choice-1" />
+    <link rel="stylesheet" href="./styles.css?v=20261026-9" />
+  <link rel="stylesheet" href="./access.css" />
+  </head>
+  <body class="module-seven-choice">
+    <a class="skip-link" href="#mainContent">跳到主要内容</a>
+
+    <header class="workbook-site-header">
+      <a class="workbook-brand" href="./index.html">
+        <span class="workbook-brand-mark" aria-hidden="true">∞</span>
+        <strong>无限进步 中考7选5训练系统</strong>
+      </a>
+      <nav class="workbook-main-nav" aria-label="全站导航">
+        <a href="./index.html">首页</a>
+        <span class="active">专项训练</span>
+      <a href="./login.html" id="accountLink">手机号登录</a>
+        <a href="./admin.html">管理后台</a>
+      </nav>
+    </header>
+
+    <main class="module-shell" id="mainContent">
+      <section class="module-hero" aria-labelledby="moduleTitle">
+        <svg class="hero-puzzle-pattern" viewBox="0 0 520 250" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M48 42h70c-3 8-5 14-5 20 0 17 13 30 30 30s30-13 30-30c0-6-2-12-5-20h70v68c-8-3-14-5-20-5-17 0-30 13-30 30s13 30 30 30c6 0 12-2 20-5v68h-70c3-8 5-14 5-20 0-17-13-30-30-30s-30 13-30 30c0 6 2 12 5 20H48v-68c8 3 14 5 20 5 17 0 30-13 30-30s-13-30-30-30c-6 0-12 2-20 5z" />
+            <path d="M238 42h70c-3 8-5 14-5 20 0 17 13 30 30 30s30-13 30-30c0-6-2-12-5-20h70v68c-8-3-14-5-20-5-17 0-30 13-30 30s13 30 30 30c6 0 12-2 20-5v68h-70c3-8 5-14 5-20 0-17-13-30-30-30s-30 13-30 30c0 6 2 12 5 20h-70v-68c8 3 14 5 20 5 17 0 30-13 30-30s-13-30-30-30c-6 0-12 2-20 5z" />
+          </g>
+        </svg>
+        <div>
+          <p class="eyebrow">讲义模块 · 21讲</p>
+          <h1 id="moduleTitle">无限进步 中考7选5训练系统</h1>
+          <p>先定位空格功能，再寻找代词、复现词与逻辑关系，用“证据—关系—答案”完成句子拼图。</p>
+        </div>
+        <div class="hero-progress" aria-label="讲义学习进度">
+          <strong id="progressCount">0 / 21</strong>
+          <span>已完成讲次</span>
+          <div class="progress-track"><span id="progressBar"></span></div>
+        </div>
+      </section>
+
+      <nav class="module-tabs" aria-label="模块功能">
+        <button class="module-tab active" type="button" data-view="catalog">讲义</button>
+        <button class="module-tab" type="button" data-view="training">真题训练</button>
+      </nav>
+
+      <section class="view active" id="homeView" aria-label="七选五学习入口">
+        <header class="home-path-heading">
+          <div>
+            <span>学习路径</span>
+            <h2>从方法到真题，两步建立解题感</h2>
+          </div>
+          <p>先掌握证据定位方法，再进入真题迁移训练</p>
+        </header>
+        <div class="module-entry-grid">
+          <button class="module-entry-card" type="button" data-module-entry="catalog">
+            <span class="module-entry-index">01</span>
+            <span class="module-entry-kicker">方法学习</span>
+            <strong>讲义</strong>
+            <span class="module-entry-description">21讲系统拆解标题、代词、复现与逻辑关系。<br />每讲包含互动例题和同类型自主练习。</span>
+            <span class="module-entry-arrow" aria-hidden="true">→</span>
+          </button>
+          <button class="module-entry-card" type="button" data-module-entry="training">
+            <span class="module-entry-index">02</span>
+            <span class="module-entry-kicker">真题训练</span>
+            <strong>真题训练</strong>
+            <span class="module-entry-description">按2026、2025、2024与模拟题顺序训练。<br />错选后进入取证式引导，逐步定位答案。</span>
+            <span class="module-entry-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+        <section class="home-stats" aria-label="课程内容数量汇总">
+          <div class="home-stat-item"><strong id="homeLessonCount">21</strong><span>讲方法讲义</span></div>
+          <div class="home-stat-item"><strong id="homeExamCount">44</strong><span>篇真题与模拟题</span></div>
+          <div class="home-stat-item"><strong id="homeQuestionCount">220</strong><span>个设空训练</span></div>
+          <div class="home-stat-note">
+            <span class="home-stat-note-mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m5 12 4 4L19 6" /></svg></span>
+            <p><strong>每一道题都能回到原文证据</strong><small>高亮线索、引导提问和突破卡支持完整复盘</small></p>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="catalogView">
+        <div class="section-heading">
+          <div>
+            <button class="directory-back" type="button" data-action="module-home">← 返回模块首页</button>
+            <p class="section-kicker">从位置到逻辑</p>
+            <h2>21讲方法目录</h2>
+            <p>按顺序学习，也可以直接搜索当前最需要的做题方法。</p>
+          </div>
+          <label class="search-box" for="lessonSearch">
+            <span>搜索讲义</span>
+            <input id="lessonSearch" type="search" placeholder="如：代词、转折、标题" autocomplete="off" />
+          </label>
+        </div>
+        <div class="lesson-list" id="lessonList"></div>
+        <p class="empty-state" id="emptyState" hidden>没有找到对应讲义，请换一个关键词。</p>
+      </section>
+
+      <section class="view" id="lessonView" aria-live="polite"></section>
+
+      <section class="view" id="trainingView">
+        <div class="section-heading">
+          <div>
+            <button class="directory-back" type="button" data-action="module-home">← 返回模块首页</button>
+            <p class="section-kicker">原卷导入 · 44篇</p>
+            <h2>七选五真题训练</h2>
+            <p>每篇包含完整文章、5个空和7个备选句。先独立完成，再统一提交。</p>
+          </div>
+          <div class="exam-progress-summary"><strong id="examDoneCount">0 / 44</strong><span>已完成篇目</span></div>
+        </div>
+        <div class="exam-list" id="examList"></div>
+      </section>
+
+      <section class="view" id="examView" aria-live="polite"></section>
+    </main>
+
+    <footer class="site-footer">@无限进步 中考7选5训练系统</footer>
+
+    <script src="./handout-data.js?v=20261025-1"></script>
+    <script src="./practice-data.js?v=20261025-3"></script>
+    <script src="./practice-data-import.js?v=20261025-1"></script>
+    <script src="./exam-data.js?v=20261025-1"></script>
+    <script src="./exam-data-2024-26.js?v=20261026-2"></script>
+    <script src="./exam-guidance-verified.js?v=20261026-3"></script>
+    <script src="./app.js?v=20261026-15"></script>
+  <script src="./access.js"></script>
+  </body>
+</html>
