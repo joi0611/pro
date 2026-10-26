@@ -47,9 +47,9 @@
       const td = document.createElement("td"), button = document.createElement("button");
       button.type = "button"; button.textContent = "撤销授权";
       button.onclick = async () => {
-        if (!confirm("撤销 " + item.phone + " 的授权？")) return;
+        if (!confirm("撤销 " + item.phone + " 的“" + (SPECIALTY_NAMES[item.specialty] || item.specialty) + "”授权？")) return;
         button.disabled = true;
-        try { await rpc("admin_delete", adminPayload({ phone: item.phone })); await load(); message("已撤销授权"); }
+        try { await rpc("admin_delete", adminPayload({ phone: item.phone, specialty: item.specialty })); await load(); message("已撤销该专项授权"); }
         catch (error) { message(error.message); button.disabled = false; }
       };
       td.append(button); tr.append(td); $("#phoneRows").append(tr);
