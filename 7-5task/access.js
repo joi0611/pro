@@ -3,6 +3,8 @@
   const $ = selector => document.querySelector(selector);
   const PHONE_KEY = "seven_choice_phone";
   const ADMIN_TOKEN_KEY = "seven_choice_admin_token";
+  const SPECIALTY = "seven_choice";
+  const SPECIALTY_NAMES = { seven_choice: "中考7选5", shcloze: "上海中考完形填空" };
   let phones = [];
   let path = location.pathname;
   if (!/\.[a-z0-9]+$/i.test(path) && !path.endsWith("/")) path += "/";
@@ -27,7 +29,7 @@
   bind("#studentLogin", async data => {
     const phone = String(data.phone || "").replace(/\D/g, "");
     if (!/^1[3-9]\d{9}$/.test(phone)) throw new Error("请输入有效的11位手机号");
-    const result = await rpc("student_login", { phone });
+    const result = await rpc("student_login", { phone, specialty: SPECIALTY });
     localStorage.setItem(PHONE_KEY, result.phone || phone); location.href = HOME;
   });
   bind("#adminLogin", async data => {
@@ -37,11 +39,11 @@
   function adminPayload(payload) { return Object.assign({}, payload || {}, { token: localStorage.getItem(ADMIN_TOKEN_KEY) || "" }); }
   function render() {
     const query = $("#phoneSearch").value.trim().toLowerCase();
-    const rows = phones.filter(item => (item.phone + " " + (item.note || "")).toLowerCase().includes(query));
+    const rows = phones.filter(item => (item.phone + " " + (SPECIALTY_NAMES[item.specialty] || item.specialty || "") + " " + (item.note || "")).toLowerCase().includes(query));
     $("#phoneCount").textContent = phones.length; $("#phoneRows").replaceChildren(); $("#noPhones").hidden = rows.length > 0;
     for (const item of rows) {
       const tr = document.createElement("tr");
-      for (const value of [item.phone, item.note || ""]) { const td = document.createElement("td"); td.textContent = value; tr.append(td); }
+      for (const value of [item.phone, SPECIALTY_NAMES[item.specialty] || item.specialty || "-", item.note || ""]) { const td = document.createElement("td"); td.textContent = value; tr.append(td); }
       const td = document.createElement("td"), button = document.createElement("button");
       button.type = "button"; button.textContent = "撤销授权";
       button.onclick = async () => {
@@ -60,7 +62,7 @@
   bind("#authorizePhone", async data => {
     const phone = String(data.phone || "").replace(/\D/g, "");
     if (!/^1[3-9]\d{9}$/.test(phone)) throw new Error("请输入有效的11位手机号");
-    await rpc("admin_add", adminPayload({ phone, note: String(data.note || "").slice(0, 80) }));
+    await rpc("admin_add", adminPayload({ phone, specialty: data.specialty, note: String(data.note || "").slice(0, 80) }));
     $("#authorizePhone").reset(); await load(); message("授权已保存，学生现在可以使用该手机号登录。");
   });
   $("#phoneSearch")?.addEventListener("input", render);
@@ -74,7 +76,7 @@
     if (link) {
       const phone = localStorage.getItem(PHONE_KEY);
       if (!phone) { location.href = LOGIN; return; }
-      const result = await rpc("student_login", { phone }), validPhone = result.phone || phone;
+      const result = await rpc("student_login", { phone, specialty: SPECIALTY }), validPhone = result.phone || phone;
       link.textContent = validPhone.replace(/(\d{3})\d{4}(\d{4})/, "$1****$2") + " · 退出";
       link.onclick = event => { event.preventDefault(); localStorage.removeItem(PHONE_KEY); location.href = LOGIN; };
     }

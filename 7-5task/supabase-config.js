@@ -3,7 +3,7 @@
   var SUPABASE_URL = "https://gbjmylxohacppnybfssh.supabase.co";
   var SUPABASE_PUBLISHABLE_KEY = "sb_publishable_qhB54NbaSS2bRDw0ehKGbA_7kHXkhTQ";
   window.sevenChoiceRpc = function (action, payload) {
-    return fetch(SUPABASE_URL + "/rest/v1/rpc/shcloze_api", {
+    return fetch(SUPABASE_URL + "/rest/v1/rpc/training_api", {
       method: "POST",
       headers: { "Content-Type": "application/json", "apikey": SUPABASE_PUBLISHABLE_KEY },
       body: JSON.stringify({ p_action: action, p_payload: payload || {} })
