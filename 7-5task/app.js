@@ -3,7 +3,20 @@
 
   const handout = window.SEVEN_CHOICE_HANDOUT;
   const practiceBank = [...(window.SEVEN_CHOICE_IMPORTED_PRACTICE || []), ...(window.SEVEN_CHOICE_PRACTICE || [])];
-  const rawExams = [...(window.SEVEN_CHOICE_EXAMS || []), ...(window.SEVEN_CHOICE_NEW_EXAMS || [])];
+  const rawExams = [
+    ...(window.SEVEN_CHOICE_EXAMS || []),
+    ...(window.SEVEN_CHOICE_NEW_EXAMS || []),
+    ...(window.SEVEN_CHOICE_300_EXAMS || []),
+    ...(window.SEVEN_CHOICE_300_EXAMS_21_40 || []),
+    ...(window.SEVEN_CHOICE_300_EXAMS_41_60 || []),
+    ...(window.SEVEN_CHOICE_300_EXAMS_61_80 || []),
+    ...(window.SEVEN_CHOICE_300_EXAMS_81_100 || []),
+    ...(window.SEVEN_CHOICE_300_EXAMS_101_120 || []),
+    ...(window.SEVEN_CHOICE_300_EXAMS_121_140 || []),
+    ...(window.SEVEN_CHOICE_300_EXAMS_141_160 || []),
+    ...(window.SEVEN_CHOICE_300_EXAMS_161_180 || []),
+    ...(window.SEVEN_CHOICE_300_EXAMS_181_200 || []),
+  ];
   if (!handout?.lessons || !Array.isArray(practiceBank) || !Array.isArray(rawExams)) throw new Error("七选五讲义、练习或真题数据未加载。");
 
   function normalizeExam(exam) {
@@ -330,19 +343,46 @@
     </article>`;
   }
 
+  function examYear(exam) {
+    const source = String(exam.source || "");
+    const fullYears = [...source.matchAll(/20(2[0-9])/g)].map((match) => Number(match[0]));
+    if (fullYears.length) return Math.max(...fullYears);
+    const schoolYear = source.match(/(?:^|\D)(2[0-9])\s*[-—～~]\s*(2[0-9])(?:\D|$)/);
+    if (schoolYear) return 2000 + Math.max(Number(schoolYear[1]), Number(schoolYear[2]));
+    return 0;
+  }
+
+  function examCategory(exam) {
+    const source = String(exam.source || "");
+    return /模拟|一模|二模|三模|四模|月考|联考|期中|期末|阶段|预测|练习|调研|适应性/.test(source) ? "mock" : "real";
+  }
+
   function orderedExamList() {
-    const sourceBucket = (exam) => {
-      const source = String(exam.source || "");
-      if (/2026/.test(source)) return 0;
-      if (/2025/.test(source)) return 1;
-      if (/2024/.test(source)) return 2;
-      return 3;
-    };
-    return [...exams].sort((a, b) => sourceBucket(a) - sourceBucket(b) || a.id - b.id);
+    return [...exams].sort((a, b) => {
+      const categoryOrder = { real: 0, mock: 1 };
+      return categoryOrder[examCategory(a)] - categoryOrder[examCategory(b)]
+        || examYear(b) - examYear(a)
+        || b.id - a.id;
+    });
+  }
+
+  function examGroupMarkup(category, title, items, startIndex) {
+    let displayIndex = startIndex;
+    const years = [...new Set(items.map(examYear))].sort((a, b) => b - a);
+    const yearGroups = years.map((year) => {
+      const yearItems = items.filter((exam) => examYear(exam) === year);
+      const cards = yearItems.map((exam) => examCard(exam, displayIndex++)).join("");
+      return `<section class="exam-year-group"><h3 class="exam-year-heading">${year ? `${year}年` : "年份未注明"}<span>${yearItems.length}篇</span></h3><div class="exam-year-list">${cards}</div></section>`;
+    }).join("");
+    return `<section class="exam-category-group exam-category-${category}"><header class="exam-category-heading"><div><span>${category === "real" ? "OFFICIAL EXAMS" : "MOCK EXAMS"}</span><h2>${title}</h2></div><strong>${items.length}篇</strong></header>${yearGroups}</section>`;
   }
 
   function renderTrainingCatalog() {
-    examList.innerHTML = orderedExamList().map((exam, index) => examCard(exam, index + 1)).join("");
+    const ordered = orderedExamList();
+    const realExams = ordered.filter((exam) => examCategory(exam) === "real");
+    const mockExams = ordered.filter((exam) => examCategory(exam) === "mock");
+    examList.innerHTML = examGroupMarkup("real", "真题部分", realExams, 1)
+      + examGroupMarkup("mock", "模拟题部分", mockExams, realExams.length + 1);
     const completed = Object.keys(state.examScores).length;
     document.querySelector("#examDoneCount").textContent = `${completed} / ${exams.length}`;
   }
@@ -394,6 +434,10 @@
       .filter((word) => word.length > 3 && !EXAM_STOP_WORDS.has(word));
   }
 
+  function isGenericImportedAnalysis(analysis) {
+    return analysis?.method === "上下文证据锁定";
+  }
+
   function examQuestionProfile(exam, number) {
     const context = examBlankContext(exam, number);
     const importedAnalysis = exam.analysis?.[number];
@@ -414,7 +458,7 @@
     else if (asksQuestion) { priority = 2; priorityLabel = "二级·问答关联"; }
     else if (pronounSignal) { priority = 2; priorityLabel = "二级·代词指代"; }
     else if (connectorSignal) { priorityLabel = "三级·逻辑关系"; }
-    if (exam.analysis?.[number]?.level) {
+    if (exam.analysis?.[number]?.level && !isGenericImportedAnalysis(exam.analysis[number])) {
       priority = exam.analysis[number].level === "第一级" ? 1 : 2;
       priorityLabel = `${exam.analysis[number].level}·导入解析`;
     }
@@ -578,20 +622,23 @@
         : "重点核对答案是否同时完成前后句要求的语意与逻辑连接。";
     const custom = EXAM_ANALYSIS_DATA[exam.id]?.[number];
     const imported = exam.analysis?.[number];
-    const guidance = imported || (custom ? { method: custom[1], chain: custom[2], highlightTerms: chainHighlightTerms(custom[2], profile) } : null);
+    const guidance = imported
+      ? { ...imported, method: isGenericImportedAnalysis(imported) ? `${feature}突破` : imported.method }
+      : (custom ? { method: custom[1], chain: custom[2], highlightTerms: chainHighlightTerms(custom[2], profile) } : null);
     const proposedTerms = guidance?.highlightTerms?.length ? guidance.highlightTerms : conciseFallbackEvidence(profile);
     const passageText = exam.passage.join("\n");
     const exactTerms = proposedTerms.filter((term) => new RegExp(escapeRegExp(term), "i").test(passageText));
     const highlightTerms = exactTerms.length ? exactTerms : conciseFallbackEvidence(profile);
     const evidenceTask = evidenceCandidatesFor(exam, profile, highlightTerms);
     const meaningTask = meaningTaskFor(guidance?.method || feature, profile, highlightTerms);
+    const exactGuidance = guidance ? { ...guidance, highlightTerms } : { highlightTerms };
     return {
       level: profile.priorityLabel,
       observe: imported?.observe || `${examPositionText(profile)} 当前空前后内容是：“${evidence}”。`,
       clue: imported?.clue || relation,
       plain: imported?.plain || `不要只看主题相近，要寻找能同时满足位置功能、上下文证据和“${feature}”特征的句子。`,
-      prompt: evidenceSelectionQuestion(guidance, feature),
-      evidenceQuestion: evidenceThinkingQuestion(guidance, profile),
+      prompt: evidenceSelectionQuestion(exactGuidance, feature),
+      evidenceQuestion: evidenceThinkingQuestion(exactGuidance, profile),
       highlightTerms,
       evidenceCandidates: evidenceTask.candidates,
       evidenceAnswer: evidenceTask.answer,
@@ -724,7 +771,7 @@
       return ({ 1: "首段过渡总领", 2: "代词指代突破", 3: "小标题格式突破", 4: "词汇关联突破", 5: "同义复现突破" })[number] || examQuestionFeature(profile);
     }
     const imported = exam.analysis?.[number];
-    if (imported) return imported.method;
+    if (imported && !isGenericImportedAnalysis(imported)) return imported.method;
     const custom = EXAM_ANALYSIS_DATA[exam.id]?.[number];
     if (custom) return custom[1];
     return `${examQuestionFeature(profile)}突破`;
@@ -732,7 +779,8 @@
 
   function breakthroughLevel(exam, number, profile) {
     if (exam.id === 1) return ({ 1: "第三级突破", 2: "第一级突破", 3: "第一级突破", 4: "第二级突破", 5: "第二级突破" })[number] || "综合突破";
-    if (exam.analysis?.[number]?.level) return `${exam.analysis[number].level}突破`;
+    if (exam.analysis?.[number]?.level && !isGenericImportedAnalysis(exam.analysis[number])) return `${exam.analysis[number].level}突破`;
+    if (isGenericImportedAnalysis(exam.analysis?.[number])) return profile.priority === 1 ? "第一级突破" : profile.priority === 2 ? "第二级突破" : "第三级突破";
     return EXAM_ANALYSIS_DATA[exam.id]?.[number]?.[0] ? `${EXAM_ANALYSIS_DATA[exam.id][number][0]}突破` : "综合突破";
   }
 
@@ -747,7 +795,7 @@
       })[number] || "位置 → 上下文线索 → 正确选项";
     }
     const imported = exam.analysis?.[number];
-    if (imported) return `${imported.chain} → ${exam.answers[number]}`;
+    if (imported && !isGenericImportedAnalysis(imported)) return `${imported.chain} → ${exam.answers[number]}`;
     const custom = EXAM_ANALYSIS_DATA[exam.id]?.[number];
     if (custom) return custom[2];
     const links = profile.overlap.slice(0, 2).join(" / ") || examQuestionFeature(profile);
@@ -927,7 +975,8 @@
     const usedLetters = new Set(examQuestionNumbers(exam)
       .filter((question) => state.examSolved[exam.id]?.[question])
       .map((question) => exam.answers[question]));
-    return `<section class="exam-guide-options" aria-label="备选句"><div class="exam-guide-options-heading"><h4>备选句 A—G</h4><span>${interactive ? `已使用 ${usedLetters.size} 项 · 浅色为雷达词` : "作答时可直接点击"}</span></div><div class="exam-option-list">${exam.options.map((option) => {
+    const finalLetter = optionLetter(exam.options[exam.options.length - 1]) || "G";
+    return `<section class="exam-guide-options" aria-label="备选句"><div class="exam-guide-options-heading"><h4>备选句 A—${finalLetter}</h4><span>${interactive ? `已使用 ${usedLetters.size} 项 · 浅色为雷达词` : "作答时可直接点击"}</span></div><div class="exam-option-list">${exam.options.map((option) => {
       const letter = optionLetter(option);
       const wrong = attempts.includes(letter);
       const correct = solved && letter === exam.answers[number];
@@ -998,8 +1047,9 @@
     const guidedConclusionVisible = solved || guideComplete;
     const allSolved = examQuestionNumbers(exam).every((question) => state.examSolved[exam.id]?.[question]);
     const adaptiveOwnsOptions = adaptiveGuide?.stage >= 2 && adaptiveGuide.stage <= 5;
+    const finalLetter = optionLetter(exam.options[exam.options.length - 1]) || "G";
     return `<div class="guide-step solve-step"><p class="guide-kicker">第五步</p><div class="solve-heading"><div><h3>逐空作答：第 ${number} 空</h3><p>当前顺序 ${index + 1} / ${order.length} · 已完成 ${completed} / ${order.length}</p></div><span>${guidedConclusionVisible ? escapeHtml(examQuestionFeature(profile)) : "独立试做"}</span></div>
-      <div class="solve-guide"><strong>${guidedConclusionVisible ? "本空判断结论" : "先独立试做"}</strong><p>${guidedConclusionVisible ? escapeHtml(examPositionText(profile)) : "先观察空格位于段首、段中、段尾还是独立成行，再判断它要承接哪部分信息。"}</p><p>观察左侧高亮的空前、空后证据，再从 A—G 中选择。</p></div>
+      <div class="solve-guide"><strong>${guidedConclusionVisible ? "本空判断结论" : "先独立试做"}</strong><p>${guidedConclusionVisible ? escapeHtml(examPositionText(profile)) : "先观察空格位于段首、段中、段尾还是独立成行，再判断它要承接哪部分信息。"}</p><p>观察左侧高亮的空前、空后证据，再从 A—${finalLetter} 中选择。</p></div>
       ${adaptiveGuideMarkup(exam, number, profile)}
       ${adaptiveOwnsOptions ? "" : examOptionsPanel(exam, number)}
       ${selected ? `<p class="guide-feedback ${solved ? "correct" : guideComplete ? "neutral" : "wrong"}" role="status">${solved ? "选择正确。该选项已变灰锁定，后续空不能再次选择。" : guideComplete ? "证据链已完成。" : adaptiveGuide?.stage === 5 ? "当前正在代入验证：请点击上方三项检查，完成后确认本空答案。" : adaptiveGuide ? "首次错选已排除，请继续完成上方取证步骤。" : "第一次选择不正确，答案选项已暂时锁定，请完成上方引导。"}</p>` : ""}
@@ -1053,7 +1103,8 @@
 
   function examAnswerRow(exam, number) {
     const selected = state.examSelections[exam.id]?.[number] || "";
-    return `<div class="exam-answer-row"><strong>${number}</strong><div class="exam-answer-buttons" role="group" aria-label="第${number}空答案">${"ABCDEFG".split("").map((letter) => {
+    const letters = exam.options.map(optionLetter).filter(Boolean);
+    return `<div class="exam-answer-row"><strong>${number}</strong><div class="exam-answer-buttons" role="group" aria-label="第${number}空答案">${letters.map((letter) => {
       const classes = ["exam-answer-button"];
       if (selected === letter) classes.push("selected");
       if (state.examSubmitted && letter === exam.answers[number]) classes.push("correct");
@@ -1094,10 +1145,12 @@
     const order = state.examSolveOrders[exam.id];
     const currentNumber = state.examGuideStep === 5 ? (state.examFocusQuestion || order[state.examSolveIndexes[exam.id] || 0]) : null;
     const displayNumber = orderedExamList().findIndex((item) => item.id === exam.id) + 1;
+    const finalLetter = optionLetter(exam.options[exam.options.length - 1]) || "G";
+    const extraOptionCount = Math.max(0, exam.options.length - examQuestionNumbers(exam).length);
     const evidencePickMode = currentNumber && state.examAdaptiveGuides[exam.id]?.[currentNumber]?.stage === 2;
     views.exam.innerHTML = `<div class="lesson-toolbar"><button class="secondary-action" type="button" data-action="exam-back">← 返回真题列表</button><span class="lesson-position">第 ${displayNumber} / ${exams.length} 篇</span></div>
       <article class="exam-sheet">
-        <header class="exam-title-block"><p>题目来源：${escapeHtml(exam.source)} · 本篇设空 ${escapeHtml(exam.range)}</p><h2>${escapeHtml(exam.title)}</h2><span>从 A—G 中选出能填入空白处的最佳选项，其中有两项多余。请跟随右侧四步引导完成。</span></header>
+        <header class="exam-title-block"><p>题目来源：${escapeHtml(exam.source)} · 本篇设空 ${escapeHtml(exam.range)}</p><h2>${escapeHtml(exam.title)}</h2><span>从 A—${finalLetter} 中选出能填入空白处的最佳选项${extraOptionCount ? `，其中有${extraOptionCount === 1 ? "一" : extraOptionCount === 2 ? "两" : extraOptionCount}项多余` : ""}。请跟随右侧四步引导完成。</span></header>
         <div class="exam-workspace guided-exam-workspace">
           <div class="exam-left-column">
             <div class="exam-reading ${evidencePickMode ? "evidence-pick-mode" : ""}"><div class="panel-heading"><h3>题目原文</h3><span>${evidencePickMode ? "双击原文取证" : currentNumber ? `当前：第 ${currentNumber} 空` : "按右侧步骤观察"}</span></div>${exam.passage.map((paragraph) => `<p>${examPassageParagraph(paragraph, exam)}</p>`).join("")}</div>
