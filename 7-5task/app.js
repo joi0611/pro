@@ -889,6 +889,21 @@
     }).join("");
   }
 
+  function keywordButtonText(value, pickedTerms, standardTerms, revealed, letter) {
+    const picked = new Set((pickedTerms || []).map((term) => String(term).toLowerCase()));
+    const standardWords = new Set((standardTerms || []).flatMap((term) => String(term).match(/[\p{L}\p{N}]+(?:['’\-][\p{L}\p{N}]+)*/gu) || []).map((word) => word.toLowerCase()));
+    const tokens = String(value).match(/\s+|[\p{L}\p{N}]+(?:['’\-][\p{L}\p{N}]+)*|[^\s]/gu) || [];
+    return tokens.map((token) => {
+      if (/^\s+$/u.test(token)) return token;
+      if (!/[\p{L}\p{N}]/u.test(token)) return `<span class="keyword-punctuation">${escapeHtml(token)}</span>`;
+      const normalized = token.toLowerCase();
+      const isPicked = picked.has(normalized);
+      const isStandard = revealed && standardWords.has(normalized);
+      const classes = ["keyword-word", isPicked ? "picked" : "", isStandard ? "correct" : ""].filter(Boolean).join(" ");
+      return `<button type="button" class="${classes}" data-keyword-word="${escapeHtml(token)}" data-keyword-letter="${letter}" aria-pressed="${isPicked}">${escapeHtml(token)}</button>`;
+    }).join("");
+  }
+
   function carriedRadarText(value, standardTerms) {
     const terms = [...new Set((standardTerms || []).filter(Boolean))].sort((a, b) => b.length - a.length);
     if (!terms.length) return escapeHtml(value);
@@ -916,7 +931,7 @@
   }
 
   function guideProgressMarkup() {
-    const labels = ["浏览全局", "圈画选项", "观察设空", "选择顺序", "逐空作答"];
+    const labels = ["浏览全局", "选择关键词", "观察设空", "选择顺序", "逐空作答"];
     return `<ol class="guide-progress">${labels.map((label, index) => `<li class="${state.examGuideStep === index + 1 ? "active" : state.examGuideStep > index + 1 ? "done" : ""}"><b>${index + 1}</b><span>${label}</span></li>`).join("")}</ol>`;
   }
 
@@ -926,7 +941,7 @@
     return `<div class="guide-step"><p class="guide-kicker">第一步</p><h3>浏览全局，把握主题</h3><p>先快速浏览首段、末段和反复出现的核心词，再选择全文主线。左侧已高亮全局线索。</p>
       <div class="theme-choices">${examThemeOptions(exam).map((title) => `<button class="guide-choice ${selected === title ? title === exam.title ? "correct" : "wrong" : ""}" type="button" data-exam-theme="${escapeHtml(title)}">${escapeHtml(title)}</button>`).join("")}</div>
       ${selected ? `<p class="guide-feedback ${correct ? "correct" : "wrong"}" role="status">${correct ? "主题判断正确。现在带着主线观察每个空的位置。" : "这个主题不能覆盖全文，请重新对照首尾段。"}</p>` : ""}
-      ${correct ? `<button class="reveal-next" type="button" data-action="exam-guide-next">进入第二步：圈画选项关键词</button>` : ""}</div>`;
+      ${correct ? `<button class="reveal-next" type="button" data-action="exam-guide-next">进入第二步：选择选项关键词</button>` : ""}</div>`;
   }
 
   function guideStepKeywords(exam) {
@@ -937,13 +952,13 @@
       const letter = optionLetter(option);
       const text = option.replace(/^[A-G]\.\s*/, "");
       const standardTerms = optionRadarTerms(exam, option);
-      return `<div class="keyword-option ${revealed ? "revealed" : ""}" data-keyword-option="${letter}"><strong>${letter}.</strong><span class="keyword-option-text">${keywordMarkedText(text, picks[letter] || [], standardTerms, revealed)}</span></div>`;
+      return `<div class="keyword-option ${revealed ? "revealed" : ""}" data-keyword-option="${letter}"><strong>${letter}.</strong><span class="keyword-option-text">${keywordButtonText(text, picks[letter] || [], standardTerms, revealed, letter)}</span></div>`;
     }).join("");
-    return `<div class="guide-step keyword-guide-step"><p class="guide-kicker">第二步</p><h3>圈画选项关键词</h3><p>不要整句画线。先在每个选项中双击你认为重要的词，再查看标准圈画。</p>
+    return `<div class="guide-step keyword-guide-step"><p class="guide-kicker">第二步</p><h3>选择选项关键词</h3><p>不要整句选择。直接点击每个选项中你认为重要的词，再查看标准答案。</p>
       <div class="radar-rules"><strong>只圈三类“雷达词”</strong><ol><li><b>① 指代词、逻辑词 🌟🌟🌟</b><span>they / it / this；however / but / so / for example</span></li><li><b>② 特殊句式、格式词 🌟🌟</b><span>祈使句句首动词；Why / How 等疑问词</span></li><li><b>③ 核心主题实词 🌟🌟</b><span>独特名词、动词，用来寻找原词或同义复现</span></li></ol></div>
-      <div class="keyword-options" aria-label="双击圈画选项关键词">${optionRows}</div>
-      <p class="keyword-pick-status">${revealed ? "紫色为标准雷达词；橙色保留你的其他圈画，便于对照。" : `已自主圈画 ${pickCount} 处 · 请直接双击选项中的词`}</p>
-      <div class="guide-actions"><button class="text-action" type="button" data-action="exam-guide-back">返回第一步</button>${revealed ? `<button class="reveal-next" type="button" data-action="exam-guide-next">进入第三步：观察设空位置</button>` : pickCount ? `<button class="reveal-next" type="button" data-action="exam-keywords-reveal">显示标准圈画</button>` : ""}</div></div>`;
+      <div class="keyword-options" aria-label="选择选项关键词">${optionRows}</div>
+      <p class="keyword-pick-status">${revealed ? "绿色为标准关键词；橙色保留你的其他选择，便于对照。" : `已选择 ${pickCount} 个关键词 · 点击单词可选择，再次点击可取消`}</p>
+      <div class="guide-actions"><button class="text-action" type="button" data-action="exam-guide-back">返回第一步</button>${revealed ? `<button class="reveal-next" type="button" data-action="exam-guide-next">进入第三步：观察设空位置</button>` : pickCount ? `<button class="reveal-next" type="button" data-action="exam-keywords-reveal">显示标准答案</button>` : ""}</div></div>`;
   }
 
   function guideStepTwo(exam) {
@@ -1208,20 +1223,6 @@
   }
 
   document.addEventListener("dblclick", (event) => {
-    const keywordText = event.target.closest(".keyword-option-text");
-    if (keywordText && state.examGuideStep === 2 && !state.examKeywordRevealed[state.activeExam]) {
-      const selection = window.getSelection();
-      if (!selection?.rangeCount || !keywordText.contains(selection.getRangeAt(0).commonAncestorContainer)) return;
-      const selectedText = selection.toString().replace(/\s+/g, " ").trim().replace(/^[^A-Za-z0-9\u3400-\u9fff]+|[^A-Za-z0-9\u3400-\u9fff]+$/g, "");
-      const letter = keywordText.closest("[data-keyword-option]")?.dataset.keywordOption;
-      if (!selectedText || !letter) return;
-      const picks = state.examKeywordPicks[state.activeExam] ||= {};
-      picks[letter] ||= [];
-      if (!picks[letter].some((item) => item.toLowerCase() === selectedText.toLowerCase())) picks[letter].push(selectedText.slice(0, 60));
-      selection.removeAllRanges();
-      renderExam(state.activeExam, true);
-      return;
-    }
     const reading = event.target.closest(".exam-reading.evidence-pick-mode");
     if (!reading) return;
     const exam = exams.find((item) => item.id === state.activeExam);
@@ -1248,6 +1249,18 @@
   });
 
   document.addEventListener("click", (event) => {
+    const keywordWord = event.target.closest("[data-keyword-word][data-keyword-letter]");
+    if (keywordWord && state.examGuideStep === 2 && !state.examKeywordRevealed[state.activeExam]) {
+      const letter = keywordWord.dataset.keywordLetter;
+      const word = keywordWord.dataset.keywordWord;
+      const picks = state.examKeywordPicks[state.activeExam] ||= {};
+      picks[letter] ||= [];
+      const index = picks[letter].findIndex((item) => item.toLowerCase() === word.toLowerCase());
+      if (index >= 0) picks[letter].splice(index, 1);
+      else picks[letter].push(word);
+      renderExam(state.activeExam, true);
+      return;
+    }
     const moduleEntry = event.target.closest("[data-module-entry]");
     if (moduleEntry) {
       const targetView = moduleEntry.dataset.moduleEntry;
