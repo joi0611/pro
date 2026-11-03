@@ -8943,6 +8943,142 @@ window.BUILTIN_LESSONS = [
   }
 ];
 
+// 2026年交大二附中九年级上学期期中考试（原题78—87）
+window.BUILTIN_LESSONS.push({
+  "id": "cloze-上海-交大二附中-2026九上期中",
+  "freezeClues": true,
+  "title_cn": "鸟类飞行与小脑的演化",
+  "title_en": "How Birds' Brains Evolved for Flight",
+  "level": "九年级",
+  "difficulty": "中等",
+  "lesson_type": "科普说明",
+  "region": "上海",
+  "source": "上海交通大学附属第二中学2026年九年级上学期期中考试",
+  "tags": ["校级期中", "科普说明", "词义辨析", "固定搭配", "上下文逻辑"],
+  "first_sentence": "Birds learned to fly about 150 million years ago.",
+  "last_sentence": "Next, the team wants to find the exact parts of the cerebellum that help prepare birds for flight.",
+  "tone": {
+    "answer": "积极",
+    "reason": "文章从鸟类飞行机制尚未完全明确写起，逐步介绍现代鸟类与古代带翼恐龙的研究证据，结尾提出进一步定位小脑相关区域的研究目标，整体呈现科学发现不断推进的积极方向。",
+    "kind": "expository",
+    "shape": "提出问题—实验比较—得出结论—继续探索",
+    "shape_reason": "开头提出鸟类如何飞行仍有疑问，中段用PET扫描和化石比较寻找证据，末尾以新的研究目标积极收束。"
+  },
+  "route_summary": {"线索词优先": 6, "固定搭配优先": 2, "双路径": 2, "整组短语直接辨析": 0},
+  "reading_sentence_count": 16,
+  "article_text_with_blanks": "Birds learned to fly about 150 million years ago. This was an important __78__ in animal history, but scientists do not fully know how this change happened. A new study gives us some answers. Researchers found that birds could fly because of changes in the cerebellum (小脑), a part of the brain that __79__ body movement. Scientists from two US universities did this study. They used PET scans on modern pigeons and __80__ the results with dinosaur fossils. Unlike X-rays that show body structure, PET scans show how the body __81__. The team scanned eight pigeons and checked 26 brain areas. They studied the birds' brain activity when resting and after flying for 10 minutes. For all birds, only the cerebellum had big changes in activity. This showed flight is __82__ the cerebellum. To find out more, scientists studied bird-like dinosaurs __83__ Archaeopteryx. Real brains have __84__ over time, so researchers looked at fossil skulls. Molds made from the inside of skulls show the size, __85__ and surface of ancient brains. In these early flying dinosaurs, the cerebellum became much bigger. The brain also grew more complex with folds. These __86__ prove flight is related to cerebellum changes. Next, the team wants to find the __87__ parts of the cerebellum that help prepare birds for flight.",
+  "reading_sentences": [
+    "Birds learned to fly about 150 million years ago.",
+    "This was an important __78__ in animal history, but scientists do not fully know how this change happened.",
+    "A new study gives us some answers.",
+    "Researchers found that birds could fly because of changes in the cerebellum (小脑), a part of the brain that __79__ body movement.",
+    "Scientists from two US universities did this study.",
+    "They used PET scans on modern pigeons and __80__ the results with dinosaur fossils.",
+    "Unlike X-rays that show body structure, PET scans show how the body __81__.",
+    "The team scanned eight pigeons and checked 26 brain areas.",
+    "They studied the birds' brain activity when resting and after flying for 10 minutes.",
+    "For all birds, only the cerebellum had big changes in activity.",
+    "This showed flight is __82__ the cerebellum.",
+    "To find out more, scientists studied bird-like dinosaurs __83__ Archaeopteryx.",
+    "Real brains have __84__ over time, so researchers looked at fossil skulls.",
+    "Molds made from the inside of skulls show the size, __85__ and surface of ancient brains.",
+    "In these early flying dinosaurs, the cerebellum became much bigger. The brain also grew more complex with folds.",
+    "These __86__ prove flight is related to cerebellum changes.",
+    "Next, the team wants to find the __87__ parts of the cerebellum that help prepare birds for flight."
+  ],
+  "questions": [
+    {
+      "q": 78, "pos": "名词", "topic": "词义辨析", "route": "线索词优先",
+      "options": ["accident", "event", "invention", "mistake"], "answer": "event",
+      "clues": ["in animal history", "this change happened"],
+      "clueTypes": {"in animal history": "语境线索·历史事件", "this change happened": "复现线索·近义复现"},
+      "explanation": "线索　空格指代前句“鸟类学会飞行”这件发生在动物史上的大事，后面的 this change happened 继续把它当作历史变化来谈，因此选 event（事件）。\n排除　accident 是意外事故，mistake 是错误，均带负面意味；invention 指人为发明，鸟类飞行属于自然演化，不是发明。",
+      "collocation": null
+    },
+    {
+      "q": 79, "pos": "动词", "topic": "动词辨析", "route": "语境还原",
+      "options": ["collects", "changes", "controls", "communicates"], "answer": "controls",
+      "clues": ["a part of the brain", "body movement"],
+      "clueTypes": {"a part of the brain": "语境线索·功能说明", "body movement": "语境线索·宾语"},
+      "explanation": "线索　逗号后的 a part of the brain 是对 cerebellum 的解释，空格要说明小脑对 body movement 的功能，即“控制身体运动”，选 controls。\n排除　collects 是收集，changes 是改变，communicates 是交流，都不能准确概括小脑与身体运动之间的功能关系。",
+      "collocation": "控制身体运动", "collocationType": "动宾搭配", "collocationBreakdown": "control body movement"
+    },
+    {
+      "q": 80, "pos": "动词", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["compared", "covered", "replaced", "shared"], "answer": "compared",
+      "clues": ["the results with", "dinosaur fossils"],
+      "clueTypes": {"the results with": "固定搭配·compare A with B", "dinosaur fossils": "语境线索·比较对象"},
+      "explanation": "线索　句中有 A（the results）+ with + B（dinosaur fossils）的骨架，研究者要把现代鸽子的扫描结果与恐龙化石作比较，固定搭配 compare A with B，选 compared。\n排除　covered 是覆盖，replaced 是替代，shared 是分享，都不能构成这里的研究比较关系。",
+      "collocation": "把A与B比较", "collocationType": "固定搭配", "collocationBreakdown": "compare A with B"
+    },
+    {
+      "q": 81, "pos": "动词", "topic": "词义辨析", "route": "转折对比",
+      "options": ["hides", "rests", "sleeps", "works"], "answer": "works",
+      "clues": ["Unlike X-rays", "show body structure"],
+      "clueTypes": {"Unlike X-rays": "逻辑线索·对比", "show body structure": "语境线索·检测内容"},
+      "explanation": "线索　Unlike 表示对比：X光显示身体结构，而PET扫描显示身体如何运作，因此选 works。画箭头：structure（静态结构）↔ works（动态功能）。\n排除　hides、rests、sleeps 都只是身体可能出现的某一种状态，不能概括PET扫描所显示的整体功能活动。",
+      "collocation": null
+    },
+    {
+      "q": 82, "pos": "形容词短语", "topic": "固定搭配", "route": "双路径",
+      "options": ["born with", "connected with", "provided with", "satisfied with"], "answer": "connected with",
+      "clues": ["only the cerebellum", "big changes in activity"],
+      "clueTypes": {"only the cerebellum": "语境线索·唯一对象", "big changes in activity": "逻辑线索·因果"},
+      "explanation": "线索　飞行前后，只有小脑活动发生明显变化，由实验现象可推出飞行“与小脑有关”，选 connected with。\n排除　born with 表示天生具有，provided with 表示被提供，satisfied with 表示对……满意，三者都不能表达研究发现的相关关系。",
+      "collocation": "与……有关联", "collocationType": "固定搭配", "collocationBreakdown": "be connected with"
+    },
+    {
+      "q": 83, "pos": "介词", "topic": "举例关系", "route": "线索词优先",
+      "options": ["against", "except", "including", "without"], "answer": "including",
+      "clues": ["bird-like dinosaurs", "Archaeopteryx"],
+      "clueTypes": {"bird-like dinosaurs": "语境线索·上位概念", "Archaeopteryx": "逻辑线索·举例"},
+      "explanation": "线索　bird-like dinosaurs 是一类事物，Archaeopteryx（始祖鸟）是其中的具体例子，属于“总类—成员”关系，选 including（包括）。\n排除　except 表示排除在外，without 表示没有，against 表示反对或倚靠，均不符合列举成员的逻辑。",
+      "collocation": null
+    },
+    {
+      "q": 84, "pos": "动词短语", "topic": "短语辨析", "route": "因果链条",
+      "options": ["broken down", "broken into", "broken out", "broke through"], "answer": "broken down",
+      "clues": ["over time", "looked at fossil skulls"],
+      "clueTypes": {"over time": "逻辑线索·时间", "looked at fossil skulls": "逻辑线索·结果"},
+      "explanation": "线索　找因果链条：真正的大脑经过漫长时间已经分解，所以研究者只能查看化石头骨，选 have broken down（已经分解）。\n排除　break into 是闯入或分成，break out 是爆发，break through 是突破；后三项既不符合大脑随时间消失的语义，形式上也与 have 后的过去分词要求不完全匹配。",
+      "collocation": "分解；腐坏", "collocationType": "固定搭配", "collocationBreakdown": "break down"
+    },
+    {
+      "q": 85, "pos": "名词", "topic": "并列结构", "route": "线索词优先",
+      "options": ["color", "smell", "shape", "sound"], "answer": "shape",
+      "clues": ["the size", "and surface", "Molds made from"],
+      "clueTypes": {"the size": "逻辑线索·并列", "and surface": "逻辑线索·并列", "Molds made from": "语境线索·模型特征"},
+      "explanation": "线索　圈出并列连词 and：size、空格、surface 都是头骨内部模型能够保留的外形特征，因此选 shape。\n排除　color、smell、sound 无法由化石头骨内部制成的模型可靠呈现，也不与 size 和 surface 构成同一语义场。",
+      "collocation": null
+    },
+    {
+      "q": 86, "pos": "名词", "topic": "指代复现", "route": "下文暗示",
+      "options": ["dreams", "hobbies", "mistakes", "results"], "answer": "results",
+      "clues": ["became much bigger", "grew more complex"],
+      "clueTypes": {"became much bigger": "语境线索·研究发现", "grew more complex": "语境线索·研究发现"},
+      "explanation": "线索　These 回指前两句的研究发现：小脑变大、大脑褶皱更复杂；这些“结果”证明飞行与小脑变化有关，选 results。\n排除　dreams 和 hobbies 与科研语境无关；mistakes 带否定意味，也不可能用来 prove 后面的科学结论。",
+      "collocation": null
+    },
+    {
+      "q": 87, "pos": "形容词", "topic": "词义辨析", "route": "语境还原",
+      "options": ["exact", "similar", "secret", "useless"], "answer": "exact",
+      "clues": ["parts of the cerebellum", "help prepare birds"],
+      "clueTypes": {"parts of the cerebellum": "语境线索·研究对象", "help prepare birds": "语境线索·功能相近"},
+      "explanation": "线索　前文只确定“飞行与小脑有关”，尚未定位到小脑内部的具体区域；Next 表明下一步要找出究竟是哪些确切部位帮助鸟类为飞行作准备，因此选 exact。\n排除　similar 表示相似的，但句中没有另一个部位作为比较对象；secret 表示秘密的，useless 表示无用的，后者还与 help prepare birds 直接矛盾。",
+      "collocation": null
+    }
+  ],
+  "missingAnswer": false,
+  "source_kind": "正式真题",
+  "exam_year": 2026,
+  "tone_markers": [
+    {"word": "A new study gives us some answers", "label": "研究推进", "pos": "start"},
+    {"word": "Next, the team wants to find", "label": "继续探索", "pos": "end"}
+  ],
+  "update_tag": "202611 导入",
+  "update_seq": 1
+});
+
 // 人工复核：第11—15篇。线索必须能在原文中精确定位，避免自动生成的截句和误判。
 (() => {
   const reviewed = {
