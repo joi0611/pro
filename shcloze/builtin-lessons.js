@@ -9079,6 +9079,143 @@ window.BUILTIN_LESSONS.push({
   "update_seq": 1
 });
 
+// 26-2山东青岛市五区联考九年级上学期期中试卷（原题1—10）
+window.BUILTIN_LESSONS.push({
+  "id": "cloze-山东-青岛五区联考-2026九上期中",
+  "freezeClues": true,
+  "title_cn": "《孙子兵法》中的和平智慧",
+  "title_en": "The Wisdom of Peace in The Art of War",
+  "level": "九年级",
+  "difficulty": "中等",
+  "lesson_type": "文化说明",
+  "region": "山东",
+  "source": "26-2山东青岛市五区联考 九上期中试卷",
+  "tags": ["五区联考", "九上期中", "传统文化", "词义辨析", "上下文逻辑"],
+  "first_sentence": "Sun Tzu lived in the State of Wu during the Spring and Autumn Period and is seen as a great master of war.",
+  "last_sentence": "A lasting peace is the wish of people everywhere.",
+  "tone": {
+    "answer": "积极",
+    "reason": "文章从《孙子兵法》的军事智慧写起，逐步说明训练、经济与知己知彼的重要性，最后强调以和平讨论代替战争，并以全世界人民期盼持久和平积极收束。",
+    "kind": "expository",
+    "shape": "介绍人物—阐释思想—联系现实—倡导和平",
+    "shape_reason": "开头介绍孙武及其著作的世界影响，中段阐释其治军与慎战思想，结尾用 peaceful discussion、value peace 和 lasting peace 明确升华和平主题。"
+  },
+  "route_summary": {"线索词优先": 5, "固定搭配优先": 3, "双路径": 2, "整组短语直接辨析": 0},
+  "reading_sentence_count": 18,
+  "article_text_with_blanks": "Sun Tzu lived in the State of Wu during the Spring and Autumn Period and is seen as a great master (大师) of war. His famous book, The Art of War, has been read for over 2,000 years. Many people think it is only about fighting. It also offers useful ideas in many other fields and its wisdom has __1__ far across the world. Once, the king of Wu asked Sun Tzu to prove that his ideas would work. Sun Tzu even trained palace women as __2__. At first, the palace women laughed and treated it as a game, but he kept giving clear __3__ and stuck to strict rules. Soon, they could follow every order __4__. Even ordinary people could protect the country when they received proper training. Sun Tzu believed war __5__ a country's economy (经济), because a nation could achieve victory only when its economy grew strong. If not, war would harm both the country and its people. He also stressed the importance of knowing the enemy: __6__ a general knows his own strength well but fails to know his enemy, he may still fail. He hoped people would live in peace, thinking the highest skill was to beat the enemy __7__ using force at all. Today, no __8__ method works for all situations. Whenever possible, we should choose peaceful discussion __9__ fighting. This ancient Chinese wisdom still guides us to value peace and think carefully before making big decisions. After all, __10__ valuable can be achieved through endless fighting. A lasting peace is the wish of people everywhere.",
+  "reading_sentences": [
+    "Sun Tzu lived in the State of Wu during the Spring and Autumn Period and is seen as a great master (大师) of war.",
+    "His famous book, The Art of War, has been read for over 2,000 years.",
+    "Many people think it is only about fighting.",
+    "It also offers useful ideas in many other fields and its wisdom has __1__ far across the world.",
+    "Once, the king of Wu asked Sun Tzu to prove that his ideas would work.",
+    "Sun Tzu even trained palace women as __2__.",
+    "At first, the palace women laughed and treated it as a game, but he kept giving clear __3__ and stuck to strict rules.",
+    "Soon, they could follow every order __4__.",
+    "Even ordinary people could protect the country when they received proper training.",
+    "Sun Tzu believed war __5__ a country's economy (经济), because a nation could achieve victory only when its economy grew strong.",
+    "If not, war would harm both the country and its people.",
+    "He also stressed the importance of knowing the enemy: __6__ a general knows his own strength well but fails to know his enemy, he may still fail.",
+    "He hoped people would live in peace, thinking the highest skill was to beat the enemy __7__ using force at all.",
+    "Today, no __8__ method works for all situations.",
+    "Whenever possible, we should choose peaceful discussion __9__ fighting.",
+    "This ancient Chinese wisdom still guides us to value peace and think carefully before making big decisions.",
+    "After all, __10__ valuable can be achieved through endless fighting.",
+    "A lasting peace is the wish of people everywhere."
+  ],
+  "questions": [
+    {
+      "q": 1, "pos": "动词", "topic": "词义辨析", "route": "语境还原",
+      "options": ["fallen", "hidden", "spread", "broken"], "answer": "spread",
+      "clues": ["across the world", "offers useful ideas"],
+      "clueTypes": {"across the world": "语境线索·传播范围", "offers useful ideas": "逻辑线索·传播原因"},
+      "explanation": "线索　画箭头：有用的思想 → 传到世界各地；across the world 给出传播范围，has 后还要求过去分词，因此选 spread（spread—spread—spread）。\n排除　fallen 表示落下，hidden 表示隐藏，broken 表示破碎，均不能和 wisdom、across the world 构成“智慧广泛传播”的语义链。",
+      "collocation": null
+    },
+    {
+      "q": 2, "pos": "名词", "topic": "语境推断", "route": "下文暗示",
+      "options": ["soldiers", "leaders", "visitors", "players"], "answer": "soldiers",
+      "clues": ["follow every order", "proper training"],
+      "clueTypes": {"follow every order": "语境线索·军事训练", "proper training": "复现线索·训练语义场"},
+      "explanation": "线索　下文的 strict rules、follow every order 和 protect the country 共同组成军事训练语义场，所以宫女被训练成 soldiers。\n排除　leaders 应当发出命令而不是接受命令；visitors 不接受训练；players 与保卫国家的语境不符。",
+      "collocation": null
+    },
+    {
+      "q": 3, "pos": "名词", "topic": "词义辨析", "route": "语境还原",
+      "options": ["collection", "discovery", "guidance", "discussion"], "answer": "guidance",
+      "clues": ["follow every order", "stuck to strict rules"],
+      "clueTypes": {"follow every order": "逻辑线索·结果", "stuck to strict rules": "语境线索·训练方式"},
+      "explanation": "线索　找因果链条：孙武持续给出清楚的指导并坚持严格规则，结果宫女能服从每一道命令，因此选 guidance。\n排除　collection 是收藏，discovery 是发现，discussion 是讨论，都不能直接产生“服从命令”的训练结果。",
+      "collocation": "给予明确指导", "collocationType": "动宾搭配", "collocationBreakdown": "give clear guidance"
+    },
+    {
+      "q": 4, "pos": "副词", "topic": "词义辨析", "route": "情感态度",
+      "options": ["secretly", "perfectly", "generally", "hardly"], "answer": "perfectly",
+      "clues": ["every order", "proper training"],
+      "clueTypes": {"every order": "语境线索·完成程度", "proper training": "逻辑线索·正向结果"},
+      "explanation": "线索　every 强调每一道命令都能执行，且前文由嬉笑转为接受严格训练，空格要表达执行效果很好，选 perfectly。\n排除　hardly 表示几乎不，与 every order 冲突；secretly 强调秘密地，generally 强调通常地，都不表示执行的准确程度。",
+      "collocation": null
+    },
+    {
+      "q": 5, "pos": "动词短语", "topic": "上下文逻辑", "route": "双路径",
+      "options": ["depended on", "led to", "stood for", "fought against"], "answer": "depended on",
+      "clues": ["only when its economy grew strong", "If not"],
+      "clueTypes": {"only when its economy grew strong": "逻辑线索·必要条件", "If not": "逻辑线索·反面验证"},
+      "explanation": "线索　圈出 only when：国家只有经济强盛时才可能在战争中取胜，说明战争的胜负取决于经济，选 depended on。后一句 If not 又从反面验证经济不强会带来伤害。\n排除　led to 表示导致，方向颠倒；stood for 表示代表；fought against 表示对抗，均不能表达必要条件关系。",
+      "collocation": "取决于……", "collocationType": "固定搭配", "collocationBreakdown": "depend on"
+    },
+    {
+      "q": 6, "pos": "连词", "topic": "逻辑关系", "route": "转折对比",
+      "options": ["So", "If", "Although", "Unless"], "answer": "Although",
+      "clues": ["knows his own strength well", "may still fail"],
+      "clueTypes": {"knows his own strength well": "逻辑线索·让步条件", "may still fail": "逻辑线索·转折结果"},
+      "explanation": "线索　前半部分“熟知自身实力”看似有利，后面却因不了解敌人而仍可能失败，still 提醒我们是让步转折关系，选 Although。句中 but 连接的是 knows 与 fails 两个并列谓语，并不与 Although 重复。\n排除　So 表结果；If 会把熟知自身变成失败条件；Unless 表除非，均不符合前后反差。",
+      "collocation": "虽然……但是仍……", "collocationType": "语法框架", "collocationBreakdown": "although + 从句, ... still ..."
+    },
+    {
+      "q": 7, "pos": "介词", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["by", "against", "except", "without"], "answer": "without",
+      "clues": ["live in peace", "using force at all"],
+      "clueTypes": {"live in peace": "情感线索·和平态度", "using force at all": "固定搭配·without doing sth."},
+      "explanation": "线索　最高明的做法是不使用武力就战胜敌人；空后是动名词 using，固定结构 without doing sth. 表示“不做某事”，选 without。\n排除　by 表示通过，会变成“通过使用武力”；against、except 都不能构成这里的方式结构。",
+      "collocation": "不做某事", "collocationType": "语法框架", "collocationBreakdown": "without doing sth."
+    },
+    {
+      "q": 8, "pos": "形容词", "topic": "语境推断", "route": "语境还原",
+      "options": ["hands-on", "stable", "grown-up", "inspiring"], "answer": "stable",
+      "clues": ["works for all situations", "Whenever possible"],
+      "clueTypes": {"works for all situations": "语境线索·适用范围", "Whenever possible": "逻辑线索·因时制宜"},
+      "explanation": "线索　后文 Whenever possible 表明处理办法要随具体情境选择，因此不存在一个始终不变、适用于所有情形的 stable method。\n排除　hands-on 是实践性的，grown-up 是成年的，inspiring 是鼓舞人心的；这些性质都不能与 all situations 构成“没有万能不变方法”的逻辑。",
+      "collocation": null
+    },
+    {
+      "q": 9, "pos": "介词短语", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["instead of", "because of", "thanks to", "according to"], "answer": "instead of",
+      "clues": ["peaceful discussion", "fighting"],
+      "clueTypes": {"peaceful discussion": "逻辑线索·选择", "fighting": "逻辑线索·对比"},
+      "explanation": "线索　peaceful discussion 与 fighting 是一和平一武力的对比选择，文章主张前者替代后者，固定结构 instead of doing sth.，选 instead of。\n排除　because of 和 thanks to 表原因，according to 表依据，都不能表达“选A而不选B”。",
+      "collocation": "而不是做某事", "collocationType": "固定搭配", "collocationBreakdown": "instead of doing sth."
+    },
+    {
+      "q": 10, "pos": "不定代词", "topic": "上下文逻辑", "route": "双路径",
+      "options": ["something", "everything", "nothing", "anything"], "answer": "nothing",
+      "clues": ["endless fighting", "A lasting peace"],
+      "clueTypes": {"endless fighting": "情感线索·负面方式", "A lasting peace": "逻辑线索·结尾主旨"},
+      "explanation": "线索　褒贬态度一致法：endless fighting 带明显否定态度，下一句又把 lasting peace 定为共同愿望，所以句意是“无休止的战争无法带来任何有价值的东西”，选 nothing。\n排除　something、everything、anything 都会不同程度肯定战争能取得成果，与全文珍视和平的主旨相反。",
+      "collocation": null
+    }
+  ],
+  "missingAnswer": false,
+  "source_kind": "正式真题",
+  "exam_year": 2026,
+  "tone_markers": [
+    {"word": "offers useful ideas in many other fields", "label": "智慧传播", "pos": "start"},
+    {"word": "A lasting peace is the wish of people everywhere", "label": "和平愿望", "pos": "end"}
+  ],
+  "update_tag": "202611 导入",
+  "update_seq": 1
+});
+
 // 人工复核：第11—15篇。线索必须能在原文中精确定位，避免自动生成的截句和误判。
 (() => {
   const reviewed = {
@@ -9134,6 +9271,59 @@ window.BUILTIN_LESSONS.push({
       question.clueTypes = Object.fromEntries(clues.map((clue, i) => [clue, types[i]]));
       question.explanation = explanation;
     });
+  }
+})();
+
+/*
+ * 统一内置篇目的公共字段形态。
+ * 新导入数据偶尔会沿用“教学方法名”作为 route，或把 collocation
+ * 拆成三个字符串字段；这里在数据进入 UI 前统一为页面支持的结构。
+ */
+(function normalizeBuiltinLessonSchema() {
+  const knownRoutes = new Set(["线索词优先", "固定搭配优先", "双路径", "整组短语直接辨析"]);
+
+  for (const lesson of window.BUILTIN_LESSONS || []) {
+    const questions = lesson.questions || [];
+
+    for (const question of questions) {
+      if (typeof question.collocation === "string") {
+        question.collocation = {
+          name: question.collocation,
+          type: question.collocationType || "",
+          structure: question.collocationBreakdown || ""
+        };
+        delete question.collocationType;
+        delete question.collocationBreakdown;
+      }
+
+      if (!knownRoutes.has(question.route)) {
+        const isCollocationQuestion = /固定搭配|短语辨析/.test(question.topic || "");
+        question.route = question.collocation && isCollocationQuestion
+          ? "固定搭配优先"
+          : "线索词优先";
+      }
+    }
+
+    const routeSummary = {
+      "线索词优先": 0,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    };
+    for (const question of questions) routeSummary[question.route] += 1;
+    lesson.route_summary = routeSummary;
+
+    const finalSentence = (lesson.reading_sentences || []).at(-1) || "";
+    const finalBlankIds = [...finalSentence.matchAll(/__(\d+)__/g)].map(match => Number(match[1]));
+    for (const blankId of finalBlankIds) {
+      const question = questions.find(item => item.q === blankId);
+      if (!question || !question.answer || !lesson.last_sentence) continue;
+      const escapedAnswer = String(question.answer).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      lesson.last_sentence = lesson.last_sentence.replace(
+        new RegExp("\\b" + escapedAnswer + "\\b", "i"),
+        "____"
+      );
+    }
   }
 })();
 
