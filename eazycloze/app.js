@@ -12,6 +12,7 @@
 var STORAGE_BASE_KEY = "cloze-national-v2";
 var STORAGE_KEY = STORAGE_BASE_KEY;
 var ACTIVE_LOGIN_CODE = "";
+var ACTIVE_LOGIN_TYPE = "";
 var APP_INITIALIZED = false;
 var REMOTE_SAVE_TIMER = null;
 var SUPABASE_CONFIG = {
@@ -120,9 +121,26 @@ function activationRpc(name, payload) {
     });
   });
 }
-function setActiveLoginCode(code) {
-  ACTIVE_LOGIN_CODE = String(code || "").trim().toUpperCase();
-  STORAGE_KEY = ACTIVE_LOGIN_CODE ? STORAGE_BASE_KEY + ":" + ACTIVE_LOGIN_CODE : STORAGE_BASE_KEY;
+function trainingRpc(action, payload) {
+  return fetch(SUPABASE_CONFIG.url + "/rest/v1/rpc/training_api", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "apikey": SUPABASE_CONFIG.anonKey,
+      "Authorization": "Bearer " + SUPABASE_CONFIG.anonKey
+    },
+    body: JSON.stringify({ p_action: action, p_payload: payload || {} })
+  }).then(function (response) {
+    return response.json().catch(function () { return null; }).then(function (data) {
+      if (!response.ok) throw new Error((data && (data.message || data.msg)) || "SUPABASE_RPC_FAILED");
+      return data || {};
+    });
+  });
+}
+function setActiveLogin(identity, type) {
+  ACTIVE_LOGIN_TYPE = type || "code";
+  ACTIVE_LOGIN_CODE = String(identity || "").trim().toUpperCase();
+  STORAGE_KEY = ACTIVE_LOGIN_CODE ? STORAGE_BASE_KEY + ":" + ACTIVE_LOGIN_TYPE + ":" + ACTIVE_LOGIN_CODE : STORAGE_BASE_KEY;
 }
 function loadRemoteProgress(code) {
   return activationRpc("get_activation_progress", {
@@ -133,7 +151,7 @@ function loadRemoteProgress(code) {
   });
 }
 function queueRemoteProgressSave(s) {
-  if (!ACTIVE_LOGIN_CODE) return;
+  if (!ACTIVE_LOGIN_CODE || ACTIVE_LOGIN_TYPE !== "code") return;
   clearTimeout(REMOTE_SAVE_TIMER);
   var code = ACTIVE_LOGIN_CODE;
   var snapshot = JSON.parse(JSON.stringify(s || {}));
@@ -3904,10 +3922,27 @@ function init() {
     m.hidden = false;
   }
 
+  var loginType = "code";
+
   function setBusy(busy) {
-    var b = $("gateBtn"), i = $("gateCode");
-    if (b) { b.disabled = busy; b.textContent = busy ? "\u6B63\u5728\u9A8C\u8BC1\u2026" : "\u6FC0\u6D3B\u5E76\u5B66\u4E60"; }
-    if (i) i.disabled = busy;
+    var b = $("gateBtn"), codeInput = $("gateCode"), phoneInput = $("gatePhone");
+    if (b) { b.disabled = busy; b.textContent = busy ? "正在验证…" : "登录并学习"; }
+    if (codeInput) codeInput.disabled = busy;
+    if (phoneInput) phoneInput.disabled = busy;
+    [$("gateCodeTab"), $("gatePhoneTab")].forEach(function (tab) { if (tab) tab.disabled = busy; });
+  }
+
+  function selectLoginType(type) {
+    loginType = type === "phone" ? "phone" : "code";
+    var isPhone = loginType === "phone";
+    $("gateCode").hidden = isPhone;
+    $("gatePhone").hidden = !isPhone;
+    $("gateCodeTab").classList.toggle("active", !isPhone);
+    $("gatePhoneTab").classList.toggle("active", isPhone);
+    $("gateSub").textContent = isPhone ? "仅限管理员已开通的手机号，无需短信验证码。" : "原有登录码继续有效，一码最多绑定4台设备。";
+    $("gateNote").textContent = isPhone ? "手机号不能自行注册，未开通请联系管理员。" : "进入后，讲义和题目均可打印。";
+    var m = $("gateMsg"); if (m) m.hidden = true;
+    setTimeout(function () { (isPhone ? $("gatePhone") : $("gateCode")).focus(); }, 0);
   }
 
   /* 本地模拟：同一激活码最多 MAX_DEVICES 台「设备」（localStorage 设备号） */
@@ -3932,42 +3967,55 @@ function init() {
     });
   }
 
-  function startAuthorizedSession(code, progress) {
-    setActiveLoginCode(code);
-    writeStoreLocal(progress || {});
-    try { localStorage.setItem(ACT_KEY, JSON.stringify({ code: code, at: Date.now() })); } catch (e) {}
+  function verifyPhone(phone) {
+    return trainingRpc("student_login", { phone: phone, specialty: "national_cloze" }).then(function (data) {
+      if (!data.ok) throw new Error(data.msg || "该手机号尚未开通全国完形");
+      return data.phone || phone;
+    });
+  }
+
+  function startAuthorizedSession(identity, type, progress) {
+    setActiveLogin(identity, type);
+    if (progress && typeof progress === "object") writeStoreLocal(progress);
+    try { localStorage.setItem(ACT_KEY, JSON.stringify({ type: type, value: identity, code: type === "code" ? identity : "", at: Date.now() })); } catch (e) {}
     init();
     unlockBody();
   }
 
   function submit() {
-    var input = $("gateCode");
-    var code = ((input && input.value) || "").trim().toUpperCase();
-    if (!code) { showMsg("\u8BF7\u8F93\u5165\u6FC0\u6D3B\u7801", false); return; }
+    var isPhone = loginType === "phone";
+    var input = isPhone ? $("gatePhone") : $("gateCode");
+    var value = ((input && input.value) || "").trim();
+    if (isPhone) value = value.replace(/\D/g, ""); else value = value.toUpperCase();
+    if (isPhone && !/^1[3-9]\d{9}$/.test(value)) { showMsg("请输入正确的11位手机号", false); return; }
+    if (!isPhone && !value) { showMsg("请输入登录码", false); return; }
     setBusy(true);
     var m = $("gateMsg");
     if (m) m.hidden = true;
-    function done(err, progress) {
+    function done(err, identity, progress) {
       setBusy(false);
       if (err) { showMsg(err, false); return; }
-      if (!checkDeviceSlot(code)) {
+      if (!isPhone && !checkDeviceSlot(value)) {
         showMsg("\u8BE5\u6FC0\u6D3B\u7801\u5DF2\u5728 4 \u53F0\u8BBE\u5907\u4E0A\u6FC0\u6D3B\uFF0C\u540D\u989D\u5DF2\u6EE1", false);
         return;
       }
-      showMsg("\u6FC0\u6D3B\u6210\u529F\uFF0C\u6B63\u5728\u8FDB\u5165\u2026", true);
-      setTimeout(function () { startAuthorizedSession(code, progress); }, 250);
+      showMsg("登录成功，正在进入…", true);
+      setTimeout(function () { startAuthorizedSession(identity, isPhone ? "phone" : "code", progress); }, 250);
     }
-    verifyActivationCode(code).then(function (valid) {
-      if (!valid) throw new Error("INVALID_CODE");
-      return loadRemoteProgress(code);
-    }).then(function (progress) {
-      done(null, progress);
+    var loginPromise = isPhone
+      ? verifyPhone(value).then(function (phone) { return { identity: phone, progress: null }; })
+      : verifyActivationCode(value).then(function (valid) {
+          if (!valid) throw new Error("INVALID_CODE");
+          return loadRemoteProgress(value).then(function (progress) { return { identity: value, progress: progress }; });
+        });
+    loginPromise.then(function (result) {
+      done(null, result.identity, result.progress);
     }).catch(function (error) {
       if (error && error.message === "INVALID_CODE") {
-        done("\u6FC0\u6D3B\u7801\u65E0\u6548\uFF0C\u8BF7\u6838\u5BF9\u540E\u91CD\u8BD5");
+        done("登录码无效，请核对后重试");
         return;
       }
-      done("\u65E0\u6CD5\u8FDE\u63A5\u6FC0\u6D3B\u670D\u52A1\uFF0C\u8BF7\u68C0\u67E5\u7F51\u7EDC\u540E\u91CD\u8BD5");
+      done(error && error.message && error.message !== "SUPABASE_RPC_FAILED" ? error.message : "无法连接登录服务，请检查网络后重试");
     });
   }
 
@@ -3978,30 +4026,37 @@ function init() {
     var btn = $("gateBtn");
     var input = $("gateCode");
     if (btn) btn.addEventListener("click", submit);
-    if (input) input.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") submit();
-    });
+    [$("gateCode"), $("gatePhone")].forEach(function (field) { if (field) field.addEventListener("keydown", function (e) { if (e.key === "Enter") submit(); }); });
+    $("gateCodeTab").addEventListener("click", function () { selectLoginType("code"); });
+    $("gatePhoneTab").addEventListener("click", function () { selectLoginType("phone"); });
     var saved = readJson(ACT_KEY, null);
-    var savedCode = saved && String(saved.code || "").trim().toUpperCase();
-    if (!savedCode) {
+    var savedType = saved && saved.type === "phone" ? "phone" : "code";
+    var savedValue = saved && String(saved.value || saved.code || "").trim();
+    if (savedType === "code") savedValue = savedValue.toUpperCase();
+    if (!savedValue) {
       if (input) input.focus();
       return;
     }
     setBusy(true);
     showMsg("\u6B63\u5728\u8BFB\u53D6\u5B66\u4E60\u8BB0\u5F55\u2026", true);
-    verifyActivationCode(savedCode).then(function (valid) {
-      if (!valid) throw new Error("INVALID_CODE");
-      return loadRemoteProgress(savedCode);
-    }).then(function (progress) {
+    var restorePromise = savedType === "phone"
+      ? verifyPhone(savedValue).then(function (phone) { return { identity: phone, progress: null }; })
+      : verifyActivationCode(savedValue).then(function (valid) {
+          if (!valid) throw new Error("INVALID_CODE");
+          return loadRemoteProgress(savedValue).then(function (progress) { return { identity: savedValue, progress: progress }; });
+        });
+    restorePromise.then(function (result) {
       setBusy(false);
-      startAuthorizedSession(savedCode, progress);
+      startAuthorizedSession(result.identity, savedType, result.progress);
     }).catch(function (error) {
       setBusy(false);
       if (error && error.message === "INVALID_CODE") {
         try { localStorage.removeItem(ACT_KEY); } catch (e) {}
-        showMsg("\u539F\u6FC0\u6D3B\u7801\u5DF2\u5931\u6548\uFF0C\u8BF7\u91CD\u65B0\u8F93\u5165", false);
+        showMsg("原登录码已失效，请重新输入", false);
       } else {
-        showMsg("\u65E0\u6CD5\u8BFB\u53D6\u5B66\u4E60\u8BB0\u5F55\uFF0C\u8BF7\u68C0\u67E5\u7F51\u7EDC\u540E\u91CD\u8BD5", false);
+        try { localStorage.removeItem(ACT_KEY); } catch (e) {}
+        selectLoginType(savedType);
+        showMsg((error && error.message) || "登录状态已失效，请重新登录", false);
       }
       if (input) input.focus();
     });

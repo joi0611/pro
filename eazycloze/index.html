@@ -5,19 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>完形填空训练系统 · 全国中考 · 无限进步</title>
   <style>body.gate-locked>*:not(#gateView){display:none!important}body.gate-locked #gateView{display:flex!important}</style>
-  <link rel="stylesheet" href="style.css?v=20261012c" />
+  <link rel="stylesheet" href="style.css?v=20261105a" />
 </head>
 <body class="gate-locked">
 
-  <!-- ============ 激活码门禁 ============ -->
+  <!-- ============ 登录门禁 ============ -->
   <div id="gateView">
     <div class="gate-card">
-      <h1 class="gate-title"><span class="gate-key" aria-hidden="true">🔑</span>输入激活码解锁学习</h1>
-      <p class="gate-sub">一码最多绑定4台设备，换设备或清除浏览器数据可能会占用新设备名额。</p>
-      <input id="gateCode" class="gate-input" type="text" autocomplete="off" spellcheck="false" placeholder="请输入激活码" maxlength="32" />
+      <h1 class="gate-title"><span class="gate-key" aria-hidden="true">🔑</span>登录全国完形</h1>
+      <div class="gate-tabs" role="tablist" aria-label="登录方式">
+        <button id="gateCodeTab" class="gate-tab active" type="button" data-login-type="code">登录码登录</button>
+        <button id="gatePhoneTab" class="gate-tab" type="button" data-login-type="phone">手机号登录</button>
+      </div>
+      <p id="gateSub" class="gate-sub">原有登录码继续有效，一码最多绑定4台设备。</p>
+      <input id="gateCode" class="gate-input" type="text" autocomplete="off" spellcheck="false" placeholder="请输入登录码" maxlength="32" />
+      <input id="gatePhone" class="gate-input" type="tel" inputmode="numeric" autocomplete="tel" placeholder="请输入已开通的11位手机号" maxlength="11" hidden />
       <p id="gateMsg" class="gate-msg" hidden></p>
-      <button id="gateBtn" class="gate-btn" type="button">激活并学习</button>
-      <p class="gate-note">进入后，讲义和题目均可打印。</p>
+      <button id="gateBtn" class="gate-btn" type="button">登录并学习</button>
+      <p id="gateNote" class="gate-note">手机号不能自行注册，需由管理员提前开通。</p>
     </div>
   </div>
 
@@ -443,7 +448,7 @@
     <section id="progressView" class="view" hidden>
       <div class="progress-head">
         <h1>训练进度</h1>
-        <p>学习记录与当前登录码绑定，并自动保存到云端。</p>
+        <p>学习记录与当前登录账号绑定；登录码用户会自动同步到云端。</p>
       </div>
       <div class="progress-dashboard" id="progressDashboard"></div>
     </section>
@@ -471,6 +476,6 @@
   <script src="methodology.js"></script>
   <script src="quiz-300.js?v=20261012b"></script>
   <script src="handout-content.js?v=20261012b"></script>
-  <script src="app.js?v=20261012e"></script>
+  <script src="app.js?v=20261104a"></script>
 </body>
 </html>

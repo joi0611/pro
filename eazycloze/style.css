@@ -2221,7 +2221,11 @@ body.gate-locked { overflow: hidden; }
 .gate-title { margin: 0 0 10px; font-size: 22px; font-weight: 800; color: #1f2a3a; letter-spacing: .5px; }
 .gate-key { margin-right: 6px; }
 .gate-sub { margin: 0 0 22px; font-size: 13px; line-height: 1.7; color: #8a93a3; }
+.gate-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 20px 0 14px; padding: 4px; border-radius: 12px; background: #f2f3f6; }
+.gate-tab { border: 0; border-radius: 9px; padding: 10px 8px; background: transparent; color: #737b89; font-size: 14px; font-weight: 700; cursor: pointer; }
+.gate-tab.active { background: #fff; color: #6d28d9; box-shadow: 0 2px 8px rgba(31,42,58,.08); }
 .gate-input { width: 100%; box-sizing: border-box; border: 1px solid #e3e6ec; border-radius: 12px; padding: 13px 16px; font-size: 15px; text-align: center; color: #1f2a3a; outline: none; transition: border-color .15s, box-shadow .15s; }
+.gate-input[hidden] { display: none; }
 .gate-input::placeholder { color: #b6bdc9; }
 .gate-input:focus { border-color: #e8503a; box-shadow: 0 0 0 3px rgba(232,80,58,.12); }
 .gate-msg { margin: 12px 0 0; font-size: 13px; color: #c0392b; font-weight: 600; }
