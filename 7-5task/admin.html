@@ -21,6 +21,7 @@
           <select name="specialty" required>
             <option value="seven_choice">中考7选5</option>
             <option value="shcloze">上海中考完形填空</option>
+            <option value="national_cloze">全国中考完形填空</option>
           </select>
         </label>
         <label>备注<input name="note" maxlength="100" placeholder="如：学生姓名或班级"></label>
@@ -28,7 +29,7 @@
       </form>
       <p>已授权 <strong id="phoneCount">0</strong> 个手机号</p>
       <label>查找手机号、专项或备注<input id="phoneSearch" type="search" placeholder="输入关键词"></label>
-      <table><thead><tr><th>手机号</th><th>专项</th><th>备注</th><th>操作</th></tr></thead><tbody id="phoneRows"></tbody></table>
+      <table><thead><tr><th>手机号</th><th>专项</th><th>备注</th><th>状态</th><th>开通时间</th><th>操作</th></tr></thead><tbody id="phoneRows"></tbody></table>
       <p id="noPhones" hidden>暂无授权手机号</p>
       <button id="adminLogout" type="button">退出后台</button>
     </section>

@@ -4,7 +4,7 @@
   const PHONE_KEY = "seven_choice_phone";
   const ADMIN_TOKEN_KEY = "seven_choice_admin_token";
   const SPECIALTY = "seven_choice";
-  const SPECIALTY_NAMES = { seven_choice: "中考7选5", shcloze: "上海中考完形填空" };
+  const SPECIALTY_NAMES = { seven_choice: "中考7选5", shcloze: "上海中考完形填空", national_cloze: "全国中考完形填空" };
   let phones = [];
   let path = location.pathname;
   if (!/\.[a-z0-9]+$/i.test(path) && !path.endsWith("/")) path += "/";
@@ -43,16 +43,23 @@
     $("#phoneCount").textContent = phones.length; $("#phoneRows").replaceChildren(); $("#noPhones").hidden = rows.length > 0;
     for (const item of rows) {
       const tr = document.createElement("tr");
-      for (const value of [item.phone, SPECIALTY_NAMES[item.specialty] || item.specialty || "-", item.note || ""]) { const td = document.createElement("td"); td.textContent = value; tr.append(td); }
-      const td = document.createElement("td"), button = document.createElement("button");
-      button.type = "button"; button.textContent = "撤销授权";
-      button.onclick = async () => {
-        if (!confirm("撤销 " + item.phone + " 的“" + (SPECIALTY_NAMES[item.specialty] || item.specialty) + "”授权？")) return;
-        button.disabled = true;
-        try { await rpc("admin_delete", adminPayload({ phone: item.phone, specialty: item.specialty })); await load(); message("已撤销该专项授权"); }
-        catch (error) { message(error.message); button.disabled = false; }
+      const openedAt = item.createdAt ? new Date(item.createdAt).toLocaleString("zh-CN", { hour12: false }) : "-";
+      for (const value of [item.phone, SPECIALTY_NAMES[item.specialty] || item.specialty || "-", item.note || "", item.enabled ? "已开通" : "已停用", openedAt]) { const td = document.createElement("td"); td.textContent = value; tr.append(td); }
+      const td = document.createElement("td"), toggle = document.createElement("button"), remove = document.createElement("button");
+      toggle.type = "button"; toggle.textContent = item.enabled ? "停用" : "重新开通";
+      toggle.onclick = async () => {
+        toggle.disabled = true;
+        try { await rpc("admin_update", adminPayload({ phone: item.phone, specialty: item.specialty, enabled: !item.enabled })); await load(); message(item.enabled ? "已停用该专项" : "已重新开通该专项"); }
+        catch (error) { message(error.message); toggle.disabled = false; }
       };
-      td.append(button); tr.append(td); $("#phoneRows").append(tr);
+      remove.type = "button"; remove.textContent = "取消权限";
+      remove.onclick = async () => {
+        if (!confirm("取消 " + item.phone + " 的“" + (SPECIALTY_NAMES[item.specialty] || item.specialty) + "”权限？")) return;
+        remove.disabled = true;
+        try { await rpc("admin_delete", adminPayload({ phone: item.phone, specialty: item.specialty })); await load(); message("已取消该专项权限"); }
+        catch (error) { message(error.message); remove.disabled = false; }
+      };
+      td.append(toggle, document.createTextNode(" "), remove); tr.append(td); $("#phoneRows").append(tr);
     }
   }
   async function load() {
