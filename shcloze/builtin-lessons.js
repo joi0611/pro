@@ -9069,13 +9069,13 @@ window.BUILTIN_LESSONS.push({
     }
   ],
   "missingAnswer": false,
-  "source_kind": "正式真题",
+  "source_kind": "校级真题",
   "exam_year": 2026,
   "tone_markers": [
     {"word": "A new study gives us some answers", "label": "研究推进", "pos": "start"},
     {"word": "Next, the team wants to find", "label": "继续探索", "pos": "end"}
   ],
-  "update_tag": "202611 导入",
+  "update_tag": "2026年11月更新",
   "update_seq": 1
 });
 
@@ -9216,13 +9216,13 @@ window.BUILTIN_LESSONS.push({
     }
   ],
   "missingAnswer": false,
-  "source_kind": "校级考试",
+  "source_kind": "校级真题",
   "exam_year": 2026,
   "tone_markers": [
     {"word": "adults also have things to learn from them", "label": "观念转变", "pos": "start"},
     {"word": "take life a little less seriously", "label": "积极启发", "pos": "end"}
   ],
-  "update_tag": "202611 导入",
+  "update_tag": "2026年11月更新",
   "update_seq": 2
 });
 
@@ -9377,13 +9377,13 @@ window.BUILTIN_LESSONS.push({
     }
   ],
   "missingAnswer": false,
-  "source_kind": "校级考试",
+  "source_kind": "校级真题",
   "exam_year": 2026,
   "tone_markers": [
     {"word": "Share More, Waste Less", "label": "共享倡议", "pos": "start"},
     {"word": "a lot more connected", "label": "社区联结", "pos": "end"}
   ],
-  "update_tag": "202611 导入",
+  "update_tag": "2026年11月更新",
   "update_seq": 3
 });
 
@@ -9522,13 +9522,13 @@ window.BUILTIN_LESSONS.push({
     }
   ],
   "missingAnswer": false,
-  "source_kind": "区级考试",
+  "source_kind": "校级真题",
   "exam_year": 2026,
   "tone_markers": [
     {"word": "careless words", "label": "反思评判", "pos": "start"},
     {"word": "really understand them", "label": "换位理解", "pos": "end"}
   ],
-  "update_tag": "202611 导入",
+  "update_tag": "2026年11月更新",
   "update_seq": 4
 });
 
@@ -9661,13 +9661,13 @@ window.BUILTIN_LESSONS.push({
     }
   ],
   "missingAnswer": false,
-  "source_kind": "校考真题",
+  "source_kind": "校级真题",
   "exam_year": 2026,
   "tone_markers": [
     {"word": "thought of giving up maths", "label": "陷入怀疑", "pos": "start"},
     {"word": "beat doubt and led Wang", "label": "战胜怀疑", "pos": "end"}
   ],
-  "update_tag": "202611 导入",
+  "update_tag": "2026年11月更新",
   "update_seq": 5
 });
 
@@ -9802,13 +9802,13 @@ window.BUILTIN_LESSONS.push({
     }
   ],
   "missingAnswer": false,
-  "source_kind": "区级考试",
+  "source_kind": "校级真题",
   "exam_year": 2026,
   "tone_markers": [
     {"word": "feel less confident", "label": "外貌焦虑", "pos": "start"},
     {"word": "search for new chances", "label": "机会与创作", "pos": "end"}
   ],
-  "update_tag": "202611 导入",
+  "update_tag": "2026年11月更新",
   "update_seq": 6
 });
 
