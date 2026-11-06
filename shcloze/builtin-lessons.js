@@ -9402,7 +9402,7 @@ window.BUILTIN_LESSONS.push({
   "first_sentence": "A young girl didn’t give up her seat to an old man on a bus.",
   "last_sentence": "Put yourself in others’ shoes and then you can really understand them.",
   "tone": {
-    "answer": "转折",
+    "answer": "转折变化",
     "reason": "文章开头写学生只凭表面现象批评女孩，并在沉船故事中指责丈夫；随着妻子身患癌症、丈夫独自抚养女儿的真相揭开，众人由草率评判转入深刻反思，结尾升华为换位思考、了解全貌后再评价他人。",
     "kind": "narrative",
     "shape": "表面评判—故事设问—真相揭示—换位反思",
@@ -9547,7 +9547,7 @@ window.BUILTIN_LESSONS.push({
   "first_sentence": "How can we plant seven trees so that there are six rows, with three trees in each row?",
   "last_sentence": "And this joy finally beat doubt and led Wang to her great success.",
   "tone": {
-    "answer": "转折",
+    "answer": "转折变化",
     "reason": "文章从王虹童年解数学题的快乐和长期热爱写起，中段转入留学研究受挫、自我怀疑甚至想放弃数学，随后她重新认识到研究的价值在于思考过程，最终战胜怀疑并取得成功。",
     "kind": "narrative",
     "shape": "童年热爱—研究受挫—观念转变—获得成功",
@@ -9686,7 +9686,7 @@ window.BUILTIN_LESSONS.push({
   "first_sentence": "With just one click of the “Glossy Babe” filter, a teenager’s face could look completely different.",
   "last_sentence": "It’s also a place to search for new chances and build careers.",
   "tone": {
-    "answer": "转折",
+    "answer": "转折变化",
     "reason": "文章开头展示美颜滤镜快速改变外貌，继而重点讨论滤镜比较对青少年自信的伤害及平台限制；末段以However转向反对限制的声音，指出滤镜也能带来创作自由、机会和职业发展。",
     "kind": "expository",
     "shape": "现象展示—风险研究—安全提醒—观点转折",

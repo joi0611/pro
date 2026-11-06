@@ -2224,7 +2224,11 @@ function renderLibrary() {
   box.innerHTML = "";
   if (!filtered.length) { empty.hidden = false; return; }
   empty.hidden = true;
-  filtered.forEach(function (l, i) { box.appendChild(buildLessonRow(l, i + 1, maxSeq > 0 && (l.update_seq || 0) === maxSeq)); });
+  filtered.forEach(function (l, i) {
+    var isNovemberUpdate = l.update_tag === "2026年11月更新" &&
+      (l.update_seq || 0) >= 1 && (l.update_seq || 0) <= 6;
+    box.appendChild(buildLessonRow(l, i + 1, isNovemberUpdate));
+  });
 }
 
 function updateHeroStats() {
