@@ -9080,6 +9080,738 @@ window.BUILTIN_LESSONS.push({
 });
 
 
+// 2026年静教院九年级上学期期中考试（原题58—67）
+window.BUILTIN_LESSONS.push({
+  "id": "cloze-上海-静教院-2026九上期中",
+  "freezeClues": true,
+  "title_cn": "成年人能从青少年身上学到什么",
+  "title_en": "What Adults Can Learn from Teenagers",
+  "level": "九年级",
+  "difficulty": "中等",
+  "lesson_type": "生活感悟",
+  "region": "上海",
+  "source": "上海静教院2026年九年级上学期期中考试",
+  "tags": ["校级期中", "生活感悟", "词义辨析", "固定搭配", "上下文逻辑"],
+  "first_sentence": "What do adults usually think of teenagers?",
+  "last_sentence": "But if we pay attention, they can push us to take life a little less seriously.",
+  "tone": {
+    "answer": "积极",
+    "reason": "文章开头写成年人常把青少年看作需要解决的问题，随后通过儿子勇于试错、接受临时变化和不过度担忧的表现，转向反思成年人的生活方式，结尾肯定青少年能推动成年人更轻松地面对生活。",
+    "kind": "reflective",
+    "shape": "刻板印象—观察反思—获得启发",
+    "shape_reason": "开头呈现成年人对青少年的负面成见，中段用三个生活片段逐层改观，末尾以成年人也能向青少年学习积极收束。"
+  },
+  "route_summary": {"线索词优先": 8, "固定搭配优先": 2, "双路径": 0, "整组短语直接辨析": 0},
+  "reading_sentence_count": 27,
+  "article_text_with_blanks": "What do adults usually think of teenagers? Many think teenagers are “problems to __58__”. We want them to be neat, calm and always ready to study. But after living with my teenage son, I’m starting to think about something else: maybe adults also have things to learn from them. What surprises me most is how easily teenagers __59__. Adults often want to be good right away. If we aren’t, we may stop and say, “I didn’t really care anyway.” My son doesn’t think like that. He decided to learn video editing for a school project, __60__ he had never done it before. His first video looked like it was filmed on a bumpy bus. He watched a few short online lessons, tried again, failed again, and laughed the whole time. A week later, his work was already much better, with smoother transitions. Watching him __61__ me that being bad at the start is normal. I also notice how comfortable he is with life being a little __62__. If I ask him at 3 p.m. whether he’ll be home for dinner, he looks at me like I’m asking about next year. His plans change all the time. Friends appear, messages come in, and __63__ there’s an outing. My own life is the opposite: I like to plan lunches and meetings days in advance. Watching him makes me wonder if “being organized” sometimes means __64__ chances. Maybe it’s okay to say yes to a quick coffee, a short walk, or a last-minute meet-up, instead of needing everything on a calendar. Then comes the __65__ ways we deal with things that haven’t happened. I’m the type of person who wants to get to the airport extremely early, as if the plane might leave because I blinked (眨眼). I watch the __66__, imagine problems and build backup plans. My son puts on his headphones, walks calmly and acts like things will work out. Through his eyes, I can see myself: stressed, overprepared, and spending energy on problems that don’t even exist yet. Teenagers still need __67__ and guidance, of course. But if we pay attention, they can push us to take life a little less seriously.",
+  "reading_sentences": [
+    "What do adults usually think of teenagers?",
+    "Many think teenagers are “problems to __58__”.",
+    "We want them to be neat, calm and always ready to study.",
+    "But after living with my teenage son, I’m starting to think about something else: maybe adults also have things to learn from them.",
+    "What surprises me most is how easily teenagers __59__.",
+    "Adults often want to be good right away.",
+    "If we aren’t, we may stop and say, “I didn’t really care anyway.”",
+    "My son doesn’t think like that.",
+    "He decided to learn video editing for a school project, __60__ he had never done it before.",
+    "His first video looked like it was filmed on a bumpy bus.",
+    "He watched a few short online lessons, tried again, failed again, and laughed the whole time.",
+    "A week later, his work was already much better, with smoother transitions.",
+    "Watching him __61__ me that being bad at the start is normal.",
+    "I also notice how comfortable he is with life being a little __62__.",
+    "If I ask him at 3 p.m. whether he’ll be home for dinner, he looks at me like I’m asking about next year.",
+    "His plans change all the time.",
+    "Friends appear, messages come in, and __63__ there’s an outing.",
+    "My own life is the opposite: I like to plan lunches and meetings days in advance.",
+    "Watching him makes me wonder if “being organized” sometimes means __64__ chances.",
+    "Maybe it’s okay to say yes to a quick coffee, a short walk, or a last-minute meet-up, instead of needing everything on a calendar.",
+    "Then comes the __65__ ways we deal with things that haven’t happened.",
+    "I’m the type of person who wants to get to the airport extremely early, as if the plane might leave because I blinked (眨眼).",
+    "I watch the __66__, imagine problems and build backup plans.",
+    "My son puts on his headphones, walks calmly and acts like things will work out.",
+    "Through his eyes, I can see myself: stressed, overprepared, and spending energy on problems that don’t even exist yet.",
+    "Teenagers still need __67__ and guidance, of course.",
+    "But if we pay attention, they can push us to take life a little less seriously."
+  ],
+  "questions": [
+    {
+      "q": 58, "pos": "动词", "topic": "词义辨析", "route": "线索词优先",
+      "options": ["end", "fix", "create", "hide"], "answer": "fix",
+      "clues": ["problems to", "neat, calm"],
+      "clueTypes": {"problems to": "语境线索·问题处理", "neat, calm": "语境线索·期待改变"},
+      "explanation": "线索　用语义场复现法：成年人把青少年看作 problems，又希望他们变得 neat、calm，说明这些“问题”需要被解决，选 fix。\n排除　end 表示结束，不能直接表达解决问题；create 是制造问题，与成年人想改变青少年的方向相反；hide 只是隐藏问题，并未解决。",
+      "collocation": null
+    },
+    {
+      "q": 59, "pos": "动词", "topic": "段落主旨", "route": "线索词优先",
+      "options": ["begin", "finish", "stop", "change"], "answer": "begin",
+      "clues": ["good right away", "tried again"],
+      "clueTypes": {"good right away": "逻辑线索·成人对比", "tried again": "语境线索·从零开始"},
+      "explanation": "线索　转折对比：成年人因为不能立刻做好就可能 stop，而儿子面对从没做过的视频剪辑，愿意先开始、再反复尝试，因此选 begin。\n排除　finish 与后文刚学习的阶段不符；stop 是成年人的反应；change 不能概括本段“不怕一开始做不好”的重点。",
+      "collocation": null
+    },
+    {
+      "q": 60, "pos": "连词", "topic": "让步关系", "route": "线索词优先",
+      "options": ["because", "as if", "even though", "as soon as"], "answer": "even though",
+      "clues": ["decided to learn", "never done it before"],
+      "clueTypes": {"decided to learn": "逻辑线索·主动行动", "never done it before": "逻辑线索·让步条件"},
+      "explanation": "线索　画箭头法：决定学习（仍然做）← 从未做过（困难条件），前后是让步关系，选 even though（尽管）。\n排除　because 会误成“因为没做过所以学习”，不突出克服困难；as if 表示仿佛；as soon as 表示一……就……，均不合逻辑。",
+      "collocation": null
+    },
+    {
+      "q": 61, "pos": "动词", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["required", "reminded", "reflected", "requested"], "answer": "reminded",
+      "clues": ["Watching him", "me that"],
+      "clueTypes": {"Watching him": "语境线索·触发感悟", "me that": "固定搭配·remind sb. that"},
+      "explanation": "线索　句中是 Watching him + 动词 + me that...，表示“看着他让我想起/意识到……”，固定结构 remind sb. that，选 reminded。\n排除　require 和 request 表示要求，通常不接“某人的观察使其明白一个道理”；reflect 不能用于 reflect sb. that。",
+      "collocation": {"name": "使某人想起/意识到……", "type": "固定句型", "structure": "remind sb. that..."}
+    },
+    {
+      "q": 62, "pos": "形容词", "topic": "词义辨析", "route": "线索词优先",
+      "options": ["unknown", "unfair", "uncomfortable", "unplanned"], "answer": "unplanned",
+      "clues": ["plans change", "last-minute meet-up"],
+      "clueTypes": {"plans change": "复现线索·反义复现", "last-minute meet-up": "语境线索·临时安排"},
+      "explanation": "线索　下文暗示：儿子的 plans change all the time，还会接受 last-minute meet-up，说明他能适应“没有事先计划的”生活，选 unplanned。\n排除　unknown 是未知，unfair 是不公平，uncomfortable 是不舒服；后文讨论的核心始终是计划是否提前安排。",
+      "collocation": null
+    },
+    {
+      "q": 63, "pos": "副词", "topic": "词义辨析", "route": "线索词优先",
+      "options": ["thoroughly", "luckily", "suddenly", "especially"], "answer": "suddenly",
+      "clues": ["Friends appear", "messages come in"],
+      "clueTypes": {"Friends appear": "语境线索·突发事件", "messages come in": "语境线索·临时变化"},
+      "explanation": "线索　圈出并列连词 and：朋友出现、消息进来，紧接着就有了一次外出，整组动作都在写计划外的突发变化，选 suddenly。\n排除　thoroughly 表示彻底地，luckily 表示幸运地，especially 表示尤其，都不能体现事情临时发生。",
+      "collocation": null
+    },
+    {
+      "q": 64, "pos": "动名词", "topic": "上下文逻辑", "route": "线索词优先",
+      "options": ["taking", "giving", "catching", "missing"], "answer": "missing",
+      "clues": ["being organized", "say yes to"],
+      "clueTypes": {"being organized": "逻辑线索·反思对象", "say yes to": "复现线索·反义对应"},
+      "explanation": "线索　转折对比：把日程排满可能会错过临时机会；下一句说可以 say yes to a quick coffee 等，正是“不再错过机会”，所以选 missing。\n排除　taking 和 catching 都是抓住机会，与作者对过度计划的反思方向相反；giving chances 表示给机会，文中没有给予对象。",
+      "collocation": null
+    },
+    {
+      "q": 65, "pos": "形容词", "topic": "对比关系", "route": "线索词优先",
+      "options": ["different", "similar", "simple", "strange"], "answer": "different",
+      "clues": ["imagine problems", "walks calmly"],
+      "clueTypes": {"imagine problems": "语境线索·成人焦虑", "walks calmly": "逻辑线索·亲子对比"},
+      "explanation": "线索　转折对比：作者提前到机场、盯着时间并设想问题，而儿子戴着耳机从容行走；两人处理尚未发生之事的方式不同，选 different。\n排除　similar 与鲜明对照相反；simple 和 strange 都不是本段要比较的关系。",
+      "collocation": null
+    },
+    {
+      "q": 66, "pos": "名词", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["stall", "clock", "escalator", "plane"], "answer": "clock",
+      "clues": ["airport extremely early", "watch the"],
+      "clueTypes": {"airport extremely early": "语境线索·时间焦虑", "watch the": "固定搭配·watch the clock"},
+      "explanation": "线索　作者怕误机而极早到机场，接着不断看时间、设想问题；固定表达 watch the clock 表示“盯着钟看时间”，选 clock。\n排除　stall 是摊位，escalator 是自动扶梯，plane 是飞机；三者虽可能出现在机场，却不能直接表现作者对时间的焦虑。",
+      "collocation": {"name": "盯着钟看时间", "type": "固定搭配", "structure": "watch the clock"}
+    },
+    {
+      "q": 67, "pos": "名词", "topic": "词义辨析", "route": "线索词优先",
+      "options": ["chances", "pressure", "rules", "inspiration"], "answer": "rules",
+      "clues": ["and guidance", "of course"],
+      "clueTypes": {"and guidance": "逻辑线索·并列", "of course": "语境线索·常识补充"},
+      "explanation": "线索　圈出并列连词 and：空格要与 guidance 构成青少年成长中需要的两类外部规范，常识上是 rules and guidance，选 rules。\n排除　chances 和 inspiration 虽可需要，但不与 guidance 构成“规范与引导”的同类并列；pressure 带负面意味，也与全文主旨不符。",
+      "collocation": null
+    }
+  ],
+  "missingAnswer": false,
+  "source_kind": "校级考试",
+  "exam_year": 2026,
+  "tone_markers": [
+    {"word": "adults also have things to learn from them", "label": "观念转变", "pos": "start"},
+    {"word": "take life a little less seriously", "label": "积极启发", "pos": "end"}
+  ],
+  "update_tag": "202611 导入",
+  "update_seq": 2
+});
+
+// 2026年建平实验中学九年级上学期期中考试（原题58—67）
+window.BUILTIN_LESSONS.push({
+  "id": "cloze-上海-建平实验中学-2026九上期中",
+  "freezeClues": true,
+  "title_cn": "让闲置物品传递邻里温情",
+  "title_en": "Sharing More and Wasting Less",
+  "level": "九年级",
+  "difficulty": "中等",
+  "lesson_type": "社区生活",
+  "region": "上海",
+  "source": "上海建平实验中学2026年九年级上学期期中考试",
+  "tags": ["校级期中", "社区生活", "网络帖子", "固定搭配", "上下文逻辑"],
+  "first_sentence": "Hello neighbours! I’m clearing out my son’s old things.",
+  "last_sentence": "In short, in a big city, such small acts build invisible bridges, making us feel a little less alone and a lot more connected.",
+  "tone": {
+    "answer": "积极",
+    "reason": "文章从邻里交换闲置物品的普通帖子写起，逐步呈现书籍、篮球、收音机和足球在居民之间传递的善意，结尾点明小小的互助能在大城市中搭建无形桥梁、增强人与人的连接。",
+    "kind": "narrative",
+    "shape": "发布需求—互换物品—传递善意—社区联结",
+    "shape_reason": "开头是居民清理和交换闲置物品，中段通过五则帖子展示互帮互助，末段从物品交换升华到慷慨与邻里温情。"
+  },
+  "route_summary": {"线索词优先": 7, "固定搭配优先": 3, "双路径": 0, "整组短语直接辨析": 0},
+  "reading_sentence_count": 42,
+  "article_text_with_blanks": "Post 1 (By Ms Li, Building 3) Hello neighbours! I’m clearing out my son’s old things. He’s off to college now. I have a set of classic science fiction novels (The Three-Body Problem included) in good __58__. They’re too valuable to throw away. Free to a young reader who promises to love them! Post 2 (By Leo, Building 7) Thanks to everyone in this group! Last month, I got a nearly-new basketball from Mr Chen. It helped me join the school team! Now I’d like to give back. I have an extra soccer ball (new, never used). Trade for __59__ interesting board games. Post 3 (By Grandma Wang, Building 1) Does anyone have a small, working radio? Mine just broke. __60__ I can’t listen to my favourite Chinese opera in the afternoons. I can offer homemade chilli sauce in return! It’s very spicy. Admin Announcement Remember, our group’s __61__ is “Share More, Waste Less”. Please describe items honestly and arrange meetings in public spaces. Let’s keep our community warm and safe! Post 4 (By Kevin’s Mum, Building 5) Wanted: Beginner’s painting set. My son Kevin suddenly wants to learn watercolour. We’re not sure if he’ll __62__ it, so we don’t want to buy an expensive one. We can trade a vintage Shanghai postcard collection. A week later Post 5 (By Kevin, Building 5) A huge “thank you” to Leo from Building 7! He didn’t have paints, but he gave me his soccer ball for FREE after hearing about my wish to paint. He said, “Just __63__ your first painting with me!” This is amazing. Mum says I must “pay it forward” one day. The ball is cool, but the __64__ is cooler. This online group, starting as a place to exchange unused items, has slowly become a mirror of our neighbourhood’s heart. Ms Li found a __65__ fan for her son’s books. Grandma Wang now enjoys her opera with a new radio and shares her sauce with the whole building. Leo learned that giving can feel even better than receiving. Kevin received not just a ball, but __66__ a lesson in generosity. __67__, in a big city, such small acts build invisible bridges, making us feel a little less alone and a lot more connected.",
+  "reading_sentences": [
+    "Post 1 (By Ms Li, Building 3)",
+    "Hello neighbours! I’m clearing out my son’s old things.",
+    "He’s off to college now.",
+    "I have a set of classic science fiction novels (The Three-Body Problem included) in good __58__.",
+    "They’re too valuable to throw away.",
+    "Free to a young reader who promises to love them!",
+    "Post 2 (By Leo, Building 7)",
+    "Thanks to everyone in this group!",
+    "Last month, I got a nearly-new basketball from Mr Chen.",
+    "It helped me join the school team!",
+    "Now I’d like to give back.",
+    "I have an extra soccer ball (new, never used).",
+    "Trade for __59__ interesting board games.",
+    "Post 3 (By Grandma Wang, Building 1)",
+    "Does anyone have a small, working radio?",
+    "Mine just broke.",
+    "__60__ I can’t listen to my favourite Chinese opera in the afternoons.",
+    "I can offer homemade chilli sauce in return!",
+    "It’s very spicy.",
+    "Admin Announcement",
+    "Remember, our group’s __61__ is “Share More, Waste Less”.",
+    "Please describe items honestly and arrange meetings in public spaces.",
+    "Let’s keep our community warm and safe!",
+    "Post 4 (By Kevin’s Mum, Building 5)",
+    "Wanted: Beginner’s painting set.",
+    "My son Kevin suddenly wants to learn watercolour.",
+    "We’re not sure if he’ll __62__ it, so we don’t want to buy an expensive one.",
+    "We can trade a vintage Shanghai postcard collection.",
+    "A week later",
+    "Post 5 (By Kevin, Building 5)",
+    "A huge “thank you” to Leo from Building 7!",
+    "He didn’t have paints, but he gave me his soccer ball for FREE after hearing about my wish to paint.",
+    "He said, “Just __63__ your first painting with me!”",
+    "This is amazing.",
+    "Mum says I must “pay it forward” one day.",
+    "The ball is cool, but the __64__ is cooler.",
+    "This online group, starting as a place to exchange unused items, has slowly become a mirror of our neighbourhood’s heart.",
+    "Ms Li found a __65__ fan for her son’s books.",
+    "Grandma Wang now enjoys her opera with a new radio and shares her sauce with the whole building.",
+    "Leo learned that giving can feel even better than receiving.",
+    "Kevin received not just a ball, but __66__ a lesson in generosity.",
+    "__67__, in a big city, such small acts build invisible bridges, making us feel a little less alone and a lot more connected."
+  ],
+  "questions": [
+    {
+      "q": 58, "pos": "名词", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["condition", "price", "order", "shape"], "answer": "condition",
+      "clues": ["in good", "too valuable"],
+      "clueTypes": {"in good": "固定搭配·in good condition", "too valuable": "语境线索·物品状态"},
+      "explanation": "线索　空格位于 in good ___ 中，用固定搭配法锁定 in good condition，表示书保存完好；后句 too valuable to throw away 也说明这些书仍有使用价值。\n排除　price 是价格，order 是秩序，shape 是形状，都不能自然表达二手物品的完好程度。",
+      "collocation": {"name": "状况良好", "type": "固定搭配", "structure": "in good condition"}
+    },
+    {
+      "q": 59, "pos": "限定词", "topic": "语法考点", "route": "线索词优先",
+      "options": ["someone", "any", "everyone", "other"], "answer": "any",
+      "clues": ["Trade for", "board games"],
+      "clueTypes": {"Trade for": "语境线索·开放交换", "board games": "语法线索·复数名词"},
+      "explanation": "线索　语法考点：空格直接修饰复数名词 board games，帖子表达“任何有趣的桌游都可以换”，选 any。\n排除　someone 和 everyone 指人，不能修饰 board games；other 通常表示“其他的”，但前文没有已知桌游作为比较基准。",
+      "collocation": null
+    },
+    {
+      "q": 60, "pos": "连词", "topic": "因果关系", "route": "线索词优先",
+      "options": ["So", "Otherwise", "Unless", "Besides"], "answer": "So",
+      "clues": ["Mine just broke", "can’t listen"],
+      "clueTypes": {"Mine just broke": "逻辑线索·原因", "can’t listen": "逻辑线索·结果"},
+      "explanation": "线索　找因果链条：收音机坏了（原因）→ 无法听戏曲（结果），所以用 So。\n排除　Otherwise 表示否则，Unless 表示除非，Besides 表示此外，都不能连接这里明确的因果关系。",
+      "collocation": null
+    },
+    {
+      "q": 61, "pos": "名词", "topic": "词义辨析", "route": "线索词优先",
+      "options": ["rule", "slogan", "secret", "tradition"], "answer": "slogan",
+      "clues": ["Share More, Waste Less", "group’s"],
+      "clueTypes": {"Share More, Waste Less": "语境线索·口号内容", "group’s": "语境线索·所属对象"},
+      "explanation": "线索　“Share More, Waste Less”是简短、有号召力的团体标语，属于 slogan（口号）。\n排除　rule 是具体规则，secret 是秘密，tradition 是长期形成的传统；三者都不能准确概括这句宣传语。",
+      "collocation": null
+    },
+    {
+      "q": 62, "pos": "动词短语", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["keep up with", "come up with", "get along with", "stick with"], "answer": "stick with",
+      "clues": ["suddenly wants", "don’t want to buy"],
+      "clueTypes": {"suddenly wants": "语境线索·兴趣初起", "don’t want to buy": "逻辑线索·担心不坚持"},
+      "explanation": "线索　Kevin突然想学水彩，妈妈不确定他是否会坚持，所以不愿买昂贵画具；stick with sth. 表示“坚持做某事”，选 stick with。\n排除　keep up with 是跟上，come up with 是想出，get along with 是与……相处，都不能表达兴趣能否持续。",
+      "collocation": {"name": "坚持做某事", "type": "固定搭配", "structure": "stick with sth."}
+    },
+    {
+      "q": 63, "pos": "动词", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["share", "buy", "compare", "draw"], "answer": "share",
+      "clues": ["with me", "first painting"],
+      "clueTypes": {"with me": "固定搭配·share sth. with sb.", "first painting": "语境线索·分享对象"},
+      "explanation": "线索　空格后有 your first painting with me，形成 share sth. with sb. 的固定结构，意思是“把你的第一幅画分享给我”，选 share。\n排除　buy 不与 with me 构成此义；compare 需要比较对象；draw 虽与画画有关，却不能接 draw your painting with me 表达 Leo 的愿望。",
+      "collocation": {"name": "与某人分享某物", "type": "固定搭配", "structure": "share sth. with sb."}
+    },
+    {
+      "q": 64, "pos": "名词", "topic": "上下文逻辑", "route": "线索词优先",
+      "options": ["kindness", "price", "gift", "friendship"], "answer": "kindness",
+      "clues": ["pay it forward", "gave me his soccer ball"],
+      "clueTypes": {"pay it forward": "语境线索·传递善意", "gave me his soccer ball": "语境线索·善举"},
+      "explanation": "线索　褒贬态度一致法：Leo免费送球，妈妈又说要把善意继续传下去；Kevin认为比球更酷的是 kindness（善意）。\n排除　price 与免费相矛盾；gift 仍只停留在物品层面；friendship 文中尚未强调两人建立了友谊。",
+      "collocation": null
+    },
+    {
+      "q": 65, "pos": "形容词", "topic": "原词复现", "route": "线索词优先",
+      "options": ["careful", "thankful", "young", "silent"], "answer": "young",
+      "clues": ["young reader", "son’s books"],
+      "clueTypes": {"young reader": "复现线索·原词复现", "son’s books": "语境线索·读者年龄"},
+      "explanation": "线索　原词复现：Ms Li最初说书免费送给 a young reader，结尾总结她找到了 a young fan，选 young。\n排除　careful、thankful、silent 在前文均没有对应信息，也不能与最初的赠书条件形成照应。",
+      "collocation": null
+    },
+    {
+      "q": 66, "pos": "副词", "topic": "递进强调", "route": "线索词优先",
+      "options": ["naturally", "actually", "gradually", "suddenly"], "answer": "actually",
+      "clues": ["not just a ball", "a lesson in generosity"],
+      "clueTypes": {"not just a ball": "逻辑线索·递进", "a lesson in generosity": "语境线索·深层收获"},
+      "explanation": "线索　not just...but...构成递进：Kevin得到的不只是球，实际上还得到了一堂关于慷慨的课，用 actually 加强“真正收获”的语气。\n排除　naturally 表示自然地，gradually 表示逐渐地，suddenly 表示突然地，都不负责强调表层物品背后的真实意义。",
+      "collocation": null
+    },
+    {
+      "q": 67, "pos": "连接语", "topic": "篇章总结", "route": "线索词优先",
+      "options": ["What’s more", "For example", "Instead", "In short"], "answer": "In short",
+      "clues": ["such small acts", "more connected"],
+      "clueTypes": {"such small acts": "语境线索·概括前文", "more connected": "语境线索·总结意义"},
+      "explanation": "线索　最后一句把前面所有邻里互助概括为 small acts，并总结其意义是让城市居民 more connected，因此选 In short（总之）。\n排除　What’s more 是补充递进，For example 是举例，Instead 是转折替代，都不能承担全文收束功能。",
+      "collocation": null
+    }
+  ],
+  "missingAnswer": false,
+  "source_kind": "校级考试",
+  "exam_year": 2026,
+  "tone_markers": [
+    {"word": "Share More, Waste Less", "label": "共享倡议", "pos": "start"},
+    {"word": "a lot more connected", "label": "社区联结", "pos": "end"}
+  ],
+  "update_tag": "202611 导入",
+  "update_seq": 3
+});
+
+// 2026年上海市闵行区九年级上学期期中考试（原题58—67）
+window.BUILTIN_LESSONS.push({
+  "id": "cloze-上海-闵行区-2026九上期中",
+  "freezeClues": true,
+  "title_cn": "不要在了解全部故事前评判他人",
+  "title_en": "Learn the Full Story Before You Judge",
+  "level": "九年级",
+  "difficulty": "中等",
+  "lesson_type": "哲理故事",
+  "region": "上海",
+  "source": "上海市闵行区2026年九年级上学期期中考试",
+  "tags": ["区级期中", "哲理故事", "词义辨析", "固定搭配", "上下文逻辑"],
+  "first_sentence": "A young girl didn’t give up her seat to an old man on a bus.",
+  "last_sentence": "Put yourself in others’ shoes and then you can really understand them.",
+  "tone": {
+    "answer": "转折",
+    "reason": "文章开头写学生只凭表面现象批评女孩，并在沉船故事中指责丈夫；随着妻子身患癌症、丈夫独自抚养女儿的真相揭开，众人由草率评判转入深刻反思，结尾升华为换位思考、了解全貌后再评价他人。",
+    "kind": "narrative",
+    "shape": "表面评判—故事设问—真相揭示—换位反思",
+    "shape_reason": "前半段营造丈夫抛下妻子的负面印象，后半段以日记揭示其承担父亲责任的苦衷，最终完成从误解到理解的转折。"
+  },
+  "route_summary": {"线索词优先": 5, "固定搭配优先": 5, "双路径": 0, "整组短语直接辨析": 0},
+  "reading_sentence_count": 26,
+  "article_text_with_blanks": "“A young girl didn’t give up her seat to an old man on a bus.” Ms. Whitehead was asking her students what they thought about it in her first Philosophy (哲学) class. Most of the students thought the girl’s behavior was __58__. Ms. Whitehead didn’t express her opinion; instead, she told another story. “It was about a loving couple who were travelling on a ship. __59__, they met with a storm and the ship was going to sink. Only one of them could have the chance to get into the lifeboat. To all passengers’ surprise, the husband left his wife behind and got on the lifeboat himself.” The teacher stopped and asked, “How would you feel if you were one of the passengers?” The class immediately burst into a heated discussion. Shortly after, __60__ Ms. Whitehead, “The husband survived and returned home. He didn’t marry others and __61__ their daughter alone after the worst day. Thirty years later, the daughter learned about what happened on the ship by accident. She really wanted a(n) __62__ but was too afraid to ask. The question in her heart was never answered until she __63__ to find his diary afterwards. The whole story is, on that day, her father and mother were on the trip to finish her __64__ wish because cancer was eating her life away. As a husband, he wished to go with his wife. As a father, he had to live on for the other loved one. During the rest of his life, he made their daughter—Evelyn into a sunny, pretty girl with double love. Yes, the great husband is my father. But by the time I learned all about this, he had already __65__.” Ms. Whitehead finished her story without a conclusion, for she didn’t think it __66__ to say anything more at this moment. The class dropped into deep __67__ about their careless words. Seeing is not always believing. We should not judge anyone or anything unless we have learnt the full story. Put yourself in others’ shoes and then you can really understand them.",
+  "reading_sentences": [
+    "“A young girl didn’t give up her seat to an old man on a bus.”",
+    "Ms. Whitehead was asking her students what they thought about it in her first Philosophy (哲学) class.",
+    "Most of the students thought the girl’s behavior was __58__.",
+    "Ms. Whitehead didn’t express her opinion; instead, she told another story.",
+    "“It was about a loving couple who were travelling on a ship.",
+    "__59__, they met with a storm and the ship was going to sink.",
+    "Only one of them could have the chance to get into the lifeboat.",
+    "To all passengers’ surprise, the husband left his wife behind and got on the lifeboat himself.”",
+    "The teacher stopped and asked, “How would you feel if you were one of the passengers?”",
+    "The class immediately burst into a heated discussion.",
+    "Shortly after, __60__ Ms. Whitehead, “The husband survived and returned home.",
+    "He didn’t marry others and __61__ their daughter alone after the worst day.",
+    "Thirty years later, the daughter learned about what happened on the ship by accident.",
+    "She really wanted a(n) __62__ but was too afraid to ask.",
+    "The question in her heart was never answered until she __63__ to find his diary afterwards.",
+    "The whole story is, on that day, her father and mother were on the trip to finish her __64__ wish because cancer was eating her life away.",
+    "As a husband, he wished to go with his wife.",
+    "As a father, he had to live on for the other loved one.",
+    "During the rest of his life, he made their daughter—Evelyn into a sunny, pretty girl with double love.",
+    "Yes, the great husband is my father.",
+    "But by the time I learned all about this, he had already __65__.”",
+    "Ms. Whitehead finished her story without a conclusion, for she didn’t think it __66__ to say anything more at this moment.",
+    "The class dropped into deep __67__ about their careless words.",
+    "Seeing is not always believing.",
+    "We should not judge anyone or anything unless we have learnt the full story.",
+    "Put yourself in others’ shoes and then you can really understand them."
+  ],
+  "questions": [
+    {
+      "q": 58, "pos": "形容词", "topic": "词义辨析", "route": "线索词优先",
+      "options": ["emotional", "improper", "regular", "unfair"], "answer": "improper",
+      "clues": ["didn’t give up her seat", "an old man"],
+      "clueTypes": {"didn’t give up her seat": "语境线索·行为", "an old man": "常识线索·礼让对象"},
+      "explanation": "线索　常识推断：女孩在公交车上没有给老人让座，学生们只看表面便认为这种行为不恰当，选 improper。\n排除　emotional 是情绪化的，regular 是正常的；unfair 强调分配或待遇不公平，不如 improper 准确评价礼仪行为。",
+      "collocation": null
+    },
+    {
+      "q": 59, "pos": "副词", "topic": "情感态度", "route": "线索词优先",
+      "options": ["Gradually", "Similarly", "Finally", "Unluckily"], "answer": "Unluckily",
+      "clues": ["met with a storm", "going to sink"],
+      "clueTypes": {"met with a storm": "语境线索·灾难", "going to sink": "语境线索·负面结果"},
+      "explanation": "线索　褒贬态度一致法：遇到风暴且船即将沉没都是负面事件，用 Unluckily（不幸的是）引出最自然。\n排除　Gradually 表示逐渐地，Similarly 表示相似地，Finally 表示最终，都不能表达突遭灾难的情感态度。",
+      "collocation": null
+    },
+    {
+      "q": 60, "pos": "动词", "topic": "叙事衔接", "route": "线索词优先",
+      "options": ["continued", "answered", "stopped", "laughed"], "answer": "continued",
+      "clues": ["Shortly after", "The husband survived"],
+      "clueTypes": {"Shortly after": "逻辑线索·时间推进", "The husband survived": "语境线索·续讲故事"},
+      "explanation": "线索　老师先 stopped and asked，引发讨论；Shortly after 后又接着讲丈夫后来的经历，形成“暂停—继续”的反义对应，选 continued。\n排除　answered 缺少回答对象，stopped 与后面的长段叙述矛盾，laughed 不符合严肃课堂氛围。",
+      "collocation": null
+    },
+    {
+      "q": 61, "pos": "动词短语", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["dressed up", "turned up", "brought up", "looked up"], "answer": "brought up",
+      "clues": ["their daughter alone", "Thirty years later"],
+      "clueTypes": {"their daughter alone": "固定搭配·bring up a child", "Thirty years later": "语境线索·长期养育"},
+      "explanation": "线索　丈夫没有再婚，独自把女儿养大；bring up a child 表示“抚养孩子”，过去式为 brought up。\n排除　dress up 是打扮，turn up 是出现或调高音量，look up 是查阅或好转，都不能表达父亲的养育责任。",
+      "collocation": {"name": "抚养孩子长大", "type": "固定搭配", "structure": "bring up a child"}
+    },
+    {
+      "q": 62, "pos": "名词", "topic": "词义辨析", "route": "线索词优先",
+      "options": ["honour", "reply", "explanation", "interview"], "answer": "explanation",
+      "clues": ["what happened", "too afraid to ask"],
+      "clueTypes": {"what happened": "语境线索·疑问内容", "too afraid to ask": "逻辑线索·寻求说明"},
+      "explanation": "线索　女儿偶然得知船上发生的事，心中有疑问却不敢问，真正想得到的是对父亲选择的 explanation（解释）。\n排除　reply 只是一般答复，不能突出弄清原因；honour 是荣誉，interview 是采访，均与心中疑问不符。",
+      "collocation": null
+    },
+    {
+      "q": 63, "pos": "动词", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["decided", "happened", "planned", "failed"], "answer": "happened",
+      "clues": ["to find his diary", "by accident"],
+      "clueTypes": {"to find his diary": "固定搭配·happen to do", "by accident": "语境线索·偶然"},
+      "explanation": "线索　固定结构 happen to do 表示“碰巧做某事”；前文 by accident 也复现“偶然”含义，因此选 happened。\n排除　decided 和 planned 都表示有意为之，与偶然发现矛盾；failed to find 表示没找到，又与后文从日记得知真相矛盾。",
+      "collocation": {"name": "碰巧做某事", "type": "固定句型", "structure": "happen to do sth."}
+    },
+    {
+      "q": 64, "pos": "形容词", "topic": "上下文逻辑", "route": "线索词优先",
+      "options": ["last", "worst", "best", "first"], "answer": "last",
+      "clues": ["cancer was eating", "her life away"],
+      "clueTypes": {"cancer was eating": "语境线索·重病", "her life away": "逻辑线索·生命将尽"},
+      "explanation": "线索　找因果链条：癌症正夺走母亲的生命，所以这趟旅行是为了完成她临终前的 last wish（最后愿望）。\n排除　worst 和 best 评价愿望好坏，文中无依据；first 与生命将尽的时间背景相反。",
+      "collocation": null
+    },
+    {
+      "q": 65, "pos": "动词短语", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["set off", "passed away", "died out", "gave up"], "answer": "passed away",
+      "clues": ["by the time", "had already"],
+      "clueTypes": {"by the time": "语法线索·过去完成时", "had already": "固定搭配·委婉表示去世"},
+      "explanation": "线索　女儿知道全部真相时，父亲已经去世；pass away 是表示“去世”的委婉固定说法，且 had 后用过去分词 passed。\n排除　set off 是出发，die out 指物种或传统灭绝，give up 是放弃，都不能描述父亲离世。",
+      "collocation": {"name": "去世", "type": "固定搭配", "structure": "pass away"}
+    },
+    {
+      "q": 66, "pos": "形容词", "topic": "固定句型", "route": "固定搭配优先",
+      "options": ["easy", "possible", "right", "necessary"], "answer": "necessary",
+      "clues": ["to say anything more", "without a conclusion"],
+      "clueTypes": {"to say anything more": "固定句型·think it necessary to do", "without a conclusion": "语境线索·无需多言"},
+      "explanation": "线索　语法考点：think it + 形容词 + to do，it 是形式宾语；真相已经让学生明白道理，老师认为没有必要再说，选 necessary。\n排除　easy 和 possible 关注能否做到；right 表示正确，却不能准确解释老师为何不再总结。",
+      "collocation": {"name": "认为有必要做某事", "type": "固定句型", "structure": "think it necessary to do sth."}
+    },
+    {
+      "q": 67, "pos": "名词", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["reflection", "education", "organization", "shock"], "answer": "reflection",
+      "clues": ["deep", "careless words"],
+      "clueTypes": {"deep": "固定搭配·deep reflection", "careless words": "语境线索·反思对象"},
+      "explanation": "线索　学生意识到自己先前的话过于草率，于是陷入 deep reflection（深刻反思），选 reflection。\n排除　education 是教育，organization 是组织；shock 只表示震惊，不能体现对 careless words 的自我审视。",
+      "collocation": {"name": "深刻反思", "type": "固定搭配", "structure": "deep reflection"}
+    }
+  ],
+  "missingAnswer": false,
+  "source_kind": "区级考试",
+  "exam_year": 2026,
+  "tone_markers": [
+    {"word": "careless words", "label": "反思评判", "pos": "start"},
+    {"word": "really understand them", "label": "换位理解", "pos": "end"}
+  ],
+  "update_tag": "202611 导入",
+  "update_seq": 4
+});
+
+// 2026年上海校考真题（同SSP，原题21—30）
+window.BUILTIN_LESSONS.push({
+  "id": "cloze-上海-校考真题-2026-同SSP",
+  "freezeClues": true,
+  "title_cn": "王虹：数学思考本身的快乐",
+  "title_en": "Hong Wang and the Joy of Mathematical Thinking",
+  "level": "中考",
+  "difficulty": "中等",
+  "lesson_type": "人物故事",
+  "region": "上海",
+  "source": "2026年上海校考真题（同SSP）",
+  "tags": ["校考真题", "人物故事", "语法词汇", "数学家", "成长励志"],
+  "first_sentence": "How can we plant seven trees so that there are six rows, with three trees in each row?",
+  "last_sentence": "And this joy finally beat doubt and led Wang to her great success.",
+  "tone": {
+    "answer": "转折",
+    "reason": "文章从王虹童年解数学题的快乐和长期热爱写起，中段转入留学研究受挫、自我怀疑甚至想放弃数学，随后她重新认识到研究的价值在于思考过程，最终战胜怀疑并取得成功。",
+    "kind": "narrative",
+    "shape": "童年热爱—研究受挫—观念转变—获得成功",
+    "shape_reason": "前段以 joy 和 lifelong love 定调，中段出现 couldn’t solve、doubt、giving up，末段以 thinking itself、beat doubt 和 great success 完成由低谷到成功的转折。"
+  },
+  "route_summary": {"线索词优先": 7, "固定搭配优先": 3, "双路径": 0, "整组短语直接辨析": 0},
+  "reading_sentence_count": 20,
+  "article_text_with_blanks": "How can we plant seven trees so that there are six rows, with three trees in each row? Hong Wang, __21__ now is 35, still remembers the joy of solving this maths problem as a child. Today, that joy has grown into a lifelong love of maths. On July 23, she __22__ the Fields Medal (菲尔兹奖) for solving the three-dimensional Kakeya conjecture (三维挂谷猜想). She became the first Chinese woman and the third woman ever to win this prize. Growing up, Wang saw maths as a hobby. Before each term started, she would finish all the exercises in her new maths textbook. She could spend days __23__ about a problem. When she finally worked out the answer, she got so __24__ that she sometimes forgot to check her work. Still, Wang’s road to __25__ wasn’t easy. She left Peking University in 2011 and went to France, then to __26__ U.S., to continue studying maths. However, she met many problems that she couldn’t solve. She started to doubt whether she was __27__ to do mathematical research. At one point, she even thought of giving up maths and __28__ an architect. But __29__ Wang realised that research wasn’t about having all the answers. Even rough ideas and questions without answers still count. They all help us learn more deeply. The joy of maths lies not only in the answer. It lies in the thinking __30__. And this joy finally beat doubt and led Wang to her great success.",
+  "reading_sentences": [
+    "How can we plant seven trees so that there are six rows, with three trees in each row?",
+    "Hong Wang, __21__ now is 35, still remembers the joy of solving this maths problem as a child.",
+    "Today, that joy has grown into a lifelong love of maths.",
+    "On July 23, she __22__ the Fields Medal (菲尔兹奖) for solving the three-dimensional Kakeya conjecture (三维挂谷猜想).",
+    "She became the first Chinese woman and the third woman ever to win this prize.",
+    "Growing up, Wang saw maths as a hobby.",
+    "Before each term started, she would finish all the exercises in her new maths textbook.",
+    "She could spend days __23__ about a problem.",
+    "When she finally worked out the answer, she got so __24__ that she sometimes forgot to check her work.",
+    "Still, Wang’s road to __25__ wasn’t easy.",
+    "She left Peking University in 2011 and went to France, then to __26__ U.S., to continue studying maths.",
+    "However, she met many problems that she couldn’t solve.",
+    "She started to doubt whether she was __27__ to do mathematical research.",
+    "At one point, she even thought of giving up maths and __28__ an architect.",
+    "But __29__ Wang realised that research wasn’t about having all the answers.",
+    "Even rough ideas and questions without answers still count.",
+    "They all help us learn more deeply.",
+    "The joy of maths lies not only in the answer.",
+    "It lies in the thinking __30__.",
+    "And this joy finally beat doubt and led Wang to her great success."
+  ],
+  "questions": [
+    {
+      "q": 21, "pos": "关系代词", "topic": "非限制性定语从句", "route": "线索词优先",
+      "options": ["which", "who", "when"], "answer": "who",
+      "clues": ["Hong Wang", "now is 35"],
+      "clueTypes": {"Hong Wang": "语法线索·先行词为人", "now is 35": "语法线索·从句缺主语"},
+      "explanation": "线索　语法考点：两个逗号之间是非限制性定语从句，先行词 Hong Wang 指人，从句 now is 35 缺主语，因此选 who。\n排除　which 指物；when 在定语从句中作时间状语，不能充当 is 的主语。",
+      "collocation": null
+    },
+    {
+      "q": 22, "pos": "动词", "topic": "一般过去时", "route": "线索词优先",
+      "options": ["received", "receives", "receive"], "answer": "received",
+      "clues": ["On July 23", "became the first"],
+      "clueTypes": {"On July 23": "语法线索·过去时间", "became the first": "复现线索·过去时"},
+      "explanation": "线索　句中 On July 23 指向已经发生的具体日期，下一句 became 也用一般过去时，因此选 received。\n排除　receives 是一般现在时第三人称单数；receive 是动词原形，前面没有助动词。",
+      "collocation": null
+    },
+    {
+      "q": 23, "pos": "动名词", "topic": "固定句型", "route": "固定搭配优先",
+      "options": ["thinking", "thinks", "thought"], "answer": "thinking",
+      "clues": ["spend days", "about a problem"],
+      "clueTypes": {"spend days": "固定句型·spend time doing", "about a problem": "语境线索·思考对象"},
+      "explanation": "线索　固定句型 spend time doing sth. 表示“花时间做某事”，days 是时间，空处用动名词 thinking。\n排除　thinks 是谓语形式，thought 是过去式或名词，都不能接在 spend days 后构成该句型。",
+      "collocation": {"name": "花时间做某事", "type": "固定句型", "structure": "spend time doing sth."}
+    },
+    {
+      "q": 24, "pos": "形容词", "topic": "形容词辨析", "route": "线索词优先",
+      "options": ["excitement", "exciting", "excited"], "answer": "excited",
+      "clues": ["she got so", "worked out the answer"],
+      "clueTypes": {"she got so": "语法线索·系表结构", "worked out the answer": "语境线索·人的感受"},
+      "explanation": "线索　get 后接形容词作表语，主语 she 表示人的感受，所以用 excited；so excited that... 构成“如此兴奋以至于……”。\n排除　excitement 是名词；exciting 表示事物令人兴奋，不能描述 she 自己的感受。",
+      "collocation": null
+    },
+    {
+      "q": 25, "pos": "名词", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["succeed", "success", "successful"], "answer": "success",
+      "clues": ["road to", "wasn’t easy"],
+      "clueTypes": {"road to": "固定搭配·road to success", "wasn’t easy": "语境线索·成功之路"},
+      "explanation": "线索　介词 to 后需要名词，固定表达 the road to success 表示“通往成功的道路”，选 success。\n排除　succeed 是动词；successful 是形容词，都不能直接作介词 to 的宾语。",
+      "collocation": {"name": "成功之路", "type": "固定搭配", "structure": "the road to success"}
+    },
+    {
+      "q": 26, "pos": "冠词", "topic": "专有名词冠词", "route": "线索词优先",
+      "options": ["a", "/", "the"], "answer": "the",
+      "clues": ["went to France", "U.S."],
+      "clueTypes": {"went to France": "语境线索·国家地点", "U.S.": "语法线索·专有名词"},
+      "explanation": "线索　语法考点：U.S. 是 United States 的缩写，states 为复数概念，国家全称前固定使用 the，写作 the U.S.。\n排除　a 不能修饰该专有名词；零冠词适用于 France、China 等单一国名，不适用于 U.S.。",
+      "collocation": null
+    },
+    {
+      "q": 27, "pos": "形容词短语", "topic": "enough的位置", "route": "线索词优先",
+      "options": ["good enough", "enough good", "so good"], "answer": "good enough",
+      "clues": ["whether she was", "to do mathematical research"],
+      "clueTypes": {"whether she was": "语法线索·系表结构", "to do mathematical research": "语法线索·enough to do"},
+      "explanation": "线索　enough 修饰形容词时必须后置，结构为 adjective + enough + to do，因此选 good enough to do mathematical research。\n排除　enough good 语序错误；so good 通常要接 that 从句，不能与后面的 to do 构成此义。",
+      "collocation": null
+    },
+    {
+      "q": 28, "pos": "动名词", "topic": "固定句型", "route": "固定搭配优先",
+      "options": ["became", "becoming", "becomes"], "answer": "becoming",
+      "clues": ["thought of", "giving up maths"],
+      "clueTypes": {"thought of": "固定句型·think of doing", "giving up maths": "语法线索·并列动名词"},
+      "explanation": "线索　think of doing sth. 表示“考虑做某事”；and 连接 giving up 与空格，两者形式必须平行，因此选 becoming。\n排除　became 是过去式，becomes 是一般现在时第三人称单数，都不能与 giving up 并列作 of 的宾语。",
+      "collocation": {"name": "考虑做某事", "type": "固定句型", "structure": "think of doing sth."}
+    },
+    {
+      "q": 29, "pos": "副词", "topic": "词义辨析", "route": "线索词优先",
+      "options": ["later", "late", "lately"], "answer": "later",
+      "clues": ["But", "realised that research"],
+      "clueTypes": {"But": "逻辑线索·转折", "realised that research": "语境线索·后来领悟"},
+      "explanation": "线索　前文写她曾想放弃，But 后写她后来改变认识，later 表示“后来”，符合事件推进。\n排除　late 表示“迟的/迟地”；lately 表示“最近”，常与现在完成时连用，都不合此处叙事时间。",
+      "collocation": null
+    },
+    {
+      "q": 30, "pos": "反身代词", "topic": "强调用法", "route": "线索词优先",
+      "options": ["its", "it", "itself"], "answer": "itself",
+      "clues": ["not only in the answer", "in the thinking"],
+      "clueTypes": {"not only in the answer": "逻辑线索·对比", "in the thinking": "语境线索·强调过程"},
+      "explanation": "线索　转折对比：数学之乐不只在答案，还在“思考本身”，反身代词 itself 放在 thinking 后作强调，选 itself。\n排除　its 是形容词性物主代词，后面必须接名词；it 是普通代词，不能表达“本身”的强调意义。",
+      "collocation": null
+    }
+  ],
+  "missingAnswer": false,
+  "source_kind": "校考真题",
+  "exam_year": 2026,
+  "tone_markers": [
+    {"word": "thought of giving up maths", "label": "陷入怀疑", "pos": "start"},
+    {"word": "beat doubt and led Wang", "label": "战胜怀疑", "pos": "end"}
+  ],
+  "update_tag": "202611 导入",
+  "update_seq": 5
+});
+
+// 2026年上海市松江区九年级上学期期中考试（原题58—67）
+window.BUILTIN_LESSONS.push({
+  "id": "cloze-上海-松江区-2026九上期中",
+  "freezeClues": true,
+  "title_cn": "美颜滤镜：外貌焦虑还是创作自由",
+  "title_en": "Beauty Filters: Appearance Anxiety or Creative Freedom?",
+  "level": "九年级",
+  "difficulty": "中等",
+  "lesson_type": "社会议题",
+  "region": "上海",
+  "source": "上海市松江区2026年九年级上学期期中考试",
+  "tags": ["区级期中", "社会议题", "网络安全", "词义辨析", "上下文逻辑"],
+  "first_sentence": "With just one click of the “Glossy Babe” filter, a teenager’s face could look completely different.",
+  "last_sentence": "It’s also a place to search for new chances and build careers.",
+  "tone": {
+    "answer": "转折",
+    "reason": "文章开头展示美颜滤镜快速改变外貌，继而重点讨论滤镜比较对青少年自信的伤害及平台限制；末段以However转向反对限制的声音，指出滤镜也能带来创作自由、机会和职业发展。",
+    "kind": "expository",
+    "shape": "现象展示—风险研究—安全提醒—观点转折",
+    "shape_reason": "前半段由外貌改变进入自信受损的负面影响，后半段通过However引出支持滤镜的观点，结尾以new chances和build careers积极收束另一面。"
+  },
+  "route_summary": {"线索词优先": 7, "固定搭配优先": 3, "双路径": 0, "整组短语直接辨析": 0},
+  "reading_sentence_count": 22,
+  "article_text_with_blanks": "With just one click of the “Glossy Babe” filter (滤镜), a teenager’s face could look completely different. Her face became a little longer, her nose looked smaller, and the pimples on her cheeks __58__. Then, the “Glow Makeup” filter made her lips look fuller and gave her longer eyelashes (睫毛)—something even real makeup (化妆品) might not achieve. Today, hundreds of millions of people use beauty filters on apps like Instagram and TikTok. Some filters are just for __59__, such as adding cute dog ears. Others can completely __60__ a person’s appearance in seconds. Noses become smaller, teeth become whiter, and eyes become bigger, making people look as if they’ve had cosmetic surgery (整容外科手术). In November 2024, TikTok announced plans to __61__ children’s use of some beauty filters. The change came after a study of nearly 200 teenagers and parents worldwide. The study found that online experiences like using beauty filters could make some girls feel less __62__ when they compare themselves with the perfect filtered faces online. Dr. Claire Prescott is a famous education expert in the U.K. She said that people are often __63__ of how strongly online comparisons can affect them. During one study, a girl who was unhappy with her appearance told her, “I admit I was wearing a filter right now.” “A lot of internet safety education teaches children how to stay away from strangers,” Dr. Prescott said. “But there are also dangers in how we compare ourselves with each other. Comparing our looks with others can __64__ how we feel.” However, not everyone __65__ TikTok’s new rules. Some believe that beauty filters are an important part of online life. Olga Isupova, a digital artist who creates beauty filters, called the rules “__66__”. “People should be free to have different looks for their real lives and their online lives,” she said. “And for people like me, social media is not only a place for fun. It’s also a place to __67__ new chances and build careers.”",
+  "reading_sentences": [
+    "With just one click of the “Glossy Babe” filter (滤镜), a teenager’s face could look completely different.",
+    "Her face became a little longer, her nose looked smaller, and the pimples on her cheeks __58__.",
+    "Then, the “Glow Makeup” filter made her lips look fuller and gave her longer eyelashes (睫毛)—something even real makeup (化妆品) might not achieve.",
+    "Today, hundreds of millions of people use beauty filters on apps like Instagram and TikTok.",
+    "Some filters are just for __59__, such as adding cute dog ears.",
+    "Others can completely __60__ a person’s appearance in seconds.",
+    "Noses become smaller, teeth become whiter, and eyes become bigger, making people look as if they’ve had cosmetic surgery (整容外科手术).",
+    "In November 2024, TikTok announced plans to __61__ children’s use of some beauty filters.",
+    "The change came after a study of nearly 200 teenagers and parents worldwide.",
+    "The study found that online experiences like using beauty filters could make some girls feel less __62__ when they compare themselves with the perfect filtered faces online.",
+    "Dr. Claire Prescott is a famous education expert in the U.K.",
+    "She said that people are often __63__ of how strongly online comparisons can affect them.",
+    "During one study, a girl who was unhappy with her appearance told her, “I admit I was wearing a filter right now.”",
+    "“A lot of internet safety education teaches children how to stay away from strangers,” Dr. Prescott said.",
+    "“But there are also dangers in how we compare ourselves with each other.",
+    "Comparing our looks with others can __64__ how we feel.”",
+    "However, not everyone __65__ TikTok’s new rules.",
+    "Some believe that beauty filters are an important part of online life.",
+    "Olga Isupova, a digital artist who creates beauty filters, called the rules “__66__”.",
+    "“People should be free to have different looks for their real lives and their online lives,” she said.",
+    "“And for people like me, social media is not only a place for fun.",
+    "It’s also a place to __67__ new chances and build careers.”"
+  ],
+  "questions": [
+    {
+      "q": 58, "pos": "动词", "topic": "词义辨析", "route": "线索词优先",
+      "options": ["darkened", "disappeared", "grew", "remained"], "answer": "disappeared",
+      "clues": ["look completely different", "pimples on her cheeks"],
+      "clueTypes": {"look completely different": "语境线索·滤镜效果", "pimples on her cheeks": "语境线索·被美化对象"},
+      "explanation": "线索　语义场复现：滤镜让脸变长、鼻子变小，接着应是让脸颊上的痘痘消失，选 disappeared。\n排除　darkened 是变黑，grew 是生长，remained 是仍然存在，都不符合美颜滤镜去除瑕疵的作用。",
+      "collocation": null
+    },
+    {
+      "q": 59, "pos": "名词", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["beauty", "research", "practice", "fun"], "answer": "fun",
+      "clues": ["just for", "cute dog ears"],
+      "clueTypes": {"just for": "固定搭配·for fun", "cute dog ears": "语境线索·娱乐效果"},
+      "explanation": "线索　添加可爱狗耳朵主要用于娱乐，固定搭配 for fun 表示“为了好玩”，选 fun。\n排除　beauty 是美丽，research 是研究，practice 是练习，都不能准确概括这种趣味特效的目的。",
+      "collocation": {"name": "为了好玩", "type": "固定搭配", "structure": "for fun"}
+    },
+    {
+      "q": 60, "pos": "动词", "topic": "词义辨析", "route": "线索词优先",
+      "options": ["analyze", "change", "copy", "protect"], "answer": "change",
+      "clues": ["appearance in seconds", "Noses become smaller"],
+      "clueTypes": {"appearance in seconds": "语境线索·改变对象", "Noses become smaller": "语境线索·具体变化"},
+      "explanation": "线索　下文用鼻子变小、牙齿变白、眼睛变大具体说明滤镜能迅速改变外貌，选 change。\n排除　analyze 是分析，copy 是复制，protect 是保护，都不能统领后面一连串外貌变化。",
+      "collocation": null
+    },
+    {
+      "q": 61, "pos": "动词", "topic": "上下文逻辑", "route": "线索词优先",
+      "options": ["encourage", "limit", "share", "test"], "answer": "limit",
+      "clues": ["children’s use", "after a study"],
+      "clueTypes": {"children’s use": "语境线索·管理对象", "after a study": "逻辑线索·风险应对"},
+      "explanation": "线索　找因果链条：研究发现滤镜可能损害女孩自信，因此TikTok计划限制儿童使用部分滤镜，选 limit。\n排除　encourage 与风险应对方向相反；share 和 test 都不能表达平台规则对使用范围的约束。",
+      "collocation": null
+    },
+    {
+      "q": 62, "pos": "形容词", "topic": "情感态度", "route": "线索词优先",
+      "options": ["confident", "patient", "careful", "active"], "answer": "confident",
+      "clues": ["compare themselves", "perfect filtered faces"],
+      "clueTypes": {"compare themselves": "逻辑线索·比较行为", "perfect filtered faces": "语境线索·理想化标准"},
+      "explanation": "线索　女孩把真实的自己与完美滤镜脸比较，会对自己的外貌更没自信，feel less confident 最符合语境。\n排除　patient、careful、active 分别表示耐心、谨慎和活跃，都不是外貌比较直接影响的自我评价。",
+      "collocation": null
+    },
+    {
+      "q": 63, "pos": "形容词", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["afraid", "proud", "tired", "unaware"], "answer": "unaware",
+      "clues": ["of how strongly", "can affect them"],
+      "clueTypes": {"of how strongly": "固定搭配·be unaware of", "can affect them": "语境线索·未知影响"},
+      "explanation": "线索　be unaware of 表示“没有意识到……”；人们往往没有意识到网络比较对自己的影响有多强，选 unaware。\n排除　afraid of 是害怕，proud of 是自豪，tired of 是厌倦，均不符合专家强调“未察觉影响”的观点。",
+      "collocation": {"name": "没有意识到……", "type": "固定搭配", "structure": "be unaware of"}
+    },
+    {
+      "q": 64, "pos": "动词", "topic": "因果关系", "route": "线索词优先",
+      "options": ["affect", "control", "hide", "protect"], "answer": "affect",
+      "clues": ["Comparing our looks", "how we feel"],
+      "clueTypes": {"Comparing our looks": "逻辑线索·原因", "how we feel": "语境线索·影响结果"},
+      "explanation": "线索　画箭头法：与他人比较外貌（原因）→ 改变我们的感受（结果），选 affect（影响）。\n排除　control 语气过强，hide 是隐藏，protect 是保护，三者都不能准确表达比较对情绪产生作用。",
+      "collocation": null
+    },
+    {
+      "q": 65, "pos": "动词", "topic": "转折对比", "route": "线索词优先",
+      "options": ["breaks", "follows", "supports", "understands"], "answer": "supports",
+      "clues": ["However, not everyone", "called the rules"],
+      "clueTypes": {"However, not everyone": "逻辑线索·转折", "called the rules": "语境线索·反对评价"},
+      "explanation": "线索　However引出不同意见；后文有人把新规称为“愚蠢”，说明并非所有人都支持新规，选 supports。\n排除　breaks 和 follows 通常描述是否遵守规则，understands 是理解；后文讨论的是对规则的态度而非执行情况。",
+      "collocation": null
+    },
+    {
+      "q": 66, "pos": "形容词", "topic": "态度判断", "route": "线索词优先",
+      "options": ["fair", "perfect", "silly", "strict"], "answer": "silly",
+      "clues": ["People should be free", "different looks"],
+      "clueTypes": {"People should be free": "语境线索·反对限制", "different looks": "语境线索·创作自由"},
+      "explanation": "线索　褒贬态度一致法：创作者主张人们应有选择不同形象的自由，说明她否定限制滤镜的新规，称其 silly（愚蠢的）。\n排除　fair 和 perfect 是正面评价，与反对立场矛盾；strict 只表示严格，批评力度不如引号中的 silly 符合语气。",
+      "collocation": null
+    },
+    {
+      "q": 67, "pos": "动词短语", "topic": "固定搭配", "route": "固定搭配优先",
+      "options": ["give up", "search for", "put off", "take away"], "answer": "search for",
+      "clues": ["new chances", "build careers"],
+      "clueTypes": {"new chances": "固定搭配·search for chances", "build careers": "语境线索·职业发展"},
+      "explanation": "线索　社交媒体不仅用于娱乐，也能寻找新机会并发展事业；search for 表示“寻找”，选 search for。\n排除　give up 是放弃，put off 是推迟，take away 是拿走，都与 new chances 和 build careers 的积极方向相反。",
+      "collocation": {"name": "寻找……", "type": "固定搭配", "structure": "search for sth."}
+    }
+  ],
+  "missingAnswer": false,
+  "source_kind": "区级考试",
+  "exam_year": 2026,
+  "tone_markers": [
+    {"word": "feel less confident", "label": "外貌焦虑", "pos": "start"},
+    {"word": "search for new chances", "label": "机会与创作", "pos": "end"}
+  ],
+  "update_tag": "202611 导入",
+  "update_seq": 6
+});
+
 // 人工复核：第11—15篇。线索必须能在原文中精确定位，避免自动生成的截句和误判。
 (() => {
   const reviewed = {
