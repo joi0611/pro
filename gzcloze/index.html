@@ -7,10 +7,12 @@
   <title>广州中考完形填空训练系统 · 无限进步</title>
   <link rel="stylesheet" href="style.css?v=20261107i" />
 </head>
-<body>
+<body class="gate-locked">
 
   <!-- ============ 手机号登录门禁 ============ -->
-  <div id="gateView" hidden>
+  <!-- 首屏直接是登录页：body 默认带 gate-locked，主页内容被 CSS 隐藏，
+       不再出现「先渲染主页 → 再跳到登录页」的闪跳。 -->
+  <div id="gateView">
     <div class="gate-card" role="dialog" aria-labelledby="gateTitle" aria-describedby="gateSub">
       <div class="gate-brand" aria-hidden="true">∞</div>
       <p class="gate-eyebrow">无限进步 · 学员入口</p>
@@ -98,9 +100,7 @@
       </div>
 
       <div class="home-footer-strip">
-        <div class="home-metric"><strong>268</strong><span>篇广州七年级真题</span></div>
-        <div class="home-metric"><strong>2686</strong><span>道真题题目</span></div>
-        <div class="home-metric"><strong>5</strong><span>个证据维度</span></div>
+        <div class="home-metric"><strong id="homeLessonCount">—</strong><span>篇广州中考完形真题</span></div>
         <div class="home-footer-copy"><span class="footer-spark" aria-hidden="true">✦</span><span><b>每次练习都留下可复盘的痕迹</b><br>错题本和生词本会自动帮你整理重点</span></div>
       </div>
       </section>
@@ -112,7 +112,7 @@
           <span class="study-toolbar-title">中考真题库</span>
         </div>
       <!-- 数据范围说明 -->
-      <p class="scope-note" id="scopeNote">本系统当前收录 <strong>广州市七年级上、下册</strong> 完形填空题目，按考试类型与来源逐篇标注。每篇均含可验证的线索证据，共 <span id="scopeLessons">268</span> 篇 / <span id="scopeQuestions">2686</span> 道。</p>
+      <p class="scope-note" id="scopeNote">本系统当前收录 <strong>广州市七至九年级</strong> 完形填空题目，按考试类型与来源逐篇标注。每篇均含可验证的线索证据，共 <span id="scopeLessons">—</span> 篇 / <span id="scopeQuestions">—</span> 道。</p>
 
       <!-- 筛选器（点「中考真题训练」卡片后展开） -->
       <div class="filter-bar" id="filterBar" hidden>
@@ -424,14 +424,8 @@
 
   <div id="printArea" class="print-area" hidden></div>
 
-  <script src="collocation-rules.js"></script>
-  <script src="clue-rules.js"></script>
-  <script src="diag-classify.js"></script>
-  <script src="builtin-lessons.js?v=20261107i"></script>
-  <script src="methodology.js"></script>
-  <script src="quiz-300.js?v=20261021a"></script>
-  <script src="handout-content.js?v=20261021a"></script>
+  <!-- 题库、讲义、配套题和分析规则均在登录成功后加载；登录首屏只加载门禁所需文件。 -->
   <script src="supabase-config.js?v=20261021a"></script>
-  <script src="app.js?v=20261107i"></script>
+  <script src="app.js?v=20261107k"></script>
 </body>
 </html>

@@ -837,9 +837,20 @@ var COLLOCATION_DICT = (window.CLOZE_COLLOCATIONS || []).concat(window.CLOZE_COL
 var COLLOCATION_RULES = window.CLOZE_PATTERN_RULES || [];
 var LEMMA_MAP = window.CLOZE_LEMMA_MAP || {};
 
+/* lemma() 会被 matchDict 的内层循环调用上万次，每次都要跑 4 个正则。
+ * 词元是有限集合，用 Map 缓存后同一批词只算一次。 */
+var _LEMMA_CACHE = new Map();
 function lemma(w) {
   if (!w) return w;
   var s = String(w).toLowerCase();
+  var hit = _LEMMA_CACHE.get(s);
+  if (hit !== undefined) return hit;
+  var out = _computeLemma(s);
+  _LEMMA_CACHE.set(s, out);
+  return out;
+}
+
+function _computeLemma(s) {
   if (Object.prototype.hasOwnProperty.call(LEMMA_MAP, s)) return LEMMA_MAP[s];
   if (/ies$/.test(s) && s.length > 4) return s.slice(0, -3) + "y";
   if (/ed$/.test(s) && s.length > 4) {
@@ -872,6 +883,58 @@ var DICT_TOKENS = COLLOCATION_DICT.map(function (item) {
 var DICT_WILDCARD = ["*", "sb", "sth", "one's", "doing"];
 var DICT_PLACEHOLDER = ["*", "sb", "sth", "one's"];
 
+/* ---------- 搭配词典倒排索引（启动性能） ----------
+ * 原实现每道题线性遍历全部 1148 条词典，8689 题 = 986 万次比对，
+ * 实测占满 DOMContentLoaded 的全部 19.6 秒，是页面打开慢的唯一根因。
+ *
+ * 命中前提：条目被判中的切分点 k，其 head（k 之前的 token）必须落在 before、
+ * tail（k 之后的 token）必须落在 after，两者都非空时才可能命中。
+ * 因此「条目的任一实词 token 出现在 before∪after 里」是命中的必要条件，
+ * 用它做倒排召回得到的候选集是朴素遍历结果的**超集**，不会漏命中。
+ * 含通配符（* / sb / sth / one's / doing）的条目可能匹配任意位置，
+ * 单独常驻候选池，保证不漏。
+ */
+var DICT_INDEX = new Map();        // 词元 -> 条目下标数组
+var DICT_WILDCARD_ENTRIES = [];    // 含通配符的条目下标
+
+(function buildDictIndex() {
+  for (var i = 0; i < DICT_TOKENS.length; i++) {
+    var T = DICT_TOKENS[i].lemma;
+    if (T.length < 2) continue;               // 单 token 条目不参与词典匹配
+    var hasWild = false;
+    for (var j = 0; j < T.length; j++) {
+      var tok = T[j];
+      if (DICT_WILDCARD.indexOf(tok) >= 0) { hasWild = true; continue; }
+      var arr = DICT_INDEX.get(tok);
+      if (!arr) { arr = []; DICT_INDEX.set(tok, arr); }
+      arr.push(i);
+    }
+    if (hasWild) DICT_WILDCARD_ENTRIES.push(i);
+  }
+})();
+
+/** 取 before∪after 的词元能召回的候选条目下标（升序，保持原遍历顺序语义） */
+function dictCandidates(before, after) {
+  var list = null, seen = null;
+  var words = before.concat(after);
+  for (var w = 0; w < words.length; w++) {
+    var arr = DICT_INDEX.get(words[w]);
+    if (!arr) continue;
+    if (!list) { list = []; seen = new Set(); }
+    for (var i = 0; i < arr.length; i++) {
+      if (!seen.has(arr[i])) { seen.add(arr[i]); list.push(arr[i]); }
+    }
+  }
+  for (var d = 0; d < DICT_WILDCARD_ENTRIES.length; d++) {
+    var id = DICT_WILDCARD_ENTRIES[d];
+    if (!list) { list = []; seen = new Set(); }
+    if (!seen.has(id)) { seen.add(id); list.push(id); }
+  }
+  if (!list || !list.length) return null;
+  list.sort(function (a, b) { return a - b; });
+  return list;
+}
+
 function wordEq(p, a) { return p === a || lemma(p) === lemma(a); }
 function seqMatch(pattern, actual) {
   if (pattern.length !== actual.length) return false;
@@ -883,8 +946,23 @@ function seqMatch(pattern, actual) {
   return true;
 }
 
+/* 正文切词缓存：同一篇的每个空都会调 getBlankContext，
+ * 原来每道题都把整篇正文重新切一遍（8689 次全文切分）。
+ * 用正文做 key 缓存切好的 token 数组，切分只做一次。 */
+var _TOKEN_CACHE = new Map();
+function articleTokens(articleText) {
+  var key = String(articleText || "");
+  if (!key) return [];
+  var hit = _TOKEN_CACHE.get(key);
+  if (hit) return hit;
+  var tokens = wordTokens(key);
+  if (_TOKEN_CACHE.size > 40) _TOKEN_CACHE.clear();   // 防无限增长
+  _TOKEN_CACHE.set(key, tokens);
+  return tokens;
+}
+
 function getBlankContext(articleText, qid) {
-  var tokens = wordTokens(articleText);
+  var tokens = articleTokens(articleText);
   var idx = tokens.indexOf("__" + qid + "__");
   if (idx < 0) return { before: [], after: [], afterRaw: [] };
   var rawAfter = tokens.slice(idx + 1, idx + 6);
@@ -894,8 +972,12 @@ function getBlankContext(articleText, qid) {
 function matchDict(before, after, afterRaw, options, answer) {
   var opts = Array.isArray(options) ? options : [];
   var bestInOptions = null, bestOther = null;
-  for (var di = 0; di < DICT_TOKENS.length; di++) {
-    var entry = DICT_TOKENS[di];
+  /* 走倒排索引取候选，而不是线性扫全部 1148 条词典。
+   * 候选集是朴素遍历结果的超集，且按原下标升序 —— 判定与择优逻辑一字未改。 */
+  var candIdx = dictCandidates(before, after);
+  if (!candIdx) return null;
+  for (var ci = 0; ci < candIdx.length; ci++) {
+    var entry = DICT_TOKENS[candIdx[ci]];
     var T = entry.lemma;
     if (T.length < 2) continue;
     var isPair = T.length === 2;
@@ -959,10 +1041,24 @@ function detectCollocation(q, sentence, ctx) {
   return null;
 }
 
+/* 句子切分缓存：同一篇正文按空号取句子时，句子边界是固定的，
+ * 原来每个空都把整篇重新按句号切开一遍。缓存后每篇只切一次。 */
+var _SENTENCE_CACHE = new Map();
+function articleSentences(articleText) {
+  var key = String(articleText || "");
+  if (!key) return [];
+  var hit = _SENTENCE_CACHE.get(key);
+  if (hit) return hit;
+  var sents = key.split(/(?<=[.!?]["']?)\s+(?=[A-Z])/);
+  if (_SENTENCE_CACHE.size > 40) _SENTENCE_CACHE.clear();
+  _SENTENCE_CACHE.set(key, sents);
+  return sents;
+}
+
 function getQuestionSentence(qid, articleText) {
   var text = String(articleText || "");
   var marker = "__" + qid + "__";
-  var sentences = text.split(/(?<=[.!?]["']?)\s+(?=[A-Z])/);
+  var sentences = articleSentences(text);
   var sent = sentences.find(function (s) { return s.indexOf(marker) >= 0; });
   return sent ? sent.trim() : text;
 }
@@ -1837,6 +1933,9 @@ function renderHandoutPrint() {
 }
 
 /* ==================== 题库渲染与筛选 ==================== */
+/* 单篇归一化：只在 openLesson 时对当前篇调用（单篇 < 30ms）。
+ * 不在启动时对全库调用 —— 8689 题跑一遍要 3 秒以上，
+ * 而 route 已由数据层固化，collocation 改为按需补齐。 */
 function normalizeLesson(l) {
   var art = l.article_text_with_blanks || "";
   (l.questions || []).forEach(function (q) {
@@ -2230,6 +2329,8 @@ function updateHeroStats() {
   if (tp) tp.textContent = library.length + " 篇 · " + totalQ + " 道空逐空复核";
   var ks = $("kpSub");
   if (ks) ks.textContent = "每个知识点包含讲解和 5-10 道专项训练题。从具体技能开始，一道一道练透。覆盖 " + library.length + " 篇、共 " + totalQ + " 道空。";
+  /* 首页统计条：只显示篇目（题库更新后自动跟随，不写死数字） */
+  var hl = $("homeLessonCount"); if (hl) hl.textContent = library.length;
   var sl = $("scopeLessons"); if (sl) sl.textContent = library.length;
   var sq = $("scopeQuestions"); if (sq) sq.textContent = totalQ;
   updateNavBadge();
@@ -2247,9 +2348,11 @@ function openLesson(id) {
   var les = library.find(function (l) { return l.id === id; });
   if (!les) return;
   currentId = id; lesson = les;
+  /* 搭配复核（collocation）数据层为空，这里按需补齐当前篇 —— 单篇 < 30ms。
+   * 线索（clues）已由数据层固化，freezeClues 的篇目不再重算。 */
   (lesson.questions || []).forEach(function (q) {
-    if (lesson.freezeClues) return;
     normalizeQuestionRouteAndCollocation(q, lesson.article_text_with_blanks || "");
+    if (lesson.freezeClues) return;
     normalizeQuestionClues(q, lesson.article_text_with_blanks || "");
   });
   passageParts = parsePassage(lesson.article_text_with_blanks || "");
@@ -3532,14 +3635,68 @@ function renderProgress() {
 }
 
 /* ==================== 初始化 ==================== */
-function init() {
+/* 题库（builtin-lessons.js，10MB）改为动态加载：
+ * 未登录用户打开页面不必下载它，登录验证通过后再注入 script 标签。
+ * 加载完成后调用 init()，再渲染主页。 */
+var LESSONS_SRC = "builtin-lessons.js?v=20261107j";
+var _lessonsReady = false;
+var _resourcesReady = false;
+
+function loadScriptOnce(src) {
+  return new Promise(function (resolve, reject) {
+    var existing = document.querySelector('script[data-lazy-src="' + src.split("?")[0] + '"]');
+    if (existing) { resolve(); return; }
+    var s = document.createElement("script");
+    s.src = src;
+    s.async = false;
+    s.setAttribute("data-lazy-src", src.split("?")[0]);
+    s.onload = resolve;
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+}
+
+function loadAppResources() {
+  if (_resourcesReady) return Promise.resolve();
+  var sources = [
+    "collocation-rules.js?v=20261107k",
+    "clue-rules.js?v=20261107k",
+    "diag-classify.js?v=20261107k",
+    "methodology.js?v=20261107k",
+    "quiz-300.js?v=20261107k",
+    "handout-content.js?v=20261107k"
+  ];
+  return Promise.all(sources.map(loadScriptOnce)).then(function () { _resourcesReady = true; });
+}
+
+function loadLessons() {
+  return new Promise(function (resolve) {
+    if (_lessonsReady) { resolve(); return; }
+    if (window.BUILTIN_LESSONS && window.BUILTIN_LESSONS.length) { _lessonsReady = true; resolve(); return; }
+    var s = document.createElement("script");
+    s.src = LESSONS_SRC;
+    s.async = false;
+    s.onload = function () { _lessonsReady = true; resolve(); };
+    s.onerror = function () {
+      showLoadError("题库加载失败，请检查网络后刷新页面重试。");
+      resolve();
+    };
+    document.head.appendChild(s);
+  });
+}
+
+function showLoadError(msg) {
+  var box = $("homeView") || document.body;
+  var p = document.createElement("p");
+  p.className = "scope-note";
+  p.textContent = msg;
+  p.style.color = "var(--bad)";
+  box.appendChild(p);
+}
+
+/* 事件绑定：与题库无关，页面加载后立即执行（交互可用） */
+function bindUI() {
   blockWheelZoom();
-  /* 内置题库（「自编」3 套示范篇不进列表，数据保留在题库文件里随时可恢复） */
-  var BUILTIN = ((typeof window !== "undefined" && window.BUILTIN_LESSONS) || [])
-    .filter(function (l) { return l.source_kind !== "自编"; });
-  BUILTIN.forEach(normalizeLesson);
-  library = BUILTIN;
-  BLANK_KEYS = null;   // 题库定了才统计空数
 
   /* 筛选初始态：地址栏 hash > 本机上次的选择 > 全部 */
   applyFilterState(readHashFilters() || loadFilterPref());
@@ -3802,7 +3959,37 @@ function init() {
     hideSentenceTip();
   });
 
-  /* 首次渲染（深链须在 writeHashFilters 之前读 hash，避免被清空） */
+  /* 首次渲染（深链须在 writeHashFilters 之前读 hash，避免被清空）
+   * 移到 renderApp()：登录后才渲染，未登录时不必白渲染 864 篇列表。 */
+}
+
+/* 题库就绪后：把题库挂进 library，再渲染 */
+function initLibrary() {
+  /* 内置题库（「自编」3 套示范篇不进列表，数据保留在题库文件里随时可恢复） */
+  var BUILTIN = ((typeof window !== "undefined" && window.BUILTIN_LESSONS) || [])
+    .filter(function (l) { return l.source_kind !== "自编"; });
+  /* 不在启动时全量跑搭配匹配。
+   * 起因：8689 题 × 1148 条词典的线性比对，实测要 19.6 秒，
+   * 全部耗在 DOMContentLoaded 上，页面打开后要等近 20 秒才能用。
+   *
+   * 现在改为「打开哪篇算哪篇」：
+   *   - route 已 100% 由数据层固化，启动时重算不会改写任何值；
+   *   - collocation（搭配复核）数据层为空，改为 openLesson 时按需补齐；
+   *   - 数据层每篇都是 freezeClues:true，线索本来就该用固化值。
+   * 单篇按需补齐耗时 < 30ms，用户无感。 */
+  library = BUILTIN;
+  BLANK_KEYS = null;   // 题库定了才统计空数
+}
+
+/* ==================== 主页渲染（题库就绪 + 登录后触发） ==================== */
+var _appRendered = false;
+var _uiBound = false;
+
+function renderApp() {
+  if (_appRendered) return;
+  _appRendered = true;
+  if (!_uiBound) { bindUI(); _uiBound = true; }
+  initLibrary();
   deepLinkLesson();
   writeHashFilters();
   renderLibrary();
@@ -3811,10 +3998,23 @@ function init() {
   showView("home");   // 首屏 = 首页 landing；真题库为独立页面，进入时才展开
 }
 
-init();
+/* 事件绑定不依赖题库，页面加载后立即执行，交互即刻可用 */
+if (!_uiBound) { bindUI(); _uiBound = true; }
+
+/* 已登录用户在门禁校验通过后解锁并渲染主页；
+ * 未登录用户登录成功后页面会 reload，这里也会再触发一次（幂等）。 */
+window.addEventListener("gzcloze:unlocked", function () {
+  Promise.all([loadAppResources(), loadLessons()]).then(renderApp).catch(function () {
+    showLoadError("学习内容加载失败，请检查网络后刷新页面重试。");
+  });
+});
 
 
-/* ==================== 手机号白名单登录 ==================== */
+/* ==================== 手机号白名单登录 ====================
+ * 首屏直接是登录页：index.html 的 body 默认带 gate-locked，
+ * 主页内容被 CSS 隐藏，不会出现「先渲染主页 → 再跳登录页」的闪跳。
+ * 已登录用户走静默校验，通过后直接解锁进主页。
+ */
 (function () {
   var currentPhone = "";
   function $(id) { return document.getElementById(id); }
@@ -3830,6 +4030,13 @@ init();
     document.body.classList.remove("gate-locked");
     var gate = $("gateView");
     if (gate) gate.hidden = true;
+    /* 解锁后渲染主页（未登录时省掉 864 篇列表的构建） */
+    try {
+      var ev;
+      if (typeof Event === "function") ev = new Event("gzcloze:unlocked");
+      else { ev = document.createEvent("Event"); ev.initEvent("gzcloze:unlocked", false, false); }
+      window.dispatchEvent(ev);
+    } catch (e) { if (typeof renderApp === "function") renderApp(); }
   }
 
   function showMsg(text, ok) {
@@ -3881,7 +4088,8 @@ init();
       localStorage.setItem(STUDENT_PHONE_KEY, phone);
       currentPhone = data.phone || phone;
       showMsg("登录成功，正在进入…", true);
-      setTimeout(function () { location.reload(); }, 250);
+      unlockBody();
+      renderLoginBtn();
     }).catch(function (error) {
       showMsg(error.message || "无法连接登录服务，请稍后重试", false);
       if (input) input.focus();
@@ -3891,6 +4099,7 @@ init();
   function boot() {
     var gate = $("gateView");
     if (!gate) return;
+    /* body 已在 HTML 里带 gate-locked，这里只补一次，保证状态一致 */
     lockBody();
     var button = $("gateBtn"), input = $("gatePhone");
     if (button) button.addEventListener("click", submit);
@@ -3912,6 +4121,8 @@ init();
     if (typeof window.gzclozeRpc !== "function") {
       showMsg("登录服务配置未加载，请刷新页面", false); renderLoginBtn(); return;
     }
+    /* 已登录：静默校验，通过后直接解锁进主页（不刷新、不跳页） */
+    showMsg("正在验证登录…", true);
     window.gzclozeRpc("student_login", { phone: savedPhone }).then(function (data) {
       if (data && data.ok) { currentPhone = data.phone || "已登录"; unlockBody(); }
       else localStorage.removeItem(STUDENT_PHONE_KEY);
