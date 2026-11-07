@@ -1,0 +1,26 @@
+<svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>三种杀法在真题中的对应实例</title>
+  <text x="40" y="34" style="font-size:15px;font-weight:500;fill:#2C2C2A">三种杀法 · 在真题中的对应实例</text>
+  <text x="40" y="56" style="font-size:12px;fill:#5F5E5A">答错时先判断属于哪一类，再去对应线索</text>
+
+  <g>
+    <rect x="40" y="80" width="600" height="60" rx="10" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/>
+    <rect x="56" y="96" width="92" height="28" rx="7" fill="#F09595" stroke="#A32D2D" stroke-width="0.5"/>
+    <text x="102" y="110" text-anchor="middle" dominant-baseline="central" style="font-size:13px;fill:#501313">方向否</text>
+    <text x="164" y="110" dominant-baseline="central" style="font-size:13px;fill:#444441">001 Q1 选 simple → 答案 difficult，与后文 never work out 方向相反</text>
+  </g>
+
+  <g>
+    <rect x="40" y="150" width="600" height="60" rx="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+    <rect x="56" y="166" width="92" height="28" rx="7" fill="#B5D4F4" stroke="#185FA5" stroke-width="0.5"/>
+    <text x="102" y="180" text-anchor="middle" dominant-baseline="central" style="font-size:13px;fill:#0C447C">异场否</text>
+    <text x="164" y="180" dominant-baseline="central" style="font-size:13px;fill:#444441">001 Q1 选 exciting → 答案 difficult，与 You make me so angry 情感场不符</text>
+  </g>
+
+  <g>
+    <rect x="40" y="220" width="600" height="60" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+    <rect x="56" y="236" width="92" height="28" rx="7" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+    <text x="102" y="250" text-anchor="middle" dominant-baseline="central" style="font-size:13px;fill:#633806">呼应否</text>
+    <text x="164" y="250" dominant-baseline="central" style="font-size:13px;fill:#444441">018 Q3 选 everything → 答案 nothing，代回 has ___ to do with 直接矛盾</text>
+  </g>
+</svg>
