@@ -1,0 +1,90 @@
+/* Phone layout: keep the learning controls in the first viewport. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+button, a, input, select, textarea { touch-action: manipulation; }
+.hero-puzzle-pattern, .module-hero::after, .module-entry-card::after { pointer-events: none; }
+[hidden] { display: none !important; }
+
+@media (max-width: 760px) {
+  body.module-seven-choice { min-height: 100vh; min-height: 100svh; }
+  .module-seven-choice .workbook-site-header {
+    position: static; display: flex; flex-direction: column; align-items: stretch;
+    gap: 8px; padding: 12px max(12px, env(safe-area-inset-left));
+    min-height: 0; height: auto;
+  }
+  .module-seven-choice .workbook-brand { min-width: 0; gap: 8px; }
+  .module-seven-choice .workbook-brand strong { font-size: 15px; line-height: 1.4; overflow-wrap: anywhere; }
+  .module-seven-choice .workbook-brand-mark { flex: 0 0 32px; width: 32px; height: 32px; font-size: 24px; border-radius: 9px; }
+  .module-seven-choice .workbook-main-nav {
+    display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center;
+    gap: 4px 12px; width: 100%; margin: 0; padding: 0;
+  }
+  .module-seven-choice .workbook-main-nav a,
+  .module-seven-choice .workbook-main-nav > span { display: inline-flex; align-items: center; min-height: 36px; padding: 4px 0; font-size: 12px; }
+  .module-shell { width: calc(100% - 24px); max-width: 640px; padding: 12px 0 max(24px, env(safe-area-inset-bottom)); }
+  .module-hero { min-height: 0; grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 16px; border-radius: 16px; }
+  .module-hero .eyebrow { margin: 0 0 8px; padding: 4px 9px; font-size: 11px; }
+  .module-hero h1 { max-width: none; font-size: 22px; line-height: 1.35; letter-spacing: 0; }
+  .module-hero > div > p:last-child:not(.eyebrow) { display: none; }
+  .hero-progress { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+  .hero-progress strong { font-size: 18px; line-height: 1.3; }
+  .hero-progress > span { font-size: 12px; }
+  .hero-progress .progress-track { flex: 1 1 64px; height: 5px; margin: 0; }
+  .hero-puzzle-pattern { display: none; }
+  .view { margin-top: 12px; padding: 0; min-width: 0; }
+  .home-path-heading { margin: 16px 0 0; gap: 0; }
+  .home-path-heading span, .home-path-heading > p { display: none; }
+  .home-path-heading h2 { font-size: 17px; line-height: 1.5; }
+  .module-entry-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; margin: 10px 0 14px; }
+  .module-entry-card {
+    display: grid; grid-template-columns: 36px minmax(0, 1fr) 24px; align-items: center;
+    column-gap: 12px; min-height: 100px; width: 100%; padding: 14px;
+    border-radius: 16px; -webkit-appearance: none; appearance: none;
+  }
+  .module-entry-index { grid-column: 1; grid-row: 1 / 3; width: 36px; height: 40px; border-radius: 10px; font-size: 13px; }
+  .module-entry-kicker { display: none; }
+  .module-entry-card strong { grid-column: 2; grid-row: 1; margin: 0; font-size: 20px; line-height: 1.4; }
+  .module-entry-description { grid-column: 2; grid-row: 2; margin: 4px 0 0; padding: 0; font-size: 12px; line-height: 1.5; }
+  .module-entry-description br { display: none; }
+  .module-entry-arrow { position: static; grid-column: 3; grid-row: 1 / 3; font-size: 24px; }
+  .module-entry-card:hover, .module-entry-card:focus-visible { transform: none; }
+  .home-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; min-height: 0; padding: 12px; border-radius: 14px; }
+  .home-stat-item { display: block; padding: 0 8px; border-bottom: 0; border-right: 1px solid #e1e4f4; text-align: center; }
+  .home-stat-item:first-child { padding-left: 8px; }
+  .home-stat-item:nth-child(3) { border-right: 0; }
+  .home-stat-item strong { min-width: 0; font-size: 22px; }
+  .home-stat-item span { margin-top: 5px; font-size: 11px; }
+  .home-stat-note { grid-column: 1 / -1; margin-top: 12px; padding: 12px 0 0; border-top: 1px solid #e1e4f4; }
+  .module-tabs { position: sticky; z-index: 20; top: 0; gap: 6px; margin-top: 0; padding: 5px; border-radius: 12px; }
+  .module-tab { min-height: 44px; font-size: 15px; }
+  body[data-view]:not([data-view="home"]) .module-hero { display: none; }
+  .section-heading { gap: 10px; margin-bottom: 12px; }
+  .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.4; }
+  .section-heading > div > p:last-child { display: none; }
+  .section-kicker { display: none; }
+  .directory-back { min-height: 44px; margin-bottom: 8px; padding: 0 12px; font-size: 13px; }
+  .search-box { width: 100%; gap: 4px; font-size: 12px; }
+  .search-box input, input, select, textarea { font-size: 16px; }
+  .lesson-list { gap: 10px; margin-top: 12px; }
+  .lesson-card { min-height: 0; padding: 14px; gap: 10px; }
+  .lesson-card-meta { margin-bottom: 8px; }
+  .lesson-main strong { font-size: 17px; }
+  .lesson-main span.lesson-summary { white-space: normal; }
+  .start-lesson, .start-exam {
+    width: 100%; min-height: 44px; padding: 10px 12px;
+    overflow: visible; color: var(--seven-purple); font-size: 14px; text-align: center;
+  }
+  .start-lesson::after { content: none; }
+  .lesson-content, .exam-sheet, .exam-reading, .exam-guide { min-width: 0; padding: 14px; border-radius: 14px; }
+  .lesson-workspace, .exam-workspace { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .exam-side, .exam-guide, .lesson-side { position: static; }
+  .lesson-toolbar, .lesson-heading, .exam-toolbar { flex-wrap: wrap; gap: 8px; }
+  .lesson-heading h2, .exam-title-block h2 { font-size: 22px; overflow-wrap: anywhere; }
+  .exam-option-item, .adaptive-option { min-height: 44px; }
+  .exam-reading p, .question-pane p { overflow-wrap: anywhere; }
+  .module-seven-choice > .site-footer { width: calc(100% - 24px); padding: 16px 0 max(16px, env(safe-area-inset-bottom)); font-size: 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0s !important; }
+}

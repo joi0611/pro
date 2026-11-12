@@ -90,12 +90,14 @@
   }
 
   function saveProgress() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify([...state.completed].sort((a, b) => a - b)));
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([...state.completed].sort((a, b) => a - b)));
+    } catch (_error) { /* Keep the current lesson usable when browser storage is unavailable. */ }
   }
 
   function escapeHtml(value) {
-    return String(value || "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;").replaceAll("'", "&#039;");
+    return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#039;");
   }
 
   function richText(value) {
@@ -170,11 +172,13 @@
   }
 
   function setView(name) {
+    document.body.dataset.view = name;
     Object.entries(views).forEach(([key, element]) => element.classList.toggle("active", key === name));
     const activeTab = name === "exam" ? "training" : name;
     tabs.forEach((tab) => tab.classList.toggle("active", name !== "home" && tab.dataset.view === activeTab));
     document.querySelector(".module-tabs")?.classList.toggle("home-hidden", name === "home");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // A completed view change must reveal content immediately, also in iOS Safari.
+    window.scrollTo({ top: 0, behavior: "auto" });
   }
 
   function lessonCard(lesson) {
@@ -197,7 +201,7 @@
 
   function makeAnalysisSteps(lesson) {
     const example = lesson.example;
-    const sentences = example.analysis.split(/(?<=[。！？!])/).map((item) => item.trim()).filter(Boolean);
+    const sentences = (example.analysis.match(/[^。！？!]*[。！？!]|[^。！？!]+$/g) || []).map((item) => item.trim()).filter(Boolean);
     const midpoint = Math.max(1, Math.ceil(sentences.length / 2));
     const answerText = example.options.find((option) => optionLetter(option) === example.answer) || `${example.answer} 选项`;
     return [
