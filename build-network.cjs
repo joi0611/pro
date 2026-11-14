@@ -3,7 +3,83 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const UPSTREAM = 'https://gbjmylxohacppnybfssh.supabase.co';
 const SKIP = new Set(['.git', 'node_modules', 'edge-functions', 'cloud-functions', 'tests']);
+function sharedTrainingConnection() {
+  if (window.__TRAINING_CONNECTION_V1__ || typeof window.fetch !== 'function') return;
+  window.__TRAINING_CONNECTION_V1__ = true;
+  var originalFetch = window.fetch.bind(window);
+  var reads = ['verify_access_code', 'verify_phone_access', 'verify_activation_code', 'verify_cloze_experience_code',
+    'get_learning_progress', 'get_phone_learning_progress', 'get_activation_progress'];
+  window.fetch = function (input, init) {
+    if (typeof input !== 'string') return originalFetch(input, init);
+    var url;
+    try { url = new URL(input, location.href); } catch (_) { return originalFetch(input, init); }
+    if (url.origin !== location.origin || !/^\/training-backend\/(rest\/v1\/rpc\/|functions\/v1\/vocab-progress)/.test(url.pathname)) {
+      return originalFetch(input, init);
+    }
+    var options = init || {}, payload = {};
+    try { payload = JSON.parse(options.body || '{}'); } catch (_) {}
+    var name = url.pathname.split('/').pop();
+    var safe = reads.indexOf(name) >= 0 || (name === 'training_api' && payload.p_action === 'student_login');
+    var trace = 'TC-' + Date.now().toString(36).toUpperCase() + '-' + Math.random().toString(36).slice(2, 7).toUpperCase();
+    function problem(message, kind, status, id) {
+      var error = new Error(message);
+      error.kind = kind; error.status = status || 0; error.requestId = id; error.isTrainingTransportError = true;
+      return error;
+    }
+    function attempt(round) {
+      var id = trace + '-' + round, controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+      var parent = options.signal, timer, onAbort;
+      var task = new Promise(function (resolve, reject) {
+        onAbort = function () {
+          if (controller) controller.abort();
+          reject(problem('请求已取消，可重新操作', 'CANCEL', 0, id));
+        };
+        if (parent && parent.aborted) { onAbort(); return; }
+        if (parent && parent.addEventListener) parent.addEventListener('abort', onAbort, { once: true });
+        timer = setTimeout(function () {
+          if (controller) controller.abort();
+          reject(problem('数据服务响应超时，请稍后重试', 'TIMEOUT', 0, id));
+        }, 20000);
+        var request = {};
+        Object.keys(options).forEach(function (key) { request[key] = options[key]; });
+        request.headers = new Headers(options.headers || {});
+        request.headers.set('X-Training-Request-Id', id);
+        request.cache = 'no-store';
+        if (controller) request.signal = controller.signal;
+        Promise.resolve().then(function () { return originalFetch(input, request); }).then(function (response) {
+          return response.clone().text().then(function (text) {
+            var data = null;
+            try { if (text) data = JSON.parse(text); }
+            catch (_) { throw problem('数据服务返回异常（HTTP ' + response.status + '），请重试', 'FORMAT', response.status, id); }
+            if (!response.ok) {
+              throw problem(data && (data.message || data.msg || data.error_description) ||
+                '数据服务暂时不可用（HTTP ' + response.status + '），请重试', 'HTTP', response.status, id);
+            }
+            return response;
+          });
+        }).then(resolve, reject);
+      });
+      function cleanup() {
+        clearTimeout(timer);
+        if (parent && parent.removeEventListener && onAbort) parent.removeEventListener('abort', onAbort);
+      }
+      return task.then(function (response) { cleanup(); return response; }, function (error) {
+        cleanup();
+        if (!error || !error.kind) error = problem('网络连接暂时中断，请重试', 'NETWORK', 0, id);
+        var transient = ['NETWORK', 'TIMEOUT', 'FORMAT'].indexOf(error.kind) >= 0 || [502, 503, 504].indexOf(error.status) >= 0;
+        if (safe && round === 0 && transient) {
+          return new Promise(function (resolve) { setTimeout(resolve, 400); }).then(function () { return attempt(1); });
+        }
+        window.TRAINING_CONNECTION_DIAGNOSTIC_V1 = { id: id, phase: name, kind: error.kind, status: error.status || 0, at: Date.now() };
+        error.message += '（诊断编号 ' + id + '/' + error.kind + '）';
+        throw error;
+      });
+    }
+    return attempt(0);
+  };
+}
 function nationalRpcRequest(name, payload) {
+  // NATIONAL_LOGIN_RESPONSE_V3: distinguish marked upstream failures from platform responses.
   var trace = 'NL-' + Date.now().toString(36).toUpperCase() + '-' + Math.random().toString(36).slice(2, 7).toUpperCase();
   var phase = name === 'training_api' ? 'PHONE' : name === 'verify_activation_code' ? 'CODE' : name === 'get_activation_progress' ? 'PROGRESS' : 'SAVE';
   var safeRetry = name === 'verify_activation_code' || name === 'get_activation_progress' ||
@@ -29,6 +105,12 @@ function nationalRpcRequest(name, payload) {
         if (controller) options.signal = controller.signal;
         return fetch(SUPABASE_CONFIG.url + '/rest/v1/rpc/' + name, options);
       }).then(function (response) {
+        var evidence = {
+          source: response.headers.get('X-Training-Failure-Source') ||
+            (response.headers.get('X-Training-Transport') ? 'PROXY_RESPONSE' : 'UNMARKED_RESPONSE'),
+          platformId: (response.headers.get('X-NWS-LOG-UUID') || '').replace(/[^a-zA-Z0-9-]/g, '').slice(0, 80),
+          upstreamId: (response.headers.get('X-Training-Upstream-Id') || '').replace(/[^a-zA-Z0-9-]/g, '').slice(0, 80)
+        };
         return response.text().then(function (text) {
           var data = null;
           try { if (text) data = JSON.parse(text); }
@@ -37,6 +119,7 @@ function nationalRpcRequest(name, payload) {
             badResponse.retryable = true;
             badResponse.kind = 'FORMAT';
             badResponse.status = response.status;
+            badResponse.evidence = evidence;
             throw badResponse;
           }
           if (!response.ok) {
@@ -45,6 +128,7 @@ function nationalRpcRequest(name, payload) {
             serverError.retryable = response.status === 502 || response.status === 503 || response.status === 504;
             serverError.kind = 'HTTP';
             serverError.status = response.status;
+            serverError.evidence = evidence;
             throw serverError;
           }
           if (name === 'training_api' && (!data || typeof data !== 'object')) {
@@ -67,8 +151,11 @@ function nationalRpcRequest(name, payload) {
       if (networkError) { error = new Error('网络连接暂时中断，请点击登录重试'); error.kind = 'NETWORK'; }
       var kind = error.kind || 'UNKNOWN';
       var number = trace + '-' + round + '/' + phase + '/' + kind;
+      if (error.evidence) number += '/' + error.evidence.source +
+        (error.evidence.platformId ? '/EO-' + error.evidence.platformId : '');
       if (typeof window !== 'undefined') window.NATIONAL_LOGIN_DIAGNOSTIC_V2 = {
-        id: trace + '-' + round, phase: phase, kind: kind, status: error.status || 0, at: Date.now()
+        id: trace + '-' + round, phase: phase, kind: kind, status: error.status || 0, at: Date.now(),
+        evidence: error.evidence || null
       };
       error.message += '（诊断编号 ' + number + '）';
       throw error;
@@ -103,7 +190,9 @@ function nationalSessionStart(identity, type, progress) {
 }
 
 function patchNationalLogin(source) {
-  if (source.includes('NATIONAL_LOGIN_DIAGNOSTIC_V2')) return source;
+  source = source.replace('var savedValue = saved && String(saved.value || saved.code || "").trim();',
+    'var savedValue = saved ? String(saved.value || saved.code || "").trim() : "";');
+  if (source.includes('NATIONAL_LOGIN_RESPONSE_V3')) return source;
   const existing = source.indexOf('function nationalRpcRequest(');
   const start = existing >= 0 ? existing : source.indexOf('function activationRpc(');
   const end = source.indexOf('function setActiveLogin(', start);
@@ -118,6 +207,21 @@ function patchNationalLogin(source) {
   return source.replace(/try \{ localStorage.removeItem\(ACT_KEY\); \} catch \(e\) \{\}\s*(?=selectLoginType\(savedType\);)/, '');
 }
 async function build(root) {
+  const aliases = [
+    ['zaytun/training/grammar/official-exams-2026.js', 'xjzk/training/grammar/official-exams-2026.js'],
+    ['zaytun/training/reading-writing/official-exams-reading-writing.js', 'zaytun/training/reading-writing/official-exams-2024-2025-20260829.js']
+  ];
+  const fixedAssets = new Set();
+  for (const [from, to] of aliases) {
+    try { await fs.access(path.join(root, path.dirname(to), 'index.html')); }
+    catch (_) { continue; }
+    await fs.copyFile(path.join(root, from), path.join(root, to));
+    fixedAssets.add(to);
+  }
+  const sharedSource = '(' + sharedTrainingConnection.toString() + ')();\n';
+  const sharedVersion = crypto.createHash('sha256').update(sharedSource).digest('hex').slice(0, 12);
+  await fs.mkdir(path.join(root, 'shared'), { recursive: true });
+  await fs.writeFile(path.join(root, 'shared/training-connection.js'), sharedSource);
   const files = [];
   async function walk(dir) {
     for (const item of await fs.readdir(dir, { withFileTypes: true })) {
@@ -132,7 +236,18 @@ async function build(root) {
   let configs = 0, pages = 0;
   for (const file of files) {
     const original = await fs.readFile(file, 'utf8');
-    const source = path.relative(root, file).split(path.sep).join('/') === 'eazycloze/app.js'
+    const relative = path.relative(root, file).split(path.sep).join('/');
+    if (relative.startsWith('leonlog/')) {
+      // This separate app uses Supabase Auth and Storage uploads, not just RPC.
+      // Keep its original SDK endpoint instead of routing it through an RPC proxy.
+      if (relative === 'leonlog/assets/supabase-config.js') {
+        const restored = original.replace(/\(location.protocol === "file:" \? "https:\/\/gbjmylxohacppnybfssh\.supabase\.co" : location.origin \+ "\/training-backend"\)/g, JSON.stringify(UPSTREAM));
+        if (restored !== original) { await fs.writeFile(file, restored); configs++; }
+        versions.set(path.resolve(file), 'net-' + crypto.createHash('sha256').update(restored).digest('hex').slice(0, 12));
+      }
+      continue;
+    }
+    const source = relative === 'eazycloze/app.js'
       ? patchNationalLogin(original) : original;
     const next = source.replace(/(["'])https:\/\/gbjmylxohacppnybfssh\.supabase\.co([^"']*)\1/g,
       (match, quote, suffix, offset) => {
@@ -141,13 +256,13 @@ async function build(root) {
           ' : location.origin + ' + JSON.stringify('/training-backend' + suffix) + ')';
       });
     if (next !== original) { await fs.writeFile(file, next); configs++; }
-    if (file.endsWith('.js') && next.includes('location.origin + "/training-backend')) {
+    if (file.endsWith('.js') && (next.includes('location.origin + "/training-backend') || fixedAssets.has(relative))) {
       versions.set(path.resolve(file), 'net-' + crypto.createHash('sha256').update(next).digest('hex').slice(0, 12));
     }
   }
   for (const file of files.filter(name => name.endsWith('.html'))) {
     const source = await fs.readFile(file, 'utf8');
-    const next = source.replace(/(<script\b[^>]*\bsrc\s*=\s*)(["'])([^"']+)\2/gi,
+    let next = source.replace(/(<script\b[^>]*\bsrc\s*=\s*)(["'])([^"']+)\2/gi,
       (match, prefix, quote, src) => {
         if (/^(https?:)?\/\//.test(src)) return match;
         const [withoutHash, hash] = src.split('#');
@@ -160,6 +275,14 @@ async function build(root) {
         query.set('v', version);
         return prefix + quote + pathname + '?' + query.toString() + (hash ? '#' + hash : '') + quote;
       });
+    const relative = path.relative(root, file).split(path.sep).join('/');
+    if (relative.startsWith('xjzk/training/junior-grammar/')) {
+      next = next.replace(/(["'])\/assets\/a4-print-entry\.js/g, '$1/xjzk/assets/a4-print-entry.js');
+    }
+    if (/^(7-5task|gzcloze|shcloze|xjzk|zaytun)\//.test(relative) || relative.startsWith('gaokao/vocabulary/')) {
+      next = next.replace(/\n?<script\b[^>]*src=["']\/shared\/training-connection\.js[^"']*["'][^>]*><\/script>/gi, '');
+      next = next.replace(/<head\b[^>]*>/i, '$&\n<script src="/shared/training-connection.js?v=' + sharedVersion + '"></script>');
+    }
     if (next !== source) { await fs.writeFile(file, next); pages++; }
   }
   console.log('[training-network] configurations=' + configs + ', versioned-pages=' + pages);
@@ -168,6 +291,7 @@ async function build(root) {
 module.exports = build;
 module.exports.nationalRpcRequest = nationalRpcRequest;
 module.exports.nationalSessionStart = nationalSessionStart;
+module.exports.sharedTrainingConnection = sharedTrainingConnection;
 if (require.main === module) build(path.resolve(process.argv[2] || process.cwd())).catch(error => {
   console.error('[training-network] Build failed:', error.message);
   process.exitCode = 1;
