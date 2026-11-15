@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="same-origin">
+  <meta http-equiv="Cache-Control" content="no-store">
+  <title>统一管理后台 · 无限进步</title>
+  <link rel="stylesheet" href="/admin/style.css?v=unified-1">
+</head>
+<body>
+  <header class="header"><a class="brand" href="/admin/"><span class="mark" aria-hidden="true">∞</span><span>无限进步<small>训练系统 · 统一管理后台</small></span></a><div class="header-right"><span class="admin-label">账号与授权</span><button id="logout" class="quiet" hidden>退出管理</button></div></header>
+  <main>
+    <section id="loginPanel" class="login panel">
+      <div class="eyebrow">一个入口，管理全部专项</div><h1>管理员登录</h1>
+      <p class="muted">使用现有管理员密码，管理学员手机号及全国完形登录码。</p>
+      <form id="loginForm"><label for="password">管理员密码</label><div class="login-fields"><input id="password" type="password" autocomplete="current-password" maxlength="128" required placeholder="请输入管理员密码"><button class="primary" type="submit" disabled>登录管理后台</button></div></form>
+      <p id="loginHint" class="muted small">支持全国完形、广州完形、上海完形、7选5及全国语法填空。</p>
+    </section>
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+    <div id="workspace" hidden>
+      <div class="heading"><div><div class="eyebrow">账号与权限</div><h1>学员授权管理</h1><p class="muted">按专项开通和管理权限，保存后立即生效。</p></div><button id="refresh" class="secondary">刷新账号列表</button></div>
+      <div id="serviceStatus" class="service-status" aria-live="polite"></div>
+      <section class="stats" aria-label="授权统计"><div><span>已载入授权</span><strong id="totalCount">—</strong></div><div><span>已启用</span><strong id="enabledCount">—</strong></div><div><span>已停用</span><strong id="disabledCount">—</strong></div><div><span>全国完形登录码</span><strong id="codeCount">—</strong></div></section>
+      <section class="panel authorize"><div class="panel-title"><h2>开通或更新手机号</h2><p class="muted small">同一手机号可开通多个专项；已存在的授权会更新备注并重新启用。</p></div>
+        <form id="authorizeForm"><div class="fields"><label>手机号<input name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="11" pattern="1[3-9][0-9]{9}" required placeholder="11位学员手机号"></label><label>备注 <span class="muted">选填</span><input name="note" maxlength="80" placeholder="学生姓名 / 班级"></label></div>
+          <fieldset><legend>选择开通专项</legend><div id="specialtyChoices" class="choices"></div></fieldset>
+          <div class="form-footer"><p class="muted small">每个专项分别保存权限与学习记录。</p><button class="primary" type="submit">保存授权</button></div>
+        </form>
+      </section>
+      <section class="panel list-panel"><div class="panel-title list-title"><div><h2>授权列表</h2><p id="resultSummary" class="muted small">正在载入…</p></div><label class="search"><span class="sr-only">搜索账号或备注</span><input id="search" type="search" placeholder="搜索手机号、登录码编号或备注"></label></div>
+        <nav id="tabs" class="tabs" aria-label="按专项筛选"></nav>
+        <div class="list-controls"><label>账号类型 <select id="kindFilter"><option value="all">全部类型</option><option value="phone">手机号</option><option value="code">登录码</option></select></label><label>状态 <select id="stateFilter"><option value="all">全部状态</option><option value="enabled">已启用</option><option value="disabled">已停用</option></select></label></div>
+        <div class="table-wrap"><table><thead><tr><th>账号</th><th>专项</th><th>备注</th><th>状态</th><th>开通时间</th><th>操作</th></tr></thead><tbody id="rows"></tbody></table></div><p id="empty" class="empty" hidden>暂无符合条件的授权</p>
+      </section>
+      <section class="panel"><details id="codeDetails"><summary>全国完形 · 新建或更新登录码</summary><p class="muted small">已有登录码以加密记录保存，原码可继续使用。列表按编号和备注管理，可重置设备绑定。</p><form id="codeForm"><div class="fields"><label>登录码<input name="code" minlength="8" maxlength="32" pattern="[A-Za-z0-9]{8,32}" required autocomplete="off" placeholder="8至32位字母或数字"></label><label>备注 <span class="muted">选填</span><input name="note" maxlength="80" placeholder="使用人 / 班级"></label></div><div class="form-footer"><p class="muted small">保存后启用；同码更新备注，保留学习记录。</p><button id="codeSubmit" class="primary" type="submit">保存登录码</button></div></form></details></section>
+      <footer><span>无限进步 · 统一管理后台</span><span>学员入口： <a href="/eazycloze/" target="_blank" rel="noopener">全国完形</a> <a href="/gzcloze/" target="_blank" rel="noopener">广州完形</a> <a href="/shcloze/" target="_blank" rel="noopener">上海完形</a> <a href="/7-5task/" target="_blank" rel="noopener">7选5</a></span></footer>
+    </div>
+  </main>
+  <script src="/admin/api.js?v=unified-1"></script>
+  <script src="/admin/app.js?v=unified-1"></script>
+</body>
+</html>
