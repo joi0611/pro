@@ -15,10 +15,7 @@ var ACTIVE_LOGIN_CODE = "";
 var ACTIVE_LOGIN_TYPE = "";
 var APP_INITIALIZED = false;
 var REMOTE_SAVE_TIMER = null;
-var SUPABASE_CONFIG = {
-  url: "https://gbjmylxohacppnybfssh.supabase.co",
-  anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdiam15bHhvaGFjcHBueWJmc3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDA1NzgsImV4cCI6MjA5ODI3NjU3OH0.mz5srsxdbZa4__oqKjlcysWuDo00w7UQaV8n2VNP4eE"
-};
+
 var clueColors = ["blue", "green", "yellow", "red", "violet"];
 
 var library = [];
@@ -102,67 +99,15 @@ function writeStoreLocal(s) {
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s || {})); }
   catch (e) { _memStore = s || {}; }
 }
-function activationRpc(name, payload) {
-  return fetch(SUPABASE_CONFIG.url + "/rest/v1/rpc/" + name, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "apikey": SUPABASE_CONFIG.anonKey,
-      "Authorization": "Bearer " + SUPABASE_CONFIG.anonKey
-    },
-    body: JSON.stringify(payload || {})
-  }).then(function (response) {
-    return response.json().catch(function () { return null; }).then(function (data) {
-      if (!response.ok) {
-        var message = data && (data.message || data.error_description || data.hint);
-        throw new Error(message || "SUPABASE_RPC_FAILED");
-      }
-      return data;
-    });
-  });
-}
-function trainingRpc(action, payload) {
-  return fetch(SUPABASE_CONFIG.url + "/rest/v1/rpc/training_api", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "apikey": SUPABASE_CONFIG.anonKey,
-      "Authorization": "Bearer " + SUPABASE_CONFIG.anonKey
-    },
-    body: JSON.stringify({ p_action: action, p_payload: payload || {} })
-  }).then(function (response) {
-    return response.json().catch(function () { return null; }).then(function (data) {
-      if (!response.ok) throw new Error((data && (data.message || data.msg)) || "SUPABASE_RPC_FAILED");
-      return data || {};
-    });
-  });
-}
+function activationRpc(name,payload){return NationalTransport.rpc(name,payload);}
+function trainingRpc(action,payload){return NationalTransport.rpc("training_api",{p_action:action,p_payload:payload||{}});}
 function setActiveLogin(identity, type) {
   ACTIVE_LOGIN_TYPE = type || "code";
   ACTIVE_LOGIN_CODE = String(identity || "").trim().toUpperCase();
   STORAGE_KEY = ACTIVE_LOGIN_CODE ? STORAGE_BASE_KEY + ":" + ACTIVE_LOGIN_TYPE + ":" + ACTIVE_LOGIN_CODE : STORAGE_BASE_KEY;
 }
-function loadRemoteProgress(code) {
-  return activationRpc("get_activation_progress", {
-    input_code: code,
-    input_region: "national"
-  }).then(function (data) {
-    return data && typeof data === "object" && !Array.isArray(data) ? data : {};
-  });
-}
-function queueRemoteProgressSave(s) {
-  if (!ACTIVE_LOGIN_CODE || ACTIVE_LOGIN_TYPE !== "code") return;
-  clearTimeout(REMOTE_SAVE_TIMER);
-  var code = ACTIVE_LOGIN_CODE;
-  var snapshot = JSON.parse(JSON.stringify(s || {}));
-  REMOTE_SAVE_TIMER = setTimeout(function () {
-    activationRpc("save_activation_progress", {
-      input_code: code,
-      input_region: "national",
-      input_progress: snapshot
-    }).catch(function () { /* 保留本地缓存，网络恢复后下一次变更会再次同步 */ });
-  }, 600);
-}
+function loadRemoteProgress(){return NationalTransport.load();}
+function queueRemoteProgressSave(s){if(ACTIVE_LOGIN_CODE)NationalTransport.queue(s);}
 function saveStore(s) {
   writeStoreLocal(s);
   queueRemoteProgressSave(s);
@@ -3976,7 +3921,7 @@ function init() {
 
   function startAuthorizedSession(identity, type, progress) {
     setActiveLogin(identity, type);
-    if (progress && typeof progress === "object") writeStoreLocal(progress);
+    writeStoreLocal(NationalTransport.choose(loadStore(),progress));
     try { localStorage.setItem(ACT_KEY, JSON.stringify({ type: type, value: identity, code: type === "code" ? identity : "", at: Date.now() })); } catch (e) {}
     init();
     unlockBody();
@@ -4003,7 +3948,7 @@ function init() {
       setTimeout(function () { startAuthorizedSession(identity, isPhone ? "phone" : "code", progress); }, 250);
     }
     var loginPromise = isPhone
-      ? verifyPhone(value).then(function (phone) { return { identity: phone, progress: null }; })
+      ? verifyPhone(value).then(function (phone) { return loadRemoteProgress().then(function(progress){return {identity:phone,progress:progress};}); })
       : verifyActivationCode(value).then(function (valid) {
           if (!valid) throw new Error("INVALID_CODE");
           return loadRemoteProgress(value).then(function (progress) { return { identity: value, progress: progress }; });
@@ -4031,7 +3976,7 @@ function init() {
     $("gatePhoneTab").addEventListener("click", function () { selectLoginType("phone"); });
     var saved = readJson(ACT_KEY, null);
     var savedType = saved && saved.type === "phone" ? "phone" : "code";
-    var savedValue = saved && String(saved.value || saved.code || "").trim();
+    var savedValue = saved ? String(saved.value || saved.code || "").trim() : "";
     if (savedType === "code") savedValue = savedValue.toUpperCase();
     if (!savedValue) {
       if (input) input.focus();
@@ -4040,7 +3985,7 @@ function init() {
     setBusy(true);
     showMsg("\u6B63\u5728\u8BFB\u53D6\u5B66\u4E60\u8BB0\u5F55\u2026", true);
     var restorePromise = savedType === "phone"
-      ? verifyPhone(savedValue).then(function (phone) { return { identity: phone, progress: null }; })
+      ? verifyPhone(savedValue).then(function (phone) { return loadRemoteProgress().then(function(progress){return {identity:phone,progress:progress};}); })
       : verifyActivationCode(savedValue).then(function (valid) {
           if (!valid) throw new Error("INVALID_CODE");
           return loadRemoteProgress(savedValue).then(function (progress) { return { identity: savedValue, progress: progress }; });
