@@ -82,16 +82,18 @@
   const emptyState = document.querySelector("#emptyState");
   const examList = document.querySelector("#examList");
 
+  function accountKey(base) { return base + ':account:' + (localStorage.getItem('seven_choice_phone') || 'guest'); }
   function loadProgress() {
     try {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      const saved = JSON.parse(localStorage.getItem(accountKey(STORAGE_KEY)) || "[]");
       return new Set(Array.isArray(saved) ? saved.map(Number) : []);
     } catch (_error) { return new Set(); }
   }
 
   function saveProgress() {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify([...state.completed].sort((a, b) => a - b)));
+      localStorage.setItem(accountKey(STORAGE_KEY), JSON.stringify([...state.completed].sort((a, b) => a - b)));
+      if (window.ThreeSiteSync) window.ThreeSiteSync.queue();
     } catch (_error) { /* Keep the current lesson usable when browser storage is unavailable. */ }
   }
 
@@ -1400,5 +1402,25 @@
 
   tabs.forEach((tab) => tab.addEventListener("click", () => { document.title = "无限进步 中考7选5训练系统"; if (tab.dataset.view === "training") renderTrainingCatalog(); setView(tab.dataset.view); }));
   lessonSearch.addEventListener("input", () => renderCatalog(lessonSearch.value));
+  window.ThreeSevenProgress = {
+    capture: function () {
+      var resume = {};
+      Object.keys(state).forEach(function (k) { if(k !== 'completed') resume[k] = state[k]; });
+      return {completed: [...state.completed].sort((a,b)=>a-b), state: resume};
+    },
+    apply: function (p) {
+      state.completed = new Set(Array.isArray(p.completed) ? p.completed.map(Number) : []);
+      if(p.state) Object.keys(state).forEach(function(k){ if(k !== 'completed' && Object.prototype.hasOwnProperty.call(p.state,k)) state[k]=p.state[k]; });
+      renderCatalog(); renderTrainingCatalog(); updateProgress(); updateHomeStats();
+    }
+  };
+  var restored = null;
+  try { restored = JSON.parse(localStorage.getItem(accountKey(STORAGE_KEY + ':full')) || 'null'); } catch (_) {}
+  if(restored) window.ThreeSevenProgress.apply(restored);
+  document.addEventListener('click', function(){ setTimeout(function(){
+    if(!window.ThreeSiteSync) return;
+    try { localStorage.setItem(accountKey(STORAGE_KEY + ':full'), JSON.stringify(window.ThreeSevenProgress.capture())); } catch (_) {}
+    window.ThreeSiteSync.queue();
+  },0); });
   renderCatalog(); renderTrainingCatalog(); updateProgress(); updateHomeStats(); setView("home");
 })();

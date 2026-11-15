@@ -8,8 +8,7 @@
     seven_choice: "全国中考7选5",
     shcloze: "上海中考完形填空",
     gzcloze: "广州中考完形填空",
-    national_cloze: "全国中考完形填空",
-    national_grammar: "全国中考语法填空"
+
   };
   let phones = [];
   let path = location.pathname;

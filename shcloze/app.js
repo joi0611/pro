@@ -95,6 +95,7 @@ function loadStore() {
   catch (e) { return _memStore; }
 }
 function saveStore(s) {
+  if (window.ThreeSiteSync) setTimeout(function(){window.ThreeSiteSync.queue();},0);
   if (!_probeStorage()) { _memStore = s; return; }
   try { localStorage.setItem(accountStorageKey(STORAGE_KEY), JSON.stringify(s)); }
   catch (e) { _memStore = s; }
@@ -683,7 +684,7 @@ function hideSentenceTip() { var t = $("sentenceTip"); if (t) { t.hidden = true;
 
 /* ---------- 3. 词汇卡：双击单词 → 有道词典 + 收录 ---------- */
 function loadVocab() { try { return JSON.parse(localStorage.getItem(accountStorageKey("cloze_vocab")) || "[]"); } catch (e) { return []; } }
-function saveVocab(v) { try { localStorage.setItem(accountStorageKey("cloze_vocab"), JSON.stringify(v)); } catch (e) {} }
+function saveVocab(v) { if (window.ThreeSiteSync) setTimeout(function(){window.ThreeSiteSync.queue();},0); try { localStorage.setItem(accountStorageKey("cloze_vocab"), JSON.stringify(v)); } catch (e) {} }
 function openYoudao(word) { window.open("https://dict.youdao.com/search?q=" + encodeURIComponent(word), "_blank", "noopener"); }
 function addVocab(word, ctx) {
   word = String(word || "").toLowerCase().replace(/[^a-z'\-]/g, "");
