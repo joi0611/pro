@@ -9,6 +9,7 @@ function sharedTrainingConnection() {
   var originalFetch = window.fetch.bind(window);
   var reads = ['verify_access_code', 'verify_phone_access', 'verify_activation_code', 'verify_cloze_experience_code',
     'get_learning_progress', 'get_phone_learning_progress', 'get_activation_progress'];
+  var retryDelays = [600, 1800];
   window.fetch = function (input, init) {
     if (typeof input !== 'string') return originalFetch(input, init);
     var url;
@@ -66,11 +67,14 @@ function sharedTrainingConnection() {
       return task.then(function (response) { cleanup(); return response; }, function (error) {
         cleanup();
         if (!error || !error.kind) error = problem('网络连接暂时中断，请重试', 'NETWORK', 0, id);
-        var transient = ['NETWORK', 'TIMEOUT', 'FORMAT'].indexOf(error.kind) >= 0 || [502, 503, 504].indexOf(error.status) >= 0;
-        if (safe && round === 0 && transient) {
-          return new Promise(function (resolve) { setTimeout(resolve, 400); }).then(function () { return attempt(1); });
+        var busy = error.status >= 500 && error.status < 600;
+        var transient = ['NETWORK', 'TIMEOUT', 'FORMAT'].indexOf(error.kind) >= 0 || busy;
+        var budget = error.kind === 'TIMEOUT' ? 1 : retryDelays.length;
+        if (safe && round < budget && transient) {
+          return new Promise(function (resolve) { setTimeout(resolve, retryDelays[round]); }).then(function () { return attempt(round + 1); });
         }
         window.TRAINING_CONNECTION_DIAGNOSTIC_V1 = { id: id, phase: name, kind: error.kind, status: error.status || 0, at: Date.now() };
+        if (busy) error.message = '题库服务器暂时繁忙，请等几秒再点一次';
         error.message += '（诊断编号 ' + id + '/' + error.kind + '）';
         throw error;
       });
@@ -125,7 +129,7 @@ function nationalRpcRequest(name, payload) {
           if (!response.ok) {
             var serverError = new Error(data && (data.message || data.msg || data.error_description) ||
               '数据服务暂时不可用（HTTP ' + response.status + '），请重试');
-            serverError.retryable = response.status === 502 || response.status === 503 || response.status === 504;
+            serverError.retryable = response.status >= 500 && response.status < 600;
             serverError.kind = 'HTTP';
             serverError.status = response.status;
             serverError.evidence = evidence;
@@ -145,8 +149,9 @@ function nationalRpcRequest(name, payload) {
     return task.then(function (data) { clearTimeout(timer); return data; }, function (error) {
       clearTimeout(timer);
       var networkError = error && (error.name === 'TypeError' || error.name === 'AbortError');
-      if (safeRetry && round === 0 && (networkError || error.retryable)) {
-        return new Promise(function (resolve) { setTimeout(resolve, 400); }).then(function () { return attempt(1); });
+      var budget = error && error.kind === 'TIMEOUT' ? 1 : 2;
+      if (safeRetry && round < budget && (networkError || error.retryable)) {
+        return new Promise(function (resolve) { setTimeout(resolve, round === 0 ? 600 : 1800); }).then(function () { return attempt(round + 1); });
       }
       if (networkError) { error = new Error('网络连接暂时中断，请点击登录重试'); error.kind = 'NETWORK'; }
       var kind = error.kind || 'UNKNOWN';
