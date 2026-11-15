@@ -9,7 +9,7 @@ const { Store: ThreeStore } = require('../three-site/runtime/store.cjs');
 const { createApp: nationalApp } = require('../national-cloze/runtime/server.cjs');
 const { createApp: threeApp } = require('../three-site/runtime/server.cjs');
 const password = 'integration-only-password';
-async function fixture() {
+async function fixture({ webRoot } = {}) {
   const national = new NationalStore(':memory:'), three = new ThreeStore(':memory:');
   const hash = bcrypt.hashSync(password, 4), now = '2026-11-15T00:00:00.000Z';
   national.setSetting('admin_hash', hash); national.setSetting('salt', 'test-salt'); national.setSetting('source_checksum', 'test');
@@ -23,7 +23,7 @@ async function fixture() {
   const nationalServer = nationalApp({ store: national, secureCookies: false });
   const threeServer = threeApp({ store: three, secureCookies: false });
   const { middleware } = await import('data:text/javascript;base64,' + fs.readFileSync(path.resolve(__dirname, '../../middleware.js')).toString('base64'));
-  const root = path.resolve(__dirname, '../..');
+  const root = path.resolve(webRoot || path.join(__dirname, '../..'));
   const requests = [];
   const server = http.createServer(async (req, res) => {
     requests.push({ path: req.url, method: req.method });

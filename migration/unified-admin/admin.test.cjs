@@ -88,6 +88,7 @@ test('old admin entries redirect; student, data and national publish routes keep
   const { middleware } = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
   const route = pathname => middleware({ request: { url: 'https://pro.yunmianas.cn' + pathname }, redirect: (url, code) => ({ redirect: url, code }), rewrite: url => ({ rewrite: url }), next: () => ({ next: true }) });
   for (const [old, id] of [['/national-admin', 'national_cloze'], ['/eazycloze/admin.html', 'national_cloze'], ['/7-5task/admin.html', 'seven_choice'], ['/7-5task/admin-supabase.html', 'national_grammar'], ['/shcloze/admin.html', 'shcloze'], ['/gzcloze/admin.html', 'gzcloze']]) assert.deepEqual(route(old), { redirect: '/admin/?specialty=' + id, code: 302 });
-  for (const pathname of ['/three-api/seven_choice/rpc', '/national-api/admin/list', '/eazycloze/app.js?v=123']) assert.equal(route(pathname).rewrite, 'https://national-origin.yunmianas.cn' + pathname);
+  for (const pathname of ['/three-api/seven_choice/rpc', '/national-api/admin/list']) assert.equal(route(pathname).rewrite, 'https://national-origin.yunmianas.cn' + pathname);
+  assert.deepEqual(route('/eazycloze/app.js?v=123'), { next: true });
   assert.deepEqual(route('/gzcloze/'), { next: true }); assert.deepEqual(route('/admin/api.js'), { next: true });
 });

@@ -2,7 +2,7 @@
 const { fixture } = require('./fixture.cjs');
 const fs = require('node:fs'), path = require('node:path'), os = require('node:os'), cp = require('node:child_process'), assert = require('node:assert/strict');
 async function main() {
-  const f = await fixture();
+  const f = await fixture({ webRoot: process.env.NATIONAL_BUILD_FIXTURE });
   const out = path.join(__dirname, '.staging'); fs.mkdirSync(out, { recursive: true });
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'unified-admin-browser-'));
   const chromePath = process.env.ADMIN_TEST_CHROME || path.join(process.env.LOCALAPPDATA, 'ms-playwright/chromium-1255/chrome-win64/chrome.exe');
@@ -75,6 +75,31 @@ async function main() {
     f.setLegacyFailure(false);
     await evaluate("document.getElementById('logout').click()"); await waitFor("document.getElementById('workspace').hidden && !document.querySelector('#loginForm button').disabled");
     assert.equal(await evaluate("document.querySelectorAll('#rows tr').length"), 0);
+    if (process.env.NATIONAL_BUILD_FIXTURE) {
+      await send('Page.navigate', { url: f.origin + '/eazycloze/' });
+      await waitFor("document.readyState === 'complete' && typeof window.markDone === 'function' && !!window.NationalTransport");
+      await evaluate("localStorage.setItem('cloze-national-v2:phone:13800000001',JSON.stringify({done:{'retained-from-before-publish':true},errors:[],vocab:[]}));document.getElementById('gatePhoneTab').click();document.getElementById('gatePhone').value='13800000001';document.getElementById('gateBtn').click()");
+      await waitFor("!document.body.classList.contains('gate-locked') && APP_INITIALIZED && library.length > 0");
+      for (let n = 0; n < 80 && f.national.readProgress({kind:'phone',identity:'13800000001'}).revision < 1; n++) await new Promise(r => setTimeout(r, 100));
+      assert.equal(f.national.readProgress({kind:'phone',identity:'13800000001'}).progress.done['retained-from-before-publish'], true);
+      const lesson = await evaluate("String(library[0].id)");
+      await evaluate("markDone(String(library[0].id))");
+      for (let n = 0; n < 80 && f.national.readProgress({kind:'phone',identity:'13800000001'}).revision < 2; n++) await new Promise(r => setTimeout(r, 100));
+      assert.equal(f.national.readProgress({kind:'phone',identity:'13800000001'}).progress.done[lesson], true);
+      await evaluate('localStorage.clear()');
+      await send('Page.reload');
+      await waitFor("document.readyState === 'complete' && typeof window.markDone === 'function' && document.body.classList.contains('gate-locked')");
+      await evaluate("document.getElementById('gatePhoneTab').click();document.getElementById('gatePhone').value='13800000001';document.getElementById('gateBtn').click()");
+      await waitFor("!document.body.classList.contains('gate-locked') && APP_INITIALIZED");
+      assert.equal(await evaluate("loadStore().done['retained-from-before-publish']"), true);
+      assert.equal(await evaluate('loadStore().done[' + JSON.stringify(lesson) + ']'), true);
+      await evaluate('localStorage.clear()'); await send('Page.reload');
+      await waitFor("document.readyState === 'complete' && typeof window.markDone === 'function' && document.body.classList.contains('gate-locked')");
+      await evaluate("document.getElementById('gateCode').value='TESTCODE01';document.getElementById('gateBtn').click()");
+      await waitFor("!document.body.classList.contains('gate-locked') && ACTIVE_LOGIN_TYPE === 'code'");
+      assert.equal(await evaluate('STORAGE_KEY'), 'cloze-national-v2:code:TESTCODE01');
+      console.log('STATIC_NATIONAL_BROWSER_LOGIN_CODE_PHONE_PROGRESS_RESTORE_VERIFIED');
+    }
     assert.deepEqual(errors, []);
     console.log(JSON.stringify({ ok: true, checks: ['no-prelogin-requests', 'old-cookie-revisit-locked', 'wrong-password-with-existing-cookies', 'single-login-five-sites', 'account-lists', 'batch-authorization', 'safe-note-rendering', 'search', 'suspend', 'code-creation', 'refresh-requires-password', 'mobile-layout', 'partial-outage', 'logout'], screenshots: out, productionDataUsed: false }));
   } finally { if (ws) ws.close(); chrome.kill(); await f.close(); }

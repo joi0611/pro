@@ -19,7 +19,9 @@ export function middleware(context) {
     return context.rewrite(NATIONAL_ORIGIN + url.pathname + url.search);
   if (url.pathname === '/eazycloze')
     return context.redirect('/eazycloze/', 308);
-  if (url.pathname.startsWith('/eazycloze/') || url.pathname.startsWith('/national-api/'))
+  // National pages and resources now follow the same GitHub static deployment
+  // as the other boards. Only its account/progress API remains on Tencent.
+  if (url.pathname.startsWith('/national-api/'))
     return context.rewrite(NATIONAL_ORIGIN + url.pathname + url.search);
   return context.next();
 }

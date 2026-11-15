@@ -202,6 +202,9 @@ function nationalSessionStart(identity, type, progress) {
 }
 
 function patchNationalLogin(source) {
+  // The dedicated Tencent transport is already migrated and validated by
+  // build-national-static; never rewrite it into the legacy Supabase client.
+  if (source.includes('NationalTransport.rpc')) return source;
   source = source.replace('var savedValue = saved && String(saved.value || saved.code || "").trim();',
     'var savedValue = saved ? String(saved.value || saved.code || "").trim() : "";');
   if (source.includes('NATIONAL_LOGIN_RESPONSE_V3')) return source;
@@ -219,6 +222,7 @@ function patchNationalLogin(source) {
   return source.replace(/try \{ localStorage.removeItem\(ACT_KEY\); \} catch \(e\) \{\}\s*(?=selectLoginType\(savedType\);)/, '');
 }
 async function build(root) {
+  await require('./build-national-static.cjs')(root);
   const aliases = [
     ['zaytun/training/grammar/official-exams-2026.js', 'xjzk/training/grammar/official-exams-2026.js'],
     ['zaytun/training/reading-writing/official-exams-reading-writing.js', 'zaytun/training/reading-writing/official-exams-2024-2025-20260829.js']
