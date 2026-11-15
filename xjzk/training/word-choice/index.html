@@ -1998,6 +1998,7 @@
 
   <div class="toast" id="toast"></div>
 
+  <script src="../../assets/progress-sync.js?v=20261115-1"></script>
   <script src="../../assets/student-profile.js?v=20261020-1"></script>
   <script src="imported-question-bank-20260829.js?v=20260829-1"></script>
   <script src="imported-question-bank-20260902.js?v=20260902-1"></script>
@@ -2105,6 +2106,7 @@
     }
 
     function unlockApp() {
+      startWordChoiceProgress();
       document.body.classList.remove("locked");
       showOnboardingIfNeeded();
     }
@@ -4349,16 +4351,67 @@
       qiongkushitaiVillage: qiongkushitaiVillageQuestion
     };
 
+
+    const wcLegacyIdentity = safeGetLogin() ? safeGetLoginMode() + ':' + safeGetLogin() : '';
+    let wcIdentity = '', wcSync = null;
+    function wcStorageKey(key) { return key + ':' + wcIdentity; }
+    function wcStamp() {
+      localStorage.setItem(wcStorageKey('word_choice_updated_at_v1'), String(Date.now()));
+      if (wcSync) wcSync.changed();
+    }
+    function startWordChoiceProgress() {
+      const mode = safeGetLoginMode(), credential = safeGetLogin();
+      if (!credential || wcIdentity === mode + ':' + credential) return;
+      if (wcSync) wcSync.stop();
+      wcIdentity = mode + ':' + credential;
+      const ownerKey = 'word_choice_legacy_progress_owner_v1';
+      if (wcLegacyIdentity === wcIdentity && (!localStorage.getItem(ownerKey) || localStorage.getItem(ownerKey) === wcIdentity)) {
+        for (const key of [WORD_CHOICE_DONE_KEY, NOTEBOOK_STORAGE_KEY]) {
+          if (!localStorage.getItem(wcStorageKey(key)) && localStorage.getItem(key)) {
+            localStorage.setItem(wcStorageKey(key), localStorage.getItem(key));
+            localStorage.setItem(wcStorageKey('word_choice_updated_at_v1'), String(Date.now()));
+          }
+        }
+        localStorage.setItem(ownerKey, wcIdentity);
+      }
+      wordChoiceDoneArticles = readWordChoiceCompletions();
+      renderLibrary();
+      if (!window.TrainingProgressSync) return;
+      wcSync = window.TrainingProgressSync.create({
+        systemType: SYSTEM_TYPE, lessonId: 'word_choice_profile_v1', rpc: callSupabaseRpc,
+        read: () => ({ updatedAt: Number(localStorage.getItem(wcStorageKey('word_choice_updated_at_v1'))) || 0,
+          data: { completed: wordChoiceDoneArticles, notebook: readNotebook() } }),
+        merge: (remote, local) => {
+          if (!remote || !remote.data) return local;
+          const completed = { ...(remote.data.completed || {}) };
+          for (const [key, record] of Object.entries(local.data.completed || {})) {
+            if (!completed[key] || String(record.completedAt || '') >= String(completed[key].completedAt || '')) completed[key] = record;
+          }
+          const newer = local.updatedAt >= remote.updatedAt ? local : remote;
+          return { updatedAt: Math.max(local.updatedAt || 0, remote.updatedAt || 0),
+            data: { completed, notebook: newer.data.notebook || [] } };
+        },
+        apply: snapshot => {
+          wordChoiceDoneArticles = snapshot.data.completed || {};
+          localStorage.setItem(wcStorageKey(WORD_CHOICE_DONE_KEY), JSON.stringify(wordChoiceDoneArticles));
+          localStorage.setItem(wcStorageKey(NOTEBOOK_STORAGE_KEY), JSON.stringify(snapshot.data.notebook || []));
+          localStorage.setItem(wcStorageKey('word_choice_updated_at_v1'), String(snapshot.updatedAt || 0));
+          renderLibrary();
+        }
+      });
+      wcSync.start(mode, credential);
+    }
+
     const WORD_CHOICE_DONE_KEY = "word_choice_done_articles_v1";
     let wordChoiceDoneArticles = readWordChoiceCompletions();
 
     function readWordChoiceCompletions() {
-      try { return JSON.parse(localStorage.getItem(WORD_CHOICE_DONE_KEY) || "{}"); }
+      try { return JSON.parse(localStorage.getItem(wcStorageKey(WORD_CHOICE_DONE_KEY)) || "{}"); }
       catch (error) { return {}; }
     }
 
     function writeWordChoiceCompletions() {
-      try { localStorage.setItem(WORD_CHOICE_DONE_KEY, JSON.stringify(wordChoiceDoneArticles)); }
+      try { localStorage.setItem(wcStorageKey(WORD_CHOICE_DONE_KEY), JSON.stringify(wordChoiceDoneArticles)); wcStamp(); }
       catch (error) {}
     }
 
@@ -4511,11 +4564,11 @@
       return String(value ?? "").replace(/[&<>\"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
     }
     function readNotebook() {
-      try { return JSON.parse(localStorage.getItem(NOTEBOOK_STORAGE_KEY) || "[]"); }
+      try { return JSON.parse(localStorage.getItem(wcStorageKey(NOTEBOOK_STORAGE_KEY)) || "[]"); }
       catch (error) { return []; }
     }
     function writeNotebook(items) {
-      try { localStorage.setItem(NOTEBOOK_STORAGE_KEY, JSON.stringify(items)); } catch (error) {}
+      try { localStorage.setItem(wcStorageKey(NOTEBOOK_STORAGE_KEY), JSON.stringify(items)); wcStamp(); } catch (error) {}
       updateNotebookCount();
     }
     function updateNotebookCount() {

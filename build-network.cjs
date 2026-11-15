@@ -8,19 +8,24 @@ function sharedTrainingConnection() {
   window.__TRAINING_CONNECTION_V1__ = true;
   var originalFetch = window.fetch.bind(window);
   var reads = ['verify_access_code', 'verify_phone_access', 'verify_activation_code', 'verify_cloze_experience_code',
-    'get_learning_progress', 'get_phone_learning_progress', 'get_activation_progress'];
+    'get_learning_progress', 'get_phone_learning_progress', 'get_activation_progress',
+    'current_staff_role', 'owner_query_login_usage', 'teacher_query_login_usage',
+    'owner_list_teachers', 'owner_list_teacher_assignments', 'staff_list_phone_access'];
   var retryDelays = [600, 1800];
   window.fetch = function (input, init) {
     if (typeof input !== 'string') return originalFetch(input, init);
     var url;
     try { url = new URL(input, location.href); } catch (_) { return originalFetch(input, init); }
-    if (url.origin !== location.origin || !/^\/training-backend\/(rest\/v1\/rpc\/|functions\/v1\/vocab-progress)/.test(url.pathname)) {
+    if (url.origin !== location.origin || !/^\/training-backend\/(rest\/v1\/|auth\/v1\/|functions\/v1\/vocab-progress)/.test(url.pathname)) {
       return originalFetch(input, init);
     }
     var options = init || {}, payload = {};
     try { payload = JSON.parse(options.body || '{}'); } catch (_) {}
     var name = url.pathname.split('/').pop();
-    var safe = reads.indexOf(name) >= 0 || (name === 'training_api' && payload.p_action === 'student_login');
+    var method = String(options.method || 'GET').toUpperCase();
+    var safe = method === 'GET' || method === 'HEAD' || reads.indexOf(name) >= 0 ||
+      (name === 'vocab-progress' && ['login', 'get'].indexOf(payload.action) >= 0) ||
+      (name === 'training_api' && payload.p_action === 'student_login');
     var trace = 'TC-' + Date.now().toString(36).toUpperCase() + '-' + Math.random().toString(36).slice(2, 7).toUpperCase();
     function problem(message, kind, status, id) {
       var error = new Error(message);
@@ -48,6 +53,8 @@ function sharedTrainingConnection() {
         request.cache = 'no-store';
         if (controller) request.signal = controller.signal;
         Promise.resolve().then(function () { return originalFetch(input, request); }).then(function (response) {
+          // Preserve authentication responses so callers can renew expired sessions.
+          if (response.status === 401 || response.status === 403) return response;
           return response.clone().text().then(function (text) {
             var data = null;
             try { if (text) data = JSON.parse(text); }

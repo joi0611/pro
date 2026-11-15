@@ -13,6 +13,7 @@
   };
 
   document.documentElement.classList.add("writing-auth-pending");
+  window.WritingTrainingAuth = { rpc: callSupabaseRpc };
   document.addEventListener("DOMContentLoaded", initAuth);
 
   async function initAuth() {
@@ -113,7 +114,10 @@
     safeSet(LOGIN_OK_KEY, "true");
     if (account && account.label) safeSet(LOGIN_LABEL_KEY, account.label);
     applyStudentBrand(studentName);
-    if (!isNewSession) addLogoutButton();
+    if (!isNewSession) {
+      addLogoutButton();
+      if (window.WritingProgressReady) window.WritingProgressReady(mode, credential);
+    }
   }
 
   function applyStudentBrand(name) {

@@ -1,0 +1,6 @@
+{
+  "name": "xjzk-site-checks",
+  "private": true,
+  "scripts": { "test": "node xjzk-reliability.cjs" },
+  "devDependencies": { "jsdom": "26.1.0" }
+}

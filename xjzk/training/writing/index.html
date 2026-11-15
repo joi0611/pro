@@ -6,6 +6,7 @@
 <title>中考英语写作训练营 · 交互练习 · 无限进步</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="auth.css?v=20261012-1" />
+<script src="../../assets/progress-sync.js?v=20261115-1"></script>
 <script src="../../assets/student-profile.js?v=20261020-1" defer></script>
 <script src="auth.js?v=20261012-1" defer></script>
 <style>
@@ -1813,10 +1814,48 @@ const $ = s => document.querySelector(s);
 const $$ = s => Array.from(document.querySelectorAll(s));
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 function norm(s){return String(s||'').toLowerCase().replace(/[.,!?;:，。！？；：'"\u2018\u2019\u201c\u201d]/g,'').replace(/\s+/g,' ').trim()}
-const LS_KEY='wx26_progress_v1_'+(localStorage.getItem('writing_access_code_20261012')||'guest');
-const store={load(){try{return JSON.parse(localStorage.getItem(LS_KEY))||{}}catch(e){return{}}},save(d){localStorage.setItem(LS_KEY,JSON.stringify(d))}};
+let writingIdentity = (localStorage.getItem('writing_login_mode_20261013') === 'phone' ? 'phone:' + (localStorage.getItem('writing_phone_login_20261013') || '') : 'code:' + (localStorage.getItem('writing_access_code_20261012') || ''));
+let writingSync = null;
+function writingKey(){ return 'wx26_progress_v2_' + writingIdentity; }
+const store={load(){try{
+  const own=localStorage.getItem(writingKey());if(own)return JSON.parse(own);
+  // The former phone key was shared by every phone account; retain it as a
+  // backup, but never import another student's unattributed work.
+  if(writingIdentity.startsWith('code:')&&writingIdentity.slice(5)){
+    const legacy=localStorage.getItem('wx26_progress_v1_'+writingIdentity.slice(5));
+    if(legacy){localStorage.setItem(writingKey(),legacy);localStorage.setItem(writingKey()+':updatedAt',String(Date.now()));return JSON.parse(legacy)}
+  }
+  return {};
+}catch(e){return{}}},save(d){localStorage.setItem(writingKey(),JSON.stringify(d))}};
 let P=store.load();
-function saveP(){store.save(P)}
+function saveP(){
+  const now=Date.now();if(currentDay&&P[currentDay.day])P[currentDay.day].updatedAt=now;
+  store.save(P);localStorage.setItem(writingKey()+':updatedAt',String(now));
+  if(writingSync)writingSync.changed();
+}
+window.WritingProgressReady=function(mode,credential){
+  if(writingSync)writingSync.stop();
+  writingIdentity=mode+':'+credential;P=store.load();renderHome();
+  if(!window.TrainingProgressSync||!window.WritingTrainingAuth)return;
+  writingSync=window.TrainingProgressSync.create({
+    systemType:'writing',lessonId:'writing_profile_v1',rpc:window.WritingTrainingAuth.rpc,
+    read:()=>({updatedAt:Number(localStorage.getItem(writingKey()+':updatedAt'))||0,data:P}),
+    merge:(remote,local)=>{
+      if(!remote||!remote.data)return local;
+      const data={...remote.data};
+      for(const [key,value] of Object.entries(local.data)){
+        if(key==='notebook')continue;
+        const localTime=Number(value&&value.updatedAt)||local.updatedAt||0;
+        const remoteTime=Number(data[key]&&data[key].updatedAt)||remote.updatedAt||0;
+        if(!data[key]||localTime>=remoteTime)data[key]=value;
+      }
+      data.notebook=(local.updatedAt>=remote.updatedAt?local.data:remote.data).notebook||[];
+      return {updatedAt:Math.max(local.updatedAt||0,remote.updatedAt||0),data};
+    },
+    apply:snapshot=>{P=snapshot.data||{};store.save(P);localStorage.setItem(writingKey()+':updatedAt',String(snapshot.updatedAt||0));renderHome();updateNotebookBadge()}
+  });
+  writingSync.start(mode,credential);
+};
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._tm);t._tm=setTimeout(()=>t.classList.remove('show'),1800)}
 
 /* ================= 视图切换 ================= */
@@ -2374,7 +2413,7 @@ function writeItemHtml(x,it,i){
 }
 
 /* ================= 错题本 ================= */
-function notebookAdd(it){const arr=P.notebook=P.notebook||[];if(!arr.find(x=>x.id===it.id))arr.push({id:it.id,day:it.day});updateNotebookBadge()}
+function notebookAdd(it){const arr=P.notebook=P.notebook||[];if(!arr.find(x=>x.id===it.id)){arr.push({id:it.id,day:it.day});saveP()}updateNotebookBadge()}
 function updateNotebookBadge(){const n=(P.notebook||[]).length;$('#navNotebookCount').hidden=n===0;$('#navNotebookCount').textContent=n}
 function renderNotebook(){
   const arr=P.notebook||[];

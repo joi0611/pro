@@ -170,8 +170,8 @@
           unlock();
         } catch (err) {
           document.body.classList.add("jgr-auth-locked");
-          localStorage.removeItem(CODE_KEY);
-          error.textContent = /fetch|network/i.test(String(err && err.message))
+          if (!err.isTrainingTransportError) localStorage.removeItem(CODE_KEY);
+          error.textContent = err.isTrainingTransportError ? err.message : /fetch|network/i.test(String(err && err.message))
             ? "暂时无法连接验证服务，请检查网络后重试。"
             : mode === "phone" ? "该手机号尚未开通初中语法重构，请联系老师授权。" : "登录码不正确，或已绑定到其他专项。";
           input.select();
@@ -199,9 +199,11 @@
       await ensureStudentProfile(mode, saved, account);
       unlock();
     } catch (err) {
-      localStorage.removeItem(CODE_KEY);
-      localStorage.removeItem(PHONE_KEY);
-      showLogin(mode === "phone" ? "手机号登录状态已失效，请重新输入。" : "登录状态已失效，请重新输入登录码。");
+      if (!err.isTrainingTransportError) {
+        localStorage.removeItem(CODE_KEY);
+        localStorage.removeItem(PHONE_KEY);
+      }
+      showLogin(err.isTrainingTransportError ? err.message : mode === "phone" ? "手机号登录状态已失效，请重新输入。" : "登录状态已失效，请重新输入登录码。");
     }
   }
 
