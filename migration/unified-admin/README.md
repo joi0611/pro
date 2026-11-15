@@ -5,9 +5,14 @@ Canonical URL: `https://pro.yunmianas.cn/admin/`.
 The dashboard manages the existing national cloze, Guangzhou cloze, Shanghai
 cloze, seven-choice and national grammar authorization services. A single
 password submission authenticates each service independently; passwords are
-cleared from the form immediately and are never persisted. National and
-three-site services keep their existing HttpOnly cookies. The existing
-national grammar service keeps its token in tab-scoped sessionStorage.
+cleared from the form immediately and are never persisted. Every dashboard
+visit and reload starts locked and sends no account-list requests. Each
+service is usable only after its password verification succeeds on that page;
+existing service cookies cannot unlock a new visit or a failed password
+attempt. National and three-site services keep their existing HttpOnly
+cookies. The national grammar token is held in memory only; the old
+sessionStorage token is removed. Partial service failures show a reconnect
+action inside the authenticated dashboard, never a simultaneous login form.
 
 The national and three-site databases are unchanged. National grammar remains
 on its current service; every legacy request is scoped to `national_grammar`.

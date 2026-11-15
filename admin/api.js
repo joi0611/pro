@@ -15,9 +15,15 @@
     const transport = options.fetch || globalThis.fetch.bind(globalThis);
     const storage = options.storage;
     const key = 'unified_training_admin_legacy_token';
-    let token = '';
-    try { token = storage?.getItem(key) || ''; } catch (_) {}
-    const remember = value => { token = value; try { value ? storage?.setItem(key, value) : storage?.removeItem(key); } catch (_) {} };
+    let token = '', epoch = 0;
+    const verifiedGroups = new Set();
+    // A dashboard visit always requires explicit password verification. Old
+    // service cookies and legacy tokens must never unlock it automatically.
+    try { storage?.removeItem(key); } catch (_) {}
+    const remember = value => { token = value; };
+    function requireGroup(group) {
+      if (!verifiedGroups.has(group)) throw Object.assign(new Error('请先输入管理员密码登录'), { status: 401 });
+    }
     async function request(url, payload, headers = {}) {
       const controller = new AbortController(), timer = setTimeout(() => controller.abort(), options.timeout || 20000);
       try {
@@ -50,6 +56,7 @@
     }
     async function listGroup(group) {
       if (!handlers[group]) throw new Error('无效服务');
+      requireGroup(group);
       const data = await handlers[group]('list');
       if (group === 'national') {
         if (!Array.isArray(data.phones) || !Array.isArray(data.codes)) throw new Error('全国完形账号列表不完整');
@@ -61,11 +68,15 @@
     }
     return {
       async login(password) {
+        const current = ++epoch;
+        verifiedGroups.clear(); remember('');
         if (!password || password.length > 128) throw new Error('请输入管理员密码');
         return Promise.all(groups.map(async group => {
           try {
             const data = await handlers[group]('login', { password });
+            if (current !== epoch) throw new Error('登录请求已失效，请重新登录');
             if (group === 'legacy') { if (!data.token) throw new Error('登录凭证缺失'); remember(data.token); }
+            verifiedGroups.add(group);
             return { group, ok: true };
           } catch (error) { if (group === 'legacy') remember(''); return { group, ok: false, error }; }
         }));
@@ -73,18 +84,20 @@
       async list() {
         return Promise.all(groups.map(async group => {
           try { return { group, ok: true, rows: await listGroup(group) }; }
-          catch (error) { if (group === 'legacy' && error.status === 401) remember(''); return { group, ok: false, rows: [], error }; }
+          catch (error) { if (error.status === 401) { verifiedGroups.delete(group); if (group === 'legacy') remember(''); } return { group, ok: false, rows: [], error }; }
         }));
       },
       async authorize({ phone, specialty, note = '', enabled = true }) {
         if (!/^1[3-9]\d{9}$/.test(phone || '')) throw new Error('请输入有效的11位手机号');
         const site = siteFor(specialty);
+        requireGroup(site.group);
         if (site.group === 'national') return national('update', { kind: 'phone', phone, note, enabled });
         if (enabled !== true) throw new Error('新授权须为启用状态');
         return handlers[site.group]('add', { phone, specialty, note });
       },
       async update(row, changes) {
         const site = siteFor(row.specialty);
+        requireGroup(site.group);
         const note = changes.note === undefined ? row.note : String(changes.note).slice(0, 80);
         const enabled = changes.enabled === undefined ? !!row.enabled : !!changes.enabled;
         if (site.group === 'national') return national('update', { kind: row.kind, phone: row.phone, hash: row.hash, note, enabled, resetDevices: changes.resetDevices === true });
@@ -92,11 +105,13 @@
         return handlers[site.group]('update', { phone: row.phone, specialty: row.specialty, note, enabled });
       },
       async saveCode({ code, note = '', enabled = true }) {
+        requireGroup('national');
         const normalized = String(code || '').trim().toUpperCase();
         if (!/^[A-Z0-9]{8,32}$/.test(normalized)) throw new Error('登录码应为8至32位字母或数字');
         return national('update', { kind: 'code', code: normalized, note, enabled });
       },
       async logout() {
+        ++epoch; verifiedGroups.clear();
         const results = await Promise.all(groups.map(async group => {
           try { await handlers[group]('logout'); return { group, ok: true }; }
           catch (error) { return { group, ok: false, error }; }

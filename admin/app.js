@@ -6,15 +6,16 @@
   const client = createClient({ storage }), $ = id => document.getElementById(id);
   const names = Object.fromEntries(sites.map(s => [s.id, s.name]));
   const groupNames = { national: '全国完形', three: '广州 / 上海 / 7选5', legacy: '全国语法填空' };
-  let results = [], rows = [], busy = false, loggedOut = false;
+  let results = [], rows = [], busy = false, loggedOut = false, signedIn = false;
   let selected = new URLSearchParams(location.search).get('specialty') || 'all';
   if (selected !== 'all' && !names[selected]) selected = 'all';
   function message(text, success = false) { $('message').textContent = text || ''; $('message').classList.toggle('success', success); }
-  function available(group) { return results.some(r => r.group === group && r.ok); }
+  function available(group) { return signedIn && results.some(r => r.group === group && r.ok); }
   function showSession() {
-    const any = results.some(r => r.ok), all = results.length === 3 && results.every(r => r.ok);
-    $('workspace').hidden = !any; $('logout').hidden = !any; $('loginPanel').hidden = all;
-    $('loginHint').textContent = any && !all ? '部分专项尚未连接。可重新输入原密码连接；已连接专项仍可管理。' : '支持全国完形、广州完形、上海完形、7选5及全国语法填空。';
+    const any = signedIn && results.some(r => r.ok), all = results.length === 3 && results.every(r => r.ok);
+    $('workspace').hidden = !any; $('logout').hidden = !any; $('loginPanel').hidden = any;
+    $('reconnect').hidden = !any || all;
+    $('loginHint').textContent = '每次打开或刷新本页面，均需先输入管理员密码。';
   }
   function render() {
     const total = rows.length, enabled = rows.filter(r => r.enabled).length;
@@ -52,6 +53,7 @@
     for (const button of $('tabs').children) button.setAttribute('aria-pressed', String(button.dataset.site === selected));
   }
   async function refresh() {
+    if (!signedIn) { results = []; rows = []; showSession(); render(); return; }
     results = await client.list();
     if (loggedOut) return;
     rows = results.flatMap(r => r.rows || []); showSession(); render();
@@ -59,6 +61,7 @@
   function controls(disabled) { busy = disabled; for (const el of document.querySelectorAll('button')) el.disabled = disabled; render(); }
   async function run(fn) {
     if (busy) return;
+    if (!signedIn) { message('请先输入管理员密码登录'); return; }
     controls(true); message('');
     try {
       const result = await fn();
@@ -80,11 +83,13 @@
   }
   $('loginForm').onsubmit = async event => {
     event.preventDefault(); if (busy) return;
+    signedIn = false; results = []; rows = []; showSession();
     controls(true); message('正在连接管理服务…');
     let password = $('password').value; $('password').value = '';
     try {
       loggedOut = false;
       const login = await client.login(password); password = '';
+      signedIn = login.some(r => r.ok);
       await refresh();
       const errors = login.filter(r => !r.ok);
       message(errors.length ? errors.map(r => groupNames[r.group] + '：' + r.error.message).join('\n') : '登录成功，所有专项已连接', !errors.length);
@@ -111,12 +116,18 @@
     if (busy) return;
     controls(true);
     try {
-      const outcome = await client.logout(); loggedOut = true; rows = []; results = []; showSession();
+      signedIn = false; rows = []; results = []; showSession(); render();
+      const outcome = await client.logout(); loggedOut = true;
       const failed = outcome.filter(r => !r.ok);
       message(failed.length ? '页面已退出，但部分服务未确认注销。请重试登录后退出，以清除服务器会话。' : '已退出管理', !failed.length);
     } finally { controls(false); }
   };
+  $('reconnect').onclick = () => {
+    if (busy) return;
+    signedIn = false; rows = []; results = []; showSession(); render(); message('请输入管理员密码重新连接专项。'); $('password').focus();
+  };
   controls(true);
   document.documentElement.dataset.adminReady = 'true';
-  refresh().catch(error => message(error.message)).finally(() => controls(false));
+  // Never request internal authorization lists before this page's explicit login.
+  showSession(); controls(false);
 })();

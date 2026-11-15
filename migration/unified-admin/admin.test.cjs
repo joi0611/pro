@@ -2,7 +2,7 @@
 const test = require('node:test'), assert = require('node:assert/strict'), fs = require('node:fs'), path = require('node:path');
 const { fixture } = require('./fixture.cjs');
 const { createClient } = require('../../admin/api.js');
-test('one login covers five specialties; restores sessions; logout revokes every service', async () => {
+test('one login covers five specialties; a fresh client always requires password despite existing service cookies', async () => {
   const f = await fixture();
   try {
     const memory = new Map(), storage = { getItem: k => memory.get(k), setItem: (k, v) => memory.set(k, v), removeItem: k => memory.delete(k) };
@@ -14,9 +14,30 @@ test('one login covers five specialties; restores sessions; logout revokes every
     assert.equal(rows.length, 6); assert.equal(rows.filter(x => x.kind === 'code').length, 1);
     assert.equal(new Set(rows.map(x => x.specialty)).size, 5);
     assert.ok(!rows.some(x => x.phone === '13800000009'), 'stale legacy national records must be excluded');
-    assert.ok((await createClient({ fetch: transport, storage }).list()).every(x => x.ok));
+    const start = f.requests.length;
+    const fresh = createClient({ fetch: transport, storage });
+    assert.ok((await fresh.list()).every(x => !x.ok));
+    assert.equal(f.requests.length, start, 'fresh visits must not request protected account lists');
+    await assert.rejects(fresh.authorize({ phone: '13800000099', specialty: 'national_cloze' }), /请先/);
+    await assert.rejects(fresh.saveCode({ code: 'UNLOGGED01' }), /请先/);
+    await assert.rejects(fresh.update(rows[0], { enabled: false }), /请先/);
+    assert.equal(f.requests.length, start, 'no unauthenticated client mutation may be sent');
+    assert.ok((await fresh.login('wrong-password')).every(x => !x.ok));
+    const afterWrongLogin = f.requests.length;
+    assert.ok((await fresh.list()).every(x => !x.ok));
+    assert.equal(f.requests.length, afterWrongLogin, 'wrong password must not fall back to valid old cookies');
     assert.ok((await client.logout()).every(x => x.ok));
     assert.equal(memory.size, 0); assert.ok((await client.list()).every(x => !x.ok));
+  } finally { await f.close(); }
+});
+test('server APIs reject anonymous reads and mutations independently of the dashboard', async () => {
+  const f = await fixture();
+  try {
+    const post = (url, payload) => fetch(f.origin + url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    assert.equal((await post('/national-api/admin/list', {})).status, 401);
+    assert.equal((await post('/national-api/admin/update', { kind: 'invalid-security-probe' })).status, 401);
+    for (const action of ['admin_list', 'admin_add', 'admin_update', 'admin_delete']) assert.equal((await post('/three-api/seven_choice/rpc', { action, payload: { phone: 'invalid', specialty: 'seven_choice' } })).status, 401);
+    assert.equal(f.national.counts().phones, 1); assert.deepEqual(f.three.counts(), { gzcloze: 1, shcloze: 1, seven_choice: 1 });
   } finally { await f.close(); }
 });
 test('authorization, notes and suspension target the right database and specialty; progress stays intact', async () => {

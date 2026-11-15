@@ -26,6 +26,16 @@ async function main() {
     await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1080, deviceScaleFactor: 1, mobile: false });
     await send('Page.navigate', { url: f.origin + '/admin/' });
     await waitFor("document.documentElement.dataset.adminReady === 'true' && !document.querySelector('#loginForm button').disabled");
+    assert.equal(await evaluate("document.getElementById('workspace').hidden"), true);
+    assert.equal(f.requests.filter(r => r.path.startsWith('/national-api/') || r.path.startsWith('/three-api/') || r.path.startsWith('/training-backend/')).length, 0, 'no internal API request before password submission');
+    // Seed the same old-cookie condition reported in production, then revisit.
+    await evaluate("Promise.all([fetch('/national-api/admin/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:'integration-only-password'})}),fetch('/three-api/seven_choice/rpc',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'admin_login',payload:{password:'integration-only-password'}})})]).then(()=>sessionStorage.setItem('unified_training_admin_legacy_token','stale-token'))");
+    const beforeRevisit = f.requests.length;
+    await send('Page.reload');
+    await waitFor("document.documentElement.dataset.adminReady === 'true' && !document.querySelector('#loginForm button').disabled");
+    assert.equal(await evaluate("document.getElementById('workspace').hidden"), true);
+    assert.equal(await evaluate("document.querySelectorAll('#rows tr').length"), 0);
+    assert.equal(f.requests.slice(beforeRevisit).filter(r => /\/(national-api|three-api|training-backend)\//.test(r.path)).length, 0, 'old cookies must not auto-load internal accounts');
     await evaluate("document.getElementById('password').value='wrong-password'; document.getElementById('loginForm').requestSubmit()");
     await waitFor("document.getElementById('message').textContent.includes('密码错误') && !document.querySelector('#loginForm button').disabled");
     assert.equal(await evaluate("document.getElementById('workspace').hidden"), true);
@@ -48,20 +58,25 @@ async function main() {
     await evaluate("document.getElementById('search').value=''; document.getElementById('search').dispatchEvent(new Event('input')); document.getElementById('kindFilter').value='code'; document.getElementById('kindFilter').dispatchEvent(new Event('change'))");
     assert.equal(await evaluate("document.querySelectorAll('#rows tr').length"), 2);
     await evaluate("document.getElementById('kindFilter').value='all'; document.getElementById('kindFilter').dispatchEvent(new Event('change'))");
-    await send('Page.reload'); await waitFor("document.getElementById('loginPanel').hidden && document.getElementById('totalCount').textContent==='12' && !document.getElementById('refresh').disabled");
+    await send('Page.reload'); await waitFor("document.documentElement.dataset.adminReady === 'true' && !document.querySelector('#loginForm button').disabled");
+    assert.equal(await evaluate("document.getElementById('workspace').hidden"), true, 'refresh must relock the dashboard');
+    assert.equal(await evaluate("document.querySelectorAll('#rows tr').length"), 0);
+    await evaluate("document.getElementById('password').value='integration-only-password'; document.getElementById('loginForm').requestSubmit()");
+    await waitFor("document.getElementById('loginPanel').hidden && document.getElementById('totalCount').textContent==='12' && !document.getElementById('refresh').disabled");
     await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
     assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true, 'mobile page must not overflow');
     const mobile = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true }); fs.writeFileSync(path.join(out, 'mobile.png'), Buffer.from(mobile.data, 'base64'));
     f.setLegacyFailure(true); await evaluate("document.getElementById('refresh').click()");
     await waitFor("document.querySelectorAll('.service-chip.failed').length===1 && !document.getElementById('refresh').disabled");
     assert.equal(await evaluate("document.getElementById('workspace').hidden"), false);
+    assert.equal(await evaluate("document.getElementById('loginPanel').hidden"), true, 'login form and authorized management must never be shown together');
     assert.equal(await evaluate("document.querySelector('#specialtyChoices input[value=national_grammar]').disabled"), true);
     assert.equal(await evaluate("document.querySelector('#specialtyChoices input[value=gzcloze]').disabled"), false);
     f.setLegacyFailure(false);
     await evaluate("document.getElementById('logout').click()"); await waitFor("document.getElementById('workspace').hidden && !document.querySelector('#loginForm button').disabled");
     assert.equal(await evaluate("document.querySelectorAll('#rows tr').length"), 0);
     assert.deepEqual(errors, []);
-    console.log(JSON.stringify({ ok: true, checks: ['wrong-password', 'single-login-five-sites', 'account-lists', 'batch-authorization', 'safe-note-rendering', 'search', 'suspend', 'code-creation', 'session-restore', 'mobile-layout', 'partial-outage', 'logout'], screenshots: out, productionDataUsed: false }));
+    console.log(JSON.stringify({ ok: true, checks: ['no-prelogin-requests', 'old-cookie-revisit-locked', 'wrong-password-with-existing-cookies', 'single-login-five-sites', 'account-lists', 'batch-authorization', 'safe-note-rendering', 'search', 'suspend', 'code-creation', 'refresh-requires-password', 'mobile-layout', 'partial-outage', 'logout'], screenshots: out, productionDataUsed: false }));
   } finally { if (ws) ws.close(); chrome.kill(); await f.close(); }
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });
