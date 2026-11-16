@@ -11,6 +11,10 @@ function sharedTrainingConnection() {
     'get_learning_progress', 'get_phone_learning_progress', 'get_activation_progress',
     'current_staff_role', 'owner_query_login_usage', 'teacher_query_login_usage',
     'owner_list_teachers', 'owner_list_teacher_assignments', 'staff_list_phone_access'];
+  // Keep an independent route to the existing backend for student reads when
+  // the same-origin edge transport is temporarily unavailable.
+  var studentReads = ['verify_access_code', 'verify_phone_access', 'verify_cloze_experience_code',
+    'get_learning_progress', 'get_phone_learning_progress'];
   var retryDelays = [600, 1800];
   window.fetch = function (input, init) {
     if (typeof input !== 'string') return originalFetch(input, init);
@@ -32,7 +36,9 @@ function sharedTrainingConnection() {
       error.kind = kind; error.status = status || 0; error.requestId = id; error.isTrainingTransportError = true;
       return error;
     }
-    function attempt(round) {
+    var canRecoverDirect = method === 'POST' &&
+      url.pathname === '/training-backend/rest/v1/rpc/' + name && studentReads.indexOf(name) >= 0;
+    function attempt(round, direct) {
       var id = trace + '-' + round, controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
       var parent = options.signal, timer, onAbort;
       var task = new Promise(function (resolve, reject) {
@@ -45,14 +51,17 @@ function sharedTrainingConnection() {
         timer = setTimeout(function () {
           if (controller) controller.abort();
           reject(problem('数据服务响应超时，请稍后重试', 'TIMEOUT', 0, id));
-        }, 20000);
+        }, direct ? 8000 : 20000);
         var request = {};
         Object.keys(options).forEach(function (key) { request[key] = options[key]; });
         request.headers = new Headers(options.headers || {});
-        request.headers.set('X-Training-Request-Id', id);
+        if (!direct) request.headers.set('X-Training-Request-Id', id);
+        else request.headers.delete('X-Training-Request-Id');
         request.cache = 'no-store';
         if (controller) request.signal = controller.signal;
-        Promise.resolve().then(function () { return originalFetch(input, request); }).then(function (response) {
+        var target = direct ? 'https://' + 'gbjmylxohacppnybfssh.supabase.co' +
+          url.pathname.slice('/training-backend'.length) + url.search : input;
+        Promise.resolve().then(function () { return originalFetch(target, request); }).then(function (response) {
           // Preserve authentication responses so callers can renew expired sessions.
           if (response.status === 401 || response.status === 403) return response;
           return response.clone().text().then(function (text) {
@@ -77,10 +86,14 @@ function sharedTrainingConnection() {
         var busy = error.status >= 500 && error.status < 600;
         var transient = ['NETWORK', 'TIMEOUT', 'FORMAT'].indexOf(error.kind) >= 0 || busy;
         var budget = error.kind === 'TIMEOUT' ? 1 : retryDelays.length;
-        if (safe && round < budget && transient) {
+        if (!direct && safe && round < budget && transient) {
           return new Promise(function (resolve) { setTimeout(resolve, retryDelays[round]); }).then(function () { return attempt(round + 1); });
         }
-        window.TRAINING_CONNECTION_DIAGNOSTIC_V1 = { id: id, phase: name, kind: error.kind, status: error.status || 0, at: Date.now() };
+        if (!direct && canRecoverDirect && transient && !(parent && parent.aborted)) {
+          return attempt(round + 1, true);
+        }
+        window.TRAINING_CONNECTION_DIAGNOSTIC_V1 = { id: id, phase: name, kind: error.kind,
+          status: error.status || 0, route: direct ? 'DIRECT_RECOVERY' : 'EDGE', at: Date.now() };
         if (busy) error.message = '题库服务器暂时繁忙，请等几秒再点一次';
         error.message += '（诊断编号 ' + id + '/' + error.kind + '）';
         throw error;
