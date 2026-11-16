@@ -41,6 +41,7 @@
       <button class="nav-tab" data-view="quiz" type="button">讲义配套题库</button>
       <button class="nav-tab" data-view="library" type="button">中考真题题库</button>
       <button class="nav-tab" data-view="notebook" type="button">错题本 <span class="nav-badge" id="navNotebookCount" hidden>0</span></button>
+      <button class="nav-tab" data-view="progress" type="button">学习记录</button>
       <button class="nav-tab" data-view="vocab" type="button">生词本 <span class="nav-badge" id="navVocabCount" hidden>0</span></button>
     </nav>
     <div class="topbar-actions">
@@ -425,9 +426,10 @@
     <section id="notebookView" class="view" hidden>
       <div class="notebook-head">
         <h1>错题本</h1>
-        <p>自动收集答错的题。点击「回看」直接跳回对应文章那道题。</p>
+        <p>自动收集篇目训练和同步练习错题；同步练习支持查看解析、重练与订正记录。</p>
       </div>
       <div class="notebook-toolbar">
+          <select class="filter-select" id="notebookSource" aria-label="错题来源"><option value="all">全部来源</option><option value="article">篇目训练</option><option value="quiz">知识点同步练习</option><option value="unresolved">同步练习待订正</option></select>
           <select class="filter-select" id="notebookFilter">
             <option value="all">全部错题</option>
             <option value="逻辑线索">判断依据：逻辑线索</option>
@@ -449,7 +451,7 @@
     <section id="progressView" class="view" hidden>
       <div class="progress-head">
         <h1>训练进度</h1>
-        <p>学习记录与当前登录账号绑定；登录码用户会自动同步到云端。</p>
+        <p>学习记录与当前手机号或登录码绑定，自动保存到云端。</p>
       </div>
       <div class="progress-dashboard" id="progressDashboard"></div>
     </section>
@@ -477,6 +479,7 @@
   <script src="methodology.js"></script>
   <script src="quiz-300.js?v=20261012b"></script>
   <script src="handout-content.js?v=20261012b"></script>
+  <script src="quiz-progress.js"></script>
   <script src="app.js?v=national-8c2ad959d8f6"></script>
 </body>
 </html>

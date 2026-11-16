@@ -1256,7 +1256,7 @@ function openHandoutQuiz(chId, techIdx) {
   if (foot) foot.hidden = true;
   if (bar) bar.hidden = true;
   if (back) back.hidden = true;
-  quizState = { ch: chId, idx: techIdx, answers: {}, submitted: false, warned: false, t0: Date.now() };
+  quizState = restoreQuizState(chId, techIdx);
   renderQuiz();
   window.scrollTo(0, 0);
 }
@@ -1281,7 +1281,7 @@ function renderQuizHome() {
         + '<span class="tcard-h"><span class="tcard-no">' + (t.no || "•") + '</span>'
         + '<span class="tcard-t">' + t.name + '</span></span>'
         + '<span class="tcard-d">' + (t.intro || "") + '</span>'
-        + '<span class="tcard-meta">' + g.qs.length + ' 题 · 开始精练 ›</span></button>');
+        + '<span class="tcard-meta">' + g.qs.length + ' 题 · ' + escapeHtml(quizCourseMeta(c.id, i)) + '</span></button>');
     });
     if (!items.length) return "";
     totalQ += qn;
@@ -1292,7 +1292,7 @@ function renderQuizHome() {
   }).join("");
   home.innerHTML = '<div class="handout-homebar"><span class="hb-pill">300 题真题靶向精练 · 按 27 课同步</span>'
     + '<span class="hb-goal">先答后揭 · 提交后才亮出原文证据与解析 · 共 ' + totalQ + ' 题</span></div>'
-    + '<div class="handout-groups">' + groups + '</div>';
+    + quizProgressPanel() + '<div class="handout-groups">' + groups + '</div>';
   home.hidden = false;
   var box = $("quizBox"); if (box) { box.hidden = true; box.innerHTML = ""; }
 }
@@ -1304,17 +1304,13 @@ function startQuiz(ch, idx) {
   quizContainerId = "quizBox"; quizContext = "quiz";
   var home = $("quizHome"); if (home) home.hidden = true;
   var box = $("quizBox"); if (box) box.hidden = false;
-  quizState = { ch: ch, idx: idx, answers: {}, submitted: false, warned: false, t0: Date.now() };
+  quizState = restoreQuizState(ch, idx);
   renderQuiz();
   window.scrollTo(0, 0);
 }
 
 /* 精练中 → 返回课表 */
-function showQuizHome() {
-  var box = $("quizBox"); if (box) { box.hidden = true; box.innerHTML = ""; }
-  var home = $("quizHome"); if (home) home.hidden = false;
-  quizState = null;
-}
+function showQuizHome() { renderQuizHome(); }
 
 function renderQuiz() {
   var box = $(quizContainerId);
@@ -1324,7 +1320,7 @@ function renderQuiz() {
   var chp = findChapter(quizState.ch);
   var ts = chapterTechs(quizState.ch);
   var t = ts[quizState.idx] || { no: "", name: "" };
-  var qs = g.qs, done = 0;
+  var qs = activeQuizQuestions(), done = 0;
   qs.forEach(function (q) { if (quizState.answers[q.no]) done++; });
 
   var backLabel = (quizContext === "quiz") ? "← 返回课表" : "← 返回本课";
@@ -1332,7 +1328,7 @@ function renderQuiz() {
     + '<button class="btn ghost" type="button" data-qz="back">' + backLabel + '</button>'
     + '<button class="btn ghost" type="button" data-qz="print">🖨 打印本课卷</button>'
     + '<div class="qz-hmain"><b>' + escapeHtml((chp ? chp.t : "") + "　" + t.no + "　" + t.name) + '</b>'
-    + '<span>共 ' + qs.length + ' 题 · 已答 <b>' + done + '</b>/' + qs.length
+    + '<span>' + (quizState.mode === 'review' ? '错题重练 · ' : '') + '共 ' + qs.length + ' 题 · 已答 <b>' + done + '</b>/' + qs.length
     + '　｜　机制 ' + escapeHtml(g.mech + " · " + g.name) + '</span></div>'
     + '<span class="qz-tip">' + (quizState.submitted
         ? '解析已解锁：对照「核心线索」回原文找证据'
@@ -1391,6 +1387,7 @@ function renderQuiz() {
     : '';
   var barHtml = '<div class="qz-bar">' + warn + (quizState.submitted
     ? '<button class="btn ghost" type="button" data-qz="again">↻ 再做一次</button>'
+      + (quizErrors(quizState.ch, quizState.idx).length ? '<button class="btn ghost" type="button" data-qz="review">重练本课错题</button>' : '')
       + '<button class="btn ghost" type="button" data-qz="back">← 返回本课</button>'
       + '<button class="btn primary" type="button" data-qz="next">进入下一课 →</button>'
     : '<button class="btn primary" type="button" data-qz="submit">提交并查看解析（已答 ' + done + '/' + qs.length + '）</button>')
@@ -3459,8 +3456,12 @@ function renderNotebook() {
   if (!list) return;
   var errors = getErrors();
   var filter = ($("notebookFilter") || {}).value || "all";
+  var source = ($("notebookSource") || {}).value || "all";
   /* 过滤按「判断依据」的一级类型（原来是按 route 字段） */
   var filtered = errors.filter(function (e) {
+    if (source === "quiz" && e.kind !== "quiz") return false;
+    if (source === "article" && e.kind === "quiz") return false;
+    if (source === "unresolved" && (e.kind !== "quiz" || e.resolved)) return false;
     if (filter === "all") return true;
     var les = library.find(function (l) { return l.id === e.lessonId; });
     if (!les) return filter === "其他";
@@ -3472,6 +3473,7 @@ function renderNotebook() {
   if (!filtered.length) { empty.hidden = false; return; }
   empty.hidden = true;
   filtered.slice().reverse().forEach(function (e) {
+    if (e.kind === "quiz") { renderQuizNotebookItem(e, list); return; }
     var les = library.find(function (l) { return l.id === e.lessonId; });
     var lessonTitle;
     var canReview = !!les;
@@ -3533,6 +3535,7 @@ function renderProgress() {
       '<div class="progress-stat"><strong>' + accuracy + '%</strong><span>正确率</span></div>' +
     '</div>' +
     '<div class="progress-chart"><h3>各路线正确率</h3><div class="bar-chart">' + routeBars + '</div></div>';
+  dash.innerHTML += quizProgressPanel();
   updateNavBadge();
 }
 
@@ -3649,6 +3652,7 @@ function init() {
   var checkBtn = $("checkAnswerBtn"); if (checkBtn) checkBtn.addEventListener("click", function () { if (currentQ) checkAnswer(currentQ); });
 
   /* 错题本 */
+  var ns = $("notebookSource"); if (ns) ns.addEventListener("change", renderNotebook);
   var nf = $("notebookFilter"); if (nf) nf.addEventListener("change", renderNotebook);
   var cnb = $("clearNotebookBtn"); if (cnb) cnb.addEventListener("click", function () {
     clearErrors(); renderNotebook(); updateNavBadge(); toast("错题本已清空");
@@ -3748,19 +3752,23 @@ function init() {
     if (act === "opt") {
       if (quizState.submitted) return;
       quizState.answers[Number(b.dataset.qno)] = b.dataset.k;
+      saveQuizDraft();
       renderQuiz();
       return;
     }
     if (act === "submit") {
-      var tot = getLessonQuiz(quizState.ch, quizState.idx).qs.length;
+      if (quizState.submitted) return;
+      var tot = activeQuizQuestions().length;
       var dn = Object.keys(quizState.answers).length;
       if (dn < tot && !quizState.warned) { quizState.warned = true; renderQuiz(); return; }
-      quizState.submitted = true; renderQuiz(); window.scrollTo(0, 0); return;
+      saveQuizSubmission(); renderQuiz(); window.scrollTo(0, 0); return;
     }
     if (act === "again") {
-      quizState.answers = {}; quizState.submitted = false; quizState.warned = false; quizState.t0 = Date.now();
+      quizState = newQuizState(quizState.ch, quizState.idx, quizState.mode, quizState.ids);
+      saveQuizDraft();
       renderQuiz(); window.scrollTo(0, 0); return;
     }
+    if (act === "review") { startQuizReview(quizState.ch, quizState.idx); return; }
     if (act === "print") { renderQuizPrint(); return; }
     if (act === "back") {
       if (quizContext === "quiz") { showQuizHome(); return; }
