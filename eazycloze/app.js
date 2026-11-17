@@ -99,6 +99,18 @@ function writeStoreLocal(s) {
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s || {})); }
   catch (e) { _memStore = s || {}; }
 }
+/* 冲突解决时，把云端进度写回本地 store（配合 connection.js 的 bindLocalWriter） */
+if (window.NationalTransport && window.NationalTransport.bindLocalWriter) {
+  NationalTransport.bindLocalWriter(function (remote) {
+    writeStoreLocal(remote || {});
+    /* 写回后刷新视图，确保错题本/进度面板立即反映云端状态 */
+    if (typeof renderNotebook === "function") renderNotebook();
+    if (typeof renderProgress === "function") renderProgress();
+    if (typeof renderHomeProgress === "function") renderHomeProgress();
+    if (typeof updateNavBadge === "function") updateNavBadge();
+    if (typeof renderQuizHome === "function") renderQuizHome();
+  });
+}
 function activationRpc(name,payload){return NationalTransport.rpc(name,payload);}
 function trainingRpc(action,payload){return NationalTransport.rpc("training_api",{p_action:action,p_payload:payload||{}});}
 function setActiveLogin(identity, type) {
