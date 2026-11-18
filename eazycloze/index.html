@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<script src="connection.js?v=8c2ad959d8f6"></script>
+<script src="connection.js?v=770cb58ce01c"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>完形填空训练系统 · 全国中考 · 无限进步</title>
   <style>body.gate-locked>*:not(#gateView){display:none!important}body.gate-locked #gateView{display:flex!important}</style>
-  <link rel="stylesheet" href="style.css?v=20261105a" />
+  <link rel="stylesheet" href="style.css?v=dd7c6ebec219" />
+  <link rel="stylesheet" href="mobile-study.css?v=20261118h" />
 </head>
 <body class="gate-locked">
 
@@ -38,8 +39,8 @@
     <nav class="nav-tabs">
       <button class="nav-tab" data-view="home" type="button">首页</button>
       <button class="nav-tab" data-view="handout" type="button">讲义</button>
-      <button class="nav-tab" data-view="quiz" type="button">讲义配套题库</button>
-      <button class="nav-tab" data-view="library" type="button">中考真题题库</button>
+      <button class="nav-tab" data-view="quiz" type="button">同步练习</button>
+      <button class="nav-tab" data-view="library" type="button">真题题库</button>
       <button class="nav-tab" data-view="notebook" type="button">错题本 <span class="nav-badge" id="navNotebookCount" hidden>0</span></button>
       <button class="nav-tab" data-view="progress" type="button">学习记录</button>
       <button class="nav-tab" data-view="vocab" type="button">生词本 <span class="nav-badge" id="navVocabCount" hidden>0</span></button>
@@ -123,40 +124,14 @@
       <!-- 数据范围说明 -->
       <p class="scope-note" id="scopeNote">本系统收录全国各省市中考完形填空题目，按省份与来源逐篇标注。每篇均含可验证的线索证据，共 <span id="scopeLessons">0</span> 篇 / <span id="scopeQuestions">0</span> 道。</p>
 
-      <!-- 筛选器（点「中考真题训练」卡片后展开） -->
+      <!-- 筛选器：一排常用（来源 + 地区）+「更多」抽屉（题型/空数/维度/年份/难度） -->
       <div class="filter-bar" id="filterBar" hidden>
-        <!-- 第 1 行：来源分层 -->
-        <div class="filter-row">
+        <!-- 常用行：手机上常驻，其余进抽屉 -->
+        <div class="filter-row filter-row-common">
           <div class="filter-group">
             <span class="filter-label">来源</span>
             <div class="filter-chips" id="kindFilters"></div>
           </div>
-        </div>
-        <!-- 第 2 行：题型 + 空数 -->
-        <div class="filter-row">
-          <div class="filter-group">
-            <span class="filter-label">题型</span>
-            <div class="filter-chips" id="typeFilters">
-              <button class="filter-chip active" data-dim="type" data-value="all" type="button">全部</button>
-              <button class="filter-chip" data-dim="type" data-value="人物故事" type="button">人物故事</button>
-              <button class="filter-chip" data-dim="type" data-value="生活哲理" type="button">生活哲理</button>
-              <button class="filter-chip" data-dim="type" data-value="说明建议" type="button">说明建议</button>
-            </div>
-          </div>
-          <div class="filter-group">
-            <span class="filter-label">空数</span>
-            <div class="filter-chips filter-chips-num" id="blanksFilters"></div>
-          </div>
-        </div>
-        <!-- 第 2.5 行：五维（讲义联动） -->
-        <div class="filter-row">
-          <div class="filter-group">
-            <span class="filter-label">维度</span>
-            <div class="filter-chips" id="dimFilters"></div>
-          </div>
-        </div>
-        <!-- 第 3 行：地区 / 年份 / 难度 -->
-        <div class="filter-row filter-row-selects">
           <div class="filter-group">
             <span class="filter-label">地区</span>
             <div class="combo" id="regionCombo">
@@ -171,25 +146,69 @@
               </div>
             </div>
           </div>
-          <div class="filter-group">
-            <span class="filter-label">年份</span>
-            <select class="filter-select" id="yearFilter"></select>
-          </div>
-          <div class="filter-group">
-            <span class="filter-label">难度</span>
-            <select class="filter-select" id="difficultyFilter">
-              <option value="all">全部难度</option>
-              <option value="简单">简单</option>
-              <option value="中等">中等</option>
-              <option value="较难">较难</option>
-            </select>
-          </div>
-          <div class="filter-group filter-actions">
-            <button class="btn ghost btn-sm" id="resetFilters" type="button">重置筛选</button>
-            <button class="btn ghost btn-sm" id="shareFilters" type="button">复制筛选链接</button>
+          <button class="filter-more-toggle" id="filterMoreBtn" type="button"
+                  aria-expanded="false" aria-controls="filterDrawer">
+            <span class="fmt-label">更多</span>
+            <span class="fmt-count" id="filterMoreCount" hidden>0</span>
+            <span class="fmt-caret" aria-hidden="true">▾</span>
+          </button>
+          <!-- 常用行右端的「弹出层头部」：只在窄屏抽屉展开时出现，滑动抽屉时跟着走，
+               随时能「收起」或「清空」，不必滚回顶部 -->
+          <div class="filter-sheet-head" id="filterSheetHead">
+            <span class="fsh-title">更多筛选<span class="fsh-count" id="filterSheetCount" hidden>0 项</span></span>
+            <button class="fsh-clear" id="filterSheetClear" type="button" hidden>清空</button>
+            <button class="fsh-done" id="filterSheetDone" type="button">收起 ▴</button>
           </div>
         </div>
-        <!-- 当前筛选摘要 -->
+
+        <!-- 抽屉：手机默认收起，桌面常显 -->
+        <div class="filter-drawer" id="filterDrawer">
+          <!-- 题型 + 空数（手机上并排两列） -->
+          <div class="filter-row">
+            <div class="filter-group half">
+              <span class="filter-label">题型</span>
+              <div class="filter-chips" id="typeFilters">
+                <button class="filter-chip active" data-dim="type" data-value="all" type="button">全部</button>
+                <button class="filter-chip" data-dim="type" data-value="人物故事" type="button">人物故事</button>
+                <button class="filter-chip" data-dim="type" data-value="生活哲理" type="button">生活哲理</button>
+                <button class="filter-chip" data-dim="type" data-value="说明建议" type="button">说明建议</button>
+              </div>
+            </div>
+            <div class="filter-group half">
+              <span class="filter-label">空数</span>
+              <div class="filter-chips filter-chips-num" id="blanksFilters"></div>
+            </div>
+          </div>
+          <!-- 五维（讲义联动） -->
+          <div class="filter-row">
+            <div class="filter-group">
+              <span class="filter-label">维度</span>
+              <div class="filter-chips" id="dimFilters"></div>
+            </div>
+          </div>
+          <!-- 年份 / 难度 / 操作 -->
+          <div class="filter-row filter-row-selects">
+            <div class="filter-group">
+              <span class="filter-label">年份</span>
+              <select class="filter-select" id="yearFilter"></select>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">难度</span>
+              <select class="filter-select" id="difficultyFilter">
+                <option value="all">全部难度</option>
+                <option value="简单">简单</option>
+                <option value="中等">中等</option>
+                <option value="较难">较难</option>
+              </select>
+            </div>
+            <div class="filter-group filter-actions">
+              <button class="btn ghost btn-sm" id="resetFilters" type="button">重置筛选</button>
+              <button class="btn ghost btn-sm" id="shareFilters" type="button">复制筛选链接</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 当前筛选摘要（常显，不随抽屉收起） -->
         <div class="filter-summary" id="filterSummary" hidden></div>
       </div>
 
@@ -356,15 +375,15 @@
           <p class="insight-lead">完形 33 篇 198 题中，<b>92.3%</b> 的干扰项在原文里根本没出现过。所以「回原文找词」这条路 92% 的情况下走不通——真正提分靠的是 <b>就近取证 + 语义辨析</b>。</p>
         </div>
         <div class="insight-flow">
-          <img src="assets/methodology/flow_strategy.svg" alt="两种策略对比" />
-          <img src="assets/methodology/flow_steps.svg" alt="三步辨析法" />
-          <img src="assets/methodology/flow_kills.svg" alt="三种杀法" />
+          <img src="assets/methodology/flow_strategy.svg?v=da1a8414d7a7" alt="两种策略对比" />
+          <img src="assets/methodology/flow_steps.svg?v=dcb66bb1a1a3" alt="三步辨析法" />
+          <img src="assets/methodology/flow_kills.svg?v=6efda220c2a2" alt="三种杀法" />
         </div>
         <h3 class="insight-sub">真题示范 · 三道典型错例</h3>
         <div class="insight-demos">
-          <figure><img src="assets/methodology/demo_001_q1.png" alt="001 Q1 窗口句推断" /><figcaption>001 Q1 · 窗口句推断：simple 用「方向否」打掉</figcaption></figure>
-          <figure><img src="assets/methodology/demo_021_q4.png" alt="021 Q4 短语辨析" /><figcaption>021 Q4 · 四个 take 短语，逐个释义不靠原文</figcaption></figure>
-          <figure><img src="assets/methodology/demo_018_q3.png" alt="018 Q3 固定搭配" /><figcaption>018 Q3 · 选错 everything，代回原句直接矛盾</figcaption></figure>
+          <figure><img src="assets/methodology/demo_001_q1.png?v=2a7b34cbc75f" alt="001 Q1 窗口句推断" /><figcaption>001 Q1 · 窗口句推断：simple 用「方向否」打掉</figcaption></figure>
+          <figure><img src="assets/methodology/demo_021_q4.png?v=434c60620669" alt="021 Q4 短语辨析" /><figcaption>021 Q4 · 四个 take 短语，逐个释义不靠原文</figcaption></figure>
+          <figure><img src="assets/methodology/demo_018_q3.png?v=7f19792eada6" alt="018 Q3 固定搭配" /><figcaption>018 Q3 · 选错 everything，代回原句直接矛盾</figcaption></figure>
         </div>
       </div>
 
@@ -472,14 +491,15 @@
 
   <div id="printArea" class="print-area" hidden></div>
 
-  <script src="collocation-rules.js"></script>
-  <script src="clue-rules.js"></script>
-  <script src="diag-classify.js"></script>
-  <script src="builtin-lessons.js?v=20261012b"></script>
-  <script src="methodology.js"></script>
-  <script src="quiz-300.js?v=20261012b"></script>
-  <script src="handout-content.js?v=20261012b"></script>
-  <script src="quiz-progress.js"></script>
-  <script src="app.js?v=national-8c2ad959d8f6"></script>
+  <script src="collocation-rules.js?v=bf1cd7f2cd4d"></script>
+  <script src="clue-rules.js?v=9a1f3956de32"></script>
+  <script src="diag-classify.js?v=55dd5c0fddee"></script>
+  <script src="builtin-lessons.js?v=ac24761688e8"></script>
+  <script src="methodology.js?v=0f78705e23a6"></script>
+  <script src="quiz-300.js?v=21608f0ed8f0"></script>
+  <script src="handout-content.js?v=dfcb7920dc9e"></script>
+  <script src="quiz-progress.js?v=be056e1b922d"></script>
+  <script src="app.js?v=76821e3d3901"></script>
+  <script src="mobile-study.js?v=20261118h"></script>
 </body>
 </html>
