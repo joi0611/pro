@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css?v=20260921-experience-button-2" />
     <link rel="stylesheet" href="../../assets/theme-purple.css?v=20260716-ui3" />
     <link rel="stylesheet" href="cloze-workbook-ui.css?v=20260921-sentence-translate-2" />
+    <link rel="stylesheet" href="cloze-knowledge.css?v=20261118-kp-1" />
   </head>
   <body class="module-cloze">
     <a class="skip-link" href="#appShell">跳到主要内容</a>
@@ -48,13 +49,13 @@
     </section>
 
     <header class="cloze-site-header">
-      <a class="cloze-site-brand" href="../../index.html" aria-label="返回新疆学生无限进步首页">
+      <!-- 品牌区只是标识，不提供跳转：离开本专项的唯一入口在首页底部「训练其他专题」 -->
+      <div class="cloze-site-brand">
         <img src="../../assets/favicon.svg" alt="" width="46" height="46" />
         <strong class="student-system-brand">新疆学生无限进步</strong>
-      </a>
+      </div>
       <nav class="cloze-site-nav" aria-label="主导航">
-        <a href="../../index.html">首页</a>
-        <span class="active" aria-current="page">专项训练</span>
+        <span class="active" aria-current="page">完形填空专项训练</span>
         <button id="headerNotebookBtn" type="button">学习记录</button>
       </nav>
     </header>
@@ -93,44 +94,127 @@
 
       <section class="workspace">
         <section id="home" class="panel home-panel">
-          <div class="home-heading">
-            <div>
-              <p class="eyebrow">题库主页</p>
-               <h2>选择一篇文章，<span>开始训练</span></h2>
-               <p id="experienceModeNote" class="experience-mode-note hidden">体验版 · 已开放5篇文章</p>
-               <p>已上传的文章会显示在这里。做过的文章会保留记录，也可以重复练习。</p>
+          <!-- 三个一级入口：知识点讲解 / 知识点同步练 / 新疆中考真题 -->
+          <div id="homeEntryView" class="kp-landing">
+            <!-- Hero -->
+            <div class="kp-hero-band">
+              <div class="kp-hero-text">
+                <span class="kp-hero-kicker"><span class="kp-kicker-dot" aria-hidden="true"></span>新疆中考 · 完形填空 · 逐空取证</span>
+                <h2>别再凭语感蒙，<span class="kp-hero-hl">完形填空的答案都在原文里</span>。</h2>
+                <p>专为读得懂却总选错、线索看不清的同学设计。先学五维一体方法，再做同步精练，最后进真题迁移，每一空都能指回原文证据。</p>
+                <p id="experienceModeNote" class="experience-mode-note hidden">体验版 · 已开放5篇文章</p>
+                <div class="kp-hero-actions">
+                  <button id="entryExamBtn" class="kp-hero-cta" type="button">开始今天的训练 <span aria-hidden="true">→</span></button>
+                  <button id="unlockFormalBtn" class="kp-hero-unlock hidden" type="button">输入正式码解锁全部</button>
+                  <span class="kp-hero-note"><span class="kp-note-check" aria-hidden="true">✓</span> 每道题都有证据可复核</span>
+                </div>
+              </div>
             </div>
-             <div class="home-tool-actions" aria-label="学习工具入口">
-               <a class="home-tool-button home-return-link" href="../../index.html">返回首页，训练其他专题</a>
-               <button id="unlockFormalBtn" class="home-tool-button hidden" type="button">输入正式码解锁全部</button>
-               <button id="openNotebookBtn" class="home-tool-button" type="button">专属错题本</button>
-              <button id="openCollocationBankBtn" class="home-tool-button" type="button">固定搭配总库</button>
+
+            <!-- 学习路径 -->
+            <div class="kp-section-head">
+              <div><span class="kp-section-eyebrow">学习路径</span><h3>从方法到真题，三步建立解题感</h3></div>
+              <span class="kp-section-caption">按顺序练，效果更稳定</span>
+            </div>
+
+            <div class="kp-path-cards">
+              <div class="kp-path-card kp-path-handout">
+                <span class="kp-hc-icon kp-hc-book" aria-hidden="true"></span>
+                <span class="kp-hc-step">01 · 先学方法</span>
+                <span class="kp-hc-t">知识点讲解</span>
+                <span class="kp-hc-d">五维一体方法讲义 · 11 讲 / 27 课技法，每课讲清「是什么、怎么判断、怎么防坑」</span>
+                <button class="kp-hc-go" id="entryHandoutBtn" type="button">进入讲义 →</button>
+                <button class="kp-hc-mini" id="homePrintHandout" type="button">打印讲义</button>
+              </div>
+              <div class="kp-path-card kp-path-quiz">
+                <span class="kp-hc-icon kp-hc-pen" aria-hidden="true"></span>
+                <span class="kp-hc-step">02 · 同步巩固</span>
+                <span class="kp-hc-t">知识点同步练习</span>
+                <span class="kp-hc-d">300 题真题靶向精练 · 按课同步 · 先答后揭，提交后才亮出原文证据</span>
+                <button class="kp-hc-go" id="entryQuizBtn" type="button">开始精练 →</button>
+                <button class="kp-hc-mini" id="homePrintQuiz" type="button">打印知识点合集</button>
+              </div>
+              <div class="kp-path-card kp-path-train">
+                <span class="kp-hc-icon kp-hc-target" aria-hidden="true"></span>
+                <span class="kp-hc-step">03 · 真题迁移</span>
+                <span class="kp-hc-t">新疆中考真题</span>
+                <span class="kp-hc-d">新疆中考真题与全疆模考 · 首尾定调 + 四步逐空训练 + 错题解析 + 精读复盘</span>
+                <button class="kp-hc-go" id="entryExamInlineBtn" type="button">进入真题库 →</button>
+              </div>
+            </div>
+
+            <!-- 底部指标条 -->
+            <div class="kp-footer-strip">
+              <div class="kp-metric"><strong id="kpMetricLessons">—</strong><span>篇真题</span></div>
+              <div class="kp-metric"><strong id="kpMetricBlanks">—</strong><span>道逐空解析</span></div>
+              <div class="kp-metric"><strong>5</strong><span>个证据维度</span></div>
+              <div class="kp-footer-copy">
+                <span class="kp-footer-spark" aria-hidden="true">✦</span>
+                <span><b>每次练习都留下可复盘的痕迹</b><br>错题本和固定搭配总库会自动帮你整理重点</span>
+              </div>
+              <div class="kp-footer-links">
+                <a class="kp-mini-link" href="../../index.html">训练其他专题</a>
+                <button id="openNotebookBtn" class="kp-mini-link" type="button">专属错题本</button>
+                <button id="openCollocationBankBtn" class="kp-mini-link" type="button">固定搭配总库</button>
+              </div>
             </div>
           </div>
           <section id="homeNotebookPanel" class="home-tool-panel hidden">
-            <div class="home-tool-panel-head">
-              <div>
+            <div class="kp-panel-head">
+              <div class="kp-panel-head-main">
                 <p class="eyebrow">专属错题本</p>
                 <h3>薄弱点雷达与错题规律</h3>
               </div>
-              <button class="ghost-button" type="button" data-home-tool-close>返回题库</button>
+              <div class="kp-panel-head-actions">
+                <button class="kp-home-back" type="button" data-home-tool-close>← 返回完形填空首页</button>
+              </div>
             </div>
             <div id="notebookSummary" class="notebook-summary"></div>
             <div id="weaknessRadar" class="weakness-radar"></div>
             <div id="notebookGroups" class="notebook-groups"></div>
           </section>
           <section id="homeCollocationPanel" class="home-tool-panel hidden">
-            <div class="home-tool-panel-head">
-              <div>
+            <div class="kp-panel-head">
+              <div class="kp-panel-head-main">
                 <p class="eyebrow">固定搭配总库</p>
                 <h3>中考高频搭配卡片</h3>
               </div>
-              <button class="ghost-button" type="button" data-home-tool-close>返回题库</button>
+              <div class="kp-panel-head-actions">
+                <button class="kp-home-back" type="button" data-home-tool-close>← 返回完形填空首页</button>
+              </div>
             </div>
             <section id="collocationBank" class="collocation-bank"></section>
           </section>
-          <div id="homeProgress" class="home-progress"></div>
-          <div id="homeGrid" class="home-grid"></div>
+          <!-- 知识点讲解 / 知识点同步练 共用面板，靠 mode 区分两个入口 -->
+          <section id="homeKnowledgePanel" class="home-tool-panel hidden">
+            <div class="kp-panel-head">
+              <div class="kp-panel-head-main">
+                <p class="eyebrow" id="kpEyebrow">知识点讲解</p>
+                <h3 id="kpTitle">知识点讲解</h3>
+                <p id="kpCrumb">先学方法，再练专项；每课都有配套真题精练。</p>
+              </div>
+              <div class="kp-panel-head-actions">
+                <button id="kpPrintBtn" class="ghost-button" type="button">打印知识点合集</button>
+                <button class="kp-home-back" type="button" data-home-tool-close>← 返回完形填空首页</button>
+              </div>
+            </div>
+            <div id="kpBody" class="kp-body"></div>
+          </section>
+          <!-- 新疆中考真题：篇目列表 -->
+          <section id="homeExamPanel" class="hidden">
+            <div class="kp-panel-head">
+              <div class="kp-panel-head-main">
+                <p class="eyebrow">新疆中考真题</p>
+                <h3>选择一篇文章，开始训练</h3>
+                <p>已上传的文章会显示在这里。做过的文章会保留记录，也可以重复练习。</p>
+              </div>
+              <div class="kp-panel-head-actions">
+                <button class="kp-home-back" type="button" data-home-tool-close>← 返回完形填空首页</button>
+              </div>
+            </div>
+            <div id="homeProgress" class="home-progress"></div>
+            <div id="homeGrid" class="home-grid"></div>
+          </section>
         </section>
 
         <header class="topbar">
@@ -139,7 +223,7 @@
             <h2><span id="topTitle" class="top-title-main">颜色们的争吵</span> <span id="topEnglishTitle">The Colors Argued</span></h2>
           </div>
           <div class="top-actions">
-            <button id="backHomeBtn" class="ghost-button">返回题库</button>
+            <button id="backHomeBtn" class="ghost-button">← 返回完形填空首页</button>
             <div class="progress-box">
             <span id="progressText">待解锁</span>
             <div class="progress-track">
@@ -310,6 +394,9 @@
     <script src="../vocabulary/doc_words.js?v=20260824"></script>
     <script src="high-frequency-selections.js?v=20261019-1"></script>
     <script src="../../assets/student-profile.js?v=20261020-1"></script>
-    <script src="app.js?v=20261020-basic-order-2"></script>
+    <script src="cloze-handout-content.js?v=20261118-kp-1"></script>
+    <script src="cloze-quiz-300.js?v=20261118-kp-1"></script>
+    <script src="cloze-knowledge-ui.js?v=20261118-kp-1"></script>
+    <script src="app.js?v=20261118-kp-1"></script>
   </body>
 </html>

@@ -3946,6 +3946,17 @@ const els = {
   firstSentence: document.querySelector("#firstSentence"),
   lastSentence: document.querySelector("#lastSentence"),
   openNotebookBtn: document.querySelector("#openNotebookBtn"),
+  homeEntryView: document.querySelector("#homeEntryView"),
+  entryHandoutBtn: document.querySelector("#entryHandoutBtn"),
+  entryQuizBtn: document.querySelector("#entryQuizBtn"),
+  entryExamBtn: document.querySelector("#entryExamBtn"),
+  entryExamInlineBtn: document.querySelector("#entryExamInlineBtn"),
+  homePrintHandout: document.querySelector("#homePrintHandout"),
+  homePrintQuiz: document.querySelector("#homePrintQuiz"),
+  kpMetricLessons: document.querySelector("#kpMetricLessons"),
+  kpMetricBlanks: document.querySelector("#kpMetricBlanks"),
+  homeExamPanel: document.querySelector("#homeExamPanel"),
+  homeKnowledgePanel: document.querySelector("#homeKnowledgePanel"),
   headerNotebookBtn: document.querySelector("#headerNotebookBtn"),
   unlockFormalBtn: document.querySelector("#unlockFormalBtn"),
   openCollocationBankBtn: document.querySelector("#openCollocationBankBtn"),
@@ -4018,12 +4029,39 @@ async function init() {
   if (hasFormalLogin()) {
     await loadCloudProgress();
   }
+  maybeApplyLocalPreview();
+}
+
+/** 本地预览：仅在 localhost 生效，线上访问不受影响。 */
+function maybeApplyLocalPreview() {
+  const isLocal = ["127.0.0.1", "localhost", "::1"].includes(location.hostname);
+  if (!isLocal) return;
+  const params = new URLSearchParams(location.search);
+  const kp = params.get("kp");
+  const quiz = params.get("quiz");
+  const exam = params.get("exam");
+  const preview = params.get("preview");
+  if (!kp && !quiz && !exam && !preview) return;
+
+  els.loginScreen?.classList.add("hidden");
+  enterHome();
+
+  if (exam) { showHomeTool("exam"); return; }
+  const isQuiz = Boolean(quiz);
+  if (!kp && !quiz) return;
+  const raw = isQuiz ? quiz : kp;
+  showHomeTool(isQuiz ? "quiz" : "handout");
+  const m = /^([a-z0-9]+)-(\d+)$/i.exec(raw || "");
+  if (m && window.ClozeKnowledge) {
+    if (isQuiz) window.ClozeKnowledge.openDrill(m[1], Number(m[2]));
+    else window.ClozeKnowledge.openLesson(m[1], Number(m[2]));
+  }
 }
 
 function enterHome() {
   els.appShell.classList.add("home-mode");
   els.appShell.classList.remove("study-mode");
-  showHomeLibrary(false);
+  showHomeEntry(false);
   resetSentenceAudio();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -4479,7 +4517,6 @@ function renderHomeProgress(doneLessons = getDoneLessons()) {
 }
 
 function renderHomeLibrary() {
-  showHomeLibrary(false);
   const doneLessons = getDoneLessons();
   renderHomeProgress(doneLessons);
   els.homeGrid.innerHTML = "";
@@ -4524,10 +4561,48 @@ function renderHomeLibrary() {
 }
 
 function showHomeLibrary(shouldScroll = true) {
+  showHomeEntry(shouldScroll);
+}
+
+/** 首页底部指标条：篇数 / 逐空解析数 */
+function fillHomeEntryCounts() {
+  const lessons = getVisibleLessonBanks().reduce(
+    (n, bank) => n + bank.lessons.filter((item) => item.available).length, 0);
+  if (els.kpMetricLessons) els.kpMetricLessons.textContent = String(lessons);
+  if (els.kpMetricBlanks) {
+    const blanks = getVisibleLessonBanks().reduce(
+      (n, bank) => n + bank.lessons.filter((item) => item.available)
+        .reduce((m, item) => m + (item.questions ? item.questions.length : 0), 0), 0);
+    els.kpMetricBlanks.textContent = blanks ? blanks.toLocaleString("en-US") : "—";
+  }
+}
+
+/** 首页一级入口屏：知识点讲解 / 知识点同步练 / 新疆中考真题 */
+function showHomeEntry(shouldScroll = true) {
+  els.appShell.classList.add("home-mode");
+  els.appShell.classList.remove("study-mode");
+  els.homeEntryView?.classList.remove("hidden");
+  els.homeKnowledgePanel?.classList.add("hidden");
   els.homeNotebookPanel?.classList.add("hidden");
   els.homeCollocationPanel?.classList.add("hidden");
-  els.homeProgress?.classList.remove("hidden");
-  els.homeGrid?.classList.remove("hidden");
+  els.homeExamPanel?.classList.add("hidden");
+  fillHomeEntryCounts();
+  if (shouldScroll) {
+    document.querySelector("#home")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+/** 供知识点模块（cloze-knowledge-ui.js）调用：回完形填空首页 */
+window.showClozeHome = function () { showHomeEntry(); };
+
+/** 新疆中考真题：篇目列表 */
+function showExamLibrary(shouldScroll = true) {
+  renderHomeLibrary();
+  els.homeEntryView?.classList.add("hidden");
+  els.homeKnowledgePanel?.classList.add("hidden");
+  els.homeNotebookPanel?.classList.add("hidden");
+  els.homeCollocationPanel?.classList.add("hidden");
+  els.homeExamPanel?.classList.remove("hidden");
   if (shouldScroll) {
     document.querySelector("#home")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -4538,18 +4613,28 @@ function showHomeTool(tool) {
     showExperienceLockedMessage("专属错题本为正式版功能。体验版的5篇学习进度只保存在当前浏览器中。");
     return;
   }
+  if (tool === "exam") {
+    showExamLibrary();
+    return;
+  }
   els.appShell.classList.add("home-mode");
   els.appShell.classList.remove("study-mode");
   resetSentenceAudio();
   const isNotebook = tool === "notebook";
+  const isCollocation = tool === "collocation";
+  const isKnowledge = tool === "handout" || tool === "quiz";
+  els.homeEntryView?.classList.add("hidden");
+  els.homeExamPanel?.classList.add("hidden");
+  els.homeKnowledgePanel?.classList.toggle("hidden", !isKnowledge);
   els.homeNotebookPanel?.classList.toggle("hidden", !isNotebook);
-  els.homeCollocationPanel?.classList.toggle("hidden", isNotebook);
-  els.homeProgress?.classList.add("hidden");
-  els.homeGrid?.classList.add("hidden");
+  els.homeCollocationPanel?.classList.toggle("hidden", !isCollocation);
   if (isNotebook) {
     renderNotebook();
-  } else {
+  } else if (isCollocation) {
     renderCollocationBank();
+  } else if (isKnowledge) {
+    const shown = window.ClozeKnowledge?.show?.(tool === "quiz" ? "quiz" : "handout");
+    if (!shown) { showHomeEntry(); return; }
   }
   document.querySelector("#home")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -6209,6 +6294,18 @@ function bindStaticEvents() {
   els.headerNotebookBtn?.addEventListener("click", () => showHomeTool("notebook"));
   els.unlockFormalBtn?.addEventListener("click", showFormalLoginFromExperience);
   els.openCollocationBankBtn?.addEventListener("click", () => showHomeTool("collocation"));
+  els.entryHandoutBtn?.addEventListener("click", () => showHomeTool("handout"));
+  els.entryQuizBtn?.addEventListener("click", () => showHomeTool("quiz"));
+  els.entryExamBtn?.addEventListener("click", () => showHomeTool("exam"));
+  els.entryExamInlineBtn?.addEventListener("click", () => showHomeTool("exam"));
+  els.homePrintHandout?.addEventListener("click", () => {
+    showHomeTool("handout");
+    setTimeout(() => window.ClozeKnowledge?.print?.(), 350);
+  });
+  els.homePrintQuiz?.addEventListener("click", () => {
+    showHomeTool("quiz");
+    setTimeout(() => window.ClozeKnowledge?.print?.(), 350);
+  });
   document.querySelector("#clozeWordCardClose")?.addEventListener("click", closeClozeWordCard);
   document.querySelector("#clozeWordCardSpeak")?.addEventListener("click", (event) => {
     playClozePronunciation(clozeWordCardTerm, event.currentTarget);
