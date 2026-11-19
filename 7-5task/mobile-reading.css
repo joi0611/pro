@@ -1,0 +1,1068 @@
+/* ============================================================
+ * 七选五（阅读还原）手机版 · mobile-reading.css
+ * ------------------------------------------------------------
+ * 定位：仿照「全国中考完形填空系统」的 mobile-study 方案，
+ *       只重做手机端「目录 → 答题」这一条链路，桌面端一字不动。
+ *
+ * 三个板块：
+ *   ① 顶栏：商标一行 + 导航一行（横向滑动），解决手机上点不到入口
+ *   ② 真题目录 / 讲义目录：筛选收成一行 + 「更多」抽屉，列表行 38~52px，
+ *      右侧带「已做 / 未做」标记
+ *   ③ 答题页：上下分屏 —— 原文固定上半屏（内部可滚），
+ *      五步引导 / 选项 / 取证 / 解析全部下沉下半屏（拖拽条三档）
+ *
+ * 生效范围：
+ *   - 目录类：@media (max-width: 880px)
+ *   - 分屏：仅 body.module-seven-choice（窄屏 + 答题视图），由 mobile-reading.js 开关
+ * 颜色只用 :root 变量（--seven-*），新增色值一律注明用途。
+ * ============================================================ */
+
+/* ---------- 拖拽条 / 抽屉开关：桌面隐藏 ---------- */
+.sheet-handle,
+.filter-more-toggle,
+.filter-sheet-head,
+.exam-quick-nav,
+.reading-mobile-bar { display: none; }
+
+/* ============================================================
+ * 一、顶栏：商标一行 + 导航一行（≤880px，全站）
+ * ============================================================ */
+@media (max-width: 880px) {
+  .module-seven-choice .workbook-site-header {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    width: 100%;
+    min-height: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0 12px;
+    border: 0;
+    border-bottom: 1px solid #e2e5f6;
+    border-radius: 0;
+    background: rgba(255, 255, 255, .96) !important;
+    box-shadow: 0 3px 14px rgba(51, 56, 112, .07) !important;
+  }
+
+  .module-seven-choice .workbook-brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 40px;
+    gap: 7px;
+    font-size: 14.5px;
+  }
+
+  .module-seven-choice .workbook-brand strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .module-seven-choice .workbook-brand-mark {
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    box-shadow: none;
+  }
+
+  /* 导航独立一行：横向滑动，不换行，当前项带底部指示线 */
+  .module-seven-choice .workbook-main-nav {
+    order: 3;
+    flex: 0 0 100%;
+    width: 100%;
+    gap: 0;
+    margin: 0 -12px;
+    padding: 0 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    border-top: 1px solid #eef0fa;
+  }
+
+  .module-seven-choice .workbook-main-nav::-webkit-scrollbar { display: none; }
+
+  .module-seven-choice .workbook-main-nav a,
+  .module-seven-choice .workbook-main-nav > span {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+    border-radius: 0 !important;
+  }
+
+  .module-seven-choice .workbook-main-nav .active::after {
+    right: 12px;
+    left: 12px;
+    height: 2.5px;
+    border-radius: 2px;
+  }
+
+  /* 首页 / 目录的外层容器贴边，把宽度让给内容 */
+  .module-seven-choice .module-shell {
+    width: 100%;
+    padding: 0 0 28px;
+  }
+
+  .module-seven-choice > .site-footer {
+    width: 100%;
+    padding: 16px 12px;
+    font-size: 11.5px;
+  }
+}
+
+/* ============================================================
+ * 二、首页：Hero / 入口卡 / 数据条整体压紧（≤880px）
+ * ============================================================ */
+@media (max-width: 880px) {
+  .module-seven-choice .module-hero {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 10px 12px 0;
+    padding: 18px 16px 16px;
+    border-radius: 18px;
+  }
+
+  .module-seven-choice .hero-puzzle-pattern { display: none; }
+  .module-seven-choice .eyebrow { margin-bottom: 8px; padding: 4px 10px; font-size: 11px; }
+
+  .module-seven-choice .module-hero h1 {
+    font-size: 22px;
+    line-height: 1.32;
+    letter-spacing: -.02em;
+  }
+
+  .module-seven-choice .module-hero > div > p:last-child {
+    margin-top: 8px;
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  .module-seven-choice .hero-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 12px;
+  }
+
+  .module-seven-choice .hero-progress strong { font-size: 17px; line-height: 1; }
+  .module-seven-choice .hero-progress > span { font-size: 11px; }
+  .module-seven-choice .hero-progress .progress-track { flex: 1 1 auto; height: 6px; margin: 0; }
+
+  .module-seven-choice .module-tabs {
+    position: sticky;
+    top: 76px;
+    z-index: 40;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    margin: 10px 12px 0;
+    padding: 5px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+  }
+
+  .module-seven-choice .module-tab { min-height: 38px; border-radius: 9px; font-size: 13.5px; }
+  .module-seven-choice .module-tabs.home-hidden { display: none; }
+
+  .module-seven-choice .view { margin: 10px 12px 0; padding: 0; }
+
+  .module-seven-choice .home-path-heading { margin: 4px 0 10px; gap: 4px; }
+  .module-seven-choice .home-path-heading span { margin-bottom: 3px; font-size: 10px; }
+  .module-seven-choice .home-path-heading h2 { font-size: 16px; line-height: 1.35; }
+  .module-seven-choice .home-path-heading > p { font-size: 11px; }
+
+  .module-seven-choice .module-entry-grid { grid-template-columns: 1fr; gap: 8px; margin: 0 0 12px; }
+
+  .module-seven-choice .module-entry-card {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) 18px;
+    grid-template-areas:
+      "icon kicker arrow"
+      "icon title  arrow"
+      "icon desc   arrow";
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 1px;
+    padding: 12px 12px;
+    border-radius: 14px;
+  }
+
+  .module-seven-choice .module-entry-card::after { display: none; }
+  .module-seven-choice .module-entry-index { grid-area: icon; width: 34px; height: 34px; border-radius: 10px; font-size: 12px; }
+  .module-seven-choice .module-entry-kicker { grid-area: kicker; margin: 0; font-size: 10px; }
+  .module-seven-choice .module-entry-card strong { grid-area: title; margin: 0; font-size: 16px; }
+  .module-seven-choice .module-entry-description {
+    grid-area: desc;
+    margin: 2px 0 0;
+    padding: 0;
+    font-size: 11px;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  /* 卡片说明里的 <br> 在手机上换成空格，避免撑高 */
+  .module-seven-choice .module-entry-description br { display: none; }
+  .module-seven-choice .module-entry-arrow { position: static; grid-area: arrow; justify-self: end; font-size: 18px; }
+
+  .module-seven-choice .home-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    min-height: 0;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+  .module-seven-choice .home-stat-item { padding: 0 8px; border-right: 1px solid #edf0fb; }
+  .module-seven-choice .home-stat-item strong { font-size: 18px; }
+  .module-seven-choice .home-stat-item span { margin-top: 2px; font-size: 10px; }
+  .module-seven-choice .home-stat-note { grid-column: 1 / -1; margin-top: 8px; padding: 8px 0 0; border-top: 1px solid #eef0fa; gap: 8px; }
+  .module-seven-choice .home-stat-note-mark { flex: 0 0 22px; width: 22px; height: 22px; }
+  .module-seven-choice .home-stat-note-mark svg { width: 13px; height: 13px; }
+  .module-seven-choice .home-stat-note strong { font-size: 11.5px; }
+  .module-seven-choice .home-stat-note small { margin-top: 2px; font-size: 10.5px; }
+}
+
+/* ============================================================
+ * 三、目录页头部 + 搜索（≤880px）
+ * ============================================================ */
+@media (max-width: 880px) {
+  .module-seven-choice .section-heading {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 2px;
+  }
+
+  .module-seven-choice .section-heading h2 { font-size: 19px; line-height: 1.3; }
+  .module-seven-choice .section-heading > div > p:last-child { margin-top: 4px; font-size: 11.5px; line-height: 1.45; }
+  .module-seven-choice .section-kicker { margin-bottom: 6px; padding: 3px 9px; font-size: 10.5px; }
+
+  .module-seven-choice .directory-back {
+    min-height: 30px;
+    margin-bottom: 8px;
+    padding: 0 11px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  /* 搜索框收成一行：label 变占位提示，输入框压缩 */
+  .module-seven-choice .search-box { width: 100%; font-size: 11px; }
+  .module-seven-choice .search-box span { display: none; }
+  .module-seven-choice .search-box input {
+    min-height: 36px;
+    padding: 0 11px;
+    border-radius: 9px;
+    font-size: 12.5px;
+  }
+
+  /* 讲义目录：两列卡片 → 紧凑单列行 */
+  .module-seven-choice .lesson-list { grid-template-columns: 1fr; gap: 6px; margin-top: 10px; }
+
+  .module-seven-choice .lesson-card {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 10px;
+    border: 1px solid #e6e9f6;
+    border-radius: 11px;
+    box-shadow: none;
+  }
+
+  .module-seven-choice .lesson-card:hover { transform: none; }
+  .module-seven-choice .lesson-main { min-width: 0; }
+  .module-seven-choice .lesson-card-meta { gap: 5px; margin-bottom: 2px; }
+
+  .module-seven-choice .lesson-index {
+    min-width: 0;
+    min-height: 0;
+    padding: 1px 6px;
+    border-radius: 6px;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .module-seven-choice .lesson-state,
+  .module-seven-choice .lesson-state.done {
+    padding: 1px 6px;
+    font-size: 9.5px;
+    line-height: 1.5;
+    color: #7a819f;
+    background: #f1f3fb;
+  }
+  .module-seven-choice .lesson-state.done { color: #16825d; background: #e8f8f1; }
+
+  .module-seven-choice .lesson-main strong {
+    display: block;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .module-seven-choice .lesson-main .lesson-summary {
+    display: -webkit-box;
+    margin-top: 2px;
+    overflow: hidden;
+    font-size: 10.5px;
+    line-height: 1.4;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .module-seven-choice .start-lesson {
+    min-height: 30px;
+    padding: 0 11px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    white-space: nowrap;
+  }
+
+  .module-seven-choice .empty-state { margin-top: 12px; padding: 16px; font-size: 12px; }
+}
+
+/* ============================================================
+ * 四、真题目录：筛选一行 + 更多抽屉 + 紧凑列表（≤880px）
+ * ============================================================ */
+@media (max-width: 880px) {
+  .module-seven-choice .exam-progress-summary {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 11px;
+    border-radius: 10px;
+  }
+  .module-seven-choice .exam-progress-summary strong { font-size: 16px; line-height: 1; }
+  .module-seven-choice .exam-progress-summary span { font-size: 11px; }
+
+  /* 筛选条：一行常驻（快速筛选 / 总数 / 更多） */
+  .module-seven-choice .exam-filter-bar {
+    position: sticky;
+    top: 76px;
+    z-index: 35;
+    margin: 8px 0 8px;
+    padding: 6px 8px;
+    border: 1px solid #e6e9f6;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, .97);
+    box-shadow: 0 4px 14px rgba(65, 70, 145, .06);
+  }
+
+  .module-seven-choice .exam-filter-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+
+  .module-seven-choice .exam-filter-chips {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    padding-bottom: 1px;
+  }
+  .module-seven-choice .exam-filter-chips::-webkit-scrollbar { display: none; }
+
+  .module-seven-choice .exam-filter-chip {
+    flex: 0 0 auto;
+    min-height: 26px;
+    padding: 3px 9px;
+    border: 1px solid #dfe3f6;
+    border-radius: 999px;
+    color: #626a8a;
+    background: #fff;
+    font-size: 11.5px;
+    font-weight: 800;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+
+  .module-seven-choice .exam-filter-chip.active {
+    border-color: var(--seven-purple);
+    color: #fff;
+    background: var(--seven-purple);
+  }
+
+  .module-seven-choice .exam-filter-chip .chip-num { margin-left: 3px; font-size: 10px; opacity: .8; }
+
+  .module-seven-choice .exam-filter-status {
+    flex: 0 0 auto;
+    color: var(--seven-muted);
+    font-size: 10.5px;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .module-seven-choice .exam-filter-more {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    min-height: 26px;
+    padding: 3px 9px;
+    border: 1px solid #dfe3f6;
+    border-radius: 999px;
+    color: #626a8a;
+    background: #fff;
+    font-size: 11.5px;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .module-seven-choice .exam-filter-more[aria-expanded="true"] {
+    border-color: var(--seven-purple);
+    color: var(--seven-purple);
+    background: var(--seven-purple-soft);
+  }
+
+  .module-seven-choice .exam-filter-more .efm-count {
+    min-width: 15px;
+    height: 15px;
+    padding: 0 3px;
+    border-radius: 999px;
+    color: #fff;
+    background: var(--seven-purple);
+    font-size: 9.5px;
+    line-height: 15px;
+    text-align: center;
+  }
+
+  /* 抽屉：默认收起；展开时贴住筛选行，头部常驻「清空 / 收起」 */
+  .module-seven-choice .exam-filter-drawer {
+    display: none;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed #e2e6f4;
+  }
+
+  .module-seven-choice .exam-filter-bar.more-open .exam-filter-drawer { display: block; }
+
+  .module-seven-choice .exam-filter-sheet-head {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    color: #7a819f;
+    font-size: 10.5px;
+    font-weight: 800;
+  }
+
+  .module-seven-choice .exam-filter-sheet-head .efsh-clear,
+  .module-seven-choice .exam-filter-sheet-head .efsh-done {
+    min-height: 22px;
+    padding: 2px 9px;
+    border: 1px solid #dfe3f6;
+    border-radius: 999px;
+    color: #626a8a;
+    background: #fff;
+    font-size: 10.5px;
+    font-weight: 800;
+  }
+
+  .module-seven-choice .exam-filter-sheet-head .efsh-clear { margin-left: auto; }
+  .module-seven-choice .exam-filter-sheet-head .efsh-done { border-color: var(--seven-purple); color: var(--seven-purple); }
+  .module-seven-choice .exam-filter-sheet-head .efsh-clear[hidden] { display: none; }
+
+  .module-seven-choice .exam-filter-group { display: grid; gap: 3px; margin-bottom: 6px; }
+  .module-seven-choice .exam-filter-group > span { color: #8a91ac; font-size: 9.5px; font-weight: 800; letter-spacing: .02em; }
+  .module-seven-choice .exam-filter-group .exam-filter-chips { flex-wrap: wrap; overflow: visible; }
+  .module-seven-choice .exam-filter-group .exam-filter-chip { min-height: 24px; padding: 3px 8px; font-size: 11px; }
+
+  /* 分组标题压紧 */
+  .module-seven-choice .exam-list { gap: 8px; margin-top: 4px; }
+  .module-seven-choice .exam-category-group { gap: 8px; margin-bottom: 14px; }
+
+  .module-seven-choice .exam-category-heading {
+    padding: 10px 12px;
+    border-radius: 12px;
+    align-items: center;
+  }
+  .module-seven-choice .exam-category-heading span { margin-bottom: 2px; font-size: 9px; }
+  .module-seven-choice .exam-category-heading h2 { font-size: 16px; }
+  .module-seven-choice .exam-category-heading > strong { font-size: 12px; }
+
+  .module-seven-choice .exam-year-group { gap: 6px; }
+  .module-seven-choice .exam-year-heading { margin: 2px 0 0; font-size: 13px; }
+  .module-seven-choice .exam-year-heading span { font-size: 10px; }
+  .module-seven-choice .exam-year-list { gap: 5px; }
+
+  /* 列表行：169px → 约 44px，右侧「已做 / 未做」标记 */
+  .module-seven-choice .exam-card {
+    min-height: 0;
+    position: relative;
+    grid-template-columns: 30px minmax(0, 1fr);
+    grid-template-areas:
+      "no main"
+      "no meta";
+    align-items: start;
+    gap: 0 7px;
+    padding: 6px 30px 6px 0;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+
+  .module-seven-choice .exam-card-index {
+    grid-area: no;
+    width: 30px;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 8px 0 0 8px;
+    color: #fff;
+    background: var(--seven-purple);
+    font-size: 10.5px;
+    line-height: 1;
+  }
+
+  .module-seven-choice .exam-card-main { grid-area: main; min-width: 0; }
+  .module-seven-choice .exam-card-main strong {
+    display: block;
+    overflow: hidden;
+    padding-right: 2px;
+    font-size: 13px;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .module-seven-choice .exam-card-main span {
+    display: block;
+    overflow: hidden;
+    margin-top: 1px;
+    font-size: 9.5px;
+    line-height: 1.3;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .module-seven-choice .exam-card-status {
+    grid-area: meta;
+    justify-self: start;
+    padding: 0;
+    color: #8a91ac;
+    font-size: 9.5px;
+    font-weight: 800;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .module-seven-choice .exam-card-status::after {
+    content: "未做";
+    margin-left: 4px;
+    padding: 0 4px;
+    border-radius: 999px;
+    color: #8a91ac;
+    background: #f1f3fb;
+    font-size: 9px;
+    line-height: 14px;
+  }
+
+  .module-seven-choice .exam-card[data-done="1"] .exam-card-status::after {
+    content: "已做";
+    color: #16825d;
+    background: #e8f8f1;
+  }
+
+  /* 「开始训练」按钮浮到行右端，只留一个箭头图标的位置 */
+  .module-seven-choice .start-exam {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    width: 24px;
+    min-height: 24px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    color: transparent;
+    background: var(--seven-purple-soft);
+    font-size: 0;
+    transform: translateY(-50%);
+  }
+
+  .module-seven-choice .start-exam::after {
+    content: "›";
+    display: grid;
+    height: 100%;
+    place-items: center;
+    color: var(--seven-purple);
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  .module-seven-choice .exam-card:active { border-color: #c9c6f0; background: #fbfbff; }
+
+  .module-seven-choice .empty-state { margin-top: 12px; }
+}
+
+/* ============================================================
+ * 五、答题页 · 上下分屏（仅 body.module-seven-choice）
+ * ------------------------------------------------------------
+ * 上半屏 .exam-reading：固定，内部可滚
+ * 下半屏 .exam-guide：沉底悬浮，拖拽条三档（看原文 / 分屏 / 看解析）
+ * 两部分是 flex 上下分栏，不是覆盖式浮层，结构上不可能遮住原文。
+ * ============================================================ */
+@media (max-width: 880px) {
+  body.module-seven-choice {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  /* 顶栏让位给原文 */
+  body.module-seven-choice .workbook-site-header { display: none !important; }
+  body.module-seven-choice > .site-footer { display: none !important; }
+
+  body.module-seven-choice .module-shell {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  body.module-seven-choice #examView.active {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* —— 顶部条：返回 + 篇目进度 —— */
+  body.module-seven-choice .lesson-toolbar {
+    flex: 0 0 auto;
+    gap: 8px;
+    margin: 0;
+    padding: 6px 10px;
+    border-bottom: 1px solid #eef0fa;
+    background: #fff;
+  }
+
+  body.module-seven-choice .lesson-toolbar .secondary-action {
+    min-height: 30px;
+    padding: 0 11px;
+    border-radius: 8px;
+    font-size: 12.5px;
+  }
+
+  body.module-seven-choice .lesson-position { font-size: 11.5px; }
+
+  /* —— 篇目卡：压成一行标题 + 玩法提示 —— */
+  body.module-seven-choice .exam-sheet {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: #fff;
+  }
+
+  body.module-seven-choice .exam-title-block {
+    flex: 0 0 auto;
+    padding: 5px 12px 6px;
+    border-bottom: 1px solid #eef0fa;
+  }
+
+  body.module-seven-choice .exam-title-block p {
+    margin: 0;
+    overflow: hidden;
+    font-size: 9.5px;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  body.module-seven-choice .exam-title-block h2 {
+    margin: 1px 0 0;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.3;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  body.module-seven-choice .exam-title-block > span { display: none; }
+
+  /* —— 分屏主体 —— */
+  body.module-seven-choice .exam-workspace,
+  body.module-seven-choice .guided-exam-workspace {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    gap: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  body.module-seven-choice .exam-left-column { min-height: 0; display: flex; flex-direction: column; }
+
+  /* 上半屏：原文 */
+  body.module-seven-choice .exam-reading {
+    flex: 1 1 auto;
+    min-height: 40vh;                    /* 兜底：下半屏再高，原文也留 5~6 行 */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: inset 0 -10px 10px -10px rgba(49, 46, 129, .12);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+    scroll-padding-top: 8px;
+  }
+
+  body.module-seven-choice .exam-reading .panel-heading {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    margin: 0;
+    padding: 4px 12px;
+    border-bottom: 1px solid #eef0fa;
+    background: #fff;
+  }
+
+  body.module-seven-choice .exam-reading .panel-heading h3 { font-size: 11.5px; }
+  body.module-seven-choice .exam-reading .panel-heading span { padding: 1px 7px; font-size: 9.5px; line-height: 1.6; }
+
+  body.module-seven-choice .exam-reading p {
+    margin: 0 0 8px;
+    padding: 0 12px;
+    font-size: clamp(13px, 3.7vw, 15.4px);
+    line-height: 1.74;
+  }
+  body.module-seven-choice .exam-reading p:first-of-type { margin-top: 8px; }
+  body.module-seven-choice .exam-reading p:last-child { margin-bottom: 14px; }
+
+  body.module-seven-choice .exam-blank {
+    min-width: 40px;
+    padding: 0 6px;
+    font-size: .92em;
+    line-height: 1.5;
+  }
+
+  /* 下半屏：引导 / 选项 / 取证 / 解析 */
+  body.module-seven-choice .exam-guide {
+    flex: 0 0 auto;
+    height: 44vh;
+    height: 44dvh;
+    min-height: 128px;
+    position: relative;
+    top: auto;
+    z-index: 4;
+    margin: 0;
+    padding: 0 12px calc(10px + env(safe-area-inset-bottom));
+    border: 0;
+    border-top: 1px solid #dfe3f6;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 24px rgba(49, 46, 129, .12);
+    background: #f8f9ff;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+  }
+
+  /* 拖拽条：常驻面板顶部，上下拖动调高矮，轻点在三档间切换 */
+  body.module-seven-choice .exam-guide > .sheet-handle {
+    position: sticky;
+    top: 0;
+    z-index: 8;
+    width: calc(100% + 24px);
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 0 -12px 4px;
+    padding: 0 12px;
+    border: 0;
+    border-bottom: 1px solid #e8ecf8;
+    background: linear-gradient(180deg, #fff 62%, rgba(255, 255, 255, .94));
+    cursor: ns-resize;
+    touch-action: none;
+    font-family: inherit;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  body.module-seven-choice .sheet-handle-bar { width: 42px; height: 4px; border-radius: 999px; background: #d3d8ee; }
+  body.module-seven-choice .sheet-handle-hint { color: #8a91ac; font-size: 9.5px; letter-spacing: .03em; }
+  body.module-seven-choice.sheet-dragging,
+  body.module-seven-choice.sheet-dragging * { cursor: ns-resize !important; }
+
+  /* —— 下半屏内容紧凑化 —— */
+  body.module-seven-choice .guide-progress {
+    position: sticky;
+    top: 22px;
+    z-index: 7;
+    gap: 2px;
+    margin: 0 -12px 8px;
+    padding: 4px 12px 6px;
+    border-bottom: 1px solid #eef0fa;
+    background: #f8f9ff;
+  }
+  body.module-seven-choice .guide-progress li b { width: 20px; height: 20px; margin-bottom: 2px; font-size: 10.5px; }
+  body.module-seven-choice .guide-progress li span { font-size: 9px; line-height: 1.25; }
+
+  body.module-seven-choice .guide-step h3 { margin: 1px 0 4px; font-size: 14.5px; line-height: 1.3; }
+  body.module-seven-choice .guide-step > p { margin: 0 0 7px; font-size: 11px; line-height: 1.5; }
+  body.module-seven-choice .guide-kicker { font-size: 9.5px; letter-spacing: .05em; }
+
+  body.module-seven-choice .theme-choices { gap: 5px; }
+  body.module-seven-choice .guide-choice { min-height: 34px; padding: 6px 9px; border-radius: 9px; font-size: 12px; line-height: 1.4; }
+
+  /* 第二步：雷达词规则压成两行 + 选项行内可点 */
+  body.module-seven-choice .radar-rules { margin: 6px 0; padding: 8px 9px; border-radius: 9px; }
+  body.module-seven-choice .radar-rules > strong { font-size: 11.5px; }
+  body.module-seven-choice .radar-rules ol { gap: 4px; margin-top: 5px; }
+  body.module-seven-choice .radar-rules li b { font-size: 10.5px; }
+  body.module-seven-choice .radar-rules li span { font-size: 9.5px; line-height: 1.4; }
+  body.module-seven-choice .keyword-options { gap: 5px; }
+  body.module-seven-choice .keyword-option { padding: 6px 8px; border-radius: 9px; font-size: 12px; }
+  body.module-seven-choice .keyword-word { min-height: 26px; padding: 2px 4px; font-size: 12.5px; }
+  body.module-seven-choice .keyword-punctuation { line-height: 26px; }
+  body.module-seven-choice .keyword-pick-status { margin-top: 6px; font-size: 10.5px; }
+
+  /* 第三步：设空位置四选一，两列 */
+  body.module-seven-choice .position-tasks { gap: 5px; }
+  body.module-seven-choice .position-task { padding: 6px 8px; border-radius: 9px; }
+  body.module-seven-choice .position-task > strong { margin-bottom: 4px; font-size: 11.5px; }
+  body.module-seven-choice .position-task > div { gap: 4px; }
+  body.module-seven-choice .position-choice { min-height: 30px; padding: 3px 5px; font-size: 11px; border-radius: 7px; }
+  body.module-seven-choice .position-task small { margin-top: 3px; font-size: 10px; }
+  body.module-seven-choice .guide-counter { margin-top: 6px; font-size: 11px; }
+
+  /* 第四步：突破口五连 */
+  body.module-seven-choice .priority-picks { gap: 5px; }
+  body.module-seven-choice .priority-pick { min-height: 52px; padding: 5px 3px; border-radius: 9px; }
+  body.module-seven-choice .priority-pick b { font-size: 15px; }
+  body.module-seven-choice .priority-pick span { font-size: 8.5px; line-height: 1.25; }
+  body.module-seven-choice .priority-pick small { margin-top: 2px; font-size: 8.5px; }
+
+  /* 第五步：题头 + 操作提示压成两行 */
+  body.module-seven-choice .solve-heading { gap: 8px; }
+  body.module-seven-choice .solve-heading h3 { font-size: 14.5px; }
+  body.module-seven-choice .solve-heading p { font-size: 9.5px; }
+  body.module-seven-choice .solve-heading > span { padding: 2px 6px; font-size: 9px; }
+  body.module-seven-choice .solve-guide { margin: 6px 0; padding: 7px 9px; border-left-width: 3px; border-radius: 8px; }
+  body.module-seven-choice .solve-guide strong { font-size: 11.5px; }
+  body.module-seven-choice .solve-guide p { margin-top: 2px; font-size: 10.5px; line-height: 1.5; }
+
+  /* 选项：一列，编号与句子同一行，拇指好点 */
+  body.module-seven-choice .exam-guide-options { margin-top: 8px; padding-top: 8px; border-top: 1px solid #e8ecf8; }
+  body.module-seven-choice .exam-guide-options-heading { margin-bottom: 5px; }
+  body.module-seven-choice .exam-guide-options-heading h4 { font-size: 12px; }
+  body.module-seven-choice .exam-guide-options-heading span { font-size: 9.5px; }
+  body.module-seven-choice .exam-option-list { gap: 5px; }
+  body.module-seven-choice .exam-option-item {
+    grid-template-columns: 20px minmax(0, 1fr) auto;
+    gap: 6px;
+    min-height: 38px;
+    padding: 6px 8px;
+    border-radius: 9px;
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+  body.module-seven-choice .exam-option-item strong { font-size: 12px; }
+  body.module-seven-choice .exam-option-item.used::after { font-size: 9px; }
+
+  /* 取证引导 */
+  body.module-seven-choice .adaptive-guide { margin: 6px 0; padding: 9px 10px; border-radius: 10px; border-width: 2px; }
+  body.module-seven-choice .adaptive-guide-title { margin-bottom: 6px; }
+  body.module-seven-choice .adaptive-guide-title span { font-size: 10.5px; }
+  body.module-seven-choice .adaptive-guide-title small { padding: 1px 6px; font-size: 9.5px; }
+  body.module-seven-choice .adaptive-guide > strong { font-size: 12.5px; }
+  body.module-seven-choice .adaptive-guide > p { margin: 3px 0 6px; font-size: 10.5px; line-height: 1.5; }
+  body.module-seven-choice .adaptive-detail { margin: 5px 0 6px; padding: 6px 8px; font-size: 10.5px; line-height: 1.5; }
+  body.module-seven-choice .adaptive-choices { gap: 4px; }
+  body.module-seven-choice .adaptive-choice { min-height: 32px; padding: 5px 6px; border-radius: 8px; font-size: 10.5px; line-height: 1.35; }
+  body.module-seven-choice .adaptive-option-list { gap: 4px; }
+  body.module-seven-choice .adaptive-option {
+    grid-template-columns: 20px minmax(0, 1fr) auto;
+    gap: 5px;
+    min-height: 34px;
+    padding: 5px 7px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    line-height: 1.38;
+  }
+  body.module-seven-choice .substitution-preview { gap: 4px; margin: 5px 0; padding: 7px 8px; font-size: 11px; line-height: 1.5; }
+  body.module-seven-choice .substitution-preview b { padding: 5px 7px; border-left-width: 3px; }
+  body.module-seven-choice .validation-progress { margin: 6px 0 4px; font-size: 10px; }
+  body.module-seven-choice .validation-checks { gap: 5px; }
+  body.module-seven-choice .validation-check { min-height: 36px; padding: 5px 8px; border-radius: 9px; font-size: 11.5px; line-height: 1.4; }
+  body.module-seven-choice .validation-check-copy small { font-size: 9.5px; }
+  body.module-seven-choice .adaptive-feedback { margin-top: 5px; padding: 6px 8px; font-size: 10.5px; line-height: 1.45; }
+
+  /* 判题反馈 + 破题卡 + 绝杀总结 */
+  body.module-seven-choice .guide-feedback { margin-top: 6px; padding: 6px 8px; border-radius: 8px; font-size: 10.5px; line-height: 1.45; }
+  body.module-seven-choice .breakthrough-card { margin-top: 6px; padding: 8px 10px; border-radius: 9px; }
+  body.module-seven-choice .breakthrough-card h4 { margin-bottom: 4px; font-size: 12px; }
+  body.module-seven-choice .breakthrough-card p { margin: 3px 0; font-size: 10.5px; line-height: 1.5; }
+  body.module-seven-choice .exam-final-summary { margin-top: 8px; padding: 9px 10px; border-radius: 10px; }
+  body.module-seven-choice .exam-final-summary h3 { font-size: 12.5px; }
+  body.module-seven-choice .summary-table { gap: 4px; }
+  body.module-seven-choice .summary-row { grid-template-columns: 26px 54px minmax(0, 1fr) 20px; gap: 5px; min-height: 32px; padding: 4px 6px; border-radius: 8px; font-size: 10.5px; }
+
+  /* 底部操作：主按钮占满一行，拇指抬手就到 */
+  body.module-seven-choice .guide-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    padding-bottom: 2px;
+  }
+  body.module-seven-choice .guide-actions .text-action,
+  body.module-seven-choice .guide-actions .reveal-next {
+    flex: 1 1 0;
+    min-height: 36px;
+    padding: 4px 8px;
+    border-radius: 9px;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+  body.module-seven-choice .guide-actions .reveal-next { margin-left: 0; }
+
+  /* 短屏再收一档 */
+  @media (max-height: 720px) {
+    body.module-seven-choice .exam-reading p { font-size: clamp(12.2px, 3.45vw, 14.4px); line-height: 1.7; }
+    body.module-seven-choice .exam-guide { height: 46vh; height: 46dvh; }
+    body.module-seven-choice .exam-title-block h2 { font-size: 13px; }
+  }
+
+  /* 横屏手机：改左右分栏，避免上下都被压扁 */
+  @media (orientation: landscape) and (max-height: 560px) {
+    body.module-seven-choice .exam-workspace,
+    body.module-seven-choice .guided-exam-workspace { flex-direction: row; }
+    body.module-seven-choice .exam-left-column { flex: 1 1 56%; min-width: 0; }
+    body.module-seven-choice .exam-reading {
+      flex: 1 1 auto;
+      min-height: 0;
+      border-right: 1px solid #dfe3f6;
+      box-shadow: inset -10px 0 10px -10px rgba(49, 46, 129, .1);
+    }
+    body.module-seven-choice .exam-guide {
+      flex: 1 1 44%;
+      height: auto;
+      min-height: 0;
+      max-height: none;
+      border-top: 0;
+      border-left: 1px solid #dfe3f6;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0 10px 8px;
+    }
+    body.module-seven-choice .exam-guide > .sheet-handle { display: none; }
+    body.module-seven-choice .guide-progress { top: 0; }
+    body.module-seven-choice .exam-title-block { padding: 3px 10px 4px; }
+  }
+}
+
+/* ============================================================
+ * 六、答题页底部「上一空 / 下一空」快跳条（仅分屏模式）
+ * ============================================================ */
+.exam-quick-nav {
+  position: fixed;
+  right: 10px;
+  bottom: calc(10px + env(safe-area-inset-bottom));
+  left: 10px;
+  z-index: 70;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: 1px solid #dfe3f6;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .96);
+  box-shadow: 0 10px 24px rgba(49, 46, 129, .16);
+  backdrop-filter: blur(8px);
+}
+
+body.module-seven-choice .exam-quick-nav { display: flex; }
+body.module-seven-choice .exam-quick-nav[hidden] { display: none !important; }
+
+/* 高于基线 .exam-quick-nav{display:none}，确保第五步出条 */
+@media (max-width: 880px) {
+  body.module-seven-choice #examQuickNav.exam-quick-nav:not([hidden]) {
+    display: flex !important;
+  }
+}
+
+.exam-quick-nav button {
+  flex: 0 0 auto;
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid #dfe3f6;
+  border-radius: 9px;
+  color: #4d2c91;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.exam-quick-nav button:disabled { color: #b9bdd2; background: #f6f7fd; }
+
+.exam-quick-nav button.eqn-next {
+  border-color: var(--seven-purple);
+  color: #fff;
+  background: var(--seven-purple);
+}
+
+.exam-quick-nav button.eqn-next:disabled { border-color: #dfe3f6; color: #b9bdd2; background: #f6f7fd; }
+
+.exam-quick-nav .eqn-status {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  color: #626a8a;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ============================================================
+ * 七、打印：手机版样式一律不参与
+ * ============================================================ */
+@media print {
+  .sheet-handle,
+  .exam-quick-nav,
+  .filter-more-toggle,
+  .filter-sheet-head { display: none !important; }
+  body.module-seven-choice { height: auto; overflow: visible; }
+  body.module-seven-choice .workbook-site-header { display: flex !important; }
+  body.module-seven-choice .module-shell { height: auto; overflow: visible; }
+  body.module-seven-choice .exam-reading { min-height: 0; overflow: visible; box-shadow: none; }
+  body.module-seven-choice .exam-guide { height: auto; overflow: visible; box-shadow: none; }
+}
