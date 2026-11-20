@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="新疆中考英语九大专项训练系统：完形、阅读、短文填空、初中语法重构、选词、读写、单词、构词法与写作。">
+  <meta name="description" content="新疆中考英语十大专项训练系统：完形、阅读、短文填空、初中语法重构、选词、读写、单词、构词法、写作与阅读还原。">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <title>新疆学生无限进步 · 中考英语专项训练</title>
   <link rel="stylesheet" href="./assets/theme-purple.css?v=20261012-purple-1">
@@ -59,6 +59,7 @@
     .module-home .training-card:nth-child(7) .card-number { background: #5f3ca0; }
     .module-home .training-card:nth-child(8) .card-number { background: #4d3273; }
     .module-home .training-card:nth-child(9) .card-number { background: #65458f; }
+    .module-home .training-card:nth-child(10) .card-number { background: #7a4fb8; }
     .module-home .card-icon {
       color: var(--home-purple);
       stroke: currentColor;
@@ -67,6 +68,9 @@
     .module-home .training-card:nth-child(3) .card-icon { color: #7655a6; }
     .module-home .training-card:nth-child(4) .card-icon { color: #8a4762; }
     .module-home .training-card:nth-child(5) .card-icon { color: #5d4387; }
+    .module-home .training-card:nth-child(10) .card-icon { color: #7a4fb8; }
+    .module-home .training-card.is-new .module-meta { color: #7a4fb8; }
+    .module-home .training-card.is-new .module-meta::before { background: #b79cf0; }
     .module-home .module-meta {
       display: inline-flex;
       align-items: center;
@@ -110,9 +114,9 @@
     <main>
       <section class="hero" aria-labelledby="heroTitle">
         <div class="hero-content">
-          <span class="eyebrow">新疆中考英语 · 九大专项</span>
+          <span class="eyebrow">新疆中考英语 · 十大专项</span>
           <h1 id="heroTitle">把每一步想清楚，<span>进步就会发生</span></h1>
-          <p>用新疆真题和全疆模考，把完形、阅读、短文填空、初中语法重构、选词、读写、单词、构词法与写作拆成看得懂、练得会的步骤。</p>
+          <p>用新疆真题和全疆模考，把完形、阅读、短文填空、初中语法重构、选词、读写、单词、构词法、写作与阅读还原拆成看得懂、练得会的步骤。</p>
           <a class="hero-action" href="#training">选择训练专项 <span aria-hidden="true">→</span></a>
         </div>
       </section>
@@ -188,6 +192,13 @@
             <svg class="card-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M14 10h31l7 7v37H14z" stroke-width="4" stroke-linejoin="round"/><path d="M45 10v9h7M22 27h21M22 36h15" stroke-width="3" stroke-linecap="round"/><path d="m24 49 5-1 18-18-4-4-18 18-1 5Z" stroke-width="3" stroke-linejoin="round"/></svg>
             <div class="card-copy"><h2>写作训练</h2><p>从句子成分、连词成句到万能句型与主题写作，按自己的节奏逐课提升。</p><span class="module-meta">通用登录码进入</span></div>
             <a class="enter-btn" href="./training/writing/index.html" aria-label="进入写作训练，需先输入登录码">输入登录码进入 →</a>
+          </article>
+
+          <article class="training-card is-new">
+            <span class="card-number">10</span>
+            <svg class="card-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M12 8h28v48H12z" stroke-width="4" stroke-linejoin="round"/><path d="M19 19h14M19 26h8" stroke-width="3" stroke-linecap="round"/><path d="M19 44h14" stroke-width="4" stroke-linecap="round" stroke-dasharray="5 5"/><path d="M58 44H45M51 38l-6 6 6 6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="card-copy"><h2>阅读还原（5选5 / 7选5）</h2><p>给短文挖出的空格选回原句：先抓首尾主线，再用代词、连词与复现词定位，最后代入复读验证。</p><span class="module-meta">手机号开通 · 5选5 / 7选5</span></div>
+            <a class="enter-btn" href="./training/reading-restoration/index.html" aria-label="进入阅读还原训练">进入专项 →</a>
           </article>
         </div>
       </section>
