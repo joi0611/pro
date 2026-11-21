@@ -2360,6 +2360,32 @@ h3 {
   background: #fff5f3;
 }
 
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.result-actions .primary-btn,
+.result-actions .ghost-btn {
+  min-height: 2.5rem;
+  padding: 0 1.1rem;
+  border-radius: 0.5rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.result-actions .ghost-btn {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+
+.result-actions .ghost-btn:hover {
+  background: #f2f6ee;
+}
+
 .step-feedback {
   display: none;
 }
