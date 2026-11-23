@@ -1,44 +1,905 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="referrer" content="same-origin">
-  <meta http-equiv="Cache-Control" content="no-store">
-  <title>统一管理后台 · 无限进步</title>
-  <link rel="stylesheet" href="/admin/style.css?v=unified-1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>无限进步@中考英语语法填空诊断</title>
+<style>
+:root{color-scheme:light;--ink:#252922;--muted:#556250;--green:#234b3b;--paper:#f6f5ee;--line:#deded1;--warm:#ede8d6}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 "Microsoft YaHei","PingFang SC",system-ui,sans-serif}
+header{background:var(--green);color:white;padding:12px max(18px,calc((100vw - 1120px)/2));font-weight:700;letter-spacing:.06em}
+main{max-width:1160px;margin:auto;padding:32px 20px 60px}
+h1,h2,h3,p{margin:0 0 12px}h1{font-size:clamp(30px,6vw,54px);line-height:1.2;color:var(--green);letter-spacing:-.035em}h2{font-size:23px;line-height:1.4}h3{font-size:19px}
+section{margin-top:24px}.lede{color:var(--muted);margin:17px 0 22px}.muted,.meta{color:var(--muted);font-size:14px}.meta{font-weight:700;display:block;margin-bottom:8px}
+button,input{font:inherit}button{background:white;border:1px solid #b8c5b8;color:var(--green);border-radius:8px;padding:8px 13px;min-height:42px;cursor:pointer;font-weight:650}button:hover{background:#e7eee7}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #a97827;outline-offset:3px}.primary{background:var(--green);color:white;border-color:var(--green);padding-inline:20px}.primary:hover{background:#35674f}.small{min-height:40px}
+.hero-actions,.pager,.cardfoot,.entry{display:flex;align-items:center;gap:12px}.cardfoot,.pager{justify-content:space-between}.pager{margin-bottom:14px}.grid,.work{display:grid;gap:15px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.work{grid-template-columns:minmax(0,1.55fr) minmax(280px,1fr);align-items:start}
+.card{background:#fff;border-radius:15px;padding:20px;border:1px solid var(--line)}.card p:last-child{margin-bottom:0}.reading{font:19px/1.95 Georgia,serif}.reading p{margin-bottom:15px}.reading .blank{font:700 14px/1 system-ui;min-height:32px;padding:6px;margin:0 1px;vertical-align:baseline}.prompt{color:#566451}
+.qnav,.choices{display:flex;flex-wrap:wrap;gap:8px}.qnav{margin:16px 0}.qnav button{padding:4px 8px;min-width:42px}.finished{background:#e6eee6}.selected,.selected:hover{background:var(--green);color:white;border-color:var(--green)}.steps{padding-left:22px;margin:0;color:var(--muted)}.task h3{margin-top:18px}.task{position:sticky;top:12px}.feedback{background:#fff1d8;border-left:4px solid #b48233;padding:8px 10px;margin:12px 0}.result{background:#edf3eb;padding:12px;margin-bottom:12px;border-radius:8px}.entry{align-items:stretch}input{width:100%;min-width:0;border:1px solid #879887;padding:8px;border-radius:8px}label{display:block;margin-bottom:7px}.metrics b{font-size:27px;color:var(--green)}details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;font-weight:650}progress{width:100%;accent-color:var(--green)}mark{background:#f9e3a9;color:inherit}.nearby{display:none}
+@media(max-width:760px){main{padding:22px 14px 40px}.grid,.work{grid-template-columns:1fr}.task{position:static;grid-row:1}.card{padding:15px}.reading{font-size:17px}.nearby{display:block;background:#f5f5ef;padding:10px;font:17px/1.6 Georgia,serif}.metrics{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.metrics .card{padding:8px}.metrics b{font-size:20px}.metrics p{font-size:12px}}
+:root{--ink:#1e1b4b;--muted:#565b78;--primary:#4f46e5;--secondary:#7c3aed;--paper:#f5f6ff;--line:#e1e4f5}
+header{background:linear-gradient(110deg,#4338ca,#6d28d9)}
+h1,button,.metrics b{color:var(--ink)}
+button,input{border-color:#cdd3ec}
+button:hover{background:#eef2ff}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline-color:var(--secondary)}
+.primary,.selected,.selected:hover{background:var(--primary);border-color:var(--primary);color:white}
+.primary:hover{background:#4338ca}
+.finished,.result{background:#eef2ff}
+.prompt{color:var(--muted)}progress{accent-color:var(--primary)}
+.directory{max-width:760px;margin:auto}
+.directory h1{font-size:clamp(24px,4vw,38px)}
+.directory section{margin-top:12px}
+.directory h2{font-size:16px;margin-bottom:5px}
+.directory .hero-actions{margin-bottom:10px}
+.assessment-guide{margin:10px 0 14px;padding:10px 12px;background:#eef0ff;border-radius:9px;color:var(--ink);font-size:14px}
+.directory-list{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+.directory-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 10px;background:white;border:1px solid var(--line);border-radius:9px}
+.directory-row strong,.directory-row .meta{display:block;margin:0}
+.directory-row .meta{font-size:12px;font-weight:500}
+.directory-row button{min-height:36px;padding:4px 10px;white-space:nowrap}
+.directory-row .row-action{display:flex;gap:8px;align-items:center;white-space:nowrap;color:var(--muted);font-size:12px}
+.doing{height:100vh;height:100dvh;overflow:hidden;display:flex;flex-direction:column}
+.doing>header{flex:none}
+main.in-study{width:100%;max-width:900px;flex:1;min-height:0;display:flex;flex-direction:column;padding:12px 20px 0}
+.in-study .pager{margin-bottom:4px;flex:none}
+.in-study h1{font-size:clamp(21px,3.5vw,30px);margin:0}
+.in-study .meta{margin:0;font-size:12px}
+.study-source{margin:2px 0 0}
+.qnav{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px;margin:7px 0;flex:none}
+.qnav button{min-width:0;min-height:34px;padding:2px}
+.work{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(55px,1fr) auto;gap:0;flex:1;min-height:0;align-items:stretch}
+.reading{min-height:0;overflow:auto;overscroll-behavior:contain;border-radius:14px 14px 0 0}
+.task{position:relative;top:auto;grid-row:2;overflow:auto;overscroll-behavior:contain;min-height:0;max-height:46vh;max-height:46dvh;padding:12px 14px max(12px,env(safe-area-inset-bottom));border-radius:14px 14px 0 0;border-top:2px solid var(--primary);box-shadow:0 -5px 20px #4338ca24;z-index:1}
+.task h2{font-size:17px;margin:4px 0 7px}.task .choices button{min-height:38px;padding:5px 9px}.task .result{margin-top:6px}
+.task .path-history{margin-top:6px;padding:5px 0 0;font-size:13px}
+@media(max-width:760px){
+  main{padding:12px 12px 16px}header{padding:7px 12px;font-size:14px}
+  main.in-study{padding:6px 8px 0}.in-study .pager button{min-height:34px;padding:3px 8px}
+  .reading{padding:10px;font-size:17px;line-height:1.7}.reading p{margin-bottom:10px}
+  .directory .hero-actions button{min-height:36px;padding:4px 10px}
+  .directory-row{padding:3px 7px}.directory-row strong{font-size:14px}.directory-row button{min-height:34px}
+}
+.report-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0 8px}
+.report-stat{display:flex;align-items:center;gap:12px;padding:12px;min-width:0}
+.report-stat strong{display:block;font-size:clamp(16px,3vw,25px);color:var(--ink);line-height:1.2}
+.report-stat p{font-size:13px;color:var(--muted);margin:4px 0 0}
+.score-ring{display:grid;place-items:center;flex:none;width:clamp(36px,7vw,64px);aspect-ratio:1;border-radius:50%;background:conic-gradient(var(--ring-color) var(--percent),#ece9fb 0)}
+.score-ring::after{content:'';width:76%;aspect-ratio:1;border-radius:50%;background:#fff}
+.skill-chart{display:grid;gap:8px;margin-top:12px}
+.skill-row{border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.skill-row>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:5px 10px;list-style:none}
+.skill-row>summary::-webkit-details-marker{display:none}
+.skill-row>summary .count{color:var(--muted);font-size:13px}
+.skill-row>summary .count::after{content:' ＋';color:var(--primary)}
+.skill-row[open]>summary .count::after{content:' －'}
+.skill-bar{grid-column:1/-1;height:7px;background:#efedfa;border-radius:99px;overflow:hidden}
+.skill-bar i{display:block;width:var(--width);height:100%;background:var(--bar);border-radius:inherit}
+.skill-note{color:var(--muted);font-size:13px;margin:7px 0 0}
+.skill-findings{padding-left:18px;margin:8px 0 0}.skill-findings li+li{margin-top:8px}
+@media(max-width:540px){.report-overview{gap:5px}.report-stat{display:block;padding:8px}.score-ring{margin:0 0 6px}.report-stat p{font-size:12px;line-height:1.45}}
+.report-hero{background:#f0edfb;border-color:#e6def8;box-shadow:0 4px 18px #4338ca09}
+.report-hero p{margin-top:7px}
+.priority-label,.sample-label,.stage-label{display:inline-block;font-size:12px;font-weight:500;color:var(--muted)}
+.priority-label,.sample-label{padding:2px 8px;border-radius:999px;background:#eeedf2}
+.priority-label{color:#543690;background:#e8e0fa}
+.report-skill-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.report-skill-grid .card{box-shadow:0 4px 16px #21115d08;min-width:0}
+.report-skill-grid h3{margin:0}
+.diagnosis-items{list-style:none;padding:0;margin:12px 0 0}
+.diagnosis-items li{padding:8px 0;border-top:1px solid var(--line)}
+.diagnosis-item-head{display:flex;justify-content:space-between;align-items:baseline;gap:6px;flex-wrap:wrap}
+.diagnosis-item-head b{font-size:14px}
+.diagnosis-number{white-space:nowrap;color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.diagnosis-progress{height:5px;background:#efedf5;border-radius:99px;overflow:hidden;margin-top:5px}
+.diagnosis-progress i{display:block;height:100%;border-radius:inherit}
+.sample-label{margin-top:4px}
+.route-note{color:var(--muted);font-size:14px}
+@media(max-width:680px){.report-skill-grid{grid-template-columns:1fr}}
+
+body:has(.assessment-home){background:#f7f5fc}
+.assessment-home{max-width:1024px;margin:auto;color:#261b42}
+.home-hero{display:grid;gap:14px;align-items:center;margin:0;padding:22px 26px;border-radius:20px;background:linear-gradient(112deg,#35205f,#553495);color:#fff}
+.home-brand{color:#ebe1ff;font-size:14px;font-weight:700;margin-bottom:6px}
+.home-hero h1{color:#fff;font-size:clamp(24px,4.2vw,40px);letter-spacing:0;margin-bottom:9px}
+.home-intro{margin:0;color:#f3ebff;max-width:39em}
+.home-control{background:#fff;border-radius:14px;padding:12px 14px;color:#261b42;min-width:0}
+.home-count{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px;font-size:14px}
+.home-count strong{font-size:17px}
+.home-control progress{display:block;height:8px;margin:0 0 10px}
+.home-actions{display:flex;flex-wrap:wrap;gap:8px}
+.home-actions .primary{background:#5b35a3;border-color:#5b35a3;flex:1}
+.home-actions .primary:hover{background:#472681}
+.assessment-home button{min-height:44px;touch-action:manipulation}
+.home-attempts{margin:8px 0 0;color:#58516b;font-size:13px}
+.home-catalog{display:grid;gap:12px;margin-top:12px}
+.home-catalog section{margin:0;background:white;border:1px solid #e7dff3;border-radius:16px;padding:12px 14px;min-width:0}
+.home-catalog h2{font-size:19px;margin:0 0 4px}
+.home-catalog .directory-hint{font-size:14px;color:#57506d;margin:0 0 6px}
+.home-catalog .directory-row{padding:6px 0;border:0;border-top:1px solid #ede7f6;border-radius:0;background:transparent}
+.home-catalog .directory-list{gap:0}
+.home-catalog .directory-row button{min-height:44px}
+.home-catalog .row-action{gap:6px}
+.home-catalog .directory-row .meta{overflow-wrap:anywhere;color:#59506d}
+.assessment-home button:disabled{cursor:default;background:#f3eff8;color:#625a70;border-color:#e4dcec}
+@media(min-width:780px){
+  .home-hero{grid-template-columns:minmax(0,1fr) minmax(260px,.55fr)}
+  .home-catalog{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:480px){
+  .home-hero{padding:15px;gap:12px;border-radius:16px}
+  .home-intro{line-height:1.5}
+  .home-catalog section{padding:8px 11px}
+  .home-catalog .directory-row strong{font-size:15px}
+}
+
+.activation-page{max-width:500px;margin:clamp(24px,8vh,80px) auto;padding:clamp(20px,5vw,36px);box-shadow:0 12px 36px #35205f16}
+.activation-page>p{color:#5b35a3;font-weight:700}
+.activation-page h1{font-size:clamp(24px,5vw,32px);margin-bottom:24px}
+.activation-page input,.activation-page button{min-height:46px}
+.activation-page button{width:100%}
+#activation-guide{color:#58516b;margin:8px 0 14px}
+#activation-error{color:#9b2041}
+.home-control .switch-code{padding:0 4px;border:0;background:none;color:#5b35a3}
+</style>
 </head>
 <body>
-  <header class="header"><a class="brand" href="/admin/"><span class="mark" aria-hidden="true">∞</span><span>无限进步<small>训练系统 · 统一管理后台</small></span></a><div class="header-right"><span class="admin-label">账号与授权</span><button id="reconnect" class="quiet" hidden>重新连接专项</button><button id="logout" class="quiet" hidden>退出管理</button></div></header>
-  <main>
-    <section id="loginPanel" class="login panel">
-      <div class="eyebrow">一个入口，管理全部专项</div><h1>管理员登录</h1>
-      <p class="muted">使用现有管理员密码，管理学员手机号及全国完形登录码。</p>
-      <form id="loginForm"><label for="password">管理员密码</label><div class="login-fields"><input id="password" type="password" autocomplete="current-password" maxlength="128" required placeholder="请输入管理员密码"><button class="primary" type="submit" disabled>登录管理后台</button></div></form>
-      <p id="loginHint" class="muted small">支持全国完形、广州完形、上海完形、7选5及高考语法填空。</p>
-    </section>
-    <p id="message" class="message" role="status" aria-live="polite"></p>
-    <div id="workspace" hidden>
-      <div class="heading"><div><div class="eyebrow">账号与权限</div><h1>学员授权管理</h1><p class="muted">按专项开通和管理权限，保存后立即生效。</p></div><button id="refresh" class="secondary">刷新账号列表</button></div>
-      <div id="serviceStatus" class="service-status" aria-live="polite"></div>
-      <section class="stats" aria-label="授权统计"><div><span>已载入授权</span><strong id="totalCount">—</strong></div><div><span>已启用</span><strong id="enabledCount">—</strong></div><div><span>已停用</span><strong id="disabledCount">—</strong></div><div><span>全国完形登录码</span><strong id="codeCount">—</strong></div></section>
-      <section class="panel authorize"><div class="panel-title"><h2>开通或更新手机号</h2><p class="muted small">同一手机号可开通多个专项；已存在的授权会更新备注并重新启用。</p></div>
-        <form id="authorizeForm"><div class="fields"><label>手机号<input name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="11" pattern="1[3-9][0-9]{9}" required placeholder="11位学员手机号"></label><label>备注 <span class="muted">选填</span><input name="note" maxlength="80" placeholder="学生姓名 / 班级"></label></div>
-          <fieldset><legend>选择开通专项</legend><div id="specialtyChoices" class="choices"></div></fieldset>
-          <div class="form-footer"><p class="muted small">每个专项分别保存权限与学习记录。</p><button class="primary" type="submit">保存授权</button></div>
-        </form>
-      </section>
-      <section class="panel list-panel"><div class="panel-title list-title"><div><h2>授权列表</h2><p id="resultSummary" class="muted small">正在载入…</p></div><label class="search"><span class="sr-only">搜索账号或备注</span><input id="search" type="search" placeholder="搜索手机号、登录码编号或备注"></label></div>
-        <nav id="tabs" class="tabs" aria-label="按专项筛选"></nav>
-        <div class="list-controls"><label>账号类型 <select id="kindFilter"><option value="all">全部类型</option><option value="phone">手机号</option><option value="code">登录码</option></select></label><label>状态 <select id="stateFilter"><option value="all">全部状态</option><option value="enabled">已启用</option><option value="disabled">已停用</option></select></label></div>
-        <div class="table-wrap"><table><thead><tr><th>账号</th><th>专项</th><th>备注</th><th>状态</th><th>开通时间</th><th>操作</th></tr></thead><tbody id="rows"></tbody></table></div><p id="empty" class="empty" hidden>暂无符合条件的授权</p>
-      </section>
-      <section class="panel"><details id="codeDetails"><summary>全国完形 · 新建或更新登录码</summary><p class="muted small">已有登录码以加密记录保存，原码可继续使用。列表按编号和备注管理，可重置设备绑定。</p><form id="codeForm"><div class="fields"><label>登录码<input name="code" minlength="8" maxlength="32" pattern="[A-Za-z0-9]{8,32}" required autocomplete="off" placeholder="8至32位字母或数字"></label><label>备注 <span class="muted">选填</span><input name="note" maxlength="80" placeholder="使用人 / 班级"></label></div><div class="form-footer"><p class="muted small">保存后启用；同码更新备注，保留学习记录。</p><button id="codeSubmit" class="primary" type="submit">保存登录码</button></div></form></details></section>
-      <footer><span>无限进步 · 统一管理后台</span><span>学员入口： <a href="/eazycloze/" target="_blank" rel="noopener">全国完形</a> <a href="/gzcloze/" target="_blank" rel="noopener">广州完形</a> <a href="/shcloze/" target="_blank" rel="noopener">上海完形</a> <a href="/7-5task/" target="_blank" rel="noopener">7选5</a></span></footer>
-    </div>
-  </main>
-  <script src="/admin/api.js?v=unified-login-2"></script>
-  <script src="/admin/app.js?v=unified-login-2"></script>
+<main></main>
+<script>
+/* 原真题判断链 */
+function normalize(v){
+  return String(v||"").trim().toLowerCase();
+}
+
+function isCorrectAnswer(q,v){
+  return(q.answers||[]).some(a=>normalize(a)===normalize(v));
+}
+
+function regexEscape(v){
+  return String(v||"").replace(/[-\/\\^$*+?.()|[\]{}]/g,"\\$&");
+}
+
+function getFocusStepOptions(q){
+  return Array.from(new Set([...(q.focusOptions||[]),q.focus].filter(Boolean)));
+}
+
+function renderQuestionExplain(q){
+  const base=String(q.explain||"");
+  const raw=String(q.prompt||"").replace(/[()]/g,"").trim();
+  if(raw&&base&&!base.includes(raw))return "提示词是 "+raw+"。"+base;
+  return base;
+}
+
+function getVerbPredicateCues(q){
+  const vf=q.verbFlow||{};
+  const kind=vf.predicateKind||"时态";
+  const structure=inferVerbStructure(q);
+  const cues=[];
+  if(kind==="情态动词"){const modal=vf.skeleton&&vf.skeleton.predicate||q.clue||"情态动词";cues.push({label:"情态动词线索",text:modal+" → 情态动词"});}else{const time=getPredicateTimeCueText(q,structure);cues.push({label:"时态线索",text:time});}
+  if(kind==="语态"||kind==="时态+语态"||/被动|be\s*\+\s*done|done/i.test(String(q.explain||"")+String(q.clue||""))){cues.push({label:"语态线索",text:getPredicateVoiceCueText(q)});}
+  const subject=vf.skeleton&&vf.skeleton.subject&&vf.skeleton.subject!=="?"?vf.skeleton.subject:"";
+  if(subject)cues.push({label:"主语线索",text:subject});
+  cues.push({label:"结构方向",text:structure});
+  return cues;
+}
+
+function getPredicateTimeCueText(q,structure){
+  const source=String(q.clue||"");
+  const groups=[{name:"一般过去时",tokens:["Last year","last year","Yesterday","yesterday","ago","last week","In ancient times","During the Song dynasty","Then","in just five years","at the age of five","became","began","bought","saw","liked","helped","worked","noticed","thought","saved","understood","wanted","was","were"]},{name:"现在完成时",tokens:["for over 6 years","for years","since ancient times","since","so far","in the past","has","have"]},{name:"一般将来时",tokens:["tomorrow","next","soon","will","If","if"]},{name:"现在进行时",tokens:["Now","now","look","listen"]},{name:"一般现在时",tokens:["often","sometimes","usually","always","every day","stand","stands","means","show","feel","becomes","runs","works","teaches","helps","need","is","are","am"]},{name:"情态动词",tokens:["can","could","should","must","may"]}];
+  for(const g of groups){const found=g.tokens.filter(t=>tokenInSource(t,source)).slice(0,3);if(found.length)return found.join(" / ")+" → "+g.name;}
+  if(structure)return "无明显时间标志词：看上下文语境、主语单复数，再落到“"+structure+"”";
+  return "无明显时间标志词：看上下文语境和主谓一致";
+}
+
+function getPredicateVoiceCueText(q){
+  const source=[q.clue,q.explain,(q.answers||[]).join(" ")].join(" ");
+  const found=[];
+  ["by","into","be divided","was","were","is","are","am","used"].forEach(t=>{if(source.includes(t)&&!found.includes(t))found.push(t);});
+  if(/被动|承受/.test(source))found.push("主语承受动作");
+  if(found.length)return found.slice(0,4).join(" / ")+" → 看主动还是被动";
+  return "看主语是不是动作承受者；若是承受者，优先考虑 be + done";
+}
+
+function matchesExpected(q,action,value){
+  const v=normalize(value).replace(/\s+/g,"");
+  if(action==="hasPrompt")return q.hasPrompt?value==="有提示词":value==="无提示词";
+  if(action==="noPromptType")return value===q.noPromptType;
+  if(action==="pos")return value===q.pos;
+  if(action==="focus")return value===q.focus;
+  if(action==="changedVerb")return value===q.verbFlow.hasChangedVerb;
+  if(action==="route")return value===q.verbFlow.route;
+  if(action==="predicateKind")return value===(q.verbFlow.predicateKind||"时态");
+  if(action==="nonPredicateFocus")return value===(q.verbFlow.nonPredicateFocus||q.verbFlow.structure);
+  if(action==="structure")return v===normalize(inferVerbStructure(q)).replace(/\s+/g,"");
+  return true;
+}
+
+function nextStep(q,action){
+  if(action==="hasPrompt")return"pos";
+  if(action==="noPromptType")return"answer";
+  if(action==="pos")return q.pos==="动词"&&q.verbFlow?"changedVerb":"focus";
+  if(action==="focus")return"answer";
+  if(action==="changedVerb")return"route";
+  if(action==="route")return q.verbFlow.route==="谓语"?"predicateKind":"nonPredicateFocus";
+  if(action==="predicateKind")return"structure";
+  if(action==="nonPredicateFocus")return q.verbFlow.structure?"structure":"answer";
+  if(action==="structure")return"answer";
+  return"answer";
+}
+
+function getDynamicHighlightItems(q,step){
+  if(!q)return[];
+  if(q.verbFlow&&q.verbFlow.route==="谓语"&&(step==="predicateKind"||step==="structure"))return getPredicateTenseHighlights(q,step);
+  if(q.verbFlow&&q.verbFlow.highlights){const key=step==="changedVerb"?"changedVerb":step==="route"?"route":step==="predicateKind"?"predicateKind":step==="nonPredicateFocus"?"focus":step==="structure"?"structure":step==="answer"?"answer":"changedVerb";return q.verbFlow.highlights[key]||[];}
+  if(!q.hasPrompt&&q.noPromptType==="连词")return splitClues(q.clue,"connectorClue");
+  if(q.clue)return splitClues(q.clue,q.pos==="形容词与副词"?"modifier":"predicate");
+  return[];
+}
+
+function splitClues(clue,type){
+  return String(clue||"").split(/\s*\/\s*/).filter(Boolean).map(text=>({text:text.trim(),type}));
+}
+
+function inferVerbStructure(q){
+  const vf=q.verbFlow||{};
+  const raw=vf.structure||q.point||"";
+  const ans=normalize((q.answers||[])[0]||"");
+  const clue=String(q.clue||"")+" "+String(q.explain||"")+" "+String(q.point||"")+" "+String(q.focus||"");
+  if(/情态动词/.test(clue)&&/\b(can|could|should|must|may)\b/.test(clue)&&!/被动/.test(clue))return"情态动词 + 动词原形";
+  if(raw&&!["时态","语态","时态+语态"].includes(raw))return raw;
+  if(/will\s+be\s+\w+ed|will be done|will be/.test(ans))return"一般将来时+被动";
+  if((/was|were/.test(ans)||/\b(was|were)\b/.test(clue))&&(/done|被动|by|into|divided|produced|created/.test(clue)||/ed$/.test(ans)))return"一般过去时+被动";
+  if((/is|are|am/.test(ans)||/\b(is|are|am)\b/.test(clue))&&(/done|被动|by|into|divided|used/.test(clue)||/ed$/.test(ans)))return"一般现在时+被动";
+  if(/^will\b/.test(ans))return"一般将来时";
+  if(/has|have/.test(ans)||/since|for over|for \d|so far|in the past/.test(clue))return"现在完成时";
+  if(/ing$/.test(ans)&&/\bis\b|\bare\b|\bam\b|now|look|listen/.test(clue))return"现在进行时";
+  if(/can|情态动词/.test(clue))return"情态动词 + 动词原形";
+  if(/last|yesterday|ago|ancient|dynasty|过去|worked|helped|noticed|thought|saved|was|were/.test(clue)||/ed$/.test(ans)||["began","made","brought","found","went"].includes(ans))return"一般过去时";
+  return"一般现在时";
+}
+
+function getVerbStructureOptions(q){
+  const correct=inferVerbStructure(q);
+  const kind=q.verbFlow&&q.verbFlow.predicateKind;
+  if(q.verbFlow&&q.verbFlow.route==="非谓语")return uniqueOptions([correct,"to do","doing","done"]);
+  if(kind==="语态")return uniqueOptions([correct,"主动语态","被动语态","is/are/am done","was/were done"]);
+  if(kind==="时态+语态")return uniqueOptions([correct,"一般现在时+被动","一般过去时+被动","一般将来时+被动","情态动词+被动"]);
+  return uniqueOptions([correct,"一般现在时","一般过去时","现在完成时","一般将来时","现在进行时","情态动词 + 动词原形"]);
+}
+
+function uniqueOptions(list){
+  return Array.from(new Set(list.filter(Boolean)));
+}
+
+function tokenInSource(token,source){
+  const t=String(token||"");
+  if(!t)return false;
+  const s=String(source||"");
+  if(/^[A-Za-z]+$/.test(t))return new RegExp("\\b"+regexEscape(t)+"\\b").test(s);
+  return s.includes(t);
+}
+
+function getPredicateTenseHighlights(q,step){
+  const vf=q.verbFlow||{};
+  const source=String(q.clue||"")+" / "+String(vf.skeleton&&vf.skeleton.predicate||"");
+  const tokens=["Last year","last year","Yesterday","yesterday","ago","last week","In ancient times","During the Song dynasty","Then","in just five years","the age of five","at the age of five","for over 6 years","for years","since ancient times","since","so far","Now","now","often","sometimes","usually","always","stand","stands","means","show","feel","becomes","runs","works","teaches","helps","need","set","became","warmed","wanted","started","decided","sold","gave","trained","played","practiced","encouraged","taught","has","have","can","will","If","if","helped","worked","noticed","thought","saved","understood","wanted","was","were","is","are","am"];
+  const found=tokens.filter(t=>tokenInSource(t,source)).slice(0,3);
+  if(found.length)return found.map(text=>({text,type:"tenseClue"}));
+  if(vf.predicateKind==="时态+语态")return splitClues((vf.skeleton&&vf.skeleton.subject)||q.clue,"subject");
+  if(step==="structure")return splitClues((vf.skeleton&&vf.skeleton.subject)||q.clue,"subject");
+  return[];
+}
+
+function getDecisionLabel(q,action,value){
+  if(action==='hasPrompt')return value;
+  if(action==='noPromptType')return '无提示词：'+value;
+  if(action==='pos')return '词性：'+value;
+  if(action==='focus')return '考点：'+value;
+  if(action==='changedVerb')return '已变化动词：'+value;
+  if(action==='route')return '路线：'+value;
+  if(action==='predicateKind')return '谓语考：'+value;
+  if(action==='nonPredicateFocus')return '非谓语：'+value;
+  if(action==='structure')return '结构：'+value;
+  if(action==='answer')return '答案：'+value;
+  return value;
+}
+
+function buildStepFeedback(q,action,value){
+  return{type:'wrong',title:'这一步需要回看线索',message:getStepFeedbackMessage(q,action,value)};
+}
+
+function getStepFeedbackMessage(q,action,value){
+  if(action==='hasPrompt')return q.hasPrompt?'括号里有提示词，先走“有提示词”路线。':'这个空没有括号提示词，应先走“无提示词”路线。';
+  if(action==='noPromptType')return '看空前后结构，本题更像“'+(q.noPromptType||'对应类别')+'”，线索是：'+(q.clue||q.point||'空前后词')+'。';
+  if(action==='pos')return '提示词最后要变成“'+(q.pos||'目标词性')+'”，线索是：'+(q.clue||q.point||'本句结构')+'。';
+  if(action==='focus')return '本题考点是“'+(q.focus||q.point||'当前结构')+'”，先看线索：'+(q.clue||'空前后')+'。';
+  if(action==='changedVerb')return '判断“有没有已经变化的动词”时，要看本句谓语骨架；本题应选“'+(q.verbFlow?.hasChangedVerb||'正确项')+'”。';
+  if(action==='route')return '本题路线应是“'+(q.verbFlow?.route||'正确路线')+'”。已有谓语通常走非谓语；缺谓语或 be+done 结构通常仍走谓语。';
+  if(action==='predicateKind'){if(q.verbFlow?.predicateKind==='情态动词'){const modal=q.verbFlow?.skeleton?.predicate||q.clue||'情态动词';const answer=(q.answers||[]).join(' / ');return '看到 '+modal+'。情态动词后接动词原形，因此填 '+answer+'。';}return '时态看时间词，语态看主被动。本题主要考“'+(q.verbFlow?.predicateKind||'时态/语态')+'”。';}
+  if(action==='nonPredicateFocus')return '非谓语看触发结构。本题需要“'+(q.verbFlow?.nonPredicateFocus||q.verbFlow?.structure||'正确形式')+'”。';
+  if(action==='structure')return '结构要和前面判断一致，本题结构是“'+(q.verbFlow?.structure||q.point||'正确结构')+'”。';
+  if(action==='answer')return '最后答案要同时满足词性、结构和拼写。正确答案是：'+(q.answers||[]).join(' / ')+'。';
+  return '请回到本句线索重新判断。';
+}
+
+function inferMistakeTag(q,action){
+  if(action==='answer')return inferAnswerMistakeTag(q);
+  const map={hasPrompt:'线索没看到',noPromptType:'线索没看到',pos:'词性判断错',focus:'词性判断错',changedVerb:'谓语/非谓语判断错',route:'谓语/非谓语判断错',predicateKind:'时态语态判断错',nonPredicateFocus:'谓语/非谓语判断错',structure:'固定搭配不熟'};
+  return map[action]||'线索没看到';
+}
+
+function inferAnswerMistakeTag(q){
+  const text=[q.point,q.focus,q.clue,q.explain,q.verbFlow&&q.verbFlow.structure].filter(Boolean).join(' ');
+  if(q.pos==='动词'){if(q.verbFlow&&q.verbFlow.route==='谓语')return '时态语态判断错';if(/搭配|介词|keep|manage|advise|expect|take|cause|learn|look forward|be excited|way to|to do|doing|done/.test(text))return '固定搭配不熟';return '谓语/非谓语判断错';}
+  if(!q.hasPrompt){if(/搭配|固定|known as|pay for|full of|role in|stand for|turn.*into|make a difference|far away from|so.*that|not only|but/.test(text))return '固定搭配不熟';return '线索没看到';}
+  if(/拼写|复数|所有格|比较级|最高级|序数词|单三|过去式|过去分词|变形|加/.test(text))return '拼写变形错';
+  if(/修饰|形容词|副词|名词|物主代词|宾格|反身代词|词性|转换/.test(text))return '词性判断错';
+  return '线索没看到';
+}
+
+const grammarStepFeedbackBase=getStepFeedbackMessage;
+getStepFeedbackMessage=function(q,action,value){
+  if(action==="pos")return '括号内提示词本身是“'+(q.pos||'对应词性')+'”，接下来再判断需要怎样变化。线索是：'+(q.clue||q.point||'本句结构')+'。';
+  return grammarStepFeedbackBase(q,action,value);
+};
+
+function describe(title, options, expected, action) {
+  return { title, options: [...new Set(options)], action };
+}
+
+function getChoice(q, step) {
+  if(!q.hasPrompt){if(step==="start")return describe("第一步：判断无提示词类别",q.noPromptTypeOptions||["冠词","介词","连词","代词"],q.noPromptType,"noPromptType");return describe("第二步：选择答案",q.options||[],q.answers&&q.answers[0],"answer");}
+  if(step==="start")return describe("第一步：判断有无提示词",["有提示词","无提示词"],"有提示词","hasPrompt");
+  if(step==="pos")return describe("第二步：判断提示词本身的词性",q.posOptions||["名词","动词","形容词与副词","数词","代词"],q.pos,"pos");
+  if(q.pos==="动词"&&q.verbFlow){if(step==="changedVerb")return describe("第三步：有没有已经变化的动词？",["有","没有"],q.verbFlow.hasChangedVerb,"changedVerb");if(step==="route")return describe("第四步：判断谓语 or 非谓语",["谓语","非谓语"],q.verbFlow.route,"route");if(step==="predicateKind")return describe("第五步：判断谓语结构",uniqueOptions([q.verbFlow.predicateKind,"时态","语态","时态+语态","情态动词","主谓一致"]),q.verbFlow.predicateKind||"时态","predicateKind");if(step==="nonPredicateFocus")return describe("第五步：选择非谓语形式",["to do","doing","done"],q.verbFlow.nonPredicateFocus||q.verbFlow.structure,"nonPredicateFocus");if(step==="structure")return describe("第六步：选择具体结构",getVerbStructureOptions(q),inferVerbStructure(q),"structure");return describe("最后一步：选择答案",q.options||[],q.answers&&q.answers[0],"answer");}
+  if(step==="focus")return describe("第三步：选择考点",getFocusStepOptions(q),q.focus,"focus");
+  return describe("最后一步：选择答案",q.options||[],q.answers&&q.answers[0],"answer");
+}
+
+function initialState() {
+  return { step: 'start', history: [], feedback: null, result: null };
+}
+
+function view(q, state) {
+  const showPredicate = q.verbFlow?.route === '谓语' &&
+    ['predicateKind', 'structure', 'answer'].includes(state.step);
+  return {
+    choice: state.result ? null : getChoice(q, state.step),
+    highlights: getDynamicHighlightItems(q, state.step),
+    predicateCues: showPredicate ? getVerbPredicateCues(q) : [],
+    history: state.history,
+    feedback: state.feedback,
+    result: state.result ? {
+      ...state.result,
+      answers: q.answers || [],
+      explanation: renderQuestionExplain(q)
+    } : null
+  };
+}
+
+function submit(q, state, action, value) {
+  if (state.result || action !== getChoice(q, state.step).action) return state;
+  const isAnswer = action === 'answer';
+  const correct = isAnswer ? isCorrectAnswer(q, value) : matchesExpected(q, action, value);
+  const history = correct ? [
+    ...state.history.filter(node => node.action !== action),
+    { action, text: getDecisionLabel(q, action, value) }
+  ] : state.history;
+  const feedback = correct ? null : buildStepFeedback(q, action, value);
+  return {
+    step: correct && !isAnswer ? nextStep(q, action) : state.step,
+    history,
+    feedback,
+    result: isAnswer ? { answer: value, correct, tag: inferMistakeTag(q, action) } : null
+  };
+}
+
+const passages = [
+['hangzhou','走失的猫','浙江杭州 · 19–28',`Susan has two cats, Ray and Star. Ray is always {19} than his sister, Star. One day in July, on his trip to the national park, Ray stepped into the trees nearby carelessly while Susan {20}. He didn’t come back that day—and for four more days, Susan and {21} husband searched and searched but couldn’t find Ray. On the {22} day, they had to leave and returned home. It was a long and hard drive. Susan was unhappy and cried {23} along the way.
+
+After two {24}, Susan received a call from the local animal home. They said they had found Ray by the microchip around his neck. He was still alive but did not have {25} easy journey. He had walked for 1200 km, trying {26} back home. He was badly hurt {27} he lost 6 pounds, 40% of his body weight. After getting together {28} his family, he was so tired that he sat on Susan’s legs and fell asleep soon.`],
+['march','红军长征','150–159',`Ninety years ago, the Central Red Army had to set out on the Long March because of the difficult situation. This year {150} the 90th anniversary (周年) of the victory of the Long March. Let’s learn something about it.
+
+During the Long March, the Chinese Central Red Army passed many places. They started {151} Jiangxi, passed through several provinces and finally arrived in Shaanxi. It is said that {152} soldiers walked about 25,000 li (about 12,500 kilometers) during the Long March.
+
+At school, you may have learned in books that soldiers went through many difficulties and they spared no effort {153} against the enemies. They crossed Chishui River four times, facing many kinds of difficulties. In Sichuan, soldiers had {154} hard time creeping (匍匐前进) across Luding Chain Bridge, which was made up of 13 iron chains, in the middle of gunfire. They also climbed over the {155} Jiajin Mountain which was 4,930 meters high. They didn’t have enough food to eat, {156} they often went hungry for days. And they didn’t have enough clothes to stay away from the cold. Many soldiers lost their {157}. About 86,000 people took part in the march, but only about 7,000 {158} when they arrived in Shaanxi.
+
+Today, we can visit the places they once passed through. This way, we may {159} understand the spirit of the Long March: Never be afraid of difficulties and never give up.`],
+['owl','机场里的雪鸮','四川乐山 · 29–38',`Every winter, Logan Airport in Boston sees some very special visitors. They are not busy {29}, but snowy owls (猫头鹰) from the North! These beautiful white birds fly south to find food. To an owl, the ground of the airport looks just like its home in the Arctic (北极).
+
+However, the airport can be a {30} place for them. They might hit planes, which is a big risk for both the birds {31} the planes. To solve this problem, a man {32} Norman Smith has stepped in. He is lovingly known as the “Owl Man”.
+
+Since 1981, Smith has {33} helped to move more than 900 owls to safer homes. After {34} an owl, he often puts a tiny transmitter (追踪器) on its back. It works like a GPS device and {35} scientists where the owls fly and how they live.
+
+Smith’s work is so amazing {36} people made a movie about him. Through his stories, Smith wants {37} a message: Together, we can create {38} world in harmony (和谐). Thanks to the “Owl Man”, the airport is now a safe place for planes as well as owls.`],
+['dance','九鲤灯舞','山东青岛 · 89–98',`The Nine Carp Lantern Dance from Fujian Province has a history of over 1,000 years. In the past, people only performed it during the Lantern Festival in the Year of the Dragon or when there was a disaster. They hoped to get rain and stay away from bad luck. In the Ming and Qing dynasties, it {89} its peak (鼎盛时期).
+
+The name “nine carp” stands for nine kinds of water animals. The dance tells an old story about a carp trying to jump over a high gate {90} a dragon. This story encourages young people to work hard {91} never give up.
+
+Unlike fish lantern dances in other places, the one in Fujian is performed {92}, with kung fu movements and local opera. During the show, dancers wear old-style clothes and move the lanterns quickly and skillfully. Their fast steps and big movements make the performance {93} and lively.
+
+Making fish lanterns needs special skills. First, workers bend (弯) the bamboo to make it look like {94} fish. Then, the bamboo pieces {95} together and covered with paper. Finally, workers draw fins and scales (鳞片) carefully.
+
+In recent years, the dance has become popular and helped with the {96} of local tourism. Many visitors come to watch the show and wonder {97} they can join in the lantern dance. The answer is yes! This offers them a chance to better experience the local culture. The dance serves as a strong bridge {98} ancient traditions and modern life. With more attention and care, this living treasure will continue to shine around the world.`],
+['roof','屋顶生物课','宁夏银川 · 69–78',`I love Thursday afternoons because we have a fun class then! It’s biology class, and it’s {69}. The classroom is not in any school building—it’s on the roof (屋顶)! Here, we learn new knowledge about nature by looking after our own “mini-farm”. The course is {70} important part of our school life.
+
+The course combines (融合) many subjects. Maths helps us work out how much water the plants need. Art also matters. We design beautiful {71} for our green plants. After school, we also learn a lot about nature by {72}. Biology is like a secret key that opens the door to learning many other subjects.
+
+Our class is {73} a small piece of land on the roof. We learn to manage the soil and grow vegetables. Last Thursday, our teacher {74} us how to cut branches (枝杈) and leaves from tomato plants. This helped them to grow more and {75} fruit. The work seemed easy, {76} it took time to get it right. We tried many times, and {77}, we made it!
+
+One thing I learn from the course: True knowledge is not just what we remember, but what we can create {78} our own hands.`],
+['clay','泥人张','江苏宿迁 · 39–48',`Clay Figure Zhang (泥人张) is a Chinese folk art. It has {39} history of over 180 years in Tianjin. The art form {40} by Zhang Mingshan in the late Qing Dynasty. He could make colorful clay figures of common people.
+
+Zhang Mingshan learnt clay sculpting from his father {41} the age of 8. He developed a habit of watching things around him. He could finish a lifelike clay figure secretly in {42} sleeve (袖子) while talking with others, so people gave him the name Clay Figure Zhang. Today, this art has included opera characters, legendary {43} and so on. It became a national intangible cultural heritage (非物质文化遗产) in 2006.
+
+Zhang Yu is the {44} generation inheritor (传承人) of the art. “Our works, though traditional in looks, must attract modern people as well,” he said.
+
+{45} the quality high, Zhang Yu follows the old methods strictly. Making the clay figures takes 18 steps in all. Artists add clay little by little, then they smooth and shape the body {46}. They pay great attention to details, like ears. Making perfect ears takes years of practice.
+
+“Clay Figure Zhang {47} popular for so many years because it is closely connected with common people’s lives,” said Zhang Yu.
+
+In 2000, Zhang Yu started a workshop in Tianjin. Now there are many cultural products in it. {48} you don’t visit it for yourself, you can’t enjoy their true value. Zhang Yu believes these cultural products are a good way to help young people learn about this traditional art.`]
+];
+const rows = `19|brave|A|比较级|braver,bravest,brave|than his sister|than 引出两者比较，brave 以 e 结尾，直接加 r 得到 braver。
+20|sleep|P0|过去进行时|was sleeping,slept,is sleeping|while Susan|Ray 走进树林时 Susan 正在睡觉，用 was sleeping。
+21|she|R|物主代词|her,she,hers|husband|名词 husband 前用形容词性物主代词 her。
+22|six|S|序数词|sixth,six,sixes|day|表示第六天，用序数词 sixth。
+23|sad|A|副词修饰动词|sadly,sad,sadness|cried|修饰动词 cried，用副词 sadly。
+24|month|N|名词复数|months,month,month’s|After two|two 后用可数名词复数。
+25||冠词|不定冠词|an,a,the|easy journey|easy 以元音音素开头，泛指一段旅程用 an。
+26|get|T1|不定式搭配|to get,getting,got|trying|try to do 表示努力做某事。
+27||连词|并列关系|and,or,but|badly hurt|两项遭遇并列，用 and。
+28||介词|介词搭配|with,for,from|getting together|get together with 表示与某人团聚。
+150|mark|P0|一般现在时|marks,mark,marked|This year|This year 是单数主语，陈述本年的事实，用 marks。
+151||介词|起点介词|from,to,at|Jiangxi|start from 表示从某处出发。
+152|we|R|物主代词|our,us,ours|soldiers|按“我们的战士”理解填 our。答案待核，本空仅练习。
+153|fight|T1|不定式搭配|to fight,fighting,fought|spared no effort|spare no effort to do 表示不遗余力做某事。
+154||冠词|不定冠词|a,an,the|hard time|have a hard time doing 是常用表达。
+155|snow|N|名词变形容词|snowy,snow,snowing|Jiajin Mountain|形容词 snowy 修饰山名。
+156||连词|因果关系|so,but,or|went hungry|缺少食物是原因，挨饿是结果。
+157|life|N|名词复数|lives,lifes,life|Many soldiers|lose their lives 表示牺牲，life 的复数是 lives。
+158|leave|B0|一般过去时+被动|were left,was left,had left|only about 7,000|took part 属于 but 前分句，arrived 属于 when 从句。设空分句仍缺谓语，复数主语用 were left。
+159|true|A|副词修饰动词|truly,true,truely|understand|truly 修饰 understand，留意 true 变形后的拼写。
+29|traveler|N|名词复数|travelers,traveler,traveler’s|They are|They 指多个来访者，用 travelers。
+30|danger|N|名词变形容词|dangerous,danger,dangerously|place|用 dangerous 修饰名词 place。
+31||连词|并列关系|and,or,but|both the birds|both ... and ... 连接两项。
+32|call|D1|分词作后置定语|called,calling,was called|has stepped in|主句谓语是 has stepped in，called Norman Smith 作后置定语修饰 a man。
+33|successful|A|副词修饰动词|successfully,successful,success|helped|副词 successfully 修饰 helped。
+34|catch|G1|介词后接动名词|catching,catch,to catch|After|After 在这里是介词，后接 catching。
+35|tell|P1|一般现在时|tells,tell,told|It works|works 和 tells 是由 and 连接的并列谓语，共用主语 It。
+36||连词|结果从句|that,which,what|so amazing|so ... that ... 表示如此……以至于……。
+37|share|T1|不定式搭配|to share,sharing,shared|wants|want to do 表示想做某事。
+38||冠词|不定冠词|a,an,the|world in harmony|泛指一个和谐的世界，用 a。
+89|reach|P0|一般过去时|reached,reaches,has reached|In the Ming and Qing dynasties|时间在过去，使用 reached。
+90|become|T1|目的不定式|to become,becoming,became|jump over a high gate|跳过高门的目的是变成龙，用 to become。
+91||连词|并列关系|and,but,or|work hard|努力和永不放弃并列，用 and。
+92|different|A|副词修饰动词|differently,different,difference|is performed|副词 differently 修饰表演的方式。
+93|energy|N|名词变形容词|energetic,energy,energetically|and lively|make + 宾语 + 形容词，energetic 和 lively 并列。
+94||冠词|不定冠词|a,an,the|fish|泛指一条鱼，用 a。
+95|tie|B0|一般现在时+被动|are tied,were tied,tie|the bamboo pieces|制作流程用一般现在时，竹片承受动作，复数主语用 are tied。
+96|develop|V|动词变名词|development,develop,developed|of local tourism|the 和 of 之间需要名词 development。
+97||连词|宾语从句连接词|if,whether,what,that|wonder|wonder 后引出是否能参加，if 和 whether 均可。
+98||介词|范围介词|between,among,through|ancient traditions and modern life|between ... and ... 表示在两者之间。
+69|excite|V|动词变形容词|exciting,excited,excitement|biology class|描述课程令人兴奋，用 exciting。
+70||冠词|不定冠词|an,a,the|important part|important 以元音音素开头，用 an。
+71|sign|N|名词复数|signs,sign,sign’s|our green plants|语境指为植物设计标牌，用复数 signs。
+72|we|R|反身代词|ourselves,us,our|by|by ourselves 表示靠我们自己。
+73|give|I1|一般现在时+被动|given,gives,giving|Our class is|is 已给出，填 given 组成完整被动谓语。
+74|teach|P0|一般过去时|taught,teaches,teached|Last Thursday|过去的时间用一般过去时，teach 的过去式是 taught。
+75|big|A|比较级|bigger,biger,biggest|more and|与 more 并列，用比较级 bigger。
+76||连词|转折关系|but,and,so|seemed easy|看起来容易，实际上费时间，表转折用 but。
+77|final|A|副词作状语|finally,final,finaly|we made it|用副词 finally 表示最终。
+78||介词|方式介词|with,by,from|our own hands|with our own hands 表示用自己的双手。
+39||冠词|不定冠词|a,an,the|history of over 180 years|have a history of 表示有多长时间的历史。
+40|create|B0|一般过去时+被动|was created,created,is created|by Zhang Mingshan|晚清是过去时间，艺术形式是被创作的，填 was created。
+41||介词|介词搭配|at,in,on|the age of 8|at the age of 是固定搭配。
+42|he|R|物主代词|his,he,him|sleeve|名词 sleeve 前用形容词性物主代词 his。
+43|hero|N|名词复数|heroes,heros,hero|opera characters|此处列举多个传奇英雄，hero 的复数是 heroes。
+44|six|S|序数词|sixth,six,sixes|generation inheritor|表示第六代，用 sixth。
+45|keep|T1|目的不定式|To keep,Keeping,Kept|Zhang Yu follows|follows 是谓语，句首用 To keep 表示目的。
+46|careful|A|副词修饰动词|carefully,careful,carefuly|smooth and shape|副词 carefully 修饰动作。
+47|be|P0|现在完成时|has been,was,is|for so many years|说话时仍受欢迎，从过去延续到现在，用 has been。
+48||连词|条件从句|If,Whether,Because|you can’t enjoy|前半句给出条件，用 If。`;
+
+
+const parts={A:'形容词与副词',R:'代词',S:'数词',N:'名词',V:'动词'};
+const nonForms={T:'to do',G:'doing',D:'done'};
+const questions = Object.fromEntries(rows.split('\n').map(line=>{
+  const [no,prompt,code,point,answers,clue,explain]=line.split('|');
+  const [answer,...alternatives]=answers.split(',');
+  const q={no:Number(no),prompt,hasPrompt:!!prompt,point,clue,explain,answers:no==='97'?['if','whether']:[answer]};
+  q.options=[...alternatives];
+  q.options.splice(q.no%q.options.length,0,answer);
+  if(!prompt) q.noPromptType=code;
+  else if(parts[code]){
+    q.pos=parts[code];
+    q.focus=point;
+    const pool={A:['比较级','副词修饰动词','副词作状语','最高级'],R:['物主代词','宾格','反身代词'],S:['序数词','基数词'],N:['名词复数','名词变形容词','名词所有格'],V:['动词变名词','动词变形容词','动词作谓语']};
+    q.focusOptions=[...new Set([...pool[code],point])];
+  }else{
+    const [kind,changed]=code;
+    q.pos='动词';
+    q.verbFlow={hasChangedVerb:changed==='1'?'有':'没有',route:nonForms[kind]?'非谓语':'谓语'};
+    if(nonForms[kind]) q.verbFlow.nonPredicateFocus=nonForms[kind];
+    else Object.assign(q.verbFlow,{predicateKind:{P:'时态',B:'时态+语态',I:'语态'}[kind],structure:point});
+  }
+  return [q.no,q];
+}));
+const tags={hasPrompt:'识别提示词',noPromptType:'判断无提示词类别',pos:'判断提示词词性',changedVerb:'识别已变化的动词',route:'判断谓语或非谓语',predicateKind:'判断谓语考点',nonPredicateFocus:'选择非谓语形式',structure:'判断谓语具体结构'};
+const hints={changedVerb:'先划分主句和从句，再找设空所在部分已经出现的动词。',route:'检查这一空是在补完整谓语，还是在修饰词语或构成搭配。',nonPredicateFocus:'找空前的动词、介词或名词，判断需要哪种形式。',predicateKind:'从时间和主语与动作的关系入手。',structure:'结合时间、主语和主动或被动关系，再选具体形式。'};
+const supplements=[
+  {id:'dance',label:'一般现在时被动 · 派生词 · 宾语从句',fits:/被动|词性|形容词|名词|连词|结果/},
+  {id:'roof',label:'反身代词 · -ing 形容词 · 补全被动谓语',fits:/代词|被动|动词|冠词|比较级/},
+  {id:'clay',label:'现在完成时 · 条件从句 · 不规则复数',fits:/时|结构|因果|连词|复数|非谓语/}
+];
+const unseen=['一般现在时被动','现在完成时','反身代词','宾语从句连接词','条件从句','动词变名词'];
+const byId=Object.fromEntries(passages.map(p=>[p[0],p]));
+const nums=p=>[...p[3].matchAll(/\{(\d+)\}/g)].map(m=>Number(m[1]));
+const locations={};
+const sources={
+  hangzhou:'2026年 · 浙江杭州 · 中考真题',
+  march:'2026优质中考模考题',
+  owl:'2026年 · 四川乐山 · 中考真题',
+  dance:'2026年 · 山东青岛 · 中考真题',
+  roof:'2026年 · 宁夏银川 · 中考真题',
+  clay:'2026年 · 江苏宿迁 · 中考真题'
+};
+for(const p of passages){
+  nums(p).forEach((id,index)=>{locations[id]={title:p[1],number:index+1};});
+}
+const localNo=id=>locations[id].number;
+const questionRef=id=>'《'+locations[id].title+'》第 '+localNo(id)+' 空';
+const core=passages.slice(0,3).flatMap(nums);
+let storageKey=null;
+const maxAttempts=2;
+let used=0,records={},busy=false;
+async function api(action,payload={}){
+  const res=await fetch('/api/'+action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+  if(!res.ok)throw Object.assign(new Error('Request failed'),{status:res.status});
+  return res.json();
+}
+let screen='login', current=19, storageIssue=false;
+const root=document.querySelector('main');
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const complete=ids=>ids.every(n=>records[n]?.state.result);
+const completed=ids=>ids.filter(n=>records[n]?.state.result).length;
+const btn=(label,action,classes='')=>'<button class="'+classes+'" data-go="'+esc(action)+'">'+label+'</button>';
+async function startAssessment(restart){
+  const remaining=maxAttempts-used;
+  if(!remaining)return false;
+  const detail=restart?'重新测评将清空之前的测评记录。':'开始测评将使用一次机会。';
+  if(!window.confirm('本账号可以测评两次，当前剩余 '+remaining+' 次。'+detail+'确认后开始测评。'))return false;
+  try{
+    ({used,records}=await api('start',{restart}));
+    return true;
+  }catch{storageIssue=true;render();return false;}
+}
+function card(p){
+  const ids=nums(p),done=completed(ids);
+  const available=passages.slice(0,3).includes(p)||complete(core);
+  return '<li class="directory-row"><div><strong>'+esc(p[1])+'</strong><span class="meta">'+esc(sources[p[0]])+'</span></div><div class="row-action">'+(available?'<span>'+done+' / '+ids.length+'</span>'+btn(done===ids.length?'回看':done?'继续':'开始','open:'+p[0]):'完成必做后开放')+'</div></li>';
+}
+function begin(id){
+  const ids=nums(byId[id]);
+  current=ids.find(n=>!records[n]?.state.result)||ids[0];
+  screen=id;
+}
+function reader(p){
+  const ids=nums(p),q=questions[current],record=records[current],state=record?.state||initialState(),v=view(q,state);
+  const focusText=(state.feedback||v.result)?q.clue:'';
+  const body=p[3].split('\n\n').map(block=>{
+    const chunks=block.split(/\{(\d+)\}/);
+    return '<p>'+chunks.map((chunk,i)=>{
+      if(i%2===0){
+        const safe=esc(chunk);
+        return focusText?safe.replace(esc(focusText),'<mark>'+esc(focusText)+'</mark>'):safe;
+      }
+      const id=Number(chunk),item=questions[id];
+      return btn('〈'+localNo(id)+'〉','question:'+id,'blank '+(id===current?'selected ':'')+(records[id]?.state.result?'finished':''))+(item.prompt?' <span class="prompt">('+esc(item.prompt)+')</span>':'');
+    }).join('')+'</p>';
+  }).join('');
+  const nav=ids.map(n=>btn(localNo(n),'question:'+n,(n===current?'selected ':'')+(records[n]?.state.result?'finished':''))).join('');
+  const steps=v.history.filter(item=>item.action!=='answer').map(item=>'<li>'+esc(item.text)+'</li>').join('');
+  const next=ids.slice(ids.indexOf(current)+1).find(n=>!records[n]?.state.result)||ids.find(n=>!records[n]?.state.result);
+  let panel;
+  if(v.result){
+    panel='<div class="result"><strong>'+ (v.result.correct?'最终答案正确':'再看一下这个空')+'</strong><p>你的答案 <b>'+esc(v.result.answer)+'</b><br>参考答案 <b>'+esc(v.result.answers.join(' / '))+'</b></p><p>'+esc(v.result.explanation)+'</p></div>'+
+      (next?btn('下一空','question:'+next,'primary'):
+        (passages.slice(3).includes(p)?btn('查看加测结果','extraReport','primary'):complete(core)?btn('查看诊断报告','report','primary'):btn('前往下一篇','nextCore','primary')));
+  }else{
+    const title=esc(v.choice.title).replace(/^最后一步：选择答案$|^第二步：选择答案$/,'填写答案');
+    let choices;
+    if(v.choice.action==='answer') choices='<form id="answer"><label for="word">输入设空处的英文答案</label><div class="entry"><input id="word" required maxlength="80" autocomplete="off" autocapitalize="off" spellcheck="false"><button class="primary">提交</button></div></form>';
+    else {
+      const options=v.choice.options.slice();
+      if(['structure','predicateKind'].includes(v.choice.action)){const shift=current%options.length;options.push(...options.splice(0,shift));}
+      choices='<div class="choices">'+options.map(o=>btn(esc(o),'pick:'+o)).join('')+'</div>';
+    }
+    panel='<h2 id="step">'+title+'</h2>'+choices+
+      (state.feedback?'<p class="feedback" role="status">'+esc(hints[v.choice.action]||state.feedback.message)+'</p>':'');
+  }
+  const pending=q.no===152?'<p class="muted">本空参考答案待核对，作答仅供练习。</p>':'';
+  return '<div class="pager">'+btn('← 目录','home')+'<span>'+completed(ids)+' / '+ids.length+' 空已完成</span>'+btn('查看结果',passages.slice(3).includes(p)?'extraReport':'report','small')+'</div><h1>'+esc(p[1])+'</h1><p class="meta study-source">'+esc(sources[p[0]])+'</p><div class="qnav" aria-label="题号">'+nav+'</div><div class="work"><article class="card reading" id="reading" lang="en" tabindex="0">'+body+'</article><aside class="card task" aria-label="当前做题步骤"><span class="meta">第 '+localNo(current)+' 空</span>'+pending+panel+
+    (steps?'<details class="path-history"><summary>已完成的判断（'+v.history.filter(item=>item.action!=='answer').length+' 步）</summary><ul class="steps">'+steps+'</ul></details>':'')+'</aside></div>';
+}
+function classify(q,attempt){
+  if(attempt.action==='answer'){
+    const given=normalize(attempt.choice);
+    if(q.noPromptType==='介词')return '介词使用';
+    if(q.noPromptType==='连词')return '连词使用';
+    if(q.noPromptType==='冠词')return '冠词使用';
+    if(q.no===158&&given==='was left')return '主谓一致';
+    if(q.no===40&&given==='created'||q.no===95&&given==='tie')return '被动结构的填写';
+    return '拼写或词形错误';
+  }
+  return tags[attempt.action]||q.point;
+}
+function summary(ids){
+  const groups=new Map(), errors=[];
+  for(const no of ids){
+    if(no===152)continue;
+    const item=records[no],q=questions[no];
+    if(!item?.state.result)continue;
+    const first=item.attempts.filter((a,i)=>item.attempts.findIndex(other=>other.action===a.action)===i);
+    for(const a of first){
+      const filling=a.action==='answer';
+      const name=(filling?q.point:tags[a.action]||q.point)||'当前考点';
+      const area=skillAreaFor(q,a.action);
+      const key=JSON.stringify([area,a.action,name]);
+      if(!groups.has(key))groups.set(key,{name,filling,area,action:a.action,count:0,wrong:0});
+      const g=groups.get(key);
+      g.count++;
+      if(!a.ok)g.wrong++;
+    }
+    const failed=first.filter(a=>!a.ok);
+    if(failed.length)errors.push({q,failed,item,label:classify(q,failed[0])});
+  }
+  return {groups,errors};
+}
+const skillAreas=[
+  {id:'recognition',name:'读题与辨词类',note:'先看有没有提示词，再判断括号里的词是什么词，或空里大概需要哪一类词。',color:'#6366f1'},
+  {id:'verbs',name:'动词与句子结构',note:'找一句话的主要动词，再看动作发生的时间、谁做了动作，以及空里要用哪种动词形式。',color:'#7c3aed'},
+  {id:'rules',name:'语法规则与搭配',note:'判断该用复数、哪种代词，或该用哪个冠词、介词和连词。',color:'#a855f7'},
+  {id:'writing',name:'拼写与词形',note:'把想好的形式写出来，检查字母、词尾和单词变化。',color:'#5142ae'}
+];
+function skillAreaFor(q,action){
+  if(['hasPrompt','pos','noPromptType'].includes(action))return 'recognition';
+  if(['changedVerb','route','predicateKind','nonPredicateFocus','structure'].includes(action)||
+    (action==='answer'&&q.verbFlow?.route==='谓语'))return 'verbs';
+  return action==='answer'&&!q.noPromptType?'writing':'rules';
+}
+
+function sortFindings(a,b){
+  return Number(a.count<=3)-Number(b.count<=3)||
+    b.wrong/b.count-a.wrong/a.count||b.count-a.count||
+    a.name.localeCompare(b.name,'zh-CN');
+}
+
+function skillList(findings){
+  return skillAreas.map(({id,name})=>{
+    const items=findings.filter(item=>item.area===id);
+    const list=items.length?'<ul>'+items.map(item=>
+      '<li><strong>'+esc(item.name)+'</strong>（'+(item.filling?'填词':'判断')+'） · 错 '+item.wrong+' / '+item.count+' 次</li>'
+    ).join('')+'</ul>':'<p>本次未记录到该类错误。</p>';
+    return '<section><h3>'+esc(name)+'</h3>'+list+'</section>';
+  }).join('');
+}
+const practiceByArea={
+  recognition:'先圈出提示词，并说出它原本是什么词。遇到没有提示词的空，先看空格前后，再判断需要哪类词。',
+  verbs:'先给句子划分小句，再圈出每小句的主语和主要动词，然后判断空格里的动词要用什么形式。',
+  rules:'先把空格前后的意思说清楚，再对照原句找复数、代词、连词或固定搭配的线索。',
+  writing:'先说出要用的词形，再盖住答案写一遍，最后核对字母和词尾。'
+};
+const diagnosisPractice={
+  "识别提示词": "圈出括号里的提示词，先区分有提示词和无提示词两类空。",
+  "判断提示词词性": "每天练 5–8 空，只判断括号里的词原本是什么词，坚持 2–3 周后用新题复测。",
+  "判断无提示词类别": "暂时不填答案，先看空格前后，说出需要冠词、介词还是连接词。",
+  "识别已变化的动词": "先分小句，圈出主语和已经有时态的动词，留意助动词和动词合在一起的情况。",
+  "判断谓语或非谓语": "先看这一小句是否已有谓语，再判断空格是补谓语，还是说明目的、修饰名词等。",
+  "判断谓语考点": "先找时间线索，再判断主语做这个动作还是承受这个动作。",
+  "选择非谓语形式": "对照 to do、doing、done 三种形式，说出所选形式在句中起什么作用。",
+  "判断谓语具体结构": "先说清时态和主被动，再按主语写出完整动词形式。",
+  "比较级": "圈出比较双方或 than，再判断用 -er 还是 more。",
+  "宾语从句连接词": "看从句缺什么成分，再根据句意选 that、whether 或疑问词。",
+  "并列关系": "读清前后两项的关系，区分并列、选择和转折。",
+  "不定冠词": "先看是不是泛指一个，再按紧跟词的开头发音选 a 或 an。",
+  "不定式搭配": "把常见的「动词 + to do」放进完整例句里记和练。",
+  "动词变名词": "找出句中需要名词的位置，再写出对应名词并核对词尾。",
+  "动词变形容词": "先确定空格修饰谁，再写出对应的形容词。",
+  "反身代词": "核对动作是否回到主语自身，再按人称和单复数选词。",
+  "范围介词": "先画出句意里的范围，再对照例句复习所用介词。",
+  "方式介词": "分清说的是工具、交通方式还是做事方法，再选介词。",
+  "分词作后置定语": "找到被修饰的名词，根据它与动作的主被动关系选分词。",
+  "副词修饰动词": "找出被修饰的动作，将提示词变成副词后核对拼写。",
+  "副词作状语": "先找副词修饰的动作或整个句子，再检查词尾。",
+  "过去进行时": "圈出过去的时间点，练习用 was/were + doing 表达当时正在发生的动作。",
+  "结果从句": "用中文说出什么情况带来了什么结果，再复习 so…that 等结构。",
+  "介词搭配": "把错题中的介词和它前后的词一起记，用原搭配造句。",
+  "介词后接动名词": "先确认前面是介词，再把后面的动词改成 -ing 形式。",
+  "名词变形容词": "先圈出被修饰的名词，再写对应的形容词并核对词尾。",
+  "名词复数": "圈出数量线索，写出复数后核对 -s、-es 或不规则变化。",
+  "目的不定式": "先问这个动作是为了什么，再练用 to do 表达目的。",
+  "起点介词": "标出动作的起点和终点，对照练习 from 和 to。",
+  "条件从句": "先找出条件和结果，再按句意选 if、unless 等连接词。",
+  "物主代词": "先找出东西是谁的，再看空格后有没有名词，区分 my 和 mine 这类形式。",
+  "现在完成时": "圈出与现在有关的时间线索，练习 have/has + 过去分词。",
+  "序数词": "先确认句子说的是第几个，再写序数词并核对不规则拼写。",
+  "一般过去时": "找过去的时间线索，再默写规则和不规则动词的过去式。",
+  "一般过去时+被动": "先确认动作发生在过去，再按主语写 was/were + 过去分词。",
+  "一般现在时": "先判断是不是事实或习惯，再核对主语和动词是否一致。",
+  "一般现在时+被动": "判断主语是否承受动作，再按主语写 am/is/are + 过去分词。",
+  "因果关系": "先分别说出原因和结果，再按句子的顺序选连接词。",
+  "转折关系": "找出前后意思转弯的地方，再用例句区分 but 和 although。"
+};
+const plainFinding={
+  pos:'看到括号里的提示词时，有几道题没先弄清它是名词、动词还是形容词，后面就容易变错。',
+  noPromptType:'括号里没给提示词时，有些空没判断准该填冠词、介词，还是把前后意思连起来的词。',
+  hasPrompt:'有些空没先看清括号里有没有提示词，做题时容易走错方向。',
+  changedVerb:'一句话里出现几个动词时，有些题没找准这一小句里已经有的主要动词。',
+  route:'遇到一句话里有好几个动词时，有些题没分清空格是要补句子的主要动词，还是要填另一种动词形式。',
+  predicateKind:'已经知道空里要补主要动词，但有些题没看准动作发生的时间，或没分清主语是做动作的一方还是承受动作的一方。',
+  nonPredicateFocus:'已经知道空里要用另一种动词形式，但有些题还拿不准该用 to do、doing 还是 done。',
+  structure:'知道该用谓语，但把时间、主语和主被动合起来选具体形式时，还有些题会出错。'
+};
+function narrative(ordered){
+  const main=ordered.filter(item=>plainFinding[item.action]).slice(0,2);
+  const other=[...new Set(ordered.filter(item=>!main.includes(item)).map(item=>item.name))];
+  const sentences=main.map(item=>plainFinding[item.action]);
+  if(main[0]===ordered[0]&&main[0].area==='recognition')sentences.unshift('这次最容易卡在动笔前。');
+  if(other.length)sentences.push(other.join('、')+'也有出错的地方。可以先回看原句，找出决定答案的词，再做几道同类题确认。');
+  return sentences.join('');
+}
+function learningAdvice(findings,assessedDone){
+  const ordered=[...findings].sort((a,b)=>b.wrong-a.wrong||sortFindings(a,b));
+  if(!ordered.length){
+    return '<section class="card"><h2>学情分析</h2><p>'+
+      (assessedDone?'已作答的题目还没有记录到判断或填词失误。':'完成答题后，这里会根据作答记录总结主要问题。')+
+      '</p><h3>训练建议</h3><p>'+(assessedDone?'用新题复测，看看换个句子能不能独立做对。':'先完成答题。')+'</p></section>';
+  }
+  const label=item=>item.name+(item.filling?'（填词）':'（判断）');
+  const path=ordered.map(item=>'<li><strong>'+esc(label(item))+'</strong> · '+esc(diagnosisPractice[item.name]||practiceByArea[item.area])+'</li>').join('');
+  return '<section class="card"><h2>学情分析</h2><p>'+esc(narrative(ordered))+'</p><h3>训练建议</h3><ol>'+path+
+    '<li>做完整题后，先回看第一步判断。第一步对了就往后找，找到出错的地方，再补练同类题。</li></ol></section>';
+}
+function report(extra=false){
+  const ids=extra?passages.slice(3).map(nums).filter(set=>set.some(n=>records[n])).flat():core;
+  const {groups,errors}=summary(ids);
+  const assessed=ids.filter(n=>n!==152);
+  const score=assessed.filter(n=>records[n]?.state.result?.correct).length;
+  const firstClean=assessed.filter(n=>records[n]?.state.result&&records[n].attempts.every(a=>a.ok)).length;
+  const findings=[...groups.values()].filter(item=>item.wrong).sort(sortFindings);
+  const assessedDone=completed(assessed);
+  const missing=assessed.filter(n=>!records[n]?.state.result);
+  const accuracy=assessed.length?(100*score/assessed.length).toFixed(1).replace(/\.0$/,'')+'%':'—';
+  const recommendationErrors=extra?summary(core).errors:errors;
+  const recommendations=supplements.map((s,i)=>({...s,i,score:recommendationErrors.reduce((sum,e)=>sum+Number(s.fits.test(e.label+' '+e.q.point)),0)})).sort((a,b)=>b.score-a.score||a.i-b.i);
+  const assessedPoints=new Set(ids.filter(n=>records[n]?.state.result).map(n=>questions[n].point));
+  const untested=unseen.filter(point=>!assessedPoints.has(point));
+  return '<div class="pager">'+(extra?btn('← 正式测评报告','report'):btn('← 首页','home'))+'</div><h1>'+(extra?'加测结果':'中考英语语法填空学情报告')+'</h1>'+
+    (extra?'<p>加测答对 <strong>'+score+' / '+assessed.length+'</strong> 空，正确率 <strong>'+accuracy+'</strong>。</p>':'<p>正式测评最终答对 <strong>'+score+' / '+assessed.length+'</strong> 空，正确率 <strong>'+accuracy+'</strong>，所有步骤都一次做对 <strong>'+firstClean+' / '+assessed.length+'</strong> 空。</p><p class="muted">《红军长征》第 3 空答案待核，已从正式分数和薄弱点统计中忽略。</p>')+'<p>已作答的 <strong>'+assessedDone+'</strong> 空中，有 <strong>'+errors.length+'</strong> 空出现过失误。未作答 <strong>'+missing.length+'</strong> 空，按错题计分。</p>'+
+    '<section><h2>薄弱点分析</h2>'+skillList(findings)+'</section>'+
+    '<details class="card"><summary><strong>逐空复盘</strong></summary>'+(errors.length?errors.map(({q,failed,item,label})=>'<details><summary>'+esc(questionRef(q.no))+' · '+esc(label)+' · 最终'+(item.state.result.correct?'答对':'答错')+'</summary><ol>'+failed.map(a=>'<li>'+esc(a.title)+'：作答为 <b>'+esc(a.choice)+'</b>'+(a.action==='answer'?'':'，重选后通过')+'</li>').join('')+'</ol><p>原文线索 <b>'+esc(q.clue)+'</b></p><p>'+esc(q.explain)+'</p>'+btn('回到原文','review:'+q.no)+'</details>').join(''):'<p>本次没有需要复盘的错步。</p>')+'</details>'+(missing.length?'<details class="card"><summary>未作答题目（'+missing.length+' 空）</summary><ul>'+missing.map(n=>'<li>'+esc(questionRef(n))+' '+btn('回到原文','review:'+n,'small')+'</li>').join('')+'</ul></details>':'')+learningAdvice(findings,assessedDone)+
+    (extra?'<section><h2>加测篇目</h2>'+(untested.length?'<p class="muted">本次未测 · '+esc(untested.join('、'))+'</p>':'')+
+    '<div class="grid">'+recommendations.map(s=>'<article class="card"><span class="meta">'+esc(sources[s.id])+'</span><h3>'+esc(byId[s.id][1])+'</h3><p>'+esc(s.label)+'</p><div class="cardfoot"><span>'+completed(nums(byId[s.id]))+' / 10 空已做 · 答对 '+nums(byId[s.id]).filter(n=>records[n]?.state.result?.correct).length+' 空</span>'+btn(complete(nums(byId[s.id]))?'回看加测':'进入加测','open:'+s.id,'small')+'</div></article>') .join('')+'</div></section>':'<section>'+btn('前往加测','extraReport','primary')+'</section>');
+}
+function revealBlank(){
+  root.querySelector('.reading .selected')?.scrollIntoView({block:'nearest',inline:'nearest'});
+}
+function assessmentHome(){
+  const done=completed(core), finished=complete(core);
+  const primaryLabel=finished?'查看诊断报告':used?'继续测评':'开始测评';
+  const restart=used===1?btn('重新测评','restart'):used>=maxAttempts?'<button type="button" disabled>重新测评</button>':'';
+  return '<div class="directory assessment-home">'+
+    '<div class="home-hero"><div><p class="home-brand">无限进步@</p><h1>中考英语语法填空诊断</h1>'+
+    '<p class="home-intro">先逐步选择你的思考路径，再填写答案。系统会记录每一步选择，生成学情报告。</p></div>'+
+    '<div class="home-control"><div class="home-count"><strong>基础测评进度</strong><span>'+done+' / '+core.length+' 空</span></div>'+
+    '<progress aria-label="基础测评进度" value="'+done+'" max="'+core.length+'"></progress>'+
+    '<div class="home-actions">'+btn(primaryLabel,finished?'report':'nextCore','primary')+restart+'</div>'+
+    '<p class="home-attempts">共 '+maxAttempts+' 次测评机会 · 剩余 '+(maxAttempts-used)+' 次</p>'+btn('切换激活码','logout','switch-code')+'</div></div>'+
+    '<div class="home-catalog"><section aria-labelledby="core-title"><h2 id="core-title">基础测评 · 3 篇必做</h2>'+
+    '<p class="directory-hint">平时正确率低于 90%，建议先完成这 3 篇。</p><ul class="directory-list">'+passages.slice(0,3).map(card).join('')+'</ul></section>'+
+    '<section aria-labelledby="extra-title"><h2 id="extra-title">进阶加测 · 3 篇选做</h2>'+
+    '<p class="directory-hint">平时正确率达到 90%，完成基础测评后可选做，检查较少考到的知识点。</p>'+
+    '<ul class="directory-list">'+passages.slice(3).map(card).join('')+'</ul></section></div></div>';
+}
+function render(){
+  const studying=!!byId[screen];
+  const priorTop=root.querySelector('.reading')?.scrollTop;
+  document.body.classList.toggle('doing',studying);
+  root.classList.toggle('in-study',studying);
+  if(!storageKey){
+    root.innerHTML='<div class="activation-page card"><p>无限进步@</p><h1>中考英语语法填空诊断</h1>'+
+      '<form id="activation-form"><label for="activation-code">测评激活码</label>'+
+      '<input id="activation-code" type="text" required autocapitalize="none" autocomplete="off" spellcheck="false" aria-describedby="activation-guide activation-error" placeholder="输入 6 位激活码">'+
+      '<p id="activation-guide">请联系老师领取激活码开始测评，每个账号可以测评2次。</p>'+
+      '<p id="activation-error" role="alert" hidden></p><button class="primary" type="submit">进入测评</button></form></div>';
+  }else if(screen==='home'){
+    root.innerHTML=assessmentHome();
+  }else root.innerHTML=screen==='report'||screen==='extraReport'?report(screen==='extraReport'):reader(byId[screen]);
+  if(studying){
+    if(priorTop!==undefined)root.querySelector('.reading').scrollTop=priorTop;
+    else revealBlank();
+  }
+  if(storageIssue)root.insertAdjacentHTML('beforeend','<p class="feedback">服务器保存失败或测评会话已失效，请重试或重新输入激活码。</p>');
+}
+async function submitChoice(value){
+  if(busy)return;
+  const q=questions[current],item=records[current]||{state:initialState(),attempts:[]};
+  const choice=view(q,item.state).choice;
+  if(!choice)return;
+  const next=submit(q,item.state,choice.action,value);
+  const ok=choice.action==='answer'?next.result.correct:!next.feedback;
+  const record={state:next,attempts:[...item.attempts,{action:choice.action,title:choice.title,choice:value,ok}]};
+  busy=true;
+  try{
+    await api('save',{used,question:current,record});
+    records[current]=record;
+    storageIssue=false;
+  }catch{storageIssue=true;}finally{busy=false;}
+  render();
+  root.querySelector('.task form input')?.focus({preventScroll:true});
+}
+root.addEventListener('submit',async event=>{
+  if(event.target.id==='activation-form'){
+    event.preventDefault();
+    const input=event.target.querySelector('input');
+    if(busy)return;
+    busy=true;
+    try{
+      ({used,records}=await api('login',{code:input.value.trim()}));
+      storageKey=true;screen='home';storageIssue=false;render();return;
+    }catch(err){
+      const error=event.target.querySelector('#activation-error');
+      error.hidden=false;
+      error.textContent=err.status===401?'激活码无效，请核对大小写和数字。':err.status===429?'尝试次数过多，请稍后再试。':'暂时无法连接服务器，请重试。';
+      return;
+    }finally{busy=false;}
+  }
+  if(!storageKey||event.target.id!=='answer')return;
+  event.preventDefault();
+  const word=event.target.querySelector('input').value.trim().replace(/\s+/g,' ');
+  if(word)submitChoice(word);
+});
+function chooseQuestion(no){
+  current=no;
+  render();
+  revealBlank();
+}
+root.addEventListener('click',async event=>{
+  const button=event.target.closest('button[data-go]');
+  if(!button||!storageKey||busy)return;
+  const [action,arg]=button.dataset.go.split(':');
+  if(action==='pick'){submitChoice(arg);return;}
+  if(action==='question'){chooseQuestion(Number(arg));return;}
+  if(action==='logout'){
+    busy=true;
+    try{await api('logout');}catch{storageIssue=true;render();return;}finally{busy=false;}
+    storageKey=null;
+    screen='login';
+    storageIssue=false;
+    render();
+    return;
+  }
+  if(action==='restart'){
+    busy=true;
+    try{if(!await startAssessment(true))return;}finally{busy=false;}
+    begin(passages[0][0]);
+  }
+  if((action==='open'||action==='nextCore')&&!used){
+    busy=true;
+    try{if(!await startAssessment(false))return;}finally{busy=false;}
+  }
+  if(action==='open')begin(arg);
+  if(action==='review'){begin(passages.find(p=>nums(p).includes(Number(arg)))[0]);chooseQuestion(Number(arg));return;}
+  if(action==='home'||action==='report'||action==='extraReport')screen=action;
+  if(action==='nextCore'){
+    const p=passages.slice(0,3).find(entry=>!complete(nums(entry)));
+    if(p)begin(p[0]);else screen='report';
+  }
+  render();
+  window.scrollTo(0,0);
+});
+render();
+
+</script>
 </body>
 </html>

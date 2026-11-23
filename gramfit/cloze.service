@@ -1,0 +1,16 @@
+[Unit]
+Description=Cloze assessment
+After=network.target
+[Service]
+Type=simple
+User=cloze
+Group=cloze
+WorkingDirectory=/opt/cloze
+Environment=CLOZE_DATA=/var/lib/cloze
+Environment=PORT=3187
+ExecStart=/usr/bin/env node /opt/cloze/server.cjs
+Restart=on-failure
+UMask=0077
+NoNewPrivileges=true
+[Install]
+WantedBy=multi-user.target
