@@ -5,7 +5,7 @@
   try { storage = window.sessionStorage; } catch (_) {}
   const client = createClient({ storage }), $ = id => document.getElementById(id);
   const names = Object.fromEntries(sites.map(s => [s.id, s.name]));
-  const groupNames = { national: '全国完形', three: '广州 / 上海 / 7选5', legacy: '全国语法填空' };
+  const groupNames = { national: '全国完形', three: '广州 / 上海 / 7选5', legacy: '高考语法填空' };
   let results = [], rows = [], busy = false, loggedOut = false, signedIn = false;
   let selected = new URLSearchParams(location.search).get('specialty') || 'all';
   if (selected !== 'all' && !names[selected]) selected = 'all';

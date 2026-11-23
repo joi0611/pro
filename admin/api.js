@@ -8,7 +8,7 @@
     { id: 'gzcloze', name: '广州完形填空', group: 'three', url: '/gzcloze/' },
     { id: 'shcloze', name: '上海完形填空', group: 'three', url: '/shcloze/' },
     { id: 'seven_choice', name: '全国中考7选5', group: 'three', url: '/7-5task/' },
-    { id: 'national_grammar', name: '全国语法填空', group: 'legacy' }
+    { id: 'national_grammar', name: '高考语法填空', group: 'legacy' }
   ];
   const groups = ['national', 'three', 'legacy'];
   function createClient(options = {}) {
@@ -45,9 +45,13 @@
     }
     const national = (action, payload = {}) => request('/national-api/admin/' + action, payload);
     const three = (action, payload = {}) => request('/three-api/seven_choice/rpc', { action: 'admin_' + action, payload });
-    const legacy = (action, payload = {}) => request('/training-backend/rest/v1/rpc/training_api', {
-      p_action: 'admin_' + action, p_payload: { ...payload, specialty: 'national_grammar', token }
-    }, { apikey: 'sb_publishable_qhB54NbaSS2bRDw0ehKGbA_7kHXkhTQ' });
+    // legacy（national_grammar / 高考语法填空）走腾讯云同域网关。
+    // 旧 Supabase 与 /training-backend/ 代理均已弃用：后者返回 PGRST202，
+    // 导致该专项登录永远失败、后台勾选框被置灰。
+    // 现与其余三个专项同源（同一 SQLite），只是多一个 specialty。
+    const legacy = (action, payload = {}) => request('/three-api/national_grammar/rpc', {
+      action: 'admin_' + action, payload: { ...payload, specialty: 'national_grammar' }
+    });
     const handlers = { national, three, legacy };
     const siteFor = id => { const site = sites.find(s => s.id === id); if (!site) throw new Error('请选择有效专项'); return site; };
     function normalize(row, specialty) {
