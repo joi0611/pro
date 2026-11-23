@@ -15,6 +15,12 @@
  * nav: kept one-line top bar with a violet baseline · signature: desktop two-column exam/workbench, mobile bottom chain · states: idle, screening, answering, done, wrong, empty
  * axes: light/grotesk-sans/chromatic-violet · posture: restrained · contrast: pass · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H5 E5 S5 R4 V4 · weakest: P, the idea is material-led; purple is spent on selection, progress and the catalog chip only */
+/* 登录门禁：未登录时只显示登录入口 */
+html:not(.authed) body{overflow:hidden}
+html:not(.authed) #loginModal{display:block !important; background:var(--color-paper,#fafaff) !important}
+html:not(.authed) #main, html:not(.authed) .sheet{visibility:hidden; pointer-events:none}
+html:not(.authed) header .tabs, html:not(.authed) #paperPick, html:not(.authed) #accountLink, html:not(.authed) .brand{visibility:hidden}
+html:not(.authed) header{border-bottom-color:transparent; background:var(--color-paper,#fafaff)}
 :root{
   color-scheme:light;
   --space-3xs:2px; --space-2xs:4px; --space-xs:8px; --space-sm:12px; --space-md:16px;
@@ -458,6 +464,7 @@ mark{background:var(--color-sheet-3); color:var(--color-sheet-ink); padding:0 va
         localStorage.setItem(LOGIN_KEY, (result && result.phone) || phone);
         hideLogin();
         checkLogin();
+        if (typeof window.__gkRenderAfterLogin === "function") window.__gkRenderAfterLogin();
       }catch(e){
         message(e.message || "登录失败，请稍后重试");
       }finally{
@@ -468,20 +475,26 @@ mark{background:var(--color-sheet-3); color:var(--color-sheet-ink); padding:0 va
     function checkLogin(){
       const phone = localStorage.getItem(LOGIN_KEY);
       const accountLink = $("#accountLink");
-      if(!accountLink) return;
       if(phone){
-        const validPhone = phone.replace(/(\d{3})\d{4}(\d{4})/, "$1****$2");
-        accountLink.textContent = validPhone + " · 退出";
-        accountLink.onclick = event => {
-          event.preventDefault();
-          if (!window.confirm("确定退出当前账号？")) return;
-          localStorage.removeItem(LOGIN_KEY);
-          location.reload();
-        };
+        document.documentElement.classList.add("authed");
+        if(accountLink){
+          const validPhone = phone.replace(/(\d{3})\d{4}(\d{4})/, "$1****$2");
+          accountLink.textContent = validPhone + " · 退出";
+          accountLink.onclick = event => {
+            event.preventDefault();
+            if (!window.confirm("确定退出当前账号？")) return;
+            localStorage.removeItem(LOGIN_KEY);
+            location.reload();
+          };
+        }
         hideLogin();
       }else{
-        accountLink.textContent = "登录";
-        accountLink.onclick = event => { event.preventDefault(); showLogin(); };
+        document.documentElement.classList.remove("authed");
+        if(accountLink){
+          accountLink.textContent = "登录";
+          accountLink.onclick = event => { event.preventDefault(); showLogin(); };
+        }
+        showLogin();
       }
     }
 
@@ -497,6 +510,7 @@ mark{background:var(--color-sheet-3); color:var(--color-sheet-ink); padding:0 va
         adminLink.target = "_blank";
         adminLink.rel = "noopener";
       }
+      // 未登录时阻止题库渲染（render 会在 DOMContentLoaded 之后执行，但登录门禁已生效）
     });
     window.showLogin = showLogin;
   })();
@@ -50764,7 +50778,10 @@ window.GK_BANK_10Y = {
   state.id = ARTS[0] && ARTS[0].id;
   state.tab = 'home';
   buildPicker();
-  render();
+  window.__gkRenderAfterLogin = render;
+  if (localStorage.getItem('gaokao_grammar_phone')) {
+    render();
+  }
 })();
 </script>
 </body>
