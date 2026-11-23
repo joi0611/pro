@@ -553,7 +553,7 @@ let storageKey=null;
 const maxAttempts=2;
 let used=0,records={},busy=false;
 async function api(action,payload={}){
-  const res=await fetch('/api/'+action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+  const res=await fetch('/gramfit/api/'+action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
   if(!res.ok)throw Object.assign(new Error('Request failed'),{status:res.status});
   return res.json();
 }
