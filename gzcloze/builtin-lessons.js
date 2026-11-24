@@ -330,11 +330,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The Flight (飞行) of Love David had never been on a plane because he was afraid of __1__ , and he had no plans of changing this.",
     "last_sentence": "It was __10__ that made him get over (克服) the fear of flying.",
     "tone": {
-      "answer": "积极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "David 起初害怕飞行、拒绝同行，后来为了陪伴母亲决定坐飞机，克服恐惧。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "David 起初害怕飞行、拒绝同行，后来为了陪伴母亲决定坐飞机，克服恐惧。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -634,11 +634,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "When was the last time you left home without your mobile phone?",
     "last_sentence": "I am planning to stay away from my phone for as long as possible.",
     "tone": {
-      "answer": "积极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "作者停用手机后起初焦虑，后来更专注，也重新感受到身边世界的美。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "作者停用手机后起初焦虑，后来更专注，也重新感受到身边世界的美。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -940,11 +940,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Every spring, in late March, the lush slopes of the West Lake region in Hangzhou come alive.",
     "last_sentence": "In several large tea producing areas like Meijiawu Village and Longjing Village, you can __10__ the fields, watch the tea-making process, and bring freshly-fried leaves home.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "龙井从春季采茶切入，依次介绍产地条件、茶博物馆、龙井传说和到访体验。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "龙井从春季采茶切入，依次介绍产地条件、茶博物馆、龙井传说和到访体验。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -1229,11 +1229,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Our Class Tree Last month, our class decided to adopt a young ginkgo tree in the school park, and we called it \"Our Class Tree\".",
     "last_sentence": "We believe that if everyone loves and protects trees, our world will be __10__ and more beautiful.",
     "tone": {
-      "answer": "转折变化",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "从领养银杏树、轮流照料，到全班承诺保护它，全文主线是共同照顾与成长。断枝是过程中的一处波折。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从领养银杏树、轮流照料，到全班承诺保护它，全文主线是共同照顾与成长。断枝是过程中的一处波折。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -1532,11 +1532,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "An artist painted many pictures of great beauty, but he was not happy with any of them.",
     "last_sentence": "The artist painted the most beautiful thing in the world and called it \"HOME\".",
     "tone": {
-      "answer": "积极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "画家起初对自己的画不满意，寻找过程中听到信仰、爱与和平的答案，回家后才意识到它们就在家庭里。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "画家起初对自己的画不满意，寻找过程中听到信仰、爱与和平的答案，回家后才意识到它们就在家庭里。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -1834,11 +1834,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Last week the electricity in my building went out.",
     "last_sentence": "From now on, we should use electricity wisely to make a different to our environment.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从停电暴露用电依赖，说明过度用电的后果，最后建议节约用电。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "从停电暴露用电依赖，说明过度用电的后果，最后建议节约用电。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -2133,11 +2133,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The Northern Hemisphere（北半球）moves deeper into autumn.",
     "last_sentence": "With some planning, you can enjoy something in your garden even during the cold weather.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "提出寒冷不等于园艺季结束，再用仍在生长的植物和背风区域说明。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "提出寒冷不等于园艺季结束，再用仍在生长的植物和背风区域说明。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -2437,11 +2437,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "One day, I was so angry with my parents that I left home, saying I would never return.",
     "last_sentence": "You know being parents is not an easy job.",
     "tone": {
-      "answer": "积极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "孩子因父母没买车气愤离家，看到父亲的鞋和钱包里的字条后改变看法，回家向父亲道歉。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "孩子因父母没买车气愤离家，看到父亲的鞋和钱包里的字条后改变看法，回家向父亲道歉。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -5431,11 +5431,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Many people often have a question about what is success and how to achieve it.",
     "last_sentence": "In this way, there will be no \"losers\".",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从成功需要经受困难的观点出发，以摩尔、古道尔等人的经历说明坚持的价值。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "从成功需要经受困难的观点出发，以摩尔、古道尔等人的经历说明坚持的价值。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -6054,11 +6054,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "There was once a large bottle of fresh, clean water.",
     "last_sentence": "Are you a \"clean drop\"?",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "水滴先为纯净自豪，遭遇污染后理解每一滴水对集体都有影响。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "水滴先为纯净自豪，遭遇污染后理解每一滴水对集体都有影响。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -9980,11 +9980,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "I used to hunt and killed quite a few deer.",
     "last_sentence": "I decided to __10__ hunting from that day on.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "猎人本来享受射猎，近距离接触雄鹿后决定从此不再打猎。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "猎人本来享受射猎，近距离接触雄鹿后决定从此不再打猎。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -11196,11 +11196,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Thirty years ago, I lived with a dog called Cookie.",
     "last_sentence": "She was my travel partner and always will be.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "生活虽拮据，叙述始终围绕 Cookie 的陪伴和双方的情感联结。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "生活虽拮据，叙述始终围绕 Cookie 的陪伴和双方的情感联结。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -12089,11 +12089,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Guangzhou, a lively city in southern China, lies on the banks of the Pearl River.",
     "last_sentence": "Come and visit this amazing city!",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从广州的地理和历史切入，分述景点、美食和城市特色。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从广州的地理和历史切入，分述景点、美食和城市特色。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -13561,10 +13561,10 @@ window.BUILTIN_LESSONS = [
     "last_sentence": "But I couldn't get any.",
     "tone": {
       "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "reason": "父子从告别时的尴尬走到再无机会告别，父亲出海未归，结尾落在遗憾。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "父子从告别时的尴尬走到再无机会告别，父亲出海未归，结尾落在遗憾。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -13862,11 +13862,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Everything went black!",
     "last_sentence": "We __10__.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "突然停电后全家担忧，恢复供电时转为欢呼。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "突然停电后全家担忧，恢复供电时转为欢呼。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -15043,11 +15043,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Taihang and Wangwu were two big mountains in the south of Jizhou and north of Heyang.",
     "last_sentence": "If we keep working every day, why can't we move away the mountains?\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "愚公面对两座山仍相信子孙能持续努力，结尾强化坚持与信心。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "愚公面对两座山仍相信子孙能持续努力，结尾强化坚持与信心。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -16529,11 +16529,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "A zoo keeper's work is very interesting but hard.",
     "last_sentence": "Many people get hurt because they sometimes do silly things, like putting their hands into the lion'scage.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从饲养员工作的特点切入，说明喂食、清洁笼舍和保障游客安全等职责。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从饲养员工作的特点切入，说明喂食、清洁笼舍和保障游客安全等职责。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -17409,11 +17409,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Smith was a landlord(地主).",
     "last_sentence": "When you say ‘give' to him, he does __10__, but when you say ‘take', he takes at once.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "地主落水，众人说给我手都无效，农夫换成抓住我的手才救起他。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "地主落水，众人说给我手都无效，农夫换成抓住我的手才救起他。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -18003,11 +18003,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "There was a small and very beautiful village.",
     "last_sentence": "From then on, they plant many trees and protect them.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "村民经历失去树木带来的后果，最后认识到树的重要并开始植树保护。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "村民经历失去树木带来的后果，最后认识到树的重要并开始植树保护。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -18892,11 +18892,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Everyone loves beautiful nature.",
     "last_sentence": "Let's start with small __10__ every day.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从怎么保护环境的问题出发，用事例说明伤害自然的后果，结尾号召从小事做起。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "从怎么保护环境的问题出发，用事例说明伤害自然的后果，结尾号召从小事做起。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -19489,11 +19489,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Tarantulas are large spiders.",
     "last_sentence": "So do you want to have a tarantula as a pet? __10__ a club near you for people who keep tarantulas as a hobby, and you'll learn more about this amazing friend.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "围绕捕鸟蛛适不适合当宠物，介绍饲养成本、空间需求和了解渠道。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "围绕捕鸟蛛适不适合当宠物，介绍饲养成本、空间需求和了解渠道。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -21279,11 +21279,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Furniture company Ikea is offering to help parents find baby names.",
     "last_sentence": "Ikea gives them some ideas without money in return.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "以父母起名难为背景，介绍宜家如何用产品名称提供起名灵感。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "以父母起名难为背景，介绍宜家如何用产品名称提供起名灵感。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -23078,11 +23078,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Mr.",
     "last_sentence": "If we keep trying to smile at someone, sooner or later, they will smile back.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "Janet 起初怕道森，看到他微笑送苹果后改变看法。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Janet 起初怕道森，看到他微笑送苹果后改变看法。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -23391,11 +23391,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "In August, Japan dumped (倾倒) nuclear (核) wastewater into the sea!",
     "last_sentence": "Maybe people will __10__ eat it because Japan dumps nuclear wastewater into the sea.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从核废水排放事件切入，按文中说法说明对海洋和食品安全的担忧。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从核废水排放事件切入，按文中说法说明对海洋和食品安全的担忧。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -23696,11 +23696,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "We may learn from the news that the world is hungry.",
     "last_sentence": "So let's work together to do something.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "先提出缺乏清洁淡水的问题，解释可用水有限，最后建议节约用水。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "先提出缺乏清洁淡水的问题，解释可用水有限，最后建议节约用水。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -24872,10 +24872,10 @@ window.BUILTIN_LESSONS = [
     "last_sentence": "The mouse watched all what was happening with great __10__ .",
     "tone": {
       "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "reason": "动物们轻视捕鼠夹的危险，随后接连遭殃，结尾以小鼠的悲伤收束。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "动物们轻视捕鼠夹的危险，随后接连遭殃，结尾以小鼠的悲伤收束。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -27070,10 +27070,10 @@ window.BUILTIN_LESSONS = [
     "last_sentence": "He kept waiting until he himself died.",
     "tone": {
       "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "reason": "主人去世后八公多年等候，最终也在等候中死去，叙事主要走向失去与哀伤。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "主人去世后八公多年等候，最终也在等候中死去，叙事主要走向失去与哀伤。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -27366,11 +27366,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Milan, a city in Italy, wants to make a new rule.",
     "last_sentence": "What about young people and visitors who want a late-night __9__ ?\" This new rule makes us think: How can a city keep everyone __10__ ?",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从米兰拟限制深夜外卖切入，解释噪音、居民休息和商业需求之间的矛盾。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从米兰拟限制深夜外卖切入，解释噪音、居民休息和商业需求之间的矛盾。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -27652,11 +27652,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Once there was a small village with poor fields.",
     "last_sentence": "From that day on, Leo was known as the Boy of the Number 7, and his village became __10__ for his kindness with the simple number seven.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "贫困村庄因 Leo 运用数字七并乐于助人而改变，结尾村庄变得富足。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "贫困村庄因 Leo 运用数字七并乐于助人而改变，结尾村庄变得富足。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -31195,11 +31195,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The Japanese Macaca monkey has been studied in the wild for over 50 years.",
     "last_sentence": "Scientists still don't fully understand how this knowledge was __10__ from one island to another.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "介绍日本猕猴洗红薯的观察过程，最后说明这种行为如何传播仍有疑问。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "介绍日本猕猴洗红薯的观察过程，最后说明这种行为如何传播仍有疑问。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -33535,11 +33535,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Your parents go to work and you are at home alone (独自).",
     "last_sentence": "And try (尝试) to learn to do something.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从独自在家的实际情境出发，引导孩子利用假期学习生活技能。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "从独自在家的实际情境出发，引导孩子利用假期学习生活技能。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -34410,11 +34410,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "We can see green trees everywhere.",
     "last_sentence": "We should do our best to protect the green on Earth.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "先讲树木的作用，再指出毁林的后果，最后号召保护森林。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "先讲树木的作用，再指出毁林的后果，最后号召保护森林。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -42953,11 +42953,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "After a day of mountain climbing with dad, David came home with tears in his eyes.",
     "last_sentence": "But often, the most beautiful views are found during the journey.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "David 因未登顶落泪，后来理解旅途中的发现也有价值。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "David 因未登顶落泪，后来理解旅途中的发现也有价值。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -43251,11 +43251,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Jayden read the task and then said, \"No way can we find all these colors in nature\" Ms.",
     "last_sentence": "But I'm sure there are even more.\" He continued trying to find more colors in nature.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "Jayden 先否定找到所有颜色的可能，亲身寻找后主动继续探索。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Jayden 先否定找到所有颜色的可能，亲身寻找后主动继续探索。"
     },
     "route_summary": {
       "线索词优先": 7,
@@ -45049,11 +45049,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "I have an unusual hobby.",
     "last_sentence": "It may be strange, but it fills my life with __10__ and a spirit of exploration.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "从阁楼发现写起，写爱好如何带来快乐和探索精神。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从阁楼发现写起，写爱好如何带来快乐和探索精神。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -46545,11 +46545,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "We all need good friends and want to get on well with them.",
     "last_sentence": "Now we're still good friends.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "我和 Karina 因分歧发生矛盾，听取母亲建议后道歉并和好。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "我和 Karina 因分歧发生矛盾，听取母亲建议后道歉并和好。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -47441,11 +47441,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "One day, a toad (癞蛤蟆) met a monkey.",
     "last_sentence": "He decided he would never do that anymore.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "猴子先自私争抢，受到蟾蜍分享的触动后反省并决定改正。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "猴子先自私争抢，受到蟾蜍分享的触动后反省并决定改正。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -48626,11 +48626,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Ellyse Perry is one of Australia's greatest women cricketers (板球运动员).",
     "last_sentence": "When you believe you can, you really can.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "从 Perry 的运动经历到她给出的建议，全文肯定坚持与自信。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从 Perry 的运动经历到她给出的建议，全文肯定坚持与自信。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -51028,10 +51028,10 @@ window.BUILTIN_LESSONS = [
     "last_sentence": "Then, he opens the basket and eats the mouse.",
     "tone": {
       "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "reason": "老鼠因贪吃困在篮子里，结尾被猫吃掉，结果没有逆转。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "老鼠因贪吃困在篮子里，结尾被猫吃掉，结果没有逆转。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -51328,11 +51328,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "In schools today, a new subject is becoming popular—school gardening.",
     "last_sentence": "They should learn it early.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "用校园种植的具体活动说明它能培养耐心、协作等技能。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "用校园种植的具体活动说明它能培养耐心、协作等技能。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -51619,11 +51619,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Once when Kevin was selling hats under a big tree, the monkeys on the tree picked some hats and put them on.",
     "last_sentence": "He said, \"Do you think only you had a grandfather?\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "祖父曾用模仿取回帽子，孙子照搬旧招却被猴子反制。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "祖父曾用模仿取回帽子，孙子照搬旧招却被猴子反制。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -51925,11 +51925,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "In August, 2023, Japan dumped (倾倒) nuclear (核) wastewater into the sea!",
     "last_sentence": "We must keep this in mind and take __10__ to do something for our marine environment.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "文章先指出排放引发的担忧，最后表达反对并呼吁采取保护行动。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "文章先指出排放引发的担忧，最后表达反对并呼吁采取保护行动。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -52827,11 +52827,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Long ago, in ancient China, there were two best friends named Bo Ya and Zhong Ziqi.",
     "last_sentence": "Even today, people use the phrase \"High Mountains and Flowing Water\" (高山流水) to __10__ a deep and meaningful friendship.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "知音相逢后又因子期去世而失去知音，伯牙以不再弹琴表达哀悼。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "知音相逢后又因子期去世而失去知音，伯牙以不再弹琴表达哀悼。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -53112,11 +53112,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "If you visit the USA, you must spend some time in the National Mustard（芥末）Museum.",
     "last_sentence": "Lots of people know about it and go to visit it.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "以芥末博物馆吸引游客切入，介绍收藏和创办经过。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "以芥末博物馆吸引游客切入，介绍收藏和创办经过。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -59025,11 +59025,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "In a village, there was a hardworking farmer with a large grape field.",
     "last_sentence": "The sons finally __10__ what their father meant about finding treasure under the field.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "儿子们从不懂父亲所说的宝藏，到丰收后理解勤劳才是真正的宝藏。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "儿子们从不懂父亲所说的宝藏，到丰收后理解勤劳才是真正的宝藏。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -59323,11 +59323,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "What's your opinion about the future?",
     "last_sentence": "So life will be hard for some people because they might lose their jobs.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "以未来生活畅想切入，分述机器人的便利和就业风险。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "以未来生活畅想切入，分述机器人的便利和就业风险。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -61091,11 +61091,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Peter and John are good friends.",
     "last_sentence": "Peter says to John, \"I __10__ our arms can recover soon.\" \"Me too,\" says John.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "两人起初把受伤后的清闲当成好事，后来开始盼望恢复。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "两人起初把受伤后的清闲当成好事，后来开始盼望恢复。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -63441,11 +63441,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Some Chinese students say they have busy school days.",
     "last_sentence": "\"I'm busy, but I like my school days __10__ I can learn lots of things,\" says David.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "以美国学生的一天为例，按日程介绍其学校和课后生活。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "以美国学生的一天为例，按日程介绍其学校和课后生活。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -64870,11 +64870,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "A baby bird lives in a nice nest.",
     "last_sentence": "You can make it.\" his mother says happily.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "小鸟从依赖温暖的巢，到在母亲鼓励下成功飞起来。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "小鸟从依赖温暖的巢，到在母亲鼓励下成功飞起来。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -65470,11 +65470,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "David was a busy salesman (销售员).",
     "last_sentence": "From that day on, he tried to come back home early.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "父亲起初不理解儿子的请求，明白孩子想要陪伴后道歉并改变作息。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "父亲起初不理解儿子的请求，明白孩子想要陪伴后道歉并改变作息。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -69929,11 +69929,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "I am so happy!",
     "last_sentence": "I don't think I will get to sleep tonight, but I know enough sleep is __10__ to my soccer practice.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "从入选球队到第一次训练，叙述者的期待与兴奋贯穿全文。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从入选球队到第一次训练，叙述者的期待与兴奋贯穿全文。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -71388,10 +71388,10 @@ window.BUILTIN_LESSONS = [
     "last_sentence": "The seedlings all __10__ in the field.",
     "tone": {
       "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "reason": "老人为让秧苗长得更快而拔苗，结果秧苗全死，结尾突出失败和教训。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "老人为让秧苗长得更快而拔苗，结果秧苗全死，结尾突出失败和教训。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -72273,11 +72273,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The Arctic Region (北极地区) is one of the coldest places in the world.",
     "last_sentence": "It is __9__ for them to live there, but they live happily with a long __10__.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "以北极寒冷的自然环境切入，介绍季节特点和因纽特人的生活。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "以北极寒冷的自然环境切入，介绍季节特点和因纽特人的生活。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -73160,11 +73160,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Hundreds of years ago, life was much harder than it is today.",
     "last_sentence": "Let's be greener people!",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从生活方式变化及其环境代价写起，最后呼吁采取更环保的行动。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "从生活方式变化及其环境代价写起，最后呼吁采取更环保的行动。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -77878,11 +77878,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "\"Never slacken your efforts at the first try\" （一鼓作气）is a well-known Chinese idiom that carries profound wisdom.",
     "last_sentence": "If we hesitate or hold back, we will lose the best opportunity and find it much harder to succeed.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "以一鼓作气的观点为主线，用历史故事和考试等生活情境说明。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "以一鼓作气的观点为主线，用历史故事和考试等生活情境说明。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -79730,10 +79730,10 @@ window.BUILTIN_LESSONS = [
     "last_sentence": "The frog burst!",
     "tone": {
       "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "reason": "青蛙因自负不停鼓气，最终身体爆裂，结局突出自负的代价。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "青蛙因自负不停鼓气，最终身体爆裂，结局突出自负的代价。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -80954,11 +80954,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Once upon a time, there was a lonely gorilla.",
     "last_sentence": "They no longer measured friendship with __10__ because they knew that true friendship has no price.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "孤独的大猩猩获得陪伴，后来双方从计较金钱走向理解友谊。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "孤独的大猩猩获得陪伴，后来双方从计较金钱走向理解友谊。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -81261,11 +81261,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The Internet has brought huge changes to people's lives around the world.",
     "last_sentence": "Only in this way can we make full use of its advantages and reduce its negative effects.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "介绍互联网的改变，分述优势与负面影响，最后说明怎样看待和使用它。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "介绍互联网的改变，分述优势与负面影响，最后说明怎样看待和使用它。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -82175,11 +82175,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Around more than 8,000 years ago, people hunted animals and collected plants to get food.",
     "last_sentence": "As a result, he still gets lots of respect from people today.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "写神农的探索和发现，结尾肯定其贡献及传承价值。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "写神农的探索和发现，结尾肯定其贡献及传承价值。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -83994,11 +83994,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "My grandfather often said \"I won't\" to show his dislike of dishonesty (不诚实).",
     "last_sentence": "Through ups and downs in life, we've come to deeply __10__ our family value behind this saying—to be truthful and honest.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "通过祖辈的经历和后代的领悟，贯穿传承诚实的价值。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "通过祖辈的经历和后代的领悟，贯穿传承诚实的价值。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -85488,11 +85488,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Do you have trouble remembering things?",
     "last_sentence": "So let's try to improve our memory together!",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "先提出记不住东西的问题，再给出改善记忆的具体办法。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "先提出记不住东西的问题，再给出改善记忆的具体办法。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -87407,11 +87407,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Light rain continued to fall as I arrived at the mountain village.",
     "last_sentence": "Sometimes, it's a quiet lantern—shared between the two, and shining in both directions.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "志愿者起初以为自己只是来帮助别人，后来体会到温暖和回馈是双向的。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "志愿者起初以为自己只是来帮助别人，后来体会到温暖和回馈是双向的。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -88011,11 +88011,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Born during my parents' travelling around the world，I always wanted to make the trip myself.Even at the age of __1__，I began sailing （航行） to realize that(__2__).My parents weren't excited about the idea，but after discussing with me，they finally(12) to let me go.",
     "last_sentence": "Now that I have kids，I understand how brave my parents were to(__14__) me，considering so many difficulties and dangers I might face.If my kids wanted to do the same thing，I would be upset at(__15__)，but I'd also try to find a way to be there for them.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "围绕独立航行的梦想与实践展开，结尾肯定家人的支持，即使旅途有风险。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "围绕独立航行的梦想与实践展开，结尾肯定家人的支持，即使旅途有风险。"
     },
     "route_summary": {
       "线索词优先": 12,
@@ -90402,11 +90402,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Gork's revenge After Captain King and his crew returned to Earth, they thought their adventure was finally over.",
     "last_sentence": "You win again!\" he shouted.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "Gork 前来报复使局势紧张，King 用手电筒迫使他退去。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Gork 前来报复使局势紧张，King 用手电筒迫使他退去。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -93665,11 +93665,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Long ago, there lived an old clock-maker named Geppetto.",
     "last_sentence": "\"said Pinocchio from the other side of the room.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "木匠发现空床先产生疑惑，随后听见匹诺曹回答，揭晓木偶活了。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "木匠发现空床先产生疑惑，随后听见匹诺曹回答，揭晓木偶活了。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -94854,11 +94854,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "A long time ago in ancient China, there lived an emperor and his wife.",
     "last_sentence": "In order to protect the skill, the ancient Chinese did their best to keep it a __10__ for many years.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从古代传说引入丝绸，展开说明丝绸受到珍视以及织造技术的保密。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从古代传说引入丝绸，展开说明丝绸受到珍视以及织造技术的保密。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -96053,11 +96053,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "During the Han Dynasty, there were two young men named Fan Shi and Zhang Shao.",
     "last_sentence": "It teaches us that trust is the key to true friendship.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "范式如约远道探友，首尾共同肯定信守承诺的友谊。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "范式如约远道探友，首尾共同肯定信守承诺的友谊。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -97243,11 +97243,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Many people may be crazy about numbers.",
     "last_sentence": "Do you believe that numbers can affect our lives?",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "对比不同文化对数字与运气的看法，结尾邀请读者思考。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "对比不同文化对数字与运气的看法，结尾邀请读者思考。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -101134,11 +101134,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Do you like keeping pets at home?",
     "last_sentence": "Now I still keep it in my room.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "最初想养真狗却未能如愿，收到机器狗后改变态度并把它当朋友。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "最初想养真狗却未能如愿，收到机器狗后改变态度并把它当朋友。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -101440,11 +101440,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Elephants are the largest land animals on the earth.",
     "last_sentence": "Baby elephants stay with their mothers until they are fully grown at about ten years old.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从大象的外形切入，说明习性以及幼象怎样得到保护。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从大象的外形切入，说明习性以及幼象怎样得到保护。"
     },
     "route_summary": {
       "线索词优先": 7,
@@ -102041,11 +102041,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "You must know pi (π) when you learn about circles in Maths.",
     "last_sentence": "When we meet difficulties, we should learn to challenge ourselves.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "介绍祖冲之的探索和贡献，结尾鼓励读者学习他面对难题的精神。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "介绍祖冲之的探索和贡献，结尾鼓励读者学习他面对难题的精神。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -104980,11 +104980,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Do you think hard work always pays off?",
     "last_sentence": "So everyone, remember not to give up your dream easily because __10__ will come to you in the end with your hard work.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "围绕努力获得机会和事业进展展开，结尾鼓励保持信心。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "围绕努力获得机会和事业进展展开，结尾鼓励保持信心。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -105828,11 +105828,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Do you use a smart phone every day?",
     "last_sentence": "Whenever I see my trees, I think about the effort I've made to grow them.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "提出手机分散注意力的问题，随后用种树应用说明如何保持专注。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "提出手机分散注意力的问题，随后用种树应用说明如何保持专注。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -107316,11 +107316,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Everyone will meet some difficulties in his or her life.",
     "last_sentence": "The man and his words made my life colourful.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "作者因头发问题经历难堪，在得到鼓励后主动结交朋友，生活改变。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "作者因头发问题经历难堪，在得到鼓励后主动结交朋友，生活改变。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -109125,11 +109125,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "More than 700 years ago, Scotland （苏格兰）was fighting against England.",
     "last_sentence": "Scotland was free.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "苏格兰一方遭受挫折，主人公因观察到坚持的力量重振斗志并扭转局势。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "苏格兰一方遭受挫折，主人公因观察到坚持的力量重振斗志并扭转局势。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -109732,11 +109732,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "During the Northern Wei Dynasty, Ancient China was in the middle of a great war (战争).",
     "last_sentence": "\"Take care of __10__ .\" She climbed on a family horse and went to the army.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "父亲年老却接到征召，木兰决定女扮男装代父从军，改变了原定的应征安排。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "父亲年老却接到征召，木兰决定女扮男装代父从军，改变了原定的应征安排。"
     },
     "route_summary": {
       "线索词优先": 7,
@@ -110025,11 +110025,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Linda's class was preparing for the 100th day of school.",
     "last_sentence": "She found a way to __10__ 100 reasons why her school was a warm and caring place.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "Linda 把百日项目变成对学校关怀的感谢，结尾延续温暖基调。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Linda 把百日项目变成对学校关怀的感谢，结尾延续温暖基调。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -110622,11 +110622,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Once upon a time in a small __1__ , there lived a young boy named Jack.",
     "last_sentence": "And he realized that his adventurous spirit had been truly rewarded.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "Jack 冒险归来分享收获，叙事肯定勇气与探索。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Jack 冒险归来分享收获，叙事肯定勇气与探索。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -112409,11 +112409,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Think about this: when you walk into the room, the light is on and there is beautiful music.",
     "last_sentence": "But I know that we need to be careful and use them safely.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "以智能家居体验切入，说明设备给生活带来的便利和安全注意事项。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "以智能家居体验切入，说明设备给生活带来的便利和安全注意事项。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -113304,11 +113304,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Once upon a time, a farmer's old donkey (驴) fell into a dry well.",
     "last_sentence": "Shake the dirt off and take a step up!",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "驴从掉进枯井、险些被埋，到踩着落土一步步逃出生天。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "驴从掉进枯井、险些被埋，到踩着落土一步步逃出生天。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -115964,11 +115964,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "When Charley got up one morning, he saw the ground deeply covered with snow.",
     "last_sentence": "The next day he gave little Charley a fine blue sled (雪橇), and on it was __10__ in yellow letters, \"Little by Little.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "Charley 面对积雪和困难，通过一点点努力完成任务并获认可。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Charley 面对积雪和困难，通过一点点努力完成任务并获认可。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -117726,11 +117726,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Is it difficult for you to get up in the morning?",
     "last_sentence": "Mike __10__ the first prize for his bed.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "提出早晨起不来的问题，用 Mike 发明的床作具体解决方案。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "提出早晨起不来的问题，用 Mike 发明的床作具体解决方案。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -118025,11 +118025,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Why do we count things in group of ten?",
     "last_sentence": "We count the hours __10__ one to twelve and then start with one again.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从为什么十个一组切入，说明十进分组及十二个一组的不同用法。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从为什么十个一组切入，说明十进分组及十二个一组的不同用法。"
     },
     "route_summary": {
       "线索词优先": 5,
@@ -118323,11 +118323,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Do you often play sports?",
     "last_sentence": "For example, swimming is fun in warm weather just like in summer, but skating or skiing is popular in winter.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "介绍运动的普遍性，并按季节举例说明人们的不同选择。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "介绍运动的普遍性，并按季节举例说明人们的不同选择。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -119781,11 +119781,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Have you ever heard the story of the internet?",
     "last_sentence": "Today it is __10__ to get online and millions of people use the internet every day.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "围绕互联网的来历，按时间说明它从早期发展到大众普及的过程。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "围绕互联网的来历，按时间说明它从早期发展到大众普及的过程。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -120079,11 +120079,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The Readers is a popular TV show.",
     "last_sentence": "\"We can express our true __10__ by reading aloud.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从朗读者节目切入，介绍节目形式、人物表达与朗读的价值。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从朗读者节目切入，介绍节目形式、人物表达与朗读的价值。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -122112,11 +122112,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "One day, Mr Hill arrived at London Airport after a three-week holiday in Paris.",
     "last_sentence": "You taught me French.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "Hill 起初面对查验和询问，结尾发现对方原来是自己以前的学生。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Hill 起初面对查验和询问，结尾发现对方原来是自己以前的学生。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -123577,11 +123577,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Facial recognition (人脸识别) means using your face as an ID when taking the subway or boarding flights (值机).",
     "last_sentence": "Unlike other personal __9__ , you can't change your face if the data is stolen. __10__ facial recognition is becoming popular in daily life, we must ask ourselves whether or not this new technology is worth the risks.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "先解释人脸识别及便利，再说明隐私和数据风险，结尾邀请权衡。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "先解释人脸识别及便利，再说明隐私和数据风险，结尾邀请权衡。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -124150,11 +124150,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "In a small town in France, there was a farmer.",
     "last_sentence": "So every time when I __10__ the bread home from the baker, I put it on the scale and then give him the butter of the same weight.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "面包师指责农夫少给黄油，真相揭示黄油是按面包师给的面包称重。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "面包师指责农夫少给黄油，真相揭示黄油是按面包师给的面包称重。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -125356,11 +125356,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The IUCN Red List and Animal Protection Many animals are in danger today, and the IUCN Red List helps us understand their conservation status.",
     "last_sentence": "It is never too late to __10__ .",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从动物濒危的问题切入，介绍红色名录和可采取的保护行动。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "从动物濒危的问题切入，介绍红色名录和可采取的保护行动。"
     },
     "route_summary": {
       "线索词优先": 7,
@@ -128709,11 +128709,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "In the summer of 2026, a group of teenagers from different countries became famous online for their unique \"time capsule\" project.",
     "last_sentence": "That will never be __10__ .'\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "通过青少年的时间胶囊项目，肯定记录与传递当代生活的价值。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "通过青少年的时间胶囊项目，肯定记录与传递当代生活的价值。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -129626,10 +129626,10 @@ window.BUILTIN_LESSONS = [
     "last_sentence": "\"One day,\" he __10__ to me, \"we will find a way out!\"",
     "tone": {
       "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "reason": "片段收束时人物仍未摆脱困境，逃离只是愿望，压抑和受困尚未解除。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "片段收束时人物仍未摆脱困境，逃离只是愿望，压抑和受困尚未解除。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -130835,11 +130835,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Shadow play (皮影戏) is a traditional type of entertainment (娱乐) in China.",
     "last_sentence": "The Chinese government is __10__ this ancient and important art form, but perhaps the best promoters are the performers themselves, who are finding new ways to bring the art form to young people.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从皮影戏的形式和材料切入，说明这一艺术的传承与推广。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从皮影戏的形式和材料切入，说明这一艺术的传承与推广。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -131138,11 +131138,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "A little boy in the United States asked his father in confusion (困惑地), \"What is the value (价值) of our lives?\" The father did not answer __1__ but handed him a translucent (透亮的) stone and said, \"Take this stone to the market __2__ don't sell it.",
     "last_sentence": "And our value is up to us and people who can see the __10__ in us.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "用不同地方对同一物件的估价，论证价值如何取决于定位和识别价值的人。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "用不同地方对同一物件的估价，论证价值如何取决于定位和识别价值的人。"
     },
     "route_summary": {
       "线索词优先": 6,
@@ -132944,11 +132944,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Have you ever felt nervous before giving a speech?",
     "last_sentence": "So next time you give a speech, let your body speak as well!",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从演讲紧张与表达困难切入，给出用肢体语言改善演讲的建议。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "从演讲紧张与表达困难切入，给出用肢体语言改善演讲的建议。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -134246,11 +134246,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "A man may usually be known by the books he reads and by the friends he __1__, and one should always live in the best company (同伴), whether books or men.",
     "last_sentence": "It is like a wise __10__ whom we can still listen to.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从好书如良友的观点展开，说明阅读为何能提供长久的陪伴与启发。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "从好书如良友的观点展开，说明阅读为何能提供长久的陪伴与启发。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -137861,11 +137861,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Do you know the story of shadow puppet play?",
     "last_sentence": "What can we do to change this situation?",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "先叙皮影起源，再说明其兴盛、材料变化和今天面临的传承困境。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "先叙皮影起源，再说明其兴盛、材料变化和今天面临的传承困境。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -142150,11 +142150,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The song The Story of Jiliang, performed by Zhou Shen, tells an ancient Chinese myth (神话) from Shan Hai Jing.",
     "last_sentence": "The ancient myth __10__ us to be kind and respect the beauty of traditional stories.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "借吉量神话写善意，结尾肯定古老故事的价值。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "借吉量神话写善意，结尾肯定古老故事的价值。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -143949,11 +143949,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Sylvie's heart beat fast.",
     "last_sentence": "She saved something far more __10__ than money by keeping silent — a life that still lived on in that golden light.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "Sylvie 起初考虑赏金，看到苍鹭后决定保守秘密、保护生命。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Sylvie 起初考虑赏金，看到苍鹭后决定保守秘密、保护生命。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -145547,11 +145547,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "You wake up one morning and find yourself in a world of very big things.",
     "last_sentence": "Anyway, you're welcome to have fun in the land of little people!",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "用想象的大小变化引入，展开介绍奇特世界并邀请读者参与体验。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "用想象的大小变化引入，展开介绍奇特世界并邀请读者参与体验。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -145845,11 +145845,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "As my father got a new job, we moved to a house outside the city and I attended a new school.",
     "last_sentence": "We spent the whole afternoon caring for the birds.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "众人以为 Bodh Raj 会伤害幼鸟，实际他赶走猛禽并照料幼鸟，印象反转。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "众人以为 Bodh Raj 会伤害幼鸟，实际他赶走猛禽并照料幼鸟，印象反转。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -146742,11 +146742,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Once upon a time, there was a traveling man who was too tired and he fell asleep on the side of the road.",
     "last_sentence": "So, when will our small effort bring __10__ moments (时刻) to others?",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "从旅途相遇写到善意带来的改变，最后鼓励读者付出举手之劳。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从旅途相遇写到善意带来的改变，最后鼓励读者付出举手之劳。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -150348,11 +150348,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "People usually communicate by speaking or writing.",
     "last_sentence": "You might be surprised by how many gestures you see in use.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从说话和书写之外的交流切入，说明不同职业如何运用手势。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从说话和书写之外的交流切入，说明不同职业如何运用手势。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -153025,11 +153025,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Every school day, we use schoolbags to carry all of our things to school.",
     "last_sentence": "Can you imagine what future schoolbags will be like?",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从日常用书包切入，说明书包随时代变化，结尾展望未来。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从日常用书包切入，说明书包随时代变化，结尾展望未来。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -154221,11 +154221,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The spaceship landed silently in the desert.",
     "last_sentence": "This discovery proved that the universe was __10__ than anyone had imagined.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "探索过程中出现意外线索，结尾揭晓星图指向新星系，发现改变此前认知。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "探索过程中出现意外线索，结尾揭晓星图指向新星系，发现改变此前认知。"
     },
     "route_summary": {
       "线索词优先": 7,
@@ -154518,11 +154518,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Once there was a king and his daughter.",
     "last_sentence": "Today, salt is used more widely and it still plays an important role in our life.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "用国王与女儿的故事引出盐，主体解释盐的生理、保存和历史用途。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "用国王与女儿的故事引出盐，主体解释盐的生理、保存和历史用途。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -156007,11 +156007,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "You know, now it is convenient to make a short video.",
     "last_sentence": "Maybe no one is watching you, but you are responsible for what you post!",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从短视频易拍易发引出风险，结尾提醒发布前思考并承担责任。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "从短视频易拍易发引出风险，结尾提醒发布前思考并承担责任。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -156599,11 +156599,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Have you ever read a book called Journey to the West?",
     "last_sentence": "Don't ask me why—I'm just fascinated by a __10__ Chinese monkey,\" Kevin said at the end of the documentary.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "以纪录片和角色体验写对孙悟空的兴趣，结尾强化喜爱。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "以纪录片和角色体验写对孙悟空的兴趣，结尾强化喜爱。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -156895,11 +156895,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The lion is one of the most dangerous animals in the world.",
     "last_sentence": "It is our obligation to protect them.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从狮子的分布和生存威胁写起，收束到保护动物的呼吁。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "从狮子的分布和生存威胁写起，收束到保护动物的呼吁。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -159852,10 +159852,10 @@ window.BUILTIN_LESSONS = [
     "last_sentence": "\"I'm __10__, Fred, you failed,\" he said.",
     "tone": {
       "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "reason": "Fred 用抛硬币取代复习与作答，最终考试不及格，突出投机失败。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Fred 用抛硬币取代复习与作答，最终考试不及格，突出投机失败。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -161654,11 +161654,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "We often hear that some famous men can do great things.",
     "last_sentence": "Maybe you will have a __10__ to save someone's life, too.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从孩子救人的事例出发，说明学习急救的必要性并鼓励掌握方法。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "从孩子救人的事例出发，说明学习急救的必要性并鼓励掌握方法。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -162843,11 +162843,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "When a large woman took the seat beside me on a plane, I felt uncomfortable.",
     "last_sentence": "\" I suddenly realized that Kelly was the most beautiful and __10__ woman I had ever met in my life.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "作者从不愿和 Kelly 邻座，到了解她后改变态度并由衷欣赏她。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "作者从不愿和 Kelly 邻座，到了解她后改变态度并由衷欣赏她。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -164614,11 +164614,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "China's Beidou Navigation Satellite System (BDS) is a great achievement in space technology.",
     "last_sentence": "It will continue to __10__ more contributions to the world in the future.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "主体介绍北斗系统的用途、进展和影响，以未来贡献收束。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "主体介绍北斗系统的用途、进展和影响，以未来贡献收束。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -166092,11 +166092,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Electronic books have changed the way many people read for pleasure.",
     "last_sentence": "He has to go to the public library, which has free __10__ .",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从电子教材的使用切入，同时说明数字化便利和设备、网络获取不均。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从电子教材的使用切入，同时说明数字化便利和设备、网络获取不均。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -169938,11 +169938,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "When people think of tigers, they think: strong and dangerous.",
     "last_sentence": "To protect the wild tigers, we need to call on more people to stop eating and hunting wild animals.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "先指出野生虎受威胁，再呼吁停止猎杀和食用野生动物。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "先指出野生虎受威胁，再呼吁停止猎杀和食用野生动物。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -170816,11 +170816,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Nature is full of amazing plants and animals.",
     "last_sentence": "Protecting them is important for our future.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "先介绍自然中的动植物，再指出人为破坏的后果，最后呼吁保护。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "先介绍自然中的动植物，再指出人为破坏的后果，最后呼吁保护。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -171704,11 +171704,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Bill, a thirteen-year-old boy, thought he had grown up to be a man.",
     "last_sentence": "Bill and the old man learned __10__ that he food was free because it was the birthday of the boss, and they were the first customer that day.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "Bill 从自认长大，到在帮助老人的经历中理解为别人着想的含义。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Bill 从自认长大，到在帮助老人的经历中理解为别人着想的含义。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -183241,11 +183241,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Zhang Guimei is a legend in China's education sector.",
     "last_sentence": "Everyone who has watched When the Mountain Flowers Bloom will __10__ and respect Zhang as she, like a mountain flower blooming on a cliff, uses her life to light the way forward for children in the mountains.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "围绕张桂梅的教育贡献展开，结尾表达敬佩和肯定。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "围绕张桂梅的教育贡献展开，结尾表达敬佩和肯定。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -184732,11 +184732,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "All day long, the little boy worked hard for his poor family.",
     "last_sentence": "\"I have learned that our house has windows of gold and diamonds.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "男孩原以为远处的房子窗户更美，换个位置后发现自己的家同样闪耀。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "男孩原以为远处的房子窗户更美，换个位置后发现自己的家同样闪耀。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -185945,11 +185945,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "完形填空 Many years ago, there was a family named Franklin.",
     "last_sentence": "Thomas Jefferson, the third president of America, called Benjamin Franklin\" the __10__ man of the age and country in which he lived\".",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "从 Benjamin Franklin 的早年写到多个领域的成就，结尾以赞誉收束。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从 Benjamin Franklin 的早年写到多个领域的成就，结尾以赞誉收束。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -186556,11 +186556,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "James was only a very little boy when he first saw snow in a picture book.",
     "last_sentence": "He dreams that he will have a __10__ future and win a big prize one day.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "James 对雪与滑雪的兴趣延伸为持续练习和对未来的期待。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "James 对雪与滑雪的兴趣延伸为持续练习和对未来的期待。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -186852,11 +186852,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Many years ago, there was a family named Franklin.",
     "last_sentence": "Thomas Jefferson, the third president of America, called Benjamin Franklin \"the __10__ man of the age and country in which he lived\".",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "介绍 Benjamin Franklin 的成长与贡献，最后引用赞誉肯定其成就。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "介绍 Benjamin Franklin 的成长与贡献，最后引用赞誉肯定其成就。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -187768,11 +187768,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "This summer, Labubu, a \"monster\" looking doll from China __1__ a soft face with large eyes, nine sharp teeth, a furry body and rabbit-like ears has won the hearts of many people around the world.",
     "last_sentence": "These bring more__10__to Labubu and make it even more popular.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从 Labubu 走红切入，说明造型、收藏交易和名人传播等因素。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从 Labubu 走红切入，说明造型、收藏交易和名人传播等因素。"
     },
     "route_summary": {
       "线索词优先": 7,
@@ -188364,11 +188364,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Jenny and Robert Slater were on holiday in America.",
     "last_sentence": "They __9__ it together: \"Here's your money and I'm very sorry you were __10__ in the lift last night. ‘Girl' is the name of my dog.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "夫妇把电梯里的话误会成威胁，次日得知对方叫的是狗并归还了钱。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "夫妇把电梯里的话误会成威胁，次日得知对方叫的是狗并归还了钱。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -189891,11 +189891,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "My mother and I were both angry.",
     "last_sentence": "I suddenly realized that there wasn't the door that I had imagined between us at all. __10__ is the most valuable.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "母女争吵后，叙述者发现想象的隔阂并不存在，重新感受到爱。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "母女争吵后，叙述者发现想象的隔阂并不存在，重新感受到爱。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -196201,11 +196201,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "This summer, when I walked into my grandparents' house with my little brother Frank, Everything still looked the same.",
     "last_sentence": "It could be the blue blanket.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "兄弟从怀念失去的爷爷，到明白回忆和共同经历仍把他们与爷爷联结。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "兄弟从怀念失去的爷爷，到明白回忆和共同经历仍把他们与爷爷联结。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -198291,11 +198291,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "One day, a farmer was looking for a water source for his farm.",
     "last_sentence": "If you cheat, you will pay soon enough.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "邻居试图靠字眼占便宜，Birbal 用同样的逻辑让骗局无法得逞。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "邻居试图靠字眼占便宜，Birbal 用同样的逻辑让骗局无法得逞。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -199777,11 +199777,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Diana Herbert was running late for school on Friday morning so she __1__ to take a shortcut.",
     "last_sentence": "\"I believe in karma (因果)—once we do nice things it will in some way benefit us __10__.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "Diana 主动做了好事并受到肯定，结尾延续善意有回响的主题。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Diana 主动做了好事并受到肯定，结尾延续善意有回响的主题。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -203345,11 +203345,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Once upon a time, a little leaf cried as the wind blew.",
     "last_sentence": "When spring came, new leaves would come out, and it would be part of them.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "小叶子从害怕坠落，到理解变化与生命延续，最后平静下来。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "小叶子从害怕坠落，到理解变化与生命延续，最后平静下来。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -204232,11 +204232,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "For Schultz, a 77-year-old man, this is a chance of a lifetime.",
     "last_sentence": "Speaking of __8__ he wants to go, Schultz says, \"__9__ modern cities, the culture in western China attracts (吸引) me more.\" Shi Xiang, the head of China Tours, says, \"Being a new brand to attract foreign visitors, the Silk Road is good for people to know more about China, __10__ the northwestern part of the country.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "以游客丝路之行为实例，介绍线路体验及它如何帮助外国游客认识中国。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "以游客丝路之行为实例，介绍线路体验及它如何帮助外国游客认识中国。"
     },
     "route_summary": {
       "线索词优先": 7,
@@ -205119,11 +205119,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "\"Huh!",
     "last_sentence": "Ask yourself: Is it okay to be a __10__ eater?",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "从嫌弃米饭开始，经由对袁隆平付出的认识走向对食物的珍惜。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从嫌弃米饭开始，经由对袁隆平付出的认识走向对食物的珍惜。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -205426,11 +205426,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "My father was busy at work in the 1980s.",
     "last_sentence": "Now the spoons are a big part of our lives.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "小勺从父亲的礼物成为跨代记忆，叙述重点是亲情的延续。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "小勺从父亲的礼物成为跨代记忆，叙述重点是亲情的延续。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -206334,11 +206334,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "When it comes to November 11, the young generations will consider it as the Singles' Day as well as the online shopping Carnival (狂欢节).",
     "last_sentence": "So we should be __10__ enough to avoid these problems when we enjoy online shopping.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从网购节切入，说明消费风险，结尾建议谨慎网购。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "从网购节切入，说明消费风险，结尾建议谨慎网购。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -206623,11 +206623,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "I remember the year when I was seven years old.",
     "last_sentence": "And I will pass them on to my kids.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "由儿时偷发夹的错误出发，写父母引导下形成并传承价值观。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "由儿时偷发夹的错误出发，写父母引导下形成并传承价值观。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -209286,11 +209286,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "A young man left his village and came to a logging camp (伐木场).",
     "last_sentence": "If we don't take time to relax, we will feel slow and lose our effectiveness.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "伐木工由只知用力到理解要磨斧、休息和学习，中心是认识改变。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "伐木工由只知用力到理解要磨斧、休息和学习，中心是认识改变。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -213137,11 +213137,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Long ago, a father divided his land between his two sons, Ming and Peng.",
     "last_sentence": "Filled with __10__ and understanding, the brothers embraced (拥抱) and promised to be there for each other.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "兄弟在互相体谅和付出中理解彼此，结尾以拥抱和承诺强化亲情。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "兄弟在互相体谅和付出中理解彼此，结尾以拥抱和承诺强化亲情。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -214920,11 +214920,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "A teacher asked her students to play a game.",
     "last_sentence": "The smell of hate will __10__ your heart and you will carry it with you wherever you go.\" If you cannot the smell of rotten potatoes for just one week, can you imagine what it is like to have the smell of hate in your heart for your lifetime?",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "学生由把带土豆当游戏，到亲历负担后理解积恨的代价。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "学生由把带土豆当游戏，到亲历负担后理解积恨的代价。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -217578,11 +217578,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Pearl S.",
     "last_sentence": "Her stories about China continue to be read and admired widely today.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "从赛珍珠的创作生涯写到作品至今仍受欣赏，去世是传记事实。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从赛珍珠的创作生涯写到作品至今仍受欣赏，去世是传记事实。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -218406,16 +218406,16 @@ window.BUILTIN_LESSONS = [
           "perfect",
           "broken"
         ],
-        "answer": "broken",
+        "answer": "pale",
         "clues": [
-          "Soon, he began to cry",
+          "rough and pale",
           "The manager noticed his"
         ],
         "clueTypes": {
-          "Soon, he began to cry": "情感线索·情感一致",
+          "rough and pale": "复现线索·原词复现",
           "The manager noticed his": "语境线索·邻近取证"
         },
-        "explanation": "原题24。圈出空格附近的“The manager noticed his”，结合句意、语法和上下文逻辑，可确定选 broken；其余选项与该处语境或搭配不符。",
+        "explanation": "原题24。圈出空格附近的“The manager noticed his”，结合句意、语法和上下文逻辑，可确定选 pale；其余选项与该处语境或搭配不符。",
         "collocation": null
       },
       {
@@ -219649,11 +219649,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "My husband, our children and I have had wonderful camping experiences over the past ten years.",
     "last_sentence": "Now, every year when my husband pulls our camper out of the garage, we are filled with a sense of __10__, wondering what camping fun and adventure we will experience next.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "回顾露营的乐趣，结尾期待新的家庭冒险，主体基调积极。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "回顾露营的乐趣，结尾期待新的家庭冒险，主体基调积极。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -226835,11 +226835,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The day when the jobs were handed out was always the most exciting moment.",
     "last_sentence": "Many children learned that to be given the most important tasks, you have to know how to be responsible even in the __10__ ones.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "Rita 起先拿到不起眼的任务，最后凭责任感获得认可，众人也改变看法。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Rita 起先拿到不起眼的任务，最后凭责任感获得认可，众人也改变看法。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -227440,11 +227440,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "What does taking the train mean to you?",
     "last_sentence": "You will never know what you will experience, and who you will meet.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "通过旅途见闻写坐火车本身的乐趣，结尾继续期待惊喜。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "通过旅途见闻写坐火车本身的乐趣，结尾继续期待惊喜。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -227746,11 +227746,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "\"Our teas can help protect your teeth and your heart，possibly even helping to prevent cancer，\"said Luo Shengkai，one of four student hosts from Sichuan University High School.They（__1__） introduced three self-made health teas through a livestream（直播）on Douyin（__2__） March 27，2022，and they（__3__） for several weeks by now.The livestream got over 60（__4__） likes and many online orders，with all profits（收入）going to local tea farmers.",
     "last_sentence": "\"Through the tea course，students（__14__） learn how to be creative and improve their hands-on skills.They also learn to respect tea workers and how to contribute to rural vitalization（乡村振兴）.That's（__15__） our educational means.\"said Mi Yunlin，the principal of the school.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从学生介绍茶切入，说明学校茶项目的实践内容和教育价值。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从学生介绍茶切入，说明学校茶项目的实践内容和教育价值。"
     },
     "route_summary": {
       "线索词优先": 7,
@@ -228741,11 +228741,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Every day after lunch, my new neighbor Sonia will play hide-and-seek (捉迷藏) with her 3 kids.",
     "last_sentence": "I said loudly, \"Of course no, what can be more fun than hide-and-seek?\" Walking out, I asked Sonia, \"SORRY, but why do you still __9__ the children's eyes during hide-and-seek?\" Sonia said seriously, \"In my eyes, they are like __10__ people, they can see everything!\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "叙述者从午休被吵后的不满，到了解 Sonia 家的情况并重新理解她。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "叙述者从午休被吵后的不满，到了解 Sonia 家的情况并重新理解她。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -230855,11 +230855,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Michelle Yeoh made history on Sunday by becoming the first Asian woman to win the Oscar Award for best actress.",
     "last_sentence": "She is an attractive star who is famous not only because of her acting skills, but also her strong will power.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "从获奖写到长期努力及其鼓舞作用，主线是对成就与毅力的肯定。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从获奖写到长期努力及其鼓舞作用，主线是对成就与毅力的肯定。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -232061,11 +232061,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Amy and I are good friends and we were born only a few days apart.",
     "last_sentence": "And so did we.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "朋友用体贴的方式帮助 Mary，结尾她和大家都笑了。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "朋友用体贴的方式帮助 Mary，结尾她和大家都笑了。"
     },
     "route_summary": {
       "线索词优先": 7,
@@ -232649,11 +232649,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "What Cheer Flower Farm is a nonprofit organization.",
     "last_sentence": "People's only job is to admire them when someone gives them flowers.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "介绍公益花农场如何运作，以及它给居民和生态带来的影响。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "介绍公益花农场如何运作，以及它给居民和生态带来的影响。"
     },
     "route_summary": {
       "线索词优先": 14,
@@ -233672,11 +233672,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "What Cheer Flower Farm is a nonprofit organization.",
     "last_sentence": "People's only job is to admire them when someone gives them flowers.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "介绍公益花农场如何运作，以及它给居民和生态带来的影响。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "介绍公益花农场如何运作，以及它给居民和生态带来的影响。"
     },
     "route_summary": {
       "线索词优先": 14,
@@ -234502,11 +234502,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Following your passion young Some people might think that young people are too young to know what they want.",
     "last_sentence": "We can be sure that if Lu hadn't followed his heart at a young age, he wouldn't be where he is today.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "从乡村自制衣服、视频少人关注，到持续尝试后登上时装舞台。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从乡村自制衣服、视频少人关注，到持续尝试后登上时装舞台。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -235107,11 +235107,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "It was the art class and the teacher had placed Henry beside me.",
     "last_sentence": "The broken ruler will forever remind me not to __10__ a friend.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "叙述者误会 Henry 后发现真相，以折断的尺子提醒自己别再误解朋友。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "叙述者误会 Henry 后发现真相，以折断的尺子提醒自己别再误解朋友。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -242374,11 +242374,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Johnny, a lizard (蜥蜴), lived between some rocks in the country, where he liked sunbathing every morning.",
     "last_sentence": "As he continued his journey, all he took with him were thoughts of the __10__.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "Johnny 从担忧过去、受旧尾巴牵绊，到放下包袱、转向未来。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "Johnny 从担忧过去、受旧尾巴牵绊，到放下包袱、转向未来。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -242673,11 +242673,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "It was a peaceful evening when Tom was doing his homework.",
     "last_sentence": "As the saying goes, \"Being prepared is not an option—it's a __10__.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "地震打破平静，主人公应对危险，最后从经历中认识到应急准备的重要。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "地震打破平静，主人公应对危险，最后从经历中认识到应急准备的重要。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -244455,11 +244455,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Once, several children in a country were hurt at war, including an 8-year-old girl.",
     "last_sentence": "The doctor __9__ the question to the boy, who answered __10__, \"Because she's my friend.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "男孩以为献血会让自己死去却愿救朋友，得到解释后恐惧解除，揭示友谊。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "男孩以为献血会让自己死去却愿救朋友，得到解释后恐惧解除，揭示友谊。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -244760,11 +244760,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The ocean is full of amazing living things.",
     "last_sentence": "People need to make real changes in their daily lives and then find the types of solutions we need __10__ this problem.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从鲸鱼误食塑料及其影响切入，结尾呼吁改变生活行为并寻找解决办法。",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "shape_reason": "从鲸鱼误食塑料及其影响切入，结尾呼吁改变生活行为并寻找解决办法。"
     },
     "route_summary": {
       "线索词优先": 6,
@@ -245347,11 +245347,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "A 14-year-old boy Sun was on his way home on a Tuesday evening after school.",
     "last_sentence": "On Weibo, people spoke highly of him, because he could keep __10__ in the face of such a dangerous situation.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "男孩被困电梯，从害怕到冷静应对，结尾因沉着受到称赞。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "男孩被困电梯，从害怕到冷静应对，结尾因沉着受到称赞。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -245937,11 +245937,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "It was a summer.",
     "last_sentence": "\"Until I got a flat tire, that is.\" I handed her the bag.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "追船归还手包途中遇爆胎、一度以为失败，最终成功交还失物。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "追船归还手包途中遇爆胎、一度以为失败，最终成功交还失物。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -250703,11 +250703,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Thirty years ago, a dog called Cookie came to my home.",
     "last_sentence": "She was my travel __10__ and always will be.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "虽然生活拮据，全文强调 Cookie 长久的陪伴，结尾延续这份珍视。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "虽然生活拮据，全文强调 Cookie 长久的陪伴，结尾延续这份珍视。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -251007,11 +251007,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Literature was something I was interested in.",
     "last_sentence": "I was __9__ With the publication of Flowers and Shadows, the life I was meant to live __10__.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "从写作屡被拒绝到小说出版，作者的处境与信心出现明显变化。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从写作屡被拒绝到小说出版，作者的处境与信心出现明显变化。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -253081,11 +253081,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "（2023·内蒙古呼和浩特·统考中考真题）A village primary school in Yunnan Province has amazed everyone who knows it.",
     "last_sentence": "The farm labor will build __10__ social ability that lasts a lifetime,\" he said.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "从乡村学校的劳动教育案例切入，说明其开展方式和对学生的意义。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "从乡村学校的劳动教育案例切入，说明其开展方式和对学生的意义。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -253959,11 +253959,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Confucius was a great thinker and educator in ancient China.",
     "last_sentence": "Let's carry forward traditional culture and keep __10__ all the time.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "从孔子的经历写到其教育精神，结尾鼓励学习和传承。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从孔子的经历写到其教育精神，结尾鼓励学习和传承。"
     },
     "route_summary": {
       "线索词优先": 7,
@@ -255161,11 +255161,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "My grandpa always tells me that people who laugh at their own mistakes will get others to laugh along.",
     "last_sentence": "The laughing made me feel __10__ instead of just silly.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "作者先不信爷爷关于自嘲的说法，亲历后懂得笑看自己的错误。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "作者先不信爷爷关于自嘲的说法，亲历后懂得笑看自己的错误。"
     },
     "route_summary": {
       "线索词优先": 10,
@@ -255457,11 +255457,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Cash Daniels, a 12-year-old boy, loves nature and wants to protect our planet.",
     "last_sentence": "He encourages everyone to stand up and take part in protecting our __10__ .",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "从关心环境写到带头行动，结尾肯定每个人都能做出改变。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "从关心环境写到带头行动，结尾肯定每个人都能做出改变。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -255748,11 +255748,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "This English grandmother has spent a whole year cleaning all of the rubbish off 52 British beaches after she made it her 2018 New Year's decision to __1__ one sandy beach each week. 70-year-old Pat Smith spent all of 2018 on Devon and Cornwall's beaches each week, armed with bags, rubber gloves and a litter picker.",
     "last_sentence": "\"Please let's try to be more thoughtful in the new year.\"",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "以祖母清理海滩的行动为主线，说明日常垃圾污染和她对公众的呼吁。",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "shape_reason": "以祖母清理海滩的行动为主线，说明日常垃圾污染和她对公众的呼吁。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -256333,11 +256333,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "There was once a boy who was out playing in a field with his friends.",
     "last_sentence": "You can turn a common stone into a diamond if you have persistence (毅力) and courage.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "answer": "积极",
+      "reason": "用寻找有趣石头的故事说明坚持目标、放下无关负担的重要。",
+      "kind": "expository",
+      "shape": "观点—例证",
+      "shape_reason": "用寻找有趣石头的故事说明坚持目标、放下无关负担的重要。"
     },
     "route_summary": {
       "线索词优先": 6,
@@ -257198,11 +257198,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "The story goes that two friends were walking through the desert.",
     "last_sentence": "It's a short message to let them know that you will never forget them.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "两位朋友从争执和伤害走到互助与理解，结尾提炼宽恕与感恩。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "两位朋友从争执和伤害走到互助与理解，结尾提炼宽恕与感恩。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -257485,11 +257485,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Since our twins began learning to walk, my wife and I have kept telling them that our sliding （推拉式的） glass door is just a window.",
     "last_sentence": "So when they come to other doors in life, they will just open them and walk through.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "父母起初把门说成窗户，后来反思不该因自己的担忧对孩子说谎。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "父母起初把门说成窗户，后来反思不该因自己的担忧对孩子说谎。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -258080,11 +258080,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Zhong Nanshan is a great medical expert in China.",
     "last_sentence": "We should learn from him and make our country __10__ in the future.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "积极",
+      "reason": "写钟南山的贡献与担当，结尾以榜样和学习号召收束。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "写钟南山的贡献与担当，结尾以榜样和学习号召收束。"
     },
     "route_summary": {
       "线索词优先": 8,
@@ -258372,11 +258372,11 @@ window.BUILTIN_LESSONS = [
     "first_sentence": "Long long ago, there was a king who felt upset because his daughter, the princess (公主), never laughed.",
     "last_sentence": "Suddenly, she began to laugh a lot.",
     "tone": {
-      "answer": "消极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "answer": "转折变化",
+      "reason": "公主起初始终不笑，最终看见镜中自己的样子而大笑。",
       "kind": "narrative",
       "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "shape_reason": "公主起初始终不笑，最终看见镜中自己的样子而大笑。"
     },
     "route_summary": {
       "线索词优先": 6,
@@ -258937,5 +258937,2720 @@ window.BUILTIN_LESSONS = [
     "tone_markers": [],
     "update_tag": "广州校内真题首批导入",
     "update_seq": 127
+  },
+  {
+    "id": "cloze-广州-二模2026-002",
+    "freezeClues": true,
+    "title_cn": "广东广州市育才中学2025学年第二学期初三5月份学业阶段性练习",
+    "title_en": "Last month, our science teacher, Mr.",
+    "level": "中考",
+    "difficulty": "中等",
+    "article_type": "记叙文",
+    "lesson_type": "校内真题",
+    "region": "广州",
+    "source": "广东广州市育才中学2025学年第二学期初三5月份学业阶段性练习",
+    "tags": [
+      "中考",
+      "校级真题",
+      "完形填空",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Last month, our science teacher, Mr.",
+    "last_sentence": "It was a __10__ I would never forget.",
+    "tone": {
+      "answer": "积极",
+      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+    },
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 24,
+    "article_text_with_blanks": "Last month, our science teacher, Mr. Chen, announced a class project — building model rockets in teams. The news spread fast throughout our classroom, and the whole class was filled with __1__ immediately. My teammate Lisa and I decided to work together on this exciting challenge.\nWe spent several days __2__ our design on paper and collecting all the necessary materials from local stores. Finally, last Saturday morning, we took the bus to the city park to test our rocket. The weather was fine — sunny with a gentle wind. With a deep breath, I pressed the button. The rocket shot into the sky __3__ , leaving a thin line of smoke behind. We cheered loudly, __4__ it had worked well. However, our joy was short-lived. The parachute (降落伞) failed to open, and the rocket fell straight down, landing in a tall tree.\nWe felt __5__ . The tree was too high to climb. Just as we were wondering what to do, an old man who was walking his dog saw our __6__ situation. He smiled kindly and said, \"Wait here for a moment.\" He returned shortly with a long bamboo pole. Without saying much, he steadily helped us get the rocket down. We were so __7__ and offered him some money. However, he __8__ with a smile. \"Seeing your scientific curiosity and hard work is the best reward,\" he said before leaving.\nThis __9__ reminded me that the world is full of love. It can appear when you least expect it. We went to the park to send a rocket into the sky, but we brought back something more significant — a renewed faith deep in people's hearts. It was a __10__ I would never forget.",
+    "reading_sentences": [
+      "Last month, our science teacher, Mr.",
+      "Chen, announced a class project — building model rockets in teams.",
+      "The news spread fast throughout our classroom, and the whole class was filled with __1__ immediately.",
+      "My teammate Lisa and I decided to work together on this exciting challenge.",
+      "We spent several days __2__ our design on paper and collecting all the necessary materials from local stores.",
+      "Finally, last Saturday morning, we took the bus to the city park to test our rocket.",
+      "The weather was fine — sunny with a gentle wind.",
+      "With a deep breath, I pressed the button.",
+      "The rocket shot into the sky __3__ , leaving a thin line of smoke behind.",
+      "We cheered loudly, __4__ it had worked well.",
+      "However, our joy was short-lived.",
+      "The parachute (降落伞) failed to open, and the rocket fell straight down, landing in a tall tree.",
+      "We felt __5__ .",
+      "The tree was too high to climb.",
+      "Just as we were wondering what to do, an old man who was walking his dog saw our __6__ situation.",
+      "He smiled kindly and said, \"Wait here for a moment.\" He returned shortly with a long bamboo pole.",
+      "Without saying much, he steadily helped us get the rocket down.",
+      "We were so __7__ and offered him some money.",
+      "However, he __8__ with a smile.",
+      "\"Seeing your scientific curiosity and hard work is the best reward,\" he said before leaving.",
+      "This __9__ reminded me that the world is full of love.",
+      "It can appear when you least expect it.",
+      "We went to the park to send a rocket into the sky, but we brought back something more significant — a renewed faith deep in people's hearts.",
+      "It was a __10__ I would never forget."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "excitement",
+          "victory",
+          "confidence",
+          "courage"
+        ],
+        "answer": "excitement",
+        "clues": [
+          "on this exciting"
+        ],
+        "clueTypes": {
+          "on this exciting": "复现线索·派生词复现"
+        },
+        "explanation": "原题1。圈出空格附近的“class was filled with”，结合句意、语法和上下文逻辑，可确定选 excitement；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "非谓语动词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "copying",
+          "planning",
+          "remembering",
+          "comparing"
+        ],
+        "answer": "planning",
+        "clues": [
+          "We spent several days",
+          "our design on paper"
+        ],
+        "clueTypes": {
+          "We spent several days": "语境线索·邻近取证",
+          "our design on paper": "语境线索·邻近取证"
+        },
+        "explanation": "原题2。圈出空格附近的“We spent several days；our design on paper”，结合句意、语法和上下文逻辑，可确定选 planning；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "slowly",
+          "accidentally",
+          "successfully",
+          "terribly"
+        ],
+        "answer": "successfully",
+        "clues": [
+          "shot into the sky",
+          "leaving a thin line"
+        ],
+        "clueTypes": {
+          "shot into the sky": "语境线索·邻近取证",
+          "leaving a thin line": "语境线索·邻近取证"
+        },
+        "explanation": "原题3。圈出空格附近的“shot into the sky；leaving a thin line”，结合句意、语法和上下文逻辑，可确定选 successfully；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "非谓语动词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "arguing",
+          "proving",
+          "discovering",
+          "believing"
+        ],
+        "answer": "believing",
+        "clues": [
+          "it had worked well",
+          "We cheered loudly"
+        ],
+        "clueTypes": {
+          "it had worked well": "语境线索·邻近取证",
+          "We cheered loudly": "语境线索·邻近取证"
+        },
+        "explanation": "原题4。圈出空格附近的“We cheered loudly；it had worked well”，结合句意、语法和上下文逻辑，可确定选 believing；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "relaxed",
+          "embarrassed",
+          "satisfied",
+          "encouraged"
+        ],
+        "answer": "embarrassed",
+        "clues": [
+          "hard work",
+          "together on this exciting challenge",
+          "We felt"
+        ],
+        "clueTypes": {
+          "hard work": "情感线索·情感一致",
+          "together on this exciting challenge": "情感线索·情感一致",
+          "We felt": "语境线索·邻近取证"
+        },
+        "explanation": "原题5。圈出空格附近的“We felt”，结合句意、语法和上下文逻辑，可确定选 embarrassed；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "perfect",
+          "common",
+          "personal",
+          "difficult"
+        ],
+        "answer": "difficult",
+        "clues": [
+          "hard work",
+          "together on this exciting challenge",
+          "curiosity and hard"
+        ],
+        "clueTypes": {
+          "hard work": "情感线索·情感一致",
+          "together on this exciting challenge": "复现线索·同场复现",
+          "curiosity and hard": "复现线索·近义词复现"
+        },
+        "explanation": "原题6。圈出空格附近的“his dog saw our”，结合句意、语法和上下文逻辑，可确定选 difficult；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "thankful",
+          "helpful",
+          "awful",
+          "painful"
+        ],
+        "answer": "thankful",
+        "clues": [
+          "We were so",
+          "and offered him some"
+        ],
+        "clueTypes": {
+          "We were so": "逻辑线索·因果",
+          "and offered him some": "语境线索·邻近取证"
+        },
+        "explanation": "原题7。圈出空格附近的“We were so；and offered him some”，结合句意、语法和上下文逻辑，可确定选 thankful；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "accepted",
+          "refused",
+          "received",
+          "required"
+        ],
+        "answer": "refused",
+        "clues": [
+          "However, he",
+          "with a smile"
+        ],
+        "clueTypes": {
+          "However, he": "逻辑线索·转折",
+          "with a smile": "语境线索·邻近取证"
+        },
+        "explanation": "原题8。圈出空格附近的“However, he；with a smile”，结合句意、语法和上下文逻辑，可确定选 refused；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "experience",
+          "adventure",
+          "decision",
+          "discussion"
+        ],
+        "answer": "experience",
+        "clues": [
+          "reminded me that the"
+        ],
+        "clueTypes": {
+          "reminded me that the": "语境线索·邻近取证"
+        },
+        "explanation": "原题9。圈出空格附近的“reminded me that the”，结合句意、语法和上下文逻辑，可确定选 experience；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "task",
+          "game",
+          "day",
+          "prize"
+        ],
+        "answer": "day",
+        "clues": [
+          "spent several days",
+          "I would never forget",
+          "It was a"
+        ],
+        "clueTypes": {
+          "spent several days": "复现线索·派生词复现",
+          "I would never forget": "语境线索·邻近取证",
+          "It was a": "语境线索·邻近取证"
+        },
+        "explanation": "原题10。圈出空格附近的“It was a；I would never forget”，结合句意、语法和上下文逻辑，可确定选 day；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "校级真题",
+    "exam_year": 2025,
+    "tone_markers": [],
+    "update_tag": "广州校内真题首批导入",
+    "update_seq": 2
+  },
+  {
+    "id": "cloze-广州-二模2026-007",
+    "freezeClues": true,
+    "title_cn": "2025年广东省广州市越秀区第七中学中考二模英语试题",
+    "title_en": "",
+    "level": "中考",
+    "difficulty": "较难",
+    "article_type": "记叙文",
+    "lesson_type": "校内真题",
+    "region": "广州",
+    "source": "2025年广东省广州市越秀区第七中学中考二模英语试题",
+    "tags": [
+      "中考",
+      "二模真题",
+      "完形填空",
+      "上下文逻辑"
+    ],
+    "first_sentence": "In a big forest, news of a coming music competition spread like wildfire.",
+    "last_sentence": "The crow had not only won the contest but also taught everyone that with __10__ , anyone can turn their weakness into strength.",
+    "tone": {
+      "answer": "积极",
+      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+    },
+    "route_summary": {
+      "线索词优先": 7,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 3
+    },
+    "reading_sentence_count": 23,
+    "article_text_with_blanks": "In a big forest, news of a coming music competition spread like wildfire. All the animals were dying to __1__ , hoping to win the grand prize-a golden microphone. Among them were a nightingale (夜莺) and a crow.\nThe nightingale __2__ day and night. Her beautiful songs made many animals stop and listen. But when the crow opened his beak (喙) to sing, his voice made the squirrels laugh and the rabbits cover their __3__ .\nHe sat alone on the forest's central stage and looked at __4__ that seemed so out of reach. \"If only I could win this,\" he said to himself and his eyes shone with __5__ . He decided to do something. Just at that moment, he noticed the dancing leaves and the nearby stream, both __6__ making beautiful sounds in the gentle wind. Suddenly, he got an idea! He could try to __7__ in a special way!\nHe spent days collecting smooth stones. He learned to hit them with his beak at just the right speed to match the natural sound of the forest. He never gave up practising even though it's __8__ and gave him a headache. When the day finally arrived, the nightingale performed first. Her voice earned a lot of applause. Then, the crow took the stage. The animals exchanged questioning looks and a few __9__ voices could be heard.\nBut as the crow began to tap the stones, mixing the sound with the moving leaves and flowing water, a magical change took place. Wonderful! When the last note (音符) faded, all the animals stood up to cheer. The crow had not only won the contest but also taught everyone that with __10__ , anyone can turn their weakness into strength.",
+    "reading_sentences": [
+      "In a big forest, news of a coming music competition spread like wildfire.",
+      "All the animals were dying to __1__ , hoping to win the grand prize-a golden microphone.",
+      "Among them were a nightingale (夜莺) and a crow.",
+      "The nightingale __2__ day and night.",
+      "Her beautiful songs made many animals stop and listen.",
+      "But when the crow opened his beak (喙) to sing, his voice made the squirrels laugh and the rabbits cover their __3__ .",
+      "He sat alone on the forest's central stage and looked at __4__ that seemed so out of reach.",
+      "\"If only I could win this,\" he said to himself and his eyes shone with __5__ .",
+      "He decided to do something.",
+      "Just at that moment, he noticed the dancing leaves and the nearby stream, both __6__ making beautiful sounds in the gentle wind.",
+      "Suddenly, he got an idea!",
+      "He could try to __7__ in a special way!",
+      "He spent days collecting smooth stones.",
+      "He learned to hit them with his beak at just the right speed to match the natural sound of the forest.",
+      "He never gave up practising even though it's __8__ and gave him a headache.",
+      "When the day finally arrived, the nightingale performed first.",
+      "Her voice earned a lot of applause.",
+      "Then, the crow took the stage.",
+      "The animals exchanged questioning looks and a few __9__ voices could be heard.",
+      "But as the crow began to tap the stones, mixing the sound with the moving leaves and flowing water, a magical change took place.",
+      "Wonderful!",
+      "When the last note (音符) faded, all the animals stood up to cheer.",
+      "The crow had not only won the contest but also taught everyone that with __10__ , anyone can turn their weakness into strength."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "take part",
+          "run away",
+          "stand up",
+          "give up"
+        ],
+        "answer": "take part",
+        "clues": [
+          "animals were dying to",
+          "hoping to win the"
+        ],
+        "clueTypes": {
+          "animals were dying to": "语境线索·邻近取证",
+          "hoping to win the": "语境线索·邻近取证"
+        },
+        "explanation": "原题1。圈出空格附近的“animals were dying to；hoping to win the”，结合句意、语法和上下文逻辑，可确定选 take part；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "cried",
+          "practised",
+          "worked",
+          "wished"
+        ],
+        "answer": "practised",
+        "clues": [
+          "gave up practising"
+        ],
+        "clueTypes": {
+          "gave up practising": "复现线索·派生词复现"
+        },
+        "explanation": "原题2。圈出空格附近的“The nightingale；day and night”，结合句意、语法和上下文逻辑，可确定选 practised；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "eyes",
+          "mouth",
+          "nose",
+          "ears"
+        ],
+        "answer": "ears",
+        "clues": [
+          "But when the crow",
+          "the rabbits cover their"
+        ],
+        "clueTypes": {
+          "But when the crow": "逻辑线索·转折",
+          "the rabbits cover their": "语境线索·邻近取证"
+        },
+        "explanation": "原题3。圈出空格附近的“the rabbits cover their”，结合句意、语法和上下文逻辑，可确定选 ears；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "the nightingale",
+          "the golden microphone",
+          "the central stage",
+          "the rabbit"
+        ],
+        "answer": "the golden microphone",
+        "clues": [
+          "a golden microphone",
+          "so out of reach",
+          "stage and looked at"
+        ],
+        "clueTypes": {
+          "a golden microphone": "复现线索·原词复现",
+          "so out of reach": "逻辑线索·因果",
+          "stage and looked at": "语境线索·邻近取证"
+        },
+        "explanation": "原题4。圈出空格附近的“stage and looked at；that seemed so out”，结合句意、语法和上下文逻辑，可确定选 the golden microphone；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "hope",
+          "tears",
+          "disappointment",
+          "happiness"
+        ],
+        "answer": "hope",
+        "clues": [
+          "his eyes shone with"
+        ],
+        "clueTypes": {
+          "his eyes shone with": "语境线索·邻近取证"
+        },
+        "explanation": "原题5。圈出空格附近的“his eyes shone with”，结合句意、语法和上下文逻辑，可确定选 hope；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "sadly",
+          "angrily",
+          "softly",
+          "weakly"
+        ],
+        "answer": "softly",
+        "clues": [
+          "flowing water, a magical change",
+          "beautiful sounds in the gentle",
+          "voice made the squirrels laugh"
+        ],
+        "clueTypes": {
+          "flowing water, a magical change": "情感线索·情感一致",
+          "beautiful sounds in the gentle": "情感线索·情感一致",
+          "voice made the squirrels laugh": "情感线索·情感一致"
+        },
+        "explanation": "原题6。圈出空格附近的“the nearby stream, both；making beautiful sounds in”，结合句意、语法和上下文逻辑，可确定选 softly；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "dance",
+          "win",
+          "fly",
+          "sing"
+        ],
+        "answer": "sing",
+        "clues": [
+          "in a special way",
+          "He could try to"
+        ],
+        "clueTypes": {
+          "in a special way": "语境线索·邻近取证",
+          "He could try to": "语境线索·邻近取证"
+        },
+        "explanation": "原题7。圈出空格附近的“He could try to；in a special way”，结合句意、语法和上下文逻辑，可确定选 sing；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "非谓语动词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "amazing",
+          "surprising",
+          "embarrassing",
+          "tiring"
+        ],
+        "answer": "tiring",
+        "clues": [
+          "practising even though it's"
+        ],
+        "clueTypes": {
+          "practising even though it's": "逻辑线索·让步"
+        },
+        "explanation": "原题8。圈出空格附近的“practising even though it's；and gave him a”，结合句意、语法和上下文逻辑，可确定选 tiring；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "careful",
+          "doubtful",
+          "hopeful",
+          "helpful"
+        ],
+        "answer": "doubtful",
+        "clues": [
+          "voices could be heard",
+          "looks and a few"
+        ],
+        "clueTypes": {
+          "voices could be heard": "语境线索·邻近取证",
+          "looks and a few": "语境线索·邻近取证"
+        },
+        "explanation": "原题9。圈出空格附近的“looks and a few；voices could be heard”，结合句意、语法和上下文逻辑，可确定选 doubtful；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "kindness and patience",
+          "bravery and honesty",
+          "creativity and hard work",
+          "humour and confidence"
+        ],
+        "answer": "creativity and hard work",
+        "clues": [
+          "but also taught everyone",
+          "taught everyone that with"
+        ],
+        "clueTypes": {
+          "but also taught everyone": "逻辑线索·转折",
+          "taught everyone that with": "语境线索·邻近取证"
+        },
+        "explanation": "原题10。圈出空格附近的“taught everyone that with；anyone can turn their”，结合句意、语法和上下文逻辑，可确定选 creativity and hard work；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "二模真题",
+    "exam_year": 2025,
+    "tone_markers": [],
+    "update_tag": "广州校内真题首批导入",
+    "update_seq": 7
+  },
+  {
+    "id": "cloze-广州-二模2026-008",
+    "freezeClues": true,
+    "title_cn": "2025年广东省广州市天河区天河中学中考二模英语试题",
+    "title_en": "Our son is my newest \"Hockey (曲棍球) Hero\".",
+    "level": "中考",
+    "difficulty": "较难",
+    "article_type": "记叙文",
+    "lesson_type": "校内真题",
+    "region": "广州",
+    "source": "2025年广东省广州市天河区天河中学中考二模英语试题",
+    "tags": [
+      "中考",
+      "二模真题",
+      "完形填空",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Our son is my newest \"Hockey (曲棍球) Hero\".",
+    "last_sentence": "Needless to say we are very __10__ hocky parents and our son is our new hero!",
+    "tone": {
+      "answer": "积极",
+      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+    },
+    "route_summary": {
+      "线索词优先": 8,
+      "固定搭配优先": 0,
+      "双路径": 1,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 16,
+    "article_text_with_blanks": "Our son is my newest \"Hockey (曲棍球) Hero\". He plays goalkeeper on his small hometown ice hockey team.\nOne weekend on match day, my wife and I arrived __1__ because of the bad traffic. We quickly found our seats and settled in. As I looked around, I __2__ we were sitting with a couple who bad a disabled child—with only one leg. We could hear the __3__ in his voice when he shouted, \"Mom, look! The goalie (守门员) is going to get the ball now!\" Happily, I listened to him and the excitement and joy in his voice as he praised the goalkeeper time and time again.\nDuring the __4__ , we went and told our son what was truly happening in the bleachers (露天看台), and he went up into the bleachers, introduce himself to the parents and sat next to that little kid. He started talking to him and before long (很快) the boy was __5__ our son's gloves and helmet. When the game was about to start again, my son told him to __6__ the game as he went back out on the ice. The small child was so excited that he kept telling his parents, \"The goalie is my friend. He is so __7__ !\"\n __8__ the game, I saw my son talking to the coaches before leaving the ice. He then skated over towards us and motioned (打手势) to the boy's dad to come __9__ . He then asked him to give the game ball to the little boy. Everyone sitting there had tears in their eyes and the biggest smiles on their faces. Needless to say we are very __10__ hocky parents and our son is our new hero!",
+    "reading_sentences": [
+      "Our son is my newest \"Hockey (曲棍球) Hero\".",
+      "He plays goalkeeper on his small hometown ice hockey team.",
+      "One weekend on match day, my wife and I arrived __1__ because of the bad traffic.",
+      "We quickly found our seats and settled in.",
+      "As I looked around, I __2__ we were sitting with a couple who bad a disabled child—with only one leg.",
+      "We could hear the __3__ in his voice when he shouted, \"Mom, look!",
+      "The goalie (守门员) is going to get the ball now!\" Happily, I listened to him and the excitement and joy in his voice as he praised the goalkeeper time and time again.",
+      "During the __4__ , we went and told our son what was truly happening in the bleachers (露天看台), and he went up into the bleachers, introduce himself to the parents and sat next to that little kid.",
+      "He started talking to him and before long (很快) the boy was __5__ our son's gloves and helmet.",
+      "When the game was about to start again, my son told him to __6__ the game as he went back out on the ice.",
+      "The small child was so excited that he kept telling his parents, \"The goalie is my friend.",
+      "He is so __7__ !\" __8__ the game, I saw my son talking to the coaches before leaving the ice.",
+      "He then skated over towards us and motioned (打手势) to the boy's dad to come __9__ .",
+      "He then asked him to give the game ball to the little boy.",
+      "Everyone sitting there had tears in their eyes and the biggest smiles on their faces.",
+      "Needless to say we are very __10__ hocky parents and our son is our new hero!"
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "together",
+          "late",
+          "alone",
+          "early"
+        ],
+        "answer": "late",
+        "clues": [
+          "because of the bad",
+          "wife and I arrived"
+        ],
+        "clueTypes": {
+          "because of the bad": "逻辑线索·因果",
+          "wife and I arrived": "语境线索·邻近取证"
+        },
+        "explanation": "原题1。圈出空格附近的“wife and I arrived；because of the bad”，结合句意、语法和上下文逻辑，可确定选 late；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "remembered",
+          "thought",
+          "noticed",
+          "heard"
+        ],
+        "answer": "noticed",
+        "clues": [
+          "when he shouted, \"Mom, look",
+          "had tears in their eyes",
+          "with only one leg"
+        ],
+        "clueTypes": {
+          "when he shouted, \"Mom, look": "复现线索·同场复现",
+          "had tears in their eyes": "复现线索·同场复现",
+          "with only one leg": "同位解释"
+        },
+        "explanation": "原题2。圈出空格附近的“I looked around, I；we were sitting with”，结合句意、语法和上下文逻辑，可确定选 noticed；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "love",
+          "worry",
+          "sadness",
+          "excitement"
+        ],
+        "answer": "excitement",
+        "clues": [
+          "and the excitement and joy",
+          "was so excited",
+          "eyes and the biggest smiles"
+        ],
+        "clueTypes": {
+          "and the excitement and joy": "复现线索·原词复现",
+          "was so excited": "复现线索·派生词复现",
+          "eyes and the biggest smiles": "复现线索·同场复现"
+        },
+        "explanation": "原题3。圈出空格附近的“We could hear the；in his voice when”，结合句意、语法和上下文逻辑，可确定选 excitement；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "match",
+          "break",
+          "shout",
+          "praise"
+        ],
+        "answer": "break",
+        "clues": [
+          "and sat next",
+          "we went and told",
+          "During the"
+        ],
+        "clueTypes": {
+          "and sat next": "逻辑线索·时间",
+          "we went and told": "语境线索·邻近取证",
+          "During the": "语境线索·邻近取证"
+        },
+        "explanation": "原题4。圈出空格附近的“During the；we went and told”，结合句意、语法和上下文逻辑，可确定选 break；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "taking off",
+          "breaking into",
+          "showing off",
+          "trying on"
+        ],
+        "answer": "trying on",
+        "clues": [
+          "the boy was",
+          "our son's gloves and"
+        ],
+        "clueTypes": {
+          "the boy was": "语境线索·邻近取证",
+          "our son's gloves and": "语境线索·邻近取证"
+        },
+        "explanation": "原题5。圈出空格附近的“the boy was；our son's gloves and”，结合句意、语法和上下文逻辑，可确定选 trying on；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "like",
+          "follow",
+          "enjoy",
+          "organize"
+        ],
+        "answer": "enjoy",
+        "clues": [
+          "eyes and the biggest smiles",
+          "found our seats and settled",
+          "and the excitement and joy"
+        ],
+        "clueTypes": {
+          "eyes and the biggest smiles": "复现线索·同场复现",
+          "found our seats and settled": "情感线索·情感一致",
+          "and the excitement and joy": "复现线索·同场复现"
+        },
+        "explanation": "原题6。圈出空格附近的“son told him to；the game as he”，结合句意、语法和上下文逻辑，可确定选 enjoy；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "crazy",
+          "pleased",
+          "calm",
+          "nice"
+        ],
+        "answer": "nice",
+        "clues": [
+          "He is so",
+          "We quickly"
+        ],
+        "clueTypes": {
+          "He is so": "逻辑线索·因果",
+          "We quickly": "复现线索·同场复现"
+        },
+        "explanation": "原题7。圈出空格附近的“He is so”，结合句意、语法和上下文逻辑，可确定选 nice；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "双路径",
+        "options": [
+          "Before",
+          "During",
+          "With",
+          "After"
+        ],
+        "answer": "After",
+        "clues": [
+          "the game, I saw my son",
+          "the game"
+        ],
+        "clueTypes": {
+          "the game, I saw my son": "逻辑线索·关系词",
+          "the game": "语境线索·搭配骨架"
+        },
+        "explanation": "原题8。圈出空格附近的“the game, I saw”，结合句意、语法和上下文逻辑，可确定选 After；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "out",
+          "in",
+          "down",
+          "off"
+        ],
+        "answer": "down",
+        "clues": [
+          "He then",
+          "boy's dad to come"
+        ],
+        "clueTypes": {
+          "He then": "逻辑线索·时间",
+          "boy's dad to come": "语境线索·邻近取证"
+        },
+        "explanation": "原题9。圈出空格附近的“boy's dad to come”，结合句意、语法和上下文逻辑，可确定选 down；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "understanding",
+          "famous",
+          "good",
+          "proud"
+        ],
+        "answer": "proud",
+        "clues": [
+          "small child was so excited",
+          "The goalie is my friend",
+          "then asked him to give"
+        ],
+        "clueTypes": {
+          "small child was so excited": "情感线索·情感一致",
+          "The goalie is my friend": "情感线索·情感一致",
+          "then asked him to give": "情感线索·情感一致"
+        },
+        "explanation": "原题10。圈出空格附近的“say we are very；hocky parents and our”，结合句意、语法和上下文逻辑，可确定选 proud；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "二模真题",
+    "exam_year": 2025,
+    "tone_markers": [],
+    "update_tag": "广州校内真题首批导入",
+    "update_seq": 8
+  },
+  {
+    "id": "cloze-广州-二模2026-011",
+    "freezeClues": true,
+    "title_cn": "2025年广东省广州中学中考二模英语试题",
+    "title_en": "Luke was curious about everything.",
+    "level": "中考",
+    "difficulty": "简单",
+    "article_type": "记叙文",
+    "lesson_type": "校内真题",
+    "region": "广州",
+    "source": "2025年广东省广州中学中考二模英语试题",
+    "tags": [
+      "中考",
+      "二模真题",
+      "完形填空",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Luke was curious about everything.",
+    "last_sentence": "The cup was repaired miraculously!",
+    "tone": {
+      "answer": "积极",
+      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+    },
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 30,
+    "article_text_with_blanks": "Luke was curious about everything. One __1__ he stole into the store room where his grandma kept her valuable collections. He knew she did not like anyone to touch her treasures, __2__ her cup for skating. Luke walked around but couldn't find the cup. He raised his head and found it was on the top of a shelf.\nWith the help of a ladder, Luke reached the cup—much heavier than it seemed. Luke __3__ the cup and tried to get it down. While climbing down, Luke's elbow struck against the ladder. He lost his balance and fell down to the ground heavily. The __4__ cup slipped out of his hands and broke into pieces.\nLuke was too nervous to feel the __5__ . He stood up quickly and felt heartbroken. He picked up the broken pieces with his shaking hands, put them back to the shelf and left the store room quickly. In order not to be __6__ by his grandma, who was watching TV in the dinning room, Luke went into his bedroom quietly.\nThat night was so __7__ . He couldn't fall asleep till midnight. He woke up and looked at the clock many times. Time seemed to go much slower. Early in the morning, Luke summed up his __8__ and knocked on grandma's door.\nGrandma took him to the store room. \"I'm, I'm really sorry...\" Luke said __9__ . With a smile, grandma hugged Luke. She said, \"When I was young, I once messed my uncle's priceless painting. I was not as __10__ as you. I didn't tell the truth at first. It made me feel upset day and night. After a week's struggle, I admitted my fault to my uncle. Honesty matters more than mistakes.\" Then she took down the broken glass cup. They used glue to stick the broken pieces together. The cup was repaired miraculously!",
+    "reading_sentences": [
+      "Luke was curious about everything.",
+      "One __1__ he stole into the store room where his grandma kept her valuable collections.",
+      "He knew she did not like anyone to touch her treasures, __2__ her cup for skating.",
+      "Luke walked around but couldn't find the cup.",
+      "He raised his head and found it was on the top of a shelf.",
+      "With the help of a ladder, Luke reached the cup—much heavier than it seemed.",
+      "Luke __3__ the cup and tried to get it down.",
+      "While climbing down, Luke's elbow struck against the ladder.",
+      "He lost his balance and fell down to the ground heavily.",
+      "The __4__ cup slipped out of his hands and broke into pieces.",
+      "Luke was too nervous to feel the __5__ .",
+      "He stood up quickly and felt heartbroken.",
+      "He picked up the broken pieces with his shaking hands, put them back to the shelf and left the store room quickly.",
+      "In order not to be __6__ by his grandma, who was watching TV in the dinning room, Luke went into his bedroom quietly.",
+      "That night was so __7__ .",
+      "He couldn't fall asleep till midnight.",
+      "He woke up and looked at the clock many times.",
+      "Time seemed to go much slower.",
+      "Early in the morning, Luke summed up his __8__ and knocked on grandma's door.",
+      "Grandma took him to the store room.",
+      "\"I'm, I'm really sorry...\" Luke said __9__ .",
+      "With a smile, grandma hugged Luke.",
+      "She said, \"When I was young, I once messed my uncle's priceless painting.",
+      "I was not as __10__ as you.",
+      "I didn't tell the truth at first.",
+      "It made me feel upset day and night.",
+      "After a week's struggle, I admitted my fault to my uncle.",
+      "Honesty matters more than mistakes.\" Then she took down the broken glass cup.",
+      "They used glue to stick the broken pieces together.",
+      "The cup was repaired miraculously!"
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "noon",
+          "night",
+          "morning",
+          "afternoon"
+        ],
+        "answer": "night",
+        "clues": [
+          "That night",
+          "feel upset day",
+          "he stole into the"
+        ],
+        "clueTypes": {
+          "That night": "复现线索·原词复现",
+          "feel upset day": "复现线索·反义词复现",
+          "he stole into the": "语境线索·邻近取证"
+        },
+        "explanation": "原题1。圈出空格附近的“he stole into the”，结合句意、语法和上下文逻辑，可确定选 night；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "probably",
+          "totally",
+          "simply",
+          "especially"
+        ],
+        "answer": "especially",
+        "clues": [
+          "to touch her treasures",
+          "her cup for skating"
+        ],
+        "clueTypes": {
+          "to touch her treasures": "语境线索·邻近取证",
+          "her cup for skating": "语境线索·邻近取证"
+        },
+        "explanation": "原题2。圈出空格附近的“to touch her treasures；her cup for skating”，结合句意、语法和上下文逻辑，可确定选 especially；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "hung",
+          "chose",
+          "lifted",
+          "designed"
+        ],
+        "answer": "lifted",
+        "clues": [
+          "the cup and tried"
+        ],
+        "clueTypes": {
+          "the cup and tried": "语境线索·邻近取证"
+        },
+        "explanation": "原题3。圈出空格附近的“the cup and tried”，结合句意、语法和上下文逻辑，可确定选 lifted；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "gold",
+          "plastic",
+          "wood",
+          "glass"
+        ],
+        "answer": "glass",
+        "clues": [
+          "the broken glass",
+          "cup slipped out of"
+        ],
+        "clueTypes": {
+          "the broken glass": "复现线索·原词复现",
+          "cup slipped out of": "语境线索·邻近取证"
+        },
+        "explanation": "原题4。圈出空格附近的“cup slipped out of”，结合句意、语法和上下文逻辑，可确定选 glass；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "stress",
+          "pain",
+          "action",
+          "sickness"
+        ],
+        "answer": "pain",
+        "clues": [
+          "uncle's priceless painting",
+          "After a week's struggle",
+          "He picked up the broken"
+        ],
+        "clueTypes": {
+          "uncle's priceless painting": "复现线索·派生词复现",
+          "After a week's struggle": "复现线索·同场复现",
+          "He picked up the broken": "复现线索·同场复现"
+        },
+        "explanation": "原题5。圈出空格附近的“nervous to feel the”，结合句意、语法和上下文逻辑，可确定选 pain；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "noticed",
+          "found",
+          "minded",
+          "understood"
+        ],
+        "answer": "noticed",
+        "clues": [
+          "order not to be",
+          "by his grandma, who"
+        ],
+        "clueTypes": {
+          "order not to be": "语境线索·邻近取证",
+          "by his grandma, who": "语境线索·邻近取证"
+        },
+        "explanation": "原题6。圈出空格附近的“order not to be；by his grandma, who”，结合句意、语法和上下文逻辑，可确定选 noticed；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "dark",
+          "quiet",
+          "cold",
+          "long"
+        ],
+        "answer": "long",
+        "clues": [
+          "That night was so"
+        ],
+        "clueTypes": {
+          "That night was so": "逻辑线索·因果"
+        },
+        "explanation": "原题7。圈出空格附近的“That night was so”，结合句意、语法和上下文逻辑，可确定选 long；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "joy",
+          "courage",
+          "trust",
+          "wisdom"
+        ],
+        "answer": "courage",
+        "clues": [
+          "Luke summed up his",
+          "and knocked on grandma's"
+        ],
+        "clueTypes": {
+          "Luke summed up his": "语境线索·邻近取证",
+          "and knocked on grandma's": "语境线索·邻近取证"
+        },
+        "explanation": "原题8。圈出空格附近的“Luke summed up his；and knocked on grandma's”，结合句意、语法和上下文逻辑，可确定选 courage；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "noisily",
+          "rudely",
+          "sadly",
+          "angrily"
+        ],
+        "answer": "sadly",
+        "clues": [
+          "she took down the broken",
+          "After a week's struggle",
+          "It made me feel upset"
+        ],
+        "clueTypes": {
+          "she took down the broken": "情感线索·情感一致",
+          "After a week's struggle": "情感线索·情感一致",
+          "It made me feel upset": "复现线索·同场复现"
+        },
+        "explanation": "原题9。圈出空格附近的“Luke said”，结合句意、语法和上下文逻辑，可确定选 sadly；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "brave",
+          "careful",
+          "friendly",
+          "generous"
+        ],
+        "answer": "brave",
+        "clues": [
+          "I was not as"
+        ],
+        "clueTypes": {
+          "I was not as": "语境线索·邻近取证"
+        },
+        "explanation": "原题10。圈出空格附近的“I was not as；as you”，结合句意、语法和上下文逻辑，可确定选 brave；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "二模真题",
+    "exam_year": 2025,
+    "tone_markers": [],
+    "update_tag": "广州校内真题首批导入",
+    "update_seq": 11
+  },
+  {
+    "id": "cloze-广州-二模2026-013",
+    "freezeClues": true,
+    "title_cn": "2025年广东省实验中学教育集团中考二模英语试题",
+    "title_en": "",
+    "level": "中考",
+    "difficulty": "较难",
+    "article_type": "记叙文",
+    "lesson_type": "校内真题",
+    "region": "广州",
+    "source": "2025年广东省实验中学教育集团中考二模英语试题",
+    "tags": [
+      "中考",
+      "二模真题",
+      "完形填空",
+      "上下文逻辑"
+    ],
+    "first_sentence": "After celebrating his 40th birthday on Nov 5, 2024, Kenyan marathon runner Eliud Kipchoge began his fifth trip to China.",
+    "last_sentence": "It's about the satisfaction you feel after finishing a marathon—knowing that you can run anything, that you can __10__ anything in this world.\" Kipchoge told China Daily.",
+    "tone": {
+      "answer": "积极",
+      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+    },
+    "route_summary": {
+      "线索词优先": 9,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 16,
+    "article_text_with_blanks": "After celebrating his 40th birthday on Nov 5, 2024, Kenyan marathon runner Eliud Kipchoge began his fifth trip to China. He visited cities such as Beijing and Shenzhen, connecting with local runners. \"The plan is to meet as many Chinese people as possible before I __1__ my tour.\"\nKipchoge was raised in a poor family. He often rode his bicycle to sell milk and ran to and from school. He started running races, focusing on the 5,000 meters for 11 years. In 2013, he switched to marathons as his __2__ , which he did for another 11 years.\nKipchoge has often said that running and life are similar because both are full of __3__ . You need to face those difficulties and make great efforts.\" From his first marathon in 2013 to __4__ the record twice and winning two Olympic gold medals, Kipchoge has not only made __5__ success but also encouraged a global community of runners.\nFor years, Kipchoge has followed a __6__ daily routine. His day begins at 5 a.m. when he rises for a morning run. Then, he returns home for a tea break. In the afternoon, he heads out for another run, then spends the rest of the day __7__ the normal exercise before getting ready for bed.\nBesides his love for the sport, Kipchoge's success of his amazing career comes from his __8__ to push the limits of human power. In 2019, he became the first athlete to run a marathon in under two hours.\n\"It's not just __9__ about running to win or breaking records. It's about the satisfaction you feel after finishing a marathon—knowing that you can run anything, that you can __10__ anything in this world.\" Kipchoge told China Daily.",
+    "reading_sentences": [
+      "After celebrating his 40th birthday on Nov 5, 2024, Kenyan marathon runner Eliud Kipchoge began his fifth trip to China.",
+      "He visited cities such as Beijing and Shenzhen, connecting with local runners.",
+      "\"The plan is to meet as many Chinese people as possible before I __1__ my tour.\" Kipchoge was raised in a poor family.",
+      "He often rode his bicycle to sell milk and ran to and from school.",
+      "He started running races, focusing on the 5,000 meters for 11 years.",
+      "In 2013, he switched to marathons as his __2__ , which he did for another 11 years.",
+      "Kipchoge has often said that running and life are similar because both are full of __3__ .",
+      "You need to face those difficulties and make great efforts.\" From his first marathon in 2013 to __4__ the record twice and winning two Olympic gold medals, Kipchoge has not only made __5__ success but also encouraged a global community of runners.",
+      "For years, Kipchoge has followed a __6__ daily routine.",
+      "His day begins at 5 a.m. when he rises for a morning run.",
+      "Then, he returns home for a tea break.",
+      "In the afternoon, he heads out for another run, then spends the rest of the day __7__ the normal exercise before getting ready for bed.",
+      "Besides his love for the sport, Kipchoge's success of his amazing career comes from his __8__ to push the limits of human power.",
+      "In 2019, he became the first athlete to run a marathon in under two hours.",
+      "\"It's not just __9__ about running to win or breaking records.",
+      "It's about the satisfaction you feel after finishing a marathon—knowing that you can run anything, that you can __10__ anything in this world.\" Kipchoge told China Daily."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "start",
+          "end",
+          "include",
+          "remember"
+        ],
+        "answer": "end",
+        "clues": [
+          "as possible before I",
+          "my tour"
+        ],
+        "clueTypes": {
+          "as possible before I": "语境线索·邻近取证",
+          "my tour": "语境线索·邻近取证"
+        },
+        "explanation": "原题1。圈出空格附近的“as possible before I；my tour”，结合句意、语法和上下文逻辑，可确定选 end；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "secret",
+          "example",
+          "ability",
+          "career"
+        ],
+        "answer": "career",
+        "clues": [
+          "his amazing career",
+          "to marathons as his",
+          "which he did for"
+        ],
+        "clueTypes": {
+          "his amazing career": "复现线索·原词复现",
+          "to marathons as his": "语境线索·邻近取证",
+          "which he did for": "语境线索·邻近取证"
+        },
+        "explanation": "原题2。圈出空格附近的“to marathons as his；which he did for”，结合句意、语法和上下文逻辑，可确定选 career；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "chances",
+          "challenges",
+          "choices",
+          "cheers"
+        ],
+        "answer": "challenges",
+        "clues": [
+          "because both are full",
+          "both are full of"
+        ],
+        "clueTypes": {
+          "because both are full": "逻辑线索·因果",
+          "both are full of": "语境线索·邻近取证"
+        },
+        "explanation": "原题3。圈出空格附近的“both are full of”，结合句意、语法和上下文逻辑，可确定选 challenges；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "非谓语动词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "setting",
+          "keeping",
+          "breaking",
+          "following"
+        ],
+        "answer": "breaking",
+        "clues": [
+          "but also encouraged a",
+          "win or breaking",
+          "a tea break"
+        ],
+        "clueTypes": {
+          "but also encouraged a": "逻辑线索·转折",
+          "win or breaking": "复现线索·原词复现",
+          "a tea break": "复现线索·派生词复现"
+        },
+        "explanation": "原题4。圈出空格附近的“first marathon in 2013 to；the record twice and”，结合句意、语法和上下文逻辑，可确定选 breaking；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "great",
+          "common",
+          "wise",
+          "modern"
+        ],
+        "answer": "great",
+        "clues": [
+          "success but also encouraged",
+          "and make great",
+          "From his first"
+        ],
+        "clueTypes": {
+          "success but also encouraged": "逻辑线索·转折",
+          "and make great": "复现线索·原词复现",
+          "From his first": "逻辑线索·时间"
+        },
+        "explanation": "原题5。圈出空格附近的“has not only made；success but also encouraged”，结合句意、语法和上下文逻辑，可确定选 great；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "free",
+          "strict",
+          "normal",
+          "nervous"
+        ],
+        "answer": "strict",
+        "clues": [
+          "Kipchoge has followed a",
+          "daily routine"
+        ],
+        "clueTypes": {
+          "Kipchoge has followed a": "语境线索·邻近取证",
+          "daily routine": "语境线索·邻近取证"
+        },
+        "explanation": "原题6。圈出空格附近的“Kipchoge has followed a；daily routine”，结合句意、语法和上下文逻辑，可确定选 strict；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "depending on",
+          "living on",
+          "putting on",
+          "focusing on"
+        ],
+        "answer": "focusing on",
+        "clues": [
+          "running races, focusing",
+          "another run, then",
+          "the normal exercise before"
+        ],
+        "clueTypes": {
+          "running races, focusing": "复现线索·原词复现",
+          "another run, then": "逻辑线索·时间",
+          "the normal exercise before": "语境线索·邻近取证"
+        },
+        "explanation": "原题7。圈出空格附近的“rest of the day；the normal exercise before”，结合句意、语法和上下文逻辑，可确定选 focusing on；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "drive",
+          "sadness",
+          "worry",
+          "record"
+        ],
+        "answer": "drive",
+        "clues": [
+          "career comes from his",
+          "to push the limits"
+        ],
+        "clueTypes": {
+          "career comes from his": "熟词生义",
+          "to push the limits": "语境线索·邻近取证"
+        },
+        "explanation": "原题8。圈出空格附近的“career comes from his；to push the limits”，结合句意、语法和上下文逻辑，可确定选 drive；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "easily",
+          "simply",
+          "totally",
+          "usually"
+        ],
+        "answer": "simply",
+        "clues": [
+          "about running to win",
+          "It's not just"
+        ],
+        "clueTypes": {
+          "about running to win": "语境线索·邻近取证",
+          "It's not just": "语境线索·邻近取证"
+        },
+        "explanation": "原题9。圈出空格附近的“It's not just；about running to win”，结合句意、语法和上下文逻辑，可确定选 simply；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "express",
+          "spread",
+          "achieve",
+          "discover"
+        ],
+        "answer": "achieve",
+        "clues": [
+          "Kipchoge's success of his amazing",
+          "for the sport, Kipchoge's success",
+          "winning two Olympic gold medals"
+        ],
+        "clueTypes": {
+          "Kipchoge's success of his amazing": "情感线索·情感一致",
+          "for the sport, Kipchoge's success": "复现线索·同场复现",
+          "winning two Olympic gold medals": "复现线索·同场复现"
+        },
+        "explanation": "原题10。圈出空格附近的“anything, that you can；anything in this world”，结合句意、语法和上下文逻辑，可确定选 achieve；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "二模真题",
+    "exam_year": 2025,
+    "tone_markers": [],
+    "update_tag": "广州校内真题首批导入",
+    "update_seq": 13
+  },
+  {
+    "id": "cloze-广州-二模2026-014",
+    "freezeClues": true,
+    "title_cn": "2025年广东省广州市第二中学联考中考二模英语试题",
+    "title_en": "In a small village lived a wise farmer named Mr.",
+    "level": "中考",
+    "difficulty": "中等",
+    "article_type": "记叙文",
+    "lesson_type": "校内真题",
+    "region": "广州",
+    "source": "2025年广东省广州市第二中学联考中考二模英语试题",
+    "tags": [
+      "中考",
+      "二模真题",
+      "完形填空",
+      "上下文逻辑"
+    ],
+    "first_sentence": "In a small village lived a wise farmer named Mr.",
+    "last_sentence": "This change showed that through __10__ both the farmer and the fox could benefit (获益).",
+    "tone": {
+      "answer": "积极",
+      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+    },
+    "route_summary": {
+      "线索词优先": 9,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 34,
+    "article_text_with_blanks": "In a small village lived a wise farmer named Mr. Chen. One afternoon, he collected 20 fresh eggs and put them in the chicken shed (鸡舍). He planned to __1__ them for money in the market the next day. After he woke up, he went to the chicken shed to get the eggs. To his surprise, one was __2__ , because he found that there were only 19 left. The same thing happened in the next two days. He guessed the eggs may be __3__ .\nOn the fourth day, he hid behind a big tree to __4__ the truth. He waited patiently to see what would happen. Suddenly, a red fox came into his field. Mr. Chen followed him to the chicken shed __5__ , without making any sound. Through the window he saw the fox stealing an egg. He walked into the chicken shed. Instead of shouting angrily, he smiled and said, \"Friend Fox! You look __6__ . You should eat more to be strong. Why not take more eggs with you?\" Though the fox couldn't believe what he heard, he agreed happily.\nMr. Chen handed him a bamboo basket. \"This is a gift. Fill it as you like!\" he said. The fox put many eggs in it, not noticing the tiny hole at the bottom. As he hurried home, the eggs dropped out one by one on his way home. The __7__ eggs led the farmer straight to where the fox lived! When the fox fell asleep, the farmer took his missing eggs and went back home __8__ , singing beautiful songs.\nThe next morning, the angry fox returned. \"You tricked me!\" he shouted. Mr. Chen answered, \"A thief loses what he gets. But if you can protect my field by preventing mice from causing damage, I can share corn with you.\" The fox agreed. Finally, he became the farm's __9__ , not just getting food as before but also helping to keep the farm free from mouse-related problems. This change showed that through __10__ both the farmer and the fox could benefit (获益).",
+    "reading_sentences": [
+      "In a small village lived a wise farmer named Mr.",
+      "Chen.",
+      "One afternoon, he collected 20 fresh eggs and put them in the chicken shed (鸡舍).",
+      "He planned to __1__ them for money in the market the next day.",
+      "After he woke up, he went to the chicken shed to get the eggs.",
+      "To his surprise, one was __2__ , because he found that there were only 19 left.",
+      "The same thing happened in the next two days.",
+      "He guessed the eggs may be __3__ .",
+      "On the fourth day, he hid behind a big tree to __4__ the truth.",
+      "He waited patiently to see what would happen.",
+      "Suddenly, a red fox came into his field.",
+      "Mr.",
+      "Chen followed him to the chicken shed __5__ , without making any sound.",
+      "Through the window he saw the fox stealing an egg.",
+      "He walked into the chicken shed.",
+      "Instead of shouting angrily, he smiled and said, \"Friend Fox!",
+      "You look __6__ .",
+      "You should eat more to be strong.",
+      "Why not take more eggs with you?\" Though the fox couldn't believe what he heard, he agreed happily.",
+      "Mr.",
+      "Chen handed him a bamboo basket.",
+      "\"This is a gift.",
+      "Fill it as you like!\" he said.",
+      "The fox put many eggs in it, not noticing the tiny hole at the bottom.",
+      "As he hurried home, the eggs dropped out one by one on his way home.",
+      "The __7__ eggs led the farmer straight to where the fox lived!",
+      "When the fox fell asleep, the farmer took his missing eggs and went back home __8__ , singing beautiful songs.",
+      "The next morning, the angry fox returned.",
+      "\"You tricked me!\" he shouted.",
+      "Mr.",
+      "Chen answered, \"A thief loses what he gets.",
+      "But if you can protect my field by preventing mice from causing damage, I can share corn with you.\" The fox agreed.",
+      "Finally, he became the farm's __9__ , not just getting food as before but also helping to keep the farm free from mouse-related problems.",
+      "This change showed that through __10__ both the farmer and the fox could benefit (获益)."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "sell",
+          "buy",
+          "give",
+          "borrow"
+        ],
+        "answer": "sell",
+        "clues": [
+          "market the next",
+          "them for money in",
+          "He planned to"
+        ],
+        "clueTypes": {
+          "market the next": "逻辑线索·时间",
+          "them for money in": "语境线索·邻近取证",
+          "He planned to": "语境线索·邻近取证"
+        },
+        "explanation": "原题1。圈出空格附近的“He planned to；them for money in”，结合句意、语法和上下文逻辑，可确定选 sell；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "非谓语动词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "resting",
+          "moving",
+          "dying",
+          "missing"
+        ],
+        "answer": "missing",
+        "clues": [
+          "because he found that",
+          "took his missing",
+          "free from mouse-related problems"
+        ],
+        "clueTypes": {
+          "because he found that": "逻辑线索·因果",
+          "took his missing": "复现线索·原词复现",
+          "free from mouse-related problems": "复现线索·同场复现"
+        },
+        "explanation": "原题2。圈出空格附近的“his surprise, one was；because he found that”，结合句意、语法和上下文逻辑，可确定选 missing；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "hidden",
+          "stolen",
+          "eaten",
+          "thrown"
+        ],
+        "answer": "stolen",
+        "clues": [
+          "the eggs may be"
+        ],
+        "clueTypes": {
+          "the eggs may be": "语境线索·邻近取证"
+        },
+        "explanation": "原题3。圈出空格附近的“the eggs may be”，结合句意、语法和上下文逻辑，可确定选 stolen；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "pick out",
+          "take out",
+          "find out",
+          "set out"
+        ],
+        "answer": "find out",
+        "clues": [
+          "a big tree to",
+          "the truth"
+        ],
+        "clueTypes": {
+          "a big tree to": "语境线索·邻近取证",
+          "the truth": "语境线索·邻近取证"
+        },
+        "explanation": "原题4。圈出空格附近的“a big tree to；the truth”，结合句意、语法和上下文逻辑，可确定选 find out；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "quickly",
+          "worriedly",
+          "quietly",
+          "angrily"
+        ],
+        "answer": "quietly",
+        "clues": [
+          "Though the fox couldn't believe",
+          "of shouting angrily, he smiled",
+          "he heard, he agreed happily"
+        ],
+        "clueTypes": {
+          "Though the fox couldn't believe": "情感线索·情感一致",
+          "of shouting angrily, he smiled": "情感线索·情感一致",
+          "he heard, he agreed happily": "情感线索·情感一致"
+        },
+        "explanation": "原题5。圈出空格附近的“to the chicken shed；without making any sound”，结合句意、语法和上下文逻辑，可确定选 quietly；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "lazy",
+          "lonely",
+          "worried",
+          "weak"
+        ],
+        "answer": "weak",
+        "clues": [
+          "You look"
+        ],
+        "clueTypes": {
+          "You look": "语境线索·邻近取证"
+        },
+        "explanation": "原题6。圈出空格附近的“You look”，结合句意、语法和上下文逻辑，可确定选 weak；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "strange",
+          "marked",
+          "broken",
+          "common"
+        ],
+        "answer": "marked",
+        "clues": [
+          "in the market",
+          "eggs led the farmer"
+        ],
+        "clueTypes": {
+          "in the market": "复现线索·派生词复现",
+          "eggs led the farmer": "语境线索·邻近取证"
+        },
+        "explanation": "原题7。圈出空格附近的“eggs led the farmer”，结合句意、语法和上下文逻辑，可确定选 marked；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "happily",
+          "patiently",
+          "politely",
+          "carefully"
+        ],
+        "answer": "happily",
+        "clues": [
+          "he agreed happily",
+          "of shouting angrily, he smiled"
+        ],
+        "clueTypes": {
+          "he agreed happily": "复现线索·原词复现",
+          "of shouting angrily, he smiled": "复现线索·同场复现"
+        },
+        "explanation": "原题8。圈出空格附近的“and went back home；singing beautiful songs”，结合句意、语法和上下文逻辑，可确定选 happily；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "creator",
+          "protector",
+          "visitor",
+          "director"
+        ],
+        "answer": "protector",
+        "clues": [
+          "you can protect",
+          "as before but",
+          "Finally, he became"
+        ],
+        "clueTypes": {
+          "you can protect": "复现线索·派生词复现",
+          "as before but": "逻辑线索·转折",
+          "Finally, he became": "逻辑线索·时间"
+        },
+        "explanation": "原题9。圈出空格附近的“he became the farm's；not just getting food”，结合句意、语法和上下文逻辑，可确定选 protector；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "fighting",
+          "tricking",
+          "competition",
+          "teamwork"
+        ],
+        "answer": "teamwork",
+        "clues": [
+          "change showed that through",
+          "both the farmer and",
+          "farmer and the"
+        ],
+        "clueTypes": {
+          "change showed that through": "语境线索·邻近取证",
+          "both the farmer and": "语境线索·邻近取证",
+          "farmer and the": "逻辑线索·并列"
+        },
+        "explanation": "原题10。圈出空格附近的“change showed that through；both the farmer and”，结合句意、语法和上下文逻辑，可确定选 teamwork；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "二模真题",
+    "exam_year": 2025,
+    "tone_markers": [],
+    "update_tag": "广州校内真题首批导入",
+    "update_seq": 14
+  },
+  {
+    "id": "cloze-广州-二模2026-015",
+    "freezeClues": true,
+    "title_cn": "2025年广东省广州市荔湾区广雅中学中考二模英语试卷",
+    "title_en": "",
+    "level": "中考",
+    "difficulty": "中等",
+    "article_type": "记叙文",
+    "lesson_type": "校内真题",
+    "region": "广州",
+    "source": "2025年广东省广州市荔湾区广雅中学中考二模英语试卷",
+    "tags": [
+      "中考",
+      "二模真题",
+      "完形填空",
+      "上下文逻辑"
+    ],
+    "first_sentence": "One quiet afternoon, a man who loved to be peaceful took his small boat out onto a lake.",
+    "last_sentence": "\"The anger was already inside me, just waiting for something to wake it up.\" From that day on, whenever something troubled him, he would __9__ and remind himself, \"It's just an empty boat.\" And just like that, he learned to stay __10__ , no matter what bumped into him.",
+    "tone": {
+      "answer": "积极",
+      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+    },
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 19,
+    "article_text_with_blanks": "One quiet afternoon, a man who loved to be peaceful took his small boat out onto a lake. The water was as __1__ as glass, with the only sounds from the insects on the trees.\nHe rowed to the middle of the lake, where no one could __2__ him. Then, he tied his boat to a rock, closed his eyes, and took a deep breath. So quiet, he thought, feeling completely at peace.\nTime passed, and the man sat still, __3__ the quiet air. His mind moved from one thought to another as he relaxed, feeling the warmth of the sun and the gentle movement of the boat.\nBut suddenly, bump! Something knocked into his boat.\nHis eyes stayed closed, but his __4__ beat faster. \"Who tries to run into my quiet time?\" he thought, feeling his __5__ rise. He was ready to shout at whoever was in the other boat.\nBut when he finally opened his eyes, he was __6__ . There was no one there. The boat that had bumped into his was completely __7__ . The wind had carried it across the lake, and it had floated right into him all on its own.\nThe man stared at the boat, and slowly, his anger disappeared. \"The __8__ didn't make me angry,\" he realized. \"The anger was already inside me, just waiting for something to wake it up.\"\nFrom that day on, whenever something troubled him, he would __9__ and remind himself, \"It's just an empty boat.\" And just like that, he learned to stay __10__ , no matter what bumped into him.",
+    "reading_sentences": [
+      "One quiet afternoon, a man who loved to be peaceful took his small boat out onto a lake.",
+      "The water was as __1__ as glass, with the only sounds from the insects on the trees.",
+      "He rowed to the middle of the lake, where no one could __2__ him.",
+      "Then, he tied his boat to a rock, closed his eyes, and took a deep breath.",
+      "So quiet, he thought, feeling completely at peace.",
+      "Time passed, and the man sat still, __3__ the quiet air.",
+      "His mind moved from one thought to another as he relaxed, feeling the warmth of the sun and the gentle movement of the boat.",
+      "But suddenly, bump!",
+      "Something knocked into his boat.",
+      "His eyes stayed closed, but his __4__ beat faster.",
+      "\"Who tries to run into my quiet time?\" he thought, feeling his __5__ rise.",
+      "He was ready to shout at whoever was in the other boat.",
+      "But when he finally opened his eyes, he was __6__ .",
+      "There was no one there.",
+      "The boat that had bumped into his was completely __7__ .",
+      "The wind had carried it across the lake, and it had floated right into him all on its own.",
+      "The man stared at the boat, and slowly, his anger disappeared.",
+      "\"The __8__ didn't make me angry,\" he realized.",
+      "\"The anger was already inside me, just waiting for something to wake it up.\" From that day on, whenever something troubled him, he would __9__ and remind himself, \"It's just an empty boat.\" And just like that, he learned to stay __10__ , no matter what bumped into him."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "calm",
+          "clear",
+          "beautiful",
+          "cool"
+        ],
+        "answer": "calm",
+        "clues": [
+          "The water was as",
+          "as glass, with the"
+        ],
+        "clueTypes": {
+          "The water was as": "语境线索·邻近取证",
+          "as glass, with the": "语境线索·邻近取证"
+        },
+        "explanation": "原题1。圈出空格附近的“The water was as；as glass, with the”，结合句意、语法和上下文逻辑，可确定选 calm；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "see",
+          "hear",
+          "know",
+          "trouble"
+        ],
+        "answer": "trouble",
+        "clues": [
+          "where no one could",
+          "whenever something troubled",
+          "He was ready to shout"
+        ],
+        "clueTypes": {
+          "where no one could": "情感线索·情感一致",
+          "whenever something troubled": "复现线索·派生词复现",
+          "He was ready to shout": "情感线索·情感一致"
+        },
+        "explanation": "原题2。圈出空格附近的“where no one could”，结合句意、语法和上下文逻辑，可确定选 trouble；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "非谓语动词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "breaking",
+          "enjoying",
+          "polluting",
+          "leaving"
+        ],
+        "answer": "enjoying",
+        "clues": [
+          "the man sat still",
+          "the quiet air"
+        ],
+        "clueTypes": {
+          "the man sat still": "语境线索·邻近取证",
+          "the quiet air": "语境线索·邻近取证"
+        },
+        "explanation": "原题3。圈出空格附近的“the man sat still；the quiet air”，结合句意、语法和上下文逻辑，可确定选 enjoying；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "hands",
+          "eyes",
+          "heart",
+          "feet"
+        ],
+        "answer": "heart",
+        "clues": [
+          "stayed closed, but his",
+          "beat faster"
+        ],
+        "clueTypes": {
+          "stayed closed, but his": "逻辑线索·转折",
+          "beat faster": "语境线索·邻近取证"
+        },
+        "explanation": "原题4。圈出空格附近的“stayed closed, but his；beat faster”，结合句意、语法和上下文逻辑，可确定选 heart；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "happiness",
+          "confidence",
+          "anger",
+          "worry"
+        ],
+        "answer": "anger",
+        "clues": [
+          "and slowly, his anger disappeared"
+        ],
+        "clueTypes": {
+          "and slowly, his anger disappeared": "复现线索·原词复现"
+        },
+        "explanation": "原题5。圈出空格附近的“he thought, feeling his”，结合句意、语法和上下文逻辑，可确定选 anger；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "excited",
+          "mad",
+          "surprised",
+          "relaxed"
+        ],
+        "answer": "surprised",
+        "clues": [
+          "But when he finally",
+          "But suddenly",
+          "his eyes, he was"
+        ],
+        "clueTypes": {
+          "But when he finally": "逻辑线索·转折",
+          "But suddenly": "复现线索·同场复现",
+          "his eyes, he was": "语境线索·邻近取证"
+        },
+        "explanation": "原题6。圈出空格附近的“his eyes, he was”，结合句意、语法和上下文逻辑，可确定选 surprised；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "empty",
+          "wooden",
+          "dark",
+          "new"
+        ],
+        "answer": "empty",
+        "clues": [
+          "just an empty",
+          "no one",
+          "and slowly, his anger disappeared"
+        ],
+        "clueTypes": {
+          "just an empty": "复现线索·原词复现",
+          "no one": "情感线索·情感一致",
+          "and slowly, his anger disappeared": "复现线索·同场复现"
+        },
+        "explanation": "原题7。圈出空格附近的“into his was completely”，结合句意、语法和上下文逻辑，可确定选 empty；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "wind",
+          "rock",
+          "person",
+          "boat"
+        ],
+        "answer": "boat",
+        "clues": [
+          "at the boat",
+          "didn't make me angry"
+        ],
+        "clueTypes": {
+          "at the boat": "复现线索·原词复现",
+          "didn't make me angry": "语境线索·邻近取证"
+        },
+        "explanation": "原题8。圈出空格附近的“didn't make me angry”，结合句意、语法和上下文逻辑，可确定选 boat；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "shout",
+          "sleep",
+          "wake",
+          "smile"
+        ],
+        "answer": "smile",
+        "clues": [
+          "already inside me, just waiting",
+          "he relaxed, feeling the warmth",
+          "make me angry,\" he realized"
+        ],
+        "clueTypes": {
+          "already inside me, just waiting": "情感线索·情感一致",
+          "he relaxed, feeling the warmth": "复现线索·同场复现",
+          "make me angry,\" he realized": "情感线索·情感一致"
+        },
+        "explanation": "原题9。圈出空格附近的“troubled him, he would；and remind himself, \"It's”，结合句意、语法和上下文逻辑，可确定选 smile；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "hopeful",
+          "peaceful",
+          "successful",
+          "careful"
+        ],
+        "answer": "peaceful",
+        "clues": [
+          "completely at peace",
+          "to be peaceful",
+          "already inside me, just waiting"
+        ],
+        "clueTypes": {
+          "completely at peace": "复现线索·派生词复现",
+          "to be peaceful": "复现线索·原词复现",
+          "already inside me, just waiting": "复现线索·同场复现"
+        },
+        "explanation": "原题10。圈出空格附近的“he learned to stay；no matter what bumped”，结合句意、语法和上下文逻辑，可确定选 peaceful；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "二模真题",
+    "exam_year": 2025,
+    "tone_markers": [],
+    "update_tag": "广州校内真题首批导入",
+    "update_seq": 15
+  },
+  {
+    "id": "cloze-广州-九上期中汇编-014",
+    "freezeClues": true,
+    "title_cn": "九上期中汇编 Passage 14",
+    "title_en": "Family traditions are simple but precious treasures for every family.",
+    "level": "九上",
+    "difficulty": "中等",
+    "article_type": "记叙文",
+    "lesson_type": "校内真题",
+    "region": "广州",
+    "source": "九上期中汇编 Passage 14",
+    "tags": [
+      "九上",
+      "校级真题",
+      "完形填空",
+      "上下文逻辑"
+    ],
+    "first_sentence": "Family traditions are simple but precious treasures for every family.",
+    "last_sentence": "Nothing in the world is more __10__ than the love and guidance from our family.",
+    "tone": {
+      "answer": "积极",
+      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+    },
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 19,
+    "article_text_with_blanks": "Family traditions are simple but precious treasures for every family. In my family, we keep a warm tradition of weekly family sharing time. Every Saturday evening, my parents and I sit together to talk about our days and share our feelings.\nLast week, I faced a small problem at school. I argued with my deskmate and felt upset all day. I was too awkward to express my thoughts bravely. During our family sharing time, I plucked up my courage and told my parents the whole thing __1__ .\nInstead of blaming me, my parents listened to me patiently. They taught me to stay __2__ when facing disagreements and learn to communicate with others unselfishly. They said every conflict can be solved with sincere talk and good manners, and it is a great __3__ to give up communication.\nI took their useful tips and put them into __4__ the next day. I took the initiative to talk with my deskmate and cleared up our misunderstanding. We became close friends again. This small change made me feel __5__ relaxed and joyful.\nI truly realize that family traditions are not strict rules, but warm guidance. They __6__ us to be positive and kind all the time. These warm family moments always stay __7__ in my mind. They greatly __8__ my bond with my family and help me grow into a person with good __9__ .\nNothing in the world is more __10__ than the love and guidance from our family.",
+    "reading_sentences": [
+      "Family traditions are simple but precious treasures for every family.",
+      "In my family, we keep a warm tradition of weekly family sharing time.",
+      "Every Saturday evening, my parents and I sit together to talk about our days and share our feelings.",
+      "Last week, I faced a small problem at school.",
+      "I argued with my deskmate and felt upset all day.",
+      "I was too awkward to express my thoughts bravely.",
+      "During our family sharing time, I plucked up my courage and told my parents the whole thing __1__ .",
+      "Instead of blaming me, my parents listened to me patiently.",
+      "They taught me to stay __2__ when facing disagreements and learn to communicate with others unselfishly.",
+      "They said every conflict can be solved with sincere talk and good manners, and it is a great __3__ to give up communication.",
+      "I took their useful tips and put them into __4__ the next day.",
+      "I took the initiative to talk with my deskmate and cleared up our misunderstanding.",
+      "We became close friends again.",
+      "This small change made me feel __5__ relaxed and joyful.",
+      "I truly realize that family traditions are not strict rules, but warm guidance.",
+      "They __6__ us to be positive and kind all the time.",
+      "These warm family moments always stay __7__ in my mind.",
+      "They greatly __8__ my bond with my family and help me grow into a person with good __9__ .",
+      "Nothing in the world is more __10__ than the love and guidance from our family."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "honestly",
+          "easily",
+          "proudly",
+          "silently"
+        ],
+        "answer": "honestly",
+        "clues": [
+          "parents the whole thing"
+        ],
+        "clueTypes": {
+          "parents the whole thing": "语境线索·邻近取证"
+        },
+        "explanation": "原题1。圈出空格附近的“parents the whole thing”，结合句意、语法和上下文逻辑，可确定选 honestly；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "positive",
+          "awkward",
+          "ashamed",
+          "nervous"
+        ],
+        "answer": "positive",
+        "clues": [
+          "to be positive",
+          "when facing disagreements and",
+          "taught me to stay"
+        ],
+        "clueTypes": {
+          "to be positive": "复现线索·原词复现",
+          "when facing disagreements and": "语境线索·邻近取证",
+          "taught me to stay": "语境线索·邻近取证"
+        },
+        "explanation": "原题2。圈出空格附近的“taught me to stay；when facing disagreements and”，结合句意、语法和上下文逻辑，可确定选 positive；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "prize",
+          "shame",
+          "tradition",
+          "choice"
+        ],
+        "answer": "shame",
+        "clues": [
+          "to give up communication",
+          "it is a great"
+        ],
+        "clueTypes": {
+          "to give up communication": "语境线索·邻近取证",
+          "it is a great": "语境线索·邻近取证"
+        },
+        "explanation": "原题3。圈出空格附近的“it is a great；to give up communication”，结合句意、语法和上下文逻辑，可确定选 shame；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "practice",
+          "power",
+          "season",
+          "effort"
+        ],
+        "answer": "practice",
+        "clues": [
+          "the next day"
+        ],
+        "clueTypes": {
+          "the next day": "逻辑线索·时间"
+        },
+        "explanation": "原题4。圈出空格附近的“and put them into；the next day”，结合句意、语法和上下文逻辑，可确定选 practice；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "indeed",
+          "hardly",
+          "nervously",
+          "nearly"
+        ],
+        "answer": "indeed",
+        "clues": [
+          "change made me feel",
+          "relaxed and joyful"
+        ],
+        "clueTypes": {
+          "change made me feel": "语境线索·邻近取证",
+          "relaxed and joyful": "语境线索·邻近取证"
+        },
+        "explanation": "原题5。圈出空格附近的“change made me feel；relaxed and joyful”，结合句意、语法和上下文逻辑，可确定选 indeed；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "force",
+          "guide",
+          "cheat",
+          "warn"
+        ],
+        "answer": "guide",
+        "clues": [
+          "us to be positive"
+        ],
+        "clueTypes": {
+          "us to be positive": "语境线索·邻近取证"
+        },
+        "explanation": "原题6。圈出空格附近的“us to be positive”，结合句意、语法和上下文逻辑，可确定选 guide；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "fresh",
+          "huge",
+          "cute",
+          "bright"
+        ],
+        "answer": "fresh",
+        "clues": [
+          "family moments always stay",
+          "in my mind"
+        ],
+        "clueTypes": {
+          "family moments always stay": "语境线索·邻近取证",
+          "in my mind": "语境线索·邻近取证"
+        },
+        "explanation": "原题7。圈出空格附近的“family moments always stay；in my mind”，结合句意、语法和上下文逻辑，可确定选 fresh；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "strengthen",
+          "lower",
+          "remove",
+          "balance"
+        ],
+        "answer": "strengthen",
+        "clues": [
+          "my bond with my",
+          "They greatly"
+        ],
+        "clueTypes": {
+          "my bond with my": "语境线索·邻近取证",
+          "They greatly": "语境线索·邻近取证"
+        },
+        "explanation": "原题8。圈出空格附近的“They greatly；my bond with my”，结合句意、语法和上下文逻辑，可确定选 strengthen；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "hooks",
+          "ethics",
+          "tents",
+          "skills"
+        ],
+        "answer": "ethics",
+        "clues": [
+          "a person with good"
+        ],
+        "clueTypes": {
+          "a person with good": "语境线索·邻近取证"
+        },
+        "explanation": "原题9。圈出空格附近的“a person with good”，结合句意、语法和上下文逻辑，可确定选 ethics；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "energetic",
+          "relaxed",
+          "powerful",
+          "successful"
+        ],
+        "answer": "powerful",
+        "clues": [
+          "than the love and",
+          "the world is more",
+          "love and guidance"
+        ],
+        "clueTypes": {
+          "than the love and": "语境线索·邻近取证",
+          "the world is more": "语境线索·邻近取证",
+          "love and guidance": "逻辑线索·并列"
+        },
+        "explanation": "原题10。圈出空格附近的“the world is more；than the love and”，结合句意、语法和上下文逻辑，可确定选 powerful；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "校级真题",
+    "exam_year": null,
+    "tone_markers": [],
+    "update_tag": "广州校内真题首批导入",
+    "update_seq": 14
+  },
+  {
+    "id": "cloze-广州-九上期中汇编-015",
+    "freezeClues": true,
+    "title_cn": "九上期中汇编 Passage 15",
+    "title_en": "",
+    "level": "九上",
+    "difficulty": "较难",
+    "article_type": "记叙文",
+    "lesson_type": "校内真题",
+    "region": "广州",
+    "source": "九上期中汇编 Passage 15",
+    "tags": [
+      "九上",
+      "校级真题",
+      "完形填空",
+      "上下文逻辑"
+    ],
+    "first_sentence": "William used to be a kid who never shared his true thoughts with others.",
+    "last_sentence": "To his surprise, he found that the friendship became even stronger!",
+    "tone": {
+      "answer": "转折变化",
+      "reason": "William 从不敢表达不同意见，到坦诚表达并发现友谊反而更牢固。",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "shape_reason": "William 从不敢表达不同意见，到坦诚表达并发现友谊反而更牢固。"
+    },
+    "route_summary": {
+      "线索词优先": 9,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 17,
+    "article_text_with_blanks": "William used to be a kid who never shared his true thoughts with others. He always had the same ideas on everything his friends said.\nOne day, he and his friends were __1__ whether middle school students should bring phones to school. His friends all thought they should. William didn't agree, but he was afraid to express his thoughts. Finally, he chose to __2__ them. However, always agreeing with others made him feel unhappy, so he gathered __3__ to tell his mom about this.\n\"I just can't tell people what I really think or want. It's too __4__ for me.\" said William. His mom smiled and handed him a __5__ —The Analects of Confucius (《论语》). When he read the words \"Gentlemen have __6__ but disagree; flunkies (小人) agree but have no peace.\" he didn't understand and asked his mom. \"It means gentlemen achieve harmony but they don't just __7__ agree with others. They have their own __8__ and can tell the truth bravely. Flunkies agree easily, but they don't really work together.\" his mom explained.\nSuddenly, William realized that having __9__ ideas wasn't a bad thing. And he started to __10__ his own thoughts bravely. To his surprise, he found that the friendship became even stronger!",
+    "reading_sentences": [
+      "William used to be a kid who never shared his true thoughts with others.",
+      "He always had the same ideas on everything his friends said.",
+      "One day, he and his friends were __1__ whether middle school students should bring phones to school.",
+      "His friends all thought they should.",
+      "William didn't agree, but he was afraid to express his thoughts.",
+      "Finally, he chose to __2__ them.",
+      "However, always agreeing with others made him feel unhappy, so he gathered __3__ to tell his mom about this.",
+      "\"I just can't tell people what I really think or want.",
+      "It's too __4__ for me.\" said William.",
+      "His mom smiled and handed him a __5__ —The Analects of Confucius (《论语》).",
+      "When he read the words \"Gentlemen have __6__ but disagree; flunkies (小人) agree but have no peace.\" he didn't understand and asked his mom.",
+      "\"It means gentlemen achieve harmony but they don't just __7__ agree with others.",
+      "They have their own __8__ and can tell the truth bravely.",
+      "Flunkies agree easily, but they don't really work together.\" his mom explained.",
+      "Suddenly, William realized that having __9__ ideas wasn't a bad thing.",
+      "And he started to __10__ his own thoughts bravely.",
+      "To his surprise, he found that the friendship became even stronger!"
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "非谓语动词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "discussing",
+          "imagining",
+          "introducing",
+          "training"
+        ],
+        "answer": "discussing",
+        "clues": [
+          "One day, he",
+          "whether middle school students",
+          "and his friends were"
+        ],
+        "clueTypes": {
+          "One day, he": "逻辑线索·时间",
+          "whether middle school students": "语境线索·邻近取证",
+          "and his friends were": "语境线索·邻近取证"
+        },
+        "explanation": "原题1。圈出空格附近的“and his friends were；whether middle school students”，结合句意、语法和上下文逻辑，可确定选 discussing；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "worry about",
+          "wait for",
+          "agree with",
+          "point out"
+        ],
+        "answer": "agree with",
+        "clues": [
+          "However, always agreeing",
+          "William didn't agree",
+          "Finally, he chose to"
+        ],
+        "clueTypes": {
+          "However, always agreeing": "复现线索·派生词复现",
+          "William didn't agree": "复现线索·原词复现",
+          "Finally, he chose to": "逻辑线索·时间"
+        },
+        "explanation": "原题2。圈出空格附近的“Finally, he chose to”，结合句意、语法和上下文逻辑，可确定选 agree with；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "chance",
+          "time",
+          "memory",
+          "courage"
+        ],
+        "answer": "courage",
+        "clues": [
+          "unhappy, so he gathered",
+          "However, always agreeing with"
+        ],
+        "clueTypes": {
+          "unhappy, so he gathered": "逻辑线索·因果",
+          "However, always agreeing with": "逻辑线索·转折"
+        },
+        "explanation": "原题3。圈出空格附近的“unhappy, so he gathered；to tell his mom”，结合句意、语法和上下文逻辑，可确定选 courage；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "polite",
+          "difficult",
+          "important",
+          "interesting"
+        ],
+        "answer": "difficult",
+        "clues": [
+          "others made him feel unhappy",
+          "agree, but he was afraid",
+          "It's too"
+        ],
+        "clueTypes": {
+          "others made him feel unhappy": "情感线索·情感一致",
+          "agree, but he was afraid": "情感线索·情感一致",
+          "It's too": "语境线索·邻近取证"
+        },
+        "explanation": "原题4。圈出空格附近的“It's too；for me”，结合句意、语法和上下文逻辑，可确定选 difficult；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "survey",
+          "report",
+          "diary",
+          "book"
+        ],
+        "answer": "book",
+        "clues": [
+          "The Analects of Confucius",
+          "and handed him a"
+        ],
+        "clueTypes": {
+          "The Analects of Confucius": "同位解释",
+          "and handed him a": "熟词生义"
+        },
+        "explanation": "原题5。圈出空格附近的“and handed him a；The Analects of Confucius”，结合句意、语法和上下文逻辑，可确定选 book；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "danger",
+          "trouble",
+          "peace",
+          "regret"
+        ],
+        "answer": "peace",
+        "clues": [
+          "have no peace",
+          "the words \"Gentlemen have",
+          "but disagree; flunkies"
+        ],
+        "clueTypes": {
+          "have no peace": "复现线索·原词复现",
+          "the words \"Gentlemen have": "语境线索·邻近取证",
+          "but disagree; flunkies": "语境线索·邻近取证"
+        },
+        "explanation": "原题6。圈出空格附近的“the words \"Gentlemen have；but disagree; flunkies”，结合句意、语法和上下文逻辑，可确定选 peace；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "副词",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "clearly",
+          "blindly",
+          "secretly",
+          "angrily"
+        ],
+        "answer": "blindly",
+        "clues": [
+          "but they don't just",
+          "agree with others"
+        ],
+        "clueTypes": {
+          "but they don't just": "逻辑线索·转折",
+          "agree with others": "语境线索·邻近取证"
+        },
+        "explanation": "原题7。圈出空格附近的“but they don't just；agree with others”，结合句意、语法和上下文逻辑，可确定选 blindly；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "interests",
+          "reasons",
+          "ideas",
+          "gifts"
+        ],
+        "answer": "ideas",
+        "clues": [
+          "They have their own",
+          "and can tell the"
+        ],
+        "clueTypes": {
+          "They have their own": "语境线索·邻近取证",
+          "and can tell the": "语境线索·邻近取证"
+        },
+        "explanation": "原题8。圈出空格附近的“They have their own；and can tell the”，结合句意、语法和上下文逻辑，可确定选 ideas；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "creative",
+          "magic",
+          "different",
+          "true"
+        ],
+        "answer": "different",
+        "clues": [
+          "Suddenly, William realized",
+          "had the same",
+          "William realized that having"
+        ],
+        "clueTypes": {
+          "Suddenly, William realized": "逻辑线索·时间",
+          "had the same": "复现线索·反义词复现",
+          "William realized that having": "语境线索·邻近取证"
+        },
+        "explanation": "原题9。圈出空格附近的“William realized that having；ideas wasn't a bad”，结合句意、语法和上下文逻辑，可确定选 different；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "express",
+          "accept",
+          "find",
+          "guess"
+        ],
+        "answer": "express",
+        "clues": [
+          "afraid to express",
+          "his own thoughts bravely",
+          "And he started to"
+        ],
+        "clueTypes": {
+          "afraid to express": "复现线索·原词复现",
+          "his own thoughts bravely": "语境线索·邻近取证",
+          "And he started to": "语境线索·邻近取证"
+        },
+        "explanation": "原题10。圈出空格附近的“And he started to；his own thoughts bravely”，结合句意、语法和上下文逻辑，可确定选 express；其余选项与该处语境或搭配不符。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "校级真题",
+    "exam_year": null,
+    "tone_markers": [],
+    "update_tag": "广州校内真题首批导入",
+    "update_seq": 15
   }
 ];

@@ -95,7 +95,6 @@ function loadStore() {
   catch (e) { return _memStore; }
 }
 function saveStore(s) {
-  if (window.ThreeSiteSync) setTimeout(function(){window.ThreeSiteSync.queue();},0);
   if (!_probeStorage()) { _memStore = s; return; }
   try { localStorage.setItem(accountStorageKey(STORAGE_KEY), JSON.stringify(s)); }
   catch (e) { _memStore = s; }
@@ -695,7 +694,7 @@ function hideSentenceTip() { var t = $("sentenceTip"); if (t) { t.hidden = true;
 
 /* ---------- 3. 词汇卡：双击单词 → 有道词典 + 收录 ---------- */
 function loadVocab() { try { return JSON.parse(localStorage.getItem(accountStorageKey("cloze_vocab")) || "[]"); } catch (e) { return []; } }
-function saveVocab(v) { if (window.ThreeSiteSync) setTimeout(function(){window.ThreeSiteSync.queue();},0); try { localStorage.setItem(accountStorageKey("cloze_vocab"), JSON.stringify(v)); } catch (e) {} }
+function saveVocab(v) { try { localStorage.setItem(accountStorageKey("cloze_vocab"), JSON.stringify(v)); } catch (e) {} }
 function openYoudao(word) { window.open("https://dict.youdao.com/search?q=" + encodeURIComponent(word), "_blank", "noopener"); }
 function addVocab(word, ctx) {
   word = String(word || "").toLowerCase().replace(/[^a-z'\-]/g, "");
@@ -833,10 +832,26 @@ function recordAnswer(q, isCorrect) {
   saveStore(s);
 }
 
-/* ==================== 搭配识别（移植） ==================== */
-var COLLOCATION_DICT = (window.CLOZE_COLLOCATIONS || []).concat(window.CLOZE_COLLOCATIONS_2 || []);
-var COLLOCATION_RULES = window.CLOZE_PATTERN_RULES || [];
-var LEMMA_MAP = window.CLOZE_LEMMA_MAP || {};
+/* ==================== 搭配识别（移植） ====================
+ * collocation-rules.js 现在是登录后才动态加载的，
+ * 所以这里的词典变量在脚本首次执行时可能还是空的。
+ * 规则文件就绪后由 rebuildCollocationDict() 重建一次。
+ */
+var COLLOCATION_DICT = [];
+var COLLOCATION_RULES = [];
+var LEMMA_MAP = {};
+var _dictBuilt = false;
+
+/* 规则文件加载完成后重建词典与倒排索引 */
+function rebuildCollocationDict() {
+  COLLOCATION_DICT = (window.CLOZE_COLLOCATIONS || []).concat(window.CLOZE_COLLOCATIONS_2 || []);
+  COLLOCATION_RULES = window.CLOZE_PATTERN_RULES || [];
+  LEMMA_MAP = window.CLOZE_LEMMA_MAP || {};
+  _LEMMA_CACHE.clear();
+  buildDictTokens();
+  buildDictIndex();
+  _dictBuilt = true;
+}
 
 /* lemma() 会被 matchDict 的内层循环调用上万次，每次都要跑 4 个正则。
  * 词元是有限集合，用 Map 缓存后同一批词只算一次。 */
@@ -874,13 +889,7 @@ function wordTokens(text) {
   return String(text || "").toLowerCase().split(/[^\w']+/).filter(Boolean);
 }
 
-var DICT_TOKENS = COLLOCATION_DICT.map(function (item) {
-  return {
-    raw: item.p, zh: item.zh || "",
-    tokens: String(item.p || "").toLowerCase().split(/\s+/).filter(Boolean),
-    lemma: String(item.p || "").toLowerCase().split(/\s+/).filter(Boolean).map(function (w) { return w === "*" ? "*" : lemma(w); })
-  };
-});
+var DICT_TOKENS = [];
 var DICT_WILDCARD = ["*", "sb", "sth", "one's", "doing"];
 var DICT_PLACEHOLDER = ["*", "sb", "sth", "one's"];
 
@@ -898,7 +907,21 @@ var DICT_PLACEHOLDER = ["*", "sb", "sth", "one's"];
 var DICT_INDEX = new Map();        // 词元 -> 条目下标数组
 var DICT_WILDCARD_ENTRIES = [];    // 含通配符的条目下标
 
-(function buildDictIndex() {
+/* 把搭配词典转成 token 形式 */
+function buildDictTokens() {
+  DICT_TOKENS = COLLOCATION_DICT.map(function (item) {
+    return {
+      raw: item.p, zh: item.zh || "",
+      tokens: String(item.p || "").toLowerCase().split(/\s+/).filter(Boolean),
+      lemma: String(item.p || "").toLowerCase().split(/\s+/).filter(Boolean).map(function (w) { return w === "*" ? "*" : lemma(w); })
+    };
+  });
+}
+
+/* 建立倒排索引（必须在 buildDictTokens 之后调用） */
+function buildDictIndex() {
+  DICT_INDEX = new Map();
+  DICT_WILDCARD_ENTRIES = [];
   for (var i = 0; i < DICT_TOKENS.length; i++) {
     var T = DICT_TOKENS[i].lemma;
     if (T.length < 2) continue;               // 单 token 条目不参与词典匹配
@@ -912,7 +935,7 @@ var DICT_WILDCARD_ENTRIES = [];    // 含通配符的条目下标
     }
     if (hasWild) DICT_WILDCARD_ENTRIES.push(i);
   }
-})();
+}
 
 /** 取 before∪after 的词元能召回的候选条目下标（升序，保持原遍历顺序语义） */
 function dictCandidates(before, after) {
@@ -3639,7 +3662,7 @@ function renderProgress() {
 /* 题库（builtin-lessons.js，10MB）改为动态加载：
  * 未登录用户打开页面不必下载它，登录验证通过后再注入 script 标签。
  * 加载完成后调用 init()，再渲染主页。 */
-var LESSONS_SRC = "builtin-lessons.js?v=20261107j";
+var LESSONS_SRC = "builtin-lessons.js?v=20261124-tone1";
 var _lessonsReady = false;
 var _resourcesReady = false;
 
@@ -3667,7 +3690,12 @@ function loadAppResources() {
     "quiz-300.js?v=20261107k",
     "handout-content.js?v=20261107k"
   ];
-  return Promise.all(sources.map(loadScriptOnce)).then(function () { _resourcesReady = true; });
+  return Promise.all(sources.map(loadScriptOnce)).then(function () {
+    /* 规则文件就绪后重建搭配词典与倒排索引
+     * （它们在 app.js 首次执行时还不存在，因为规则文件是动态加载的） */
+    rebuildCollocationDict();
+    _resourcesReady = true;
+  });
 }
 
 function loadLessons() {

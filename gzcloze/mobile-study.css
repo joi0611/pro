@@ -1,0 +1,500 @@
+.sheet-handle { display: none; }
+@media screen and (max-width: 880px) {  /* ---------- 整屏锁定：页面本身不滚，只有原文区和解析区各自内部滚 ---------- */
+  body.study-mobile {
+    height: 100% !important;
+    overflow: hidden !important;
+    overscroll-behavior: none;
+    touch-action: manipulation;
+  }
+  /* 做题视图里顶栏整体让位（原文要位置） */
+  body.study-mobile .topbar { display: none !important; }
+
+  body.study-mobile .container {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body.study-mobile #studyView.active {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100vh;
+    height: 100dvh;
+    padding: 0;
+  }
+
+  /* ---------- 顶部三条：工具条 / 篇目信息 / 题号，全部压扁 ---------- */
+  body.study-mobile .study-toolbar {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 6px 10px;
+    gap: 8px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    z-index: 5;
+  }
+  body.study-mobile .study-toolbar .back-btn {
+    margin: 0;
+    padding: 4px 10px;
+    min-height: 30px;
+    font-size: 12.5px;
+  }
+  body.study-mobile .study-toolbar .print-btn { display: none !important; }
+  body.study-mobile .study-tabs { padding: 2px; border-radius: 8px; }
+  body.study-mobile .study-tab { padding: 4px 10px; font-size: 12px; border-radius: 6px; }
+
+  body.study-mobile .lesson-meta {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 4px 10px;
+    gap: 6px;
+    font-size: 10.5px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+  }
+  body.study-mobile .lesson-meta strong {
+    font-size: 12px;
+    max-width: 54vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  body.study-mobile .lesson-meta > span { flex: 0 0 auto; color: var(--ink-3); }
+  body.study-mobile .lesson-meta .progress-tag {
+    margin-left: auto;
+    padding: 1px 8px;
+    font-size: 10px;
+  }
+
+  body.study-mobile #qNav {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 5px 10px;
+    gap: 6px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    box-shadow: none;
+    background: var(--panel);
+  }
+  body.study-mobile .q-nav-label { display: none; }
+  body.study-mobile .q-nav-grid {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 5px;
+    padding-bottom: 1px;
+    scrollbar-width: none;
+  }
+  body.study-mobile .q-nav-grid::-webkit-scrollbar { display: none; }
+  body.study-mobile .q-nav-item {
+    width: 27px;
+    height: 27px;
+    font-size: 12px;
+    border-radius: 7px;
+  }
+  body.study-mobile .q-nav-timer { padding: 2px 8px; font-size: 11px; }
+
+  /* ---------- 分屏主体：上半原文 / 下半解析 ---------- */
+  body.study-mobile #practicePane {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    gap: 0;
+    overflow: hidden;
+  }
+  body.study-mobile #practicePane[hidden] { display: none !important; }
+
+  /* 原文区：固定上半屏，只有它自己滚 */
+  body.study-mobile .passage {
+    flex: 1 1 auto;
+    min-height: 9.5em;              /* 兜底：解析再长，原文也留 5~6 行 */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    border: 0;
+    border-radius: 0;
+    box-shadow: inset 0 -10px 10px -10px rgba(49, 46, 129, .14);
+    padding: 8px 12px 22px;
+    font-size: clamp(13px, 3.7vw, 15.6px);
+    line-height: 1.74;
+    scroll-behavior: smooth;
+    scroll-padding-top: 10px;
+  }
+  body.study-mobile .passage .blank-btn {
+    min-width: 38px;
+    min-height: 26px;
+    margin: 0 1px;
+    padding: 0 6px;
+    font-size: inherit;
+  }
+  body.study-mobile .clue-mark { padding: 0 3px; }
+
+  /* 解析面板：沉底悬浮（圆角 + 投影），与原文上下分区，绝不覆盖 */
+  body.study-mobile .question-panel {
+    flex: 0 0 auto;
+    height: 44vh;
+    height: 44dvh;
+    min-height: 128px;
+    margin: 0;
+    padding: 0 12px calc(12px + env(safe-area-inset-bottom));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    border: 0;
+    border-top: 1px solid var(--line-strong);
+    border-radius: 18px 18px 0 0;
+    background: var(--panel);
+    box-shadow: 0 -10px 26px rgba(49, 46, 129, .13);
+    position: relative;
+    z-index: 2;
+    scroll-behavior: smooth;
+  }
+
+  /* 拖拽条：常驻面板顶部，可上下拖 / 点一下在「半屏 ↔ 大屏」间切换 */
+  body.study-mobile .question-panel > .sheet-handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: sticky;
+    top: 0;
+    z-index: 6;
+    width: calc(100% + 24px);
+    height: 22px;
+    margin: 0 -12px 6px;
+    padding: 0 12px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, #fff 62%, rgba(255, 255, 255, .92));
+    cursor: ns-resize;
+    touch-action: none;
+    font-family: inherit;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  body.study-mobile .sheet-handle-bar {
+    width: 44px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--line-strong);
+  }
+  body.study-mobile .sheet-handle-hint {
+    font-size: 10px;
+    color: var(--ink-3);
+    letter-spacing: .04em;
+  }
+  body.study-mobile.sheet-dragging,
+  body.study-mobile.sheet-dragging * { cursor: ns-resize !important; }
+
+  /* ---------- 解析内容紧凑化 ---------- */
+  body.study-mobile .question-box { padding: 0; }
+  body.study-mobile .question-title {
+    gap: 6px;
+    margin: 0 0 6px;
+    padding: 0 0 6px;
+  }
+  body.study-mobile .question-title #questionNumber {
+    min-width: 26px;
+    height: 23px;
+    font-size: 12.5px;
+    border-radius: 7px;
+  }
+  body.study-mobile .question-title #questionCategory {
+    font-size: 10.5px;
+    line-height: 1.35;
+    color: var(--ink-3);
+  }
+  body.study-mobile .question-title .progress-tag {
+    margin-left: auto;
+    padding: 1px 7px;
+    font-size: 10px;
+  }
+  /* 「本题选项」与下面「选择答案」重复，手机上省掉，直接点选项 */
+  body.study-mobile #optionPreviewStep { display: none !important; }
+
+  body.study-mobile .mini-section { margin-bottom: 8px; }
+  body.study-mobile .mini-section h4 {
+    margin: 0 0 5px;
+    font-size: 11.5px;
+    letter-spacing: .02em;
+  }
+  body.study-mobile .mini-section h4 small { display: none; }
+
+  body.study-mobile .tool-guide {
+    margin-bottom: 6px;
+    font-size: 11.5px;
+    line-height: 1.55;
+  }
+  body.study-mobile .tool-guide .guide-once { display: none; }
+  body.study-mobile .tool-guide .structure { font-size: 10.5px; }
+  body.study-mobile .tool-help { width: 14px; height: 14px; font-size: 10px; }
+
+  /* 线索卡压成一行行小 chips：点一下仍能跳到原文对应高亮 */
+  body.study-mobile .clue-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  body.study-mobile .clue-pill {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    max-width: 100%;
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+  body.study-mobile .clue-pill strong {
+    display: inline;
+    padding-right: 0;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  body.study-mobile .clue-pos {
+    position: static;
+    top: auto;
+    right: auto;
+    margin-left: 0;
+    padding: 0 5px;
+    font-size: 9.5px;
+    line-height: 15px;
+  }
+  body.study-mobile .clue-pill span { font-size: 10px; line-height: 1.35; }
+  body.study-mobile .clue-pill .clue-tag { margin-left: 0; font-size: 9.5px; padding: 0 4px; }
+  body.study-mobile .clue-pill small {
+    flex: 1 0 100%;
+    margin-top: 1px;
+    font-size: 10px;
+    line-height: 1.4;
+    display: none;
+  }
+
+  /* 选项：两列大按钮，拇指好点 */
+  body.study-mobile .answer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  body.study-mobile .option {
+    padding: 7px 9px;
+    min-height: 36px;
+    font-size: 13px;
+    line-height: 1.35;
+    text-align: left;
+    border-radius: 9px;
+  }
+  body.study-mobile #checkAnswerBtn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 7px 16px;
+    min-height: 36px;
+    font-size: 13px;
+  }
+
+  body.study-mobile .sentence-check {
+    padding: 8px 10px;
+    font-size: 12.5px;
+    line-height: 1.62;
+    border-radius: 8px;
+  }
+  body.study-mobile .feedback { margin-top: 6px; font-size: 12px; }
+
+  body.study-mobile .explain-box { font-size: 12.5px; line-height: 1.66; }
+  body.study-mobile .explain-box .label { font-size: 13px; }
+  body.study-mobile .exp-line { gap: 6px; margin: 3px 0; }
+  body.study-mobile .exp-line-plain { margin: 3px 0; }
+  body.study-mobile .exp-tag { min-width: 30px; padding: 0 5px; font-size: 10.5px; line-height: 1.7; }
+  body.study-mobile .clue-list-inline { margin: 2px 0 0; padding-left: 16px; font-size: 12px; }
+  body.study-mobile .collocation { margin-top: 5px; padding: 3px 9px; font-size: 11px; }
+
+  body.study-mobile .diag-card { padding: 9px 11px; border-radius: 9px; }
+  body.study-mobile .diag-head { margin-bottom: 5px; }
+  body.study-mobile .diag-killer { font-size: 10px; padding: 1px 7px; }
+  body.study-mobile .diag-title { font-size: 12.5px; }
+  body.study-mobile .diag-why,
+  body.study-mobile .diag-look { font-size: 11.5px; line-height: 1.6; }
+  body.study-mobile .diag-others li { font-size: 11.5px; line-height: 1.55; }
+  body.study-mobile .diag-tip { font-size: 11px; margin-top: 6px; }
+
+  body.study-mobile .explain-actions { margin-top: 8px; gap: 6px; }
+  body.study-mobile .explain-actions .btn {
+    flex: 1 1 0;
+    min-height: 36px;
+    padding: 7px 10px;
+    font-size: 12.5px;
+  }
+  body.study-mobile .next-q-btn { padding: 7px 10px; }
+
+  /* 空状态 / 首尾定调：都住在下半屏的解析面板里 */
+  body.study-mobile .empty-state { padding: 2px 0 6px; font-size: 12px; line-height: 1.6; }
+  body.study-mobile .empty-state strong { font-size: 13.5px; margin-bottom: 3px; }
+  body.study-mobile .empty-state p { font-size: 11.5px; margin: 0; }
+  body.study-mobile .step-preview { display: none; }
+
+  body.study-mobile .question-panel .tone-card {
+    margin: 0 0 6px;
+    padding: 2px 0 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+  body.study-mobile .question-panel .tone-head { gap: 6px; }
+  body.study-mobile .question-panel .tone-sub { display: none; }
+  body.study-mobile .question-panel .tone-badge { font-size: 10px; padding: 1px 6px; }
+  body.study-mobile .question-panel .tone-title { font-size: 12.5px; }
+  body.study-mobile .question-panel .tone-collapse { padding: 1px 9px; font-size: 10.5px; }
+  body.study-mobile .question-panel .tone-body { margin-top: 5px; }
+
+  /* 首尾句：一行一句，超高就在格子里滚，绝不撑高面板 */
+  body.study-mobile .question-panel .tone-anchors { grid-template-columns: 1fr 1fr; gap: 5px; }
+  body.study-mobile .question-panel .tone-anchor { padding: 4px 6px; border-left-width: 2px; }
+  body.study-mobile .question-panel .tone-anchor-label { font-size: 9px; margin-bottom: 1px; }
+  body.study-mobile .question-panel .tone-anchor-text {
+    font-size: 10.5px;
+    line-height: 1.38;
+    max-height: 2.76em;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /* 曲线图在小屏上只是装饰，收起来把高度让给选项 */
+  body.study-mobile .question-panel .tone-chart { display: none; }
+
+  body.study-mobile .question-panel .tone-ask { margin-top: 5px; }
+  body.study-mobile .question-panel .tone-ask-q { margin: 0 0 4px; font-size: 11px; }
+  body.study-mobile .question-panel .tone-options { gap: 5px; }
+  body.study-mobile .question-panel .tone-opt {
+    flex: 1 1 30%;
+    min-width: 0;
+    padding: 4px 6px;
+    min-height: 28px;
+    font-size: 11.5px;
+    border-width: 1px;
+  }
+  body.study-mobile .question-panel .tone-feedback {
+    margin: 3px 0 0;
+    font-size: 10.5px;
+    line-height: 1.4;
+    min-height: 0;
+  }
+  body.study-mobile .question-panel .tone-result {
+    margin-top: 5px;
+    padding: 5px 8px;
+    border-left-width: 2px;
+  }
+  body.study-mobile .question-panel .tone-result-head { margin-bottom: 3px; gap: 6px; }
+  body.study-mobile .question-panel .tone-verdict { font-size: 11.5px; }
+  body.study-mobile .question-panel .tone-verdict-tag { display: none; }
+  body.study-mobile .question-panel .tone-reason {
+    font-size: 10.5px;
+    line-height: 1.5;
+    max-height: 4.5em;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  body.study-mobile .question-panel .tone-routes { display: none; }
+  body.study-mobile .question-panel .tone-mini { padding: 3px 9px; font-size: 11px; margin-bottom: 4px; }
+  body.study-mobile .question-panel .tone-mini-more { font-size: 10px; }
+
+  /* 定调还没做时，下半屏只留给「第一步」，别同时塞做题提示 */
+  body.study-mobile .question-panel.tone-pending #emptyState { display: none !important; }
+
+  /* 短屏（老机型 / 横屏浏览器带地址栏）再收一档 */
+  @media (max-height: 720px) {
+    body.study-mobile .passage {
+      font-size: clamp(12.2px, 3.45vw, 14.5px);
+      line-height: 1.7;
+      padding: 6px 11px 18px;
+    }
+    body.study-mobile .lesson-meta { font-size: 10px; padding: 3px 10px; }
+    body.study-mobile .q-nav-item { width: 25px; height: 25px; font-size: 11.5px; }
+    body.study-mobile .question-panel { height: 46vh; height: 46dvh; }
+  }
+
+  /* 横屏手机：改为左右分栏，避免上下都被压扁 */
+  @media (orientation: landscape) and (max-height: 560px) {
+    body.study-mobile #practicePane { flex-direction: row; }
+    body.study-mobile .passage {
+      flex: 1 1 56%;
+      min-height: 0;
+      min-width: 0;
+      border-right: 1px solid var(--line-strong);
+      box-shadow: inset -10px 0 10px -10px rgba(49, 46, 129, .12);
+    }
+    body.study-mobile .question-panel {
+      flex: 1 1 44%;
+      height: auto;
+      min-height: 0;
+      max-height: none;
+      border-top: 0;
+      border-left: 1px solid var(--line-strong);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0 10px 10px;
+    }
+    body.study-mobile .question-panel > .sheet-handle { display: none; }
+  }
+}
+
+
+@media screen and (max-width: 880px) {
+  body.study-mobile .passage { min-height: 0; }
+  body.study-mobile .question-panel { min-height: 0; }
+  body.study-mobile .question-panel > .sheet-handle { min-height: 32px; }
+  #libraryView .study-toolbar { gap: 8px; margin-bottom: 8px; }
+  #libraryView .scope-note { margin: 0 0 8px; padding: 6px 8px; font-size: 12px; line-height: 1.45; }
+  #libraryView .filter-bar { margin-bottom: 8px; padding: 6px 8px; gap: 4px; }
+  #libraryView .filter-row { display: block; }
+  #libraryView .filter-group { flex-direction: row; align-items: center; gap: 6px; min-width: 0; }
+  #libraryView .filter-label { flex: none; }
+  #libraryView .filter-chips { min-width: 0; flex-wrap: nowrap; overflow-x: auto; gap: 5px; }
+  #libraryView .filter-chip { flex: none; white-space: nowrap; min-height: 32px; padding: 3px 9px; }
+  #libraryView .filter-summary { padding: 4px 7px; font-size: 11px; }
+  #libraryView .lesson-row {
+    grid-template-columns: 27px minmax(0, 1fr) auto;
+    grid-template-areas: "no main side";
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px 6px 0;
+  }
+  #libraryView .lesson-no { grid-area: no; padding: 0; font-size: 10px; }
+  #libraryView .lesson-main { grid-area: main; min-width: 0; gap: 3px; }
+  #libraryView .lesson-main h3 { font-size: 13px; line-height: 1.35; }
+  #libraryView .lesson-side { grid-area: side; padding: 0; margin: 0; }
+  #libraryView .lesson-practice-btn { min-height: 36px; padding: 4px 8px; font-size: 12px; white-space: nowrap; }
+  #libraryView .lesson-chips { gap: 3px; margin: 0; }
+  #libraryView .lesson-chips .chip { font-size: 10px; padding: 1px 5px; line-height: 1.2; }
+}
+
+@media screen and (max-width: 880px) {
+  .container { width: 100%; padding-inline: 12px; }
+  .topbar { flex-wrap: wrap; height: auto; min-height: 0; padding: 4px 12px 0; gap: 2px 8px; }
+  .topbar .brand { min-width: 0; flex-shrink: 1; align-items: center; }
+  .topbar .brand-sub { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .topbar .nav-tabs {
+    order: 1;
+    flex: 1 1 100%;
+    min-width: 0;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .topbar .nav-tabs::-webkit-scrollbar { display: none; }
+  .topbar .nav-tab { flex: none; white-space: nowrap; font-size: 13px; padding: 8px 10px; }
+  #libraryView .lesson-practice-btn { min-width: 48px; }
+}
