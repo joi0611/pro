@@ -2012,7 +2012,7 @@ function provinceOf(r) {
 function renderKindFilters() {
   var box = $("kindFilters"); if (!box) return;
   var c = countBy(lessonStage);
-  var keys = ["七年级", "八年级", "九年级", "中考"];
+  var keys = ["七年级", "八年级", "九年级"];
   var html = ['<button class="filter-chip' + (filterState.stage === "all" ? " active" : "") +
     '" data-dim="stage" data-value="all" type="button">全部<span class="chip-num">' + library.length + '</span></button>'];
   keys.forEach(function (k) {
@@ -2282,7 +2282,11 @@ function lessonArticleType(l) {
   return ["说明文", "记叙文", "其他"].indexOf(value) >= 0 ? value : "其他";
 }
 
-function buildLessonRow(l, no, isNew) {
+function isNovemberUpload(lesson) {
+  return lesson.update_tag === "2026年11月更新";
+}
+
+function buildLessonRow(l, no) {
   var done = isDone(l.id);
   var title = String(l.source || l.title_cn || l.title || "未命名").trim();
 
@@ -2294,10 +2298,10 @@ function buildLessonRow(l, no, isNew) {
   var row = document.createElement("div");
   row.className = "lesson-row" + (done ? " done" : "");
   row.innerHTML =
-    '<div class="lesson-no">' + pad3(no) + '</div>' +
+    '<div class="lesson-no">' + no + '</div>' +
     '<div class="lesson-main">' +
       '<h3>' + escapeHtml(title) +
-        (isNew && l.update_tag ? '<span class="lesson-update-badge">' + escapeHtml(l.update_tag) + '</span>' : '') +
+        (isNovemberUpload(l) ? '<span class="lesson-update-badge lesson-upload-date">上传时间2026年11月</span>' : '') +
       '</h3>' +
       '<div class="lesson-chips">' + chips.join("") + '</div>' +
     '</div>' +
@@ -2325,9 +2329,9 @@ function renderLibrary() {
   var filtered = library.filter(matchesFilters);
   /* 按 2026 → 2018 时间倒序：新真题排前面 */
   /* 最新更新批次优先（update_seq 越大越前，同批次后导入的在前），其余按年份倒序 */
-  var maxSeq = 0;
-  library.forEach(function (l) { if ((l.update_seq || 0) > maxSeq) maxSeq = l.update_seq || 0; });
   filtered.sort(function (a, b) {
+    var uploadPriority = Number(isNovemberUpload(b)) - Number(isNovemberUpload(a));
+    if (uploadPriority) return uploadPriority;
     var qa = a.update_seq || 0, qb = b.update_seq || 0;
     if (qa !== qb) return qb - qa;
     if (qa > 0) return library.indexOf(b) - library.indexOf(a);
@@ -2338,9 +2342,7 @@ function renderLibrary() {
   if (!filtered.length) { empty.hidden = false; return; }
   empty.hidden = true;
   filtered.forEach(function (l, i) {
-    var isNovemberUpdate = l.update_tag === "2026年11月更新" &&
-      (l.update_seq || 0) >= 1 && (l.update_seq || 0) <= 6;
-    box.appendChild(buildLessonRow(l, i + 1, isNovemberUpdate));
+    box.appendChild(buildLessonRow(l, i + 1));
   });
 }
 
@@ -3662,7 +3664,7 @@ function renderProgress() {
 /* 题库（builtin-lessons.js，10MB）改为动态加载：
  * 未登录用户打开页面不必下载它，登录验证通过后再注入 script 标签。
  * 加载完成后调用 init()，再渲染主页。 */
-var LESSONS_SRC = "builtin-lessons.js?v=20261124-tone1";
+var LESSONS_SRC = "builtin-lessons.js?v=20261124-review1";
 var _lessonsReady = false;
 var _resourcesReady = false;
 

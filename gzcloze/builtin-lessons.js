@@ -79094,28 +79094,28 @@ window.BUILTIN_LESSONS = [
   {
     "id": "cloze-广州-八上综合-008",
     "freezeClues": true,
-    "title_cn": "广州执信中学期中测",
-    "title_en": "I'm Lisa.",
+    "title_cn": "2026-2027 广州越秀铁一八上英语期中考试卷",
+    "title_en": "Nova Middle School in 2095",
     "level": "八上",
     "difficulty": "较难",
     "article_type": "说明文",
     "lesson_type": "校内真题",
     "region": "广州",
-    "source": "广州执信中学期中测",
+    "source": "2026-2027 广州越秀铁一八上英语期中考试卷",
     "tags": [
       "八上",
       "期中真题",
       "完形填空",
       "上下文逻辑"
     ],
-    "first_sentence": "I'm Lisa.",
+    "first_sentence": "I'm a student from Nova Middle School and I really love it!",
     "last_sentence": "To me, it's not just a school, but a wonderful place that truly __10__ the way of learning.",
     "tone": {
       "answer": "积极",
-      "reason": "根据文章开端、事件发展与结尾情绪走向综合判断。",
-      "kind": "narrative",
-      "shape": "情境—发展—收束",
-      "shape_reason": "文章由具体情境展开，并在结尾完成事件或观点收束。"
+      "kind": "expository",
+      "shape": "观点—例证",
+      "reason": "首段用 I really love it 表达对未来学校的喜爱；中间用指纹门禁、宠物 AI 训练、传送上课、全息作业和多环境校车等例子具体说明；尾句用 changes the way of learning 回扣对学校的评价。",
+      "shape_reason": "首段用 I really love it 表达对未来学校的喜爱；中间用指纹门禁、宠物 AI 训练、传送上课、全息作业和多环境校车等例子具体说明；尾句用 changes the way of learning 回扣对学校的评价。"
     },
     "route_summary": {
       "线索词优先": 9,
@@ -79124,7 +79124,7 @@ window.BUILTIN_LESSONS = [
       "整组短语直接辨析": 1
     },
     "reading_sentence_count": 25,
-    "article_text_with_blanks": "I'm Lisa. I live in year 2095. I'm a student from Nova Middle School and I really love it!\nAt the school gate, a fingerprint recognition system helps ensure __1__ as only students and school staff can enter.\nEvery week, we have a pet training programme where students can __2__ their pets. While students are in class, AI-powered trainers teach pets problem-solving skills and even basic communication. Thanks to this, my dog Coco has become more __3__ .\nGetting to different classes is easy. We just step onto the teleportation (远距离传送) stand, and within a second, we __4__ at the right classroom! Floating desks can be __5__ around the room, which allows students to rearrange their learning space easily.\nAs for homework, we complete it on a holographic (全息图的) interactive board, which provides real-time feedback and detailed explanations. We have already replaced pens with the power of our __6__ to control digital ink, making writing faster and easier. This means we don't need to move or say a single word. We just need to be focused and think clearly.\nPE classes are great! My favourite part is the underwater racetrack, where we ride small underwater motorcycles. In a health class, we sometimes use wheelchairs. It helps us better understand the great difficulties faced by the __7__ students in class. Field trips are also exciting. Our school bus is __8__ a special kind of strong glass. It runs on clean energy and can __9__ travel on land, underwater, in the air, and even in space. Even a primary school student can operate it without any difficulty. Underwater, it swims like a fish, and in the sky, it flies like a bird.\nWhat do you think of my school? To me, it's not just a school, but a wonderful place that truly __10__ the way of learning.",
+    "article_text_with_blanks": "I'm Lisa. I live in year 2095. I'm a student from Nova Middle School and I really love it!\nAt the school gate, a fingerprint recognition system helps ensure __1__ as only students and school staff can enter.\nEvery week, we have a pet training programme where students can __2__ their pets. While students are in class, AI-powered trainers teach pets problem-solving skills and even basic communication. Thanks to this, my dog Coco has become more __3__.\nGetting to different classes is easy. We just step onto the teleportation (远距离传送) stand, and within a second, we __4__ at the right classroom! Floating desks can be __5__ around the room, which allows students to rearrange their learning space easily.\nAs for homework, we complete it on a holographic (全息图的) interactive board, which provides real-time feedback and detailed explanations. We have already replaced pens with the power of our __6__ to control digital ink, making writing faster and easier. This means we don't need to move or say a single word. We just need to be focused and think clearly.\nPE classes are great! My favourite part is the underwater racetrack, where we ride small underwater motorcycles. In a health class, we sometimes use wheelchairs. It helps us better understand the great difficulties faced by the __7__ students in class. Field trips are also exciting. Our school bus is __8__ a special kind of strong glass. It runs on clean energy and can __9__ travel on land, underwater, in the air, and even in space. Even a primary school student can operate it without any difficulty. Underwater, it swims like a fish, and in the sky, it flies like a bird.\nWhat do you think of my school? To me, it's not just a school, but a wonderful place that truly __10__ the way of learning.",
     "reading_sentences": [
       "I'm Lisa.",
       "I live in year 2095.",
@@ -79132,7 +79132,7 @@ window.BUILTIN_LESSONS = [
       "At the school gate, a fingerprint recognition system helps ensure __1__ as only students and school staff can enter.",
       "Every week, we have a pet training programme where students can __2__ their pets.",
       "While students are in class, AI-powered trainers teach pets problem-solving skills and even basic communication.",
-      "Thanks to this, my dog Coco has become more __3__ .",
+      "Thanks to this, my dog Coco has become more __3__.",
       "Getting to different classes is easy.",
       "We just step onto the teleportation (远距离传送) stand, and within a second, we __4__ at the right classroom!",
       "Floating desks can be __5__ around the room, which allows students to rearrange their learning space easily.",
@@ -79166,16 +79166,12 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "safety",
         "clues": [
-          "recognition system helps ensure",
-          "as only students and",
-          "students and school"
+          "only students and school staff can enter"
         ],
         "clueTypes": {
-          "recognition system helps ensure": "语境线索·邻近取证",
-          "as only students and": "语境线索·邻近取证",
-          "students and school": "逻辑线索·并列"
+          "only students and school staff can enter": "语境线索·邻近取证"
         },
-        "explanation": "原题21。圈出空格附近的“recognition system helps ensure；as only students and”，结合句意、语法和上下文逻辑，可确定选 safety；其余选项与该处语境或搭配不符。",
+        "explanation": "原题28。门禁只允许学生和教职工进入，说明指纹识别的作用是保障安全，选 B safety。as 引出这项判断的依据。convenience、success、happiness 都不是这项出入限制直接保障的结果。",
         "collocation": null
       },
       {
@@ -79191,14 +79187,12 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "bring",
         "clues": [
-          "programme where students can",
-          "their pets"
+          "pet training programme"
         ],
         "clueTypes": {
-          "programme where students can": "语境线索·邻近取证",
-          "their pets": "语境线索·邻近取证"
+          "pet training programme": "语境线索·邻近取证"
         },
-        "explanation": "原题22。圈出空格附近的“programme where students can；their pets”，结合句意、语法和上下文逻辑，可确定选 bring；其余选项与该处语境或搭配不符。",
+        "explanation": "原题29。学校每周有宠物训练活动，学生把宠物带到学校参加，选 C bring。take 通常表示从参照地点带走，carry 强调携带动作，hold 强调拿着或抱着。",
         "collocation": null
       },
       {
@@ -79214,12 +79208,14 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "intelligent",
         "clues": [
-          "Coco has become more"
+          "problem-solving skills and even basic communication",
+          "Thanks to this"
         ],
         "clueTypes": {
-          "Coco has become more": "语境线索·邻近取证"
+          "problem-solving skills and even basic communication": "逻辑线索·因果",
+          "Thanks to this": "语境线索·邻近取证"
         },
-        "explanation": "原题23。圈出空格附近的“Coco has become more”，结合句意、语法和上下文逻辑，可确定选 intelligent；其余选项与该处语境或搭配不符。",
+        "explanation": "原题30。Thanks to this 承接上句，训练让宠物学会解决问题和基本交流，因此 Coco 变得更聪明，选 C intelligent。训练内容没有指向重要、精力充沛或忠诚。",
         "collocation": null
       },
       {
@@ -79235,16 +79231,14 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "arrive",
         "clues": [
-          "we don't need to move",
-          "It runs",
+          "within a second",
           "at the right classroom"
         ],
         "clueTypes": {
-          "we don't need to move": "复现线索·同场复现",
-          "It runs": "复现线索·同场复现",
+          "within a second": "逻辑线索·时间",
           "at the right classroom": "语境线索·邻近取证"
         },
-        "explanation": "原题24。圈出空格附近的“within a second, we；at the right classroom”，结合句意、语法和上下文逻辑，可确定选 arrive；其余选项与该处语境或搭配不符。",
+        "explanation": "原题31。踏上传送台，不到一秒就到达指定教室。结合 at the right classroom，arrive at 表示到达具体地点，选 D arrive。stay 和 rest 是停留、休息，meet 通常对应见面。",
         "collocation": null
       },
       {
@@ -79260,16 +79254,12 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "moved",
         "clues": [
-          "need to move",
-          "It runs",
-          "around the room, which"
+          "rearrange their learning space easily"
         ],
         "clueTypes": {
-          "need to move": "复现线索·派生词复现",
-          "It runs": "复现线索·同场复现",
-          "around the room, which": "语境线索·邻近取证"
+          "rearrange their learning space easily": "语境线索·邻近取证"
         },
-        "explanation": "原题25。圈出空格附近的“Floating desks can be；around the room, which”，结合句意、语法和上下文逻辑，可确定选 moved；其余选项与该处语境或搭配不符。",
+        "explanation": "原题32。后半句说学生可以重新布置学习空间，说明桌子可以在教室里移动位置，选 A moved。lifted 只强调抬起，pulled 强调拉这一方式，flowed 用于流动且不适合此处被动结构。",
         "collocation": null
       },
       {
@@ -79285,14 +79275,12 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "minds",
         "clues": [
-          "to control digital ink",
-          "the power of our"
+          "be focused and think clearly"
         ],
         "clueTypes": {
-          "to control digital ink": "语境线索·邻近取证",
-          "the power of our": "语境线索·邻近取证"
+          "be focused and think clearly": "语境线索·邻近取证"
         },
-        "explanation": "原题26。圈出空格附近的“the power of our；to control digital ink”，结合句意、语法和上下文逻辑，可确定选 minds；其余选项与该处语境或搭配不符。",
+        "explanation": "原题33。后文说无需移动、无需开口，只要集中注意力、清晰思考，因此用思维来控制数字墨水，选 D minds。hands、voices、eyes 分别指用手、声音、眼睛，均缺少依据。",
         "collocation": null
       },
       {
@@ -79308,14 +79296,12 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "disabled",
         "clues": [
-          "difficulties faced by the",
-          "students in class"
+          "we sometimes use wheelchairs"
         ],
         "clueTypes": {
-          "difficulties faced by the": "语境线索·邻近取证",
-          "students in class": "语境线索·邻近取证"
+          "we sometimes use wheelchairs": "语境线索·邻近取证"
         },
-        "explanation": "原题27。圈出空格附近的“difficulties faced by the；students in class”，结合句意、语法和上下文逻辑，可确定选 disabled；其余选项与该处语境或搭配不符。",
+        "explanation": "原题34。健康课上体验轮椅是为了理解有行动障碍的同学遇到的困难，选 D disabled。轮椅线索不支持 lonely、blind 或 poor。",
         "collocation": null
       },
       {
@@ -79331,14 +79317,12 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "made of",
         "clues": [
-          "Our school bus is",
-          "a special kind of"
+          "a special kind of strong glass"
         ],
         "clueTypes": {
-          "Our school bus is": "语境线索·邻近取证",
-          "a special kind of": "语境线索·邻近取证"
+          "a special kind of strong glass": "语境线索·邻近取证"
         },
-        "explanation": "原题28。圈出空格附近的“Our school bus is；a special kind of”，结合句意、语法和上下文逻辑，可确定选 made of；其余选项与该处语境或搭配不符。",
+        "explanation": "原题35。四项都是 made 开头的整组短语，先判断后接的是材质、产地还是用途。strong glass 是校车仍可辨认的材质，选 B made of。made from 常用于原料加工后难以辨认，made in 表产地，made for 表用途或对象。",
         "collocation": null
       },
       {
@@ -79354,16 +79338,12 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "easily",
         "clues": [
-          "learning space easily",
-          "faster and easier",
-          "to different classes is easy"
+          "without any difficulty"
         ],
         "clueTypes": {
-          "learning space easily": "复现线索·原词复现",
-          "faster and easier": "复现线索·派生词复现",
-          "to different classes is easy": "复现线索·同场复现"
+          "without any difficulty": "复现线索·同义复现"
         },
-        "explanation": "原题29。圈出空格附近的“clean energy and can；travel on land, underwater”，结合句意、语法和上下文逻辑，可确定选 easily；其余选项与该处语境或搭配不符。",
+        "explanation": "原题36。下句说连小学生操作校车都毫不费力，without any difficulty 对应 easily，选 A。四种行驶环境说明校车适用范围广；文中没有强调速度慢、动作突然或程度完全。",
         "collocation": null
       },
       {
@@ -79379,25 +79359,23 @@ window.BUILTIN_LESSONS = [
         ],
         "answer": "changes",
         "clues": [
-          "but a wonderful place",
-          "wonderful place that truly",
-          "the way of learning"
+          "the way of learning",
+          "holographic (全息图的) interactive board"
         ],
         "clueTypes": {
-          "but a wonderful place": "逻辑线索·转折",
-          "wonderful place that truly": "语境线索·邻近取证",
-          "the way of learning": "语境线索·邻近取证"
+          "the way of learning": "语境线索·邻近取证",
+          "holographic (全息图的) interactive board": "语境线索·邻近取证"
         },
-        "explanation": "原题30。圈出空格附近的“wonderful place that truly；the way of learning”，结合句意、语法和上下文逻辑，可确定选 changes；其余选项与该处语境或搭配不符。",
+        "explanation": "原题37。尾句总结前文：传送上课、全息作业和意念控制墨水改变了学习方式，选 B changes。discovers、follows、represents 分别表示发现、遵循、代表，不能概括这些实例。",
         "collocation": null
       }
     ],
     "missingAnswer": false,
     "source_kind": "期中真题",
-    "exam_year": null,
+    "exam_year": 2026,
     "tone_markers": [],
-    "update_tag": "广州校内真题首批导入",
-    "update_seq": 8
+    "update_tag": "2026年11月更新",
+    "update_seq": 185
   },
   {
     "id": "cloze-广州-八上综合-010",
@@ -261652,5 +261630,2494 @@ window.BUILTIN_LESSONS = [
     "tone_markers": [],
     "update_tag": "广州校内真题首批导入",
     "update_seq": 15
+  },
+  {
+    "id": "cloze-广州-九上-2026-省实期中",
+    "freezeClues": true,
+    "title_cn": "2026-2027 广州九上省实期中考试",
+    "title_en": "The Rope and the Knots",
+    "level": "九上",
+    "difficulty": "中等",
+    "article_type": "记叙文",
+    "lesson_type": "校内真题",
+    "region": "广州",
+    "source": "2026-2027 广州九上省实期中考试",
+    "tags": [
+      "九上",
+      "期中真题",
+      "完形填空",
+      "上下文逻辑"
+    ],
+    "first_sentence": "One morning, a teacher was giving a lesson in a middle school.",
+    "last_sentence": "We need to first know the __10__ of a problem, and only then can we solve it as soon as possible.",
+    "tone": {
+      "answer": "转折变化",
+      "reason": "老师先演示直接拉绳，绳结反而更紧；学生提出先看清绳结是怎样打成的，再动手解开。结尾由解绳转到生活中的问题，点明做法应从急于动手转向先找原因。",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "shape_reason": "老师先演示直接拉绳，绳结反而更紧；学生提出先看清绳结是怎样打成的，再动手解开。结尾由解绳转到生活中的问题，点明做法应从急于动手转向先找原因。"
+    },
+    "route_summary": {
+      "线索词优先": 9,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 21,
+    "article_text_with_blanks": "One morning, a teacher was giving a lesson in a middle school. All of the students stared at him in __1__ because the teacher had a rope in his hand.\nAt the beginning of the class, the teacher didn't say anything. Instead, he started tying knots (打结) in the rope. Then he asked, \"I have tied three knots in this rope. Is it the __2__ rope I had before?\"\nOne of the students replied, \"It's not __3__ to answer. The rope seems to have __4__ from the outside, but from the inside it is still the same rope as it was before.\" In fact, it has three knots which were not there before.\n\"Yes, you are right!\" the teacher said. \"Now, I will untie these knots.\" Then he began to __5__ both ends of the rope to make it straight.\nSeeing that, the student said, \"You are not untying them. You are making them tighter (更紧的).\"\nThe teacher stopped and asked, \"What can I do to untie these __6__?\"\nSome students replied, \"You have to look at them closely so that you will __7__ how they are tied. Then you can try to untie them.\"\nThe teacher said, \"That's what I want to hear. In our lives, many people want to __8__ problems, but they don't even know the reasons that cause the problems. Just like the saying goes, everything must be checked __9__ before we act. We need to first know the __10__ of a problem, and only then can we solve it as soon as possible.\"",
+    "reading_sentences": [
+      "One morning, a teacher was giving a lesson in a middle school.",
+      "All of the students stared at him in __1__ because the teacher had a rope in his hand.",
+      "At the beginning of the class, the teacher didn't say anything.",
+      "Instead, he started tying knots (打结) in the rope.",
+      "Then he asked, \"I have tied three knots in this rope.",
+      "Is it the __2__ rope I had before?\"",
+      "One of the students replied, \"It's not __3__ to answer.",
+      "The rope seems to have __4__ from the outside, but from the inside it is still the same rope as it was before.",
+      "In fact, it has three knots which were not there before.",
+      "\"Yes, you are right!\" the teacher said.",
+      "\"Now, I will untie these knots.",
+      "Then he began to __5__ both ends of the rope to make it straight.",
+      "Seeing that, the student said, \"You are not untying them.",
+      "You are making them tighter (更紧的).\"",
+      "The teacher stopped and asked, \"What can I do to untie these __6__?\"",
+      "Some students replied, \"You have to look at them closely so that you will __7__ how they are tied.",
+      "Then you can try to untie them.\"",
+      "The teacher said, \"That's what I want to hear.",
+      "In our lives, many people want to __8__ problems, but they don't even know the reasons that cause the problems.",
+      "Just like the saying goes, everything must be checked __9__ before we act.",
+      "We need to first know the __10__ of a problem, and only then can we solve it as soon as possible.\""
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "上下文逻辑",
+        "route": "线索词优先",
+        "options": [
+          "danger",
+          "trouble",
+          "surprise",
+          "peace"
+        ],
+        "answer": "surprise",
+        "clues": [
+          "because the teacher had a rope in his hand"
+        ],
+        "clueTypes": {
+          "because the teacher had a rope in his hand": "逻辑线索·因果"
+        },
+        "explanation": "原题11。because 后给出原因。老师上课时手里拿着绳子，学生都盯着他，说明他们对不寻常的情景感到惊讶。in surprise 表示「惊讶地」；文中没有危险、麻烦或平静的情境。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "same",
+          "new",
+          "long",
+          "thick"
+        ],
+        "answer": "same",
+        "clues": [
+          "it is still the same rope"
+        ],
+        "clueTypes": {
+          "it is still the same rope": "复现线索·原词复现"
+        },
+        "explanation": "原题12。学生的回答直接复现 the same rope，说明老师在问打结后的绳子是否仍是原来那根。new、long、thick 分别讲新旧、长短或粗细，偏离问题。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "上下文逻辑",
+        "route": "线索词优先",
+        "options": [
+          "easy",
+          "wise",
+          "hard",
+          "useful"
+        ],
+        "answer": "easy",
+        "clues": [
+          "but from the inside it is still the same rope"
+        ],
+        "clueTypes": {
+          "but from the inside it is still the same rope": "逻辑线索·转折"
+        },
+        "explanation": "原题13。but 把外观变化和绳子本身不变并列对照，因此这个问题不容易回答。注意空前有 not，选 easy；not hard 会变成「不难」，与下文解释相反。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "上下文逻辑",
+        "route": "线索词优先",
+        "options": [
+          "remained",
+          "changed",
+          "grown",
+          "disappeared"
+        ],
+        "answer": "changed",
+        "clues": [
+          "three knots which were not there before",
+          "it is still the same rope"
+        ],
+        "clueTypes": {
+          "three knots which were not there before": "逻辑线索·转折",
+          "it is still the same rope": "语境线索·邻近取证"
+        },
+        "explanation": "原题14。原来没有的三个结改变了绳子外观，后文 but 又说明它仍是同一根绳子。选 changed；remained 与转折不合，grown 和 disappeared 均与绳子的实际变化不符。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "上下文逻辑",
+        "route": "线索词优先",
+        "options": [
+          "pull",
+          "push",
+          "put",
+          "pick"
+        ],
+        "answer": "pull",
+        "clues": [
+          "You are making them tighter",
+          "both ends of the rope"
+        ],
+        "clueTypes": {
+          "You are making them tighter": "逻辑线索·因果",
+          "both ends of the rope": "语境线索·邻近取证"
+        },
+        "explanation": "原题15。学生指出结变紧了，反推老师是在往外拉绳子两端。选 pull；push 是推，put 是放，pick 是挑选或拾取，都不能说明绳结为什么收紧。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "ropes",
+          "marks",
+          "ends",
+          "knots"
+        ],
+        "answer": "knots",
+        "clues": [
+          "I will untie these knots"
+        ],
+        "clueTypes": {
+          "I will untie these knots": "复现线索·原词复现"
+        },
+        "explanation": "原题16。前文老师已说要解开这些结，untie 和 these 都指向同一对象，选 knots。绳子两端是老师拉的部位，绳结才是要解开的部位。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "上下文逻辑",
+        "route": "线索词优先",
+        "options": [
+          "realize",
+          "wonder",
+          "guess",
+          "imagine"
+        ],
+        "answer": "realize",
+        "clues": [
+          "look at them closely"
+        ],
+        "clueTypes": {
+          "look at them closely": "逻辑线索·目的"
+        },
+        "explanation": "原题17。so that 表目的：仔细观察是为了弄明白结是怎样打成的。选 realize；wonder 表示想知道，guess 和 imagine 表示猜测或想象，未达到弄清楚的目的。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "ask for",
+          "deal with",
+          "depend on",
+          "try out"
+        ],
+        "answer": "deal with",
+        "clues": [
+          "solve it as soon as possible"
+        ],
+        "clueTypes": {
+          "solve it as soon as possible": "复现线索·同义复现"
+        },
+        "explanation": "原题18。四个选项都是整组短语。尾句 solve it 表明人们想处理或解决问题，选 deal with。ask for 指请求，depend on 指依靠，try out 指试用。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "slowly",
+          "quietly",
+          "carefully",
+          "completely"
+        ],
+        "answer": "carefully",
+        "clues": [
+          "look at them closely"
+        ],
+        "clueTypes": {
+          "look at them closely": "复现线索·同义复现"
+        },
+        "explanation": "原题19。把前面的解绳方法带回尾段：look at them closely 对应行动前仔细检查，选 carefully。slowly 和 quietly 说速度或声音，completely 强调完整程度。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "plan",
+          "result",
+          "cause",
+          "secret"
+        ],
+        "answer": "cause",
+        "clues": [
+          "the reasons that cause the problems"
+        ],
+        "clueTypes": {
+          "the reasons that cause the problems": "复现线索·同义复现"
+        },
+        "explanation": "原题20。前文说许多人连引起问题的原因都不知道。尾句要求先弄清问题的成因，the cause of a problem 与上文呼应，选 cause；result 是结果，plan 是计划，secret 是秘密。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "source_kind": "期中真题",
+    "exam_year": 2026,
+    "tone_markers": [],
+    "update_tag": "2026年11月更新",
+    "update_seq": 186
+  },
+  {
+    "id": "cloze-广州-七上-2026-广州黄广附七上期中",
+    "title_cn": "2026-2027 广州黄广附七上期中",
+    "title_en": "Minor Snow",
+    "source": "2026-2027 广州黄广附七上期中",
+    "level": "七上",
+    "region": "广州",
+    "difficulty": "中等",
+    "lesson_type": "校内真题",
+    "article_type": "说明文",
+    "source_kind": "期中真题",
+    "exam_year": 2026,
+    "tags": [
+      "七上",
+      "期中真题",
+      "完形填空"
+    ],
+    "freezeClues": true,
+    "first_sentence": "The Chinese lunar calendar has 24 solar terms.",
+    "last_sentence": "It __10__ us better understand traditional Chinese culture and enjoy the beauty of nature.",
+    "tone": {
+      "answer": "积极",
+      "kind": "expository",
+      "shape": "现象—说明",
+      "reason": "先介绍小雪的节气顺序和日期，再从天气、农事、饮食和雪景展开，最后回扣节气的文化意义。",
+      "shape_reason": "先介绍小雪的节气顺序和日期，再从天气、农事、饮食和雪景展开，最后回扣节气的文化意义。"
+    },
+    "tone_markers": [],
+    "route_summary": {
+      "线索词优先": 9,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 1
+    },
+    "reading_sentence_count": 19,
+    "article_text_with_blanks": "The Chinese lunar calendar has 24 solar terms. Minor Snow is the 20th one and usually __1__ around November 22nd.\nWhen Minor Snow comes, the temperature (温度) gets __2__. The air becomes cooler. In many places, there may be a __3__ snow. The snowflakes are small and soft. Farmers are busy preparing for the cold months. They harvest the last crops and keep food like cabbages and carrots. They also make sure their animals have __4__ places to live.\nDuring Minor Snow, people focus on staying healthy. They cook warm and healthy __5__. Mutton soup is __6__ because it warms the body. Some families make sweet porridge (粥). This porridge gives people __7__ and helps them stay warm.\nThe scene during Minor Snow is beautiful. The leaves of the trees are like nice pictures. The __8__ of the land covered with snow is amazing and it __9__ a silver blanket (毯子). Minor Snow shows us the quiet and warm side of nature. It __10__ us better understand traditional Chinese culture and enjoy the beauty of nature.",
+    "reading_sentences": [
+      "The Chinese lunar calendar has 24 solar terms.",
+      "Minor Snow is the 20th one and usually __1__ around November 22nd.",
+      "When Minor Snow comes, the temperature (温度) gets __2__.",
+      "The air becomes cooler.",
+      "In many places, there may be a __3__ snow.",
+      "The snowflakes are small and soft.",
+      "Farmers are busy preparing for the cold months.",
+      "They harvest the last crops and keep food like cabbages and carrots.",
+      "They also make sure their animals have __4__ places to live.",
+      "During Minor Snow, people focus on staying healthy.",
+      "They cook warm and healthy __5__.",
+      "Mutton soup is __6__ because it warms the body.",
+      "Some families make sweet porridge (粥).",
+      "This porridge gives people __7__ and helps them stay warm.",
+      "The scene during Minor Snow is beautiful.",
+      "The leaves of the trees are like nice pictures.",
+      "The __8__ of the land covered with snow is amazing and it __9__ a silver blanket (毯子).",
+      "Minor Snow shows us the quiet and warm side of nature.",
+      "It __10__ us better understand traditional Chinese culture and enjoy the beauty of nature."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "goes",
+          "starts",
+          "comes",
+          "leaves"
+        ],
+        "answer": "comes",
+        "clues": [
+          "When Minor Snow comes"
+        ],
+        "clueTypes": {
+          "When Minor Snow comes": "复现线索·原词复现"
+        },
+        "explanation": "原题16。下句用 comes 写小雪到来。本句说节气通常在某日前后到来，复现 comes；starts 虽可表示开始，却没有下句的直接复现支持。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "lower",
+          "hotter",
+          "warmer",
+          "higher"
+        ],
+        "answer": "lower",
+        "clues": [
+          "The air becomes cooler"
+        ],
+        "clueTypes": {
+          "The air becomes cooler": "复现线索·同义复现"
+        },
+        "explanation": "原题17。空气变凉与气温降低相对应，选 lower；其余三项指变热或升高。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "heavy",
+          "little",
+          "big",
+          "thick"
+        ],
+        "answer": "little",
+        "clues": [
+          "Minor Snow is the 20th one"
+        ],
+        "clueTypes": {
+          "Minor Snow is the 20th one": "语境线索·邻近取证"
+        },
+        "explanation": "原题18。a little snow 表示「少量的雪」，a little 整体修饰不可数名词 snow。文中语境是节气小雪及少量降雪。small and soft 描写雪花的形态，单靠雪花大小不能判断降雪量。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "cold",
+          "quiet",
+          "freezing",
+          "warm"
+        ],
+        "answer": "warm",
+        "clues": [
+          "preparing for the cold months"
+        ],
+        "clueTypes": {
+          "preparing for the cold months": "语境线索·邻近取证"
+        },
+        "explanation": "原题19。农民为寒冷月份做准备，确保牲畜住在暖和的地方，选 warm；quiet 不能回应保暖需要，cold 和 freezing 与保暖相反。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "meals",
+          "snacks",
+          "drinks",
+          "snakes"
+        ],
+        "answer": "meals",
+        "clues": [
+          "Some families make sweet porridge"
+        ],
+        "clueTypes": {
+          "Some families make sweet porridge": "语境线索·邻近取证"
+        },
+        "explanation": "原题20。羊肉汤和甜粥是下文列举的暖身食物，meals 能概括语境；snacks、drinks 的范围不符，snakes 与例子无关。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "上下文逻辑",
+        "route": "线索词优先",
+        "options": [
+          "popular",
+          "clear",
+          "bright",
+          "calm"
+        ],
+        "answer": "popular",
+        "clues": [
+          "because it warms the body"
+        ],
+        "clueTypes": {
+          "because it warms the body": "逻辑线索·因果"
+        },
+        "explanation": "原题21。because 给出羊肉汤受欢迎的原因：它能暖身。clear、bright 和 calm 无法与这个原因形成合理因果。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "courage",
+          "trust",
+          "energy",
+          "skill"
+        ],
+        "answer": "energy",
+        "clues": [
+          "helps them stay warm"
+        ],
+        "clueTypes": {
+          "helps them stay warm": "语境线索·邻近取证"
+        },
+        "explanation": "原题22。粥是食物，能提供能量并帮助保暖。courage、trust 和 skill 指勇气、信任、技能。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "sound",
+          "view",
+          "trip",
+          "colour"
+        ],
+        "answer": "view",
+        "clues": [
+          "The scene during Minor Snow is beautiful"
+        ],
+        "clueTypes": {
+          "The scene during Minor Snow is beautiful": "复现线索·同义复现"
+        },
+        "explanation": "原题23。scene 与 view 呼应，雪盖大地是看到的景象。sound 指声音，trip 指旅行，colour 仅指颜色。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "looks up",
+          "looks for",
+          "looks at",
+          "looks like"
+        ],
+        "answer": "looks like",
+        "clues": [
+          "a silver blanket"
+        ],
+        "clueTypes": {
+          "a silver blanket": "语境线索·邻近取证"
+        },
+        "explanation": "原题24。把雪地比作银毯，需要 looks like 表示「看起来像」。其他短语分别表示查找或抬头看、寻找、看向。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "solves",
+          "practises",
+          "makes",
+          "asks"
+        ],
+        "answer": "makes",
+        "clues": [
+          "better understand traditional Chinese culture"
+        ],
+        "clueTypes": {
+          "better understand traditional Chinese culture": "语境线索·邻近取证"
+        },
+        "explanation": "原题25。空后是 us + understand，且句意是小雪使我们更理解传统文化，选 makes，结构为 make sb. do。asks 要接 ask sb. to do。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "update_tag": "2026年11月更新",
+    "update_seq": 187
+  },
+  {
+    "id": "cloze-广州-九上-2026-海珠六中集团九上期中考试",
+    "title_cn": "2026-2027 海珠六中集团九上期中考试",
+    "title_en": "The Tree Peony",
+    "source": "2026-2027 海珠六中集团九上期中考试",
+    "level": "九上",
+    "region": "广州",
+    "difficulty": "中等",
+    "lesson_type": "校内真题",
+    "article_type": "记叙文",
+    "source_kind": "期中真题",
+    "exam_year": 2026,
+    "tags": [
+      "九上",
+      "期中真题",
+      "完形填空"
+    ],
+    "freezeClues": true,
+    "first_sentence": "When I was nine, my grandfather gave me a small seed.",
+    "last_sentence": "The lesson wasn’t really about gardening; it was about learning to trust the process, to value slow development, and to believe some things are worth __10__.",
+    "tone": {
+      "answer": "转折变化",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "reason": "作者先期待种子很快长大，等不到发芽时转为失望，后来坚持照料直至牡丹开花，最终理解真正的成长需要时间与耐心。",
+      "shape_reason": "作者先期待种子很快长大，等不到发芽时转为失望，后来坚持照料直至牡丹开花，最终理解真正的成长需要时间与耐心。"
+    },
+    "tone_markers": [],
+    "route_summary": {
+      "线索词优先": 8,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 2
+    },
+    "reading_sentence_count": 22,
+    "article_text_with_blanks": "When I was nine, my grandfather gave me a small seed. “Plant it,” he said, “but know that it will take time to grow into what it is meant to be.” I was __1__ at first, expecting quick results like the sunflowers I’d grown the summer before. I planted it in a corner of the garden and __2__ it daily.\nWeeks passed, then months. __3__ appeared above the soil. I began to feel disappointed. “Maybe it’s dead,” I told my grandfather. He simply smiled and said, “Some things require faith and __4__.” Though I didn’t want to, I still kept watering the empty patch of earth every day.\nA year later, a tiny green shoot finally came out. It grew slowly—painfully slowly. During my secondary school years, that plant became a symbol of my own __5__. There were times I wanted to give up on both the plant and myself, especially when there was too much stress. But remembering my grandfather’s words, I kept going.\nFive years after planting, it finally bloomed (开花). The sight took my breath away: a fantastic tree peony with flowers as large as dinner plates. All those years of __6__ finally paid off!\nMy grandfather __7__ the following spring, but he left me with more than just a beautiful plant. He taught me that the most __8__ things in life — character, wisdom, meaningful relationships — all need time and patience to mature. True growth happens unseen, under the surface, where roots grow deep and strong.\nToday, whenever I face challenges that test my patience, I remember that seed, a reminder of my grandfather’s __9__. The lesson wasn’t really about gardening; it was about learning to trust the process, to value slow development, and to believe some things are worth __10__.",
+    "reading_sentences": [
+      "When I was nine, my grandfather gave me a small seed.",
+      "“Plant it,” he said, “but know that it will take time to grow into what it is meant to be.”",
+      "I was __1__ at first, expecting quick results like the sunflowers I’d grown the summer before.",
+      "I planted it in a corner of the garden and __2__ it daily.",
+      "Weeks passed, then months. __3__ appeared above the soil.",
+      "I began to feel disappointed.",
+      "“Maybe it’s dead,” I told my grandfather.",
+      "He simply smiled and said, “Some things require faith and __4__.”",
+      "Though I didn’t want to, I still kept watering the empty patch of earth every day.",
+      "A year later, a tiny green shoot finally came out.",
+      "It grew slowly—painfully slowly.",
+      "During my secondary school years, that plant became a symbol of my own __5__.",
+      "There were times I wanted to give up on both the plant and myself, especially when there was too much stress.",
+      "But remembering my grandfather’s words, I kept going.",
+      "Five years after planting, it finally bloomed (开花).",
+      "The sight took my breath away: a fantastic tree peony with flowers as large as dinner plates.",
+      "All those years of __6__ finally paid off!",
+      "My grandfather __7__ the following spring, but he left me with more than just a beautiful plant.",
+      "He taught me that the most __8__ things in life — character, wisdom, meaningful relationships — all need time and patience to mature.",
+      "True growth happens unseen, under the surface, where roots grow deep and strong.",
+      "Today, whenever I face challenges that test my patience, I remember that seed, a reminder of my grandfather’s __9__.",
+      "The lesson wasn’t really about gardening; it was about learning to trust the process, to value slow development, and to believe some things are worth __10__."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "excited",
+          "worried",
+          "surprised",
+          "frightened"
+        ],
+        "answer": "excited",
+        "clues": [
+          "expecting quick results"
+        ],
+        "clueTypes": {
+          "expecting quick results": "语境线索·邻近取证"
+        },
+        "explanation": "原题11。作者期待种子像向日葵一样很快长大，对结果满怀期待，选 excited。surprised 需要出乎意料的事件，worried 和 frightened 与这一阶段的情绪不符。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "watched",
+          "planted",
+          "watered",
+          "moved"
+        ],
+        "answer": "watered",
+        "clues": [
+          "kept watering the empty patch of earth every day"
+        ],
+        "clueTypes": {
+          "kept watering the empty patch of earth every day": "复现线索·同义复现"
+        },
+        "explanation": "原题12。后文说仍坚持每天浇水，kept watering 对应最初种下后每天浇水，选 watered。planted 已经发生，watched 和 moved 得不到后文支持。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "Something",
+          "Nothing",
+          "Anything",
+          "Everything"
+        ],
+        "answer": "Nothing",
+        "clues": [
+          "Maybe it’s dead"
+        ],
+        "clueTypes": {
+          "Maybe it’s dead": "语境线索·邻近取证"
+        },
+        "explanation": "原题13。数月过去，作者失望并怀疑种子死了，说明土面什么也没长出来。选 Nothing；其他选项不符合这处否定语境。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "luck",
+          "patience",
+          "skill",
+          "sunshine"
+        ],
+        "answer": "patience",
+        "clues": [
+          "all need time and patience to mature"
+        ],
+        "clueTypes": {
+          "all need time and patience to mature": "复现线索·原词复现"
+        },
+        "explanation": "原题14。后文用 patience 回扣爷爷的话。种了数月还未出芽，需要的是耐心；luck、skill、sunshine 都不能概括这段等待。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "success",
+          "failure",
+          "dream",
+          "growth"
+        ],
+        "answer": "growth",
+        "clues": [
+          "True growth happens unseen"
+        ],
+        "clueTypes": {
+          "True growth happens unseen": "复现线索·原词复现"
+        },
+        "explanation": "原题15。植物慢慢长大对应作者在压力下坚持、自身也在慢慢成长。尾段 True growth 回扣这一隐喻，选 growth。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "worries",
+          "pains",
+          "efforts",
+          "doubts"
+        ],
+        "answer": "efforts",
+        "clues": [
+          "finally paid off"
+        ],
+        "clueTypes": {
+          "finally paid off": "语境线索·邻近取证"
+        },
+        "explanation": "原题16。多年照料后牡丹终于开花，pay off 在此表示努力得到回报。选 efforts，担忧、痛苦或怀疑都无法概括照料和坚持。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "passed away",
+          "passed by",
+          "passed on",
+          "passed out"
+        ],
+        "answer": "passed away",
+        "clues": [
+          "he left me with more than just a beautiful plant"
+        ],
+        "clueTypes": {
+          "he left me with more than just a beautiful plant": "语境线索·邻近取证"
+        },
+        "explanation": "原题17。爷爷在次年春天去世，给作者留下了植物和人生道理，选 passed away。passed by 是经过，passed out 是昏倒。passed on 无宾语时也可委婉表示去世，因此本题 A、C 有语义重叠，按这份卷面的标注采用更常见的表达 passed away。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "expensive",
+          "immediate",
+          "valuable",
+          "simple"
+        ],
+        "answer": "valuable",
+        "clues": [
+          "character, wisdom, meaningful relationships"
+        ],
+        "clueTypes": {
+          "character, wisdom, meaningful relationships": "语境线索·邻近取证"
+        },
+        "explanation": "原题18。破折号列举品格、智慧和有意义的关系，都是人生中珍贵的事物，选 valuable。immediate 与需要时间成熟矛盾，expensive 强调价格，simple 强调简单。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "wisdom",
+          "kindness",
+          "curiosity",
+          "determination"
+        ],
+        "answer": "wisdom",
+        "clues": [
+          "He taught me"
+        ],
+        "clueTypes": {
+          "He taught me": "语境线索·邻近取证"
+        },
+        "explanation": "原题19。种子提醒作者想起爷爷教给自己的道理，回扣上段教诲及 wisdom，选 wisdom。善意、好奇或决心都无法准确概括这些教诲。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "caring for",
+          "looking for",
+          "studying for",
+          "waiting for"
+        ],
+        "answer": "waiting for",
+        "clues": [
+          "to value slow development"
+        ],
+        "clueTypes": {
+          "to value slow development": "语境线索·邻近取证"
+        },
+        "explanation": "原题20。全文从等待种子发芽到等待牡丹开花，尾句总结有些事值得等待。选 waiting for；其他短语不能回扣时间与耐心的主旨。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "update_tag": "2026年11月更新",
+    "update_seq": 188
+  },
+  {
+    "id": "cloze-广州-七上-2026-天河中学期中",
+    "title_cn": "2026-2027广州天河中学七上期中考试",
+    "title_en": "Pollution and the Earth",
+    "source": "2026-2027广州天河中学七上期中考试",
+    "level": "七上",
+    "region": "广州",
+    "difficulty": "中等",
+    "lesson_type": "校内真题",
+    "article_type": "说明文",
+    "source_kind": "期中真题",
+    "exam_year": 2026,
+    "tags": [
+      "七上",
+      "期中真题",
+      "完形填空"
+    ],
+    "freezeClues": true,
+    "first_sentence": "Hundreds of years ago, life was much harder than it is today.",
+    "last_sentence": "Let’s be greener people!",
+    "tone": {
+      "answer": "积极",
+      "kind": "expository",
+      "shape": "问题—建议",
+      "reason": "开头对比过去和现在的生活，引出污染问题；中段分述水、空气和土壤污染及危害；结尾呼吁采取环保行动，让地球变得更好。",
+      "shape_reason": "开头对比过去和现在的生活，引出污染问题；中段分述水、空气和土壤污染及危害；结尾呼吁采取环保行动，让地球变得更好。"
+    },
+    "tone_markers": [],
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 14,
+    "article_text_with_blanks": "Hundreds of years ago, life was much harder than it is today. People didn’t __1__ modern machines. And people didn’t have such a comfortable life either. Today, we live a better life than before, but there are some __2__ problems in people’s lives. One of the biggest problems is pollution.\nWater pollution: People make many rivers and lakes __3__. That kills fish and __4__ our drinking water. And a lot of plants and animals __5__.\n__6__ pollution: In some big cities, factories, cars, trucks and buses make the air dirty. It’s bad for all the living things in the world.\nSoil (土壤) pollution: To have a good harvest, most __7__ use too many chemicals (化学品) in their fields. That’s __8__ for the soil.\nThese __9__ are very harmful to us, so all of us should do something to make the Earth __10__. Let’s be greener people!",
+    "reading_sentences": [
+      "Hundreds of years ago, life was much harder than it is today.",
+      "People didn’t __1__ modern machines.",
+      "And people didn’t have such a comfortable life either.",
+      "Today, we live a better life than before, but there are some __2__ problems in people’s lives.",
+      "One of the biggest problems is pollution.",
+      "Water pollution: People make many rivers and lakes __3__.",
+      "That kills fish and __4__ our drinking water.",
+      "And a lot of plants and animals __5__.",
+      "__6__ pollution: In some big cities, factories, cars, trucks and buses make the air dirty.",
+      "It’s bad for all the living things in the world.",
+      "Soil (土壤) pollution: To have a good harvest, most __7__ use too many chemicals (化学品) in their fields.",
+      "That’s __8__ for the soil.",
+      "These __9__ are very harmful to us, so all of us should do something to make the Earth __10__.",
+      "Let’s be greener people!"
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "have",
+          "help",
+          "buy",
+          "work"
+        ],
+        "answer": "have",
+        "clues": [
+          "people didn’t have such a comfortable life either"
+        ],
+        "clueTypes": {
+          "people didn’t have such a comfortable life either": "复现线索·原词复现"
+        },
+        "explanation": "原题16。前后两句用 didn’t have 和 either 并列说明过去所缺少的事物：没有现代机器，也过不上那样舒适的生活。选 have。buy 只说明买不买，不能表达当时是否具备现代机器。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "上下文逻辑",
+        "route": "线索词优先",
+        "options": [
+          "old",
+          "new",
+          "funny",
+          "small"
+        ],
+        "answer": "new",
+        "clues": [
+          "Today, we live a better life than before"
+        ],
+        "clueTypes": {
+          "Today, we live a better life than before": "逻辑线索·转折"
+        },
+        "explanation": "原题17。Today 与过去对比，but 引出生活改善后出现的新问题，选 new。下文说污染是最大的问题之一，排除 small 和 funny。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "上下文逻辑",
+        "route": "线索词优先",
+        "options": [
+          "wide",
+          "fresh",
+          "dirty",
+          "dry"
+        ],
+        "answer": "dirty",
+        "clues": [
+          "That kills fish"
+        ],
+        "clueTypes": {
+          "That kills fish": "逻辑线索·因果"
+        },
+        "explanation": "原题18。下一句说鱼因此死亡，且本段主题为水污染，说明河湖被弄脏，选 dirty。fresh 表示新鲜，与污染后果相反。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "makes",
+          "finds",
+          "provides",
+          "pollutes"
+        ],
+        "answer": "pollutes",
+        "clues": [
+          "Water pollution"
+        ],
+        "clueTypes": {
+          "Water pollution": "复现线索·同义复现"
+        },
+        "explanation": "原题19。空格与 kills 并列，描述水污染造成的另一后果。pollutes our drinking water 意为污染饮用水，呼应段首 pollution。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "forget",
+          "die",
+          "stop",
+          "reach"
+        ],
+        "answer": "die",
+        "clues": [
+          "That kills fish"
+        ],
+        "clueTypes": {
+          "That kills fish": "复现线索·同义复现"
+        },
+        "explanation": "原题20。鱼因污染死亡，下一句把受影响范围扩大到许多动植物，选 die。forget、stop、reach 都无法承接这个后果。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "Land",
+          "Sea",
+          "Air",
+          "Noise"
+        ],
+        "answer": "Air",
+        "clues": [
+          "make the air dirty"
+        ],
+        "clueTypes": {
+          "make the air dirty": "复现线索·原词复现"
+        },
+        "explanation": "原题21。冒号后写工厂和车辆把空气弄脏，air 直接点明本段是空气污染，选 Air。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "workers",
+          "farmers",
+          "teachers",
+          "students"
+        ],
+        "answer": "farmers",
+        "clues": [
+          "To have a good harvest"
+        ],
+        "clueTypes": {
+          "To have a good harvest": "语境线索·邻近取证"
+        },
+        "explanation": "原题22。想获得好收成、在自家田里施用化学品的是农民，选 farmers。harvest 和 fields 属于同一农业场景。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "上下文逻辑",
+        "route": "线索词优先",
+        "options": [
+          "poor",
+          "sick",
+          "unhappy",
+          "bad"
+        ],
+        "answer": "bad",
+        "clues": [
+          "use too many chemicals"
+        ],
+        "clueTypes": {
+          "use too many chemicals": "逻辑线索·因果"
+        },
+        "explanation": "原题23。too many chemicals 表示化学品使用过量，会给土壤带来损害。be bad for 表示「对……有害」，选 bad。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "problems",
+          "gas",
+          "cultures",
+          "solutions"
+        ],
+        "answer": "problems",
+        "clues": [
+          "One of the biggest problems is pollution"
+        ],
+        "clueTypes": {
+          "One of the biggest problems is pollution": "复现线索·原词复现"
+        },
+        "explanation": "原题24。These 回指前面列举的水、空气和土壤污染，统称 problems，也复现首段原词。gas 为单数且范围过窄，solutions 是解决办法。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "deeper",
+          "dirtier",
+          "better",
+          "quieter"
+        ],
+        "answer": "better",
+        "clues": [
+          "Let’s be greener people!"
+        ],
+        "clueTypes": {
+          "Let’s be greener people!": "语境线索·邻近取证"
+        },
+        "explanation": "原题25。尾句号召大家采取环保行动。针对几类污染共同努力，目的是让地球变得更好，选 better。quieter 只涉及噪声，dirtier 方向相反。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "update_tag": "2026年11月更新",
+    "update_seq": 189
+  },
+  {
+    "id": "cloze-广州-九上-2026-白云区期中",
+    "title_cn": "2026-2027广州白云区九上期中考",
+    "title_en": "A Green Miracle",
+    "source": "2026-2027广州白云区九上期中考",
+    "level": "九上",
+    "region": "广州",
+    "difficulty": "中等",
+    "lesson_type": "校内真题",
+    "article_type": "记叙文",
+    "source_kind": "期中真题",
+    "exam_year": 2026,
+    "tags": [
+      "九上",
+      "期中真题",
+      "完形填空"
+    ],
+    "freezeClues": true,
+    "first_sentence": "In May 2026, Yin Yuzhen, a model worker famous for planting trees and __1__ against desertification (荒漠化), posted a video online.",
+    "last_sentence": "It is a green __10__ that was made possible through their joint efforts.",
+    "tone": {
+      "answer": "转折变化",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "reason": "文章从视频寻人切入，回叙尹玉珍治沙、朋友筹款相助及两人失去联系，最后写两人重逢、荒地变绿。失联到重逢、荒地到绿地形成呼应。",
+      "shape_reason": "文章从视频寻人切入，回叙尹玉珍治沙、朋友筹款相助及两人失去联系，最后写两人重逢、荒地变绿。失联到重逢、荒地到绿地形成呼应。"
+    },
+    "tone_markers": [],
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 25,
+    "article_text_with_blanks": "In May 2026, Yin Yuzhen, a model worker famous for planting trees and __1__ against desertification (荒漠化), posted a video online. She was looking for Ronald Sakovsky, an old friend she had not seen for 26 years.\nTo understand the story, we need to go back 26 years.\nIn 1999, Sakovsky was working as a teacher in Luoyang, Henan Province. One day, he learned about Yin and her work in the Mu Us Sandy Land. At that time, the land was __2__ and dry, __3__ with sand. Sandstorms made life even harder. Yin and her husband were __4__ of money and tools, but they continued to plant trees.\nSakovsky was deeply moved by her story. He decided to __5__ Yin. He __6__ $5,000 and gave the money to help her buy young trees. Later, he went to the desert himself, met Yin for the first time, and they planted a tree together. It was only a small tree, but it __7__ the beginning of a special friendship.\nAfter Sakovsky returned to the United States, the two friends __8__ lost contact. But Yin never forgot her American friend. She wanted to tell him that the small tree had grown into a big one. More importantly, she wanted him to come back and see how the desert had changed.\nThe video soon __9__ online. Many people joined the search, and Sakovsky was finally found. On August 23, 2026, Sakovsky arrived in Ordos, Inner Mongolia. The two friends finally met. They hugged each other and both cried out of excitement. The next day, they went back to the desert and planted another tree together. What was once a dry and barren (贫瘠的) land is now green again. It is a green __10__ that was made possible through their joint efforts.",
+    "reading_sentences": [
+      "In May 2026, Yin Yuzhen, a model worker famous for planting trees and __1__ against desertification (荒漠化), posted a video online.",
+      "She was looking for Ronald Sakovsky, an old friend she had not seen for 26 years.",
+      "To understand the story, we need to go back 26 years.",
+      "In 1999, Sakovsky was working as a teacher in Luoyang, Henan Province.",
+      "One day, he learned about Yin and her work in the Mu Us Sandy Land.",
+      "At that time, the land was __2__ and dry, __3__ with sand.",
+      "Sandstorms made life even harder.",
+      "Yin and her husband were __4__ of money and tools, but they continued to plant trees.",
+      "Sakovsky was deeply moved by her story.",
+      "He decided to __5__ Yin.",
+      "He __6__ $5,000 and gave the money to help her buy young trees.",
+      "Later, he went to the desert himself, met Yin for the first time, and they planted a tree together.",
+      "It was only a small tree, but it __7__ the beginning of a special friendship.",
+      "After Sakovsky returned to the United States, the two friends __8__ lost contact.",
+      "But Yin never forgot her American friend.",
+      "She wanted to tell him that the small tree had grown into a big one.",
+      "More importantly, she wanted him to come back and see how the desert had changed.",
+      "The video soon __9__ online.",
+      "Many people joined the search, and Sakovsky was finally found.",
+      "On August 23, 2026, Sakovsky arrived in Ordos, Inner Mongolia.",
+      "The two friends finally met.",
+      "They hugged each other and both cried out of excitement.",
+      "The next day, they went back to the desert and planted another tree together.",
+      "What was once a dry and barren (贫瘠的) land is now green again.",
+      "It is a green __10__ that was made possible through their joint efforts."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "fighting",
+          "dealing",
+          "solving",
+          "saving"
+        ],
+        "answer": "fighting",
+        "clues": [
+          "against desertification"
+        ],
+        "clueTypes": {
+          "against desertification": "语境线索·邻近取证"
+        },
+        "explanation": "原题11。fight against 表示与……作斗争。and 连接 planting 和 fighting，共同说明她因植树和抗击荒漠化而闻名。deal 要接 with，solve 直接接宾语。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "tough",
+          "humid",
+          "rough",
+          "rich"
+        ],
+        "answer": "rough",
+        "clues": [
+          "Sandstorms made life even harder"
+        ],
+        "clueTypes": {
+          "Sandstorms made life even harder": "语境线索·邻近取证"
+        },
+        "explanation": "原题12。land 是被描述的对象，rough 描写土地粗糙不平。humid 与 dry 矛盾，rich 与贫瘠语境相反，tough 更常用来描述处境艰难。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "filled",
+          "equipped",
+          "mixed",
+          "covered"
+        ],
+        "answer": "covered",
+        "clues": [
+          "the land was"
+        ],
+        "clueTypes": {
+          "the land was": "语境线索·邻近取证"
+        },
+        "explanation": "原题13。sand 覆盖的是土地表面，covered with 表示被覆盖。filled with 强调内部填满，equipped with 表配备，mixed with 表混合。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "上下文逻辑",
+        "route": "线索词优先",
+        "options": [
+          "lack",
+          "demand",
+          "preparation",
+          "kit"
+        ],
+        "answer": "lack",
+        "clues": [
+          "but they continued to plant trees"
+        ],
+        "clueTypes": {
+          "but they continued to plant trees": "逻辑线索·转折"
+        },
+        "explanation": "原题14。but 表明即使缺钱、缺工具，他们仍坚持植树，按卷面标注选 lack。原句 were lack of 搭配有误，规范表达可用 were short of 或 lacked money and tools。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "follow",
+          "visit",
+          "invite",
+          "support"
+        ],
+        "answer": "support",
+        "clues": [
+          "gave the money to help her buy young trees"
+        ],
+        "clueTypes": {
+          "gave the money to help her buy young trees": "语境线索·邻近取证"
+        },
+        "explanation": "原题15。后句说明他给钱帮助购买树苗，这一做法具体体现 support。visit 是后来发生的事，follow 和 invite 得不到这里的行动支持。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "paid",
+          "rose",
+          "raised",
+          "cost"
+        ],
+        "answer": "raised",
+        "clues": [
+          "and gave the money"
+        ],
+        "clueTypes": {
+          "and gave the money": "语境线索·邻近取证"
+        },
+        "explanation": "原题16。先筹到钱，再把钱给她，raise money 表示筹款。rose 是不及物动词 rise 的过去式，paid 表示支付，cost 表示花费。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "started",
+          "became",
+          "marked",
+          "brought"
+        ],
+        "answer": "marked",
+        "clues": [
+          "the beginning of a special friendship"
+        ],
+        "clueTypes": {
+          "the beginning of a special friendship": "语境线索·邻近取证"
+        },
+        "explanation": "原题17。it 指两人一起种下的小树，这件事标志着友谊的开始。mark the beginning of 是贴合语境的搭配，became 会把树本身说成友谊的开端。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "gradually",
+          "gently",
+          "quickly",
+          "suddenly"
+        ],
+        "answer": "gradually",
+        "clues": [
+          "she had not seen for 26 years"
+        ],
+        "clueTypes": {
+          "she had not seen for 26 years": "语境线索·邻近取证"
+        },
+        "explanation": "原题18。文章开头交代两人已 26 年未见，后文写他回国后失去联系，但没有交代导致突然断联的事件。按卷面标注选 A gradually，是最顺畅的语境推断；26 年未见本身不能直接证明失联的速度。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "appeared",
+          "affected",
+          "spread",
+          "survived"
+        ],
+        "answer": "spread",
+        "clues": [
+          "Many people joined the search"
+        ],
+        "clueTypes": {
+          "Many people joined the search": "语境线索·邻近取证"
+        },
+        "explanation": "原题19。许多人加入寻找，说明视频在网上传播开了。appeared 只说明出现，affected 需要影响对象，survived 表示幸存。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "exploration",
+          "miracle",
+          "method",
+          "achievement"
+        ],
+        "answer": "miracle",
+        "clues": [
+          "is now green again"
+        ],
+        "clueTypes": {
+          "is now green again": "语境线索·邻近取证"
+        },
+        "explanation": "原题20。荒地变绿的强烈反差支持 green miracle，强调变化令人惊叹。achievement 也能指共同努力取得的成就，有一定合理性，按卷面标注录 B。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "update_tag": "2026年11月更新",
+    "update_seq": 190
+  },
+  {
+    "id": "cloze-广州-八上-2026-猎德实验中学期中",
+    "title_cn": "2026-2027广州天河猎德实验中学八上期中考",
+    "title_en": "Numbers in Nature",
+    "source": "2026-2027广州天河猎德实验中学八上期中考",
+    "level": "八上",
+    "region": "广州",
+    "difficulty": "中等",
+    "lesson_type": "校内真题",
+    "article_type": "记叙文",
+    "source_kind": "期中真题",
+    "exam_year": 2026,
+    "tags": [
+      "八上",
+      "期中真题",
+      "完形填空"
+    ],
+    "freezeClues": true,
+    "first_sentence": "I used to think numbers were the most boring thing in the world.",
+    "last_sentence": "Every time I open my exercise book, I am reading letters from nature.",
+    "tone": {
+      "answer": "转折变化",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "reason": "作者起初觉得数字冷冰冰又无趣。爷爷用向日葵籽引导作者发现斐波那契数列，作者由排斥转为主动探索，最终爱上数学。",
+      "shape_reason": "作者起初觉得数字冷冰冰又无趣。爷爷用向日葵籽引导作者发现斐波那契数列，作者由排斥转为主动探索，最终爱上数学。"
+    },
+    "tone_markers": [],
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 33,
+    "article_text_with_blanks": "I used to think numbers were the most boring thing in the world. In my eyes, they were just __1__ symbols on my exercise book. All I wanted was to finish my exercises and run away to the playground.\nEverything changed last spring at my grandfather’s house. My grandfather was seventy, but he __2__ worked in his garden every morning. One afternoon, he __3__ a sunflower and put it into my hand. “Count the seeds in one circle,” he said. I laughed but did it anyway.\nWhen I __4__ thirty-four, he smiled and pointed at the next circle. “Now count the seeds here __5__,” he said. I moved my finger slowly over them, one by one. This time I did not want to stop. “What do you __6__?” he asked me gently.\nI counted the second circle: fifty-five. “Now the third one,” my grandfather said. I counted it twice, then a third time: eighty-nine.\nHe wrote on the ground: 34, 55, 89. “These are __7__ numbers in nature,” he said. “Sunflowers, pinecones, sea shells follow the same __8__: each number is the sum of the two before it. People call it the Fibonacci sequence (斐波那契数列).”\n“Then the one before thirty-four is twenty-one,” I said. “Fifty-five minus thirty-four.” He smiled and wrote it in front. “You found it yourself,” he said.\nI stared at the numbers. I couldn’t believe my __9__. The “boring” numbers were hiding in flowers, trees and the sea!\nThat evening, I looked at the stars. “Maybe numbers are not cold at all. They are a __10__ nature uses to talk to us.” Now maths is my favourite subject. Every time I open my exercise book, I am reading letters from nature.",
+    "reading_sentences": [
+      "I used to think numbers were the most boring thing in the world.",
+      "In my eyes, they were just __1__ symbols on my exercise book.",
+      "All I wanted was to finish my exercises and run away to the playground.",
+      "Everything changed last spring at my grandfather’s house.",
+      "My grandfather was seventy, but he __2__ worked in his garden every morning.",
+      "One afternoon, he __3__ a sunflower and put it into my hand.",
+      "“Count the seeds in one circle,” he said.",
+      "I laughed but did it anyway.",
+      "When I __4__ thirty-four, he smiled and pointed at the next circle.",
+      "“Now count the seeds here __5__,” he said.",
+      "I moved my finger slowly over them, one by one.",
+      "This time I did not want to stop.",
+      "“What do you __6__?”",
+      "he asked me gently.",
+      "I counted the second circle: fifty-five.",
+      "“Now the third one,” my grandfather said.",
+      "I counted it twice, then a third time: eighty-nine.",
+      "He wrote on the ground: 34, 55, 89.",
+      "“These are __7__ numbers in nature,” he said.",
+      "“Sunflowers, pinecones, sea shells follow the same __8__: each number is the sum of the two before it.",
+      "People call it the Fibonacci sequence (斐波那契数列).”",
+      "“Then the one before thirty-four is twenty-one,” I said.",
+      "“Fifty-five minus thirty-four.”",
+      "He smiled and wrote it in front.",
+      "“You found it yourself,” he said.",
+      "I stared at the numbers.",
+      "I couldn’t believe my __9__.",
+      "The “boring” numbers were hiding in flowers, trees and the sea!",
+      "That evening, I looked at the stars.",
+      "“Maybe numbers are not cold at all.",
+      "They are a __10__ nature uses to talk to us.”",
+      "Now maths is my favourite subject.",
+      "Every time I open my exercise book, I am reading letters from nature."
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "funny",
+          "warm",
+          "easy",
+          "cold"
+        ],
+        "answer": "cold",
+        "clues": [
+          "numbers are not cold at all"
+        ],
+        "clueTypes": {
+          "numbers are not cold at all": "复现线索·原词复现"
+        },
+        "explanation": "原题11。尾段 not cold at all 回扣开篇的 cold。作者原先认为数字只是冷冰冰的符号，funny、warm 和开篇的无趣印象相反。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "上下文逻辑",
+        "route": "线索词优先",
+        "options": [
+          "hardly",
+          "never",
+          "still",
+          "seldom"
+        ],
+        "answer": "still",
+        "clues": [
+          "worked in his garden every morning"
+        ],
+        "clueTypes": {
+          "worked in his garden every morning": "逻辑线索·转折"
+        },
+        "explanation": "原题12。but 表明爷爷虽已七十岁，却仍每天在花园劳作，选 still。hardly、never、seldom 都与 every morning 所示频率冲突。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "bought",
+          "picked",
+          "planted",
+          "drew"
+        ],
+        "answer": "picked",
+        "clues": [
+          "put it into my hand"
+        ],
+        "clueTypes": {
+          "put it into my hand": "语境线索·邻近取证"
+        },
+        "explanation": "原题13。地点是花园，爷爷随即把向日葵交给作者数籽，picked 表示摘下。planted 和 drew 无法解释他当场拿着可数籽的花，bought 缺少购买场景。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "reached",
+          "missed",
+          "forgot",
+          "chose"
+        ],
+        "answer": "reached",
+        "clues": [
+          "Count the seeds in one circle"
+        ],
+        "clueTypes": {
+          "Count the seeds in one circle": "语境线索·邻近取证"
+        },
+        "explanation": "原题14。上文正在数第一圈种子，reached thirty-four 表示数到三十四。missed、forgot、chose 分别是错过、忘记、选择，不能表示计数进展。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "quickly",
+          "carefully",
+          "bravely",
+          "quietly"
+        ],
+        "answer": "carefully",
+        "clues": [
+          "slowly over them, one by one"
+        ],
+        "clueTypes": {
+          "slowly over them, one by one": "复现线索·同义复现"
+        },
+        "explanation": "原题15。手指慢慢移动，逐个数种子，说明数得仔细，选 carefully。quickly 与 slowly 相反，bravely 和 quietly 不能概括这一动作。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "say",
+          "hear",
+          "notice",
+          "forget"
+        ],
+        "answer": "notice",
+        "clues": [
+          "pointed at the next circle"
+        ],
+        "clueTypes": {
+          "pointed at the next circle": "语境线索·邻近取证"
+        },
+        "explanation": "原题16。爷爷让作者比较不同圈的种子数量，问观察到什么，选 notice。这里没有听觉线索，也没有让作者说出或忘掉某句话。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "boring",
+          "expensive",
+          "broken",
+          "special"
+        ],
+        "answer": "special",
+        "clues": [
+          "People call it the Fibonacci sequence"
+        ],
+        "clueTypes": {
+          "People call it the Fibonacci sequence": "语境线索·邻近取证"
+        },
+        "explanation": "原题17。数字呈现了有名称的规律，爷爷强调其特别之处，选 special。boring 是作者起初的看法，expensive 和 broken 与数列无关。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "game",
+          "story",
+          "rule",
+          "joke"
+        ],
+        "answer": "rule",
+        "clues": [
+          "each number is the sum of the two before it"
+        ],
+        "clueTypes": {
+          "each number is the sum of the two before it": "语境线索·邻近取证"
+        },
+        "explanation": "原题18。冒号后说明每项等于前两项之和，这是一条规律，选 rule。game、story、joke 都无法概括这个数学关系。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "eyes",
+          "ears",
+          "hands",
+          "feet"
+        ],
+        "answer": "eyes",
+        "clues": [
+          "I stared at the numbers"
+        ],
+        "clueTypes": {
+          "I stared at the numbers": "语境线索·邻近取证"
+        },
+        "explanation": "原题19。stared at 表明作者亲眼看到数字规律。couldn’t believe my eyes 表示简直不敢相信眼前所见。ears 对应听觉，hands 和 feet 不符合搭配。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "story",
+          "language",
+          "game",
+          "picture"
+        ],
+        "answer": "language",
+        "clues": [
+          "I am reading letters from nature"
+        ],
+        "clueTypes": {
+          "I am reading letters from nature": "语境线索·邻近取证"
+        },
+        "explanation": "原题20。talk to us 和 reading letters 把数字比作自然与人交流的语言，选 language。story、game、picture 都不能同时呼应说话和读信。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "update_tag": "2026年11月更新",
+    "update_seq": 191
+  },
+  {
+    "id": "cloze-广州-九上-2026-广附大联盟期中",
+    "title_cn": "2026-2027广附大联盟期中考试",
+    "title_en": "Kirsty and the Power of Connection",
+    "source": "2026-2027广附大联盟期中考试",
+    "level": "九上",
+    "region": "广州",
+    "difficulty": "中等",
+    "lesson_type": "校内真题",
+    "article_type": "记叙文",
+    "source_kind": "期中真题",
+    "exam_year": 2026,
+    "tags": [
+      "九上",
+      "期中真题",
+      "完形填空"
+    ],
+    "freezeClues": true,
+    "first_sentence": "Kirsty Waugh, a 12-year-old girl from England, is bravely fighting a brain tumor (脑肿瘤).",
+    "last_sentence": "Don’t set yourself a goal, just aim to go as far as you can, which might be a lot __10__ than you imagine!”",
+    "tone": {
+      "answer": "转折变化",
+      "kind": "narrative",
+      "shape": "情境—发展—收束",
+      "reason": "开篇写 Kirsty 患病并接受艰难治疗；Even while dealing with this 引出她主动帮助他人的行动；后文写她由手作募款到联结世界各地的同名者，结尾从个人困境走向互助与鼓励。",
+      "shape_reason": "开篇写 Kirsty 患病并接受艰难治疗；Even while dealing with this 引出她主动帮助他人的行动；后文写她由手作募款到联结世界各地的同名者，结尾从个人困境走向互助与鼓励。"
+    },
+    "tone_markers": [],
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "reading_sentence_count": 21,
+    "article_text_with_blanks": "Kirsty Waugh, a 12-year-old girl from England, is bravely fighting a brain tumor (脑肿瘤). In 2024, she started having trouble seeing and __1__ things, and doctors found a large tumor in her brain. They operated and removed part of it, which brought back her eyesight and memory. However, the tumor could not be taken out __2__ because of its dangerous location. Now Kirsty has to go through chemotherapy (化疗), a __3__ treatment that makes her feel very tired and weak.\nEven while dealing with this, Kirsty decided to help others. She learned that very little money went to research on children’s brain tumors. “I thought it was so crazy that I needed to tell people and make a __4__,” she said. Last year, during her first round of chemotherapy, she __5__ over £120,000 by making 70 small bunting flags by hand—one each week. She donated the money to a children’s cancer charity.\nThis year, Kirsty came up with a new idea: reaching out to people who __6__ her first name. She and her father created a website called MyNameIsKirsty.com. There, people named Kirsty (or Kirstie, Kirsten, etc.) could add their names, photos, and __7__ to a world map. In this way, Kirsty can see other Kirstys all around the world. “I want to tell everyone about my story,” Kirsty said, “but especially Kirstys, because it’s the __8__ name!” Over 11,000 people with the name Kirsty have joined the map, and many others have joined as “Friends of Kirsty”. So far, the campaign has raised over £80,000 more for brain tumor research.\nKirsty’s story shows the power of human connection. A simple name brought together thousands of __9__ from around the world, all wanting to support a brave girl and a good cause. When Kirsty was asked if she had advice for others, she replied, “You can do anything as long as you set your mind to it. Don’t set yourself a goal, just aim to go as far as you can, which might be a lot __10__ than you imagine!”",
+    "reading_sentences": [
+      "Kirsty Waugh, a 12-year-old girl from England, is bravely fighting a brain tumor (脑肿瘤).",
+      "In 2024, she started having trouble seeing and __1__ things, and doctors found a large tumor in her brain.",
+      "They operated and removed part of it, which brought back her eyesight and memory.",
+      "However, the tumor could not be taken out __2__ because of its dangerous location.",
+      "Now Kirsty has to go through chemotherapy (化疗), a __3__ treatment that makes her feel very tired and weak.",
+      "Even while dealing with this, Kirsty decided to help others.",
+      "She learned that very little money went to research on children’s brain tumors.",
+      "“I thought it was so crazy that I needed to tell people and make a __4__,” she said.",
+      "Last year, during her first round of chemotherapy, she __5__ over £120,000 by making 70 small bunting flags by hand—one each week.",
+      "She donated the money to a children’s cancer charity.",
+      "This year, Kirsty came up with a new idea: reaching out to people who __6__ her first name.",
+      "She and her father created a website called MyNameIsKirsty.com.",
+      "There, people named Kirsty (or Kirstie, Kirsten, etc.) could add their names, photos, and __7__ to a world map.",
+      "In this way, Kirsty can see other Kirstys all around the world.",
+      "“I want to tell everyone about my story,” Kirsty said, “but especially Kirstys, because it’s the __8__ name!”",
+      "Over 11,000 people with the name Kirsty have joined the map, and many others have joined as “Friends of Kirsty”.",
+      "So far, the campaign has raised over £80,000 more for brain tumor research.",
+      "Kirsty’s story shows the power of human connection.",
+      "A simple name brought together thousands of __9__ from around the world, all wanting to support a brave girl and a good cause.",
+      "When Kirsty was asked if she had advice for others, she replied, “You can do anything as long as you set your mind to it.",
+      "Don’t set yourself a goal, just aim to go as far as you can, which might be a lot __10__ than you imagine!”"
+    ],
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "hearing",
+          "recognizing",
+          "remembering",
+          "learning"
+        ],
+        "answer": "remembering",
+        "clues": [
+          "her eyesight and memory"
+        ],
+        "clueTypes": {
+          "her eyesight and memory": "复现线索·同义复现"
+        },
+        "explanation": "原题11。手术后恢复视力和记忆，eyesight 对应 seeing，memory 对应 remembering，因此选 C。其他选项没有直接对应 memory。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "上下文逻辑",
+        "route": "线索词优先",
+        "options": [
+          "completely",
+          "hardly",
+          "difficultly",
+          "partly"
+        ],
+        "answer": "completely",
+        "clues": [
+          "removed part of it"
+        ],
+        "clueTypes": {
+          "removed part of it": "逻辑线索·转折"
+        },
+        "explanation": "原题12。前面说已切除一部分，后面用 However 补充因位置危险无法全部切除，选 A completely。partly 与前文已切除一部分矛盾。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "simple",
+          "tough",
+          "common",
+          "quick"
+        ],
+        "answer": "tough",
+        "clues": [
+          "very tired and weak"
+        ],
+        "clueTypes": {
+          "very tired and weak": "语境线索·邻近取证"
+        },
+        "explanation": "原题13。化疗让她非常疲倦虚弱，说明治疗过程很艰难，选 B tough。common 和 quick 都无法从后文推得，simple 与描述不符。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "change",
+          "promise",
+          "plan",
+          "choice"
+        ],
+        "answer": "change",
+        "clues": [
+          "very little money went to research"
+        ],
+        "clueTypes": {
+          "very little money went to research": "语境线索·邻近取证"
+        },
+        "explanation": "原题14。她想让大家知道研究经费不足并改变现状，后文募捐是实际行动，因此选 A change。承诺、计划和选择都没有点明她想改变的处境。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "raised",
+          "saved",
+          "earned",
+          "collected"
+        ],
+        "answer": "raised",
+        "clues": [
+          "the campaign has raised over £80,000"
+        ],
+        "clueTypes": {
+          "the campaign has raised over £80,000": "复现线索·原词复现"
+        },
+        "explanation": "原题15。后文 has raised 用于同一募款主题，raise money 表示筹款，且她把所得捐给慈善机构，选 A raised。collected 也可表示收集或募到钱，raised 有更直接的原词复现支持。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "call",
+          "know",
+          "like",
+          "share"
+        ],
+        "answer": "share",
+        "clues": [
+          "people named Kirsty"
+        ],
+        "clueTypes": {
+          "people named Kirsty": "语境线索·邻近取证"
+        },
+        "explanation": "原题16。后文明确网站面向同名者，share her first name 表示与她同名，选 D。call、know、like 都不能说明同名关系。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "messages",
+          "locations",
+          "stories",
+          "donations"
+        ],
+        "answer": "locations",
+        "clues": [
+          "to a world map"
+        ],
+        "clueTypes": {
+          "to a world map": "语境线索·邻近取证"
+        },
+        "explanation": "原题17。他们把信息标到世界地图上，地图让 Kirsty 看见各地的同名者，所需地理信息是 locations，选 B。其他选项不能直接说明人们在哪里。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "best",
+          "only",
+          "right",
+          "first"
+        ],
+        "answer": "best",
+        "clues": [
+          "but especially Kirstys"
+        ],
+        "clueTypes": {
+          "but especially Kirstys": "语境线索·邻近取证"
+        },
+        "explanation": "原题18。Kirsty 尤其想把故事讲给同名者，并用感叹语气说这是最棒的名字，选 A best。only 不符合也欢迎其他人参与的语境，right 和 first 缺少判断标准或先后顺序。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "children",
+          "strangers",
+          "girls",
+          "adults"
+        ],
+        "answer": "strangers",
+        "clues": [
+          "brought together thousands of"
+        ],
+        "clueTypes": {
+          "brought together thousands of": "语境线索·邻近取证"
+        },
+        "explanation": "原题19。世界各地的人因为同一个名字和公益目标而聚在一起，重点是把原本互不相识的人联结起来，选 B strangers。原文没有限定参与者的年龄或性别。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "more",
+          "better",
+          "further",
+          "longer"
+        ],
+        "answer": "further",
+        "clues": [
+          "go as far as you can"
+        ],
+        "clueTypes": {
+          "go as far as you can": "复现线索·同义复现"
+        },
+        "explanation": "原题20。前面说尽力走得远，空格后 than 需要比较级，further 对应 far 并表示超出自己想象的程度，选 C。longer 偏向时间或长度，more 和 better 与 go far 的表达不匹配。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "update_tag": "2026年11月更新",
+    "update_seq": 192
+  },
+  {
+    "id": "cloze-广州-七上-2026-五中期中",
+    "title_cn": "2026-2027广州七上五中期中考试",
+    "source": "2026-2027广州七上五中期中考试",
+    "title_en": "School Gardening",
+    "level": "七上",
+    "region": "广州",
+    "difficulty": "中等",
+    "article_type": "说明文",
+    "lesson_type": "校内真题",
+    "source_kind": "期中真题",
+    "exam_year": 2026,
+    "tags": [
+      "七上",
+      "期中真题",
+      "完形填空"
+    ],
+    "freezeClues": true,
+    "article_text_with_blanks": "In schools today, a new subject is becoming popular—school gardening. It is not just an interesting subject, but also a great way to stay __1__.\nIn the gardening class, students can go outside and get __2__ air, which is important for their body and mind. More importantly, they can learn a lot. When some young students have food, they ask questions like “Where does the rice come __3__?” In this class, they can get the answer. And they can learn to do things with their own __4__. Through group activities, they can also learn some __5__ skill and care about others and themselves.\nThe school garden doesn’t have to be very __6__ so money is not a problem for most schools. But students can still have a lot of fun in it. At first, teachers decide what __7__ to grow. Then they grow them with students. Carrots and tomatoes are their __8__ because it is nice for them to get a carrot or a tomato, wash it and eat it right in the garden. Some vegetables are easy to grow but others need a __9__ time. This can teach students that hard work pays off. Learning gardening __10__ students many important skills, like patience and teamwork. They should learn it early.",
+    "reading_sentences": [
+      "In schools today, a new subject is becoming popular—school gardening.",
+      "It is not just an interesting subject, but also a great way to stay __1__.",
+      "In the gardening class, students can go outside and get __2__ air, which is important for their body and mind.",
+      "More importantly, they can learn a lot.",
+      "When some young students have food, they ask questions like “Where does the rice come __3__?”",
+      "In this class, they can get the answer.",
+      "And they can learn to do things with their own __4__.",
+      "Through group activities, they can also learn some __5__ skill and care about others and themselves.",
+      "The school garden doesn’t have to be very __6__ so money is not a problem for most schools.",
+      "But students can still have a lot of fun in it.",
+      "At first, teachers decide what __7__ to grow.",
+      "Then they grow them with students.",
+      "Carrots and tomatoes are their __8__ because it is nice for them to get a carrot or a tomato, wash it and eat it right in the garden.",
+      "Some vegetables are easy to grow but others need a __9__ time.",
+      "This can teach students that hard work pays off.",
+      "Learning gardening __10__ students many important skills, like patience and teamwork.",
+      "They should learn it early."
+    ],
+    "reading_sentence_count": 17,
+    "first_sentence": "In schools today, a new subject is becoming popular—school gardening.",
+    "last_sentence": "They should learn it early.",
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "healthy",
+          "clear",
+          "safe",
+          "busy"
+        ],
+        "answer": "healthy",
+        "clues": [
+          "important for their body and mind"
+        ],
+        "clueTypes": {
+          "important for their body and mind": "语境线索·邻近取证"
+        },
+        "explanation": "原题26。对身心有益对应 stay healthy（保持健康）。其他选项指清楚、安全或忙碌。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "fresh",
+          "cold",
+          "dirty",
+          "dry"
+        ],
+        "answer": "fresh",
+        "clues": [
+          "students can go outside"
+        ],
+        "clueTypes": {
+          "students can go outside": "语境线索·邻近取证"
+        },
+        "explanation": "原题27。户外活动能呼吸新鲜空气，get fresh air 与下文的身心益处呼应。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "on",
+          "from",
+          "to",
+          "in"
+        ],
+        "answer": "from",
+        "clues": [
+          "Where does the rice come"
+        ],
+        "clueTypes": {
+          "Where does the rice come": "语境线索·邻近取证"
+        },
+        "explanation": "原题28。Where 问来源。come from 表示「来自」，这里介词留在句末。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "feet",
+          "heads",
+          "hands",
+          "eyes"
+        ],
+        "answer": "hands",
+        "clues": [
+          "do things with their own"
+        ],
+        "clueTypes": {
+          "do things with their own": "语境线索·邻近取证"
+        },
+        "explanation": "原题29。园艺课中种植需要亲自动手，with their own hands 表示「用自己的双手」。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "English",
+          "music",
+          "sports",
+          "teamwork"
+        ],
+        "answer": "teamwork",
+        "clues": [
+          "like patience and teamwork"
+        ],
+        "clueTypes": {
+          "like patience and teamwork": "复现线索·原词复现"
+        },
+        "explanation": "原题30。通过小组活动培养合作能力，尾段 teamwork 原词复现，选 D。原卷保留 some teamwork skill，更自然的说法是 some teamwork skills。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "large",
+          "interesting",
+          "thick",
+          "tall"
+        ],
+        "answer": "large",
+        "clues": [
+          "money is not a problem for most schools"
+        ],
+        "clueTypes": {
+          "money is not a problem for most schools": "语境线索·邻近取证"
+        },
+        "explanation": "原题31。so 引出费用不成问题，前面说明花园无需很大。large 描述整体规模。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "animals",
+          "colors",
+          "vegetables",
+          "songs"
+        ],
+        "answer": "vegetables",
+        "clues": [
+          "Carrots and tomatoes"
+        ],
+        "clueTypes": {
+          "Carrots and tomatoes": "语境线索·邻近取证"
+        },
+        "explanation": "原题32。胡萝卜和番茄是文中种植的例子，说明老师先决定种什么蔬菜。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "friends",
+          "snacks",
+          "meals",
+          "favorites"
+        ],
+        "answer": "favorites",
+        "clues": [
+          "eat it right in the garden"
+        ],
+        "clueTypes": {
+          "eat it right in the garden": "语境线索·邻近取证"
+        },
+        "explanation": "原题33。because 后解释孩子们喜欢现摘现吃，胡萝卜和番茄因此是他们最喜欢的，选 favorites。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "short",
+          "long",
+          "hard",
+          "fun"
+        ],
+        "answer": "long",
+        "clues": [
+          "others need a"
+        ],
+        "clueTypes": {
+          "others need a": "语境线索·邻近取证"
+        },
+        "explanation": "原题34。but 将容易种植与需要更多时间对比，a long time 与后文 patience 呼应。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "teaches",
+          "practises",
+          "saves",
+          "helps"
+        ],
+        "answer": "teaches",
+        "clues": [
+          "students many important skills"
+        ],
+        "clueTypes": {
+          "students many important skills": "语境线索·邻近取证"
+        },
+        "explanation": "原题35。teach sb. sth. 表示教某人某项技能，students 和 skills 分别是人和所学内容，选 teaches。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "tone": {
+      "kind": "expository",
+      "answer": "积极",
+      "shape": "观点—例证",
+      "reason": "首段提出校园园艺有趣且有益，随后用户外活动、亲手种植和小组合作举例，尾段回扣耐心与协作等收获。",
+      "shape_reason": "首段提出校园园艺有趣且有益，随后用户外活动、亲手种植和小组合作举例，尾段回扣耐心与协作等收获。"
+    },
+    "tone_markers": [],
+    "route_summary": {
+      "线索词优先": 10,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 0
+    },
+    "update_tag": "2026年11月更新",
+    "update_seq": 193
+  },
+  {
+    "id": "cloze-广州-七上-2026-二中期中",
+    "title_cn": "2026-2027广州二中七上期中考试",
+    "source": "2026-2027广州二中七上期中考试",
+    "title_en": "Making Lunch at the Campsite",
+    "level": "七上",
+    "region": "广州",
+    "difficulty": "中等",
+    "article_type": "记叙文",
+    "lesson_type": "校内真题",
+    "source_kind": "期中真题",
+    "exam_year": 2026,
+    "tags": [
+      "七上",
+      "期中真题",
+      "完形填空"
+    ],
+    "freezeClues": true,
+    "article_text_with_blanks": "I am Daniel, a student at Sunshine Middle School. We go on a school trip every year. This year it is from October 29th to 30th. We have lots of __1__ during the two days. We camp, study with students from other schools in a small town and visit some museums. But the most amazing activity for me is __2__ lunch.\nWe __3__ the campsite (野营地) early in the morning. We get there at 11:00 a.m. The guide tells us, “This is the place where we will make our __4__ today. There isn’t any meat for you. There are only some cabbages, potatoes and other vegetables. There is also some flour (面粉). Now, let’s do it in different __5__!” “Oh, no! Why do we have to do that?” a __6__ student shouts, “Now I am so hungry, and I don’t want to do anything!”\nMany students shout like him. But we have to __7__, or we will have nothing to eat. There is only one cook in our group — that fat student because the others didn’t cook before. He makes pancakes for us. Half an hour later, the pancakes are ready. “Wow! They taste __8__!” I say. The others in my group get the pancakes and eat them quickly and __9__.\nDuring the activity, we learn an important __10__ — We must learn to make food by ourselves from now on.",
+    "reading_sentences": [
+      "I am Daniel, a student at Sunshine Middle School.",
+      "We go on a school trip every year.",
+      "This year it is from October 29th to 30th.",
+      "We have lots of __1__ during the two days.",
+      "We camp, study with students from other schools in a small town and visit some museums.",
+      "But the most amazing activity for me is __2__ lunch.",
+      "We __3__ the campsite (野营地) early in the morning.",
+      "We get there at 11:00 a.m.",
+      "The guide tells us, “This is the place where we will make our __4__ today.",
+      "There isn’t any meat for you.",
+      "There are only some cabbages, potatoes and other vegetables.",
+      "There is also some flour (面粉).",
+      "Now, let’s do it in different __5__!”",
+      "“Oh, no!",
+      "Why do we have to do that?”",
+      "a __6__ student shouts, “Now I am so hungry, and I don’t want to do anything!”",
+      "Many students shout like him.",
+      "But we have to __7__, or we will have nothing to eat.",
+      "There is only one cook in our group — that fat student because the others didn’t cook before.",
+      "He makes pancakes for us.",
+      "Half an hour later, the pancakes are ready.",
+      "“Wow!",
+      "They taste __8__!”",
+      "I say.",
+      "The others in my group get the pancakes and eat them quickly and __9__.",
+      "During the activity, we learn an important __10__ — We must learn to make food by ourselves from now on."
+    ],
+    "reading_sentence_count": 26,
+    "first_sentence": "I am Daniel, a student at Sunshine Middle School.",
+    "last_sentence": "During the activity, we learn an important __10__ — We must learn to make food by ourselves from now on.",
+    "questions": [
+      {
+        "q": 1,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "activities",
+          "subjects",
+          "problems",
+          "meetings"
+        ],
+        "answer": "activities",
+        "clues": [
+          "visit some museums"
+        ],
+        "clueTypes": {
+          "visit some museums": "语境线索·邻近取证"
+        },
+        "explanation": "原题41。露营、学习交流和参观博物馆都是旅行中的活动，后文 activity 也复现了这一概念。",
+        "collocation": null
+      },
+      {
+        "q": 2,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "ordering",
+          "dividing",
+          "making",
+          "buying"
+        ],
+        "answer": "making",
+        "clues": [
+          "He makes pancakes for us"
+        ],
+        "clueTypes": {
+          "He makes pancakes for us": "语境线索·邻近取证"
+        },
+        "explanation": "原题42。后文说学生用食材做煎饼，最难忘的活动是做午饭，选 making。",
+        "collocation": null
+      },
+      {
+        "q": 3,
+        "pos": "短语",
+        "topic": "语境推断",
+        "route": "整组短语直接辨析",
+        "options": [
+          "come from",
+          "stay at",
+          "go back to",
+          "leave for"
+        ],
+        "answer": "leave for",
+        "clues": [
+          "We get there at 11:00 a.m."
+        ],
+        "clueTypes": {
+          "We get there at 11:00 a.m.": "语境线索·邻近取证"
+        },
+        "explanation": "原题43。早上先出发，十一点才到野营地。leave for 表示动身前往，与 get there 对应。",
+        "collocation": null
+      },
+      {
+        "q": 4,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "snacks",
+          "breakfast",
+          "lunch",
+          "supper"
+        ],
+        "answer": "lunch",
+        "clues": [
+          "the most amazing activity for me"
+        ],
+        "clueTypes": {
+          "the most amazing activity for me": "语境线索·邻近取证"
+        },
+        "explanation": "原题44。第 42 题代入后是 making lunch，直接呼应向导说的 make our lunch；十一点到达也提供时间旁证。先用第 42 题取得的全文任务线索，再定第 44 题，选 C。",
+        "collocation": null
+      },
+      {
+        "q": 5,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "pairs",
+          "groups",
+          "classes",
+          "clubs"
+        ],
+        "answer": "groups",
+        "clues": [
+          "in our group"
+        ],
+        "clueTypes": {
+          "in our group": "语境线索·邻近取证"
+        },
+        "explanation": "原题45。后文的 our group 直接对应分组完成，选 groups。",
+        "collocation": null
+      },
+      {
+        "q": 6,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "tall",
+          "short",
+          "thin",
+          "fat"
+        ],
+        "answer": "fat",
+        "clues": [
+          "that fat student"
+        ],
+        "clueTypes": {
+          "that fat student": "语境线索·邻近取证"
+        },
+        "explanation": "原题46。后文用 that fat student 回指先前抱怨的同一个学生，选 fat。",
+        "collocation": null
+      },
+      {
+        "q": 7,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "taste",
+          "change",
+          "wait",
+          "start"
+        ],
+        "answer": "start",
+        "clues": [
+          "or we will have nothing to eat"
+        ],
+        "clueTypes": {
+          "or we will have nothing to eat": "语境线索·邻近取证"
+        },
+        "explanation": "原题47。or 表示「否则」。虽然大家不情愿，还是必须开始做饭，否则就没东西吃，选 start。",
+        "collocation": null
+      },
+      {
+        "q": 8,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "delicious",
+          "strange",
+          "boring",
+          "terrible"
+        ],
+        "answer": "delicious",
+        "clues": [
+          "eat them quickly"
+        ],
+        "clueTypes": {
+          "eat them quickly": "语境线索·邻近取证"
+        },
+        "explanation": "原题48。作者惊叹，同学们也很快吃起煎饼，说明味道好，选 delicious。",
+        "collocation": null
+      },
+      {
+        "q": 9,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "happily",
+          "angrily",
+          "patiently",
+          "worriedly"
+        ],
+        "answer": "happily",
+        "clues": [
+          "Wow! They taste"
+        ],
+        "clueTypes": {
+          "Wow! They taste": "语境线索·邻近取证"
+        },
+        "explanation": "原题49。煎饼做好且味道好，大家吃得又快又开心，选 happily。",
+        "collocation": null
+      },
+      {
+        "q": 10,
+        "pos": "词义辨析",
+        "topic": "语境推断",
+        "route": "线索词优先",
+        "options": [
+          "skill",
+          "lesson",
+          "secret",
+          "rule"
+        ],
+        "answer": "lesson",
+        "clues": [
+          "We must learn to make food by ourselves"
+        ],
+        "clueTypes": {
+          "We must learn to make food by ourselves": "语境线索·邻近取证"
+        },
+        "explanation": "原题50。破折号后是这次经历带来的认识：今后应学会自己做饭。learn an important lesson 表示得到启示，选 lesson。",
+        "collocation": null
+      }
+    ],
+    "missingAnswer": false,
+    "tone": {
+      "kind": "narrative",
+      "answer": "转折变化",
+      "shape": "情境—发展—收束",
+      "reason": "学生起初因饥饿而抱怨不想做饭，后来动手做出煎饼，吃得很开心，并认识到要学会自己做饭。",
+      "shape_reason": "学生起初因饥饿而抱怨不想做饭，后来动手做出煎饼，吃得很开心，并认识到要学会自己做饭。"
+    },
+    "tone_markers": [],
+    "route_summary": {
+      "线索词优先": 9,
+      "固定搭配优先": 0,
+      "双路径": 0,
+      "整组短语直接辨析": 1
+    },
+    "update_tag": "2026年11月更新",
+    "update_seq": 194
   }
 ];
