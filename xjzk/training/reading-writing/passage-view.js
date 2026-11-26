@@ -245,7 +245,7 @@ let stageTabsBound = false;
         <button type="button" class="catalog-row${finished ? ' is-done' : ''}" data-open-passage="${i}">
           <span class="catalog-index">${serial}</span>
           <span class="catalog-main">
-            <span class="catalog-badges">${officialBadge}</span>
+            <span class="catalog-badges">${officialBadge}${p.updateLabel ? `<span class="latest-update-badge">${escapeHtml(p.updateLabel)}</span>` : ""}</span>
             <strong>${escapeHtml(cleanTitle(p))}</strong>
             <span class="catalog-detail-row">
               <span class="row-meta" title="${escapeHtml(source)}">${escapeHtml(source)}</span>

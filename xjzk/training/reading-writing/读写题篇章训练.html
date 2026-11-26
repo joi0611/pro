@@ -13576,6 +13576,11 @@ window.PASSAGES_DATA = [
   }
 ];
 </script>
+<script src="urumqi38-midterm-20261124-passage.js?v=20261126-main"></script>
+<script src="urumqi08-midterm-202611-passage.js?v=20261126-main"></script>
+<script src="urumqi126-cihu-midterm-20261026-passage.js?v=20261126-cihu-review"></script>
+<script src="urumqi-joint1-202611-passage.js?v=20261126-main"></script>
+
 <script>/*
  * 读写题 · 篇章模式引擎（纯逻辑，无 DOM）
  * 职责：篇章数据建模、填空/问答分级判分、原文证据索引
@@ -14379,7 +14384,7 @@ let stageTabsBound = false;
         <button type="button" class="catalog-row${finished ? ' is-done' : ''}" data-open-passage="${i}">
           <span class="catalog-index">${serial}</span>
           <span class="catalog-main">
-            <span class="catalog-badges">${officialBadge}</span>
+            <span class="catalog-badges">${officialBadge}${p.updateLabel ? `<span class="latest-update-badge">${escapeHtml(p.updateLabel)}</span>` : ""}</span>
             <strong>${escapeHtml(cleanTitle(p))}</strong>
             <span class="catalog-detail-row">
               <span class="row-meta" title="${escapeHtml(source)}">${escapeHtml(source)}</span>
