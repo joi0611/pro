@@ -819,7 +819,11 @@
   <footer class="site-footer">@新疆学生无限进步</footer>
 
   <script src="../../assets/student-profile.js?v=20261020-1"></script>
-  <script>
+  <script src="data/urumqi38-midterm-20261124.js?v=20261126-main"></script>
+<script src="data/urumqi08-midterm-202611.js?v=20261126-reading-review"></script>
+<script src="data/urumqi126-cihu-midterm-20261026.js?v=20261126-main"></script>
+<script src="data/urumqi-joint1-202611.js?v=20261126-reading-review"></script>
+<script>
     function q(number, stem, options, answer, keywords, evidence, keywordTip, compare, explanation) {
       return { number, stem, options, answer, keywords, evidence, keywordTip, compare, explanation };
     }
@@ -1048,11 +1052,11 @@
             const index = passages.indexOf(p);
             const official = isRealExam(p);
             const badge = official ? `<span class="official-exam-badge">${passageYear(p)} 新疆中考真题</span>` : "";
-            const latest = p.importBatch === window.LATEST_IMPORT_BATCH;
+            const latest = p.updateLabel || p.importBatch === window.LATEST_IMPORT_BATCH;
             const serial = String(displayIndex + 1).padStart(2, "0");
             const completed = isPassageComplete(p);
             const translationStatus = completed && hasPassageTranslation(p) ? " · 已完成，可看译文" : (completed ? " · 已完成" : "");
-            return `<button class="catalog-item${official ? " official-exam-card" : ""}" onclick="selectPassage(${index})">${badge}${latest ? `<em class="latest-update-badge">${window.LATEST_IMPORT_BATCH} 更新</em>` : ''}<strong>${serial}. ${escapeHtml(cleanSourceText(p.title))}</strong><span>${escapeHtml(cleanSourceText(p.meta))} · ${p.questions.length} 题${translationStatus}</span></button>`;
+            return `<button class="catalog-item${official ? " official-exam-card" : ""}" onclick="selectPassage(${index})">${badge}${latest ? `<em class="latest-update-badge">${p.updateLabel || (window.LATEST_IMPORT_BATCH + " 更新")}</em>` : ''}<strong>${serial}. ${escapeHtml(cleanSourceText(p.title))}</strong><span>${escapeHtml(cleanSourceText(p.meta))} · ${p.questions.length} 题${translationStatus}</span></button>`;
           }).join("") : `<div class="meta">暂未载入</div>`}
         </section>
       `;
@@ -2545,6 +2549,7 @@
       }
     }
 
+    passages.push(...window.urumqi38Reading, ...window.urumqi08Passages, ...window.urumqi126Passages, ...window.joint1Reading);
     renderAll();
     document.addEventListener("DOMContentLoaded", initReadingLogin);
   </script>
