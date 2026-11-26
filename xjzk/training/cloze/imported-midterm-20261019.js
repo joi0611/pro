@@ -673,16 +673,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "myself",
         "pos": "代词",
-        "category": "固定搭配 / 语法",
+        "category": "语境推理",
         "clues": [
-          "time by",
-          "time",
-          "by"
+          "I can organize (安排) my time"
         ],
-        "explanation": "【详解】1．句意：我现在正在度假，所以我可以自己安排时间。mine我的，名词性物主代词；you你/你们；myself我自己，反身代词。此处为固定短语by oneself“独自地，亲自”，主语是I，对应的反身代词为myself。故选C。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：by oneself。语境路径：主语是 I，说的是假期可以自行安排时间，填 myself。 答案：myself。",
+        "collocation": "by oneself",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "by oneself"
       },
       {
         "id": 2,
@@ -776,16 +774,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "arrive",
         "pos": "形容词副词",
-        "category": "固定搭配 / 语法",
+        "category": "语境推理",
         "clues": [
-          "at the gym early",
-          "morning",
-          "I"
+          "play sports with my friends"
         ],
-        "explanation": "6．句意：每天早上，我很早就到健身房，和朋友们一起做运动。leave离开；arrive到达；cross穿过。根据“at the gym early”可知，此处是“到达”健身房，arrive at为固定短语。故选B。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：arrive at。语境路径：早上先到体育馆，再和朋友一起运动。 答案：arrive。",
+        "collocation": "arrive at",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "arrive at"
       },
       {
         "id": 7,
@@ -817,17 +813,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "spend",
         "pos": "名词",
-        "category": "上下文复现",
+        "category": "语境推理",
         "clues": [
-          "about two hours in the gym",
-          "I often",
-          "I",
-          "often"
+          "but I still have a lot of free time"
         ],
-        "explanation": "8．句意：我经常在健身房花大约两个小时，但我仍然有很多空闲时间。learn学习；care关心；spend花费，度过演。根据“about two hours in the gym”可知，此处指“花费”时间在健身房。故选C。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：spend + 时间 + 地点。语境路径：下文还剩很多空闲时间，说明前面的两小时是在体育馆花掉的时间。 答案：spend。",
+        "collocation": "spend + 时间 + 地点",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "spend + 时间 + 地点"
       },
       {
         "id": 9,
@@ -2020,17 +2013,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "for",
         "pos": "介词搭配",
-        "category": "固定搭配 / 语法",
+        "category": "语境推理",
         "clues": [
-          "be good",
-          "be",
-          "good",
-          "your learning"
+          "find some mistakes in your notes"
         ],
-        "explanation": "12．句意：这会对你的学习有好处。固定搭配“be good for”表示“对……有益”，be good with多指“善于和人相处”，in无相关固定搭配。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：be good for。语境路径：和同学比对笔记能发现错误，因此对学习有益。 答案：for。",
+        "collocation": "be good for",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "be good for"
       },
       {
         "id": 13,
@@ -2062,17 +2052,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "spend",
         "pos": "动词",
-        "category": "固定搭配 / 语法",
+        "category": "语境推理",
         "clues": [
-          "you will",
-          "you",
-          "will",
-          "less time"
+          "the most important and useful parts in your notes"
         ],
-        "explanation": "14．句意：课后或者考试前，复习笔记里最重要、最有用的内容，你复习会花费更少时间，取得更好的成绩。本句主语是you，符合spend的用法；cost主语只能是物品，take常用句式为“It takes sb. time to do sth.”，二者都不匹配句子结构。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：spend time doing sth.。语境路径：只复习笔记重点，学生花在复习上的时间就更少。 答案：spend。",
+        "collocation": "spend time doing sth.",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "spend time doing sth."
       },
       {
         "id": 15,
@@ -2383,17 +2370,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "listen to",
         "pos": "名词",
-        "category": "上下文复现",
+        "category": "语境推理",
         "clues": [
-          "English tapes",
-          "me to",
-          "me",
-          "to"
+          "I could only catch a few words"
         ],
-        "explanation": "5．句意：张老师还让我每天早上听英语磁带。talk about谈论；listen to听；think of想起。根据“English tapes”可知，此处指听英语磁带。故选B。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：listen to。语境路径：起初只能听懂几个词，后来懂得更多，说明他在听英语录音。 答案：listen to。",
+        "collocation": "listen to",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "listen to"
       },
       {
         "id": 6,
@@ -2509,17 +2493,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "keep",
         "pos": "动词",
-        "category": "固定搭配 / 语法",
+        "category": "语境推理",
         "clues": [
-          "Practice makes perfect.",
-          "I will",
-          "I",
-          "will"
+          "Practice makes perfect."
         ],
-        "explanation": "11．句意：我将继续每天练习英语。stop停止；keep保持，继续；mind介意。根据上文“Practice makes perfect.”及“I will...practicing English every day.”可知，此处指将继续每天练习英语，keep doing sth.“继续做某事”，固定短语。故选B。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：keep doing sth.。语境路径：熟能生巧，作者决定每天继续练英语。三个词都能接 -ing，此处要判断是继续还是停止。 答案：keep。",
+        "collocation": "keep doing sth.",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "keep doing sth."
       },
       {
         "id": 12,
@@ -2530,17 +2511,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "took",
         "pos": "名词",
-        "category": "固定搭配 / 语法",
+        "category": "语境推理",
         "clues": [
-          "I followed her advice.",
-          "glad I",
-          "glad",
-          "I"
+          "I followed her advice."
         ],
-        "explanation": "12．句意：我很高兴我采纳了张老师的建议。took采取，采纳；made制作；gave给。根据上文“I followed her advice.”可知，此处指采纳了张老师的建议，take one’s advice“采纳某人的建议”，固定短语。故选A。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：take one’s advice。语境路径：上文已经说他听从了老师的建议，这里回顾的是同一件事。 答案：took。",
+        "collocation": "take one’s advice",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "take one’s advice"
       },
       {
         "id": 13,
@@ -2551,15 +2529,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "give up",
         "pos": "名词",
-        "category": "上下文复现",
+        "category": "语境推理",
         "clues": [
-          "If you find English hard, just keep trying.",
-          "Don’t"
+          "just keep trying"
         ],
-        "explanation": "13．句意：不要放弃。give up放弃；give in屈服；give out分发。根据上文“If you find English hard, just keep trying.”可知，此处指不要放弃，要继续努力。故选A。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：give up。语境路径：上文劝读者继续努力，所以这里是劝读者不要放弃。 答案：give up。",
+        "collocation": "give up",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "give up"
       },
       {
         "id": 14,
@@ -3142,16 +3119,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "To",
         "pos": "名词",
-        "category": "固定搭配 / 语法",
+        "category": "固定搭配",
         "clues": [
-          "my surprise",
-          "my",
-          "surprise"
+          "my surprise"
         ],
-        "explanation": "11．句意：令我惊讶的是，很多学生更理解我了，并且很快完成了作业。To到；At在；On在……上面。“to one’s surprise”是固定短语，意为“令某人惊讶的是”。故选A。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "to one’s surprise 表示“令某人惊讶的是”，三个介词中选 To。",
+        "collocation": "to one’s surprise",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "to one’s surprise"
       },
       {
         "id": 12,
@@ -3499,17 +3474,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "wait",
         "pos": "形容词副词",
-        "category": "固定搭配 / 语法",
+        "category": "语境推理",
         "clues": [
-          "he couldn’t",
-          "he",
-          "couldn’t",
-          "to fly"
+          "The son loved it so much"
         ],
-        "explanation": "【详解】1．句意：儿子太喜欢了，迫不及待想放它。根据“couldn’t...to fly it”可知，此处指等不及要去放风筝，固定搭配couldn’t wait to do sth.表示“迫不及待做某事”，应选用wait。plan“计划”，hope“希望”，均不符合语境。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：can’t wait to do sth.。语境路径：儿子非常喜欢风筝，迫不及待想去放。 答案：wait。",
+        "collocation": "can’t wait to do sth.",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "can’t wait to do sth."
       },
       {
         "id": 2,
@@ -4101,17 +4073,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "door",
         "pos": "名词",
-        "category": "上下文复现",
+        "category": "语境推理",
         "clues": [
-          "doorbell",
-          "opened the",
-          "opened",
-          "the"
+          "the doorbell rang"
         ],
-        "explanation": "2．句意：我弟弟以为是我们的父母，他迅速地打开了门。根据前文“门铃响了”可知，接下来的动作应该是去开门“door”，而不是开橱柜“cupboard”或开门铃“doorbell”。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：open the door。语境路径：门铃响了，弟弟以为父母回来了，就去开门。 答案：door。",
+        "collocation": "open the door",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "open the door"
       },
       {
         "id": 3,
@@ -4781,16 +4750,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "warm",
         "pos": "名词",
-        "category": "上下文复现",
+        "category": "语境推理",
         "clues": [
-          "keep him",
-          "keep",
-          "him"
+          "about -4℃"
         ],
-        "explanation": "7．句意：然后她紧紧地靠在布朗先生身边，让他保持温暖。wet湿的；dry干的；warm温暖的。根据“Then she stayed close to Mr Brown to keep him...”及常识可知，狗靠在布朗先生身边是为了让他保持温暖，故选C。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：keep sb. warm。语境路径：气温约零下四度，凯尔西贴着主人是为了保暖。 答案：warm。",
+        "collocation": "keep sb. warm",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "keep sb. warm"
       },
       {
         "id": 8,
@@ -4821,17 +4788,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "lose",
         "pos": "名词",
-        "category": "上下文复现",
+        "category": "语境推理",
         "clues": [
-          "I would",
-          "I",
-          "would",
-          "my life"
+          "didn’t lose his life"
         ],
-        "explanation": "9．句意：“凯尔西给了我希望。我不能睡觉，否则我会因为寒冷而失去生命，”布朗先生说。leave离开；lose失去；live居住。根据“I couldn't sleep, or I would...my life because of the cold”可知，此处指因为寒冷而失去生命，故选B。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：lose one’s life。语境路径：后文医生说他没有丧命，呼应这里严寒中的生命危险。 答案：lose。",
+        "collocation": "lose one’s life",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "lose one’s life"
       },
       {
         "id": 10,
@@ -4947,17 +4911,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "lives",
         "pos": "名词",
-        "category": "上下文复现",
+        "category": "语境推理",
         "clues": [
-          "save our",
-          "save",
-          "our",
-          "when we"
+          "saving his life"
         ],
-        "explanation": "15．句意：当我们最需要帮助的时候，它们能给我们带来快乐，甚至拯救我们的生命。time时间；lives生命；money钱。根据“They can bring us happiness and even save our...when we need help the most.”及前文内容可知，此处指拯救我们的生命，故选B。主题03 人与自然——环境保护",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：save one’s life。语境路径：上文说凯尔西救了主人，结尾由这个例子推广到动物有时能救人的命。 答案：lives。",
+        "collocation": "save one’s life",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "save one’s life"
       }
     ],
     "verifySentences": [
@@ -5321,16 +5282,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "low",
         "pos": "名词",
-        "category": "上下文复现",
+        "category": "语境推理",
         "clues": [
-          "prices as",
-          "prices",
-          "as"
+          "9.9 yuan"
         ],
-        "explanation": "5．句意：有些盲盒售价低至9.9元。high高的；new新的；low低的。根据“as…as 9.9 yuan”可知，此处表示价格低。故选C。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：as low as。语境路径：这一段在说明盲盒很便宜，9.9 元是具体的低价例子。as … as 只确定结构，价格语境才能选 low。 答案：low。",
+        "collocation": "as low as",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "as low as"
       },
       {
         "id": 6,
@@ -5529,17 +5488,14 @@ window.importedMidtermClozeLessons = [
         ],
         "answer": "keep away",
         "pos": "名词",
-        "category": "上下文复现",
+        "category": "语境推理",
         "clues": [
-          "make them",
-          "make",
-          "them",
-          "from blind"
+          "let’s stop buying such blind boxes"
         ],
-        "explanation": "15．句意：动物是我们的朋友，所以我们应该爱它们并且让它们远离盲盒。give away赠送；keep away远离；give up放弃。根据“so we should love them and make them…from blind boxes”可知，让它们远离盲盒是保护动物的正确做法。故选B。",
-        "collocation": "无",
-        "collocationType": "无",
-        "collocationBreakdown": "无"
+        "explanation": "搭配路径：keep away from。语境路径：结尾呼吁保护动物、停止买这类盲盒，因此要让动物远离盲盒。 答案：keep away。",
+        "collocation": "keep away from",
+        "collocationType": "固定结构",
+        "collocationBreakdown": "keep away from"
       }
     ],
     "verifySentences": [

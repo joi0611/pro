@@ -3757,12 +3757,29 @@ const normalizedLessonSources = {
   "xinjiang-official-2016-cloze": "2016年 · 新疆维吾尔自治区、新疆生产建设兵团 · 初中学业水平考试英语真题"
 };
 
+const examOpeningIds = [
+  "urumqi-joint1-202611",
+  "xinjiang-midterm-2025-cloze-03",
+  "xinjiang-midterm-2025-cloze-07",
+  "xinjiang-midterm-2025-cloze-09",
+  "xinjiang-midterm-2025-cloze-01",
+  "xinjiang-midterm-2025-cloze-02",
+  "xinjiang-midterm-2025-cloze-04",
+  "xinjiang-midterm-2025-cloze-05",
+  "xinjiang-midterm-2025-cloze-06",
+  "xinjiang-midterm-2025-cloze-08",
+  "xinjiang-midterm-2025-cloze-10",
+  "urumqi38-midterm-20261124-cloze"
+];
+const examOpeningRank = new Map(examOpeningIds.map((id, index) => [id, index]));
+
 const lessonBanks = [
   {
     id: "exam",
     title: "中考",
     lessons: [
       ...(window.officialClozeLessons || []),
+      ...[window.joint1Cloze, window.urumqi38MidtermCloze, ...(window.importedMidtermClozeLessons || []).filter(item => examOpeningRank.has(item.id))].filter(Boolean),
       lesson,
       nineColoredDeer,
       supermarketWarmth,
@@ -3798,7 +3815,8 @@ const lessonBanks = [
     id: "basic",
     title: "初阶",
     lessons: [
-      ...(window.importedMidtermClozeLessons || []),
+      ...[window.urumqi08Cloze, window.urumqi126Cloze].filter(Boolean),
+      ...(window.importedMidtermClozeLessons || []).filter(item => !examOpeningRank.has(item.id)),
       refrigeratorMagnets,
       braveBoyHouseFire,
       saltyJuiceLife,
@@ -3823,6 +3841,12 @@ lessonBanks.forEach((bank) => {
   });
 });
 
+const examLessons = lessonBanks[0].lessons;
+lessonBanks.splice(0, 1,
+  { id: "official-exam", title: "中考真题", lessons: examLessons.filter(isOfficialExamLesson) },
+  { id: "exam", title: "优质中考模考题", lessons: examLessons.filter(item => !isOfficialExamLesson(item)) }
+);
+
 function isOfficialExamLesson(item) {
   return Boolean(item && (item.featured || /初中学业水平考试英语真题/.test(item.source || "")));
 }
@@ -3842,6 +3866,9 @@ function sortLessonsForDisplay(lessons) {
   return lessons
     .map((item, originalIndex) => ({ item, originalIndex }))
     .sort((a, b) => {
+      const aRank = examOpeningRank.get(a.item.id) ?? Infinity;
+      const bRank = examOpeningRank.get(b.item.id) ?? Infinity;
+      if (aRank !== bRank) return aRank - bRank;
       const aYear = getOfficialExamYear(a.item);
       const bYear = getOfficialExamYear(b.item);
       if (aYear || bYear) {
@@ -3859,6 +3886,23 @@ function sortLessonsForDisplay(lessons) {
 }
 
 const lessonSlots = lessonBanks.flatMap((bank) => bank.lessons);
+
+for (const item of lessonSlots) {
+  const reviewed = window.CLOZE_DUAL_ROUTE_REVIEW?.[item.id];
+  if (!reviewed) continue;
+  for (const question of item.questions) {
+    const clues = reviewed[question.id];
+    if (!clues) continue;
+    question.clues = Array.isArray(clues) ? clues : clues.clues;
+    if (!Array.isArray(clues)) {
+      question.collocation = clues.collocation;
+      question.collocationType = "固定结构";
+      question.collocationBreakdown = clues.collocation;
+      question.explanation += " 语境路径：" + clues.reason;
+    }
+    question.category = question.category + " / 语境推理";
+  }
+}
 
 const storageKeys = {
   done: "clozeCoach.doneLessons",
@@ -4452,6 +4496,7 @@ function hasStoredCollocation(question) {
 }
 
 function shouldUseCollocationFirst(question) {
+  if (question.contextOnly) return false;
   if (!hasStoredCollocation(question)) return false;
   const category = question.category || "";
   const clueFirstTypes = ["上下文复现", "逻辑推理", "常识", "情感态度", "主旨升华", "动作连贯", "下文暗示", "上文总结", "语境推理"];
@@ -4465,10 +4510,12 @@ function hasIndependentClueRoute(question) {
 }
 
 function isDualReasoningQuestion(question) {
+  if (question.contextOnly) return false;
   return hasStoredCollocation(question) && hasIndependentClueRoute(question);
 }
 
 function getAcceptedReasoningRoutes(question) {
+  if (question.contextOnly) return [false];
   if (isDualReasoningQuestion(question)) return [true, false];
   return [shouldUseCollocationFirst(question)];
 }
@@ -4520,6 +4567,7 @@ function renderHomeLibrary() {
   const doneLessons = getDoneLessons();
   renderHomeProgress(doneLessons);
   els.homeGrid.innerHTML = "";
+  let displayNumber = 0;
   getVisibleLessonBanks().forEach((bank) => {
     const availableLessons = sortLessonsForDisplay(bank.lessons.filter((item) => item.available));
     if (!availableLessons.length) return;
@@ -4535,17 +4583,18 @@ function renderHomeLibrary() {
 
     const list = document.createElement("div");
     list.className = "home-card-grid";
-    availableLessons.forEach((item, index) => {
+    availableLessons.forEach((item) => {
+      displayNumber += 1;
       const isUnlocked = isLessonUnlocked(item);
       const isDone = isUnlocked && Boolean(doneLessons[item.id]);
       const card = document.createElement("article");
       const isOfficialExam = isOfficialExamLesson(item);
       card.className = `home-lesson-card ${isUnlocked ? (isDone ? "done" : "ready") : "experience-locked"}${item.featured ? " featured" : ""}${isOfficialExam ? " official-exam-card" : ""}`;
       card.innerHTML = `
-        <span class="home-card-index">${String(index + 1).padStart(2, "0")}</span>
+        <span class="home-card-index">${String(displayNumber).padStart(2, "0")}</span>
         <div class="home-card-main">
           ${isOfficialExam ? `<span class="official-exam-badge">${getOfficialExamBadge(item)}</span>` : ""}
-          ${item.importBatch === window.LATEST_IMPORT_BATCH ? `<span class="latest-update-badge">${window.LATEST_IMPORT_BATCH} 更新</span>` : ""}
+          ${(item.updateLabel || item.importBatch === window.LATEST_IMPORT_BATCH) ? `<span class="latest-update-badge">${item.updateLabel || (window.LATEST_IMPORT_BATCH + " 更新")}</span>` : ""}
           <strong>${item.title}</strong>
           <p class="source-line${isOfficialExamLesson(item) ? " real-exam-source" : ""}">${item.source}</p>
         </div>
@@ -4642,15 +4691,18 @@ function showHomeTool(tool) {
 function renderLessonLibrary() {
   const doneLessons = getDoneLessons();
   els.lessonGrid.innerHTML = "";
+  let displayNumber = 0;
   getVisibleLessonBanks().forEach((bank) => {
     const group = document.createElement("details");
     group.className = "library-group";
-    group.open = bank.lessons.some((item) => item.id === lesson.id) || bank.id === "exam";
+    group.open = bank.lessons.some((item) => item.id === lesson.id) || bank.id === "exam" || bank.id === "official-exam";
     group.innerHTML = `<summary>${bank.title}<span>${bank.lessons.length}篇</span></summary>`;
     const list = document.createElement("div");
     list.className = "library-group-list";
 
-    sortLessonsForDisplay(bank.lessons).forEach((item, index) => {
+    const sortedLessons = sortLessonsForDisplay(bank.lessons);
+    sortedLessons.forEach((item) => {
+      displayNumber += 1;
       const isUnlocked = isLessonUnlocked(item);
       const isDone = isUnlocked && Boolean(doneLessons[item.id]);
       const isActive = item.id === lesson.id;
@@ -4663,12 +4715,12 @@ function renderLessonLibrary() {
         <div class="library-topline">
           <span class="pick-label">
             <span class="fake-check">${isActive ? "✓" : ""}</span>
-            第 ${index + 1} 篇
+            ${"第 " + displayNumber + " 篇"}
           </span>
           <span class="status-pill ${!isUnlocked ? "locked" : isDone ? "done" : item.available ? "ready" : "pending"}">${!isUnlocked ? "已锁定" : isDone ? "已做，可重做" : item.available ? "可练习" : "待导入"}</span>
         </div>
         ${isOfficialExam ? `<span class="official-exam-badge">${getOfficialExamBadge(item)}</span>` : ""}
-        ${item.importBatch === window.LATEST_IMPORT_BATCH ? `<span class="latest-update-badge">${window.LATEST_IMPORT_BATCH} 更新</span>` : ""}
+        ${(item.updateLabel || item.importBatch === window.LATEST_IMPORT_BATCH) ? `<span class="latest-update-badge">${item.updateLabel || (window.LATEST_IMPORT_BATCH + " 更新")}</span>` : ""}
         <strong>${item.title}</strong>
         <p>${item.englishTitle}</p>
         ${item.source ? `<p class="source-line${isOfficialExamLesson(item) ? " real-exam-source" : ""}">${item.source}</p>` : ""}
@@ -4838,11 +4890,15 @@ function getToneValue(tone) {
   return text;
 }
 
+function activeQuestionNeedsContext(id) {
+  return Boolean(findQuestion(id)?.contextRequired);
+}
+
 function renderPassage() {
   els.passage.innerHTML = "";
   const activeQuestion = state.selectedId
     && state.posPassed[state.selectedId]
-    && state.reasoningRoutes[state.selectedId] !== true
+    && (state.reasoningRoutes[state.selectedId] !== true || activeQuestionNeedsContext(state.selectedId))
     ? findQuestion(state.selectedId)
     : null;
   lesson.passage.forEach((part) => {
@@ -5128,7 +5184,7 @@ function renderToolStep(question) {
       : `寻找线索：${hiddenCollocation ? "线索词观察" : tool.title}`;
   els.toolGuide.innerHTML = buildToolGuide(question, tool);
   els.clueWords.innerHTML = "";
-  const clueItems = selectedRoute === true
+  const clueItems = selectedRoute === true && !question.contextRequired
     ? []
     : getQuestionHighlightItems(question, { revealCollocation: answered });
   clueItems.forEach((item) => {
@@ -5177,7 +5233,9 @@ function buildToolGuide(question, tool) {
   const selectedRoute = state.reasoningRoutes[question.id];
   if (selectedRoute === true && hasStoredCollocation(question)) {
     if (!answered) {
-      return "<p>先观察线索词和空格前后结构，不急着看完整搭配。选完答案后，再打开搭配放大镜复盘。</p>";
+      return question.contextRequired
+        ? "<p>先判断空格前后的结构，再用标出的原文线索排除干扰项。</p>"
+        : "<p>先观察线索词和空格前后结构，不急着看完整搭配。选完答案后，再打开搭配放大镜复盘。</p>";
     }
     return `
       <div class="collocation-box collocation-lens-box">
@@ -6126,7 +6184,7 @@ function renderHighFrequencySentence(sentence, surface) {
 
 function renderHighFrequencyReview() {
   if (!els.highFrequencyReview) return;
-  const lessonSelections = window.CLOZE_HIGH_FREQUENCY_SELECTIONS?.[lesson.id] || [];
+  const lessonSelections = window.CLOZE_HIGH_FREQUENCY_SELECTIONS?.[lesson.id] || (lesson.vocabularyCards || []).map(([surface, sentence]) => ({word: surface, surface, sentence}));
   const cards = lessonSelections.map((selection) => {
     const entry = getHighFrequencyVocabularyEntry(selection.word);
     if (!entry) return null;
