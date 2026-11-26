@@ -169,7 +169,7 @@
     ],
     items: [
       { id: 1, needed: "prep", word: "in", rule: "safe", answer: "in", before: "Jiangxi Province", after: "the southeast", formula: "方位表达 in the southeast of。", path: "Jiangxi Province ___ the southeast of China -> in" },
-      { id: 2, needed: "noun", word: "difficulty", rule: "plural", answer: "difficulties", before: "all the", after: "he faces", formula: "all the 后接可数名词复数。", path: "all the ___ he faces -> difficulty -> difficulties" },
+      { id: 2, needed: "noun", word: "difficulty", rule: "plural", answer: "difficulties", before: "all the", after: "he faces", formula: "这里指他在学校遇到的各种困难。difficulty 表示一件具体的困难时可数，此处用复数 difficulties。", path: "all the ___ he faces -> 他面对的各种困难 -> difficulty 是可数名词，此处用复数 -> difficulties" },
       { id: 3, needed: "noun", word: "back", rule: "keep", answer: "back", before: "on his", after: "walks into", formula: "物主代词后接名词；carry sb. on one's back。", path: "carries Zhong on his ___ -> back" },
       { id: 4, needed: "conj", word: "if", rule: "safe", answer: "if", before: "ask Zhong", after: "he wants", formula: "ask 后用 if 引导一般疑问意义的宾语从句。", path: "ask Zhong ___ he wants -> if" },
       { id: 5, needed: "num", word: "fourth", rule: "ordinal", answer: "fourth", before: "in the", after: "grade", formula: "年级前用序数词。", path: "in the ___ grade -> fourth" },

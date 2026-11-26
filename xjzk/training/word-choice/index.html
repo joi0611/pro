@@ -2000,12 +2000,15 @@
 
   <script src="../../assets/progress-sync.js?v=20261115-1"></script>
   <script src="../../assets/student-profile.js?v=20261020-1"></script>
-  <script src="imported-question-bank-20260829.js?v=20260829-1"></script>
+  <script src="imported-question-bank-20260829.js?v=20261126-official-review"></script>
   <script src="imported-question-bank-20260902.js?v=20260902-1"></script>
   <script src="imported-question-bank-20260913.js?v=20260914-visible-print-1"></script>
   <script src="imported-question-bank-20261019.js?v=20261020-basic-order-1"></script>
   <script src="../grammar/grammar-word-data.js?v=20260920-1"></script>
-  <script src="word-choice-reading.js?v=20260920-1"></script>
+  <script src="urumqi08-midterm-202611.js?v=20261126-main"></script>
+<script src="urumqi126-cihu-midterm-20261026.js?v=20261126-main"></script>
+<script src="urumqi-joint1-202611.js?v=20261126-main"></script>
+<script src="word-choice-reading.js?v=20260920-1"></script>
   <script>
     const loginCodes = new Set();
 
@@ -2172,7 +2175,7 @@
       11: { needed: "verb", correctWord: "learn", rule: "base", answer: "learn", path: "to ___ something else -> to needs verb base form -> learn -> learn" },
       12: { needed: "num", correctWord: "thousand", rule: "plural", answer: "thousands", path: "During ___ of years -> fixed expression thousands of -> thousand -> thousands" },
       13: { needed: "conj", correctWord: "and", rule: "safe", answer: "and", path: "between the East ___ the West -> between A and B -> and" },
-      14: { needed: "verb", correctWord: "make", rule: "base", answer: "make", path: "In order to ___ it pass down -> to + verb base, make it pass down -> make" },
+      14: { needed: "verb", correctWord: "make", rule: "base", answer: "make", path: "In order to ___ it pass down -> in order to + 动词原形 → 表示“使、让” → make" },
       15: { needed: "adj", correctWord: "famous", rule: "origin", answer: "famous", path: "It is ___ for -> be + adjective and be famous for -> famous" },
       16: { needed: "prep", correctWord: "of", rule: "safe", answer: "of", path: "because ___ its high quality -> because of + noun phrase -> of" },
       17: { needed: "verb", correctWord: "pick", rule: "past", answer: "picked", path: "people mainly ___ cotton -> missing predicate verb, In the past marks past tense -> pick -> picked" },
@@ -2200,10 +2203,10 @@
       11: "空前是：不定式符号 to。口诀：to 之后必填【动词原形】。",
       12: "空后是：of。口诀：hundred/thousand + of 结构中，单位词要加 s，填【复数形式】。",
       13: "空前是：between。口诀：between...and... 是固定搭配，必填【并列连词 and】。",
-      14: "空前是：In order to。口诀：to 后填【动词原形】；make sb/sth do 中也用动词原形。",
+      14: "本题沿用原卷措辞（原卷第68题）。in order to 后用动词原形，结合“让木卡姆流传下去”的语境，选 make。",
       15: "空前是：be 动词，空后是 for。口诀：be famous for 是固定搭配，填【形容词】。",
       16: "空前是：because，空后是名词短语。口诀：because of 后接名词/名词短语，填【介词 of】。",
-      17: "句中有：In the past。口诀：有过去时间标志，动词必填【过去式】。",
+      17: "主语 people 后缺谓语；In the past 和采棉的语境表明这里叙述以前的情况，因此用一般过去时 picked。",
       18: "空前是：Thanks。口诀：thanks to 是固定搭配，填【介词 to】。",
       19: "空前是：one of。口诀：one of + 复数名词，表示“其中之一”。",
       20: "空后是：...and...。口诀：both...and... 是固定搭配，表示“两者都”。",
@@ -2285,7 +2288,7 @@
         8: "空前是：can。口诀：情态动词之后必填【动词原形】。",
         9: "句中有：Last year。口诀：有过去时间标志，动词必填【过去式】。",
         10: "空前是：helps to。口诀：to 之后必填【动词原形】。",
-        11: "空后是：land。口诀：名词前作定语，必填【形容词】。"
+        11: "空格描述 land 的特点。结合治沙语境，选形容词 dry，表示“干旱的土地”。"
       },
       passageHtml: `
         Can roses really grow in the desert? The
@@ -4281,7 +4284,7 @@
         87: "位于名词 houses 前作定语，优先判断为形容词。",
         88: "动词搭配：cover...with...，表示“用……覆盖……”。",
         89: "keep + 宾语 + 形容词作宾补；再看 warm in winter / cool in summer 的对比。",
-        90: "have/has + 过去分词构成现在完成时；take place 的过去分词是 taken。",
+        90: "take place 表示“发生”。have 后用 take 的过去分词 taken，完整结构是 have taken place。",
         91: "不定式符号 to 后接动词原形，构成目的状语。",
         92: "形容词 fun 后接名词；such as 后列举多项内容时，多用复数名词。",
         93: "修饰动词 live，表示递进语气，填副词 even。",
@@ -4322,7 +4325,13 @@
         <span class="clue" data-clue-for="95">natural beauty and</span> lively culture.`
     };
 
-    const questionBank = {
+    const novemberWordChoice = {
+"urumqi08-midterm-202611": window.urumqi08WordChoice,
+"urumqi126-cihu-midterm-20261026": window.urumqi126WordChoice,
+"urumqi-joint1-202611": window.joint1WordChoice
+};
+const questionBank = {
+      ...novemberWordChoice,
       ...window.WORD_CHOICE_IMPORTED_20260829,
       ...window.WORD_CHOICE_IMPORTED_20260902,
       ...window.WORD_CHOICE_IMPORTED_20260913,
@@ -4475,7 +4484,7 @@
         const officialYear = getWordChoiceOfficialYear(data);
         const title = officialYear ? (rawTitle.replace(/^20\d{2}\s*新疆真题\s*[·.：:]?\s*/, "").trim() || "新疆中考选词填空") : rawTitle;
         const serial = String(index + 1).padStart(2, "0");
-        const badge = officialYear ? '<span class="official-exam-badge">' + officialYear + ' 新疆中考真题</span>' : (data.importBatch === "20261019" ? '<span class="latest-update-badge">20261019 更新</span>' : '');
+        const badge = officialYear ? '<span class="official-exam-badge">' + officialYear + ' 新疆中考真题</span>' : (data.updateLabel ? '<span class="latest-update-badge">' + data.updateLabel + "</span>" : data.importBatch === "20261019" ? '<span class="latest-update-badge">20261019 更新</span>' : '');
         const done = wordChoiceDoneArticles[key];
         const safeTitle = escapeHtml(title);
         const readingButton = '<button class="word-home-reading" type="button" data-reading-article="' + key + '" aria-label="查看全文翻译：' + safeTitle + '"><span class="word-home-reading-mark" aria-hidden="true">译</span><span class="word-home-action-label">全文翻译</span></button>';
@@ -4581,6 +4590,9 @@
       if (!ans) return ["未作答", "没有完成选词、词性和变形操作。"];
       if (ans.need !== target.needed) return ["词性判断", `本空需要${labelFor(target.needed)}，你选择的是${labelFor(ans.need)}。先判断词性，再进行词形转换。`];
       if (ans.word !== target.correctWord) return ["选词错误", `本空需要${labelFor(target.needed)}，应先选“${target.correctWord}”，再决定词形。`];
+      if (ans.shown === target.answer && ans.rule !== target.rule) {
+        return ["变形规则", `拼写正确，本空应选择“${notebookRuleLabel(target.rule)}”。`];
+      }
       if (ans.shown !== target.answer) {
         if (target.rule === "sentence" || /^[A-Z]/.test(target.answer) && /^[a-z]/.test(ans.shown || "")) return ["句首大小写", "词形基本正确，但位于句首时首字母需要大写。"];
         if (target.rule === "third") return ["第三人称单数", `主语和时态要求动词第三人称单数，应使用“${target.answer}”。`];
@@ -5190,7 +5202,8 @@
       const records = Object.entries(blanks).map(([id, target]) => {
         const ans = state.answers[id];
         const blank = document.querySelector(`[data-blank="${id}"]`);
-        const ok = ans && ans.need === target.needed && ans.word === target.correctWord && ans.shown === target.answer;
+        const ok = ans && ans.need === target.needed && ans.word === target.correctWord && ans.shown === target.answer
+          && (!getWordChoiceOfficialYear(questionBank[currentQuestionKey]) || ans.rule === target.rule);
         if (ok) correct += 1;
         blank.classList.toggle("wrong", !ok);
         const [errorType, explanation] = ok ? ["", ""] : classifyError(target, ans);
