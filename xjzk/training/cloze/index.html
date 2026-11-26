@@ -1,14 +1,14 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
     <title>新疆中考英语完形填空训练系统</title>
-    <link rel="stylesheet" href="styles.css?v=20260716-official-order-1" />
+    <link rel="stylesheet" href="styles.css?v=20260921-experience-button-2" />
     <link rel="stylesheet" href="../../assets/theme-purple.css?v=20260716-ui3" />
-    <link rel="stylesheet" href="cloze-workbook-ui.css?v=20260716-1" />
-    <link rel="stylesheet" href="cloze-knowledge.css?v=20261118-nav-1" />
+    <link rel="stylesheet" href="cloze-workbook-ui.css?v=20260921-sentence-translate-2" />
+    <link rel="stylesheet" href="cloze-knowledge.css?v=20261118-kp-1" />
   </head>
   <body class="module-cloze">
     <a class="skip-link" href="#appShell">跳到主要内容</a>
@@ -21,12 +21,27 @@
           </div>
           <div class="login-panel">
             <div class="login-form">
-              <label for="loginCode">登录码 <small>新疆学生无限进步统一登录码</small></label>
-              <div class="login-row">
-                <input id="loginCode" type="password" autocomplete="off" placeholder="请输入登录码" />
-                <button id="loginBtn" class="primary-button">登录</button>
+              <div class="login-modes" role="tablist" aria-label="选择登录方式">
+                <button class="login-mode active" type="button" role="tab" aria-selected="true" data-login-mode="code">登录码登录</button>
+                <button class="login-mode" type="button" role="tab" aria-selected="false" data-login-mode="phone">手机号登录</button>
               </div>
-              <p id="loginFeedback" class="feedback"></p>
+              <div data-login-field="code">
+                <label for="loginCode">登录码 <small>原登录码继续有效</small></label>
+                <div class="login-row">
+                  <input id="loginCode" type="password" autocomplete="off" placeholder="请输入登录码" />
+                  <button id="loginBtn" class="primary-button">登录</button>
+                </div>
+                <button id="experienceLoginBtn" class="experience-login-button" type="button">进入体验版</button>
+                <p class="experience-login-note">体验版需输入体验码，开放5篇文章，学习记录仅保存在当前浏览器。</p>
+              </div>
+              <div class="hidden" data-login-field="phone">
+                <label for="loginPhone">手机号 <small>需老师提前开通完形填空板块</small></label>
+                <div class="login-row">
+                  <input id="loginPhone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="请输入11位手机号" />
+                  <button id="phoneLoginBtn" class="primary-button">登录</button>
+                </div>
+              </div>
+               <p id="loginFeedback" class="feedback"></p>
             </div>
           </div>
         </div>
@@ -87,8 +102,10 @@
                 <span class="kp-hero-kicker"><span class="kp-kicker-dot" aria-hidden="true"></span>新疆中考 · 完形填空 · 逐空取证</span>
                 <h2>别再凭语感蒙，<span class="kp-hero-hl">完形填空的答案都在原文里</span>。</h2>
                 <p>专为读得懂却总选错、线索看不清的同学设计。先学五维一体方法，再做同步精练，最后进真题迁移，每一空都能指回原文证据。</p>
+                <p id="experienceModeNote" class="experience-mode-note hidden">体验版 · 已开放5篇文章</p>
                 <div class="kp-hero-actions">
                   <button id="entryExamBtn" class="kp-hero-cta" type="button">开始今天的训练 <span aria-hidden="true">→</span></button>
+                  <button id="unlockFormalBtn" class="kp-hero-unlock hidden" type="button">输入正式码解锁全部</button>
                   <span class="kp-hero-note"><span class="kp-note-check" aria-hidden="true">✓</span> 每道题都有证据可复核</span>
                 </div>
               </div>
@@ -128,7 +145,7 @@
 
             <!-- 底部指标条 -->
             <div class="kp-footer-strip">
-              <div class="kp-metric"><strong id="kpMetricLessons">53</strong><span>篇真题</span></div>
+              <div class="kp-metric"><strong id="kpMetricLessons">—</strong><span>篇真题</span></div>
               <div class="kp-metric"><strong id="kpMetricBlanks">—</strong><span>道逐空解析</span></div>
               <div class="kp-metric"><strong>5</strong><span>个证据维度</span></div>
               <div class="kp-footer-copy">
@@ -142,7 +159,6 @@
               </div>
             </div>
           </div>
-
           <section id="homeNotebookPanel" class="home-tool-panel hidden">
             <div class="kp-panel-head">
               <div class="kp-panel-head-main">
@@ -169,7 +185,7 @@
             </div>
             <section id="collocationBank" class="collocation-bank"></section>
           </section>
-          <!-- 知识点讲解 / 知识点同步练 共用面板，靠 data-kp-mode 区分两个入口 -->
+          <!-- 知识点讲解 / 知识点同步练 共用面板，靠 mode 区分两个入口 -->
           <section id="homeKnowledgePanel" class="home-tool-panel hidden">
             <div class="kp-panel-head">
               <div class="kp-panel-head-main">
@@ -314,13 +330,13 @@
         <section id="verify" class="panel study-panel">
           <div class="panel-heading">
             <p class="eyebrow">复盘提升区</p>
-            <h3>做完再读一遍，是提升的关键</h3>
           </div>
           <section id="collocationReview" class="collocation-review"></section>
+          <section id="highFrequencyReview" class="high-frequency-review" aria-labelledby="highFrequencyTitle"></section>
           <div class="read-aloud">
             <div>
               <strong id="readStatus">精读翻译台</strong>
-              <p>完整查看原文和选项；单击单词或选项看意思，双击句子看整句中文。</p>
+              <p>完整查看原文和选项；单击单词查看词卡，点击每句末尾的“译”查看整句中文。</p>
             </div>
           </div>
           <div class="translation-workbench">
@@ -330,7 +346,7 @@
             </div>
             <div id="sentenceMeaning" class="translation-card">
               <strong>翻译</strong>
-              <p>单击单词或选项查看意思，双击句子查看整句中文。</p>
+              <p>单击单词查看词卡，点击每句末尾的“译”查看整句中文。</p>
             </div>
           </div>
           <section class="paper-practice">
@@ -347,16 +363,40 @@
     </main>
 
     <div id="printArea" class="print-area" aria-hidden="true"></div>
-    <script src="cloze-handout-content.js?v=20261117-1"></script>
-    <script src="cloze-quiz-300.js?v=20261117-1"></script>
-    <script src="cloze-knowledge-ui.js?v=20261118-nav-1"></script>
+
+    <div id="clozeWordCardLayer" class="cloze-word-card-layer" role="dialog" aria-modal="true" aria-labelledby="clozeWordCardTitle">
+      <section class="cloze-word-card" role="document">
+        <button id="clozeWordCardClose" class="cloze-word-card-close" type="button" aria-label="关闭词汇卡片">×</button>
+        <p class="cloze-word-card-label">精读词汇卡片</p>
+        <div class="cloze-word-card-title-row">
+          <h3><a id="clozeWordCardTitle" href="https://dict.youdao.com/" target="_blank" rel="noopener noreferrer" title="前往有道词典查看完整释义"></a></h3>
+          <button id="clozeWordCardSpeak" class="cloze-word-card-speaker" type="button" aria-label="播放单词发音" title="播放发音">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zm-2.5-8.7v2.06a7 7 0 0 1 0 13.28v2.06a9 9 0 0 0 0-17.4z"/></svg>
+            <span>发音</span>
+          </button>
+        </div>
+        <p id="clozeWordCardPhonetic" class="cloze-word-card-phonetic">音标加载中…</p>
+        <div class="cloze-word-card-section">
+          <strong>词义</strong>
+          <p id="clozeWordCardMeaning"></p>
+        </div>
+        <div class="cloze-word-card-section">
+          <strong>常见固定搭配</strong>
+          <div id="clozeWordCardCollocations" class="cloze-word-card-collocations"></div>
+        </div>
+        <p class="cloze-word-card-source">点击词语可前往有道词典；发音优先使用有道，连接失败时自动使用浏览器英语语音。</p>
+      </section>
+    </div>
     <script src="official-exams-2021-2025.js?v=20260823-official-exams-2"></script>
     <script src="official-exams-2016-2020.js?v=20260823-official-exams-2"></script>
-    <script src="../../assets/student-profile.js?v=20260828-1"></script>
-    <script src="urumqi08-midterm-202611.js?v=20261126-merged"></script>
-  <script src="urumqi-joint1-202611.js?v=20261126-merged"></script>
-  <script src="urumqi126-cihu-midterm-20261026.js?v=20261126-merged"></script>
-  <script src="urumqi38-midterm-20261124.js?v=20261126-merged"></script>
-  <script src="app.js?v=20261126-merged"></script>
+    <script>window.LATEST_IMPORT_BATCH = "20261019";</script>
+    <script src="imported-midterm-20261019.js?v=20261020-order-1"></script>
+    <script src="../vocabulary/doc_words.js?v=20260824"></script>
+    <script src="high-frequency-selections.js?v=20261019-1"></script>
+    <script src="../../assets/student-profile.js?v=20261020-1"></script>
+    <script src="cloze-handout-content.js?v=20261118-kp-1"></script>
+    <script src="cloze-quiz-300.js?v=20261118-kp-1"></script>
+    <script src="cloze-knowledge-ui.js?v=20261118-kp-1"></script>
+    <script src="app.js?v=20261118-kp-1"></script>
   </body>
 </html>
