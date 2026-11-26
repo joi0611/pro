@@ -157,6 +157,8 @@
       '<div class="reading-guide"><strong>阅读方式</strong><span>英文原句 → 中文翻译 → 单击词汇查看学习卡</span></div>' +
       '<div class="reading-sentence-list">' + sentences.map((item, index) => {
         const cacheKey = hashText(item.text);
+        const curated = article.readingTranslations?.[index];
+        if (curated) translationCache[cacheKey] = curated;
         const cached = translationCache[cacheKey];
         return '<section class="reading-sentence" data-sentence-index="' + index + '" data-sentence="' + escapeHtml(item.text) + '"><div class="reading-sentence-no">句子 ' + String(index + 1).padStart(2, "0") + '</div><div class="reading-sentence-body"><p class="reading-en">' + renderInteractiveSentence(item.text) + '</p><div class="reading-cn" data-translation-key="' + cacheKey + '"><strong>译文</strong><span>' + (cached ? escapeHtml(cached) : '正在加载译文…') + '</span></div></div></section>';
       }).join("") + '</div>' +
