@@ -330,7 +330,7 @@
     const status = score === undefined ? "待完成" : `${score} / ${total}`;
     return `<article class="exam-card">
       <div class="exam-card-index">${String(displayIndex).padStart(2, "0")}</div>
-      <div class="exam-card-main"><span>题目来源：${escapeHtml(exam.source)} · 本篇 ${escapeHtml(exam.range)} 题</span><strong>${escapeHtml(exam.title)}</strong></div>
+      <div class="exam-card-main"><span>题目来源：${escapeHtml(exam.source)} · 本篇 ${escapeHtml(exam.range)} 题</span><strong>${escapeHtml(exam.title)}</strong>${exam.updateLabel ? `<span class="latest-update-badge">${escapeHtml(exam.updateLabel)}</span>` : ""}</div>
       <span class="exam-card-status ${score === total ? "done" : ""}">${status}</span>
       <button class="start-exam" type="button" data-exam-id="${exam.id}">${score === undefined ? "开始训练" : "再次训练"}</button>
     </article>`;
