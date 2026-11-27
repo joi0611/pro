@@ -168,8 +168,6 @@ function switchStudyPane(pane) {
   if (practice) practice.hidden = (pane !== "practice");
   if (trans) trans.hidden = !(pane === "trans" && toolPaneHasContent(trans));
   document.body.setAttribute("data-pane", pane);
-  var printBtn = $("printBtn");
-  if (printBtn) printBtn.hidden = (pane !== "practice");
   Array.prototype.forEach.call(document.querySelectorAll(".study-tab"), function (btn) {
     var on = btn.getAttribute("data-pane") === pane;
     btn.classList.toggle("active", on);
@@ -781,36 +779,7 @@ function renderVocab() {
   });
 }
 
-/* ---------- 4. 打印：空白练习卷（不含答案与解析） ---------- */
-function buildPrintHtml(les) {
-  var text = les.article_text_with_blanks || "";
-  var body = escapeHtml(text).replace(/__(\d+)__/g, function (_, n) {
-    return '<span class="pb-blank"><i>' + n + '</i><u></u></span>';
-  });
-  var qs = (les.questions || []).slice().sort(function (a, b) { return a.q - b.q; });
-  var qHtml = qs.map(function (q) {
-    var opts = (q.options || []).map(function (o, i) {
-      return '<span class="popt"><b>' + "ABCD".charAt(i) + '.</b> ' + escapeHtml(o) + '</span>';
-    }).join("");
-    return '<div class="pq"><span class="pq-no">' + q.q + '.</span><span class="pq-opts">' + opts + '</span></div>';
-  }).join("");
-  var meta = [les.region, les.exam_year ? les.exam_year + " 年" : "", les.source].filter(Boolean).join(" · ");
-  return '<div class="print-wrap">' +
-    '<h1>' + escapeHtml(les.title_cn || "") + '</h1>' +
-    '<div class="print-meta">' + escapeHtml(meta) + '</div>' +
-    '<div class="print-info"><span>班级 __________</span><span>姓名 __________</span>' +
-      '<span>用时 ______ 分钟</span><span>正确 ______ / ' + qs.length + '</span></div>' +
-    '<div class="print-article"><p>' + body + '</p></div>' +
-    '<div class="print-qs"><h3>选项</h3>' + qHtml + '</div>' +
-    '<div class="print-foot">共 ' + qs.length + ' 题 · 把所选答案填到正文对应编号的横线上</div>' +
-  '</div>';
-}
-function renderPrintView() {
-  var area = $("printArea"); if (!area || !lesson) return;
-  area.innerHTML = buildPrintHtml(lesson);
-  area.hidden = false;
-  setTimeout(function () { try { window.print(); } catch (e) {} }, 60);
-}
+
 /* 做题统计 */
 function getStats() {
   var s = loadStore();
@@ -1450,7 +1419,6 @@ function renderQuiz() {
   var backLabel = (quizContext === "quiz") ? "← 返回课表" : "← 返回本课";
   var head = '<div class="qz-head">'
     + '<button class="btn ghost" type="button" data-qz="back">' + backLabel + '</button>'
-    + '<button class="btn ghost" type="button" data-qz="print">🖨 打印本课卷</button>'
     + '<div class="qz-hmain"><b>' + escapeHtml((chp ? chp.t : "") + "　" + t.no + "　" + t.name) + '</b>'
     + '<span>共 ' + qs.length + ' 题 · 已答 <b>' + done + '</b>/' + qs.length
     + '　｜　机制 ' + escapeHtml(g.mech + " · " + g.name) + '</span></div>'
@@ -1526,37 +1494,6 @@ function closeHandoutQuiz() {
   quizState = null;
 }
 
-/* 精练卷打印：题干 + 选项，不含答案（复用空白练习卷打印样式） */
-function quizPrintHtml(g) {
-  var qHtml = g.qs.map(function (q) {
-    var stem = escapeHtml(q.stem).replace(/_{3,}(\d+)_{3,}/g, function (_, n) {
-      return '<span class="pb-blank"><i>' + n + '</i><u></u></span>';
-    });
-    var opts = (q.options || []).map(function (o) {
-      return '<span class="popt"><b>' + escapeHtml(o.k) + '.</b> ' + escapeHtml(o.v) + '</span>';
-    }).join("");
-    return '<div class="qzp">'
-      + '<div class="qzp-h"><b>训练 ' + q.no + '</b><span>' + escapeHtml(q.src || "") + '</span></div>'
-      + '<p class="qzp-stem">' + stem + '</p>'
-      + '<div class="qzp-opts">' + opts + '</div>'
-      + '</div>';
-  }).join("");
-  return '<div class="print-wrap"><h1>' + escapeHtml(g.name || "") + ' · 精练卷</h1>'
-    + '<div class="print-meta">' + escapeHtml(g.mech + " · " + g.name) + ' ｜ 共 ' + g.qs.length + ' 题 · 把所选答案填到对应编号的横线上</div>'
-    + '<div class="print-info"><span>班级 __________</span><span>姓名 __________</span><span>用时 ______ 分钟</span></div>'
-    + '<div class="print-qs">' + qHtml + '</div>'
-    + '<div class="print-foot">来源：中考完形填空五维一体 300 题真题精练分册</div>'
-    + '</div>';
-}
-
-function renderQuizPrint() {
-  var area = $("printArea");
-  if (!area || !quizState) return;
-  var g = getLessonQuiz(quizState.ch, quizState.idx);
-  if (!g) return;
-  area.innerHTML = quizPrintHtml(g);
-  window.print();
-}
 
 /** 从 HANDOUT_HTML 动态解析某一讲的「课」列表（标题形如「第一课　原词复现」） */
 function chapterTechs(key) {
@@ -1941,20 +1878,6 @@ function enterHandout() {
   showHandoutHome();
 }
 
-/* 讲义打印：把封面 + 全部章节灌入 #printArea（复用现有打印体系），再调起打印 */
-function renderHandoutPrint() {
-  var area = $("printArea");
-  if (!area) { window.print(); return; }
-  var H = (typeof HANDOUT_HTML !== "undefined") ? HANDOUT_HTML : null;
-  var cover = '<div class="print-wrap"><h1>中考完形填空 · 五维一体核心解题矩阵</h1>'
-    + '<p class="print-meta">词汇复现 · 情感态度 · 语境还原 · 篇章结构 · 动作链条与语法基石 ｜ 纯净全量解析版</p></div>';
-  var body = HANDOUT_CHAPTERS.map(function (c) {
-    var inner = (H && H[c.id]) ? H[c.id] : '';
-    return '<section class="ho-ch">' + inner + '</section>';
-  }).join("");
-  area.innerHTML = cover + body;
-  window.print();
-}
 
 /* ==================== 题库渲染与筛选 ==================== */
 /* 单篇归一化：只在 openLesson 时对当前篇调用（单篇 < 30ms）。
@@ -3689,7 +3612,7 @@ function loadAppResources() {
     "clue-rules.js?v=20261107k",
     "diag-classify.js?v=20261107k",
     "methodology.js?v=20261107k",
-    "quiz-300.js?v=20261107k",
+    "quiz-300.js?v=21608f0ed8f0",
     "handout-content.js?v=20261107k"
   ];
   return Promise.all(sources.map(loadScriptOnce)).then(function () {
@@ -3836,7 +3759,6 @@ function bindUI() {
   var kpBack = $("kpBackBtn"); if (kpBack) kpBack.addEventListener("click", function () { window.backToKPList && window.backToKPList(); });
 
   /* 新增功能：打印 / 生词本 / 单词查询 */
-  var printBtn = $("printBtn"); if (printBtn) printBtn.addEventListener("click", renderPrintView);
   var vocabBack = $("vocabBackBtn"); if (vocabBack) vocabBack.addEventListener("click", function () { showView("library"); });
   var libHome = $("libraryHomeBtn"); if (libHome) libHome.addEventListener("click", function () { showView("home"); });
   initWordLookup();
@@ -3853,7 +3775,7 @@ function bindUI() {
   /* 三板块入口卡片：点卡片任意处（打印按钮除外）触发内部 CTA */
   document.addEventListener("click", function (e) {
     if (!e.target.closest) return;
-    if (e.target.closest("[data-go]") || e.target.closest(".hc-print")) return;
+    if (e.target.closest("[data-go]")) return;
     var card = e.target.closest(".home-card");
     if (!card) return;
     var go = card.querySelector("[data-go]");
@@ -3873,17 +3795,6 @@ function bindUI() {
       var sec = document.getElementById(el.dataset.anchor);
       if (sec) setTimeout(function () { sec.scrollIntoView({ behavior: "smooth", block: "start" }); }, 80);
     }
-  });
-  var hpBtn = document.getElementById("handoutPrintBtn");
-  if (hpBtn) hpBtn.addEventListener("click", function () { renderHandoutPrint(); });
-  /* 主页三板块打印按钮 */
-  var hpH = document.getElementById("homePrintHandout");
-  if (hpH) hpH.addEventListener("click", function () { renderHandoutPrint(); });
-  var hpq = document.getElementById("homePrintQuiz");
-  if (hpq) hpq.addEventListener("click", function () {
-    if (quizState) { renderQuizPrint(); return; }
-    showView("handout");
-    toast("选择任意一课，进入精练后点「打印本课卷」即可打印该课题目");
   });
   /* 讲义主页：卡片点击进单讲 / 返回目录 / 上一讲下一讲 */
   var homeBox = document.getElementById("handoutHome");
@@ -3941,7 +3852,6 @@ function bindUI() {
       quizState.answers = {}; quizState.submitted = false; quizState.warned = false; quizState.t0 = Date.now();
       renderQuiz(); window.scrollTo(0, 0); return;
     }
-    if (act === "print") { renderQuizPrint(); return; }
     if (act === "back") {
       if (quizContext === "quiz") { showQuizHome(); return; }
       var c = quizState.ch, i2 = quizState.idx; closeHandoutQuiz(); openHandoutLesson(c, i2); return;

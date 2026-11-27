@@ -93,7 +93,6 @@
           <span class="hc-t">知识点讲解</span>
           <span class="hc-d">五维一体方法讲义 · 11 讲 / 27 课技法 · 学完即练</span>
           <span class="hc-go" data-go="handout">进入讲义 →</span>
-          <button class="hc-print" id="homePrintHandout" type="button">打印讲义</button>
         </div>
         <div class="home-card hc-quiz">
           <span class="hc-icon hc-icon-pen" aria-hidden="true"><span></span></span>
@@ -101,7 +100,6 @@
           <span class="hc-t">知识点同步练习</span>
           <span class="hc-d">配套题库待导入 · 按课同步 · 先答后揭，提交后亮出原文证据</span>
           <span class="hc-go" data-go="quiz">开始精练 →</span>
-          <button class="hc-print" id="homePrintQuiz" type="button">打印精练卷</button>
         </div>
         <div class="home-card hc-train">
           <span class="hc-icon hc-icon-target" aria-hidden="true"><span></span></span>
@@ -156,7 +154,6 @@
           <button class="study-tab" data-pane="trans" type="button" role="tab" aria-selected="false">翻译精读</button>
         </div>
 
-        <button id="printBtn" class="btn ghost print-btn" type="button">🖨 打印练习卷</button>
       </div>
 
       <div class="lesson-meta" id="lessonMeta"></div>
@@ -362,7 +359,6 @@
         <h1 class="handout-title">完形填空方法讲义矩阵</h1>
         <span class="handout-sub">五维一体 · 全 11 讲 ｜ 学完即练 · 可打印</span>
         <button class="btn ghost no-print" id="handoutBackBtn" type="button" hidden>← 返回讲义目录</button>
-        <button class="btn ghost" id="handoutPrintBtn" type="button">🖨 打印讲义</button>
       </div>
       <div class="handout-home" id="handoutHome"></div>
       <div class="handout-layout" hidden>
@@ -435,11 +431,10 @@
 
   <div id="toast" class="toast" hidden></div>
 
-  <div id="printArea" class="print-area" hidden></div>
 
   <!-- 题库、讲义、配套题和分析规则均在登录成功后加载；登录首屏只加载门禁所需文件。 -->
   <script src="supabase-config.js?v=20261021a"></script>
-  <script src="app.js?v=20261125-upload-order"></script>
+  <script src="app.js?v=20261127-handout-quiz"></script>
   <script src="mobile-study.js?v=20261124a"></script>
 </body>
 </html>
