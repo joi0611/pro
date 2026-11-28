@@ -1,3 +1,5 @@
+const q80 = vq(80,"(become)",["becoming"],["becoming","become","becomes","became"],"有","谓语","时态","is","is 是助动词，与 becoming 合起来构成现在进行时，表示出行正变得越来越方便。");
+q80.verbFlow.tenseCue = "is + 动词-ing → 现在进行时";
 addExamArticle("urumqi-joint1-202611", {...{
   "title": "琳达眼中的中国乡村",
   "practiceTitle": "琳达眼中的中国乡村",
@@ -32,8 +34,8 @@ nq(76,["a"],["a","an","the","/"],"冠词","不定冠词","25-year-old girl","gir
 nq(77,["In"],["In","On","At","By"],"介词","固定搭配","her free time","in one’s free time 表示“在某人的空闲时间”，句首大写。"),
 q(78,"(great)",["greatly"],["greatly","great","greater","greatest"],"形容词与副词","形容词变副词","was / amazed","空格修饰 amazed，应用副词 greatly，表示“非常惊讶”。"),
 vq(79,"(see)",["saw"],["saw","see","seen","seeing"],"没有","谓语","时态","Last year","主语 she 后缺谓语，Last year 指过去，see 的过去式是 saw。"),
-vq(80,"(become)",["becoming"],["becoming","become","becomes","became"],"有","谓语","时态","is / more and more","is 与 becoming 一起构成现在进行时，表示便利程度正在提高。"),
-q(81,"(develop)",["development"],["development","develop","developing","developed"],"名词","动词变名词","The / of digital technology","The ___ of 结构需要名词，development 表示“发展”，是主语中心词。"),
+q80,
+q(81,"(develop)",["development"],["development","develop","developing","developed"],"动词","动词变名词","The / of digital technology","提示词 develop 是动词。The ___ of digital technology 是主语，空格需要名词 development 作中心词，意为“发展”。"),
 q(82,"(project)",["projects"],["projects","project","projectes","projected"],"名词","可数名词变复数","there are","are 对应复数名词 projects，housing projects 指住房项目。"),
 nq(83,["so","so that"],["so","but","or","although"],"连词","因果关系","keeps sending teachers / can have","前句说持续派教师，后句说学生因此能接受更好的教育。逗号后可用 so 表结果，so that 也可表达目的。"),
 q(84,"(thousand)",["thousands"],["thousands","thousand","thousandes","thousandth"],"名词","可数名词变复数","of students","thousands of 表示“数以千计的”，千位数没有具体数字限定。")
